@@ -1,5 +1,7 @@
 # RaidProtect Developer Documentation
 
+[![Publish documentation](https://github.com/raidprotect/docs/actions/workflows/publish.yml/badge.svg?event=push)](https://github.com/raidprotect/docs/actions/workflows/publish.yml)
+
 This repository contains the internal documentation of RaidProtect. It explains
 the internal architecture of the bot and its features.
 
