@@ -1,0 +1,9 @@
+[book]
+title = "RaidProtect Developer Documentation"
+description = "Internal documentation for RaidProtect contributors"
+language = "en"
+src = "src"
+
+[output.html]
+git-repository-url = "https://github.com/raidprotect/docs"
+edit-url-template = "https://github.com/raidprotect/docs/edit/main/{path}"
