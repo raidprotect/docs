@@ -5,7 +5,7 @@
 # Overview
 
 - [RaidProtect architecture](./architecture.md)
-- [Bot overview]()
+- [Bot overview](./bot-overview.md)
 - [Features]()
     - [Moderation]()
     - [Captcha]()
