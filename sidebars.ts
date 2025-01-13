@@ -4,7 +4,7 @@ const sidebars: SidebarsConfig = {
 	sidebar: [
 		{
 			type: 'doc',
-			id: 'home',
+			id: 'readme',
 		},
 		{
 			type: 'doc',
