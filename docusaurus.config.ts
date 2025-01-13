@@ -31,7 +31,7 @@ export default async function createConfigAsync() {
 					label: 'English',
 					path: 'en'
 				},
-			},
+			}
 		},
 		presets: [
 			[
@@ -40,7 +40,7 @@ export default async function createConfigAsync() {
 					docs: {
 						routeBasePath: '/',
 						sidebarPath: './sidebars.ts',
-						editUrl: 'https://github.com/raidprotect/docs/tree/main/',
+						editUrl: 'https://github.com/raidprotect/docs/tree/master/',
 						lastVersion: lastStableVersion,
 						onlyIncludeVersions: (() => {
 							return ['current', lastStableVersion];
@@ -80,18 +80,24 @@ export default async function createConfigAsync() {
 			},
 			colorMode: {
 				defaultMode: 'dark',
-				respectPrefersColorScheme: true
+				respectPrefersColorScheme: true,
+				disableSwitch: true
 			},
-			image: 'img/docusaurus-social-card.jpg',
 			navbar: {
-				title: 'RaidProtect',
+				title: null,
 				logo: {
 					alt: 'RaidProtect',
-					src: 'img/logo.svg',
+					src: 'img/extend_logo.svg',
 					href: 'https://raidprotect.bot',
 					target: '_self'
 				},
 				items: [
+					{
+						to: 'https://raidprotect.bot',
+						position: 'left',
+						label: 'Accueil',
+						target: '_self'
+					},
 					{
 						type: 'docSidebar',
 						sidebarId: 'sidebar',
@@ -133,24 +139,84 @@ export default async function createConfigAsync() {
 						// 	},
 						// ],
 					},
+					{
+						href: 'https://discord.com/invite/raidprotect',
+						className: 'navbar-social navbar-discord',
+						position: 'right',
+						'aria-label': 'Discord server',
+					},
+					{
+						href: 'https://x.com/raidprotect',
+						className: 'navbar-social navbar-x',
+						position: 'right',
+						'aria-label': 'Twitter',
+					},
+					{
+						href: 'https://github.com/raidprotect',
+						className: 'navbar-social navbar-github',
+						position: 'right',
+						'aria-label': 'GitHub repository',
+					}
 				],
 			},
 			footer: {
 				style: 'light',
-				links: [],
 				logo: {
 					alt: 'RaidProtect',
-					src: 'img/logo.svg',
+					src: 'img/extend_logo.svg',
 					href: 'https://raidprotect.bot',
 					target: '_self',
-					width: '75px'
+					width: '275px'
 				},
-				copyright: `Copyright © ${new Date().getFullYear()} RaidProtect`,
+				links: [
+					{
+						title: 'Navigation',
+						items: [
+							{
+								label: 'Accueil',
+								to: 'https://raidprotect.bot',
+								target: '_self'
+							},
+							{
+								label: 'Documentation',
+								to: '/',
+								target: '_self'
+							},
+							{
+								label: 'Suggestions',
+								to: 'https://suggestions.raidprotect.bot',
+								target: '_self'
+							},
+						],
+					},
+					{
+						title: 'Information',
+						items: [
+							{
+								label: 'Mentions légales',
+								to: 'https://raidprotect.bot/legal',
+							},
+							{
+								label: 'Statuts des services',
+								to: 'https://status.raidprotect.bot',
+								target: '_self'
+							},
+							{
+								label: 'contact@raidprotect.bot',
+								to: 'mailto:contact@raidprotect.bot'
+							}
+						],
+					},
+				],
+				copyright: `Copyright © ${new Date().getFullYear()} - RaidProtect - RP - Tous droits réservés.`,
 			},
 			prism: {
 				theme: prismThemes.github,
 				darkTheme: prismThemes.dracula,
 			},
 		} satisfies Preset.ThemeConfig,
+		stylesheets: [
+			'https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap',
+		]
 	} satisfies Config
 }

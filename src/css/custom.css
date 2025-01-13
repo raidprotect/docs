@@ -5,6 +5,12 @@
  */
 
 /* You can override the default Infima variables here. */
+html[data-theme='dark'] {
+  --ifm-background-color: #040114;
+  --ifm-color-content: white;
+  --ifm-toc-border-color: #252332
+}
+
 :root {
   --ifm-color-primary: #D35F5F;
   --ifm-color-primary-dark: #ce5c5c;
@@ -13,18 +19,213 @@
   --ifm-color-primary-light: #ec9090;
   --ifm-color-primary-lighter: #e98f8f;
   --ifm-color-primary-lightest: #e18989;
+  --ifm-navbar-background-color: var(--ifm-background-color);
+  --ifm-footer-background-color: var(--ifm-background-color);
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-footer-title-color: white;
+  --ifm-menu-color: var(--ifm-color-content);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #D35F5F;
-  --ifm-color-primary-dark: #ce5c5c;
-  --ifm-color-primary-darker: #bd5454;
-  --ifm-color-primary-darkest: #9e4747;
-  --ifm-color-primary-light: #ec9090;
-  --ifm-color-primary-lighter: #e98f8f;
-  --ifm-color-primary-lightest: #e18989;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+.navbar {
+  margin-top: 15px;
+}
+
+.navbar__brand .navbar__title {
+  display: none;
+}
+
+.navbar__item {
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+}
+
+.navbar-social {
+  padding: 0;
+  margin-left: 1rem;
+  transition: transform .3s ease-in-out;
+}
+
+.navbar-social::before {
+  content: '';
+  background-color: var(--ifm-navbar-link-color);
+  display: flex;
+  width: 18px;
+  height: 18px;
+}
+
+.navbar-discord::before {
+  mask-image: url('/img/discord.svg');
+}
+
+.navbar-x::before {
+  mask-image: url('/img/x.svg');
+}
+
+.navbar-github::before {
+  mask-image: url('/img/github.svg');
+}
+
+.footer {
+  z-index: 2;
+  border-top: 1px solid #252332;
+  padding: 100px 0 30px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer__bottom {
+  margin-top: 30px;
+  border-top: 1px solid #252332;
+  padding-top: 30px;
+  position: relative;
+}
+
+.footer-decoration-one {
+  background-image: linear-gradient(180deg,var(--ifm-color-primary) 40%,#a561a3);
+  opacity: 0.8;
+  filter: blur(140px);
+  width: 50%;
+  height: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  inset: auto 0% 380px
+}
+
+.footer__grid {
+  position: relative;
+  grid-auto-columns: 1fr;
+  display: grid;
+}
+
+.footer__grid {
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
+  grid-template-columns: 1fr;
+}
+
+.footer__details {
+  grid-column: span 1 / span 1;
+}
+
+.footer-social-list {
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 15px;
+  display: flex;
+}
+
+.social-link:hover, .navbar-social:hover {
+   transform: translateY(-3px);
+}
+
+.social-link {
+  transition: transform .3s ease-in-out;
+  display: flex;
+}
+
+.social-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.footer__col {
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  padding: 0;
+}
+
+.footer__title {
+  font-size: 24px;
+  font-family: 'Nohemi Vf', sans-serif;
+  font-weight: 600;
+  line-height: 1.2em;
+}
+
+.footer__item {
+  margin-bottom: 15px;
+}
+
+.footer__link-item {
+  font-size: 18px;
+  line-height: 1.4em;
+  transition: color .3s ease-in-out;
+}
+
+.footer__link-item:hover {
+  text-decoration: none;
+}
+
+@media screen and (min-width: 479px) {
+  .footer__grid {
+    grid-column-gap: 30px;
+    grid-row-gap: 50px;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 50px;
+  }
+
+  .footer__details {
+    grid-column: span 2 / span 2;
+  }
+
+  .footer__col {
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .footer__grid {
+    grid-column-gap: 30px;
+    grid-row-gap: 50px;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 80px;
+  }
+
+  .footer__details {
+    grid-column: span 3 / span 3;
+  }
+
+  .footer__col {
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+  }
+}
+
+@media screen and (min-width: 996px) {
+  .navbar__brand {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .navbar__items:not(.navbar__items--right) {
+    margin-left: 244px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer__grid {
+    grid-template-rows: auto;
+    grid-template-columns: 1.75fr 1fr 1fr;
+    margin-bottom: 60px;
+    grid-row-gap: 16px;
+    grid-column-gap: 16px;
+  }
+
+  .footer__details {
+    grid-area: span 1 / span 1 / span 1 / span 1;
+    justify-self: auto;
+  }
+
+  .footer__col {
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
 }

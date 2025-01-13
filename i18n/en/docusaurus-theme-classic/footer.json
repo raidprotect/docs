@@ -1,10 +1,42 @@
 {
   "copyright": {
-    "message": "Copyright © 2025 RaidProtect",
+    "message": "Copyright © 2025 - RaidProtect - RP - All rights reserved.",
     "description": "The footer copyright"
   },
   "logo.alt": {
     "message": "RaidProtect",
     "description": "The alt text of footer logo"
+  },
+  "link.title.Navigation": {
+    "message": "Navigation",
+    "description": "The title of the footer links column with title=Navigation in the footer"
+  },
+  "link.title.Information": {
+    "message": "Information",
+    "description": "The title of the footer links column with title=Information in the footer"
+  },
+  "link.item.label.Accueil": {
+    "message": "Home",
+    "description": "The label of footer link with label=Accueil linking to https://raidprotect.bot/"
+  },
+  "link.item.label.Documentation": {
+    "message": "Documentation",
+    "description": "The label of footer link with label=Documentation linking to /"
+  },
+  "link.item.label.Suggestions": {
+    "message": "Suggestions",
+    "description": "The label of footer link with label=Suggestions linking to https://suggestions.raidprotect.bot"
+  },
+  "link.item.label.Mentions légales": {
+    "message": "Legal notices",
+    "description": "The label of footer link with label=Mentions légales linking to https://raidprotect.bot/legal"
+  },
+  "link.item.label.Statuts des services": {
+    "message": "Status of services",
+    "description": "The label of footer link with label=Status des services linking to https://status.raidprotect.bot"
+  },
+  "link.item.label.contact@raidprotect.bot": {
+    "message": "contact@raidprotect.bot",
+    "description": "The label of footer link with label=contact@raidprotect.bot linking to mailto:contact@raidprotect.bot"
   }
 }
