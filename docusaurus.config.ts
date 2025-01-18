@@ -13,7 +13,7 @@ export default async function createConfigAsync() {
 		title: 'RaidProtect',
 		tagline: 'Sécurisez votre serveur Discord',
 		favicon: 'img/favicon.ico',
-		url: 'https:/docs.raidprotect.bot',
+		url: 'https:/docs-beta.raidprotect.bot',
 		baseUrl: '/',
 		organizationName: 'rapidprotect',
 		projectName: 'raidprotect',
@@ -25,12 +25,12 @@ export default async function createConfigAsync() {
 			localeConfigs: {
 				fr: {
 					label: 'Français',
-					path: 'fr',
+					path: 'fr'
 				},
 				en: {
 					label: 'English',
 					path: 'en'
-				},
+				}
 			}
 		},
 		presets: [
@@ -63,7 +63,7 @@ export default async function createConfigAsync() {
 						sidebarCollapsed: false,
 						editCurrentVersion: false,
 						editLocalizedFiles: true,
-						showLastUpdateAuthor: false,
+						showLastUpdateAuthor: true,
 						showLastUpdateTime: true,
 					},
 					blog: false,
@@ -74,13 +74,23 @@ export default async function createConfigAsync() {
 				} satisfies Preset.Options,
 			],
 		],
+		scripts: [
+			{
+				src: "https://cdn.nolt.io/widgets.js",
+				async: true,
+			},
+			{
+				src: "/js/nolt.js",
+				defer: true
+			}
+		],
 		themeConfig: {
 			docs: {
 				versionPersistence: 'localStorage',
 			},
 			colorMode: {
 				defaultMode: 'dark',
-				respectPrefersColorScheme: true,
+				respectPrefersColorScheme: false,
 				disableSwitch: true
 			},
 			navbar: {
@@ -88,12 +98,12 @@ export default async function createConfigAsync() {
 				logo: {
 					alt: 'RaidProtect',
 					src: 'img/extend_logo.svg',
-					href: 'https://raidprotect.bot',
+					href: 'https://beta.raidprotect.bot',
 					target: '_self'
 				},
 				items: [
 					{
-						to: 'https://raidprotect.bot',
+						to: 'https://beta.raidprotect.bot',
 						position: 'left',
 						label: 'Accueil',
 						target: '_self'
@@ -108,7 +118,8 @@ export default async function createConfigAsync() {
 						to: 'https://suggestions.raidprotect.bot',
 						position: 'left',
 						label: 'Suggestions',
-						target: '_self'
+						target: '_self',
+						className: 'suggestion-button'
 					},
 					{
 						type: 'docsVersionDropdown',
@@ -164,7 +175,7 @@ export default async function createConfigAsync() {
 				logo: {
 					alt: 'RaidProtect',
 					src: 'img/extend_logo.svg',
-					href: 'https://raidprotect.bot',
+					href: 'https://beta.raidprotect.bot',
 					target: '_self',
 					width: '275px'
 				},
@@ -174,7 +185,7 @@ export default async function createConfigAsync() {
 						items: [
 							{
 								label: 'Accueil',
-								to: 'https://raidprotect.bot',
+								to: 'https://beta.raidprotect.bot',
 								target: '_self'
 							},
 							{
@@ -185,7 +196,8 @@ export default async function createConfigAsync() {
 							{
 								label: 'Suggestions',
 								to: 'https://suggestions.raidprotect.bot',
-								target: '_self'
+								target: '_self',
+								className: 'suggestion-button'
 							},
 						],
 					},
@@ -194,7 +206,7 @@ export default async function createConfigAsync() {
 						items: [
 							{
 								label: 'Mentions légales',
-								to: 'https://raidprotect.bot/legal',
+								to: 'https://beta.raidprotect.bot/legal',
 							},
 							{
 								label: 'Statuts des services',
