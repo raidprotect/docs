@@ -1,0 +1,51 @@
+---
+title: Guide rapide
+---
+
+import DocCard from '@theme/DocCard';
+
+Besoin de débuter rapidement avec RaidProtect ? Cette page condense les principales informations à connaître.
+
+Bienvenue sur le guide rapide de RaidProtect ! **Cette page condense les principales informations** pour débuter avec le bot. Pour plus de détails sur chaque fonctionnalité, référez-vous au reste de cette documentation. 📚 
+
+Tout d'abord, il vous faut inviter RaidProtect et **configurer correctement ses permissions**. Cette étape fondamentale est décrite sur la page d’accueil de la documentation.
+
+<DocCard item={{ type: 'link', href: '/', docId: 'readme', label: 'Lisez-moi' }} />
+
+Une fois les permissions correctement configurées (sans quoi le bot risque d'être inefficace), vous pouvez commencer à tester les différentes fonctionnalités !  🤠 
+
+## 💬 L'anti-spam
+
+L'une des fonctionnalités principales de RaidProtect est bien évidemment son anti-spam. Ce dernier vous permet de **bloquer en une fraction de secondes les tentatives de spam**, sans aucune intervention humaine.
+
+L'anti-spam prend en considération plusieurs paramètres pour définir la gravité du spam, et donc décider d'agir ou non. **Dans le cas où un spam est détecté, le bot expulse son auteur** et vous avertit dans le salon de logs de sa sanction. 🙌 
+
+Dans certains cas, il peut être nécessaire d'**ignorer certains salons de la détection**. Pour ce faire, exécutez simplement la commande `?settings allowspam #salon-a-ignorer`. Pour plus de détails concernant le fonctionnement de l'anti-spam, consultez sa documentation détaillée !
+
+<DocCard item={{ type: 'link', href: '/features/antispam', docId: 'features/antispam', label: 'Anti-spam' }} />
+
+## 💢 Le mode raid
+
+Parfois, un groupe d'utilisateurs menace votre serveur et il vous faut employer les grands moyens. Le mode raid est là pour ça ! Grâce à lui, vous pouvez **bloquer temporairement tous les utilisateurs tentant de rejoindre votre serveur**. Efficace, mais à réserver pour les grandes occasions ... 🤩 
+
+**L'activation du mode raid est d'une simplicité enfantine** - et cela vous permet de réagir rapidement face au danger. Faites tout simplement la commande `?raidmode` dans n'importe quel salon, et le mode raid sera en place. **N'oubliez pas de le désactiver** en utilisant la même commande !
+
+Afin de rendre cette protection encore plus efficace, RaidProtect est capable de détecter un afflux massif de nouveaux utilisateurs et d'**activer le mode raid tout seul** (mais pas de le désactiver, attention). Si votre serveur est très populaire, il se peut que vous ayez besoin de changer la sensibilité de détection : référez-vous à la documentation détaillée pour en savoir plus.
+
+<DocCard item={{ type: 'link', href: '/features/raidmode', docId: 'features/raidmode', label: 'Mode raid' }} />
+
+## 🚧 Le captcha
+
+Voici la dernière - mais pas moins populaire - fonctionnalité de RaidProtect. Vous connaissez sûrement les cases à cocher "Je ne suis pas un robot" ? Notre captcha a la même mission, mais sûr votre serveur Discord. Il permet **d'afficher un code à remplir à tous les nouveaux utilisateurs**, afin de stopper les robots se cachant sous un compte normal (_selfbot_). 🕵️ 
+
+**Cette fonctionnalité est totalement optionnelle**, et il se peut que vous n'en ayez pas besoin. Si vous souhaitez tout de même l'utiliser, son activation se fait en utilisant la commande `?captcha enable`. Tout est ensuite automatique !
+
+Si comme beaucoup de serveurs vous utilisez un rôle Membre et un bot permettant de l'assigner automatiquement (_autorole_), **cela risque d'interférer avec le captcha**. Heureusement, nous avons tout prévu. Consultez la documentation détaillée du captcha pour découvrir les paramètres optionnels.
+
+<DocCard item={{ type: 'link', href: '/features/captcha', docId: 'features/captcha', label: 'Captcha (vérification)' }} />
+
+## 😵 Ça ne marche pas !
+
+Véritable dysfonctionnement ou problème de configuration, il se peut que - parfois - tout ne fonctionne pas comme prévu. Heureusement, nous avons tout prévu ! **Consultez tout d'abord la page concernant les dysfonctionnements courants** de cette documentation. Si le problème persiste, notre équipe se fera une joie de vous dépanner. Rejoignez notre serveur Discord pour nous contacter. 👨‍🔧 
+
+<DocCard item={{ type: 'link', href: '/malfunctions', docId: 'malfunctions', label: 'Dysfonctionements' }} />
