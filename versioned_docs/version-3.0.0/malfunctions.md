@@ -32,6 +32,7 @@ Pour vous avertir des actions qu'il prend, RaidProtect a besoin d'un salon de lo
 - **Définissez manuellement un salon.** Si rien ne fonctionne, pas de panique, vous pouvez choisir manuellement le salon que le bot utilisera pour les logs ! Une fois un salon dédié créé, effectuez la commande ?settings logs #salon, en remplaçant #salon par le salon que vous venez de créer.
 
 ## Un utilisateur a spammé, mais le bot ne l'a pas sanctionné
+
 L'anti-spam est l'une des fonctionnalités principales de RaidProtect, et cela peut être embêtant s’il ne fonctionne pas. Mais rassurez-vous, la plupart du temps, il ne s'agit de rien de grave ! 😇 
 
 - **Si l'anti-spam demande d'arrêter le spam**, mais ne sanctionne pas, cela est sûrement dû à un manque de permissions. Rappelez-vous, le bot doit avoir la permission Administrateur et doit être au niveau de celui des administrateurs dans l'ordre des rôles.
@@ -47,11 +48,12 @@ Si malgré cela un spam n'est toujours pas détecté, contactez-nous sur notre s
 Les utilisateurs ont accès au serveur sans passer le captcha
 Ce problème est relativement courant, mais dépend de **la configuration de votre serveur**. Voyons comment y remédier. 🏥 
 
-- **Avez-vous un rôle automatique ?** Si vous avez configuré un bot (autre que RaidProtect) pour donner un rôle aux nouveaux arrivants sur votre serveur, cela peut interférer avec le captcha. Remplacez ce dernier par l'[autorole de RaidProtect](). 
+- **Avez-vous un rôle automatique ?** Si vous avez configuré un bot (autre que RaidProtect) pour donner un rôle aux nouveaux arrivants sur votre serveur, cela peut interférer avec le captcha. Remplacez ce dernier par l'[autorole de RaidProtect](/features/captcha#role-automatique). 
 
 - **Avez-vous activé le captcha ?** Il s'agit d'une fonctionnalité totalement optionnelle qui nécessite d'effectuer une commande pour l'activer. Consultez la page de cette documentation dédiée au captcha pour en savoir plus.
 
 ## Les utilisateurs peuvent toujours parler lorsque je verrouille un salon
-La commande de verrouillage parait magique, mais elle a aussi ses faiblesses. Comme [noté dans cette documentation](), la commande **agit uniquement sur le rôle @everyone**. Cela signifie que si dans le salon que vous souhaitez verrouiller un rôle a explicitement la permission de parler, il pourra le faire malgré tout. Comme une image vaut mille mots, voici ce que cela donne concrètement. 🔍 
+
+La commande de verrouillage parait magique, mais elle a aussi ses faiblesses. Comme [noté dans cette documentation](/features/others#verrouillage-salons), la commande **agit uniquement sur le rôle @everyone**. Cela signifie que si dans le salon que vous souhaitez verrouiller un rôle a explicitement la permission de parler, il pourra le faire malgré tout. Comme une image vaut mille mots, voici ce que cela donne concrètement. 🔍 
 
 ![Capture d'écran configuration verrouillage de salon](./assets/lock-channel-messages-raidprotect.png)
