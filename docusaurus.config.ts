@@ -99,7 +99,8 @@ export default async function createConfigAsync() {
 					alt: 'RaidProtect',
 					src: 'img/extend_logo.svg',
 					href: 'https://beta.raidprotect.bot',
-					target: '_self'
+					target: '_self',
+					height: '32px'
 				},
 				items: [
 					{
@@ -177,7 +178,7 @@ export default async function createConfigAsync() {
 					src: 'img/extend_logo.svg',
 					href: 'https://beta.raidprotect.bot',
 					target: '_self',
-					width: '275px'
+					height: '36px'
 				},
 				links: [
 					{
@@ -227,8 +228,6 @@ export default async function createConfigAsync() {
 				darkTheme: prismThemes.dracula,
 			},
 		} satisfies Preset.ThemeConfig,
-		stylesheets: [
-			'https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap',
-		]
+		stylesheets: []
 	} satisfies Config
 }

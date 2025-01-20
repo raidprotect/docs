@@ -11,6 +11,20 @@ html[data-theme='dark'] {
   --ifm-toc-border-color: #252332
 }
 
+@font-face {
+  font-family: 'Objectivity';
+  src: url('/fonts/objectivity.regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nohemi VF';
+  src: url('/fonts/nohemi-vf.medium.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
 :root {
   --ifm-color-primary: #D35F5F;
   --ifm-color-primary-dark: #ce5c5c;
@@ -21,10 +35,14 @@ html[data-theme='dark'] {
   --ifm-color-primary-lightest: #e18989;
   --ifm-navbar-background-color: var(--ifm-background-color);
   --ifm-footer-background-color: var(--ifm-background-color);
+  --ifm-dropdown-background-color: #1b1a25;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-footer-title-color: white;
   --ifm-menu-color: var(--ifm-color-content);
+  --ifm-navbar-height: 51px;
+  --ifm-font-family-base: 'Objectivity', 'Arial', sans-serif;
+  --ifm-heading-font-family: 'Nohemi VF', 'Arial', sans-serif;
 }
 
 .navbar {
@@ -37,8 +55,13 @@ html[data-theme='dark'] {
 
 .navbar__item {
   font-size: 18px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--ifm-heading-font-family);
   font-weight: 600;
+  padding: 1.15px 12px 1.15px 12px;
+}
+
+.navbar__item .navbar__link, .navbar__item .dropdown__menu {
+  font-family: var(--ifm-font-family-base)
 }
 
 .navbar-social {
@@ -73,6 +96,10 @@ html[data-theme='dark'] {
   padding: 100px 0 30px 0;
   position: relative;
   overflow: hidden;
+}
+
+.footer__logo {
+  margin-top: 0;
 }
 
 .footer__bottom {
@@ -141,7 +168,7 @@ html[data-theme='dark'] {
 
 .footer__title {
   font-size: 24px;
-  font-family: 'Nohemi Vf', sans-serif;
+  font-family: var(--ifm-heading-font-family);
   font-weight: 600;
   line-height: 1.2em;
 }
@@ -153,6 +180,7 @@ html[data-theme='dark'] {
 .footer__link-item {
   font-size: 18px;
   line-height: 1.4em;
+  font-weight: 400;
   transition: color .3s ease-in-out;
 }
 

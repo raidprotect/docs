@@ -9,6 +9,8 @@
   opacity: 0.5;
   transition: opacity var(--ifm-transition-fast)
     var(--ifm-transition-timing-default);
+  display: block;
+  height: 36px;
 }
 
 .footerLogoLink:hover {
