@@ -13,6 +13,7 @@ import ThemedImage from '@theme/ThemedImage';
 import type {Props} from '@theme/Footer/Logo';
 
 import styles from './styles.module.css';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 function LogoImage({logo}: Props) {
   const {withBaseUrl} = useBaseUrlUtils();
@@ -33,9 +34,13 @@ function LogoImage({logo}: Props) {
 }
 
 export default function FooterLogo({logo}: Props): ReactNode {
+  const {
+      siteConfig: { customFields: { urls } },
+      i18n: { currentLocale }
+  } = useDocusaurusContext();
   return logo.href ? (
     <Link
-      href={logo.href}
+      href={urls[logo.href][currentLocale] ?? logo.href}
       className={styles.footerLogoLink}
       target={logo.target}>
       <LogoImage logo={logo} />

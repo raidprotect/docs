@@ -20,7 +20,7 @@ html[data-theme='dark'] {
 
 @font-face {
   font-family: 'Nohemi VF';
-  src: url('/fonts/nohemi-vf.medium.ttf') format('truetype');
+  src: url('/fonts/nohemi-vf.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
 }
@@ -224,7 +224,7 @@ html[data-theme='dark'] {
   }
 }
 
-@media screen and (min-width: 996px) {
+@media screen and (min-width: 997px) {
   .navbar__brand {
     position: absolute;
     left: 1rem;
@@ -233,7 +233,7 @@ html[data-theme='dark'] {
   }
 
   .navbar__items:not(.navbar__items--right) {
-    margin-left: 244px;
+    margin-left: 250px;
     display: flex;
     justify-content: center;
     align-items: center;

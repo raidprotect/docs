@@ -12,10 +12,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 import IconExternalLink from '@theme/Icon/ExternalLink';
 import type {Props} from '@theme/Footer/LinkItem';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 export default function FooterLinkItem({item}: Props): ReactNode {
+  const {
+     siteConfig: { customFields: { urls } },
+    i18n: { currentLocale }
+  } = useDocusaurusContext();
+
   const {to, href, label, prependBaseUrlToHref, className, ...props} = item;
-  const toUrl = useBaseUrl(to);
+  const toUrl = useBaseUrl(to && urls[to] ? urls[to][currentLocale] : to);
   const normalizedHref = useBaseUrl(href, {forcePrependBaseUrl: true});
 
   return (

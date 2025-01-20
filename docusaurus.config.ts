@@ -33,6 +33,18 @@ export default async function createConfigAsync() {
 				}
 			}
 		},
+		customFields: {
+			urls: {
+				main: {
+					fr: 'https://beta.raidprotect.bot',
+					en: 'https://beta.raidprotect.bot/en'
+				},
+				legal: {
+					fr: 'https://beta.raidprotect.bot/legal',
+					en: 'https://beta.raidprotect.bot/en/legal'
+				}
+			}
+		},
 		presets: [
 			[
 				'classic',
@@ -42,9 +54,7 @@ export default async function createConfigAsync() {
 						sidebarPath: './sidebars.ts',
 						editUrl: 'https://github.com/raidprotect/docs/tree/master/',
 						lastVersion: lastStableVersion,
-						onlyIncludeVersions: (() => {
-							return ['current', lastStableVersion];
-						})(),
+						onlyIncludeVersions: ['current', lastStableVersion],
 						versions: {
 							current: {
 								label: 'Bêta 🚧',
@@ -98,13 +108,13 @@ export default async function createConfigAsync() {
 				logo: {
 					alt: 'RaidProtect',
 					src: 'img/extend_logo.svg',
-					href: 'https://beta.raidprotect.bot',
+					href: 'main',
 					target: '_self',
 					height: '32px'
 				},
 				items: [
 					{
-						to: 'https://beta.raidprotect.bot',
+						to: 'main',
 						position: 'left',
 						label: 'Accueil',
 						target: '_self'
@@ -176,7 +186,7 @@ export default async function createConfigAsync() {
 				logo: {
 					alt: 'RaidProtect',
 					src: 'img/extend_logo.svg',
-					href: 'https://beta.raidprotect.bot',
+					href: 'main',
 					target: '_self',
 					height: '36px'
 				},
@@ -186,7 +196,7 @@ export default async function createConfigAsync() {
 						items: [
 							{
 								label: 'Accueil',
-								to: 'https://beta.raidprotect.bot',
+								to: 'main',
 								target: '_self'
 							},
 							{
@@ -207,7 +217,8 @@ export default async function createConfigAsync() {
 						items: [
 							{
 								label: 'Mentions légales',
-								to: 'https://beta.raidprotect.bot/legal',
+								to: 'legal',
+								target: '_self'
 							},
 							{
 								label: 'Statuts des services',
