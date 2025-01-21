@@ -8,20 +8,20 @@
 html[data-theme='dark'] {
   --ifm-background-color: #040114;
   --ifm-color-content: white;
-  --ifm-toc-border-color: #252332
+  --ifm-toc-border-color: #252332;
 }
 
 @font-face {
   font-family: 'Objectivity';
-  src: url('/fonts/objectivity.regular.otf') format('opentype');
+  src: url('https://cdn.prod.website-files.com/677fbd67c3c9318f7fb56659/678e55c1ee5db5287ce804e8_objectivity.regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Nohemi VF';
-  src: url('/fonts/nohemi-vf.ttf') format('truetype');
-  font-weight: 600;
+  src: url('https://cdn.prod.website-files.com/677fbd67c3c9318f7fb56659/677fbd68c3c9318f7fb566fd_Nohemi-VF.ttf') format('truetype');
+  font-weight: 100 900;
   font-style: normal;
 }
 
@@ -43,6 +43,10 @@ html[data-theme='dark'] {
   --ifm-navbar-height: 53px;
   --ifm-font-family-base: 'Objectivity', 'Arial', sans-serif;
   --ifm-heading-font-family: 'Nohemi VF', 'Arial', sans-serif;
+}
+
+body {
+  line-height: 1.5em;
 }
 
 .navbar {
@@ -107,6 +111,7 @@ html[data-theme='dark'] {
   border-top: 1px solid #252332;
   padding-top: 30px;
   position: relative;
+  font-size: 18px;
 }
 
 .footer-decoration-one {
@@ -169,12 +174,16 @@ html[data-theme='dark'] {
 .footer__title {
   font-size: 24px;
   font-family: var(--ifm-heading-font-family);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.2em;
 }
 
 .footer__item {
   margin-bottom: 15px;
+}
+
+.footer__item:last-child {
+  margin-bottom: 0px;
 }
 
 .footer__link-item {
@@ -242,7 +251,7 @@ html[data-theme='dark'] {
   .footer__grid {
     grid-template-rows: auto;
     grid-template-columns: 1.75fr 1fr 1fr;
-    margin-bottom: 60px;
+    margin-bottom: 90px;
     grid-row-gap: 16px;
     grid-column-gap: 16px;
   }

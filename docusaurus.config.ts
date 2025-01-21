@@ -3,6 +3,7 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 import versions from './versions.json';
+import { SitemapItem } from '@docusaurus/plugin-sitemap/lib/types';
 
 const lastStableVersion = versions.find((version) => version !== 'beta')
 
@@ -13,7 +14,7 @@ export default async function createConfigAsync() {
 		title: 'RaidProtect',
 		tagline: 'Sécurisez votre serveur Discord',
 		favicon: 'img/favicon.ico',
-		url: 'https:/docs-beta.raidprotect.bot',
+		url: 'https:/docs.raidprotect.bot',
 		baseUrl: '/',
 		organizationName: 'rapidprotect',
 		projectName: 'raidprotect',
@@ -33,15 +34,16 @@ export default async function createConfigAsync() {
 				}
 			}
 		},
+		trailingSlash: false,
 		customFields: {
 			urls: {
 				main: {
-					fr: 'https://beta.raidprotect.bot',
-					en: 'https://beta.raidprotect.bot/en'
+					fr: 'https://raidprotect.bot?r=0',
+					en: 'https://raidprotect.bot/en'
 				},
 				legal: {
-					fr: 'https://beta.raidprotect.bot/legal',
-					en: 'https://beta.raidprotect.bot/en/legal'
+					fr: 'https://raidprotect.bot/legal?r=0',
+					en: 'https://raidprotect.bot/en/legal'
 				}
 			}
 		},
@@ -78,6 +80,19 @@ export default async function createConfigAsync() {
 					},
 					blog: false,
 					pages: false,
+					sitemap: {
+						lastmod: 'date',
+						ignorePatterns: ['**/beta/**'],
+						filename: 'sitemap.xml',
+						changefreq: null,
+						async createSitemapItems(params) {
+							const items = await params.defaultCreateSitemapItems(params)
+							return items.map(i => ({
+								...i,
+								priority: 0
+							}))
+						},
+					},
 					theme: {
 						customCss: './src/css/custom.css',
 					},
@@ -94,7 +109,43 @@ export default async function createConfigAsync() {
 				defer: true
 			}
 		],
+		headTags: [
+			{
+				tagName: 'script',
+				attributes: {
+					type: 'application/ld+json'
+				},
+				innerHTML: JSON.stringify({
+					"@context": "https://schema.org",
+					"@type": "WebSite",
+					"url": "https://docs.raidprotect.bot",
+					"name": "RaidProtect Documentation",
+					"publisher": {
+						"@type": "Organization",
+						"name": "RaidProtect",
+						"url": "https://raidprotect.bot",
+						"logo": "https://cdn.prod.website-files.com/677fbd67c3c9318f7fb56659/678ff5223c75df94332bb485_OrganizationLogo.svg",
+						"contactPoint": {
+							"@type": "ContactPoint",
+							"email": "contact@raidprotect.bot",
+							"contactType": "support",
+							"availableLanguage": ["Fr", "En"]
+						},
+						"sameAs": [
+							"https://x.com/raidprotect",
+							"https://www.linkedin.com/company/raidprotect",
+							"https://github.com/raidprotect"
+						]
+					},
+					"inLanguage": ["Fr", "En"]
+				})
+			}
+		],
 		themeConfig: {
+			image: 'https://cdn.prod.website-files.com/677fbd67c3c9318f7fb56659/678fefffd131bc2bbafd4468_RP-embed.webp',
+			metadata: [
+				{ name: 'theme-color', content: '#D35F5F' }
+			],
 			docs: {
 				versionPersistence: 'localStorage',
 			},

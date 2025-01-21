@@ -1,0 +1,52 @@
+---
+title: Quick Guide
+---
+
+import DocCard from '@theme/DocCard';
+
+Need to get started quickly with RaidProtect? This page summarizes the key information you need to know.
+
+Welcome to the RaidProtect Quick Guide! **This page condenses the essential information** to get started with the bot. For more details on each feature, refer to the rest of the documentation. 📚 
+
+First, you need to invite RaidProtect and **properly configure its permissions**. This crucial step is outlined on the documentation's homepage.
+
+<DocCard item={{ type: 'link', href: '/', label: 'Read Me' }} />
+<br />
+
+Once the permissions are correctly configured (without which the bot may not function effectively), you can start exploring the various features! 🤠 
+
+## 💬 Anti-Spam {#antispam}
+
+One of RaidProtect's main features is its anti-spam system. It enables you to **block spam attempts within seconds**, without any manual intervention.
+
+The anti-spam system takes multiple parameters into account to determine the severity of the spam and decide whether to take action. **If spam is detected, the bot kicks the spammer** and notifies you in the logs channel. 🙌 
+
+In some cases, you might want to **exclude certain channels from spam detection**. To do this, simply run the command `?settings allowspam #channel-to-ignore`. For more details about the anti-spam system, refer to the detailed documentation!
+
+<DocCard item={{ type: 'link', href: '/features/antispam', label: 'Anti-Spam' }} />
+
+## 💢 Raid Mode {#raidmode}
+
+Sometimes, a group of users may threaten your server, and drastic measures are required. Raid Mode is here to help! It allows you to **temporarily block all users attempting to join your server**. It’s effective but should be reserved for serious situations. 🤩 
+
+**Activating Raid Mode is incredibly simple**, allowing you to respond quickly to threats. Just run the `?raidmode` command in any channel, and Raid Mode will be enabled. **Don’t forget to disable it** using the same command!
+
+To make this protection even more effective, RaidProtect can detect a massive influx of new users and **activate Raid Mode automatically** (though it won’t disable it). If your server is highly popular, you may need to adjust the sensitivity settings—refer to the detailed documentation for more information.
+
+<DocCard item={{ type: 'link', href: '/features/raidmode', label: 'Raid Mode' }} />
+
+## 🚧 Captcha {#captcha}
+
+Finally, we have RaidProtect's captcha feature—a popular and essential tool. Think of the "I'm not a robot" checkboxes. Our captcha serves a similar purpose but for your Discord server. It **displays a code for new users to complete**, stopping bots disguised as regular accounts (_selfbots_). 🕵️ 
+
+**This feature is entirely optional**, and you may not need it. If you want to use it, simply enable it by running the command `?captcha enable`. Everything else is automated!
+
+If your server uses a Member role and a bot to assign it automatically (_autorole_), **this might interfere with the captcha**. Fortunately, we’ve planned for this. Check out the detailed captcha documentation to explore optional settings.
+
+<DocCard item={{ type: 'link', href: '/features/captcha', label: 'Captcha (Verification)' }} />
+
+## 😵 It’s Not Working! {#errors}
+
+Whether it’s a malfunction or a configuration issue, things don’t always go as planned. Fortunately, we’re here to help! **Start by checking the page on common issues** in this documentation. If the problem persists, our team will be happy to assist. Join our Discord server to contact us. 👨‍🔧 
+
+<DocCard item={{ type: 'link', href: '/malfunctions', label: 'Common Issues' }} />

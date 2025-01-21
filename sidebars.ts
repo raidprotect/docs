@@ -21,6 +21,9 @@ const sidebars: SidebarsConfig = {
 		{
 			type: 'category',
 			label: 'features',
+			link: {
+				type: 'generated-index',
+			},
 			items: [
 				{
 					type: 'doc',
@@ -43,6 +46,9 @@ const sidebars: SidebarsConfig = {
 		{
 			type: 'category',
 			label: 'guides',
+			link: {
+				type: 'generated-index',
+			},
 			items: [
 				{
 					type: 'doc',
@@ -53,6 +59,9 @@ const sidebars: SidebarsConfig = {
 		{
 			type: 'category',
 			label: 'useful-links',
+			link: {
+				type: 'generated-index',
+			},
 			items: [
 				{ 
 					type: 'link',
