@@ -4,7 +4,7 @@ title: Mode raid
 
 Le mode raid est un mode d'urgence permettant de bloquer tous les nouveaux utilisateurs tentant de rejoindre votre serveur. Cela permet dans certaines situations de bloquer une tentative de raid. Radical mais efficace. 💣 
 
-## ❓ Fonctionnement du mode raid
+## ❓ Fonctionnement du mode raid {#working}
 
 Une fois le mode raid activé, tous les nouveaux utilisateurs seront **instantanément expulsés** et RaidProtect leur enverra un message les informant que le serveur est en mode raid.
 
@@ -12,7 +12,7 @@ Une fois le mode raid activé, tous les nouveaux utilisateurs seront **instantan
 
 ![Capture d'écran mode raid activé](../assets/raidmode-active-raidprotect.png)
 
-## 📡 Le mode raid automatique
+## 📡 Le mode raid automatique {#autoraidmode}
 
 Si un grand nombre d'utilisateurs rejoint votre serveur dans un laps de temps très réduit, RaidProtect est capable d'**activer automatiquement le mode raid**.
 

@@ -3,11 +3,20 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 import versions from './versions.json';
-import { SitemapItem } from '@docusaurus/plugin-sitemap/lib/types';
 
 const lastStableVersion = versions.find((version) => version !== 'beta')
 
 const defaultLocale = 'fr'
+
+const urlPriorities = {
+	'features/captcha': 0.8,
+	'features/anti-spam': 0.7,
+	'features/raid-mode': 0.7,
+	'features/others': 0.7,
+	'category/guides': 0.6,
+	'malfunctions': 0.4,
+	'guides/report-violation-to-discord': 0.4
+}
 
 export default async function createConfigAsync() {
 	return {
@@ -79,6 +88,12 @@ export default async function createConfigAsync() {
 						showLastUpdateTime: true,
 					},
 					blog: false,
+					/* blog: {
+						blogTitle: 'Blog',
+						blogSidebarCount: 10,
+						blogSidebarTitle: 'Blog',
+						routeBasePath: '/blog'
+					}, */
 					pages: false,
 					sitemap: {
 						lastmod: 'date',
@@ -89,7 +104,7 @@ export default async function createConfigAsync() {
 							const items = await params.defaultCreateSitemapItems(params)
 							return items.map(i => ({
 								...i,
-								priority: 0
+								priority: urlPriorities[i.url.replace(new RegExp('https://docs.raidprotect.bot/(en/)?'), '')] ?? 0.5
 							}))
 						},
 					},
@@ -176,6 +191,11 @@ export default async function createConfigAsync() {
 						position: 'left',
 						label: 'Documentation',
 					},
+					// {
+					// 		to: 'blog',
+					//		position: 'left',
+					//		label: 'Blog',
+					// },
 					{
 						to: 'https://suggestions.raidprotect.bot',
 						position: 'left',

@@ -8,26 +8,27 @@ const sidebars: SidebarsConfig = {
 		},
 		{
 			type: 'doc',
-			id: 'quick-guide',
+			id: 'setup',
 		},
-		// {
-		// 	type: 'doc',
-		// 	id: 'changelog'
-		// },
+		{
+		 	type: 'doc',
+		 	id: 'changelog'
+		},
 		{
 			type: 'doc',
-			id: 'malfunctions',
+			id: 'language',
 		},
 		{
 			type: 'category',
 			label: 'features',
 			link: {
 				type: 'generated-index',
+				title: 'Fonctionnalités'
 			},
 			items: [
 				{
 					type: 'doc',
-					id: 'features/antispam',
+					id: 'features/anti-spam',
 				},
 				{
 					type: 'doc',
@@ -35,11 +36,23 @@ const sidebars: SidebarsConfig = {
 				},
 				{
 					type: 'doc',
-					id: 'features/raidmode',
+					id: 'features/raid-mode',
 				},
 				{
 					type: 'doc',
-					id: 'features/others',
+					id: 'features/reports',
+				},
+				{
+					type: 'doc',
+					id: 'features/channel-lock',
+				},
+				{
+					type: 'doc',
+					id: 'features/moderation',
+				},
+				{
+					type: 'doc',
+					id: 'features/utilities',
 				},
 			],
 		},
@@ -48,12 +61,17 @@ const sidebars: SidebarsConfig = {
 			label: 'guides',
 			link: {
 				type: 'generated-index',
+				title: 'Guides',
 			},
 			items: [
 				{
 					type: 'doc',
-					id: 'guides/report-violation-to-discord',
+					id: 'guides/malfunctions',
 				},
+				{
+					type: 'doc',
+					id: 'guides/report-violation-to-discord',
+				}
 			],
 		},
 		{
@@ -61,6 +79,7 @@ const sidebars: SidebarsConfig = {
 			label: 'useful-links',
 			link: {
 				type: 'generated-index',
+				title: 'Liens utiles'
 			},
 			items: [
 				{ 

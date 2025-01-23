@@ -10,18 +10,23 @@
     },
     {
       "type": "doc",
+      "id": "changelog"
+    },
+    {
+      "type": "doc",
       "id": "malfunctions"
     },
     {
       "type": "category",
       "label": "features",
       "link": {
-				"type": "generated-index"
+				"type": "generated-index",
+				"title": "Fonctionnalités"
 			},
       "items": [
         {
           "type": "doc",
-          "id": "features/antispam"
+          "id": "features/anti-spam"
         },
         {
           "type": "doc",
@@ -29,7 +34,7 @@
         },
         {
           "type": "doc",
-          "id": "features/raidmode"
+          "id": "features/raid-mode"
         },
         {
           "type": "doc",
@@ -41,7 +46,8 @@
       "type": "category",
       "label": "guides",
       "link": {
-				"type": "generated-index"
+				"type": "generated-index",
+				"title": "Guides"
 			},
       "items": [
         {
@@ -54,7 +60,8 @@
       "type": "category",
       "label": "useful-links",
       "link": {
-				"type": "generated-index"
+				"type": "generated-index",
+				"title": "Liens utiles"
 			},
       "items": [
         {

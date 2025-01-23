@@ -32,7 +32,7 @@ To notify you of its actions, RaidProtect requires a logs channel. This channel 
 
 - **Set a logs channel manually.** If nothing works, don’t worry! You can manually assign a channel for the logs. Create a dedicated channel, then run the command `?settings logs #channel`, replacing `#channel` with your new logs channel.  
 
-## A user spammed, but the bot didn’t take action {#antispam}
+## A user spammed, but the bot didn’t take action {#anti-spam}
 
 Anti-spam is one of RaidProtect’s core features, and it can be frustrating if it doesn’t work as expected. Fortunately, the issue is usually easy to fix. 😇  
 

@@ -1,5 +1,5 @@
 ---
-title: Antispam
+title: Anti-spam
 ---
 
 Easily and effectively protect your Discord server with RaidProtect's anti-spam feature.

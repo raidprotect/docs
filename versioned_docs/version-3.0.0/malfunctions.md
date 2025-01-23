@@ -32,7 +32,7 @@ Pour vous avertir des actions qu'il prend, RaidProtect a besoin d'un salon de lo
 
 - **Définissez manuellement un salon.** Si rien ne fonctionne, pas de panique, vous pouvez choisir manuellement le salon que le bot utilisera pour les logs ! Une fois un salon dédié créé, effectuez la commande ?settings logs #salon, en remplaçant #salon par le salon que vous venez de créer.
 
-## Un utilisateur a spammé, mais le bot ne l'a pas sanctionné {#antispam}
+## Un utilisateur a spammé, mais le bot ne l'a pas sanctionné {#anti-spam}
 
 L'anti-spam est l'une des fonctionnalités principales de RaidProtect, et cela peut être embêtant s’il ne fonctionne pas. Mais rassurez-vous, la plupart du temps, il ne s'agit de rien de grave ! 😇 
 
