@@ -50,13 +50,13 @@ If the anti-spam still doesn’t respond to spam, contact us on our support serv
 
 This issue is relatively common and often relates to **your server’s configuration**. Here’s how to fix it. 🏥  
 
-- **Do you have an autorole?** If another bot is assigning a role to new users, it might interfere with the captcha. Replace it with [RaidProtect’s autorole](/features/captcha#autorole).  
+- **Do you have an autorole?** If another bot is assigning a role to new users, it might interfere with the captcha. Replace it with [RaidProtect’s autorole](./features/captcha.md#autorole).  
 
 - **Is the captcha enabled?** This feature is optional and requires a command to activate. Refer to the captcha documentation for more details.  
 
 ## Users can still chat when I lock a channel {#lock}
 
-The lock command is useful but has limitations. As noted in [this documentation](/features/others#lock), the command **only affects the @everyone role**. This means if another role explicitly has permission to chat in the locked channel, members with that role will still be able to speak.  
+The lock command is useful but has limitations. As noted in [this documentation](./features/others.md#lock), the command **only affects the @everyone role**. This means if another role explicitly has permission to chat in the locked channel, members with that role will still be able to speak.  
 
 As a picture is worth a thousand words, here’s a visual example of what this looks like. 🔍  
 

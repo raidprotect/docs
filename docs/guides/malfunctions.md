@@ -49,12 +49,12 @@ Si malgré cela un spam n'est toujours pas détecté, contactez-nous sur notre s
 Les utilisateurs ont accès au serveur sans passer le captcha
 Ce problème est relativement courant, mais dépend de **la configuration de votre serveur**. Voyons comment y remédier. 🏥 
 
-- **Avez-vous un rôle automatique ?** Si vous avez configuré un bot (autre que RaidProtect) pour donner un rôle aux nouveaux arrivants sur votre serveur, cela peut interférer avec le captcha. Remplacez ce dernier par l'[autorole de RaidProtect](/features/captcha#autorole). 
+- **Avez-vous un rôle automatique ?** Si vous avez configuré un bot (autre que RaidProtect) pour donner un rôle aux nouveaux arrivants sur votre serveur, cela peut interférer avec le captcha. Remplacez ce dernier par l'[autorole de RaidProtect](../features/captcha.md#autorole). 
 
 - **Avez-vous activé le captcha ?** Il s'agit d'une fonctionnalité totalement optionnelle qui nécessite d'effectuer une commande pour l'activer. Consultez la page de cette documentation dédiée au captcha pour en savoir plus.
 
 ## Les utilisateurs peuvent toujours parler lorsque je verrouille un salon {#lock}
 
-La commande de verrouillage parait magique, mais elle a aussi ses faiblesses. Comme [noté dans cette documentation](/features/others#lock), la commande **agit uniquement sur le rôle @everyone**. Cela signifie que si dans le salon que vous souhaitez verrouiller un rôle a explicitement la permission de parler, il pourra le faire malgré tout. Comme une image vaut mille mots, voici ce que cela donne concrètement. 🔍 
+La commande de verrouillage parait magique, mais elle a aussi ses faiblesses. Comme [noté dans cette documentation](../features/channel-lock.md#lock), la commande **agit uniquement sur le rôle @everyone**. Cela signifie que si dans le salon que vous souhaitez verrouiller un rôle a explicitement la permission de parler, il pourra le faire malgré tout. Comme une image vaut mille mots, voici ce que cela donne concrètement. 🔍 
 
-![Capture d'écran configuration verrouillage de salon](./assets/lock-channel-messages-raidprotect.png)
+![Capture d'écran configuration verrouillage de salon](../assets/lock-channel-messages-raidprotect.png)
