@@ -9,10 +9,10 @@ Découvrez la liste détaillée des modifications qui ont été apportées à Ra
 - Nouvelle [commande `/settings`](./setup.md#settings) sous forme de pannel dans Discord
 - Nouvelle [commande `/setup`](./setup.md#install) sous forme d'Onboarding
 - Uniformisation des messages
-- Possibilité d'ignorer des utilisateurs et des rôles dans l'antispam
+- Possibilité d'[ignorer des utilisateurs et des rôles](./features/anti-spam.md#ignore) dans l'[antispam](./features/anti-spam.md)
 - Ajout de la [commande `/report`](./features/reports.md)
 - Possibilité de choisir si la [commande `/lock`](./features/channel-lock.md) renomme le salon verrouillé avec `🔒`
-- Possibilité de choisir le prefix des commandes hybrides
+- Possibilité de [choisir le prefix](./features/utilities.md#prefix) des commandes hybrides
 - Amélioration des performances et de la stabilité du bot
 
 ## 3.0.0 (14/01/2023)
@@ -40,7 +40,7 @@ Découvrez la liste détaillée des modifications qui ont été apportées à Ra
 - Ajout de la [commande `?userinfo`](./features/utilities.md#userinfo).
 - ~~Ajout des commandes `?lockall` et `?unlockall`~~ (Fonctionnalité supprimée).
 - Ajout des commandes [`?kick`](./features/moderation.md#kick) et [`?ban`](./features/moderation.md#ban).
-- Ajout du min-age sur le captcha (possibilité de définir un âge minimum de compte pour accéder au serveur).
+- Ajout du [min-age sur le captcha](./features/captcha.md#minage) (possibilité de définir un âge minimum de compte pour accéder au serveur).
 - Possibilité de configurer la suppression automatique des messages d'invocation de commandes.
 - Le salon logs se recrée automatiquement s’il a été supprimé.
 - Refonte de la connexion à la base de données.
@@ -49,9 +49,9 @@ Découvrez la liste détaillée des modifications qui ont été apportées à Ra
 ## 2.1.1 (21/02/2019)
 
 - Suppression du `?settings captcha` (remplacement par `?captcha`).
-- Ajout de la possibilité de définir un salon de logs pour le captcha.
-- Ajout d'un autorole compatible avec le captcha.
-- Simplification du captcha (5/6 lettres bonnes nécessaires).
+- Ajout de la possibilité de définir un [salon de logs](./features/captcha.md#logs) pour le captcha.
+- Ajout d'un [autorole](./features/captcha.md#autorole) compatible avec le captcha.
+- Simplification du [captcha](./features/captcha.md) (5/6 lettres bonnes nécessaires).
 - Autres modifications mineures.
 
 ## 2.1.0 (16/02/2019)
@@ -59,7 +59,7 @@ Découvrez la liste détaillée des modifications qui ont été apportées à Ra
 - Ajout du captcha (`?settings captcha`).
 - Ajout du niveau de sécurité de l'anti-spam (`?settings spamlevel`).
 - Ajout des commandes `?about` et `?invite`.
-- Ajout de la commande `?clear`.
+- Ajout de la [commande `?clear`](./features/utilities.md#clear).
 - Diverses modifications et corrections de bugs.
 
 ## 2.0.1 (04/02/2019)
@@ -69,9 +69,9 @@ Découvrez la liste détaillée des modifications qui ont été apportées à Ra
 
 ## 2.0.0 (26/01/2019)
 
-- Ajout de l'anti-spam.
-- Ajout du mode raid automatique.
+- Ajout de l'[anti-spam](./features/anti-spam.md).
+- Ajout du [mode raid automatique](./features/raid-mode.md#autoraidmode).
 - Ajout du salon de logs.
 - Ajout de la configuration du bot.
-- Ajout du verrouillage de salons.
+- Ajout du [verrouillage de salons](./features/channel-lock.md).
 - Nombreuses modifications diverses.

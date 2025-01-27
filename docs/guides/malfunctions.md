@@ -6,7 +6,7 @@ Un problème avec RaidProtect ? La solution se trouve sûrement ici.
 
 Parfois, il arrive que tout ne fonctionne pas comme prévu. Voici les **problèmes les plus courants** que vous pouvez rencontrer, et comment les résoudre. 🤗 
 
-Si cette page n'apporte pas de réponse à un problème que vous rencontrez, **n'hésitez pas à contacter notre support** qui se fera un plaisir de vous aider !
+Si cette page n'apporte pas de réponse à un problème que vous rencontrez, [**n'hésitez pas à contacter notre support**](https://discord.com/invite/raidprotect) qui se fera un plaisir de vous aider !
 
 ## Le bot affiche une erreur lorsque je fais une commande {#commands}
 
@@ -16,11 +16,11 @@ Si la commande ne s'exécute pas avec succès, **RaidProtect peut afficher une e
 
 - **Vérifiez les paramètres de la commande.** Il se peut que la commande soit tout simplement mal écrite, regardez dans l'aide comment l'utiliser. N'oubliez pas que les crochets ([]) ne sont pas à inclure.
 
-- **Vérifiez les permissions du bot.** Ce dernier doit avoir la permission Administrateur et être au niveau des administrateurs dans l'ordre des rôles.
+- **Vérifiez les permissions du bot.** Ce dernier doit avoir la permission **Administrateur** et être au niveau des administrateurs dans l'ordre des rôles.
 
 - **Retentez la commande.** Parfois, le problème se résout sans que l'on sache pourquoi.
 
-Si vous continuez à avoir une erreur malgré avoir suivi ces conseils, contactez notre support pour que nous puissions vous aider ! 🤝 
+Si vous continuez à avoir une erreur malgré avoir suivi ces conseils, [contactez notre support](https://discord.com/invite/raidprotect) pour que nous puissions vous aider ! 🤝 
 
 ## Le salon de logs du bot ne s'est pas créé tout seul {#logs}
 
@@ -28,13 +28,13 @@ Pour vous avertir des actions qu'il prend, RaidProtect a besoin d'un salon de lo
 
 - **Assurez-vous que le bot est bien Administrateur.** Pour le bon fonctionnement du bot, il est nécessaire de lui donner la permission Administrateur. Si cela n'est pas fait, rendez-vous dans les paramètres des rôles et accordez cette permission au rôle RaidProtect. Il ne vous reste plus qu'à initialiser manuellement le bot pour que tout fonctionne (voir juste après) !
 
-- **Vérifiez que le bot est correctement initialisé.** Cela est normalement fait automatiquement, mais vous pouvez forcer cette initialisation avec la commande ?setup. Le salon de logs devrait se créer automatiquement.
+- **Vérifiez que le bot est correctement initialisé.** Cela est normalement fait automatiquement, mais vous pouvez forcer cette initialisation avec la [commande `/setup`](../setup.md#install). Le salon de logs devrait se créer automatiquement.
 
-- **Définissez manuellement un salon.** Si rien ne fonctionne, pas de panique, vous pouvez choisir manuellement le salon que le bot utilisera pour les logs ! Une fois un salon dédié créé, effectuez la commande ?settings logs #salon, en remplaçant #salon par le salon que vous venez de créer.
+- **Définissez manuellement un salon.** Si rien ne fonctionne, pas de panique, vous pouvez choisir manuellement le salon que le bot utilisera pour les logs ! Une fois un salon dédié créé, effectuez la [commande /settings](../setup.md#settings) puis sélectionnez Logs.
 
 ## Un utilisateur a spammé, mais le bot ne l'a pas sanctionné {#anti-spam}
 
-L'anti-spam est l'une des fonctionnalités principales de RaidProtect, et cela peut être embêtant s’il ne fonctionne pas. Mais rassurez-vous, la plupart du temps, il ne s'agit de rien de grave ! 😇 
+L'[anti-spam](../features/anti-spam.md) est l'une des fonctionnalités principales de RaidProtect, et cela peut être embêtant s’il ne fonctionne pas. Mais rassurez-vous, la plupart du temps, il ne s'agit de rien de grave ! 😇 
 
 - **Si l'anti-spam demande d'arrêter le spam**, mais ne sanctionne pas, cela est sûrement dû à un manque de permissions. Rappelez-vous, le bot doit avoir la permission Administrateur et doit être au niveau de celui des administrateurs dans l'ordre des rôles.
 
@@ -44,14 +44,15 @@ L'anti-spam est l'une des fonctionnalités principales de RaidProtect, et cela p
 
 - **Le spam est-il assez long ?** Le bot ne détecte le spam en général qu'à partir de plus de 5 messages. Ne soyez pas trop pressés.
 
-Si malgré cela un spam n'est toujours pas détecté, contactez-nous sur notre serveur de support en joignant une **capture d'écran du problème**.
+Si malgré cela un spam n'est toujours pas détecté, [contactez-nous sur notre serveur de support](https://discord.com/invite/raidprotect) en joignant une **capture d'écran du problème**.
 
-Les utilisateurs ont accès au serveur sans passer le captcha
+## Les utilisateurs ont accès au serveur sans passer le captcha {#captcha}
+
 Ce problème est relativement courant, mais dépend de **la configuration de votre serveur**. Voyons comment y remédier. 🏥 
 
 - **Avez-vous un rôle automatique ?** Si vous avez configuré un bot (autre que RaidProtect) pour donner un rôle aux nouveaux arrivants sur votre serveur, cela peut interférer avec le captcha. Remplacez ce dernier par l'[autorole de RaidProtect](../features/captcha.md#autorole). 
 
-- **Avez-vous activé le captcha ?** Il s'agit d'une fonctionnalité totalement optionnelle qui nécessite d'effectuer une commande pour l'activer. Consultez la page de cette documentation dédiée au captcha pour en savoir plus.
+- **Avez-vous activé le captcha ?** Il s'agit d'une fonctionnalité totalement optionnelle qui nécessite d'effectuer une commande pour l'activer. Consultez la [page de cette documentation dédiée au captcha](../features/captcha.md#setup) pour en savoir plus.
 
 ## Les utilisateurs peuvent toujours parler lorsque je verrouille un salon {#lock}
 

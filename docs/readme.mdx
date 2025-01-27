@@ -3,6 +3,8 @@ title: Lisez-moi
 slug: /
 ---
 
+import DocCard from '@theme/DocCard';
+
 Besoin d'aide pour utiliser RaidProtect ? Vous trouverez toutes les informations dans notre documentation !
 
 ## Bienvenue sur la documentation de RaidProtect !
@@ -12,7 +14,10 @@ N'oubliez pas de [rejoindre notre serveur Discord](https://discord.com/invite/ra
 
 ## 🚀 Débuter avec RaidProtect {#start}
 
-Pour commencer à utiliser RaidProtect, il vous suffit de l'inviter sur votre serveur en utilisant le lien suivant. 
+Pour commencer à utiliser RaidProtect, il vous suffit de l'inviter sur votre serveur en utilisant le lien suivant.
+
+<DocCard item={{ type: 'link', href: 'https://raidprotect.bot/invite', label: 'Inviter RaidProtect' }} />
+<br />
 
 :::danger
 Attention, des **copies du bot** circulent en **utilisant le nom de RaidProtect**, invitez-le uniquement depuis notre site officiel.
@@ -31,10 +36,15 @@ Une fois RaidProtect ajouté à votre serveur, faites la commande suivante : [`/
 ### Fonctionnalités principales
 
 Consultez les différentes sections de cette documentation pour découvrir toutes les fonctionnalités offertes par RaidProtect :
-- Anti-spam
-- Captcha (vérification)
-- Mode raid
-- Signalements (modération)
-- Autres fonctionnalités
+<DocCard item={{ type: 'link', href: '/beta/features/anti-spam', docId: 'features/anti-spam', label: 'Anti-spam' }} />
+<br />
+<DocCard item={{ type: 'link', href: '/beta/features/captcha', docId: 'features/captcha', label: 'Captcha (vérification)' }} />
+<br />
+<DocCard item={{ type: 'link', href: '/beta/features/raid-mode', docId: 'features/raid-mode', label: 'Mode raid' }} />
+<br />
+<DocCard item={{ type: 'link', href: '/beta/features/reports', docId: 'features/reports', label: 'Singalements' }} />
+<br />
+<DocCard item={{ type: 'link', href: '/beta/features/utilities', docId: 'features/utilities', label: 'Utilitaires' }} />
+<br />
 
-Pour les moins téméraires (ou les plus pressés), vous pouvez consulter notre **guide rapide** qui récapitule les principales informations à savoir pour débuter. 😉
+Pour les moins téméraires (ou les plus pressés), vous pouvez simplement lire les indications de la [commande `/setup`](./setup.md#install) qui récapitule les principales informations de chaque fonctionnalités.

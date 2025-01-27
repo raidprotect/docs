@@ -1,6 +1,7 @@
 ---
 title: Mode raid
 ---
+
 Le mode raid est une fonctionnalité d'urgence conçue pour bloquer instantanément tous les nouveaux utilisateurs tentant de rejoindre votre serveur. Il est radical mais efficace pour empêcher les raids massifs.
 
 ## ❓ Fonctionnement du mode raid {#working}
@@ -12,6 +13,7 @@ Le mode raid est une fonctionnalité d'urgence conçue pour bloquer instantaném
 - Un message sera automatiquement posté dans le salon de logs pour signaler l'activation.
 
 ### Désactivation :
+
 Le mode raid ne se désactive pas automatiquement. Pensez à l’arrêter avec la même commande lorsque la menace est écartée. 😇
 
 ## 📡 Le mode raid automatique {#autoraidmode}
@@ -32,9 +34,9 @@ Si votre serveur accueille souvent beaucoup de nouveaux membres simultanément, 
 Nous recommandons d’entrer une valeur comprise entre 10 et 20 membres en 10 secondes pour une bonne efficacité du système.
 :::
 
-1. Faites la commande `/settings`
+1. Faites la [commande `/settings`](../setup.md#settings)
 2. Cliquez sur le bouton “**Auto RaidMode**”.
-3. Sélectionnez le nombre de membres pouvant rejoindre sous 10 secondes _(ex : par défaut : 10)_. 
+3. Sélectionnez le nombre de membres pouvant rejoindre sous 10 secondes _(ex : par défaut : 10)_.
 
 Bien entendu, vous pouvez laisser à la valeur par défaut (10) ou ajuster selon la valeur souhaitée en cliquant sur le bouton “**Valeur personnalisée**”.
 

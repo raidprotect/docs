@@ -10,13 +10,13 @@ Le système de signalement de RaidProtect vous permet de signaler rapidement tou
 Les membres peuvent signaler un contenu via 3 méthodes principales :
 
 1. **Clic droit sur un message**
-Un membre peut faire un clic droit sur un message qu’il estime enfreindre le règlement, sélectionner “Applications”, puis cliquer sur “Signaler le message”. Une fenêtre contextuelle s’ouvrira, permettant à l’utilisateur d’ajouter une explication.
+Un membre peut faire un clic droit sur un message qu’il estime enfreindre le règlement, sélectionner **`Applications`**, puis cliquer sur **`Signaler le message`**. Une fenêtre contextuelle s’ouvrira, permettant à l’utilisateur d’ajouter une explication.
 
 2. **Clic droit sur un pseudo**
-De la même manière, un membre peut faire un clic droit sur un pseudo qu’il juge problématique, choisir “Applications”, puis cliquer sur “Signaler le membre”. Une fenêtre contextuelle s’ouvrira alors pour permettre à l’utilisateur de fournir des détails supplémentaires sur la situation.
+De la même manière, un membre peut faire un clic droit sur un pseudo qu’il juge problématique, choisir **`Applications`**, puis cliquer sur **`Signaler le membre`**. Une fenêtre contextuelle s’ouvrira alors pour permettre à l’utilisateur de fournir des détails supplémentaires sur la situation.
 
 3. **Commande Slash**
-Les membres peuvent également signaler un message ou un utilisateur via la commande /signaler dans n’importe quel salon du serveur.
+Les membres peuvent également signaler un message ou un utilisateur via la commande **`/report`** dans n’importe quel salon du serveur.
 
 ```/report [@utilisateur] [raison]```
 Remplacez `[@utilisateur]` par l’utilisateur souhaité et `[raison]` par le motif de l’infraction.
@@ -27,8 +27,8 @@ Avant que le système de signalement ne soit pleinement fonctionnel, il est imp�
 
 ### Configurer le salon de signalements :
 
-1. Faites la commande ``/settings`
-2. Sélectionnez le bouton “**Signalements**”.
+1. Faites la [commande `/settings`](../setup.md#settings)
+2. Sélectionnez le bouton **Signalements**”.
 3. Cliquez sur le bouton “**Salon**”.
 4. Sélectionnez le salon souhaité (ex : #signalements ou #reports). 
 Si vous ne disposez pas de salon adapté, vous pouvez choisir d’en créer en un automatiquement depuis le bouton “En créer un pour moi".
@@ -37,7 +37,7 @@ Si vous ne disposez pas de salon adapté, vous pouvez choisir d’en créer en u
 
 ### Configurer le rôle de notification des signalements :
 
-1. Faites la commande `/settings`
+1. Faites la [commande `/settings`](../setup.md#settings)
 2. électionnez le bouton “**Signalements**”.
 3. Cliquez sur le bouton “**Rôle**”.
 4. Sélectionnez le rôle souhaité (_ex: @Modérateur ou @Notifs reports_). 

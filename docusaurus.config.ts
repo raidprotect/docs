@@ -176,7 +176,8 @@ export default async function createConfigAsync() {
 					src: 'img/extend_logo.svg',
 					href: 'main',
 					target: '_self',
-					height: '32px'
+					height: '32px',
+					width: '250.81px'
 				},
 				items: [
 					{

@@ -16,7 +16,7 @@ Utilisez la commande :
 Remplacez `[@utilisateur]` par la mention ou l’identifiant souhaité et `[raison]` par le motif de la sanction.
 
 :::info
-Vous pouvez bannir un utilisateur à partir de son identifiant Discord, même s’il n’est pas connecté ou présent sur votre serveur.
+Vous pouvez bannir un utilisateur à partir de son [identifiant Discord](https://dfr.gg/wiki/interface/mode-developpeur), même s’il n’est pas connecté ou présent sur votre serveur.
 :::
 
 ### Expulser un utilisateur : {#kick}

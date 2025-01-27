@@ -6,7 +6,7 @@ Il arrive parfois qu’il soit nécessaire de verrouiller temporairement un salo
 
 ## Verrouiller un salon : {#lock}
 
-Utilisez la commande :
+Utilisez la commande :
 ```/lock```
 
 Cela retirera la permission de parler du rôle **@everyone** dans le salon, empêchant ainsi tous les utilisateurs de poster dans ce salon.
@@ -27,5 +27,5 @@ Pour que la commande de verrouillage fonctionne correctement, vous devez vous as
 Cette fonctionnalité est activée par défaut sur tous les serveurs. Cependant, vous avez la possibilité de choisir si les salons verrouillés doivent être renommés avec un emoji cadenas (🔒) ajouté devant leur nom.
 
 Pour activer/désactiver le cadena devant les noms des salons verrouillés : 
-1. Faites la commande `/settings`
+1. Faites la [commande `/settings`](../setup.md#settings)
 2. Cliquez sur le bouton “**Cadenas sur les salons verrouillés**”. Ce bouton fonctionne comme un interrupteur : un simple clic suffit pour activer ou désactiver l’option.

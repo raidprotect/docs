@@ -25,7 +25,7 @@ Lorsque le captcha est activé, RaidProtect publie automatiquement un message da
 ## ⛽ Mise en place du captcha {#setup}
 
 La mise en place du captcha est simple et rapide ! Voici comment faire :
-1. Faites la commande `/settings`
+1. Faites la [commande `/settings`](../setup.md#settings)
 2. Cliquez sur le bouton “**Captcha**”.
 3. Sélectionnez les différentes options à ignorer dans les différents sélecteurs 
 4. Le rôle et le salon nécessaires sont automatiquement créés et configurés.
@@ -39,7 +39,7 @@ Pour s’adapter aux besoins de votre serveur, le captcha de RaidProtect propose
 ### Logs séparés {#logs}
 
 Si votre serveur est populaire, les logs liés au captcha peuvent encombrer votre salon de logs principal. Vous pouvez les déplacer dans un autre salon :
-1. Faites la commande /settings
+1. Faites la [commande `/settings`](../setup.md#settings)
 2. Cliquez sur le bouton “**Logs**”.
 3. Sélectionnez “**Captcha**”
 4. Choisissez le salon dans lequel les logs du captcha seront indexées.
@@ -49,7 +49,7 @@ Bien entendu, si vous n’avez pas encore de salon dédié, vous pouvez cliquer 
 
 Si vous utilisez un système de rôle automatique (autorole) autre que RaidProtect, cela peut interférer avec le captcha. Remplacez votre autorole existant par celui de RaidProtect.
 
-1. Faites la commande `/settings`
+1. Faites la [commande `/settings`](../setup.md#settings)
 2. Cliquez sur le bouton “**Captcha**”.
 3. Sélectionnez “**Rôle automatique**”
 4. Choisissez le rôle qui sera donné aux membres ayant validé le captcha
@@ -60,7 +60,7 @@ Pour renforcer la sécurité, vous pouvez exiger un âge minimum pour les compte
 
 ### Définir un âge minimum :
 
-1. Faites la commande `/settings`
+1. Faites la [commande `/settings`](../setup.md#settings)
 2. Cliquez sur le bouton “**Captcha**”.
 3. Appuyez sur le bouton “**Âge minimum**”
-4. Sélectionnez la valeur souhaitée dans le menu de sélection ou choisissez une valeur personnalisée exprimée en format date (h/d/m/y)
+4. Sélectionnez la valeur souhaitée dans le menu de sélection ou choisissez une valeur personnalisée exprimée en format date (m/h/d/y)

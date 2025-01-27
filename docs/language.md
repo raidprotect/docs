@@ -2,14 +2,14 @@
 title: Langue
 ---
 
-RaidProtect vous permet de choisir la langue utilisée par le bot pour s’adapter au mieux à votre communauté Discord. Voici tout ce que vous devez savoir sur cette fonctionnalité.
+RaidProtect vous permet de choisir la langue utilisée par le bot pour s’adapter au mieux à votre communauté Discord.
 
 RaidProtect peut être configuré dans les langues suivantes : 
 - **Français 🇫🇷**
 - **Anglais 🇬🇧**
 
 :::note
-Si votre serveur est défini comme communautaire (paramètre Discord), RaidProtect utilise automatiquement la langue configurée dans les **paramètres de la communauté** du serveur.
+Si votre serveur est défini comme communautaire (paramètre Discord), RaidProtect utilise par défaut la langue configurée dans les **paramètres de la communauté** du serveur.
 :::
 
 **Messages publics :** La langue configurée affecte uniquement les messages publics envoyés par RaidProtect dans votre serveur (ex : logs, messages de captcha, signalements, etc.).
@@ -18,7 +18,7 @@ Si votre serveur est défini comme communautaire (paramètre Discord), RaidProte
 
 ## Changer la langue du bot
 
-- Faites la commande `/settings`
+- Faites la [commande `/settings`](./setup.md#settings)
 - Sélectionnez le bouton “**Langue**”.
 - Sélectionnez la langue souhaitée.
 

@@ -23,7 +23,7 @@ RaidProtect offre trois niveaux de sécurité pour répondre aux besoins de votr
 
 ## 🎚️ Comment changer le niveau de sécurité ? {#level-change}
 
-1. Faites la commande `/settings`
+1. Faites la [commande `/settings`](../setup.md#settings)
 2. Cliquez sur le bouton “**Anti-spam**”.
 3. Sélectionnez le niveau de l’anti-spam souhaité dans le premier sélecteur.
 - Désactivé (pour désactiver l’anti-spam)
@@ -34,7 +34,7 @@ RaidProtect offre trois niveaux de sécurité pour répondre aux besoins de votr
 ## 🛌 Gérer les rôles, utilisateurs et salons ignorés 😉 {#ignore}
 
 Vous pouvez exclure certains salons, rôles ou même utilisateurs de la surveillance anti-spam pour plus de flexibilité.
-1. Faites la commande `/settings`
+1. Faites la [commande `/settings`](../setup.md#settings)
 2. Cliquez sur le bouton “**Anti-spam**”.
 3. Sélectionnez les différentes options à ignorer dans les différents sélecteurs 
 - Salon(s) à ignorer
