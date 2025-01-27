@@ -6,7 +6,7 @@ Un problème avec RaidProtect ? La solution se trouve sûrement ici.
 
 Parfois, il arrive que tout ne fonctionne pas comme prévu. Voici les **problèmes les plus courants** que vous pouvez rencontrer, et comment les résoudre. 🤗 
 
-Si cette page n'apporte pas de réponse à un problème que vous rencontrez, [**n'hésitez pas à contacter notre support**](https://discord.com/invite/raidprotect) qui se fera un plaisir de vous aider !
+Si cette page n'apporte pas de réponse à un problème que vous rencontrez, [**n'hésitez pas à contacter notre support**](https://raidprotect.bot/discord) qui se fera un plaisir de vous aider !
 
 ## Le bot affiche une erreur lorsque je fais une commande {#commands}
 
@@ -20,7 +20,7 @@ Si la commande ne s'exécute pas avec succès, **RaidProtect peut afficher une e
 
 - **Retentez la commande.** Parfois, le problème se résout sans que l'on sache pourquoi.
 
-Si vous continuez à avoir une erreur malgré avoir suivi ces conseils, [contactez notre support](https://discord.com/invite/raidprotect) pour que nous puissions vous aider ! 🤝 
+Si vous continuez à avoir une erreur malgré avoir suivi ces conseils, [contactez notre support](https://raidprotect.bot/discord) pour que nous puissions vous aider ! 🤝 
 
 ## Le salon de logs du bot ne s'est pas créé tout seul {#logs}
 
@@ -44,7 +44,7 @@ L'[anti-spam](../features/anti-spam.md) est l'une des fonctionnalités principal
 
 - **Le spam est-il assez long ?** Le bot ne détecte le spam en général qu'à partir de plus de 5 messages. Ne soyez pas trop pressés.
 
-Si malgré cela un spam n'est toujours pas détecté, [contactez-nous sur notre serveur de support](https://discord.com/invite/raidprotect) en joignant une **capture d'écran du problème**.
+Si malgré cela un spam n'est toujours pas détecté, [contactez-nous sur notre serveur de support](https://raidprotect.bot/discord) en joignant une **capture d'écran du problème**.
 
 ## Les utilisateurs ont accès au serveur sans passer le captcha {#captcha}
 
