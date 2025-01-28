@@ -84,7 +84,7 @@ export default async function createConfigAsync() {
 						sidebarCollapsed: false,
 						editCurrentVersion: false,
 						editLocalizedFiles: true,
-						showLastUpdateAuthor: true,
+						showLastUpdateAuthor: false,
 						showLastUpdateTime: true,
 					},
 					blog: false,
@@ -260,7 +260,8 @@ export default async function createConfigAsync() {
 					src: 'img/extend_logo.svg',
 					href: 'main',
 					target: '_self',
-					height: '36px'
+					height: '36px',
+					width: '282.16px'
 				},
 				links: [
 					{
