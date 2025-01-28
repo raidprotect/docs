@@ -70,7 +70,7 @@ Découvrez la liste détaillée des modifications qui ont été apportées à Ra
 ## 2.0.0 (26/01/2019) {#2-0-0}
 
 - Ajout de l'[anti-spam](./features/anti-spam.md).
-- Ajout du [mode raid automatique](./features/raid-mode.md#autoraidmode).
+- Ajout du [mode raid automatique](./features/raid-mode.md#config).
 - Ajout du salon de logs.
 - Ajout de la configuration du bot.
 - Ajout du [verrouillage de salons](./features/channel-lock.md).

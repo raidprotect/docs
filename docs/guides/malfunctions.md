@@ -52,7 +52,7 @@ Ce problème est relativement courant, mais dépend de **la configuration de vot
 
 - **Avez-vous un rôle automatique ?** Si vous avez configuré un bot (autre que RaidProtect) pour donner un rôle aux nouveaux arrivants sur votre serveur, cela peut interférer avec le captcha. Remplacez ce dernier par l'[autorole de RaidProtect](../features/captcha.md#autorole). 
 
-- **Avez-vous activé le captcha ?** Il s'agit d'une fonctionnalité totalement optionnelle qui nécessite d'effectuer une commande pour l'activer. Consultez la [page de cette documentation dédiée au captcha](../features/captcha.md#setup) pour en savoir plus.
+- **Avez-vous activé le captcha ?** Il s'agit d'une fonctionnalité totalement optionnelle qui nécessite d'effectuer une commande pour l'activer. Consultez la [page de cette documentation dédiée au captcha](../features/captcha.md#config) pour en savoir plus.
 
 ## Les utilisateurs peuvent toujours parler lorsque je verrouille un salon {#lock}
 

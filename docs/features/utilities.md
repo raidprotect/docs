@@ -42,3 +42,5 @@ Utilisez la commande :
 
 ```/userinfo [@utilisateur]```
 Remplacez `[@utilisateur]` par la mention ou l’identifiant souhaité.
+
+## 🧹 Supprimer un groupe de messages {#clear}
