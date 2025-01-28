@@ -17,7 +17,7 @@ Si vous préférez utiliser certaines commandes avec un préfixe personnalisé, 
 - [`/userinfo`](../features/utilities#userinfo)
 
 
-### 💬 Comment activer ou désactiver le préfixe {#config}
+## 💬 Comment activer ou désactiver le préfixe {#config}
 
 1. Ouvrez le menu de configuration en tapant [`/settings`](../setup.md#settings).
 2. Accédez à l’option "**Préfixe**" des commandes.

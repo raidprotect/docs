@@ -1,4 +1,6 @@
-# Nouveautés
+---
+title: Nouveautés
+---
 
 Découvrez la liste détaillée des modifications qui ont été apportées à RaidProtect.
 
