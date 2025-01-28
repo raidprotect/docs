@@ -12,7 +12,7 @@ Découvrez la liste détaillée des modifications qui ont été apportées à Ra
 - Possibilité d'[ignorer des utilisateurs et des rôles](./features/anti-spam.md#ignore) dans l'[antispam](./features/anti-spam.md).
 - Ajout de la [commande `/report`](./features/reports.md).
 - Possibilité de choisir si la [commande `/lock`](./features/channel-lock.md) renomme le salon verrouillé avec `🔒`.
-- Possibilité de [choisir le prefix](./features/utilities.md#prefix) des commandes hybrides.
+- Possibilité de [choisir le prefix](./guides/prefix.md) des commandes hybrides.
 - Amélioration des performances et de la stabilité du bot.
 
 ## 3.0.0 (14/01/2023) {#3-0-0}
