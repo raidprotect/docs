@@ -6,15 +6,13 @@ Il arrive parfois qu’il soit nécessaire de verrouiller temporairement un salo
 
 ## 🔒 Verrouiller un salon {#lock}
 
-Utilisez la commande :
-```/lock```
+Utilisez la commande : ```/lock```
 
 Cela retirera la permission de parler du rôle **@everyone** dans le salon, empêchant ainsi tous les utilisateurs de poster dans ce salon.
 
 ## 🔓 Déverrouiller un salon {#unlock}
 
-Utilisez la commande :
-```/unlock```
+Utilisez la commande : ```/unlock```
 
 Cela ajoutera la permission de parler du rôle **@everyone** dans le salon, empêchant ainsi tous les utilisateurs de poster dans ce salon.
 

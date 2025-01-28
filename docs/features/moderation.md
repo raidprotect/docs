@@ -8,8 +8,7 @@ En plus de ces actions, RaidProtect envoie des messages privés à l’utilisate
 
 ## 🔨 Bannir un utilisateur {#ban}
 
-Utilisez la commande :
-```/ban [@utilisateur] [raison]```
+Utilisez la commande : ```/ban [@utilisateur] [raison]```
 
 Remplacez `[@utilisateur]` par la mention ou l’identifiant souhaité et `[raison]` par le motif de la sanction.
 
@@ -19,7 +18,6 @@ Vous pouvez bannir un utilisateur à partir de son [identifiant Discord](https:/
 
 ## 👢 Expulser un utilisateur {#kick}
 
-Utilisez la commande :
-```/kick [@utilisateur] [raison]```
+Utilisez la commande : ```/kick [@utilisateur] [raison]```
 
 Remplacez `[@utilisateur]` par la mention ou l’identifiant souhaité et `[raison]` par le motif de la sanction.

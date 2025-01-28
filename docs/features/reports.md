@@ -16,8 +16,7 @@ De la même manière, un membre peut faire un clic droit sur un profil qu’il j
 3. **Commande Slash** 
 Les membres peuvent également signaler un message ou un utilisateur via la commande **`/report`** dans n’importe quel salon du serveur.
 
-Utilisez la commande :
-```/report [@utilisateur] [raison]```
+Utilisez la commande : ```/report [@utilisateur] [raison]```
 
 Remplacez `[@utilisateur]` par l’utilisateur souhaité et `[raison]` par le motif de l’infraction.
 

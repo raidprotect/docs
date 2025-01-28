@@ -9,8 +9,7 @@ En plus des fonctionnalités principales comme le système de captcha et la prot
 
 La commande `/userinfo` vous permet d’obtenir des informations détaillées sur un utilisateur, telles que la **date de création de son compte** Discord ainsi que la **date à laquelle il a rejoint** votre serveur (si c’est un membre).
 
-Utilisez la commande :
-```/userinfo [@utilisateur]```
+Utilisez la commande : ```/userinfo [@utilisateur]```
 
 Remplacez `[@utilisateur]` par la mention ou l’identifiant souhaité.
 
@@ -18,9 +17,7 @@ Remplacez `[@utilisateur]` par la mention ou l’identifiant souhaité.
 
 La commande `/clear` vous permet de supprimer rapidement un certain nombre de messages dans un salon texte. Vous pouvez spécifier un utilisateur pour ne supprimer que ses messages.
 
-Utilisez la commande :
-
-```/clear [nombre] (@utilisateur)```
+Utilisez la commande : ```/clear [nombre] (@utilisateur)```
 
 - Remplacez `[nombre]` par le nombre de messages que vous souhaitez supprimer (maximum 100).
 - Ajoutez `(@utilisateur)` en utilisant la mention ou l’identifiant pour cibler uniquement ses messages dans le salon.
