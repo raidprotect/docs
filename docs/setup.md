@@ -2,7 +2,7 @@
 title: Installation
 ---
 
-RaidProtect vous simplifie la gestion de votre serveur grâce à deux outils puissants ; la commande [`/setup`](#install) pour une configuration guidée étape par étape, et la commande [`/settings`](#settings) pour modifier vos paramètres à tout moment via un menu centralisé. Ce guide d’installation vous explique comment les utiliser efficacement.
+RaidProtect simplifie la gestion de votre serveur grâce à deux outils puissants ; la commande [`/setup`](#install) pour une configuration guidée étape par étape et la commande [`/settings`](#settings) pour modifier vos paramètres à tout moment via un menu centralisé. Ce guide d’installation vous explique comment les utiliser efficacement.
 
 ## Installation guidée {#install}
 
@@ -10,10 +10,10 @@ La commande `/setup` est conçue pour vous aider à configurer RaidProtect rapid
 
 ### 🔧 Configuration recommandée {#recommended}
 
-Permet d’activer ou de désactiver les fonctionnalités principales en un clin d’œil grâce à un select menu interactif.
+Permet d’activer ou de désactiver les fonctionnalités principales en un clin d’œil grâce à un menu de sélection interactif.
 
 1. Faites la commande `/setup`.
-2. Sélectionnez le bouton “**Configuration rapide**”.
+2. Sélectionnez le bouton “**Configuration recommandée**”.
 3. Activez ou désactivez les fonctionnalités souhaitées en utilisant le menu de sélection.
 
 Le bot vous enverra ensuite un récapitulatif des fonctionnalités activées et des changements qu’il va apporter au serveur.

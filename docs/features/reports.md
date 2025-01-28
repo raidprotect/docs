@@ -2,23 +2,23 @@
 title: Signalements
 ---
 
-🚨 Un outil efficace pour gérer et modérer rapidement les problèmes sur votre serveur Discord !
-
-Le système de signalement de RaidProtect vous permet de signaler rapidement tout contenu problématique ou utilisateur suspect. Il fonctionne de deux manières différentes, et peut être configuré pour optimiser le processus de gestion des signalements.
+Le système de signalement de RaidProtect permet à votre communauté de signaler rapidement tout contenu problématique ou utilisateur suspect. Il fonctionne de deux manières différentes, et peut être configuré pour optimiser le processus de gestion des signalements.
 
 ## ❓ Fonctionnent des signalements {#working}
-Les membres peuvent signaler un contenu via 3 méthodes principales :
+Les membres peuvent signaler un contenu via 3 méthodes principales.
 
-1. **Clic droit sur un message**
+1. **Clic droit sur un message** 
 Un membre peut faire un clic droit sur un message qu’il estime enfreindre le règlement, sélectionner **`Applications`**, puis cliquer sur **`Signaler le message`**. Une fenêtre contextuelle s’ouvrira, permettant à l’utilisateur d’ajouter une explication.
 
-2. **Clic droit sur un profil**
+2. **Clic droit sur un profil** 
 De la même manière, un membre peut faire un clic droit sur un profil qu’il juge problématique, choisir **`Applications`**, puis cliquer sur **`Signaler le membre`**. Une fenêtre contextuelle s’ouvrira alors pour permettre à l’utilisateur de fournir des détails supplémentaires sur la situation.
 
-3. **Commande Slash**
+3. **Commande Slash** 
 Les membres peuvent également signaler un message ou un utilisateur via la commande **`/report`** dans n’importe quel salon du serveur.
 
+Utilisez la commande :
 ```/report [@utilisateur] [raison]```
+
 Remplacez `[@utilisateur]` par l’utilisateur souhaité et `[raison]` par le motif de l’infraction.
 
 ## 🚩 Configuration des signalements {#config}

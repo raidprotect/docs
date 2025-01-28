@@ -20,11 +20,11 @@ Si la commande ne s'exécute pas avec succès, **RaidProtect peut afficher une e
 
 - **Retentez la commande.** Parfois, le problème se résout sans que l'on sache pourquoi.
 
-Si vous continuez à avoir une erreur malgré avoir suivi ces conseils, [contactez notre support](https://raidprotect.bot/discord) pour que nous puissions vous aider ! 🤝 
+Si vous continuez à avoir une erreur malgré avoir suivi ces conseils, [contactez notre support](https://raidprotect.bot/discord) pour que nous puissions vous aider. 🤝 
 
 ## Le salon de logs du bot ne s'est pas créé tout seul {#logs}
 
-Pour vous avertir des actions qu'il prend, RaidProtect a besoin d'un salon de logs. Ce salon est créé automatiquement lorsque le bot rejoint pour la première fois, mais parfois, aucun salon n'est créé. Voici comment remédier à ce problème ! ⚙️ 
+Pour vous avertir des actions qu'il prend, RaidProtect a besoin d'un salon de logs. Ce salon est créé automatiquement lorsque le bot rejoint pour la première fois, mais parfois, aucun salon n'est créé. Voici comment remédier à ce problème. ⚙️ 
 
 - **Assurez-vous que le bot est bien Administrateur.** Pour le bon fonctionnement du bot, il est nécessaire de lui donner la permission Administrateur. Si cela n'est pas fait, rendez-vous dans les paramètres des rôles et accordez cette permission au rôle RaidProtect. Il ne vous reste plus qu'à initialiser manuellement le bot pour que tout fonctionne (voir juste après) !
 
@@ -34,7 +34,7 @@ Pour vous avertir des actions qu'il prend, RaidProtect a besoin d'un salon de lo
 
 ## Un utilisateur a spammé, mais le bot ne l'a pas sanctionné {#anti-spam}
 
-L'[anti-spam](../features/anti-spam.md) est l'une des fonctionnalités principales de RaidProtect, et cela peut être embêtant s’il ne fonctionne pas. Mais rassurez-vous, la plupart du temps, il ne s'agit de rien de grave ! 😇 
+L'[anti-spam](../features/anti-spam.md) est l'une des fonctionnalités principales de RaidProtect, et cela peut être embêtant s’il ne fonctionne pas. Mais rassurez-vous, la plupart du temps, il ne s'agit de rien de grave. 😇 
 
 - **Si l'anti-spam demande d'arrêter le spam**, mais ne sanctionne pas, cela est sûrement dû à un manque de permissions. Rappelez-vous, le bot doit avoir la permission Administrateur et doit être au niveau de celui des administrateurs dans l'ordre des rôles.
 
