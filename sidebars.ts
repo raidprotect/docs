@@ -22,8 +22,8 @@ const sidebars: SidebarsConfig = {
 			type: 'category',
 			label: 'features',
 			link: {
-				type: 'generated-index',
-				title: 'Fonctionnalités'
+				type: 'doc',
+				id: 'features/index'
 			},
 			items: [
 				{
@@ -60,8 +60,8 @@ const sidebars: SidebarsConfig = {
 			type: 'category',
 			label: 'guides',
 			link: {
-				type: 'generated-index',
-				title: 'Guides',
+				type: 'doc',
+				id: 'guides/index'
 			},
 			items: [
 				{
@@ -78,8 +78,8 @@ const sidebars: SidebarsConfig = {
 			type: 'category',
 			label: 'useful-links',
 			link: {
-				type: 'generated-index',
-				title: 'Liens utiles'
+				type: 'doc',
+				id: 'useful-links/index'
 			},
 			items: [
 				{ 
