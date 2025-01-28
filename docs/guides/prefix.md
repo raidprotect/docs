@@ -1,0 +1,30 @@
+---
+title: Utilisation d'un préfix
+---
+
+## Préfixe désactivé (par défaut) {#disabled}
+
+Par défaut, RaidProtect utilise uniquement les commandes Slash (`/`) pour interagir avec le bot. Cela garantit une utilisation intuitive et cohérente avec les standards de Discord.
+
+## Préfixe activé (optionnel) {#activated}
+
+Si vous préférez utiliser certaines commandes avec un préfixe personnalisé, vous pouvez activer cette option. Le préfixe par défaut en cas d’activation est `?`, mais il peut être modifié selon vos besoins. Une fois activé, ces commandes sont également utilisables avec le préfixe configuré : 
+- [`/raidmode`](./raid-mode.md)
+- [`/ban`](./moderation.md#ban)
+- [`/kick`](./moderation.md#kick)
+- [`/lock`](./channel-lock.md#lock)
+- [`/unlock`](./channel-lock.md#unlock)
+- [`/userinfo`](#userinfo)
+
+
+### 💬 Comment activer ou désactiver le préfixe {#config}
+
+1. Ouvrez le menu de configuration en tapant [`/settings`](../setup.md#settings).
+2. Accédez à l’option "**Préfixe**" des commandes.
+3. Activez ou désactivez le préfixe selon vos préférences.
+Si activé, personnalisez le préfixe en saisissant le caractère ou la chaîne souhaitée.
+
+:::note
+Les commandes Slash (`/`) restent disponibles même si le préfixe est activé.
+Il est recommandé d’éviter les préfixes déjà utilisés par d’autres bots pour éviter les conflits de commandes.
+:::

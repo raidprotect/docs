@@ -66,6 +66,10 @@ const sidebars: SidebarsConfig = {
 			items: [
 				{
 					type: 'doc',
+					id: 'guides/prefix',
+				},
+				{
+					type: 'doc',
 					id: 'guides/malfunctions',
 				},
 				{
