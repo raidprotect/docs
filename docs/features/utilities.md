@@ -22,4 +22,4 @@ Utilisez la commande :
 
 ```/clear [nombre] (@utilisateur)```
 •	Remplacez `[nombre]` par le nombre de messages que vous souhaitez supprimer (maximum 100).
-•	Ajoutez `(@utilisateur)` en mentionnant un utilisateur pour cibler uniquement ses messages dans le salon.
+•	Ajoutez `(@utilisateur)` en utilisant la mention ou l’identifiant pour cibler uniquement ses messages dans le salon.

@@ -8,7 +8,7 @@ RaidProtect vous simplifie la gestion de votre serveur grâce à deux outils pui
 
 La commande `/setup` est conçue pour vous aider à configurer RaidProtect rapidement ou à travers une approche détaillée selon vos besoins. Elle vous propose deux modes de configuration, [rapide](#fast) ou [avancée](#advanced).
 
-### 🏃 Configuration rapide {#fast}
+### 🔧 Configuration recommandée {#recommended}
 
 Permet d’activer ou de désactiver les fonctionnalités principales en un clin d’œil grâce à un select menu interactif.
 
@@ -33,7 +33,7 @@ Si vous souhaitez configurer le bot d'une manière plus approfondie, optez pour 
 
 La commande `/settings` est la commande de gestion de vos paramètres une fois l’installation effectuée. Elle vous permet de visualiser, ajuster ou personnaliser les fonctionnalités de RaidProtect à tout moment, de manière simple et rapide.
 
-### 🔍 Accéder au menu des paramètres {#menu}
+### 🔍 Menu des paramètres {#menu}
 
 1. Tapez `/settings` dans un salon où le bot est actif.
 2. Naviguez facilement entre les différentes sections pour trouver les paramètres que vous souhaitez modifier.
@@ -41,7 +41,7 @@ La commande `/settings` est la commande de gestion de vos paramètres une fois l
 
 ![Capture d'écran paramètres](./assets/rpBeta-settings.webp)
 
-### 🔄 Réinitialiser un paramètre à sa configuration d'origine {#reset}
+### 🔄 Réinitialiser un paramètre {#reset}
 
 1. Naviguez vers le paramètre souhaité.
 2. Cliquez sur “**Réinitialiser**”.

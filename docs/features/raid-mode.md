@@ -8,12 +8,12 @@ Le mode raid est une fonctionnalité d'urgence conçue pour bloquer instantaném
 
 RaidProtect active automatiquement le mode raid si un grand nombre d’utilisateurs rejoint votre serveur en un court laps de temps. Par défaut, le mode raid s'active si plus de 10 utilisateurs rejoignent votre serveur en moins de 10 secondes. Lorsque le mode raid est activé, aucun utilisateur ne peut rejoindre le serveur. Ils sont bloqués au niveau de l’invitation.
 
-### Activation {#activation}
+### Activation {#enable}
 
 - Pour activer manuellement ce mode, un utilisateur disposant des permissions d'expulsion doit exécuter la commande `/raidmode`.
 - Un message sera automatiquement posté dans le salon de logs pour signaler l'activation.
 
-### Désactivation {#deactivation}
+### Désactivation {#disable}
 
 Le mode raid ne se désactive pas automatiquement. Pensez à l’arrêter avec la même commande lorsque la menace est écartée. 😇
 
