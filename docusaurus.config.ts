@@ -80,7 +80,7 @@ export default async function createConfigAsync() {
 							extendDefaults: true
 						},
 						breadcrumbs: true,	
-						sidebarCollapsible: false,
+						sidebarCollapsible: true,
 						sidebarCollapsed: false,
 						editCurrentVersion: false,
 						editLocalizedFiles: true,
