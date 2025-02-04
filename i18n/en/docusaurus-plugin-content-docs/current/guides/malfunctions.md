@@ -46,7 +46,7 @@ The [anti-spam](../features/anti-spam.md) feature is one of RaidProtect's main f
 
 If spam is still not detected, [contact us on our support server](https://raidprotect.bot/discord) with a **screenshot of the issue**.
 
-## Users have access to the server without passing the captcha {#captcha}
+## Users have access to the server without completing the captcha {#captcha}
 
 This problem is relatively common, but it depends on **your server configuration**. Let’s see how to fix it. 🏥 
 
