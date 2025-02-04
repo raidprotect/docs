@@ -29,7 +29,7 @@ Before the reporting system is fully operational, it is imperative to configure 
 1. Use the [command `/settings`](../setup.md#settings).
 2. Select the **Reports** button.
 3. Click on the **Channel** button.
-4. Choose the desired channel (_e.g., #reports or #signalements_).  
+4. Choose the desired channel (_e.g. #reports_).  
 If you do not have a suitable channel, you can opt to create one automatically using the **Create one for me** button.
 
 [Screenshot report settings](../assets/rpBeta-settings-reports.webp)
@@ -39,7 +39,7 @@ If you do not have a suitable channel, you can opt to create one automatically u
 1. Use the [command `/settings`](../setup.md#settings).
 2. Select the **Reports** button.
 3. Click on the **Role** button.
-4. Choose the desired role (_e.g., @Moderator or @Report Notifs_).  
+4. Choose the desired role (_e.g. @Moderator or @Report Ping_).  
 If you do not have a suitable role, you can opt to create one automatically with the **Create one for me** button.
 
 :::warning
