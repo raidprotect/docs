@@ -1,6 +1,7 @@
 ---
 title: Anti-spam
 ---
+
 L’Anti-spam de RaidProtect est un outil performant pour empêcher les spams sur votre serveur Discord. Grâce à son système de détection automatique, il s’occupe des problèmes tout seul, sans que vous ayez à intervenir.
 
 ## ❓ Fonctionnement de l’anti-spam {#working}
