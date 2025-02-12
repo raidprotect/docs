@@ -305,7 +305,7 @@ export default async function createConfigAsync() {
 						],
 					},
 				],
-				copyright: `Copyright © ${new Date().getFullYear()} - RaidProtect - RP - Tous droits réservés.`,
+				copyright: `© ${new Date().getFullYear()} SAS French Community Agency, RaidProtect. Tous droits réservés.`,
 			},
 			prism: {
 				theme: prismThemes.github,
