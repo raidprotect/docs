@@ -15,6 +15,7 @@ Si vous préférez utiliser certaines commandes avec un préfixe personnalisé, 
 - [`/lock`](../features/channel-lock.md#lock)
 - [`/unlock`](../features/channel-lock.md#unlock)
 - [`/userinfo`](../features/utilities#userinfo)
+- [`/clear`](../features/utilities#clear)
 
 
 ## 💬 Comment activer ou désactiver le préfixe {#config}
