@@ -8,14 +8,15 @@ Le captcha est l’une des fonctionnalités les plus populaires de RaidProtect, 
 
 ## ❓ Fonctionnement du captcha {#working}
 
-Le captcha repose sur un rôle "**@Non vérifié**" et un salon nommé **#vérification**. Lorsqu'un utilisateur rejoint votre serveur :
-- Le bot attribue automatiquement le rôle **@Non vérifié** à cet utilisateur, limitant son accès uniquement au salon **#verification**.
-- Dans ce salon, une image contenant 6 lettres est envoyée par le bot. L'utilisateur doit retranscrire les lettres dans le salon pour prouver qu'il est humain. Une erreur d'une lettre est tolérée.
-- Si la réponse est correcte, le rôle "**@Non vérifié**" est retiré et l'utilisateur accède normalement au serveur. Dans le cas contraire, il est automatiquement expulsé.
+Le captcha repose sur un rôle **@Non vérifié** et un salon nommé **#vérification**. Lorsqu'un utilisateur rejoint votre serveur :
+- Le bot attribue automatiquement le rôle **@Non vérifié** à cet utilisateur, limitant son accès uniquement au salon **#vérification**.
+- Dans ce salon, une image contenant 6 lettres majuscules est envoyée par le bot. L'utilisateur doit retranscrire les lettres dans le salon pour prouver qu'il est humain.
+- Si la réponse est correcte, le rôle **@Non vérifié** est retiré et l'utilisateur accède normalement au serveur. Dans le cas contraire, il est automatiquement expulsé.
 - Lorsque le captcha est activé, RaidProtect publie automatiquement un message dans le salon de logs, indiquant la date de création du compte de chaque nouvel utilisateur.
+- RaidProtect détecte automatiquement les problèmes de permissions (salon et rôle) ainsi que la visibilité par défaut du salon lors du processus d'accueil Discord.
 
 :::info
-**Délai :** Les utilisateurs disposent de **5 minutes** pour compléter le captcha. Passé ce délai, ils sont automatiquement expulsés.
+**Délai et essais :** Les utilisateurs disposent de **1 à 10 minutes** pour compléter le captcha (**5 minutes par défaut**) et de **1 à 3 essais** (**2 essais par défaut**). Au-delà, ils sont automatiquement expulsés du serveur.
 :::
 :::warning
 **Gestion des permissions :** Les permissions du rôle **@Non vérifié** sont configurées automatiquement par RaidProtect. Vous pouvez renommer le rôle et le salon, mais ne les supprimez pas.
@@ -29,6 +30,7 @@ La mise en place du captcha est simple et rapide.
 2. Cliquez sur le bouton “**Captcha**”.
 3. Choisissez le salon dans lequel les captchas seront réalisés ou utilisez le bouton “**En créer un pour moi**”.
 4. Le rôle **@Non vérifié** est automatiquement créé et configuré.
+5. Configurez le nombre d’essais autorisés (entre 1 et 3) ainsi que le temps de résolution maximal (entre 1 et 10 minutes).
 
 ![Capture d'écran paramètre captcha](../assets/rpBeta-settings-anti-captcha.webp)
 
@@ -60,5 +62,5 @@ Pour renforcer la sécurité, vous pouvez exiger un âge minimum pour les compte
 
 1. Faites la [commande `/settings`](../setup.md#settings).
 2. Cliquez sur le bouton “**Captcha**”.
-3. Appuyez sur le bouton “**Âge minimum**”.
+3. Appuyez sur le bouton “**Âge minimum**”.
 4. Sélectionnez la valeur souhaitée dans le menu de sélection ou choisissez une valeur personnalisée exprimée en format date (m/h/d/y).

@@ -13,6 +13,7 @@ To stay updated on the latest news about the upcoming major version, [join our D
 - Complete rewrite aimed at preparing future updates and stabilizing the bot.
 - Fixed all known bugs to date.
 - The `?raidmode` command now uses the "Disable invites" feature.
+- Automatic sending of a private message to the concerned member when a sanction is applied.
 
 ## 2.2.0 (04/13/2020)
 

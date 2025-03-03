@@ -13,6 +13,7 @@ Pour être informé des dernières actualités sur la prochaine version majeure,
 - Réécriture complète visant à préparer les futures mises à jour et à stabiliser le bot.
 - Correction de tous les bugs connus à ce jour.
 - La commande `?raidmode` utilise désormais la fonctionnalité "Désactiver les invitations".
+- Envoi automatique d’un message privé au membre concerné lors de l’application d’une sanction.
 
 ## 2.2.0 (13/04/2020)
 

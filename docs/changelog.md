@@ -11,10 +11,13 @@ Découvrez la liste détaillée des modifications qui ont été apportées à Ra
 - Nouvelle [commande `/settings`](./setup.md#settings) sous forme de pannel dans Discord.
 - Nouvelle [commande `/setup`](./setup.md#install) sous forme d'Onboarding.
 - Uniformisation des messages.
+- Possibilité de choisir le nombre d’essais et le temps alloué à la résolution du [captcha](./features/captcha#config).
 - Possibilité d'[ignorer des utilisateurs et des rôles](./features/anti-spam.md#ignore) dans l'[antispam](./features/anti-spam.md).
 - Ajout de la [commande `/report`](./features/reports.md).
 - Possibilité de choisir si la [commande `/lock`](./features/channel-lock.md) renomme le salon verrouillé avec `🔒`.
 - Possibilité de [choisir le prefix](./guides/prefix.md) des commandes hybrides.
+- Détection automatique des problèmes de permissions liés aux salons et aux rôles pour éviter les erreurs de configuration.
+- Vérification automatique de la visibilité du salon de vérification dans le processus d’accueil de Discord.
 - Amélioration des performances et de la stabilité du bot.
 
 ## 3.0.0 (14/01/2023) {#3-0-0}
@@ -22,6 +25,7 @@ Découvrez la liste détaillée des modifications qui ont été apportées à Ra
 - Réécriture complète visant à préparer les futures mises à jour et à stabiliser le bot.
 - Correction de tous les bugs connus à ce jour.
 - La [commande `?raidmode`](./features/raid-mode.md) utilise désormais la fonctionnalité "Désactiver les invitations".
+- Envoi automatique d’un message privé au membre concerné lors de l’application d’une sanction.
 
 ## 2.2.0 (13/04/2020) {#2-2-0}
 

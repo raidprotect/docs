@@ -11,10 +11,13 @@ Discover the detailed list of changes made to RaidProtect.
 - New [`/settings` command](./setup.md#settings) as a Discord panel.
 - New [`/setup` command](./setup.md#install) as an Onboarding process.
 - Standardization of messages.
+- Ability to choose the number of attempts and the time allowed for solving the [captcha](./features/captcha#config).
 - Ability to [ignore users and roles](./features/anti-spam.md#ignore) in [antispam](./features/anti-spam.md).
 - Added the [`/report` command](./features/reports.md).
 - Option to choose whether the [`/lock` command](./features/channel-lock.md) renames the locked channel with `🔒`.
 - Ability to [choose the prefix](./guides/prefix.md) for hybrid commands.
+- Automatic detection of permission issues related to channels and roles to prevent configuration errors.
+- Automatic verification of the visibility of the verification channel in Discord's onboarding process.
 - Improved bot performance and stability.
 
 ## 3.0.0 (01/14/2023) {#3-0-0}
@@ -22,6 +25,7 @@ Discover the detailed list of changes made to RaidProtect.
 - Complete rewrite aimed at preparing for future updates and stabilizing the bot.
 - Fixed all known bugs to date.
 - The [`?raidmode` command](./features/raid-mode.md) now uses the "Disable Invites" feature.
+- Automatic sending of a private message to the concerned member when a sanction is applied.
 
 ## 2.2.0 (04/13/2020) {#2-2-0}
 
