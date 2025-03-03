@@ -6,20 +6,27 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Discover the detailed list of changes made to RaidProtect.
 
-## 3.1.0 (02/08/2025) {#3-1-0}
+## 3.1.0 (08/02/2025) {#3-1-0}
 
-- Added Slash Commands. <SuggestionLink id="463" />
-- [Internationalization](./language.md) (Added English).
-- New [`/settings` command](./setup.md#settings) as a Discord panel.
-- New [`/setup` command](./setup.md#install) as an Onboarding process.
-- Standardization of messages.
-- Ability to choose the number of attempts and the time allowed for solving the [captcha](./features/captcha#config).
-- Ability to [ignore users and roles](./features/anti-spam.md#ignore) in [antispam](./features/anti-spam.md).
-- Added the [`/report` command](./features/reports.md).
-- Option to choose whether the [`/lock` command](./features/channel-lock.md) renames the locked channel with `🔒`.
-- Ability to [choose the prefix](./guides/prefix.md) for hybrid commands.
-- Automatic detection of permission issues related to channels and roles to prevent configuration errors.
-- Automatic verification of the visibility of the verification channel in Discord's onboarding process.
+- Added **Slash Commands**. <SuggestionLink id="463" />
+- [Internationalization](./language.md) (added English). <SuggestionLink id="109" />
+- New feature [`/report`](./features/reports.md). <SuggestionLink id="164" />
+- New configuration commands:
+  - [`/settings`](./setup.md#settings) as an interactive panel.
+  - [`/setup`](./setup.md#install) as an Onboarding process.
+- Advanced settings:
+  - Enable/disable each feature individually. <SuggestionLink id="356" />
+  - Choose the delay and number of attempts before expulsion by the [captcha](./features/captcha#config). <SuggestionLink id="363" />
+  - Option to select the verification channel for the [captcha](./features/captcha). <SuggestionLink id="385" />
+  - Ignore users/roles/categories in the [anti-spam](./features/anti-spam.md#ignore). <SuggestionLink id="362" />
+  - Choose the [prefix for hybrid commands](./guides/prefix.md). <SuggestionLink id="103" />
+  - Option to choose whether the [`/lock` command](./features/channel-lock.md) renames the locked channel with `🔒`.
+- Improved UX:
+  - Prefix displayed when pinging the bot + mention as a universal prefix. <SuggestionLink id="193" />
+  - Disabling the [captcha](./features/captcha) no longer deletes the associated role and channel. <SuggestionLink id="43" />
+  - Automatic detection of permission issues related to channels and roles. <SuggestionLink id="65" />
+  - Automatic visibility check of the verification channel in Discord's onboarding process.
+  - Standardized messages.
 - Improved bot performance and stability.
 
 ## 3.0.0 (01/14/2023) {#3-0-0}
@@ -27,7 +34,7 @@ Discover the detailed list of changes made to RaidProtect.
 - Complete rewrite aimed at preparing for future updates and stabilizing the bot.
 - Fixed all known bugs to date.
 - The [`?raidmode` command](./features/raid-mode.md) now uses the "Disable Invites" feature.
-- Automatic sending of a private message to the concerned member when a sanction is applied.
+- Automatic sending of a private message to the concerned member when a sanction is applied. <SuggestionLink id="426" />
 
 ## 2.2.0 (04/13/2020) {#2-2-0}
 
@@ -40,16 +47,16 @@ Discover the detailed list of changes made to RaidProtect.
 - Ability to ban any user by their ID, even if they are not in the affected server.
 - Display of the ban reason in the response of the [`?ban` command](./features/moderation.md#ban).
 - The [`?raidmode` command](./features/raid-mode.md) now requires the permission to kick members.
-- Changed the kick duration if the captcha is not completed (5 min).
+- Changed the kick duration if the captcha is not completed (5 min). <SuggestionLink id="129" />
 - Various internal improvements.
 
 ## 2.1.2 (04/17/2019) {#2-1-2}
 
-- Added the [`?userinfo` command](./features/utilities.md#userinfo).
+- Added the [`?userinfo` command](./features/utilities.md#userinfo). <SuggestionLink id="29" />
 - ~~Added the `?lockall` and `?unlockall` commands~~ (Feature removed).
 - Added the [`?kick`](./features/moderation.md#kick) and [`?ban`](./features/moderation.md#ban) commands.
 - Added [min-age to the captcha](./features/captcha.md#minage) (ability to set a minimum account age to access the server).
-- Option to configure automatic deletion of command invocation messages.
+- Option to configure automatic deletion of command invocation messages. <SuggestionLink id="26" />
 - The logs channel is automatically recreated if deleted.
 - Overhauled database connection.
 - Bug fixes and various improvements.
@@ -64,8 +71,8 @@ Discover the detailed list of changes made to RaidProtect.
 
 ## 2.1.0 (02/16/2019) {#2-1-0}
 
-- Added captcha (`?settings captcha`).
-- Added anti-spam security level (`?settings spamlevel`).
+- Added captcha (`?settings captcha`). <SuggestionLink id="11" />
+- Added anti-spam security level (`?settings spamlevel`). <SuggestionLink id="25" />
 - Added the `?about` and `?invite` commands.
 - Added the [`?clear` command](./features/utilities.md#clear).
 - Various changes and bug fixes.
