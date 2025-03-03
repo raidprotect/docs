@@ -6,7 +6,7 @@ RaidProtect simplifie la gestion de votre serveur grâce à deux outils puissant
 
 ## Installation guidée {#install}
 
-La commande `/setup` est conçue pour vous aider à configurer RaidProtect rapidement ou à travers une approche détaillée selon vos besoins. Elle vous propose deux modes de configuration, [recommandée](#recommended) ou [avancée](#advanced).
+La commande `/setup` est conçue pour vous aider à configurer RaidProtect rapidement ou à travers une approche détaillée selon vos besoins.<!-- Elle vous propose deux modes de configuration, [recommandée](#recommended) ou [avancée](#advanced). 
 
 ### 🔧 Configuration recommandée {#recommended}
 
@@ -18,6 +18,7 @@ Permet d’activer ou de désactiver les fonctionnalités principales en un clin
 
 Le bot vous enverra ensuite un récapitulatif des fonctionnalités activées et des changements qu’il va apporter au serveur.
 
+<!--
 ### 🛠️ Configuration avancée {#advanced}
 
 Si vous souhaitez configurer le bot d'une manière plus approfondie, optez pour la configuration avancée. Le bot vous guide étape par étape avec des explications claires.
@@ -28,7 +29,7 @@ Si vous souhaitez configurer le bot d'une manière plus approfondie, optez pour 
 4. Utilisez les boutons “**Précédent**” et “**Suivant**” pour avancer ou revenir en arrière.
 
 À la fin, un récapitulatif des paramètres est affiché pour confirmer vos choix.
-
+-->
 ## Modifier la configuration {#settings}
 
 La commande `/settings` est la commande de gestion de vos paramètres une fois l’installation effectuée. Elle vous permet de visualiser, ajuster ou personnaliser les fonctionnalités de RaidProtect à tout moment, de manière simple et rapide.
