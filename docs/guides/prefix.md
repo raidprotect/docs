@@ -14,7 +14,7 @@ Si vous préférez utiliser certaines commandes avec un préfixe personnalisé, 
 - [`?kick`](../features/moderation.md#kick)
 - [`?lock`](../features/channel-lock.md#lock)
 - [`?unlock`](../features/channel-lock.md#unlock)
-- [`?userinfo` ou `?ui`](../features/utilities#userinfo)
+- [`?userinfo` | `?ui`](../features/utilities#userinfo)
 - [`?clear`](../features/utilities#clear)
 
 

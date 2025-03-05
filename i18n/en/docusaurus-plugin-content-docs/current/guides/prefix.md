@@ -14,7 +14,7 @@ If you prefer to use certain commands with a custom prefix, you can enable this 
 - [`?kick`](../features/moderation.md#kick)
 - [`?lock`](../features/channel-lock.md#lock)
 - [`?unlock`](../features/channel-lock.md#unlock)
-- [`?userinfo` or `?ui`](../features/utilities#userinfo)
+- [`?userinfo` | `?ui`](../features/utilities#userinfo)
 - [`?clear`](../features/utilities#clear)
 
 ## 💬 How to Enable or Disable the Prefix {#config}
