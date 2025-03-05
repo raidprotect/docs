@@ -17,6 +17,10 @@ RaidProtect automatically activates raid mode if a large number of users join yo
 
 Raid mode does not deactivate automatically. Be sure to turn it off with the same command when the threat has passed. 😇
 
+:::info
+The `raidmode` command is [usable with a prefix](../guides/prefix.md).
+:::
+
 ## 🚨 Configuring Automatic Raid Mode {#config}
 
 If your server frequently hosts many new members simultaneously, it is wise to adjust this threshold to avoid false positives.

@@ -17,6 +17,10 @@ RaidProtect active automatiquement le mode raid si un grand nombre d’utilisate
 
 Le mode raid ne se désactive pas automatiquement. Pensez à l’arrêter avec la même commande lorsque la menace est écartée. 😇
 
+:::info
+La commande `raidmode` est [utilisable par préfixe](../guides/prefix.md).
+:::
+
 ## 🚨 Configuration du mode raid automatique {#config}
 
 Si votre serveur accueille souvent beaucoup de nouveaux membres simultanément, il est judicieux de modifier ce seuil pour éviter les faux-positifs.

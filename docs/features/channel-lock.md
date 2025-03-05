@@ -19,6 +19,9 @@ Cela ajoutera la permission de parler du rôle **@everyone** dans le salon, emp�
 :::warning
 Pour que la commande de verrouillage fonctionne correctement, vous devez vous assurer qu’aucun rôle n’a de permission explicite de parler dans ce salon. Sinon, les membres avec ces rôles pourront toujours discuter.
 :::
+:::info
+Les commandes `lock` et `unlock` sont [utilisables par préfixe](../guides/prefix.md).
+:::
 
 ## ✏️ Configuration du cadenas {#config}
 

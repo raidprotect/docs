@@ -19,6 +19,9 @@ This will add the speaking permission back to the **@everyone** role in the chan
 :::warning
 For the lock command to work properly, you must ensure that no roles have explicit permission to speak in that channel. Otherwise, members with those roles will still be able to chat.
 :::
+:::info
+The `lock` and `unlock` commands are [usable by prefix](../guides/prefix.md).
+:::
 
 ## ✏️ Configuring the Lock Icon {#config}
 
