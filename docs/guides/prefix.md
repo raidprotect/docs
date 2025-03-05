@@ -8,14 +8,14 @@ Par défaut, RaidProtect utilise uniquement les commandes Slash (`/`) pour inter
 
 ## Préfixe activé (optionnel) {#activated}
 
-Si vous préférez utiliser certaines commandes avec un préfixe personnalisé, vous pouvez activer cette option. Le préfixe par défaut en cas d’activation est `?`, mais il peut être modifié selon vos besoins. Une fois activé, ces commandes sont également utilisables avec le préfixe configuré : 
-- [`/raidmode`](../features/raid-mode.md)
-- [`/ban`](../features/moderation.md#ban)
-- [`/kick`](../features/moderation.md#kick)
-- [`/lock`](../features/channel-lock.md#lock)
-- [`/unlock`](../features/channel-lock.md#unlock)
-- [`/userinfo`](../features/utilities#userinfo)
-- [`/clear`](../features/utilities#clear)
+Si vous préférez utiliser certaines commandes avec un préfixe personnalisé, vous pouvez activer cette option. Le préfixe par défaut en cas d’activation est `?`, mais il peut être modifié selon vos besoins. Une fois activé, ces commandes sont utilisables avec le préfixe configuré : 
+- [`?raidmode`](../features/raid-mode.md)
+- [`?ban`](../features/moderation.md#ban)
+- [`?kick`](../features/moderation.md#kick)
+- [`?lock`](../features/channel-lock.md#lock)
+- [`?unlock`](../features/channel-lock.md#unlock)
+- [`?userinfo` ou `?ui`](../features/utilities#userinfo)
+- [`?clear`](../features/utilities#clear)
 
 
 ## 💬 Comment activer ou désactiver le préfixe {#config}
