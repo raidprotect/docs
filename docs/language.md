@@ -12,7 +12,7 @@ Si votre serveur est défini comme communautaire (paramètre Discord), RaidProte
 
 **Messages éphémères :** Ces messages privés ou temporaires restent affichés dans la langue de l’utilisateur qui interagit avec le bot.
 
-## 🌐 Liste des langues supportée  {#supported}
+## 🌐 Liste des langues supportées  {#supported}
 
 - **Français**
 - **Anglais**

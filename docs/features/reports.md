@@ -37,7 +37,7 @@ Si vous ne disposez pas de salon adapté, vous pouvez choisir d’en créer en u
 ### Configurer le rôle de notification {#config-role}
 
 1. Faites la [commande `/settings`](../setup.md#settings).
-2. électionnez le bouton “**Signalements**”.
+2. Sélectionnez le bouton “**Signalements**”.
 3. Cliquez sur le bouton “**Rôle**”.
 4. Sélectionnez le rôle souhaité (_ex : @Modérateur ou @Notifs reports_). 
 Si vous ne disposez pas de rôle adapté, vous pouvez choisir d’en créer en un automatiquement depuis le bouton “**En créer un pour moi**".
