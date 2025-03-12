@@ -27,7 +27,7 @@ export default async function createConfigAsync() {
 		baseUrl: '/',
 		organizationName: 'rapidprotect',
 		projectName: 'raidprotect',
-		onBrokenLinks: 'throw',
+		onBrokenLinks: 'warn',
 		onBrokenMarkdownLinks: 'warn',
 		i18n: {
 			defaultLocale: defaultLocale,
@@ -65,7 +65,7 @@ export default async function createConfigAsync() {
 						sidebarPath: './sidebars.ts',
 						editUrl: 'https://github.com/raidprotect/docs/tree/master/',
 						lastVersion: lastStableVersion,
-						onlyIncludeVersions: ['current', lastStableVersion],
+						onlyIncludeVersions: ['current', lastStableVersion, '3.0.0'],
 						versions: {
 							current: {
 								label: 'Bêta 🚧',
@@ -73,6 +73,9 @@ export default async function createConfigAsync() {
 							},
 							[lastStableVersion]: {
 								label: 'Stable',
+							},
+							'3.0.0': {
+								label: 'Ancienne'
 							}
 						},
 						admonitions: {
