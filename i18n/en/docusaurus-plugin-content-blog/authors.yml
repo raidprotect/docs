@@ -1,14 +1,12 @@
 derrios:
   name: Arthur
   title: Administrator
-  url: https://fca.gg/arthur
+  url: https://fca.gg/en/team/arthur
   page: false
-  image_url: https://github.com/derrios.png
+  image_url: https://github.com/mrderrios.png
   socials: {
-    bluesky: derrios.fr,
-    x: mrderrios,
     linkedin: arthurbattais,
-    github: Derrios
+    github: MrDerrios
   }
 zallom:
   name: Zallom
@@ -17,8 +15,15 @@ zallom:
   page: false
   image_url: https://github.com/zallom.png
   socials: {
-    bluesky: zallom.fr,
-    x: ZallomDEV,
     linkedin: matthias-gp,
     github: Zallom
+  }
+ichii:
+  name: Ethan
+  title: Developer
+  url: https://github.com/IchiiDev
+  page: false
+  image_url: https://github.com/ichiidev.png
+  socials: {
+    github: IchiiDev
   }
