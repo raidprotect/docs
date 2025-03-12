@@ -87,13 +87,12 @@ export default async function createConfigAsync() {
 						showLastUpdateAuthor: false,
 						showLastUpdateTime: true,
 					},
-					blog: false,
-					/* blog: {
+					blog: {
 						blogTitle: 'Blog',
 						blogSidebarCount: 10,
 						blogSidebarTitle: 'Blog',
 						routeBasePath: '/blog'
-					}, */
+					},
 					pages: false,
 					sitemap: {
 						lastmod: 'date',
@@ -192,11 +191,11 @@ export default async function createConfigAsync() {
 						position: 'left',
 						label: 'Documentation',
 					},
-					// {
-					// 		to: 'blog',
-					//		position: 'left',
-					//		label: 'Blog',
-					// },
+					{
+					 	to: 'blog',
+						position: 'left',
+						label: 'Blog',
+					},
 					{
 						to: 'https://suggestions.raidprotect.bot',
 						position: 'left',
