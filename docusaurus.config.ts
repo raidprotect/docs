@@ -200,13 +200,6 @@ export default async function createConfigAsync() {
 						label: 'Blog',
 					},
 					{
-						to: 'https://suggestions.raidprotect.bot',
-						position: 'left',
-						label: 'Suggestions',
-						target: '_self',
-						className: 'suggestion-button'
-					},
-					{
 						type: 'docsVersionDropdown',
 						position: 'right',
 						dropdownActiveClassDisabled: true,
