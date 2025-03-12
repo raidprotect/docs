@@ -23,7 +23,7 @@ export default async function createConfigAsync() {
 		title: 'RaidProtect',
 		tagline: 'Sécurisez votre serveur Discord',
 		favicon: 'img/favicon.ico',
-		url: 'https:/docs.raidprotect.bot',
+		url: 'https://docs.raidprotect.bot',
 		baseUrl: '/',
 		organizationName: 'rapidprotect',
 		projectName: 'raidprotect',
