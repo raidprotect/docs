@@ -53,6 +53,24 @@ export default async function createConfigAsync() {
 				legal: {
 					fr: 'https://raidprotect.bot/legal?r=0',
 					en: 'https://raidprotect.bot/en/legal'
+				},
+				terms: {
+					fr: 'https://raidprotect.bot/terms?r=0',
+					en: 'https://raidprotect.bot/en/terms'
+				},
+				privacy: {
+					fr: 'https://raidprotect.bot/privacy?r=0',
+					en: 'https://raidprotect.bot/en/privacy'
+				},
+				geranium: {
+					fr: 'https://i.dfr.gg/geranium.webm',
+					en: 'https://i.dfr.gg/en-geranium.webm'
+				}
+			},
+			texts: {
+				footer: {
+					fr: 'RaidProtect est un bot Discord qui protège votre serveur des utilisateurs malintentionnés grâce à son anti-spam et son captcha. <strong>Et juste là, un petit géranium.&nbsp;</strong>',
+					en: 'RaidProtect is a Discord bot that protects your server from malicious users with its anti-spam and captcha features. <strong>And right there, a little geranium.&nbsp;</strong>'
 				}
 			}
 		},
@@ -115,16 +133,6 @@ export default async function createConfigAsync() {
 					},
 				} satisfies Preset.Options,
 			],
-		],
-		scripts: [
-			{
-				src: "https://cdn.nolt.io/widgets.js",
-				async: true,
-			},
-			{
-				src: "/js/nolt.js",
-				defer: true
-			}
 		],
 		headTags: [
 			{
@@ -273,11 +281,15 @@ export default async function createConfigAsync() {
 								target: '_self'
 							},
 							{
+								label: 'Blog',
+								to: '/blog',
+								target: '_self'
+							},
+							{
 								label: 'Suggestions',
 								to: 'https://suggestions.raidprotect.bot',
-								target: '_self',
-								className: 'suggestion-button'
-							},
+								target: '_self'
+							}
 						],
 					},
 					{
@@ -289,13 +301,19 @@ export default async function createConfigAsync() {
 								target: '_self'
 							},
 							{
-								label: 'Statuts des services',
-								to: 'https://status.raidprotect.bot',
+								label: 'Conditions d\'utilisation',
+								to: 'terms',
 								target: '_self'
 							},
 							{
-								label: 'contact@raidprotect.bot',
-								to: 'mailto:contact@raidprotect.bot'
+								label: 'Politique de confidentialité',
+								to: 'privacy',
+								target: '_self'
+							},
+							{
+								label: 'Statuts des services',
+								to: 'https://status.raidprotect.bot',
+								target: '_self'
 							}
 						],
 					},

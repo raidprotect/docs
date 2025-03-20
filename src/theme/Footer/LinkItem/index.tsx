@@ -16,7 +16,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 export default function FooterLinkItem({item}: Props): ReactNode {
   const {
-     siteConfig: { customFields: { urls } },
+    siteConfig: { customFields: { urls } },
     i18n: { currentLocale }
   } = useDocusaurusContext();
 

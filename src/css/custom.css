@@ -119,6 +119,15 @@ body {
   font-size: 18px;
 }
 
+.footer__description {
+  padding-right: 70px;
+}
+
+.footer__description p {
+  font-size: 16px;
+  display: inline;
+}
+
 .footer-decoration-one {
   background-image: linear-gradient(180deg,var(--ifm-color-primary) 40%,#a561a3);
   opacity: 0.8;
@@ -152,7 +161,7 @@ body {
   grid-row-gap: 25px;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 15px;
+  margin-top: 20px;
   display: flex;
 }
 
