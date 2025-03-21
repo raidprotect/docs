@@ -89,7 +89,7 @@ function useDefaultCanonicalUrl() {
   // See https://github.com/facebook/docusaurus/issues/9170
   const {pathname} = useLocation();
 
-  const versionedPathRegex = /^\/(beta)(\/|$)/;
+  const versionedPathRegex = /^\/([a-z]{2})?(\/)?beta(\/|$)/;
 
   let canonicalPathname = applyTrailingSlash(useBaseUrl(pathname), {
     trailingSlash,
@@ -97,7 +97,9 @@ function useDefaultCanonicalUrl() {
   });
 
   if (versionedPathRegex.test(pathname) && !(excludedCanonical as Array<string>).includes(pathname)) {
-    canonicalPathname = pathname.replace(versionedPathRegex, '/');
+    canonicalPathname = pathname.replace(versionedPathRegex, (_, lang, _slash1, _version) => {
+      return lang ? `/${lang}/` : '/'
+    })
   }
 
   return siteUrl + canonicalPathname;
