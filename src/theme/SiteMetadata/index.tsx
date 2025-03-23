@@ -82,22 +82,24 @@ function AlternateLangHeaders(): ReactNode {
 // Default canonical url inferred from current page location pathname
 function useDefaultCanonicalUrl() {
   const {
-    siteConfig: {url: siteUrl, baseUrl, trailingSlash},
+    siteConfig: {url: siteUrl, baseUrl, trailingSlash, customFields: { excludedCanonical }},
   } = useDocusaurusContext();
 
   // TODO using useLocation().pathname is not a super idea
   // See https://github.com/facebook/docusaurus/issues/9170
   const {pathname} = useLocation();
 
-  const versionedPathRegex = /^\/(beta|3\.0\.0)(\/|$)/;
+  const versionedPathRegex = /^\/([a-z]{2})?(\/)?beta(\/|$)/;
 
   let canonicalPathname = applyTrailingSlash(useBaseUrl(pathname), {
     trailingSlash,
     baseUrl,
   });
 
-  if (versionedPathRegex.test(pathname)) {
-    canonicalPathname = pathname.replace(versionedPathRegex, '/');
+  if (versionedPathRegex.test(pathname) && !(excludedCanonical as Array<string>).includes(pathname)) {
+    canonicalPathname = pathname.replace(versionedPathRegex, (_, lang, _slash1, _version) => {
+      return lang ? `/${lang}/` : '/'
+    })
   }
 
   return siteUrl + canonicalPathname;

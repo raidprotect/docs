@@ -72,7 +72,8 @@ export default async function createConfigAsync() {
 					fr: 'RaidProtect est un bot Discord qui protège votre serveur des utilisateurs malintentionnés grâce à son anti-spam et son captcha. <strong>Et juste là, un petit géranium.&nbsp;</strong>',
 					en: 'RaidProtect is a Discord bot that protects your server from malicious users with its anti-spam and captcha features. <strong>And right there, a little geranium.&nbsp;</strong>'
 				}
-			}
+			},
+			excludedCanonical: []
 		},
 		presets: [
 			[
