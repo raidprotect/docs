@@ -127,7 +127,7 @@
     "description": "The label for the navbar versions dropdown on mobile view"
   },
   "theme.NotFound.title": {
-    "message": "Page introuvable",
+    "message": "Erreur ",
     "description": "The title of the 404 page"
   },
   "theme.tags.tagsListLabel": {
@@ -199,12 +199,16 @@
     "description": "The label for the mobile language switcher dropdown"
   },
   "theme.NotFound.p1": {
-    "message": "Nous n'avons pas trouvé ce que vous recherchez.",
+    "message": "La page que vous recherchez n'existe pas ou a été déplacée.",
     "description": "The first paragraph of the 404 page"
   },
-  "theme.NotFound.p2": {
-    "message": "Veuillez contacter le propriétaire du site qui vous a lié à l'URL d'origine et leur faire savoir que leur lien est cassé.",
-    "description": "The 2nd paragraph of the 404 page"
+  "theme.NotFound.backToHome": {
+    "message": "Retour à l'accueil",
+    "description": "Back to home button on 404 page"
+  },
+  "theme.NotFound.goBack": {
+    "message": "Revenir en arrière",
+    "description": "Back to previous page button on 404 page"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
     "message": "Sur cette page",

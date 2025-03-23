@@ -35,8 +35,16 @@
     "message": "Status of services",
     "description": "The label of footer link with label=Statuts des services linking to https://status.raidprotect.bot"
   },
-  "link.item.label.contact@raidprotect.bot": {
-    "message": "contact@raidprotect.bot",
-    "description": "The label of footer link with label=contact@raidprotect.bot linking to mailto:contact@raidprotect.bot"
+  "link.item.label.Blog": {
+    "message": "Blog",
+    "description": "The label of footer link with label=Blog linking to /blog"
+  },
+  "link.item.label.Conditions d'utilisation": {
+    "message": "Terms of Service",
+    "description": "The label of footer link with label=Conditions d'utilisation linking to terms"
+  },
+  "link.item.label.Politique de confidentialité": {
+    "message": "Privacy Policy",
+    "description": "The label of footer link with label=Politique de confidentialité linking to privacy"
   }
 }

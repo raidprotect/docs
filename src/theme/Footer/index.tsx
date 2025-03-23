@@ -13,6 +13,7 @@ import FooterCopyright from '@theme/Footer/Copyright';
 import { Column } from './Column';
 import clsx from 'clsx';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Translate from '@docusaurus/Translate';
 
 function Footer(): ReactNode {
   const {
