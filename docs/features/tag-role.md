@@ -19,7 +19,7 @@ La configuration se fait en quelques clics :
 1. Faites la [commande `/settings`](../setup.md#settings).
 2. Cliquez sur le bouton “**Rôle de Tag**”.
 3. Sélectionnez un rôle existant via le sélecteur ou cliquez sur “**En créer un pour moi**”.
-4. Vous pouvez à tout moment désactiver le rôle via le bouton “**Désactiver**”.
+4. Vous pouvez à tout moment désélectionner le rôle en cliquant sur le bouton “**Remettre à zéro**”.
 
 :::tip
 Vos membres auront le rôle à leur prochaine modification de profil (Pseudo, Avatar, Bannière, Rôles, Tag…). Vous pouvez [demander au support](https://raidprotect.bot/discord) une synchronisation complète du rôle si vous avez beaucoup de membres possédant ou ayant possédé le Tag.

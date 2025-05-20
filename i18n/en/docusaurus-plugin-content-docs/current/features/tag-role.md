@@ -17,9 +17,9 @@ If the Tag is not enabled or your server doesn’t yet have the feature, the Tag
 
 Configuration takes just a few clicks:  
 1. Use the [command `/settings`](../setup.md#settings).  
-2. Click the “**Tag Role**” button.  
-3. Select an existing role via the selector or click “**Create one for me**”.  
-You can disable the role at any time using the “**Disable**” button.
+2. Click the “**Tag Role**” button.  
+3. Select an existing role via the selector or click “**Create one for me**”.  
+4. You can deselect the role at any time by clicking on the “**Reset**” button.
 
 :::tip
 Members will receive the role the next time they update their profile (Username, Avatar, Banner, Roles, Tag…). You can [contact support](https://raidprotect.bot/discord) to request a full role sync if you have many members who currently have or previously had the Tag.
