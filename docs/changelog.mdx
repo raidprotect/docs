@@ -6,22 +6,32 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Découvrez la liste détaillée des modifications qui ont été apportées à RaidProtect.
 
+## 3.1.1 (20/05/2025) {#3-1-1}
+
+- Nouvelle fonctionnalité [Tag de Rôle](./features/tag-role.md). <SuggestionLink id="512" />
+- Nouvelle commande de modération [`/timeout`](./features/moderation#timeout). <SuggestionLink id="52" />
+- Performances et stabilité :
+  - Nettoyage des états persistants de l’antispam.
+  - Correction des fuites mémoires.
+  - Optimisation des appels à la base de données.
+  - Amélioration de la rapidité globale du bot.
+
 ## 3.1.0 (12/03/2025) {#3-1-0}
 
 - Ajout des **Commandes Slash**. <SuggestionLink id="463" />
 - [Internationalisation](./language.md) (ajout de l'anglais). <SuggestionLink id="109" />
 - Nouvelle fonctionnalité [`/report`](./features/reports.md). <SuggestionLink id="164" />
-- Nouvelles commandes de configuration :
+- Nouvelles commandes de configuration :
   - [`/settings`](./setup.md#settings) sous forme de pannel interactif.
   - [`/setup`](./setup.md#install) sous forme d'Onboarding.
-- Paramétrage avancé :
+- Paramétrage avancé :
   - Activer/désactiver chaque fonctionnalité individuellement. <SuggestionLink id="356" />
   - Choix du délai et du nombre de tentatives avant expulsion par le [captcha](./features/captcha#config). <SuggestionLink id="363" />
   - Choix du salon de vérification pour le [captcha](./features/captcha) possible. <SuggestionLink id="385" />
   - Ignorer utilisateurs/rôles/catégories dans l'[antispam](./features/anti-spam.md#ignore). <SuggestionLink id="362" />
   - Choix du [préfixe des commandes hybrides](./guides/prefix.md). <SuggestionLink id="103" />
   - Option pour choisir si la [commande `/lock`](./features/channel-lock.md) renomme le salon verrouillé avec `🔒`.
-- UX améliorée :
+- UX améliorée :
   - Préfixe affiché au ping du bot + mention comme préfixe universel. <SuggestionLink id="193" />
   - Désactiver le [captcha](./features/captcha) ne supprime plus le rôle et le salon associés. <SuggestionLink id="43" />
   - Détection automatique des problèmes de permissions liés aux salons et aux rôles. <SuggestionLink id="65" />
