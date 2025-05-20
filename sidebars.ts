@@ -48,6 +48,10 @@ const sidebars: SidebarsConfig = {
 				},
 				{
 					type: 'doc',
+					id: 'features/tag-role',
+				},
+				{
+					type: 'doc',
 					id: 'features/moderation',
 				},
 				{
