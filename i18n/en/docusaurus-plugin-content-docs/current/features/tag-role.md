@@ -4,7 +4,7 @@ title: Tag Role
 
 The Tag Role automatically assigns a role to members who add your server’s tag to their Discord profile. By assigning a role to these members, you acknowledge their commitment and encourage them to actively represent your server. It’s a simple yet effective way to strengthen collective identity while rewarding your community’s most loyal ambassadors.
 
-## ❓ How the Tag Role Works
+## ❓ How the Tag Role Works {#working}
 
 It’s simple. As soon as a member adds the server’s tag to their Discord profile, RaidProtect automatically assigns them a specific role.  
 If the member removes the tag, the role is removed.
@@ -13,7 +13,7 @@ If the member removes the tag, the role is removed.
 If the Tag is not enabled or your server doesn’t yet have the feature, the Tag Role will have no effect.
 :::
 
-## 🎖️ Configuring the Tag Role
+## 🎖️ Configuring the Tag Role {#config}
 
 Configuration takes just a few clicks:  
 1. Use the [command `/settings`](../setup.md#settings).  
