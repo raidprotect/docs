@@ -25,3 +25,9 @@ Vous pouvez bannir un utilisateur à partir de son [identifiant Discord](https:/
 Utilisez la commande : ```/kick [@utilisateur] [raison]```
 
 Remplacez `[@utilisateur]` par la mention ou l’identifiant souhaité et `[raison]` par le motif de la sanction.
+
+## ⏳ Exclure un utilisateur {#timeout}
+
+Utilisez la commande : ```/timeout [@utilisateur] [durée] [raison]```
+
+Remplacez `[@utilisateur]` par la mention ou l’identifiant souhaité, `[durée]` par la durée du timeout (ex. : `10m`, `1h`, `1d`) et `[raison]` par le motif de la sanction.

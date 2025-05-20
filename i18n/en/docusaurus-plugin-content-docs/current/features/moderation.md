@@ -25,3 +25,9 @@ You can ban a user using their [Discord ID](https://dfr.gg/wiki/interface/mode-d
 Use the command: ```/kick [@user] [reason]```
 
 Replace `[@user]` with the desired mention or ID and `[reason]` with the reason for the sanction.
+
+## ⏳ Timeout a User {#timeout}
+
+Use the command: ```/timeout [@user] [duration] [reason]```
+
+Replace `[@user]` with the desired mention or ID, `[duration]` with the timeout length (e.g. `10m`, `1h`, `1d`), and `[reason]` with the reason for the sanction.
