@@ -52,7 +52,7 @@ S*l*ash FR est une communauté qu’on a créée pour rassembler les passionné
 Non, une grande partie de l’équipe communautaire continue l’aventure, épaulée par de nouveaux membres issus de S*l*ash FR. Baptiste lui-même restera en soutien occasionnel sur le projet.
 
 ### Le bot deviendra-t-il payant ?
-Toutes les fonctionnalités actuelles **resteront gratuites. Toutefois, certaines nouvelles fonctionnalités avancées pourront être proposées sous forme d’abonnement premium pour couvrir les frais de maintenance et de développement.
+Toutes les fonctionnalités actuelles **resteront gratuites**. Toutefois, certaines nouvelles fonctionnalités avancées pourront être proposées sous forme d’abonnement premium pour couvrir les frais de maintenance et de développement.
 
 ### Le design et l’image de RaidProtect vont-ils changer ?
 Non, l’identité visuelle de RaidProtect **reste la même**. En revanche, le site web bénéficiera d’une mise à jour afin de mieux refléter les évolutions du projet.
