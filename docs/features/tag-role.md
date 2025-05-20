@@ -2,7 +2,7 @@
 title: Rôle de Tag
 ---
 
-Le Rôle de Tag permet d’attribuer automatiquement un rôle aux membres qui ajoutent le tag de votre serveur à leur profil Discord. En attribuant un rôle à ces membres, vous valorisez leur engagement et [les encouragez à représenter activement votre serveur](https://dfr.gg/blog/2025/05/09/revolution-boosts-tags-serveur-publics#avantages-supplementaires). C’est un moyen simple mais efficace de renforcer l’identité collective, tout en récompensant les ambassadeurs les plus fidèles de votre communauté.
+Le Rôle de Tag permet d’attribuer automatiquement un rôle aux membres qui ajoutent [le tag de votre serveur](https://support.discord.com/hc/fr/articles/31444248479639-Tag-du-serveur) à leur profil Discord. En attribuant un rôle à ces membres, vous valorisez leur engagement et [les encouragez à représenter activement votre serveur](https://dfr.gg/blog/2025/05/09/revolution-boosts-tags-serveur-publics#tags). C’est un moyen simple mais efficace de renforcer l’identité collective, tout en récompensant les ambassadeurs les plus fidèles de votre communauté.
 
 ## ❓ Fonctionnement du Rôle de Tag {#working}
 

@@ -2,7 +2,7 @@
 title: Tag Role
 ---
 
-The Tag Role automatically assigns a role to members who add your server’s tag to their Discord profile. By assigning a role to these members, you acknowledge their commitment and encourage them to actively represent your server. It’s a simple yet effective way to strengthen collective identity while rewarding your community’s most loyal ambassadors.
+The Tag Role automatically assigns a role to members who add [your server’s tag](https://support.discord.com/hc/en-us/articles/31444248479639-Server-Tags) to their Discord profile. By assigning a role to these members, you acknowledge their commitment and encourage them to actively represent your server. It’s a simple yet effective way to strengthen collective identity while rewarding your community’s most loyal ambassadors.
 
 ## ❓ How the Tag Role Works {#working}
 
