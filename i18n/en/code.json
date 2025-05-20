@@ -305,5 +305,17 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "theme.NotFound.backToHome": {
+    "message": "Back To Home",
+    "description": "Back to home button on 404 page"
+  },
+  "theme.NotFound.goBack": {
+    "message": "Go back",
+    "description": "Back to previous page button on 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
+    "description": "The 2nd paragraph of the 404 page"
   }
 }
