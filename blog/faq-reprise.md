@@ -27,7 +27,6 @@ Le bot a été entièrement réécrit pour être plus rapide, plus stable et mie
 L’un des gros avantages de cette reprise, c’est qu’on peut enfin investir du temps et des moyens pour rendre RaidProtect encore plus efficace. Voici quelques-unes des nouveautés en préparation :
 - Support des **commandes slash** pour mieux coller aux standards de Discord.
 - Plus d’**options de configuration** pour s’adapter aux besoins de chaque serveur.
-- Un **tableau de bord** en ligne pour gérer le bot plus facilement.
 - Un **système multilingue** pour élargir la portée de RaidProtect.
 
 ### 🔐 Un engagement renforcé pour la sécurité
@@ -35,7 +34,7 @@ RaidProtect a été conçu pour protéger les serveurs et c’est toujours notre
 
 ## Qui sommes-nous et pourquoi nous ?
 
-On est FCA.gg, une équipe qui développe des outils pour les communautés en ligne. Nous avons aussi lancé Slash FR, une communauté francophone dédiée à Discord et ses bonnes pratiques. RaidProtect rejoint naturellement cet écosystème.
+Plus qu'une équipe, nous sommes un groupe d'amis et depuis 2017 nous unissons passion et expertise pour construire des communautés en ligne. Nous avons aussi lancé S*l*ash FR, une communauté francophone dédiée à Discord et ses bonnes pratiques. RaidProtect rejoint naturellement cet écosystème.
 
 On sait que l’idée d’une entreprise derrière le projet peut en inquiéter certains. Pour être honnêtes, oui, on va devoir financer RaidProtect, parce qu’un bot de cette ampleur coûte cher à faire tourner. Mais on ne veut pas brider le bot ou transformer tout en payant. Toutes les fonctionnalités actuelles resteront gratuites et les options payantes seront là pour ceux qui veulent des outils avancés.
 
@@ -44,7 +43,7 @@ On sait que l’idée d’une entreprise derrière le projet peut en inquiéter 
 Lorsque nous avons annoncé la reprise de RaidProtect, nous avons reçu de nombreuses questions de la part de la communauté. Que ce soit sur le serveur de support ou lors de notre événement dédié à la transition, nous avons pu constater un vif intérêt pour l’avenir du bot. Afin de clarifier les choses et d’apporter des réponses précises, nous avons regroupé ici les interrogations les plus fréquentes.
 
 ### Pourquoi votre agence reprend RaidProtect ?
-FCA.gg est spécialisée dans la gestion de serveurs Discord et le développement de bots. L’équipe souhaitait s’investir dans un projet d’envergure et RaidProtect correspondait parfaitement à cette ambition.
+Notre agence est spécialisée dans la gestion de serveurs Discord et le développement de bots. L’équipe souhaitait s’investir dans un projet d’envergure et RaidProtect correspondait parfaitement à cette ambition.
 
 ### Quel est le lien avec S*l*ash FR ?
 S*l*ash FR est une communauté qu’on a créée pour rassembler les passionnés de Discord. RaidProtect y trouve naturellement sa place, mais ça reste un projet indépendant.
@@ -58,7 +57,7 @@ Toutes les fonctionnalités actuelles **resteront gratuites. Toutefois, certaine
 ### Le design et l’image de RaidProtect vont-ils changer ?
 Non, l’identité visuelle de RaidProtect **reste la même**. En revanche, le site web bénéficiera d’une mise à jour afin de mieux refléter les évolutions du projet.
 
-### D’autres bots seront-ils développés par FCA.gg ?
+### D’autres bots seront-ils développés par votre équipe ?
 L’acquisition de RaidProtect s’inscrit dans une volonté de proposer à terme d’autres outils pour les serveurs Discord. Cependant, la priorité actuelle reste d’optimiser et de perfectionner RaidProtect.
 
 ---
