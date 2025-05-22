@@ -1,5 +1,5 @@
 ---
-title: Onboarding Process and RaidProtect
+title: Onboarding Process and Captcha
 ---
 
 If the `#verification` channel is not visible by default to new members, this can prevent the Captcha system from working properly. Here's how to fix this step by step.

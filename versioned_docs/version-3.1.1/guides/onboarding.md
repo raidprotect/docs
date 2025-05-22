@@ -1,5 +1,5 @@
 ---
-title: Processus d’accueil et RaidProtect
+title: Processus d’accueil et Captcha
 ---
 
 Si le salon `#vérification` n’est pas visible par défaut pour les nouveaux membres, cela peut empêcher le bon fonctionnement du système Captcha. Voici comment corriger ce problème étape par étape.
