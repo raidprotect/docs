@@ -30,4 +30,4 @@ Replace `[@user]` with the desired mention or ID and `[reason]` with the reason 
 
 Use the command: ```/timeout [@user] [duration] [reason]```
 
-Replace `[@user]` with the desired mention or ID, `[duration]` with the timeout length (e.g. `10m`, `1h`, `1d`), and `[reason]` with the reason for the sanction.
+Replace `[@user]` with the desired mention or ID, `[duration]` with the timeout length, up to a maximum of 28 days (e.g. `10m`, `1h`, `1d`), and `[reason]` with the reason for the sanction.

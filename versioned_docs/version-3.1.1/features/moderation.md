@@ -30,4 +30,4 @@ Remplacez `[@utilisateur]` par la mention ou l’identifiant souhaité et `[rais
 
 Utilisez la commande : ```/timeout [@utilisateur] [durée] [raison]```
 
-Remplacez `[@utilisateur]` par la mention ou l’identifiant souhaité, `[durée]` par la durée du timeout (ex. : `10m`, `1h`, `1d`) et `[raison]` par le motif de la sanction.
+Remplacez `[@utilisateur]` par la mention ou l’identifiant souhaité, `[durée]` par la durée du timeout, dans un maximum de 28 jours (ex. : `10m`, `1h`, `1d`) et `[raison]` par le motif de la sanction.
