@@ -21,6 +21,8 @@ RaidProtect offre trois niveaux de sécurité pour répondre aux besoins de votr
 - 🟠 **Moyen :** Sanctionne tous les spams, mais respecte les salons ignorés.
 - 🟢 **Faible :** Sanctionne uniquement les spams lourd.
 
+![Capture d'écran paramètre anti-spam](../assets/rp-settings-anti-spam.webp)
+
 ### Changer le niveau de sécurité {#level}
 
 1. Faites la [commande `/settings`](../setup.md#settings).
@@ -36,8 +38,6 @@ Vous pouvez exclure certains salons, rôles ou même utilisateurs de la surveill
 - Salon(s) à ignorer
 - Rôle(s) à ignorer
 - Membre(s) à ignorer
-
-![Capture d'écran paramètre anti-spam](../assets/rp-settings-anti-spam.webp)
 
 :::info
 Les salons contenant “**spam**” dans leur nom sont automatiquement ignorés. Les personnes ayant la permission administrateur sont ignorées totalement. 

@@ -21,6 +21,8 @@ RaidProtect offers three security levels to meet your server's needs.
 - 🟠 **Medium:** Sanctions all spam but respects ignored channels.
 - 🟢 **Low:** Sanctions only heavy spam.
 
+![Anti-spam settings screenshot](../assets/rp-settings-anti-spam.webp)
+
 ### Changing the Security Level {#level}
 
 1. Use the [`/settings` command](../setup.md#settings).
@@ -36,8 +38,6 @@ You can exclude certain channels, roles, or even users from anti-spam monitoring
 - Channel(s) to ignore
 - Role(s) to ignore
 - Member(s) to ignore
-
-![Anti-spam settings screenshot](../assets/rp-settings-anti-spam.webp)
 
 :::info
 Channels containing “**spam**” in their name are automatically ignored. Users with administrator permissions are completely ignored.
