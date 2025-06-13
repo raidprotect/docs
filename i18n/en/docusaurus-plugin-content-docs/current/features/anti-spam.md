@@ -42,3 +42,16 @@ You can exclude certain channels, roles, or even users from anti-spam monitoring
 :::info
 Channels containing “**spam**” in their name are automatically ignored. Users with administrator permissions are completely ignored.
 :::
+
+### Configure sanctions by trigger {#triggers}
+
+You can customize the sanctions applied depending on the type of spam detected. This allows for a response adapted to the severity of the violation.
+
+1. Use the [ `/settings` command](../setup.md#settings).
+2. Click on the “**Anti-spam**” button.
+3. Go to the “**Sanctions**” tab.
+4. For each trigger, select a specific sanction. You can modify these values using the dropdown menus:
+- **Select a trigger**: choose the type of spam to configure.
+- **Select a sanction**: choose the corresponding sanction.
+
+![Screenshot of anti-spam sanctions](../assets/rpBeta-settings-anti-spam-sanctions.webp)

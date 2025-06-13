@@ -21,7 +21,7 @@ RaidProtect offre trois niveaux de sécurité pour répondre aux besoins de votr
 - 🟠 **Moyen :** Sanctionne tous les spams, mais respecte les salons ignorés.
 - 🟢 **Faible :** Sanctionne uniquement les spams lourd.
 
-![Capture d'écran paramètre anti-spam](../assets/rp-settings-anti-spam.webp)
+![Capture d'écran paramètre anti-spam](../assets/rpBeta-settings-anti-spam.webp)
 
 ### Changer le niveau de sécurité {#level}
 
@@ -42,3 +42,16 @@ Vous pouvez exclure certains salons, rôles ou même utilisateurs de la surveill
 :::info
 Les salons contenant “**spam**” dans leur nom sont automatiquement ignorés. Les personnes ayant la permission administrateur sont ignorées totalement. 
 :::
+
+### Configurer les sanctions par déclencheur {#triggers}
+
+Vous pouvez personnaliser les sanctions appliquées selon le type de spam détecté. Cela permet une réponse adaptée à la gravité de l’infraction.
+
+1. Faites la [commande `/settings`](../setup.md#settings).
+2. Cliquez sur le bouton “**Anti-spam**”.
+3. Allez dans l’onglet “**Sanctions**”.
+4. Pour chaque déclencheur, sélectionnez une sanction spécifique. Vous pouvez modifier ces valeurs à l’aide des menus déroulants :
+- **Sélectionner un trigger** : choisissez le type de spam à configurer.
+- **Sélectionner une sanction** : choisissez la sanction correspondante.
+
+![Capture d'écran des sanctions anti-spam](../assets/rpBeta-settings-anti-spam-sanctions.webp)
