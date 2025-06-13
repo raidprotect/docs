@@ -18,6 +18,9 @@ Allows you to enable or disable core features at a glance using an interactive s
 
 The bot will then send you a summary of the activated features and the changes it will make to the server.
 
+![Recommended configuration screenshot](./assets/rp-setup.webp)
+
+<!--
 ### 🛠️ Advanced Configuration {#advanced}
 
 If you want to configure the bot more thoroughly, opt for the advanced configuration. The bot guides you step by step with clear explanations.
@@ -28,7 +31,7 @@ If you want to configure the bot more thoroughly, opt for the advanced configura
 4. Use the “**Previous**” and “**Next**” buttons to move forward or go back.
 
 At the end, a summary of the settings is displayed to confirm your choices.
-
+-->
 ## Modifying the Configuration {#settings}
 
 The `/settings` command is the go-to command for managing your settings after installation. It allows you to view, adjust, or customize RaidProtect's features at any time, in a simple and fast way.
@@ -39,12 +42,14 @@ The `/settings` command is the go-to command for managing your settings after in
 2. Easily navigate between different sections to find the settings you want to modify.
 3. Adjust the options: Each category presents a list of customizable options in the form of buttons or dropdown menus.
 
-![Settings Screenshot](./assets/rpBeta-settings.webp)
+![Settings screenshot](./assets/rp-settings.webp)
 
 ### 🔄 Resetting a Setting {#reset}
 
 1. Navigate to the desired setting.
 2. Click on “**Reset**”.
+
+![Reset button screenshot](./assets/rp-button-reset.webp)
 
 The bot will confirm the reset before applying the changes.
 

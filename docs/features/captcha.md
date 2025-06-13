@@ -32,7 +32,7 @@ La mise en place du captcha est simple et rapide.
 4. Le rôle **@Non vérifié** est automatiquement créé et configuré.
 5. Configurez le nombre d’essais autorisés (entre 1 et 3) ainsi que le temps de résolution maximal (entre 1 et 10 minutes).
 
-![Capture d'écran paramètre captcha](../assets/rpBeta-settings-anti-captcha.webp)
+![Capture d'écran paramètre captcha](../assets/rp-settings-captcha.webp)
 
 ## ✨ Fonctionnalités supplémentaires {#additional-features}
 

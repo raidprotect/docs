@@ -21,6 +21,8 @@ Configuration takes just a few clicks:
 3. Select an existing role via the selector or click “**Create one for me**”.  
 4. You can deselect the role at any time by clicking on the “**Reset**” button.
 
+[Tag Role settings screenshot](../assets/rp-settings-tag-role.webp)
+
 :::tip
 Members will receive the role the next time they update their profile (Username, Avatar, Banner, Roles, Tag…). You can [contact support](https://raidprotect.bot/discord) to request a full role sync if you have many members who currently have or previously had the Tag.
 :::

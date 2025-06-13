@@ -32,7 +32,7 @@ Setting up captcha is quick and easy.
 4. The **@Unverified** role is automatically created and configured.
 5. Configure the allowed number of attempts (between **1 and 3**) and the maximum resolution time (between **1 and 10 minutes**).
 
-![Captcha settings screenshot](../assets/rpBeta-settings-anti-captcha.webp)
+![Captcha settings screenshot](../assets/rp-settings-captcha.webp)
 
 ## ✨ Additional Features {#additional-features}
 

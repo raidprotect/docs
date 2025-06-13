@@ -21,6 +21,8 @@ La configuration se fait en quelques clics :
 3. Sélectionnez un rôle existant via le sélecteur ou cliquez sur “**En créer un pour moi**”.
 4. Vous pouvez à tout moment désélectionner le rôle en cliquant sur le bouton “**Réinitialiser**”.
 
+![Capture d'écran paramètre Rôle de Tag](../assets/rp-settings-tag-role.webp)
+
 :::tip
 Vos membres auront le rôle à leur prochaine modification de profil (Pseudo, Avatar, Bannière, Rôles, Tag…). Vous pouvez [demander au support](https://raidprotect.bot/discord) une synchronisation complète du rôle si vous avez beaucoup de membres possédant ou ayant possédé le Tag.
 :::

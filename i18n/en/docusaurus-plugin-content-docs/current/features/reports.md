@@ -24,6 +24,8 @@ Replace `[@user]` with the desired user and `[reason]` with the reason for the i
 
 Before the reporting system is fully operational, it is imperative to configure a **report channel** where all reports will be sent. You need to set up a log or notification channel to receive alerts regarding reports.
 
+[Report settings screenshot](../assets/rp-settings-reports.webp)
+
 ### Setting Up the Channel {#config-channel}
 
 1. Use the [command `/settings`](../setup.md#settings).
@@ -31,8 +33,6 @@ Before the reporting system is fully operational, it is imperative to configure 
 3. Click on the **Channel** button.
 4. Choose the desired channel (_e.g. #reports_).  
 If you do not have a suitable channel, you can opt to create one automatically using the **Create one for me** button.
-
-[Screenshot report settings](../assets/rpBeta-settings-reports.webp)
 
 ### Configuring the Notification Role {#config-role}
 

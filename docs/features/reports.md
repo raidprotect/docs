@@ -24,6 +24,8 @@ Remplacez `[@utilisateur]` par l’utilisateur souhaité et `[raison]` par le mo
 
 Avant que le système de signalement ne soit pleinement fonctionnel, il est impératif de configurer un **salon de signalement** où tous les signalements seront envoyés. Vous devez définir un salon de logs ou de notifications pour recevoir les alertes concernant les signalements.
 
+![Capture d'écran paramètre signalements](../assets/rp-settings-reports.webp)
+
 ### Configurer le salon {#config-channel}
 
 1. Faites la [commande `/settings`](../setup.md#settings).
@@ -31,8 +33,6 @@ Avant que le système de signalement ne soit pleinement fonctionnel, il est imp�
 3. Cliquez sur le bouton “**Salon**”.
 4. Sélectionnez le salon souhaité (_ex : #signalements ou #reports_). 
 Si vous ne disposez pas de salon adapté, vous pouvez choisir d’en créer en un automatiquement depuis le bouton “**En créer un pour moi**".
-
-![Capture d'écran paramètre signalements](../assets/rpBeta-settings-reports.webp)
 
 ### Configurer le rôle de notification {#config-role}
 

@@ -37,7 +37,7 @@ You can exclude certain channels, roles, or even users from anti-spam monitoring
 - Role(s) to ignore
 - Member(s) to ignore
 
-![Anti-spam settings screenshot](../assets/rpBeta-settings-anti-spam.webp)
+![Anti-spam settings screenshot](../assets/rp-settings-anti-spam.webp)
 
 :::info
 Channels containing “**spam**” in their name are automatically ignored. Users with administrator permissions are completely ignored.

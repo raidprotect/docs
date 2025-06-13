@@ -25,7 +25,7 @@ La commande `raidmode` est [utilisable par préfixe](../guides/prefix.md).
 
 Si votre serveur accueille souvent beaucoup de nouveaux membres simultanément, il est judicieux de modifier ce seuil pour éviter les faux-positifs.
 
-![Capture d'écran mode raid automatique](../assets/rpBeta-settings-raid-mode.webp)
+![Capture d'écran mode raid automatique](../assets/rp-settings-raid-mode.webp)
 
 :::note
 Nous recommandons d’entrer une valeur comprise entre 10 et 20 membres en 10 secondes pour une bonne efficacité du système.

@@ -21,6 +21,8 @@ Permet d’activer ou de désactiver les fonctionnalités principales en un clin
 
 Le bot vous enverra ensuite un récapitulatif des fonctionnalités activées et des changements qu’il va apporter au serveur.
 
+![Capture d'écran configuration recommandée](./assets/rp-setup.webp)
+
 <!--
 ### 🛠️ Configuration avancée {#advanced}
 
@@ -43,12 +45,14 @@ La commande `/settings` est la commande de gestion de vos paramètres une fois l
 2. Naviguez facilement entre les différentes sections pour trouver les paramètres que vous souhaitez modifier.
 3. Ajustez les options : Chaque catégorie présente une liste d’options modifiables sous forme de boutons ou menus déroulants.
 
-![Capture d'écran paramètres](./assets/rpBeta-settings.webp)
+![Capture d'écran paramètres](./assets/rp-settings.webp)
 
 ### 🔄 Réinitialiser un paramètre {#reset}
 
 1. Naviguez vers le paramètre souhaité.
 2. Cliquez sur “**Réinitialiser**”.
+
+![Capture d'écran bouton réinitialiser](./assets/rp-button-reset.webp)
 
 Le bot confirmera la réinitialisation avant d’appliquer les changements.
 

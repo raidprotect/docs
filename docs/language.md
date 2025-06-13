@@ -23,7 +23,7 @@ Si votre serveur est défini comme communautaire (paramètre Discord), RaidProte
 - Sélectionnez le bouton “**Langue**”.
 - Sélectionnez la langue souhaitée.
 
-![Capture d'écran paramètre langues](./assets/rpBeta-settings-language.webp)
+![Capture d'écran paramètre langues](./assets/rp-settings-language.webp)
 
 Une fois la langue sélectionnée, le bot adaptera automatiquement tous ses messages, notifications et commandes à la langue choisie pour votre serveur.
 

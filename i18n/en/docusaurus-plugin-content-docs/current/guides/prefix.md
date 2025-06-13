@@ -24,6 +24,8 @@ If you prefer to use certain commands with a custom prefix, you can enable this 
 3. Enable or disable the prefix according to your preferences.
 If enabled, customize the prefix by entering the desired character or string.
 
+![Prefix settings screenshot](../assets/rp-settings-prefix.webp)
+
 :::note
 Slash commands (`/`) remain available even if the prefix is activated.
 It is recommended to avoid prefixes already used by other bots to prevent command conflicts.

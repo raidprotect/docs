@@ -25,6 +25,8 @@ Si vous préférez utiliser certaines commandes avec un préfixe personnalisé, 
 3. Activez ou désactivez le préfixe selon vos préférences.
 Si activé, personnalisez le préfixe en saisissant le caractère ou la chaîne souhaitée.
 
+![Capture d'écran paramètre préfixe](../assets/rp-settings-prefix.webp)
+
 :::note
 Les commandes Slash (`/`) restent disponibles même si le préfixe est activé.
 Il est recommandé d’éviter les préfixes déjà utilisés par d’autres bots pour éviter les conflits de commandes.

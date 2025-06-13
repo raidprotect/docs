@@ -37,7 +37,7 @@ Vous pouvez exclure certains salons, rôles ou même utilisateurs de la surveill
 - Rôle(s) à ignorer
 - Membre(s) à ignorer
 
-![Capture d'écran paramètre anti-spam](../assets/rpBeta-settings-anti-spam.webp)
+![Capture d'écran paramètre anti-spam](../assets/rp-settings-anti-spam.webp)
 
 :::info
 Les salons contenant “**spam**” dans leur nom sont automatiquement ignorés. Les personnes ayant la permission administrateur sont ignorées totalement. 
