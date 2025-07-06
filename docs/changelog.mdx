@@ -6,6 +6,26 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Découvrez la liste détaillée des modifications qui ont été apportées à RaidProtect.
 
+## 3.2.0 (07/07/2025) {#3-2-0}
+
+- Nouvelle fonctionnalité [DM Lock](./features/dm-lock.md).
+- Choix des [sanctions](./features/anti-spam.md#triggers) appliquées par l'ant-ispam. <SuggestionLink id="514" />
+- Nouvelles logs d'anti-spam (plus de visibilité sur les détections).
+- Activation d'un âge minimum de compte sans captcha. <SuggestionLink id="314" />
+- Blocage/autorisation de certaines extensions de fichier sur tout le serveur.
+- Nouvelles logs lors des modifications importantes de la configuration du bot.
+- Correction : 
+- - La [commande `/lock`](./features/channel-lock.md) supporte désormais les salons forums, média, et les threads.
+- - Correction du bug de la [commande `/clear`](./features/utilities.md#clear) quand le bot n’a pas les permissions nécessaires dans un salon.
+- UI/UX améliorée :
+- - Précision sur la possibilité d’écrire dans les select menu de membre, rôle et salon.
+- - Vérification de la présence de la fonctionnalité `COMMUNITY` lors de la configuration de l’Auto Raid Mode.
+- Performances et stabilité :
+- - Refonte gestion des emojis (via @fca.gg/glyph v1.0.0).
+- - Réduction du temps de démarrage et monitoring des clusters (via @fca.gg/midway v1.3.1).
+- - Meilleure gestion des rate limit et réduction de latences (via @fca.gg/iris v1.1.4).
+- - Intégration de Sentry pour la gestion des erreurs et amélioration du support dev (@fca.gg/kino v1.0.0).
+
 ## 3.1.1 (21/05/2025) {#3-1-1}
 
 - Nouvelle fonctionnalité [Tag de Rôle](./features/tag-role.md). <SuggestionLink id="512" />
