@@ -9,16 +9,17 @@ Discover the detailed list of changes made to RaidProtect.
 ## 3.2.0 (07/07/2025) {#3-2-0}
 
 - New feature: [DM Lock](./features/dm-lock.md).
-- Selection of [sanctions](./features/anti-spam.md#triggers) applied by anti-spam. <SuggestionLink id="514" />
+- Choice of [sanctions](./features/anti-spam.md#triggers) applied by the anti-spam. <SuggestionLink id="514" />
 - New anti-spam logs (better visibility on detections).
-- Enforcing a minimum account age without captcha. <SuggestionLink id="314" />
+- Enable minimum account age without captcha. <SuggestionLink id="314" />
 - Blocking/allowing certain file extensions server-wide.
-- New logs for important bot configuration changes.
+- Complete redesign of the [`/userinfo` command](./features/utilities.md#userinfo).
+- New logs for major bot configuration changes.
 - Fixes:
-  - The [`/lock` command](./features/channel-lock.md) now supports forum channels, media channels, and threads.
-  - Fixed bug with the [`/clear` command](./features/utilities.md#clear) when the bot lacks necessary permissions in a channel.
+  - The [`/lock` command](./features/channel-lock.md) now supports forum and media channels, and blocks threads along with channels.
+  - Fixed bug in the [`/clear` command](./features/utilities.md#clear) when the bot lacked necessary permissions in a channel.
 - Improved UI/UX:
-  - Clarification about typing in member, role, and channel select menus.
+  - Clarified that member, role, and channel select menus allow typing.
   - Check for the `COMMUNITY` feature when configuring Auto Raid Mode.
 - Performance and stability:
   - Revamped emoji handling (via @fca.gg/glyph v1.0.0).
