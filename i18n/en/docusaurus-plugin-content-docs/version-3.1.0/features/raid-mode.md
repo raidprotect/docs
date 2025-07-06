@@ -8,6 +8,10 @@ Raid mode is an emergency feature designed to instantly block all new users atte
 
 RaidProtect automatically activates raid mode if a large number of users join your server in a short period. By default, raid mode activates if more than 10 users join your server in less than 10 seconds. When raid mode is activated, no users can join the server. They are blocked at the invitation level.
 
+:::warning
+Discord’s Community features are essential for Raid mode to function properly. [Follow our guide to verify that Community is enabled on your server.](../guides/community.md)
+:::
+
 ### Activation {#enable}
 
 - To manually activate this mode, a user with kick permissions must execute the command `/raidmode`.
