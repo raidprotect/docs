@@ -8,8 +8,8 @@ Si le salon `#vérification` n’est pas visible par défaut pour les nouveaux m
 
 1. Ouvrez les paramètres du salon `#vérification` (clic droit > **Modifier le salon**).
 2. Dans l’onglet **Permissions** :
-   - Assurez-vous que `@everyone` **n’a pas** la permission de voir ou d’écrire.
-   - Vérifiez que le rôle `@Non Vérifié` **a** la permission de **voir** et **envoyer des messages** dans ce salon.
+   - Assurez-vous que `@everyone` **n’a pas** la permission de voir le salon.
+   - Vérifiez que le rôle `@Non Vérifié` **a** la permission de **voir le salon**, **voir les anciens messages** et **envoyer des messages**.
 
 ## 2️⃣ Vérifier la catégorie d’accueil {#default-category}
 
