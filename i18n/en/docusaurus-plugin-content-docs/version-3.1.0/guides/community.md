@@ -1,5 +1,5 @@
 ---
-title: Enable Discord Community Features
+title: Enable Community
 ---
 
 Enabling the Community feature unlocks several advanced security settings essential for the proper functioning of some RaidProtect features like **DM Lock** or **Raid Mode**.
@@ -8,7 +8,7 @@ Enabling the Community feature unlocks several advanced security settings essent
 
 - You must be an administrator of the Discord server.
 
-## 🚩 Enable Community {#steps}
+## 🚩 Enable Community Features {#steps}
 
 1. **Open your server settings**
    - Click on the server name at the top left > “Server Settings”.

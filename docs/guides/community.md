@@ -1,5 +1,5 @@
 ---
-title: Activer les fonctions communautaires Discord
+title: Activer la communauté
 ---
 
 L’activation de la communauté rend disponibles plusieurs réglages de sécurité avancés indispensables au bon fonctionnement de certaines fonctionnalités de RaidProtect comme **DM Lock** ou le **Mode raid**.
@@ -8,7 +8,7 @@ L’activation de la communauté rend disponibles plusieurs réglages de sécuri
 
 - Être administrateur du serveur Discord.
 
-## 🚩 Activer la communauté {#steps}
+## 🚩 Activer les fonctions communautaires {#steps}
 
 1. **Ouvrez les paramètres de votre serveur**
    - Cliquez sur le nom du serveur en haut à gauche > “Paramètres du serveur”.
