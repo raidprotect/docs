@@ -6,6 +6,26 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Discover the detailed list of changes made to RaidProtect.
 
+## 3.2.0 (07/07/2025) {#3-2-0}
+
+- New feature: [DM Lock](./features/dm-lock.md).
+- Selection of [sanctions](./features/anti-spam.md#triggers) applied by anti-spam. <SuggestionLink id="514" />
+- New anti-spam logs (better visibility on detections).
+- Enforcing a minimum account age without captcha. <SuggestionLink id="314" />
+- Blocking/allowing certain file extensions server-wide.
+- New logs for important bot configuration changes.
+- Fixes:
+  - The [`/lock` command](./features/channel-lock.md) now supports forum channels, media channels, and threads.
+  - Fixed bug with the [`/clear` command](./features/utilities.md#clear) when the bot lacks necessary permissions in a channel.
+- Improved UI/UX:
+  - Clarification about typing in member, role, and channel select menus.
+  - Check for the `COMMUNITY` feature when configuring Auto Raid Mode.
+- Performance and stability:
+  - Revamped emoji handling (via @fca.gg/glyph v1.0.0).
+  - Reduced startup time and cluster monitoring (via @fca.gg/midway v1.3.1).
+  - Better rate limit handling and reduced latency (via @fca.gg/iris v1.1.4).
+  - Integrated Sentry for error tracking and improved developer support (@fca.gg/kino v1.0.0).
+
 ## 3.1.1 (21/05/2025) {#3-1-1}
 
 - New feature [Role Tag](./features/tag-role.md). <SuggestionLink id="512" />
