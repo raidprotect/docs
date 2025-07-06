@@ -74,6 +74,10 @@ const sidebars: SidebarsConfig = {
 				},
 				{
 					type: 'doc',
+					id: 'guides/community',
+				},
+				{
+					type: 'doc',
 					id: 'guides/onboarding',
 				},
 				{
