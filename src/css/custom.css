@@ -9,6 +9,7 @@ html[data-theme='dark'] {
   --ifm-background-color: #040114;
   --ifm-color-content: white;
   --ifm-toc-border-color: #252332;
+  --ifm-card-background-color: #242328
 }
 
 @font-face {
@@ -40,6 +41,7 @@ html[data-theme='dark'] {
   --ifm-toc-border-color: #252332;
   --ifm-navbar-background-color: var(--ifm-background-color);
   --ifm-footer-background-color: var(--ifm-background-color);
+  --ifm-card-background-color: #242328
   --ifm-dropdown-background-color: #1b1a25;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
