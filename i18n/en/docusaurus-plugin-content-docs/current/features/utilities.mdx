@@ -2,6 +2,9 @@
 title: Utilities
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Extra features to simplify the management of your server. 🔧
 
 In addition to core features like the captcha system and anti-raid protection, RaidProtect offers several secondary tools that can make managing your server even smoother.
@@ -40,55 +43,55 @@ If the target is a server member, additional info includes:
 <Tabs>
   <TabItem value="animator" label="🟦 Animator">
 
-The **Animator** category is shown if the member has **at least one** of the following permissions:
+    The **Animator** category is shown if the member has **at least one** of the following permissions:
 
-- `MANAGE_EXPRESSIONS`
-- `CREATE_GUILD_EXPRESSIONS`
-- `MANAGE_EVENTS`
+    - `MANAGE_EXPRESSIONS`
+    - `CREATE_GUILD_EXPRESSIONS`
+    - `MANAGE_EVENTS`
 
   </TabItem>
   <TabItem value="moderator" label="🟨 Moderator">
 
-The **Moderator** category is shown if the member has **at least one** of the following permissions:
+    The **Moderator** category is shown if the member has **at least one** of the following permissions:
 
-- `KICK_MEMBERS`
-- `BAN_MEMBERS`
-- `MODERATE_MEMBERS`
-- `MANAGE_MESSAGES`
-- `MUTE_MEMBERS`
-- `DEAFEN_MEMBERS`
-- `MOVE_MEMBERS`
-- `MANAGE_THREADS`
+    - `KICK_MEMBERS`
+    - `BAN_MEMBERS`
+    - `MODERATE_MEMBERS`
+    - `MANAGE_MESSAGES`
+    - `MUTE_MEMBERS`
+    - `DEAFEN_MEMBERS`
+    - `MOVE_MEMBERS`
+    - `MANAGE_THREADS`
 
   </TabItem>
   <TabItem value="manager" label="🟧 Manager">
 
-The **Manager** category is shown if the member has **at least one** of the following permissions:
+    The **Manager** category is shown if the member has **at least one** of the following permissions:
 
-- `MANAGE_GUILD`
-- `MANAGE_ROLES`
-- `MANAGE_CHANNELS`
-- `VIEW_AUDIT_LOG`
-- `MANAGE_WEBHOOKS`
-- `MANAGE_SERVER_EXPRESSIONS`
+    - `MANAGE_GUILD`
+    - `MANAGE_ROLES`
+    - `MANAGE_CHANNELS`
+    - `VIEW_AUDIT_LOG`
+    - `MANAGE_WEBHOOKS`
+    - `MANAGE_SERVER_EXPRESSIONS`
 
   </TabItem>
   <TabItem value="admin" label="🟥 Administrator">
 
-The **Administrator** category is shown in **two possible cases**:
+    The **Administrator** category is shown in **two possible cases**:
 
-1️⃣ Has the permission:
-- `ADMINISTRATOR`
+    1️⃣ Has the permission:
+    - `ADMINISTRATOR`
 
-2️⃣ Has **all three** of the following permissions at the same time:
-- `MANAGE_GUILD`
-- `MANAGE_ROLES`
-- `MANAGE_CHANNELS`
+    2️⃣ Has **all three** of the following permissions at the same time:
+    - `MANAGE_GUILD`
+    - `MANAGE_ROLES`
+    - `MANAGE_CHANNELS`
 
   </TabItem>
   <TabItem value="owner" label="🟩 Owner" default>
 
-**Condition**: The member is the **server owner**.
+    **Condition**: The member is the **server owner**.
 
   </TabItem>
 </Tabs>
