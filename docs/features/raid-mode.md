@@ -1,10 +1,12 @@
 ---
-title: Mode raid
+title: Anti-raid
 ---
 
-Le mode raid est une fonctionnalité d'urgence conçue pour bloquer instantanément tous les nouveaux utilisateurs tentant de rejoindre votre serveur. Il est radical mais efficace pour empêcher les raids massifs. Avec le mode raid de RaidProtect, vous disposez d'un bouclier efficace contre les attaques massives sur votre serveur. 🌟
+## Mode raid
 
-## ❓ Fonctionnement du mode raid {#working}
+Le mode raid est une fonctionnalité d'urgence conçue pour bloquer instantanément tous les nouveaux utilisateurs tentant de rejoindre votre serveur. 
+
+### ❓ Fonctionnement du mode raid {#working}
 
 RaidProtect active automatiquement le mode raid si un grand nombre d’utilisateurs rejoint votre serveur en un court laps de temps. Par défaut, le mode raid s'active si plus de 10 utilisateurs rejoignent votre serveur en moins de 10 secondes. Lorsque le mode raid est activé, aucun utilisateur ne peut rejoindre le serveur. Ils sont bloqués au niveau de l’invitation.
 
@@ -12,12 +14,12 @@ RaidProtect active automatiquement le mode raid si un grand nombre d’utilisate
 Les fonctions communautaires de Discord sont indispensables au bon fonctionnement du Mode raid. [Suivez notre guide pour vérifier l'activation de la communauté sur votre serveur.](../guides/community.md)
 :::
 
-### Activation {#enable}
+#### Activation {#enable}
 
 - Pour activer manuellement ce mode, un utilisateur disposant des permissions d'expulsion doit exécuter la commande `/raidmode`.
 - Un message sera automatiquement posté dans le salon de logs pour signaler l'activation.
 
-### Désactivation {#disable}
+#### Désactivation {#disable}
 
 Le mode raid ne se désactive pas automatiquement. Pensez à l’arrêter avec la même commande lorsque la menace est écartée. 😇
 
@@ -25,7 +27,7 @@ Le mode raid ne se désactive pas automatiquement. Pensez à l’arrêter avec l
 La commande `raidmode` est [utilisable par préfixe](../guides/prefix.md).
 :::
 
-## 🚨 Configuration du mode raid automatique {#config}
+### 🚨 Configuration du mode raid automatique {#config}
 
 Si votre serveur accueille souvent beaucoup de nouveaux membres simultanément, il est judicieux de modifier ce seuil pour éviter les faux-positifs.
 
@@ -44,3 +46,18 @@ Vous pouvez laisser à la valeur par défaut (10) ou ajuster selon la valeur sou
 :::warning
 Si le mode raid s’active automatiquement, pensez à le désactiver une fois la menace passée. Rappelez-vous, il ne se désactive pas tout seul. 😖
 :::
+
+
+## Âge requis {#minage}
+
+Pour renforcer la sécurité, vous pouvez exiger un âge minimum pour les comptes Discord des nouveaux membres.
+
+1. Faites la [commande `/settings`](../setup.md#settings).
+2. Cliquez sur le bouton “**Âge requis**”.
+3. Sélectionnez la valeur souhaitée dans le menu de sélection ou choisissez une valeur personnalisée exprimée en format date (m/h/d/y).
+
+### 🎂 Bypass de l'âge de compte minimum {#bypass}
+
+Utilisez la commande : ```/bypass minage [utilisateur]```
+
+Remplacez `[utilisateur]` par l’identifiant souhaité, ce dernier disposera de 10 minutes pour rejoindre le serveur sans être expulsé par l'âge requis.

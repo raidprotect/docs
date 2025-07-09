@@ -55,12 +55,3 @@ If you use an automatic role (autorole) system other than RaidProtect, it may in
 2. Click the "**Captcha**" button.
 3. Select "**Auto Role**".
 4. Choose the role that will be assigned to members who successfully complete captcha.
-
-### Minimum Account Age {#minage}
-
-To enhance security, you can require a minimum account age for new Discord members.
-
-1. Run the [`/settings` command](../setup.md#settings).
-2. Click the "**Captcha**" button.
-3. Press the "**Minimum Age**" button.
-4. Select the desired value from the dropdown menu or choose a custom value expressed in date format (m/h/d/y).

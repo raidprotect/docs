@@ -55,12 +55,3 @@ Si vous utilisez un système de rôle automatique (autorole) autre que RaidProte
 2. Cliquez sur le bouton “**Captcha**”.
 3. Sélectionnez “**Rôle automatique**”.
 4. Choisissez le rôle qui sera donné aux membres ayant validé le captcha.
-
-### Âge de compte minimum {#minage}
-
-Pour renforcer la sécurité, vous pouvez exiger un âge minimum pour les comptes Discord des nouveaux membres.
-
-1. Faites la [commande `/settings`](../setup.md#settings).
-2. Cliquez sur le bouton “**Captcha**”.
-3. Appuyez sur le bouton “**Âge minimum**”.
-4. Sélectionnez la valeur souhaitée dans le menu de sélection ou choisissez une valeur personnalisée exprimée en format date (m/h/d/y).
