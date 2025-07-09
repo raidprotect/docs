@@ -56,7 +56,7 @@ Pour renforcer la sécurité, vous pouvez exiger un âge minimum pour les compte
 2. Cliquez sur le bouton “**Âge requis**”.
 3. Sélectionnez la valeur souhaitée dans le menu de sélection ou choisissez une valeur personnalisée exprimée en format date (m/h/d/y).
 
-### 🎂 Bypass de l'âge de compte minimum {#bypass}
+### 🎂 Bypass de l'âge de compte minimum {#bypass-minage}
 
 Utilisez la commande : ```/bypass minage [utilisateur]```
 

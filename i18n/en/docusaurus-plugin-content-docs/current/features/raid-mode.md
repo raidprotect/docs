@@ -56,7 +56,7 @@ To strengthen security, you can require a minimum Discord account age for new me
 2. Click the “**Required Age**” button.
 3. Select your desired value from the dropdown menu or choose a custom value expressed in date format (m/h/d/y).
 
-### 🎂 Minimum Account Age Bypass {#bypass}
+### 🎂 Minimum Account Age Bypass {#bypass-minage}
 
 Use the command: ```/bypass minage [user]```
 

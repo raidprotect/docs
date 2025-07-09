@@ -6,25 +6,26 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Discover the detailed list of changes made to RaidProtect.
 
-## 3.2.0 (07/07/2025) {#3-2-0}
+## 3.2.0 (10/07/2025) {#3-2-0}
 
-- New feature: [DM Lock](./features/dm-lock.md).
-- Choice of [sanctions](./features/anti-spam.md#triggers) applied by the anti-spam. <SuggestionLink id="85" />
-- New anti-spam logs (better visibility on detections).
-- Enable [minimum account age]((./features/raid-mode#minage)) without captcha. <SuggestionLink id="314" />
-- Complete redesign of the [`/userinfo` command](./features/utilities.mdx#userinfo).
-- New logs for major bot configuration changes.
+- New feature [DM Lock](./features/dm-lock.md).
+- Choice of [sanctions](./features/anti-spam.md#triggers) applied by anti-spam. <SuggestionLink id="85" />
+- New anti-spam logs (more visibility on detections).
+- Activation of a [minimum account age](./features/raid-mode.md#minage) without captcha. <SuggestionLink id="314" />
+- New [command /bypass minage](./features/raid-mode.md#bypass-minage) to accept a user who doesn’t meet the required account age. <SuggestionLink id="447" />
+- Complete overhaul of the [command `/userinfo`](./features/utilities.mdx#userinfo).
+- New logs for important bot configuration changes.
 - Fixes:
-  - The [`/lock` command](./features/channel-lock.md) now supports forum and media channels, and blocks threads along with channels.
-  - Fixed bug in the [`/clear` command](./features/moderation.md#clear) when the bot lacked necessary permissions in a channel.
+  - The [command `/lock`](./features/channel-lock.md) now supports forum and media channels, and blocks threads with the channels.
+  - Fixed the bug with the [command `/clear`](./features/moderation.md#clear) when the bot lacked the necessary permissions in a channel.
 - Improved UI/UX:
-  - Clarified that member, role, and channel select menus allow typing.
-  - Check for the `COMMUNITY` feature when configuring Auto Raid Mode.
+  - Clarification on the ability to type in the member, role, and channel select menus.
+  - Check for the presence of the `COMMUNITY` feature when configuring Auto Raid Mode.
 - Performance and stability:
-  - Revamped emoji handling ([`@fca.gg/glyph` v1.0.0](https://github.com/FCAgreatgoals/glyph)).
-  - Reduced startup time and cluster monitoring (`@fca.gg/midway` v1.3.1).
-  - Better rate limit handling and reduced latency (`@fca.gg/iris` v1.1.4).
-  - Integrated Sentry for error tracking and improved developer support ([`@fca.gg/kino` v1.0.0](https://github.com/FCAgreatgoals/kino)).
+  - Revamped emoji management ([`@fca.gg/glyph` v1.0.0](https://github.com/FCAgreatgoals/glyph)).
+  - Reduced startup time and cluster monitoring (`@fca.gg/midway` v1.3.1).
+  - Better rate limit handling and reduced latency (`@fca.gg/iris` v1.1.4).
+  - Integrated Sentry for error tracking and improved dev support ([`@fca.gg/kino` v1.0.0](https://github.com/FCAgreatgoals/kino)).
 
 ## 3.1.1 (21/05/2025) {#3-1-1}
 
