@@ -31,3 +31,12 @@ Replace `[@user]` with the desired mention or ID and `[reason]` with the reason 
 Use the command: ```/timeout [@user] [duration] [reason]```
 
 Replace `[@user]` with the desired mention or ID, `[duration]` with the timeout length, up to a maximum of 28 days (e.g. `10m`, `1h`, `1d`), and `[reason]` with the reason for the sanction.
+
+## 🧹 Clear a Group of Messages {#clear}
+
+The command `/clear` allows you to quickly delete a certain number of messages in a text channel. You can specify a user to delete only their messages.
+
+Use the command: ```/clear [number] (@user)```
+
+- Replace `[number]` with the number of messages you wish to delete (maximum 100).
+- Add `(@user)` using the mention or ID to target only their messages in the channel.

@@ -31,3 +31,14 @@ Remplacez `[@utilisateur]` par la mention ou l’identifiant souhaité et `[rais
 Utilisez la commande : ```/timeout [@utilisateur] [durée] [raison]```
 
 Remplacez `[@utilisateur]` par la mention ou l’identifiant souhaité, `[durée]` par la durée du timeout, dans un maximum de 28 jours (ex. : `10m`, `1h`, `1d`) et `[raison]` par le motif de la sanction.
+
+## 🧹 Supprimer un groupe de messages {#clear}
+
+La commande `/clear` vous permet de supprimer rapidement un certain nombre de messages dans un salon texte. Vous pouvez spécifier un utilisateur pour ne supprimer que ses messages.
+
+Utilisez la commande :
+
+/clear [nombre] (@utilisateur)
+
+- Remplacez `[nombre]` par le nombre de messages que vous souhaitez supprimer (maximum 100).
+- Ajoutez `(@utilisateur)` en utilisant la mention ou l’identifiant pour cibler uniquement ses messages dans le salon.
