@@ -2,6 +2,7 @@
 title: Utilitaires
 ---
 
+import BrowserWindow from '@site/src/components/BrowserWindow';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -40,8 +41,9 @@ Si la cible est un membre du serveur, les infos supplémentaires incluent :
 - **Nombre de rôles** et **liste des 6 premiers rôles**
 - **Catégorie de permissions** (déterminée automatiquement selon les rôles) :
 
+<BrowserWindow>
 <Tabs>
-  <TabItem value="animator" label="🟦 Animateur">
+  <TabItem value="animator" label="Animateur">
 
     La catégorie **Animateur** est affiché si le membre possède **au moins une** des permissions suivantes :
 
@@ -50,7 +52,7 @@ Si la cible est un membre du serveur, les infos supplémentaires incluent :
     - `MANAGE_EVENTS`
 
   </TabItem>
-  <TabItem value="moderator" label="🟨 Modérateur">
+  <TabItem value="moderator" label="Modérateur">
 
     La catégorie **Modérateur** est affiché si le membre possède **au moins une** des permissions suivantes :
 
@@ -64,7 +66,7 @@ Si la cible est un membre du serveur, les infos supplémentaires incluent :
     - `MANAGE_THREADS`
 
   </TabItem>
-  <TabItem value="manager" label="🟧 Responsable">
+  <TabItem value="manager" label="Responsable">
 
     La catégorie **Responsable** est affiché si le membre possède **au moins une** des permissions suivantes :
 
@@ -76,7 +78,7 @@ Si la cible est un membre du serveur, les infos supplémentaires incluent :
     - `MANAGE_SERVER_EXPRESSIONS`
 
   </TabItem>
-  <TabItem value="admin" label="🟥 Administrateur">
+  <TabItem value="admin" label="Administrateur">
 
     La catégorie **Administrateur** est affiché dans **deux cas possibles** :
 
@@ -89,12 +91,13 @@ Si la cible est un membre du serveur, les infos supplémentaires incluent :
     - `MANAGE_CHANNELS`
 
   </TabItem>
-  <TabItem value="owner" label="🟩 Propriétaire" default>
+  <TabItem value="owner" label="Propriétaire" default>
 
     **Condition** : Le membre est le **propriétaire du serveur**.
 
   </TabItem>
 </Tabs>
+</BrowserWindow>
 
 - **Flags de membre**
 

@@ -2,6 +2,7 @@
 title: Utilities
 ---
 
+import BrowserWindow from '@site/src/components/BrowserWindow';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -40,8 +41,9 @@ If the target is a server member, additional info includes:
 - **Number of roles** and **list of the first 6 roles**
 - **Permission category** (automatically determined based on roles):
 
+<BrowserWindow>
 <Tabs>
-  <TabItem value="animator" label="🟦 Animator">
+  <TabItem value="animator" label="Animator">
 
     The **Animator** category is shown if the member has **at least one** of the following permissions:
 
@@ -50,7 +52,7 @@ If the target is a server member, additional info includes:
     - `MANAGE_EVENTS`
 
   </TabItem>
-  <TabItem value="moderator" label="🟨 Moderator">
+  <TabItem value="moderator" label="Moderator">
 
     The **Moderator** category is shown if the member has **at least one** of the following permissions:
 
@@ -64,7 +66,7 @@ If the target is a server member, additional info includes:
     - `MANAGE_THREADS`
 
   </TabItem>
-  <TabItem value="manager" label="🟧 Manager">
+  <TabItem value="manager" label="Manager">
 
     The **Manager** category is shown if the member has **at least one** of the following permissions:
 
@@ -76,7 +78,7 @@ If the target is a server member, additional info includes:
     - `MANAGE_SERVER_EXPRESSIONS`
 
   </TabItem>
-  <TabItem value="admin" label="🟥 Administrator">
+  <TabItem value="admin" label="Administrator">
 
     The **Administrator** category is shown in **two possible cases**:
 
@@ -89,12 +91,13 @@ If the target is a server member, additional info includes:
     - `MANAGE_CHANNELS`
 
   </TabItem>
-  <TabItem value="owner" label="🟩 Owner" default>
+  <TabItem value="owner" label="Owner" default>
 
     **Condition**: The member is the **server owner**.
 
   </TabItem>
 </Tabs>
+</BrowserWindow>
 
 - **Member flags**
 

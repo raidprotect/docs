@@ -36,9 +36,6 @@ Remplacez `[@utilisateur]` par la mention ou l’identifiant souhaité, `[durée
 
 La commande `/clear` vous permet de supprimer rapidement un certain nombre de messages dans un salon texte. Vous pouvez spécifier un utilisateur pour ne supprimer que ses messages.
 
-Utilisez la commande :
+Utilisez la commande : ```/clear [nombre] (@utilisateur)```
 
-/clear [nombre] (@utilisateur)
-
-- Remplacez `[nombre]` par le nombre de messages que vous souhaitez supprimer (maximum 100).
-- Ajoutez `(@utilisateur)` en utilisant la mention ou l’identifiant pour cibler uniquement ses messages dans le salon.
+Remplacez `[nombre]` par le nombre de messages que vous souhaitez supprimer (maximum 100). Ajoutez `(@utilisateur)` en utilisant la mention ou l’identifiant pour cibler uniquement ses messages dans le salon.

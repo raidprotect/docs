@@ -38,5 +38,4 @@ The command `/clear` allows you to quickly delete a certain number of messages i
 
 Use the command: ```/clear [number] (@user)```
 
-- Replace `[number]` with the number of messages you wish to delete (maximum 100).
-- Add `(@user)` using the mention or ID to target only their messages in the channel.
+Replace `[number]` with the number of messages you wish to delete (maximum 100). Add `(@user)` using the mention or ID to target only their messages in the channel.
