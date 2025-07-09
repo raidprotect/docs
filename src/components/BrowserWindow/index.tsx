@@ -21,7 +21,7 @@ interface Props {
 export default function BrowserWindow({
   children,
   minHeight,
-  url = 'raidprotect.bot',
+  url = 'http://localhost.com:3000',
   style,
   bodyStyle,
 }: Props): ReactNode {
