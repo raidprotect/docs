@@ -2,6 +2,10 @@
 title: Anti-spam
 ---
 
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 RaidProtect's Anti-spam is a powerful tool to prevent spam on your Discord server. Thanks to its automatic detection system, it handles issues on its own without requiring your intervention.
 
 ## ❓ How the Anti-spam Works {#working}
