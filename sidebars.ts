@@ -28,10 +28,6 @@ const sidebars: SidebarsConfig = {
 			items: [
 				{
 					type: 'doc',
-					id: 'features/anti-spam',
-				},
-				{
-					type: 'doc',
 					id: 'features/captcha',
 				},
 				{
@@ -40,7 +36,11 @@ const sidebars: SidebarsConfig = {
 				},
 				{
 					type: 'doc',
-					id: 'features/reports',
+					id: 'features/anti-spam',
+				},
+				{
+					type: 'doc',
+					id: 'features/dm-lock',
 				},
 				{
 					type: 'doc',
@@ -48,11 +48,15 @@ const sidebars: SidebarsConfig = {
 				},
 				{
 					type: 'doc',
-					id: 'features/tag-role',
+					id: 'features/reports',
 				},
 				{
 					type: 'doc',
 					id: 'features/moderation',
+				},
+				{
+					type: 'doc',
+					id: 'features/tag-role',
 				},
 				{
 					type: 'doc',
