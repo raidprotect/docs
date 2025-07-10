@@ -4,7 +4,7 @@ title: Anti-raid
 
 ## Mode raid
 
-Le mode raid est une fonctionnalité d'urgence conçue pour bloquer instantanément tous les nouveaux utilisateurs tentant de rejoindre votre serveur. 
+Le mode raid est une fonctionnalité d'urgence conçue pour bloquer instantanément tous les nouveaux utilisateurs tentant de rejoindre votre serveur, surpassant ainsi la limitation native de Discord qui ne permet ce blocage que pour 24 heures via l'action de cybersécurité "Suspendre les invitations".
 
 ### ❓ Fonctionnement du mode raid {#working}
 
@@ -53,7 +53,7 @@ Si le mode raid s’active automatiquement, pensez à le désactiver une fois la
 Pour renforcer la sécurité, vous pouvez exiger un âge minimum pour les comptes Discord des nouveaux membres.
 
 1. Faites la [commande `/settings`](../setup.md#settings).
-2. Cliquez sur le bouton “**Âge Minimum**”.
+2. Cliquez sur le bouton “**Âge Minimum**”.
 3. Sélectionnez la valeur souhaitée dans le menu de sélection ou choisissez une valeur personnalisée exprimée en format date (m/h/d/y).
 
 ### 🎂 Bypass de l'âge de compte minimum {#bypass-minage}
