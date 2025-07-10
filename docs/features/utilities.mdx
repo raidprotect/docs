@@ -45,7 +45,7 @@ Si la cible est un membre du serveur, les infos supplémentaires incluent :
 <Tabs>
   <TabItem value="animator" label="Animateur" default>
 
-    La catégorie **Animateur** est affiché si le membre possède **au moins une** des permissions suivantes :
+    La catégorie **Animateur** est affiché si le membre possède **au moins une** des permissions suivantes :
 
     - `MANAGE_EXPRESSIONS`
     - `CREATE_GUILD_EXPRESSIONS`
@@ -54,7 +54,7 @@ Si la cible est un membre du serveur, les infos supplémentaires incluent :
   </TabItem>
   <TabItem value="moderator" label="Modérateur">
 
-    La catégorie **Modérateur** est affiché si le membre possède **au moins une** des permissions suivantes :
+    La catégorie **Modérateur** est affiché si le membre possède **au moins une** des permissions suivantes :
 
     - `KICK_MEMBERS`
     - `BAN_MEMBERS`
@@ -68,7 +68,7 @@ Si la cible est un membre du serveur, les infos supplémentaires incluent :
   </TabItem>
   <TabItem value="manager" label="Responsable">
 
-    La catégorie **Responsable** est affiché si le membre possède **au moins une** des permissions suivantes :
+    La catégorie **Responsable** est affiché si le membre possède **au moins une** des permissions suivantes :
 
     - `MANAGE_GUILD`
     - `MANAGE_ROLES`
@@ -80,12 +80,12 @@ Si la cible est un membre du serveur, les infos supplémentaires incluent :
   </TabItem>
   <TabItem value="admin" label="Administrateur">
 
-    La catégorie **Administrateur** est affiché dans **deux cas possibles** :
+    La catégorie **Administrateur** est affiché dans **deux cas possibles** :
 
-    1️⃣ Possède la permission :
+    1️⃣ Possède la permission :
     - `ADMINISTRATOR`
 
-    2️⃣ Possède les **trois permissions suivantes en même temps** :
+    2️⃣ Possède les **trois permissions suivantes en même temps** :
     - `MANAGE_GUILD`
     - `MANAGE_ROLES`
     - `MANAGE_CHANNELS`
@@ -101,17 +101,17 @@ Si la cible est un membre du serveur, les infos supplémentaires incluent :
 
 - **Flags de membre**
 
-Certains indicateurs spéciaux (flags) peuvent être affichés pour un membre :
+Certains indicateurs spéciaux (flags) peuvent être affichés pour un membre :
 
-| Flag                                      | Emoji / Nom affiché          | Explication                                                       |
-| ----------------------------------------- | ---------------------------- | ----------------------------------------------------------------- |
+| **Flag**                                 | **Emoji / Nom affiché**      | **Explication**                                                   |
+| ---------------------------------------- | ---------------------------- | ----------------------------------------------------------------- |
 | `DID_REJOIN`                             | MemberDidRejoin              | L'utilisateur a quitté et rejoint à nouveau le serveur.           |
 | `IS_GUEST`                               | MemberIsGuest                | Membre invité (invitation temporaire ou accès invité).            |
 | `COMPLETED_ONBOARDING`                   | OnboardingCompleted          | A terminé le processus d'accueil (onboarding) du serveur.         |
-| `STARTED_ONBOARDING`                     | OnboardingStarted            | A commencé le processus d'accueil mais ne l'a pas encore fini.     |
-| `COMPLETED_SERVER_GUIDE`                 | ServerGuideCompleted         | A terminé le guide du serveur si activé.                           |
-| `STARTED_SERVER_GUIDE`                   | ServerGuideStarted           | A commencé le guide du serveur mais ne l'a pas fini.                |
-| `AUTOMOD_QUARANTINED_NAME`               | MemberQuarantined            | Nom d'utilisateur mis en quarantaine par l'automodération.         |
-| `AUTOMOD_QUARANTINED_GUILD_TAG`          | MemberQuarantined            | Tag ou pseudo sur le serveur mis en quarantaine par l'automod.     |
-| `BYPASSES_VERIFICATION`                  | BypassVerification           | L'utilisateur peut passer outre la vérification du serveur.        |
-| `SPAMMER`                                | UnusualAccountActivity       | Compte marqué comme spammeur ou activité inhabituelle détectée.    |
+| `STARTED_ONBOARDING`                     | OnboardingStarted            | A commencé le processus d'accueil.                                |
+| `COMPLETED_SERVER_GUIDE`                 | ServerGuideCompleted         | A terminé le guide du serveur si activé.                          |
+| `STARTED_SERVER_GUIDE`                   | ServerGuideStarted           | A commencé le guide du serveur.                                   |
+| `AUTOMOD_QUARANTINED_NAME`               | MemberQuarantined            | Mis en quarantaine par l'automodération pour le nom d'utilisateur.|
+| `AUTOMOD_QUARANTINED_GUILD_TAG`          | MemberQuarantined            | Mis en quarantaine par l'automodération pour le tag ou pseudo.    |
+| `BYPASSES_VERIFICATION`                  | BypassVerification           | L'utilisateur peut passer outre la vérification du serveur.       |
+| `SPAMMER`                                | UnusualAccountActivity       | Compte marqué comme spammeur ou activité inhabituelle détectée.   |
