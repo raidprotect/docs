@@ -55,3 +55,22 @@ You can customize the sanctions applied depending on the type of spam detected. 
 - **Select a sanction**: choose the corresponding sanction.
 
 ![Screenshot of anti-spam sanctions](../assets/rpBeta-settings-anti-spam-sanctions.webp)
+
+## 📑 Anti-spam Logs {#logs}
+
+Detailed logs are generated with all messages deleted by the anti-spam. You can simply download or expand the content.
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="animator" label="Collapsed" default>
+
+![Screenshot of anti-spam logs](../assets/rp-logs-anti-spam.webp)
+
+  </TabItem>
+  <TabItem value="moderator" label="Expanded">
+
+![Screenshot of expanded anti-spam logs](../assets/rp-logs-anti-spam-expand.webp)
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>

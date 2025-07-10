@@ -2,6 +2,10 @@
 title: Anti-spam
 ---
 
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 L’Anti-spam de RaidProtect est un outil performant pour empêcher les spams sur votre serveur Discord. Grâce à son système de détection automatique, il s’occupe des problèmes tout seul, sans que vous ayez à intervenir.
 
 ## ❓ Fonctionnement de l’anti-spam {#working}
@@ -55,3 +59,22 @@ Vous pouvez personnaliser les sanctions appliquées selon le type de spam détec
 - **Sélectionner une sanction** : choisissez la sanction correspondante.
 
 ![Capture d'écran des sanctions anti-spam](../assets/rpBeta-settings-anti-spam-sanctions.webp)
+
+## 📑 Logs de l’anti-spam {#logs}
+
+Des logs détaillés sont générés avec ensemble des messages supprimés par l'anti-spam. Vous pouvez simplement télécharger ou déplier le contenu.
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="animator" label="Réduit" default>
+
+![Capture d'écran des logs de anti-spam](../assets/rp-logs-anti-spam.webp)
+
+  </TabItem>
+  <TabItem value="moderator" label="Dépliés">
+
+![Capture d'écran des logs de anti-spam dépliés](../assets/rp-logs-anti-spam-expand.webp)
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
