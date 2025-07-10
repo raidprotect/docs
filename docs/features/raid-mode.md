@@ -48,12 +48,12 @@ Si le mode raid s’active automatiquement, pensez à le désactiver une fois la
 :::
 
 
-## Âge minimum {#minage}
+## Âge Minimum {#minage}
 
 Pour renforcer la sécurité, vous pouvez exiger un âge minimum pour les comptes Discord des nouveaux membres.
 
 1. Faites la [commande `/settings`](../setup.md#settings).
-2. Cliquez sur le bouton “**Âge minimum**”.
+2. Cliquez sur le bouton “**Âge Minimum**”.
 3. Sélectionnez la valeur souhaitée dans le menu de sélection ou choisissez une valeur personnalisée exprimée en format date (m/h/d/y).
 
 ### 🎂 Bypass de l'âge de compte minimum {#bypass-minage}
