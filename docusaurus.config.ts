@@ -175,6 +175,13 @@ export default async function createConfigAsync() {
 			docs: {
 				versionPersistence: 'localStorage',
 			},
+			announcementBar: {
+				id: '3.2.0',
+				content: '<strong><a href="https://docs.raidprotect.bot/blog/3.2.0-protection-update">Protection Update (3.2.0)</a> is now live!</strong>',
+				backgroundColor: '#D35F5F',
+				textColor: '#FFFFFF',
+				isCloseable: true
+			},
 			colorMode: {
 				defaultMode: 'dark',
 				respectPrefersColorScheme: false,
