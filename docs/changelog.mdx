@@ -15,8 +15,9 @@ Découvrez la liste détaillée des modifications qui ont été apportées à Ra
 - Nouvelle [commande /bypass minage](./features/raid-mode.md#bypass-minage) pour accepter une personne qui n'a pas l'âge de compte requis. <SuggestionLink id="447" />
 - Refonte total de la [commande `/userinfo`](./features/utilities.mdx#userinfo).
 - Nouvelles logs lors des modifications importantes de la configuration du bot.
-- Correction : 
+- Correction :
   - La [commande `/lock`](./features/channel-lock.md) supporte désormais les salons forums, médias et bloque les threads avec les salons.
+  - Le [captcha](./features/captcha.md) ne bloque plus les nouveaux membres quand le bot n’a pas les permissions nécessaires.
   - Correction du bug de la [commande `/clear`](./features/moderation.md#clear) quand le bot n’a pas les permissions nécessaires dans un salon.
 - UI/UX améliorée :
   - Précision sur la possibilité d’écrire dans les select menu de membre, rôle et salon.
@@ -30,7 +31,7 @@ Découvrez la liste détaillée des modifications qui ont été apportées à Ra
 ## 3.1.1 (21/05/2025) {#3-1-1}
 
 - Nouvelle fonctionnalité [Tag de Rôle](./features/tag-role.md). <SuggestionLink id="512" />
-- Nouvelle commande de modération [`/timeout`](./features/moderation#timeout). <SuggestionLink id="52" />
+- Nouvelle commande de modération [`/timeout`](./features/moderation.md#timeout). <SuggestionLink id="52" />
 - Suivi automatique des mises à jour dans le salon de logs général de chaque serveur.
 - Performances et stabilité :
   - Nettoyage des états persistants de l’antispam.
@@ -48,14 +49,14 @@ Découvrez la liste détaillée des modifications qui ont été apportées à Ra
   - [`/setup`](./setup.md#install) sous forme d'Onboarding.
 - Paramétrage avancé :
   - Activer/désactiver chaque fonctionnalité individuellement. <SuggestionLink id="356" />
-  - Choix du délai et du nombre de tentatives avant expulsion par le [captcha](./features/captcha#config). <SuggestionLink id="363" />
-  - Choix du salon de vérification pour le [captcha](./features/captcha) possible. <SuggestionLink id="385" />
+  - Choix du délai et du nombre de tentatives avant expulsion par le [captcha](./features/captcha.md#config). <SuggestionLink id="363" />
+  - Choix du salon de vérification pour le [captcha](./features/captcha.md) possible. <SuggestionLink id="385" />
   - Ignorer utilisateurs/rôles/catégories dans l'[antispam](./features/anti-spam.md#ignore). <SuggestionLink id="362" />
   - Choix du [préfixe des commandes hybrides](./guides/prefix.md). <SuggestionLink id="103" />
   - Option pour choisir si la [commande `/lock`](./features/channel-lock.md) renomme le salon verrouillé avec `🔒`.
 - UX améliorée :
   - Préfixe affiché au ping du bot + mention comme préfixe universel. <SuggestionLink id="193" />
-  - Désactiver le [captcha](./features/captcha) ne supprime plus le rôle et le salon associés. <SuggestionLink id="43" />
+  - Désactiver le [captcha](./features/captcha.md) ne supprime plus le rôle et le salon associés. <SuggestionLink id="43" />
   - Détection automatique des problèmes de permissions liés aux salons et aux rôles. <SuggestionLink id="65" />
   - Contrôle automatique de la visibilité du salon de vérification dans le processus d’accueil de Discord.
   - Uniformisation des messages.
@@ -87,7 +88,7 @@ Découvrez la liste détaillée des modifications qui ont été apportées à Ra
 - Ajout de la [commande `?userinfo`](./features/utilities.mdx#userinfo). <SuggestionLink id="29" />
 - ~~Ajout des commandes `?lockall` et `?unlockall`~~ (Fonctionnalité supprimée).
 - Ajout des commandes [`?kick`](./features/moderation.md#kick) et [`?ban`](./features/moderation.md#ban).
-- Ajout du [min-age sur le captcha](./features/raid-mode#minage) (possibilité de définir un âge minimum de compte pour accéder au serveur).
+- Ajout du [min-age sur le captcha](./features/raid-mode.md#minage) (possibilité de définir un âge minimum de compte pour accéder au serveur).
 - Possibilité de configurer la suppression automatique des messages d'invocation de commandes. <SuggestionLink id="26" />
 - Le salon logs se recrée automatiquement s’il a été supprimé.
 - Refonte de la connexion à la base de données.

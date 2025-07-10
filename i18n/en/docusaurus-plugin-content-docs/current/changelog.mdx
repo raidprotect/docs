@@ -17,6 +17,7 @@ Discover the detailed list of changes made to RaidProtect.
 - New logs for important bot configuration changes.
 - Fixes:
   - The [command `/lock`](./features/channel-lock.md) now supports forum and media channels, and blocks threads with the channels.
+  - The [captcha](./features/captcha.md) no longer blocks new members when the bot does not have the necessary permissions.
   - Fixed the bug with the [command `/clear`](./features/moderation.md#clear) when the bot lacked the necessary permissions in a channel.
 - Improved UI/UX:
   - Clarification on the ability to type in the member, role, and channel select menus.
@@ -30,7 +31,7 @@ Discover the detailed list of changes made to RaidProtect.
 ## 3.1.1 (21/05/2025) {#3-1-1}
 
 - New feature [Role Tag](./features/tag-role.md). <SuggestionLink id="512" />
-- New moderation command [`/timeout`](./features/moderation#timeout). <SuggestionLink id="52" />
+- New moderation command [`/timeout`](./features/moderation.md#timeout). <SuggestionLink id="52" />
 - Automatic tracking of updates in each server's general log room.
 - Performance and stability:
   - Cleanup of persistent antispam states.
@@ -48,14 +49,14 @@ Discover the detailed list of changes made to RaidProtect.
   - [`/setup`](./setup.md#install) as an Onboarding process.
 - Advanced settings:
   - Enable/disable each feature individually. <SuggestionLink id="356" />
-  - Choose the delay and number of attempts before expulsion by the [captcha](./features/captcha#config). <SuggestionLink id="363" />
-  - Option to select the verification channel for the [captcha](./features/captcha). <SuggestionLink id="385" />
+  - Choose the delay and number of attempts before expulsion by the [captcha](./features/captcha.md#config). <SuggestionLink id="363" />
+  - Option to select the verification channel for the [captcha](./features/captcha.md). <SuggestionLink id="385" />
   - Ignore users/roles/categories in the [anti-spam](./features/anti-spam.md#ignore). <SuggestionLink id="362" />
   - Choose the [prefix for hybrid commands](./guides/prefix.md). <SuggestionLink id="103" />
   - Option to choose whether the [`/lock` command](./features/channel-lock.md) renames the locked channel with `🔒`.
 - Improved UX:
   - Prefix displayed when pinging the bot + mention as a universal prefix. <SuggestionLink id="193" />
-  - Disabling the [captcha](./features/captcha) no longer deletes the associated role and channel. <SuggestionLink id="43" />
+  - Disabling the [captcha](./features/captcha.md) no longer deletes the associated role and channel. <SuggestionLink id="43" />
   - Automatic detection of permission issues related to channels and roles. <SuggestionLink id="65" />
   - Automatic visibility check of the verification channel in Discord's onboarding process.
   - Standardized messages.
@@ -87,7 +88,7 @@ Discover the detailed list of changes made to RaidProtect.
 - Added the [`?userinfo` command](./features/utilities.mdx#userinfo). <SuggestionLink id="29" />
 - ~~Added the `?lockall` and `?unlockall` commands~~ (Feature removed).
 - Added the [`?kick`](./features/moderation.md#kick) and [`?ban`](./features/moderation.md#ban) commands.
-- Added [min-age to the captcha](./features/raid-mode#minage) (ability to set a minimum account age to access the server).
+- Added [min-age to the captcha](./features/raid-mode.md#minage) (ability to set a minimum account age to access the server).
 - Option to configure automatic deletion of command invocation messages. <SuggestionLink id="26" />
 - The logs channel is automatically recreated if deleted.
 - Overhauled database connection.
