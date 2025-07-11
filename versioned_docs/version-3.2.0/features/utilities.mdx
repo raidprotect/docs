@@ -5,6 +5,7 @@ title: Utilitaires
 import SeparatedBox from '@site/src/components/SeparatedBox';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import Icon from "@site/src/components/Icon";
 
 Des fonctionnalités supplémentaires pour simplifier la gestion de votre serveur. 🔧
 
@@ -103,15 +104,15 @@ Si la cible est un membre du serveur, les infos supplémentaires incluent :
 
 Certains indicateurs spéciaux (flags) peuvent être affichés pour un membre :
 
-| **Flag**                                 | **Emoji / Nom affiché**      | **Explication**                                                   |
-| ---------------------------------------- | ---------------------------- | ----------------------------------------------------------------- |
-| `DID_REJOIN`                             | MemberDidRejoin              | L'utilisateur a quitté et rejoint à nouveau le serveur.           |
-| `IS_GUEST`                               | MemberIsGuest                | Membre invité (invitation temporaire ou accès invité).            |
-| `COMPLETED_ONBOARDING`                   | OnboardingCompleted          | A terminé le processus d'accueil (onboarding) du serveur.         |
-| `STARTED_ONBOARDING`                     | OnboardingStarted            | A commencé le processus d'accueil.                                |
-| `COMPLETED_SERVER_GUIDE`                 | ServerGuideCompleted         | A terminé le guide du serveur si activé.                          |
-| `STARTED_SERVER_GUIDE`                   | ServerGuideStarted           | A commencé le guide du serveur.                                   |
-| `AUTOMOD_QUARANTINED_NAME`               | MemberQuarantined            | Mis en quarantaine par l'automodération pour le nom d'utilisateur.|
-| `AUTOMOD_QUARANTINED_GUILD_TAG`          | MemberQuarantined            | Mis en quarantaine par l'automodération pour le tag ou pseudo.    |
-| `BYPASSES_VERIFICATION`                  | BypassVerification           | L'utilisateur peut passer outre la vérification du serveur.       |
-| `SPAMMER`                                | UnusualAccountActivity       | Compte marqué comme spammeur ou activité inhabituelle détectée.   |
+| **Flag**                                 | **Emoji affiché**                                                                                                               | **Explication**                                                   |
+| ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------| ----------------------------------------------------------------- |
+| `DID_REJOIN`                             | <Icon src="./assets/icons/MemberDidRejoin.svg" alt="icon MemberDidRejoin" title=":MemberDidRejoin:"/>                           | L'utilisateur a quitté et rejoint à nouveau le serveur.           |
+| `IS_GUEST`                               | <Icon src="./assets/icons/MemberIsGuest.svg" alt="icon MemberIsGuest" title=":MemberIsGuest:"/>                                 | Membre invité (invitation temporaire ou accès invité).            |
+| `COMPLETED_ONBOARDING`                   | <Icon src="./assets/icons/OnboardingCompleted.svg" alt="icon OnboardingCompleted" title=":OnboardingCompleted:"/>               | A terminé le processus d'accueil (onboarding) du serveur.         |
+| `STARTED_ONBOARDING`                     | <Icon src="./assets/icons/OnboardingStarted.svg" alt="icon OnboardingStarted" title=":OnboardingStarted:"/>                     | A commencé le processus d'accueil.                                |
+| `COMPLETED_SERVER_GUIDE`                 | <Icon src="./assets/icons/ServerGuideCompleted.svg" alt="icon ServerGuideCompleted" title=":ServerGuideCompleted:"/>            | A terminé le guide du serveur si activé.                          |
+| `STARTED_SERVER_GUIDE`                   | <Icon src="./assets/icons/ServerGuideStarted.svg" alt="icon ServerGuideStarted" title=":ServerGuideStarted:"/>                  | A commencé le guide du serveur.                                   |
+| `AUTOMOD_QUARANTINED_NAME`               | <Icon src="./assets/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                     | Mis en quarantaine par l'automodération pour le nom d'utilisateur.|
+| `AUTOMOD_QUARANTINED_GUILD_TAG`          | <Icon src="./assets/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                     | Mis en quarantaine par l'automodération pour le tag ou pseudo.    |
+| `BYPASSES_VERIFICATION`                  | <Icon src="./assets/icons/BypassVerification.svg" alt="icon BypassVerification" title=":BypassVerification:"/>                  | L'utilisateur peut passer outre la vérification du serveur.       |
+| `SPAMMER`                                | <Icon src="./assets/icons/UnusualAccountActivity.svg" alt="icon UnusualAccountActivity" title=":UnusualAccountActivity:"/>      | Compte marqué comme spammeur ou activité inhabituelle détectée.   |
