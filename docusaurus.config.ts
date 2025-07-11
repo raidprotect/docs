@@ -180,7 +180,7 @@ export default async function createConfigAsync() {
 				content: '<strong><a href="https://docs.raidprotect.bot/blog/3.2.0-protection-update">Protection Update (3.2.0)</a> is now live!</strong>',
 				backgroundColor: '#D35F5F',
 				textColor: '#FFFFFF',
-				isCloseable: true
+				isCloseable: false
 			},
 			colorMode: {
 				defaultMode: 'dark',
