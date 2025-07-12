@@ -73,7 +73,7 @@ export default async function createConfigAsync() {
 					en: 'RaidProtect is a Discord bot that protects your server from malicious users with its anti-spam and captcha features. <strong>And right there, a little geranium.&nbsp;</strong>'
 				},
 				announcementBar: {
-					fr: '<strong>La <a href="https://docs.raidprotect.bot/blog/3.2.0-protection-update">Protection Update (3.2.0)</a> est sortie!</strong>',
+					fr: '<strong>La <a href="https://docs.raidprotect.bot/blog/3.2.0-protection-update">Protection Update (3.2.0)</a> est sortie !</strong>',
 					en: '<strong><a href="https://docs.raidprotect.bot/en/blog/3.2.0-protection-update">Protection Update (3.2.0)</a> is now live!</strong>'
 				}
 			},
