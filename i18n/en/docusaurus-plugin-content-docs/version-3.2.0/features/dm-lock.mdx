@@ -2,6 +2,10 @@
 title: DM Lock
 ---
 
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 The **DM Lock** feature of RaidProtect permanently closes access to server-originated direct messages (DMs), surpassing Discord’s native limitation, which only allows this block for 24 hours via the "Pause DMs" security action.
 
 ## 🚦 Use cases and recommendations {#recommendations}
@@ -32,3 +36,34 @@ Discord’s community features are essential for DM Lock to function properly. [
 3. Enable or disable automatic closing of direct messages.
 
 ![DM Lock settings screenshot](../assets/rp-settings-dm-lock.webp)
+
+## ℹ️ Command /dmlock-info {#info}
+
+The `/dmlock-info` command informs members about the current **DM Lock** status on the server. It displays a clear message indicating whether the restriction is **enabled** or **disabled**, along with an educational explanation of its purpose.
+
+**Goal:**
+- Explain why DMs are limited (to combat spam, scams, phishing).
+- Reduce confusion and repeated questions from new members.
+- Remind members of the conditions for continuing DM conversations (friends, staff, bots, existing contacts).
+
+**Example Display**
+<SeparatedBox>
+<Tabs>
+  <TabItem value="enable" label="Enabled" default>
+
+![Screenshot of the dmlock-info command enabled](../assets/rp-dm-lock-info-enable.webp)
+
+  </TabItem>
+  <TabItem value="disable" label="Disabled">
+
+![Screenshot of the dmlock-info command disabled](../assets/rp-dm-lock-info-disable.webp)
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+### ⚙️ Best Practices
+
+- Encourage active members to use `/dmlock-info` to answer new members’ questions.
+- Display it regularly or pin it in your welcome channels.
+- Combine it with your rules or announcements to reinforce the server’s anti-spam policy.
