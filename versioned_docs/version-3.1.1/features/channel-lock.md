@@ -27,6 +27,6 @@ Les commandes `lock` et `unlock` sont [utilisables par préfixe](../guides/prefi
 
 Par défaut, cette fonctionnalité est désactivée. Cependant, vous avez la possibilité de choisir si les salons verrouillés doivent être renommés avec un emoji cadenas (🔒) ajouté devant leur nom.
 
-Pour activer/désactiver le cadena devant les noms des salons verrouillés : 
+Pour activer/désactiver le cadenas devant les noms des salons verrouillés : 
 1. Faites la [commande `/settings`](../setup.md#settings).
 2. Cliquez sur le bouton “**Cadenas sur les salons verrouillés**”. Ce bouton fonctionne comme un interrupteur ; Un simple clic suffit pour activer ou désactiver l’option.
