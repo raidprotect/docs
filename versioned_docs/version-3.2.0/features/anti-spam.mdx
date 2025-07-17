@@ -58,6 +58,24 @@ Vous pouvez personnaliser les sanctions appliquées selon le type de spam détec
 - **Sélectionner un trigger** : choisissez le type de spam à configurer.
 - **Sélectionner une sanction** : choisissez la sanction correspondante.
 
+#### Types de sanctions et déclencheurs {#sanctions}
+
+Voici les différentes **sanctions disponibles** ainsi que les **déclencheurs (triggers)** que RaidProtect peut détecter, avec le **temps de timeout par défaut** si applicable :
+
+- **Warn** : Envoie un avertissement au membre.
+- **Kick** : Expulse le membre du serveur.
+- **Timeout** : Rend le membre muet pendant une durée définie.
+- **Softban** : Bannit puis débannit immédiatement le membre, supprimant ainsi ses messages.
+- **Ban** : Bannit définitivement le membre.
+
+| Déclencheur (Trigger)                  | Description                                             | Durée du Timeout   |
+|----------------------------------------|---------------------------------------------------------|--------------------|
+| Spam                                   | Envoi répété de messages                                | 1 minute           |
+| Spam avec selfbot                      | Utilisation de selfbots pour spammer                    | 1 heure            |
+| Spam de mentions                       | Mentions massives répétées                              | 30 minutes         |
+| Spam de liens                          | Envoi massif de liens                                   | 24 heures          |
+| Spam de duplicatas ou spam importants  | Messages copiés-collés ou spams excessifs               | 24 heures          |
+
 ![Capture d'écran des sanctions anti-spam](../assets/rpBeta-settings-anti-spam-sanctions.webp)
 
 ## 📑 Logs de l’anti-spam {#logs}
