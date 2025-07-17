@@ -11,7 +11,7 @@ La fonctionnalité **Fermeture des MP** de RaidProtect permet de fermer l’acc�
 - **Communautés avec un jeune public :** Pour les serveurs comptant un grand nombre de mineurs, limiter les MP peut renforcer la sécurité et prévenir les comportements inappropriés.
 - **Protection continue :** Grâce à l’automatisation, il n’y a pas de fenêtre de vulnérabilité liée à l’oubli du renouvellement manuel.
 
-## ❓ Fonctionnent de la Fermeture des MP {#working}
+## ❓ Fonctionnement de la Fermeture des MP {#working}
 
 Le bot RaidProtect vérifie régulièrement l’état du paramètre de blocage des MP serveur et, si nécessaire, le réactive automatiquement afin d’éviter toute période de vulnérabilité entre deux renouvellements manuels. Cette tâche s’exécute de manière transparente pour les administrateurs et les membres du serveur.
 
