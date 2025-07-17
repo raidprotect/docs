@@ -4,7 +4,7 @@ title: Signalements
 
 Le système de signalement de RaidProtect permet à votre communauté de signaler rapidement tout contenu problématique ou utilisateur suspect. Il fonctionne de deux manières différentes, et peut être configuré pour optimiser le processus de gestion des signalements.
 
-## ❓ Fonctionnent des signalements {#working}
+## ❓ Fonctionnement des signalements {#working}
 Les membres peuvent signaler un contenu via 3 méthodes principales.
 
 1. **Clic droit sur un message** 
