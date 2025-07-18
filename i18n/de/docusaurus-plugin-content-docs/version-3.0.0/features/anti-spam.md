@@ -14,7 +14,7 @@ Easily and effectively protect your Discord server with RaidProtect's anti-spam 
 
 **If spam is detected, RaidProtect kicks the spammer** and informs you via the logs channel. You can view details of the blocked spam by clicking on the provided link.
 
-![Spam Log Screenshot](../assets/log-spam-raidprotect.png)
+![Spam Log Screenshot](../../../../en/docusaurus-plugin-content-docs/version-3.0.0/assets/log-spam-raidprotect.png)
 
 ## 📈 Anti-Spam Security Levels {#level}
 

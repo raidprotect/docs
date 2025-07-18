@@ -58,4 +58,4 @@ This problem is relatively common, but it depends on **your server configuration
 
 The lock command seems magical, but it has its weaknesses. As [noted in this documentation](../features/channel-lock.md#lock), the command **only affects the @everyone role**. This means that if there is a role in the channel you want to lock that explicitly has permission to speak, they will still be able to do so. A picture is worth a thousand words, so here’s what that looks like in practice. 🔍 
 
-[Screenshot of channel lock configuration](../assets/lock-channel-messages-raidprotect.png)
+[Screenshot of channel lock configuration](../../../../en/docusaurus-plugin-content-docs/version-3.1.0/assets/lock-channel-messages-raidprotect.png)

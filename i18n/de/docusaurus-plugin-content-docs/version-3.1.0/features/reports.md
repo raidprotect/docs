@@ -32,7 +32,7 @@ Before the reporting system is fully operational, it is imperative to configure 
 4. Choose the desired channel (_e.g. #reports_).  
 If you do not have a suitable channel, you can opt to create one automatically using the **Create one for me** button.
 
-[Screenshot report settings](../assets/rpBeta-settings-reports.webp)
+[Screenshot report settings](../../../../en/docusaurus-plugin-content-docs/version-3.1.0/assets/rpBeta-settings-reports.webp)
 
 ### Configuring the Notification Role {#config-role}
 

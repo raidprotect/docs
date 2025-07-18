@@ -39,7 +39,7 @@ The `/settings` command is the go-to command for managing your settings after in
 2. Easily navigate between different sections to find the settings you want to modify.
 3. Adjust the options: Each category presents a list of customizable options in the form of buttons or dropdown menus.
 
-![Settings Screenshot](./assets/rpBeta-settings.webp)
+![Settings Screenshot](../../../en/docusaurus-plugin-content-docs/version-3.1.0/assets/rpBeta-settings.webp)
 
 ### 🔄 Resetting a Setting {#reset}
 

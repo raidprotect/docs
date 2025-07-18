@@ -18,11 +18,11 @@ Users have five minutes to complete the captcha. After this time, they are kicke
 **The permissions for the "Unverified" role are managed automatically by RaidProtect.** While you can rename the role and channel, they must not be deleted.
 :::
 
-![How the Captcha Works](../assets/captcha-raidprotect.gif)
+![How the Captcha Works](../../../../en/docusaurus-plugin-content-docs/version-3.0.0/assets/captcha-raidprotect.gif)
 
 When a user joins your server with the captcha enabled, RaidProtect automatically posts **a message with the account creation date** of the new user in the logs channel.
 
-![Join Log Screenshot](../assets/log-join-captcha-raidprotect.png)
+![Join Log Screenshot](../../../../en/docusaurus-plugin-content-docs/version-3.0.0/assets/log-join-captcha-raidprotect.png)
 
 ## ⛽ Setting Up the Captcha {#setup}
 

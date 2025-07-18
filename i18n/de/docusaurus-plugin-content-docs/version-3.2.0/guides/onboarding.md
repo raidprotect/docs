@@ -4,7 +4,7 @@ title: Onboarding Process and Captcha
 
 If the `#verification` channel is not visible by default for new members, this can prevent the Captcha system from working properly. Here’s how to fix this issue step by step.
 
-![Captcha alert screenshot](../assets/rp-settings-captcha-alert.webp)
+![Captcha alert screenshot](../../../../en/docusaurus-plugin-content-docs/version-3.2.0/assets/rp-settings-captcha-alert.webp)
 
 ## 1️⃣ Check the channel permissions {#permissions}
 
@@ -13,7 +13,7 @@ If the `#verification` channel is not visible by default for new members, this c
    - Make sure `@everyone` **does not** have permission to view the channel.
    - Ensure the `@Unverified` role **has** permission to **view the channel**, **read message history**, and **send messages**.
 
-![Screenshot channel permissions check](../assets/rp-verification-channel-permissions.webp)
+![Screenshot channel permissions check](../../../../en/docusaurus-plugin-content-docs/version-3.2.0/assets/rp-verification-channel-permissions.webp)
 
 ## 2️⃣ Check the Welcome category {#default-category}
 
@@ -22,7 +22,7 @@ If the `#verification` channel is not visible by default for new members, this c
 3. If needed, move `#verification` into a checked category.
 4. Save the changes.
 
-![Screenshot welcome category check](../assets/rp-welcome-category.webp)
+![Screenshot welcome category check](../../../../en/docusaurus-plugin-content-docs/version-3.2.0/assets/rp-welcome-category.webp)
 
 ## 3️⃣ Refresh the configuration in RaidProtect {#refresh-config}
 
