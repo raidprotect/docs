@@ -1,0 +1,117 @@
+---
+title: Utilities
+---
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Icon from "@site/src/components/Icon";
+
+Extra features to simplify the management of your server. 🔧
+
+In addition to core features like the captcha system and anti-raid protection, RaidProtect offers several secondary tools that can make managing your server even smoother.
+
+:::info
+Utility commands are [usable with a prefix](../guides/prefix.md).
+:::
+
+## 👤 User Information {#userinfo}
+
+The `/userinfo` command lets you get detailed information about a user.
+
+Use the command: ```/userinfo [@user]```
+
+Replace `[@user]` with the desired mention or ID.
+
+### 📋 Displayed Information {#displayed-userinfo}
+
+- **Discord account creation date**
+- User's **profile picture**
+- **Profile banner**
+- **Profile badges**
+  - The Nitro, Booster, Quest, and Originally Name badges are not displayed.
+
+
+### 🎭 Information about a server member {#displayed-memberinfo}
+
+If the target is a server member, additional info includes:
+
+- **Date joined the server**
+- **Server nickname**
+- **Number of roles** and **list of the first 6 roles**
+- **Permission category** (visible only to moderators):
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="animator" label="Animator" default>
+
+    The **Animator** category is shown if the member has **at least one** of the following permissions:
+
+    - `MANAGE_EXPRESSIONS`
+    - `CREATE_GUILD_EXPRESSIONS`
+    - `MANAGE_EVENTS`
+
+  </TabItem>
+  <TabItem value="moderator" label="Moderator">
+
+    The **Moderator** category is shown if the member has **at least one** of the following permissions:
+
+    - `KICK_MEMBERS`
+    - `BAN_MEMBERS`
+    - `MODERATE_MEMBERS`
+    - `MANAGE_MESSAGES`
+    - `MUTE_MEMBERS`
+    - `DEAFEN_MEMBERS`
+    - `MOVE_MEMBERS`
+    - `MANAGE_THREADS`
+
+  </TabItem>
+  <TabItem value="manager" label="Manager">
+
+    The **Manager** category is shown if the member has **at least one** of the following permissions:
+
+    - `MANAGE_GUILD`
+    - `MANAGE_ROLES`
+    - `MANAGE_CHANNELS`
+    - `VIEW_AUDIT_LOG`
+    - `MANAGE_WEBHOOKS`
+    - `MANAGE_SERVER_EXPRESSIONS`
+
+  </TabItem>
+  <TabItem value="admin" label="Administrator">
+
+    The **Administrator** category is shown in **two possible cases**:
+
+    1️⃣ Has the permission:
+    - `ADMINISTRATOR`
+
+    2️⃣ Has **all three** of the following permissions at the same time:
+    - `MANAGE_GUILD`
+    - `MANAGE_ROLES`
+    - `MANAGE_CHANNELS`
+
+  </TabItem>
+  <TabItem value="owner" label="Owner">
+
+    **Condition**: The member is the **server owner**.
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+- **Member flags** (visible only to moderators)
+
+Certain special indicators (flags) can be displayed for a member:
+
+| **Flag**                                 | **Displayed Emoji**                                                                                                    | **Explanation**                                                   |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `DID_REJOIN`                             | <Icon src="/img/icons/MemberDidRejoin.svg" alt="icon MemberDidRejoin" title=":MemberDidRejoin:"/>                      | The user left and rejoined the server.                            |
+| `IS_GUEST`                               | <Icon src="/img/icons/MemberIsGuest.svg" alt="icon MemberIsGuest" title=":MemberIsGuest:"/>                            | Guest member (temporary invite or guest access).                  |
+| `COMPLETED_ONBOARDING`                   | <Icon src="/img/icons/OnboardingCompleted.svg" alt="icon OnboardingCompleted" title=":OnboardingCompleted:"/>          | Completed the server onboarding process.                          |
+| `STARTED_ONBOARDING`                     | <Icon src="/img/icons/OnboardingStarted.svg" alt="icon OnboardingStarted" title=":OnboardingStarted:"/>                | Started the onboarding process.                                   |
+| `COMPLETED_SERVER_GUIDE`                 | <Icon src="/img/icons/ServerGuideCompleted.svg" alt="icon ServerGuideCompleted" title=":ServerGuideCompleted:"/>       | Completed the server guide if enabled.                            |
+| `STARTED_SERVER_GUIDE`                   | <Icon src="/img/icons/ServerGuideStarted.svg" alt="icon ServerGuideStarted" title=":ServerGuideStarted:"/>             | Started the server guide.                                         |
+| `AUTOMOD_QUARANTINED_NAME`               | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | Quarantined by automoderation for the username.                   |
+| `AUTOMOD_QUARANTINED_GUILD_TAG`          | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | Quarantined by automoderation for the tag or nickname.            |
+| `BYPASSES_VERIFICATION`                  | <Icon src="/img/icons/BypassVerification.svg" alt="icon BypassVerification" title=":BypassVerification:"/>             | User can bypass server verification.                              |
+| `SPAMMER`                                | <Icon src="/img/icons/UnusualAccountActivity.svg" alt="icon UnusualAccountActivity" title=":UnusualAccountActivity:"/> | Account marked as spammer or unusual activity detected.           |
