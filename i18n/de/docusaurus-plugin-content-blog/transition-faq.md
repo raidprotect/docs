@@ -1,67 +1,66 @@
 ---
-title: 'A New Era for Your Security'
+title: 'Eine neue Ära für deine Sicherheit'
 tags: [faq]
 authors: [derrios, ichii]
 date: 2023-01-16
 ---
 
-Since its creation in 2018 by [Baptiste](https://baptiste.lol/), RaidProtect has become one of the essential French-speaking bots for Discord server security. After more than four years of development and evolution, the project is now undergoing a major transition: **RaidProtect is being taken over by the team behind [S*l*ash FR](https://slash.fr.community/) and [DFR.gg](https://dfr.gg/)**. This takeover aims to secure the bot’s future, offer new perspectives, and enrich its development.
+Seit seiner Erstellung im Jahr 2018 durch [Baptiste](https://baptiste.lol/) hat sich RaidProtect zu einem der wichtigsten französischsprachigen Bots für die Sicherheit von Discord-Servern entwickelt. Nach über vier Jahren Weiterentwicklung geht das Projekt nun in eine neue Phase über: **Das Team hinter [S*l*ash FR](https://slash.fr.community/) und [DFR.gg](https://dfr.gg/) übernimmt RaidProtect**. Diese Übernahme soll die Zukunft des Bots sichern, neue Perspektiven eröffnen und die Entwicklung vorantreiben.
 
 <!--truncate-->
 
-## Why this takeover? {#why}
+## Warum diese Übernahme? {#why}
 
-Over time, maintaining a bot like RaidProtect became increasingly complicated. Between Discord’s changes, API updates, and growing demands, it was becoming harder and harder for Baptiste to keep RaidProtect up to date while ensuring its stability and effectiveness. Rather than let RaidProtect shut down, he chose to entrust the project to us.
+Im Laufe der Zeit wurde es immer schwieriger, einen Bot wie RaidProtect zu pflegen. Zwischen Discord-Änderungen, API-Updates und wachsenden Anforderungen konnte Baptiste den Bot kaum noch aktuell halten und gleichzeitig seine Stabilität garantieren. Anstatt RaidProtect einzustellen, hat er sich entschieden, das Projekt uns anzuvertrauen.
 
-Our team has taken over, bringing the resources and expertise needed to meet the technical and organizational challenges of RaidProtect. Our goal is simple: to improve and modernize the bot while staying true to what it has always been.
+Unser Team hat übernommen und bringt die nötigen Ressourcen und das Know-how mit, um die technischen und organisatorischen Herausforderungen zu meistern. Unser Ziel ist einfach: den Bot verbessern und modernisieren, ohne seine Identität zu verlieren.
 
-## What’s changing (and what’s not!) {#changing}
+## Was ändert sich (und was nicht!) {#changing}
 
-#### ✅ RaidProtect is still the same bot you know {#same}
-The features you rely on aren’t going anywhere. We’re keeping **the same philosophy**, and we just want to make it better without disrupting your habits. Security and reliability remain at the heart of the project.
+#### ✅ RaidProtect bleibt der Bot, den du kennst {#same}
+Die Funktionen, auf die du dich verlässt, bleiben bestehen. Wir behalten **dieselbe Philosophie** bei und möchten den Bot nur verbessern, ohne deine Gewohnheiten zu stören. Sicherheit und Zuverlässigkeit stehen weiterhin im Mittelpunkt.
 
-#### 🔄 A technical overhaul for better performance {#technical-overhaul}
-The bot has been completely rewritten to be faster, more stable, and better suited to Discord’s changes. This overhaul wasn’t just an improvement — it was a necessity: with the new version of Discord’s API, the old version of the bot simply would no longer function. This update also makes it easier for us to add new features.
+#### 🔄 Technische Neuentwicklung für bessere Leistung {#technical-overhaul}
+Der Bot wurde komplett neu geschrieben, um schneller, stabiler und besser an Discords Neuerungen angepasst zu sein. Diese Überarbeitung war notwendig: Mit der neuen API-Version hätte die alte Version nicht mehr funktioniert. Gleichzeitig können wir so einfacher neue Funktionen hinzufügen.
 
-#### 🛠️ Updates and new features coming soon {#updates}
-One of the major benefits of this takeover is that we can finally invest time and resources into making RaidProtect even more effective. Here are some of the upcoming improvements:
-- Support for **slash commands** to align with Discord’s current standards.
-- More **configuration options** to fit each server’s needs.
-- A **multilingual system** to broaden RaidProtect’s reach.
+#### 🛠️ Baldige Updates und neue Features {#updates}
+Ein großer Vorteil dieser Übernahme ist, dass wir nun Zeit und Ressourcen investieren können, um RaidProtect noch effektiver zu machen. Geplante Verbesserungen sind unter anderem:
+- Unterstützung für **Slash-Befehle**, passend zu den aktuellen Discord-Standards.
+- Mehr **Konfigurationsmöglichkeiten**, damit jeder Server optimal eingestellt werden kann.
+- Ein **mehrsprachiges System**, um RaidProtect einem größeren Publikum zugänglich zu machen.
 
-#### 🔐 A stronger commitment to security {#safety}
-RaidProtect was designed to protect servers, and that remains our top priority. We will closely monitor Discord’s evolution and adapt the bot to the new tools the platform provides.
+#### 🔐 Noch mehr Einsatz für Sicherheit {#safety}
+RaidProtect wurde entwickelt, um Server zu schützen – das bleibt unsere oberste Priorität. Wir beobachten Discords Entwicklungen genau und passen den Bot an die neuen Tools der Plattform an.
 
-## Your questions, our answers (FAQ) {#faq}
+## Eure Fragen, unsere Antworten (FAQ) {#faq}
 
-When we announced the takeover of RaidProtect, we received many questions from the community. Whether on the support server or during our transition event, we saw strong interest in the bot’s future. To clarify things and provide clear answers, we’ve gathered the most frequently asked questions here.
+Als wir die Übernahme angekündigt haben, gab es viele Fragen aus der Community. Ob auf dem Support-Server oder bei unserem Übergangsevent – das Interesse war groß. Um alles klarzustellen, haben wir hier die häufigsten Fragen gesammelt.
 
-#### Who are you and why you? {#faq-1}
+#### Wer seid ihr und warum gerade ihr? {#faq-1}
+Wir sind mehr als nur ein Team – seit 2017 verbinden wir Leidenschaft und Fachwissen, um Online-Communities aufzubauen. Außerdem haben wir S*l*ash FR ins Leben gerufen, eine französischsprachige Community rund um Discord und Best Practices. RaidProtect passt perfekt in dieses Umfeld.
 
-More than just a team, we’re a group of friends who have been combining passion and expertise to build online communities since 2017. We also launched S*l*ash FR, a French-speaking community focused on Discord and its best practices. RaidProtect naturally fits into this ecosystem.
+Wir verstehen, dass der Gedanke an ein Unternehmen hinter dem Projekt manche beunruhigt. Ja, wir müssen RaidProtect finanzieren, denn ein Bot dieser Größe verursacht Kosten. Dennoch wollen wir keine Funktionen streichen oder alles kostenpflichtig machen. Alle aktuellen Features bleiben kostenlos, und für fortgeschrittene Werkzeuge wird es optionale Premium-Angebote geben.
 
-We understand that the idea of a company behind the project may worry some people. To be honest, yes, we will have to fund RaidProtect, because running a bot at this scale is expensive. But we don’t want to limit the bot or turn everything into paid features. All current features will remain free, and premium options will be available for those who want advanced tools.
+#### Warum übernimmt eure Agentur RaidProtect? {#faq-2}
+Unsere Agentur ist auf die Verwaltung von Discord-Servern und die Entwicklung von Bots spezialisiert. Das Team wollte in ein großes Projekt investieren, und RaidProtect passte perfekt zu diesem Ziel.
 
-#### Why is your agency taking over RaidProtect? {#faq-2}
-Our agency specializes in managing Discord servers and developing bots. The team wanted to invest in a major project, and RaidProtect perfectly matched that ambition.
+#### Was hat das mit S*l*ash FR zu tun? {#faq-3}
+S*l*ash FR ist eine Community, die wir gegründet haben, um Discord-Begeisterte zusammenzubringen. RaidProtect fügt sich natürlich ein, bleibt aber ein eigenständiges Projekt.
 
-#### What’s the link with S*l*ash FR? {#faq-3}
-S*l*ash FR is a community we created to bring together Discord enthusiasts. RaidProtect naturally fits in, but it remains an independent project.
+#### Wird das aktuelle RaidProtect-Team verändert? {#faq-4}
+Nein, der Großteil des Community-Teams macht weiter, unterstützt von neuen Mitgliedern aus S*l*ash FR. Auch Baptiste wird das Projekt gelegentlich weiterhin begleiten.
 
-#### Will the current RaidProtect team change? {#faq-4}
-No, most of the community team is continuing the journey, supported by new members from S*l*ash FR. Baptiste himself will still provide occasional support on the project.
+#### Wird der Bot kostenpflichtig? {#faq-5}
+Alle bestehenden Funktionen bleiben **kostenlos**. Einige neue, fortgeschrittene Features könnten jedoch über ein Premium-Abonnement angeboten werden, um Wartung und Entwicklung zu finanzieren.
 
-#### Will the bot become paid? {#faq-5}
-All current features will **remain free**. However, some new advanced features may be offered through a premium subscription to cover maintenance and development costs.
+#### Ändern sich Design und Markenauftritt von RaidProtect? {#faq-6}
+Nein, die visuelle Identität von RaidProtect **bleibt erhalten**. Die Website wird jedoch aktualisiert, um die Entwicklung des Projekts besser widerzuspiegeln.
 
-#### Will the design and branding of RaidProtect change? {#faq-6}
-No, RaidProtect’s visual identity will **stay the same**. However, the website will be updated to better reflect the project’s evolution.
-
-#### Will your team develop other bots? {#faq-7}
-The acquisition of RaidProtect is part of a broader plan to eventually offer other tools for Discord servers. However, the current priority is to optimize and perfect RaidProtect.
+#### Wird euer Team weitere Bots entwickeln? {#faq-7}
+Die Übernahme von RaidProtect ist Teil eines größeren Plans, langfristig weitere Tools für Discord-Server anzubieten. Vorrang hat aber derzeit, RaidProtect zu optimieren und zu perfektionieren.
 
 ---
 
-RaidProtect is evolving, but the spirit remains the same. We know how important this bot is for many servers, and we want to make it an even more reliable, powerful, and adaptable tool for your needs.
+RaidProtect entwickelt sich weiter, doch der Geist bleibt derselbe. Wir wissen, wie wichtig dieser Bot für viele Server ist, und wollen ihn zu einem noch zuverlässigeren, leistungsstärkeren und flexibleren Werkzeug machen.
 
-Thank you all for your trust — the adventure is just beginning! 🚀
+Vielen Dank für euer Vertrauen – das Abenteuer hat gerade erst begonnen! 🚀
