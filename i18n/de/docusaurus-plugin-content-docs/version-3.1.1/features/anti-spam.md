@@ -21,7 +21,7 @@ RaidProtect offers three security levels to meet your server's needs.
 - 🟠 **Medium:** Sanctions all spam but respects ignored channels.
 - 🟢 **Low:** Sanctions only heavy spam.
 
-![Anti-spam settings screenshot](../assets/rp-settings-anti-spam.webp)
+![Anti-spam settings screenshot](../../../../en/docusaurus-plugin-content-docs/version-3.1.1/assets/rp-settings-anti-spam.webp)
 
 ### Changing the Security Level {#level}
 

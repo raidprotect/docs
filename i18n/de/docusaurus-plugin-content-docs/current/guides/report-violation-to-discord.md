@@ -24,7 +24,7 @@ To make a report, you need to provide evidence. First, note that **screenshots a
 
 Filing a report is very easy and takes only a few minutes. First, go to the **dedicated form** by following the link **https://dis.gd/report**.
 
-[Screenshot of Discord report](../assets/discord-report.png)
+[Screenshot of Discord report](../../../../en/docusaurus-plugin-content-docs/current/assets/discord-report.png)
 
 Depending on the type of report selected, **different information will be requested**. Enter the link to the message obtained in the previous step in the appropriate field (and possibly the others in the description). Don’t hesitate to be **as thorough as possible** and remember the basic rules of politeness. 😇 
 
@@ -32,4 +32,4 @@ Depending on the type of report selected, **different information will be reques
 
 A few days after your report—generally within a week—you should receive **a response via email** from Discord. Note that you will not be able to know the sanctions taken (or not) against the reported user. 😒
 
-[Screenshot of Discord response](../assets/discord-reply.png)
+[Screenshot of Discord response](../../../../en/docusaurus-plugin-content-docs/current/assets/discord-reply.png)

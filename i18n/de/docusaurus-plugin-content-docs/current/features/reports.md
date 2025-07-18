@@ -24,7 +24,7 @@ Replace `[@user]` with the desired user and `[reason]` with the reason for the i
 
 Before the reporting system is fully operational, it is imperative to configure a **report channel** where all reports will be sent. You need to set up a log or notification channel to receive alerts regarding reports.
 
-[Report settings screenshot](../assets/rp-settings-reports.webp)
+[Report settings screenshot](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-reports.webp)
 
 ### Setting Up the Channel {#config-channel}
 

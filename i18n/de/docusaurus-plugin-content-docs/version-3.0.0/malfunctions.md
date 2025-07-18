@@ -60,4 +60,4 @@ The lock command is useful but has limitations. As noted in [this documentation]
 
 As a picture is worth a thousand words, here’s a visual example of what this looks like. 🔍  
 
-![Screenshot of channel lock configuration](./assets/lock-channel-messages-raidprotect.png)
+![Screenshot of channel lock configuration](../../../en/docusaurus-plugin-content-docs/version-3.0.0/assets/lock-channel-messages-raidprotect.png)

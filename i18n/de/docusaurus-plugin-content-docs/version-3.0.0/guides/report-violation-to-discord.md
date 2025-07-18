@@ -24,7 +24,7 @@ To make a report, you’ll need to provide evidence. Note that **screenshots are
 
 Reporting is quick and straightforward, taking only a few minutes. First, go to the **dedicated form** by visiting **[https://dis.gd/report](https://dis.gd/report)**.
 
-![Discord Report Form Screenshot](../assets/discord-report.png)
+![Discord Report Form Screenshot](../../../../en/docusaurus-plugin-content-docs/version-3.0.0/assets/discord-report.png)
 
 ### Submitting the Report to the Trust & Safety Team {#form}
 
@@ -34,4 +34,4 @@ Depending on the type of report, **different details will be required**. Paste t
 
 A few days after submitting your report—usually within a week—you should receive **an email response** from Discord. Note that you won’t be informed about the specific penalties (if any) imposed on the reported user. 😒  
 
-![Discord Reply Screenshot](../assets/discord-reply.png)
+![Discord Reply Screenshot](../../../../en/docusaurus-plugin-content-docs/version-3.0.0/assets/discord-reply.png)

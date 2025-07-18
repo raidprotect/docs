@@ -14,7 +14,7 @@ Using these commands is **very straightforward**. For banning, simply run: `?ban
 
 For advanced users, note that you can ban a user even **if they are not on your server** by using their user ID. Convenient.
 
-![Ban Log Screenshot](../assets/log-ban-raidprotect.png)
+![Ban Log Screenshot](../../../../en/docusaurus-plugin-content-docs/version-3.0.0/assets/log-ban-raidprotect.png)
 
 Example of a log message after banning a user.
 
@@ -28,4 +28,4 @@ This command **removes the permission to speak** from the @everyone role in the 
 
 The final additional feature is the `?userinfo` command. This command primarily allows you to view **the account creation date of any user** and, if they are a server member, the date they joined your server. The command must be followed by a mention, a username with a tag, or a user ID. 👀  
 
-![User Info Screenshot](../assets/userinfo-raidprotect.png)
+![User Info Screenshot](../../../../en/docusaurus-plugin-content-docs/version-3.0.0/assets/userinfo-raidprotect.png)

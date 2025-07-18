@@ -18,7 +18,7 @@ Allows you to enable or disable core features at a glance using an interactive s
 
 The bot will then send you a summary of the activated features and the changes it will make to the server.
 
-![Recommended configuration screenshot](./assets/rp-setup.webp)
+![Recommended configuration screenshot](../../../en/docusaurus-plugin-content-docs/version-3.1.1/assets/rp-setup.webp)
 
 <!--
 ### 🛠️ Advanced Configuration {#advanced}
@@ -42,14 +42,14 @@ The `/settings` command is the go-to command for managing your settings after in
 2. Easily navigate between different sections to find the settings you want to modify.
 3. Adjust the options: Each category presents a list of customizable options in the form of buttons or dropdown menus.
 
-![Settings screenshot](./assets/rp-settings.webp)
+![Settings screenshot](../../../en/docusaurus-plugin-content-docs/version-3.1.1/assets/rp-settings.webp)
 
 ### 🔄 Resetting a Setting {#reset}
 
 1. Navigate to the desired setting.
 2. Click on “**Reset**”.
 
-![Reset button screenshot](./assets/rp-button-reset.webp)
+![Reset button screenshot](../../../en/docusaurus-plugin-content-docs/version-3.1.1/assets/rp-button-reset.webp)
 
 The bot will confirm the reset before applying the changes.
 

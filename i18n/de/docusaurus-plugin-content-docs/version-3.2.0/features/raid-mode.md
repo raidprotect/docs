@@ -31,7 +31,7 @@ The `raidmode` command is also [available with prefix](../guides/prefix.md).
 
 If your server often gets many new members at once, it’s wise to adjust this threshold to avoid false positives.
 
-![Screenshot of auto raid mode settings](../assets/rp-settings-raid-mode.webp)
+![Screenshot of auto raid mode settings](../../../../en/docusaurus-plugin-content-docs/version-3.2.0/assets/rp-settings-raid-mode.webp)
 
 :::note
 We recommend setting a value between 10 and 20 members in 10 seconds for optimal system performance.

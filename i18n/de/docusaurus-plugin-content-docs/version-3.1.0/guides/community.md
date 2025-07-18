@@ -29,7 +29,7 @@ If Community is already enabled on your server, the section will be called **Com
 4. **Complete the setup**
    - Click “Finish Setup”. The “Community” badge will appear on your server once activation is complete.
 
-![Discord Community activation screenshot](../assets/rp-enable-community.webp)
+![Discord Community activation screenshot](../../../../en/docusaurus-plugin-content-docs/version-3.1.0/assets/rp-enable-community.webp)
 
 ## 💡 Use DM Lock & Raid Mode modules after activation {#use}
 

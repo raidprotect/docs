@@ -29,7 +29,7 @@ The `raidmode` command is [usable with a prefix](../guides/prefix.md).
 
 If your server frequently hosts many new members simultaneously, it is wise to adjust this threshold to avoid false positives.
 
-[Screenshot of automatic raid mode](../assets/rpBeta-settings-raid-mode.webp)
+[Screenshot of automatic raid mode](../../../../en/docusaurus-plugin-content-docs/version-3.1.0/assets/rpBeta-settings-raid-mode.webp)
 
 :::note
 We recommend entering a value between 10 and 20 members in 10 seconds for good system efficiency.
