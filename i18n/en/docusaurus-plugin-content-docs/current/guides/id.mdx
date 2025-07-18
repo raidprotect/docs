@@ -1,0 +1,98 @@
+---
+title: Using IDs
+---
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Discord IDs are unique numbers that precisely identify each user, channel, server, or message on Discord. They are a reliable and permanent way to identify elements on the platform.
+
+:::note Relevance for Moderation
+Using Discord IDs is especially useful for moderation actions because it allows you to:
+- **Sanction an absent user**: Ban someone who has left the server
+- **Avoid mistakes**: Precisely identify the right person even with similar usernames
+- **Keep track**: IDs never change, unlike usernames
+- **Conflict resolution**: Clear identification in case of special characters
+:::
+
+## Enabling Developer Mode
+
+You need to enable Developer Mode to use Discord IDs.
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="desktop" label="On Discord Desktop/Web" default>
+
+1. **Open User Settings**
+   - Click the gear icon ⚙️ at the bottom left of the interface
+
+2. **Access Advanced Settings**
+   - In the sidebar, go to the **Advanced** tab
+
+3. **Enable Developer Mode**
+   - Turn on the **"Developer Mode"** option by clicking the toggle button
+   - The button should turn blue once enabled
+
+  </TabItem>
+  <TabItem value="mobile" label="On Discord Mobile">
+
+1. **Open User Settings**
+   - Tap your avatar at the bottom right
+   - Tap the gear icon ⚙️ at the top right of the interface
+
+2. **Access Advanced Settings**
+   - Scroll down and tap **"Advanced"**
+
+3. **Enable Developer Mode**
+   - Turn on the **"Developer Mode"** option
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+## Copying an ID
+
+Once Developer Mode is enabled, you can copy the ID of any element:
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="user" label="User ID" default>
+
+- **Right-click** on the avatar or username
+- Select **"Copy User ID"**
+
+  </TabItem>
+  <TabItem value="channel" label="Channel ID">
+
+- **Right-click** on the channel name in the channel list
+- Select **"Copy Channel ID"**
+
+  </TabItem>
+  <TabItem value="server" label="Server ID">
+
+- **Right-click** on the server name at the top left
+- Select **"Copy Server ID"**
+
+  </TabItem>
+  <TabItem value="message" label="Message ID">
+
+- **Right-click** on a message
+- Select **"Copy Message ID"**
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+## Using with RaidProtect
+
+IDs can be used in RaidProtect commands instead of mentions:
+
+- [`/ban 123456789012345678 Server rules violation`](../features/moderation#ban)
+- [`/clear 100 123456789012345678`](../features/moderation#clear)
+- [`/userinfo 123456789012345678`](../features/utilities#userinfo)
+- [`/bypass mining 123456789012345678`](../features/raid-mode#minage)
+
+:::info
+You can ban a user using their Discord ID, even if they are not online or present in your server.
+:::

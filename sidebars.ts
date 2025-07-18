@@ -89,6 +89,10 @@ const sidebars: SidebarsConfig = {
 					id: 'guides/malfunctions',
 				},
 				{
+					type: 'doc',
+					id: 'guides/id',
+				},
+				{
 					type: 'link',
 					href: 'https://discord.com/safety/360044103651-reporting-abusive-behavior-to-discord',
 					label: 'report',
