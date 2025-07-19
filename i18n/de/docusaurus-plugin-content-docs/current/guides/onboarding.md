@@ -1,52 +1,52 @@
 ---
-title: Onboarding Process and Captcha
+title: Onboarding-Prozess und Captcha
 ---
 
-If the `#verification` channel is not visible by default for new members, this can prevent the Captcha system from working properly. Here’s how to fix this issue step by step.
+Wenn der Kanal `#verification` für neue Mitglieder standardmäßig nicht sichtbar ist, kann das Captcha-System nicht korrekt funktionieren. So behebst du das Problem Schritt für Schritt.
 
 ![Captcha alert screenshot](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-captcha-alert.webp)
 
-## 1️⃣ Check the channel permissions {#permissions}
+## 1️⃣ Kanalberechtigungen prüfen {#permissions}
 
-1. Open the `#verification` channel settings (right-click > **Edit Channel**).
-2. In the **Permissions** tab:
-   - Make sure `@everyone` **does not** have permission to view the channel.
-   - Ensure the `@Unverified` role **has** permission to **view the channel**, **read message history**, and **send messages**.
+1. Öffne die Einstellungen des Kanals `#verification` (Rechtsklick > **Kanal bearbeiten**).
+2. Im Tab **Berechtigungen**:
+   - Stelle sicher, dass `@everyone` **keine** Berechtigung hat, den Kanal zu sehen.
+   - Stelle sicher, dass die Rolle `@Unverified` **Berechtigung** hat, den Kanal zu **sehen**, **Nachrichtenverlauf zu lesen** und **Nachrichten zu senden**.
 
 ![Screenshot channel permissions check](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-verification-channel-permissions.webp)
 
-## 2️⃣ Check the Welcome category {#default-category}
+## 2️⃣ Willkommen-Kategorie prüfen {#default-category}
 
-1. Go to **Server Settings** > **Onboarding**.
-2. In the **Default Channels** section, verify that the category containing `#verification` is checked as visible for new members.
-3. If needed, move `#verification` into a checked category.
-4. Save the changes.
+1. Gehe zu **Servereinstellungen** > **Onboarding**.
+2. Überprüfe im Bereich **Standardkanäle**, ob die Kategorie, die `#verification` enthält, für neue Mitglieder als sichtbar markiert ist.
+3. Verschiebe `#verification` gegebenenfalls in eine markierte Kategorie.
+4. Speichere die Änderungen.
 
 ![Screenshot welcome category check](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-welcome-category.webp)
 
-## 3️⃣ Refresh the configuration in RaidProtect {#refresh-config}
+## 3️⃣ Konfiguration in RaidProtect aktualisieren {#refresh-config}
 
-1. Use the [`/settings`](../setup.md#settings) command and go to the **Captcha** tab.
-2. Click **Refresh** to force the configuration update.
-3. If the channel is now visible, the Captcha system will work correctly.
+1. Nutze den Befehl [`/settings`](../setup.md#settings) und wechsle in den Tab **Captcha**.
+2. Klicke auf **Refresh**, um die Konfiguration zu erzwingen.
+3. Wenn der Kanal nun sichtbar ist, funktioniert das Captcha-System korrekt.
 
-## 4️⃣ Test with a test account {#test-account}
+## 4️⃣ Mit einem Testaccount prüfen {#test-account}
 
-To confirm everything is set up properly:
+Um sicherzugehen, dass alles richtig eingerichtet ist:
 
-1. Join the server with another Discord account.
-2. Check that the `#verification` channel is visible on arrival.
-3. Enter the Captcha code sent by RaidProtect.
-4. Once verified, the account should have access to the other channels.
+1. Tritt mit einem anderen Discord-Account dem Server bei.
+2. Überprüfe, ob der Kanal `#verification` beim Betreten sichtbar ist.
+3. Gib den von RaidProtect gesendeten Captcha-Code ein.
+4. Nach der Verifizierung sollte der Account Zugriff auf die anderen Kanäle haben.
 
-## 🛠️ Common issues and solutions {#common-issues}
+## 🛠️ Häufige Probleme und Lösungen {#common-issues}
 
-| Issue | Solution |
-|-------|----------|
-| 🔴 The `#verification` channel remains invisible | Check that it is in a **checked category** in Discord’s Welcome settings. |
-| 🚫 The `@Unverified` role cannot write | Grant it **send messages** permission in `#verification`. |
-| ❌ Captcha doesn’t work after changes | Click **“Refresh”** in `/settings > Captcha`. |
+| Problem | Lösung |
+|-------|---------|
+| 🔴 Der Kanal `#verification` bleibt unsichtbar | Prüfe, ob er in den Willkommens-Einstellungen von Discord in einer **markierten Kategorie** liegt. |
+| 🚫 Die Rolle `@Unverified` kann nicht schreiben | Gib ihr im Kanal `#verification` die Berechtigung **Nachrichten senden**. |
+| ❌ Captcha funktioniert nach Änderungen nicht | Klicke in `/settings > Captcha` auf **„Refresh“**. |
 
 ---
 
-✅ By following these steps, your verification system will be fully operational to safely welcome members and effectively block bots or raids.
+✅ Wenn du diese Schritte befolgst, funktioniert dein Verifizierungssystem vollständig, um Mitglieder sicher willkommen zu heißen und Bots oder Raids effektiv zu blockieren.

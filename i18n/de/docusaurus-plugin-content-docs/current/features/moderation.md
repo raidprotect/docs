@@ -2,40 +2,40 @@
 title: Moderation
 ---
 
-To facilitate the work of your moderators, RaidProtect integrates very useful moderation commands that allow you to interact directly with Discord's native features, such as **banning** and **kicking** users.
+Um die Arbeit deiner Moderatoren zu erleichtern, integriert RaidProtect sehr nützliche Moderationsbefehle, mit denen du direkt auf die nativen Funktionen von Discord zugreifen kannst, wie etwa **Bannen** und **Kicken** von Nutzern.
 
-In addition to these actions, RaidProtect sends direct messages to the sanctioned user to explain the reason for their sanction, and this is also recorded in the server logs for your reference.
+Zusätzlich zu diesen Aktionen sendet RaidProtect dem sanktionierten Nutzer eine Direktnachricht, um den Grund der Sanktion zu erläutern. Dieser wird auch in den Server-Logs vermerkt.
 
 :::info
-Moderation commands are [usable by prefix](../guides/prefix.md).
+Moderationsbefehle sind [auch mit Prefix nutzbar](../guides/prefix.md).
 :::
 
-## 🔨 Ban a User {#ban}
+## 🔨 Einen Nutzer bannen {#ban}
 
-Use the command: ```/ban [@user] [reason]```
+Verwende den Befehl: ```/ban [@user] [reason]```
 
-Replace `[@user]` with the desired mention or ID and `[reason]` with the reason for the sanction.
+Ersetze `[@user]` durch die gewünschte Erwähnung oder ID und `[reason]` durch den Grund der Sanktion.
 
 :::tip
-You can ban a user using their [Discord ID](https://dfr.gg/wiki/interface/mode-developpeur), even if they are not currently online or present on your server.
+Du kannst einen Nutzer über seine [Discord-ID](https://dfr.gg/wiki/interface/mode-developpeur) bannen, selbst wenn er nicht online ist oder deinen Server bereits verlassen hat.
 :::
 
-## 👢 Kick a User {#kick}
+## 👢 Einen Nutzer kicken {#kick}
 
-Use the command: ```/kick [@user] [reason]```
+Verwende den Befehl: ```/kick [@user] [reason]```
 
-Replace `[@user]` with the desired mention or ID and `[reason]` with the reason for the sanction.
+Ersetze `[@user]` durch die gewünschte Erwähnung oder ID und `[reason]` durch den Grund der Sanktion.
 
-## ⏳ Timeout a User {#timeout}
+## ⏳ Einen Nutzer stummschalten {#timeout}
 
-Use the command: ```/timeout [@user] [duration] [reason]```
+Verwende den Befehl: ```/timeout [@user] [duration] [reason]```
 
-Replace `[@user]` with the desired mention or ID, `[duration]` with the timeout length, up to a maximum of 28 days (e.g. `10m`, `1h`, `1d`), and `[reason]` with the reason for the sanction.
+Ersetze `[@user]` durch die gewünschte Erwähnung oder ID, `[duration]` durch die Dauer des Timeouts (maximal 28 Tage, z. B. `10m`, `1h`, `1d`) und `[reason]` durch den Grund der Sanktion.
 
-## 🧹 Clear a Group of Messages {#clear}
+## 🧹 Nachrichten eines Kanals löschen {#clear}
 
-The command `/clear` allows you to quickly delete a certain number of messages in a text channel. You can specify a user to delete only their messages.
+Der Befehl `/clear` ermöglicht es dir, in einem Textkanal schnell eine bestimmte Anzahl von Nachrichten zu löschen. Du kannst auch einen Nutzer angeben, um nur seine Nachrichten zu entfernen.
 
-Use the command: ```/clear [number] (@user)```
+Verwende den Befehl: ```/clear [number] (@user)```
 
-Replace `[number]` with the number of messages you wish to delete (maximum 100). Add `(@user)` using the mention or ID to target only their messages in the channel.
+Ersetze `[number]` durch die Anzahl der zu löschenden Nachrichten (maximal 100). Füge `(@user)` mit der entsprechenden Erwähnung oder ID hinzu, um nur seine Nachrichten im Kanal zu löschen.

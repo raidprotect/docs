@@ -1,32 +1,32 @@
 ---
-title: Channel locking
+title: Channel sperren
 ---
 
-Sometimes it is necessary to temporarily lock a channel to prevent users from sending messages. With the lock command, this becomes a breeze!
+Manchmal ist es nötig, einen Kanal vorübergehend zu sperren, damit Nutzer keine Nachrichten mehr senden können. Mit dem Befehl `/lock` geht das ganz einfach!
 
-## 🔒 Lock a Channel {#lock}
+## 🔒 Einen Kanal sperren {#lock}
 
-Use the command: ```/lock```
+Verwende den Befehl: ```/lock```
 
-This will remove the speaking permission from the **@everyone** role in the channel, preventing all users from posting in that channel.
+Dadurch wird der **@everyone**-Rolle in diesem Kanal die Schreibberechtigung entzogen, sodass niemand dort mehr posten kann.
 
-## 🔓 Unlock a Channel {#unlock}
+## 🔓 Einen Kanal entsperren {#unlock}
 
-Use the command: ```/unlock```
+Verwende den Befehl: ```/unlock```
 
-This will add the speaking permission back to the **@everyone** role in the channel, allowing all users to post in that channel.
+Damit erhält die **@everyone**-Rolle ihre Schreibberechtigung im Kanal zurück und alle Nutzer können wieder dort schreiben.
 
 :::warning
-For the lock command to work properly, you must ensure that no roles have explicit permission to speak in that channel. Otherwise, members with those roles will still be able to chat.
+Damit der Lock-Befehl korrekt funktioniert, dürfen keine Rollen explizit das Recht haben, in diesem Kanal zu schreiben. Andernfalls können Mitglieder mit solchen Rollen weiterhin chatten.
 :::
 :::info
-The `lock` and `unlock` commands are [usable by prefix](../guides/prefix.md).
+Die Befehle `lock` und `unlock` sind [auch mit Prefix nutzbar](../guides/prefix.md).
 :::
 
-## ✏️ Configuring the Lock Icon {#config}
+## ✏️ Das Schloss-Icon konfigurieren {#config}
 
-By default, this feature is disabled. However, you can choose whether locked channels should be renamed with a lock emoji (🔒) added in front of their name.
+Standardmäßig ist diese Funktion deaktiviert. Du kannst jedoch festlegen, ob gesperrte Kanäle ein Schloss-Emoji (🔒) vor ihrem Namen erhalten sollen.
 
-To enable/disable the lock icon in front of the names of locked channels:  
-1. Use the [command `/settings`](../setup.md#settings).
-2. Click on the **Lock Icon on Locked Channels** button. This button acts as a toggle; a simple click is enough to enable or disable the option.
+So aktivierst/deaktivierst du das Schloss-Icon vor dem Namen gesperrter Kanäle:
+1. Nutze den [Befehl `/settings`](../setup.md#settings).
+2. Klicke auf die Schaltfläche **Lock Icon on Locked Channels**. Ein einfacher Klick genügt, um die Option an- oder auszuschalten.
