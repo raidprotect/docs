@@ -175,7 +175,8 @@ export default async function createConfigAsync() {
 						"sameAs": [
 							"https://x.com/raidprotect",
 							"https://www.linkedin.com/company/raidprotect",
-							"https://github.com/raidprotect"
+							"https://github.com/raidprotect",
+							"https://www.youtube.com/@RaidProtect"
 						]
 					},
 					"inLanguage": ["Fr", "En", "De"]
@@ -193,7 +194,7 @@ export default async function createConfigAsync() {
 			announcementBar: {
 				id: '3.2.0',
 				content: '<strong><a href="https://docs.raidprotect.bot/blog/3.2.0-protection-update">Protection Update (3.2.0)</a> is now live!</strong>',
-				backgroundColor: '#D35F5F',
+				backgroundColor: '#BD5454',
 				textColor: '#FFFFFF',
 				isCloseable: false
 			},
