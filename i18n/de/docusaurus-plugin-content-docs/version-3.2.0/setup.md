@@ -18,7 +18,7 @@ Damit kannst du die wichtigsten Funktionen auf einen Blick über ein interaktive
 
 Anschließend erhältst du eine Zusammenfassung der aktivierten Funktionen und der Änderungen, die am Server vorgenommen werden.
 
-![Recommended configuration screenshot](../../../en/docusaurus-plugin-content-docs/current/assets/rp-setup.webp)
+![Empfohlene Konfigurations-Screenshot](../../../en/docusaurus-plugin-content-docs/current/assets/rp-setup.webp)
 
 <!--
 ### 🛠️ Fortgeschrittene Konfiguration {#advanced}
@@ -42,14 +42,14 @@ Der `/settings`-Befehl ist nach der Installation die zentrale Anlaufstelle, um d
 2. Navigiere bequem zwischen den verschiedenen Bereichen, um die gewünschten Einstellungen zu finden.
 3. Passe die Optionen an: Jede Kategorie präsentiert eine Liste anpassbarer Optionen in Form von Buttons oder Dropdown-Menüs.
 
-![Settings screenshot](../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings.webp)
+![Einstellungen-Screenshot](../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings.webp)
 
 ### 🔄 Eine Einstellung zurücksetzen {#reset}
 
 1. Navigiere zur gewünschten Einstellung.
 2. Klicke auf "**Reset**".
 
-![Reset button screenshot](../../../en/docusaurus-plugin-content-docs/current/assets/rp-button-reset.webp)
+![Screenshot der Zurücksetzen-Schaltfläche](../../../en/docusaurus-plugin-content-docs/current/assets/rp-button-reset.webp)
 
 Der Bot bestätigt das Zurücksetzen, bevor er die Änderungen übernimmt.
 
