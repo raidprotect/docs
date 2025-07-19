@@ -31,50 +31,61 @@ export default async function createConfigAsync() {
 		onBrokenMarkdownLinks: 'warn',
 		i18n: {
 			defaultLocale: defaultLocale,
-			locales: ['fr', 'en'],
+			locales: ['fr', 'en', 'de'],
 			localeConfigs: {
-				fr: {
-					label: 'Français',
-					path: 'fr'
-				},
-				en: {
-					label: 'English',
-					path: 'en'
-				}
+					fr: {
+							label: 'Français',
+							path: 'fr'
+					},
+					en: {
+							label: 'English',
+							path: 'en'
+					},
+					de: {
+							label: 'Deutsch',
+							path: 'de'
+					}
 			}
 		},
 		trailingSlash: false,
 		customFields: {
 			urls: {
 				main: {
-					fr: 'https://raidprotect.bot?r=0',
-					en: 'https://raidprotect.bot/en'
+						fr: 'https://raidprotect.bot?r=0',
+						en: 'https://raidprotect.bot/en',
+						de: 'https://raidprotect.bot/de'
 				},
 				legal: {
-					fr: 'https://raidprotect.bot/legal?r=0',
-					en: 'https://raidprotect.bot/en/legal'
+						fr: 'https://raidprotect.bot/legal?r=0',
+						en: 'https://raidprotect.bot/en/legal',
+						de: 'https://raidprotect.bot/de/legal'
 				},
 				terms: {
-					fr: 'https://raidprotect.bot/terms?r=0',
-					en: 'https://raidprotect.bot/en/terms'
+						fr: 'https://raidprotect.bot/terms?r=0',
+						en: 'https://raidprotect.bot/en/terms',
+						de: 'https://raidprotect.bot/de/terms'
 				},
 				privacy: {
-					fr: 'https://raidprotect.bot/privacy?r=0',
-					en: 'https://raidprotect.bot/en/privacy'
+						fr: 'https://raidprotect.bot/privacy?r=0',
+						en: 'https://raidprotect.bot/en/privacy',
+						de: 'https://raidprotect.bot/de/privacy'
 				},
 				geranium: {
-					fr: 'https://i.dfr.gg/geranium.webm',
-					en: 'https://i.dfr.gg/en-geranium.webm'
+						fr: 'https://i.dfr.gg/geranium.webm',
+						en: 'https://i.dfr.gg/en-geranium.webm',
+						de: 'https://i.dfr.gg/en-geranium.webm'
 				}
 			},
 			texts: {
 				footer: {
-					fr: 'RaidProtect est un bot Discord qui protège votre serveur des utilisateurs malintentionnés grâce à son anti-spam et son captcha. <strong>Et juste là, un petit géranium.&nbsp;</strong>',
-					en: 'RaidProtect is a Discord bot that protects your server from malicious users with its anti-spam and captcha features. <strong>And right there, a little geranium.&nbsp;</strong>'
+						fr: 'RaidProtect est un bot Discord qui protège votre serveur des utilisateurs malintentionnés grâce à son anti-spam et son captcha. <strong>Et juste là, un petit géranium.&nbsp;</strong>',
+						en: 'RaidProtect is a Discord bot that protects your server from malicious users with its anti-spam and captcha features. <strong>And right there, a little geranium.&nbsp;</strong>',
+						de: 'RaidProtect ist ein Discord-Bot, der Ihren Server vor böswilligen Nutzern schützt – dank integriertem Anti-Spam und Captcha-System. <strong>Und genau dort, ein kleines Geranium.&nbsp;</strong>'
 				},
 				announcementBar: {
-					fr: '<strong>La <a href="https://docs.raidprotect.bot/blog/3.2.0-protection-update">Protection Update (3.2.0)</a> est sortie !</strong>',
-					en: '<strong><a href="https://docs.raidprotect.bot/en/blog/3.2.0-protection-update">Protection Update (3.2.0)</a> is now live!</strong>'
+						fr: '<strong>La <a href="https://docs.raidprotect.bot/blog/3.2.0-protection-update">Protection Update (3.2.0)</a> est sortie !</strong>',
+						en: '<strong><a href="https://docs.raidprotect.bot/en/blog/3.2.0-protection-update">Protection Update (3.2.0)</a> is now live!</strong>',
+						de: '<strong>Das <a href="https://docs.raidprotect.bot/de/blog/3.2.0-protection-update">Protection Update (3.2.0)</a> ist erschienen!</strong>'
 				}
 			},
 			excludedCanonical: []
@@ -159,7 +170,7 @@ export default async function createConfigAsync() {
 							"@type": "ContactPoint",
 							"email": "contact@raidprotect.bot",
 							"contactType": "support",
-							"availableLanguage": ["Fr", "En"]
+							"availableLanguage": ["Fr", "En", "De"]
 						},
 						"sameAs": [
 							"https://x.com/raidprotect",
@@ -167,7 +178,7 @@ export default async function createConfigAsync() {
 							"https://github.com/raidprotect"
 						]
 					},
-					"inLanguage": ["Fr", "En"]
+					"inLanguage": ["Fr", "En", "De"]
 				})
 			}
 		],
