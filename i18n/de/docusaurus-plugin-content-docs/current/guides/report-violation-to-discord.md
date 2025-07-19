@@ -24,7 +24,7 @@ Um eine Meldung einzureichen, benötigst du Beweise. Beachte zunächst, dass **S
 
 Eine Meldung zu erstellen ist ganz einfach und dauert nur wenige Minuten. Gehe zunächst auf das **dedizierte Formular** unter **https://dis.gd/report**.
 
-![Screenshot of Discord report](../../../../en/docusaurus-plugin-content-docs/current/assets/discord-report.png)
+![Screenshot des Discord-Meldeformulars](../../../../en/docusaurus-plugin-content-docs/current/assets/discord-report.png)
 
 Je nach ausgewähltem Meldetyp werden **unterschiedliche Informationen abgefragt**. Gib den im vorherigen Schritt kopierten Nachrichtenlink im entsprechenden Feld ein (weitere Links ggf. in der Beschreibung). Sei **so ausführlich wie möglich** und beachte die grundlegenden Höflichkeitsregeln. 😇
 
@@ -32,4 +32,4 @@ Je nach ausgewähltem Meldetyp werden **unterschiedliche Informationen abgefragt
 
 Einige Tage nach deiner Meldung – meist innerhalb einer Woche – solltest du **eine Antwort per E-Mail** von Discord erhalten. Beachte, dass du nicht erfährst, welche Sanktionen gegen den gemeldeten Nutzer ergriffen wurden (oder nicht). 😒
 
-![Screenshot of Discord response](../../../../en/docusaurus-plugin-content-docs/current/assets/discord-reply.png)
+![Screenshot der Antwort von Discord](../../../../en/docusaurus-plugin-content-docs/current/assets/discord-reply.png)

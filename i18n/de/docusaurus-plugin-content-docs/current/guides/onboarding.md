@@ -4,7 +4,7 @@ title: Onboarding-Prozess und Captcha
 
 Wenn der Kanal `#verification` für neue Mitglieder standardmäßig nicht sichtbar ist, kann das Captcha-System nicht korrekt funktionieren. So behebst du das Problem Schritt für Schritt.
 
-![Captcha alert screenshot](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-captcha-alert.webp)
+![Screenshot der Captcha-Warnung](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-captcha-alert.webp)
 
 ## 1️⃣ Kanalberechtigungen prüfen {#permissions}
 
@@ -13,7 +13,7 @@ Wenn der Kanal `#verification` für neue Mitglieder standardmäßig nicht sichtb
    - Stelle sicher, dass `@everyone` **keine** Berechtigung hat, den Kanal zu sehen.
    - Stelle sicher, dass die Rolle `@Unverified` **Berechtigung** hat, den Kanal zu **sehen**, **Nachrichtenverlauf zu lesen** und **Nachrichten zu senden**.
 
-![Screenshot channel permissions check](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-verification-channel-permissions.webp)
+![Screenshot der Überprüfung der Kanalberechtigungen](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-verification-channel-permissions.webp)
 
 ## 2️⃣ Willkommen-Kategorie prüfen {#default-category}
 
@@ -22,7 +22,7 @@ Wenn der Kanal `#verification` für neue Mitglieder standardmäßig nicht sichtb
 3. Verschiebe `#verification` gegebenenfalls in eine markierte Kategorie.
 4. Speichere die Änderungen.
 
-![Screenshot welcome category check](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-welcome-category.webp)
+![Screenshot der Überprüfung der Willkommens-Kategorie](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-welcome-category.webp)
 
 ## 3️⃣ Konfiguration in RaidProtect aktualisieren {#refresh-config}
 
