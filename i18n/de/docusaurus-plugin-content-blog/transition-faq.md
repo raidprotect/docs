@@ -1,7 +1,7 @@
 ---
 title: 'Eine neue Ära für deine Sicherheit'
 tags: [faq]
-authors: [derrios, ichii]
+authors: [derrios, haxgamig, ichii]
 date: 2023-01-16
 ---
 

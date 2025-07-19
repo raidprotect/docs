@@ -1,7 +1,7 @@
 ---
 title: 'Beta Program Launch'
 tags: [community]
-authors: [derrios]
+authors: [derrios, zallom]
 slug: beta-program-launch
 date: 2024-11-25
 ---
