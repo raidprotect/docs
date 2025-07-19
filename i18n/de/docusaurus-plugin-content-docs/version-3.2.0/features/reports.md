@@ -1,61 +1,61 @@
 ---
-title: Reports
+title: Meldungen
 ---
 
-The RaidProtect reporting system allows your community to quickly report any problematic content or suspicious users. It operates in two different ways and can be configured to optimize the reporting management process.
+Das Meldesystem von RaidProtect ermöglicht deiner Community, problematische Inhalte oder verdächtige Nutzer schnell zu melden. Es funktioniert auf zwei Arten und lässt sich konfigurieren, um die Bearbeitung der Meldungen zu optimieren.
 
-## ❓ How Reporting Works {#working}
-Members can report content through 3 main methods.
+## ❓ Wie das Melden funktioniert {#working}
+Mitglieder können auf drei Hauptwegen Meldungen abgeben.
 
-1. **Right-click on a message**  
-A member can right-click on a message they believe violates the rules, select **`Applications`**, and then click on **`Report Message`**. A popup will appear, allowing the user to add an explanation.
+1. **Rechtsklick auf eine Nachricht**
+Ein Mitglied kann eine Nachricht, die gegen die Regeln verstößt, mit Rechtsklick auswählen, **`Anwendungen`** wählen und dann auf **`Nachricht melden`** klicken. Daraufhin erscheint ein Popup, in dem eine Erklärung hinzugefügt werden kann.
 
-2. **Right-click on a profile**  
-Similarly, a member can right-click on a profile they find problematic, choose **`Applications`**, and then click on **`Report Member`**. A popup will then open to allow the user to provide additional details about the situation.
+2. **Rechtsklick auf ein Profil**
+Ebenso kann ein Mitglied ein problematisches Profil mit Rechtsklick auswählen, **`Anwendungen`** wählen und dann auf **`Mitglied melden`** klicken. Ein Popup öffnet sich, damit der Nutzer weitere Details zur Situation angeben kann.
 
-3. **Slash Command**  
-Members can also report a message or user via the **`/report`** command in any server channel.
+3. **Slash-Befehl**
+Mitglieder können auch eine Nachricht oder einen Nutzer über den Befehl **`/report`** in einem beliebigen Serverkanal melden.
 
-Use the command: ```/report [@user] [reason]```
+Verwende den Befehl: ```/report [@user] [reason]```
 
-Replace `[@user]` with the desired user and `[reason]` with the reason for the infraction.
+Ersetze `[@user]` durch den gewünschten Nutzer und `[reason]` durch den Grund des Verstoßes.
 
-## 🚩 Configuring Reports {#config}
+## 🚩 Meldungen konfigurieren {#config}
 
-Before the reporting system is fully operational, it is imperative to configure a **report channel** where all reports will be sent. You need to set up a log or notification channel to receive alerts regarding reports.
+Bevor das Meldesystem vollständig funktioniert, muss ein **Meldekanal** eingerichtet werden, in dem alle Meldungen eingehen. Außerdem solltest du einen Log- oder Benachrichtigungskanal festlegen, um über Meldungen informiert zu werden.
 
-[Report settings screenshot](../../../../en/docusaurus-plugin-content-docs/version-3.2.0/assets/rp-settings-reports.webp)
+![Report settings screenshot](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-reports.webp)
 
-### Setting Up the Channel {#config-channel}
+### Den Kanal einrichten {#config-channel}
 
-1. Use the [command `/settings`](../setup.md#settings).
-2. Select the **Reports** button.
-3. Click on the **Channel** button.
-4. Choose the desired channel (_e.g. #reports_).  
-If you do not have a suitable channel, you can opt to create one automatically using the **Create one for me** button.
+1. Nutze den [Befehl `/settings`](../setup.md#settings).
+2. Wähle die Schaltfläche **Reports**.
+3. Klicke auf **Channel**.
+4. Wähle den gewünschten Kanal (z. B. #reports).
+   Wenn du keinen passenden Kanal hast, kannst du über **Create one for me** automatisch einen erstellen lassen.
 
-### Configuring the Notification Role {#config-role}
+### Die Benachrichtigungsrolle festlegen {#config-role}
 
-1. Use the [command `/settings`](../setup.md#settings).
-2. Select the **Reports** button.
-3. Click on the **Role** button.
-4. Choose the desired role (_e.g. @Moderator or @Report Ping_).  
-If you do not have a suitable role, you can opt to create one automatically with the **Create one for me** button.
+1. Nutze den [Befehl `/settings`](../setup.md#settings).
+2. Wähle die Schaltfläche **Reports**.
+3. Klicke auf **Role**.
+4. Wähle die gewünschte Rolle (z. B. @Moderator oder @Report Ping).
+   Wenn du keine passende Rolle hast, kannst du sie über **Create one for me** automatisch erstellen lassen.
 
 :::warning
-The channel should be restricted to moderators and administrators to ensure proper management of reports.
+Der Kanal sollte auf Moderatoren und Administratoren beschränkt sein, um eine ordnungsgemäße Bearbeitung der Meldungen zu gewährleisten.
 :::
 
-## Managing Reports {#manage}
+## Meldungen verwalten {#manage}
 
-As a community moderator, you can choose to accept or reject a report.
+Als Community-Moderator kannst du eine Meldung annehmen oder ablehnen.
 
-- **✅ Accept a report:** If the report is valid, click the “Accept” button under the alert. This button does not trigger any specific action but indicates to other moderators that you consider this report to be handled, fostering coordination and organization.
+- **✅ Meldung annehmen:** Wenn die Meldung berechtigt ist, klicke unter der Benachrichtigung auf „Accept“. Dieser Button löst keine spezielle Aktion aus, zeigt aber anderen Moderatoren, dass du die Meldung bearbeitest und fördert so die Koordination.
 
-- **👁️ View Context:** To view the reported message and see the context, click “View Message” under the alert.
+- **👁️ Kontext anzeigen:** Um die gemeldete Nachricht im Zusammenhang zu sehen, klicke unter der Benachrichtigung auf „View Message“.
 
-- **❌ Reject a report:** If the report is not legitimate, click the “Reject” button under the alert. Similar to the “Accept” button, no specific action is associated with this button; it merely informs other moderators of your decision.
+- **❌ Meldung ablehnen:** Wenn die Meldung unbegründet ist, klicke unter der Benachrichtigung auf „Reject“. Auch hier ist keine spezielle Aktion hinterlegt; andere Moderatoren sehen lediglich deine Entscheidung.
 
 :::note
-Ensure that your moderators are well-trained in using this feature and encourage your active members to use it responsibly!
+Stelle sicher, dass deine Moderatoren im Umgang mit dieser Funktion geschult sind, und ermutige deine aktiven Mitglieder, sie verantwortungsvoll zu nutzen!
 :::

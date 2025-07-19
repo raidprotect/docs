@@ -1,35 +1,35 @@
 ---
-title: Report a violation to Discord
+title: Einen Verstoß an Discord melden
 ---
 
-Have you encountered a malicious user on Discord? Report them so that they can be sanctioned.
+Bist du auf einen böswilligen Nutzer bei Discord gestoßen? Melde ihn, damit er sanktioniert werden kann.
 
-On Discord, some users may not have good intentions. If they display behavior that is particularly harmful to the community, it is advisable to **report it to Discord's Trust & Safety team**. If the violation is found to be valid, the user may face sanctions ranging from a warning to account deletion. 😖 
+Auf Discord gibt es leider auch Nutzer mit schlechten Absichten. Zeigen sie ein Verhalten, das der Community besonders schadet, solltest du es **dem Trust-&-Safety-Team von Discord melden**. Wird der Verstoß bestätigt, können Sanktionen von einer Verwarnung bis hin zur Kontolöschung reichen. 😖
 
-## 🧐 What Types of Violations to Report? {#types-of-violations}
+## 🧐 Welche Verstöße sollte man melden? {#types-of-violations}
 
-Of course, not all types of violations are subject to account deletion. Punishable behaviors are described in **Discord's [Community Guidelines](https://discord.com/guidelines)** (as well as in the [Terms of Service](https://discord.com/terms), which is more legal jargon than clear instructions). The list of report types on the reporting page is a great summary for those hesitant to read extensively.
+Natürlich führen nicht alle Verstöße direkt zur Kontolöschung. Strafbare Handlungen werden in **[Discords Community-Richtlinien](https://discord.com/guidelines)** beschrieben (sowie in den [Nutzungsbedingungen](https://discord.com/terms), die eher juristisch gehalten sind). Die Liste der Meldetypen auf der Melde-Seite fasst für Lesefaule gut zusammen, was gemeldet werden kann.
 
-In general, **harmful behaviors to the community** (spam, promotion of illegal content, etc.) or **serious harm to a user** (doxxing, harassment) should be reported.
+Im Allgemeinen sollten **schädliche Verhaltensweisen für die Community** (Spam, Bewerbung illegaler Inhalte usw.) oder **massiver Schaden für einen Nutzer** (Doxxing, Belästigung) gemeldet werden.
 
-For less extreme behaviors, **prefer banning** (on a server) or [blocking](https://support.discordapp.com/hc/en-us/articles/217916488-Blocking-and-Privacy-Settings) (throughout Discord). If you are not a moderator on the server where the actions are happening, feel free to report it to the moderation team, who must take action.
+Bei weniger gravierendem Verhalten solltest du eher **einen Bann** (auf einem Server) oder das [Blockieren](https://support.discordapp.com/hc/en-us/articles/217916488-Blocking-and-Privacy-Settings) in Betracht ziehen. Wenn du kein Moderator auf dem betroffenen Server bist, melde den Vorfall der Moderation, die handeln muss.
 
-## 🕵️ Collecting Evidence {#recover-evidences}
+## 🕵️ Beweise sammeln {#recover-evidences}
 
-To make a report, you need to provide evidence. First, note that **screenshots are not useful**; they can be easily falsified. You will need at least one (or preferably several) message links.
+Um eine Meldung einzureichen, benötigst du Beweise. Beachte zunächst, dass **Screenshots wertlos sind** – sie lassen sich leicht fälschen. Du brauchst mindestens einen (besser mehrere) Nachrichtenlinks.
 
-**These links are very easy to obtain**. On a message corresponding to the violation you wish to report, right-click > Copy Message Link (on desktop) or Long press > Share > Copy to Clipboard (on mobile).
+**Diese Links erhältst du ganz einfach.** Klicke bei der betreffenden Nachricht mit Rechtsklick auf **„Nachrichtenlink kopieren“** (Desktop) oder halte sie gedrückt > Teilen > In Zwischenablage kopieren (Mobil).
 
-## 📪 Reporting the Violation to the _Trust & Safety_ Team {#report-to-tns}
+## 📪 Den Verstoß an das _Trust & Safety_-Team melden {#report-to-tns}
 
-Filing a report is very easy and takes only a few minutes. First, go to the **dedicated form** by following the link **https://dis.gd/report**.
+Eine Meldung zu erstellen ist ganz einfach und dauert nur wenige Minuten. Gehe zunächst auf das **dedizierte Formular** unter **https://dis.gd/report**.
 
-[Screenshot of Discord report](../../../../en/docusaurus-plugin-content-docs/version-3.2.0/assets/discord-report.png)
+![Screenshot des Discord-Meldeformulars](../../../../en/docusaurus-plugin-content-docs/current/assets/discord-report.png)
 
-Depending on the type of report selected, **different information will be requested**. Enter the link to the message obtained in the previous step in the appropriate field (and possibly the others in the description). Don’t hesitate to be **as thorough as possible** and remember the basic rules of politeness. 😇 
+Je nach ausgewähltem Meldetyp werden **unterschiedliche Informationen abgefragt**. Gib den im vorherigen Schritt kopierten Nachrichtenlink im entsprechenden Feld ein (weitere Links ggf. in der Beschreibung). Sei **so ausführlich wie möglich** und beachte die grundlegenden Höflichkeitsregeln. 😇
 
-### 📨 Discord's Response {#discord-response}
+### 📨 Antwort von Discord {#discord-response}
 
-A few days after your report—generally within a week—you should receive **a response via email** from Discord. Note that you will not be able to know the sanctions taken (or not) against the reported user. 😒
+Einige Tage nach deiner Meldung – meist innerhalb einer Woche – solltest du **eine Antwort per E-Mail** von Discord erhalten. Beachte, dass du nicht erfährst, welche Sanktionen gegen den gemeldeten Nutzer ergriffen wurden (oder nicht). 😒
 
-[Screenshot of Discord response](../../../../en/docusaurus-plugin-content-docs/version-3.2.0/assets/discord-reply.png)
+![Screenshot der Antwort von Discord](../../../../en/docusaurus-plugin-content-docs/current/assets/discord-reply.png)
