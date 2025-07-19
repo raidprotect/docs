@@ -6,55 +6,55 @@ import SeparatedBox from '@site/src/components/SeparatedBox';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-The **DM Lock** feature of RaidProtect permanently closes access to server-originated direct messages (DMs), surpassing Discord’s native limitation, which only allows this block for 24 hours via the "Pause DMs" security action.
+Die Funktion **DM Lock** von RaidProtect blockiert dauerhaft den Zugriff auf serverinitiierte Direktnachrichten (DMs) und übertrifft damit die native Discord-Beschränkung, die solche Sperren nur für 24 Stunden über die Sicherheitsaktion "DMs pausieren" erlaubt.
 
-## 🚦 Use cases and recommendations {#recommendations}
+## 🚦 Einsatzmöglichkeiten und Empfehlungen {#recommendations}
 
-- **Servers exposed to spam or harassment:** DM Lock is especially recommended for public or high-traffic communities where the risk of DM abuse is higher.
-- **Temporary events or sensitive periods:** During launches, major announcements, or periods of heavy activity (e.g. contests, promotions), enabling DM Lock helps prevent phishing or scam attempts.
-- **Communities with a young audience:** For servers with many minors, restricting DMs can enhance safety and help prevent inappropriate behavior.
-- **Continuous protection:** Thanks to automation, there’s no vulnerability window from forgetting to renew the block manually.
+- **Server, die Spam oder Belästigung ausgesetzt sind:** DM Lock eignet sich besonders für öffentliche oder stark frequentierte Communities, in denen Missbrauch von DMs häufiger vorkommt.
+- **Temporäre Events oder sensible Phasen:** Bei Launches, großen Ankündigungen oder Zeiten mit viel Aktivität (z. B. Gewinnspiele, Promotionen) hilft DM Lock, Phishing- oder Scam-Versuche zu verhindern.
+- **Communities mit jungem Publikum:** Auf Servern mit vielen Minderjährigen erhöht die Einschränkung von DMs die Sicherheit und kann unangemessenes Verhalten vorbeugen.
+- **Dauerhafter Schutz:** Dank Automatisierung entsteht kein Verwundbarkeitsfenster, weil man die Sperre manuell verlängern müsste.
 
-## ❓ How DM Lock works {#working}
+## ❓ Wie DM Lock funktioniert {#working}
 
-The RaidProtect bot regularly checks the server’s DM blocking setting and, if needed, automatically re-enables it to prevent any vulnerability window between manual renewals. This task runs transparently for server admins and members.
+Der RaidProtect-Bot überprüft regelmäßig die Einstellung zur DM-Sperre des Servers und aktiviert sie bei Bedarf automatisch erneut, um jede Lücke zwischen manuellen Verlängerungen zu schließen. Dieser Vorgang läuft für Administratoren und Mitglieder transparent ab.
 
 :::info
-It remains possible to send and receive messages with:
-- friends
-- bots
-- staff
+Es ist weiterhin möglich, Nachrichten auszutauschen mit:
+- Freunden
+- Bots
+- Teammitgliedern
 :::
 :::warning
-Discord’s community features are essential for DM Lock to function properly. [Follow our guide to check if Community is enabled on your server.](../guides/community.md)
+Die Community-Funktionen von Discord sind für ein korrektes Funktionieren von DM Lock erforderlich. [Folge unserem Leitfaden, um zu prüfen, ob Community auf deinem Server aktiviert ist.](../guides/community.md)
 :::
 
-## 🚩 Configuring DM Lock {#config}
+## 🚩 DM Lock konfigurieren {#config}
 
-1. Run the [ `/settings` command](../setup.md#settings).
-2. Click on the “**DM Lock**” button.
-3. Enable or disable automatic closing of direct messages.
+1. Führe den [`/settings`-Befehl](../setup.md#settings) aus.
+2. Klicke auf die Schaltfläche "**DM Lock**".
+3. Aktiviere oder deaktiviere das automatische Schließen von Direktnachrichten.
 
 ![DM Lock settings screenshot](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-dm-lock.webp)
 
-## ℹ️ Command /dmlock-info {#info}
+## ℹ️ Befehl /dmlock-info {#info}
 
-The `/dmlock-info` command informs members about the current **DM Lock** status on the server. It displays a clear message indicating whether the restriction is **enabled** or **disabled**, along with an educational explanation of its purpose.
+Der Befehl `/dmlock-info` informiert Mitglieder über den aktuellen **DM Lock**-Status des Servers. Er zeigt klar an, ob die Beschränkung **aktiviert** oder **deaktiviert** ist, und liefert eine kurze Erläuterung des Zwecks.
 
-**Goal:**
-- Explain why DMs are limited (to combat spam, scams, phishing).
-- Reduce confusion and repeated questions from new members.
-- Remind members of the conditions for continuing DM conversations (friends, staff, bots, existing contacts).
+**Ziel:**
+- Erklären, warum DMs eingeschränkt sind (zur Bekämpfung von Spam, Scams, Phishing).
+- Verwirrung und wiederholte Fragen neuer Mitglieder reduzieren.
+- Mitglieder daran erinnern, unter welchen Bedingungen DM-Gespräche fortgesetzt werden können (Freunde, Team, Bots, bestehende Kontakte).
 
-**Example Display**
+**Beispielanzeige**
 <SeparatedBox>
 <Tabs>
-  <TabItem value="enable" label="Enabled" default>
+  <TabItem value="enable" label="Aktiviert" default>
 
 ![Screenshot of the dmlock-info command enabled](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-dm-lock-info-enable.webp)
 
   </TabItem>
-  <TabItem value="disable" label="Disabled">
+  <TabItem value="disable" label="Deaktiviert">
 
 ![Screenshot of the dmlock-info command disabled](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-dm-lock-info-disable.webp)
 
@@ -64,6 +64,6 @@ The `/dmlock-info` command informs members about the current **DM Lock** status 
 
 ### ⚙️ Best Practices
 
-- Encourage active members to use `/dmlock-info` to answer new members’ questions.
-- Display it regularly or pin it in your welcome channels.
-- Combine it with your rules or announcements to reinforce the server’s anti-spam policy.
+- Bitte aktive Mitglieder, bei Fragen neuer Nutzer den Befehl `/dmlock-info` zu verwenden.
+- Zeige ihn regelmäßig oder pinne ihn in deinen Willkommenskanälen an.
+- Kombiniere ihn mit deinen Regeln oder Ankündigungen, um die Anti-Spam-Politik des Servers zu unterstreichen.

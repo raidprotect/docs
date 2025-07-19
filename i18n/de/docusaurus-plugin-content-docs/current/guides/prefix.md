@@ -1,14 +1,14 @@
 ---
-title: Using a prefix
+title: Prefix verwenden
 ---
 
-## Disabled Prefix (Default) {#disabled}
+## Deaktivierter Prefix (Standard) {#disabled}
 
-By default, RaidProtect uses only Slash commands (`/`) to interact with the bot. This ensures intuitive and consistent usage with Discord standards.
+Standardmäßig nutzt RaidProtect ausschließlich Slash-Befehle (`/`) zur Interaktion mit dem Bot. Das sorgt für eine intuitive und konsistente Bedienung gemäß den Discord-Richtlinien.
 
-## Activated Prefix (Optional) {#activated}
+## Aktivierter Prefix (Optional) {#activated}
 
-If you prefer to use certain commands with a custom prefix, you can enable this option. The default prefix when activated is `?`, but it can be modified to suit your needs. Once activated, these commands can be used with the configured prefix: 
+Wenn du bestimmte Befehle lieber mit einem eigenen Prefix verwenden möchtest, kannst du diese Option aktivieren. Der Standardprefix ist `?`, lässt sich jedoch nach Bedarf anpassen. Nach der Aktivierung können folgende Befehle mit dem eingestellten Prefix genutzt werden:
 - [`?raidmode`](../features/raid-mode.md)
 - [`?ban`](../features/moderation.md#ban)
 - [`?kick`](../features/moderation.md#kick)
@@ -17,16 +17,16 @@ If you prefer to use certain commands with a custom prefix, you can enable this 
 - [`?userinfo` | `?ui`](../features/utilities#userinfo)
 - [`?clear`](../features/moderation#clear)
 
-## 💬 How to Enable or Disable the Prefix {#config}
+## 💬 Prefix aktivieren oder deaktivieren {#config}
 
-1. Open the configuration menu by typing [`/settings`](../setup.md#settings).
-2. Access the "**Prefix**" option for commands.
-3. Enable or disable the prefix according to your preferences.
-If enabled, customize the prefix by entering the desired character or string.
+1. Öffne das Konfigurationsmenü mit [`/settings`](../setup.md#settings).
+2. Wähle die Option "**Prefix**" für Befehle.
+3. Aktiviere oder deaktiviere den Prefix nach deinen Vorlieben.
+   Wenn aktiviert, kannst du den Prefix anpassen, indem du das gewünschte Zeichen oder Wort eingibst.
 
 ![Prefix settings screenshot](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-prefix.webp)
 
 :::note
-Slash commands (`/`) remain available even if the prefix is activated.
-It is recommended to avoid prefixes already used by other bots to prevent command conflicts.
+Slash-Befehle (`/`) bleiben verfügbar, auch wenn der Prefix aktiviert ist.
+Es empfiehlt sich, Prefixe zu vermeiden, die bereits von anderen Bots verwendet werden, um Konflikte zu vermeiden.
 :::

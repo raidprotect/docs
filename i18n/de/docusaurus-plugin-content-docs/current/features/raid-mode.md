@@ -1,63 +1,62 @@
 ---
-title: Anti-raid
+title: Anti-Raid
 ---
 
-## Raid Mode
+## Raid-Modus
 
-Raid mode is an emergency feature designed to instantly block all new users trying to join your server, surpassing Discord’s native limitation which only allows this block for 24 hours via the "Pause Invites" security action.
+Der Raid-Modus ist eine Notfallfunktion, die sofort alle neuen Nutzer blockiert, die deinem Server beitreten wollen. Damit übertrifft sie die native Discord-Beschränkung, die Einladungen nur für 24 Stunden über die Aktion "Einladungen pausieren" blockieren kann.
 
-### ❓ How Raid Mode Works {#working}
+### ❓ Wie der Raid-Modus funktioniert {#working}
 
-RaidProtect automatically enables raid mode if a large number of users join your server in a short time. By default, raid mode activates if more than 10 users join your server in less than 10 seconds. When raid mode is enabled, no users can join the server. They are blocked at the invite level.
+RaidProtect aktiviert den Raid-Modus automatisch, wenn in kurzer Zeit viele Nutzer deinem Server beitreten. Standardmäßig schaltet sich der Modus ein, wenn mehr als 10 Nutzer in weniger als 10 Sekunden joinen. Ist der Raid-Modus aktiviert, kann niemand dem Server beitreten – Einladungen werden sofort blockiert.
 
 :::warning
-Discord’s Community features are essential for Raid Mode to work properly. [Follow our guide to ensure Community is enabled on your server.](../guides/community.md)
+Die Community-Funktionen von Discord sind für ein korrektes Funktionieren des Raid-Modus erforderlich. [Folge unserem Leitfaden, um sicherzustellen, dass Community auf deinem Server aktiviert ist.](../guides/community.md)
 :::
 
-#### Enabling {#enable}
+#### Aktivieren {#enable}
 
-- To manually enable this mode, a user with kick permissions must run the `/raidmode` command.
-- A message will automatically be posted in the log channel to signal activation.
+- Um den Modus manuell zu aktivieren, muss ein Nutzer mit Kick-Berechtigung den Befehl `/raidmode` ausführen.
+- Im Log-Kanal wird automatisch eine Nachricht gepostet, die die Aktivierung meldet.
 
-#### Disabling {#disable}
+#### Deaktivieren {#disable}
 
-Raid mode does not disable itself automatically. Remember to turn it off with the same command once the threat has passed. 😇
+Der Raid-Modus deaktiviert sich nicht von selbst. Denke daran, ihn mit demselben Befehl wieder auszuschalten, sobald die Gefahr vorüber ist. 😇
 
 :::info
-The `raidmode` command is also [available with prefix](../guides/prefix.md).
+Der Befehl `raidmode` ist [auch mit Prefix verfügbar](../guides/prefix.md).
 :::
 
-### 🚨 Auto Raid Mode Configuration {#config}
+### 🚨 Automatische Raid-Modus-Konfiguration {#config}
 
-If your server often gets many new members at once, it’s wise to adjust this threshold to avoid false positives.
+Wenn auf deinem Server häufig viele Mitglieder gleichzeitig joinen, solltest du diese Schwelle anpassen, um Fehlalarme zu vermeiden.
 
 ![Screenshot of auto raid mode settings](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-raid-mode.webp)
 
 :::note
-We recommend setting a value between 10 and 20 members in 10 seconds for optimal system performance.
+Wir empfehlen einen Wert zwischen 10 und 20 Mitgliedern in 10 Sekunden, um das System optimal zu nutzen.
 :::
 
-1. Run the [ `/settings` command](../setup.md#settings).
-2. Click the “**Auto RaidMode**” button.
-3. Select the number of members allowed to join within 10 seconds.
+1. Führe den [`/settings`-Befehl](../setup.md#settings) aus.
+2. Klicke auf die Schaltfläche "**Auto RaidMode**".
+3. Wähle aus, wie viele Mitglieder innerhalb von 10 Sekunden beitreten dürfen.
 
-You can leave it at the default value (10) or adjust it to your desired value by clicking the “**Custom Value**” button.
+Du kannst den Standardwert (10) belassen oder über die Schaltfläche "**Benutzerdefinierter Wert**" einen eigenen Wert einstellen.
 
 :::warning
-If raid mode is automatically triggered, don’t forget to disable it once the threat has passed. Remember, it does not turn off on its own. 😖
+Wenn der Raid-Modus automatisch ausgelöst wurde, vergiss nicht, ihn zu deaktivieren, sobald die Gefahr vorüber ist. Er schaltet sich nämlich nicht selbst aus. 😖
 :::
 
+## Mindestalter des Accounts {#minage}
 
-## Minimum Account Age {#minage}
+Zur besseren Sicherheit kannst du ein Mindestalter der Discord-Accounts für neue Mitglieder festlegen.
 
-To improve security, you can require a minimum Discord account age for new members.
+1. Führe den [`/settings`-Befehl](../setup.md#settings) aus.
+2. Klicke auf die Schaltfläche "**Minimum Age**".
+3. Wähle den gewünschten Wert im Dropdown-Menü oder gib ein eigenes Datum im Format m/h/d/y an.
 
-1. Run the [ `/settings` command](../setup.md#settings).
-2. Click the “**Minimum Age**” button.
-3. Select the desired value from the dropdown menu or choose a custom value in date format (m/h/d/y).
+### 🎂 Mindestalter umgehen {#bypass-minage}
 
-### 🎂 Minimum Account Age Bypass {#bypass-minage}
+Verwende den Befehl: ```/bypass minage [user]```
 
-Use the command: ```/bypass minage [user]```
-
-Replace `[user]` with the desired ID; they will have 10 minutes to join the server without being kicked for not meeting the age requirement.
+Ersetze `[user]` mit der gewünschten ID; diese Person hat dann 10 Minuten Zeit, dem Server beizutreten, ohne wegen Nichterfüllung des Alterskriteriums gekickt zu werden.

@@ -1,28 +1,27 @@
 ---
-title: Tag Role
+title: Tag-Rolle
 ---
 
-The Tag Role automatically assigns a role to members who add [your server’s tag](https://support.discord.com/hc/en-us/articles/31444248479639-Server-Tags) to their Discord profile. By assigning a role to these members, you acknowledge their commitment and encourage them to actively represent your server. It’s a simple yet effective way to strengthen collective identity while rewarding your community’s most loyal ambassadors.
+Die Tag-Rolle weist automatisch allen Mitgliedern eine Rolle zu, die [den Tag deines Servers](https://support.discord.com/hc/en-us/articles/31444248479639-Server-Tags) in ihr Discord-Profil einfügen. Durch das Vergeben dieser Rolle würdigst du ihr Engagement und motivierst sie, deinen Server aktiv zu repräsentieren. Eine einfache, aber effektive Methode, um die gemeinsame Identität zu stärken und die treuesten Botschafter deiner Community zu belohnen.
 
-## ❓ How the Tag Role Works {#working}
+## ❓ Wie die Tag-Rolle funktioniert {#working}
 
-It’s simple. As soon as a member adds the server’s tag to their Discord profile, RaidProtect automatically assigns them a specific role.  
-If the member removes the tag, the role is removed.
+Ganz einfach: Sobald ein Mitglied den Server-Tag in sein Discord-Profil einträgt, weist RaidProtect ihm automatisch eine bestimmte Rolle zu. Entfernt das Mitglied den Tag, wird auch die Rolle entfernt.
 
 :::info
-If the Tag is not enabled or your server doesn’t yet have the feature, the Tag Role will have no effect.
+Ist die Tag-Funktion nicht aktiviert oder steht sie deinem Server noch nicht zur Verfügung, hat die Tag-Rolle keine Wirkung.
 :::
 
-## 🎖️ Configuring the Tag Role {#config}
+## 🎖️ Die Tag-Rolle konfigurieren {#config}
 
-Configuration takes just a few clicks:  
-1. Use the [command `/settings`](../setup.md#settings).  
-2. Click the “**Tag Role**” button.  
-3. Select an existing role via the selector or click “**Create one for me**”.  
-4. You can deselect the role at any time by clicking on the “**Reset**” button.
+Die Einrichtung dauert nur wenige Klicks:
+1. Nutze den [Befehl `/settings`](../setup.md#settings).
+2. Klicke auf die Schaltfläche "**Tag Role**".
+3. Wähle eine bestehende Rolle im Auswahlmenü oder klicke auf "**Create one for me**".
+4. Du kannst die Rolle jederzeit wieder abwählen, indem du auf "**Reset**" klickst.
 
-[Tag Role settings screenshot](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-tag-role.webp)
+![Tag Role settings screenshot](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-tag-role.webp)
 
 :::tip
-Members will receive the role the next time they update their profile (Username, Avatar, Banner, Roles, Tag…). You can [contact support](https://raidprotect.bot/discord) to request a full role sync if you have many members who currently have or previously had the Tag.
+Mitglieder erhalten die Rolle, wenn sie ihr Profil das nächste Mal aktualisieren (Benutzername, Avatar, Banner, Rollen, Tag …). Du kannst [den Support kontaktieren](https://raidprotect.bot/discord), um eine vollständige Rollensynchronisierung anzufordern, falls viele Mitglieder den Tag aktuell oder früher verwendet haben.
 :::
