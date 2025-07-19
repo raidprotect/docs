@@ -51,22 +51,22 @@ export default async function createConfigAsync() {
 		customFields: {
 			urls: {
 				main: {
-						fr: 'https://raidprotect.bot?r=0',
+						fr: 'https://raidprotect.bot',
 						en: 'https://raidprotect.bot/en',
 						de: 'https://raidprotect.bot/de'
 				},
 				legal: {
-						fr: 'https://raidprotect.bot/legal?r=0',
+						fr: 'https://raidprotect.bot/legal',
 						en: 'https://raidprotect.bot/en/legal',
 						de: 'https://raidprotect.bot/de/legal'
 				},
 				terms: {
-						fr: 'https://raidprotect.bot/terms?r=0',
+						fr: 'https://raidprotect.bot/terms',
 						en: 'https://raidprotect.bot/en/terms',
 						de: 'https://raidprotect.bot/de/terms'
 				},
 				privacy: {
-						fr: 'https://raidprotect.bot/privacy?r=0',
+						fr: 'https://raidprotect.bot/privacy',
 						en: 'https://raidprotect.bot/en/privacy',
 						de: 'https://raidprotect.bot/de/privacy'
 				},
