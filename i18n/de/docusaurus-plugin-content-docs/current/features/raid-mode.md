@@ -31,7 +31,7 @@ Der Befehl `raidmode` ist [auch mit Prefix verfügbar](../guides/prefix.md).
 
 Wenn auf deinem Server häufig viele Mitglieder gleichzeitig joinen, solltest du diese Schwelle anpassen, um Fehlalarme zu vermeiden.
 
-![Screenshot of auto raid mode settings](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-raid-mode.webp)
+![Screenshot der Einstellungen für den automatischen Raid-Modus](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-raid-mode.webp)
 
 :::note
 Wir empfehlen einen Wert zwischen 10 und 20 Mitgliedern in 10 Sekunden, um das System optimal zu nutzen.

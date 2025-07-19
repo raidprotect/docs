@@ -49,4 +49,4 @@ Dieses Problem tritt relativ häufig auf, hängt jedoch von **deiner Serverkonfi
 
 Der Lock-Befehl wirkt zwar magisch, hat aber seine Schwächen. Wie [in der Dokumentation erwähnt](../features/channel-lock.md#lock), **betrifft der Befehl nur die @everyone-Rolle**. Wenn also eine Rolle im Kanal explizit die Berechtigung zum Schreiben hat, können Mitglieder mit dieser Rolle weiterhin schreiben. Ein Bild sagt mehr als tausend Worte, daher siehst du hier, wie das in der Praxis aussieht. 🔍
 
-![Screenshot of channel lock configuration](../../../../en/docusaurus-plugin-content-docs/current/assets/lock-channel-messages-raidprotect.png)
+![Screenshot der Kanalsperrkonfiguration](../../../../en/docusaurus-plugin-content-docs/current/assets/lock-channel-messages-raidprotect.png)

@@ -23,7 +23,7 @@ Ist dein Server als Community-Server eingerichtet (Discord-Einstellung), verwend
 - Wähle die Schaltfläche "**Language**".
 - Entscheide dich für die gewünschte Sprache.
 
-![Screenshot of language settings](../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-language.webp)
+![Screenshot der Spracheinstellungen](../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-language.webp)
 
 Sobald die Sprache ausgewählt ist, passt der Bot automatisch alle seine Nachrichten, Benachrichtigungen und Befehle an die gewählte Sprache deines Servers an.
 
