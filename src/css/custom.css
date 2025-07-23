@@ -97,6 +97,10 @@ body {
   mask-image: url('/img/x.svg');
 }
 
+.navbar-youtube::before {
+  mask-image: url('/img/youtube.svg');
+}
+
 .navbar-github::before {
   mask-image: url('/img/github.svg');
 }

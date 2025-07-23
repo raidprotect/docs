@@ -273,6 +273,12 @@ export default async function createConfigAsync() {
 						'aria-label': 'Twitter',
 					},
 					{
+						href: 'https://www.youtube.com/@RaidProtect',
+						className: 'navbar-social navbar-youtube',
+						position: 'right',
+						'aria-label': 'YouTube',
+					},
+					{
 						href: 'https://github.com/raidprotect',
 						className: 'navbar-social navbar-github',
 						position: 'right',
