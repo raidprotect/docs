@@ -50,6 +50,9 @@ function Footer(): ReactNode {
             <a href="https://x.com/raidprotect" target="_blank" className="social-link w-inline-block">
               <img loading="eager" src="/img/x.svg" alt="Logo X (Twitter)" className="social-icon" />
             </a>
+            <a href="https://www.youtube.com/@RaidProtect" target="_blank" className="social-link w-inline-block">
+              <img loading="eager" src="/img/youtube.svg" alt="Logo YouTube" className="social-icon" />
+            </a>
             <a href="https://github.com/raidprotect" target="_blank" className="social-link w-inline-block">
               <img loading="eager" src="/img/github.svg" alt="Logo GitHub" className="social-icon" />
             </a>
