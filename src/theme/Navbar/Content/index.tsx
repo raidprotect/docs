@@ -66,9 +66,9 @@ function NavbarContentLayout({
 export default function NavbarContent(): ReactNode {
   const mobileSidebar = useNavbarMobileSidebar();
   const {
-		siteConfig: { customFields: { urls } },
-		i18n: { currentLocale }
-	} = useDocusaurusContext();
+        siteConfig: { customFields: { urls } },
+        i18n: { currentLocale }
+    } = useDocusaurusContext();
 
   const items = useNavbarItems();
   const [leftItems, rightItems] = splitNavbarItems(items);
