@@ -4,17 +4,17 @@ title: Channel locking
 
 Sometimes it is necessary to temporarily lock a channel to prevent users from sending messages. With the lock command, this becomes a breeze!
 
-## 🔒 Lock a Channel {#lock}
+## 🔒 Lock a channel {#lock}
 
-Use the command: ```/lock```
+Use the command: ```/lock [reason]```
 
-This will remove the speaking permission from the **@everyone** role in the channel, preventing all users from posting in that channel.
+This command removes the permission to send messages for the **@everyone** role in the channel, preventing all users from posting there. Replace **[reason]** to indicate why the channel is locked (e.g.: *chat cleanup*, *important announcement*, etc.).
 
-## 🔓 Unlock a Channel {#unlock}
+## 🔓 Unlock a channel {#unlock}
 
-Use the command: ```/unlock```
+Use the command: ```/unlock [reason]```
 
-This will add the speaking permission back to the **@everyone** role in the channel, allowing all users to post in that channel.
+This command restores the message-sending permissions to their state before the lock for the **@everyone** role in the channel, allowing users to post again. Replace **[reason]** to indicate why the channel is unlocked (e.g.: *discussion reopened*, *announcement finished*, etc.).
 
 :::warning
 For the lock command to work properly, you must ensure that no roles have explicit permission to speak in that channel. Otherwise, members with those roles will still be able to chat.

@@ -6,15 +6,15 @@ Il arrive parfois qu’il soit nécessaire de verrouiller temporairement un salo
 
 ## 🔒 Verrouiller un salon {#lock}
 
-Utilisez la commande : ```/lock```
+Utilisez la commande : ```/lock [raison]```
 
-Cela retirera la permission de parler du rôle **@everyone** dans le salon, empêchant ainsi tous les utilisateurs de poster dans ce salon.
+Cette commande retire les permissions d’envoyer des messages au rôle **@everyone** dans le salon, empêchant ainsi tous les utilisateurs d’y poster. Remplacez **[raison]** pour indiquer pourquoi le salon est verrouillé (ex. : *nettoyage du chat*, *annonce importante*, etc.).
 
 ## 🔓 Déverrouiller un salon {#unlock}
 
-Utilisez la commande : ```/unlock```
+Utilisez la commande : ```/unlock [raison]```
 
-Cela ajoutera la permission de parler du rôle **@everyone** dans le salon, empêchant ainsi tous les utilisateurs de poster dans ce salon.
+Cette commande rétablit les permissions d’envoyer des messages aux états précédant le verrouillage au rôle **@everyone** dans le salon, permettant à nouveau aux utilisateurs d’y poster. Remplacez **[raison]** pour indiquer pourquoi le salon est déverrouillé (ex. : *discussion rouverte*, *annonce terminée*, etc.).
 
 :::warning
 Pour que la commande de verrouillage fonctionne correctement, vous devez vous assurer qu’aucun rôle n’a de permission explicite de parler dans ce salon. Sinon, les membres avec ces rôles pourront toujours discuter.

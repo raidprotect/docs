@@ -6,15 +6,15 @@ Manchmal ist es nötig, einen Kanal vorübergehend zu sperren, damit Nutzer kein
 
 ## 🔒 Einen Kanal sperren {#lock}
 
-Verwende den Befehl: ```/lock```
+Verwende den Befehl: ```/lock [Grund]```
 
-Dadurch wird der **@everyone**-Rolle in diesem Kanal die Schreibberechtigung entzogen, sodass niemand dort mehr posten kann.
+Dieser Befehl entzieht der Rolle **@everyone** die Berechtigung, Nachrichten im Kanal zu senden, sodass keine Nutzer dort posten können. Ersetze **[Grund]**, um anzugeben, warum der Kanal gesperrt ist (z. B.: *Chat-Bereinigung*, *wichtige Ankündigung* usw.).
 
 ## 🔓 Einen Kanal entsperren {#unlock}
 
-Verwende den Befehl: ```/unlock```
+Verwende den Befehl: ```/unlock [Grund]```
 
-Damit erhält die **@everyone**-Rolle ihre Schreibberechtigung im Kanal zurück und alle Nutzer können wieder dort schreiben.
+Dieser Befehl stellt die vorherigen Nachrichtenrechte für die Rolle **@everyone** im Kanal wieder her, sodass die Nutzer erneut dort posten können. Ersetze **[Grund]**, um anzugeben, warum der Kanal entsperrt ist (z. B.: *Diskussion wieder geöffnet*, *Ankündigung beendet* usw.).
 
 :::warning
 Damit der Lock-Befehl korrekt funktioniert, dürfen keine Rollen explizit das Recht haben, in diesem Kanal zu schreiben. Andernfalls können Mitglieder mit solchen Rollen weiterhin chatten.
