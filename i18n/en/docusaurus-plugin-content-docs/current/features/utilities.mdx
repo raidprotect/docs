@@ -115,3 +115,22 @@ Certain special indicators (flags) can be displayed for a member:
 | `AUTOMOD_QUARANTINED_GUILD_TAG`          | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | Quarantined by automoderation for the tag or nickname.            |
 | `BYPASSES_VERIFICATION`                  | <Icon src="/img/icons/BypassVerification.svg" alt="icon BypassVerification" title=":BypassVerification:"/>             | User can bypass server verification.                              |
 | `SPAMMER`                                | <Icon src="/img/icons/UnusualAccountActivity.svg" alt="icon UnusualAccountActivity" title=":UnusualAccountActivity:"/> | Account marked as spammer or unusual activity detected.           |
+
+## ⚖️ Discord Sanctions {#discord-sanctions}
+
+The `/discord-sanctions` command allows you to view the **sanctions issued by Discord** against a user, in accordance with European regulations.
+
+Use the command: ```/discord-sanctions [@user]```
+
+Replace `[@user]` with the desired mention or ID.
+
+### 📋 Displayed Information {#displayed-sanctions}
+
+- **Type of sanction** (content removal, restricted/suspended/banned account)
+- **Date of issuance**
+- **Type of content**
+- **Flags** (🚓 illegal, 🤖 automated)
+
+:::note
+This information is provided directly by Discord and **cannot be modified** by RaidProtect.
+:::
