@@ -45,3 +45,13 @@ Der Befehl `/clear` ermöglicht es dir, in einem Textkanal schnell eine bestimmt
 Verwende den Befehl: ```/clear [number] (@user)```
 
 Ersetze `[number]` durch die Anzahl der zu löschenden Nachrichten (maximal 100). Füge `(@user)` mit der entsprechenden Erwähnung oder ID hinzu, um nur seine Nachrichten im Kanal zu löschen.
+
+## 🕒 Slowmode in einem Kanal aktivieren {#slowmode}
+
+Der Befehl `/slowmode` ermöglicht es dir, den Slowmode in einem Textkanal zu aktivieren oder anzupassen, um die Häufigkeit der gesendeten Nachrichten der Nutzer zu begrenzen.
+
+Verwende den Befehl: ```/slowmode [Dauer] (Kanal) (Grund)```
+
+- Ersetze `[Dauer]` durch das gewünschte Intervall zwischen den Nachrichten (z. B.: `5s`, `1m`, `10m`, `1h`).
+- Füge `(Kanal)` hinzu, wenn du den Slowmode in einem anderen Kanal anwenden möchtest als in dem, in dem du den Befehl eingibst.
+- Füge `(Grund)` hinzu, um den Anlass anzugeben, der in den Server-Logs gespeichert wird.

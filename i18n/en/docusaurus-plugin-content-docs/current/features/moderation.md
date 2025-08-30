@@ -45,3 +45,13 @@ The command `/clear` allows you to quickly delete a certain number of messages i
 Use the command: ```/clear [number] (@user)```
 
 Replace `[number]` with the number of messages you wish to delete (maximum 100). Add `(@user)` using the mention or ID to target only their messages in the channel.
+
+## 🕒 Enable slowmode in a channel {#slowmode}
+
+The `/slowmode` command allows you to enable or modify the slowmode of a text channel, in order to limit how frequently users can send messages.
+
+Use the command: ```/slowmode [duration] (channel) (reason)```
+
+- Replace `[duration]` with the desired time between each message (e.g.: `5s`, `1m`, `10m`, `1h`).
+- Add `(channel)` if you want to apply slowmode to a different channel than the one where you type the command.
+- Add `(reason)` to specify the motive, which will be recorded in the server logs.

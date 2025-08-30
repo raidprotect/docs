@@ -45,3 +45,13 @@ La commande `/clear` vous permet de supprimer rapidement un certain nombre de me
 Utilisez la commande : ```/clear [nombre] (@utilisateur)```
 
 Remplacez `[nombre]` par le nombre de messages que vous souhaitez supprimer (maximum 100). Ajoutez `(@utilisateur)` en utilisant la mention ou l’identifiant pour cibler uniquement ses messages dans le salon.
+
+## 🕒 Activer le slowmode dans un salon {#slowmode}
+
+La commande `/slowmode` vous permet d’activer ou de modifier le mode lent d’un salon texte, afin de limiter la fréquence des messages envoyés par les utilisateurs.
+
+Utilisez la commande : ```/slowmode [durée] (salon) (raison)```
+
+- Remplacez `[durée]` par la durée souhaitée entre chaque message (par ex. : `5s`, `1m`, `10m`, `1h`).
+- Ajoutez `(salon)` si vous souhaitez appliquer le slowmode à un autre salon que celui où vous tapez la commande.
+- Ajoutez `(raison)` pour préciser le motif, qui sera enregistré dans les logs du serveur.
