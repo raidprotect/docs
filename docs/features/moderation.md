@@ -12,25 +12,31 @@ Les commandes de modérations sont [utilisables par préfixe](../guides/prefix.m
 
 ## 🔨 Bannir un utilisateur {#ban}
 
-Utilisez la commande : ```/ban [@utilisateur] [raison]```
+Utilisez la commande : ```/ban [@utilisateur] (raison)```
 
-Remplacez `[@utilisateur]` par la mention ou l’identifiant souhaité et `[raison]` par le motif de la sanction.
+Remplacez `[@utilisateur]` par la mention ou l’identifiant souhaité et `(raison)` par le motif de la sanction.
 
 :::tip
 Vous pouvez bannir un utilisateur à partir de son [identifiant Discord](https://dfr.gg/wiki/interface/mode-developpeur), même s’il n’est pas connecté ou présent sur votre serveur.
 :::
 
+### Débannir un utilisateur {#unban}
+
+Utilisez la commande : ```/unban [ID] (raison)```
+
+Remplacez `[ID]` par l’identifiant souhaité et `(raison)` par le motif du débannissement.
+
 ## 👢 Expulser un utilisateur {#kick}
 
-Utilisez la commande : ```/kick [@utilisateur] [raison]```
+Utilisez la commande : ```/kick [@utilisateur] (raison)```
 
-Remplacez `[@utilisateur]` par la mention ou l’identifiant souhaité et `[raison]` par le motif de la sanction.
+Remplacez `[@utilisateur]` par la mention ou l’identifiant souhaité et `(raison)` par le motif de la sanction.
 
 ## ⏳ Exclure un utilisateur {#timeout}
 
-Utilisez la commande : ```/timeout [@utilisateur] [durée] [raison]```
+Utilisez la commande : ```/timeout [@utilisateur] [durée] (raison)```
 
-Remplacez `[@utilisateur]` par la mention ou l’identifiant souhaité, `[durée]` par la durée du timeout, dans un maximum de 28 jours (ex. : `10m`, `1h`, `1d`) et `[raison]` par le motif de la sanction.
+Remplacez `[@utilisateur]` par la mention ou l’identifiant souhaité, `[durée]` par la durée du timeout, dans un maximum de 28 jours (ex. : `10m`, `1h`, `1d`) et `(raison)` par le motif de la sanction.
 
 ## 🧹 Supprimer un groupe de messages {#clear}
 

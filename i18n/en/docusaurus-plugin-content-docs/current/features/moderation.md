@@ -20,6 +20,12 @@ Replace `[@user]` with the desired mention or ID and `[reason]` with the reason 
 You can ban a user using their [Discord ID](https://dfr.gg/wiki/interface/mode-developpeur), even if they are not currently online or present on your server.
 :::
 
+### Unban a user {#unban}
+
+Use the command: ```/unban [ID] (reason)```
+
+Replace `[ID]` with the desired identifier and `(reason)` with the reason for the unban.
+
 ## 👢 Kick a User {#kick}
 
 Use the command: ```/kick [@user] [reason]```

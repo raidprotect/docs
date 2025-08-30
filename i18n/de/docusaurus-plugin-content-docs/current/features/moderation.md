@@ -20,6 +20,12 @@ Ersetze `[@user]` durch die gewünschte Erwähnung oder ID und `[reason]` durch 
 Du kannst einen Nutzer über seine [Discord-ID](https://dfr.gg/wiki/interface/mode-developpeur) bannen, selbst wenn er nicht online ist oder deinen Server bereits verlassen hat.
 :::
 
+### Benutzer entsperren {#unban}
+
+Verwenden Sie den Befehl: ```/unban [ID] (Grund)```
+
+Ersetzen Sie `[ID]` durch die gewünschte Kennung und `(Grund)` durch den Grund der Entsperrung.
+
 ## 👢 Einen Nutzer kicken {#kick}
 
 Verwende den Befehl: ```/kick [@user] [reason]```
