@@ -16,9 +16,9 @@ Ebenso kann ein Mitglied ein problematisches Profil mit Rechtsklick auswählen, 
 3. **Slash-Befehl**
 Mitglieder können auch eine Nachricht oder einen Nutzer über den Befehl **`/report`** in einem beliebigen Serverkanal melden.
 
-Verwende den Befehl: ```/report [@user] [reason]```
+Verwende den Befehl: ```/report (member) (reason)```
 
-Ersetze `[@user]` durch den gewünschten Nutzer und `[reason]` durch den Grund des Verstoßes.
+Ersetze `(member)` durch den gewünschten Nutzer und `(reason)` durch den Grund des Verstoßes.
 
 ## 🚩 Meldungen konfigurieren {#config}
 

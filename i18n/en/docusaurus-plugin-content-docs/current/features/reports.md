@@ -16,9 +16,9 @@ Similarly, a member can right-click on a profile they find problematic, choose *
 3. **Slash Command**  
 Members can also report a message or user via the **`/report`** command in any server channel.
 
-Use the command: ```/report [@user] [reason]```
+Use the command: ```/report (member) (reason)```
 
-Replace `[@user]` with the desired user and `[reason]` with the reason for the infraction.
+Replace `(member)` with the desired user and `(reason)` with the reason for the infraction.
 
 ## 🚩 Configuring Reports {#config}
 
