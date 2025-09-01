@@ -59,4 +59,4 @@ Zur besseren Sicherheit kannst du ein Mindestalter der Discord-Accounts für neu
 
 Verwende den Befehl: ```/bypass minage [user]```
 
-Ersetze `[user]` mit der gewünschten ID; diese Person hat dann 10 Minuten Zeit, dem Server beizutreten, ohne wegen Nichterfüllung des Alterskriteriums gekickt zu werden.
+Ersetze `[user]` mit der gewünschten ID; diese Person hat dann 10 Minuten Zeit, dem Server beizutreten, ohne wegen Nichterfüllung des Alterskriteriums gekickt zu werden. Sie können den Befehl auch ohne Angabe eines Benutzers verwenden, um die aktuelle Liste der Bypass-Benutzer anzuzeigen.

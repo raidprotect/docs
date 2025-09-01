@@ -60,4 +60,4 @@ To improve security, you can require a minimum Discord account age for new membe
 
 Use the command: ```/bypass minage [user]```
 
-Replace `[user]` with the desired ID; they will have 10 minutes to join the server without being kicked for not meeting the age requirement.
+Replace `[user]` with the desired ID; they will have 10 minutes to join the server without being kicked for not meeting the age requirement. You can also use the command without specifying a user to see the current list of bypass users.

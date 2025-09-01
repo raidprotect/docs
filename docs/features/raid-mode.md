@@ -60,4 +60,4 @@ Pour renforcer la sécurité, vous pouvez exiger un âge minimum pour les compte
 
 Utilisez la commande : ```/bypass minage [utilisateur]```
 
-Remplacez `[utilisateur]` par l’identifiant souhaité, ce dernier disposera de 10 minutes pour rejoindre le serveur sans être expulsé par l'âge requis.
+Remplacez `[utilisateur]` par l’identifiant souhaité, ce dernier disposera de 10 minutes pour rejoindre le serveur sans être expulsé par l'âge requis. Vous pouvez aussi utiliser la commande sans spécifier d'utilisateur pour connaître la liste actuelle des utilisateurs bypass.
