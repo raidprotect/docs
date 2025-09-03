@@ -83,9 +83,9 @@ export default async function createConfigAsync() {
                         de: 'RaidProtect ist ein Discord-Bot, der Ihren Server vor böswilligen Nutzern schützt – dank integriertem Anti-Spam und Captcha-System. <strong>Und genau dort, ein kleines Geranium.&nbsp;</strong>'
                 },
                 announcementBar: {
-                        fr: '<strong>La <a href="https://docs.raidprotect.bot/blog/3.2.0-protection-update">Protection Update (3.2.0)</a> est sortie !</strong>',
-                        en: '<strong><a href="https://docs.raidprotect.bot/en/blog/3.2.0-protection-update">Protection Update (3.2.0)</a> is now live!</strong>',
-                        de: '<strong>Das <a href="https://docs.raidprotect.bot/de/blog/3.2.0-protection-update">Protection Update (3.2.0)</a> ist erschienen!</strong>'
+                        fr: '<strong>La <a href="https://docs.raidprotect.bot/blog/3.2.1-discord-sanctions">Protection Update (3.2.1)</a> est sortie !</strong>',
+                        en: '<strong><a href="https://docs.raidprotect.bot/en/blog/3.2.1-discord-sanctions">Protection Update (3.2.1)</a> is now live!</strong>',
+                        de: '<strong>Das <a href="https://docs.raidprotect.bot/de/blog/3.2.1-discord-sanctions">Protection Update (3.2.1)</a> ist erschienen!</strong>'
                 }
             },
             excludedCanonical: []
@@ -192,8 +192,8 @@ export default async function createConfigAsync() {
                 versionPersistence: 'localStorage',
             },
             announcementBar: {
-                id: '3.2.0',
-                content: '<strong><a href="https://docs.raidprotect.bot/blog/3.2.0-protection-update">Protection Update (3.2.0)</a> is now live!</strong>',
+                id: '3.2.1',
+                content: '<strong><a href="https://docs.raidprotect.bot/blog/3.2.1-discord-sanctions">Protection Update (3.2.1)</a> is now live!</strong>',
                 backgroundColor: '#BD5454',
                 textColor: '#FFFFFF',
                 isCloseable: false
