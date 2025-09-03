@@ -40,7 +40,6 @@ Si la cible est un membre du serveur, les infos supplémentaires incluent :
 - **Pseudo sur le serveur**
 - **Nombre de rôles** et **liste des 6 premiers rôles**
 - **Catégorie de permissions** (visible seulement par les modérateurs) :
-
 <SeparatedBox>
 <Tabs>
   <TabItem value="animator" label="Animateur" default>
@@ -99,11 +98,8 @@ Si la cible est un membre du serveur, les infos supplémentaires incluent :
 </Tabs>
 </SeparatedBox>
 
-- **Flags de membre** (visible seulement par les modérateurs)
-
-Certains indicateurs spéciaux (flags) peuvent être affichés pour un membre :
-
-| **Flag**                                 | **Emoji affiché**                                                                                                      | **Explication**                                                   |
+- **Flags de membre** (visible seulement par les modérateurs) :
+| **Flags**                                | **Émojis**                                                                                                             | **Significations**                                                |
 | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `DID_REJOIN`                             | <Icon src="/img/icons/MemberDidRejoin.svg" alt="icon MemberDidRejoin" title=":MemberDidRejoin:"/>                      | L'utilisateur a quitté et rejoint à nouveau le serveur.           |
 | `IS_GUEST`                               | <Icon src="/img/icons/MemberIsGuest.svg" alt="icon MemberIsGuest" title=":MemberIsGuest:"/>                            | Membre invité (invitation temporaire ou accès invité).            |
@@ -126,10 +122,21 @@ Remplacez `(utilisateur)` par la mention ou l’identifiant souhaité.
 
 ### 📋 Informations affichées {#displayed-sanctions}
 
-- **Type de sanction** (suppression de contenu, compte restreint/suspendu/banni)
+- **Type de sanction**
+| **Sanctions**                            | **Émojis**                                                                                                             | **Significations**                                                |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `CONTENT_DELETED`                        | <Icon src="/img/icons/ContentDeleted.svg" alt="icon ContentDeleted" title=":iconTrash:"/>                              | Du contenu posté par l'utilisateur a été supprimé.                |
+| `RESTRICTED`                             | <Icon src="/img/icons/AccountRestricted.svg" alt="icon AccountRestricted" title=":iconRestricted:"/>                   | Le compte utilisateur a été restreint.                            |
+| `ACCOUNT_SUSPENDED`                      | <Icon src="/img/icons/AccountSuspended.svg" alt="icon AccountSuspended" title=":iconSuspended:"/>                      | Le compte utilisateur a été suspendu.                             |
+| `ACCOUNT_TERMINATED`                     | <Icon src="/img/icons/AccountTerminated.svg" alt="icon AccountTerminated" title=":iconTerminated:"/>                   | Le compte utilisateur a été supprimé.                             |
+
 - **Date d’émission**
 - **Type de contenu**
-- **Flags** (🚓 illégal, 🤖 automatique)
+- **Flags de sanction**
+| **Flags**                                | **Émojis**                                                                                                             | **Significations**                                                |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ILLEGAL_CONTENT`                        | <Icon src="/img/icons/IllegalContent.svg" alt="icon IllegalContent" title=":iconIllegal:"/>                            | Sanction appliqué pour un contenu illégal.                        |
+| `AUTOMATED_DETECTION`                    | <Icon src="/img/icons/AutomatedDetection.svg" alt="icon AutomatedDetection" title=":iconBots:"/>                       | Sanction appliquée via une détection automatique.                 |
 
 :::note
 Ces informations sont directement fournies par Discord et **ne peuvent pas être modifiées** par RaidProtect.

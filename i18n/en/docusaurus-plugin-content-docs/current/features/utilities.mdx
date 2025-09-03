@@ -103,7 +103,7 @@ If the target is a server member, additional info includes:
 
 Certain special indicators (flags) can be displayed for a member:
 
-| **Flag**                                 | **Displayed Emoji**                                                                                                    | **Explanation**                                                   |
+| **Flags**                                | **Emojis**                                                                                                             | **Meanings**                                                      |
 | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `DID_REJOIN`                             | <Icon src="/img/icons/MemberDidRejoin.svg" alt="icon MemberDidRejoin" title=":MemberDidRejoin:"/>                      | The user left and rejoined the server.                            |
 | `IS_GUEST`                               | <Icon src="/img/icons/MemberIsGuest.svg" alt="icon MemberIsGuest" title=":MemberIsGuest:"/>                            | Guest member (temporary invite or guest access).                  |
@@ -126,10 +126,21 @@ Replace `(user)` with the desired mention or ID.
 
 ### 📋 Displayed Information {#displayed-sanctions}
 
-- **Type of sanction** (content removal, restricted/suspended/banned account)
-- **Date of issuance**
+- **Type of sanction**
+| **Sanctions**                            | **Emojis**                                                                                                             | **Meanings**                                                      |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `CONTENT_DELETED`                        | <Icon src="/img/icons/ContentDeleted.svg" alt="icon ContentDeleted" title=":iconTrash:"/>                              | Content posted by the user has been deleted.                      |
+| `RESTRICTED`                             | <Icon src="/img/icons/AccountRestricted.svg" alt="icon AccountRestricted" title=":iconRestricted:"/>                   | The user account has been restricted.                             |
+| `ACCOUNT_SUSPENDED`                      | <Icon src="/img/icons/AccountSuspended.svg" alt="icon AccountSuspended" title=":iconSuspended:"/>                      | The user account has been suspended.                              |
+| `ACCOUNT_TERMINATED`                     | <Icon src="/img/icons/AccountTerminated.svg" alt="icon AccountTerminated" title=":iconTerminated:"/>                   | The user account has been terminated.                             |
+
+- **Date of issue**
 - **Type of content**
-- **Flags** (🚓 illegal, 🤖 automated)
+- **Sanction flags**
+| **Flags**                                | **Emojis**                                                                                                             | **Meanings**                                                      |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ILLEGAL_CONTENT`                        | <Icon src="/img/icons/IllegalContent.svg" alt="icon IllegalContent" title=":iconIllegal:"/>                            | Sanction applied for illegal content.                             |
+| `AUTOMATED_DETECTION`                    | <Icon src="/img/icons/AutomatedDetection.svg" alt="icon AutomatedDetection" title=":iconBots:"/>                       | Sanction applied through automated detection.                     |
 
 :::note
 This information is provided directly by Discord and **cannot be modified** by RaidProtect.
