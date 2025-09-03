@@ -31,3 +31,9 @@ $ npm run write-translations -- --locale <locale>
 ```
 
 This command regenerates translation files in `i18n/<locale>` directory.
+
+### Version
+
+```
+$ npm run docusaurus docs:version <version>
+```
