@@ -1,0 +1,146 @@
+---
+title: Utilities
+---
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Icon from "@site/src/components/Icon";
+
+Zusätzliche Funktionen, die dir die Verwaltung deines Servers erleichtern. 🔧
+
+Neben Kernfunktionen wie dem Captcha-System und dem Anti-Raid-Schutz bietet RaidProtect mehrere Hilfswerkzeuge, die die Administration deines Servers noch reibungsloser machen.
+
+:::info
+Utility-Befehle sind [auch mit einem Prefix nutzbar](../guides/prefix.md).
+:::
+
+## 👤 Nutzerinformationen {#userinfo}
+
+Mit dem Befehl `/userinfo` erhältst du detaillierte Informationen über einen Nutzer.
+
+Verwende den Befehl: ```/userinfo [user]```
+
+Ersetze `[user]` durch die gewünschte Erwähnung oder ID.
+
+### 📋 Angezeigte Informationen {#displayed-userinfo}
+
+- **Erstellungsdatum des Discord-Accounts**
+- **Profilbild** des Nutzers
+- **Profilbanner**
+- **Profilabzeichen**
+  - Die Badges Nitro, Booster, Quest und Originally Name werden nicht angezeigt.
+
+### 🎭 Informationen zu einem Servermitglied {#displayed-memberinfo}
+
+Ist das Ziel ein Servermitglied, werden zusätzliche Angaben gemacht:
+
+- **Beitrittsdatum zum Server**
+- **Server-Spitzname**
+- **Anzahl der Rollen** und **Liste der ersten 6 Rollen**
+- **Berechtigungskategorie** (nur für Moderatoren sichtbar):
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="animator" label="Animator" default>
+
+    Die Kategorie **Animator** wird angezeigt, wenn das Mitglied **mindestens eine** der folgenden Berechtigungen besitzt:
+
+    - `MANAGE_EXPRESSIONS`
+    - `CREATE_GUILD_EXPRESSIONS`
+    - `MANAGE_EVENTS`
+
+  </TabItem>
+  <TabItem value="moderator" label="Moderator">
+
+    Die Kategorie **Moderator** wird angezeigt, wenn das Mitglied **mindestens eine** der folgenden Berechtigungen besitzt:
+
+    - `KICK_MEMBERS`
+    - `BAN_MEMBERS`
+    - `MODERATE_MEMBERS`
+    - `MANAGE_MESSAGES`
+    - `MUTE_MEMBERS`
+    - `DEAFEN_MEMBERS`
+    - `MOVE_MEMBERS`
+    - `MANAGE_THREADS`
+
+  </TabItem>
+  <TabItem value="manager" label="Manager">
+
+    Die Kategorie **Manager** wird angezeigt, wenn das Mitglied **mindestens eine** der folgenden Berechtigungen besitzt:
+
+    - `MANAGE_GUILD`
+    - `MANAGE_ROLES`
+    - `MANAGE_CHANNELS`
+    - `VIEW_AUDIT_LOG`
+    - `MANAGE_WEBHOOKS`
+    - `MANAGE_SERVER_EXPRESSIONS`
+
+  </TabItem>
+  <TabItem value="admin" label="Administrator">
+
+    Die Kategorie **Administrator** wird in **zwei möglichen Fällen** angezeigt:
+
+    1️⃣ Besitzt die Berechtigung:
+    - `ADMINISTRATOR`
+
+    2️⃣ Verfügt **gleichzeitig über alle drei** folgenden Berechtigungen:
+    - `MANAGE_GUILD`
+    - `MANAGE_ROLES`
+    - `MANAGE_CHANNELS`
+
+  </TabItem>
+  <TabItem value="owner" label="Owner">
+
+    **Bedingung**: Das Mitglied ist der **Serverbesitzer**.
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+- **Mitglieder-Flags** (nur für Moderatoren sichtbar):
+
+| **Flags**                                | **Emojis**                                                                                                                  | **Bedeutungen**                                                          |
+| ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| `DID_REJOIN`                             | <Icon src="/img/icons/MemberDidRejoin.svg" alt="Icon MitgliedKamZurück" title=":MemberDidRejoin:"/>                         | Der Nutzer hat den Server verlassen und ist wieder beigetreten.          |
+| `IS_GUEST`                               | <Icon src="/img/icons/MemberIsGuest.svg" alt="Icon MitgliedIstGast" title=":MemberIsGuest:"/>                               | Gastmitglied (temporäre Einladung oder Gastzugang).                      |
+| `COMPLETED_ONBOARDING`                   | <Icon src="/img/icons/OnboardingCompleted.svg" alt="Icon OnboardingAbgeschlossen" title=":OnboardingCompleted:"/>           | Hat den Server-Onboarding-Prozess abgeschlossen.                         |
+| `STARTED_ONBOARDING`                     | <Icon src="/img/icons/OnboardingStarted.svg" alt="Icon OnboardingGestartet" title=":OnboardingStarted:"/>                   | Hat den Onboarding-Prozess gestartet.                                    |
+| `COMPLETED_SERVER_GUIDE`                 | <Icon src="/img/icons/ServerGuideCompleted.svg" alt="Icon ServerGuideAbgeschlossen" title=":ServerGuideCompleted:"/>        | Hat den Server-Guide (falls aktiviert) abgeschlossen.                    |
+| `STARTED_SERVER_GUIDE`                   | <Icon src="/img/icons/ServerGuideStarted.svg" alt="Icon ServerGuideGestartet" title=":ServerGuideStarted:"/>                | Hat den Server-Guide gestartet.                                          |
+| `AUTOMOD_QUARANTINED_NAME`               | <Icon src="/img/icons/MemberQuarantined.svg" alt="Icon MitgliedUnterQuarantäne" title=":MemberQuarantined:"/>               | Durch Automoderation wegen des Benutzernamens unter Quarantäne gestellt. |
+| `AUTOMOD_QUARANTINED_GUILD_TAG`          | <Icon src="/img/icons/MemberQuarantined.svg" alt="Icon MitgliedUnterQuarantäne" title=":MemberQuarantined:"/>               | Durch Automoderation wegen Tag oder Nickname unter Quarantäne gestellt.  |
+| `BYPASSES_VERIFICATION`                  | <Icon src="/img/icons/BypassVerification.svg" alt="Icon VerifizierungUmgangen" title=":BypassVerification:"/>               | Nutzer kann die Server-Verifizierung umgehen.                            |
+| `SPAMMER`                                | <Icon src="/img/icons/UnusualAccountActivity.svg" alt="Icon UngewöhnlicheKontoAktivität" title=":UnusualAccountActivity:"/> | Konto als Spammer markiert oder ungewöhnliche Aktivität festgestellt.    |
+
+## ⚖️ Discord-Sanktionen {#discord-sanctions}
+
+Der Befehl `/ds` ermöglicht es Ihnen, die **von Discord verhängten Sanktionen** gegen einen Benutzer einzusehen, in Übereinstimmung mit den [europäischen Vorschriften](https://transparency.dsa.ec.europa.eu/).
+
+Verwenden Sie den Befehl: ```/ds (user)```
+
+Ersetzen Sie `(user)` durch die gewünschte Erwähnung oder ID.
+
+### 📋 Angezeigte Informationen {#displayed-sanctions}
+
+- **Art der Sanktion**:
+
+| **Sanktionen**                           | **Emojis**                                                                                                                  | **Bedeutungen**                                                          |
+| ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| `CONTENT_DELETED`                        | <Icon src="/img/icons/ContentDeleted.svg" alt="icon ContentDeleted" title=":iconTrash:"/>                                   | Vom Benutzer veröffentlichter Inhalt wurde gelöscht.                     |
+| `RESTRICTED`                             | <Icon src="/img/icons/AccountRestricted.svg" alt="icon AccountRestricted" title=":iconRestricted:"/>                        | Das Benutzerkonto wurde eingeschränkt.                                   |
+| `ACCOUNT_SUSPENDED`                      | <Icon src="/img/icons/AccountSuspended.svg" alt="icon AccountSuspended" title=":iconSuspended:"/>                           | Das Benutzerkonto wurde gesperrt.                                        |
+| `ACCOUNT_TERMINATED`                     | <Icon src="/img/icons/AccountTerminated.svg" alt="icon AccountTerminated" title=":iconTerminated:"/>                        | Das Benutzerkonto wurde gelöscht.                                        |
+
+- **Ausstellungsdatum**
+- **Inhaltstyp**
+- **Sanktions-Flags**:
+
+| **Flags**                                | **Emojis**                                                                                                                  | **Bedeutungen**                                                          |
+| ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| `ILLEGAL_CONTENT`                        | <Icon src="/img/icons/IllegalContent.svg" alt="icon IllegalContent" title=":iconIllegal:"/>                                 | Sanktion für illegalen Inhalt.                                           |
+| `AUTOMATED_DETECTION`                    | <Icon src="/img/icons/AutomatedDetection.svg" alt="icon AutomatedDetection" title=":iconBots:"/>                            | Sanktion durch automatische Erkennung angewendet.                        |
+
+:::note
+Der Befehl ermöglicht es, die zwischen dem 22. August 2024 und dem 14. August 2025 ausgestellten Berichte einzusehen. Diese Informationen werden direkt von Discord bereitgestellt und **können nicht von RaidProtect geändert werden**.
+:::
