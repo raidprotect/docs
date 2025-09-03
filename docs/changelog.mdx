@@ -6,13 +6,30 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Découvrez la liste détaillée des modifications qui ont été apportées à RaidProtect.
 
+## 3.2.1 (03/09/2025) {#3-2-1}
+
+- Nouvelle [commande `/ds`](./features/utilities.mdx#discord-sanctions) permettant de consulter les sanctions Discord d'un utilisateur.
+- L'anti-spam est désormais capable de stopper le spam de Commandes Slash.
+- Nouveau déclencheur d'anti-spam : [Spam de commandes externes](./features/anti-spam/mdx#triggers).
+- Nouvelle [commande `/slowmode`](./features/moderation.md#slowmode) permettant d’activer ou de modifier le mode lent d’un salon.
+- Nouvelle [commande `/unban`](./features/moderation.md#unban).
+- Nouvelle commande `/bypass captcha` pour accepter un utilisateur qui ne parvient pas à résoudre le captcha.
+- Nouveau paramètre [raison] pour les [commandes `/lock` et `/unlock`](.features/channel-lock.md).
+- Correction :
+  - Diverses erreurs de traductions.
+  - Erreurs de prise en compte de la raison dans la commande /timeout.
+  - Multiples optimisations pour réduire le temps de démarrage du bot et le temps d'exécution des commandes.
+  - Erreurs dans l'interprétation des commandes par préfix.
+  - Erreurs dans la validation des préfixes.
+  - Erreurs d'avatar par défaut corrigées.
+
 ## 3.2.0 (10/07/2025) {#3-2-0}
 
 - Nouvelle fonctionnalité [Fermeture des MP](./features/dm-lock.mdx).
 - Choix des [sanctions](./features/anti-spam.mdx#triggers) appliquées par l'anti-spam. <SuggestionLink id="85" />
 - Nouvelles [logs d'anti-spam](./features/anti-spam.mdx#logs) (plus de visibilité sur les détections).
 - Activation d'un [âge minimum de compte](./features/raid-mode.md#minage) sans captcha. <SuggestionLink id="314" />
-- Nouvelle [commande /bypass minage](./features/raid-mode.md#bypass-minage) pour accepter une personne qui n'a pas l'âge de compte requis. <SuggestionLink id="447" />
+- Nouvelle [commande /bypass minage](./features/raid-mode.md#bypass-minage) pour accepter un utilisateur qui n'a pas l'âge de compte requis. <SuggestionLink id="447" />
 - Refonte total de la [commande `/userinfo`](./features/utilities.mdx#userinfo).
 - Nouvelles logs lors des modifications importantes de la configuration du bot.
 - Correction :

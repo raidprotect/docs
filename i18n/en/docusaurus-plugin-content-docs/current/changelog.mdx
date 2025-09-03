@@ -6,6 +6,23 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Discover the detailed list of changes made to RaidProtect.
 
+## 3.2.1 (03/09/2025) {#3-2-1}
+
+- New [command `/ds`](./features/utilities.mdx#discord-sanctions) allowing to view a user's Discord sanctions.
+- Anti-spam is now able to stop Slash Command spam.
+- New anti-spam trigger: [External command spam](./features/anti-spam/mdx#triggers).
+- New [command `/slowmode`](./features/moderation.md#slowmode) to enable or modify the slowmode of a channel.
+- New [command `/unban`](./features/moderation.md#unban).
+- New command `/bypass captcha` to accept a user who cannot solve the captcha.
+- New parameter [reason] for the [commands `/lock` and `/unlock`](.features/channel-lock.md).
+- Fixes:
+  - Various translation errors.
+  - Errors handling the reason in the /timeout command.
+  - Multiple optimizations to reduce bot startup time and command execution time.
+  - Errors in interpreting prefix commands.
+  - Errors in prefix validation.
+  - Default avatar errors fixed.
+
 ## 3.2.0 (10/07/2025) {#3-2-0}
 
 - New feature [DM Lock](./features/dm-lock.mdx).

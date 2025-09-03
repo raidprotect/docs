@@ -6,6 +6,23 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Entdecken Sie die detaillierte Liste der Änderungen an RaidProtect.
 
+## 3.2.1 (03/09/2025) {#3-2-1}
+
+- Neuer [Befehl `/ds`](./features/utilities.mdx#discord-sanctions), um die Discord-Sanktionen eines Benutzers einzusehen.
+- Anti-Spam kann nun Slash-Befehl-Spam stoppen.
+- Neuer Anti-Spam-Auslöser: [Spam von externen Befehlen](./features/anti-spam/mdx#triggers).
+- Neuer [Befehl `/slowmode`](./features/moderation.md#slowmode), um den Slowmode eines Kanals zu aktivieren oder zu ändern.
+- Neuer [Befehl `/unban`](./features/moderation.md#unban).
+- Neuer Befehl `/bypass captcha`, um einen Benutzer zu akzeptieren, der das Captcha nicht lösen kann.
+- Neuer Parameter [reason] für die [Befehle `/lock` und `/unlock`](.features/channel-lock.md).
+- Fehlerbehebungen:
+  - Verschiedene Übersetzungsfehler.
+  - Fehler bei der Berücksichtigung des Grundes im Befehl /timeout.
+  - Mehrere Optimierungen zur Reduzierung der Bot-Startzeit und der Befehlsausführungszeit.
+  - Fehler bei der Interpretation von Präfix-Befehlen.
+  - Fehler bei der Präfix-Validierung.
+  - Fehler beim Standard-Avatar behoben.
+
 ## 3.2.0 (10.07.2025) {#3-2-0}
 
 - Neue Funktion: [DM-Sperre](./features/dm-lock.mdx).
