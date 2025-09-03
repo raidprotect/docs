@@ -55,3 +55,9 @@ Si vous utilisez un système de rôle automatique (autorole) autre que RaidProte
 2. Cliquez sur le bouton “**Captcha**”.
 3. Sélectionnez “**Rôle automatique**”.
 4. Choisissez le rôle qui sera donné aux membres ayant validé le captcha.
+
+### Bypass du captcha {#bypass}
+
+Utilisez la commande : ```/bypass captcha [utilisateur]```
+
+Remplacez `[utilisateur]` par l’identifiant souhaité, ce dernier disposera de 10 minutes pour rejoindre le serveur sans avoir besoin de résoudre le captcha. Si l'utilisateur est déjà présent, le captcha sera résolu automatiquement. Vous pouvez aussi utiliser la commande sans spécifier d'utilisateur pour connaître la liste actuelle des utilisateurs bypass.

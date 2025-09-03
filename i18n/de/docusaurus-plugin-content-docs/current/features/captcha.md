@@ -55,3 +55,9 @@ Wenn du ein anderes automatisches Rollensystem (Autorole) als RaidProtect verwen
 2. Klicke auf die Schaltfläche "**Captcha**".
 3. Wähle "**Auto Role**" aus.
 4. Wähle die Rolle, die Mitgliedern zugewiesen wird, die das Captcha erfolgreich abschließen.
+
+### Captcha-Bypass {#bypass}
+
+Verwenden Sie den Befehl: ```/bypass captcha [Benutzer]```
+
+Ersetzen Sie `[Benutzer]` durch die gewünschte Kennung; diese Person hat dann 10 Minuten Zeit, dem Server beizutreten, ohne das Captcha lösen zu müssen. Wenn der Benutzer bereits anwesend ist, wird das Captcha automatisch gelöst. Sie können den Befehl auch ohne Benutzerangabe verwenden, um die aktuelle Liste der Bypass-Benutzer anzuzeigen.
