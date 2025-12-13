@@ -12,6 +12,8 @@ Les commandes de modérations sont [utilisables par préfixe](../guides/prefix.m
 
 ## 🔨 Bannir un utilisateur {#ban}
 
+La commande `/ban` vous permet d'interdire définitivement l'accès d'un utilisateur à votre serveur.
+
 Utilisez la commande : ```/ban (utilisateur) [raison]```
 
 Remplacez `(utilisateur)` par la mention ou l’identifiant souhaité et `[raison]` par le motif de la sanction.
@@ -22,11 +24,15 @@ Vous pouvez bannir un utilisateur à partir de son [identifiant Discord](https:/
 
 ### Débannir un utilisateur {#unban}
 
+La commande `/unban` vous permet de retirer le bannissement d'un utilisateur précédemment banni, lui permettant ainsi de rejoindre à nouveau votre serveur.
+
 Utilisez la commande : ```/unban (utilisateur) [raison]```
 
 Remplacez `(utilisateur)` par l’identifiant souhaité et `[raison]` par le motif du débannissement.
 
 ## 👢 Expulser un utilisateur {#kick}
+
+La commande `/kick` vous permet d'expulser un membre de votre serveur sans le bannir. L'utilisateur pourra rejoindre le serveur à nouveau s'il possède une invitation valide.
 
 Utilisez la commande : ```/kick (membre) [raison]```
 
@@ -34,9 +40,27 @@ Remplacez `(membre)` par la mention ou l’identifiant souhaité et `[raison]` p
 
 ## ⏳ Exclure un utilisateur {#timeout}
 
+La commande `/timeout` vous permet de restreindre temporairement la capacité d'un membre à interagir sur le serveur. Pendant cette période, le membre ne pourra pas envoyer de messages, réagir, rejoindre des vocaux ou envoyer des messages privés aux autres membres.
+
 Utilisez la commande : ```/timeout (membre) (durée) [raison]```
 
 Remplacez `(membre)` par la mention ou l’identifiant souhaité, `(durée)` par la durée du timeout, dans un maximum de 28 jours (ex. : `10m`, `1h`, `1d`) et `[raison]` par le motif de la sanction.
+
+### Arrêter d'exclure un utilisateur {#untimeout}
+
+La commande `/untimeout` vous permet de retirer immédiatement les restrictions d'un membre en timeout, lui permettant de retrouver toutes ses capacités d'interaction sur le serveur.
+
+Utilisez la commande : ```/untimeout (membre) [raison]```
+
+Remplacez `(membre)` par la mention ou l'identifiant souhaité et `[raison]` par le motif du retrait du timeout.
+
+## ⚠️ Avertir un utilisateur {#warn}
+
+La commande `/warn` vous permet d'avertir formellement un membre par un message privé pour un comportement inapproprié. L'avertissement est enregistré dans les logs du serveur pour un suivi des sanctions.
+
+Utilisez la commande : ```/warn (membre) [raison]```
+
+Remplacez `(membre)` par la mention ou l'identifiant souhaité et `[raison]` par le motif de l'avertissement.
 
 ## 🧹 Supprimer un groupe de messages {#clear}
 

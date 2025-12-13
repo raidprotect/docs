@@ -12,6 +12,8 @@ Moderationsbefehle sind [auch mit Prefix nutzbar](../guides/prefix.md).
 
 ## 🔨 Einen Nutzer bannen {#ban}
 
+Der Befehl `/ban` ermöglicht es Ihnen, einem Benutzer dauerhaft den Zugriff auf Ihren Server zu verwehren.
+
 Verwende den Befehl: ```/ban (user) [reason]```
 
 Ersetze `(user)` durch die gewünschte Erwähnung oder ID und `[reason]` durch den Grund der Sanktion.
@@ -22,11 +24,15 @@ Du kannst einen Nutzer über seine [Discord-ID](https://dfr.gg/wiki/interface/mo
 
 ### Benutzer entsperren {#unban}
 
+Der Befehl `/unban` ermöglicht es Ihnen, die Sperre eines zuvor gesperrten Benutzers aufzuheben, sodass dieser Ihrem Server erneut beitreten kann.
+
 Verwenden Sie den Befehl: ```/unban (user) [reason]```
 
 Ersetzen Sie `(user)` durch die gewünschte Kennung und `[reason]` durch den Grund der Entsperrung.
 
 ## 👢 Einen Nutzer kicken {#kick}
+
+The `/kick`-Befehl ermöglicht es Ihnen, ein Mitglied von Ihrem Server zu entfernen, ohne es zu bannen. Der Benutzer kann dem Server erneut beitreten, wenn er über eine gültige Einladung verfügt.
 
 Verwende den Befehl: ```/kick (member) [reason]```
 
@@ -37,6 +43,22 @@ Ersetze `(member)` durch die gewünschte Erwähnung oder ID und `[reason]` durch
 Verwende den Befehl: ```/timeout (member) (duration) [reason]```
 
 Ersetze `(member)` durch die gewünschte Erwähnung oder ID, `(duration)` durch die Dauer des Timeouts (maximal 28 Tage, z. B. `10m`, `1h`, `1d`) und `[reason]` durch den Grund der Sanktion.
+
+### Ausschluss eines Nutzers aufheben {#untimeout}
+
+Der Befehl `/untimeout` ermöglicht es, die Einschränkungen eines zeitlich gesperrten Mitglieds sofort aufzuheben, sodass es alle Interaktionsmöglichkeiten auf dem Server wiedererlangt.
+
+Verwenden Sie den Befehl: ```/untimeout (mitglied) [grund]```
+
+Ersetzen Sie `(mitglied)` durch die gewünschte Erwähnung oder ID und `[grund]` durch den Grund für das Aufheben des Timeouts.
+
+## ⚠️ Einen Nutzer verwarnen {#warn}
+
+Der Befehl `/warn` ermöglicht es, ein Mitglied formell per privater Nachricht wegen unangemessenen Verhaltens zu verwarnen. Die Verwarnung wird in den Server-Logs zur Nachverfolgung von Sanktionen gespeichert.
+
+Verwenden Sie den Befehl: ```/warn (mitglied) [grund]```
+
+Ersetzen Sie `(mitglied)` durch die gewünschte Erwähnung oder ID und `[grund]` durch den Grund der Verwarnung.
 
 ## 🧹 Nachrichten eines Kanals löschen {#clear}
 

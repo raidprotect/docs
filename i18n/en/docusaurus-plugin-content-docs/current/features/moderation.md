@@ -12,6 +12,8 @@ Moderation commands are [usable by prefix](../guides/prefix.md).
 
 ## 🔨 Ban a User {#ban}
 
+The `/ban` command allows you to permanently prohibit a user from accessing your server.
+
 Use the command: ```/ban (user) [reason]```
 
 Replace `(user)` with the desired mention or ID and `[reason]` with the reason for the sanction.
@@ -22,11 +24,15 @@ You can ban a user using their [Discord ID](https://dfr.gg/wiki/interface/mode-d
 
 ### Unban a user {#unban}
 
+The `/unban` command allows you to remove the ban from a previously banned user, thus allowing them to join your server again.
+
 Use the command: ```/unban (user) [reason]```
 
 Replace `(user)` with the desired identifier and `[reason]` with the reason for the unban.
 
 ## 👢 Kick a User {#kick}
+
+The `/kick` command allows you to remove a member from your server without banning them. The user will be able to rejoin the server if they have a valid invitation.
 
 Use the command: ```/kick (member) [reason]```
 
@@ -38,9 +44,25 @@ Use the command: ```/timeout (member) (duration) [reason]```
 
 Replace `(member)` with the desired mention or ID, `(duration)` with the timeout length, up to a maximum of 28 days (e.g. `10m`, `1h`, `1d`), and `[reason]` with the reason for the sanction.
 
+### Stop excluding a user {#untimeout}
+
+The `/untimeout` command allows you to immediately remove the restrictions from a timed-out member, allowing them to regain all their interaction capabilities on the server.
+
+Use the command: ```/untimeout (member) [reason]```
+
+Replace `(member)` with the desired mention or ID and `[reason]` with the reason for removing the timeout.
+
+## ⚠️ Warn a user {#warn}
+
+The `/warn` command allows you to formally warn a member via a private message for inappropriate behavior. The warning is recorded in the server logs for sanction tracking.
+
+Use the command: ```/warn (member) [reason]```
+
+Replace `(member)` with the desired mention or ID and `[reason]` with the reason for the warning.
+
 ## 🧹 Clear a Group of Messages {#clear}
 
-The command `/clear` allows you to quickly delete a certain number of messages in a text channel. You can specify a user to delete only their messages.
+The `/clear` command allows you to quickly delete a certain number of messages in a text channel. You can specify a user to delete only their messages.
 
 Use the command: ```/clear (number) [user]```
 
