@@ -11,9 +11,32 @@ Des fonctionnalités supplémentaires pour simplifier la gestion de votre serveu
 
 En plus des fonctionnalités principales comme le système de captcha et la protection anti-raid, RaidProtect propose plusieurs outils secondaires qui peuvent rendre la gestion de votre serveur encore plus fluide.
 
-:::info
-Les commandes utilitaires sont [utilisables par préfixe](../guides/prefix.md).
-:::
+## 📋 Dupliquer un Salon {#channel-duplicate}
+
+La commande `/channel duplicate` vous permet de dupliquer entièrement un salon, y compris tous ses paramètres, permissions et configurations. Surpassant ainsi la fonction native de Discord ne permet pas de dupliquer **les catégories** et **certains paramètres spécifiques** comme les tags des salons forums.
+
+Utilisez la commande : ```/channel duplicate [salon]```
+
+Remplacez `[salon]` par la mention ou l'identifiant du salon à dupliquer.
+
+### 🎯 Fonctionnalités {#duplicate-features}
+
+Cette commande duplique l'ensemble des éléments suivants :
+
+- **Nom du salon**
+- **Permissions** (rôles et utilisateurs)
+- **Type de salon** (texte, vocal, forum, etc.)
+- **Paramètres spécifiques** selon le type de salon
+- **Position** dans la catégorie (si applicable)
+
+### ⚙️ Configurations RaidProtect {#duplicate-config}
+
+Lorsque vous dupliquez un salon qui possède des configurations internes à RaidProtect, le bot vous propose automatiquement de :
+
+- **Remplacer** la configuration existante pour utiliser le nouveau salon
+- **Dupliquer** la configuration pour conserver les deux salons configurés
+
+**Exemple** : Si vous dupliquez le salon de logs, RaidProtect vous proposera de mettre à jour sa configuration pour que le nouveau salon devienne le salon de logs, ou de garder les deux salons configurés selon votre préférence.
 
 ## 👤 Informations Utilisateur {#userinfo}
 
@@ -22,6 +45,10 @@ La commande `/userinfo` vous permet d’obtenir des informations détaillées su
 Utilisez la commande : ```/userinfo [utilisateur]```
 
 Remplacez `[utilisateur]` par la mention ou l’identifiant souhaité.
+
+:::info
+La commandes `userinfo` est [utilisable par préfixe](../guides/prefix.md).
+:::
 
 ### 📋 Informations affichées {#displayed-userinfo}
 

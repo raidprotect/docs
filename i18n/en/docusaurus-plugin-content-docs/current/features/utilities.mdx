@@ -11,9 +11,32 @@ Extra features to simplify the management of your server. 🔧
 
 In addition to core features like the captcha system and anti-raid protection, RaidProtect offers several secondary tools that can make managing your server even smoother.
 
-:::info
-Utility commands are [usable with a prefix](../guides/prefix.md).
-:::
+## 📋 Duplicate a Channel {#channel-duplicate}
+
+The `/channel duplicate` command allows you to fully duplicate a channel, including all its settings, permissions, and configurations. It goes beyond Discord’s native feature, which does not allow duplicating **categories** and **certain specific settings** such as forum channel tags.
+
+Use the command: ```/channel duplicate [channel]```
+
+Replace `[channel]` with the mention or the ID of the channel to duplicate.
+
+### 🎯 Features {#duplicate-features}
+
+This command duplicates all of the following elements:
+
+- **Channel name**
+- **Permissions** (roles and users)
+- **Channel type** (text, voice, forum, etc.)
+- **Specific settings** depending on the channel type
+- **Position** within the category (if applicable)
+
+### ⚙️ RaidProtect Configurations {#duplicate-config}
+
+When you duplicate a channel that has internal RaidProtect configurations, the bot will automatically offer you the option to:
+
+- **Replace** the existing configuration to use the new channel
+- **Duplicate** the configuration to keep both channels configured
+
+**Example**: If you duplicate the logs channel, RaidProtect will ask whether you want to update its configuration so that the new channel becomes the logs channel, or keep both channels configured according to your preference.
 
 ## 👤 User Information {#userinfo}
 
@@ -22,6 +45,10 @@ The `/userinfo` command lets you get detailed information about a user.
 Use the command: ```/userinfo [user]```
 
 Replace `[user]` with the desired mention or ID.
+
+:::info
+The `userinfo` command is also [available with prefix](../guides/prefix.md).
+:::
 
 ### 📋 Displayed Information {#displayed-userinfo}
 

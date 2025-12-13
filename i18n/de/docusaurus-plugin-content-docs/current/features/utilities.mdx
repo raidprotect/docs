@@ -11,9 +11,32 @@ Zusätzliche Funktionen, die dir die Verwaltung deines Servers erleichtern. �
 
 Neben Kernfunktionen wie dem Captcha-System und dem Anti-Raid-Schutz bietet RaidProtect mehrere Hilfswerkzeuge, die die Administration deines Servers noch reibungsloser machen.
 
-:::info
-Utility-Befehle sind [auch mit einem Prefix nutzbar](../guides/prefix.md).
-:::
+## 📋 Einen Kanal duplizieren {#channel-duplicate}
+
+Der Befehl `/channel duplicate` ermöglicht es Ihnen, einen Kanal vollständig zu duplizieren, einschließlich aller Einstellungen, Berechtigungen und Konfigurationen. Damit übertrifft er die native Discord-Funktion, die **Kategorien** und **bestimmte spezifische Einstellungen** wie Tags von Forum-Kanälen nicht duplizieren kann.
+
+Verwenden Sie den Befehl: ```/channel duplicate [Kanal]```
+
+Ersetzen Sie `[Kanal]` durch die Erwähnung oder die ID des zu duplizierenden Kanals.
+
+### 🎯 Funktionen {#duplicate-features}
+
+Dieser Befehl dupliziert alle folgenden Elemente:
+
+- **Kanalname**
+- **Berechtigungen** (Rollen und Benutzer)
+- **Kanaltyp** (Text, Sprache, Forum usw.)
+- **Spezifische Einstellungen** je nach Kanaltyp
+- **Position** in der Kategorie (falls zutreffend)
+
+### ⚙️ RaidProtect-Konfigurationen {#duplicate-config}
+
+Wenn Sie einen Kanal duplizieren, der interne RaidProtect-Konfigurationen besitzt, bietet Ihnen der Bot automatisch an:
+
+- Die bestehende Konfiguration zu **ersetzen**, um den neuen Kanal zu verwenden
+- Die Konfiguration zu **duplizieren**, um beide Kanäle konfiguriert zu behalten
+
+**Beispiel**: Wenn Sie den Log-Kanal duplizieren, schlägt RaidProtect vor, seine Konfiguration so zu aktualisieren, dass der neue Kanal zum Log-Kanal wird, oder beide Kanäle je nach Ihrer Präferenz konfiguriert zu behalten.
 
 ## 👤 Nutzerinformationen {#userinfo}
 
@@ -22,6 +45,10 @@ Mit dem Befehl `/userinfo` erhältst du detaillierte Informationen über einen N
 Verwende den Befehl: ```/userinfo [user]```
 
 Ersetze `[user]` durch die gewünschte Erwähnung oder ID.
+
+:::info
+Der Befehl `userinfo` ist [auch mit Prefix verfügbar](../guides/prefix.md).
+:::
 
 ### 📋 Angezeigte Informationen {#displayed-userinfo}
 
