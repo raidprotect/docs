@@ -7,7 +7,7 @@ Um die Arbeit deiner Moderatoren zu erleichtern, integriert RaidProtect sehr nü
 Zusätzlich zu diesen Aktionen sendet RaidProtect dem sanktionierten Nutzer eine Direktnachricht, um den Grund der Sanktion zu erläutern. Dieser wird auch in den Server-Logs vermerkt.
 
 :::info
-Moderationsbefehle sind [auch mit Prefix nutzbar](../guides/prefix.md).
+Moderationsbefehle sind [auch mit Prefix nutzbar](../guides/prefix).
 :::
 
 ## 🔨 Einen Nutzer bannen {#ban}
@@ -19,7 +19,7 @@ Verwende den Befehl: ```/ban (user) [reason]```
 Ersetze `(user)` durch die gewünschte Erwähnung oder ID und `[reason]` durch den Grund der Sanktion.
 
 :::tip
-Du kannst einen Nutzer über seine [Discord-ID](https://support.discord.com/hc/de/articles/206346498-Wo-kann-ich-meine-Benutzer-Server-Nachrichten-ID-finden) bannen, selbst wenn er nicht online ist oder deinen Server bereits verlassen hat.
+Du kannst einen Nutzer über seine [Discord-ID](../guides/id) bannen, selbst wenn er nicht online ist oder deinen Server bereits verlassen hat.
 :::
 
 ### Benutzer entsperren {#unban}
