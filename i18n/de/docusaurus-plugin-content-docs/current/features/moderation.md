@@ -19,7 +19,7 @@ Verwende den Befehl: ```/ban (user) [reason]```
 Ersetze `(user)` durch die gewünschte Erwähnung oder ID und `[reason]` durch den Grund der Sanktion.
 
 :::tip
-Du kannst einen Nutzer über seine [Discord-ID](https://dfr.gg/wiki/interface/mode-developpeur) bannen, selbst wenn er nicht online ist oder deinen Server bereits verlassen hat.
+Du kannst einen Nutzer über seine [Discord-ID](https://support.discord.com/hc/de/articles/206346498-Wo-kann-ich-meine-Benutzer-Server-Nachrichten-ID-finden) bannen, selbst wenn er nicht online ist oder deinen Server bereits verlassen hat.
 :::
 
 ### Benutzer entsperren {#unban}

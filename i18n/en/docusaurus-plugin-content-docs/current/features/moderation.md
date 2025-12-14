@@ -19,7 +19,7 @@ Use the command: ```/ban (user) [reason]```
 Replace `(user)` with the desired mention or ID and `[reason]` with the reason for the sanction.
 
 :::tip
-You can ban a user using their [Discord ID](https://dfr.gg/wiki/interface/mode-developpeur), even if they are not currently online or present on your server.
+You can ban a user using their [Discord ID](https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID), even if they are not currently online or present on your server.
 :::
 
 ### Unban a user {#unban}
