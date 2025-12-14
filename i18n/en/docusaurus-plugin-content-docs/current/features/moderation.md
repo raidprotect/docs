@@ -54,7 +54,7 @@ Replace `(member)` with the desired mention or ID and `[reason]` with the reason
 
 ## ⚠️ Warn a user {#warn}
 
-The `/warn` command allows you to formally warn a member via a private message for inappropriate behavior. The warning is recorded in the server logs for sanction tracking.
+The `/warn` command allows you to formally warn a member via a private message sent by the bot.
 
 Use the command: ```/warn (member) [reason]```
 

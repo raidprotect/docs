@@ -56,7 +56,7 @@ Remplacez `(membre)` par la mention ou l'identifiant souhaité et `[raison]` par
 
 ## ⚠️ Avertir un utilisateur {#warn}
 
-La commande `/warn` vous permet d'avertir formellement un membre par un message privé pour un comportement inapproprié. L'avertissement est enregistré dans les logs du serveur pour un suivi des sanctions.
+La commande `/warn` vous permet d'avertir formellement un membre par un message privé envoyé via le bot.
 
 Utilisez la commande : ```/warn (membre) [raison]```
 

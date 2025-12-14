@@ -54,7 +54,7 @@ Ersetzen Sie `(mitglied)` durch die gewünschte Erwähnung oder ID und `[grund]`
 
 ## ⚠️ Einen Nutzer verwarnen {#warn}
 
-Der Befehl `/warn` ermöglicht es, ein Mitglied formell per privater Nachricht wegen unangemessenen Verhaltens zu verwarnen. Die Verwarnung wird in den Server-Logs zur Nachverfolgung von Sanktionen gespeichert.
+Der Befehl `/warn` ermöglicht es Ihnen, ein Mitglied formell zu verwarnen, indem der Bot eine private Nachricht sendet.
 
 Verwenden Sie den Befehl: ```/warn (mitglied) [grund]```
 
