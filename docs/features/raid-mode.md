@@ -33,20 +33,27 @@ Si votre serveur accueille souvent beaucoup de nouveaux membres simultanément, 
 
 ![Capture d'écran mode raid automatique](../assets/rp-settings-raid-mode.webp)
 
+#### Seuil de membres {#threshold}
+
+1. Faites la [commande `/settings`](../setup.md#settings).
+2. Cliquez sur le bouton “**Auto RaidMode**”.
+3. Sélectionnez “**Nombre de membres**”.
+4. Choisissez le nombre de membres pouvant rejoindre sous 10 secondes.
+
+Vous pouvez laisser à la valeur par défaut (10) ou ajuster selon la valeur souhaitée en cliquant sur le bouton “**Valeur personnalisée**”.
+
 :::note
 Nous recommandons d’entrer une valeur comprise entre 10 et 20 membres en 10 secondes pour une bonne efficacité du système.
 :::
 
+#### Durée du raidmode {#duration}
+
 1. Faites la [commande `/settings`](../setup.md#settings).
 2. Cliquez sur le bouton “**Auto RaidMode**”.
-3. Sélectionnez le nombre de membres pouvant rejoindre sous 10 secondes.
+3. Sélectionnez “**Durée**”.
+4. Choisissez la durée du raidmode (24h maximum).
 
-Vous pouvez laisser à la valeur par défaut (10) ou ajuster selon la valeur souhaitée en cliquant sur le bouton “**Valeur personnalisée**”.
-
-:::warning
-Si le mode raid s’active automatiquement, pensez à le désactiver une fois la menace passée. Rappelez-vous, il ne se désactive pas tout seul. 😖
-:::
-
+Vous pouvez laisser à la valeur par défaut (5 minutes) ou ajuster selon la valeur souhaitée en cliquant sur le bouton “**Valeur personnalisée**”.
 
 ## Âge Minimum {#minage}
 
