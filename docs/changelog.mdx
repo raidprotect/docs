@@ -6,6 +6,37 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Découvrez la liste détaillée des modifications qui ont été apportées à RaidProtect.
 
+## 3.3.0 (19/12/2025) {#3-3-0}
+
+- Nouvelle fonctionnalité **[Historique des sanctions](./features/sanctions.md)**.
+  - Nouvelle [commande `/sanctions search`](./features/sanctions.md#search).
+  - Nouvelle [commande `/sanctions info`](./features/sanctions.md#info).
+  - Nouvelle [commande `/sanctions edit`](./features/sanctions.md#edit).
+  - Nouvelle [commande `/sanctions delete`](./features/sanctions.md#delete).
+  - Les sanctions de l’automod sont ajoutées à l’historique des sanctions.
+  - Les bannissements, expulsions et timeouts sont ajoutés à l’historique et loggés. <SuggestionLink id="151" />
+  - Accusé de réception du message privé de notification de sanction.
+- Nouveaux logs pour les sanctions.
+- Possibilité de configurer un salon de logs dédié aux sanctions.
+- Nouvelle [commande `/warn`](./features/moderation.md#warn). <SuggestionLink id="52" />
+- Nouvelle [commande `/untimeout`](./features/moderation.md#untimeout). <SuggestionLink id="52" />
+- Nouvelle [commande `/tempban`](./features/moderation.md#tempban). <SuggestionLink id="524" />
+- Le [RaidMode](./features/raid-mode.md#mode-raid) et l’[Auto RaidMode](./features/raid-mode.md#duration) se désactivent automatiquement après un certain temps. <SuggestionLink id="37" />
+- Nouveau paramètre [durée] pour la [commande `/raidmode`](./features/raid-mode.md#mode-raid). <SuggestionLink id="37" />
+- Nouvelle [commande `/joinlock`](./features/channel-lock.md#joinlock) pour fermer les invitations indéfiniment.
+- Nouvelle [commande `/channel duplicate`](./features/utilities.mdx#channel-duplicate) pour dupliquer strictement un salon. <SuggestionLink id="225" />
+- Nouvelle commande `/changelog` et boutons dans le `/settings` et le `/about` pour consulter le changelog.
+- Accusé de réception du message privé de l’[Âge minimum](./features/raid-mode.md#minage).
+- Correction :
+  - Amélioration de la gestion des cooldowns.
+  - Correction de diverses erreurs de traduction.
+  - Augmentation de la taille maximale des raisons de sanctions (512).
+- Performances et stabilité :
+  - Optimisation du cache des messages.
+  - Optimisation du stockage en base de données.
+  - Gestion des expirations de sanctions (`@fca.gg/midway` v1.3.2).
+  - Refonte de la gestion des emojis ([`@fca.gg/glyph` v1.1.1](https://github.com/FCAgreatgoals/glyph)).
+
 ## 3.2.1 (03/09/2025) {#3-2-1}
 
 - Nouvelle [commande `/ds`](./features/utilities.mdx#discord-sanctions) permettant de consulter les sanctions Discord d'un utilisateur.
@@ -40,7 +71,7 @@ Découvrez la liste détaillée des modifications qui ont été apportées à Ra
   - Précision sur la possibilité d’écrire dans les select menu de membre, rôle et salon.
   - Vérification de la présence de la fonctionnalité `COMMUNITY` lors de la configuration de l’Auto Raid Mode.
 - Performances et stabilité :
-  - Refonte gestion des emojis ([`@fca.gg/glyph` v1.0.0](https://github.com/FCAgreatgoals/glyph)).
+  - Refonte gestion des emojis ([`@fca.gg/glyph` v0.1.0](https://github.com/FCAgreatgoals/glyph)).
   - Réduction du temps de démarrage et monitoring des clusters (`@fca.gg/midway` v1.3.1).
   - Meilleure gestion des rate limit et réduction de latences (`@fca.gg/iris` v1.1.4).
   - Intégration de Sentry pour la gestion des erreurs et amélioration du support dev ([`@fca.gg/kino` v1.0.0](https://github.com/FCAgreatgoals/kino)).
