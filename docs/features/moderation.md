@@ -22,6 +22,14 @@ Remplacez `(utilisateur)` par la mention ou l’identifiant souhaité et `[raiso
 Vous pouvez bannir un utilisateur à partir de son [identifiant Discord](../guides/id), même s’il n’est pas connecté ou présent sur votre serveur.
 :::
 
+### Bannir temporairement un utilisateur {#tempban}
+
+La commande `/tempban` vous permet d'interdire temporairement l'accès d'un utilisateur à votre serveur.
+
+Utilisez la commande : ```/tempban (utilisateur) (durée) [raison]```
+
+Remplacez `(utilisateur)` par la mention ou l’identifiant souhaité, `(durée)` par la durée du bannissement et `[raison]` par le motif de la sanction.
+
 ### Débannir un utilisateur {#unban}
 
 La commande `/unban` vous permet de retirer le bannissement d'un utilisateur précédemment banni, lui permettant ainsi de rejoindre à nouveau votre serveur.
