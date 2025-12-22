@@ -52,6 +52,10 @@ const sidebars: SidebarsConfig = {
                 },
                 {
                     type: 'doc',
+                    id: 'features/sanctions',
+                },
+                {
+                    type: 'doc',
                     id: 'features/moderation',
                 },
                 {
