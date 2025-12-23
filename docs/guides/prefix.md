@@ -10,13 +10,17 @@ Par défaut, RaidProtect utilise uniquement les commandes Slash (`/`) pour inter
 
 Si vous préférez utiliser certaines commandes avec un préfixe personnalisé, vous pouvez activer cette option. Le préfixe par défaut en cas d’activation est `?`, mais il peut être modifié selon vos besoins. Une fois activé, ces commandes sont utilisables avec le préfixe configuré : 
 - [`?raidmode`](../features/raid-mode.md)
-- [`?ban`](../features/moderation.md#ban)
-- [`?kick`](../features/moderation.md#kick)
+- [`?ban`](../features/moderation.mdx#ban)
+- [`?tempban`](../features/moderation.mdx#tempban)
+- [`?unban`](../features/moderation.mdx#unban)
+- [`?kick`](../features/moderation.mdx#kick)
+- [`?timeout`](../features/moderation.mdx#timeout)
+- [`?untimeout`](../features/moderation.mdx#untimeout)
+- [`?warn`](../features/moderation.mdx#warn)
 - [`?lock`](../features/channel-lock.md#lock)
 - [`?unlock`](../features/channel-lock.md#unlock)
-- [`?userinfo` | `?ui`](../features/utilities#userinfo)
+- [`?userinfo` | `?ui`](../features/utilities#userinfo)
 - [`?clear`](../features/moderation#clear)
-
 
 ## 💬 Comment activer ou désactiver le préfixe {#config}
 

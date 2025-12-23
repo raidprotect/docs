@@ -18,9 +18,9 @@ Entdecken Sie die detaillierte Liste der Änderungen an RaidProtect.
   - Empfangsbestätigung der privaten Sanktionsbenachrichtigung.
 - Neue Protokolle für Sanktionen.
 - Möglichkeit, einen dedizierten Sanktionsprotokoll-Kanal zu konfigurieren.
-- Neuer [Befehl `/warn`](./features/moderation.md#warn). <SuggestionLink id="52" />
-- Neuer [Befehl `/untimeout`](./features/moderation.md#untimeout). <SuggestionLink id="52" />
-- Neuer [Befehl `/tempban`](./features/moderation.md#tempban). <SuggestionLink id="524" />
+- Neuer [Befehl `/warn`](./features/moderation.mdx#warn). <SuggestionLink id="52" />
+- Neuer [Befehl `/untimeout`](./features/moderation.mdx#untimeout). <SuggestionLink id="52" />
+- Neuer [Befehl `/tempban`](./features/moderation.mdx#tempban). <SuggestionLink id="524" />
 - [RaidMode](./features/raid-mode.md#raid-mode) und [Auto RaidMode](./features/raid-mode.md#duration) deaktivieren sich nach einer bestimmten Zeit automatisch. <SuggestionLink id="37" />
 - Neuer Parameter [Dauer] für den [Befehl `/raidmode`](./features/raid-mode.md#raid-mode). <SuggestionLink id="37" />
 - Neuer [Befehl `/joinlock`](./features/join-lock.mdx) zum unbefristeten Schließen von Einladungen.
@@ -42,8 +42,8 @@ Entdecken Sie die detaillierte Liste der Änderungen an RaidProtect.
 - Neuer [Befehl `/ds`](./features/utilities.mdx#discord-sanctions), um die Discord-Sanktionen eines Benutzers einzusehen.
 - Anti-Spam kann nun Slash-Befehl-Spam stoppen.
 - Neuer Anti-Spam-Auslöser: [Spam von externen Befehlen](./features/anti-spam.mdx#triggers).
-- Neuer [Befehl `/slowmode`](./features/moderation.md#slowmode), um den Slowmode eines Kanals zu aktivieren oder zu ändern.
-- Neuer [Befehl `/unban`](./features/moderation.md#unban). <SuggestionLink id="296" />
+- Neuer [Befehl `/slowmode`](./features/moderation.mdx#slowmode), um den Slowmode eines Kanals zu aktivieren oder zu ändern.
+- Neuer [Befehl `/unban`](./features/moderation.mdx#unban). <SuggestionLink id="296" />
 - Neuer [Befehl `/bypass captcha`](./features/captcha.md#bypass), um einen Benutzer zu akzeptieren, der das Captcha nicht lösen kann.
 - Neuer Parameter [reason] für die [Befehle `/lock` und `/unlock`](./features/channel-lock.md). <SuggestionLink id="516" />
 - Korrekturen:
@@ -66,7 +66,7 @@ Entdecken Sie die detaillierte Liste der Änderungen an RaidProtect.
   - Anti-Spam funktioniert jetzt auch in Threads.
   - Der Befehl [`/lock`](./features/channel-lock.md) unterstützt jetzt Forum- und Medienkanäle und blockiert auch Threads darin.
   - Das [Captcha](./features/captcha.md) blockiert neue Mitglieder nicht mehr, wenn dem Bot die nötigen Berechtigungen fehlen.
-  - Der Fehler beim Befehl [`/clear`](./features/moderation.md#clear) bei fehlenden Berechtigungen im Kanal wurde behoben.
+  - Der Fehler beim Befehl [`/clear`](./features/moderation.mdx#clear) bei fehlenden Berechtigungen im Kanal wurde behoben.
 - Verbesserte UI/UX:
   - Klarstellung zur Texteingabe in Mitglieder-, Rollen- und Kanalauswahlmenüs.
   - Prüfung auf das Vorhandensein des `COMMUNITY`-Features bei der Konfiguration des Auto-Raid-Modus.
@@ -79,7 +79,7 @@ Entdecken Sie die detaillierte Liste der Änderungen an RaidProtect.
 ## 3.1.1 (21.05.2025) {#3-1-1}
 
 - Neue Funktion: [Rollen-Tag](./features/tag-role.md). <SuggestionLink id="512" />
-- Neuer Moderationsbefehl [`/timeout`](./features/moderation.md#timeout). <SuggestionLink id="52" />
+- Neuer Moderationsbefehl [`/timeout`](./features/moderation.mdx#timeout). <SuggestionLink id="52" />
 - Automatisches Protokollieren von Updates im allgemeinen Log-Kanal jedes Servers.
 - Leistung und Stabilität:
   - Bereinigung persistenter Anti-Spam-Zustände.
@@ -126,7 +126,7 @@ Entdecken Sie die detaillierte Liste der Änderungen an RaidProtect.
 
 - Blacklist und zugehörige Befehle entfernt.
 - Möglichkeit, Nutzer per ID zu bannen – auch wenn sie nicht auf dem Server sind. <SuggestionLink id="113" /> <SuggestionLink id="148" />
-- Anzeige des Ban-Grundes in der Antwort des Befehls [`?ban`](./features/moderation.md#ban).
+- Anzeige des Ban-Grundes in der Antwort des Befehls [`?ban`](./features/moderation.mdx#ban).
 - Der Befehl [`?raidmode`](./features/raid-mode.md) erfordert nun die Berechtigung, Mitglieder zu kicken.
 - Geänderte Kick-Dauer bei nicht bestandenem Captcha (5 Minuten). <SuggestionLink id="129" />
 - Verschiedene interne Verbesserungen.
@@ -135,7 +135,7 @@ Entdecken Sie die detaillierte Liste der Änderungen an RaidProtect.
 
 - Hinzugefügt: Befehl [`?userinfo`](./features/utilities.mdx#userinfo). <SuggestionLink id="29" />
 - ~~Befehle `?lockall` und `?unlockall` hinzugefügt~~ (Funktion entfernt).
-- Hinzugefügt: Befehle [`?kick`](./features/moderation.md#kick) und [`?ban`](./features/moderation.md#ban).
+- Hinzugefügt: Befehle [`?kick`](./features/moderation.mdx#kick) und [`?ban`](./features/moderation.mdx#ban).
 - [Mindestalter im Captcha](./features/raid-mode.md#minage) hinzugefügt (Kontoalter als Voraussetzung für Serverzugang).
 - Option zur automatischen Löschung von Befehlsaufrufen. <SuggestionLink id="26" />
 - Der Log-Kanal wird automatisch neu erstellt, wenn er gelöscht wird.
@@ -155,7 +155,7 @@ Entdecken Sie die detaillierte Liste der Änderungen an RaidProtect.
 - Captcha hinzugefügt (`?settings captcha`). <SuggestionLink id="11" />
 - Anti-Spam-Sicherheitslevel hinzugefügt (`?settings spamlevel`). <SuggestionLink id="25" />
 - Befehle `?about` und `?invite` hinzugefügt.
-- Befehl [`?clear`](./features/moderation.md#clear) hinzugefügt.
+- Befehl [`?clear`](./features/moderation.mdx#clear) hinzugefügt.
 - Verschiedene Änderungen und Fehlerbehebungen.
 
 ## 2.0.1 (04.02.2019) {#2-0-1}

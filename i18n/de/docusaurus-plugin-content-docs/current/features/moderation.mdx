@@ -2,6 +2,8 @@
 title: Moderation
 ---
 
+import Icon from "@site/src/components/Icon";
+
 Um die Arbeit deiner Moderatoren zu erleichtern, integriert RaidProtect sehr nützliche Moderationsbefehle, mit denen du direkt auf die nativen Funktionen von Discord zugreifen kannst, wie etwa **Bannen** und **Kicken** von Nutzern.
 
 Zusätzlich zu diesen Aktionen sendet RaidProtect dem sanktionierten Nutzer eine Direktnachricht, um den Grund der Sanktion zu erläutern. Dieser wird auch in den Server-Logs vermerkt.
@@ -10,7 +12,7 @@ Zusätzlich zu diesen Aktionen sendet RaidProtect dem sanktionierten Nutzer eine
 Moderationsbefehle sind [auch mit Prefix nutzbar](../guides/prefix).
 :::
 
-## 🔨 Einen Nutzer bannen {#ban}
+## <Icon src="/img/icons/SanctionsBAN.svg" alt="icon SanctionsBAN" title=":iconSanctionsBAN:"/> Einen Nutzer bannen {#ban}
 
 Der Befehl `/ban` ermöglicht es Ihnen, einem Benutzer dauerhaft den Zugriff auf Ihren Server zu verwehren.
 
@@ -22,7 +24,7 @@ Ersetze `(user)` durch die gewünschte Erwähnung oder ID und `[reason]` durch d
 Du kannst einen Nutzer über seine [Discord-ID](../guides/id) bannen, selbst wenn er nicht online ist oder deinen Server bereits verlassen hat.
 :::
 
-### Einen Benutzer temporär bannen {#tempban}
+### <Icon src="/img/icons/SanctionsBANTemp.svg" alt="icon SanctionsBANTemp" title=":iconSanctionsBANTemp:"/> Einen Benutzer temporär bannen {#tempban}
 
 Der Befehl `/tempban` ermöglicht es Ihnen, einem Benutzer vorübergehend den Zugriff auf Ihren Server zu verwehren.
 
@@ -30,7 +32,7 @@ Verwenden Sie den Befehl: ```/tempban (user) (duration) [reason]```
 
 Ersetzen Sie `(user)` durch die gewünschte Erwähnung oder ID, `(duration)` durch die Dauer der Sperre und `[reason]` durch den Grund der Sanktion.
 
-### Benutzer entsperren {#unban}
+### <Icon src="/img/icons/SanctionsUNBAN.svg" alt="icon SanctionsUNBAN" title=":iconSanctionsUNBAN:"/> Benutzer entsperren {#unban}
 
 Der Befehl `/unban` ermöglicht es Ihnen, die Sperre eines zuvor gesperrten Benutzers aufzuheben, sodass dieser Ihrem Server erneut beitreten kann.
 
@@ -38,7 +40,7 @@ Verwenden Sie den Befehl: ```/unban (user) [reason]```
 
 Ersetzen Sie `(user)` durch die gewünschte Kennung und `[reason]` durch den Grund der Entsperrung.
 
-## 👢 Einen Nutzer kicken {#kick}
+## <Icon src="/img/icons/SanctionsKICK.svg" alt="icon SanctionsKICK" title=":iconSanctionsKICK:" /> Einen Nutzer kicken {#kick}
 
 The `/kick`-Befehl ermöglicht es Ihnen, ein Mitglied von Ihrem Server zu entfernen, ohne es zu bannen. Der Benutzer kann dem Server erneut beitreten, wenn er über eine gültige Einladung verfügt.
 
@@ -46,13 +48,13 @@ Verwende den Befehl: ```/kick (member) [reason]```
 
 Ersetze `(member)` durch die gewünschte Erwähnung oder ID und `[reason]` durch den Grund der Sanktion.
 
-## ⏳ Einen Nutzer stummschalten {#timeout}
+## <Icon src="/img/icons/SanctionsTIMEOUT.svg" alt="icon SanctionsTIMEOUT" title=":iconSanctionsTIMEOUT:" /> Einen Nutzer stummschalten {#timeout}
 
 Verwende den Befehl: ```/timeout (member) (duration) [reason]```
 
 Ersetze `(member)` durch die gewünschte Erwähnung oder ID, `(duration)` durch die Dauer des Timeouts (maximal 28 Tage, z. B. `10m`, `1h`, `1d`) und `[reason]` durch den Grund der Sanktion.
 
-### Ausschluss eines Nutzers aufheben {#untimeout}
+### <Icon src="/img/icons/SanctionsUNTIMEOUT.svg" alt="icon SanctionsUNTIMEOUT" title=":iconSanctionsUNTIMEOUT:" /> Ausschluss eines Nutzers aufheben {#untimeout}
 
 Der Befehl `/untimeout` ermöglicht es, die Einschränkungen eines zeitlich gesperrten Mitglieds sofort aufzuheben, sodass es alle Interaktionsmöglichkeiten auf dem Server wiedererlangt.
 
@@ -60,7 +62,7 @@ Verwenden Sie den Befehl: ```/untimeout (mitglied) [grund]```
 
 Ersetzen Sie `(mitglied)` durch die gewünschte Erwähnung oder ID und `[grund]` durch den Grund für das Aufheben des Timeouts.
 
-## ⚠️ Einen Nutzer verwarnen {#warn}
+## <Icon src="/img/icons/SanctionsWARN.svg" alt="icon SanctionsWARN" title=":iconSanctionsWARN:" /> Einen Nutzer verwarnen {#warn}
 
 Der Befehl `/warn` ermöglicht es Ihnen, ein Mitglied formell zu verwarnen, indem der Bot eine private Nachricht sendet.
 

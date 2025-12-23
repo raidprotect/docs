@@ -18,9 +18,9 @@ Découvrez la liste détaillée des modifications qui ont été apportées à Ra
   - Accusé de réception du message privé de notification de sanction.
 - Nouveaux logs pour les sanctions.
 - Possibilité de configurer un salon de logs dédié aux sanctions.
-- Nouvelle [commande `/warn`](./features/moderation.md#warn). <SuggestionLink id="52" />
-- Nouvelle [commande `/untimeout`](./features/moderation.md#untimeout). <SuggestionLink id="52" />
-- Nouvelle [commande `/tempban`](./features/moderation.md#tempban). <SuggestionLink id="524" />
+- Nouvelle [commande `/warn`](./features/moderation.mdx#warn). <SuggestionLink id="52" />
+- Nouvelle [commande `/untimeout`](./features/moderation.mdx#untimeout). <SuggestionLink id="52" />
+- Nouvelle [commande `/tempban`](./features/moderation.mdx#tempban). <SuggestionLink id="524" />
 - Le [RaidMode](./features/raid-mode.md#raid-mode) et l’[Auto RaidMode](./features/raid-mode.md#duration) se désactivent automatiquement après un certain temps. <SuggestionLink id="37" />
 - Nouveau paramètre [durée] pour la [commande `/raidmode`](./features/raid-mode.md#raid-mode). <SuggestionLink id="37" />
 - Nouvelle [commande `/joinlock`](./features/join-lock.mdx) pour fermer les invitations indéfiniment.
@@ -42,8 +42,8 @@ Découvrez la liste détaillée des modifications qui ont été apportées à Ra
 - Nouvelle [commande `/ds`](./features/utilities.mdx#discord-sanctions) permettant de consulter les sanctions Discord d'un utilisateur.
 - L'anti-spam est désormais capable de stopper le spam de Commandes Slash.
 - Nouveau déclencheur d'anti-spam : [Spam de commandes externes](./features/anti-spam.mdx#triggers).
-- Nouvelle [commande `/slowmode`](./features/moderation.md#slowmode) permettant d’activer ou de modifier le mode lent d’un salon.
-- Nouvelle [commande `/unban`](./features/moderation.md#unban). <SuggestionLink id="296" />
+- Nouvelle [commande `/slowmode`](./features/moderation.mdx#slowmode) permettant d’activer ou de modifier le mode lent d’un salon.
+- Nouvelle [commande `/unban`](./features/moderation.mdx#unban). <SuggestionLink id="296" />
 - Nouvelle [commande `/bypass captcha`](./features/captcha.md#bypass) pour accepter un utilisateur qui ne parvient pas à résoudre le captcha.
 - Nouveau paramètre [raison] pour les [commandes `/lock` et `/unlock`](./features/channel-lock.md). <SuggestionLink id="516" />
 - Correction :
@@ -66,7 +66,7 @@ Découvrez la liste détaillée des modifications qui ont été apportées à Ra
   - L'anti-spam fonctionne désormais dans les threads.
   - La [commande `/lock`](./features/channel-lock.md) supporte désormais les salons forums, médias et bloque les threads avec les salons.
   - Le [captcha](./features/captcha.md) ne bloque plus les nouveaux membres quand le bot n’a pas les permissions nécessaires.
-  - Correction du bug de la [commande `/clear`](./features/moderation.md#clear) quand le bot n’a pas les permissions nécessaires dans un salon.
+  - Correction du bug de la [commande `/clear`](./features/moderation.mdx#clear) quand le bot n’a pas les permissions nécessaires dans un salon.
 - UI/UX améliorée :
   - Précision sur la possibilité d’écrire dans les select menu de membre, rôle et salon.
   - Vérification de la présence de la fonctionnalité `COMMUNITY` lors de la configuration de l’Auto Raid Mode.
@@ -79,7 +79,7 @@ Découvrez la liste détaillée des modifications qui ont été apportées à Ra
 ## 3.1.1 (21/05/2025) {#3-1-1}
 
 - Nouvelle fonctionnalité [Tag de Rôle](./features/tag-role.md). <SuggestionLink id="512" />
-- Nouvelle commande de modération [`/timeout`](./features/moderation.md#timeout). <SuggestionLink id="52" />
+- Nouvelle commande de modération [`/timeout`](./features/moderation.mdx#timeout). <SuggestionLink id="52" />
 - Suivi automatique des mises à jour dans le salon de logs général de chaque serveur.
 - Performances et stabilité :
   - Nettoyage des états persistants de l’antispam.
@@ -126,7 +126,7 @@ Découvrez la liste détaillée des modifications qui ont été apportées à Ra
 
 - Suppression de la liste noire et des commandes associées.
 - Possibilité de bannir n'importe quel utilisateur avec son identifiant, même s'il n'est pas dans le serveur concerné. <SuggestionLink id="113" /> <SuggestionLink id="148" />
-- Affichage de la raison du bannissement dans la réponse de la [commande `?ban`](./features/moderation.md#ban).
+- Affichage de la raison du bannissement dans la réponse de la [commande `?ban`](./features/moderation.mdx#ban).
 - La [commande `?raidmode`](./features/raid-mode.md) nécessite désormais la permission d'expulser des membres.
 - Modification du temps d'expulsion si le captcha n'est pas complété (5 min). <SuggestionLink id="129" />
 - Améliorations internes diverses.
@@ -135,7 +135,7 @@ Découvrez la liste détaillée des modifications qui ont été apportées à Ra
 
 - Ajout de la [commande `?userinfo`](./features/utilities.mdx#userinfo). <SuggestionLink id="29" />
 - ~~Ajout des commandes `?lockall` et `?unlockall`~~ (Fonctionnalité supprimée).
-- Ajout des commandes [`?kick`](./features/moderation.md#kick) et [`?ban`](./features/moderation.md#ban).
+- Ajout des commandes [`?kick`](./features/moderation.mdx#kick) et [`?ban`](./features/moderation.mdx#ban).
 - Ajout du [min-age sur le captcha](./features/raid-mode.md#minage) (possibilité de définir un âge minimum de compte pour accéder au serveur).
 - Possibilité de configurer la suppression automatique des messages d'invocation de commandes. <SuggestionLink id="26" />
 - Le salon logs se recrée automatiquement s’il a été supprimé.
@@ -155,7 +155,7 @@ Découvrez la liste détaillée des modifications qui ont été apportées à Ra
 - Ajout du captcha (`?settings captcha`). <SuggestionLink id="11" />
 - Ajout du niveau de sécurité de l'anti-spam (`?settings spamlevel`). <SuggestionLink id="25" />
 - Ajout des commandes `?about` et `?invite`.
-- Ajout de la [commande `?clear`](./features/moderation.md#clear).
+- Ajout de la [commande `?clear`](./features/moderation.mdx#clear).
 - Diverses modifications et corrections de bugs.
 
 ## 2.0.1 (04/02/2019) {#2-0-1}

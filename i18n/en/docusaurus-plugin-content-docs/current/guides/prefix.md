@@ -10,11 +10,16 @@ By default, RaidProtect uses only Slash commands (`/`) to interact with the bot.
 
 If you prefer to use certain commands with a custom prefix, you can enable this option. The default prefix when activated is `?`, but it can be modified to suit your needs. Once activated, these commands can be used with the configured prefix: 
 - [`?raidmode`](../features/raid-mode.md)
-- [`?ban`](../features/moderation.md#ban)
-- [`?kick`](../features/moderation.md#kick)
+- [`?ban`](../features/moderation.mdx#ban)
+- [`?tempban`](../features/moderation.mdx#tempban)
+- [`?unban`](../features/moderation.mdx#unban)
+- [`?kick`](../features/moderation.mdx#kick)
+- [`?timeout`](../features/moderation.mdx#timeout)
+- [`?untimeout`](../features/moderation.mdx#untimeout)
+- [`?warn`](../features/moderation.mdx#warn)
 - [`?lock`](../features/channel-lock.md#lock)
 - [`?unlock`](../features/channel-lock.md#unlock)
-- [`?userinfo` | `?ui`](../features/utilities#userinfo)
+- [`?userinfo` | `?ui`](../features/utilities#userinfo)
 - [`?clear`](../features/moderation#clear)
 
 ## 💬 How to Enable or Disable the Prefix {#config}

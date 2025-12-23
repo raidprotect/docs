@@ -10,11 +10,16 @@ Standardmäßig nutzt RaidProtect ausschließlich Slash-Befehle (`/`) zur Intera
 
 Wenn du bestimmte Befehle lieber mit einem eigenen Prefix verwenden möchtest, kannst du diese Option aktivieren. Der Standardprefix ist `?`, lässt sich jedoch nach Bedarf anpassen. Nach der Aktivierung können folgende Befehle mit dem eingestellten Prefix genutzt werden:
 - [`?raidmode`](../features/raid-mode.md)
-- [`?ban`](../features/moderation.md#ban)
-- [`?kick`](../features/moderation.md#kick)
+- [`?ban`](../features/moderation.mdx#ban)
+- [`?tempban`](../features/moderation.mdx#tempban)
+- [`?unban`](../features/moderation.mdx#unban)
+- [`?kick`](../features/moderation.mdx#kick)
+- [`?timeout`](../features/moderation.mdx#timeout)
+- [`?untimeout`](../features/moderation.mdx#untimeout)
+- [`?warn`](../features/moderation.mdx#warn)
 - [`?lock`](../features/channel-lock.md#lock)
 - [`?unlock`](../features/channel-lock.md#unlock)
-- [`?userinfo` | `?ui`](../features/utilities#userinfo)
+- [`?userinfo` | `?ui`](../features/utilities#userinfo)
 - [`?clear`](../features/moderation#clear)
 
 ## 💬 Prefix aktivieren oder deaktivieren {#config}
