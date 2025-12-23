@@ -44,6 +44,10 @@ const sidebars: SidebarsConfig = {
                 },
                 {
                     type: 'doc',
+                    id: 'features/join-lock',
+                },
+                {
+                    type: 'doc',
                     id: 'features/channel-lock',
                 },
                 {
