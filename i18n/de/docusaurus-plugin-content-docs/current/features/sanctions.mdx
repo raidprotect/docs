@@ -2,6 +2,8 @@
 title: Sanktionsverlauf
 ---
 
+import Icon from "@site/src/components/Icon";
+
 Der Sanktionsverlauf von RaidProtect ermöglicht es Ihnen, alle auf Ihrem Server verhängten Sanktionen zu verfolgen und zu verwalten. Dieses System zentralisiert alle Moderationsaktionen in einer durchsuchbaren und bearbeitbaren Datenbank und erleichtert so die Arbeit Ihres Moderationsteams.
 
 ## ❓ Funktionsweise des Verlaufs {#working}
@@ -70,6 +72,26 @@ Ersetzen Sie `(id)` durch die Kennung der zu löschenden Sanktion.
 
 ![Screenshot der Sanktionslöschung](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-delete.webp)
 
+## Sanktionsstatus {#status}
+
+Sanktionen können unterschiedliche Status haben:
+
+| **Status**       | **Emojis**                                                                                                                 | **Bedeutungen**                                              |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| `Aktiv`          |                                                                                                                            | Die Sanktion ist aktiv.                                      |
+| `Abgelaufen`     | <Icon src="/img/icons/SanctionStatusEXPIRED.svg" alt="icon SanctionStatusEXPIRED" title=":iconSanctionStatusEXPIRED:"/>    | Die Sanktion ist abgelaufen.                                 |
+| `Abgebrochen`    | <Icon src="/img/icons/SanctionStatusCANCELED.svg" alt="icon SanctionStatusCANCELED" title=":iconSanctionStatusCANCELED:"/> | Die Sanktion wurde von einem Moderator aufgehoben.           |
+| `Fehlgeschlagen` | <Icon src="/img/icons/SanctionStatusFAILED.svg" alt="icon SanctionStatusFAILED" title=":iconSanctionStatusFAILED:"/>       | Die Sanktion ist fehlgeschlagen (fehlende Berechtigungen).   |
+
+### Verwaltung von Duplikaten {#duplicates}
+
+Wird eine aktive, bereits bestehende Sanktion gefunden, können Sie:
+
+* **Zusammenführen** der beiden Sanktionen: Die Dauer wird – sofern möglich – addiert und die Gründe werden zusammengeführt.
+* **Abbrechen** der aktiven Sanktion und Erstellen einer neuen Sanktion.
+* **Überschreiben** der aktiven Sanktion mit den Informationen der neu eingegebenen Sanktion.
+
+![Screenshot der Verwaltung von Sanktionsstatus](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-active-found.webp)
 
 ## 📊 Sanktionsprotokolle {#logs}
 

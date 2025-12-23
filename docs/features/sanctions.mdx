@@ -2,6 +2,8 @@
 title: Historique de Sanctions
 ---
 
+import Icon from "@site/src/components/Icon";
+
 L'historique des sanctions de RaidProtect vous permet de suivre et de gérer toutes les sanctions appliquées sur votre serveur. Ce système centralise toutes les actions de modération dans une base de données consultable et modifiable, facilitant ainsi le travail de votre équipe de modération.
 
 ## ❓ Fonctionnement de l'historique {#working}
@@ -70,6 +72,26 @@ Remplacez `(id)` par l'identifiant de la sanction à supprimer.
 
 ![Capture d'écran suppression d'une sanction](../assets/rp-sanctions-delete.webp)
 
+## Statuts des sanctions {#status}
+
+Les sanctions peuvent avoir différents statuts :
+
+| **Status**    | **Émojis**                                                                                                                  | **Significations**                                        |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------| --------------------------------------------------------- |
+| `Actif`       |                                                                                                                             | La sanction est en cours.                                 |
+| `Expiré`      | <Icon src="/img/icons/SanctionStatusEXPIRED.svg" alt="icon SanctionStatusEXPIRED" title=":iconSanctionStatusEXPIRED:"/>     | La sanction est expirée.                                  |
+| `Annulé`      | <Icon src="/img/icons/SanctionStatusCANCELED.svg" alt="icon SanctionStatusCANCELED" title=":iconSanctionStatusCANCELED:"/>  | La sanction a été annulée par un modérateur.              |
+| `Échoué`      | <Icon src="/img/icons/SanctionStatusFAILED.svg" alt="icon SanctionStatusFAILED" title=":iconSanctionStatusFAILED:"/>        | La sanction a échoué (manque de permissions).             |
+
+### Gestion des doublons {#duplicates}
+
+Lorsqu'une sanction active et antérieure est trouvée, vous pouvez :
+
+- **Fusionner** les deux sanctions : les durées seront additionnées si possible et les raisons seront concaténées.
+- **Annuler** la sanction active et créer une nouvelle sanction.
+- **Ecraser** la sanction active avec les informations de la sanction tapée.
+
+![Capture d'écran de la gestion des statuts des sanctions](../assets/rp-sanctions-active-found.webp)
 
 ## 📊 Logs des sanctions {#logs}
 

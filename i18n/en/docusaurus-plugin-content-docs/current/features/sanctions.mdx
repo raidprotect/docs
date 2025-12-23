@@ -2,6 +2,8 @@
 title: Sanctions History
 ---
 
+import Icon from "@site/src/components/Icon";
+
 RaidProtect's sanctions history allows you to track and manage all sanctions applied on your server. This system centralizes all moderation actions in a searchable and editable database, making it easier for your moderation team to work.
 
 ## ❓ How the history works {#working}
@@ -70,6 +72,26 @@ Replace `(id)` with the identifier of the sanction to delete.
 
 ![Screenshot of sanction deletion](../assets/rp-sanctions-delete.webp)
 
+## Sanction status {#status}
+
+Sanctions can have different statuses :
+
+| **Status**    | **Emojis**                                                                                                                  | **Meanings**                                              |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------| --------------------------------------------------------- |
+| `Active`      |                                                                                                                             | The sanction is in progress.                              |
+| `Expired`     | <Icon src="/img/icons/SanctionStatusEXPIRED.svg" alt="icon SanctionStatusEXPIRED" title=":iconSanctionStatusEXPIRED:"/>     | The sanction has expired.                                 |
+| `Canceled`    | <Icon src="/img/icons/SanctionStatusCANCELED.svg" alt="icon SanctionStatusCANCELED" title=":iconSanctionStatusCANCELED:"/>  | The sanction has been canceled by a moderator.            |
+| `Failed`      | <Icon src="/img/icons/SanctionStatusFAILED.svg" alt="icon SanctionStatusFAILED" title=":iconSanctionStatusFAILED:"/>        | The sanction has failed (missing permissions).            |
+
+### Handling duplicates {#duplicates}
+
+When an active and previous sanction is found, you can :
+
+- **Merge** the two sanctions : the durations will be added if possible and the reasons will be concatenated.
+- **Cancel** the active sanction and create a new sanction.
+- **Overwrite** the active sanction with the information of the sanction typed.
+
+![Screenshot of handling duplicates](../assets/rp-sanctions-active-found.webp)
 
 ## 📊 Sanctions logs {#logs}
 
