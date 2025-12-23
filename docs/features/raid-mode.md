@@ -2,7 +2,7 @@
 title: Anti-raid
 ---
 
-## Mode raid
+## Mode raid {#raid-mode}
 
 Le mode raid est une fonctionnalité d'urgence conçue pour bloquer instantanément tous les nouveaux utilisateurs tentant de rejoindre votre serveur, surpassant ainsi la limitation native de Discord qui ne permet ce blocage que pour 24 heures via l'action de cybersécurité "Suspendre les invitations".
 

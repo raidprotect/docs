@@ -2,7 +2,7 @@
 title: Anti-Raid
 ---
 
-## Raid-Modus
+## Raid-Modus {#raid-mode}
 
 Der Raid-Modus ist eine Notfallfunktion, die sofort alle neuen Nutzer blockiert, die deinem Server beitreten wollen. Damit übertrifft sie die native Discord-Beschränkung, die Einladungen nur für 24 Stunden über die Aktion "Einladungen pausieren" blockieren kann.
 
@@ -50,7 +50,6 @@ Sie können den Standardwert (10) beibehalten oder den gewünschten Wert über d
 4. Legen Sie die Dauer des RaidModes fest (maximal 24 Stunden).
 
 Sie können den Standardwert (5 Minuten) beibehalten oder den gewünschten Wert über die Schaltfläche "**Custom value**" anpassen.
-
 
 ## Mindestalter des Accounts {#minage}
 

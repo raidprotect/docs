@@ -30,7 +30,7 @@ Verwenden Sie den Befehl: ```/sanctions search [benutzer] [moderator] [typ] [dat
 - `[datum]`: Nach Sanktionsdatum filtern.
 - `[status]`: Nach Sanktionsstatus filtern (Aktiv, Abgelaufen, Storniert).
 
-![Screenshot der Sanktionssuche](../assets/rp-sanctions-search.webp)
+![Screenshot der Sanktionssuche](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-search.webp)
 
 :::tip
 Sie können mehrere Kriterien kombinieren, um Ihre Suche zu verfeinern. Suchen Sie beispielsweise nach allen Verbannungen, die von einem bestimmten Moderator durchgeführt wurden.
@@ -44,7 +44,7 @@ Verwenden Sie den Befehl: ```/sanctions info (id)```
 
 Ersetzen Sie `(id)` durch die Kennung der Sanktion, die Sie anzeigen möchten.
 
-![Screenshot der Sanktionsinformationen](../assets/rp-sanctions-info.webp)
+![Screenshot der Sanktionsinformationen](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-info.webp)
 
 ## ✏️ Eine Sanktion bearbeiten {#edit}
 
@@ -54,7 +54,7 @@ Verwenden Sie den Befehl: ```/sanctions edit (id) (neuer_grund)```
 
 Ersetzen Sie `(id)` durch die Kennung der zu ändernden Sanktion und `(neuer_grund)` durch den neuen Grund (maximal 512 Zeichen).
 
-![Screenshot der Sanktionsbearbeitung](../assets/rp-sanctions-edit.webp)
+![Screenshot der Sanktionsbearbeitung](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-edit.webp)
 
 :::warning
 Das Bearbeiten einer Sanktion aktualisiert den Eintrag im Verlauf, ändert jedoch nicht die auf Discord verhängte Sanktion (zum Beispiel bleibt ein verbannter Benutzer verbannt).
@@ -68,18 +68,18 @@ Verwenden Sie den Befehl: ```/sanctions delete (id)```
 
 Ersetzen Sie `(id)` durch die Kennung der zu löschenden Sanktion.
 
-![Screenshot der Sanktionslöschung](../assets/rp-sanctions-delete.webp)
+![Screenshot der Sanktionslöschung](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-delete.webp)
 
 
 ## 📊 Sanktionsprotokolle {#logs}
 
 Für eine bessere Organisation können Sie einen Protokollkanal konfigurieren, der speziell für Sanktionen vorgesehen ist, getrennt von Ihren allgemeinen Protokollen.
 
-![Screenshot der Sanktionsprotokolle-Konfiguration](../assets/rp-sanctions-logs.webp)
+![Screenshot der Sanktionsprotokolle-Konfiguration](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-logs.webp)
 
 ### Sanktionsprotokoll-Kanal konfigurieren {#config-logs}
 
-![Screenshot der Sanktionsprotokolle-Konfiguration](../assets/rp-settings-sanctions-logs.webp)
+![Screenshot der Sanktionsprotokolle-Konfiguration](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-sanctions-logs.webp)
 
 1. Verwenden Sie den [Befehl `/settings`](../setup.md#settings).
 2. Klicken Sie auf die Schaltfläche "**Logs**".
