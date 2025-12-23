@@ -27,26 +27,31 @@ Raid mode does not disable itself automatically. Remember to turn it off with th
 The `raidmode` command is also [available with prefix](../guides/prefix.md).
 :::
 
-### 🚨 Auto Raid Mode Configuration {#config}
-
-If your server often gets many new members at once, it’s wise to adjust this threshold to avoid false positives.
+If your server often gets many new members at once, it's wise to adjust this threshold to avoid false positives.
 
 ![Screenshot of auto raid mode settings](../assets/rp-settings-raid-mode.webp)
 
+#### Member threshold {#threshold}
+
+1. Use the [command `/settings`](../setup.md#settings).
+2. Click on the "**Auto RaidMode**" button.
+3. Select "**Members**".
+4. Choose the number of members that can join within 10 seconds.
+
+You can leave it at the default value (10) or adjust it to the desired value by clicking the "**Custom value**" button.
+
 :::note
-We recommend setting a value between 10 and 20 members in 10 seconds for optimal system performance.
+We recommend entering a value between 10 and 20 members in 10 seconds for good system efficiency.
 :::
 
-1. Run the [ `/settings` command](../setup.md#settings).
-2. Click the “**Auto RaidMode**” button.
-3. Select the number of members allowed to join within 10 seconds.
+#### Raid mode duration {#duration}
 
-You can leave it at the default value (10) or adjust it to your desired value by clicking the “**Custom Value**” button.
+1. Use the [command `/settings`](../setup.md#settings).
+2. Click on the "**Auto RaidMode**" button.
+3. Select "**Duration**".
+4. Choose the raid mode duration (24h maximum).
 
-:::warning
-If raid mode is automatically triggered, don’t forget to disable it once the threat has passed. Remember, it does not turn off on its own. 😖
-:::
-
+You can leave it at the default value (5 minutes) or adjust it to the desired value by clicking the "**Custom value**" button.
 
 ## Minimum Account Age {#minage}
 

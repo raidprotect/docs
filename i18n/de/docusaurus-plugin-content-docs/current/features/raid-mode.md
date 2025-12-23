@@ -33,19 +33,24 @@ Wenn auf deinem Server häufig viele Mitglieder gleichzeitig joinen, solltest du
 
 ![Screenshot der Einstellungen für den automatischen Raid-Modus](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-raid-mode.webp)
 
-:::note
-Wir empfehlen einen Wert zwischen 10 und 20 Mitgliedern in 10 Sekunden, um das System optimal zu nutzen.
-:::
+#### Mitgliederschwelle {#threshold}
 
-1. Führe den [`/settings`-Befehl](../setup.md#settings) aus.
-2. Klicke auf die Schaltfläche "**Auto RaidMode**".
-3. Wähle aus, wie viele Mitglieder innerhalb von 10 Sekunden beitreten dürfen.
+1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
+2. Klicken Sie auf die Schaltfläche "**Auto RaidMode**".
+3. Wählen Sie "**Members**".
+4. Legen Sie die Anzahl der Mitglieder fest, die innerhalb von 10 Sekunden beitreten dürfen.
 
-Du kannst den Standardwert (10) belassen oder über die Schaltfläche "**Benutzerdefinierter Wert**" einen eigenen Wert einstellen.
+Sie können den Standardwert (10) beibehalten oder den gewünschten Wert über die Schaltfläche "**Custom value**" anpassen.
 
-:::warning
-Wenn der Raid-Modus automatisch ausgelöst wurde, vergiss nicht, ihn zu deaktivieren, sobald die Gefahr vorüber ist. Er schaltet sich nämlich nicht selbst aus. 😖
-:::
+#### RaidMode-Dauer {#duration}
+
+1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
+2. Klicken Sie auf die Schaltfläche "**Auto RaidMode**".
+3. Wählen Sie "**Duration**".
+4. Legen Sie die Dauer des RaidModes fest (maximal 24 Stunden).
+
+Sie können den Standardwert (5 Minuten) beibehalten oder den gewünschten Wert über die Schaltfläche "**Custom value**" anpassen.
+
 
 ## Mindestalter des Accounts {#minage}
 

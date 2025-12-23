@@ -22,6 +22,14 @@ Replace `(user)` with the desired mention or ID and `[reason]` with the reason f
 You can ban a user using their [Discord ID](../guides/id), even if they are not currently online or present on your server.
 :::
 
+### Temporarily ban a user {#tempban}
+
+The `/tempban` command allows you to temporarily prohibit a user from accessing your server.
+
+Use the command: ```/tempban (user) (duration) [reason]```
+
+Replace `(user)` with the desired mention or ID, `(duration)` with the ban duration, and `[reason]` with the reason for the sanction.
+
 ### Unban a user {#unban}
 
 The `/unban` command allows you to remove the ban from a previously banned user, thus allowing them to join your server again.

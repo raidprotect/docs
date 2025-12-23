@@ -6,6 +6,37 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Entdecken Sie die detaillierte Liste der Änderungen an RaidProtect.
 
+## 3.3.0 (19/12/2025) {#3-3-0}
+
+- Neue Funktion **[Sanktionsverlauf](./features/sanctions.md)**.
+  - Neuer [Befehl `/sanctions search`](./features/sanctions.md#search).
+  - Neuer [Befehl `/sanctions info`](./features/sanctions.md#info).
+  - Neuer [Befehl `/sanctions edit`](./features/sanctions.md#edit).
+  - Neuer [Befehl `/sanctions delete`](./features/sanctions.md#delete).
+  - Automod-Sanktionen werden dem Sanktionsverlauf hinzugefügt.
+  - Verbannungen, Kicks und Timeouts werden dem Verlauf hinzugefügt und protokolliert. <SuggestionLink id="151" />
+  - Empfangsbestätigung der privaten Sanktionsbenachrichtigung.
+- Neue Protokolle für Sanktionen.
+- Möglichkeit, einen dedizierten Sanktionsprotokoll-Kanal zu konfigurieren.
+- Neuer [Befehl `/warn`](./features/moderation.md#warn). <SuggestionLink id="52" />
+- Neuer [Befehl `/untimeout`](./features/moderation.md#untimeout). <SuggestionLink id="52" />
+- Neuer [Befehl `/tempban`](./features/moderation.md#tempban). <SuggestionLink id="524" />
+- [RaidMode](./features/raid-mode.md#mode-raid) und [Auto RaidMode](./features/raid-mode.md#duration) deaktivieren sich nach einer bestimmten Zeit automatisch. <SuggestionLink id="37" />
+- Neuer Parameter [Dauer] für den [Befehl `/raidmode`](./features/raid-mode.md#mode-raid). <SuggestionLink id="37" />
+- Neuer [Befehl `/joinlock`](./features/channel-lock.md#joinlock) zum unbefristeten Schließen von Einladungen.
+- Neuer [Befehl `/channel duplicate`](./features/utilities.mdx#channel-duplicate) zum strikten Duplizieren eines Kanals. <SuggestionLink id="225" />
+- Neuer Befehl `/changelog` und Schaltflächen in `/settings` und `/about` zum Anzeigen des Changelogs.
+- Empfangsbestätigung der privaten Nachricht für das [Mindestalter](./features/raid-mode.md#minage).
+- Korrekturen:
+  - Verbesserte Cooldown-Verwaltung.
+  - Korrektur verschiedener Übersetzungsfehler.
+  - Erhöhung der maximalen Größe für Sanktionsbegründungen (512).
+- Leistung und Stabilität:
+  - Optimierter Nachrichten-Cache.
+  - Optimierte Datenbankspeicherung.
+  - Verwaltung von Sanktionsabläufen (`@fca.gg/midway` v1.3.2).
+  - Überarbeitete Emoji-Verwaltung ([`@fca.gg/glyph` v1.1.1](https://github.com/FCAgreatgoals/glyph)).
+
 ## 3.2.1 (03.09.2025) {#3-2-1}
 
 - Neuer [Befehl `/ds`](./features/utilities.mdx#discord-sanctions), um die Discord-Sanktionen eines Benutzers einzusehen.

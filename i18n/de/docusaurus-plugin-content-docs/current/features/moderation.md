@@ -22,6 +22,14 @@ Ersetze `(user)` durch die gewünschte Erwähnung oder ID und `[reason]` durch d
 Du kannst einen Nutzer über seine [Discord-ID](../guides/id) bannen, selbst wenn er nicht online ist oder deinen Server bereits verlassen hat.
 :::
 
+### Einen Benutzer temporär bannen {#tempban}
+
+Der Befehl `/tempban` ermöglicht es Ihnen, einem Benutzer vorübergehend den Zugriff auf Ihren Server zu verwehren.
+
+Verwenden Sie den Befehl: ```/tempban (user) (duration) [reason]```
+
+Ersetzen Sie `(user)` durch die gewünschte Erwähnung oder ID, `(duration)` durch die Dauer der Sperre und `[reason]` durch den Grund der Sanktion.
+
 ### Benutzer entsperren {#unban}
 
 Der Befehl `/unban` ermöglicht es Ihnen, die Sperre eines zuvor gesperrten Benutzers aufzuheben, sodass dieser Ihrem Server erneut beitreten kann.
