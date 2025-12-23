@@ -28,7 +28,11 @@ export default async function createConfigAsync() {
         organizationName: 'rapidprotect',
         projectName: 'raidprotect',
         onBrokenLinks: 'warn',
-        onBrokenMarkdownLinks: 'warn',
+        markdown: {
+            hooks: {
+                onBrokenMarkdownLinks: 'warn'
+            }
+        },
         i18n: {
             defaultLocale: defaultLocale,
             locales: ['fr', 'en', 'de'],
