@@ -4,7 +4,7 @@ title: Anti-raid
 
 ## Raid Mode {#raid-mode}
 
-Raid mode is an emergency feature designed to instantly block all new users trying to join your server, surpassing Discord’s native limitation which only allows this block for 24 hours via the "Pause Invites" security action.
+Raid mode is an emergency feature designed to instantly block all new users trying to join your server, for a maximum duration of 24 hours. To permanently block new members, use the [`/joinlock`](./join-lock.mdx) command.
 
 ### ❓ How Raid Mode Works {#working}
 

@@ -4,7 +4,7 @@ title: Anti-Raid
 
 ## Raid-Modus {#raid-mode}
 
-Der Raid-Modus ist eine Notfallfunktion, die sofort alle neuen Nutzer blockiert, die deinem Server beitreten wollen. Damit übertrifft sie die native Discord-Beschränkung, die Einladungen nur für 24 Stunden über die Aktion "Einladungen pausieren" blockieren kann.
+Der Raid-Modus ist eine Notfallfunktion, die entwickelt wurde, um sofort alle neuen Nutzer zu blockieren, die versuchen, deinem Server beizutreten, mit einer maximalen Dauer von 24 Stunden. Um neue Mitglieder dauerhaft zu blockieren, verwende den Befehl [`/joinlock`](./join-lock.mdx).
 
 ### ❓ Wie der Raid-Modus funktioniert {#working}
 
