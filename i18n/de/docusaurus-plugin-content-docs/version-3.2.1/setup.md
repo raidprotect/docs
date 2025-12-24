@@ -6,7 +6,8 @@ RaidProtect vereinfacht die Serververwaltung mit zwei mächtigen Werkzeugen: dem
 
 ## Geführte Installation {#install}
 
-Der `/setup`-Befehl hilft dir, RaidProtect schnell oder detailliert einzurichten – je nach Bedarf. Er bietet zwei Konfigurationsmodi: [empfohlen](#recommended) oder [fortgeschritten](#advanced).
+Der `/setup`-Befehl hilft dir, RaidProtect schnell oder detailliert einzurichten – je nach Bedarf.
+<!-- Er bietet zwei Konfigurationsmodi: [empfohlen](#recommended) oder [fortgeschritten](#advanced). -->
 
 ### 🔧 Empfohlene Konfiguration {#recommended}
 
