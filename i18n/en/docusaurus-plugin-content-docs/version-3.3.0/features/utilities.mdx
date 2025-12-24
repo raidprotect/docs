@@ -1,0 +1,189 @@
+---
+title: Utilities
+---
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Icon from "@site/src/components/Icon";
+
+Extra features to simplify the management of your server. 🔧
+
+In addition to core features like the captcha system and anti-raid protection, RaidProtect offers several secondary tools that can make managing your server even smoother.
+
+## 📋 Duplicate a Channel {#channel-duplicate}
+
+The `/channel duplicate` command allows you to fully duplicate a channel, including all its settings, permissions, and configurations. It goes beyond Discord’s native feature, which does not allow duplicating **categories** and **certain specific settings** such as forum channel tags.
+
+Use the command: ```/channel duplicate [channel]```
+
+Replace `[channel]` with the mention or the ID of the channel to duplicate.
+
+### 🎯 Features {#duplicate-features}
+
+This command duplicates all of the following elements:
+
+- **Channel name**
+- **Permissions** (roles and users)
+- **Channel type** (text, voice, forum, etc.)
+- **Specific settings** depending on the channel type
+- **Position** within the category (if applicable)
+
+### ⚙️ RaidProtect Configurations {#duplicate-config}
+
+When you duplicate a channel that has internal RaidProtect configurations, the bot will automatically offer you the option to:
+
+- **Replace** the existing configuration to use the new channel
+- **Duplicate** the configuration to keep both channels configured
+
+**Example**: If you duplicate the logs channel, RaidProtect will ask whether you want to update its configuration so that the new channel becomes the logs channel, or keep both channels configured according to your preference.
+
+## 👤 User Information {#userinfo}
+
+The `/userinfo` command lets you get detailed information about a user.
+
+Use the command: ```/userinfo [user]```
+
+Replace `[user]` with the desired mention or ID.
+
+:::info
+The `userinfo` command is also [available with prefix](../guides/prefix.md).
+:::
+
+### 📋 Displayed Information {#displayed-userinfo}
+
+- **Discord account creation date**
+- User's **profile picture**
+- **Profile banner**
+- **Profile badges**
+  - The Nitro, Booster, Quest, and Originally Name badges are not displayed.
+
+
+### 🎭 Information about a server member {#displayed-memberinfo}
+
+If the target is a server member, additional info includes:
+
+- **Date joined the server**
+- **Server nickname**
+- **Number of roles** and **list of the first 6 roles**
+- **Permission category** (visible only to moderators):
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="animator" label="Animator" default>
+
+    The **Animator** category is shown if the member has **at least one** of the following permissions:
+
+    - `MANAGE_EXPRESSIONS`
+    - `CREATE_GUILD_EXPRESSIONS`
+    - `MANAGE_EVENTS`
+
+  </TabItem>
+  <TabItem value="moderator" label="Moderator">
+
+    The **Moderator** category is shown if the member has **at least one** of the following permissions:
+
+    - `KICK_MEMBERS`
+    - `BAN_MEMBERS`
+    - `MODERATE_MEMBERS`
+    - `MANAGE_MESSAGES`
+    - `MUTE_MEMBERS`
+    - `DEAFEN_MEMBERS`
+    - `MOVE_MEMBERS`
+    - `MANAGE_THREADS`
+
+  </TabItem>
+  <TabItem value="manager" label="Manager">
+
+    The **Manager** category is shown if the member has **at least one** of the following permissions:
+
+    - `MANAGE_GUILD`
+    - `MANAGE_ROLES`
+    - `MANAGE_CHANNELS`
+    - `VIEW_AUDIT_LOG`
+    - `MANAGE_WEBHOOKS`
+    - `MANAGE_SERVER_EXPRESSIONS`
+
+  </TabItem>
+  <TabItem value="admin" label="Administrator">
+
+    The **Administrator** category is shown in **two possible cases**:
+
+    1️⃣ Has the permission:
+    - `ADMINISTRATOR`
+
+    2️⃣ Has **all three** of the following permissions at the same time:
+    - `MANAGE_GUILD`
+    - `MANAGE_ROLES`
+    - `MANAGE_CHANNELS`
+
+  </TabItem>
+  <TabItem value="owner" label="Owner">
+
+    **Condition**: The member is the **server owner**.
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+- **Member flags** (visible only to moderators):
+
+| **Flags**                                | **Emojis**                                                                                                             | **Meanings**                                                      |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `DID_REJOIN`                             | <Icon src="/img/icons/MemberDidRejoin.svg" alt="icon MemberDidRejoin" title=":MemberDidRejoin:"/>                      | The user left and rejoined the server.                            |
+| `IS_GUEST`                               | <Icon src="/img/icons/MemberIsGuest.svg" alt="icon MemberIsGuest" title=":MemberIsGuest:"/>                            | Guest member (temporary invite or guest access).                  |
+| `COMPLETED_ONBOARDING`                   | <Icon src="/img/icons/OnboardingCompleted.svg" alt="icon OnboardingCompleted" title=":OnboardingCompleted:"/>          | Completed the server onboarding process.                          |
+| `STARTED_ONBOARDING`                     | <Icon src="/img/icons/OnboardingStarted.svg" alt="icon OnboardingStarted" title=":OnboardingStarted:"/>                | Started the onboarding process.                                   |
+| `COMPLETED_SERVER_GUIDE`                 | <Icon src="/img/icons/ServerGuideCompleted.svg" alt="icon ServerGuideCompleted" title=":ServerGuideCompleted:"/>       | Completed the server guide if enabled.                            |
+| `STARTED_SERVER_GUIDE`                   | <Icon src="/img/icons/ServerGuideStarted.svg" alt="icon ServerGuideStarted" title=":ServerGuideStarted:"/>             | Started the server guide.                                         |
+| `AUTOMOD_QUARANTINED_NAME`               | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | Quarantined by automoderation for the username.                   |
+| `AUTOMOD_QUARANTINED_GUILD_TAG`          | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | Quarantined by automoderation for the tag or nickname.            |
+| `BYPASSES_VERIFICATION`                  | <Icon src="/img/icons/BypassVerification.svg" alt="icon BypassVerification" title=":BypassVerification:"/>             | User can bypass server verification.                              |
+| `SPAMMER`                                | <Icon src="/img/icons/UnusualAccountActivity.svg" alt="icon UnusualAccountActivity" title=":UnusualAccountActivity:"/> | Account marked as spammer or unusual activity detected.           |
+
+## ⚖️ Discord Sanctions {#discord-sanctions}
+
+The `/ds` command allows you to view the **sanctions issued by Discord** against a user, in accordance with [European regulations](https://transparency.dsa.ec.europa.eu/).
+
+Use the command: ```/ds (user)```
+
+Replace `(user)` with the desired mention or ID.
+
+### 📋 Displayed Information {#displayed-sanctions}
+
+- **Type of sanction**:
+
+| **Sanctions**                            | **Emojis**                                                                                                             | **Meanings**                                                      |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `CONTENT_DELETED`                        | <Icon src="/img/icons/ContentDeleted.svg" alt="icon ContentDeleted" title=":iconTrash:"/>                              | Content posted by the user has been deleted.                      |
+| `RESTRICTED`                             | <Icon src="/img/icons/AccountRestricted.svg" alt="icon AccountRestricted" title=":iconRestricted:"/>                   | The user account has been restricted.                             |
+| `ACCOUNT_SUSPENDED`                      | <Icon src="/img/icons/AccountSuspended.svg" alt="icon AccountSuspended" title=":iconSuspended:"/>                      | The user account has been suspended.                              |
+| `ACCOUNT_TERMINATED`                     | <Icon src="/img/icons/AccountTerminated.svg" alt="icon AccountTerminated" title=":iconTerminated:"/>                   | The user account has been terminated.                             |
+
+- **Date of issue**
+- **Type of content**
+- **Sanction flags**:
+
+| **Flags**                                | **Emojis**                                                                                                             | **Meanings**                                                      |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ILLEGAL_CONTENT`                        | <Icon src="/img/icons/IllegalContent.svg" alt="icon IllegalContent" title=":iconIllegal:"/>                            | Sanction applied for illegal content.                             |
+| `AUTOMATED_DETECTION`                    | <Icon src="/img/icons/AutomatedDetection.svg" alt="icon AutomatedDetection" title=":iconBots:"/>                       | Sanction applied through automated detection.                     |
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="reports-found" label="Reports found" default>
+
+![Screenshot of Discord Sanctions](../assets/rp-ds-report-found.webp)
+
+  </TabItem>
+  <TabItem value="reports-not-found" label="No reports found">
+
+![Screenshot of Discord Sanctions not found](../assets/rp-ds-report-not-found.webp)
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+:::note
+The command allows you to view the reports issued between August 22, 2024 and August 14, 2025. This information is provided directly by Discord and **cannot be modified** by RaidProtect.
+:::
