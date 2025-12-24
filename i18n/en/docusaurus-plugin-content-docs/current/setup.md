@@ -6,7 +6,8 @@ RaidProtect simplifies server management with two powerful tools: the [`/setup`]
 
 ## Guided Installation {#install}
 
-The `/setup` command is designed to help you configure RaidProtect quickly or through a detailed approach, depending on your needs. It offers two configuration modes: [recommended](#recommended) or [advanced](#advanced).
+The `/setup` command is designed to help you configure RaidProtect quickly or through a detailed approach, depending on your needs.
+<!-- It offers two configuration modes: [recommended](#recommended) or [advanced](#advanced). -->
 
 ### 🔧 Recommended Configuration {#recommended}
 
