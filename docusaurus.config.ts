@@ -92,12 +92,16 @@ export default async function createConfigAsync() {
                 footer: {
                         fr: 'RaidProtect est un bot Discord qui protège votre serveur des utilisateurs malintentionnés grâce à son anti-spam et son captcha. <strong>Et juste là, un petit géranium.&nbsp;</strong>',
                         en: 'RaidProtect is a Discord bot that protects your server from malicious users with its anti-spam and captcha features. <strong>And right there, a little geranium.&nbsp;</strong>',
-                        de: 'RaidProtect ist ein Discord-Bot, der Ihren Server vor böswilligen Nutzern schützt – dank integriertem Anti-Spam und Captcha-System. <strong>Und genau dort, ein kleines Geranium.&nbsp;</strong>'
+                        de: 'RaidProtect ist ein Discord-Bot, der Ihren Server vor böswilligen Nutzern schützt – dank integriertem Anti-Spam und Captcha-System. <strong>Und genau dort, ein kleines Geranium.&nbsp;</strong>',
+                        es: 'RaidProtect es un bot de Discord que protege tu servidor de usuarios malintencionados gracias a su anti-spam y captcha. <strong>Y justo allí, un pequeño geranio.&nbsp;</strong>',
+                        pt: 'RaidProtect é um bot do Discord que protege seu servidor de usuários maliciosos graças ao seu anti-spam e captcha. <strong>E justo lá, um pequeno gerânio.&nbsp;</strong>'
                 },
                 announcementBar: {
-                        fr: '<strong>La <a href="https://docs.raidprotect.bot/blog/3.3.0-moderation-update">Moderation Update (3.3.0)</a> est sortie !</strong>',
-                        en: '<strong><a href="https://docs.raidprotect.bot/en/blog/3.3.0-moderation-update">Moderation Update (3.3.0)</a> is now live!</strong>',
-                        de: '<strong>Das <a href="https://docs.raidprotect.bot/de/blog/3.3.0-moderation-update">Moderation Update (3.3.0)</a> ist erschienen!</strong>'
+                        fr: '<strong>La <a href="https://docs.raidprotect.bot/blog/3.3.1-jail-and-mute">Jail & Mute (3.3.1)</a> est sortie !</strong>',
+                        en: '<strong><a href="https://docs.raidprotect.bot/en/blog/3.3.1-jail-and-mute">Jail & Mute (3.3.1)</a> is now live!</strong>',
+                        de: '<strong>Das <a href="https://docs.raidprotect.bot/de/blog/3.3.1-jail-and-mute">Jail & Mute (3.3.1)</a> ist erschienen!</strong>',
+                        es: '<strong>¡El <a href="https://docs.raidprotect.bot/es/blog/3.3.1-jail-and-mute">Jail & Mute (3.3.1)</a> está disponible!</strong>',
+                        pt: '<strong>O <a href="https://docs.raidprotect.bot/pt/blog/3.3.1-jail-and-mute">Jail & Mute (3.3.1)</a> está disponível!</strong>'
                 }
             },
             excludedCanonical: []
@@ -111,7 +115,7 @@ export default async function createConfigAsync() {
                         sidebarPath: './sidebars.ts',
                         editUrl: 'https://github.com/raidprotect/docs/tree/master/',
                         lastVersion: lastStableVersion,
-                        onlyIncludeVersions: ['current', lastStableVersion, '3.2.1'],
+                        onlyIncludeVersions: ['current', lastStableVersion, '3.3.0'],
                         versions: {
                             current: {
                                 label: 'Bêta 🚧',
@@ -120,7 +124,7 @@ export default async function createConfigAsync() {
                             [lastStableVersion]: {
                                 label: 'Stable',
                             },
-                            '3.2.1': {
+                            '3.3.0': {
                                 label: 'Ancienne'
                             }
                         },
@@ -204,8 +208,8 @@ export default async function createConfigAsync() {
                 versionPersistence: 'localStorage',
             },
             announcementBar: {
-                id: '3.2.1',
-                content: '<strong><a href="https://docs.raidprotect.bot/blog/3.2.1-discord-sanctions">Protection Update (3.2.1)</a> is now live!</strong>',
+                id: '3.3.1',
+                content: '<strong><a href="https://docs.raidprotect.bot/en/blog/3.3.1-jail-and-mute">Jail & Mute (3.3.1)</a> is now live!</strong>',
                 backgroundColor: '#BD5454',
                 textColor: '#FFFFFF',
                 isCloseable: false
@@ -239,7 +243,7 @@ export default async function createConfigAsync() {
                         label: 'Documentation',
                     },
                     {
-                         to: 'blog',
+                        to: 'blog',
                         position: 'left',
                         label: 'Blog',
                     },

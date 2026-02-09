@@ -1,32 +1,32 @@
 ---
-title: Language
+title: Idioma
 ---
 
-RaidProtect allows you to choose the language used by the bot to best suit your Discord community.
+RaidProtect te permite elegir el idioma utilizado por el bot para adaptarse mejor a tu comunidad de Discord.
 
 :::note
-If your server is set as a community server (Discord setting), RaidProtect will by default use the language configured in the server's **community settings**.
+Si tu servidor esta configurado como servidor de comunidad (configuracion de Discord), RaidProtect usara por defecto el idioma configurado en la **configuracion de comunidad** del servidor.
 :::
 
-**Public Messages:** The configured language only affects public messages sent by RaidProtect in your server (logs, captcha messages, reports, etc.).
+**Mensajes publicos:** El idioma configurado solo afecta los mensajes publicos enviados por RaidProtect en tu servidor (registros, mensajes de captcha, reportes, etc.).
 
-**Ephemeral Messages:** These private or temporary messages remain displayed in the language of the user interacting with the bot.
+**Mensajes efimeros:** Estos mensajes privados o temporales se muestran en el idioma del usuario que interactua con el bot.
 
-## 🌐 List of Supported Languages {#supported}
+## 🌐 Lista de idiomas soportados {#supported}
 
-- **French**
-- **English**
+- **Frances**
+- **Ingles**
 
-## ⚙️ Changing the Bot's Language {#change}
+## ⚙️ Cambiar el idioma del bot {#change}
 
-- Use the [`/settings` command](./setup.md#settings).
-- Select the “**Language**” button.
-- Choose the desired language.
+- Usa el [comando `/settings`](./setup.md#settings).
+- Selecciona el boton "**Idioma**".
+- Elige el idioma deseado.
 
-![Screenshot of language settings](../../../en/docusaurus-plugin-content-docs/version-3.1.0/assets/rpBeta-settings-language.webp)
+![Captura de pantalla de configuracion de idioma](../../../en/docusaurus-plugin-content-docs/version-3.1.0/assets/rpBeta-settings-language.webp)
 
-Once the language is selected, the bot will automatically adapt all its messages, notifications, and commands to the chosen language for your server.
+Una vez seleccionado el idioma, el bot adaptara automaticamente todos sus mensajes, notificaciones y comandos al idioma elegido para tu servidor.
 
 :::info
-RaidProtect's language support is constantly evolving! [Suggest](https://suggestions.raidprotect.bot) languages you'd like to see on the bot or [vote](https://suggestions.raidprotect.bot) for proposed languages to have them added.
+¡El soporte de idiomas de RaidProtect esta en constante evolucion! [Sugiere](https://suggestions.raidprotect.bot) idiomas que te gustaria ver en el bot o [vota](https://suggestions.raidprotect.bot) por los idiomas propuestos para que sean agregados.
 :::

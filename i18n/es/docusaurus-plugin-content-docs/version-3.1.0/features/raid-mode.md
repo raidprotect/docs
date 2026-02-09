@@ -1,46 +1,46 @@
 ---
-title: Raid mode
+title: Modo raid
 ---
 
-Raid mode is an emergency feature designed to instantly block all new users attempting to join your server. It is radical but effective in preventing mass raids. With RaidProtect's raid mode, you have an effective shield against massive attacks on your server. 🌟
+El modo raid es una funcion de emergencia disenada para bloquear instantaneamente a todos los nuevos usuarios que intentan unirse a tu servidor. Es radical pero efectivo para prevenir raids masivos. Con el modo raid de RaidProtect, tienes un escudo efectivo contra ataques masivos en tu servidor. 🌟
 
-## ❓ How Raid Mode Works {#working}
+## ❓ Como funciona el modo raid {#working}
 
-RaidProtect automatically activates raid mode if a large number of users join your server in a short period. By default, raid mode activates if more than 10 users join your server in less than 10 seconds. When raid mode is activated, no users can join the server. They are blocked at the invitation level.
+RaidProtect activa automaticamente el modo raid si un gran numero de usuarios se unen a tu servidor en un periodo corto. Por defecto, el modo raid se activa si mas de 10 usuarios se unen a tu servidor en menos de 10 segundos. Cuando el modo raid esta activado, ningun usuario puede unirse al servidor. Son bloqueados a nivel de invitacion.
 
 :::warning
-Discord’s Community features are essential for Raid mode to function properly. [Follow our guide to verify that Community is enabled on your server.](../guides/community.md)
+Las funciones de Comunidad de Discord son esenciales para que el modo raid funcione correctamente. [Sigue nuestra guia para verificar que la Comunidad esta habilitada en tu servidor.](../guides/community.md)
 :::
 
-### Activation {#enable}
+### Activacion {#enable}
 
-- To manually activate this mode, a user with kick permissions must execute the command `/raidmode`.
-- A message will be automatically posted in the logs channel to indicate activation.
+- Para activar manualmente este modo, un usuario con permisos de expulsion debe ejecutar el comando `/raidmode`.
+- Se publicara automaticamente un mensaje en el canal de registros para indicar la activacion.
 
-### Deactivation {#disable}
+### Desactivacion {#disable}
 
-Raid mode does not deactivate automatically. Be sure to turn it off with the same command when the threat has passed. 😇
+El modo raid no se desactiva automaticamente. Asegurate de desactivarlo con el mismo comando cuando la amenaza haya pasado. 😇
 
 :::info
-The `raidmode` command is [usable with a prefix](../guides/prefix.md).
+El comando `raidmode` es [utilizable con prefijo](../guides/prefix.md).
 :::
 
-## 🚨 Configuring Automatic Raid Mode {#config}
+## 🚨 Configurar el modo raid automatico {#config}
 
-If your server frequently hosts many new members simultaneously, it is wise to adjust this threshold to avoid false positives.
+Si tu servidor frecuentemente recibe muchos nuevos miembros simultaneamente, es prudente ajustar este umbral para evitar falsos positivos.
 
-[Screenshot of automatic raid mode](../../../../en/docusaurus-plugin-content-docs/version-3.1.0/assets/rpBeta-settings-raid-mode.webp)
+[Captura de pantalla del modo raid automatico](../../../../en/docusaurus-plugin-content-docs/version-3.1.0/assets/rpBeta-settings-raid-mode.webp)
 
 :::note
-We recommend entering a value between 10 and 20 members in 10 seconds for good system efficiency.
+Recomendamos ingresar un valor entre 10 y 20 miembros en 10 segundos para una buena eficiencia del sistema.
 :::
 
-1. Use the [command `/settings`](../setup.md#settings).
-2. Click the “**Auto RaidMode**” button.
-3. Select the number of members who can join within 10 seconds.
+1. Usa el [comando `/settings`](../setup.md#settings).
+2. Haz clic en el boton "**Auto RaidMode**".
+3. Selecciona el numero de miembros que pueden unirse en 10 segundos.
 
-You can leave the default value (10) or adjust it to the desired value by clicking the “**Custom Value**” button.
+Puedes dejar el valor predeterminado (10) o ajustarlo al valor deseado haciendo clic en el boton "**Valor personalizado**".
 
 :::warning
-If raid mode activates automatically, remember to disable it once the threat has passed. Keep in mind, it does not turn off by itself. 😖
+Si el modo raid se activa automaticamente, recuerda desactivarlo una vez que la amenaza haya pasado. Ten en cuenta que no se desactiva solo. 😖
 :::

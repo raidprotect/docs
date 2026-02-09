@@ -24,7 +24,7 @@ Si prefieres usar ciertos comandos con un prefijo personalizado, puedes activar 
 3. Activa o desactiva el prefijo segun tus preferencias.
 Si esta activado, personaliza el prefijo ingresando el caracter o cadena deseada.
 
-![Captura de pantalla de la configuracion del prefijo](../assets/rp-settings-prefix.webp)
+![Captura de pantalla de la configuracion del prefijo](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-prefix.webp)
 
 :::note
 Los comandos Slash (`/`) permanecen disponibles incluso si el prefijo esta activado.

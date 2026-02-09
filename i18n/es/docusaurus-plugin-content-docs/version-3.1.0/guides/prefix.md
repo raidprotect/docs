@@ -1,30 +1,30 @@
 ---
-title: Using a prefix
+title: Usar un prefijo
 ---
 
-## Disabled Prefix (Default) {#disabled}
+## Prefijo desactivado (por defecto) {#disabled}
 
-By default, RaidProtect uses only Slash commands (`/`) to interact with the bot. This ensures intuitive and consistent usage with Discord standards.
+Por defecto, RaidProtect usa solo comandos Slash (`/`) para interactuar con el bot. Esto asegura un uso intuitivo y consistente con los estandares de Discord.
 
-## Activated Prefix (Optional) {#activated}
+## Prefijo activado (opcional) {#activated}
 
-If you prefer to use certain commands with a custom prefix, you can enable this option. The default prefix when activated is `?`, but it can be modified to suit your needs. Once activated, these commands can be used with the configured prefix: 
+Si prefieres usar ciertos comandos con un prefijo personalizado, puedes habilitar esta opcion. El prefijo predeterminado cuando se activa es `?`, pero puede modificarse segun tus necesidades. Una vez activado, estos comandos pueden usarse con el prefijo configurado:
 - [`?raidmode`](../features/raid-mode.md)
 - [`?ban`](../features/moderation.md#ban)
 - [`?kick`](../features/moderation.md#kick)
 - [`?lock`](../features/channel-lock.md#lock)
 - [`?unlock`](../features/channel-lock.md#unlock)
-- [`?userinfo` | `?ui`](../features/utilities#userinfo)
+- [`?userinfo` | `?ui`](../features/utilities#userinfo)
 - [`?clear`](../features/utilities#clear)
 
-## 💬 How to Enable or Disable the Prefix {#config}
+## 💬 Como activar o desactivar el prefijo {#config}
 
-1. Open the configuration menu by typing [`/settings`](../setup.md#settings).
-2. Access the "**Prefix**" option for commands.
-3. Enable or disable the prefix according to your preferences.
-If enabled, customize the prefix by entering the desired character or string.
+1. Abre el menu de configuracion escribiendo [`/settings`](../setup.md#settings).
+2. Accede a la opcion "**Prefijo**" para comandos.
+3. Activa o desactiva el prefijo segun tus preferencias.
+Si esta activado, personaliza el prefijo ingresando el caracter o cadena deseada.
 
 :::note
-Slash commands (`/`) remain available even if the prefix is activated.
-It is recommended to avoid prefixes already used by other bots to prevent command conflicts.
+Los comandos Slash (`/`) siguen disponibles incluso si el prefijo esta activado.
+Se recomienda evitar prefijos ya utilizados por otros bots para prevenir conflictos de comandos.
 :::

@@ -2,43 +2,43 @@
 title: Anti-spam
 ---
 
-RaidProtect's Anti-spam is a powerful tool to prevent spam on your Discord server. Thanks to its automatic detection system, it handles issues on its own without requiring your intervention.
+El Anti-spam de RaidProtect es una herramienta poderosa para prevenir el spam en tu servidor de Discord. Gracias a su sistema de deteccion automatica, se encarga de los problemas por si solo sin requerir tu intervencion.
 
-## ❓ How the Anti-spam Works {#working}
+## ❓ Como funciona el Anti-spam {#working}
 
-RaidProtect's anti-spam detects and automatically blocks suspicious behavior. It distinguishes between two types of spam.
-- **Heavy spam:** Messages containing invitation links, mass mentions, or images. This type of spam is often used during raids.
-- **Light spam:** Messages sent frequently but less intrusive.
+El anti-spam de RaidProtect detecta y bloquea automaticamente comportamientos sospechosos. Distingue entre dos tipos de spam.
+- **Spam pesado:** Mensajes que contienen enlaces de invitacion, menciones masivas o imagenes. Este tipo de spam se usa frecuentemente durante raids.
+- **Spam ligero:** Mensajes enviados con frecuencia pero menos intrusivos.
 
-RaidProtect's anti-spam acts in two ways.
-- **Sanctions:** Automatic kicking or banning of spammers.
-- **Notifications:** Sends messages to the log channel to report blocked spam with an overview of detected actions.
+El anti-spam de RaidProtect actua de dos maneras.
+- **Sanciones:** Expulsion o baneo automatico de spammers.
+- **Notificaciones:** Envia mensajes al canal de registros para reportar el spam bloqueado con un resumen de las acciones detectadas.
 
-## 🛡️ Configuring the Anti-spam {#config}
+## 🛡️ Configurar el Anti-spam {#config}
 
-RaidProtect offers three security levels to meet your server's needs.
-- 🔴 **High:** Sanctions all spam, including heavy spam in ignored channels.
-- 🟠 **Medium:** Sanctions all spam but respects ignored channels.
-- 🟢 **Low:** Sanctions only heavy spam.
+RaidProtect ofrece tres niveles de seguridad para adaptarse a las necesidades de tu servidor.
+- 🔴 **Alto:** Sanciona todo el spam, incluyendo spam pesado en canales ignorados.
+- 🟠 **Medio:** Sanciona todo el spam pero respeta los canales ignorados.
+- 🟢 **Bajo:** Sanciona solo el spam pesado.
 
-### Changing the Security Level {#level}
+### Cambiar el nivel de seguridad {#level}
 
-1. Use the [`/settings` command](../setup.md#settings).
-2. Click on the “**Anti-spam**” button.
-3. Select the desired anti-spam level from the first dropdown.
+1. Usa el [comando `/settings`](../setup.md#settings).
+2. Haz clic en el boton "**Anti-spam**".
+3. Selecciona el nivel de anti-spam deseado en el primer menu desplegable.
 
-### Managing Ignored Roles, Users, and Channels {#ignore}
+### Gestionar roles, usuarios y canales ignorados {#ignore}
 
-You can exclude certain channels, roles, or even users from anti-spam monitoring for added flexibility. 😉
-1. Use the [`/settings` command](../setup.md#settings).
-2. Click on the “**Anti-spam**” button.
-3. Select the different options to ignore in the dropdowns:
-- Channel(s) to ignore
-- Role(s) to ignore
-- Member(s) to ignore
+Puedes excluir ciertos canales, roles o incluso usuarios del monitoreo del anti-spam para mayor flexibilidad. 😉
+1. Usa el [comando `/settings`](../setup.md#settings).
+2. Haz clic en el boton "**Anti-spam**".
+3. Selecciona las diferentes opciones a ignorar en los menus desplegables:
+- Canal(es) a ignorar
+- Rol(es) a ignorar
+- Miembro(s) a ignorar
 
-![Anti-spam settings screenshot](../../../../en/docusaurus-plugin-content-docs/version-3.1.0/assets/rpBeta-settings-anti-spam.webp)
+![Captura de pantalla de configuracion del anti-spam](../../../../en/docusaurus-plugin-content-docs/version-3.1.0/assets/rpBeta-settings-anti-spam.webp)
 
 :::info
-Channels containing “**spam**” in their name are automatically ignored. Users with administrator permissions are completely ignored.
+Los canales que contienen "**spam**" en su nombre se ignoran automaticamente. Los usuarios con permisos de administrador se ignoran completamente.
 :::

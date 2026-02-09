@@ -1,28 +1,28 @@
 ---
-title: Utilities
+title: Utilitarios
 ---
 
-Additional features to simplify the management of your server. 🔧
+Funcionalidades adicionais para simplificar a gestao do seu servidor. 🔧
 
-In addition to core features like the captcha system and anti-raid protection, RaidProtect offers several secondary tools that can make managing your server even smoother.
+Alem das funcionalidades principais como o sistema de captcha e a protecao anti-raid, o RaidProtect oferece diversas ferramentas secundarias que podem tornar a gestao do seu servidor ainda mais fluida.
 
 :::info
-Utility commands are [usable by prefix](../guides/prefix.md).
+Os comandos utilitarios sao [utilizaveis por prefixo](../guides/prefix.md).
 :::
 
-## 👤 User Information {#userinfo}
+## 👤 Informacao do utilizador {#userinfo}
 
-The command `/userinfo` allows you to obtain detailed information about a user, such as their **Discord account creation date** and the **date they joined** your server (if they are a member).
+O comando `/userinfo` permite-lhe obter informacoes detalhadas sobre um utilizador, como a sua **data de criacao de conta Discord** e a **data em que entrou** no seu servidor (se for membro).
 
-Use the command: ```/userinfo [@user]```
+Utilize o comando: ```/userinfo [@utilizador]```
 
-Replace `[@user]` with the desired mention or ID.
+Substitua `[@utilizador]` pela mencao ou ID pretendido.
 
-## 🧹 Clear a Group of Messages {#clear}
+## 🧹 Eliminar um grupo de mensagens {#clear}
 
-The command `/clear` allows you to quickly delete a certain number of messages in a text channel. You can specify a user to delete only their messages.
+O comando `/clear` permite-lhe eliminar rapidamente um determinado numero de mensagens num canal de texto. Pode especificar um utilizador para eliminar apenas as suas mensagens.
 
-Use the command: ```/clear [number] (@user)```
+Utilize o comando: ```/clear [numero] (@utilizador)```
 
-- Replace `[number]` with the number of messages you wish to delete (maximum 100).
-- Add `(@user)` using the mention or ID to target only their messages in the channel.
+- Substitua `[numero]` pelo numero de mensagens que pretende eliminar (maximo 100).
+- Adicione `(@utilizador)` utilizando a mencao ou ID para visar apenas as suas mensagens no canal.

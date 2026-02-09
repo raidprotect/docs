@@ -1,46 +1,46 @@
 ---
-title: Onboarding Process and Captcha
+title: Processo de integracao e Captcha
 ---
 
-If the `#verification` channel is not visible by default for new members, this can prevent the Captcha system from working properly. Here’s how to fix this issue step by step.
+Se o canal `#verification` nao estiver visivel por defeito para os novos membros, isto pode impedir o sistema de Captcha de funcionar corretamente. Eis como resolver este problema passo a passo.
 
-## 1️⃣ Check the channel permissions {#permissions}
+## 1️⃣ Verificar as permissoes do canal {#permissions}
 
-1. Open the `#verification` channel settings (right-click > **Edit Channel**).
-2. In the **Permissions** tab:
-   - Make sure `@everyone` **does not** have permission to view the channel.
-   - Ensure the `@Unverified` role **has** permission to **view the channel**, **read message history**, and **send messages**.
+1. Abra as definicoes do canal `#verification` (clique direito > **Editar canal**).
+2. No separador **Permissoes**:
+   - Certifique-se de que `@everyone` **nao** tem permissao para ver o canal.
+   - Verifique que o cargo `@Unverified` **tem** permissao para **ver o canal**, **ler o historico de mensagens** e **enviar mensagens**.
 
-## 2️⃣ Check the Welcome category {#default-category}
+## 2️⃣ Verificar a categoria de Boas-vindas {#default-category}
 
-1. Go to **Server Settings** > **Welcome**.
-2. In the **Default Channels** section, verify that the category containing `#verification` is checked as visible for new members.
-3. If needed, move `#verification` into a checked category.
-4. Save the changes.
+1. Va a **Definicoes do servidor** > **Boas-vindas**.
+2. Na seccao **Canais predefinidos**, verifique que a categoria que contem `#verification` esta marcada como visivel para os novos membros.
+3. Se necessario, mova `#verification` para uma categoria marcada.
+4. Guarde as alteracoes.
 
-## 3️⃣ Refresh the configuration in RaidProtect {#refresh-config}
+## 3️⃣ Atualizar a configuracao no RaidProtect {#refresh-config}
 
-1. Use the [`/settings`](../setup.md#settings) command and go to the **Captcha** tab.
-2. Click **Refresh** to force the configuration update.
-3. If the channel is now visible, the Captcha system will work correctly.
+1. Utilize o comando [`/settings`](../setup.md#settings) e va ao separador **Captcha**.
+2. Clique em **Atualizar** para forcar a atualizacao da configuracao.
+3. Se o canal estiver agora visivel, o sistema de Captcha funcionara corretamente.
 
-## 4️⃣ Test with a test account {#test-account}
+## 4️⃣ Testar com uma conta de teste {#test-account}
 
-To confirm everything is set up properly:
+Para confirmar que tudo esta configurado corretamente:
 
-1. Join the server with another Discord account.
-2. Check that the `#verification` channel is visible on arrival.
-3. Enter the Captcha code sent by RaidProtect.
-4. Once verified, the account should have access to the other channels.
+1. Entre no servidor com outra conta Discord.
+2. Verifique que o canal `#verification` esta visivel a chegada.
+3. Introduza o codigo de Captcha enviado pelo RaidProtect.
+4. Uma vez verificada, a conta devera ter acesso aos outros canais.
 
-## 🛠️ Common issues and solutions {#common-issues}
+## 🛠️ Problemas comuns e solucoes {#common-issues}
 
-| Issue | Solution |
-|-------|----------|
-| 🔴 The `#verification` channel remains invisible | Check that it is in a **checked category** in Discord’s Welcome settings. |
-| 🚫 The `@Unverified` role cannot write | Grant it **send messages** permission in `#verification`. |
-| ❌ Captcha doesn’t work after changes | Click **“Refresh”** in `/settings > Captcha`. |
+| Problema | Solucao |
+|----------|---------|
+| 🔴 O canal `#verification` permanece invisivel | Verifique que esta numa **categoria marcada** nas definicoes de Boas-vindas do Discord. |
+| 🚫 O cargo `@Unverified` nao consegue escrever | Conceda-lhe a permissao de **enviar mensagens** em `#verification`. |
+| ❌ O Captcha nao funciona apos as alteracoes | Clique em **"Atualizar"** em `/settings > Captcha`. |
 
 ---
 
-✅ By following these steps, your verification system will be fully operational to safely welcome members and effectively block bots or raids.
+✅ Seguindo estes passos, o seu sistema de verificacao estara totalmente operacional para acolher os membros de forma segura e bloquear eficazmente bots ou raids.

@@ -2,43 +2,43 @@
 title: Anti-spam
 ---
 
-RaidProtect's Anti-spam is a powerful tool to prevent spam on your Discord server. Thanks to its automatic detection system, it handles issues on its own without requiring your intervention.
+O Anti-spam do RaidProtect e uma ferramenta poderosa para prevenir spam no seu servidor Discord. Gracas ao seu sistema de detecao automatica, trata dos problemas sozinho sem necessitar da sua intervencao.
 
-## ❓ How the Anti-spam Works {#working}
+## ❓ Como funciona o Anti-spam {#working}
 
-RaidProtect's anti-spam detects and automatically blocks suspicious behavior. It distinguishes between two types of spam.
-- **Heavy spam:** Messages containing invitation links, mass mentions, or images. This type of spam is often used during raids.
-- **Light spam:** Messages sent frequently but less intrusive.
+O anti-spam do RaidProtect deteta e bloqueia automaticamente comportamentos suspeitos. Distingue entre dois tipos de spam.
+- **Spam pesado:** Mensagens que contem links de convite, mencoes em massa ou imagens. Este tipo de spam e frequentemente utilizado durante raids.
+- **Spam ligeiro:** Mensagens enviadas frequentemente mas menos intrusivas.
 
-RaidProtect's anti-spam acts in two ways.
-- **Sanctions:** Automatic kicking or banning of spammers.
-- **Notifications:** Sends messages to the log channel to report blocked spam with an overview of detected actions.
+O anti-spam do RaidProtect atua de duas formas.
+- **Sancoes:** Expulsao ou banimento automatico de spammers.
+- **Notificacoes:** Envia mensagens para o canal de registos para reportar o spam bloqueado com um resumo das acoes detetadas.
 
-## 🛡️ Configuring the Anti-spam {#config}
+## 🛡️ Configurar o Anti-spam {#config}
 
-RaidProtect offers three security levels to meet your server's needs.
-- 🔴 **High:** Sanctions all spam, including heavy spam in ignored channels.
-- 🟠 **Medium:** Sanctions all spam but respects ignored channels.
-- 🟢 **Low:** Sanctions only heavy spam.
+O RaidProtect oferece tres niveis de seguranca para se adequar as necessidades do seu servidor.
+- 🔴 **Alto:** Sanciona todo o spam, incluindo spam pesado em canais ignorados.
+- 🟠 **Medio:** Sanciona todo o spam mas respeita os canais ignorados.
+- 🟢 **Baixo:** Sanciona apenas o spam pesado.
 
-### Changing the Security Level {#level}
+### Alterar o nivel de seguranca {#level}
 
-1. Use the [`/settings` command](../setup.md#settings).
-2. Click on the “**Anti-spam**” button.
-3. Select the desired anti-spam level from the first dropdown.
+1. Utilize o [comando `/settings`](../setup.md#settings).
+2. Clique no botao "**Anti-spam**".
+3. Selecione o nivel de anti-spam pretendido no primeiro menu pendente.
 
-### Managing Ignored Roles, Users, and Channels {#ignore}
+### Gerir cargos, utilizadores e canais ignorados {#ignore}
 
-You can exclude certain channels, roles, or even users from anti-spam monitoring for added flexibility. 😉
-1. Use the [`/settings` command](../setup.md#settings).
-2. Click on the “**Anti-spam**” button.
-3. Select the different options to ignore in the dropdowns:
-- Channel(s) to ignore
-- Role(s) to ignore
-- Member(s) to ignore
+Pode excluir determinados canais, cargos ou mesmo utilizadores da monitorizacao do anti-spam para maior flexibilidade. 😉
+1. Utilize o [comando `/settings`](../setup.md#settings).
+2. Clique no botao "**Anti-spam**".
+3. Selecione as diferentes opcoes a ignorar nos menus pendentes:
+- Canal(is) a ignorar
+- Cargo(s) a ignorar
+- Membro(s) a ignorar
 
-![Anti-spam settings screenshot](../../../../en/docusaurus-plugin-content-docs/version-3.1.0/assets/rpBeta-settings-anti-spam.webp)
+![Captura de ecra das definicoes do anti-spam](../../../../en/docusaurus-plugin-content-docs/version-3.1.0/assets/rpBeta-settings-anti-spam.webp)
 
 :::info
-Channels containing “**spam**” in their name are automatically ignored. Users with administrator permissions are completely ignored.
+Os canais que contem "**spam**" no seu nome sao automaticamente ignorados. Os utilizadores com permissoes de administrador sao completamente ignorados.
 :::

@@ -24,7 +24,7 @@ Para hacer un reporte, necesitas proporcionar evidencias. Primero, ten en cuenta
 
 Presentar un reporte es muy facil y solo toma unos minutos. Primero, ve al **formulario dedicado** siguiendo el enlace **https://dis.gd/report**.
 
-[Captura de pantalla del reporte de Discord](../assets/discord-report.png)
+[Captura de pantalla del reporte de Discord](../../../../en/docusaurus-plugin-content-docs/current/assets/discord-report.png)
 
 Dependiendo del tipo de reporte seleccionado, **se solicitara diferente informacion**. Ingresa el enlace del mensaje obtenido en el paso anterior en el campo correspondiente (y posiblemente los otros en la descripcion). No dudes en ser **lo mas detallado posible** y recuerda las reglas basicas de cortesia. 😇
 
@@ -32,4 +32,4 @@ Dependiendo del tipo de reporte seleccionado, **se solicitara diferente informac
 
 Unos dias despues de tu reporte, generalmente dentro de una semana, deberias recibir **una respuesta por correo electronico** de Discord. Ten en cuenta que no podras conocer las sanciones tomadas (o no) contra el usuario reportado. 😒
 
-[Captura de pantalla de la respuesta de Discord](../assets/discord-reply.png)
+[Captura de pantalla de la respuesta de Discord](../../../../en/docusaurus-plugin-content-docs/current/assets/discord-reply.png)

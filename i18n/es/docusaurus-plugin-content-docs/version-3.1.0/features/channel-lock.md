@@ -1,32 +1,32 @@
 ---
-title: Channel locking
+title: Bloqueo de canales
 ---
 
-Sometimes it is necessary to temporarily lock a channel to prevent users from sending messages. With the lock command, this becomes a breeze!
+A veces es necesario bloquear temporalmente un canal para evitar que los usuarios envien mensajes. ¡Con el comando lock, esto se vuelve muy facil!
 
-## 🔒 Lock a Channel {#lock}
+## 🔒 Bloquear un canal {#lock}
 
-Use the command: ```/lock```
+Usa el comando: ```/lock```
 
-This will remove the speaking permission from the **@everyone** role in the channel, preventing all users from posting in that channel.
+Esto eliminara el permiso de hablar del rol **@everyone** en el canal, evitando que todos los usuarios publiquen en ese canal.
 
-## 🔓 Unlock a Channel {#unlock}
+## 🔓 Desbloquear un canal {#unlock}
 
-Use the command: ```/unlock```
+Usa el comando: ```/unlock```
 
-This will add the speaking permission back to the **@everyone** role in the channel, allowing all users to post in that channel.
+Esto restaurara el permiso de hablar del rol **@everyone** en el canal, permitiendo que todos los usuarios publiquen en ese canal.
 
 :::warning
-For the lock command to work properly, you must ensure that no roles have explicit permission to speak in that channel. Otherwise, members with those roles will still be able to chat.
+Para que el comando lock funcione correctamente, debes asegurarte de que ningun rol tenga permiso explicito para hablar en ese canal. De lo contrario, los miembros con esos roles seguiran pudiendo chatear.
 :::
 :::info
-The `lock` and `unlock` commands are [usable by prefix](../guides/prefix.md).
+Los comandos `lock` y `unlock` son [utilizables por prefijo](../guides/prefix.md).
 :::
 
-## ✏️ Configuring the Lock Icon {#config}
+## ✏️ Configurar el icono de bloqueo {#config}
 
-By default, this feature is disabled. However, you can choose whether locked channels should be renamed with a lock emoji (🔒) added in front of their name.
+Por defecto, esta funcion esta desactivada. Sin embargo, puedes elegir si los canales bloqueados deben renombrarse con un emoji de candado (🔒) agregado delante de su nombre.
 
-To enable/disable the lock icon in front of the names of locked channels:  
-1. Use the [command `/settings`](../setup.md#settings).
-2. Click on the **Lock Icon on Locked Channels** button. This button acts as a toggle; a simple click is enough to enable or disable the option.
+Para activar/desactivar el icono de bloqueo delante de los nombres de los canales bloqueados:
+1. Usa el [comando `/settings`](../setup.md#settings).
+2. Haz clic en el boton **Icono de bloqueo en canales bloqueados**. Este boton funciona como un interruptor; un simple clic es suficiente para activar o desactivar la opcion.

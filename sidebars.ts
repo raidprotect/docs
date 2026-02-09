@@ -40,6 +40,14 @@ const sidebars: SidebarsConfig = {
                 },
                 {
                     type: 'doc',
+                    id: 'features/sanctions',
+                },
+                {
+                    type: 'doc',
+                    id: 'features/moderation',
+                },
+                {
+                    type: 'doc',
                     id: 'features/dm-lock',
                 },
                 {
@@ -53,14 +61,6 @@ const sidebars: SidebarsConfig = {
                 {
                     type: 'doc',
                     id: 'features/reports',
-                },
-                {
-                    type: 'doc',
-                    id: 'features/sanctions',
-                },
-                {
-                    type: 'doc',
-                    id: 'features/moderation',
                 },
                 {
                     type: 'doc',

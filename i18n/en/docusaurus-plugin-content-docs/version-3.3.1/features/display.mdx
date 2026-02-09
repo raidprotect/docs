@@ -1,0 +1,45 @@
+---
+title: Information Panels
+---
+
+The `/display public` command allows you to create and manage public information panels displayed on your server. You can create multiple panels with different types of content and features.
+
+Use the command: ```/display public```
+
+## ❓ How it works {#working}
+
+Each information panel is published by the bot in a channel of your choice. You have multiple slots available to create independent panels, each with its own content and features.
+
+## 📄 Content types {#content}
+
+Each panel can contain one or more of the following content types:
+
+- **DM Lock**: Informs members about the DM lock status. Displays whether DMs are locked or not, and explains that only friends, staff, bots, and previous contacts can send DMs.
+- **Jail**: Displays a message intended for jailed members, indicating that their access to the server has been restricted due to a rule violation.
+- **Sanctions**: Tells members how to view their personal sanctions history via the `/my-sanctions` command.
+- **Report**: Explains to members how to report a user or a message via the `/report` command or the context menu (right-click).
+
+## ⚙️ Features {#features}
+
+In addition to content, each panel can enable interactive features:
+
+- **Translation**: Adds a button allowing members to translate the panel into any language supported by Discord.
+- **Sanctions access**: Adds a "View my sanctions" button allowing members to directly view their sanctions.
+- **Report**: Adds a "Report" button to quickly report a user.
+
+{/* TODO: Add a screenshot of /display public */}
+
+## 📌 Reserved slot {#reserved-slot}
+
+The last slot is reserved for **Jail** content and is automatically managed via `/settings` > Sanctions > [Jail](./sanctions.mdx#jail). Its channel can only be modified through this configuration.
+
+## 🔄 Updating panels {#update}
+
+When you change the bot's language or the panel content is updated by RaidProtect, an indicator signals the panels that are not up to date. You can then click the "Update" button to refresh the panel.
+
+## ✏️ Edit or delete a panel {#edit}
+
+From the `/display public` menu, each occupied slot has buttons to:
+
+- **Edit**: Change the channel, content, or features of the panel.
+- **Delete**: Remove the panel from the channel and free up the slot.

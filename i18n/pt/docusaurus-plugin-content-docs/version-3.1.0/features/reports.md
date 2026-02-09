@@ -1,61 +1,61 @@
 ---
-title: Reports
+title: Denuncias
 ---
 
-The RaidProtect reporting system allows your community to quickly report any problematic content or suspicious users. It operates in two different ways and can be configured to optimize the reporting management process.
+O sistema de denuncias do RaidProtect permite a sua comunidade reportar rapidamente qualquer conteudo problematico ou utilizadores suspeitos. Funciona de duas formas diferentes e pode ser configurado para otimizar o processo de gestao de denuncias.
 
-## ❓ How Reporting Works {#working}
-Members can report content through 3 main methods.
+## ❓ Como funcionam as denuncias {#working}
+Os membros podem denunciar conteudo atraves de 3 metodos principais.
 
-1. **Right-click on a message**  
-A member can right-click on a message they believe violates the rules, select **`Applications`**, and then click on **`Report Message`**. A popup will appear, allowing the user to add an explanation.
+1. **Clique direito numa mensagem**
+Um membro pode clicar com o botao direito numa mensagem que considere violar as regras, selecionar **`Aplicacoes`** e depois clicar em **`Denunciar mensagem`**. Aparecera uma janela que permite ao utilizador adicionar uma explicacao.
 
-2. **Right-click on a profile**  
-Similarly, a member can right-click on a profile they find problematic, choose **`Applications`**, and then click on **`Report Member`**. A popup will then open to allow the user to provide additional details about the situation.
+2. **Clique direito num perfil**
+De forma semelhante, um membro pode clicar com o botao direito num perfil que considere problematico, escolher **`Aplicacoes`** e depois clicar em **`Denunciar membro`**. Sera aberta uma janela para permitir ao utilizador fornecer detalhes adicionais sobre a situacao.
 
-3. **Slash Command**  
-Members can also report a message or user via the **`/report`** command in any server channel.
+3. **Comando Slash**
+Os membros tambem podem denunciar uma mensagem ou utilizador atraves do comando **`/report`** em qualquer canal do servidor.
 
-Use the command: ```/report [@user] [reason]```
+Utilize o comando: ```/report [@utilizador] [motivo]```
 
-Replace `[@user]` with the desired user and `[reason]` with the reason for the infraction.
+Substitua `[@utilizador]` pelo utilizador pretendido e `[motivo]` pelo motivo da infracao.
 
-## 🚩 Configuring Reports {#config}
+## 🚩 Configurar as denuncias {#config}
 
-Before the reporting system is fully operational, it is imperative to configure a **report channel** where all reports will be sent. You need to set up a log or notification channel to receive alerts regarding reports.
+Antes do sistema de denuncias estar totalmente operacional, e imprescindivel configurar um **canal de denuncias** para onde todas as denuncias serao enviadas. Precisa de configurar um canal de registos ou notificacoes para receber alertas sobre as denuncias.
 
-### Setting Up the Channel {#config-channel}
+### Configurar o canal {#config-channel}
 
-1. Use the [command `/settings`](../setup.md#settings).
-2. Select the **Reports** button.
-3. Click on the **Channel** button.
-4. Choose the desired channel (_e.g. #reports_).  
-If you do not have a suitable channel, you can opt to create one automatically using the **Create one for me** button.
+1. Utilize o [comando `/settings`](../setup.md#settings).
+2. Selecione o botao **Denuncias**.
+3. Clique no botao **Canal**.
+4. Escolha o canal pretendido (_ex. #denuncias_).
+Se nao tiver um canal adequado, pode optar por criar um automaticamente utilizando o botao **Criar um por mim**.
 
-[Screenshot report settings](../../../../en/docusaurus-plugin-content-docs/version-3.1.0/assets/rpBeta-settings-reports.webp)
+[Captura de ecra das definicoes de denuncias](../../../../en/docusaurus-plugin-content-docs/version-3.1.0/assets/rpBeta-settings-reports.webp)
 
-### Configuring the Notification Role {#config-role}
+### Configurar o cargo de notificacao {#config-role}
 
-1. Use the [command `/settings`](../setup.md#settings).
-2. Select the **Reports** button.
-3. Click on the **Role** button.
-4. Choose the desired role (_e.g. @Moderator or @Report Ping_).  
-If you do not have a suitable role, you can opt to create one automatically with the **Create one for me** button.
+1. Utilize o [comando `/settings`](../setup.md#settings).
+2. Selecione o botao **Denuncias**.
+3. Clique no botao **Cargo**.
+4. Escolha o cargo pretendido (_ex. @Moderador ou @Ping de denuncias_).
+Se nao tiver um cargo adequado, pode optar por criar um automaticamente com o botao **Criar um por mim**.
 
 :::warning
-The channel should be restricted to moderators and administrators to ensure proper management of reports.
+O canal deve estar restrito a moderadores e administradores para garantir a gestao adequada das denuncias.
 :::
 
-## Managing Reports {#manage}
+## Gerir as denuncias {#manage}
 
-As a community moderator, you can choose to accept or reject a report.
+Enquanto moderador da comunidade, pode optar por aceitar ou rejeitar uma denuncia.
 
-- **✅ Accept a report:** If the report is valid, click the “Accept” button under the alert. This button does not trigger any specific action but indicates to other moderators that you consider this report to be handled, fostering coordination and organization.
+- **✅ Aceitar uma denuncia:** Se a denuncia for valida, clique no botao "Aceitar" abaixo do alerta. Este botao nao desencadeia nenhuma acao especifica, mas indica aos outros moderadores que considera esta denuncia tratada, promovendo a coordenacao e organizacao.
 
-- **👁️ View Context:** To view the reported message and see the context, click “View Message” under the alert.
+- **👁️ Ver contexto:** Para visualizar a mensagem denunciada e ver o contexto, clique em "Ver mensagem" abaixo do alerta.
 
-- **❌ Reject a report:** If the report is not legitimate, click the “Reject” button under the alert. Similar to the “Accept” button, no specific action is associated with this button; it merely informs other moderators of your decision.
+- **❌ Rejeitar uma denuncia:** Se a denuncia nao for legitima, clique no botao "Rejeitar" abaixo do alerta. Semelhante ao botao "Aceitar", nenhuma acao especifica esta associada a este botao; apenas informa os outros moderadores da sua decisao.
 
 :::note
-Ensure that your moderators are well-trained in using this feature and encourage your active members to use it responsibly!
+Certifique-se de que os seus moderadores estao bem formados na utilizacao desta funcionalidade e incentive os seus membros ativos a utiliza-la de forma responsavel!
 :::

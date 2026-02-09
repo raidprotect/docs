@@ -1,0 +1,45 @@
+---
+title: Paneles de informacion
+---
+
+El comando `/display public` te permite crear y gestionar paneles de informacion publicos que se muestran en tu servidor. Puedes crear multiples paneles con diferentes tipos de contenido y funciones.
+
+Usa el comando: ```/display public```
+
+## ❓ Como funciona {#working}
+
+Cada panel de informacion es publicado por el bot en un canal de tu eleccion. Tienes multiples espacios disponibles para crear paneles independientes, cada uno con su propio contenido y funciones.
+
+## 📄 Tipos de contenido {#content}
+
+Cada panel puede contener uno o mas de los siguientes tipos de contenido:
+
+- **Bloqueo de MD**: Informa a los miembros sobre el estado del bloqueo de MD. Muestra si los MD estan bloqueados o no, y explica que solo amigos, staff, bots y contactos previos pueden enviar MD.
+- **Calabozo**: Muestra un mensaje destinado a los miembros en el calabozo, indicando que su acceso al servidor ha sido restringido debido a una violacion de las reglas.
+- **Sanciones**: Indica a los miembros como ver su historial personal de sanciones mediante el comando `/my-sanctions`.
+- **Reportar**: Explica a los miembros como reportar a un usuario o un mensaje mediante el comando `/report` o el menu contextual (clic derecho).
+
+## ⚙️ Funciones {#features}
+
+Ademas del contenido, cada panel puede activar funciones interactivas:
+
+- **Traduccion**: Agrega un boton que permite a los miembros traducir el panel a cualquier idioma soportado por Discord.
+- **Acceso a sanciones**: Agrega un boton "Ver mis sanciones" que permite a los miembros ver directamente sus sanciones.
+- **Reportar**: Agrega un boton "Reportar" para reportar rapidamente a un usuario.
+
+{/* TODO: Agregar una captura de pantalla de /display public */}
+
+## 📌 Espacio reservado {#reserved-slot}
+
+El ultimo espacio esta reservado para el contenido del **Calabozo** y se gestiona automaticamente mediante `/settings` > Sanciones > [Calabozo](./sanctions.mdx#jail). Su canal solo puede modificarse a traves de esta configuracion.
+
+## 🔄 Actualizacion de paneles {#update}
+
+Cuando cambias el idioma del bot o el contenido del panel es actualizado por RaidProtect, un indicador senala los paneles que no estan actualizados. Luego puedes hacer clic en el boton "Actualizar" para refrescar el panel.
+
+## ✏️ Editar o eliminar un panel {#edit}
+
+Desde el menu `/display public`, cada espacio ocupado tiene botones para:
+
+- **Editar**: Cambiar el canal, el contenido o las funciones del panel.
+- **Eliminar**: Eliminar el panel del canal y liberar el espacio.

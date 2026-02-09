@@ -1,0 +1,143 @@
+---
+title: Moderation
+---
+
+import Icon from "@site/src/components/Icon";
+
+To facilitate the work of your moderators, RaidProtect integrates very useful moderation commands that allow you to interact directly with Discord's native features, such as **banning** and **kicking** users.
+
+In addition to these actions, RaidProtect sends direct messages to the sanctioned user to explain the reason for their sanction, and this is also recorded in the server logs for your reference.
+
+:::info
+Moderation commands are [usable by prefix](../guides/prefix).
+:::
+
+## 🖱️ Sanction via the context menu {#context-menu}
+
+In addition to slash commands, you can sanction a member directly from their profile via a right-click: **Applications** → **RaidProtect** → **Sanction**.
+
+A window will open allowing you to:
+- **Sanction type**: Select the type of sanction to apply.
+- **Duration**: Enter a duration (optional, e.g.: `1d 2h 30m`).
+- **Reason**: Specify the reason for the sanction.
+
+## <Icon src="/img/icons/SanctionsBAN.svg" alt="icon SanctionsBAN" title=":iconSanctionsBAN:"/> Ban a User {#ban}
+
+The `/ban` command allows you to permanently prohibit a user from accessing your server.
+
+Use the command: ```/ban (user) [reason]```
+
+Replace `(user)` with the desired mention or ID and `[reason]` with the reason for the sanction.
+
+:::tip
+You can ban a user using their [Discord ID](../guides/id), even if they are not currently online or present on your server.
+:::
+
+### <Icon src="/img/icons/SanctionsBANTemp.svg" alt="icon SanctionsBANTemp" title=":iconSanctionsBANTemp:"/>  Temporarily ban a user {#tempban}
+
+The `/tempban` command allows you to temporarily prohibit a user from accessing your server.
+
+Use the command: ```/tempban (user) (duration) [reason]```
+
+Replace `(user)` with the desired mention or ID, `(duration)` with the ban duration, and `[reason]` with the reason for the sanction.
+
+### <Icon src="/img/icons/SanctionsUNBAN.svg" alt="icon SanctionsUNBAN" title=":iconSanctionsUNBAN:"/> Unban a user {#unban}
+
+The `/unban` command allows you to remove the ban from a previously banned user, thus allowing them to join your server again.
+
+Use the command: ```/unban (user) [reason]```
+
+Replace `(user)` with the desired identifier and `[reason]` with the reason for the unban.
+
+## <Icon src="/img/icons/SanctionsKICK.svg" alt="icon SanctionsKICK" title=":iconSanctionsKICK:" /> Kick a User {#kick}
+
+The `/kick` command allows you to remove a member from your server without banning them. The user will be able to rejoin the server if they have a valid invitation.
+
+Use the command: ```/kick (member) [reason]```
+
+Replace `(member)` with the desired mention or ID and `[reason]` with the reason for the sanction.
+
+## <Icon src="/img/icons/SanctionsTIMEOUT.svg" alt="icon SanctionsTIMEOUT" title=":iconSanctionsTIMEOUT:" /> Mute a User {#timeout}
+
+The `/mute` command allows you to temporarily restrict a member's ability to interact on the server. During this period, the member will not be able to send messages, react, join voice channels, or send direct messages to other members.
+
+Use the command: ```/mute (member) (duration) [reason] [force_timeout]```
+
+Replace `(member)` with the desired mention or ID, `(duration)` with the mute duration (e.g.: `10m`, `1h`, `1d`), and `[reason]` with the reason for the sanction.
+
+:::tip
+The `[force_timeout]` parameter allows you to override the threshold rule and force the use of Discord's timeout, even if a Mute role is configured.
+
+You can configure a [Mute role](./sanctions.mdx#mute) and a [mute threshold](./sanctions.mdx#mute-threshold) in `/settings` > Sanctions. Beyond the defined threshold, the bot will automatically apply the Mute role instead of Discord's timeout, allowing durations longer than 28 days.
+:::
+
+### <Icon src="/img/icons/SanctionsUNTIMEOUT.svg" alt="icon SanctionsUNTIMEOUT" title=":iconSanctionsUNTIMEOUT:" /> Unmute a user {#untimeout}
+
+The `/untimeout` command allows you to immediately remove the restrictions from a muted member, allowing them to regain all their interaction capabilities on the server.
+
+Use the command: ```/untimeout (member) [reason]```
+
+Replace `(member)` with the desired mention or ID and `[reason]` with the reason for removing the timeout.
+
+## <Icon src="/img/icons/SanctionsJAIL.svg" alt="icon SanctionsJAIL" title=":iconSanctionsJAIL:" /> Jail a user {#jail}
+
+The `/jail` command allows you to isolate a member by assigning them a restrictive role. The Jail is intended as an alternative to banning: the member retains very limited access to the server instead of being completely excluded.
+
+Use the command: ```/jail (member) [reason]```
+
+Replace `(member)` with the desired mention or ID and `[reason]` with the reason for the sanction.
+
+:::warning
+The [Jail role](./sanctions.mdx#jail) must be configured via `/settings` before you can use this command.
+:::
+
+### <Icon src="/img/icons/SanctionsJAILTemp.svg" alt="icon SanctionsJAILTemp" title=":iconSanctionsJAILTemp:" /> Temporarily jail a user {#tempjail}
+
+The `/tempjail` command allows you to temporarily jail a member for a defined duration.
+
+Use the command: ```/tempjail (member) (duration) [reason]```
+
+Replace `(member)` with the desired mention or ID, `(duration)` with the jail duration, and `[reason]` with the reason for the sanction.
+
+### <Icon src="/img/icons/SanctionsUNJAIL.svg" alt="icon SanctionsUNJAIL" title=":iconSanctionsUNJAIL:" /> Release a user {#unjail}
+
+The `/unjail` command allows you to remove the Jail role from a member, allowing them to regain their normal access to the server.
+
+Use the command: ```/unjail (member) [reason]```
+
+Replace `(member)` with the desired mention or ID and `[reason]` with the reason for the release.
+
+## <Icon src="/img/icons/SanctionsWARN.svg" alt="icon SanctionsWARN" title=":iconSanctionsWARN:" /> Warn a user {#warn}
+
+The `/warn` command allows you to formally warn a member via a private message sent by the bot.
+
+Use the command: ```/warn (member) [reason]```
+
+Replace `(member)` with the desired mention or ID and `[reason]` with the reason for the warning.
+
+## 🧹 Clear a Group of Messages {#clear}
+
+The `/clear` command allows you to quickly delete a certain number of messages in a text channel. You can specify a user to delete only their messages.
+
+Use the command: ```/clear (number) [user]```
+
+Replace `(number)` with the number of messages you wish to delete (maximum 100). Add `[user]` using the mention or ID to target only their messages in the channel.
+
+## 🕒 Enable slowmode in a channel {#slowmode}
+
+The `/slowmode` command allows you to enable or modify the slowmode of a text channel, in order to limit how frequently users can send messages.
+
+Use the command: ```/slowmode (duration) [channel] [reason]```
+
+- Replace `(duration)` with the desired time between each message (e.g.: `5s`, `1m`, `10m`, `1h`).
+- Add `[channel]` if you want to apply slowmode to a different channel than the one where you type the command.
+- Add `[reason]` to specify the motive, which will be recorded in the server logs.
+
+## 📋 Moderation logs {#logs}
+
+By default, moderation logs are sent to RaidProtect's main log channel. You can configure a dedicated log channel to separate moderation actions from other logs.
+
+1. Use the [command `/settings`](../setup.md#settings).
+2. Click on the "**Logs**" button.
+3. Select "**Moderation**".
+4. Choose the channel in which moderation logs will be sent or use the "**Create one for me**" button.

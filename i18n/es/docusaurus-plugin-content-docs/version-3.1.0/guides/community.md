@@ -1,37 +1,37 @@
 ---
-title: Enable Community
+title: Activar Comunidad
 ---
 
-Enabling the Community feature unlocks several advanced security settings essential for the proper functioning of some RaidProtect features like **DM Lock** or **Raid Mode**.
+Activar la funcion de Comunidad desbloquea varias configuraciones de seguridad avanzadas esenciales para el correcto funcionamiento de algunas funciones de RaidProtect como **DM Lock** o **Modo Raid**.
 
-## 🚦 Requirements {#requirement}
+## 🚦 Requisitos {#requirement}
 
-- You must be an administrator of the Discord server.
+- Debes ser administrador del servidor de Discord.
 
-## 🚩 Enable Community Features {#steps}
+## 🚩 Activar las funciones de Comunidad {#steps}
 
-1. **Open your server settings**
-   - Click on the server name at the top left > “Server Settings”.
+1. **Abre la configuracion de tu servidor**
+   - Haz clic en el nombre del servidor en la esquina superior izquierda > "Configuracion del servidor".
 
-2. **Go to the “Community” section**
-   - In the sidebar, navigate to the **Enable Community** tab and click **Get Started**.
+2. **Ve a la seccion "Comunidad"**
+   - En la barra lateral, navega hasta la pestana **Activar Comunidad** y haz clic en **Comenzar**.
 
 :::note
-If Community is already enabled on your server, the section will be called **Community Overview**.
+Si la Comunidad ya esta activada en tu servidor, la seccion se llamara **Vista general de la Comunidad**.
 :::
 
-3. **Follow the setup wizard**
-   - Enable email verification for all members.
-   - Enable the explicit content filter.
-   - Set up a rules channel and an updates channel.
-   - Accept the Community Server guidelines.
+3. **Sigue el asistente de configuracion**
+   - Activa la verificacion por correo electronico para todos los miembros.
+   - Activa el filtro de contenido explicito.
+   - Configura un canal de reglas y un canal de actualizaciones.
+   - Acepta las directrices del Servidor de Comunidad.
 
-4. **Complete the setup**
-   - Click “Finish Setup”. The “Community” badge will appear on your server once activation is complete.
+4. **Completa la configuracion**
+   - Haz clic en "Finalizar configuracion". La insignia de "Comunidad" aparecera en tu servidor una vez que se complete la activacion.
 
-![Discord Community activation screenshot](../../../../en/docusaurus-plugin-content-docs/version-3.1.0/assets/rp-enable-community.webp)
+![Captura de pantalla de activacion de Comunidad de Discord](../../../../en/docusaurus-plugin-content-docs/version-3.1.0/assets/rp-enable-community.webp)
 
-## 💡 Use DM Lock & Raid Mode modules after activation {#use}
+## 💡 Usar los modulos DM Lock y Modo Raid despues de la activacion {#use}
 
-- Run the [`/settings`](../setup.md#settings) command to open the RaidProtect configuration menu.
-- Enable or disable the desired modules (DM Lock, Raid Mode, etc.) from the interactive menu.
+- Ejecuta el comando [`/settings`](../setup.md#settings) para abrir el menu de configuracion de RaidProtect.
+- Activa o desactiva los modulos deseados (DM Lock, Modo Raid, etc.) desde el menu interactivo.

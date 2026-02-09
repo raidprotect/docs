@@ -1,61 +1,61 @@
 ---
-title: Reports
+title: Reportes
 ---
 
-The RaidProtect reporting system allows your community to quickly report any problematic content or suspicious users. It operates in two different ways and can be configured to optimize the reporting management process.
+El sistema de reportes de RaidProtect permite a tu comunidad reportar rapidamente cualquier contenido problematico o usuarios sospechosos. Funciona de dos maneras diferentes y puede configurarse para optimizar el proceso de gestion de reportes.
 
-## ❓ How Reporting Works {#working}
-Members can report content through 3 main methods.
+## ❓ Como funcionan los reportes {#working}
+Los miembros pueden reportar contenido a traves de 3 metodos principales.
 
-1. **Right-click on a message**  
-A member can right-click on a message they believe violates the rules, select **`Applications`**, and then click on **`Report Message`**. A popup will appear, allowing the user to add an explanation.
+1. **Clic derecho en un mensaje**
+Un miembro puede hacer clic derecho en un mensaje que crea que viola las reglas, seleccionar **`Aplicaciones`** y luego hacer clic en **`Reportar mensaje`**. Aparecera una ventana emergente que permite al usuario agregar una explicacion.
 
-2. **Right-click on a profile**  
-Similarly, a member can right-click on a profile they find problematic, choose **`Applications`**, and then click on **`Report Member`**. A popup will then open to allow the user to provide additional details about the situation.
+2. **Clic derecho en un perfil**
+De manera similar, un miembro puede hacer clic derecho en un perfil que considere problematico, elegir **`Aplicaciones`** y luego hacer clic en **`Reportar miembro`**. Se abrira una ventana emergente para permitir al usuario proporcionar detalles adicionales sobre la situacion.
 
-3. **Slash Command**  
-Members can also report a message or user via the **`/report`** command in any server channel.
+3. **Comando Slash**
+Los miembros tambien pueden reportar un mensaje o usuario mediante el comando **`/report`** en cualquier canal del servidor.
 
-Use the command: ```/report [@user] [reason]```
+Usa el comando: ```/report [@usuario] [motivo]```
 
-Replace `[@user]` with the desired user and `[reason]` with the reason for the infraction.
+Reemplaza `[@usuario]` con el usuario deseado y `[motivo]` con el motivo de la infraccion.
 
-## 🚩 Configuring Reports {#config}
+## 🚩 Configurar los reportes {#config}
 
-Before the reporting system is fully operational, it is imperative to configure a **report channel** where all reports will be sent. You need to set up a log or notification channel to receive alerts regarding reports.
+Antes de que el sistema de reportes sea completamente operativo, es imprescindible configurar un **canal de reportes** donde se enviaran todos los reportes. Necesitas configurar un canal de registros o notificaciones para recibir alertas sobre los reportes.
 
-### Setting Up the Channel {#config-channel}
+### Configurar el canal {#config-channel}
 
-1. Use the [command `/settings`](../setup.md#settings).
-2. Select the **Reports** button.
-3. Click on the **Channel** button.
-4. Choose the desired channel (_e.g. #reports_).  
-If you do not have a suitable channel, you can opt to create one automatically using the **Create one for me** button.
+1. Usa el [comando `/settings`](../setup.md#settings).
+2. Selecciona el boton **Reportes**.
+3. Haz clic en el boton **Canal**.
+4. Elige el canal deseado (_ej. #reportes_).
+Si no tienes un canal adecuado, puedes optar por crear uno automaticamente usando el boton **Crear uno por mi**.
 
-[Screenshot report settings](../../../../en/docusaurus-plugin-content-docs/version-3.1.0/assets/rpBeta-settings-reports.webp)
+[Captura de pantalla de configuracion de reportes](../../../../en/docusaurus-plugin-content-docs/version-3.1.0/assets/rpBeta-settings-reports.webp)
 
-### Configuring the Notification Role {#config-role}
+### Configurar el rol de notificacion {#config-role}
 
-1. Use the [command `/settings`](../setup.md#settings).
-2. Select the **Reports** button.
-3. Click on the **Role** button.
-4. Choose the desired role (_e.g. @Moderator or @Report Ping_).  
-If you do not have a suitable role, you can opt to create one automatically with the **Create one for me** button.
+1. Usa el [comando `/settings`](../setup.md#settings).
+2. Selecciona el boton **Reportes**.
+3. Haz clic en el boton **Rol**.
+4. Elige el rol deseado (_ej. @Moderador o @Ping de reportes_).
+Si no tienes un rol adecuado, puedes optar por crear uno automaticamente con el boton **Crear uno por mi**.
 
 :::warning
-The channel should be restricted to moderators and administrators to ensure proper management of reports.
+El canal debe estar restringido a moderadores y administradores para asegurar la gestion adecuada de los reportes.
 :::
 
-## Managing Reports {#manage}
+## Gestionar los reportes {#manage}
 
-As a community moderator, you can choose to accept or reject a report.
+Como moderador de la comunidad, puedes elegir aceptar o rechazar un reporte.
 
-- **✅ Accept a report:** If the report is valid, click the “Accept” button under the alert. This button does not trigger any specific action but indicates to other moderators that you consider this report to be handled, fostering coordination and organization.
+- **✅ Aceptar un reporte:** Si el reporte es valido, haz clic en el boton "Aceptar" debajo de la alerta. Este boton no desencadena ninguna accion especifica, pero indica a otros moderadores que consideras que este reporte ha sido atendido, fomentando la coordinacion y organizacion.
 
-- **👁️ View Context:** To view the reported message and see the context, click “View Message” under the alert.
+- **👁️ Ver contexto:** Para ver el mensaje reportado y su contexto, haz clic en "Ver mensaje" debajo de la alerta.
 
-- **❌ Reject a report:** If the report is not legitimate, click the “Reject” button under the alert. Similar to the “Accept” button, no specific action is associated with this button; it merely informs other moderators of your decision.
+- **❌ Rechazar un reporte:** Si el reporte no es legitimo, haz clic en el boton "Rechazar" debajo de la alerta. Similar al boton "Aceptar", no se asocia ninguna accion especifica con este boton; simplemente informa a otros moderadores de tu decision.
 
 :::note
-Ensure that your moderators are well-trained in using this feature and encourage your active members to use it responsibly!
+¡Asegurate de que tus moderadores esten bien capacitados en el uso de esta funcion y anima a tus miembros activos a usarla de manera responsable!
 :::

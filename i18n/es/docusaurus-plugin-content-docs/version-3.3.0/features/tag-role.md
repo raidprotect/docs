@@ -21,7 +21,7 @@ La configuracion solo toma unos clics:
 3. Selecciona un rol existente mediante el selector o haz clic en "**Crear uno por mi**".
 4. Puedes deseleccionar el rol en cualquier momento haciendo clic en el boton "**Restablecer**".
 
-[Captura de pantalla de la configuracion del Rol de etiqueta](../assets/rp-settings-tag-role.webp)
+[Captura de pantalla de la configuracion del Rol de etiqueta](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-tag-role.webp)
 
 :::tip
 Los miembros recibiran el rol la proxima vez que actualicen su perfil (Nombre de usuario, Avatar, Banner, Roles, Etiqueta...). Puedes [contactar al soporte](https://raidprotect.bot/discord) para solicitar una sincronizacion completa de roles si tienes muchos miembros que actualmente tienen o tuvieron anteriormente la etiqueta.

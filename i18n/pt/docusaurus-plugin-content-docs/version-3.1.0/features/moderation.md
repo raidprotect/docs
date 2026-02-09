@@ -1,27 +1,27 @@
 ---
-title: Moderation
+title: Moderacao
 ---
 
-To facilitate the work of your moderators, RaidProtect integrates very useful moderation commands that allow you to interact directly with Discord's native features, such as **banning** and **kicking** users.
+Para facilitar o trabalho dos seus moderadores, o RaidProtect integra comandos de moderacao muito uteis que lhe permitem interagir diretamente com as funcionalidades nativas do Discord, como **banir** e **expulsar** utilizadores.
 
-In addition to these actions, RaidProtect sends direct messages to the sanctioned user to explain the reason for their sanction, and this is also recorded in the server logs for your reference.
+Alem destas acoes, o RaidProtect envia mensagens diretas ao utilizador sancionado para explicar o motivo da sua sancao, e isto e igualmente registado nos registos do servidor para sua referencia.
 
 :::info
-Moderation commands are [usable by prefix](../guides/prefix.md).
+Os comandos de moderacao sao [utilizaveis por prefixo](../guides/prefix.md).
 :::
 
-## 🔨 Ban a User {#ban}
+## 🔨 Banir um utilizador {#ban}
 
-Use the command: ```/ban [@user] [reason]```
+Utilize o comando: ```/ban [@utilizador] [motivo]```
 
-Replace `[@user]` with the desired mention or ID and `[reason]` with the reason for the sanction.
+Substitua `[@utilizador]` pela mencao ou ID pretendido e `[motivo]` pelo motivo da sancao.
 
 :::tip
-You can ban a user using their [Discord ID](https://dfr.gg/wiki/interface/mode-developpeur), even if they are not currently online or present on your server.
+Pode banir um utilizador atraves do seu [ID do Discord](https://dfr.gg/wiki/interface/mode-developpeur), mesmo que nao esteja atualmente online ou presente no seu servidor.
 :::
 
-## 👢 Kick a User {#kick}
+## 👢 Expulsar um utilizador {#kick}
 
-Use the command: ```/kick [@user] [reason]```
+Utilize o comando: ```/kick [@utilizador] [motivo]```
 
-Replace `[@user]` with the desired mention or ID and `[reason]` with the reason for the sanction.
+Substitua `[@utilizador]` pela mencao ou ID pretendido e `[motivo]` pelo motivo da sancao.

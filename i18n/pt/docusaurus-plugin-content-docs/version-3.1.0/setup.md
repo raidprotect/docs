@@ -1,53 +1,53 @@
 ---
-title: Installation
+title: Instalacao
 ---
 
-RaidProtect simplifies server management with two powerful tools: the [`/setup`](#install) command for a step-by-step guided setup and the [`/settings`](#settings) command to adjust your settings at any time through a centralized menu. This installation guide explains how to use them effectively.
+O RaidProtect simplifica a gestao do servidor com duas ferramentas poderosas: o comando [`/setup`](#install) para uma configuracao guiada passo a passo e o comando [`/settings`](#settings) para ajustar as suas definicoes a qualquer momento atraves de um menu centralizado. Este guia de instalacao explica como utiliza-los de forma eficaz.
 
-## Guided Installation {#install}
+## Instalacao guiada {#install}
 
-The `/setup` command is designed to help you configure RaidProtect quickly or through a detailed approach, depending on your needs. It offers two configuration modes: [recommended](#recommended) or [advanced](#advanced).
+O comando `/setup` foi concebido para o ajudar a configurar o RaidProtect rapidamente ou de forma detalhada, consoante as suas necessidades. Oferece dois modos de configuracao: [recomendada](#recommended) ou [avancada](#advanced).
 
-### 🔧 Recommended Configuration {#recommended}
+### 🔧 Configuracao recomendada {#recommended}
 
-Allows you to enable or disable core features at a glance using an interactive selection menu.
+Permite-lhe ativar ou desativar as funcionalidades principais de forma rapida atraves de um menu de selecao interativo.
 
-1. Use the `/setup` command.
-2. Select the “**Recommended Configuration**” button.
-3. Enable or disable the desired features using the selection menu.
+1. Utilize o comando `/setup`.
+2. Selecione o botao "**Configuracao recomendada**".
+3. Ative ou desative as funcionalidades desejadas atraves do menu de selecao.
 
-The bot will then send you a summary of the activated features and the changes it will make to the server.
+O bot enviar-lhe-a um resumo das funcionalidades ativadas e das alteracoes que fara no servidor.
 
-### 🛠️ Advanced Configuration {#advanced}
+### 🛠️ Configuracao avancada {#advanced}
 
-If you want to configure the bot more thoroughly, opt for the advanced configuration. The bot guides you step by step with clear explanations.
+Se pretender configurar o bot de forma mais completa, opte pela configuracao avancada. O bot guia-o passo a passo com explicacoes claras.
 
-1. Use the `/setup` command.
-2. Select the “**Advanced Configuration**” button.
-3. Each step introduces a feature, its purpose, and a recommended minimum configuration.
-4. Use the “**Previous**” and “**Next**” buttons to move forward or go back.
+1. Utilize o comando `/setup`.
+2. Selecione o botao "**Configuracao avancada**".
+3. Cada passo apresenta uma funcionalidade, o seu proposito e uma configuracao minima recomendada.
+4. Utilize os botoes "**Anterior**" e "**Seguinte**" para avancar ou retroceder.
 
-At the end, a summary of the settings is displayed to confirm your choices.
+No final, e apresentado um resumo das definicoes para confirmar as suas escolhas.
 
-## Modifying the Configuration {#settings}
+## Modificar a configuracao {#settings}
 
-The `/settings` command is the go-to command for managing your settings after installation. It allows you to view, adjust, or customize RaidProtect's features at any time, in a simple and fast way.
+O comando `/settings` e o comando principal para gerir as suas definicoes apos a instalacao. Permite-lhe visualizar, ajustar ou personalizar as funcionalidades do RaidProtect a qualquer momento, de forma simples e rapida.
 
-### 🔍 Settings Menu {#menu}
+### 🔍 Menu de definicoes {#menu}
 
-1. Type `/settings` in a channel where the bot is active.
-2. Easily navigate between different sections to find the settings you want to modify.
-3. Adjust the options: Each category presents a list of customizable options in the form of buttons or dropdown menus.
+1. Escreva `/settings` num canal onde o bot esteja ativo.
+2. Navegue facilmente entre as diferentes seccoes para encontrar as definicoes que pretende modificar.
+3. Ajuste as opcoes: cada categoria apresenta uma lista de opcoes personalizaveis sob a forma de botoes ou menus pendentes.
 
-![Settings Screenshot](../../../en/docusaurus-plugin-content-docs/version-3.1.0/assets/rpBeta-settings.webp)
+![Captura de ecra das definicoes](../../../en/docusaurus-plugin-content-docs/version-3.1.0/assets/rpBeta-settings.webp)
 
-### 🔄 Resetting a Setting {#reset}
+### 🔄 Repor uma definicao {#reset}
 
-1. Navigate to the desired setting.
-2. Click on “**Reset**”.
+1. Navegue ate a definicao pretendida.
+2. Clique em "**Repor**".
 
-The bot will confirm the reset before applying the changes.
+O bot confirmara a reposicao antes de aplicar as alteracoes.
 
-:::info Configuration Issue?
-If you encounter a problem, check the [Malfunctions](./guides/malfunctions) section or join our [support server](https://raidprotect.bot/discord) for assistance.
+:::info Problema de configuracao?
+Se encontrar um problema, consulte a seccao [Anomalias](./guides/malfunctions) ou junte-se ao nosso [servidor de suporte](https://raidprotect.bot/discord) para obter ajuda.
 :::

@@ -1,27 +1,27 @@
 ---
-title: Moderation
+title: Moderacion
 ---
 
-To facilitate the work of your moderators, RaidProtect integrates very useful moderation commands that allow you to interact directly with Discord's native features, such as **banning** and **kicking** users.
+Para facilitar el trabajo de tus moderadores, RaidProtect integra comandos de moderacion muy utiles que te permiten interactuar directamente con las funciones nativas de Discord, como **banear** y **expulsar** usuarios.
 
-In addition to these actions, RaidProtect sends direct messages to the sanctioned user to explain the reason for their sanction, and this is also recorded in the server logs for your reference.
+Ademas de estas acciones, RaidProtect envia mensajes directos al usuario sancionado para explicar el motivo de su sancion, y esto tambien se registra en los registros del servidor para tu referencia.
 
 :::info
-Moderation commands are [usable by prefix](../guides/prefix.md).
+Los comandos de moderacion son [utilizables por prefijo](../guides/prefix.md).
 :::
 
-## 🔨 Ban a User {#ban}
+## 🔨 Banear a un usuario {#ban}
 
-Use the command: ```/ban [@user] [reason]```
+Usa el comando: ```/ban [@usuario] [motivo]```
 
-Replace `[@user]` with the desired mention or ID and `[reason]` with the reason for the sanction.
+Reemplaza `[@usuario]` con la mencion o ID deseado y `[motivo]` con el motivo de la sancion.
 
 :::tip
-You can ban a user using their [Discord ID](https://dfr.gg/wiki/interface/mode-developpeur), even if they are not currently online or present on your server.
+Puedes banear a un usuario usando su [ID de Discord](https://dfr.gg/wiki/interface/mode-developpeur), incluso si no esta actualmente en linea o presente en tu servidor.
 :::
 
-## 👢 Kick a User {#kick}
+## 👢 Expulsar a un usuario {#kick}
 
-Use the command: ```/kick [@user] [reason]```
+Usa el comando: ```/kick [@usuario] [motivo]```
 
-Replace `[@user]` with the desired mention or ID and `[reason]` with the reason for the sanction.
+Reemplaza `[@usuario]` con la mencion o ID deseado y `[motivo]` con el motivo de la sancion.

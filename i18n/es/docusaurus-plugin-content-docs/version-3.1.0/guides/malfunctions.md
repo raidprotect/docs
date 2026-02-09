@@ -1,61 +1,61 @@
 ---
-title: Malfunctions
+title: Problemas frecuentes
 ---
 
-Having an issue with RaidProtect? The solution is likely here.
+¿Tienes un problema con RaidProtect? La solucion probablemente esta aqui.
 
-Sometimes things don't work as expected. Here are the **most common problems** you may encounter, along with how to solve them. 🤗 
+A veces las cosas no funcionan como se espera. Aqui estan los **problemas mas comunes** que puedes encontrar, junto con como resolverlos. 🤗
 
-If this page does not answer a problem you're experiencing, [**feel free to contact our support**](https://raidprotect.bot/discord) who will be happy to help you!
+Si esta pagina no responde a un problema que estas experimentando, [**no dudes en contactar a nuestro soporte**](https://raidprotect.bot/discord) quienes estaran encantados de ayudarte.
 
-## The bot shows an error when I run a command {#commands}
+## El bot muestra un error cuando ejecuto un comando {#commands}
 
-If the command does not execute successfully, **RaidProtect may display an error** instead of the expected result. In most cases, there will be an indication in the message, but it may be a more generic message. Here’s how to resolve this issue in most cases. 🧐 
+Si el comando no se ejecuta correctamente, **RaidProtect puede mostrar un error** en lugar del resultado esperado. En la mayoria de los casos, habra una indicacion en el mensaje, pero puede ser un mensaje mas generico. Asi es como resolver este problema en la mayoria de los casos. 🧐
 
-- **Do what is indicated.** Some errors clearly explain the problem. If the bot asks you to do something, please do it.
+- **Haz lo que se indica.** Algunos errores explican claramente el problema. Si el bot te pide que hagas algo, por favor hazlo.
 
-- **Check the command parameters.** The command might simply be misspelled; check the help on how to use it. Remember that brackets ([]) are not to be included.
+- **Verifica los parametros del comando.** El comando podria simplemente estar mal escrito; revisa la ayuda sobre como usarlo. Recuerda que los corchetes ([]) no deben incluirse.
 
-- **Check the bot's permissions.** The bot must have **Administrator** permission and be at the administrator level in the role hierarchy.
+- **Verifica los permisos del bot.** El bot debe tener permiso de **Administrador** y estar al nivel de administrador en la jerarquia de roles.
 
-- **Retry the command.** Sometimes the issue resolves itself for unknown reasons.
+- **Reintenta el comando.** A veces el problema se resuelve solo por razones desconocidas.
 
-If you continue to receive an error despite following these tips, [contact our support](https://raidprotect.bot/discord) so we can assist you. 🤝 
+Si continuas recibiendo un error a pesar de seguir estos consejos, [contacta a nuestro soporte](https://raidprotect.bot/discord) para que podamos ayudarte. 🤝
 
-## The bot's log channel didn't create itself {#logs}
+## El canal de registros del bot no se creo {#logs}
 
-To notify you of the actions it takes, RaidProtect needs a log channel. This channel is created automatically when the bot first joins, but sometimes no channel is created. Here’s how to remedy this issue. ⚙️ 
+Para notificarte de las acciones que realiza, RaidProtect necesita un canal de registros. Este canal se crea automaticamente cuando el bot se une por primera vez, pero a veces no se crea ningun canal. Asi es como remediar este problema. ⚙️
 
-- **Ensure the bot is an Administrator.** For the bot to function properly, it must be given Administrator permission. If this is not done, go to the role settings and grant this permission to the RaidProtect role. You then just need to manually initialize the bot for everything to work (see below)!
+- **Asegurate de que el bot sea Administrador.** Para que el bot funcione correctamente, se le debe otorgar el permiso de Administrador. Si esto no se ha hecho, ve a la configuracion de roles y otorga este permiso al rol de RaidProtect. ¡Luego solo necesitas inicializar manualmente el bot para que todo funcione (ver abajo)!
 
-- **Check that the bot is properly initialized.** This is usually done automatically, but you can force this initialization with the [command `/setup`](../setup.md#install). The log channel should be created automatically.
+- **Verifica que el bot este correctamente inicializado.** Esto normalmente se hace automaticamente, pero puedes forzar esta inicializacion con el [comando `/setup`](../setup.md#install). El canal de registros deberia crearse automaticamente.
 
-- **Manually set a channel.** If nothing works, don’t panic; you can manually choose the channel the bot will use for logs! Once a dedicated channel is created, execute the [command /settings](../setup.md#settings) and then select Logs.
+- **Configura un canal manualmente.** Si nada funciona, no entres en panico; ¡puedes elegir manualmente el canal que el bot usara para registros! Una vez creado un canal dedicado, ejecuta el [comando /settings](../setup.md#settings) y luego selecciona Registros.
 
-## A user spammed, but the bot did not sanction them {#anti-spam}
+## Un usuario hizo spam, pero el bot no lo sanciono {#anti-spam}
 
-The [anti-spam](../features/anti-spam.md) feature is one of RaidProtect's main functionalities, and it can be frustrating if it’s not working. But rest assured, most of the time it’s nothing serious. 😇 
+La funcion de [anti-spam](../features/anti-spam.md) es una de las principales funcionalidades de RaidProtect, y puede ser frustrante si no esta funcionando. Pero no te preocupes, la mayoria de las veces no es nada grave. 😇
 
-- **If the anti-spam asks to stop the spam but does not sanction,** this is likely due to a lack of permissions. Remember, the bot must have Administrator permission and must be at the administrator level in the role hierarchy.
+- **Si el anti-spam pide que se detenga el spam pero no sanciona,** esto probablemente se debe a falta de permisos. Recuerda, el bot debe tener permiso de Administrador y debe estar al nivel de administrador en la jerarquia de roles.
 
-- **Check the anti-spam configuration.** It’s quite simple, but some forget that they have ignored a channel.
+- **Verifica la configuracion del anti-spam.** Es bastante simple, pero algunos olvidan que han ignorado un canal.
 
-- **Check the spammer's permissions.** Administrators are ignored, so if you’re testing the anti-spam on your own server, it may not detect you.
+- **Verifica los permisos del spammer.** Los administradores son ignorados, asi que si estas probando el anti-spam en tu propio servidor, puede que no te detecte.
 
-- **Is the spam long enough?** The bot generally only detects spam if it’s more than 5 messages. Don’t be too hasty.
+- **¿El spam es lo suficientemente largo?** El bot generalmente solo detecta spam si son mas de 5 mensajes. No seas demasiado apresurado.
 
-If spam is still not detected, [contact us on our support server](https://raidprotect.bot/discord) with a **screenshot of the issue**.
+Si el spam aun no es detectado, [contactanos en nuestro servidor de soporte](https://raidprotect.bot/discord) con una **captura de pantalla del problema**.
 
-## Users have access to the server without completing the captcha {#captcha}
+## Los usuarios tienen acceso al servidor sin completar el captcha {#captcha}
 
-This problem is relatively common, but it depends on **your server configuration**. Let’s see how to fix it. 🏥 
+Este problema es relativamente comun, pero depende de **la configuracion de tu servidor**. Veamos como solucionarlo. 🏥
 
-- **Do you have an auto role?** If you have set up a bot (other than RaidProtect) to give a role to newcomers on your server, this may interfere with the captcha. Replace it with the [RaidProtect autorole](../features/captcha.md#autorole). 
+- **¿Tienes un rol automatico?** Si has configurado un bot (diferente a RaidProtect) para dar un rol a los nuevos miembros de tu servidor, esto puede interferir con el captcha. Reemplazalo con el [autorole de RaidProtect](../features/captcha.md#autorole).
 
-- **Have you activated the captcha?** This is a completely optional feature that requires you to execute a command to enable it. Check the [dedicated captcha documentation page](../features/captcha.md#config) for more information.
+- **¿Has activado el captcha?** Esta es una funcion completamente opcional que requiere que ejecutes un comando para habilitarla. Consulta la [pagina de documentacion dedicada al captcha](../features/captcha.md#config) para mas informacion.
 
-## Users can still talk when I lock a channel {#lock}
+## Los usuarios aun pueden hablar cuando bloqueo un canal {#lock}
 
-The lock command seems magical, but it has its weaknesses. As [noted in this documentation](../features/channel-lock.md#lock), the command **only affects the @everyone role**. This means that if there is a role in the channel you want to lock that explicitly has permission to speak, they will still be able to do so. A picture is worth a thousand words, so here’s what that looks like in practice. 🔍 
+El comando lock parece magico, pero tiene sus debilidades. Como se [indica en esta documentacion](../features/channel-lock.md#lock), el comando **solo afecta al rol @everyone**. Esto significa que si hay un rol en el canal que deseas bloquear que tiene permiso explicito para hablar, seguiran pudiendo hacerlo. Una imagen vale mas que mil palabras, asi que aqui esta como se ve en la practica. 🔍
 
-[Screenshot of channel lock configuration](../../../../en/docusaurus-plugin-content-docs/version-3.1.0/assets/lock-channel-messages-raidprotect.png)
+[Captura de pantalla de configuracion de bloqueo de canal](../../../../en/docusaurus-plugin-content-docs/version-3.1.0/assets/lock-channel-messages-raidprotect.png)

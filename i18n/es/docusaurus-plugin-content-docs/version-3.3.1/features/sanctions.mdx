@@ -1,0 +1,196 @@
+---
+title: Historial de sanciones
+---
+
+import Icon from "@site/src/components/Icon";
+
+El historial de sanciones de RaidProtect te permite rastrear y gestionar todas las sanciones aplicadas en tu servidor. Este sistema centraliza todas las acciones de moderacion en una base de datos consultable y editable, facilitando el trabajo de tu equipo de moderacion.
+
+## ❓ Como funciona el historial {#working}
+
+El historial de sanciones registra automaticamente todas las acciones de moderacion realizadas en tu servidor:
+
+- **Sanciones manuales**: Todos los comandos de moderacion (`/ban`, `/tempban`, `/kick`, `/timeout`, `/warn`) se registran automaticamente en el historial.
+- **Sanciones automaticas**: Las sanciones aplicadas por el anti-spam tambien se agregan al historial de sanciones.
+- **Baneos, expulsiones y timeouts**: Las sanciones aplicadas sin usar RaidProtect se agregan al historial.
+- **Automod de Discord**: Las sanciones aplicadas por el automod de Discord tambien se agregan.
+- **Notificaciones de sanciones**: Los miembros sancionados reciben un mensaje privado informandoles sobre la sancion y su razon. El bot tambien envia un acuse de recibo confirmando el envio de esta notificacion.
+
+:::info
+Todas las sanciones registradas contienen: el usuario sancionado, el moderador responsable, la razon (hasta 512 caracteres), la fecha y hora, asi como el tipo de sancion y si el usuario fue notificado.
+:::
+
+## 🔍 Buscar sanciones {#search}
+
+El comando `/sanctions search` te permite buscar sanciones en el historial segun diferentes criterios.
+
+Usa el comando: ```/sanctions search [user] [moderator] [type] [date] [status] [moderator_type]```
+
+- `[user]`: Buscar todas las sanciones de un usuario especifico.
+- `[moderator]`: Buscar todas las sanciones aplicadas por un moderador especifico.
+- `[type]`: Filtrar por tipo de sancion (Ban, Softban, Unban, Kick, Timeout, Untimeout, Warn, Jail, Unjail, Mute, Unmute).
+- `[date]`: Filtrar por fecha de sancion.
+- `[status]`: Filtrar por estado de sancion (Activa, Expirada, Cancelada, Fallida).
+- `[moderator_type]`: Filtrar por tipo de moderador (Acciones humanas, Acciones automatizadas, RaidProtect, Discord, Antispam, etc.).
+
+![Captura de pantalla de la busqueda de sanciones](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-search.webp)
+
+:::tip
+Puedes combinar multiples criterios para refinar tu busqueda. Por ejemplo, buscar todos los baneos realizados por un moderador especifico.
+:::
+
+## ℹ️ Ver una sancion {#info}
+
+El comando `/sanctions info` te permite obtener informacion detallada sobre una sancion especifica.
+
+Usa el comando: ```/sanctions info (id)```
+
+Reemplaza `(id)` con el identificador de la sancion que deseas ver.
+
+![Captura de pantalla de la informacion de una sancion](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-info.webp)
+
+## ✏️ Editar una sancion {#edit}
+
+El comando `/sanctions edit` te permite modificar la razon de una sancion existente, util para corregir un error o agregar detalles.
+
+Usa el comando: ```/sanctions edit (id) (new_reason)```
+
+Reemplaza `(id)` con el identificador de la sancion a modificar y `(new_reason)` con la nueva razon (maximo 512 caracteres).
+
+![Captura de pantalla de la edicion de una sancion](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-edit.webp)
+
+:::warning
+Editar una sancion actualiza el registro en el historial pero no cambia la sancion aplicada en Discord (por ejemplo, un usuario baneado seguira baneado).
+:::
+
+## 🗑️ Eliminar una sancion {#delete}
+
+El comando `/sanctions delete` te permite eliminar una sancion del historial. Esta accion es irreversible.
+
+Usa el comando: ```/sanctions delete (id)```
+
+Reemplaza `(id)` con el identificador de la sancion a eliminar.
+
+![Captura de pantalla de la eliminacion de una sancion](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-delete.webp)
+
+## Estados de las sanciones {#status}
+
+Las sanciones pueden tener diferentes estados:
+
+| **Estado**    | **Emojis**                                                                                                                  | **Significados**                                              |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------| ------------------------------------------------------------- |
+| `Activa`      | <Icon src="/img/icons/SanctionStatusACTIVE.svg" alt="icon SanctionStatusACTIVE" title=":iconSanctionStatusACTIVE:"/>        | La sancion esta en curso.                                     |
+| `Expirada`    | <Icon src="/img/icons/SanctionStatusEXPIRED.svg" alt="icon SanctionStatusEXPIRED" title=":iconSanctionStatusEXPIRED:"/>     | La sancion ha expirado.                                       |
+| `Cancelada`   | <Icon src="/img/icons/SanctionStatusCANCELED.svg" alt="icon SanctionStatusCANCELED" title=":iconSanctionStatusCANCELED:"/>  | La sancion ha sido cancelada por un moderador.                |
+| `Fallida`     | <Icon src="/img/icons/SanctionStatusFAILED.svg" alt="icon SanctionStatusFAILED" title=":iconSanctionStatusFAILED:"/>        | La sancion ha fallado (permisos insuficientes).               |
+
+### Manejo de duplicados {#duplicates}
+
+Cuando se encuentra una sancion activa y previa, puedes:
+
+- **Fusionar** las dos sanciones: las duraciones se sumaran si es posible y las razones se concatenaran.
+- **Cancelar** la sancion activa y crear una nueva sancion.
+- **Sobrescribir** la sancion activa con la informacion de la sancion ingresada.
+
+![Captura de pantalla de la gestion de estados de sanciones](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-active-found.webp)
+
+## ⚙️ Configuracion de sanciones {#config}
+
+### Calabozo {#jail}
+
+Configura el **Calabozo** para habilitar una sancion de moderacion basada en roles, mas restrictiva que un silencio estandar. Una vez configurado, este rol te permite aislar a un miembro con permisos severamente limitados y desbloquea el uso de los comandos [`/jail`](./moderation.mdx#jail) y [`/tempjail`](./moderation.mdx#tempjail).
+
+1. Usa el [comando `/settings`](../setup.md#settings).
+2. Haz clic en el boton "**Sanciones**".
+3. Selecciona "**Calabozo**".
+4. Elige un rol existente mediante el selector o haz clic en "**Crear uno para mi**".
+
+Al crear el rol, tambien puedes configurar el **canal de informacion del Calabozo**:
+
+- **Seleccionar un canal existente** para mostrar informacion destinada a los miembros encarcelados.
+- **Crear un nuevo canal** ingresando un nombre (predeterminado: `acceso-restringido`).
+
+Este canal corresponde al espacio reservado en los [paneles de informacion](./display.mdx), gestionado automaticamente por la configuracion del Calabozo.
+
+:::info
+Si ya hay un rol de Calabozo configurado, puedes modificar el canal de informacion mediante el boton dedicado en el submenu del Calabozo.
+:::
+
+### Rol de Silencio {#mute}
+
+Configura el **rol de Silencio** para usar una sancion basada en roles en lugar del timeout de Discord para duraciones extendidas. Cuando la duracion del silencio excede el umbral definido, el bot asignara automaticamente el rol de Silencio al miembro en lugar de aplicar un timeout de Discord.
+
+1. Usa el [comando `/settings`](../setup.md#settings).
+2. Haz clic en el boton "**Sanciones**".
+3. Selecciona "**Rol de Silencio**".
+4. Elige un rol existente mediante el selector o haz clic en "**Crear uno para mi**".
+
+#### Umbral de Silencio {#mute-threshold}
+
+Configura el **umbral del rol de Silencio** para definir a partir de que duracion el bot usara un silencio basado en roles en lugar del timeout de Discord. Cuando la duracion del silencio excede este umbral, el rol de Silencio se aplica automaticamente. Un valor de 0 desactiva completamente el uso del timeout.
+
+1. Usa el [comando `/settings`](../setup.md#settings).
+2. Haz clic en el boton "**Sanciones**".
+3. Selecciona "**Umbral de Silencio**".
+4. Elige un valor del selector o ingresa un valor personalizado.
+
+:::info
+El limite de 28 dias para el timeout es impuesto por Discord. Mas alla de esta duracion, el rol de Silencio siempre sera utilizado si esta configurado.
+:::
+
+### Privacidad de sanciones {#sanctions-privacy}
+
+Configura el nivel de privacidad de las sanciones para controlar a que informacion pueden acceder los miembros respecto a **sus propias sanciones**, mediante el comando [`/my-sanctions`](./utilities.mdx#my-sanctions) o el boton **Ver mis sanciones**.
+
+1. Usa el [comando `/settings`](../setup.md#settings).
+2. Haz clic en el boton "**Sanciones**".
+3. Selecciona "**Privacidad de sanciones**".
+4. Elige el nivel de acceso deseado:
+
+| **Nivel**                           | **Descripcion**                                                                                     |
+| ----------------------------------- | --------------------------------------------------------------------------------------------------- |
+| Desactivado                         | Los miembros no pueden ver sus sanciones personales.                                                |
+| Solo sanciones                      | Los miembros solo pueden ver sus sanciones y el tiempo restante, si aplica.                         |
+| Con razones                         | Los miembros pueden ver sus sanciones junto con las razones, sin la identidad del moderador.        |
+| Con razones y moderadores           | Los miembros pueden ver toda la informacion: sanciones, razones y moderadores.                      |
+
+:::note
+Independientemente del nivel seleccionado, **los moderadores conservan acceso completo** al historial de sanciones mediante las herramientas de moderacion.
+:::
+
+### Mostrar medios {#show-medias}
+
+Configura la visualizacion de medios en las razones de sanciones. Cuando esta opcion esta desactivada, los enlaces que contienen las siguientes extensiones se eliminan automaticamente de las razones de sanciones cuando se muestran a los miembros (mediante [`/my-sanctions`](./utilities.mdx#my-sanctions) o notificaciones de sanciones):
+
+`png`, `jpg`, `jpeg`, `gif`, `webp`, `webm`, `mp4`
+
+1. Usa el [comando `/settings`](../setup.md#settings).
+2. Haz clic en el boton "**Sanciones**".
+3. Haz clic en el boton "**Mostrar medios**" para activar o desactivar la opcion.
+
+## 📊 Registros de sanciones {#logs}
+
+Para una mejor organizacion, puedes configurar un canal de registros dedicado especificamente a las sanciones, separado de tus registros generales.
+
+![Captura de pantalla de la configuracion de registros de sanciones](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-logs.webp)
+
+### Configurar el canal de registros de sanciones {#config-logs}
+
+![Captura de pantalla de la configuracion de registros de sanciones](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-sanctions-logs.webp)
+
+1. Usa el [comando `/settings`](../setup.md#settings).
+2. Haz clic en el boton "**Registros**".
+3. Selecciona "**Moderacion**".
+4. Elige el canal en el que se enviaran los registros de sanciones o usa el boton "**Crear uno para mi**".
+
+:::note
+Tambien puedes elegir si RaidProtect registra las acciones realizadas por usuarios sin pasar por el bot.
+:::
+
+### Logica de colores {#logs-color}
+
+![Configuracion de registros de sanciones](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-logs-color.webp)
+
+## 📦 Importar / Exportar sanciones {#import-export}
+
+RaidProtect te permite importar o exportar el historial de sanciones de tu servidor. Para hacerlo, visita nuestro [servidor de soporte](https://raidprotect.bot/discord) y envia un mensaje privado al bot de soporte (en la parte superior de la lista de miembros), que te guiara a traves del proceso.

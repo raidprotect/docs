@@ -1,0 +1,143 @@
+---
+title: Moderation
+---
+
+import Icon from "@site/src/components/Icon";
+
+Um die Arbeit deiner Moderatoren zu erleichtern, integriert RaidProtect sehr nützliche Moderationsbefehle, mit denen du direkt auf die nativen Funktionen von Discord zugreifen kannst, wie etwa **Bannen** und **Kicken** von Nutzern.
+
+Zusätzlich zu diesen Aktionen sendet RaidProtect dem sanktionierten Nutzer eine Direktnachricht, um den Grund der Sanktion zu erläutern. Dies wird auch in den Server-Logs vermerkt.
+
+:::info
+Moderationsbefehle sind [auch mit Prefix nutzbar](../guides/prefix).
+:::
+
+## 🖱️ Sanktionieren über das Kontextmenü {#context-menu}
+
+Neben Slash-Befehlen kannst du ein Mitglied auch direkt über sein Profil per Rechtsklick sanktionieren: **Anwendungen** → **RaidProtect** → **Sanktionieren**.
+
+Ein Fenster öffnet sich, in dem du Folgendes angeben kannst:
+- **Sanktionstyp**: Den Typ der zu verhängenden Sanktion auswählen.
+- **Dauer**: Eine Dauer angeben (optional, z. B.: `1d 2h 30m`).
+- **Grund**: Den Grund der Sanktion angeben.
+
+## <Icon src="/img/icons/SanctionsBAN.svg" alt="icon SanctionsBAN" title=":iconSanctionsBAN:"/> Einen Nutzer bannen {#ban}
+
+Der Befehl `/ban` ermöglicht es dir, einem Benutzer dauerhaft den Zugriff auf deinen Server zu verwehren.
+
+Verwende den Befehl: ```/ban (user) [reason]```
+
+Ersetze `(user)` durch die gewünschte Erwähnung oder ID und `[reason]` durch den Grund der Sanktion.
+
+:::tip
+Du kannst einen Nutzer über seine [Discord-ID](../guides/id) bannen, selbst wenn er nicht online ist oder deinen Server bereits verlassen hat.
+:::
+
+### <Icon src="/img/icons/SanctionsBANTemp.svg" alt="icon SanctionsBANTemp" title=":iconSanctionsBANTemp:"/>  Einen Benutzer temporär bannen {#tempban}
+
+Der Befehl `/tempban` ermöglicht es dir, einem Benutzer vorübergehend den Zugriff auf deinen Server zu verwehren.
+
+Verwende den Befehl: ```/tempban (user) (duration) [reason]```
+
+Ersetze `(user)` durch die gewünschte Erwähnung oder ID, `(duration)` durch die Dauer der Sperre und `[reason]` durch den Grund der Sanktion.
+
+### <Icon src="/img/icons/SanctionsUNBAN.svg" alt="icon SanctionsUNBAN" title=":iconSanctionsUNBAN:"/> Benutzer entsperren {#unban}
+
+Der Befehl `/unban` ermöglicht es dir, die Sperre eines zuvor gesperrten Benutzers aufzuheben, sodass dieser deinem Server erneut beitreten kann.
+
+Verwende den Befehl: ```/unban (user) [reason]```
+
+Ersetze `(user)` durch die gewünschte Kennung und `[reason]` durch den Grund der Entsperrung.
+
+## <Icon src="/img/icons/SanctionsKICK.svg" alt="icon SanctionsKICK" title=":iconSanctionsKICK:" /> Einen Nutzer kicken {#kick}
+
+Der Befehl `/kick` ermöglicht es dir, ein Mitglied von deinem Server zu entfernen, ohne es zu bannen. Der Benutzer kann dem Server erneut beitreten, wenn er über eine gültige Einladung verfügt.
+
+Verwende den Befehl: ```/kick (member) [reason]```
+
+Ersetze `(member)` durch die gewünschte Erwähnung oder ID und `[reason]` durch den Grund der Sanktion.
+
+## <Icon src="/img/icons/SanctionsTIMEOUT.svg" alt="icon SanctionsTIMEOUT" title=":iconSanctionsTIMEOUT:" /> Einen Nutzer stummschalten (Mute) {#timeout}
+
+Der Befehl `/mute` ermöglicht es dir, die Interaktionsmöglichkeiten eines Mitglieds auf dem Server vorübergehend einzuschränken. Während dieser Zeit kann das Mitglied keine Nachrichten senden, nicht reagieren, keinen Sprachkanälen beitreten und keine Direktnachrichten an andere Mitglieder senden.
+
+Verwende den Befehl: ```/mute (member) (duration) [reason] [force_timeout]```
+
+Ersetze `(member)` durch die gewünschte Erwähnung oder ID, `(duration)` durch die Mute-Dauer (z. B.: `10m`, `1h`, `1d`) und `[reason]` durch den Grund der Sanktion.
+
+:::tip
+Der Parameter `[force_timeout]` ermöglicht es, die Schwellenwertregel zu umgehen und die Verwendung des Discord-Timeouts zu erzwingen, auch wenn eine Mute-Rolle konfiguriert ist.
+
+Du kannst eine [Mute-Rolle](./sanctions.mdx#mute) und einen [Mute-Schwellenwert](./sanctions.mdx#mute-threshold) unter `/settings` > Sanktionen konfigurieren. Über den definierten Schwellenwert hinaus wendet der Bot automatisch die Mute-Rolle anstelle des Discord-Timeouts an, was Dauern von mehr als 28 Tagen ermöglicht.
+:::
+
+### <Icon src="/img/icons/SanctionsUNTIMEOUT.svg" alt="icon SanctionsUNTIMEOUT" title=":iconSanctionsUNTIMEOUT:" /> Stummschaltung eines Nutzers aufheben {#untimeout}
+
+Der Befehl `/untimeout` ermöglicht es dir, die Einschränkungen eines stummgeschalteten Mitglieds sofort aufzuheben, sodass es alle Interaktionsmöglichkeiten auf dem Server wiedererlangt.
+
+Verwende den Befehl: ```/untimeout (member) [reason]```
+
+Ersetze `(member)` durch die gewünschte Erwähnung oder ID und `[reason]` durch den Grund für das Aufheben des Timeouts.
+
+## <Icon src="/img/icons/SanctionsJAIL.svg" alt="icon SanctionsJAIL" title=":iconSanctionsJAIL:" /> Einen Nutzer einsperren {#jail}
+
+Der Befehl `/jail` ermöglicht es dir, ein Mitglied zu isolieren, indem ihm eine restriktive Rolle zugewiesen wird. Die Jail soll eine Alternative zum Ban bieten: Das Mitglied behält einen sehr eingeschränkten Zugang zum Server, anstatt vollständig ausgeschlossen zu werden.
+
+Verwende den Befehl: ```/jail (member) [reason]```
+
+Ersetze `(member)` durch die gewünschte Erwähnung oder ID und `[reason]` durch den Grund der Sanktion.
+
+:::warning
+Die [Jail-Rolle](./sanctions.mdx#jail) muss über `/settings` konfiguriert werden, bevor du diesen Befehl verwenden kannst.
+:::
+
+### <Icon src="/img/icons/SanctionsJAILTemp.svg" alt="icon SanctionsJAILTemp" title=":iconSanctionsJAILTemp:" /> Einen Nutzer temporär einsperren {#tempjail}
+
+Der Befehl `/tempjail` ermöglicht es dir, ein Mitglied für eine festgelegte Dauer temporär einzusperren.
+
+Verwende den Befehl: ```/tempjail (member) (duration) [reason]```
+
+Ersetze `(member)` durch die gewünschte Erwähnung oder ID, `(duration)` durch die Dauer der Inhaftierung und `[reason]` durch den Grund der Sanktion.
+
+### <Icon src="/img/icons/SanctionsUNJAIL.svg" alt="icon SanctionsUNJAIL" title=":iconSanctionsUNJAIL:" /> Einen Nutzer freilassen {#unjail}
+
+Der Befehl `/unjail` ermöglicht es dir, die Jail-Rolle eines Mitglieds zu entfernen, sodass es wieder normalen Zugang zum Server erhält.
+
+Verwende den Befehl: ```/unjail (member) [reason]```
+
+Ersetze `(member)` durch die gewünschte Erwähnung oder ID und `[reason]` durch den Grund der Freilassung.
+
+## <Icon src="/img/icons/SanctionsWARN.svg" alt="icon SanctionsWARN" title=":iconSanctionsWARN:" /> Einen Nutzer verwarnen {#warn}
+
+Der Befehl `/warn` ermöglicht es dir, ein Mitglied formell zu verwarnen, indem der Bot eine private Nachricht sendet.
+
+Verwende den Befehl: ```/warn (member) [reason]```
+
+Ersetze `(member)` durch die gewünschte Erwähnung oder ID und `[reason]` durch den Grund der Verwarnung.
+
+## 🧹 Nachrichten eines Kanals löschen {#clear}
+
+Der Befehl `/clear` ermöglicht es dir, in einem Textkanal schnell eine bestimmte Anzahl von Nachrichten zu löschen. Du kannst auch einen Nutzer angeben, um nur seine Nachrichten zu entfernen.
+
+Verwende den Befehl: ```/clear (number) [user]```
+
+Ersetze `(number)` durch die Anzahl der zu löschenden Nachrichten (maximal 100). Füge `[user]` mit der entsprechenden Erwähnung oder ID hinzu, um nur seine Nachrichten im Kanal zu löschen.
+
+## 🕒 Slowmode in einem Kanal aktivieren {#slowmode}
+
+Der Befehl `/slowmode` ermöglicht es dir, den Slowmode in einem Textkanal zu aktivieren oder anzupassen, um die Häufigkeit der gesendeten Nachrichten der Nutzer zu begrenzen.
+
+Verwende den Befehl: ```/slowmode (duration) [channel] [reason]```
+
+- Ersetze `(duration)` durch das gewünschte Intervall zwischen den Nachrichten (z. B.: `5s`, `1m`, `10m`, `1h`).
+- Füge `[channel]` hinzu, wenn du den Slowmode in einem anderen Kanal anwenden möchtest als in dem, in dem du den Befehl eingibst.
+- Füge `[reason]` hinzu, um den Anlass anzugeben, der in den Server-Logs gespeichert wird.
+
+## 📋 Moderationsprotokolle {#logs}
+
+Standardmäßig werden die Moderationsprotokolle im Haupt-Log-Kanal von RaidProtect gesendet. Du kannst einen dedizierten Log-Kanal konfigurieren, um die Moderationsaktionen von den anderen Logs zu trennen.
+
+1. Nutze den [Befehl `/settings`](../setup.md#settings).
+2. Klicke auf die Schaltfläche "**Logs**".
+3. Wähle "**Moderation**".
+4. Wähle den Kanal aus, in dem die Moderationsprotokolle gesendet werden sollen, oder verwende die Schaltfläche "**Einen für mich erstellen**".

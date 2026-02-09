@@ -1,66 +1,66 @@
 ---
-title: Captcha (Verification)
+title: Captcha (Verificacion)
 ---
 
-Prevent selfbots from accessing your Discord server and block raids with RaidProtect's captcha system.
+Evita que los selfbots accedan a tu servidor de Discord y bloquea raids con el sistema de captcha de RaidProtect.
 
-Captcha is one of RaidProtect's most popular features, though it remains entirely optional. It allows you to require each new user to complete a challenge by entering a code to verify that they are not a bot (selfbot).
+El captcha es una de las funciones mas populares de RaidProtect, aunque sigue siendo completamente opcional. Te permite requerir que cada nuevo usuario complete un desafio ingresando un codigo para verificar que no es un bot (selfbot).
 
-## ❓ How Captcha Works {#working}
+## ❓ Como funciona el Captcha {#working}
 
-Captcha relies on a **@Unverified** role and a **#verification** channel. When a user joins your server:
-- The bot automatically assigns the **@Unverified** role to this user, limiting their access only to the **#verification** channel.
-- In this channel, the bot sends an image containing 6 uppercase letters. The user must transcribe the letters in the channel to prove they are human.
-- If the response is correct, the **@Unverified** role is removed, and the user gains normal access to the server. Otherwise, they are automatically kicked.
-- When captcha is enabled, RaidProtect automatically posts a message in the logs channel, indicating the account creation date of each new user.
-- RaidProtect automatically detects permission issues (channel and role) as well as the default visibility of the channel during Discord's onboarding process.
+El captcha se basa en un rol **@Unverified** y un canal **#verification**. Cuando un usuario se une a tu servidor:
+- El bot asigna automaticamente el rol **@Unverified** a este usuario, limitando su acceso unicamente al canal **#verification**.
+- En este canal, el bot envia una imagen que contiene 6 letras mayusculas. El usuario debe transcribir las letras en el canal para demostrar que es humano.
+- Si la respuesta es correcta, se elimina el rol **@Unverified** y el usuario obtiene acceso normal al servidor. De lo contrario, es expulsado automaticamente.
+- Cuando el captcha esta activado, RaidProtect publica automaticamente un mensaje en el canal de registros, indicando la fecha de creacion de la cuenta de cada nuevo usuario.
+- RaidProtect detecta automaticamente problemas de permisos (canal y rol) asi como la visibilidad predeterminada del canal durante el proceso de incorporacion de Discord.
 
 :::info
-**Time Limit and Attempts:** Users have **1 to 10 minutes** to complete captcha (**5 minutes by default**) and **1 to 3 attempts** (**2 attempts by default**). If they exceed these limits, they are automatically kicked from the server.
+**Limite de tiempo e intentos:** Los usuarios tienen de **1 a 10 minutos** para completar el captcha (**5 minutos por defecto**) y de **1 a 3 intentos** (**2 intentos por defecto**). Si exceden estos limites, son expulsados automaticamente del servidor.
 :::
 :::warning
-**Permission Management:** The permissions for the **@Unverified** role are automatically configured by RaidProtect. You can rename the role and the channel, but do not delete them.
+**Gestion de permisos:** Los permisos del rol **@Unverified** se configuran automaticamente por RaidProtect. Puedes renombrar el rol y el canal, pero no los elimines.
 :::
 
-## 🚪 Captcha Configuration {#config}
+## 🚪 Configuracion del Captcha {#config}
 
-Setting up captcha is quick and easy.
+Configurar el captcha es rapido y facil.
 
-1. Run the [`/settings` command](../setup.md#settings).
-2. Click the "**Captcha**" button.
-3. Choose the channel where captchas will be conducted or use the "**Create one for me**" button.
-4. The **@Unverified** role is automatically created and configured.
-5. Configure the allowed number of attempts (between **1 and 3**) and the maximum resolution time (between **1 and 10 minutes**).
+1. Ejecuta el [comando `/settings`](../setup.md#settings).
+2. Haz clic en el boton "**Captcha**".
+3. Elige el canal donde se realizaran los captchas o usa el boton "**Crear uno por mi**".
+4. El rol **@Unverified** se crea y configura automaticamente.
+5. Configura el numero de intentos permitidos (entre **1 y 3**) y el tiempo maximo de resolucion (entre **1 y 10 minutos**).
 
-![Captcha settings screenshot](../../../../en/docusaurus-plugin-content-docs/version-3.1.0/assets/rpBeta-settings-anti-captcha.webp)
+![Captura de pantalla de configuracion del captcha](../../../../en/docusaurus-plugin-content-docs/version-3.1.0/assets/rpBeta-settings-anti-captcha.webp)
 
-## ✨ Additional Features {#additional-features}
+## ✨ Funciones adicionales {#additional-features}
 
-To adapt to your server's needs, RaidProtect's captcha offers customizable options.
+Para adaptarse a las necesidades de tu servidor, el captcha de RaidProtect ofrece opciones personalizables.
 
-### Separate Logs {#logs}
+### Registros separados {#logs}
 
-If your server is popular, captcha-related logs may clutter your main logs channel. You can move them to another channel.
+Si tu servidor es popular, los registros relacionados con el captcha pueden saturar tu canal de registros principal. Puedes moverlos a otro canal.
 
-1. Run the [`/settings` command](../setup.md#settings).
-2. Click the "**Logs**" button.
-3. Select "**Captcha**".
-4. Choose the channel where captcha logs will be stored or use the "**Create one for me**" button.
+1. Ejecuta el [comando `/settings`](../setup.md#settings).
+2. Haz clic en el boton "**Registros**".
+3. Selecciona "**Captcha**".
+4. Elige el canal donde se almacenaran los registros del captcha o usa el boton "**Crear uno por mi**".
 
-### Auto Role {#autorole}
+### Rol automatico {#autorole}
 
-If you use an automatic role (autorole) system other than RaidProtect, it may interfere with captcha. Replace your existing autorole with RaidProtect's.
+Si usas un sistema de rol automatico (autorole) diferente a RaidProtect, puede interferir con el captcha. Reemplaza tu autorole existente con el de RaidProtect.
 
-1. Run the [`/settings` command](../setup.md#settings).
-2. Click the "**Captcha**" button.
-3. Select "**Auto Role**".
-4. Choose the role that will be assigned to members who successfully complete captcha.
+1. Ejecuta el [comando `/settings`](../setup.md#settings).
+2. Haz clic en el boton "**Captcha**".
+3. Selecciona "**Rol automatico**".
+4. Elige el rol que se asignara a los miembros que completen exitosamente el captcha.
 
-### Minimum Account Age {#minage}
+### Edad minima de cuenta {#minage}
 
-To enhance security, you can require a minimum account age for new Discord members.
+Para mejorar la seguridad, puedes requerir una edad minima de cuenta para los nuevos miembros de Discord.
 
-1. Run the [`/settings` command](../setup.md#settings).
-2. Click the "**Captcha**" button.
-3. Press the "**Minimum Age**" button.
-4. Select the desired value from the dropdown menu or choose a custom value expressed in date format (m/h/d/y).
+1. Ejecuta el [comando `/settings`](../setup.md#settings).
+2. Haz clic en el boton "**Captcha**".
+3. Presiona el boton "**Edad minima**".
+4. Selecciona el valor deseado en el menu desplegable o elige un valor personalizado expresado en formato de fecha (m/h/d/y).
