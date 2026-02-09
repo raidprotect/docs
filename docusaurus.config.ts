@@ -107,11 +107,11 @@ export default async function createConfigAsync() {
                     pt: 'RaidProtect é um bot do Discord que protege seu servidor de usuários maliciosos graças ao seu anti-spam e captcha. <strong>E justo lá, um pequeno gerânio.&nbsp;</strong>'
                 },
                 announcementBar: {
-                    fr: '<strong>La <a href="https://docs.raidprotect.bot/blog/3.3.1-jail-and-mute">Jail & Mute (3.3.1)</a> est sortie !</strong>',
-                    en: '<strong><a href="https://docs.raidprotect.bot/en/blog/3.3.1-jail-and-mute">Jail & Mute (3.3.1)</a> is now live!</strong>',
-                    de: '<strong>Das <a href="https://docs.raidprotect.bot/de/blog/3.3.1-jail-and-mute">Jail & Mute (3.3.1)</a> ist erschienen!</strong>',
-                    es: '<strong>¡El <a href="https://docs.raidprotect.bot/es/blog/3.3.1-jail-and-mute">Jail & Mute (3.3.1)</a> está disponible!</strong>',
-                    pt: '<strong>O <a href="https://docs.raidprotect.bot/pt/blog/3.3.1-jail-and-mute">Jail & Mute (3.3.1)</a> está disponível!</strong>'
+                    fr: '<strong>La mise à jour <a href="https://docs.raidprotect.bot/blog/3.3.1-jail-and-mute">Système de prison "Jail" et Mute via rôle (3.3.1)</a> est sortie !</strong>',
+                    en: '<strong><a href="https://docs.raidprotect.bot/en/blog/3.3.1-jail-and-mute">Jail System and Role-based Mute (3.3.1)</a> is now live!</strong>',
+                    de: '<strong>Das <a href="https://docs.raidprotect.bot/de/blog/3.3.1-jail-and-mute">Gefängnissystem "Jail" und rollenbasiertes Mute (3.3.1)</a> ist erschienen!</strong>',
+                    es: '<strong>¡El <a href="https://docs.raidprotect.bot/es/blog/3.3.1-jail-and-mute">Sistema de prisión "Jail" y Mute por rol (3.3.1)</a> está disponible!</strong>',
+                    pt: '<strong>O <a href="https://docs.raidprotect.bot/pt/blog/3.3.1-jail-and-mute">Sistema de prisão "Jail" e Mute por cargo (3.3.1)</a> está disponível!</strong>'
                 }
             },
             excludedCanonical: []
