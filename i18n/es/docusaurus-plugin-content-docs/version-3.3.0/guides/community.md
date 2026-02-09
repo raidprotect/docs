@@ -29,7 +29,7 @@ Si la Comunidad ya esta activada en tu servidor, la seccion se llamara **Vista g
 4. **Completa la configuracion**
    - Haz clic en "Finalizar configuracion". La insignia "Comunidad" aparecera en tu servidor una vez que la activacion este completa.
 
-![Captura de pantalla de la activacion de Comunidad en Discord](../assets/rp-enable-community.webp)
+![Captura de pantalla de la activacion de Comunidad en Discord](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-enable-community.webp)
 
 ## 💡 Usar los modulos Bloqueo de MD y Modo Raid despues de la activacion {#use}
 

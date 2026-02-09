@@ -4,7 +4,7 @@ title: Proceso de incorporacion y Captcha
 
 Si el canal `#verificacion` no es visible por defecto para los nuevos miembros, esto puede impedir que el sistema de Captcha funcione correctamente. Aqui te explicamos como solucionar este problema paso a paso.
 
-![Captura de pantalla de la alerta del captcha](../assets/rp-settings-captcha-alert.webp)
+![Captura de pantalla de la alerta del captcha](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-captcha-alert.webp)
 
 ## 1️⃣ Verificar los permisos del canal {#permissions}
 
@@ -13,7 +13,7 @@ Si el canal `#verificacion` no es visible por defecto para los nuevos miembros, 
    - Asegurate de que `@everyone` **no** tenga permiso para ver el canal.
    - Asegurate de que el rol `@Noverificado` **tenga** permiso para **ver el canal**, **leer el historial de mensajes** y **enviar mensajes**.
 
-![Captura de pantalla de la verificacion de permisos del canal](../assets/rp-verification-channel-permissions.webp)
+![Captura de pantalla de la verificacion de permisos del canal](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-verification-channel-permissions.webp)
 
 ## 2️⃣ Verificar la categoria de bienvenida {#default-category}
 
@@ -22,7 +22,7 @@ Si el canal `#verificacion` no es visible por defecto para los nuevos miembros, 
 3. Si es necesario, mueve `#verificacion` a una categoria marcada.
 4. Guarda los cambios.
 
-![Captura de pantalla de la verificacion de la categoria de bienvenida](../assets/rp-welcome-category.webp)
+![Captura de pantalla de la verificacion de la categoria de bienvenida](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-welcome-category.webp)
 
 ## 3️⃣ Actualizar la configuracion en RaidProtect {#refresh-config}
 

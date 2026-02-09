@@ -58,4 +58,4 @@ Este problema es relativamente comun, pero depende de **la configuracion de tu s
 
 El comando de bloqueo parece magico, pero tambien tiene sus debilidades. Como [se indica en esta documentacion](../features/channel-lock.md#lock), el comando **solo actua sobre el rol @everyone**. Esto significa que si un rol en el canal que deseas bloquear tiene explicitamente permiso para hablar, podra seguir haciendolo. Como una imagen vale mas que mil palabras, aqui te mostramos como se ve en la practica.
 
-![Captura de pantalla de la configuracion de bloqueo de canal](../assets/lock-channel-messages-raidprotect.png)
+![Captura de pantalla de la configuracion de bloqueo de canal](../../../../en/docusaurus-plugin-content-docs/current/assets/lock-channel-messages-raidprotect.png)
