@@ -63,45 +63,55 @@ export default async function createConfigAsync() {
         customFields: {
             urls: {
                 main: {
-                        fr: 'https://raidprotect.bot',
-                        en: 'https://raidprotect.bot/en',
-                        de: 'https://raidprotect.bot/de'
+                    fr: 'https://raidprotect.bot',
+                    en: 'https://raidprotect.bot/en',
+                    de: 'https://raidprotect.bot/de',
+                    es: 'https://raidprotect.bot/es',
+                    pt: 'https://raidprotect.bot/pt'
                 },
                 legal: {
-                        fr: 'https://raidprotect.bot/legal',
-                        en: 'https://raidprotect.bot/en/legal',
-                        de: 'https://raidprotect.bot/de/legal'
+                    fr: 'https://raidprotect.bot/legal',
+                    en: 'https://raidprotect.bot/en/legal',
+                    de: 'https://raidprotect.bot/de/legal',
+                    es: 'https://raidprotect.bot/es/legal',
+                    pt: 'https://raidprotect.bot/pt/legal'
                 },
                 terms: {
-                        fr: 'https://raidprotect.bot/terms',
-                        en: 'https://raidprotect.bot/en/terms',
-                        de: 'https://raidprotect.bot/de/terms'
+                    fr: 'https://raidprotect.bot/terms',
+                    en: 'https://raidprotect.bot/en/terms',
+                    de: 'https://raidprotect.bot/de/terms',
+                    es: 'https://raidprotect.bot/es/terms',
+                    pt: 'https://raidprotect.bot/pt/terms'
                 },
                 privacy: {
-                        fr: 'https://raidprotect.bot/privacy',
-                        en: 'https://raidprotect.bot/en/privacy',
-                        de: 'https://raidprotect.bot/de/privacy'
+                    fr: 'https://raidprotect.bot/privacy',
+                    en: 'https://raidprotect.bot/en/privacy',
+                    de: 'https://raidprotect.bot/de/privacy',
+                    es: 'https://raidprotect.bot/es/privacy',
+                    pt: 'https://raidprotect.bot/pt/privacy'
                 },
                 geranium: {
-                        fr: 'https://i.dfr.gg/geranium.webm',
-                        en: 'https://i.dfr.gg/en-geranium.webm',
-                        de: 'https://i.dfr.gg/en-geranium.webm'
+                    fr: 'https://i.dfr.gg/geranium.webm',
+                    en: 'https://i.dfr.gg/en-geranium.webm',
+                    de: 'https://i.dfr.gg/en-geranium.webm',
+                    es: 'https://i.dfr.gg/en-geranium.webm',
+                    pt: 'https://i.dfr.gg/en-geranium.webm'
                 }
             },
             texts: {
                 footer: {
-                        fr: 'RaidProtect est un bot Discord qui protège votre serveur des utilisateurs malintentionnés grâce à son anti-spam et son captcha. <strong>Et juste là, un petit géranium.&nbsp;</strong>',
-                        en: 'RaidProtect is a Discord bot that protects your server from malicious users with its anti-spam and captcha features. <strong>And right there, a little geranium.&nbsp;</strong>',
-                        de: 'RaidProtect ist ein Discord-Bot, der Ihren Server vor böswilligen Nutzern schützt – dank integriertem Anti-Spam und Captcha-System. <strong>Und genau dort, ein kleines Geranium.&nbsp;</strong>',
-                        es: 'RaidProtect es un bot de Discord que protege tu servidor de usuarios malintencionados gracias a su anti-spam y captcha. <strong>Y justo allí, un pequeño geranio.&nbsp;</strong>',
-                        pt: 'RaidProtect é um bot do Discord que protege seu servidor de usuários maliciosos graças ao seu anti-spam e captcha. <strong>E justo lá, um pequeno gerânio.&nbsp;</strong>'
+                    fr: 'RaidProtect est un bot Discord qui protège votre serveur des utilisateurs malintentionnés grâce à son anti-spam et son captcha. <strong>Et juste là, un petit géranium.&nbsp;</strong>',
+                    en: 'RaidProtect is a Discord bot that protects your server from malicious users with its anti-spam and captcha features. <strong>And right there, a little geranium.&nbsp;</strong>',
+                    de: 'RaidProtect ist ein Discord-Bot, der Ihren Server vor böswilligen Nutzern schützt – dank integriertem Anti-Spam und Captcha-System. <strong>Und genau dort, ein kleines Geranium.&nbsp;</strong>',
+                    es: 'RaidProtect es un bot de Discord que protege tu servidor de usuarios malintencionados gracias a su anti-spam y captcha. <strong>Y justo allí, un pequeño geranio.&nbsp;</strong>',
+                    pt: 'RaidProtect é um bot do Discord que protege seu servidor de usuários maliciosos graças ao seu anti-spam e captcha. <strong>E justo lá, um pequeno gerânio.&nbsp;</strong>'
                 },
                 announcementBar: {
-                        fr: '<strong>La <a href="https://docs.raidprotect.bot/blog/3.3.1-jail-and-mute">Jail & Mute (3.3.1)</a> est sortie !</strong>',
-                        en: '<strong><a href="https://docs.raidprotect.bot/en/blog/3.3.1-jail-and-mute">Jail & Mute (3.3.1)</a> is now live!</strong>',
-                        de: '<strong>Das <a href="https://docs.raidprotect.bot/de/blog/3.3.1-jail-and-mute">Jail & Mute (3.3.1)</a> ist erschienen!</strong>',
-                        es: '<strong>¡El <a href="https://docs.raidprotect.bot/es/blog/3.3.1-jail-and-mute">Jail & Mute (3.3.1)</a> está disponible!</strong>',
-                        pt: '<strong>O <a href="https://docs.raidprotect.bot/pt/blog/3.3.1-jail-and-mute">Jail & Mute (3.3.1)</a> está disponível!</strong>'
+                    fr: '<strong>La <a href="https://docs.raidprotect.bot/blog/3.3.1-jail-and-mute">Jail & Mute (3.3.1)</a> est sortie !</strong>',
+                    en: '<strong><a href="https://docs.raidprotect.bot/en/blog/3.3.1-jail-and-mute">Jail & Mute (3.3.1)</a> is now live!</strong>',
+                    de: '<strong>Das <a href="https://docs.raidprotect.bot/de/blog/3.3.1-jail-and-mute">Jail & Mute (3.3.1)</a> ist erschienen!</strong>',
+                    es: '<strong>¡El <a href="https://docs.raidprotect.bot/es/blog/3.3.1-jail-and-mute">Jail & Mute (3.3.1)</a> está disponible!</strong>',
+                    pt: '<strong>O <a href="https://docs.raidprotect.bot/pt/blog/3.3.1-jail-and-mute">Jail & Mute (3.3.1)</a> está disponível!</strong>'
                 }
             },
             excludedCanonical: []
