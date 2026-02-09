@@ -35,19 +35,27 @@ export default async function createConfigAsync() {
         },
         i18n: {
             defaultLocale: defaultLocale,
-            locales: ['fr', 'en', 'de'],
+            locales: ['fr', 'en', 'de', 'es', 'pt'],
             localeConfigs: {
                     fr: {
-                            label: 'Français',
-                            path: 'fr'
+                        label: 'Français',
+                        path: 'fr'
                     },
                     en: {
-                            label: 'English',
-                            path: 'en'
+                        label: 'English',
+                        path: 'en'
                     },
                     de: {
-                            label: 'Deutsch',
-                            path: 'de'
+                        label: 'Deutsch',
+                        path: 'de'
+                    },
+                    es: {
+                        label: 'Español',
+                        path: 'es'
+                    },
+                    pt: {
+                        label: 'Português',
+                        path: 'pt'
                     }
             }
         },
