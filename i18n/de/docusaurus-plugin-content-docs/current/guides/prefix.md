@@ -1,37 +1,41 @@
 ---
-title: Prefix verwenden
+title: Verwendung eines Prefixes
 ---
 
-## Deaktivierter Prefix (Standard) {#disabled}
+## Prefix deaktiviert (Standard) {#disabled}
 
-Standardmäßig nutzt RaidProtect ausschließlich Slash-Befehle (`/`) zur Interaktion mit dem Bot. Das sorgt für eine intuitive und konsistente Bedienung gemäß den Discord-Richtlinien.
+Standardmäßig verwendet RaidProtect ausschließlich Slash-Befehle (`/`) zur Interaktion mit dem Bot. Dies gewährleistet eine intuitive Nutzung, die den Discord-Standards entspricht.
 
-## Aktivierter Prefix (Optional) {#activated}
+## Prefix aktiviert (optional) {#activated}
 
-Wenn du bestimmte Befehle lieber mit einem eigenen Prefix verwenden möchtest, kannst du diese Option aktivieren. Der Standardprefix ist `?`, lässt sich jedoch nach Bedarf anpassen. Nach der Aktivierung können folgende Befehle mit dem eingestellten Prefix genutzt werden:
+Wenn Sie bestimmte Befehle lieber mit einem benutzerdefinierten Prefix verwenden möchten, können Sie diese Option aktivieren. Der Standard-Prefix bei Aktivierung ist `?`, kann aber nach Ihren Bedürfnissen geändert werden. Nach der Aktivierung können folgende Befehle mit dem konfigurierten Prefix verwendet werden:
 - [`?raidmode`](../features/raid-mode.md)
 - [`?ban`](../features/moderation.mdx#ban)
 - [`?tempban`](../features/moderation.mdx#tempban)
 - [`?unban`](../features/moderation.mdx#unban)
 - [`?kick`](../features/moderation.mdx#kick)
-- [`?timeout`](../features/moderation.mdx#timeout)
-- [`?untimeout`](../features/moderation.mdx#untimeout)
+- [`?mute` | `?timeout`](../features/moderation.mdx#timeout)
+- [`?unmute` | `?untimeout`](../features/moderation.mdx#untimeout)
+- [`?jail`](../features/moderation.mdx#jail)
+- [`?tempjail`](../features/moderation.mdx#tempjail)
+- [`?unjail`](../features/moderation.mdx#unjail)
 - [`?warn`](../features/moderation.mdx#warn)
+- [`?slowmode`](../features/moderation.mdx#slowmode)
 - [`?lock`](../features/channel-lock.md#lock)
 - [`?unlock`](../features/channel-lock.md#unlock)
 - [`?userinfo` | `?ui`](../features/utilities#userinfo)
 - [`?clear`](../features/moderation#clear)
 
-## 💬 Prefix aktivieren oder deaktivieren {#config}
+## So aktivieren oder deaktivieren Sie den Prefix {#config}
 
-1. Öffne das Konfigurationsmenü mit [`/settings`](../setup.md#settings).
-2. Wähle die Option "**Prefix**" für Befehle.
-3. Aktiviere oder deaktiviere den Prefix nach deinen Vorlieben.
-   Wenn aktiviert, kannst du den Prefix anpassen, indem du das gewünschte Zeichen oder Wort eingibst.
+1. Öffnen Sie das Einstellungsmenü, indem Sie [`/settings`](../setup.md#settings) eingeben.
+2. Navigieren Sie zur Option "**Prefix**" der Befehle.
+3. Aktivieren oder deaktivieren Sie den Prefix nach Ihren Wünschen.
+Falls aktiviert, passen Sie den Prefix an, indem Sie das gewünschte Zeichen oder die gewünschte Zeichenkette eingeben.
 
-![Prefix settings screenshot](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-prefix.webp)
+![Screenshot Prefix-Einstellung](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-prefix.webp)
 
 :::note
-Slash-Befehle (`/`) bleiben verfügbar, auch wenn der Prefix aktiviert ist.
-Es empfiehlt sich, Prefixe zu vermeiden, die bereits von anderen Bots verwendet werden, um Konflikte zu vermeiden.
+Slash-Befehle (`/`) bleiben auch bei aktiviertem Prefix verfügbar.
+Es wird empfohlen, Prefixe zu vermeiden, die bereits von anderen Bots verwendet werden, um Befehlskonflikte zu verhindern.
 :::

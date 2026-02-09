@@ -1,5 +1,5 @@
 ---
-title: Utilities
+title: Dienstprogramme
 ---
 
 import SeparatedBox from '@site/src/components/SeparatedBox';
@@ -7,17 +7,17 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Icon from "@site/src/components/Icon";
 
-Zusätzliche Funktionen, die dir die Verwaltung deines Servers erleichtern. 🔧
+Zusätzliche Funktionen, die dir die Verwaltung deines Servers erleichtern. 🔧
 
 Neben Kernfunktionen wie dem Captcha-System und dem Anti-Raid-Schutz bietet RaidProtect mehrere Hilfswerkzeuge, die die Administration deines Servers noch reibungsloser machen.
 
 ## 📋 Einen Kanal duplizieren {#channel-duplicate}
 
-Der Befehl `/channel duplicate` ermöglicht es Ihnen, einen Kanal vollständig zu duplizieren, einschließlich aller Einstellungen, Berechtigungen und Konfigurationen. Damit übertrifft er die native Discord-Funktion, die **Kategorien** und **bestimmte spezifische Einstellungen** wie Tags von Forum-Kanälen nicht duplizieren kann.
+Der Befehl `/channel duplicate` ermöglicht es dir, einen Kanal vollständig zu duplizieren, einschließlich aller Einstellungen, Berechtigungen und Konfigurationen. Damit übertrifft er die native Discord-Funktion, die **Kategorien** und **bestimmte spezifische Einstellungen** wie Tags von Forum-Kanälen nicht duplizieren kann.
 
-Verwenden Sie den Befehl: ```/channel duplicate [Kanal]```
+Verwende den Befehl: ```/channel duplicate [channel]```
 
-Ersetzen Sie `[Kanal]` durch die Erwähnung oder die ID des zu duplizierenden Kanals.
+Ersetze `[channel]` durch die Erwähnung oder die ID des zu duplizierenden Kanals.
 
 ### 🎯 Funktionen {#duplicate-features}
 
@@ -31,12 +31,65 @@ Dieser Befehl dupliziert alle folgenden Elemente:
 
 ### ⚙️ RaidProtect-Konfigurationen {#duplicate-config}
 
-Wenn Sie einen Kanal duplizieren, der interne RaidProtect-Konfigurationen besitzt, bietet Ihnen der Bot automatisch an:
+Wenn du einen Kanal duplizierst, der interne RaidProtect-Konfigurationen besitzt, bietet dir der Bot automatisch an:
 
 - Die bestehende Konfiguration zu **ersetzen**, um den neuen Kanal zu verwenden
 - Die Konfiguration zu **duplizieren**, um beide Kanäle konfiguriert zu behalten
 
-**Beispiel**: Wenn Sie den Log-Kanal duplizieren, schlägt RaidProtect vor, seine Konfiguration so zu aktualisieren, dass der neue Kanal zum Log-Kanal wird, oder beide Kanäle je nach Ihrer Präferenz konfiguriert zu behalten.
+**Beispiel**: Wenn du den Log-Kanal duplizierst, schlägt RaidProtect vor, seine Konfiguration so zu aktualisieren, dass der neue Kanal zum Log-Kanal wird, oder beide Kanäle je nach deiner Präferenz konfiguriert zu behalten.
+
+## 🗑️ Einen Kanal löschen und neu erstellen {#channel-clear}
+
+Der Befehl `/channel clear` ermöglicht es dir, einen Kanal zu löschen und ihn identisch neu zu erstellen, wobei seine Einstellungen, Berechtigungen und RaidProtect-Konfigurationen beibehalten werden.
+
+Verwende den Befehl: ```/channel clear```
+
+:::warning
+Die Nachrichten und Webhooks des Kanals werden unwiderruflich gelöscht. Vor der Ausführung wird eine Bestätigung angefordert.
+:::
+
+## 🧹 Mitglieder bereinigen {#prune}
+
+Der Befehl `/prune` ermöglicht es dir, inaktive Mitglieder über ein interaktives Menü von deinem Server zu entfernen.
+
+Verwende den Befehl: ```/prune [duration]```
+
+Ersetze `[duration]` durch die gewünschte Anzahl an Tagen der Inaktivität. Der Bot zeigt ein interaktives Menü an, mit dem du:
+- Die Inaktivitätsdauer auswählen kannst
+- Bestimmte Rollen ein- oder ausschließen kannst
+- Die Anzahl der betroffenen Mitglieder vor der Bestätigung sehen kannst
+
+![Screenshot des Prune-Befehls](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-prune.webp)
+
+## 🚫 Nutzer blockieren {#block}
+
+Der Befehl `/block` ermöglicht es dir, einen Nutzer daran zu hindern, bestimmte RaidProtect-Funktionen auf deinem Server zu nutzen (zum Beispiel Meldungen senden oder die Tag-Rolle erhalten).
+
+### Einen Nutzer blockieren {#block-add}
+
+Verwende den Befehl: ```/block add (user) [reason]```
+
+### Einen Nutzer entsperren {#block-remove}
+
+Verwende den Befehl: ```/block remove (user) [reason]```
+
+### Blockierte Nutzer auflisten {#block-list}
+
+Verwende den Befehl: ```/block list```
+
+## 📢 Informationspanels {#display}
+
+Siehe die [dedizierte Seite zu Informationspanels](./display.mdx) für weitere Informationen über den Befehl `/display public`.
+
+## 📜 Meine Sanktionen {#my-sanctions}
+
+Der Befehl `/my-sanctions` ermöglicht es Mitgliedern, ihre eigenen Sanktionen auf dem Server einzusehen, entsprechend der von den Administratoren konfigurierten [Vertraulichkeitsstufe](./sanctions.mdx#sanctions-privacy).
+
+Verwende den Befehl: ```/my-sanctions```
+
+:::info
+Dieser Befehl ist auch über die Schaltfläche **Meine Sanktionen einsehen** auf den [Informationspanels](./display.mdx) zugänglich, wenn die Funktion aktiviert ist.
+:::
 
 ## 👤 Nutzerinformationen {#userinfo}
 
@@ -58,6 +111,7 @@ Der Befehl `userinfo` ist [auch mit Prefix verfügbar](../guides/prefix.md).
 - **Profilabzeichen**
   - Die Badges Nitro, Booster, Quest und Originally Name werden nicht angezeigt.
 
+
 ### 🎭 Informationen zu einem Servermitglied {#displayed-memberinfo}
 
 Ist das Ziel ein Servermitglied, werden zusätzliche Angaben gemacht:
@@ -66,7 +120,6 @@ Ist das Ziel ein Servermitglied, werden zusätzliche Angaben gemacht:
 - **Server-Spitzname**
 - **Anzahl der Rollen** und **Liste der ersten 6 Rollen**
 - **Berechtigungskategorie** (nur für Moderatoren sichtbar):
-
 <SeparatedBox>
 <Tabs>
   <TabItem value="animator" label="Animator" default>
@@ -117,7 +170,7 @@ Ist das Ziel ein Servermitglied, werden zusätzliche Angaben gemacht:
     - `MANAGE_CHANNELS`
 
   </TabItem>
-  <TabItem value="owner" label="Owner">
+  <TabItem value="owner" label="Eigentümer">
 
     **Bedingung**: Das Mitglied ist der **Serverbesitzer**.
 
@@ -127,46 +180,46 @@ Ist das Ziel ein Servermitglied, werden zusätzliche Angaben gemacht:
 
 - **Mitglieder-Flags** (nur für Moderatoren sichtbar):
 
-| **Flags**                                | **Emojis**                                                                                                                  | **Bedeutungen**                                                          |
-| ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| `DID_REJOIN`                             | <Icon src="/img/icons/MemberDidRejoin.svg" alt="Icon MitgliedKamZurück" title=":MemberDidRejoin:"/>                         | Der Nutzer hat den Server verlassen und ist wieder beigetreten.          |
-| `IS_GUEST`                               | <Icon src="/img/icons/MemberIsGuest.svg" alt="Icon MitgliedIstGast" title=":MemberIsGuest:"/>                               | Gastmitglied (temporäre Einladung oder Gastzugang).                      |
-| `COMPLETED_ONBOARDING`                   | <Icon src="/img/icons/OnboardingCompleted.svg" alt="Icon OnboardingAbgeschlossen" title=":OnboardingCompleted:"/>           | Hat den Server-Onboarding-Prozess abgeschlossen.                         |
-| `STARTED_ONBOARDING`                     | <Icon src="/img/icons/OnboardingStarted.svg" alt="Icon OnboardingGestartet" title=":OnboardingStarted:"/>                   | Hat den Onboarding-Prozess gestartet.                                    |
-| `COMPLETED_SERVER_GUIDE`                 | <Icon src="/img/icons/ServerGuideCompleted.svg" alt="Icon ServerGuideAbgeschlossen" title=":ServerGuideCompleted:"/>        | Hat den Server-Guide (falls aktiviert) abgeschlossen.                    |
-| `STARTED_SERVER_GUIDE`                   | <Icon src="/img/icons/ServerGuideStarted.svg" alt="Icon ServerGuideGestartet" title=":ServerGuideStarted:"/>                | Hat den Server-Guide gestartet.                                          |
-| `AUTOMOD_QUARANTINED_NAME`               | <Icon src="/img/icons/MemberQuarantined.svg" alt="Icon MitgliedUnterQuarantäne" title=":MemberQuarantined:"/>               | Durch Automoderation wegen des Benutzernamens unter Quarantäne gestellt. |
-| `AUTOMOD_QUARANTINED_GUILD_TAG`          | <Icon src="/img/icons/MemberQuarantined.svg" alt="Icon MitgliedUnterQuarantäne" title=":MemberQuarantined:"/>               | Durch Automoderation wegen Tag oder Nickname unter Quarantäne gestellt.  |
-| `BYPASSES_VERIFICATION`                  | <Icon src="/img/icons/BypassVerification.svg" alt="Icon VerifizierungUmgangen" title=":BypassVerification:"/>               | Nutzer kann die Server-Verifizierung umgehen.                            |
-| `SPAMMER`                                | <Icon src="/img/icons/UnusualAccountActivity.svg" alt="Icon UngewöhnlicheKontoAktivität" title=":UnusualAccountActivity:"/> | Konto als Spammer markiert oder ungewöhnliche Aktivität festgestellt.    |
+| **Flags**                                | **Emojis**                                                                                                             | **Bedeutungen**                                                   |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `DID_REJOIN`                             | <Icon src="/img/icons/MemberDidRejoin.svg" alt="icon MemberDidRejoin" title=":MemberDidRejoin:"/>                      | Der Nutzer hat den Server verlassen und ist wieder beigetreten.   |
+| `IS_GUEST`                               | <Icon src="/img/icons/MemberIsGuest.svg" alt="icon MemberIsGuest" title=":MemberIsGuest:"/>                            | Gastmitglied (temporäre Einladung oder Gastzugang).               |
+| `COMPLETED_ONBOARDING`                   | <Icon src="/img/icons/OnboardingCompleted.svg" alt="icon OnboardingCompleted" title=":OnboardingCompleted:"/>          | Hat den Server-Onboarding-Prozess abgeschlossen.                 |
+| `STARTED_ONBOARDING`                     | <Icon src="/img/icons/OnboardingStarted.svg" alt="icon OnboardingStarted" title=":OnboardingStarted:"/>                | Hat den Onboarding-Prozess gestartet.                             |
+| `COMPLETED_SERVER_GUIDE`                 | <Icon src="/img/icons/ServerGuideCompleted.svg" alt="icon ServerGuideCompleted" title=":ServerGuideCompleted:"/>       | Hat den Server-Guide (falls aktiviert) abgeschlossen.             |
+| `STARTED_SERVER_GUIDE`                   | <Icon src="/img/icons/ServerGuideStarted.svg" alt="icon ServerGuideStarted" title=":ServerGuideStarted:"/>             | Hat den Server-Guide gestartet.                                   |
+| `AUTOMOD_QUARANTINED_NAME`               | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | Durch Automoderation wegen des Benutzernamens unter Quarantäne gestellt. |
+| `AUTOMOD_QUARANTINED_GUILD_TAG`          | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | Durch Automoderation wegen Tag oder Nickname unter Quarantäne gestellt. |
+| `BYPASSES_VERIFICATION`                  | <Icon src="/img/icons/BypassVerification.svg" alt="icon BypassVerification" title=":BypassVerification:"/>             | Nutzer kann die Server-Verifizierung umgehen.                     |
+| `SPAMMER`                                | <Icon src="/img/icons/UnusualAccountActivity.svg" alt="icon UnusualAccountActivity" title=":UnusualAccountActivity:"/> | Konto als Spammer markiert oder ungewöhnliche Aktivität festgestellt. |
 
 ## ⚖️ Discord-Sanktionen {#discord-sanctions}
 
-Der Befehl `/ds` ermöglicht es Ihnen, die **von Discord verhängten Sanktionen** gegen einen Benutzer einzusehen, in Übereinstimmung mit den [europäischen Vorschriften](https://transparency.dsa.ec.europa.eu/).
+Der Befehl `/ds` ermöglicht es dir, die **von Discord verhängten Sanktionen** gegen einen Benutzer einzusehen, in Übereinstimmung mit den [europäischen Vorschriften](https://transparency.dsa.ec.europa.eu/).
 
-Verwenden Sie den Befehl: ```/ds (user)```
+Verwende den Befehl: ```/ds (user)```
 
-Ersetzen Sie `(user)` durch die gewünschte Erwähnung oder ID.
+Ersetze `(user)` durch die gewünschte Erwähnung oder ID.
 
 ### 📋 Angezeigte Informationen {#displayed-sanctions}
 
 - **Art der Sanktion**:
 
-| **Sanktionen**                           | **Emojis**                                                                                                                  | **Bedeutungen**                                                          |
-| ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| `CONTENT_DELETED`                        | <Icon src="/img/icons/ContentDeleted.svg" alt="icon ContentDeleted" title=":iconTrash:"/>                                   | Vom Benutzer veröffentlichter Inhalt wurde gelöscht.                     |
-| `RESTRICTED`                             | <Icon src="/img/icons/AccountRestricted.svg" alt="icon AccountRestricted" title=":iconRestricted:"/>                        | Das Benutzerkonto wurde eingeschränkt.                                   |
-| `ACCOUNT_SUSPENDED`                      | <Icon src="/img/icons/AccountSuspended.svg" alt="icon AccountSuspended" title=":iconSuspended:"/>                           | Das Benutzerkonto wurde gesperrt.                                        |
-| `ACCOUNT_TERMINATED`                     | <Icon src="/img/icons/AccountTerminated.svg" alt="icon AccountTerminated" title=":iconTerminated:"/>                        | Das Benutzerkonto wurde gelöscht.                                        |
+| **Sanktionen**                           | **Emojis**                                                                                                             | **Bedeutungen**                                                   |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `CONTENT_DELETED`                        | <Icon src="/img/icons/ContentDeleted.svg" alt="icon ContentDeleted" title=":iconTrash:"/>                              | Vom Benutzer veröffentlichter Inhalt wurde gelöscht.              |
+| `RESTRICTED`                             | <Icon src="/img/icons/AccountRestricted.svg" alt="icon AccountRestricted" title=":iconRestricted:"/>                   | Das Benutzerkonto wurde eingeschränkt.                            |
+| `ACCOUNT_SUSPENDED`                      | <Icon src="/img/icons/AccountSuspended.svg" alt="icon AccountSuspended" title=":iconSuspended:"/>                      | Das Benutzerkonto wurde gesperrt.                                 |
+| `ACCOUNT_TERMINATED`                     | <Icon src="/img/icons/AccountTerminated.svg" alt="icon AccountTerminated" title=":iconTerminated:"/>                   | Das Benutzerkonto wurde gelöscht.                                 |
 
 - **Ausstellungsdatum**
 - **Inhaltstyp**
 - **Sanktions-Flags**:
 
-| **Flags**                                | **Emojis**                                                                                                                  | **Bedeutungen**                                                          |
-| ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| `ILLEGAL_CONTENT`                        | <Icon src="/img/icons/IllegalContent.svg" alt="icon IllegalContent" title=":iconIllegal:"/>                                 | Sanktion für illegalen Inhalt.                                           |
-| `AUTOMATED_DETECTION`                    | <Icon src="/img/icons/AutomatedDetection.svg" alt="icon AutomatedDetection" title=":iconBots:"/>                            | Sanktion durch automatische Erkennung angewendet.                        |
+| **Flags**                                | **Emojis**                                                                                                             | **Bedeutungen**                                                   |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ILLEGAL_CONTENT`                        | <Icon src="/img/icons/IllegalContent.svg" alt="icon IllegalContent" title=":iconIllegal:"/>                            | Sanktion für illegalen Inhalt.                                    |
+| `AUTOMATED_DETECTION`                    | <Icon src="/img/icons/AutomatedDetection.svg" alt="icon AutomatedDetection" title=":iconBots:"/>                       | Sanktion durch automatische Erkennung angewendet.                 |
 
 <SeparatedBox>
 <Tabs>

@@ -68,6 +68,10 @@ const sidebars: SidebarsConfig = {
                 },
                 {
                     type: 'doc',
+                    id: 'features/display',
+                },
+                {
+                    type: 'doc',
                     id: 'features/utilities',
                 },
             ],

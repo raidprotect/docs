@@ -2,36 +2,36 @@
 title: Community aktivieren
 ---
 
-Durch das Aktivieren der Community-Funktion schaltest du mehrere erweiterte Sicherheitseinstellungen frei, die für das korrekte Funktionieren mancher RaidProtect-Features wie **DM Lock** oder **Raid Mode** notwendig sind.
+Die Aktivierung der Community-Funktion macht mehrere erweiterte Sicherheitseinstellungen verfügbar, die für das ordnungsgemäße Funktionieren bestimmter RaidProtect-Funktionen wie **DM Lock** oder **Raid-Modus** unerlässlich sind.
 
-## 🚦 Voraussetzungen {#requirement}
+## Voraussetzungen {#requirement}
 
-- Du musst Administrator des Discord-Servers sein.
+- Administrator des Discord-Servers sein.
 
-## 🚩 Community-Funktionen aktivieren {#steps}
+## Community-Funktionen aktivieren {#steps}
 
-1. **Öffne deine Servereinstellungen**
-   - Klicke oben links auf den Servernamen > „Servereinstellungen“.
+1. **Öffnen Sie Ihre Servereinstellungen**
+   - Klicken Sie oben links auf den Servernamen > "Servereinstellungen".
 
-2. **Wechsle zum Bereich „Community“**
-   - Navigiere in der Seitenleiste zum Tab **Community aktivieren** und klicke auf **Los geht's**.
+2. **Gehen Sie zum Abschnitt "Community"**
+   - Navigieren Sie in der Seitenleiste zum Tab **Community aktivieren** und klicken Sie dann auf **Loslegen**.
 
 :::note
-Ist Community auf deinem Server bereits aktiviert, heißt der Bereich **Community-Übersicht**.
+Wenn die Community auf Ihrem Server bereits aktiviert ist, heißt der Abschnitt **Community-Übersicht**.
 :::
 
-3. **Folge dem Einrichtungsassistenten**
-   - Aktiviere die E-Mail-Verifizierung für alle Mitglieder.
-   - Aktiviere den Filter für explizite Inhalte.
-   - Richte einen Regel- und einen Info-Kanal ein.
-   - Akzeptiere die Richtlinien für Community-Server.
+3. **Folgen Sie dem Einrichtungsassistenten**
+   - Aktivieren Sie die E-Mail-Verifizierung für alle Mitglieder.
+   - Aktivieren Sie den Filter für anstößige Inhalte.
+   - Richten Sie einen Regelkanal und einen Ankündigungskanal ein.
+   - Akzeptieren Sie die Nutzungsrichtlinien für Community-Server.
 
-4. **Schließe die Einrichtung ab**
-   - Klicke auf „Setup abschließen“. Nach erfolgreicher Aktivierung erscheint auf deinem Server das „Community“-Abzeichen.
+4. **Schließen Sie die Einrichtung ab**
+   - Klicken Sie auf "Einrichtung abschließen". Das "Community"-Abzeichen wird auf Ihrem Server angezeigt, sobald die Aktivierung abgeschlossen ist.
 
-![Discord Community activation screenshot](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-enable-community.webp)
+![Screenshot Discord Community-Aktivierung](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-enable-community.webp)
 
-## 💡 DM Lock & Raid Mode nach der Aktivierung verwenden {#use}
+## DM Lock & Raid-Modus Module nach der Aktivierung verwenden {#use}
 
-- Führe den Befehl [`/settings`](../setup.md#settings) aus, um das RaidProtect-Konfigurationsmenü zu öffnen.
-- Aktiviere oder deaktiviere die gewünschten Module (DM Lock, Raid Mode usw.) über das interaktive Menü.
+- Führen Sie den Befehl [`/settings`](../setup.md#settings) aus, um das RaidProtect-Einstellungsmenü zu öffnen.
+- Aktivieren oder deaktivieren Sie die gewünschten Module (DM Lock, Raid-Modus...) über das interaktive Menü.

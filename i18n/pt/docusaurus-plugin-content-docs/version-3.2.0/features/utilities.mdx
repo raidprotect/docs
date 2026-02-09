@@ -1,0 +1,117 @@
+---
+title: Utilitarios
+---
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Icon from "@site/src/components/Icon";
+
+Funcionalidades extra para simplificar a gestao do teu servidor. 🔧
+
+Para alem das funcionalidades principais como o sistema de captcha e a protecao anti-raid, o RaidProtect oferece varias ferramentas secundarias que podem tornar a gestao do teu servidor ainda mais fluida.
+
+:::info
+Os comandos de utilitarios sao [utilizaveis com prefixo](../guides/prefix.md).
+:::
+
+## 👤 Informacao do utilizador {#userinfo}
+
+O comando `/userinfo` permite-te obter informacao detalhada sobre um utilizador.
+
+Usa o comando: ```/userinfo [@user]```
+
+Substitui `[@user]` pela mencao ou ID desejada.
+
+### 📋 Informacao apresentada {#displayed-userinfo}
+
+- **Data de criacao da conta Discord**
+- **Foto de perfil** do utilizador
+- **Banner de perfil**
+- **Insignias de perfil**
+  - As insignias Nitro, Booster, Quest e Originally Name nao sao apresentadas.
+
+
+### 🎭 Informacao de um membro do servidor {#displayed-memberinfo}
+
+Se o alvo for um membro do servidor, a informacao adicional inclui:
+
+- **Data de entrada no servidor**
+- **Alcunha no servidor**
+- **Numero de cargos** e **lista dos primeiros 6 cargos**
+- **Categoria de permissoes** (visivel apenas para moderadores):
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="animator" label="Animador" default>
+
+    A categoria **Animador** e apresentada se o membro tiver **pelo menos uma** das seguintes permissoes:
+
+    - `MANAGE_EXPRESSIONS`
+    - `CREATE_GUILD_EXPRESSIONS`
+    - `MANAGE_EVENTS`
+
+  </TabItem>
+  <TabItem value="moderator" label="Moderador">
+
+    A categoria **Moderador** e apresentada se o membro tiver **pelo menos uma** das seguintes permissoes:
+
+    - `KICK_MEMBERS`
+    - `BAN_MEMBERS`
+    - `MODERATE_MEMBERS`
+    - `MANAGE_MESSAGES`
+    - `MUTE_MEMBERS`
+    - `DEAFEN_MEMBERS`
+    - `MOVE_MEMBERS`
+    - `MANAGE_THREADS`
+
+  </TabItem>
+  <TabItem value="manager" label="Gestor">
+
+    A categoria **Gestor** e apresentada se o membro tiver **pelo menos uma** das seguintes permissoes:
+
+    - `MANAGE_GUILD`
+    - `MANAGE_ROLES`
+    - `MANAGE_CHANNELS`
+    - `VIEW_AUDIT_LOG`
+    - `MANAGE_WEBHOOKS`
+    - `MANAGE_SERVER_EXPRESSIONS`
+
+  </TabItem>
+  <TabItem value="admin" label="Administrador">
+
+    A categoria **Administrador** e apresentada em **dois casos possiveis**:
+
+    1️⃣ Tem a permissao:
+    - `ADMINISTRATOR`
+
+    2️⃣ Tem **as tres** permissoes seguintes em simultaneo:
+    - `MANAGE_GUILD`
+    - `MANAGE_ROLES`
+    - `MANAGE_CHANNELS`
+
+  </TabItem>
+  <TabItem value="owner" label="Proprietario">
+
+    **Condicao**: O membro e o **proprietario do servidor**.
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+- **Indicadores do membro** (visiveis apenas para moderadores)
+
+Certos indicadores especiais (flags) podem ser apresentados para um membro:
+
+| **Flag**                                 | **Emoji apresentado**                                                                                                  | **Explicacao**                                                    |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `DID_REJOIN`                             | <Icon src="/img/icons/MemberDidRejoin.svg" alt="icon MemberDidRejoin" title=":MemberDidRejoin:"/>                      | O utilizador saiu e voltou a entrar no servidor.                  |
+| `IS_GUEST`                               | <Icon src="/img/icons/MemberIsGuest.svg" alt="icon MemberIsGuest" title=":MemberIsGuest:"/>                            | Membro convidado (convite temporario ou acesso de convidado).     |
+| `COMPLETED_ONBOARDING`                   | <Icon src="/img/icons/OnboardingCompleted.svg" alt="icon OnboardingCompleted" title=":OnboardingCompleted:"/>          | Completou o processo de integracao do servidor.                   |
+| `STARTED_ONBOARDING`                     | <Icon src="/img/icons/OnboardingStarted.svg" alt="icon OnboardingStarted" title=":OnboardingStarted:"/>                | Iniciou o processo de integracao.                                 |
+| `COMPLETED_SERVER_GUIDE`                 | <Icon src="/img/icons/ServerGuideCompleted.svg" alt="icon ServerGuideCompleted" title=":ServerGuideCompleted:"/>       | Completou o guia do servidor se ativado.                          |
+| `STARTED_SERVER_GUIDE`                   | <Icon src="/img/icons/ServerGuideStarted.svg" alt="icon ServerGuideStarted" title=":ServerGuideStarted:"/>             | Iniciou o guia do servidor.                                       |
+| `AUTOMOD_QUARANTINED_NAME`               | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | Posto em quarentena pela automoderacao pelo nome de utilizador.   |
+| `AUTOMOD_QUARANTINED_GUILD_TAG`          | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | Posto em quarentena pela automoderacao pela etiqueta ou alcunha.  |
+| `BYPASSES_VERIFICATION`                  | <Icon src="/img/icons/BypassVerification.svg" alt="icon BypassVerification" title=":BypassVerification:"/>             | O utilizador pode contornar a verificacao do servidor.            |
+| `SPAMMER`                                | <Icon src="/img/icons/UnusualAccountActivity.svg" alt="icon UnusualAccountActivity" title=":UnusualAccountActivity:"/> | Conta marcada como spammer ou atividade invulgar detetada.        |

@@ -4,63 +4,67 @@ title: Anti-Raid
 
 ## Raid-Modus {#raid-mode}
 
-Der Raid-Modus ist eine Notfallfunktion, die entwickelt wurde, um sofort alle neuen Nutzer zu blockieren, die versuchen, deinem Server beizutreten, mit einer maximalen Dauer von 24 Stunden. Um neue Mitglieder dauerhaft zu blockieren, verwende den Befehl [`/joinlock`](./join-lock.mdx).
+Der Raid-Modus ist eine Notfallfunktion, die darauf ausgelegt ist, alle neuen Benutzer, die versuchen, Ihrem Server beizutreten, sofort zu blockieren, mit einer maximalen Dauer von 24 Stunden. Um neue Mitglieder dauerhaft zu blockieren, verwenden Sie den [`/joinlock`-Befehl](./join-lock.mdx).
 
-### ❓ Wie der Raid-Modus funktioniert {#working}
+### ❓ Funktionsweise des Raid-Modus {#working}
 
-RaidProtect aktiviert den Raid-Modus automatisch, wenn in kurzer Zeit viele Nutzer deinem Server beitreten. Standardmäßig schaltet sich der Modus ein, wenn mehr als 10 Nutzer in weniger als 10 Sekunden joinen. Ist der Raid-Modus aktiviert, kann niemand dem Server beitreten – Einladungen werden sofort blockiert.
+RaidProtect aktiviert den Raid-Modus automatisch, wenn eine große Anzahl von Benutzern Ihrem Server in kurzer Zeit beitritt. Standardmäßig wird der Raid-Modus aktiviert, wenn mehr als 10 Benutzer Ihrem Server in weniger als 10 Sekunden beitreten. Wenn der Raid-Modus aktiviert ist, kann kein Benutzer dem Server beitreten. Sie werden auf Einladungsebene blockiert.
 
 :::warning
-Die Community-Funktionen von Discord sind für ein korrektes Funktionieren des Raid-Modus erforderlich. [Folge unserem Leitfaden, um sicherzustellen, dass Community auf deinem Server aktiviert ist.](../guides/community.md)
+Die Community-Funktionen von Discord sind für die ordnungsgemäße Funktion des Raid-Modus unerlässlich. [Folgen Sie unserer Anleitung, um die Aktivierung der Community auf Ihrem Server zu überprüfen.](../guides/community.md)
 :::
 
-#### Aktivieren {#enable}
+#### Aktivierung {#enable}
 
-- Um den Modus manuell zu aktivieren, muss ein Nutzer mit Kick-Berechtigung den Befehl `/raidmode` ausführen.
-- Im Log-Kanal wird automatisch eine Nachricht gepostet, die die Aktivierung meldet.
+- Um diesen Modus manuell zu aktivieren, muss ein Benutzer mit Kick-Berechtigungen den Befehl `/raidmode` ausführen.
+- Eine Nachricht wird automatisch im Log-Kanal veröffentlicht, um die Aktivierung zu signalisieren.
 
-#### Deaktivieren {#disable}
+#### Deaktivierung {#disable}
 
-Der Raid-Modus deaktiviert sich nicht von selbst. Denke daran, ihn mit demselben Befehl wieder auszuschalten, sobald die Gefahr vorüber ist. 😇
+Der Raid-Modus wird nicht automatisch deaktiviert. Denken Sie daran, ihn mit demselben Befehl zu stoppen, sobald die Bedrohung vorüber ist. 😇
 
 :::info
-Der Befehl `raidmode` ist [auch mit Prefix verfügbar](../guides/prefix.md).
+Der Befehl `raidmode` ist [per Präfix verwendbar](../guides/prefix.md).
 :::
 
-### 🚨 Automatische Raid-Modus-Konfiguration {#config}
+### 🚨 Konfiguration des automatischen Raid-Modus {#config}
 
-Wenn auf deinem Server häufig viele Mitglieder gleichzeitig joinen, solltest du diese Schwelle anpassen, um Fehlalarme zu vermeiden.
+Wenn Ihr Server häufig viele neue Mitglieder gleichzeitig empfängt, ist es ratsam, diesen Schwellenwert anzupassen, um Fehlalarme zu vermeiden.
 
-![Screenshot der Einstellungen für den automatischen Raid-Modus](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-raid-mode.webp)
+![Automatischer Raid-Modus Screenshot](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-raid-mode.webp)
 
-#### Mitgliederschwelle {#threshold}
+#### Mitglieder-Schwellenwert {#threshold}
 
-1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
-2. Klicken Sie auf die Schaltfläche "**Auto RaidMode**".
-3. Wählen Sie "**Members**".
-4. Legen Sie die Anzahl der Mitglieder fest, die innerhalb von 10 Sekunden beitreten dürfen.
+1. Führen Sie den [`/settings`-Befehl](../setup.md#settings) aus.
+2. Klicken Sie auf die Schaltfläche "**Auto RaidMode**".
+3. Wählen Sie "**Anzahl der Mitglieder**".
+4. Wählen Sie die Anzahl der Mitglieder, die innerhalb von 10 Sekunden beitreten können.
 
-Sie können den Standardwert (10) beibehalten oder den gewünschten Wert über die Schaltfläche "**Custom value**" anpassen.
+Sie können den Standardwert (10) beibehalten oder ihn auf den gewünschten Wert anpassen, indem Sie auf die Schaltfläche "**Benutzerdefinierter Wert**" klicken.
 
-#### RaidMode-Dauer {#duration}
+:::note
+Wir empfehlen, einen Wert zwischen 10 und 20 Mitgliedern pro 10 Sekunden einzugeben, um eine gute Effektivität des Systems zu gewährleisten.
+:::
 
-1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
-2. Klicken Sie auf die Schaltfläche "**Auto RaidMode**".
-3. Wählen Sie "**Duration**".
-4. Legen Sie die Dauer des RaidModes fest (maximal 24 Stunden).
+#### Dauer des Raid-Modus {#duration}
 
-Sie können den Standardwert (5 Minuten) beibehalten oder den gewünschten Wert über die Schaltfläche "**Custom value**" anpassen.
+1. Führen Sie den [`/settings`-Befehl](../setup.md#settings) aus.
+2. Klicken Sie auf die Schaltfläche "**Auto RaidMode**".
+3. Wählen Sie "**Dauer**".
+4. Wählen Sie die Dauer des Raid-Modus (maximal 24 Stunden).
 
-## Mindestalter des Accounts {#minage}
+Sie können den Standardwert (5 Minuten) beibehalten oder ihn auf den gewünschten Wert anpassen, indem Sie auf die Schaltfläche "**Benutzerdefinierter Wert**" klicken.
 
-Zur besseren Sicherheit kannst du ein Mindestalter der Discord-Accounts für neue Mitglieder festlegen.
+## Mindestalter {#minage}
 
-1. Führe den [`/settings`-Befehl](../setup.md#settings) aus.
-2. Klicke auf die Schaltfläche "**Minimum Age**".
-3. Wähle den gewünschten Wert im Dropdown-Menü oder gib ein eigenes Datum im Format m/h/d/y an.
+Um die Sicherheit zu erhöhen, können Sie ein Mindestalter für Discord-Konten neuer Mitglieder festlegen.
 
-### 🎂 Mindestalter umgehen {#bypass-minage}
+1. Führen Sie den [`/settings`-Befehl](../setup.md#settings) aus.
+2. Klicken Sie auf die Schaltfläche "**Mindestalter**".
+3. Wählen Sie den gewünschten Wert aus dem Auswahlmenü oder wählen Sie einen benutzerdefinierten Wert im Datumsformat (m/h/d/y).
 
-Verwende den Befehl: ```/bypass minage [user]```
+### 🎂 Bypass des Mindestkonto-Alters {#bypass-minage}
 
-Ersetze `[user]` mit der gewünschten ID; diese Person hat dann 10 Minuten Zeit, dem Server beizutreten, ohne wegen Nichterfüllung des Alterskriteriums gekickt zu werden. Sie können den Befehl auch ohne Angabe eines Benutzers verwenden, um die aktuelle Liste der Bypass-Benutzer anzuzeigen.
+Verwenden Sie den Befehl: ```/bypass minage [Benutzer]```
+
+Ersetzen Sie `[Benutzer]` durch die gewünschte Kennung; diese Person hat 10 Minuten Zeit, dem Server beizutreten, ohne aufgrund der Altersanforderung gekickt zu werden. Sie können den Befehl auch ohne Angabe eines Benutzers verwenden, um die aktuelle Liste der Bypass-Benutzer anzuzeigen.

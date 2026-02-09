@@ -1,0 +1,98 @@
+---
+title: Utilizar IDs
+---
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Os IDs do Discord são números únicos que identificam com precisão cada utilizador, canal, servidor ou mensagem no Discord. São uma forma fiável e permanente de identificar elementos na plataforma.
+
+:::note Relevância para a Moderação
+Utilizar IDs do Discord é especialmente útil para ações de moderação porque permite-lhe:
+- **Sancionar um utilizador ausente**: Banir alguém que saiu do servidor
+- **Evitar erros**: Identificar com precisão a pessoa certa mesmo com nomes de utilizador semelhantes
+- **Manter o registo**: Os IDs nunca mudam, ao contrário dos nomes de utilizador
+- **Resolução de conflitos**: Identificação clara em caso de caracteres especiais
+:::
+
+## Ativar o Modo de Programador
+
+Precisa de ativar o Modo de Programador para utilizar os IDs do Discord.
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="desktop" label="No Discord Desktop/Web" default>
+
+    1. **Abra as Definições de Utilizador**
+    - Clique no ícone de engrenagem ⚙️ no canto inferior esquerdo da interface
+
+    2. **Aceda às Definições Avançadas**
+    - Na barra lateral, vá ao separador **Avançado**
+
+    3. **Ative o Modo de Programador**
+    - Ative a opção **"Modo de Programador"** clicando no botão de alternância
+    - O botão deve ficar azul quando ativado
+
+  </TabItem>
+  <TabItem value="mobile" label="No Discord Mobile">
+
+    1. **Abra as Definições de Utilizador**
+    - Toque no seu avatar no canto inferior direito
+    - Toque no ícone de engrenagem ⚙️ no canto superior direito da interface
+
+    2. **Aceda às Definições Avançadas**
+    - Deslize para baixo e toque em **"Avançado"**
+
+    3. **Ative o Modo de Programador**
+    - Ative a opção **"Modo de Programador"**
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+## Copiar um ID
+
+Uma vez ativado o Modo de Programador, pode copiar o ID de qualquer elemento:
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="user" label="ID de Utilizador" default>
+
+    - **Clique com o botão direito** no avatar ou nome de utilizador
+    - Selecione **"Copiar ID de Utilizador"**
+
+  </TabItem>
+  <TabItem value="channel" label="ID de Canal">
+
+    - **Clique com o botão direito** no nome do canal na lista de canais
+    - Selecione **"Copiar ID de Canal"**
+
+  </TabItem>
+  <TabItem value="server" label="ID de Servidor">
+
+    - **Clique com o botão direito** no nome do servidor no canto superior esquerdo
+    - Selecione **"Copiar ID de Servidor"**
+
+  </TabItem>
+  <TabItem value="message" label="ID de Mensagem">
+
+    - **Clique com o botão direito** numa mensagem
+    - Selecione **"Copiar ID de Mensagem"**
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+## Utilização com o RaidProtect
+
+Os IDs podem ser utilizados nos comandos do RaidProtect em vez de menções:
+
+- [`/ban user:123456789012345678 reason:Violação das regras do servidor`](../features/moderation#ban)
+- [`/clear amount:100 user:123456789012345678`](../features/moderation#clear)
+- [`/userinfo user:123456789012345678`](../features/utilities#userinfo)
+- [`/bypass mining user:123456789012345678`](../features/raid-mode#minage)
+
+:::info
+Pode banir um utilizador utilizando o seu ID do Discord, mesmo que não esteja online ou presente no seu servidor.
+:::

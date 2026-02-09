@@ -38,6 +38,59 @@ Lorsque vous dupliquez un salon qui possède des configurations internes à Raid
 
 **Exemple** : Si vous dupliquez le salon de logs, RaidProtect vous proposera de mettre à jour sa configuration pour que le nouveau salon devienne le salon de logs, ou de garder les deux salons configurés selon votre préférence.
 
+## 🗑️ Supprimer et re-créer un Salon {#channel-clear}
+
+La commande `/channel clear` vous permet de supprimer un salon et de le re-créer à l'identique, en conservant ses paramètres, permissions et configurations RaidProtect.
+
+Utilisez la commande : ```/channel clear```
+
+:::warning
+Les messages et les webhooks du salon seront définitivement supprimés. Une confirmation vous sera demandée avant l'exécution.
+:::
+
+## 🧹 Congédier des Membres {#prune}
+
+La commande `/prune` vous permet d'expulser les membres inactifs de votre serveur via un menu interactif.
+
+Utilisez la commande : ```/prune [durée]```
+
+Remplacez `[durée]` par le nombre de jours d'inactivité souhaité. Le bot affiche un menu interactif vous permettant de :
+- Sélectionner la durée d'inactivité
+- Inclure ou exclure des rôles spécifiques
+- Voir le nombre de membres concernés avant confirmation
+
+![Capture d'écran de la commande prune](../assets/rp-prune.webp)
+
+## 🚫 Bloquer des Utilisateurs {#block}
+
+La commande `/block` vous permet d'empêcher un utilisateur d'utiliser certaines fonctionnalités de RaidProtect sur votre serveur (par exemple, envoyer des signalements ou recevoir le rôle de tag).
+
+### Bloquer un utilisateur {#block-add}
+
+Utilisez la commande : ```/block add (utilisateur) [raison]```
+
+### Débloquer un utilisateur {#block-remove}
+
+Utilisez la commande : ```/block remove (utilisateur) [raison]```
+
+### Lister les utilisateurs bloqués {#block-list}
+
+Utilisez la commande : ```/block list```
+
+## 📢 Panneaux d'information {#display}
+
+Consultez la [page dédiée aux panneaux d'information](./display.mdx) pour en savoir plus sur la commande `/display public`.
+
+## 📜 Mes Sanctions {#my-sanctions}
+
+La commande `/my-sanctions` permet aux membres de consulter leurs propres sanctions sur le serveur, selon le [niveau de confidentialité](./sanctions.mdx#sanctions-privacy) configuré par les administrateurs.
+
+Utilisez la commande : ```/my-sanctions```
+
+:::info
+Cette commande est également accessible via le bouton **Consulter mes sanctions** sur les [panneaux d'information](./display.mdx) si la fonctionnalité est activée.
+:::
+
 ## 👤 Informations Utilisateur {#userinfo}
 
 La commande `/userinfo` vous permet d’obtenir des informations détaillées sur un utilisateur.

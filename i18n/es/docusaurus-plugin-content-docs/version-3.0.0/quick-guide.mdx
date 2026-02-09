@@ -1,0 +1,52 @@
+---
+title: Guía rápida
+---
+
+import DocCard from '@theme/DocCard';
+
+¿Necesitas empezar rápidamente con RaidProtect? Esta página resume la información clave que necesitas saber.
+
+¡Bienvenido a la guía rápida de RaidProtect! **Esta página condensa la información esencial** para comenzar con el bot. Para más detalles sobre cada función, consulta el resto de la documentación. 📚
+
+Primero, debes invitar a RaidProtect y **configurar correctamente sus permisos**. Este paso crucial se detalla en la página de inicio de la documentación.
+
+<DocCard item={{ type: 'link', href: '/3.0.0', label: 'Léeme' }} />
+<br />
+
+Una vez que los permisos estén correctamente configurados (sin lo cual el bot podría no funcionar correctamente), ¡puedes empezar a explorar las distintas funciones! 🤠
+
+## 💬 Anti-Spam {#antispam}
+
+Una de las principales funciones de RaidProtect es su sistema anti-spam. Te permite **bloquear intentos de spam en cuestión de segundos**, sin ninguna intervención manual.
+
+El sistema anti-spam toma en cuenta múltiples parámetros para determinar la gravedad del spam y decidir si debe actuar. **Si se detecta spam, el bot expulsa al spammer** y te notifica en el canal de logs. 🙌
+
+En algunos casos, podrías querer **excluir ciertos canales de la detección de spam**. Para hacerlo, simplemente ejecuta el comando `?settings allowspam #canal-a-ignorar`. Para más detalles sobre el sistema anti-spam, ¡consulta la documentación detallada!
+
+<DocCard item={{ type: 'link', href: '/3.0.0/features/anti-spam', label: 'Anti-Spam' }} />
+
+## 💢 Modo Raid {#raidmode}
+
+A veces, un grupo de usuarios puede amenazar tu servidor y se requieren medidas drásticas. ¡El Modo Raid está aquí para ayudar! Te permite **bloquear temporalmente a todos los usuarios que intenten unirse a tu servidor**. Es efectivo, pero debe reservarse para situaciones graves. 🤩
+
+**Activar el Modo Raid es increíblemente sencillo**, lo que te permite responder rápidamente a las amenazas. Solo ejecuta el comando `?raidmode` en cualquier canal y el Modo Raid se activará. **¡No olvides desactivarlo** usando el mismo comando!
+
+Para hacer esta protección aún más efectiva, RaidProtect puede detectar una afluencia masiva de nuevos usuarios y **activar el Modo Raid automáticamente** (aunque no lo desactivará). Si tu servidor es muy popular, es posible que necesites ajustar la configuración de sensibilidad. Consulta la documentación detallada para más información.
+
+<DocCard item={{ type: 'link', href: '/3.0.0/features/raid-mode', label: 'Modo Raid' }} />
+
+## 🚧 Captcha {#captcha}
+
+Por último, tenemos la función de captcha de RaidProtect, una herramienta popular y esencial. Piensa en las casillas de "No soy un robot". Nuestro captcha cumple una función similar, pero para tu servidor de Discord. **Muestra un código que los nuevos usuarios deben completar**, deteniendo a los bots disfrazados de cuentas normales (_selfbots_). 🕵️
+
+**Esta función es completamente opcional**, y puede que no la necesites. Si quieres usarla, simplemente actívala ejecutando el comando `?captcha enable`. ¡Todo lo demás es automático!
+
+Si tu servidor usa un rol de Miembro y un bot para asignarlo automáticamente (_autorole_), **esto podría interferir con el captcha**. Afortunadamente, hemos previsto esto. Consulta la documentación detallada del captcha para explorar las opciones de configuración.
+
+<DocCard item={{ type: 'link', href: '/3.0.0/features/captcha', label: 'Captcha (Verificación)' }} />
+
+## 😵 ¡No funciona! {#errors}
+
+Ya sea un mal funcionamiento o un problema de configuración, las cosas no siempre salen como se esperaba. ¡Afortunadamente, estamos aquí para ayudar! **Empieza por consultar la página de problemas comunes** en esta documentación. Si el problema persiste, nuestro equipo estará encantado de asistirte. Únete a nuestro servidor de Discord para contactarnos. 👨‍🔧
+
+<DocCard item={{ type: 'link', href: '/3.0.0/malfunctions', label: 'Problemas comunes' }} />

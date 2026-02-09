@@ -6,6 +6,39 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Découvrez la liste détaillée des modifications qui ont été apportées à RaidProtect.
 
+## 3.3.1 (09/02/2026) {#3-3-1}
+
+- Système de **[Panneaux d'information](./features/display.mdx)** (`/display public`).
+- Nouveau module **Anti-Scam**.
+- [Sanctionner via le menu contextuel](./features/moderation.mdx#context-menu) (clic droit sur un profil).
+- Nouveau système de **[Jail](./features/sanctions.mdx#jail)**.
+  - Nouvelle [commande `/jail`](./features/moderation.mdx#jail) pour emprisonner un membre.
+  - Nouvelle [commande `/tempjail`](./features/moderation.mdx#tempjail) pour emprisonner temporairement un membre.
+  - Nouvelle [commande `/unjail`](./features/moderation.mdx#unjail) pour libérer un membre.
+  - Configuration du rôle Jail et du salon d'information via `/settings`.
+- Nouveau système de **[Mute par rôle](./features/sanctions.mdx#mute)** : au-delà d'un [seuil configurable](./features/sanctions.mdx#mute-threshold), le bot attribue un rôle Mute au lieu du timeout Discord.
+  - Les commandes `/timeout` et `/untimeout` deviennent [`/mute`](./features/moderation.mdx#timeout) et [`/unmute`](./features/moderation.mdx#untimeout). Le timeout Discord reste utilisé par défaut en dessous du seuil.
+  - Nouveau paramètre `[force_timeout]` pour forcer le timeout Discord quelle que soit la durée.
+- Nouvelle [commande `/my-sanctions`](./features/utilities.mdx#my-sanctions) pour permettre aux membres de consulter leurs propres sanctions.
+- Nouveau paramètre [Confidentialité des sanctions](./features/sanctions.mdx#sanctions-privacy) pour contrôler l'accès aux sanctions personnelles.
+- Nouveau paramètre [Afficher les médias](./features/sanctions.mdx#show-medias) dans les raisons de sanctions.
+- Refonte visuelle des filtres dans [`/sanctions search`](./features/sanctions.mdx#search) et ajout du filtre [type de modérateur](./features/sanctions.mdx#search).
+- [Import / Export des sanctions](./features/sanctions.mdx#import-export) via le bot support.
+- Nouveau système de **[blocage de membres](./features/utilities.mdx#block)** de certaines fonctionnalités de RaidProtect sur un serveur.
+  - Nouvelle [commande `/block add`](./features/utilities.mdx#block-add).
+  - Nouvelle [commande `/block remove`](./features/utilities.mdx#block-remove).
+  - Nouvelle [commande `/block list`](./features/utilities.mdx#block-list).
+- Nouvelle [commande `/prune`](./features/utilities.mdx#prune) pour congédier les membres inactifs avec des conditions plus précises. <SuggestionLink id="256" />
+- Nouvelle [commande `/channel clear`](./features/utilities.mdx#channel-clear) pour supprimer et re-créer un salon. <SuggestionLink id="543" />
+- Logs pour les commandes `/bypass`. <SuggestionLink id="546" />
+- [Internationalisation](./language.md) (ajout de l'allemand, l'espagnol et le portugais).
+- Correction :
+  - Amélioration de la gestion du captcha.
+  - Correction de la validation des préfixes.
+  - Corrections de traductions.
+- Performances et stabilité :
+  - Nouveau framework de traduction ([`@fca.gg/hermes` v1.2.1](https://github.com/FCAgreatgoals/hermes)).
+
 ## 3.3.0 (19/12/2025) {#3-3-0}
 
 - Nouvelle fonctionnalité **[Historique des sanctions](./features/sanctions.mdx)**.

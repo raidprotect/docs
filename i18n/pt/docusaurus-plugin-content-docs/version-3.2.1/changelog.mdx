@@ -1,0 +1,142 @@
+---
+title: Registo de Alterações
+---
+
+import SuggestionLink from '@site/src/components/SuggestionLink';
+
+Descubra a lista detalhada das alterações efetuadas no RaidProtect.
+
+## 3.2.1 (03/09/2025) {#3-2-1}
+
+- Novo [comando `/ds`](./features/utilities.mdx#discord-sanctions) que permite ver as sanções Discord de um utilizador.
+- O anti-spam é agora capaz de parar o spam de Slash Commands.
+- Novo gatilho de anti-spam: [Spam de comandos externos](./features/anti-spam.mdx#triggers).
+- Novo [comando `/slowmode`](./features/moderation.md#slowmode) para ativar ou modificar o modo lento de um canal.
+- Novo [comando `/unban`](./features/moderation.md#unban). <SuggestionLink id="296" />
+- Novo [comando `/bypass captcha`](./features/captcha.md#bypass) para aceitar um utilizador que não consiga resolver o captcha.
+- Novo parâmetro [reason] para os [comandos `/lock` e `/unlock`](./features/channel-lock.md). <SuggestionLink id="516" />
+- Correções:
+  - Diversos erros de tradução.
+  - Melhor tratamento do **motivo** no comando `/timeout`.
+  - Otimizações do tempo de arranque do bot e do tempo de execução dos comandos.
+  - Correções na interpretação e validação dos comandos com prefixo.
+  - Correção de problemas relacionados com **avatares predefinidos**.
+
+## 3.2.0 (10/07/2025) {#3-2-0}
+
+- Nova funcionalidade [Bloqueio de MDs](./features/dm-lock.mdx).
+- Escolha das [sanções](./features/anti-spam.mdx#triggers) aplicadas pelo anti-spam. <SuggestionLink id="85" />
+- Novos [registos do anti-spam](./features/anti-spam.mdx#logs) (mais visibilidade nas deteções).
+- Ativação de uma [idade mínima da conta](./features/raid-mode.md#minage) sem captcha. <SuggestionLink id="314" />
+- Novo [comando /bypass minage](./features/raid-mode.md#bypass-minage) para aceitar um utilizador que não cumpra a idade mínima da conta exigida. <SuggestionLink id="447" />
+- Reformulação completa do [comando `/userinfo`](./features/utilities.mdx#userinfo).
+- Novos registos para alterações importantes na configuração do bot.
+- Correções:
+  - O anti-spam funciona agora em tópicos.
+  - O [comando `/lock`](./features/channel-lock.md) suporta agora canais de fórum e de multimédia, e bloqueia tópicos juntamente com os canais.
+  - O [captcha](./features/captcha.md) já não bloqueia novos membros quando o bot não tem as permissões necessárias.
+  - Corrigido o erro do [comando `/clear`](./features/moderation.md#clear) quando o bot não tinha as permissões necessárias num canal.
+- Melhorias de UI/UX:
+  - Clarificação sobre a possibilidade de escrever nos menus de seleção de membros, cargos e canais.
+  - Verificação da presença da funcionalidade `COMMUNITY` ao configurar o Modo Raid Automático.
+- Desempenho e estabilidade:
+  - Gestão de emojis reformulada ([`@fca.gg/glyph` v1.0.0](https://github.com/FCAgreatgoals/glyph)).
+  - Tempo de arranque reduzido e monitorização de clusters (`@fca.gg/midway` v1.3.1).
+  - Melhor gestão dos limites de requisições e redução da latência (`@fca.gg/iris` v1.1.4).
+  - Sentry integrado para rastreamento de erros e suporte melhorado ao desenvolvimento ([`@fca.gg/kino` v1.0.0](https://github.com/FCAgreatgoals/kino)).
+
+## 3.1.1 (21/05/2025) {#3-1-1}
+
+- Nova funcionalidade [Cargo de Tag](./features/tag-role.md). <SuggestionLink id="512" />
+- Novo comando de moderação [`/timeout`](./features/moderation.md#timeout). <SuggestionLink id="52" />
+- Acompanhamento automático das atualizações no canal de registos geral de cada servidor.
+- Desempenho e estabilidade:
+  - Limpeza dos estados persistentes do anti-spam.
+  - Correção de fugas de memória.
+  - Otimização das chamadas à base de dados.
+  - Melhoria da velocidade geral do bot.
+
+## 3.1.0 (12/03/2025) {#3-1-0}
+
+- Adição de **Slash Commands**. <SuggestionLink id="463" />
+- [Internacionalização](./language.md) (adição do inglês). <SuggestionLink id="109" />
+- Nova funcionalidade [`/report`](./features/reports.md). <SuggestionLink id="164" />
+- Novos comandos de configuração:
+  - [`/settings`](./setup.md#settings) como painel interativo.
+  - [`/setup`](./setup.md#install) como processo de Onboarding.
+- Definições avançadas:
+  - Ativar/desativar cada funcionalidade individualmente. <SuggestionLink id="356" />
+  - Escolher o tempo e o número de tentativas antes da expulsão pelo [captcha](./features/captcha.md#config). <SuggestionLink id="363" />
+  - Opção de selecionar o canal de verificação para o [captcha](./features/captcha.md). <SuggestionLink id="385" />
+  - Ignorar utilizadores/cargos/categorias no [anti-spam](./features/anti-spam.mdx#ignore). <SuggestionLink id="362" />
+  - Escolher o [prefixo para comandos híbridos](./guides/prefix.md). <SuggestionLink id="103" />
+  - Opção de escolher se o [comando `/lock`](./features/channel-lock.md) renomeia o canal bloqueado com `🔒`.
+- UX melhorada:
+  - Prefixo apresentado ao mencionar o bot + menção como prefixo universal. <SuggestionLink id="193" />
+  - Desativar o [captcha](./features/captcha.md) já não elimina o cargo e o canal associados. <SuggestionLink id="43" />
+  - Deteção automática de problemas de permissões relacionados com canais e cargos. <SuggestionLink id="65" />
+  - Verificação automática da visibilidade do canal de verificação no processo de onboarding do Discord.
+  - Mensagens padronizadas.
+- Melhoria do desempenho e estabilidade do bot.
+
+## 3.0.0 (01/14/2023) {#3-0-0}
+
+- Reescrita completa com o objetivo de preparar futuras atualizações e estabilizar o bot.
+- Correção de todos os erros conhecidos até à data.
+- O [comando `?raidmode`](./features/raid-mode.md) utiliza agora a funcionalidade "Desativar Convites".
+- Envio automático de uma mensagem privada ao membro em causa quando uma sanção é aplicada. <SuggestionLink id="426" />
+
+## 2.2.0 (04/13/2020) {#2-2-0}
+
+- Melhoria do desempenho do bot.
+- Alterações significativas na arquitetura interna do projeto.
+
+## 2.1.3 (10/13/2019) {#2-1-3}
+
+- Remoção da lista negra e dos comandos associados.
+- Possibilidade de banir qualquer utilizador pelo seu ID, mesmo que não esteja no servidor afetado. <SuggestionLink id="113" /> <SuggestionLink id="148" />
+- Apresentação do motivo do banimento na resposta do [comando `?ban`](./features/moderation.md#ban).
+- O [comando `?raidmode`](./features/raid-mode.md) requer agora a permissão para expulsar membros.
+- Alteração da duração da expulsão se o captcha não for completado (5 min). <SuggestionLink id="129" />
+- Diversas melhorias internas.
+
+## 2.1.2 (04/17/2019) {#2-1-2}
+
+- Adição do [comando `?userinfo`](./features/utilities.mdx#userinfo). <SuggestionLink id="29" />
+- ~~Adição dos comandos `?lockall` e `?unlockall`~~ (Funcionalidade removida).
+- Adição dos comandos [`?kick`](./features/moderation.md#kick) e [`?ban`](./features/moderation.md#ban).
+- Adição da [idade mínima ao captcha](./features/raid-mode.md#minage) (possibilidade de definir uma idade mínima da conta para aceder ao servidor).
+- Opção para configurar a eliminação automática das mensagens de invocação de comandos. <SuggestionLink id="26" />
+- O canal de registos é automaticamente recriado se for eliminado.
+- Reformulação da ligação à base de dados.
+- Correções de erros e diversas melhorias.
+
+## 2.1.1 (02/21/2019) {#2-1-1}
+
+- Remoção de `?settings captcha` (substituído por `?captcha`).
+- Adição da possibilidade de definir um [canal de registos](./features/captcha.md#logs) para o captcha.
+- Adição de um [cargo automático](./features/captcha.md#autorole) compatível com o captcha.
+- Simplificação do [captcha](./features/captcha.md) (5/6 letras corretas exigidas).
+- Outras alterações menores.
+
+## 2.1.0 (02/16/2019) {#2-1-0}
+
+- Adição do captcha (`?settings captcha`). <SuggestionLink id="11" />
+- Adição do nível de segurança anti-spam (`?settings spamlevel`). <SuggestionLink id="25" />
+- Adição dos comandos `?about` e `?invite`.
+- Adição do [comando `?clear`](./features/moderation.md#clear).
+- Diversas alterações e correções de erros.
+
+## 2.0.1 (02/04/2019) {#2-0-1}
+
+- Reescrita da ajuda (`?help`).
+- Correção de erros em [`?lock`](./features/channel-lock.md#lock) e [`?unlock`](./features/channel-lock.md#unlock).
+
+## 2.0.0 (01/26/2019) {#2-0-0}
+
+- Adição do [anti-spam](./features/anti-spam.mdx).
+- Adição do [modo raid automático](./features/raid-mode.md#config).
+- Adição do canal de registos.
+- Adição da configuração do bot.
+- Adição do [bloqueio de canais](./features/channel-lock.md).
+- Numerosas alterações diversas.

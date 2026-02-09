@@ -7,14 +7,16 @@ RaidProtect simplifies server management with two powerful tools: the [`/setup`]
 ## Guided Installation {#install}
 
 The `/setup` command is designed to help you configure RaidProtect quickly or through a detailed approach, depending on your needs.
-<!-- It offers two configuration modes: [recommended](#recommended) or [advanced](#advanced). -->
+<!--
+It offers two configuration modes: [recommended](#recommended) or [advanced](#advanced).
+-->
 
 ### 🔧 Recommended Configuration {#recommended}
 
 Allows you to enable or disable core features at a glance using an interactive selection menu.
 
 1. Use the `/setup` command.
-2. Select the “**Recommended Configuration**” button.
+2. Select the "**Recommended Configuration**" button.
 3. Enable or disable the desired features using the selection menu.
 
 The bot will then send you a summary of the activated features and the changes it will make to the server.
@@ -27,9 +29,9 @@ The bot will then send you a summary of the activated features and the changes i
 If you want to configure the bot more thoroughly, opt for the advanced configuration. The bot guides you step by step with clear explanations.
 
 1. Use the `/setup` command.
-2. Select the “**Advanced Configuration**” button.
+2. Select the "**Advanced Configuration**" button.
 3. Each step introduces a feature, its purpose, and a recommended minimum configuration.
-4. Use the “**Previous**” and “**Next**” buttons to move forward or go back.
+4. Use the "**Previous**" and "**Next**" buttons to move forward or go back.
 
 At the end, a summary of the settings is displayed to confirm your choices.
 -->
@@ -48,7 +50,7 @@ The `/settings` command is the go-to command for managing your settings after in
 ### 🔄 Resetting a Setting {#reset}
 
 1. Navigate to the desired setting.
-2. Click on “**Reset**”.
+2. Click on "**Reset**".
 
 ![Reset button screenshot](./assets/rp-button-reset.webp)
 

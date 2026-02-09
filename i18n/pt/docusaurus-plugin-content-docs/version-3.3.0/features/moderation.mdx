@@ -1,0 +1,89 @@
+---
+title: Moderacao
+---
+
+import Icon from "@site/src/components/Icon";
+
+Para facilitar o trabalho dos seus moderadores, o RaidProtect integra comandos de moderacao muito uteis que permitem interagir diretamente com as funcionalidades nativas do Discord, como **banir** e **expulsar** utilizadores.
+
+Para alem destas acoes, o RaidProtect envia mensagens privadas ao utilizador sancionado para explicar o motivo da sua sancao, sendo igualmente registado nos registos do servidor para sua referencia.
+
+:::info
+Os comandos de moderacao sao [utilizaveis por prefixo](../guides/prefix).
+:::
+
+## <Icon src="/img/icons/SanctionsBAN.svg" alt="icon SanctionsBAN" title=":iconSanctionsBAN:"/> Banir um Utilizador {#ban}
+
+O comando `/ban` permite-lhe proibir permanentemente um utilizador de aceder ao seu servidor.
+
+Utilize o comando: ```/ban (user) [reason]```
+
+Substitua `(user)` pela mencao ou ID desejado e `[reason]` pelo motivo da sancao.
+
+:::tip
+Pode banir um utilizador atraves do seu [ID Discord](../guides/id), mesmo que este nao esteja atualmente online ou presente no seu servidor.
+:::
+
+### <Icon src="/img/icons/SanctionsBANTemp.svg" alt="icon SanctionsBANTemp" title=":iconSanctionsBANTemp:"/> Banir temporariamente um utilizador {#tempban}
+
+O comando `/tempban` permite-lhe proibir temporariamente um utilizador de aceder ao seu servidor.
+
+Utilize o comando: ```/tempban (user) (duration) [reason]```
+
+Substitua `(user)` pela mencao ou ID desejado, `(duration)` pela duracao do banimento e `[reason]` pelo motivo da sancao.
+
+### <Icon src="/img/icons/SanctionsUNBAN.svg" alt="icon SanctionsUNBAN" title=":iconSanctionsUNBAN:"/> Desbanir um utilizador {#unban}
+
+O comando `/unban` permite-lhe remover o banimento de um utilizador previamente banido, permitindo-lhe assim voltar a entrar no seu servidor.
+
+Utilize o comando: ```/unban (user) [reason]```
+
+Substitua `(user)` pelo identificador desejado e `[reason]` pelo motivo do desbanimento.
+
+## <Icon src="/img/icons/SanctionsKICK.svg" alt="icon SanctionsKICK" title=":iconSanctionsKICK:"/> Expulsar um Utilizador {#kick}
+
+O comando `/kick` permite-lhe remover um membro do seu servidor sem o banir. O utilizador podera voltar a entrar no servidor se tiver um convite valido.
+
+Utilize o comando: ```/kick (member) [reason]```
+
+Substitua `(member)` pela mencao ou ID desejado e `[reason]` pelo motivo da sancao.
+
+## <Icon src="/img/icons/SanctionsTIMEOUT.svg" alt="icon SanctionsTIMEOUT" title=":iconSanctionsTIMEOUT:"/> Excluir temporariamente um Utilizador {#timeout}
+
+Utilize o comando: ```/timeout (member) (duration) [reason]```
+
+Substitua `(member)` pela mencao ou ID desejado, `(duration)` pela duracao da exclusao temporaria, ate um maximo de 28 dias (ex.: `10m`, `1h`, `1d`), e `[reason]` pelo motivo da sancao.
+
+### <Icon src="/img/icons/SanctionsUNTIMEOUT.svg" alt="icon SanctionsUNTIMEOUT" title=":iconSanctionsUNTIMEOUT:"/> Remover a exclusao temporaria de um utilizador {#untimeout}
+
+O comando `/untimeout` permite-lhe remover imediatamente as restricoes de um membro com exclusao temporaria, permitindo-lhe recuperar todas as suas capacidades de interacao no servidor.
+
+Utilize o comando: ```/untimeout (member) [reason]```
+
+Substitua `(member)` pela mencao ou ID desejado e `[reason]` pelo motivo da remocao da exclusao temporaria.
+
+## <Icon src="/img/icons/SanctionsWARN.svg" alt="icon SanctionsWARN" title=":iconSanctionsWARN:"/> ⚠️ Avisar um utilizador {#warn}
+
+O comando `/warn` permite-lhe avisar formalmente um membro atraves de uma mensagem privada enviada pelo bot.
+
+Utilize o comando: ```/warn (member) [reason]```
+
+Substitua `(member)` pela mencao ou ID desejado e `[reason]` pelo motivo do aviso.
+
+## 🧹 Limpar um Grupo de Mensagens {#clear}
+
+O comando `/clear` permite-lhe eliminar rapidamente um determinado numero de mensagens num canal de texto. Pode especificar um utilizador para eliminar apenas as suas mensagens.
+
+Utilize o comando: ```/clear (number) [user]```
+
+Substitua `(number)` pelo numero de mensagens que deseja eliminar (maximo 100). Adicione `[user]` usando a mencao ou ID para eliminar apenas as suas mensagens no canal.
+
+## 🕒 Ativar o modo lento num canal {#slowmode}
+
+O comando `/slowmode` permite-lhe ativar ou modificar o modo lento de um canal de texto, de forma a limitar a frequencia com que os utilizadores podem enviar mensagens.
+
+Utilize o comando: ```/slowmode (duration) [channel] [reason]```
+
+- Substitua `(duration)` pelo tempo desejado entre cada mensagem (ex.: `5s`, `1m`, `10m`, `1h`).
+- Adicione `[channel]` se pretender aplicar o modo lento a um canal diferente daquele onde escreve o comando.
+- Adicione `[reason]` para especificar o motivo, que sera registado nos registos do servidor.

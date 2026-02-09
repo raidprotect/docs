@@ -7,13 +7,13 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Icon from "@site/src/components/Icon";
 
-Extra features to simplify the management of your server. 🔧
+Extra features to simplify the management of your server. 🔧
 
 In addition to core features like the captcha system and anti-raid protection, RaidProtect offers several secondary tools that can make managing your server even smoother.
 
 ## 📋 Duplicate a Channel {#channel-duplicate}
 
-The `/channel duplicate` command allows you to fully duplicate a channel, including all its settings, permissions, and configurations. It goes beyond Discord’s native feature, which does not allow duplicating **categories** and **certain specific settings** such as forum channel tags.
+The `/channel duplicate` command allows you to fully duplicate a channel, including all its settings, permissions, and configurations. It goes beyond Discord's native feature, which does not allow duplicating **categories** and **certain specific settings** such as forum channel tags.
 
 Use the command: ```/channel duplicate [channel]```
 
@@ -38,6 +38,59 @@ When you duplicate a channel that has internal RaidProtect configurations, the b
 
 **Example**: If you duplicate the logs channel, RaidProtect will ask whether you want to update its configuration so that the new channel becomes the logs channel, or keep both channels configured according to your preference.
 
+## 🗑️ Delete and re-create a Channel {#channel-clear}
+
+The `/channel clear` command allows you to delete a channel and re-create it identically, keeping its settings, permissions, and RaidProtect configurations.
+
+Use the command: ```/channel clear```
+
+:::warning
+The channel's messages and webhooks will be permanently deleted. A confirmation will be requested before execution.
+:::
+
+## 🧹 Prune Members {#prune}
+
+The `/prune` command allows you to kick inactive members from your server via an interactive menu.
+
+Use the command: ```/prune [duration]```
+
+Replace `[duration]` with the desired number of days of inactivity. The bot displays an interactive menu allowing you to:
+- Select the inactivity duration
+- Include or exclude specific roles
+- See the number of affected members before confirmation
+
+![Screenshot of the prune command](../assets/rp-prune.webp)
+
+## 🚫 Block Users {#block}
+
+The `/block` command allows you to prevent a user from using certain RaidProtect features on your server (for example, sending reports or receiving the tag role).
+
+### Block a user {#block-add}
+
+Use the command: ```/block add (user) [reason]```
+
+### Unblock a user {#block-remove}
+
+Use the command: ```/block remove (user) [reason]```
+
+### List blocked users {#block-list}
+
+Use the command: ```/block list```
+
+## 📢 Information Panels {#display}
+
+See the [dedicated information panels page](./display.mdx) to learn more about the `/display public` command.
+
+## 📜 My Sanctions {#my-sanctions}
+
+The `/my-sanctions` command allows members to view their own sanctions on the server, according to the [privacy level](./sanctions.mdx#sanctions-privacy) configured by administrators.
+
+Use the command: ```/my-sanctions```
+
+:::info
+This command is also accessible via the **View my sanctions** button on the [information panels](./display.mdx) if the feature is enabled.
+:::
+
 ## 👤 User Information {#userinfo}
 
 The `/userinfo` command lets you get detailed information about a user.
@@ -47,7 +100,7 @@ Use the command: ```/userinfo [user]```
 Replace `[user]` with the desired mention or ID.
 
 :::info
-The `userinfo` command is also [available with prefix](../guides/prefix.md).
+The `userinfo` command is [usable by prefix](../guides/prefix.md).
 :::
 
 ### 📋 Displayed Information {#displayed-userinfo}
@@ -67,7 +120,6 @@ If the target is a server member, additional info includes:
 - **Server nickname**
 - **Number of roles** and **list of the first 6 roles**
 - **Permission category** (visible only to moderators):
-
 <SeparatedBox>
 <Tabs>
   <TabItem value="animator" label="Animator" default>

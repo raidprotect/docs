@@ -2,58 +2,60 @@
 title: Installation
 ---
 
-RaidProtect vereinfacht die Serververwaltung mit zwei mächtigen Werkzeugen: dem [`/setup`](#install)-Befehl für eine schrittweise geführte Einrichtung und dem [`/settings`](#settings)-Befehl, um deine Einstellungen jederzeit über ein zentrales Menü anzupassen. Diese Installationsanleitung erklärt, wie du sie effektiv nutzt.
+RaidProtect vereinfacht die Serververwaltung mit zwei leistungsstarken Werkzeugen: dem [`/setup`](#install)-Befehl für eine schrittweise geführte Einrichtung und dem [`/settings`](#settings)-Befehl, um Ihre Einstellungen jederzeit über ein zentrales Menü anzupassen. Diese Installationsanleitung erklärt, wie Sie sie effektiv nutzen.
 
 ## Geführte Installation {#install}
 
-Der `/setup`-Befehl hilft dir, RaidProtect schnell oder detailliert einzurichten – je nach Bedarf.
-<!-- Er bietet zwei Konfigurationsmodi: [empfohlen](#recommended) oder [fortgeschritten](#advance -->d).
+Der `/setup`-Befehl hilft Ihnen, RaidProtect schnell oder detailliert einzurichten – je nach Bedarf.
+<!--
+Er bietet zwei Konfigurationsmodi: [empfohlen](#recommended) oder [erweitert](#advanced).
+-->
 
 ### 🔧 Empfohlene Konfiguration {#recommended}
 
-Damit kannst du die wichtigsten Funktionen auf einen Blick über ein interaktives Auswahlmenü aktivieren oder deaktivieren.
+Ermöglicht es Ihnen, die wichtigsten Funktionen auf einen Blick über ein interaktives Auswahlmenü zu aktivieren oder zu deaktivieren.
 
-1. Verwende den Befehl `/setup`.
-2. Klicke auf die Schaltfläche "**Recommended Configuration**".
-3. Aktiviere oder deaktiviere die gewünschten Funktionen über das Auswahlmenü.
+1. Verwenden Sie den Befehl `/setup`.
+2. Klicken Sie auf die Schaltfläche "**Empfohlene Konfiguration**".
+3. Aktivieren oder deaktivieren Sie die gewünschten Funktionen über das Auswahlmenü.
 
-Anschließend erhältst du eine Zusammenfassung der aktivierten Funktionen und der Änderungen, die am Server vorgenommen werden.
+Anschließend erhalten Sie eine Zusammenfassung der aktivierten Funktionen und der Änderungen, die am Server vorgenommen werden.
 
-![Recommended configuration screenshot](../../../en/docusaurus-plugin-content-docs/current/assets/rp-setup.webp)
+![Screenshot empfohlene Konfiguration](../../../en/docusaurus-plugin-content-docs/current/assets/rp-setup.webp)
 
 <!--
-### 🛠️ Fortgeschrittene Konfiguration {#advanced}
+### 🛠️ Erweiterte Konfiguration {#advanced}
 
-Wenn du den Bot gründlicher konfigurieren möchtest, wähle die fortgeschrittene Konfiguration. Der Bot führt dich Schritt für Schritt mit klaren Erklärungen.
+Wenn Sie den Bot gründlicher konfigurieren möchten, wählen Sie die erweiterte Konfiguration. Der Bot führt Sie Schritt für Schritt mit klaren Erklärungen.
 
-1. Verwende den `/setup`-Befehl.
-2. Wähle die Schaltfläche "**Advanced Configuration**".
+1. Verwenden Sie den `/setup`-Befehl.
+2. Wählen Sie die Schaltfläche "**Erweiterte Konfiguration**".
 3. Jeder Schritt stellt eine Funktion, ihren Zweck und eine empfohlene Mindesteinstellung vor.
-4. Mit den Schaltflächen "**Previous**" und "**Next**" kannst du vor- und zurückgehen.
+4. Mit den Schaltflächen "**Zurück**" und "**Weiter**" können Sie vor- und zurückgehen.
 
-Am Ende wird eine Zusammenfassung der Einstellungen angezeigt, um deine Auswahl zu bestätigen.
+Am Ende wird eine Zusammenfassung der Einstellungen angezeigt, um Ihre Auswahl zu bestätigen.
 -->
 ## Konfiguration ändern {#settings}
 
-Der `/settings`-Befehl ist nach der Installation die zentrale Anlaufstelle, um deine Einstellungen zu verwalten. Damit kannst du die Funktionen von RaidProtect jederzeit einfach und schnell einsehen, anpassen oder personalisieren.
+Der `/settings`-Befehl ist nach der Installation die zentrale Anlaufstelle, um Ihre Einstellungen zu verwalten. Damit können Sie die Funktionen von RaidProtect jederzeit einfach und schnell einsehen, anpassen oder personalisieren.
 
 ### 🔍 Einstellungsmenü {#menu}
 
-1. Tippe `/settings` in einen Kanal, in dem der Bot aktiv ist.
-2. Navigiere bequem zwischen den verschiedenen Bereichen, um die gewünschten Einstellungen zu finden.
-3. Passe die Optionen an: Jede Kategorie präsentiert eine Liste anpassbarer Optionen in Form von Buttons oder Dropdown-Menüs.
+1. Geben Sie `/settings` in einen Kanal ein, in dem der Bot aktiv ist.
+2. Navigieren Sie bequem zwischen den verschiedenen Bereichen, um die gewünschten Einstellungen zu finden.
+3. Passen Sie die Optionen an: Jede Kategorie präsentiert eine Liste anpassbarer Optionen in Form von Buttons oder Dropdown-Menüs.
 
-![Settings screenshot](../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings.webp)
+![Screenshot Einstellungen](../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings.webp)
 
 ### 🔄 Eine Einstellung zurücksetzen {#reset}
 
-1. Navigiere zur gewünschten Einstellung.
-2. Klicke auf "**Reset**".
+1. Navigieren Sie zur gewünschten Einstellung.
+2. Klicken Sie auf "**Zurücksetzen**".
 
-![Reset button screenshot](../../../en/docusaurus-plugin-content-docs/current/assets/rp-button-reset.webp)
+![Screenshot Schaltfläche Zurücksetzen](../../../en/docusaurus-plugin-content-docs/current/assets/rp-button-reset.webp)
 
 Der Bot bestätigt das Zurücksetzen, bevor er die Änderungen übernimmt.
 
 :::info Konfigurationsproblem?
-Solltest du auf ein Problem stoßen, sieh im Abschnitt [Fehlfunktionen](./guides/malfunctions) nach oder komme auf unseren [Support‑Server](https://raidprotect.bot/discord), um Hilfe zu erhalten.
+Sollten Sie auf ein Problem stoßen, sehen Sie im Abschnitt [Fehlfunktionen](./guides/malfunctions) nach oder treten Sie unserem [Support-Server](https://raidprotect.bot/discord) bei, um Hilfe zu erhalten.
 :::

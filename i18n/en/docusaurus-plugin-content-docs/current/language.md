@@ -16,11 +16,14 @@ If your server is set as a community server (Discord setting), RaidProtect will 
 
 - **French**
 - **English**
+- **German**
+- **Spanish**
+- **Brazilian Portuguese**
 
 ## ⚙️ Changing the Bot's Language {#change}
 
 - Use the [`/settings` command](./setup.md#settings).
-- Select the “**Language**” button.
+- Select the "**Language**" button.
 - Choose the desired language.
 
 ![Screenshot of language settings](./assets/rp-settings-language.webp)

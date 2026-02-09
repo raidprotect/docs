@@ -1,0 +1,69 @@
+---
+title: Bloqueio de MDs
+---
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+A funcionalidade **Bloqueio de MDs** do RaidProtect fecha permanentemente o acesso às mensagens diretas (MDs) originadas pelo servidor, superando a limitação nativa do Discord, que apenas permite este bloqueio durante 24 horas através da ação de segurança "Pausar MDs".
+
+## 🚦 Casos de utilização e recomendações {#recommendations}
+
+- **Servidores expostos a spam ou assédio:** O Bloqueio de MDs é especialmente recomendado para comunidades públicas ou de grande tráfego onde o risco de abuso de MDs é maior.
+- **Eventos temporários ou períodos sensíveis:** Durante lançamentos, anúncios importantes ou períodos de intensa atividade (ex.: concursos, promoções), ativar o Bloqueio de MDs ajuda a prevenir tentativas de phishing ou fraude.
+- **Comunidades com público jovem:** Para servidores com muitos menores, restringir as MDs pode aumentar a segurança e ajudar a prevenir comportamentos inadequados.
+- **Proteção contínua:** Graças à automatização, não existe uma janela de vulnerabilidade por se esquecer de renovar o bloqueio manualmente.
+
+## ❓ Como funciona o Bloqueio de MDs {#working}
+
+O bot RaidProtect verifica regularmente a definição de bloqueio de MDs do servidor e, se necessário, reativa-a automaticamente para evitar qualquer janela de vulnerabilidade entre renovações manuais. Esta tarefa é executada de forma transparente para os administradores e membros do servidor.
+
+:::info
+Continua a ser possível enviar e receber mensagens com:
+- amigos
+- bots
+- equipa de moderação
+:::
+:::warning
+As funcionalidades de comunidade do Discord são essenciais para o funcionamento correto do Bloqueio de MDs. [Siga o nosso guia para verificar se a Comunidade está ativada no seu servidor.](../guides/community.md)
+:::
+
+## 🚩 Configurar o Bloqueio de MDs {#config}
+
+1. Execute o [comando `/settings`](../setup.md#settings).
+2. Clique no botão "**Bloqueio de MDs**".
+3. Ative ou desative o fecho automático das mensagens diretas.
+
+![Captura de ecrã das definições do Bloqueio de MDs](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-dm-lock.webp)
+
+## ℹ️ Comando /dmlock-info {#info}
+
+O comando `/dmlock-info` informa os membros sobre o estado atual do **Bloqueio de MDs** no servidor. Apresenta uma mensagem clara a indicar se a restrição está **ativada** ou **desativada**, juntamente com uma explicação educativa do seu propósito.
+
+**Objetivo:**
+- Explicar por que razão as MDs estão limitadas (para combater spam, fraudes, phishing).
+- Reduzir a confusão e as questões repetidas de novos membros.
+- Relembrar aos membros as condições para continuar conversas por MD (amigos, equipa, bots, contactos existentes).
+
+**Exemplo de Apresentação**
+<SeparatedBox>
+<Tabs>
+  <TabItem value="enable" label="Ativado" default>
+
+![Captura de ecrã do comando dmlock-info ativado](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-dm-lock-info-enable.webp)
+
+  </TabItem>
+  <TabItem value="disable" label="Desativado">
+
+![Captura de ecrã do comando dmlock-info desativado](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-dm-lock-info-disable.webp)
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+### ⚙️ Boas Práticas
+
+- Encoraje os membros ativos a utilizar `/dmlock-info` para responder às questões dos novos membros.
+- Apresente-o regularmente ou fixe-o nos seus canais de boas-vindas.
+- Combine-o com as suas regras ou anúncios para reforçar a política anti-spam do servidor.

@@ -16,6 +16,9 @@ Si votre serveur est défini comme communautaire (paramètre Discord), RaidProte
 
 - **Français**
 - **Anglais**
+- **Allemand**
+- **Espagnol**
+- **Portugais Brésilien**
 
 ## ⚙️ Changer la langue du bot {#change}
 

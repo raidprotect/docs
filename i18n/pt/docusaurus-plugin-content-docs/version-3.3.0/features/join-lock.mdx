@@ -1,0 +1,34 @@
+---
+title: Bloqueio de Entradas
+---
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+A funcionalidade **Bloqueio de Entradas** do RaidProtect fecha permanentemente o acesso a novos membros que tentam entrar no servidor, ultrapassando a limitacao nativa do Discord, que apenas permite este bloqueio durante 24 horas atraves da acao de seguranca "Pausar Convites".
+
+## 🚦 Casos de utilizacao e recomendacoes {#recommendations}
+
+- **Servidores privados e fechados:** O Bloqueio de Entradas e especialmente recomendado para servidores que precisam de permanecer privados e nao querem novas chegadas (servidores empresariais, equipas restritas, grupos privados).
+- **Servidores de staff:** Para servidores dedicados a equipas de moderacao ou administracao, onde apenas membros autorizados devem ter acesso.
+- **Servidores empresariais ou profissionais:** Para organizacoes que utilizam o Discord internamente e querem garantir que apenas os funcionarios atuais podem aceder ao servidor.
+- **Comunidades de tamanho limitado:** Para servidores que atingiram o tamanho maximo desejado e nao querem aceitar novos membros permanentemente.
+
+## ❓ Como funciona o Bloqueio de Entradas {#working}
+
+O RaidProtect fecha permanentemente as entradas no seu servidor. Ao contrario da funcionalidade nativa do Discord, que requer renovacao manual a cada 24 horas, este metodo permite o bloqueio permanente sem intervencao.
+
+:::info
+Os membros ja presentes no servidor permanecem ativos e podem continuar a utilizar o servidor normalmente.
+:::
+:::warning
+As funcionalidades de comunidade do Discord sao essenciais para o correto funcionamento do Bloqueio de Entradas. [Siga o nosso guia para verificar se a Comunidade esta ativada no seu servidor.](../guides/community.md)
+:::
+
+## 🚩 Configurar o Bloqueio de Entradas {#config}
+
+1. Execute o comando `/joinlock`.
+2. Clique no botao "**Enable**" ou "**Disable**".
+
+![Captura de ecra das definicoes do Bloqueio de Entradas](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-join-lock.webp)

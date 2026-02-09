@@ -1,0 +1,45 @@
+---
+title: Informationspanels
+---
+
+Der Befehl `/display public` ermöglicht es dir, öffentliche Informationspanels auf deinem Server zu erstellen und zu verwalten. Du kannst mehrere Panels mit unterschiedlichen Inhalten und Funktionen erstellen.
+
+Verwende den Befehl: ```/display public```
+
+## ❓ Funktionsweise {#working}
+
+Jedes Informationspanel wird vom Bot in einem Kanal deiner Wahl veröffentlicht. Du hast mehrere Plätze zur Verfügung, um unabhängige Panels zu erstellen, jedes mit eigenem Inhalt und eigenen Funktionen.
+
+## 📄 Inhaltstypen {#content}
+
+Jedes Panel kann einen oder mehrere der folgenden Inhalte enthalten:
+
+- **DM-Sperre**: Informiert die Mitglieder über den Status der DM-Sperre. Zeigt an, ob DMs gesperrt sind oder nicht, und erklärt, dass nur Freunde, Staff, Bots und vorherige Kontakte DMs senden können.
+- **Jail**: Zeigt eine Nachricht an, die für Mitglieder in der Jail bestimmt ist und darauf hinweist, dass ihr Zugang zum Server aufgrund eines Regelverstoßes eingeschränkt wurde.
+- **Sanktionen**: Teilt den Mitgliedern mit, wie sie ihren persönlichen Sanktionsverlauf über den Befehl `/my-sanctions` einsehen können.
+- **Meldung**: Erklärt den Mitgliedern, wie sie einen Nutzer oder eine Nachricht über den Befehl `/report` oder das Kontextmenü (Rechtsklick) melden können.
+
+## ⚙️ Funktionen {#features}
+
+Neben dem Inhalt kann jedes Panel interaktive Funktionen aktivieren:
+
+- **Übersetzung**: Fügt eine Schaltfläche hinzu, mit der Mitglieder das Panel in alle von Discord unterstützten Sprachen übersetzen können.
+- **Sanktionszugang**: Fügt eine Schaltfläche "Meine Sanktionen einsehen" hinzu, über die Mitglieder direkt ihre Sanktionen einsehen können.
+- **Meldung**: Fügt eine Schaltfläche "Melden" hinzu, um schnell einen Nutzer zu melden.
+
+{/* TODO: Add a screenshot of /display public */}
+
+## 📌 Reservierter Platz {#reserved-slot}
+
+Der letzte Platz ist für den Inhalt **Jail** reserviert und wird automatisch über `/settings` > Sanktionen > [Jail](./sanctions.mdx#jail) verwaltet. Sein Kanal kann nur über diese Konfiguration geändert werden.
+
+## 🔄 Panels aktualisieren {#update}
+
+Wenn du die Sprache des Bots änderst oder der Panelinhalt von RaidProtect aktualisiert wird, zeigt ein Indikator an, welche Panels nicht auf dem neuesten Stand sind. Du kannst dann auf die Schaltfläche "Aktualisieren" klicken, um das Panel zu aktualisieren.
+
+## ✏️ Ein Panel bearbeiten oder löschen {#edit}
+
+Über das Menü `/display public` verfügt jeder belegte Platz über Schaltflächen zum:
+
+- **Bearbeiten**: Den Kanal, den Inhalt oder die Funktionen des Panels ändern.
+- **Löschen**: Das Panel aus dem Kanal entfernen und den Platz freigeben.

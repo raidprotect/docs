@@ -2,69 +2,69 @@
 title: Anti-raid
 ---
 
-## Raid Mode {#raid-mode}
+## Raid mode {#raid-mode}
 
-Raid mode is an emergency feature designed to instantly block all new users trying to join your server, for a maximum duration of 24 hours. To permanently block new members, use the [`/joinlock`](./join-lock.mdx) command.
+Raid mode is an emergency feature designed to instantly block all new users attempting to join your server, with a maximum duration of 24 hours. To permanently block new members, use the [`/joinlock` command](./join-lock.mdx).
 
-### ❓ How Raid Mode Works {#working}
+### ❓ How raid mode works {#working}
 
-RaidProtect automatically enables raid mode if a large number of users join your server in a short time. By default, raid mode activates if more than 10 users join your server in less than 10 seconds. When raid mode is enabled, no users can join the server. They are blocked at the invite level.
+RaidProtect automatically activates raid mode if a large number of users join your server in a short period of time. By default, raid mode activates if more than 10 users join your server in less than 10 seconds. When raid mode is activated, no user can join the server. They are blocked at the invitation level.
 
 :::warning
-Discord’s Community features are essential for Raid Mode to work properly. [Follow our guide to ensure Community is enabled on your server.](../guides/community.md)
+Discord's community features are essential for raid mode to work properly. [Follow our guide to verify that community is enabled on your server.](../guides/community.md)
 :::
 
-#### Enabling {#enable}
+#### Activation {#enable}
 
-- To manually enable this mode, a user with kick permissions must run the `/raidmode` command.
-- A message will automatically be posted in the log channel to signal activation.
+- To manually activate this mode, a user with kick permissions must execute the `/raidmode` command.
+- A message will be automatically posted in the logs channel to signal the activation.
 
-#### Disabling {#disable}
+#### Deactivation {#disable}
 
-Raid mode does not disable itself automatically. Remember to turn it off with the same command once the threat has passed. 😇
+Raid mode does not deactivate automatically. Remember to stop it with the same command once the threat has passed. 😇
 
 :::info
-The `raidmode` command is also [available with prefix](../guides/prefix.md).
+The `raidmode` command is [usable via prefix](../guides/prefix.md).
 :::
 
-### 🚨 Auto Raid Mode Configuration {#config}
+### 🚨 Automatic raid mode configuration {#config}
 
-If your server often gets many new members at once, it's wise to adjust this threshold to avoid false positives.
+If your server often welcomes many new members simultaneously, it is wise to modify this threshold to avoid false positives.
 
-![Screenshot of auto raid mode settings](../assets/rp-settings-raid-mode.webp)
+![Automatic raid mode screenshot](../assets/rp-settings-raid-mode.webp)
 
 #### Member threshold {#threshold}
 
-1. Use the [command `/settings`](../setup.md#settings).
-2. Click on the "**Auto RaidMode**" button.
-3. Select "**Members**".
+1. Run the [`/settings` command](../setup.md#settings).
+2. Click the "**Auto RaidMode**" button.
+3. Select "**Number of members**".
 4. Choose the number of members that can join within 10 seconds.
 
 You can leave it at the default value (10) or adjust it to the desired value by clicking the "**Custom value**" button.
 
 :::note
-We recommend entering a value between 10 and 20 members in 10 seconds for good system efficiency.
+We recommend entering a value between 10 and 20 members per 10 seconds for good system effectiveness.
 :::
 
 #### Raid mode duration {#duration}
 
-1. Use the [command `/settings`](../setup.md#settings).
-2. Click on the "**Auto RaidMode**" button.
+1. Run the [`/settings` command](../setup.md#settings).
+2. Click the "**Auto RaidMode**" button.
 3. Select "**Duration**".
 4. Choose the raid mode duration (24h maximum).
 
 You can leave it at the default value (5 minutes) or adjust it to the desired value by clicking the "**Custom value**" button.
 
-## Minimum Account Age {#minage}
+## Minimum Age {#minage}
 
-To improve security, you can require a minimum Discord account age for new members.
+To strengthen security, you can require a minimum age for Discord accounts of new members.
 
-1. Run the [ `/settings` command](../setup.md#settings).
-2. Click the “**Minimum Age**” button.
-3. Select the desired value from the dropdown menu or choose a custom value in date format (m/h/d/y).
+1. Run the [`/settings` command](../setup.md#settings).
+2. Click the "**Minimum Age**" button.
+3. Select the desired value from the selection menu or choose a custom value expressed in date format (m/h/d/y).
 
-### 🎂 Minimum Account Age Bypass {#bypass-minage}
+### 🎂 Minimum account age bypass {#bypass-minage}
 
 Use the command: ```/bypass minage [user]```
 
-Replace `[user]` with the desired ID; they will have 10 minutes to join the server without being kicked for not meeting the age requirement. You can also use the command without specifying a user to see the current list of bypass users.
+Replace `[user]` with the desired identifier; they will have 10 minutes to join the server without being kicked due to the age requirement. You can also use the command without specifying a user to see the current list of bypassed users.

@@ -1,0 +1,98 @@
+---
+title: Uso de identificadores
+---
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Los identificadores de Discord son numeros unicos que te permiten identificar con precision cada usuario, canal, servidor o mensaje en Discord. Proporcionan una forma confiable y permanente de identificar elementos en la plataforma.
+
+:::note Utilidad para la moderacion
+Usar identificadores de Discord es particularmente util para acciones de moderacion porque te permite:
+- **Sancionar a un usuario ausente**: Banear a alguien que ha salido del servidor
+- **Evitar errores**: Identificar con precision a la persona correcta incluso con nombres de usuario similares
+- **Mantener un registro**: Los identificadores nunca cambian, a diferencia de los nombres de usuario
+- **Resolver conflictos**: Identificacion clara en caso de caracteres especiales
+:::
+
+## Activar el modo desarrollador
+
+Necesitas activar el modo desarrollador para usar los identificadores de Discord.
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="desktop" label="En Discord Escritorio/Web" default>
+
+    1. **Abre la configuracion de usuario**
+    - Haz clic en el icono de engranaje en la esquina inferior izquierda de la interfaz
+
+    2. **Accede a la configuracion avanzada**
+    - En la barra lateral, navega a la pestana **Avanzado**
+
+    3. **Activa el modo desarrollador**
+    - Activa la opcion **"Modo desarrollador"** haciendo clic en el interruptor
+    - El boton deberia ponerse azul una vez activado
+
+  </TabItem>
+  <TabItem value="mobile" label="En Discord Movil">
+
+    1. **Abre la configuracion de usuario**
+    - Toca tu avatar en la esquina inferior derecha
+    - Toca el icono de engranaje en la esquina superior derecha de la interfaz
+
+    2. **Accede a la configuracion avanzada**
+    - Desplazate hacia abajo y toca **"Avanzado"**
+
+    3. **Activa el modo desarrollador**
+    - Activa la opcion **"Modo desarrollador"**
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+## Copiar un identificador
+
+Una vez que el modo desarrollador este activado, puedes copiar el identificador de cualquier elemento:
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="user" label="ID de usuario" default>
+
+    - **Haz clic derecho** en el avatar o nombre de usuario
+    - Selecciona **"Copiar ID de usuario"**
+
+  </TabItem>
+  <TabItem value="channel" label="ID de canal">
+
+    - **Haz clic derecho** en el nombre del canal en la lista de canales
+    - Selecciona **"Copiar ID de canal"**
+
+  </TabItem>
+  <TabItem value="server" label="ID de servidor">
+
+    - **Haz clic derecho** en el nombre del servidor en la esquina superior izquierda
+    - Selecciona **"Copiar ID de servidor"**
+
+  </TabItem>
+  <TabItem value="message" label="ID de mensaje">
+
+    - **Haz clic derecho** en un mensaje
+    - Selecciona **"Copiar ID de mensaje"**
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+## Uso con RaidProtect
+
+Los identificadores se pueden usar en los comandos de RaidProtect en lugar de menciones:
+
+- [`/ban user:123456789012345678 reason:Violation des règles du serveur`](../features/moderation#ban)
+- [`/clear amount:100 user:123456789012345678`](../features/moderation#clear)
+- [`/userinfo user:123456789012345678`](../features/utilities#userinfo)
+- [`/bypass minage user:123456789012345678`](../features/raid-mode#minage)
+
+:::info
+Puedes banear a un usuario usando su identificador de Discord, incluso si no esta en linea o no esta presente en tu servidor.
+:::

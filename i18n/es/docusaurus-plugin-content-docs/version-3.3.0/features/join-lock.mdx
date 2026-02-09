@@ -1,0 +1,34 @@
+---
+title: Bloqueo de acceso
+---
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+La funcion **Bloqueo de acceso** de RaidProtect cierra permanentemente el acceso a nuevos miembros que intenten unirse al servidor, superando la limitacion nativa de Discord, que solo permite este bloqueo por 24 horas mediante la accion de seguridad "Pausar invitaciones".
+
+## 🚦 Casos de uso y recomendaciones {#recommendations}
+
+- **Servidores privados y cerrados:** El Bloqueo de acceso es especialmente recomendado para servidores que necesitan permanecer privados y no desean nuevas llegadas (servidores corporativos, equipos restringidos, grupos privados).
+- **Servidores de staff:** Para servidores dedicados a equipos de moderacion o administracion, donde solo los miembros autorizados deben tener acceso.
+- **Servidores corporativos o profesionales:** Para organizaciones que usan Discord internamente y quieren asegurar que solo los empleados actuales puedan acceder al servidor.
+- **Comunidades de tamano limitado:** Para servidores que han alcanzado su tamano maximo deseado y no quieren aceptar nuevos miembros de forma permanente.
+
+## ❓ Como funciona el Bloqueo de acceso {#working}
+
+RaidProtect cierra permanentemente los accesos en tu servidor. A diferencia de la funcion nativa de Discord que requiere renovacion manual cada 24 horas, este metodo permite un bloqueo permanente sin intervencion.
+
+:::info
+Los miembros que ya estan presentes en el servidor permanecen activos y pueden continuar usando el servidor normalmente.
+:::
+:::warning
+Las funciones de comunidad de Discord son esenciales para que el Bloqueo de acceso funcione correctamente. [Sigue nuestra guia para verificar si la Comunidad esta activada en tu servidor.](../guides/community.md)
+:::
+
+## 🚩 Configuracion del Bloqueo de acceso {#config}
+
+1. Ejecuta el comando `/joinlock`.
+2. Haz clic en el boton "**Activar**" o "**Desactivar**".
+
+![Captura de pantalla de la configuracion del Bloqueo de acceso](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-join-lock.webp)

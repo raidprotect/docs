@@ -1,0 +1,69 @@
+---
+title: Bloqueio de MP
+---
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+A funcionalidade **Bloqueio de MP** do RaidProtect fecha permanentemente o acesso a mensagens privadas (MP) originadas no servidor, ultrapassando a limitacao nativa do Discord, que apenas permite este bloqueio durante 24 horas atraves da acao de seguranca "Pausar MP".
+
+## 🚦 Casos de utilizacao e recomendacoes {#recommendations}
+
+- **Servidores expostos a spam ou assedio:** O Bloqueio de MP e especialmente recomendado para comunidades publicas ou de grande trafego onde o risco de abuso de MP e maior.
+- **Eventos temporarios ou periodos sensiveis:** Durante lancamentos, anuncios importantes ou periodos de grande atividade (ex.: concursos, promocoes), ativar o Bloqueio de MP ajuda a prevenir tentativas de phishing ou burla.
+- **Comunidades com um publico jovem:** Para servidores com muitos menores, restringir as MP pode melhorar a seguranca e ajudar a prevenir comportamentos inadequados.
+- **Protecao continua:** Gracas a automatizacao, nao ha janela de vulnerabilidade por se esquecer de renovar o bloqueio manualmente.
+
+## ❓ Como funciona o Bloqueio de MP {#working}
+
+O bot RaidProtect verifica regularmente a definicao de bloqueio de MP do servidor e, se necessario, reativa-a automaticamente para prevenir qualquer janela de vulnerabilidade entre renovacoes manuais. Esta tarefa e executada de forma transparente para os administradores e membros do servidor.
+
+:::info
+Continua a ser possivel enviar e receber mensagens com:
+- amigos
+- bots
+- staff
+:::
+:::warning
+As funcionalidades de comunidade do Discord sao essenciais para o correto funcionamento do Bloqueio de MP. [Siga o nosso guia para verificar se a Comunidade esta ativada no seu servidor.](../guides/community.md)
+:::
+
+## 🚩 Configurar o Bloqueio de MP {#config}
+
+1. Execute o [comando `/settings`](../setup.md#settings).
+2. Clique no botao "**DM Lock**".
+3. Ative ou desative o fecho automatico de mensagens privadas.
+
+![Captura de ecra das definicoes do Bloqueio de MP](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-dm-lock.webp)
+
+## ℹ️ Comando /dmlock-info {#info}
+
+O comando `/dmlock-info` informa os membros sobre o estado atual do **Bloqueio de MP** no servidor. Apresenta uma mensagem clara indicando se a restricao esta **ativada** ou **desativada**, juntamente com uma explicacao pedagogica do seu proposito.
+
+**Objetivo:**
+- Explicar porque e que as MP estao limitadas (para combater spam, burlas, phishing).
+- Reduzir a confusao e as perguntas repetidas dos novos membros.
+- Relembrar aos membros as condicoes para continuar conversas por MP (amigos, staff, bots, contactos existentes).
+
+**Exemplo de Apresentacao**
+<SeparatedBox>
+<Tabs>
+  <TabItem value="enable" label="Ativado" default>
+
+![Captura de ecra do comando dmlock-info ativado](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-dm-lock-info-enable.webp)
+
+  </TabItem>
+  <TabItem value="disable" label="Desativado">
+
+![Captura de ecra do comando dmlock-info desativado](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-dm-lock-info-disable.webp)
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+### ⚙️ Boas Praticas
+
+- Incentive os membros ativos a utilizar `/dmlock-info` para responder as perguntas dos novos membros.
+- Apresente-o regularmente ou fixe-o nos seus canais de boas-vindas.
+- Combine-o com as suas regras ou anuncios para reforcar a politica anti-spam do servidor.

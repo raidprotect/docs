@@ -1,0 +1,189 @@
+---
+title: Utilitarios
+---
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Icon from "@site/src/components/Icon";
+
+Funcionalidades extra para simplificar a gestao do seu servidor. 🔧
+
+Para alem das funcionalidades principais como o sistema de captcha e a protecao anti-raid, o RaidProtect oferece varias ferramentas secundarias que podem tornar a gestao do seu servidor ainda mais fluida.
+
+## 📋 Duplicar um Canal {#channel-duplicate}
+
+O comando `/channel duplicate` permite-lhe duplicar completamente um canal, incluindo todas as suas definicoes, permissoes e configuracoes. Vai alem da funcionalidade nativa do Discord, que nao permite duplicar **categorias** e **certas definicoes especificas** como as tags de canais de forum.
+
+Utilize o comando: ```/channel duplicate [channel]```
+
+Substitua `[channel]` pela mencao ou pelo ID do canal a duplicar.
+
+### 🎯 Funcionalidades {#duplicate-features}
+
+Este comando duplica todos os seguintes elementos:
+
+- **Nome do canal**
+- **Permissoes** (cargos e utilizadores)
+- **Tipo de canal** (texto, voz, forum, etc.)
+- **Definicoes especificas** dependendo do tipo de canal
+- **Posicao** dentro da categoria (se aplicavel)
+
+### ⚙️ Configuracoes do RaidProtect {#duplicate-config}
+
+Quando duplica um canal que tem configuracoes internas do RaidProtect, o bot oferece-lhe automaticamente a opcao de:
+
+- **Substituir** a configuracao existente para utilizar o novo canal
+- **Duplicar** a configuracao para manter ambos os canais configurados
+
+**Exemplo**: Se duplicar o canal de registos, o RaidProtect perguntara se pretende atualizar a sua configuracao para que o novo canal se torne o canal de registos, ou manter ambos os canais configurados conforme a sua preferencia.
+
+## 👤 Informacoes do Utilizador {#userinfo}
+
+O comando `/userinfo` permite-lhe obter informacoes detalhadas sobre um utilizador.
+
+Utilize o comando: ```/userinfo [user]```
+
+Substitua `[user]` pela mencao ou ID desejado.
+
+:::info
+O comando `userinfo` tambem esta [disponivel com prefixo](../guides/prefix.md).
+:::
+
+### 📋 Informacoes Apresentadas {#displayed-userinfo}
+
+- **Data de criacao da conta Discord**
+- **Foto de perfil** do utilizador
+- **Banner do perfil**
+- **Distintivos do perfil**
+  - Os distintivos Nitro, Booster, Quest e Originally Name nao sao apresentados.
+
+
+### 🎭 Informacoes sobre um membro do servidor {#displayed-memberinfo}
+
+Se o alvo for um membro do servidor, informacoes adicionais incluem:
+
+- **Data de entrada no servidor**
+- **Alcunha no servidor**
+- **Numero de cargos** e **lista dos primeiros 6 cargos**
+- **Categoria de permissao** (visivel apenas para moderadores):
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="animator" label="Animador" default>
+
+    A categoria **Animador** e apresentada se o membro tiver **pelo menos uma** das seguintes permissoes:
+
+    - `MANAGE_EXPRESSIONS`
+    - `CREATE_GUILD_EXPRESSIONS`
+    - `MANAGE_EVENTS`
+
+  </TabItem>
+  <TabItem value="moderator" label="Moderador">
+
+    A categoria **Moderador** e apresentada se o membro tiver **pelo menos uma** das seguintes permissoes:
+
+    - `KICK_MEMBERS`
+    - `BAN_MEMBERS`
+    - `MODERATE_MEMBERS`
+    - `MANAGE_MESSAGES`
+    - `MUTE_MEMBERS`
+    - `DEAFEN_MEMBERS`
+    - `MOVE_MEMBERS`
+    - `MANAGE_THREADS`
+
+  </TabItem>
+  <TabItem value="manager" label="Gestor">
+
+    A categoria **Gestor** e apresentada se o membro tiver **pelo menos uma** das seguintes permissoes:
+
+    - `MANAGE_GUILD`
+    - `MANAGE_ROLES`
+    - `MANAGE_CHANNELS`
+    - `VIEW_AUDIT_LOG`
+    - `MANAGE_WEBHOOKS`
+    - `MANAGE_SERVER_EXPRESSIONS`
+
+  </TabItem>
+  <TabItem value="admin" label="Administrador">
+
+    A categoria **Administrador** e apresentada em **dois casos possiveis**:
+
+    1️⃣ Possui a permissao:
+    - `ADMINISTRATOR`
+
+    2️⃣ Possui **as tres** seguintes permissoes ao mesmo tempo:
+    - `MANAGE_GUILD`
+    - `MANAGE_ROLES`
+    - `MANAGE_CHANNELS`
+
+  </TabItem>
+  <TabItem value="owner" label="Proprietario">
+
+    **Condicao**: O membro e o **proprietario do servidor**.
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+- **Flags do membro** (visiveis apenas para moderadores):
+
+| **Flags**                                | **Emojis**                                                                                                             | **Significados**                                                      |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `DID_REJOIN`                             | <Icon src="/img/icons/MemberDidRejoin.svg" alt="icon MemberDidRejoin" title=":MemberDidRejoin:"/>                      | O utilizador saiu e voltou a entrar no servidor.                      |
+| `IS_GUEST`                               | <Icon src="/img/icons/MemberIsGuest.svg" alt="icon MemberIsGuest" title=":MemberIsGuest:"/>                            | Membro convidado (convite temporario ou acesso de convidado).         |
+| `COMPLETED_ONBOARDING`                   | <Icon src="/img/icons/OnboardingCompleted.svg" alt="icon OnboardingCompleted" title=":OnboardingCompleted:"/>          | Completou o processo de onboarding do servidor.                       |
+| `STARTED_ONBOARDING`                     | <Icon src="/img/icons/OnboardingStarted.svg" alt="icon OnboardingStarted" title=":OnboardingStarted:"/>                | Iniciou o processo de onboarding.                                     |
+| `COMPLETED_SERVER_GUIDE`                 | <Icon src="/img/icons/ServerGuideCompleted.svg" alt="icon ServerGuideCompleted" title=":ServerGuideCompleted:"/>       | Completou o guia do servidor se ativado.                              |
+| `STARTED_SERVER_GUIDE`                   | <Icon src="/img/icons/ServerGuideStarted.svg" alt="icon ServerGuideStarted" title=":ServerGuideStarted:"/>             | Iniciou o guia do servidor.                                           |
+| `AUTOMOD_QUARANTINED_NAME`               | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | Colocado em quarentena pela automoderacao devido ao nome de utilizador.|
+| `AUTOMOD_QUARANTINED_GUILD_TAG`          | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | Colocado em quarentena pela automoderacao devido a tag ou alcunha.    |
+| `BYPASSES_VERIFICATION`                  | <Icon src="/img/icons/BypassVerification.svg" alt="icon BypassVerification" title=":BypassVerification:"/>             | O utilizador pode contornar a verificacao do servidor.                |
+| `SPAMMER`                                | <Icon src="/img/icons/UnusualAccountActivity.svg" alt="icon UnusualAccountActivity" title=":UnusualAccountActivity:"/> | Conta marcada como spammer ou atividade incomum detetada.             |
+
+## ⚖️ Sancoes do Discord {#discord-sanctions}
+
+O comando `/ds` permite-lhe ver as **sancoes emitidas pelo Discord** contra um utilizador, em conformidade com os [regulamentos europeus](https://transparency.dsa.ec.europa.eu/).
+
+Utilize o comando: ```/ds (user)```
+
+Substitua `(user)` pela mencao ou ID desejado.
+
+### 📋 Informacoes Apresentadas {#displayed-sanctions}
+
+- **Tipo de sancao**:
+
+| **Sancoes**                              | **Emojis**                                                                                                             | **Significados**                                                      |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `CONTENT_DELETED`                        | <Icon src="/img/icons/ContentDeleted.svg" alt="icon ContentDeleted" title=":iconTrash:"/>                              | Conteudo publicado pelo utilizador foi eliminado.                     |
+| `RESTRICTED`                             | <Icon src="/img/icons/AccountRestricted.svg" alt="icon AccountRestricted" title=":iconRestricted:"/>                   | A conta do utilizador foi restringida.                                |
+| `ACCOUNT_SUSPENDED`                      | <Icon src="/img/icons/AccountSuspended.svg" alt="icon AccountSuspended" title=":iconSuspended:"/>                      | A conta do utilizador foi suspensa.                                   |
+| `ACCOUNT_TERMINATED`                     | <Icon src="/img/icons/AccountTerminated.svg" alt="icon AccountTerminated" title=":iconTerminated:"/>                   | A conta do utilizador foi terminada.                                  |
+
+- **Data de emissao**
+- **Tipo de conteudo**
+- **Flags da sancao**:
+
+| **Flags**                                | **Emojis**                                                                                                             | **Significados**                                                      |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| `ILLEGAL_CONTENT`                        | <Icon src="/img/icons/IllegalContent.svg" alt="icon IllegalContent" title=":iconIllegal:"/>                            | Sancao aplicada por conteudo ilegal.                                  |
+| `AUTOMATED_DETECTION`                    | <Icon src="/img/icons/AutomatedDetection.svg" alt="icon AutomatedDetection" title=":iconBots:"/>                       | Sancao aplicada atraves de detecao automatizada.                      |
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="reports-found" label="Relatorios encontrados" default>
+
+![Captura de ecra das Sancoes do Discord](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-ds-report-found.webp)
+
+  </TabItem>
+  <TabItem value="reports-not-found" label="Nenhum relatorio encontrado">
+
+![Captura de ecra das Sancoes do Discord nao encontradas](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-ds-report-not-found.webp)
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+:::note
+O comando permite-lhe ver os relatorios emitidos entre 22 de agosto de 2024 e 14 de agosto de 2025. Esta informacao e fornecida diretamente pelo Discord e **nao pode ser modificada** pelo RaidProtect.
+:::

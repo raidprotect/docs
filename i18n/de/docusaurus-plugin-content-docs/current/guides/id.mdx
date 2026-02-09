@@ -1,84 +1,84 @@
 ---
-title: IDs verwenden
+title: Verwendung von Identifikatoren
 ---
 
 import SeparatedBox from '@site/src/components/SeparatedBox';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Discord-IDs sind eindeutige Nummern, die jeden Benutzer, Kanal, Server oder jede Nachricht auf Discord genau identifizieren. Sie sind eine zuverlässige und dauerhafte Möglichkeit, Elemente auf der Plattform zu erkennen.
+Discord-Identifikatoren sind einzigartige Nummern, mit denen Sie jeden Benutzer, Kanal, Server oder jede Nachricht auf Discord genau identifizieren können. Sie bieten eine zuverlässige und dauerhafte Möglichkeit, Elemente auf der Plattform zu identifizieren.
 
-:::note Relevanz für die Moderation
-Die Verwendung von Discord-IDs ist besonders für Moderationsmaßnahmen nützlich, da sie dir ermöglicht:
-- **Abwesende Nutzer zu sanktionieren**: Jemanden bannen, der den Server bereits verlassen hat
-- **Fehler zu vermeiden**: Auch bei ähnlichen Nutzernamen genau die richtige Person identifizieren
-- **Den Überblick zu behalten**: IDs ändern sich nie, im Gegensatz zu Benutzernamen
-- **Konflikte zu lösen**: Klare Identifizierung bei Sonderzeichen
+:::note Nutzen für die Moderation
+Die Verwendung von Discord-Identifikatoren ist besonders nützlich für Moderationsaktionen, da sie Folgendes ermöglicht:
+- **Einen abwesenden Benutzer bestrafen**: Jemanden bannen, der den Server verlassen hat
+- **Fehler vermeiden**: Die richtige Person auch bei ähnlichen Benutzernamen genau identifizieren
+- **Aufzeichnungen führen**: Identifikatoren ändern sich nie, im Gegensatz zu Benutzernamen
+- **Konflikte lösen**: Eindeutige Identifizierung bei Sonderzeichen
 :::
 
 ## Entwicklermodus aktivieren
 
-Um Discord-IDs zu nutzen, musst du den Entwicklermodus aktivieren.
+Sie müssen den Entwicklermodus aktivieren, um Discord-Identifikatoren verwenden zu können.
 
 <SeparatedBox>
 <Tabs>
   <TabItem value="desktop" label="Auf Discord Desktop/Web" default>
 
     1. **Benutzereinstellungen öffnen**
-    - Klicke unten links auf das Zahnrad ⚙️
+    - Klicken Sie auf das Zahnradsymbol unten links in der Oberfläche
 
     2. **Erweiterte Einstellungen aufrufen**
-    - Gehe in der Seitenleiste zum Tab **Erweitert**
+    - Navigieren Sie in der Seitenleiste zum Tab **Erweitert**
 
     3. **Entwicklermodus aktivieren**
-    - Schalte die Option **„Entwicklermodus“** ein, indem du den Schalter klickst
-    - Der Schalter sollte blau sein, wenn er aktiviert ist
+    - Aktivieren Sie die Option **"Entwicklermodus"**, indem Sie auf den Kippschalter klicken
+    - Die Schaltfläche sollte nach der Aktivierung blau werden
 
   </TabItem>
   <TabItem value="mobile" label="Auf Discord Mobile">
 
     1. **Benutzereinstellungen öffnen**
-    - Tippe unten rechts auf deinen Avatar
-    - Tippe oben rechts auf das Zahnrad ⚙️
+    - Tippen Sie unten rechts auf Ihren Avatar
+    - Tippen Sie oben rechts auf das Zahnradsymbol
 
     2. **Erweiterte Einstellungen aufrufen**
-    - Scrolle nach unten und tippe auf **„Erweitert“**
+    - Scrollen Sie nach unten und tippen Sie auf **"Erweitert"**
 
     3. **Entwicklermodus aktivieren**
-    - Aktiviere die Option **„Entwicklermodus“**
+    - Aktivieren Sie die Option **"Entwicklermodus"**
 
   </TabItem>
 </Tabs>
 </SeparatedBox>
 
-## Eine ID kopieren
+## Einen Identifikator kopieren
 
-Sobald der Entwicklermodus aktiviert ist, kannst du die ID jedes Elements kopieren:
+Sobald der Entwicklermodus aktiviert ist, können Sie den Identifikator jedes Elements kopieren:
 
 <SeparatedBox>
 <Tabs>
-  <TabItem value="user" label="User ID" default>
+  <TabItem value="user" label="Benutzer-ID" default>
 
     - **Rechtsklick** auf den Avatar oder Benutzernamen
-    - **„User ID kopieren“** auswählen
+    - Wählen Sie **"Benutzer-ID kopieren"**
 
   </TabItem>
-  <TabItem value="channel" label="Channel ID">
+  <TabItem value="channel" label="Kanal-ID">
 
-    - **Rechtsklick** auf den Kanalnamen in der Liste
-    - **„Channel ID kopieren“** auswählen
+    - **Rechtsklick** auf den Kanalnamen in der Kanalliste
+    - Wählen Sie **"Kanal-ID kopieren"**
 
   </TabItem>
-  <TabItem value="server" label="Server ID">
+  <TabItem value="server" label="Server-ID">
 
     - **Rechtsklick** auf den Servernamen oben links
-    - **„Server ID kopieren“** auswählen
+    - Wählen Sie **"Server-ID kopieren"**
 
   </TabItem>
-  <TabItem value="message" label="Message ID">
+  <TabItem value="message" label="Nachrichten-ID">
 
     - **Rechtsklick** auf eine Nachricht
-    - **„Message ID kopieren“** auswählen
+    - Wählen Sie **"Nachrichten-ID kopieren"**
 
   </TabItem>
 </Tabs>
@@ -86,13 +86,13 @@ Sobald der Entwicklermodus aktiviert ist, kannst du die ID jedes Elements kopier
 
 ## Verwendung mit RaidProtect
 
-IDs können in RaidProtect-Befehlen anstelle von Erwähnungen genutzt werden:
+Identifikatoren können in RaidProtect-Befehlen anstelle von Erwähnungen verwendet werden:
 
-- [`/ban user:123456789012345678 reason:Verstoß gegen Serverregeln`](../features/moderation#ban)
+- [`/ban user:123456789012345678 reason:Violation des règles du serveur`](../features/moderation#ban)
 - [`/clear amount:100 user:123456789012345678`](../features/moderation#clear)
 - [`/userinfo user:123456789012345678`](../features/utilities#userinfo)
 - [`/bypass minage user:123456789012345678`](../features/raid-mode#minage)
 
 :::info
-Du kannst einen Nutzer über seine Discord-ID bannen, selbst wenn er nicht online ist oder sich nicht auf deinem Server befindet.
+Sie können einen Benutzer anhand seiner Discord-ID bannen, selbst wenn er nicht online oder auf Ihrem Server anwesend ist.
 :::

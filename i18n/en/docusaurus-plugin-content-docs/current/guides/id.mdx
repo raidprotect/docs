@@ -1,59 +1,59 @@
 ---
-title: Using IDs
+title: Using Identifiers
 ---
 
 import SeparatedBox from '@site/src/components/SeparatedBox';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Discord IDs are unique numbers that precisely identify each user, channel, server, or message on Discord. They are a reliable and permanent way to identify elements on the platform.
+Discord identifiers are unique numbers that allow you to precisely identify each user, channel, server, or message on Discord. They provide a reliable and permanent way to identify elements on the platform.
 
-:::note Relevance for Moderation
-Using Discord IDs is especially useful for moderation actions because it allows you to:
+:::note Usefulness for moderation
+Using Discord identifiers is particularly useful for moderation actions because it allows you to:
 - **Sanction an absent user**: Ban someone who has left the server
 - **Avoid mistakes**: Precisely identify the right person even with similar usernames
-- **Keep track**: IDs never change, unlike usernames
-- **Conflict resolution**: Clear identification in case of special characters
+- **Keep a record**: Identifiers never change, unlike usernames
+- **Resolve conflicts**: Clear identification in case of special characters
 :::
 
 ## Enabling Developer Mode
 
-You need to enable Developer Mode to use Discord IDs.
+You need to enable Developer Mode to use Discord identifiers.
 
 <SeparatedBox>
 <Tabs>
   <TabItem value="desktop" label="On Discord Desktop/Web" default>
 
-    1. **Open User Settings**
-    - Click the gear icon ⚙️ at the bottom left of the interface
+    1. **Open user settings**
+    - Click the gear icon in the bottom left of the interface
 
-    2. **Access Advanced Settings**
-    - In the sidebar, go to the **Advanced** tab
+    2. **Access advanced settings**
+    - In the sidebar, navigate to the **Advanced** tab
 
     3. **Enable Developer Mode**
-    - Turn on the **"Developer Mode"** option by clicking the toggle button
+    - Enable the **"Developer Mode"** option by clicking the toggle switch
     - The button should turn blue once enabled
 
   </TabItem>
   <TabItem value="mobile" label="On Discord Mobile">
 
-    1. **Open User Settings**
-    - Tap your avatar at the bottom right
-    - Tap the gear icon ⚙️ at the top right of the interface
+    1. **Open user settings**
+    - Tap your avatar in the bottom right
+    - Tap the gear icon in the top right of the interface
 
-    2. **Access Advanced Settings**
+    2. **Access advanced settings**
     - Scroll down and tap **"Advanced"**
 
     3. **Enable Developer Mode**
-    - Turn on the **"Developer Mode"** option
+    - Enable the **"Developer Mode"** option
 
   </TabItem>
 </Tabs>
 </SeparatedBox>
 
-## Copying an ID
+## Copying an Identifier
 
-Once Developer Mode is enabled, you can copy the ID of any element:
+Once Developer Mode is enabled, you can copy the identifier of any element:
 
 <SeparatedBox>
 <Tabs>
@@ -71,7 +71,7 @@ Once Developer Mode is enabled, you can copy the ID of any element:
   </TabItem>
   <TabItem value="server" label="Server ID">
 
-    - **Right-click** on the server name at the top left
+    - **Right-click** on the server name in the top left
     - Select **"Copy Server ID"**
 
   </TabItem>
@@ -84,15 +84,15 @@ Once Developer Mode is enabled, you can copy the ID of any element:
 </Tabs>
 </SeparatedBox>
 
-## Using with RaidProtect
+## Usage with RaidProtect
 
-IDs can be used in RaidProtect commands instead of mentions:
+Identifiers can be used in RaidProtect commands instead of mentions:
 
-- [`/ban user:123456789012345678 reason:Server rules violation`](../features/moderation#ban)
+- [`/ban user:123456789012345678 reason:Violation des règles du serveur`](../features/moderation#ban)
 - [`/clear amount:100 user:123456789012345678`](../features/moderation#clear)
 - [`/userinfo user:123456789012345678`](../features/utilities#userinfo)
-- [`/bypass mining user:123456789012345678`](../features/raid-mode#minage)
+- [`/bypass minage user:123456789012345678`](../features/raid-mode#minage)
 
 :::info
-You can ban a user using their Discord ID, even if they are not online or present in your server.
+You can ban a user using their Discord identifier, even if they are not online or present on your server.
 :::
