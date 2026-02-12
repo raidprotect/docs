@@ -90,6 +90,13 @@ export default async function createConfigAsync() {
                     es: 'https://raidprotect.bot/es/privacy',
                     pt: 'https://raidprotect.bot/pt/privacy'
                 },
+                cookies: {
+                    fr: 'https://raidprotect.bot/cookies',
+                    en: 'https://raidprotect.bot/en/cookies',
+                    de: 'https://raidprotect.bot/de/cookies',
+                    es: 'https://raidprotect.bot/es/cookies',
+                    pt: 'https://raidprotect.bot/pt/cookies'
+                },
                 geranium: {
                     fr: 'https://i.dfr.gg/geranium.webm',
                     en: 'https://i.dfr.gg/en-geranium.webm',
@@ -367,8 +374,8 @@ export default async function createConfigAsync() {
                                 target: '_self'
                             },
                             {
-                                label: 'Statuts des services',
-                                to: 'https://status.raidprotect.bot',
+                                label: 'Politique des cookies',
+                                to: 'cookies',
                                 target: '_self'
                             }
                         ],
