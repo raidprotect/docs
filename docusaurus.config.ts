@@ -191,28 +191,17 @@ export default async function createConfigAsync() {
                 },
                 innerHTML: JSON.stringify({
                     "@context": "https://schema.org",
-                    "@type": "WebSite",
-                    "url": "https://docs.raidprotect.bot",
-                    "name": "RaidProtect Documentation",
-                    "publisher": {
-                        "@type": "Organization",
-                        "name": "RaidProtect",
-                        "url": "https://raidprotect.bot",
-                        "logo": "https://cdn.prod.website-files.com/677fbd67c3c9318f7fb56659/678ff5223c75df94332bb485_OrganizationLogo.svg",
-                        "contactPoint": {
-                            "@type": "ContactPoint",
-                            "email": "contact@raidprotect.bot",
-                            "contactType": "support",
-                            "availableLanguage": ["Fr", "En", "De"]
-                        },
-                        "sameAs": [
-                            "https://x.com/raidprotect",
-                            "https://www.linkedin.com/company/raidprotect",
-                            "https://github.com/raidprotect",
-                            "https://www.youtube.com/@RaidProtect"
-                        ]
-                    },
-                    "inLanguage": ["Fr", "En", "De"]
+                    "@graph": [
+                        { "@type": "Organization", "@id": "https://raidprotect.bot/#organization" },
+                        {
+                            "@type": "WebSite",
+                            "@id": "https://docs.raidprotect.bot/#website",
+                            "url": "https://docs.raidprotect.bot/",
+                            "name": "RaidProtect Docs",
+                            "publisher": { "@id": "https://raidprotect.bot/#organization" },
+                            "inLanguage": ["fr", "en", "de", "es", "pt"]
+                        }
+                    ]
                 })
             }
         ],
