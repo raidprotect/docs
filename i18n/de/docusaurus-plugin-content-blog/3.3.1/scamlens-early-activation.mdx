@@ -1,0 +1,61 @@
+---
+title: 'ScamLens: Das Ende von Krypto-Bilder-Spam auf Discord'
+tags: [threats]
+authors: [zallom]
+image: ../../../../blog/3.3.1/assets/rp-scamlens.webp
+slug: scamlens-early-activation
+date: 2026-02-14
+---
+
+import Timestamp from '@site/src/components/Timestamp';
+
+Eine große Spam-Welle im Zusammenhang mit dem **„Krypto-Bilder"-Betrug** hat uns dazu veranlasst, den `Deletion`-Modus von **RaidProtect ScamLens**, unserem Anti-Scam-Bildanalysemodul, vorzeitig zu aktivieren.
+
+![RaidProtect ScamLens abgewehrte Bedrohung am 14.02.2026](../../../../blog/3.3.1/assets/rp-scamlens.webp)
+
+{/* truncate */}
+
+## 🛡️ Spam-Details {#threat}
+
+Zwei massive Spam-Wellen fanden am <Timestamp value={1771023600} format="D" /> statt, zwischen <Timestamp value={1771023600} format="T" /> und <Timestamp value={1771068391} format="T" />. Über **2.500 kompromittierte Konten** wurden genutzt, um mehr als **10.000 Nachrichten** mit dieser Art von Bildern zu versenden. Diese Zahlen beziehen sich nur auf das, was auf den 340.000 von RaidProtect geschützten Servern beobachtet wurde — da Discord mehrere Millionen aktive Server hat, kann das tatsächliche Ausmaß dieses Angriffs auf **mehrere Hunderttausend Nachrichten** auf der gesamten Plattform geschätzt werden.
+
+Der Betrug, bekannt als „Krypto-Bilder", besteht aus dem massenhaften Versand von **4 Bildern**, die Nutzer zum Kauf betrügerischer Kryptowährungen auffordern, in so vielen Kanälen wie möglich.
+
+#### Welle 1 {#wave-1}
+![Vorkommen pro Minute — Welle 1 (00:00 bis 01:25)](../../../../blog/3.3.1/assets/0000_0125.webp)
+
+#### Welle 2 {#wave-2}
+![Vorkommen pro Minute — Welle 2 (10:21 bis 11:25)](../../../../blog/3.3.1/assets/1021_1125.webp)
+
+Angesichts des hohen Volumens betrügerischer Nachrichten haben wir den `Deletion`-Modus von **ScamLens** vorzeitig aktiviert — ursprünglich im `Lernmodus` eingeführt im [Update 3.3.1](/blog/3.3.1-jail-and-mute#changelog).
+Dieses Modul analysiert auf euren Servern gesendete Bilder und löscht nun automatisch als betrügerisch erkannte Bilder (keine Konfiguration erforderlich).
+
+### Wie geht es weiter? {#next}
+
+Der `Sanktion`-Modus wird in Kürze aktiviert: Zusätzlich zum Löschen betrügerischer Bilder wird ScamLens automatisch einen **eintägigen Timeout** für den Absender anwenden. Wir haben uns entschieden, diese Konten nicht zu bannen, da es sich fast ausschließlich um **gehackte Konten** handelt — ein Bann würde den eigentlichen Kontoinhaber bestrafen. Der Timeout neutralisiert die Bedrohung sofort und gibt dem Inhaber Zeit, die Kontrolle über sein Konto zurückzuerlangen.
+
+:::info 🔒 Bewusst undurchsichtige Funktionsweise
+Aus Sicherheitsgründen kommunizieren wir nicht und werden nicht über die von ScamLens verwendeten Erkennungsmethoden kommunizieren. Dieser „Black Box"-Ansatz soll verhindern, dass Betrüger ihre Techniken anpassen, um unseren Schutz zu umgehen.
+:::
+
+---
+
+## ❓ FAQ {#faq}
+
+#### Wie blockiert man Bilder-Spam auf Discord? {#antispam-images}
+[Füge RaidProtect hinzu](https://raidprotect.bot/invite) zu deinem Server. ScamLens ist standardmäßig aktiviert und löscht alle als betrügerisch erkannten Bilder — keine zusätzliche Konfiguration erforderlich.
+
+#### Wie schützt man sich vor Krypto-Bilder-Betrug auf Discord? {#arnaque-images-crypto}
+Einfach [RaidProtect hinzufügen](https://raidprotect.bot/invite). ScamLens erkennt und löscht betrügerische Bilder automatisch.
+
+#### Wie verhindert man Spam-Bots auf meinem Discord-Server? {#anti-spam-bots}
+Zusätzlich zu ScamLens aktiviere das [Captcha](/features/captcha) von RaidProtect, um automatisierte Konten am Beitritt zu deinem Server zu hindern.
+
+---
+
+:::tip 📚 Nützliche Ressourcen
+- 🔗 [RaidProtect zu deinem Server hinzufügen](https://raidprotect.bot/invite)
+- 📘 [Vollständige Dokumentation lesen](https://docs.raidprotect.bot/)
+- 💡 [Vorschlag oder Feedback einreichen](https://suggestions.raidprotect.bot/)
+- 📣 [Ankündigungen folgen und der Community beitreten](https://raidprotect.bot/discord)
+:::
