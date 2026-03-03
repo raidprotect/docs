@@ -2,7 +2,7 @@
 title: Captcha (Vérification)
 ---
 
-Empêchez les selfbots d'accéder à votre serveur Discord et bloquez les raids grâce au système de captcha de RaidProtect.
+Empêchez les "selfbots" d'accéder à votre serveur Discord et bloquez les raids grâce au système de captcha de RaidProtect.
 
 Le captcha est l’une des fonctionnalités les plus populaires de RaidProtect, bien qu’il reste entièrement optionnel. Il permet de demander à chaque nouvel utilisateur de relever un défi consistant à saisir un code, afin de vérifier qu’il ne s’agit pas d’un robot (selfbot).
 
