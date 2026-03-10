@@ -333,5 +333,71 @@
   "theme.IconExternalLink.ariaLabel": {
     "message": "(abre en nueva pestaña)",
     "description": "The ARIA label for the external link icon"
+  },
+  "editor.signIn.title": {
+    "message": "Editar la documentación"
+  },
+  "editor.signIn.description": {
+    "message": "Inicia sesión con GitHub para proponer cambios en la documentación."
+  },
+  "editor.signIn.button": {
+    "message": "Iniciar sesión con GitHub"
+  },
+  "editor.toolbar.propose": {
+    "message": "Proponer cambios"
+  },
+  "editor.toolbar.cancel": {
+    "message": "Cancelar"
+  },
+  "editor.toolbar.commitPlaceholder": {
+    "message": "Describe tus cambios..."
+  },
+  "editor.success.title": {
+    "message": "¡Cambios propuestos!"
+  },
+  "editor.success.description": {
+    "message": "Tu Pull Request se ha creado correctamente. El equipo la revisará pronto."
+  },
+  "editor.success.viewPr": {
+    "message": "Ver Pull Request"
+  },
+  "editor.success.backToDocs": {
+    "message": "Volver a la documentación"
+  },
+  "editor.error.noSource": {
+    "message": "No se ha especificado ningún archivo"
+  },
+  "editor.error.noSource.description": {
+    "message": "Usa el enlace \"Editar esta página\" desde una página de documentación."
+  },
+  "editor.error.notFound": {
+    "message": "Este archivo no se encontró en el repositorio."
+  },
+  "editor.error.sessionExpired": {
+    "message": "Tu sesión ha expirado. Por favor, inicia sesión de nuevo."
+  },
+  "editor.error.noPermission": {
+    "message": "No tienes permiso para proponer cambios."
+  },
+  "editor.error.conflict": {
+    "message": "El archivo ha sido modificado mientras tanto. Recarga la página para obtener la última versión."
+  },
+  "editor.error.generic": {
+    "message": "Ha ocurrido un error. Por favor, inténtalo de nuevo."
+  },
+  "editor.loading": {
+    "message": "Cargando..."
+  },
+  "editor.authenticating": {
+    "message": "Autenticando..."
+  },
+  "editor.exitBar.backToDocs": {
+    "message": "Volver a la documentación"
+  },
+  "editor.header.logout": {
+    "message": "Cerrar sesión"
+  },
+  "editor.preview.title": {
+    "message": "Vista previa"
   }
 }

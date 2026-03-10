@@ -333,5 +333,71 @@
   "theme.IconExternalLink.ariaLabel": {
     "message": "(opens in new tab)",
     "description": "The ARIA label for the external link icon"
+  },
+  "editor.signIn.title": {
+    "message": "Modifier la documentation"
+  },
+  "editor.signIn.description": {
+    "message": "Connectez-vous avec GitHub pour proposer des modifications à la documentation."
+  },
+  "editor.signIn.button": {
+    "message": "Se connecter avec GitHub"
+  },
+  "editor.toolbar.propose": {
+    "message": "Proposer les modifications"
+  },
+  "editor.toolbar.cancel": {
+    "message": "Annuler"
+  },
+  "editor.toolbar.commitPlaceholder": {
+    "message": "Décrivez vos modifications..."
+  },
+  "editor.success.title": {
+    "message": "Modifications proposées !"
+  },
+  "editor.success.description": {
+    "message": "Votre Pull Request a été créée avec succès. L'équipe la relira prochainement."
+  },
+  "editor.success.viewPr": {
+    "message": "Voir la Pull Request"
+  },
+  "editor.success.backToDocs": {
+    "message": "Retour à la documentation"
+  },
+  "editor.error.noSource": {
+    "message": "Aucun fichier spécifié"
+  },
+  "editor.error.noSource.description": {
+    "message": "Utilisez le lien \"Modifier cette page\" depuis une page de documentation."
+  },
+  "editor.error.notFound": {
+    "message": "Ce fichier n'a pas été trouvé dans le dépôt."
+  },
+  "editor.error.sessionExpired": {
+    "message": "Votre session a expiré. Veuillez vous reconnecter."
+  },
+  "editor.error.noPermission": {
+    "message": "Vous n'avez pas la permission de proposer des modifications."
+  },
+  "editor.error.conflict": {
+    "message": "Le fichier a été modifié entre-temps. Rechargez la page pour obtenir la dernière version."
+  },
+  "editor.error.generic": {
+    "message": "Une erreur est survenue. Veuillez réessayer."
+  },
+  "editor.loading": {
+    "message": "Chargement..."
+  },
+  "editor.authenticating": {
+    "message": "Authentification en cours..."
+  },
+  "editor.exitBar.backToDocs": {
+    "message": "Retour à la documentation"
+  },
+  "editor.header.logout": {
+    "message": "Déconnexion"
+  },
+  "editor.preview.title": {
+    "message": "Aperçu"
   }
 }

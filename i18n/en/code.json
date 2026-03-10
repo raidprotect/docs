@@ -333,5 +333,71 @@
   "theme.IconExternalLink.ariaLabel": {
     "message": "(opens in new tab)",
     "description": "The ARIA label for the external link icon"
+  },
+  "editor.signIn.title": {
+    "message": "Edit the documentation"
+  },
+  "editor.signIn.description": {
+    "message": "Sign in with GitHub to suggest changes to the documentation."
+  },
+  "editor.signIn.button": {
+    "message": "Sign in with GitHub"
+  },
+  "editor.toolbar.propose": {
+    "message": "Propose changes"
+  },
+  "editor.toolbar.cancel": {
+    "message": "Cancel"
+  },
+  "editor.toolbar.commitPlaceholder": {
+    "message": "Describe your changes..."
+  },
+  "editor.success.title": {
+    "message": "Changes proposed!"
+  },
+  "editor.success.description": {
+    "message": "Your Pull Request has been successfully created. The team will review it shortly."
+  },
+  "editor.success.viewPr": {
+    "message": "View Pull Request"
+  },
+  "editor.success.backToDocs": {
+    "message": "Back to documentation"
+  },
+  "editor.error.noSource": {
+    "message": "No file specified"
+  },
+  "editor.error.noSource.description": {
+    "message": "Use the \"Edit this page\" link from a documentation page."
+  },
+  "editor.error.notFound": {
+    "message": "This file was not found in the repository."
+  },
+  "editor.error.sessionExpired": {
+    "message": "Your session has expired. Please sign in again."
+  },
+  "editor.error.noPermission": {
+    "message": "You do not have permission to propose changes."
+  },
+  "editor.error.conflict": {
+    "message": "The file has been modified in the meantime. Reload the page to get the latest version."
+  },
+  "editor.error.generic": {
+    "message": "An error occurred. Please try again."
+  },
+  "editor.loading": {
+    "message": "Loading..."
+  },
+  "editor.authenticating": {
+    "message": "Authenticating..."
+  },
+  "editor.exitBar.backToDocs": {
+    "message": "Back to documentation"
+  },
+  "editor.header.logout": {
+    "message": "Log out"
+  },
+  "editor.preview.title": {
+    "message": "Preview"
   }
 }

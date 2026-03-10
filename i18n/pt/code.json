@@ -333,5 +333,71 @@
   "theme.IconExternalLink.ariaLabel": {
     "message": "(abre em nova aba)",
     "description": "The ARIA label for the external link icon"
+  },
+  "editor.signIn.title": {
+    "message": "Editar a documentação"
+  },
+  "editor.signIn.description": {
+    "message": "Faça login com o GitHub para propor alterações na documentação."
+  },
+  "editor.signIn.button": {
+    "message": "Entrar com GitHub"
+  },
+  "editor.toolbar.propose": {
+    "message": "Propor alterações"
+  },
+  "editor.toolbar.cancel": {
+    "message": "Cancelar"
+  },
+  "editor.toolbar.commitPlaceholder": {
+    "message": "Descreva suas alterações..."
+  },
+  "editor.success.title": {
+    "message": "Alterações propostas!"
+  },
+  "editor.success.description": {
+    "message": "Seu Pull Request foi criado com sucesso. A equipe irá revisá-lo em breve."
+  },
+  "editor.success.viewPr": {
+    "message": "Ver Pull Request"
+  },
+  "editor.success.backToDocs": {
+    "message": "Voltar à documentação"
+  },
+  "editor.error.noSource": {
+    "message": "Nenhum arquivo especificado"
+  },
+  "editor.error.noSource.description": {
+    "message": "Use o link \"Editar esta página\" a partir de uma página de documentação."
+  },
+  "editor.error.notFound": {
+    "message": "Este arquivo não foi encontrado no repositório."
+  },
+  "editor.error.sessionExpired": {
+    "message": "Sua sessão expirou. Por favor, faça login novamente."
+  },
+  "editor.error.noPermission": {
+    "message": "Você não tem permissão para propor alterações."
+  },
+  "editor.error.conflict": {
+    "message": "O arquivo foi modificado nesse meio tempo. Recarregue a página para obter a versão mais recente."
+  },
+  "editor.error.generic": {
+    "message": "Ocorreu um erro. Por favor, tente novamente."
+  },
+  "editor.loading": {
+    "message": "Carregando..."
+  },
+  "editor.authenticating": {
+    "message": "Autenticando..."
+  },
+  "editor.exitBar.backToDocs": {
+    "message": "Voltar à documentação"
+  },
+  "editor.header.logout": {
+    "message": "Sair"
+  },
+  "editor.preview.title": {
+    "message": "Pré-visualização"
   }
 }

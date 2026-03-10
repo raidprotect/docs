@@ -253,6 +253,40 @@ body {
   }
 }
 
+.theme-unlisted-banner {
+  display: none;
+}
+
+/* Editor page — widen content area, hide unnecessary chrome */
+body.editor-page .theme-doc-breadcrumbs,
+body.editor-page .pagination-nav,
+body.editor-page .theme-doc-version-badge,
+body.editor-page footer {
+  display: none;
+}
+
+body.editor-page article > .theme-doc-markdown > header {
+  display: none;
+}
+
+body.editor-page .theme-doc-markdown {
+  max-width: 100%;
+}
+
+body.editor-page [class*="docMainContainer"] {
+  flex: 1;
+}
+
+body.editor-page article {
+  padding: 0;
+}
+
+/* Sidebar collapse/expand buttons — only visible on editor pages */
+body:not(.editor-page) [class*="collapseSidebarButton"],
+body:not(.editor-page) [class*="expandButton"] {
+  display: none !important;
+}
+
 @media screen and (min-width: 997px) {
   .navbar__brand {
     position: absolute;

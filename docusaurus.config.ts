@@ -123,6 +123,26 @@ export default async function createConfigAsync() {
             },
             excludedCanonical: []
         },
+        plugins: [
+            [
+                'docusaurus-plugin-github-editor',
+                {
+                    githubClientId: 'Ov23liMLIK4wQFUf5NKP',
+                    oauthWorkerUrl: 'https://rp-docs-github-oauth.raidprotect.workers.dev',
+                    repoOwner: 'raidprotect',
+                    repoName: 'docs',
+                    baseBranch: 'master',
+                    defaultLocale: 'fr',
+                    editPageTitle: 'Modifier la documentation',
+                    logoSrc: '/img/extend_logo.svg',
+                    enableEditThisPage: true,
+                    editUrlBranch: 'master',
+                    storageKeyPrefix: 'rp-docs-editor',
+                    prTitlePrefix: 'docs: ',
+                    prBodyTemplate: '## Modification de la documentation\n\n**Fichier modifié :** `{{filePath}}`\n\n{{commitMessage}}\n\n---\n*Proposé via l\'éditeur de documentation intégré.*',
+                },
+            ],
+        ],
         presets: [
             [
                 'classic',
@@ -212,6 +232,9 @@ export default async function createConfigAsync() {
             ],
             docs: {
                 versionPersistence: 'localStorage',
+                sidebar: {
+                    hideable: true,
+                },
             },
             announcementBar: {
                 id: '3.3.1',

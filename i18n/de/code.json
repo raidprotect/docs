@@ -333,5 +333,71 @@
   "theme.IconExternalLink.ariaLabel": {
     "message": "(opens in new tab)",
     "description": "The ARIA label for the external link icon"
+  },
+  "editor.signIn.title": {
+    "message": "Dokumentation bearbeiten"
+  },
+  "editor.signIn.description": {
+    "message": "Melden Sie sich mit GitHub an, um Änderungen an der Dokumentation vorzuschlagen."
+  },
+  "editor.signIn.button": {
+    "message": "Mit GitHub anmelden"
+  },
+  "editor.toolbar.propose": {
+    "message": "Änderungen vorschlagen"
+  },
+  "editor.toolbar.cancel": {
+    "message": "Abbrechen"
+  },
+  "editor.toolbar.commitPlaceholder": {
+    "message": "Beschreiben Sie Ihre Änderungen..."
+  },
+  "editor.success.title": {
+    "message": "Änderungen vorgeschlagen!"
+  },
+  "editor.success.description": {
+    "message": "Ihr Pull Request wurde erfolgreich erstellt. Das Team wird ihn in Kürze überprüfen."
+  },
+  "editor.success.viewPr": {
+    "message": "Pull Request ansehen"
+  },
+  "editor.success.backToDocs": {
+    "message": "Zurück zur Dokumentation"
+  },
+  "editor.error.noSource": {
+    "message": "Keine Datei angegeben"
+  },
+  "editor.error.noSource.description": {
+    "message": "Verwenden Sie den Link \"Diese Seite bearbeiten\" auf einer Dokumentationsseite."
+  },
+  "editor.error.notFound": {
+    "message": "Diese Datei wurde im Repository nicht gefunden."
+  },
+  "editor.error.sessionExpired": {
+    "message": "Ihre Sitzung ist abgelaufen. Bitte melden Sie sich erneut an."
+  },
+  "editor.error.noPermission": {
+    "message": "Sie haben keine Berechtigung, Änderungen vorzuschlagen."
+  },
+  "editor.error.conflict": {
+    "message": "Die Datei wurde zwischenzeitlich geändert. Laden Sie die Seite neu, um die neueste Version zu erhalten."
+  },
+  "editor.error.generic": {
+    "message": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
+  },
+  "editor.loading": {
+    "message": "Wird geladen..."
+  },
+  "editor.authenticating": {
+    "message": "Authentifizierung läuft..."
+  },
+  "editor.exitBar.backToDocs": {
+    "message": "Zurück zur Dokumentation"
+  },
+  "editor.header.logout": {
+    "message": "Abmelden"
+  },
+  "editor.preview.title": {
+    "message": "Vorschau"
   }
 }
