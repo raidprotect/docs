@@ -42,7 +42,7 @@ Le grade le plus élevé parmi vos méthodes configurées est automatiquement re
 
 <SeparatedBox>
 <Tabs>
-  <TabItem value="pin" label="PIN" default>
+<TabItem value="pin" label="PIN" default>
 
 Le code PIN est la méthode la plus simple. Deux modes sont disponibles :
 
@@ -53,16 +53,16 @@ Le code PIN est la méthode la plus simple. Deux modes sont disponibles :
 Les PIN faibles sont automatiquement rejetés : chiffres identiques répétés, séquences croissantes/décroissantes, et motifs courants.
 :::
 
-  </TabItem>
-  <TabItem value="otp" label="OTP (Code 2FA)">
+</TabItem>
+<TabItem value="otp" label="OTP (Code 2FA)">
 
 L'OTP utilise le standard TOTP (Time-based One-Time Password) compatible avec les applications d'authentification telles que Google Authenticator, Authy ou 1Password.
 
 - Code à 6 chiffres renouvelé toutes les 30 secondes.
 - Tolérance d'une fenêtre de ±1 pour compenser les décalages.
 
-  </TabItem>
-  <TabItem value="passkey" label="Passkey (WebAuthn)">
+</TabItem>
+<TabItem value="passkey" label="Passkey (WebAuthn)">
 
 Les passkeys offrent le niveau de sécurité le plus élevé (grade S). L'authentification se fait via le navigateur en utilisant :
 
@@ -71,7 +71,7 @@ Les passkeys offrent le niveau de sécurité le plus élevé (grade S). L'authen
 
 Lorsque vous utilisez une passkey, un lien externe s'ouvre dans votre navigateur pour effectuer la vérification. Une fois validée, le bot est notifié en temps réel et vous attribue le rôle.
 
-  </TabItem>
+</TabItem>
 </Tabs>
 </SeparatedBox>
 
