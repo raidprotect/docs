@@ -25,14 +25,14 @@ L'Authentication Manager nécessite que chaque membre crée un **profil d'authen
 
 Chaque méthode d'authentification est associée à un **grade de sécurité**. Les rôles protégés exigent un grade minimum que le membre doit atteindre.
 
-| **Grade** | **Condition**                         |
-| --------- | ------------------------------------- |
-| S          | Au moins une passkey enregistrée      |
-| A          | Code OTP (2FA) activé                 |
-| B          | PIN renforcé de 8 chiffres ou plus    |
-| C          | PIN renforcé de 6 chiffres ou plus    |
-| D          | PIN simple de 6 chiffres ou plus      |
-| E          | PIN simple de 4 chiffres ou plus      |
+| **Grade**                                                                   | **Condition**                         |
+| --------------------------------------------------------------------------- | ------------------------------------- |
+| <Icon src="/img/icons/RankS.svg" alt="icon RankS" title=":securityRankS:"/> | Au moins une passkey enregistrée      |
+| <Icon src="/img/icons/RankA.svg" alt="icon RankA" title=":securityRankA:"/> | Code OTP (2FA) activé                 |
+| <Icon src="/img/icons/RankB.svg" alt="icon RankB" title=":securityRankB:"/> | PIN renforcé de 8 chiffres ou plus    |
+| <Icon src="/img/icons/RankC.svg" alt="icon RankC" title=":securityRankC:"/> | PIN renforcé de 6 chiffres ou plus    |
+| <Icon src="/img/icons/RankD.svg" alt="icon RankD" title=":securityRankD:"/> | PIN simple de 6 chiffres ou plus      |
+| <Icon src="/img/icons/RankE.svg" alt="icon RankE" title=":securityRankE:"/> | PIN simple de 4 chiffres ou plus      |
 
 :::tip
 Le grade le plus élevé parmi vos méthodes configurées est automatiquement retenu. Par exemple, si vous avez un PIN simple (grade D) et une passkey (grade S), votre grade sera **S**.
