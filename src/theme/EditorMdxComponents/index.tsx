@@ -5,6 +5,7 @@ import Details from '@theme/Details';
 import CodeBlock from '@theme/CodeBlock';
 import SeparatedBox from '@site/src/components/SeparatedBox';
 import SuggestionLink from '@site/src/components/SuggestionLink';
+import Icon from '@site/src/components/Icon';
 
 function DocCardPreview({item}: {item?: {type?: string; label?: string; href?: string; description?: string}}) {
   if (!item) return null;
@@ -61,6 +62,7 @@ export function useEditorMdxComponents(extra: Record<string, any> = {}): Record<
     CodeBlock,
     SeparatedBox,
     SuggestionLink,
+    Icon,
     ...extra,
   };
 }

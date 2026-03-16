@@ -21,8 +21,8 @@ importers:
         specifier: ^2.0.0
         version: 2.1.1
       docusaurus-plugin-github-editor:
-        specifier: ^1.0.3
-        version: 1.0.3(@docusaurus/core@3.9.2(@mdx-js/react@3.1.1(@types/react@19.2.14)(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^1.1.0
+        version: 1.1.0(@docusaurus/core@3.9.2(@mdx-js/react@3.1.1(@types/react@19.2.14)(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       prism-react-renderer:
         specifier: ^2.3.0
         version: 2.4.1(react@18.3.1)
@@ -2572,8 +2572,8 @@ packages:
     resolution: {integrity: sha512-l4gcSouhcgIKRvyy99RNVOgxXiicE+2jZoNmaNmZ6JXiGajBOJAesk1OBlJuM5k2c+eudGdLxDqXuPCKIj6kpw==}
     engines: {node: '>=6'}
 
-  docusaurus-plugin-github-editor@1.0.3:
-    resolution: {integrity: sha512-M76szStclUjusEkrGU4T5Fcz5tw1Ggiz5V32RW2ZeGFR+mGXL/pqdB2vwoKhjlcjebnbrI0IiLu+pe+5G4QA0g==}
+  docusaurus-plugin-github-editor@1.1.0:
+    resolution: {integrity: sha512-ZD8quSgHwvuo7JM9NIZXu5/oGuUwOIbmkkKIo8ldfZuhQvJsDputkusp8pvssROUH1gPtXYeXLs6pKJfCLQxtw==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       '@docusaurus/core': ^3.0.0
@@ -8943,7 +8943,7 @@ snapshots:
     dependencies:
       '@leichtgewicht/ip-codec': 2.0.5
 
-  docusaurus-plugin-github-editor@1.0.3(@docusaurus/core@3.9.2(@mdx-js/react@3.1.1(@types/react@19.2.14)(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  docusaurus-plugin-github-editor@1.1.0(@docusaurus/core@3.9.2(@mdx-js/react@3.1.1(@types/react@19.2.14)(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@codemirror/commands': 6.10.2
       '@codemirror/lang-markdown': 6.5.0
