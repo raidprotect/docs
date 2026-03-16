@@ -6,7 +6,7 @@ L'Authentication Manager (AM) de RaidProtect est un système d'authentification 
 
 ## ❓ Fonctionnement général {#working}
 
-L'Authentication Manager repose sur un système de **rôles protégés** et de **sessions temporaires**. Lorsqu'un administrateur configure un rôle avec l'AM :
+L'Authentication Manager repose sur un système de **rôles protégés** et de **sessions temporaires**. Lorsqu'un administrateur configure un rôle avec l'AM :
 
 1. Le rôle Discord est protégé par une authentification obligatoire.
 2. Les membres autorisés doivent s'authentifier via la commande `/auth` pour obtenir le rôle.
@@ -36,32 +36,40 @@ Le grade le plus élevé parmi vos méthodes configurées est automatiquement re
 
 ## 🛡️ Méthodes d'authentification {#methods}
 
-### PIN {#pin}
+<SeparatedBox>
+<Tabs>
+  <TabItem value="pin" label="PIN" default>
 
-Le code PIN est la méthode la plus simple. Deux modes sont disponibles :
+Le code PIN est la méthode la plus simple. Deux modes sont disponibles :
 
-- **PIN simple** : Saisie classique dans un formulaire (4 à 12 chiffres).
-- **PIN renforcé** : Clavier numérique avec disposition aléatoire des touches (6 à 12 chiffres), empêchant l'observation par un tiers.
+- **PIN simple** : Saisie classique dans un formulaire (4 à 12 chiffres).
+- **PIN renforcé** : Clavier numérique avec disposition aléatoire des touches (6 à 12 chiffres), empêchant l'observation par un tiers.
 
 :::warning
-Les PIN faibles sont automatiquement rejetés : chiffres identiques répétés, séquences croissantes/décroissantes, et motifs courants.
+Les PIN faibles sont automatiquement rejetés : chiffres identiques répétés, séquences croissantes/décroissantes, et motifs courants.
 :::
 
-### OTP (Code 2FA) {#otp}
+  </TabItem>
+  <TabItem value="otp" label="OTP (Code 2FA)">
 
 L'OTP utilise le standard TOTP (Time-based One-Time Password) compatible avec les applications d'authentification telles que Google Authenticator, Authy ou 1Password.
 
 - Code à 6 chiffres renouvelé toutes les 30 secondes.
 - Tolérance d'une fenêtre de ±1 pour compenser les décalages.
 
-### Passkey (WebAuthn) {#passkey}
+  </TabItem>
+  <TabItem value="passkey" label="Passkey (WebAuthn)">
 
-Les passkeys offrent le niveau de sécurité le plus élevé (grade S). L'authentification se fait via le navigateur en utilisant :
+Les passkeys offrent le niveau de sécurité le plus élevé (grade S). L'authentification se fait via le navigateur en utilisant :
 
 - **Empreinte digitale** ou **reconnaissance faciale** (Touch ID, Face ID, Windows Hello).
 - **Clé de sécurité physique** (YubiKey, etc.).
 
 Lorsque vous utilisez une passkey, un lien externe s'ouvre dans votre navigateur pour effectuer la vérification. Une fois validée, le bot est notifié en temps réel et vous attribue le rôle.
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
 
 ## 👤 Profil d'authentification (`/auth-profile`) {#auth-profile}
 
@@ -71,24 +79,13 @@ La commande `/auth-profile` permet de gérer votre profil d'authentification per
 
 Lors de la première utilisation, un écran d'accueil vous explique le fonctionnement du système. Cliquez sur **Continuer** pour configurer votre première méthode d'authentification.
 
-### Gestion du PIN {#manage-pin}
+### Gestion des authentifications {#manage-methods}
 
-Depuis votre profil, vous pouvez :
+Depuis votre profil, vous pouvez gérer vos méthodes d'authentification.
 
-- **Ajouter un PIN** : Choisissez entre PIN simple ou renforcé.
-- **Modifier le PIN** : Changez votre code existant.
-- **Supprimer le PIN** : Retirez cette méthode (vérification de l'intégrité du grade effectuée).
-
-### Gestion de l'OTP {#manage-otp}
-
-- **Activer l'OTP** : Un QR code et une clé secrète sont générés. Scannez le QR code avec votre application d'authentification puis vérifiez avec un code à 6 chiffres.
-- **Régénérer l'OTP** : Génère un nouveau secret (l'ancien est invalidé).
-- **Supprimer l'OTP** : Désactive la méthode.
-
-### Gestion des passkeys {#manage-passkeys}
-
-- **Ajouter une passkey** : Ouvre un lien vers la page d'enregistrement. Vous pouvez nommer votre appareil (ex. "MacBook Pro", "iPhone").
-- **Supprimer une passkey** : Confirmation requise avant suppression.
+- Ajouter, modifier ou supprimer un **PIN** (simple ou renforcé).
+- Activer l'**OTP (2FA)** via QR code, régénérer le secret ou désactiver la méthode.
+- Ajouter une **passkeys** via la page d'enregistrement ou la supprimer.
 
 Chaque passkey affiche son nom d'appareil et la date de dernière utilisation.
 
@@ -102,7 +99,7 @@ Consultez les 3 dernières actions effectuées sur votre compte, avec un accès 
 
 ### Réinitialisation du compte {#reset}
 
-Le bouton **J'ai oublié mes authentifiants** permet de réinitialiser entièrement votre compte. Cette action :
+Le bouton **J'ai oublié mes authentifiants** permet de réinitialiser entièrement votre compte. Cette action :
 
 - Supprime toutes vos méthodes d'authentification.
 - Désactive tous vos accès aux rôles protégés.
@@ -131,15 +128,15 @@ Seuls les rôles auxquels vous avez été assigné (statut **Actif**) apparaisse
 
 ### Gestion des sessions {#sessions}
 
-Depuis le panneau `/auth`, vous pouvez :
+Depuis le panneau `/auth`, vous pouvez :
 
-- **Prolonger une session** : Re-authentifiez-vous pour prolonger la durée de la session active.
-- **Se déconnecter** : Révoque immédiatement la session et retire le rôle Discord.
+- **Prolonger une session** : Re-authentifiez-vous pour prolonger la durée de la session active.
+- **Se déconnecter** : Révoque immédiatement la session et retire le rôle Discord.
 
 ### Sécurité {#auth-security}
 
-- **Tentatives limitées** : Après 5 échecs, votre compte est verrouillé pendant 1 heure. Après 10 échecs, le compte est réinitialisé.
-- **Avertissement** : Un message d'avertissement apparaît à partir de 3 tentatives échouées.
+- **Tentatives limitées** : Après 5 échecs, votre compte est verrouillé pendant 1 heure. Après 10 échecs, le compte est réinitialisé.
+- **Avertissement** : Un message d'avertissement apparaît à partir de 3 tentatives échouées.
 
 ## ⚙️ Configuration serveur (`/auth-settings`) {#auth-settings}
 
@@ -157,10 +154,10 @@ Les managers doivent atteindre un grade de sécurité minimum (configurable) pou
 
 ### Paramètres du serveur {#server-settings}
 
-- **Durée de session par défaut** : Durée des sessions pour les nouveaux rôles (1 à 99 999 minutes).
-- **Grade minimum par défaut** : Grade de sécurité minimum appliqué aux nouveaux rôles.
-- **Grade minimum des managers** : Grade requis pour qu'un membre soit manager.
-- **URL du webhook** : Webhook Discord pour recevoir les logs d'audit (optionnel).
+- **Durée de session par défaut** : Durée des sessions pour les nouveaux rôles (1 à 99 999 minutes).
+- **Grade minimum par défaut** : Grade de sécurité minimum appliqué aux nouveaux rôles.
+- **Grade minimum des managers** : Grade requis pour qu'un membre soit manager.
+- **URL du webhook** : Webhook Discord pour recevoir les logs d'audit (optionnel).
 
 ### Onglet Rôles {#roles-tab}
 
@@ -173,7 +170,7 @@ Les managers doivent atteindre un grade de sécurité minimum (configurable) pou
 5. Définissez la durée de session.
 
 :::info
-**Limites :** 3 rôles en version gratuite, 10 rôles en version premium.
+**Limites :** 3 rôles en version gratuite, 10 rôles en version premium.
 :::
 
 #### Modifier un rôle {#edit-role}
@@ -198,7 +195,7 @@ Supprime définitivement le rôle du système d'authentification.
 4. Le membre reçoit un message privé l'informant de l'invitation.
 
 :::info
-**Limites :** 20 utilisateurs en version gratuite, 50 en version premium.
+**Limites :** 20 utilisateurs en version gratuite, 50 en version premium.
 :::
 
 #### Statuts des membres {#member-status}
@@ -220,7 +217,7 @@ Retire le membre de tous les rôles protégés sur le serveur.
 
 ### Onglet Logs {#logs-tab}
 
-Consultez le journal d'audit du serveur avec pagination. Chaque entrée contient : l'utilisateur, l'action, le type (AM ou Discord) et la date.
+Consultez le journal d'audit du serveur avec pagination. Chaque entrée contient : l'utilisateur, l'action, le type (AM ou Discord) et la date.
 
 ### Onglet Sessions {#sessions-tab}
 
