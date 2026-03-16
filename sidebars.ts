@@ -74,6 +74,10 @@ const sidebars: SidebarsConfig = {
                     type: 'doc',
                     id: 'features/utilities',
                 },
+                {
+                    type: 'doc',
+                    id: 'features/authentication-manager',
+                },
             ],
         },
         {
