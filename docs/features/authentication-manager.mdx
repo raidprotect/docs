@@ -57,7 +57,7 @@ Les PIN faibles sont automatiquement rejetés : chiffres identiques répétés,
 </TabItem>
 <TabItem value="otp" label="OTP (Code 2FA)">
 
-L'OTP utilise le standard TOTP (Time-based One-Time Password) compatible avec les applications d'authentification telles que Google Authenticator, Authy ou 1Password.
+L'OTP utilise le standard TOTP (Time-based One-Time Password) compatible avec les applications d'authentification telles que [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2), [Authy](https://authy.com/), [1Password](https://1password.com/), [Dashlane](https://www.dashlane.com/) ou [Bitwarden](https://bitwarden.com/).
 
 - Code à 6 chiffres renouvelé toutes les 30 secondes.
 - Tolérance d'une fenêtre de ±1 pour compenser les décalages.
@@ -159,7 +159,7 @@ Les managers doivent atteindre un grade de sécurité minimum (configurable) pou
 
 ### Paramètres du serveur {#server-settings}
 
-- **Durée de session par défaut** : Durée des sessions pour les nouveaux rôles (1 à 99 999 minutes).
+- **Durée de session par défaut** : Durée des sessions pour les nouveaux rôles (jusqu'à 8 heures en version gratuite, 24 heures en version premium).
 - **Grade minimum par défaut** : Grade de sécurité minimum appliqué aux nouveaux rôles.
 - **Grade minimum des managers** : Grade requis pour qu'un membre soit manager.
 - **URL du webhook** : Webhook Discord pour recevoir les logs d'audit (optionnel).
@@ -176,6 +176,10 @@ Les managers doivent atteindre un grade de sécurité minimum (configurable) pou
 
 :::info
 **Limites :** 3 rôles en version gratuite, 10 rôles en version premium.
+:::
+
+:::tip
+Si votre rôle est configuré pour être **affiché séparément** dans la liste des membres, pensez à conserver le rôle original (en lui retirant ses permissions sensibles) pour l'affichage, et à créer un nouveau rôle avec les permissions réelles que vous protégerez via l'AM. Ainsi, vos membres gardent leur rôle visible en permanence, tandis que les permissions sensibles ne sont attribuées que pendant les sessions authentifiées.
 :::
 
 #### Modifier un rôle {#edit-role}
