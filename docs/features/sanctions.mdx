@@ -168,6 +168,27 @@ Configurez l'affichage des médias dans les raisons de sanctions. Lorsque cette 
 2. Cliquez sur le bouton "**Sanctions**".
 3. Cliquez sur le bouton "**Afficher les médias**" pour activer ou désactiver l'option.
 
+## ✨ Noms des sanctions (Premium) {#custom-names}
+
+Avec la version premium, vous pouvez personnaliser le nom de chaque type de sanction pour l'adapter au vocabulaire de votre serveur. Pour chaque type, vous pouvez configurer :
+
+- **Nom** : Remplacez le nom par défaut par celui de votre choix, jusqu'à 32 caractères (ex : "Warn" → "Carton Jaune").
+- **Verbe** : Définissez le verbe utilisé dans les messages, jusqu'à 32 caractères (ex : "averti"). Si laissé vide, le nom est utilisé.
+- **Mode MP** : Choisissez la formulation du message privé envoyé au membre sanctionné :
+  - "Vous avez été [verbe]" (par défaut)
+  - "Vous avez reçu un [nom]"
+
+Les types de sanctions personnalisables sont : Ban, Unban, Kick, Jail, Unjail, Timeout, Untimeout, Mute, Unmute et Warn.
+
+1. Faites la [commande `/settings`](../setup.md#settings).
+2. Cliquez sur le bouton "**Sanctions**".
+3. Sélectionnez "**Noms des sanctions**".
+4. Choisissez le type de sanction à personnaliser et renseignez le nom, le verbe et le mode MP souhaités.
+
+:::tip
+Laissez les champs vides pour réinitialiser un type de sanction à son nom par défaut. Vous pouvez également utiliser le bouton "Réinitialiser tout" pour remettre tous les noms à zéro.
+:::
+
 ## 📊 Logs des sanctions {#logs}
 
 Pour une meilleure organisation, vous pouvez configurer un salon de logs dédié spécifiquement aux sanctions, séparé de vos logs généraux.

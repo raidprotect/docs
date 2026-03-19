@@ -8,12 +8,12 @@ Découvrez la liste détaillée des modifications qui ont été apportées à Ra
 
 ## 3.3.2 (16/03/2026) {#3-3-2}
 
-- Nouveau système **[Authentication Manager](./features/authentication-manager.md)** (AM) pour protéger l'accès aux rôles Discord par authentification.
-  - Nouvelle [commande `/auth`](./features/authentication-manager.md#auth) pour s'authentifier et obtenir un rôle protégé.
-  - Nouvelle [commande `/auth-profile`](./features/authentication-manager.md#auth-profile) pour gérer son profil d'authentification (PIN, OTP, passkeys).
-  - Nouvelle [commande `/auth-settings`](./features/authentication-manager.md#auth-settings) pour configurer les rôles protégés et les utilisateurs autorisés.
-  - Système de [grades de sécurité](./features/authentication-manager.md#grades) (S à E) basé sur les méthodes configurées.
-  - Support des [passkeys (WebAuthn)](./features/authentication-manager.md#passkey), [codes PIN](./features/authentication-manager.md#pin) (simple et renforcé) et [OTP (2FA)](./features/authentication-manager.md#otp).
+- Nouveau système **[Authentication Manager](./features/authentication-manager.mdx)** (AM) pour protéger l'accès aux rôles Discord par authentification.
+  - Nouvelle [commande `/auth`](./features/authentication-manager.mdx#auth) pour s'authentifier et obtenir un rôle protégé.
+  - Nouvelle [commande `/auth-profile`](./features/authentication-manager.mdx#auth-profile) pour gérer son profil d'authentification (PIN, OTP, passkeys).
+  - Nouvelle [commande `/auth-settings`](./features/authentication-manager.mdx#auth-settings) pour configurer les rôles protégés et les utilisateurs autorisés.
+  - Système de [grades de sécurité](./features/authentication-manager.mdx#grades) (S à E) basé sur les méthodes configurées.
+  - Support des [passkeys (WebAuthn)](./features/authentication-manager.mdx#methods), [codes PIN](./features/authentication-manager.mdx#methods) (simple et renforcé) et [OTP (2FA)](./features/authentication-manager.mdx#methods).
   - Sessions temporaires avec expiration et révocation automatique.
   - Système de managers avec plafond de permissions.
 - Logs :
@@ -21,8 +21,9 @@ Découvrez la liste détaillée des modifications qui ont été apportées à Ra
   - Logs de suppression en masse du `/clear`.
   - Logs des modifications des paramètres Anti-Scam et Auto RaidMode.
 - Nouveau système **Premium**.
-  - Personnalisation du profil du bot (avatar, bannière, polices avec effets gradient, néon, etc.).
   - Limites augmentées pour l'Authentication Manager et les panneaux d'information.
+  - [Noms des sanctions](./features/sanctions.mdx#custom-names) personnalisables (nom, verbe et formulation en MP).
+  - Accès en avant-première aux nouvelles fonctionnalités expérimentales.
 - Détection et empêchement de l'usurpation de RaidProtect.
 - Correction :
   - Correction des erreurs de unmute et untimeout.
