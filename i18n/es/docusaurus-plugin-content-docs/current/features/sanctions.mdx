@@ -168,6 +168,27 @@ Configura la visualizacion de medios en las razones de sanciones. Cuando esta op
 2. Haz clic en el boton "**Sanciones**".
 3. Haz clic en el boton "**Mostrar medios**" para activar o desactivar la opcion.
 
+## ✨ Nombres de sanciones personalizados (Premium) {#custom-names}
+
+Con la version premium, puedes personalizar el nombre de cada tipo de sancion para adaptarlo al vocabulario de tu servidor. Para cada tipo, puedes configurar:
+
+- **Nombre**: Sustituye el nombre predeterminado por uno de tu eleccion, hasta 32 caracteres (ej.: "Warn" → "Tarjeta Amarilla").
+- **Verbo**: Define el verbo utilizado en los mensajes, hasta 32 caracteres (ej.: "advertido"). Si se deja vacio, se utiliza el nombre.
+- **Modo MD**: Elige la formulacion del mensaje privado enviado al miembro sancionado:
+  - "Has sido [verbo]" (por defecto)
+  - "Has recibido un [nombre]"
+
+Los tipos de sanciones personalizables son: Ban, Unban, Kick, Jail, Unjail, Timeout, Untimeout, Mute, Unmute y Warn.
+
+1. Usa el [comando `/settings`](../setup.md#settings).
+2. Haz clic en el boton "**Sanciones**".
+3. Selecciona "**Nombres de sanciones**".
+4. Elige el tipo de sancion a personalizar e introduce el nombre, el verbo y el modo MD deseados.
+
+:::tip
+Deja los campos vacios para restablecer un tipo de sancion a su nombre predeterminado. Tambien puedes usar el boton "Restablecer todo" para restablecer todos los nombres.
+:::
+
 ## 📊 Registros de sanciones {#logs}
 
 Para una mejor organizacion, puedes configurar un canal de registros dedicado especificamente a las sanciones, separado de tus registros generales.

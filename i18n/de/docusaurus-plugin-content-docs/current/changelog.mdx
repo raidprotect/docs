@@ -6,6 +6,33 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Entdecken Sie die detaillierte Liste der Änderungen an RaidProtect.
 
+## 3.3.2 (20/03/2026) {#3-3-2}
+
+- Neues **[Authentication Manager](./features/authentication-manager.mdx)** (AM)-System zum Schutz des Zugangs zu Discord-Rollen durch Authentifizierung.
+  - Neuer [Befehl `/auth`](./features/authentication-manager.mdx#auth), um sich zu authentifizieren und eine geschützte Rolle zu erhalten.
+  - Neuer [Befehl `/auth-profile`](./features/authentication-manager.mdx#auth-profile), um das eigene Authentifizierungsprofil zu verwalten (PIN, OTP, Passkeys).
+  - Neuer [Befehl `/auth-settings`](./features/authentication-manager.mdx#auth-settings), um geschützte Rollen und autorisierte Benutzer zu konfigurieren.
+  - [Sicherheitsgrad](./features/authentication-manager.mdx#grades)-System (S bis E) basierend auf konfigurierten Methoden.
+  - Unterstützung für [Passkeys (WebAuthn)](./features/authentication-manager.mdx#methods), [PIN-Codes](./features/authentication-manager.mdx#methods) (einfach und verstärkt) und [OTP (2FA)](./features/authentication-manager.mdx#methods).
+  - Temporäre Sitzungen mit automatischem Ablauf und Widerruf.
+  - Manager-System mit Berechtigungsgrenze.
+- Protokolle:
+  - Neue Protokoll-Engine in Vorbereitung auf ein dediziertes Update.
+  - Massenentfernungsprotokolle für `/clear`.
+  - Protokolle für Änderungen der Anti-Scam- und Auto-RaidMode-Einstellungen.
+- Neues **Premium**-System.
+  - Erhöhte Limits für Authentication Manager und Informationspanels.
+  - Anpassbare [Sanktionsnamen](./features/sanctions.mdx#custom-names) (Name, Verb und DM-Formulierung).
+  - Frühzeitiger Zugang zu neuen experimentellen Funktionen.
+- Erkennung und Verhinderung der Imitation von RaidProtect.
+- Korrekturen:
+  - Korrektur von Unmute- und Untimeout-Fehlern.
+  - Korrektur des Jail-Setups.
+  - Korrektur des "gesperrten Antispam" auf einigen Servern.
+  - Verschiedene Übersetzungskorrekturen.
+- Leistung und Stabilität:
+  - Optimierung des Mitglieder-, Berechtigungs- und Nachrichten-Caches.
+
 ## 3.3.1 (09/02/2026) {#3-3-1}
 
 - [Internationalisierung](./language.md) (Hinzufügung von Deutsch, Spanisch und Portugiesisch).

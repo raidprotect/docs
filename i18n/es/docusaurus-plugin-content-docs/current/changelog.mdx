@@ -6,6 +6,33 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Descubre la lista detallada de cambios realizados en RaidProtect.
 
+## 3.3.2 (20/03/2026) {#3-3-2}
+
+- Nuevo sistema **[Authentication Manager](./features/authentication-manager.mdx)** (AM) para proteger el acceso a los roles de Discord mediante autenticacion.
+  - Nuevo [comando `/auth`](./features/authentication-manager.mdx#auth) para autenticarse y obtener un rol protegido.
+  - Nuevo [comando `/auth-profile`](./features/authentication-manager.mdx#auth-profile) para gestionar tu perfil de autenticacion (PIN, OTP, passkeys).
+  - Nuevo [comando `/auth-settings`](./features/authentication-manager.mdx#auth-settings) para configurar los roles protegidos y los usuarios autorizados.
+  - Sistema de [grados de seguridad](./features/authentication-manager.mdx#grades) (S a E) basado en los metodos configurados.
+  - Soporte para [passkeys (WebAuthn)](./features/authentication-manager.mdx#methods), [codigos PIN](./features/authentication-manager.mdx#methods) (simple y reforzado) y [OTP (2FA)](./features/authentication-manager.mdx#methods).
+  - Sesiones temporales con expiracion y revocacion automaticas.
+  - Sistema de managers con limite de permisos.
+- Registros:
+  - Nuevo motor de registros en preparacion para una actualizacion dedicada.
+  - Registros de eliminacion masiva para `/clear`.
+  - Registros de modificaciones de configuracion de Anti-Scam y Auto RaidMode.
+- Nuevo sistema **Premium**.
+  - Limites aumentados para el Authentication Manager y los paneles de informacion.
+  - [Nombres de sanciones](./features/sanctions.mdx#custom-names) personalizables (nombre, verbo y formulacion en MD).
+  - Acceso anticipado a nuevas funciones experimentales.
+- Deteccion y prevencion de la suplantacion de RaidProtect.
+- Correcciones:
+  - Correccion de errores de unmute y untimeout.
+  - Correccion del setup del Calabozo.
+  - Correccion del "antispam bloqueado" en algunos servidores.
+  - Correcciones de traducciones diversas.
+- Rendimiento y estabilidad:
+  - Optimizacion de la cache de miembros, permisos y mensajes.
+
 ## 3.3.1 (09/02/2026) {#3-3-1}
 
 - [Internacionalizacion](./language.md) (adicion de aleman, espanol y portugues).

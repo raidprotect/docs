@@ -6,6 +6,33 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Discover the detailed list of changes made to RaidProtect.
 
+## 3.3.2 (20/03/2026) {#3-3-2}
+
+- New **[Authentication Manager](./features/authentication-manager.mdx)** (AM) system to protect access to Discord roles through authentication.
+  - New [command `/auth`](./features/authentication-manager.mdx#auth) to authenticate and obtain a protected role.
+  - New [command `/auth-profile`](./features/authentication-manager.mdx#auth-profile) to manage your authentication profile (PIN, OTP, passkeys).
+  - New [command `/auth-settings`](./features/authentication-manager.mdx#auth-settings) to configure protected roles and authorized users.
+  - [Security grade](./features/authentication-manager.mdx#grades) system (S to E) based on configured methods.
+  - Support for [passkeys (WebAuthn)](./features/authentication-manager.mdx#methods), [PIN codes](./features/authentication-manager.mdx#methods) (simple and reinforced) and [OTP (2FA)](./features/authentication-manager.mdx#methods).
+  - Temporary sessions with automatic expiration and revocation.
+  - Manager system with permission ceiling.
+- Logs:
+  - New logging engine in preparation for a dedicated update.
+  - Mass deletion logs for `/clear`.
+  - Logs for Anti-Scam and Auto RaidMode settings changes.
+- New **Premium** system.
+  - Increased limits for Authentication Manager and information panels.
+  - Customizable [sanction names](./features/sanctions.mdx#custom-names) (name, verb and DM wording).
+  - Early access to new experimental features.
+- Detection and prevention of RaidProtect impersonation.
+- Fixes:
+  - Fixed unmute and untimeout errors.
+  - Fixed Jail setup.
+  - Fixed "antispam blocked" on some servers.
+  - Various translation fixes.
+- Performance and stability:
+  - Optimized member, permissions and message cache.
+
 ## 3.3.1 (09/02/2026) {#3-3-1}
 
 - [Internationalization](./language.md) (addition of German, Spanish, and Portuguese).
