@@ -1,0 +1,99 @@
+---
+title: Anti-spam
+---
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+RaidProtect's Anti-spam is a powerful tool to prevent spam on your Discord server. Thanks to its automatic detection system, it handles problems on its own, without requiring your intervention.
+
+## ❓ How anti-spam works {#working}
+
+RaidProtect's anti-spam automatically detects and blocks suspicious behavior. It distinguishes between two types of spam.
+- **Heavy spam:** Messages containing invitation links, mass mentions, or images. These spams are often used during raids.
+- **Light spam:** Messages sent frequently but less intrusive.
+
+RaidProtect's anti-spam acts in two ways.
+- **Sanctions:** Automatic kick or ban of spammers.
+- **Notifications:** Sending messages to the logs channel to report blocked spam with a preview of detected actions.
+
+## 🛡️ Anti-spam configuration {#config}
+
+RaidProtect offers three security levels to meet your server's needs.
+- 🔴 **High:** Sanctions all spam and even heavy spam in ignored channels.
+- 🟠 **Medium:** Sanctions all spam, but respects ignored channels.
+- 🟢 **Low:** Sanctions only heavy spam.
+
+![Anti-spam settings screenshot](../assets/rp-settings-anti-spam.webp)
+
+### Change the security level {#level}
+
+1. Run the [`/settings` command](../setup.md#settings).
+2. Click the "**Anti-spam**" button.
+3. Select the desired anti-spam level in the first selector.
+
+### Manage ignored roles, users, and channels {#ignore}
+
+You can exclude certain channels, roles, or even users from anti-spam monitoring for more flexibility. 😉
+1. Run the [`/settings` command](../setup.md#settings).
+2. Click the "**Anti-spam**" button.
+3. Select the different options to ignore in the various selectors:
+- Channel(s) to ignore
+- Role(s) to ignore
+- Member(s) to ignore
+
+:::info
+Channels containing "**spam**" in their name are automatically ignored. Users with administrator permission are completely ignored.
+:::
+
+### Configure sanctions by trigger {#triggers}
+
+You can customize the sanctions applied based on the type of spam detected. This allows a response adapted to the severity of the offense.
+
+1. Run the [`/settings` command](../setup.md#settings).
+2. Click the "**Anti-spam**" button.
+3. Go to the "**Sanctions**" tab.
+4. For each trigger, select a specific sanction. You can modify these values using the dropdown menus:
+- **Select a trigger**: choose the type of spam to configure.
+- **Select a sanction**: choose the corresponding sanction.
+
+#### Sanction types and triggers {#sanctions}
+
+Here are the different **available sanctions** as well as the **triggers** that RaidProtect can detect, with the **default timeout duration** if applicable:
+
+- **Warn**: Sends a warning to the member.
+- **Kick**: Kicks the member from the server.
+- **Timeout**: Mutes the member for a defined duration.
+- **Softban**: Bans then immediately unbans the member, thereby deleting their messages.
+- **Ban**: Permanently bans the member.
+
+| Trigger                                | Description                                             | Timeout Duration   |
+|----------------------------------------|---------------------------------------------------------|--------------------|
+| Spam                                   | Repeated message sending                                | 1 minute           |
+| Selfbot spam                           | Using selfbots to spam                                  | 1 hour             |
+| Mention spam                           | Repeated mass mentions                                  | 30 minutes         |
+| Link spam                              | Mass link sending                                       | 24 hours           |
+| External command spam                  | Using external commands to spam                         | 1 hour             |
+| Duplicate spam or heavy spam           | Copy-pasted messages or excessive spam                  | 24 hours           |
+
+![Anti-spam sanctions screenshot](../assets/rp-settings-anti-spam-sanctions.webp)
+
+## 📑 Anti-spam logs {#logs}
+
+Detailed logs are generated with all messages deleted by the anti-spam. You can simply download or expand the content.
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="animator" label="Collapsed" default>
+
+![Anti-spam logs screenshot](../assets/rp-logs-anti-spam.webp)
+
+  </TabItem>
+  <TabItem value="moderator" label="Expanded">
+
+![Expanded anti-spam logs screenshot](../assets/rp-logs-anti-spam-expand.webp)
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
