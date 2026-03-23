@@ -114,11 +114,11 @@ export default async function createConfigAsync() {
                     pt: 'RaidProtect é um bot do Discord que protege seu servidor de usuários maliciosos graças ao seu anti-spam e captcha. <strong>E justo lá, um pequeno gerânio.&nbsp;</strong>'
                 },
                 announcementBar: {
-                    fr: '<strong>La mise à jour <a href="https://docs.raidprotect.bot/blog/3.3.2-authentication-manager">Authentication Manager (3.3.2)</a> est sortie !</strong>',
-                    en: '<strong><a href="https://docs.raidprotect.bot/en/blog/3.3.2-authentication-manager">Authentication Manager (3.3.2)</a> is now live!</strong>',
-                    de: '<strong>Das <a href="https://docs.raidprotect.bot/de/blog/3.3.2-authentication-manager">Authentication Manager (3.3.2)</a> ist erschienen!</strong>',
-                    es: '<strong>¡El <a href="https://docs.raidprotect.bot/es/blog/3.3.2-authentication-manager">Authentication Manager (3.3.2)</a> está disponible!</strong>',
-                    pt: '<strong>O <a href="https://docs.raidprotect.bot/pt/blog/3.3.2-authentication-manager">Authentication Manager (3.3.2)</a> está disponível!</strong>'
+                    fr: '<strong>La mise à jour <a href="https://docs.raidprotect.bot/blog/3.3.2-authentication-manager">Authentication Manager (3.3.2)</a> est disponible !</strong>',
+                    en: '<strong>The <a href="https://docs.raidprotect.bot/en/blog/3.3.2-authentication-manager">Authentication Manager (3.3.2)</a> update is now live!</strong>',
+                    de: '<strong>Das Update <a href="https://docs.raidprotect.bot/de/blog/3.3.2-authentication-manager">Authentication Manager (3.3.2)</a> ist jetzt verfügbar!</strong>',
+                    es: '<strong>¡La actualización <a href="https://docs.raidprotect.bot/es/blog/3.3.2-authentication-manager">Authentication Manager (3.3.2)</a> ya está disponible!</strong>',
+                    pt: '<strong>A atualização <a href="https://docs.raidprotect.bot/pt/blog/3.3.2-authentication-manager">Authentication Manager (3.3.2)</a> já está disponível!</strong>'
                 }
             },
             excludedCanonical: []
@@ -238,7 +238,7 @@ export default async function createConfigAsync() {
             },
             announcementBar: {
                 id: '3.3.2',
-                content: '<strong><a href="https://docs.raidprotect.bot/en/blog/3.3.2-authentication-manager">Authentication Manager (3.3.2)</a> is now live!</strong>',
+                content: '<strong>The <a href="https://docs.raidprotect.bot/en/blog/3.3.2-authentication-manager">Authentication Manager (3.3.2)</a> update is now live!</strong>',
                 backgroundColor: '#BD5454',
                 textColor: '#FFFFFF',
                 isCloseable: false
