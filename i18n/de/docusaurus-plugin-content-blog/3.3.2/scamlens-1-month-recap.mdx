@@ -1,0 +1,81 @@
+---
+title: 'ScamLens: 260.000 betrügerische Bilder auf Discord entfernt'
+tags: [threats]
+authors: [zallom]
+slug: scamlens-1-month-recap
+date: 2026-03-14
+image: ../../../../blog/3.3.2/assets/rp-scamlens-1-month-recap.webp
+description: Einen Monat nach der Aktivierung von ScamLens — Erkennungsstatistiken für Discord-Scams, abgefangene betrügerische Bilder, erweiterte Abdeckung und neue Logs.
+---
+
+import Timestamp from '@site/src/components/Timestamp';
+
+Einen Monat nach der [vorzeitigen Aktivierung von ScamLens](/de/blog/scamlens-early-activation), hier die ersten Erkennungsstatistiken für betrügerische Bilder auf Discord und einige Neuigkeiten.
+
+![RaidProtect ScamLens 1 month recap blog post social card](../../../../blog/3.3.2/assets/rp-scamlens-1-month-recap.webp)
+
+{/* truncate */}
+
+## 🔎 Was ist ScamLens? {#what-is-scamlens}
+
+ScamLens ist **RaidProtects Anti-Scam-Modul**. Es analysiert automatisch Bilder, die auf eurem Discord-Server gesendet werden, und **entfernt solche, die als betrügerisch identifiziert wurden** — ohne Konfiguration. Es richtet sich hauptsächlich gegen **Kryptowährungs**-, **Krypto-Casino**- und **Fake-Investment**-Betrug, der massenhaft über gehackte Discord-Konten verbreitet wird.
+
+So sehen diese Bilder aus:
+
+<div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '280px 280px', gap: '8px'}}>
+  <img src={require('../../../../blog/3.3.1/assets/scam-1.png').default} alt="MrBeast Crypto Casino Scam 1" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-2.png').default} alt="MrBeast Crypto Casino Scam 2" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-3.png').default} alt="MrBeast Crypto Casino Scam 3" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-4.png').default} alt="MrBeast Crypto Casino Scam 4" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+</div>
+
+## 📊 Bilanz nach 1 Monat {#stats}
+
+Seit dem <Timestamp value={1771023600} format="D" /> analysiert ScamLens kontinuierlich Bilder auf allen 340.000 von RaidProtect geschützten Discord-Servern. Hier sind die Zahlen:
+
+| **Kennzahl** | **Wert** |
+|---|---|
+| Analysierte Bilder (einzigartig) | **162.000** |
+| Erkannte Scam-Bilder (einzigartig) | **62.000** |
+| Entfernte betrügerische Bilder | **260.000** |
+| Identifizierte Konten | **15.000** |
+
+**Mehr als eines von drei analysierten Bildern ist betrügerisch.**
+
+![Vorkommen pro Minute — ScamLens 1 Monat](../../../../blog/3.3.2/assets/1402-1403.webp)
+
+Im Gegensatz zu den [anfänglichen Wellen](/de/blog/scamlens-early-activation#threat), die sich als **massive, konzentrierte Spitzen** über 1-Stunden-Fenster manifestierten, ist die Aktivität über einen Monat hinweg viel gleichmäßiger verteilt. Die Erkennungen bleiben zahlreich, aber kontinuierlich verteilt statt in wenigen intensiven Schüben gebündelt.
+
+---
+
+## 🆕 Neuigkeiten {#updates}
+
+### 🪵 Erkennungs-Logs {#logs}
+
+ScamLens hat nun einen **dedizierten Log**: Jede Erkennung eines betrügerischen Bildes erzeugt eine Nachricht in eurem Logs-Kanal, mit dem betroffenen Mitglied und dem Zielkanal. Ihr wisst genau, was der Bot abgefangen hat — ohne zusätzliche Konfiguration.
+
+### 🔍 Erweiterte Abdeckung {#coverage}
+
+Einige Bilder entgingen bisher der Analyse, weil sie vom Discord-CDN anders ausgeliefert wurden. ScamLens deckt diese Fälle nun ebenfalls ab.
+
+---
+
+## ❓ FAQ {#faq}
+
+#### Warum erscheinen Bild-Scams auf meinem Discord-Server? {#pourquoi-scam-images}
+Diese Bilder werden von **gehackten Discord-Konten** gesendet. Betrüger kompromittieren Konten und nutzen sie dann, um so viele Server wie möglich gleichzeitig zu spammen. Euer Server ist **nicht gezielt ausgewählt** — er ist Teil der Masse. Ein einziges gehacktes Konto kann **Dutzende von Servern in Sekunden** erreichen, weshalb automatisches Entfernen so wichtig ist.
+
+#### Wie schütze ich meinen Discord-Server vor Scams? {#proteger-serveur-scam-discord}
+[Fügt RaidProtect](https://raidprotect.bot/invite) zu eurem Server hinzu. ScamLens ist standardmäßig aktiv und entfernt automatisch als betrügerisch erkannte Bilder, ohne Konfiguration.
+
+#### Entwickeln sich Scam-Bilder, um die Erkennung zu umgehen? {#evolution-scam}
+Ja, die Techniken ändern sich regelmäßig. ScamLens wird kontinuierlich aktualisiert, um mit diesen Entwicklungen Schritt zu halten.
+
+---
+
+:::tip 📚 Nützliche Links
+- 🔗 [RaidProtect zu eurem Server hinzufügen](https://raidprotect.bot/invite)
+- 📘 [Die vollständige Dokumentation einsehen](https://docs.raidprotect.bot/)
+- 💡 [Einen Vorschlag oder Feedback einreichen](https://suggestions.raidprotect.bot/)
+- 📣 [Ankündigungen folgen und der Community beitreten](https://raidprotect.bot/discord)
+:::
