@@ -32,7 +32,7 @@ Mit der Zeit werden neue Pläne eingeführt und das Founder-Angebot aus dem Shop
 Founder-Abonnenten behalten ihren Preis und profitieren weiterhin von zukünftigen Verbesserungen. Ihr wettet früh auf RaidProtect — das vergessen wir nicht. Falls eine zukünftige Funktion besonders ressourcenintensiv sein sollte, könnte sie nicht enthalten sein — aber eure aktuellen Vorteile und vernünftige zukünftige Ergänzungen sind garantiert.
 
 :::tip Premium aktivieren
-Nutzt `/settings` auf eurem Discord-Server und klickt auf "Premium", oder geht direkt zum [RaidProtect-Shop auf Discord](https://discord.com/discovery/applications/466578580449525760/store/1484304292553687111), um das Angebot zu entdecken.
+Nutzt `/settings` auf eurem Discord-Server und klickt auf "Premium", oder geht direkt zum [RaidProtect-Shop auf Discord](https://discord.com/discovery/applications/466578580449525760/store), um das Angebot zu entdecken.
 :::
 
 ---

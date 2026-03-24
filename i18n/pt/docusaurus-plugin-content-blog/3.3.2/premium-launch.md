@@ -32,7 +32,7 @@ Com o tempo, serão introduzidos novos planos e a oferta Founder será removida 
 Os subscritores Founder mantêm o seu preço e continuam a beneficiar das melhorias futuras. Estais a apostar no RaidProtect desde o início — não esquecemos. Se uma funcionalidade futura se revelar particularmente dispendiosa em recursos, poderá não estar incluída — mas os vossos benefícios atuais e as adições razoáveis futuras estão garantidos.
 
 :::tip Ativar o Premium
-Usa `/settings` no teu servidor Discord e clica em "Premium", ou vai diretamente à [loja do RaidProtect no Discord](https://discord.com/discovery/applications/466578580449525760/store/1484304292553687111) para descobrir a oferta.
+Usa `/settings` no teu servidor Discord e clica em "Premium", ou vai diretamente à [loja do RaidProtect no Discord](https://discord.com/discovery/applications/466578580449525760/store) para descobrir a oferta.
 :::
 
 ---

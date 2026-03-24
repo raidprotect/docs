@@ -32,7 +32,7 @@ Le Premium se lance avec une **offre Founder**, réservée aux premiers abonnés
 Les abonnés Founder conservent leur tarif et continuent de bénéficier des évolutions du service. Vous pariez sur RaidProtect dès le début, on s'en souvient. Si une fonctionnalité future s'avère particulièrement coûteuse en ressources, elle pourrait ne pas être incluse — mais les avantages actuels et les ajouts raisonnables à venir restent acquis.
 
 :::tip Activer le Premium
-Utilisez `/settings` sur votre serveur Discord et cliquez sur "Premium" ou rendez-vous directement sur la [boutique de RaidProtect dans Discord](https://discord.com/discovery/applications/466578580449525760/store/1484304292553687111) pour découvrir l'offre.
+Utilisez `/settings` sur votre serveur Discord et cliquez sur "Premium" ou rendez-vous directement sur la [boutique de RaidProtect dans Discord](https://discord.com/discovery/applications/466578580449525760/store) pour découvrir l'offre.
 :::
 
 ---
