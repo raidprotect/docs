@@ -11,6 +11,10 @@ const sidebars: SidebarsConfig = {
             id: 'setup',
         },
         {
+            type: 'doc',
+            id: 'commands',
+        },
+        {
              type: 'doc',
              id: 'changelog'
         },
@@ -37,6 +41,10 @@ const sidebars: SidebarsConfig = {
                 {
                     type: 'doc',
                     id: 'features/anti-spam',
+                },
+                {
+                    type: 'doc',
+                    id: 'features/honeypot',
                 },
                 {
                     type: 'doc',
