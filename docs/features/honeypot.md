@@ -7,7 +7,7 @@ Le **HoneyPot** (ou salon-piège) de RaidProtect est un salon où **personne ne 
 ## ❓ Comment ça marche ? {#working}
 
 Quand vous activez le HoneyPot, RaidProtect crée un salon textuel **tout en haut de votre serveur**, avec un nom clair tiré au hasard parmi `dont-talk`, `do-not-write`, `read-only`, `silent`, `quiet`, etc. Ce salon a trois caractéristiques :
-- **Tout le monde peut y écrire**, y compris les membres qui n'ont pas encore validé le captcha. C'est fait exprès : un compte piraté ou un robot ne doit pas pouvoir éviter le piège. En revanche, les membres déjà sanctionnés par les rôles **Jail** ou **Mute** restent bloqués comme partout ailleurs.
+- **Tout le monde peut y écrire**, y compris les membres qui n'ont pas encore validé le captcha. C'est fait exprès : un compte piraté ou un robot ne doit pas pouvoir éviter le piège.
 - **Un message d'avertissement** est posté à la création du salon, avec un bouton "Traduire" pour que chacun puisse le lire dans sa langue.
 - **Un compteur public** affiche le nombre de comptes déjà attrapés par le piège, mis à jour automatiquement.
 
@@ -18,9 +18,6 @@ Dès qu'un membre poste dans ce salon :
 
 :::info
 Le HoneyPot fonctionne main dans la main avec [ScamLens](/blog/scamlens-early-activation), qui supprime les images d'arnaque sans punir le compte. Le HoneyPot, lui, attrape tout le reste : **nouvelles images d'arnaque pas encore connues**, **spam de liens**, **raids texte**, **robots**.
-:::
-:::warning
-RaidProtect a besoin des permissions `Gérer les salons` et `Bannir des membres` pour faire fonctionner le HoneyPot. Sans ces permissions, le module ne peut pas être activé.
 :::
 
 ## 🛠️ Mettre en place le HoneyPot {#config}
@@ -49,7 +46,12 @@ Plusieurs sanctions sont disponibles :
 Pour les sanctions à durée (Bannissement, Timeout, Jail, Mute), vous pouvez choisir une **durée prête à l'emploi** (de 5 minutes à 28 jours) ou une **durée personnalisée** via le bouton dédié (par exemple `5m`, `1h`, `2d` ; minimum 1 minute).
 
 :::tip
-**Laquelle choisir ?** Le **Softban** est un bon compromis : il nettoie les messages et expulse le compte piraté, mais le propriétaire légitime peut revenir une fois son compte sécurisé.
+Le **Softban** est un bon compromis : il nettoie les messages et expulse le compte piraté, mais le propriétaire légitime peut revenir une fois son compte sécurisé.
+:::
+
+:::info
+Seuls le **Bannissement** et le **Softban** permettent à Discord de supprimer nativement les messages du compte piraté **partout sur le serveur** d'un seul coup.  
+Pour les autres sanctions (Kick, Timeout, Jail, Mute), RaidProtect doit faire une suppression inter-salons manuelle, beaucoup plus coûteuse côté bot, elles sont donc réservées aux serveurs Premium.
 :::
 
 ### Membres ignorés {#ignore}

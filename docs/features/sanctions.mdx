@@ -14,7 +14,7 @@ L'historique des sanctions enregistre automatiquement toutes les actions de mod�
 - **Sanctions automatiques** : Les sanctions appliquées par l'anti-spam sont également ajoutées à l'historique des sanctions.
 - **Bannissements, expulsions et timeouts** : Les sanctions appliqués sans utiliser RaidProtect sont ajoutées à l'historique.
 - **Automod de Discord** : Les sanctions appliqués par l'automod de Discord sont également ajoutées.
-- **Notifications des sanctions** : Les membres sanctionnés reçoivent un message privé les informant de la sanction et de sa raison. Le bot envoie également un accusé de réception confirmant l'envoi de cette notification.
+- **Notifications des sanctions** : Les membres sanctionnés reçoivent un message privé les informant de la sanction et de sa raison. Le bot envoie également un accusé de réception détaillé confirmant le statut de l'envoi : **reçu**, **MP fermés**, **expiré** ou **silencieux** (lorsque l'option `[silent]` est utilisée). Pour les kicks, softbans et bans temporaires, ce message contient également un **bouton avec une invitation au serveur** afin que le membre puisse revenir une fois la sanction terminée.
 
 :::info
 Toutes les sanctions enregistrées contiennent : l'utilisateur sanctionné, le modérateur responsable, la raison (jusqu'à 512 caractères), la date et l'heure, ainsi que le type de sanction et si l'utilisateur a été prévenu.
@@ -67,9 +67,9 @@ La modification d'une sanction met à jour l'enregistrement dans l'historique ma
 
 La commande `/sanctions delete` vous permet de supprimer une sanction de l'historique. Cette action est irréversible.
 
-Utilisez la commande : ```/sanctions delete (id)```
+Utilisez la commande : ```/sanctions delete (id) [raison]```
 
-Remplacez `(id)` par l'identifiant de la sanction à supprimer.
+Remplacez `(id)` par l'identifiant de la sanction à supprimer. Le paramètre `[raison]` permet de **justifier la suppression**, qui sera enregistrée dans les logs.
 
 ![Capture d'écran suppression d'une sanction](../assets/rp-sanctions-delete.webp)
 
@@ -96,6 +96,14 @@ Lorsqu'une sanction active et antérieure est trouvée, vous pouvez :
 
 ## ⚙️ Configuration des sanctions {#config}
 
+### Désactiver les sanctions {#disable}
+
+Vous pouvez **désactiver complètement le système de sanctions** sur votre serveur. Lorsque les sanctions sont désactivées, RaidProtect n'enregistre plus aucune sanction dans l'historique et les commandes liées sont indisponibles.
+
+1. Faites la [commande `/settings`](../setup.md#settings).
+2. Cliquez sur le bouton "**Sanctions**".
+3. Cliquez sur "**Système de sanctions**" pour activer ou désactiver l'ensemble du module.
+
 ### Jail {#jail}
 
 Configurez la **Jail** afin d'activer une sanction de modération par rôle, plus restrictive qu'un mute classique. Une fois configuré, ce rôle permet d'isoler un membre avec des permissions fortement limitées et débloque l'utilisation des commandes [`/jail`](./moderation.mdx#jail) et [`/tempjail`](./moderation.mdx#tempjail).
@@ -115,6 +123,15 @@ Ce salon correspond à l'emplacement réservé dans les [panneaux d'information]
 :::info
 Si un rôle Jail est déjà configuré, vous pouvez modifier le salon d'information via le bouton dédié dans le sous-menu Jail.
 :::
+
+#### Rôles lors du jail {#jail-roles}
+
+Dans le sous-menu Jail, le bouton **Rôles lors du jail** contrôle ce que RaidProtect fait des rôles du membre quand il est emprisonné. Deux modes :
+
+- **Ajouter le rôle jail** *(par défaut)* : le rôle Jail est simplement ajouté en plus des rôles existants du membre.
+- **Remplacer par le rôle jail** : RaidProtect **retire tous les rôles du membre** le temps de l'emprisonnement et les lui restaure à sa libération. Plus strict, cela évite qu'un rôle avec des permissions explicites ne contourne les restrictions du rôle Jail.
+
+Cliquez sur le bouton pour basculer entre les deux modes.
 
 ### Rôle Mute {#mute}
 
@@ -136,6 +153,11 @@ Configurez le **seuil du rôle Mute** afin de définir à partir de quelle duré
 
 :::info
 La limite de 28 jours pour le timeout est imposée par Discord. Au-delà de cette durée, le rôle Mute sera systématiquement utilisé si configuré.
+:::
+:::info
+Les **timeouts appliqués par l'AutoMod de Discord** sont automatiquement convertis en mute par rôle si leur durée dépasse le seuil configuré, pour assurer une cohérence avec vos sanctions manuelles. La durée reste limitée à 28 jours (limite Discord).
+
+Cette fonctionnalité est actuellement en **beta publique pour les serveurs Premium**.
 :::
 
 ### Confidentialité des Sanctions {#sanctions-privacy}

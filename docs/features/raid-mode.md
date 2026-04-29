@@ -55,6 +55,20 @@ Nous recommandons d’entrer une valeur comprise entre 10 et 20 membres en 10 se
 
 Vous pouvez laisser à la valeur par défaut (5 minutes) ou ajuster selon la valeur souhaitée en cliquant sur le bouton “**Valeur personnalisée**”.
 
+#### Fermer les MP automatiquement {#close-dm}
+
+Vous pouvez configurer l'**auto raid mode** pour qu'il **ferme automatiquement les MP du serveur** dès qu'il s'active. Cela ajoute une couche de protection supplémentaire pendant un raid : les nouveaux comptes ne peuvent plus contacter vos membres en privé pour les phisher ou les arnaquer.
+
+1. Faites la [commande `/settings`](../setup.md#settings).
+2. Cliquez sur le bouton “**Auto RaidMode**”.
+3. Activez l'option “**Fermer les MP**”.
+
+Lorsque l'auto raid mode se désactive (manuellement ou automatiquement après la durée configurée), les MP reprennent leur configuration précédente.
+
+:::info
+Cette option est complémentaire de la [Fermeture des MP permanente](./dm-lock.mdx) : si vous l'activez sans avoir la fermeture permanente, les MP ne sont fermés que pendant un raid actif.
+:::
+
 ## Âge Minimum {#minage}
 
 Pour renforcer la sécurité, vous pouvez exiger un âge minimum pour les comptes Discord des nouveaux membres.

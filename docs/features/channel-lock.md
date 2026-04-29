@@ -6,9 +6,13 @@ Il arrive parfois qu’il soit nécessaire de verrouiller temporairement un salo
 
 ## 🔒 Verrouiller un salon {#lock}
 
-Utilisez la commande : ```/lock [raison]```
+Utilisez la commande : ```/lock [duration] [raison]```
 
 Cette commande retire les permissions d’envoyer des messages au rôle **@everyone** dans le salon, empêchant ainsi tous les utilisateurs d’y poster. Remplacez **[raison]** pour indiquer pourquoi le salon est verrouillé (ex. : *nettoyage du chat*, *annonce importante*, etc.).
+
+### Verrouillage temporaire {#lock-duration}
+
+Le paramètre `[duration]` permet de **déverrouiller automatiquement le salon** après la durée indiquée (par ex. `15m`, `1h`, `2d`). Utile pour une mise au calme rapide sans avoir à penser à débloquer le salon manuellement.
 
 ## 🔓 Déverrouiller un salon {#unlock}
 

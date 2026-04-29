@@ -6,6 +6,35 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Découvrez la liste détaillée des modifications qui ont été apportées à RaidProtect.
 
+## 3.3.3 (01/05/2026) {#3-3-3}
+
+- Nouveau module **[HoneyPot](./features/honeypot.md)** : un salon-piège qui sanctionne automatiquement les comptes piratés et les robots de spam, et qui alimente le catalogue ScamLens.
+- Nouvelles commandes :
+  - [`/softban`](./features/moderation.mdx#softban) pour bannir puis débannir un membre afin de supprimer ses messages.
+  - [`/serverinfo`](./features/utilities.mdx#serverinfo) pour consulter les informations du serveur.
+  - [`/feedback`](./features/utilities.mdx#feedback) pour partager un avis, une suggestion ou signaler un bug directement depuis Discord.
+  - [`/snipe`](./features/moderation.mdx#snipe) pour récupérer le dernier message supprimé d’un salon ou d’un utilisateur sur la dernière heure (solution temporaire en attendant la mise à jour des logs).
+  - [`/modview`](./features/moderation.mdx#modview) pour ouvrir une vue de modération centralisée d’un membre (sanctions, note, snipe).
+  - [`/note`](./features/moderation.mdx#note) pour ajouter ou modifier la note de modération d’un membre sans passer par `/modview`.
+- Sanctions :
+  - Nouvelle option [`silent`](./features/moderation.mdx) sur toutes les commandes de sanction pour ne pas notifier la cible en MP.
+  - Nouveau paramètre [`delete-messages`](./features/moderation.mdx#ban) sur les commandes `/ban` et `/tempban` pour supprimer l’historique des messages.
+  - Nouveau mode [« Remplacer par le rôle jail »](./features/sanctions.mdx#jail-roles) : la sanction Jail retire tous les rôles du membre le temps de l’emprisonnement et les restaure à sa libération (configurable dans `/settings` → Sanctions → Jail).
+  - Possibilité de [désactiver complètement les sanctions](./features/sanctions.mdx#disable) sur le serveur.
+  - Possibilité d’ajouter une [raison à `/sanctions delete`](./features/sanctions.mdx#delete).
+  - Affichage de la **durée finale** en plus du timestamp dans les logs de sanction à durée.
+  - Amélioration du suivi de l’accusé de réception des MP de sanction : reçu, MP fermés, expiré, silent.
+  - Bouton avec une **invitation au serveur** dans les MP de notification après un kick, un softban ou un ban temporaire.
+- Choix d’une **durée unique** pour les sanctions à durée appliquées par l’[anti-spam](./features/anti-spam.mdx#duration).
+- Possibilité de **fermer automatiquement les MP** lors de l’activation de l’[auto raid mode](./features/raid-mode.md#close-dm).
+- Les timeouts appliqués par l’AutoMod de Discord sont automatiquement [convertis en mute par rôle](./features/sanctions.mdx#mute-threshold) lorsqu’ils dépassent le seuil de mute configuré, pour une cohérence avec les sanctions manuelles (en **beta publique pour les serveurs Premium**).
+- Nouveau paramètre `[duration]` sur les commandes [`/lock`](./features/channel-lock.md#lock-duration) et [`/slowmode`](./features/moderation.mdx#slowmode) pour appliquer la modification temporairement.
+- Nouveau parsing des commandes par messages.
+- Autocomplete dans les paramètres `duration` des commandes.
+- Correction :
+  - Correction d’erreurs sur les expirations des sanctions.
+  - Corrections de traductions diverses.
+
 ## 3.3.2 (20/03/2026) {#3-3-2}
 
 - Nouveau système **[Authentication Manager](./features/authentication-manager.mdx)** (AM) pour protéger l'accès aux rôles Discord par authentification.
