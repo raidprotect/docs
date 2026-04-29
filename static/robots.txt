@@ -1,5 +1,13 @@
 User-agent: *
 
-Disallow: /3.
-Disallow: /en/3.
-Disallow: /de/3.
+Disallow: /3.3.1/*
+Disallow: /en/3.3.1/*
+Disallow: /de/3.3.1/*
+Disallow: /es/3.3.1/*
+Disallow: /pt/3.3.1/*
+
+Disallow: /beta/*
+Disallow: /en/beta/*
+Disallow: /de/beta/*
+Disallow: /es/beta/*
+Disallow: /pt/beta/*
