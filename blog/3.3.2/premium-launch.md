@@ -7,13 +7,13 @@ date: 2026-03-24
 image: ./assets/rp-premium-launch.webp
 ---
 
-RaidProtect est gratuit depuis le premier jour — et le restera. Aujourd'hui, nous lançons le **Premium RaidProtect** : des capacités étendues pour les serveurs qui en ont besoin, et un moyen concret de faire avancer le projet.
+RaidProtect est gratuit depuis le premier jour — et le restera. Aujourd'hui, nous lançons le **Premium RaidProtect** : des capacités étendues pour les serveurs qui en ont besoin, et un moyen concret de faire avancer le projet.
 
 ![RaidProtect Premium Launch blog post social card](./assets/rp-premium-launch.webp)
 
 <!--truncate-->
 
-## ❓ Pourquoi un Premium ? {#why}
+## ❓ Pourquoi un Premium ? {#why}
 
 RaidProtect est développé et maintenu par une entreprise dont les revenus viennent d'autres projets. Depuis le début, c'est elle qui finance l'intégralité du bot : serveurs, bande passante, développement, maintenance. Concrètement, ce sont les revenus générés par d'autres clients, sur d'autres prestations, qui paient le service que vous utilisez gratuitement.
 
@@ -43,7 +43,7 @@ Utilisez `/settings` sur votre serveur Discord et cliquez sur "Premium" ou rende
 
 Renommez chaque type de sanction pour correspondre au vocabulaire de votre serveur. Le nom affiché, le verbe utilisé dans les messages et la formulation du message privé envoyé au membre sanctionné sont tous configurables librement.
 
-### 🔐 [Authentication Manager : limites étendues](/features/authentication-manager)
+### 🔐 [Authentication Manager : limites étendues](/features/authentication-manager)
 
 En version gratuite, l'Authentication Manager est limité à 3 rôles protégés, 20 utilisateurs et des sessions de 8 heures maximum. Le Premium repousse ces plafonds :
 
@@ -53,7 +53,7 @@ En version gratuite, l'Authentication Manager est limité à 3 rôles protégés
 | Utilisateurs | 20 | 50 |
 | Durée de session max. | 8h | 24h |
 
-### 📋 [Panneaux d'informatio : limites étendues](/features/display)
+### 📋 [Panneaux d'informatio : limites étendues](/features/display)
 
 Passez de 2 à 4 panneaux d'information publics (+ le slot réservé au Jail), pour couvrir davantage de contenu sur votre serveur.
 
