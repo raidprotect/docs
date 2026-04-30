@@ -389,7 +389,8 @@
     "message": "Chargement..."
   },
   "editor.authenticating": {
-    "message": "Authentification en cours..."
+    "message": "Authentification en cours...",
+    "description": "Authenticating message"
   },
   "editor.exitBar.backToDocs": {
     "message": "Retour à la documentation"
@@ -399,5 +400,23 @@
   },
   "editor.preview.title": {
     "message": "Aperçu"
+  },
+  "editor.sidebar.title": {
+    "message": "Files"
+  },
+  "editor.contribute.title": {
+    "message": "Contribuer à la documentation"
+  },
+  "editor.contribute.description": {
+    "message": "Aidez à améliorer la documentation en modifiant les pages existantes. Choisissez une page ci-dessous ou recherchez-en une."
+  },
+  "editor.contribute.searchPlaceholder": {
+    "message": "Rechercher une page..."
+  },
+  "editor.contribute.noResults": {
+    "message": "Aucune page trouvée."
+  },
+  "editor.contribute.featured": {
+    "message": "Pages suggérées"
   }
 }

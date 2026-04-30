@@ -1,0 +1,233 @@
+---
+title: Authentication Manager
+---
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Icon from "@site/src/components/Icon";
+
+RaidProtect's Authentication Manager (AM) is an advanced authentication system that protects access to certain Discord roles through identity verification. Using passkeys (WebAuthn), PIN codes and OTP, only authenticated members can obtain sensitive roles.
+
+## ❓ How it works {#working}
+
+The Authentication Manager is based on a system of **protected roles** and **temporary sessions**. When an administrator configures a role with AM:
+
+1. The Discord role is protected by mandatory authentication.
+2. Authorized members must authenticate via the `/auth` command to obtain the role.
+3. A **temporary session** is created with a defined duration (configurable).
+4. When the session expires, the role is automatically removed.
+
+:::info
+The Authentication Manager requires each member to create an **authentication profile** via `/auth-profile` before they can authenticate.
+:::
+
+## 🔐 Security grades {#grades}
+
+Each authentication method is associated with a **security grade**. Protected roles require a minimum grade that the member must reach.
+
+| **Grade**                                                                   | **Condition**                         |
+| --------------------------------------------------------------------------- | ------------------------------------- |
+| <Icon src="/img/icons/RankS.svg" alt="icon RankS" title=":securityRankS:"/> | At least one registered passkey       |
+| <Icon src="/img/icons/RankA.svg" alt="icon RankA" title=":securityRankA:"/> | OTP (2FA) code enabled                |
+| <Icon src="/img/icons/RankB.svg" alt="icon RankB" title=":securityRankB:"/> | Reinforced PIN of 8 digits or more    |
+| <Icon src="/img/icons/RankC.svg" alt="icon RankC" title=":securityRankC:"/> | Reinforced PIN of 6 digits or more    |
+| <Icon src="/img/icons/RankD.svg" alt="icon RankD" title=":securityRankD:"/> | Simple PIN of 6 digits or more        |
+| <Icon src="/img/icons/RankE.svg" alt="icon RankE" title=":securityRankE:"/> | Simple PIN of 4 digits or more        |
+
+:::tip
+The highest grade among your configured methods is automatically retained. For example, if you have a simple PIN (grade D) and a passkey (grade S), your grade will be **S**.
+:::
+
+## 🛡️ Authentication methods {#methods}
+
+<SeparatedBox>
+<Tabs>
+<TabItem value="pin" label="PIN" default>
+
+The PIN code is the simplest method. Two modes are available:
+
+- **Simple PIN**: Classic input via a form (4 to 12 digits).
+- **Reinforced PIN**: Numeric keypad with randomized key layout (6 to 12 digits), preventing observation by a third party.
+
+:::warning
+Weak PINs are automatically rejected: repeated identical digits, ascending/descending sequences, and common patterns.
+:::
+
+</TabItem>
+<TabItem value="otp" label="OTP (2FA Code)">
+
+OTP uses the TOTP (Time-based One-Time Password) standard, compatible with authentication apps such as [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2), [Authy](https://authy.com/), [1Password](https://1password.com/), [Dashlane](https://www.dashlane.com/) or [Bitwarden](https://bitwarden.com/).
+
+- 6-digit code renewed every 30 seconds.
+- Tolerance of a ±1 window to compensate for time drift.
+
+</TabItem>
+<TabItem value="passkey" label="Passkey (WebAuthn)">
+
+Passkeys offer the highest level of security (grade S). Authentication is done via the browser using:
+
+- **Fingerprint** or **facial recognition** (Touch ID, Face ID, Windows Hello).
+- **Physical security key** (YubiKey, etc.).
+
+When using a passkey, an external link opens in your browser to perform the verification. Once validated, the bot is notified in real time and assigns the role to you.
+
+</TabItem>
+</Tabs>
+</SeparatedBox>
+
+## 👤 Authentication profile (`/auth-profile`) {#auth-profile}
+
+The `/auth-profile` command allows you to manage your personal authentication profile. It is accessible in any server or via direct message.
+
+### First use {#onboarding}
+
+On first use, a welcome screen explains how the system works. Click **Continue** to configure your first authentication method.
+
+### Managing authentications {#manage-methods}
+
+From your profile, you can manage your authentication methods.
+
+- Add, modify or delete a **PIN** (simple or reinforced).
+- Enable **OTP (2FA)** via QR code, regenerate the secret or disable the method.
+- Add a **passkey** via the registration page or delete it.
+
+Each passkey displays its device name and the date of last use.
+
+### Active sessions {#profile-sessions}
+
+View your active sessions from your profile. In a direct message context, sessions from all your servers are visible.
+
+### Audit log {#profile-audit}
+
+View the last 3 actions performed on your account, with access to the full paginated log.
+
+### Account reset {#reset}
+
+The **I forgot my credentials** button allows you to completely reset your account. This action:
+
+- Deletes all your authentication methods.
+- Disables all your access to protected roles.
+- Requires complete reconfiguration.
+
+:::danger
+This action is irreversible. All your access will be immediately revoked.
+:::
+
+## 🔑 Authenticating (`/auth`) {#auth}
+
+The `/auth` command allows you to authenticate to obtain a protected role.
+
+### Authentication process {#auth-flow}
+
+1. Run `/auth` on the server.
+2. A dropdown menu displays the available roles with their required grade and session duration.
+3. Select a role.
+4. Choose your authentication method from those that meet the role's minimum grade.
+5. Complete the verification (PIN, OTP or passkey).
+6. On success, the Discord role is assigned to you and a session is created.
+
+:::info
+Only roles you have been assigned (status **Active**) appear in the menu.
+:::
+
+### Session management {#sessions}
+
+From the `/auth` panel, you can:
+
+- **Extend a session**: Re-authenticate to extend the duration of the active session.
+- **Log out**: Immediately revokes the session and removes the Discord role.
+
+### Security {#auth-security}
+
+- **Limited attempts**: After 5 failures, your account is locked for 1 hour. After 10 failures, the account is reset.
+- **Warning**: A warning message appears after 3 failed attempts.
+
+## ⚙️ Server configuration (`/auth-settings`) {#auth-settings}
+
+The `/auth-settings` command is reserved for administrators and authorized managers. It allows you to configure the entire authentication system on the server.
+
+### Permissions {#permissions}
+
+| **Role**        | **Access**                                                                 |
+| --------------- | -------------------------------------------------------------------------- |
+| Owner           | Full access                                                                |
+| Administrator   | Full access (unless the `ADMINISTRATOR` permission comes from an AM role)  |
+| Manager         | Limited access, must authenticate, can only manage roles below their ceiling |
+
+Managers must reach a minimum security grade (configurable) to access the settings.
+
+### Server settings {#server-settings}
+
+- **Default session duration**: Duration of sessions for new roles (up to 8 hours in the free version, 24 hours in the premium version).
+- **Default minimum grade**: Minimum security grade applied to new roles.
+- **Minimum manager grade**: Grade required for a member to be a manager.
+- **Webhook URL**: Discord webhook to receive audit logs (optional).
+
+### Roles tab {#roles-tab}
+
+#### Add a role {#add-role}
+
+1. Open `/auth-settings` and go to the **Roles** tab.
+2. Click **Add a role**.
+3. Select the Discord role to protect.
+4. Set the required minimum grade.
+5. Set the session duration.
+
+:::info
+**Limits:** 3 roles in the free version, 10 roles in the premium version.
+:::
+
+:::tip
+If your role is configured to be **displayed separately** in the member list, consider keeping the original role (by removing its sensitive permissions) for display, and creating a new role with the actual permissions that you will protect via AM. This way, your members keep their visible role permanently, while the sensitive permissions are only assigned during authenticated sessions.
+:::
+
+#### Edit a role {#edit-role}
+
+You can modify the minimum grade and session duration of an existing role.
+
+#### Enable / Disable a role {#toggle-role}
+
+A role can be paused without deleting it. Inactive roles continue to occupy a slot.
+
+#### Delete a role {#delete-role}
+
+Permanently removes the role from the authentication system.
+
+### Users tab {#users-tab}
+
+#### Add a user {#add-user}
+
+1. Go to the **Users** tab.
+2. Click **Add a user**.
+3. Select the member and the roles to assign to them.
+4. The member receives a private message informing them of the invitation.
+
+:::info
+**Limits:** 20 users in the free version, 50 in the premium version.
+:::
+
+#### Member statuses {#member-status}
+
+| **Status**  | **Description**                                                         |
+| ----------- | ----------------------------------------------------------------------- |
+| Invited     | The member has been added but has not yet configured their profile       |
+| Pending     | The profile is configured, awaiting approval                            |
+| Active      | The member can authenticate to obtain the role                          |
+| Disabled    | Access to the role is temporarily suspended                             |
+
+#### Promote to manager {#promote-manager}
+
+A manager can manage users and roles that are below their permission ceiling. The ceiling corresponds to the highest position between the manager's Discord role and their active AM role.
+
+#### Delete a user {#delete-user}
+
+Removes the member from all protected roles on the server.
+
+### Logs tab {#logs-tab}
+
+View the server's audit log with pagination. Each entry contains: the user, the action, the type (AM or Discord) and the date.
+
+### Sessions tab {#sessions-tab}
+
+View all server sessions with their status (Active, Expired, Revoked), the user, the role, and the creation and expiration dates.

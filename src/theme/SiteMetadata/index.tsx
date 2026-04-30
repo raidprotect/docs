@@ -13,7 +13,6 @@ import {PageMetadata, useThemeConfig} from '@docusaurus/theme-common';
 import {
   DEFAULT_SEARCH_TAG,
   useAlternatePageUtils,
-  keyboardFocusedClassName,
 } from '@docusaurus/theme-common/internal';
 import {useLocation} from '@docusaurus/router';
 import {applyTrailingSlash} from '@docusaurus/utils-common';
@@ -82,25 +81,17 @@ function AlternateLangHeaders(): ReactNode {
 // Default canonical url inferred from current page location pathname
 function useDefaultCanonicalUrl() {
   const {
-    siteConfig: {url: siteUrl, baseUrl, trailingSlash, customFields: { excludedCanonical }},
+    siteConfig: {url: siteUrl, baseUrl, trailingSlash},
   } = useDocusaurusContext();
 
   // TODO using useLocation().pathname is not a super idea
   // See https://github.com/facebook/docusaurus/issues/9170
   const {pathname} = useLocation();
 
-  const versionedPathRegex = /^\/([a-z]{2})?(\/)?beta(\/|$)/;
-
-  let canonicalPathname = applyTrailingSlash(useBaseUrl(pathname), {
+  const canonicalPathname = applyTrailingSlash(useBaseUrl(pathname), {
     trailingSlash,
     baseUrl,
   });
-
-  if (versionedPathRegex.test(pathname) && !(excludedCanonical as Array<string>).includes(pathname)) {
-    canonicalPathname = pathname.replace(versionedPathRegex, (_, lang, _slash1, _version) => {
-      return lang ? `/${lang}/` : '/'
-    })
-  }
 
   return siteUrl + canonicalPathname;
 }
@@ -136,9 +127,6 @@ export default function SiteMetadata(): ReactNode {
     <>
       <Head>
         <meta name="twitter:card" content="summary_large_image" />
-        {/* The keyboard focus class name need to be applied when SSR so links
-        are outlined when JS is disabled */}
-        <body className={keyboardFocusedClassName} />
       </Head>
 
       {defaultImage && <PageMetadata image={defaultImage} />}

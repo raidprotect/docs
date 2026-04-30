@@ -1,0 +1,255 @@
+---
+title: Utilitários
+---
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Icon from "@site/src/components/Icon";
+
+Funcionalidades extra para simplificar a gestão do seu servidor. 🔧
+
+Para além das funcionalidades principais como o sistema de captcha e a proteção anti-raid, o RaidProtect oferece diversas ferramentas secundárias que podem tornar a gestão do seu servidor ainda mais fluida.
+
+## 📋 Duplicar um Canal {#channel-duplicate}
+
+O comando `/channel duplicate` permite-lhe duplicar completamente um canal, incluindo todas as suas definições, permissões e configurações. Vai além da funcionalidade nativa do Discord, que não permite duplicar **categorias** e **determinadas definições específicas** como as tags de canais de fórum.
+
+Utilize o comando: ```/channel duplicate [channel]```
+
+Substitua `[channel]` pela menção ou pelo ID do canal a duplicar.
+
+### 🎯 Funcionalidades {#duplicate-features}
+
+Este comando duplica todos os seguintes elementos:
+
+- **Nome do canal**
+- **Permissões** (cargos e utilizadores)
+- **Tipo de canal** (texto, voz, fórum, etc.)
+- **Definições específicas** consoante o tipo de canal
+- **Posição** dentro da categoria (se aplicável)
+
+### ⚙️ Configurações do RaidProtect {#duplicate-config}
+
+Quando duplica um canal que possui configurações internas do RaidProtect, o bot oferece-lhe automaticamente a opção de:
+
+- **Substituir** a configuração existente para utilizar o novo canal
+- **Duplicar** a configuração para manter ambos os canais configurados
+
+**Exemplo**: Se duplicar o canal de registos, o RaidProtect perguntará se pretende atualizar a sua configuração para que o novo canal se torne o canal de registos, ou manter ambos os canais configurados conforme a sua preferência.
+
+## 🗑️ Eliminar e recriar um Canal {#channel-clear}
+
+O comando `/channel clear` permite-lhe eliminar um canal e recriá-lo de forma idêntica, mantendo as suas definições, permissões e configurações do RaidProtect.
+
+Utilize o comando: ```/channel clear```
+
+:::warning
+As mensagens e webhooks do canal serão permanentemente eliminados. Será solicitada uma confirmação antes da execução.
+:::
+
+## 🧹 Limpar Membros {#prune}
+
+O comando `/prune` permite-lhe expulsar membros inativos do seu servidor através de um menu interativo.
+
+Utilize o comando: ```/prune [duration]```
+
+Substitua `[duration]` pelo número de dias de inatividade desejado. O bot apresenta um menu interativo que lhe permite:
+- Selecionar a duração de inatividade
+- Incluir ou excluir cargos específicos
+- Ver o número de membros afetados antes da confirmação
+
+![Captura de ecrã do comando prune](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-prune.webp)
+
+## 🚫 Bloquear Utilizadores {#block}
+
+O comando `/block` permite-lhe impedir um utilizador de usar determinadas funcionalidades do RaidProtect no seu servidor (por exemplo, enviar denúncias ou receber o tag de cargo).
+
+### Bloquear um utilizador {#block-add}
+
+Utilize o comando: ```/block add (user) [reason]```
+
+### Desbloquear um utilizador {#block-remove}
+
+Utilize o comando: ```/block remove (user) [reason]```
+
+### Listar utilizadores bloqueados {#block-list}
+
+Utilize o comando: ```/block list```
+
+## 📢 Painéis de Informação {#display}
+
+Consulte a [página dedicada aos painéis de informação](./display.mdx) para saber mais sobre o comando `/display public`.
+
+## 📜 As Minhas Sanções {#my-sanctions}
+
+O comando `/my-sanctions` permite aos membros visualizar as suas próprias sanções no servidor, de acordo com o [nível de privacidade](./sanctions.mdx#sanctions-privacy) configurado pelos administradores.
+
+Utilize o comando: ```/my-sanctions```
+
+:::info
+Este comando é também acessível através do botão **Ver as minhas sanções** nos [painéis de informação](./display.mdx) se a funcionalidade estiver ativada.
+:::
+
+## 🏠 Informações do servidor {#serverinfo}
+
+O comando `/serverinfo` apresenta as **informações do servidor atual**: nome, proprietário, data de criação, número de membros, nível de boost, funcionalidades ativadas, etc.
+
+Utilize o comando: ```/serverinfo```
+
+## 💬 Dar a sua opinião {#feedback}
+
+O comando `/feedback` permite a qualquer membro do servidor **partilhar uma opinião, uma sugestão ou um relato de bug** diretamente a partir do Discord, sem ter de aceder ao servidor de suporte.
+
+Utilize o comando: ```/feedback```
+
+O bot propõe-lhe avaliar a sua experiência e em seguida abre uma janela para introduzir o seu feedback. Consoante o tipo de feedback (sugestão, bug, experiência), o RaidProtect redireciona-o para os recursos certos (servidor de suporte, página de sugestões).
+
+## 👤 Informações do Utilizador {#userinfo}
+
+O comando `/userinfo` permite-lhe obter informações detalhadas sobre um utilizador.
+
+Utilize o comando: ```/userinfo [user]```
+
+Substitua `[user]` pela menção ou ID desejado.
+
+:::info
+O comando `userinfo` é [utilizável por prefixo](../guides/prefix.md).
+:::
+
+### 📋 Informações Apresentadas {#displayed-userinfo}
+
+- **Data de criação da conta Discord**
+- **Foto de perfil** do utilizador
+- **Banner do perfil**
+- **Insígnias do perfil**
+  - As insígnias Nitro, Booster, Quest e Originally Name não são apresentadas.
+
+
+### 🎭 Informações sobre um membro do servidor {#displayed-memberinfo}
+
+Se o alvo for um membro do servidor, são incluídas informações adicionais:
+
+- **Data de entrada no servidor**
+- **Alcunha no servidor**
+- **Número de cargos** e **lista dos primeiros 6 cargos**
+- **Categoria de permissões** (visível apenas para moderadores):
+<SeparatedBox>
+<Tabs>
+  <TabItem value="animator" label="Animador" default>
+
+    A categoria **Animador** é apresentada se o membro tiver **pelo menos uma** das seguintes permissões:
+
+    - `MANAGE_EXPRESSIONS`
+    - `CREATE_GUILD_EXPRESSIONS`
+    - `MANAGE_EVENTS`
+
+  </TabItem>
+  <TabItem value="moderator" label="Moderador">
+
+    A categoria **Moderador** é apresentada se o membro tiver **pelo menos uma** das seguintes permissões:
+
+    - `KICK_MEMBERS`
+    - `BAN_MEMBERS`
+    - `MODERATE_MEMBERS`
+    - `MANAGE_MESSAGES`
+    - `MUTE_MEMBERS`
+    - `DEAFEN_MEMBERS`
+    - `MOVE_MEMBERS`
+    - `MANAGE_THREADS`
+
+  </TabItem>
+  <TabItem value="manager" label="Gestor">
+
+    A categoria **Gestor** é apresentada se o membro tiver **pelo menos uma** das seguintes permissões:
+
+    - `MANAGE_GUILD`
+    - `MANAGE_ROLES`
+    - `MANAGE_CHANNELS`
+    - `VIEW_AUDIT_LOG`
+    - `MANAGE_WEBHOOKS`
+    - `MANAGE_SERVER_EXPRESSIONS`
+
+  </TabItem>
+  <TabItem value="admin" label="Administrador">
+
+    A categoria **Administrador** é apresentada em **dois casos possíveis**:
+
+    1️⃣ Possui a permissão:
+    - `ADMINISTRATOR`
+
+    2️⃣ Possui **as três** permissões seguintes ao mesmo tempo:
+    - `MANAGE_GUILD`
+    - `MANAGE_ROLES`
+    - `MANAGE_CHANNELS`
+
+  </TabItem>
+  <TabItem value="owner" label="Proprietário">
+
+    **Condição**: O membro é o **proprietário do servidor**.
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+- **Flags do membro** (visíveis apenas para moderadores):
+
+| **Flags**                                | **Emojis**                                                                                                             | **Significados**                                                  |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `DID_REJOIN`                             | <Icon src="/img/icons/MemberDidRejoin.svg" alt="icon MemberDidRejoin" title=":MemberDidRejoin:"/>                      | O utilizador saiu e voltou a entrar no servidor.                  |
+| `IS_GUEST`                               | <Icon src="/img/icons/MemberIsGuest.svg" alt="icon MemberIsGuest" title=":MemberIsGuest:"/>                            | Membro convidado (convite temporário ou acesso de convidado).     |
+| `COMPLETED_ONBOARDING`                   | <Icon src="/img/icons/OnboardingCompleted.svg" alt="icon OnboardingCompleted" title=":OnboardingCompleted:"/>          | Completou o processo de integração do servidor.                   |
+| `STARTED_ONBOARDING`                     | <Icon src="/img/icons/OnboardingStarted.svg" alt="icon OnboardingStarted" title=":OnboardingStarted:"/>                | Iniciou o processo de integração.                                 |
+| `COMPLETED_SERVER_GUIDE`                 | <Icon src="/img/icons/ServerGuideCompleted.svg" alt="icon ServerGuideCompleted" title=":ServerGuideCompleted:"/>       | Completou o guia do servidor, se ativado.                         |
+| `STARTED_SERVER_GUIDE`                   | <Icon src="/img/icons/ServerGuideStarted.svg" alt="icon ServerGuideStarted" title=":ServerGuideStarted:"/>             | Iniciou o guia do servidor.                                       |
+| `AUTOMOD_QUARANTINED_NAME`               | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | Posto em quarentena pela automoderação devido ao nome de utilizador. |
+| `AUTOMOD_QUARANTINED_GUILD_TAG`          | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | Posto em quarentena pela automoderação devido à tag ou alcunha.   |
+| `BYPASSES_VERIFICATION`                  | <Icon src="/img/icons/BypassVerification.svg" alt="icon BypassVerification" title=":BypassVerification:"/>             | O utilizador pode contornar a verificação do servidor.            |
+| `SPAMMER`                                | <Icon src="/img/icons/UnusualAccountActivity.svg" alt="icon UnusualAccountActivity" title=":UnusualAccountActivity:"/> | Conta marcada como spammer ou atividade invulgar detetada.        |
+
+## ⚖️ Sanções do Discord {#discord-sanctions}
+
+O comando `/ds` permite-lhe visualizar as **sanções emitidas pelo Discord** contra um utilizador, em conformidade com os [regulamentos europeus](https://transparency.dsa.ec.europa.eu/).
+
+Utilize o comando: ```/ds (user)```
+
+Substitua `(user)` pela menção ou ID desejado.
+
+### 📋 Informações Apresentadas {#displayed-sanctions}
+
+- **Tipo de sanção**:
+
+| **Sanções**                              | **Emojis**                                                                                                             | **Significados**                                                  |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `CONTENT_DELETED`                        | <Icon src="/img/icons/ContentDeleted.svg" alt="icon ContentDeleted" title=":iconTrash:"/>                              | Conteúdo publicado pelo utilizador foi eliminado.                 |
+| `RESTRICTED`                             | <Icon src="/img/icons/AccountRestricted.svg" alt="icon AccountRestricted" title=":iconRestricted:"/>                   | A conta do utilizador foi restringida.                            |
+| `ACCOUNT_SUSPENDED`                      | <Icon src="/img/icons/AccountSuspended.svg" alt="icon AccountSuspended" title=":iconSuspended:"/>                      | A conta do utilizador foi suspensa.                               |
+| `ACCOUNT_TERMINATED`                     | <Icon src="/img/icons/AccountTerminated.svg" alt="icon AccountTerminated" title=":iconTerminated:"/>                   | A conta do utilizador foi encerrada.                              |
+
+- **Data de emissão**
+- **Tipo de conteúdo**
+- **Flags da sanção**:
+
+| **Flags**                                | **Emojis**                                                                                                             | **Significados**                                                  |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ILLEGAL_CONTENT`                        | <Icon src="/img/icons/IllegalContent.svg" alt="icon IllegalContent" title=":iconIllegal:"/>                            | Sanção aplicada por conteúdo ilegal.                              |
+| `AUTOMATED_DETECTION`                    | <Icon src="/img/icons/AutomatedDetection.svg" alt="icon AutomatedDetection" title=":iconBots:"/>                       | Sanção aplicada por deteção automatizada.                         |
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="reports-found" label="Relatórios encontrados" default>
+
+![Captura de ecrã das Sanções do Discord](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-ds-report-found.webp)
+
+  </TabItem>
+  <TabItem value="reports-not-found" label="Nenhum relatório encontrado">
+
+![Captura de ecrã das Sanções do Discord não encontradas](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-ds-report-not-found.webp)
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+:::note
+O comando permite visualizar os relatórios emitidos entre 22 de agosto de 2024 e 14 de agosto de 2025. Estas informações são fornecidas diretamente pelo Discord e **não podem ser modificadas** pelo RaidProtect.
+:::

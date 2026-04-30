@@ -1,0 +1,49 @@
+---
+title: Panneaux d'information
+---
+
+La commande `/display public` vous permet de créer et gérer des panneaux d'information publics affichés sur votre serveur. Vous pouvez créer plusieurs panneaux avec différents types de contenu et fonctionnalités.
+
+Utilisez la commande : ```/display public```
+
+## ❓ Fonctionnement {#working}
+
+Chaque panneau d'information est publié par le bot dans un salon de votre choix. Vous disposez de plusieurs emplacements pour créer des panneaux indépendants, chacun avec son propre contenu et ses fonctionnalités.
+
+:::info
+**Limites :** 2 emplacements en version gratuite, 4 en version premium (+ 1 emplacement réservé au contenu Jail).
+:::
+
+## 📄 Types de contenu {#content}
+
+Chaque panneau peut contenir un ou plusieurs des contenus suivants :
+
+- **Verrouillage des MP** : Informe les membres de l'état de la fermeture des MP. Affiche si les MP sont verrouillés ou non, et explique que seuls les amis, le staff, les bots et les contacts précédents peuvent envoyer des MP.
+- **Prison** : Affiche un message destiné aux membres en jail, indiquant que leur accès au serveur a été limité suite à un non-respect des règles.
+- **Sanctions** : Indique aux membres comment consulter l'historique de leurs sanctions personnelles via la commande `/mes-sanctions`.
+- **Signalement** : Explique aux membres comment signaler un utilisateur ou un message via la commande `/report` ou le menu contextuel (clic droit).
+
+## ⚙️ Fonctionnalités {#features}
+
+En plus du contenu, chaque panneau peut activer des fonctionnalités interactives :
+
+- **Traduction** : Ajoute un bouton permettant aux membres de traduire le panneau dans toutes les langues supportées par Discord.
+- **Accès aux sanctions** : Ajoute un bouton "Consulter mes sanctions" permettant aux membres de consulter directement leurs sanctions.
+- **Signalement** : Ajoute un bouton "Signaler" pour signaler rapidement un utilisateur.
+
+{/* TODO: Ajouter une capture d'écran de /display public */}
+
+## 📌 Emplacement réservé {#reserved-slot}
+
+Le dernier emplacement est réservé au contenu **Prison** et est automatiquement géré via `/settings` > Sanctions > [Jail](./sanctions.mdx#jail). Son salon ne peut être modifié qu'en passant par cette configuration.
+
+## 🔄 Mise à jour des panneaux {#update}
+
+Lorsque vous modifiez la langue du bot ou que le contenu des panneaux est mis à jour par RaidProtect, un indicateur signale les panneaux qui ne sont pas à jour. Vous pouvez alors cliquer sur le bouton "Mettre à jour" pour actualiser le panneau.
+
+## ✏️ Modifier ou supprimer un panneau {#edit}
+
+Depuis le menu `/display public`, chaque emplacement occupé dispose de boutons pour :
+
+- **Modifier** : Changer le salon, le contenu ou les fonctionnalités du panneau.
+- **Supprimer** : Retirer le panneau du salon et libérer l'emplacement.
