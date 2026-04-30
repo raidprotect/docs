@@ -1,0 +1,166 @@
+---
+title: Lista de comandos
+---
+
+Todos os comandos do RaidProtect, agrupados por categoria. Clique no nome de um comando para aceder à sua documentação detalhada.
+
+## Legenda dos protótipos {#legend}
+
+- `(arg)`: argumento **obrigatório**.
+- `[arg]`: argumento **opcional**.
+- `[--flag]`: flag booleana opcional (slash: `flag: true`, mensagem: `--flag`).
+- `[--flag=valor]`: flag opcional com valor.
+- `(@membro)` / `(#canal)` / `(@&cargo)`: prefixo que indica o tipo esperado.
+
+---
+
+## Configuração e instalação {#config}
+
+| Comando | Protótipo | Descrição |
+|---|---|---|
+| [`/setup`](./setup.md#install) | `/setup` | Inicia a instalação guiada para ativar o RaidProtect no servidor. |
+| [`/settings`](./setup.md#settings) | `/settings` | Abre o menu interativo para alterar a configuração a qualquer momento. |
+| [`/honeypot`](./features/honeypot.md#config) | `/honeypot` | Configura o canal-armadilha HoneyPot. |
+| [`/tagrole`](./features/tag-role.md) | `/tagrole` | Configura o cargo atribuído aos membros que ostentam a tag do servidor. |
+| [`/display public`](./features/display.mdx) | `/display public` | Gere os painéis de informação públicos do RaidProtect. |
+
+## Moderação {#moderation}
+
+### Sanções
+
+| Comando | Protótipo | Descrição |
+|---|---|---|
+| [`/ban`](./features/moderation.mdx#ban) | `/ban (@utilizador) [duração] [--delete-messages=duração] [--silent] [razão]` | Bane definitivamente um utilizador. |
+| [`/tempban`](./features/moderation.mdx#tempban) | `/tempban (@utilizador) (duração) [--delete-messages=duração] [--silent] [razão]` | Bane um utilizador por uma duração definida. |
+| [`/softban`](./features/moderation.mdx#softban) | `/softban (@membro) [--delete-messages=duração] [--silent] [razão]` | Bane e desbane um membro para eliminar as suas mensagens. |
+| [`/unban`](./features/moderation.mdx#unban) | `/unban (@utilizador) [--silent] [razão]` | Levanta um banimento. |
+| [`/kick`](./features/moderation.mdx#kick) | `/kick (@membro) [--silent] [razão]` | Expulsa um membro do servidor. |
+| [`/mute`](./features/moderation.mdx#timeout) | `/mute (@membro) (duração) [--force-timeout] [--silent] [razão]` | Silencia um membro (cargo Mute ou timeout do Discord). |
+| [`/unmute`](./features/moderation.mdx#untimeout) | `/unmute (@membro) [--silent] [razão]` | Remove o mute / timeout de um membro. |
+| [`/jail`](./features/moderation.mdx#jail) | `/jail (@membro) [--silent] [razão]` | Prende um membro através do cargo Jail. |
+| [`/tempjail`](./features/moderation.mdx#tempjail) | `/tempjail (@membro) (duração) [--silent] [razão]` | Prende um membro por uma duração definida. |
+| [`/unjail`](./features/moderation.mdx#unjail) | `/unjail (@membro) [--silent] [razão]` | Liberta um membro da Prisão. |
+| [`/warn`](./features/moderation.mdx#warn) | `/warn (@membro) [--silent] [razão]` | Avisa formalmente um membro por MP. |
+
+### Ferramentas de moderação
+
+| Comando | Protótipo | Descrição |
+|---|---|---|
+| [`/clear`](./features/moderation.mdx#clear) | `/clear (número) [@utilizador]` | Elimina um grupo de mensagens num canal. |
+| [`/snipe`](./features/moderation.mdx#snipe) | `/snipe [@utilizador] [--channel=#canal]` | Recupera a última mensagem eliminada num canal ou de um utilizador (1 h). |
+| [`/modview`](./features/moderation.mdx#modview) | `/modview (@utilizador)` | Abre uma vista de moderação centralizada de um membro (sanções, nota, snipe). |
+| [`/note`](./features/moderation.mdx#note) | `/note (@utilizador)` | Adiciona ou modifica a nota de moderação interna de um membro. |
+
+### Bloqueio de canais
+
+| Comando | Protótipo | Descrição |
+|---|---|---|
+| [`/lock`](./features/channel-lock.md#lock) | `/lock [#canal] [duração] [razão]` | Bloqueia um canal para impedir o envio de mensagens (duração opcional). |
+| [`/unlock`](./features/channel-lock.md#unlock) | `/unlock [#canal] [razão]` | Desbloqueia um canal previamente bloqueado. |
+| [`/slowmode`](./features/moderation.mdx#slowmode) | `/slowmode (intervalo) [duração] [#canal] [razão]` | Ativa ou modifica o modo lento de um canal (duração de aplicação opcional). |
+
+## Histórico de sanções {#sanctions}
+
+| Comando | Protótipo | Descrição |
+|---|---|---|
+| [`/sanctions search`](./features/sanctions.mdx#search) | `/sanctions search [@utilizador] [@moderador] [tipo] [razão] [data] [estado] [tipo-moderador]` | Pesquisa no histórico com filtros (utilizador, moderador, tipo, data, estado…). |
+| [`/sanctions info`](./features/sanctions.mdx#info) | `/sanctions info (id)` | Apresenta os detalhes de uma sanção. |
+| [`/sanctions edit`](./features/sanctions.mdx#edit) | `/sanctions edit (id) [nova_razão] [nova_duração]` | Modifica a razão de uma sanção existente. |
+| [`/sanctions delete`](./features/sanctions.mdx#delete) | `/sanctions delete (id) [razão]` | Elimina uma sanção do histórico. |
+| [`/my-sanctions`](./features/utilities.mdx#my-sanctions) | `/my-sanctions` | Permite a um membro consultar as suas próprias sanções. |
+
+## Anti-raid {#antiraid}
+
+| Comando | Protótipo | Descrição |
+|---|---|---|
+| [`/raidmode`](./features/raid-mode.md#raid-mode) | `/raidmode [estado] [duração]` | Ativa ou desativa o modo raid (bloqueio de novas entradas). |
+| [`/joinlock`](./features/join-lock.mdx) | `/joinlock [estado]` | Encerra indefinidamente o acesso ao servidor a novos membros. |
+| [`/dmlock`](./features/dm-lock.mdx) | `/dmlock` | Ativa ou desativa o fecho permanente das MP do servidor. |
+| [`/dmlock-info`](./features/dm-lock.mdx#info) | `/dmlock-info` | Informa os membros do estado do fecho das MP. |
+
+## Autenticação {#auth}
+
+| Comando | Protótipo | Descrição |
+|---|---|---|
+| [`/auth`](./features/authentication-manager.mdx#auth) | `/auth [cargo]` | Autentica-se para obter um cargo protegido. |
+| [`/auth-profile`](./features/authentication-manager.mdx#auth-profile) | `/auth-profile` | Gere o seu perfil de autenticação (PIN, OTP, passkeys). |
+| [`/auth-settings`](./features/authentication-manager.mdx#auth-settings) | `/auth-settings` | Configura os cargos protegidos e os utilizadores autorizados. |
+
+## Bypass {#bypass}
+
+| Comando | Protótipo | Descrição |
+|---|---|---|
+| [`/bypass captcha`](./features/captcha.md#bypass) | `/bypass captcha [@utilizador]` | Autoriza um utilizador a entrar sem passar pelo captcha. |
+| [`/bypass minage`](./features/raid-mode.md#bypass-minage) | `/bypass minage [@utilizador]` | Autoriza um utilizador a entrar sem respeitar a idade mínima. |
+
+## Utilitários {#utilities}
+
+| Comando | Protótipo | Descrição |
+|---|---|---|
+| [`/userinfo`](./features/utilities.mdx#userinfo) | `/userinfo [@utilizador]` | Apresenta as informações de um utilizador. |
+| [`/serverinfo`](./features/utilities.mdx#serverinfo) | `/serverinfo` | Apresenta as informações do servidor. |
+| [`/ds`](./features/utilities.mdx#discord-sanctions) | `/ds (@utilizador)` | Apresenta as sanções do Discord (DSA) de um utilizador. |
+| [`/prune`](./features/utilities.mdx#prune) | `/prune [dias]` | Expulsa os membros inativos através de um menu interativo. |
+| [`/channel duplicate`](./features/utilities.mdx#channel-duplicate) | `/channel duplicate (#canal)` | Duplica um canal com as suas definições e permissões. |
+| [`/channel clear`](./features/utilities.mdx#channel-clear) | `/channel clear (#canal)` | Elimina e recria um canal de forma idêntica. |
+| [`/block add`](./features/utilities.mdx#block-add) | `/block add [@utilizador] [razão]` | Impede um utilizador de utilizar determinadas funcionalidades. |
+| [`/block remove`](./features/utilities.mdx#block-remove) | `/block remove [@utilizador] [razão]` | Levanta o bloqueio de um utilizador. |
+| [`/block list`](./features/utilities.mdx#block-list) | `/block list` | Lista os utilizadores bloqueados. |
+| [`/report`](./features/reports.md) | `/report (@membro) (razão)` | Permite aos membros sinalizar uma situação à moderação. |
+
+## Informação e ajuda {#info}
+
+| Comando | Protótipo | Descrição |
+|---|---|---|
+| [`/about`](./readme.mdx) | `/about` | Apresenta informações gerais sobre o RaidProtect. |
+| [`/help`](./readme.mdx) | `/help` | Apresenta a ajuda geral do RaidProtect. |
+| [`/invite`](./useful-links/index.md) | `/invite` | Apresenta os links úteis (convite, suporte, página do bot). |
+| [`/changelog`](./changelog.mdx) | `/changelog` | Consulta o registo de alterações do RaidProtect. |
+| [`/feedback`](./features/utilities.mdx#feedback) | `/feedback` | Partilha um parecer, uma sugestão ou um relato de bug. |
+
+---
+
+## ⚙️ Duas formas de utilizar um comando {#usage}
+
+Os dois formatos oferecem **exatamente as mesmas possibilidades**: tudo o que é viável em slash é viável por mensagem, e vice-versa. A diferença está apenas na forma de introduzir o comando.
+
+### Slash commands: o mais simples {#slash}
+
+Escreva `/` num canal, escolha o comando, e **o Discord apresenta-lhe cada parâmetro numa interface dedicada** (seletor de utilizador, seletor de canal, autocomplete nas durações, etc.). É a forma recomendada por defeito — não tem nada para memorizar.
+
+```
+/ban @membro razão: spam de scam
+```
+
+### Message commands: o mais complexo {#prefix}
+
+Uma vez [ativado o prefixo em `/settings`](./guides/prefix.md), também pode escrever os comandos por mensagem clássica (`?ban …`, `?kick …`, etc.). Sem interface gráfica: tem de **conhecer a sintaxe** (argumentos posicionais, flags nomeadas, argumento livre no fim da linha). Em troca, é mais rápido no teclado para os moderadores que dominam os comandos.
+
+#### Argumentos posicionais
+
+Indicados pela ordem do protótipo, sem nome. São os argumentos principais do comando.
+
+```
+?ban 123456789012345678
+?slowmode 10s
+```
+
+#### Flags nomeadas (`--nome=valor`)
+
+Para as opções secundárias. As flags podem ser colocadas em **qualquer sítio** do comando, em qualquer ordem.
+
+- `--silent` (booleana): apenas ativa a opção.
+- `--delete-messages=7d`: passa um valor à opção.
+
+```
+?ban @membro --delete-messages=7d --silent razão do ban
+?tempban @membro 1d --silent voltou a fazer
+```
+
+#### Argumento «rest» (texto livre)
+
+O último argumento de alguns comandos (tipicamente `[razão]`) captura **tudo o que escrever depois**, espaços incluídos, sem ter de colocar aspas.
+
+```
+?warn @membro voltaste a infringir a regra 3 do servidor
+```

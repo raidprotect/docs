@@ -79,6 +79,19 @@ Aqui estan las diferentes **sanciones disponibles** asi como los **disparadores*
 
 ![Captura de pantalla de las sanciones del anti-spam](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-anti-spam-sanctions.webp)
 
+#### Duracion de las sanciones {#duration}
+
+Cuando las sanciones aplicadas por el anti-spam admiten una duracion (mute, timeout, jail), puedes definir una **duracion unica** aplicada a todas estas sanciones en lugar de mantener la duracion predeterminada de cada disparador.
+
+1. Ejecuta el [comando `/settings`](../setup.md#settings).
+2. Haz clic en el boton "**Anti-spam**".
+3. Ve a la pestana "**Sanciones**".
+4. Selecciona una duracion predefinida en el selector "**Duracion de las sanciones**", o haz clic en "**Duracion personalizada**" para introducir el valor de tu eleccion (por ejemplo `30m`, `2h`, `7d`).
+
+:::info
+La duracion se ignora para las sanciones que no la admiten (kick, softban, ban, warn).
+:::
+
 ## 📑 Registros del anti-spam {#logs}
 
 Se generan registros detallados con todos los mensajes eliminados por el anti-spam. Puedes simplemente descargar o expandir el contenido.

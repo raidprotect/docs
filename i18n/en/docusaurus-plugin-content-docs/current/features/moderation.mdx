@@ -12,6 +12,22 @@ In addition to these actions, RaidProtect sends direct messages to the sanctione
 Moderation commands are [usable by prefix](../guides/prefix).
 :::
 
+:::info
+All sanction commands accept the `[silent]` option to skip notifying the target by DM. Notification DMs (kick, softban, temporary ban) include a button with a server invite.
+:::
+
+## 🔍 Member moderation view {#modview}
+
+The `/modview` command opens a **centralized moderation view** for a member: their sanctions, internal moderation note and last deleted message are gathered in a single response, with quick actions (sanction, edit the note, etc.).
+
+Use the command: ```/modview (user)```
+
+Replace `(user)` with the desired mention or ID.
+
+:::tip
+The command is also accessible via the context menu: right-click on a profile → **Apps** → **Open Modview**.
+:::
+
 ## 🖱️ Sanction via the context menu {#context-menu}
 
 In addition to slash commands, you can sanction a member directly from their profile via a right-click: **Applications** → **RaidProtect** → **Sanction**.
@@ -25,9 +41,12 @@ A window will open allowing you to:
 
 The `/ban` command allows you to permanently prohibit a user from accessing your server.
 
-Use the command: ```/ban (user) [reason]```
+Use the command: ```/ban (user) [delete-messages] [silent] [reason]```
 
 Replace `(user)` with the desired mention or ID and `[reason]` with the reason for the sanction.
+
+- `[delete-messages]`: duration of message history to delete (for example `1h`, `1d`, `7d`). Discord caps the deletion at 7 days maximum.
+- `[silent]`: skip sending a DM to the target.
 
 :::tip
 You can ban a user using their [Discord ID](../guides/id), even if they are not currently online or present on your server.
@@ -37,15 +56,27 @@ You can ban a user using their [Discord ID](../guides/id), even if they are not 
 
 The `/tempban` command allows you to temporarily prohibit a user from accessing your server.
 
-Use the command: ```/tempban (user) (duration) [reason]```
+Use the command: ```/tempban (user) (duration) [delete-messages] [silent] [reason]```
 
-Replace `(user)` with the desired mention or ID, `(duration)` with the ban duration, and `[reason]` with the reason for the sanction.
+Replace `(user)` with the desired mention or ID, `(duration)` with the ban duration, and `[reason]` with the reason for the sanction. The `[delete-messages]` parameter lets you delete the member's message history (up to 7 days).
+
+### <Icon src="/img/icons/SanctionsSOFTBAN.svg" alt="icon SanctionsSOFTBAN" title=":iconSanctionsSOFTBAN:"/> Softban a user {#softban}
+
+The `/softban` command bans then immediately unbans a member. This **deletes their message history** without permanently excluding them from the server: they can come back with a new invitation.
+
+Use the command: ```/softban (member) [delete-messages] [silent] [reason]```
+
+Replace `(member)` with the desired mention or ID and `[reason]` with the reason for the sanction. The `[delete-messages]` parameter lets you choose the duration of messages to delete (default 1 day).
+
+:::tip
+The softban is particularly well-suited to **hacked accounts**: it cleans up the spam and frees the account, without permanently excluding the member once they've secured their account.
+:::
 
 ### <Icon src="/img/icons/SanctionsUNBAN.svg" alt="icon SanctionsUNBAN" title=":iconSanctionsUNBAN:"/> Unban a user {#unban}
 
 The `/unban` command allows you to remove the ban from a previously banned user, thus allowing them to join your server again.
 
-Use the command: ```/unban (user) [reason]```
+Use the command: ```/unban (user) [silent] [reason]```
 
 Replace `(user)` with the desired identifier and `[reason]` with the reason for the unban.
 
@@ -53,7 +84,7 @@ Replace `(user)` with the desired identifier and `[reason]` with the reason for 
 
 The `/kick` command allows you to remove a member from your server without banning them. The user will be able to rejoin the server if they have a valid invitation.
 
-Use the command: ```/kick (member) [reason]```
+Use the command: ```/kick (member) [silent] [reason]```
 
 Replace `(member)` with the desired mention or ID and `[reason]` with the reason for the sanction.
 
@@ -61,7 +92,7 @@ Replace `(member)` with the desired mention or ID and `[reason]` with the reason
 
 The `/mute` command allows you to temporarily restrict a member's ability to interact on the server. During this period, the member will not be able to send messages, react, join voice channels, or send direct messages to other members.
 
-Use the command: ```/mute (member) (duration) [reason] [force_timeout]```
+Use the command: ```/mute (member) (duration) [force_timeout] [silent] [reason]```
 
 Replace `(member)` with the desired mention or ID, `(duration)` with the mute duration (e.g.: `10m`, `1h`, `1d`), and `[reason]` with the reason for the sanction.
 
@@ -73,9 +104,9 @@ You can configure a [Mute role](./sanctions.mdx#mute) and a [mute threshold](./s
 
 ### <Icon src="/img/icons/SanctionsUNTIMEOUT.svg" alt="icon SanctionsUNTIMEOUT" title=":iconSanctionsUNTIMEOUT:" /> Unmute a user {#untimeout}
 
-The `/untimeout` command allows you to immediately remove the restrictions from a muted member, allowing them to regain all their interaction capabilities on the server.
+The `/unmute` command allows you to immediately remove the restrictions from a muted member, allowing them to regain all their interaction capabilities on the server.
 
-Use the command: ```/untimeout (member) [reason]```
+Use the command: ```/unmute (member) [silent] [reason]```
 
 Replace `(member)` with the desired mention or ID and `[reason]` with the reason for removing the timeout.
 
@@ -83,7 +114,7 @@ Replace `(member)` with the desired mention or ID and `[reason]` with the reason
 
 The `/jail` command allows you to isolate a member by assigning them a restrictive role. The Jail is intended as an alternative to banning: the member retains very limited access to the server instead of being completely excluded.
 
-Use the command: ```/jail (member) [reason]```
+Use the command: ```/jail (member) [silent] [reason]```
 
 Replace `(member)` with the desired mention or ID and `[reason]` with the reason for the sanction.
 
@@ -95,7 +126,7 @@ The [Jail role](./sanctions.mdx#jail) must be configured via `/settings` before 
 
 The `/tempjail` command allows you to temporarily jail a member for a defined duration.
 
-Use the command: ```/tempjail (member) (duration) [reason]```
+Use the command: ```/tempjail (member) (duration) [silent] [reason]```
 
 Replace `(member)` with the desired mention or ID, `(duration)` with the jail duration, and `[reason]` with the reason for the sanction.
 
@@ -103,7 +134,7 @@ Replace `(member)` with the desired mention or ID, `(duration)` with the jail du
 
 The `/unjail` command allows you to remove the Jail role from a member, allowing them to regain their normal access to the server.
 
-Use the command: ```/unjail (member) [reason]```
+Use the command: ```/unjail (member) [silent] [reason]```
 
 Replace `(member)` with the desired mention or ID and `[reason]` with the reason for the release.
 
@@ -111,9 +142,17 @@ Replace `(member)` with the desired mention or ID and `[reason]` with the reason
 
 The `/warn` command allows you to formally warn a member via a private message sent by the bot.
 
-Use the command: ```/warn (member) [reason]```
+Use the command: ```/warn (member) [silent] [reason]```
 
 Replace `(member)` with the desired mention or ID and `[reason]` with the reason for the warning.
+
+## 📝 Moderation note {#note}
+
+The `/note` command lets you add or edit a member's **internal moderation note**, without having to go through [`/modview`](#modview). The note is only visible to moderators.
+
+Use the command: ```/note (user)```
+
+Replace `(user)` with the desired mention or ID. A window opens to enter or edit the note.
 
 ## 🧹 Clear a Group of Messages {#clear}
 
@@ -127,11 +166,27 @@ Replace `(number)` with the number of messages you wish to delete (maximum 100).
 
 The `/slowmode` command allows you to enable or modify the slowmode of a text channel, in order to limit how frequently users can send messages.
 
-Use the command: ```/slowmode (duration) [channel] [reason]```
+Use the command: ```/slowmode (delay) [duration] [channel] [reason]```
 
-- Replace `(duration)` with the desired time between each message (e.g.: `5s`, `1m`, `10m`, `1h`).
+- Replace `(delay)` with the desired time between each message (e.g.: `5s`, `1m`, `10m`, `1h`; `0` to disable).
+- Add `[duration]` to automatically disable the slowmode after this duration (e.g. `30m`, `2h`).
 - Add `[channel]` if you want to apply slowmode to a different channel than the one where you type the command.
 - Add `[reason]` to specify the motive, which will be recorded in the server logs.
+
+## 🕵️ Retrieve a deleted message {#snipe}
+
+The `/snipe` command lets you retrieve the **last deleted message** in a channel, or the last deleted message of a specific user, from the past hour.
+
+Use the command: ```/snipe [user]```
+
+- Without an argument: shows the last deleted message of the current channel.
+- With `[user]`: shows the last deleted message by that user.
+
+From the response, you can **sanction the author** or **delete the message** (if it's still in the channel).
+
+:::info
+`/snipe` is a **temporary solution** while waiting for the logs update. Only messages deleted in the past hour are available.
+:::
 
 ## 📋 Moderation logs {#logs}
 

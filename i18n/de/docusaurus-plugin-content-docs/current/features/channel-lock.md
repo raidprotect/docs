@@ -6,9 +6,13 @@ Manchmal ist es notwendig, einen Kanal vorübergehend zu sperren, um zu verhinde
 
 ## 🔒 Einen Kanal sperren {#lock}
 
-Verwenden Sie den Befehl: ```/lock [Grund]```
+Verwenden Sie den Befehl: ```/lock [duration] [Grund]```
 
 Dieser Befehl entzieht der Rolle **@everyone** im Kanal die Berechtigung, Nachrichten zu senden, und verhindert so, dass alle Benutzer dort schreiben. Ersetzen Sie **[Grund]**, um anzugeben, warum der Kanal gesperrt ist (z. B. *Chat-Bereinigung*, *wichtige Ankündigung*, etc.).
+
+### Temporäre Sperre {#lock-duration}
+
+Der Parameter `[duration]` ermöglicht es, **den Kanal automatisch zu entsperren** nach der angegebenen Dauer (z. B. `15m`, `1h`, `2d`). Nützlich für eine schnelle Beruhigung, ohne daran denken zu müssen, den Kanal manuell zu entsperren.
 
 ## 🔓 Einen Kanal entsperren {#unlock}
 

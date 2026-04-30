@@ -1,0 +1,166 @@
+---
+title: Command list
+---
+
+All RaidProtect commands, grouped by category. Click on a command name to access its detailed documentation.
+
+## Prototype legend {#legend}
+
+- `(arg)`: **required** argument.
+- `[arg]`: **optional** argument.
+- `[--flag]`: optional boolean flag (slash: `flag: true`, message: `--flag`).
+- `[--flag=value]`: optional flag with a value.
+- `(@member)` / `(#channel)` / `(@&role)`: prefix indicating the expected type.
+
+---
+
+## Configuration & installation {#config}
+
+| Command | Prototype | Description |
+|---|---|---|
+| [`/setup`](./setup.md#install) | `/setup` | Launches the guided installation to enable RaidProtect on the server. |
+| [`/settings`](./setup.md#settings) | `/settings` | Opens the interactive menu to change the configuration at any time. |
+| [`/honeypot`](./features/honeypot.md#config) | `/honeypot` | Configures the HoneyPot trap channel. |
+| [`/tagrole`](./features/tag-role.md) | `/tagrole` | Configures the role granted to members who wear the server tag. |
+| [`/display public`](./features/display.mdx) | `/display public` | Manages RaidProtect's public information panels. |
+
+## Moderation {#moderation}
+
+### Sanctions
+
+| Command | Prototype | Description |
+|---|---|---|
+| [`/ban`](./features/moderation.mdx#ban) | `/ban (@user) [duration] [--delete-messages=duration] [--silent] [reason]` | Permanently bans a user. |
+| [`/tempban`](./features/moderation.mdx#tempban) | `/tempban (@user) (duration) [--delete-messages=duration] [--silent] [reason]` | Bans a user for a defined duration. |
+| [`/softban`](./features/moderation.mdx#softban) | `/softban (@member) [--delete-messages=duration] [--silent] [reason]` | Bans then unbans a member to delete their messages. |
+| [`/unban`](./features/moderation.mdx#unban) | `/unban (@user) [--silent] [reason]` | Lifts a ban. |
+| [`/kick`](./features/moderation.mdx#kick) | `/kick (@member) [--silent] [reason]` | Kicks a member from the server. |
+| [`/mute`](./features/moderation.mdx#timeout) | `/mute (@member) (duration) [--force-timeout] [--silent] [reason]` | Mutes a member (Mute role or Discord timeout). |
+| [`/unmute`](./features/moderation.mdx#untimeout) | `/unmute (@member) [--silent] [reason]` | Removes a member's mute / timeout. |
+| [`/jail`](./features/moderation.mdx#jail) | `/jail (@member) [--silent] [reason]` | Jails a member via the Jail role. |
+| [`/tempjail`](./features/moderation.mdx#tempjail) | `/tempjail (@member) (duration) [--silent] [reason]` | Jails a member for a defined duration. |
+| [`/unjail`](./features/moderation.mdx#unjail) | `/unjail (@member) [--silent] [reason]` | Releases a member from Jail. |
+| [`/warn`](./features/moderation.mdx#warn) | `/warn (@member) [--silent] [reason]` | Formally warns a member by DM. |
+
+### Moderation tools
+
+| Command | Prototype | Description |
+|---|---|---|
+| [`/clear`](./features/moderation.mdx#clear) | `/clear (number) [@user]` | Deletes a group of messages in a channel. |
+| [`/snipe`](./features/moderation.mdx#snipe) | `/snipe [@user] [--channel=#channel]` | Retrieves the last deleted message in the channel or from a user (1 h). |
+| [`/modview`](./features/moderation.mdx#modview) | `/modview (@user)` | Opens a centralized moderation view of a member (sanctions, note, snipe). |
+| [`/note`](./features/moderation.mdx#note) | `/note (@user)` | Adds or edits the internal moderation note of a member. |
+
+### Channel locking
+
+| Command | Prototype | Description |
+|---|---|---|
+| [`/lock`](./features/channel-lock.md#lock) | `/lock [#channel] [duration] [reason]` | Locks a channel to prevent message sending (optional duration). |
+| [`/unlock`](./features/channel-lock.md#unlock) | `/unlock [#channel] [reason]` | Unlocks a previously locked channel. |
+| [`/slowmode`](./features/moderation.mdx#slowmode) | `/slowmode (delay) [duration] [#channel] [reason]` | Enables or modifies the slowmode of a channel (optional duration of effect). |
+
+## Sanctions history {#sanctions}
+
+| Command | Prototype | Description |
+|---|---|---|
+| [`/sanctions search`](./features/sanctions.mdx#search) | `/sanctions search [@user] [@moderator] [type] [reason] [date] [status] [moderator-type]` | Searches the history with filters (user, moderator, type, date, status…). |
+| [`/sanctions info`](./features/sanctions.mdx#info) | `/sanctions info (id)` | Displays the details of a sanction. |
+| [`/sanctions edit`](./features/sanctions.mdx#edit) | `/sanctions edit (id) [new_reason] [new_duration]` | Modifies the reason of an existing sanction. |
+| [`/sanctions delete`](./features/sanctions.mdx#delete) | `/sanctions delete (id) [reason]` | Removes a sanction from the history. |
+| [`/my-sanctions`](./features/utilities.mdx#my-sanctions) | `/my-sanctions` | Allows a member to view their own sanctions. |
+
+## Anti-raid {#antiraid}
+
+| Command | Prototype | Description |
+|---|---|---|
+| [`/raidmode`](./features/raid-mode.md#raid-mode) | `/raidmode [state] [duration]` | Enables or disables raid mode (blocks new arrivals). |
+| [`/joinlock`](./features/join-lock.mdx) | `/joinlock [state]` | Permanently closes server access to new members. |
+| [`/dmlock`](./features/dm-lock.mdx) | `/dmlock` | Enables or disables permanent DM closure for the server. |
+| [`/dmlock-info`](./features/dm-lock.mdx#info) | `/dmlock-info` | Informs members of the DM closure state. |
+
+## Authentication {#auth}
+
+| Command | Prototype | Description |
+|---|---|---|
+| [`/auth`](./features/authentication-manager.mdx#auth) | `/auth [role]` | Authenticate to obtain a protected role. |
+| [`/auth-profile`](./features/authentication-manager.mdx#auth-profile) | `/auth-profile` | Manages your authentication profile (PIN, OTP, passkeys). |
+| [`/auth-settings`](./features/authentication-manager.mdx#auth-settings) | `/auth-settings` | Configures protected roles and authorized users. |
+
+## Bypass {#bypass}
+
+| Command | Prototype | Description |
+|---|---|---|
+| [`/bypass captcha`](./features/captcha.md#bypass) | `/bypass captcha [@user]` | Allows a user to join without going through the captcha. |
+| [`/bypass minage`](./features/raid-mode.md#bypass-minage) | `/bypass minage [@user]` | Allows a user to join without respecting the minimum account age. |
+
+## Utilities {#utilities}
+
+| Command | Prototype | Description |
+|---|---|---|
+| [`/userinfo`](./features/utilities.mdx#userinfo) | `/userinfo [@user]` | Displays a user's information. |
+| [`/serverinfo`](./features/utilities.mdx#serverinfo) | `/serverinfo` | Displays the server information. |
+| [`/ds`](./features/utilities.mdx#discord-sanctions) | `/ds (@user)` | Displays a user's Discord (DSA) sanctions. |
+| [`/prune`](./features/utilities.mdx#prune) | `/prune [days]` | Kicks inactive members via an interactive menu. |
+| [`/channel duplicate`](./features/utilities.mdx#channel-duplicate) | `/channel duplicate (#channel)` | Duplicates a channel with its settings and permissions. |
+| [`/channel clear`](./features/utilities.mdx#channel-clear) | `/channel clear (#channel)` | Deletes and re-creates a channel identically. |
+| [`/block add`](./features/utilities.mdx#block-add) | `/block add [@user] [reason]` | Prevents a user from using certain features. |
+| [`/block remove`](./features/utilities.mdx#block-remove) | `/block remove [@user] [reason]` | Lifts a user's block. |
+| [`/block list`](./features/utilities.mdx#block-list) | `/block list` | Lists blocked users. |
+| [`/report`](./features/reports.md) | `/report (@member) (reason)` | Allows members to report a situation to the moderation team. |
+
+## Information & help {#info}
+
+| Command | Prototype | Description |
+|---|---|---|
+| [`/about`](./readme.mdx) | `/about` | Displays general information about RaidProtect. |
+| [`/help`](./readme.mdx) | `/help` | Displays RaidProtect's general help. |
+| [`/invite`](./useful-links/index.md) | `/invite` | Displays useful links (invitation, support, bot page). |
+| [`/changelog`](./changelog.mdx) | `/changelog` | View RaidProtect's changelog. |
+| [`/feedback`](./features/utilities.mdx#feedback) | `/feedback` | Share feedback, a suggestion or report a bug. |
+
+---
+
+## ⚙️ Two ways to use a command {#usage}
+
+Both formats give you **exactly the same possibilities**: anything you can do via slash you can do via message, and vice versa. The only difference is in how you type the command.
+
+### Slash commands: the simplest way {#slash}
+
+Type `/` in a channel, choose the command, and **Discord prompts you for each parameter in a dedicated interface** (user picker, channel picker, autocomplete on durations, etc.). It's the recommended default — you don't have to memorize anything.
+
+```
+/ban @member reason: scam spam
+```
+
+### Message commands: the most complex way {#prefix}
+
+Once the [prefix is enabled in `/settings`](./guides/prefix.md), you can also write commands as plain messages (`?ban …`, `?kick …`, etc.). No graphical interface: you have to **know the syntax** (positional arguments, named flags, free-form trailing argument). In return, it's faster on the keyboard for moderators who know the commands.
+
+#### Positional arguments
+
+Given in the order of the prototype, without a name. These are the main arguments of the command.
+
+```
+?ban 123456789012345678
+?slowmode 10s
+```
+
+#### Named flags (`--name=value`)
+
+For secondary options. Flags can be placed **anywhere** in the command, in any order.
+
+- `--silent` (boolean): just enables the option.
+- `--delete-messages=7d`: passes a value to the option.
+
+```
+?ban @member --delete-messages=7d --silent reason for the ban
+?tempban @member 1d --silent he did it again
+```
+
+#### "Rest" argument (free-form text)
+
+The last argument of certain commands (typically `[reason]`) captures **everything you write after**, spaces included, without needing quotes.
+
+```
+?warn @member you've broken rule 3 of the server again
+```

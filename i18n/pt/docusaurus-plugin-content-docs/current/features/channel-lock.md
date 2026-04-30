@@ -6,9 +6,13 @@ Por vezes, é necessário bloquear temporariamente um canal para impedir os util
 
 ## 🔒 Bloquear um canal {#lock}
 
-Utilize o comando: ```/lock [reason]```
+Utilize o comando: ```/lock [duration] [reason]```
 
 Este comando remove a permissão de enviar mensagens do cargo **@everyone** no canal, impedindo assim todos os utilizadores de publicar. Substitua **[reason]** para indicar o motivo do bloqueio do canal (por exemplo, *limpeza do chat*, *anúncio importante*, etc.).
+
+### Bloqueio temporário {#lock-duration}
+
+O parâmetro `[duration]` permite **desbloquear automaticamente o canal** ao fim da duração indicada (por ex. `15m`, `1h`, `2d`). Útil para uma pausa rápida sem ter de se lembrar de desbloquear o canal manualmente.
 
 ## 🔓 Desbloquear um canal {#unlock}
 

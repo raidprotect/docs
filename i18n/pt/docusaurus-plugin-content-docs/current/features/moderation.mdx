@@ -12,6 +12,22 @@ Para além destas ações, o RaidProtect envia mensagens privadas ao utilizador 
 Os comandos de moderação são [utilizáveis por prefixo](../guides/prefix).
 :::
 
+:::info
+Todos os comandos de sanção aceitam a opção `[silent]` para não notificar o alvo por MP. As MP de notificação (kick, softban, ban temporário) contêm um botão com um convite para o servidor.
+:::
+
+## 🔍 Vista de moderação de um membro {#modview}
+
+O comando `/modview` abre uma **vista de moderação centralizada** sobre um membro: as suas sanções, a sua nota de moderação interna e a última mensagem que eliminou são reunidas numa única resposta, com ações rápidas (sancionar, modificar a nota, etc.).
+
+Utilize o comando: ```/modview (user)```
+
+Substitua `(user)` pela menção ou ID desejado.
+
+:::tip
+O comando também é acessível através do menu de contexto: clique direito num perfil → **Aplicações** → **Abrir Modview**.
+:::
+
 ## 🖱️ Sancionar através do menu de contexto {#context-menu}
 
 Para além dos slash commands, pode sancionar um membro diretamente a partir do seu perfil através de um clique direito: **Aplicações** → **RaidProtect** → **Sancionar**.
@@ -25,9 +41,12 @@ Abre-se uma janela que lhe permite:
 
 O comando `/ban` permite-lhe proibir permanentemente um utilizador de aceder ao seu servidor.
 
-Utilize o comando: ```/ban (user) [reason]```
+Utilize o comando: ```/ban (user) [delete-messages] [silent] [reason]```
 
 Substitua `(user)` pela menção ou ID desejado e `[reason]` pela razão da sanção.
+
+- `[delete-messages]`: duração do histórico a eliminar (por exemplo `1h`, `1d`, `7d`). O Discord limita a eliminação a um máximo de 7 dias.
+- `[silent]`: não enviar uma MP ao alvo.
 
 :::tip
 Pode banir um utilizador através do seu [ID Discord](../guides/id), mesmo que não esteja atualmente online ou presente no seu servidor.
@@ -37,15 +56,27 @@ Pode banir um utilizador através do seu [ID Discord](../guides/id), mesmo que n
 
 O comando `/tempban` permite-lhe proibir temporariamente um utilizador de aceder ao seu servidor.
 
-Utilize o comando: ```/tempban (user) (duration) [reason]```
+Utilize o comando: ```/tempban (user) (duration) [delete-messages] [silent] [reason]```
 
-Substitua `(user)` pela menção ou ID desejado, `(duration)` pela duração do banimento e `[reason]` pela razão da sanção.
+Substitua `(user)` pela menção ou ID desejado, `(duration)` pela duração do banimento e `[reason]` pela razão da sanção. O parâmetro `[delete-messages]` permite eliminar o histórico de mensagens do membro (até 7 dias).
+
+### <Icon src="/img/icons/SanctionsSOFTBAN.svg" alt="icon SanctionsSOFTBAN" title=":iconSanctionsSOFTBAN:"/> Softban a um utilizador {#softban}
+
+O comando `/softban` bane e em seguida desbane imediatamente um membro. Isto permite **eliminar o histórico das suas mensagens** sem o excluir definitivamente do servidor: pode regressar com um novo convite.
+
+Utilize o comando: ```/softban (member) [delete-messages] [silent] [reason]```
+
+Substitua `(member)` pela menção ou ID desejado e `[reason]` pela razão da sanção. O parâmetro `[delete-messages]` permite escolher a duração das mensagens a eliminar (por defeito 1 dia).
+
+:::tip
+O softban é particularmente adequado para **contas pirateadas**: limpa-se o spam e liberta-se a conta, sem excluir definitivamente o membro assim que tiver protegido a sua conta.
+:::
 
 ### <Icon src="/img/icons/SanctionsUNBAN.svg" alt="icon SanctionsUNBAN" title=":iconSanctionsUNBAN:"/> Desbanir um utilizador {#unban}
 
 O comando `/unban` permite-lhe remover o banimento de um utilizador previamente banido, permitindo-lhe assim voltar a entrar no seu servidor.
 
-Utilize o comando: ```/unban (user) [reason]```
+Utilize o comando: ```/unban (user) [silent] [reason]```
 
 Substitua `(user)` pelo identificador desejado e `[reason]` pela razão do desbanimento.
 
@@ -53,7 +84,7 @@ Substitua `(user)` pelo identificador desejado e `[reason]` pela razão do desba
 
 O comando `/kick` permite-lhe remover um membro do seu servidor sem o banir. O utilizador poderá voltar a entrar no servidor se tiver um convite válido.
 
-Utilize o comando: ```/kick (member) [reason]```
+Utilize o comando: ```/kick (member) [silent] [reason]```
 
 Substitua `(member)` pela menção ou ID desejado e `[reason]` pela razão da sanção.
 
@@ -61,7 +92,7 @@ Substitua `(member)` pela menção ou ID desejado e `[reason]` pela razão da sa
 
 O comando `/mute` permite-lhe restringir temporariamente a capacidade de interação de um membro no servidor. Durante este período, o membro não poderá enviar mensagens, reagir, entrar em canais de voz ou enviar mensagens privadas a outros membros.
 
-Utilize o comando: ```/mute (member) (duration) [reason] [force_timeout]```
+Utilize o comando: ```/mute (member) (duration) [force_timeout] [silent] [reason]```
 
 Substitua `(member)` pela menção ou ID desejado, `(duration)` pela duração do silenciamento (ex.: `10m`, `1h`, `1d`) e `[reason]` pela razão da sanção.
 
@@ -73,9 +104,9 @@ Pode configurar um [cargo de Mute](./sanctions.mdx#mute) e um [limiar de mute](.
 
 ### <Icon src="/img/icons/SanctionsUNTIMEOUT.svg" alt="icon SanctionsUNTIMEOUT" title=":iconSanctionsUNTIMEOUT:" /> Remover o silenciamento de um utilizador {#untimeout}
 
-O comando `/untimeout` permite-lhe remover imediatamente as restrições de um membro silenciado, permitindo-lhe recuperar todas as suas capacidades de interação no servidor.
+O comando `/unmute` permite-lhe remover imediatamente as restrições de um membro silenciado, permitindo-lhe recuperar todas as suas capacidades de interação no servidor.
 
-Utilize o comando: ```/untimeout (member) [reason]```
+Utilize o comando: ```/unmute (member) [silent] [reason]```
 
 Substitua `(member)` pela menção ou ID desejado e `[reason]` pela razão da remoção do timeout.
 
@@ -83,7 +114,7 @@ Substitua `(member)` pela menção ou ID desejado e `[reason]` pela razão da re
 
 O comando `/jail` permite-lhe isolar um membro atribuindo-lhe um cargo restritivo. A Prisão destina-se a ser uma alternativa ao banimento: o membro mantém um acesso muito limitado ao servidor em vez de ser completamente excluído.
 
-Utilize o comando: ```/jail (member) [reason]```
+Utilize o comando: ```/jail (member) [silent] [reason]```
 
 Substitua `(member)` pela menção ou ID desejado e `[reason]` pela razão da sanção.
 
@@ -95,7 +126,7 @@ O [cargo de Prisão](./sanctions.mdx#jail) deve ser configurado via `/settings` 
 
 O comando `/tempjail` permite-lhe prender temporariamente um membro por uma duração definida.
 
-Utilize o comando: ```/tempjail (member) (duration) [reason]```
+Utilize o comando: ```/tempjail (member) (duration) [silent] [reason]```
 
 Substitua `(member)` pela menção ou ID desejado, `(duration)` pela duração da prisão e `[reason]` pela razão da sanção.
 
@@ -103,7 +134,7 @@ Substitua `(member)` pela menção ou ID desejado, `(duration)` pela duração d
 
 O comando `/unjail` permite-lhe remover o cargo de Prisão de um membro, permitindo-lhe recuperar o seu acesso normal ao servidor.
 
-Utilize o comando: ```/unjail (member) [reason]```
+Utilize o comando: ```/unjail (member) [silent] [reason]```
 
 Substitua `(member)` pela menção ou ID desejado e `[reason]` pela razão da libertação.
 
@@ -111,9 +142,17 @@ Substitua `(member)` pela menção ou ID desejado e `[reason]` pela razão da li
 
 O comando `/warn` permite-lhe avisar formalmente um membro através de uma mensagem privada enviada pelo bot.
 
-Utilize o comando: ```/warn (member) [reason]```
+Utilize o comando: ```/warn (member) [silent] [reason]```
 
 Substitua `(member)` pela menção ou ID desejado e `[reason]` pela razão do aviso.
+
+## 📝 Nota de moderação {#note}
+
+O comando `/note` permite adicionar ou modificar a **nota de moderação interna** de um membro, sem ter de passar pelo [`/modview`](#modview). A nota é apenas visível para os moderadores.
+
+Utilize o comando: ```/note (user)```
+
+Substitua `(user)` pela menção ou ID desejado. Abre-se uma janela para introduzir ou modificar a nota.
 
 ## 🧹 Limpar um Grupo de Mensagens {#clear}
 
@@ -127,11 +166,27 @@ Substitua `(number)` pelo número de mensagens que pretende eliminar (máximo 10
 
 O comando `/slowmode` permite-lhe ativar ou modificar o modo lento de um canal de texto, de forma a limitar a frequência com que os utilizadores podem enviar mensagens.
 
-Utilize o comando: ```/slowmode (duration) [channel] [reason]```
+Utilize o comando: ```/slowmode (intervalo) [duration] [channel] [reason]```
 
-- Substitua `(duration)` pelo tempo desejado entre cada mensagem (ex.: `5s`, `1m`, `10m`, `1h`).
+- Substitua `(intervalo)` pelo tempo desejado entre cada mensagem (por ex.: `5s`, `1m`, `10m`, `1h`; `0` para desativar).
+- Adicione `[duration]` para desativar automaticamente o modo lento ao fim dessa duração (por ex. `30m`, `2h`).
 - Adicione `[channel]` se pretender aplicar o modo lento a um canal diferente daquele onde escreve o comando.
 - Adicione `[reason]` para especificar o motivo, que ficará registado nos registos do servidor.
+
+## 🕵️ Recuperar uma mensagem eliminada {#snipe}
+
+O comando `/snipe` permite recuperar a **última mensagem eliminada** num canal, ou a última mensagem eliminada por um utilizador específico, na última hora.
+
+Utilize o comando: ```/snipe [user]```
+
+- Sem argumento: apresenta a última mensagem eliminada no canal atual.
+- Com `[user]`: apresenta a última mensagem eliminada por esse utilizador.
+
+A partir da resposta, pode **sancionar o autor** ou **eliminar a mensagem** (caso ainda esteja presente no canal).
+
+:::info
+O `/snipe` é uma **solução temporária** enquanto se aguarda a atualização dos registos. Apenas as mensagens eliminadas na última hora estão disponíveis.
+:::
 
 ## 📋 Registos de moderação {#logs}
 

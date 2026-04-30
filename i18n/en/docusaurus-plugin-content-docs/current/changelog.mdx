@@ -6,6 +6,35 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Discover the detailed list of changes made to RaidProtect.
 
+## 3.3.3 (30/04/2026) {#3-3-3}
+
+- New [command `/modview`](./features/moderation.mdx#modview) to open a centralized moderation view of a member (sanctions, note, snipe). <SuggestionLink id="544" />
+- New [command `/note`](./features/moderation.mdx#note) to add or edit a member's moderation note. <SuggestionLink id="545" />
+- Customization of RaidProtect's **avatar**, **banner** and **nickname writing style** (**Premium**).
+- New **[HoneyPot](./features/honeypot.md)** module: a trap channel that automatically sanctions hacked accounts and spam bots, and feeds the ScamLens catalog. <SuggestionLink id="560" />
+- New parsing for message commands.
+- Autocomplete on the `duration` parameters of slash commands.
+- Sanctions:
+  - New [command `/softban`](./features/moderation.mdx#softban) to ban then unban a member in order to delete their messages.
+  - New [`silent` option](./features/moderation.mdx) on every sanction command to skip notifying the target by DM. <SuggestionLink id="545" />
+  - New [`delete-messages` parameter](./features/moderation.mdx#ban) on the `/ban` and `/tempban` commands to delete the message history.
+  - New [Replace with Jail role](./features/sanctions.mdx#jail-roles) mode: the Jail sanction removes all of the member's roles for the duration of the jail and restores them on release. <SuggestionLink id="552" />
+  - Ability to [fully disable sanctions](./features/sanctions.mdx#disable) on the server.
+  - Ability to add a [reason to `/sanctions delete`](./features/sanctions.mdx#delete).
+  - Display of the **final duration** in addition to the timestamp in logs of sanctions with a duration.
+  - Improved acknowledgment tracking for sanction DMs: received, DMs closed, expired, silent.
+  - Button with a **server invite** in the notification DMs after a kick, softban or temporary ban. <SuggestionLink id="570" />
+- New [command `/serverinfo`](./features/utilities.mdx#serverinfo) to view the server information. <SuggestionLink id="264" />
+- New [command `/snipe`](./features/moderation.mdx#snipe) to retrieve the last deleted message of a channel or user from the past hour (temporary solution while waiting for the logs update).
+- New [command `/feedback`](./features/utilities.mdx#feedback) to share feedback, a suggestion or report a bug directly from Discord.
+- Choice of a **single duration** for sanctions with a duration applied by the [anti-spam](./features/anti-spam.mdx#duration). <SuggestionLink id="559" />
+- Ability to **automatically close DMs** when [auto raid mode](./features/raid-mode.md#close-dm) is activated. <SuggestionLink id="521" />
+- Timeouts applied by Discord's AutoMod are automatically [converted to a role-based mute](./features/sanctions.mdx#mute-threshold) when they exceed the configured mute threshold (in **public beta for Premium servers**).
+- New `[duration]` parameter on the [`/lock`](./features/channel-lock.md#lock-duration) and [`/slowmode`](./features/moderation.mdx#slowmode) commands to apply the change temporarily. <SuggestionLink id="515" />
+- Fixes:
+  - Fixed errors on sanction expirations.
+  - Various translation fixes.
+
 ## 3.3.2 (20/03/2026) {#3-3-2}
 
 - New **[Authentication Manager](./features/authentication-manager.mdx)** (AM) system to protect access to Discord roles through authentication.

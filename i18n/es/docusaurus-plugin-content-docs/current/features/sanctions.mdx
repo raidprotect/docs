@@ -14,7 +14,7 @@ El historial de sanciones registra automaticamente todas las acciones de moderac
 - **Sanciones automaticas**: Las sanciones aplicadas por el anti-spam tambien se agregan al historial de sanciones.
 - **Baneos, expulsiones y timeouts**: Las sanciones aplicadas sin usar RaidProtect se agregan al historial.
 - **Automod de Discord**: Las sanciones aplicadas por el automod de Discord tambien se agregan.
-- **Notificaciones de sanciones**: Los miembros sancionados reciben un mensaje privado informandoles sobre la sancion y su razon. El bot tambien envia un acuse de recibo confirmando el envio de esta notificacion.
+- **Notificaciones de sanciones**: Los miembros sancionados reciben un mensaje privado informandoles sobre la sancion y su razon. El bot tambien envia un acuse de recibo detallado que confirma el estado del envio: **recibido**, **MD cerrados**, **expirado** o **silencioso** (cuando se usa la opcion `[silent]`). Para los kicks, softbans y bans temporales, este mensaje contiene ademas un **boton con una invitacion al servidor** para que el miembro pueda volver una vez terminada la sancion.
 
 :::info
 Todas las sanciones registradas contienen: el usuario sancionado, el moderador responsable, la razon (hasta 512 caracteres), la fecha y hora, asi como el tipo de sancion y si el usuario fue notificado.
@@ -67,9 +67,9 @@ Editar una sancion actualiza el registro en el historial pero no cambia la sanci
 
 El comando `/sanctions delete` te permite eliminar una sancion del historial. Esta accion es irreversible.
 
-Usa el comando: ```/sanctions delete (id)```
+Usa el comando: ```/sanctions delete (id) [reason]```
 
-Reemplaza `(id)` con el identificador de la sancion a eliminar.
+Reemplaza `(id)` con el identificador de la sancion a eliminar. El parametro `[reason]` permite **justificar la eliminacion**, que se registrara en los registros.
 
 ![Captura de pantalla de la eliminacion de una sancion](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-delete.webp)
 
@@ -96,6 +96,14 @@ Cuando se encuentra una sancion activa y previa, puedes:
 
 ## ⚙️ Configuracion de sanciones {#config}
 
+### Desactivar las sanciones {#disable}
+
+Puedes **desactivar completamente el sistema de sanciones** en tu servidor. Cuando las sanciones estan desactivadas, RaidProtect ya no registra ninguna sancion en el historial y los comandos relacionados quedan indisponibles.
+
+1. Ejecuta el [comando `/settings`](../setup.md#settings).
+2. Haz clic en el boton "**Sanciones**".
+3. Haz clic en "**Sistema de sanciones**" para activar o desactivar el modulo completo.
+
 ### Calabozo {#jail}
 
 Configura el **Calabozo** para habilitar una sancion de moderacion basada en roles, mas restrictiva que un silencio estandar. Una vez configurado, este rol te permite aislar a un miembro con permisos severamente limitados y desbloquea el uso de los comandos [`/jail`](./moderation.mdx#jail) y [`/tempjail`](./moderation.mdx#tempjail).
@@ -115,6 +123,15 @@ Este canal corresponde al espacio reservado en los [paneles de informacion](./di
 :::info
 Si ya hay un rol de Calabozo configurado, puedes modificar el canal de informacion mediante el boton dedicado en el submenu del Calabozo.
 :::
+
+#### Roles durante el calabozo {#jail-roles}
+
+En el submenu del Calabozo, el boton **Roles durante el calabozo** controla lo que RaidProtect hace con los roles del miembro cuando esta encarcelado. Dos modos:
+
+- **Anadir el rol de Calabozo** *(por defecto)*: el rol de Calabozo simplemente se anade ademas de los roles existentes del miembro.
+- **Reemplazar por el rol de Calabozo**: RaidProtect **retira todos los roles del miembro** durante el encarcelamiento y se los restaura al liberarlo. Mas estricto, evita que un rol con permisos explicitos eluda las restricciones del rol de Calabozo.
+
+Haz clic en el boton para alternar entre los dos modos.
 
 ### Rol de Silencio {#mute}
 
@@ -136,6 +153,11 @@ Configura el **umbral del rol de Silencio** para definir a partir de que duracio
 
 :::info
 El limite de 28 dias para el timeout es impuesto por Discord. Mas alla de esta duracion, el rol de Silencio siempre sera utilizado si esta configurado.
+:::
+:::info
+Los **timeouts aplicados por el AutoMod de Discord** se convierten automaticamente en silencio por rol si su duracion supera el umbral configurado, para asegurar la coherencia con tus sanciones manuales. La duracion sigue limitada a 28 dias (limite de Discord).
+
+Esta funcionalidad esta actualmente en **beta publica para los servidores Premium**.
 :::
 
 ### Privacidad de sanciones {#sanctions-privacy}

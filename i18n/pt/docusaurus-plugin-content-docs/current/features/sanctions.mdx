@@ -14,7 +14,7 @@ O histórico de sanções regista automaticamente todas as ações de moderaçã
 - **Sanções automáticas**: As sanções aplicadas pelo anti-spam são também adicionadas ao histórico de sanções.
 - **Banimentos, expulsões e timeouts**: As sanções aplicadas sem utilizar o RaidProtect são adicionadas ao histórico.
 - **Automod do Discord**: As sanções aplicadas pelo automod do Discord são igualmente adicionadas.
-- **Notificações de sanção**: Os membros sancionados recebem uma mensagem privada informando-os sobre a sanção e a sua razão. O bot também envia um aviso de receção confirmando o envio desta notificação.
+- **Notificações de sanção**: Os membros sancionados recebem uma mensagem privada informando-os sobre a sanção e a sua razão. O bot envia também um aviso de receção detalhado a confirmar o estado do envio: **recebida**, **MP fechadas**, **expirada** ou **silenciosa** (quando é utilizada a opção `[silent]`). Para os kicks, softbans e bans temporários, esta mensagem contém igualmente um **botão com um convite para o servidor** para que o membro possa regressar quando a sanção terminar.
 
 :::info
 Todas as sanções registadas contêm: o utilizador sancionado, o moderador responsável, a razão (até 512 caracteres), a data e hora, bem como o tipo de sanção e se o utilizador foi notificado.
@@ -67,9 +67,9 @@ Editar uma sanção atualiza o registo no histórico, mas não altera a sanção
 
 O comando `/sanctions delete` permite-lhe eliminar uma sanção do histórico. Esta ação é irreversível.
 
-Utilize o comando: ```/sanctions delete (id)```
+Utilize o comando: ```/sanctions delete (id) [reason]```
 
-Substitua `(id)` pelo identificador da sanção a eliminar.
+Substitua `(id)` pelo identificador da sanção a eliminar. O parâmetro `[reason]` permite **justificar a eliminação**, que será registada nos registos.
 
 ![Captura de ecrã da eliminação de sanção](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-delete.webp)
 
@@ -96,6 +96,14 @@ Quando é encontrada uma sanção ativa e anterior, pode:
 
 ## ⚙️ Configuração das sanções {#config}
 
+### Desativar as sanções {#disable}
+
+Pode **desativar completamente o sistema de sanções** no seu servidor. Quando as sanções estão desativadas, o RaidProtect deixa de registar qualquer sanção no histórico e os comandos relacionados ficam indisponíveis.
+
+1. Utilize o [comando `/settings`](../setup.md#settings).
+2. Clique no botão "**Sanções**".
+3. Clique em "**Sistema de sanções**" para ativar ou desativar todo o módulo.
+
 ### Prisão {#jail}
 
 Configure a **Prisão** para ativar uma sanção de moderação baseada em cargo, mais restritiva do que um silenciamento padrão. Uma vez configurado, este cargo permite-lhe isolar um membro com permissões severamente limitadas e desbloqueia a utilização dos comandos [`/jail`](./moderation.mdx#jail) e [`/tempjail`](./moderation.mdx#tempjail).
@@ -115,6 +123,15 @@ Este canal corresponde ao espaço reservado nos [painéis de informação](./dis
 :::info
 Se um cargo de Prisão já estiver configurado, pode modificar o canal de informação através do botão dedicado no submenu da Prisão.
 :::
+
+#### Cargos durante a prisão {#jail-roles}
+
+No submenu da Prisão, o botão **Cargos durante a prisão** controla o que o RaidProtect faz aos cargos do membro quando este é preso. Dois modos:
+
+- **Adicionar o cargo Jail** *(por defeito)*: o cargo Jail é simplesmente adicionado aos cargos existentes do membro.
+- **Substituir pelo cargo Jail**: o RaidProtect **retira todos os cargos do membro** durante o tempo de prisão e restaura-os quando este é libertado. Mais rigoroso, evita que um cargo com permissões explícitas contorne as restrições do cargo Jail.
+
+Clique no botão para alternar entre os dois modos.
 
 ### Cargo de Mute {#mute}
 
@@ -136,6 +153,11 @@ Configure o **limiar do cargo de Mute** para definir a partir de que duração o
 
 :::info
 O limite de 28 dias para o timeout é imposto pelo Discord. Para além desta duração, o cargo de Mute será sempre utilizado se estiver configurado.
+:::
+:::info
+Os **timeouts aplicados pelo AutoMod do Discord** são automaticamente convertidos em mute por cargo se a sua duração ultrapassar o limiar configurado, para garantir uma coerência com as suas sanções manuais. A duração permanece limitada a 28 dias (limite do Discord).
+
+Esta funcionalidade está atualmente em **beta pública para servidores Premium**.
 :::
 
 ### Privacidade das Sanções {#sanctions-privacy}

@@ -79,6 +79,19 @@ Eis as diferentes **sanções disponíveis**, bem como os **gatilhos** que o Rai
 
 ![Captura de ecrã das sanções do anti-spam](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-anti-spam-sanctions.webp)
 
+#### Duração das sanções {#duration}
+
+Quando as sanções aplicadas pelo anti-spam suportam uma duração (mute, timeout, jail), pode definir uma **duração única** aplicada a todas estas sanções em vez de manter a duração predefinida de cada gatilho.
+
+1. Execute o [comando `/settings`](../setup.md#settings).
+2. Clique no botão "**Anti-spam**".
+3. Vá ao separador "**Sanções**".
+4. Selecione uma duração predefinida no seletor "**Duração das sanções**", ou clique em "**Duração personalizada**" para introduzir o valor à sua escolha (por ex. `30m`, `2h`, `7d`).
+
+:::info
+A duração é ignorada para as sanções que não a suportam (kick, softban, ban, warn).
+:::
+
 ## 📑 Registos do anti-spam {#logs}
 
 São gerados registos detalhados com todas as mensagens eliminadas pelo anti-spam. Pode simplesmente descarregar ou expandir o conteúdo.

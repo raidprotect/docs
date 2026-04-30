@@ -14,7 +14,7 @@ Der Sanktionsverlauf zeichnet automatisch alle auf deinem Server durchgeführten
 - **Automatische Sanktionen**: Von Anti-Spam verhängte Sanktionen werden ebenfalls dem Sanktionsverlauf hinzugefügt.
 - **Verbannungen, Kicks und Timeouts**: Sanktionen, die ohne RaidProtect verhängt wurden, werden dem Verlauf hinzugefügt.
 - **Discord Automod**: Sanktionen, die von Discords Automod verhängt wurden, werden ebenfalls hinzugefügt.
-- **Sanktionsbenachrichtigungen**: Sanktionierte Mitglieder erhalten eine private Nachricht, die sie über die Sanktion und deren Grund informiert. Der Bot sendet außerdem eine Empfangsbestätigung, die das Versenden dieser Benachrichtigung bestätigt.
+- **Sanktionsbenachrichtigungen**: Sanktionierte Mitglieder erhalten eine private Nachricht, die sie über die Sanktion und deren Grund informiert. Der Bot sendet außerdem eine detaillierte Empfangsbestätigung, die den Versandstatus bestätigt: **empfangen**, **DMs geschlossen**, **abgelaufen** oder **silent** (wenn die Option `[silent]` verwendet wird). Bei Kicks, Softbans und temporären Bans enthält diese Nachricht zudem eine **Schaltfläche mit einer Server-Einladung**, damit das Mitglied nach Ablauf der Sanktion zurückkehren kann.
 
 :::info
 Alle aufgezeichneten Sanktionen enthalten: den sanktionierten Benutzer, den verantwortlichen Moderator, den Grund (bis zu 512 Zeichen), Datum und Uhrzeit sowie die Art der Sanktion und ob der Benutzer benachrichtigt wurde.
@@ -67,9 +67,9 @@ Das Bearbeiten einer Sanktion aktualisiert den Eintrag im Verlauf, ändert jedoc
 
 Der Befehl `/sanctions delete` ermöglicht es dir, eine Sanktion aus dem Verlauf zu löschen. Diese Aktion ist unwiderruflich.
 
-Verwende den Befehl: ```/sanctions delete (id)```
+Verwende den Befehl: ```/sanctions delete (id) [grund]```
 
-Ersetze `(id)` durch die Kennung der zu löschenden Sanktion.
+Ersetze `(id)` durch die Kennung der zu löschenden Sanktion. Der Parameter `[grund]` ermöglicht es, **die Löschung zu rechtfertigen**, was in den Logs gespeichert wird.
 
 ![Screenshot der Sanktionslöschung](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-delete.webp)
 
@@ -96,6 +96,14 @@ Wird eine aktive, bereits bestehende Sanktion gefunden, kannst du:
 
 ## ⚙️ Konfiguration der Sanktionen {#config}
 
+### Sanktionen deaktivieren {#disable}
+
+Du kannst das **Sanktionssystem auf deinem Server vollständig deaktivieren**. Wenn die Sanktionen deaktiviert sind, zeichnet RaidProtect keine Sanktionen mehr im Verlauf auf, und die zugehörigen Befehle sind nicht verfügbar.
+
+1. Nutze den [Befehl `/settings`](../setup.md#settings).
+2. Klicke auf die Schaltfläche "**Sanktionen**".
+3. Klicke auf "**Sanktionssystem**", um das gesamte Modul zu aktivieren oder zu deaktivieren.
+
 ### Jail {#jail}
 
 Konfiguriere die **Jail**, um eine rollenbasierte Moderationssanktion zu aktivieren, die restriktiver ist als ein herkömmlicher Mute. Einmal konfiguriert, ermöglicht diese Rolle, ein Mitglied mit stark eingeschränkten Berechtigungen zu isolieren, und schaltet die Verwendung der Befehle [`/jail`](./moderation.mdx#jail) und [`/tempjail`](./moderation.mdx#tempjail) frei.
@@ -115,6 +123,15 @@ Dieser Kanal entspricht dem reservierten Platz in den [Informationspanels](./dis
 :::info
 Wenn bereits eine Jail-Rolle konfiguriert ist, kannst du den Informationskanal über die entsprechende Schaltfläche im Jail-Untermenü ändern.
 :::
+
+#### Rollen während der Jail {#jail-roles}
+
+Im Jail-Untermenü steuert die Schaltfläche **Rollen während der Jail**, was RaidProtect mit den Rollen des Mitglieds tut, wenn es eingesperrt ist. Zwei Modi:
+
+- **Jail-Rolle hinzufügen** *(Standard)*: Die Jail-Rolle wird einfach zusätzlich zu den vorhandenen Rollen des Mitglieds hinzugefügt.
+- **Durch die Jail-Rolle ersetzen**: RaidProtect **entfernt während der Inhaftierung alle Rollen des Mitglieds** und stellt sie ihm bei der Freilassung wieder her. Strenger; das verhindert, dass eine Rolle mit expliziten Berechtigungen die Einschränkungen der Jail-Rolle umgeht.
+
+Klicke auf die Schaltfläche, um zwischen den beiden Modi zu wechseln.
 
 ### Mute-Rolle {#mute}
 
@@ -136,6 +153,11 @@ Konfiguriere den **Mute-Rollen-Schwellenwert**, um festzulegen, ab welcher Dauer
 
 :::info
 Die 28-Tage-Grenze für das Timeout wird von Discord vorgegeben. Über diese Dauer hinaus wird die Mute-Rolle systematisch verwendet, sofern konfiguriert.
+:::
+:::info
+Die **von Discords AutoMod verhängten Timeouts** werden automatisch in rollenbasiertes Mute umgewandelt, wenn ihre Dauer den konfigurierten Schwellenwert überschreitet, um Konsistenz mit deinen manuellen Sanktionen zu gewährleisten. Die Dauer bleibt auf 28 Tage beschränkt (Discord-Limit).
+
+Diese Funktion befindet sich derzeit in **öffentlicher Beta für Premium-Server**.
 :::
 
 ### Vertraulichkeit der Sanktionen {#sanctions-privacy}

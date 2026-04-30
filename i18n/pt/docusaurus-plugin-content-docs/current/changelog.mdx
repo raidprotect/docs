@@ -6,6 +6,35 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Descubra a lista detalhada das alterações efetuadas ao RaidProtect.
 
+## 3.3.3 (30/04/2026) {#3-3-3}
+
+- Novo [comando `/modview`](./features/moderation.mdx#modview) para abrir uma vista de moderação centralizada de um membro (sanções, nota, snipe). <SuggestionLink id="544" />
+- Novo [comando `/note`](./features/moderation.mdx#note) para adicionar ou modificar a nota de moderação de um membro. <SuggestionLink id="545" />
+- Personalização do **avatar**, do **banner** e do **estilo de escrita do nome** do RaidProtect (**Premium**).
+- Novo módulo **[HoneyPot](./features/honeypot.md)**: um canal-armadilha que sanciona automaticamente as contas pirateadas e os bots de spam, e que alimenta o catálogo do ScamLens. <SuggestionLink id="560" />
+- Novo parsing dos comandos por mensagens.
+- Autocomplete nos parâmetros `duration` dos slash commands.
+- Sanções:
+  - Novo [comando `/softban`](./features/moderation.mdx#softban) para banir e depois desbanir um membro de forma a eliminar as suas mensagens.
+  - Nova [opção `silent`](./features/moderation.mdx) em todos os comandos de sanção para não notificar o alvo por MP. <SuggestionLink id="545" />
+  - Novo [parâmetro `delete-messages`](./features/moderation.mdx#ban) nos comandos `/ban` e `/tempban` para eliminar o histórico de mensagens.
+  - Novo modo [Substituir pelo cargo Jail](./features/sanctions.mdx#jail-roles): a sanção Jail retira todos os cargos do membro durante o tempo de prisão e restaura-os quando é libertado. <SuggestionLink id="552" />
+  - Possibilidade de [desativar completamente as sanções](./features/sanctions.mdx#disable) no servidor.
+  - Possibilidade de adicionar uma [razão a `/sanctions delete`](./features/sanctions.mdx#delete).
+  - Apresentação da **duração final** para além do timestamp nos registos das sanções com duração.
+  - Melhoria do acompanhamento do aviso de receção das MP de sanção: recebida, MP fechadas, expirada, silent.
+  - Botão com um **convite para o servidor** nas MP de notificação após um kick, um softban ou um ban temporário. <SuggestionLink id="570" />
+- Novo [comando `/serverinfo`](./features/utilities.mdx#serverinfo) para consultar as informações do servidor. <SuggestionLink id="264" />
+- Novo [comando `/snipe`](./features/moderation.mdx#snipe) para recuperar a última mensagem eliminada de um canal ou de um utilizador na última hora (solução temporária enquanto se aguarda a atualização dos registos).
+- Novo [comando `/feedback`](./features/utilities.mdx#feedback) para partilhar um parecer, uma sugestão ou sinalizar um bug diretamente a partir do Discord.
+- Escolha de uma **duração única** para as sanções com duração aplicadas pelo [anti-spam](./features/anti-spam.mdx#duration). <SuggestionLink id="559" />
+- Possibilidade de **fechar automaticamente as MP** ao ativar o [auto raid mode](./features/raid-mode.md#close-dm). <SuggestionLink id="521" />
+- Os timeouts aplicados pelo AutoMod do Discord são automaticamente [convertidos em mute por cargo](./features/sanctions.mdx#mute-threshold) quando ultrapassam o limiar de mute configurado (em **beta pública para servidores Premium**).
+- Novo parâmetro `[duration]` nos comandos [`/lock`](./features/channel-lock.md#lock-duration) e [`/slowmode`](./features/moderation.mdx#slowmode) para aplicar a alteração temporariamente. <SuggestionLink id="515" />
+- Correções:
+  - Correção de erros nas expirações das sanções.
+  - Correções de traduções diversas.
+
 ## 3.3.2 (20/03/2026) {#3-3-2}
 
 - Novo sistema **[Authentication Manager](./features/authentication-manager.mdx)** (AM) para proteger o acesso aos cargos do Discord por autenticação.

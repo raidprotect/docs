@@ -6,6 +6,35 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Entdecken Sie die detaillierte Liste der Änderungen an RaidProtect.
 
+## 3.3.3 (30/04/2026) {#3-3-3}
+
+- Neuer [Befehl `/modview`](./features/moderation.mdx#modview), um eine zentrale Moderationsansicht eines Mitglieds zu öffnen (Sanktionen, Notiz, Snipe). <SuggestionLink id="544" />
+- Neuer [Befehl `/note`](./features/moderation.mdx#note), um die Moderationsnotiz eines Mitglieds hinzuzufügen oder zu ändern. <SuggestionLink id="545" />
+- Anpassung von **Avatar**, **Banner** und **Schreibstil des Pseudonyms** von RaidProtect (**Premium**).
+- Neues Modul **[HoneyPot](./features/honeypot.md)**: ein Fallenkanal, der gehackte Konten und Spam-Bots automatisch sanktioniert und den ScamLens-Katalog speist. <SuggestionLink id="560" />
+- Neues Parsing der Nachrichtenbefehle.
+- Autocomplete in den `duration`-Parametern der Slash-Befehle.
+- Sanktionen:
+  - Neuer [Befehl `/softban`](./features/moderation.mdx#softban), um ein Mitglied zu bannen und sofort wieder zu entbannen, um seine Nachrichten zu löschen.
+  - Neue [Option `silent`](./features/moderation.mdx) auf allen Sanktionsbefehlen, um die Zielperson nicht per DM zu benachrichtigen. <SuggestionLink id="545" />
+  - Neuer [Parameter `delete-messages`](./features/moderation.mdx#ban) auf den Befehlen `/ban` und `/tempban`, um den Nachrichtenverlauf zu löschen.
+  - Neuer Modus [Durch die Jail-Rolle ersetzen](./features/sanctions.mdx#jail-roles): Die Jail-Sanktion entfernt während der Inhaftierung alle Rollen des Mitglieds und stellt sie bei der Freilassung wieder her. <SuggestionLink id="552" />
+  - Möglichkeit, [Sanktionen auf dem Server vollständig zu deaktivieren](./features/sanctions.mdx#disable).
+  - Möglichkeit, [`/sanctions delete` einen Grund hinzuzufügen](./features/sanctions.mdx#delete).
+  - Anzeige der **endgültigen Dauer** zusätzlich zum Zeitstempel in den Logs von Sanktionen mit Dauer.
+  - Verbesserung der Zustellbestätigung der Sanktions-DMs: empfangen, DMs geschlossen, abgelaufen, silent.
+  - Schaltfläche mit einer **Server-Einladung** in den Benachrichtigungs-DMs nach einem Kick, Softban oder temporären Ban. <SuggestionLink id="570" />
+- Neuer [Befehl `/serverinfo`](./features/utilities.mdx#serverinfo), um die Informationen des Servers einzusehen. <SuggestionLink id="264" />
+- Neuer [Befehl `/snipe`](./features/moderation.mdx#snipe), um die zuletzt gelöschte Nachricht eines Kanals oder eines Benutzers aus der letzten Stunde abzurufen (vorübergehende Lösung bis zum Update der Logs).
+- Neuer [Befehl `/feedback`](./features/utilities.mdx#feedback), um eine Meinung, einen Vorschlag oder eine Bug-Meldung direkt aus Discord zu teilen.
+- Wahl einer **einheitlichen Dauer** für die vom [Anti-Spam](./features/anti-spam.mdx#duration) verhängten Sanktionen mit Dauer. <SuggestionLink id="559" />
+- Möglichkeit, **DMs automatisch zu schließen** beim Aktivieren des [Auto-Raid-Modus](./features/raid-mode.md#close-dm). <SuggestionLink id="521" />
+- Die von Discords AutoMod verhängten Timeouts werden automatisch [in rollenbasiertes Mute umgewandelt](./features/sanctions.mdx#mute-threshold), wenn sie den konfigurierten Mute-Schwellenwert überschreiten (in **öffentlicher Beta für Premium-Server**).
+- Neuer Parameter `[duration]` auf den Befehlen [`/lock`](./features/channel-lock.md#lock-duration) und [`/slowmode`](./features/moderation.mdx#slowmode), um die Änderung temporär anzuwenden. <SuggestionLink id="515" />
+- Korrekturen:
+  - Korrektur von Fehlern beim Ablauf von Sanktionen.
+  - Verschiedene Übersetzungskorrekturen.
+
 ## 3.3.2 (20/03/2026) {#3-3-2}
 
 - Neues **[Authentication Manager](./features/authentication-manager.mdx)** (AM)-System zum Schutz des Zugangs zu Discord-Rollen durch Authentifizierung.

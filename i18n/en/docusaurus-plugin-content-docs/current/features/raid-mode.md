@@ -55,6 +55,20 @@ We recommend entering a value between 10 and 20 members per 10 seconds for good 
 
 You can leave it at the default value (5 minutes) or adjust it to the desired value by clicking the "**Custom value**" button.
 
+#### Close DMs automatically {#close-dm}
+
+You can configure the **auto raid mode** to **automatically close the server's DMs** as soon as it activates. This adds an extra layer of protection during a raid: new accounts can no longer reach out to your members in private to phish or scam them.
+
+1. Run the [`/settings` command](../setup.md#settings).
+2. Click the "**Auto RaidMode**" button.
+3. Enable the "**Close DMs**" option.
+
+When auto raid mode is disabled (manually or automatically after the configured duration), the DMs return to their previous configuration.
+
+:::info
+This option is complementary to the [permanent DM closure](./dm-lock.mdx): if you enable it without permanent closure, DMs are only closed during an active raid.
+:::
+
 ## Minimum Age {#minage}
 
 To strengthen security, you can require a minimum age for Discord accounts of new members.

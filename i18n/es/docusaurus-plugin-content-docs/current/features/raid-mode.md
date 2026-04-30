@@ -55,6 +55,20 @@ Recomendamos ingresar un valor entre 10 y 20 miembros por 10 segundos para una b
 
 Puedes dejarlo en el valor predeterminado (5 minutos) o ajustarlo al valor deseado haciendo clic en el boton "**Valor personalizado**".
 
+#### Cerrar los MD automaticamente {#close-dm}
+
+Puedes configurar el **auto raid mode** para que **cierre automaticamente los MD del servidor** en cuanto se active. Esto anade una capa de proteccion adicional durante un raid: las cuentas nuevas ya no pueden contactar a tus miembros en privado para intentar phishing o estafarlos.
+
+1. Ejecuta el [comando `/settings`](../setup.md#settings).
+2. Haz clic en el boton "**Auto RaidMode**".
+3. Activa la opcion "**Cerrar los MD**".
+
+Cuando el auto raid mode se desactiva (manualmente o automaticamente despues de la duracion configurada), los MD recuperan su configuracion anterior.
+
+:::info
+Esta opcion es complementaria al [Cierre permanente de los MD](./dm-lock.mdx): si la activas sin tener el cierre permanente, los MD solo se cierran durante un raid activo.
+:::
+
 ## Edad minima {#minage}
 
 Para reforzar la seguridad, puedes exigir una edad minima para las cuentas de Discord de los nuevos miembros.

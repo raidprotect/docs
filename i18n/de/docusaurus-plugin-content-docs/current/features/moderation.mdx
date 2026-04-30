@@ -12,6 +12,22 @@ Zusätzlich zu diesen Aktionen sendet RaidProtect dem sanktionierten Nutzer eine
 Moderationsbefehle sind [auch mit Prefix nutzbar](../guides/prefix).
 :::
 
+:::info
+Alle Sanktionsbefehle akzeptieren die Option `[silent]`, um die Zielperson nicht per DM zu benachrichtigen. Die Benachrichtigungs-DMs (Kick, Softban, temporärer Ban) enthalten eine Schaltfläche mit einer Server-Einladung.
+:::
+
+## 🔍 Moderationsansicht eines Mitglieds {#modview}
+
+Der Befehl `/modview` öffnet eine **zentrale Moderationsansicht** eines Mitglieds: seine Sanktionen, seine interne Moderationsnotiz und die zuletzt von ihm gelöschte Nachricht werden in einer einzigen Antwort zusammengefasst, mit Schnellaktionen (sanktionieren, Notiz bearbeiten usw.).
+
+Verwende den Befehl: ```/modview (benutzer)```
+
+Ersetze `(benutzer)` durch die gewünschte Erwähnung oder ID.
+
+:::tip
+Der Befehl ist auch über das Kontextmenü erreichbar: Rechtsklick auf ein Profil → **Anwendungen** → **Modview öffnen**.
+:::
+
 ## 🖱️ Sanktionieren über das Kontextmenü {#context-menu}
 
 Neben Slash-Befehlen kannst du ein Mitglied auch direkt über sein Profil per Rechtsklick sanktionieren: **Anwendungen** → **RaidProtect** → **Sanktionieren**.
@@ -25,9 +41,12 @@ Ein Fenster öffnet sich, in dem du Folgendes angeben kannst:
 
 Der Befehl `/ban` ermöglicht es dir, einem Benutzer dauerhaft den Zugriff auf deinen Server zu verwehren.
 
-Verwende den Befehl: ```/ban (user) [reason]```
+Verwende den Befehl: ```/ban (user) [delete-messages] [silent] [reason]```
 
 Ersetze `(user)` durch die gewünschte Erwähnung oder ID und `[reason]` durch den Grund der Sanktion.
+
+- `[delete-messages]`: Dauer des zu löschenden Nachrichtenverlaufs (zum Beispiel `1h`, `1d`, `7d`). Discord begrenzt die Löschung auf maximal 7 Tage.
+- `[silent]`: keine DM an die Zielperson senden.
 
 :::tip
 Du kannst einen Nutzer über seine [Discord-ID](../guides/id) bannen, selbst wenn er nicht online ist oder deinen Server bereits verlassen hat.
@@ -37,15 +56,27 @@ Du kannst einen Nutzer über seine [Discord-ID](../guides/id) bannen, selbst wen
 
 Der Befehl `/tempban` ermöglicht es dir, einem Benutzer vorübergehend den Zugriff auf deinen Server zu verwehren.
 
-Verwende den Befehl: ```/tempban (user) (duration) [reason]```
+Verwende den Befehl: ```/tempban (user) (duration) [delete-messages] [silent] [reason]```
 
-Ersetze `(user)` durch die gewünschte Erwähnung oder ID, `(duration)` durch die Dauer der Sperre und `[reason]` durch den Grund der Sanktion.
+Ersetze `(user)` durch die gewünschte Erwähnung oder ID, `(duration)` durch die Dauer der Sperre und `[reason]` durch den Grund der Sanktion. Der Parameter `[delete-messages]` ermöglicht es, den Nachrichtenverlauf des Mitglieds zu löschen (bis zu 7 Tage).
+
+### <Icon src="/img/icons/SanctionsSOFTBAN.svg" alt="icon SanctionsSOFTBAN" title=":iconSanctionsSOFTBAN:"/> Ein Mitglied softbannen {#softban}
+
+Der Befehl `/softban` bannt ein Mitglied und entbannt es sofort wieder. Damit kannst du den **Nachrichtenverlauf löschen**, ohne das Mitglied dauerhaft vom Server auszuschließen: Es kann mit einer neuen Einladung zurückkehren.
+
+Verwende den Befehl: ```/softban (member) [delete-messages] [silent] [reason]```
+
+Ersetze `(member)` durch die gewünschte Erwähnung oder ID und `[reason]` durch den Grund der Sanktion. Der Parameter `[delete-messages]` ermöglicht es, die Dauer der zu löschenden Nachrichten zu wählen (Standard: 1 Tag).
+
+:::tip
+Der Softban eignet sich besonders für **gehackte Konten**: Der Spam wird bereinigt und das Konto freigegeben, ohne das Mitglied dauerhaft auszuschließen, sobald es sein Konto gesichert hat.
+:::
 
 ### <Icon src="/img/icons/SanctionsUNBAN.svg" alt="icon SanctionsUNBAN" title=":iconSanctionsUNBAN:"/> Benutzer entsperren {#unban}
 
 Der Befehl `/unban` ermöglicht es dir, die Sperre eines zuvor gesperrten Benutzers aufzuheben, sodass dieser deinem Server erneut beitreten kann.
 
-Verwende den Befehl: ```/unban (user) [reason]```
+Verwende den Befehl: ```/unban (user) [silent] [reason]```
 
 Ersetze `(user)` durch die gewünschte Kennung und `[reason]` durch den Grund der Entsperrung.
 
@@ -53,7 +84,7 @@ Ersetze `(user)` durch die gewünschte Kennung und `[reason]` durch den Grund de
 
 Der Befehl `/kick` ermöglicht es dir, ein Mitglied von deinem Server zu entfernen, ohne es zu bannen. Der Benutzer kann dem Server erneut beitreten, wenn er über eine gültige Einladung verfügt.
 
-Verwende den Befehl: ```/kick (member) [reason]```
+Verwende den Befehl: ```/kick (member) [silent] [reason]```
 
 Ersetze `(member)` durch die gewünschte Erwähnung oder ID und `[reason]` durch den Grund der Sanktion.
 
@@ -61,7 +92,7 @@ Ersetze `(member)` durch die gewünschte Erwähnung oder ID und `[reason]` durch
 
 Der Befehl `/mute` ermöglicht es dir, die Interaktionsmöglichkeiten eines Mitglieds auf dem Server vorübergehend einzuschränken. Während dieser Zeit kann das Mitglied keine Nachrichten senden, nicht reagieren, keinen Sprachkanälen beitreten und keine Direktnachrichten an andere Mitglieder senden.
 
-Verwende den Befehl: ```/mute (member) (duration) [reason] [force_timeout]```
+Verwende den Befehl: ```/mute (member) (duration) [force_timeout] [silent] [reason]```
 
 Ersetze `(member)` durch die gewünschte Erwähnung oder ID, `(duration)` durch die Mute-Dauer (z. B.: `10m`, `1h`, `1d`) und `[reason]` durch den Grund der Sanktion.
 
@@ -73,9 +104,9 @@ Du kannst eine [Mute-Rolle](./sanctions.mdx#mute) und einen [Mute-Schwellenwert]
 
 ### <Icon src="/img/icons/SanctionsUNTIMEOUT.svg" alt="icon SanctionsUNTIMEOUT" title=":iconSanctionsUNTIMEOUT:" /> Stummschaltung eines Nutzers aufheben {#untimeout}
 
-Der Befehl `/untimeout` ermöglicht es dir, die Einschränkungen eines stummgeschalteten Mitglieds sofort aufzuheben, sodass es alle Interaktionsmöglichkeiten auf dem Server wiedererlangt.
+Der Befehl `/unmute` ermöglicht es dir, die Einschränkungen eines stummgeschalteten Mitglieds sofort aufzuheben, sodass es alle Interaktionsmöglichkeiten auf dem Server wiedererlangt.
 
-Verwende den Befehl: ```/untimeout (member) [reason]```
+Verwende den Befehl: ```/unmute (member) [silent] [reason]```
 
 Ersetze `(member)` durch die gewünschte Erwähnung oder ID und `[reason]` durch den Grund für das Aufheben des Timeouts.
 
@@ -83,7 +114,7 @@ Ersetze `(member)` durch die gewünschte Erwähnung oder ID und `[reason]` durch
 
 Der Befehl `/jail` ermöglicht es dir, ein Mitglied zu isolieren, indem ihm eine restriktive Rolle zugewiesen wird. Die Jail soll eine Alternative zum Ban bieten: Das Mitglied behält einen sehr eingeschränkten Zugang zum Server, anstatt vollständig ausgeschlossen zu werden.
 
-Verwende den Befehl: ```/jail (member) [reason]```
+Verwende den Befehl: ```/jail (member) [silent] [reason]```
 
 Ersetze `(member)` durch die gewünschte Erwähnung oder ID und `[reason]` durch den Grund der Sanktion.
 
@@ -95,7 +126,7 @@ Die [Jail-Rolle](./sanctions.mdx#jail) muss über `/settings` konfiguriert werde
 
 Der Befehl `/tempjail` ermöglicht es dir, ein Mitglied für eine festgelegte Dauer temporär einzusperren.
 
-Verwende den Befehl: ```/tempjail (member) (duration) [reason]```
+Verwende den Befehl: ```/tempjail (member) (duration) [silent] [reason]```
 
 Ersetze `(member)` durch die gewünschte Erwähnung oder ID, `(duration)` durch die Dauer der Inhaftierung und `[reason]` durch den Grund der Sanktion.
 
@@ -103,7 +134,7 @@ Ersetze `(member)` durch die gewünschte Erwähnung oder ID, `(duration)` durch 
 
 Der Befehl `/unjail` ermöglicht es dir, die Jail-Rolle eines Mitglieds zu entfernen, sodass es wieder normalen Zugang zum Server erhält.
 
-Verwende den Befehl: ```/unjail (member) [reason]```
+Verwende den Befehl: ```/unjail (member) [silent] [reason]```
 
 Ersetze `(member)` durch die gewünschte Erwähnung oder ID und `[reason]` durch den Grund der Freilassung.
 
@@ -111,9 +142,17 @@ Ersetze `(member)` durch die gewünschte Erwähnung oder ID und `[reason]` durch
 
 Der Befehl `/warn` ermöglicht es dir, ein Mitglied formell zu verwarnen, indem der Bot eine private Nachricht sendet.
 
-Verwende den Befehl: ```/warn (member) [reason]```
+Verwende den Befehl: ```/warn (member) [silent] [reason]```
 
 Ersetze `(member)` durch die gewünschte Erwähnung oder ID und `[reason]` durch den Grund der Verwarnung.
+
+## 📝 Moderationsnotiz {#note}
+
+Der Befehl `/note` ermöglicht es, die **interne Moderationsnotiz** eines Mitglieds hinzuzufügen oder zu ändern, ohne über [`/modview`](#modview) gehen zu müssen. Die Notiz ist nur für Moderatoren sichtbar.
+
+Verwende den Befehl: ```/note (benutzer)```
+
+Ersetze `(benutzer)` durch die gewünschte Erwähnung oder ID. Ein Fenster öffnet sich, um die Notiz einzugeben oder zu ändern.
 
 ## 🧹 Nachrichten eines Kanals löschen {#clear}
 
@@ -127,11 +166,27 @@ Ersetze `(number)` durch die Anzahl der zu löschenden Nachrichten (maximal 100)
 
 Der Befehl `/slowmode` ermöglicht es dir, den Slowmode in einem Textkanal zu aktivieren oder anzupassen, um die Häufigkeit der gesendeten Nachrichten der Nutzer zu begrenzen.
 
-Verwende den Befehl: ```/slowmode (duration) [channel] [reason]```
+Verwende den Befehl: ```/slowmode (interval) [duration] [channel] [reason]```
 
-- Ersetze `(duration)` durch das gewünschte Intervall zwischen den Nachrichten (z. B.: `5s`, `1m`, `10m`, `1h`).
+- Ersetze `(interval)` durch das gewünschte Intervall zwischen den Nachrichten (z. B.: `5s`, `1m`, `10m`, `1h`; `0` zum Deaktivieren).
+- Füge `[duration]` hinzu, um den Slowmode nach dieser Dauer automatisch zu deaktivieren (z. B. `30m`, `2h`).
 - Füge `[channel]` hinzu, wenn du den Slowmode in einem anderen Kanal anwenden möchtest als in dem, in dem du den Befehl eingibst.
 - Füge `[reason]` hinzu, um den Anlass anzugeben, der in den Server-Logs gespeichert wird.
+
+## 🕵️ Eine gelöschte Nachricht abrufen {#snipe}
+
+Der Befehl `/snipe` ermöglicht es, die **zuletzt gelöschte Nachricht** in einem Kanal oder die zuletzt gelöschte Nachricht eines bestimmten Benutzers aus der letzten Stunde abzurufen.
+
+Verwende den Befehl: ```/snipe [benutzer]```
+
+- Ohne Argument: zeigt die zuletzt gelöschte Nachricht des aktuellen Kanals an.
+- Mit `[benutzer]`: zeigt die zuletzt von diesem Benutzer gelöschte Nachricht an.
+
+Aus der Antwort heraus kannst du **den Autor sanktionieren** oder **die Nachricht löschen** (sofern sie noch im Kanal vorhanden ist).
+
+:::info
+`/snipe` ist eine **vorübergehende Lösung** bis zum Update der Logs. Nur Nachrichten, die in der letzten Stunde gelöscht wurden, sind verfügbar.
+:::
 
 ## 📋 Moderationsprotokolle {#logs}
 

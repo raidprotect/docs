@@ -6,9 +6,13 @@ Sometimes it is necessary to temporarily lock a channel to prevent users from se
 
 ## 🔒 Lock a channel {#lock}
 
-Use the command: ```/lock [reason]```
+Use the command: ```/lock [duration] [reason]```
 
 This command removes the permission to send messages from the **@everyone** role in the channel, thereby preventing all users from posting. Replace **[reason]** to indicate why the channel is locked (e.g., *chat cleanup*, *important announcement*, etc.).
+
+### Temporary lock {#lock-duration}
+
+The `[duration]` parameter lets you **automatically unlock the channel** after the specified duration (e.g. `15m`, `1h`, `2d`). Useful for a quick cool-down without having to remember to unlock the channel manually.
 
 ## 🔓 Unlock a channel {#unlock}
 

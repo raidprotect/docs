@@ -14,7 +14,7 @@ The sanctions history automatically records all moderation actions performed on 
 - **Automatic sanctions**: Sanctions applied by anti-spam are also added to the sanctions history.
 - **Bans, kicks and timeouts**: Sanctions applied without using RaidProtect are added to the history.
 - **Discord's Automod**: Sanctions applied by Discord's automod are also added.
-- **Sanction notifications**: Sanctioned members receive a private message informing them of the sanction and its reason. The bot also sends an acknowledgment receipt confirming the sending of this notification.
+- **Sanction notifications**: Sanctioned members receive a private message informing them of the sanction and its reason. The bot also sends a detailed acknowledgment confirming the delivery status: **received**, **DMs closed**, **expired** or **silent** (when the `[silent]` option is used). For kicks, softbans and temporary bans, this message also includes a **button with a server invite** so the member can come back once the sanction is over.
 
 :::info
 All recorded sanctions contain: the sanctioned user, the responsible moderator, the reason (up to 512 characters), the date and time, as well as the type of sanction and whether the user was notified.
@@ -67,9 +67,9 @@ Editing a sanction updates the record in the history but does not change the san
 
 The `/sanctions delete` command allows you to delete a sanction from the history. This action is irreversible.
 
-Use the command: ```/sanctions delete (id)```
+Use the command: ```/sanctions delete (id) [reason]```
 
-Replace `(id)` with the identifier of the sanction to delete.
+Replace `(id)` with the identifier of the sanction to delete. The `[reason]` parameter lets you **justify the deletion**, which will be recorded in the logs.
 
 ![Screenshot of sanction deletion](../assets/rp-sanctions-delete.webp)
 
@@ -96,6 +96,14 @@ When an active and previous sanction is found, you can:
 
 ## ⚙️ Sanctions configuration {#config}
 
+### Disable sanctions {#disable}
+
+You can **fully disable the sanctions system** on your server. When sanctions are disabled, RaidProtect no longer records any sanction in the history and the related commands are unavailable.
+
+1. Use the [command `/settings`](../setup.md#settings).
+2. Click on the "**Sanctions**" button.
+3. Click on "**Sanctions system**" to enable or disable the entire module.
+
 ### Jail {#jail}
 
 Configure the **Jail** to enable a role-based moderation sanction, more restrictive than a standard mute. Once configured, this role allows you to isolate a member with severely limited permissions and unlocks the use of the [`/jail`](./moderation.mdx#jail) and [`/tempjail`](./moderation.mdx#tempjail) commands.
@@ -115,6 +123,15 @@ This channel corresponds to the reserved slot in the [information panels](./disp
 :::info
 If a Jail role is already configured, you can modify the information channel via the dedicated button in the Jail submenu.
 :::
+
+#### Roles during jail {#jail-roles}
+
+In the Jail submenu, the **Roles during jail** button controls what RaidProtect does with the member's roles while they are jailed. Two modes:
+
+- **Add the jail role** *(default)*: the Jail role is simply added on top of the member's existing roles.
+- **Replace with the jail role**: RaidProtect **removes all of the member's roles** for the duration of the jail and restores them on release. Stricter, this prevents a role with explicit permissions from bypassing the Jail role's restrictions.
+
+Click the button to switch between the two modes.
 
 ### Mute Role {#mute}
 
@@ -136,6 +153,11 @@ Configure the **Mute role threshold** to define from what duration the bot will 
 
 :::info
 The 28-day timeout limit is imposed by Discord. Beyond this duration, the Mute role will always be used if configured.
+:::
+:::info
+**Timeouts applied by Discord's AutoMod** are automatically converted to a role-based mute when their duration exceeds the configured threshold, to ensure consistency with your manual sanctions. The duration remains capped at 28 days (Discord limit).
+
+This feature is currently in **public beta for Premium servers**.
 :::
 
 ### Sanctions Privacy {#sanctions-privacy}

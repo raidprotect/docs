@@ -79,6 +79,19 @@ Here are the different **available sanctions** as well as the **triggers** that 
 
 ![Anti-spam sanctions screenshot](../assets/rp-settings-anti-spam-sanctions.webp)
 
+#### Sanctions duration {#duration}
+
+When the sanctions applied by the anti-spam support a duration (mute, timeout, jail), you can set a **single duration** applied to all of these sanctions instead of keeping each trigger's default.
+
+1. Run the [`/settings` command](../setup.md#settings).
+2. Click the "**Anti-spam**" button.
+3. Go to the "**Sanctions**" tab.
+4. Pick a predefined duration in the "**Sanctions duration**" selector, or click "**Custom duration**" to enter the value of your choice (e.g. `30m`, `2h`, `7d`).
+
+:::info
+The duration is ignored for sanctions that do not support one (kick, softban, ban, warn).
+:::
+
 ## 📑 Anti-spam logs {#logs}
 
 Detailed logs are generated with all messages deleted by the anti-spam. You can simply download or expand the content.
