@@ -6,7 +6,7 @@ Le **HoneyPot** (ou salon-piège) de RaidProtect est un salon où **personne ne 
 
 ## ❓ Comment ça marche ? {#working}
 
-Quand vous activez le HoneyPot, RaidProtect crée un salon textuel **tout en haut de votre serveur**, avec un nom clair tiré au hasard parmi `dont-talk`, `do-not-write`, `read-only`, `silent`, `quiet`, etc. Ce salon a trois caractéristiques :
+Quand vous activez le HoneyPot, RaidProtect crée un salon textuel **tout en haut de votre serveur**, avec un nom clair tiré au hasard. Ce salon a trois caractéristiques :
 - **Tout le monde peut y écrire**, y compris les membres qui n'ont pas encore validé le captcha. C'est fait exprès : un compte piraté ou un robot ne doit pas pouvoir éviter le piège.
 - **Un message d'avertissement** est posté à la création du salon, avec un bouton "Traduire" pour que chacun puisse le lire dans sa langue.
 - **Un compteur public** affiche le nombre de comptes déjà attrapés par le piège, mis à jour automatiquement.
