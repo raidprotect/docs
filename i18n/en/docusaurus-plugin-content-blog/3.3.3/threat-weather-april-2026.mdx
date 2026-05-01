@@ -18,7 +18,7 @@ April 2026 recap across the **355,000 Discord servers** protected by RaidProtect
 
 ## 🛰️ Recap: ScamLens, RaidProtect's image anti-scam {#what-is-scamlens}
 
-ScamLens is the **image anti-scam** module of RaidProtect, the **Discord protection bot**. It analyzes every image in real time and automatically deletes the ones it identifies as fraudulent: **crypto scams**, **fake celebrity giveaways** (MrBeast, Elon Musk, Kick, Stake…), **fake online casino promotions**. No rules to write, no blocklist to maintain: just [add RaidProtect](https://raidprotect.bot/invite), ScamLens activates by default.
+ScamLens is the **image anti-scam** module of RaidProtect, the **Discord protection bot**. It analyzes every image in real time and automatically deletes the ones it identifies as fraudulent: **crypto scams**, **fake celebrity giveaways** (MrBeast, Elon Musk, Kick, Stake…), **fake online casino promotions**. No rules to write, no blocklist to maintain: just [add RaidProtect](https://raidprotect.bot/en/invite), ScamLens activates by default.
 
 <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '280px 280px', gap: '8px'}}>
   <img src={require('../../../../blog/3.3.1/assets/scam-1.png').default} alt="MrBeast Crypto Casino Scam 1" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
@@ -29,7 +29,7 @@ ScamLens is the **image anti-scam** module of RaidProtect, the **Discord protect
 
 ## 📊 ScamLens recap since February 14, 2026 {#stats}
 
-Cumulative data since the [early activation of ScamLens](/blog/scamlens-early-activation) on <Timestamp value={1771023600} format="D" />, across the **355,000 Discord servers** protected by RaidProtect:
+Cumulative data since the [early activation of ScamLens](/en/blog/scamlens-early-activation) on <Timestamp value={1771023600} format="D" />, across the **355,000 Discord servers** protected by RaidProtect:
 
 | **Indicator (cumulative since February 14)** | **March 21, 2026** | **May 1, 2026** | **Change** |
 |---|---|---|---|
@@ -38,7 +38,7 @@ Cumulative data since the [early activation of ScamLens](/blog/scamlens-early-ac
 | Fraudulent images deleted | 260,000 | **1,400,000** | **+440%** |
 | Hacked Discord accounts identified | 15,000 | **40,000** | **+167%** |
 
-The volume of deleted images has **more than quintupled**: the [extended coverage](/blog/scamlens-1-month-recap#coverage) now catches images that were escaping analysis for technical reasons related to the Discord CDN. The unique image catalog only grows by 32% because attackers keep cycling through a few **visual clusters** (re-crops, filters, retouches).
+The volume of deleted images has **more than quintupled**: the [extended coverage](/en/blog/scamlens-1-month-recap#coverage) now catches images that were escaping analysis for technical reasons related to the Discord CDN. The unique image catalog only grows by 32% because attackers keep cycling through a few **visual clusters** (re-crops, filters, retouches).
 
 A **"2-image" variant** (instead of 4) has appeared during the period; ScamLens covers it, and several **spikes of ~2,000 deletions per minute** have already been intercepted. Each image is processed in **~400 ms**, before most members have even had time to see it.
 
@@ -52,9 +52,9 @@ We now apply a **24-hour automatic timeout** to any account flagged by ScamLens.
 
 ### 🍯 The RaidProtect HoneyPot {#honeypot}
 
-A **[Discord HoneyPot](https://docs.raidprotect.bot/features/honeypot)** (or "trap channel") is a channel where no legitimate member is supposed to post. **Hacked accounts** and **spam bots**, on the other hand, dump their payload (images, links, mentions, pings) into **every channel** without filtering, including the trap. Any message landing there triggers an **automatic sanction**, regardless of its content.
+A **[Discord HoneyPot](https://docs.raidprotect.bot/en/features/honeypot)** (or "trap channel") is a channel where no legitimate member is supposed to post. **Hacked accounts** and **spam bots**, on the other hand, dump their payload (images, links, mentions, pings) into **every channel** without filtering, including the trap. Any message landing there triggers an **automatic sanction**, regardless of its content.
 
-**RaidProtect now ships its own HoneyPot.** With [`/settings` → **HoneyPot**](https://docs.raidprotect.bot/features/honeypot), the bot creates the channel, places it at the top of the server, and posts a translated warning message.
+**RaidProtect now ships its own HoneyPot.** With [`/settings` → **HoneyPot**](https://docs.raidprotect.bot/en/features/honeypot), the bot creates the channel, places it at the top of the server, and posts a translated warning message.
 
 #### Why the RaidProtect HoneyPot rather than another? {#honeypot-vs-others}
 
@@ -87,16 +87,16 @@ Any **crypto "giveaway"**, **online casino** with a celebrity logo or **miracle 
 A **HoneyPot** (or trap channel) is a channel visible to everyone but where **no legitimate member should write**. Any message that lands there is necessarily automated spam: RaidProtect automatically sanctions the account (ban, softban, kick, timeout, jail or mute, your choice).
 
 #### How do I enable the HoneyPot on my Discord server? {#activer-honeypot}
-[Add RaidProtect](https://raidprotect.bot/invite), run `/settings` → **HoneyPot**, then "**Create the channel**". The bot creates the trap channel, places it at the top of the server and posts a translated warning message. Details in the [documentation](https://docs.raidprotect.bot/features/honeypot).
+[Add RaidProtect](https://raidprotect.bot/en/invite), run `/settings` → **HoneyPot**, then "**Create the channel**". The bot creates the trap channel, places it at the top of the server and posts a translated warning message. Details in the [documentation](https://docs.raidprotect.bot/en/features/honeypot).
 
 #### Does RaidProtect automatically protect against spam? {#raidprotect-spam-auto}
-Yes. [Add RaidProtect](https://raidprotect.bot/invite) with the recommended permissions: **ScamLens is active by default** and deletes fraudulent images in ~400 ms. The **HoneyPot** activates in one click via `/settings` to close the blind spots (link spam, text raids, new image formats).
+Yes. [Add RaidProtect](https://raidprotect.bot/en/invite) with the recommended permissions: **ScamLens is active by default** and deletes fraudulent images in ~400 ms. The **HoneyPot** activates in one click via `/settings` to close the blind spots (link spam, text raids, new image formats).
 
 ---
 
 :::tip 📚 Useful resources
-- 🔗 [Add RaidProtect to your server](https://raidprotect.bot/invite)
-- 📘 [HoneyPot documentation](https://docs.raidprotect.bot/features/honeypot)
+- 🔗 [Add RaidProtect to your server](https://raidprotect.bot/en/invite)
+- 📘 [HoneyPot documentation](https://docs.raidprotect.bot/en/features/honeypot)
 - 💡 [Submit a suggestion](https://suggestions.raidprotect.bot/)
 - 📣 [Join our Discord server](https://raidprotect.bot/discord)
 :::
