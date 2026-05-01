@@ -5,12 +5,12 @@ authors: [zallom]
 slug: threat-weather-april-2026
 date: 2026-05-01
 image: ../../../../blog/3.3.3/assets/rp-scamlens-2-month-recap.webp
-description: Bilanz April 2026 auf Discord, 1,41 Millionen Scam-Bilder von ScamLens entfernt und 40.000 gehackte Konten identifiziert. Wir bringen zudem den HoneyPot heraus, einen Anti-Spam-Fallenkanal, der ScamLens vervollständigt, indem er noch nicht katalogisierte Scams und andere Spam-Arten (Links, Erwähnungen, Text-Raids) abfängt.
+description: Bilanz April 2026 auf Discord, 1,4 Millionen Scam-Bilder von ScamLens entfernt und 40.000 gehackte Konten identifiziert. Wir bringen zudem den HoneyPot heraus, einen Anti-Spam-Fallenkanal, der ScamLens vervollständigt, indem er noch nicht katalogisierte Scams und andere Spam-Arten (Links, Erwähnungen, Text-Raids) abfängt.
 ---
 
 import Timestamp from '@site/src/components/Timestamp';
 
-Bilanz April 2026 auf den **355.000 Discord-Servern**, die von RaidProtect geschützt werden (vom 21. März bis 1. Mai 2026): **1,41 Millionen Scam-Bilder entfernt** durch ScamLens und **40.000 gehackte Discord-Konten** identifiziert. Wir bringen zudem den **HoneyPot** heraus, einen neuen **Anti-Spam-Fallenkanal**, der ScamLens vervollständigt, indem er **noch nicht katalogisierte Scams** und andere Formen von automatisiertem Spam abfängt (Links, Erwähnungen, Text-Raids).
+Bilanz April 2026 auf den **355.000 Discord-Servern**, die von RaidProtect geschützt werden (vom 21. März bis 1. Mai 2026): **1,4 Millionen Scam-Bilder entfernt** durch ScamLens und **40.000 gehackte Discord-Konten** identifiziert. Wir bringen zudem den **HoneyPot** heraus, einen neuen **Anti-Spam-Fallenkanal**, der ScamLens vervollständigt, indem er **noch nicht katalogisierte Scams** und andere Formen von automatisiertem Spam abfängt (Links, Erwähnungen, Text-Raids).
 
 ![RaidProtect: Bedrohungslage April 2026](../../../../blog/3.3.3/assets/rp-scamlens-2-month-recap.webp)
 
@@ -33,9 +33,9 @@ Kumulierte Daten seit der [vorzeitigen Aktivierung von ScamLens](/de/blog/scamle
 
 | **Kennzahl (kumuliert seit dem 14. Februar)** | **21. März 2026** | **1. Mai 2026** | **Entwicklung** |
 |---|---|---|---|
-| Analysierte Bilder (einzigartig) | 162.000 | **896.000** | **+453 %** |
-| Erkannte Scam-Bilder (einzigartig) | 62.000 | **81.645** | +32 % |
-| Entfernte betrügerische Bilder | 260.000 | **1.406.233** | **+441 %** |
+| Analysierte Bilder (einzigartig) | 162.000 | **890.000** | **+450 %** |
+| Erkannte Scam-Bilder (einzigartig) | 62.000 | **82.000** | +32 % |
+| Entfernte betrügerische Bilder | 260.000 | **1.400.000** | **+440 %** |
 | Identifizierte gehackte Discord-Konten | 15.000 | **40.000** | **+167 %** |
 
 Das Volumen der entfernten Bilder hat sich **mehr als verfünffacht**: Die [erweiterte Abdeckung](/de/blog/scamlens-1-month-recap#coverage) erfasst nun Bilder, die der Analyse aus technischen Gründen rund um Discords CDN bislang entgingen. Der Katalog einzigartiger Bilder wächst nur um 32 %, weil die Angreifer einige **visuelle Cluster** ständig variieren (Zuschnitte, Filter, Retuschen).
@@ -60,7 +60,7 @@ Ein **Discord-HoneyPot** (oder „Fallenkanal") ist ein Kanal, in dem kein legit
 
 Unser HoneyPot ist **direkt mit ScamLens verbunden**:
 
-- **ScamLens kommt zuerst.** Wenn ein in der Falle gepostetes Bild bereits bekannt ist, wird es in ~400 ms entfernt, und der HoneyPot **löst nicht aus**: Er lässt ScamLens wirken.
+- **ScamLens kommt zuerst.** Wenn ein in der Falle gepostetes Bild bereits bekannt ist, wird es entfernt und der HoneyPot **löst nicht aus**: Er lässt ScamLens wirken.
 - **Der HoneyPot bereichert ScamLens.** Jedes neue Bild, das in einem Fallenkanal abgefangen wird, fließt in unseren Katalog ein, der dann die Welle **auf den 355.000 geschützten Servern** blockiert.
 
 #### Was jeder abdeckt {#scamlens-honeypot}

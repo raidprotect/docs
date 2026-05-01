@@ -5,12 +5,12 @@ authors: [zallom]
 slug: threat-weather-april-2026
 date: 2026-05-01
 image: ./assets/rp-scamlens-2-month-recap.webp
-description: Bilan avril 2026 sur Discord, 1,41 million d'images d'arnaque supprimées par ScamLens et 40 000 comptes piratés identifiés. On lance aussi le HoneyPot, un salon-piège antispam qui complète ScamLens en attrapant les arnaques pas encore catalogués et les autres types de spam (liens, mentions, raids texte).
+description: Bilan avril 2026 sur Discord, 1,4 million d'images d'arnaque supprimées par ScamLens et 40 000 comptes piratés identifiés. On lance aussi le HoneyPot, un salon-piège antispam qui complète ScamLens en attrapant les arnaques pas encore catalogués et les autres types de spam (liens, mentions, raids texte).
 ---
 
 import Timestamp from '@site/src/components/Timestamp';
 
-Bilan d'avril 2026 sur les **355 000 serveurs Discord** protégés par RaidProtect (du 21 mars au 1er mai 2026) : **1,41 million d'images d'arnaque supprimées** par ScamLens et **40 000 comptes Discord piratés** identifiés. On lance aussi le **HoneyPot**, un nouveau **salon-piège antispam** qui complète ScamLens en attrapant les **scams pas encore catalogués** et les autres formes de spam automatisé (liens, mentions, raids texte).
+Bilan d'avril 2026 sur les **355 000 serveurs Discord** protégés par RaidProtect (du 21 mars au 1er mai 2026) : **1,4 million d'images d'arnaque supprimées** par ScamLens et **40 000 comptes Discord piratés** identifiés. On lance aussi le **HoneyPot**, un nouveau **salon-piège antispam** qui complète ScamLens en attrapant les **scams pas encore catalogués** et les autres formes de spam automatisé (liens, mentions, raids texte).
 
 ![RaidProtect : Météo des menaces Avril 2026](./assets/rp-scamlens-2-month-recap.webp)
 
@@ -33,9 +33,9 @@ Données cumulées depuis l'[activation anticipée de ScamLens](/blog/scamlens-e
 
 | **Indicateur (cumulé depuis le 14 février)** | **21 mars 2026** | **1er mai 2026** | **Évolution** |
 |---|---|---|---|
-| Images analysées (uniques) | 162 000 | **896 000** | **+453 %** |
-| Images de scam détectées (uniques) | 62 000 | **81 645** | +32 % |
-| Images frauduleuses supprimées | 260 000 | **1 406 233** | **+441 %** |
+| Images analysées (uniques) | 162 000 | **890 000** | **+450 %** |
+| Images de scam détectées (uniques) | 62 000 | **82 000** | +32 % |
+| Images frauduleuses supprimées | 260 000 | **1 400 000** | **+440 %** |
 | Comptes Discord piratés identifiés | 15 000 | **40 000** | **+167 %** |
 
 Le volume d'images supprimées a **plus que quintuplé** : la [couverture étendue](/blog/scamlens-1-month-recap#coverage) capte désormais des images qui échappaient à l'analyse pour des raisons techniques liées au CDN Discord. Le catalogue d'images uniques ne progresse que de 32 % parce que les attaquants déclinent quelques **clusters visuels** en permanence (recadrages, filtres, retouches).
@@ -60,7 +60,7 @@ Un **HoneyPot Discord** (ou « salon-piège ») est un salon où aucun membre l�
 
 Notre HoneyPot est **directement relié à ScamLens** :
 
-- **ScamLens passe en premier.** Si une image postée dans le piège est déjà connue, elle est supprimée en ~400 ms et le HoneyPot **ne de déclenche pas** : il laisse ScamLens agir.
+- **ScamLens passe en premier.** Si une image postée dans le piège est déjà connue, elle est supprimée et le HoneyPot **ne se déclenche pas** : il laisse ScamLens agir.
 - **Le HoneyPot enrichit ScamLens.** Toute nouvelle image attrapée dans un salon-piège alimente notre catalogue, qui bloque ensuite la vague **sur les 355 000 serveurs protégés**.
 
 #### Ce que chacun couvre {#scamlens-honeypot}
