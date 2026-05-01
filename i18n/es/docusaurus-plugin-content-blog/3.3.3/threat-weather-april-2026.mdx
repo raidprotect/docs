@@ -1,0 +1,102 @@
+---
+title: 40 000 cuentas de Discord hackeadas bloqueadas + nuevo HoneyPot
+tags: [threats]
+authors: [zallom]
+slug: threat-weather-april-2026
+date: 2026-05-01
+image: ../../../../blog/3.3.3/assets/rp-scamlens-2-month-recap.webp
+description: Balance de abril de 2026 en Discord, 1,41 millones de imágenes de scam eliminadas por ScamLens y 40 000 cuentas hackeadas identificadas. Lanzamos además el HoneyPot, un canal-trampa antispam que complementa a ScamLens al atrapar los scams aún no catalogados y los demás tipos de spam (enlaces, menciones, raids de texto).
+---
+
+import Timestamp from '@site/src/components/Timestamp';
+
+Balance de abril de 2026 en los **355 000 servidores de Discord** protegidos por RaidProtect (del 21 de marzo al 1 de mayo de 2026): **1,41 millones de imágenes de scam eliminadas** por ScamLens y **40 000 cuentas de Discord hackeadas** identificadas. Lanzamos además el **HoneyPot**, un nuevo **canal-trampa antispam** que complementa a ScamLens al atrapar los **scams aún no catalogados** y las demás formas de spam automatizado (enlaces, menciones, raids de texto).
+
+![RaidProtect: Meteorología de las amenazas Abril 2026](../../../../blog/3.3.3/assets/rp-scamlens-2-month-recap.webp)
+
+{/* truncate */}
+
+## 🛰️ Recordatorio: ScamLens, el anti-scam de imágenes de RaidProtect {#what-is-scamlens}
+
+ScamLens es el módulo **anti-scam de imágenes** de RaidProtect, el **bot de protección para Discord**. Analiza cada imagen en tiempo real y elimina automáticamente las que identifica como fraudulentas: **estafas cripto**, **falsos sorteos de famosos** (MrBeast, Elon Musk, Kick, Stake…), **falsas promociones de casinos en línea**. Sin reglas que escribir, sin listas negras que mantener: basta con [añadir RaidProtect](https://raidprotect.bot/invite), ScamLens se activa por defecto.
+
+<div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '280px 280px', gap: '8px'}}>
+  <img src={require('../../../../blog/3.3.1/assets/scam-1.png').default} alt="MrBeast Crypto Casino Scam 1" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-2.png').default} alt="MrBeast Crypto Casino Scam 2" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-3.png').default} alt="MrBeast Crypto Casino Scam 3" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-4.png').default} alt="MrBeast Crypto Casino Scam 4" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+</div>
+
+## 📊 Balance de ScamLens desde el 14 de febrero de 2026 {#stats}
+
+Datos acumulados desde la [activación anticipada de ScamLens](/blog/scamlens-early-activation) el <Timestamp value={1771023600} format="D" />, en los **355 000 servidores de Discord** protegidos por RaidProtect:
+
+| **Indicador (acumulado desde el 14 de febrero)** | **21 de marzo de 2026** | **1 de mayo de 2026** | **Evolución** |
+|---|---|---|---|
+| Imágenes analizadas (únicas) | 162 000 | **896 000** | **+453 %** |
+| Imágenes de scam detectadas (únicas) | 62 000 | **81 645** | +32 % |
+| Imágenes fraudulentas eliminadas | 260 000 | **1 406 233** | **+441 %** |
+| Cuentas de Discord hackeadas identificadas | 15 000 | **40 000** | **+167 %** |
+
+El volumen de imágenes eliminadas se ha **más que quintuplicado**: la [cobertura ampliada](/blog/scamlens-1-month-recap#coverage) capta ahora imágenes que escapaban al análisis por motivos técnicos relacionados con la CDN de Discord. El catálogo de imágenes únicas solo crece un 32 % porque los atacantes declinan permanentemente unos pocos **clusters visuales** (recortes, filtros, retoques).
+
+Una **variante «2 imágenes»** (en lugar de 4) ha aparecido durante el periodo; ScamLens la cubre, y ya se han interceptado varios **picos de ~2 000 eliminaciones por minuto**. Cada imagen se procesa en **~400 ms**, antes incluso de que la mayoría de miembros haya tenido tiempo de verla.
+
+---
+
+## 🆕 Novedades {#updates}
+
+### ⏱️ Timeout automático de 24 h {#scamlens-timeout}
+
+Aplicamos ahora un **timeout automático de 24 h** a toda cuenta detectada por ScamLens. Esto le da al propietario legítimo (casi siempre víctima de un hackeo) tiempo para recuperar el acceso y cortar el de los atacantes.
+
+### 🍯 El HoneyPot de RaidProtect {#honeypot}
+
+Un **HoneyPot de Discord** (o «canal-trampa») es un canal donde ningún miembro legítimo debe escribir. Las **cuentas hackeadas** y los **bots de spam**, en cambio, sueltan su carga (imágenes, enlaces, menciones, pings) en **todos los canales** sin filtrar, así que también en la trampa. Cualquier mensaje que llegue ahí dispara una **sanción automática**, sea cual sea su contenido.
+
+**RaidProtect integra ahora su propio HoneyPot.** Con [`/settings` → **HoneyPot**](https://docs.raidprotect.bot/features/honeypot), el bot crea el canal, lo coloca en la parte superior del servidor y publica un mensaje de advertencia traducido.
+
+#### ¿Por qué el HoneyPot de RaidProtect en lugar de otro? {#honeypot-vs-others}
+
+Nuestro HoneyPot está **directamente conectado a ScamLens**:
+
+- **ScamLens pasa primero.** Si una imagen publicada en la trampa ya es conocida, se elimina en ~400 ms y el HoneyPot **no se dispara**: deja actuar a ScamLens.
+- **El HoneyPot enriquece a ScamLens.** Toda nueva imagen atrapada en un canal-trampa alimenta nuestro catálogo, que después bloquea la oleada **en los 355 000 servidores protegidos**.
+
+#### Lo que cubre cada uno {#scamlens-honeypot}
+
+- **ScamLens** = imágenes de scam conocidas, eliminadas con timeout de 24 h.
+- **HoneyPot** = todo lo demás: **spam de enlaces, raids de texto, menciones masivas, bots**, y **nuevas imágenes** aún no identificadas.
+
+ScamLens está activo por defecto. **Activar el HoneyPot no rompe nada**, viene a cerrar los puntos ciegos.
+
+---
+
+## ❓ FAQ {#faq}
+
+#### ¿Por qué mi cuenta de Discord envía mensajes sola? {#compte-discord-envoie-messages-seul}
+Tu cuenta probablemente ha sido **hackeada**. Los estafadores roban el **token de autenticación** (web falsa, software infectado, extensión maliciosa) y lo usan para spamear imágenes de scam en todos los servidores donde estás. Cambia tu contraseña de Discord, activa la **doble autenticación** y revoca las sesiones activas.
+
+#### ¿Qué hago si uno de mis miembros difunde un scam cripto? {#membre-diffuse-scam-crypto}
+No lo banees: casi siempre es una **cuenta hackeada**, no un usuario malicioso. Contáctalo en privado para que asegure su cuenta. ScamLens ya elimina la imagen al vuelo, sin castigar al propietario legítimo.
+
+#### ¿Cómo reconocer una promoción cripto falsa en Discord? {#reconnaitre-fausse-promo-crypto}
+Cualquier **«regalo» cripto**, **casino en línea** con logo de famoso o **inversión milagrosa** es una estafa. Discord nunca organiza distribuciones de criptomonedas, y ninguna marca seria hace spam multi-servidor.
+
+#### ¿Qué es un HoneyPot en Discord? {#qu-est-ce-qu-un-honeypot}
+Un **HoneyPot** (o canal-trampa) es un canal visible para todos pero donde **ningún miembro legítimo debe escribir**. Cualquier mensaje que aterrice ahí es necesariamente spam automatizado: RaidProtect sanciona automáticamente la cuenta (ban, softban, kick, timeout, jail o mute, a tu elección).
+
+#### ¿Cómo activo el HoneyPot en mi servidor de Discord? {#activer-honeypot}
+[Añade RaidProtect](https://raidprotect.bot/invite), ejecuta `/settings` → **HoneyPot**, después «**Crear el canal**». El bot crea el canal-trampa, lo coloca en la parte superior del servidor y publica un mensaje de advertencia traducido. Más detalles en la [documentación](https://docs.raidprotect.bot/features/honeypot).
+
+#### ¿RaidProtect protege automáticamente contra el spam? {#raidprotect-spam-auto}
+Sí. [Añade RaidProtect](https://raidprotect.bot/invite) con los permisos recomendados: **ScamLens está activo por defecto** y elimina las imágenes fraudulentas en ~400 ms. El **HoneyPot** se activa con un clic vía `/settings` para cerrar los puntos ciegos (spam de enlaces, raids de texto, nuevos formatos de imágenes).
+
+---
+
+:::tip 📚 Recursos útiles
+- 🔗 [Añadir RaidProtect a tu servidor](https://raidprotect.bot/invite)
+- 📘 [Documentación HoneyPot](https://docs.raidprotect.bot/features/honeypot)
+- 💡 [Enviar una sugerencia](https://suggestions.raidprotect.bot/)
+- 📣 [Unirse a nuestro servidor de Discord](https://raidprotect.bot/discord)
+:::
