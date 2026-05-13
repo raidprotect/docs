@@ -154,6 +154,18 @@ Verwende den Befehl: ```/note (benutzer)```
 
 Ersetze `(benutzer)` durch die gewünschte Erwähnung oder ID. Ein Fenster öffnet sich, um die Notiz einzugeben oder zu ändern.
 
+## 🏷️ Pseudonym eines Mitglieds ändern {#nick}
+
+Der Befehl `/nick` ermöglicht es dir, das Pseudonym eines Mitglieds auf dem Server zu ändern oder zurückzusetzen.
+
+Verwende den Befehl: ```/nick (mitglied) [pseudonym]```
+
+Ersetze `(mitglied)` durch die gewünschte Erwähnung oder ID. Der Parameter `[pseudonym]` ist das neue zu vergebende Pseudonym (maximal 32 Zeichen). Wird er weggelassen, wird das Pseudonym des Mitglieds zurückgesetzt.
+
+:::info
+Der Befehl erfordert die Discord-Berechtigung **Pseudonyme verwalten** und ist auch über die Aliase `nickname`, `rename` und `setnick` als [Präfix-Befehl](../guides/prefix) erreichbar. Änderungen werden in den Server-Logs protokolliert.
+:::
+
 ## 🧹 Nachrichten eines Kanals löschen {#clear}
 
 Der Befehl `/clear` ermöglicht es dir, in einem Textkanal schnell eine bestimmte Anzahl von Nachrichten zu löschen. Du kannst auch einen Nutzer angeben, um nur seine Nachrichten zu entfernen.

@@ -154,6 +154,18 @@ Use the command: ```/note (user)```
 
 Replace `(user)` with the desired mention or ID. A window opens to enter or edit the note.
 
+## 🏷️ Change a member's nickname {#nick}
+
+The `/nick` command lets you change a member's nickname on the server, or reset it.
+
+Use the command: ```/nick (member) [nickname]```
+
+Replace `(member)` with the desired mention or ID. The `[nickname]` parameter is the new nickname to apply (32 characters maximum). If omitted, the member's nickname is reset.
+
+:::info
+The command requires the Discord **Manage Nicknames** permission and is also accessible via the aliases `nickname`, `rename` and `setnick` as a [prefix command](../guides/prefix). Changes are recorded in the server logs.
+:::
+
 ## 🧹 Clear a Group of Messages {#clear}
 
 The `/clear` command allows you to quickly delete a certain number of messages in a text channel. You can specify a user to delete only their messages.

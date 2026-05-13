@@ -154,6 +154,18 @@ Usa el comando: ```/note (user)```
 
 Reemplaza `(user)` con la mencion o ID deseado. Se abre una ventana para escribir o modificar la nota.
 
+## 🏷️ Cambiar el apodo de un miembro {#nick}
+
+El comando `/nick` te permite modificar el apodo de un miembro en el servidor, o restablecerlo.
+
+Usa el comando: ```/nick (miembro) [apodo]```
+
+Reemplaza `(miembro)` con la mención o ID deseado. El parámetro `[apodo]` es el nuevo apodo a aplicar (32 caracteres máximo). Si se omite, el apodo del miembro se restablece.
+
+:::info
+El comando requiere el permiso de Discord **Gestionar apodos** y también es accesible mediante los alias `nickname`, `rename` y `setnick` como [comando con prefijo](../guides/prefix). Los cambios se registran en los logs del servidor.
+:::
+
 ## 🧹 Eliminar un grupo de mensajes {#clear}
 
 El comando `/clear` te permite eliminar rapidamente una cierta cantidad de mensajes en un canal de texto. Puedes especificar un usuario para eliminar solo sus mensajes.

@@ -154,6 +154,18 @@ Utilisez la commande : ```/note (utilisateur)```
 
 Remplacez `(utilisateur)` par la mention ou l’identifiant souhaité. Une fenêtre s’ouvre pour saisir ou modifier la note.
 
+## 🏷️ Changer le pseudo d’un membre {#nick}
+
+La commande `/nick` vous permet de modifier le pseudo d’un membre sur le serveur, ou de le réinitialiser.
+
+Utilisez la commande : ```/nick (membre) [pseudo]```
+
+Remplacez `(membre)` par la mention ou l’identifiant souhaité. Le paramètre `[pseudo]` est le nouveau pseudo à appliquer (32 caractères maximum). S’il est omis, le pseudo du membre est réinitialisé.
+
+:::info
+La commande nécessite la permission Discord **Gérer les pseudos** et est aussi accessible via les alias `nickname`, `rename` et `setnick` en [commande par préfixe](../guides/prefix). Les changements sont enregistrés dans les logs du serveur.
+:::
+
 ## 🧹 Supprimer un groupe de messages {#clear}
 
 La commande `/clear` vous permet de supprimer rapidement un certain nombre de messages dans un salon texte. Vous pouvez spécifier un utilisateur pour ne supprimer que ses messages.
