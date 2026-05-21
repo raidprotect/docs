@@ -39,11 +39,11 @@ Usa `/settings` no teu servidor Discord e clica em "Premium", ou vai diretamente
 
 ## ✨ O que o Premium oferece hoje {#features}
 
-### 🏷️ [Nomes de sanções personalizáveis](/features/sanctions#custom-names)
+### 🏷️ [Nomes de sanções personalizáveis](/docs/features/sanctions#custom-names)
 
 Renomeia cada tipo de sanção para corresponder ao vocabulário do teu servidor. O nome apresentado, o verbo utilizado nas mensagens e a formulação da mensagem privada enviada ao membro sancionado são todos configuráveis livremente.
 
-### 🔐 [Authentication Manager: limites alargados](/features/authentication-manager)
+### 🔐 [Authentication Manager: limites alargados](/docs/features/authentication-manager)
 
 Na versão gratuita, o Authentication Manager está limitado a 3 funções protegidas, 20 utilizadores e sessões de 8 horas no máximo. O Premium eleva estes limites:
 
@@ -53,7 +53,7 @@ Na versão gratuita, o Authentication Manager está limitado a 3 funções prote
 | Utilizadores | 20 | 50 |
 | Duração máx. de sessão | 8h | 24h |
 
-### 📋 [Painéis de informação: limites alargados](/features/display)
+### 📋 [Painéis de informação: limites alargados](/docs/features/display)
 
 Passa de 2 para 4 painéis de informação públicos (+ o slot reservado para o Jail), para cobrir mais conteúdo no teu servidor.
 
@@ -63,7 +63,7 @@ Obtém acesso antecipado a certas funcionalidades experimentais antes do seu lan
 
 ---
 
-Para a lista completa de alterações, consulta [o changelog](/changelog).
+Para a lista completa de alterações, consulta [o changelog](/docs/changelog).
 
 :::tip Recursos úteis
 - [Adicionar o RaidProtect ao teu servidor](https://raidprotect.bot/invite)
