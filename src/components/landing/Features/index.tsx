@@ -1,10 +1,11 @@
 import React, {type ReactNode} from 'react';
 import clsx from 'clsx';
+import Link from '@docusaurus/Link';
 import shared from '../styles/shared.module.css';
 import styles from './styles.module.css';
 
 type Feature = {
-  href: string;
+  to: string;
   icon: string;
   iconAlt: string;
   title: string;
@@ -13,7 +14,7 @@ type Feature = {
 
 const FEATURES: Feature[] = [
   {
-    href: 'https://docs.raidprotect.bot/features/anti-spam',
+    to: '/docs/features/anti-spam',
     icon: '/img/landing/iconAntispamWhite.svg',
     iconAlt: 'RaidProtect icon Antispam',
     title: 'Protection anti-spam',
@@ -21,7 +22,7 @@ const FEATURES: Feature[] = [
       'Sanctionnez instantanément les tentatives de spam, sans aucune intervention de votre part.',
   },
   {
-    href: 'https://docs.raidprotect.bot/features/raid-mode',
+    to: '/docs/features/raid-mode',
     icon: '/img/landing/iconAntiraidWhite.svg',
     iconAlt: 'RaidProtect icon Antiraid',
     title: 'Blocage des raids',
@@ -29,7 +30,7 @@ const FEATURES: Feature[] = [
       "Vous craignez un raid ? Notre bot est capable de le détecter et de le bloquer avant même qu'il impacte votre serveur.",
   },
   {
-    href: 'https://docs.raidprotect.bot/features/captcha',
+    to: '/docs/features/captcha',
     icon: '/img/landing/iconCaptchaWhite.svg',
     iconAlt: 'RaidProtect icon Captcha',
     title: 'Protection contre les robots',
@@ -37,7 +38,7 @@ const FEATURES: Feature[] = [
       "Grâce au captcha, vos membres doivent prouver qu'ils sont humains. Dites adieu aux comptes automatisés.",
   },
   {
-    href: 'https://docs.raidprotect.bot/features/utilities',
+    to: '/docs/features/utilities',
     icon: '/img/landing/iconReportWhite.svg',
     iconAlt: 'RaidProtect icon Report',
     title: 'Modération & administration',
@@ -45,7 +46,7 @@ const FEATURES: Feature[] = [
       "Gérez votre serveur comme un pro avec nos diverses fonctionalités de modération et d'administration.",
   },
   {
-    href: 'https://docs.raidprotect.bot/features/tag-role',
+    to: '/docs/features/tag-role',
     icon: '/img/landing/iconTagWhite.svg',
     iconAlt: 'RaidProtect icon Tag',
     title: 'Rôle de Tag',
@@ -53,7 +54,7 @@ const FEATURES: Feature[] = [
       'Le Rôle de Tag permet d’attribuer automatiquement un rôle aux membres qui ajoutent le tag de votre serveur.',
   },
   {
-    href: 'https://docs.raidprotect.bot/features/dm-lock',
+    to: '/docs/features/dm-lock',
     icon: '/img/landing/iconDmlockWhite.svg',
     iconAlt: 'RaidProtect icon DM Lock',
     title: 'Fermeture des MP',
@@ -80,7 +81,7 @@ export default function Features(): ReactNode {
         <div className={styles.grid}>
           <div className={styles.decoration} aria-hidden="true" />
           {FEATURES.map((feature) => (
-            <a key={feature.title} href={feature.href} className={styles.item}>
+            <Link key={feature.title} to={feature.to} className={styles.item}>
               <div className={styles.iconWrap}>
                 <div className={styles.iconBg}>
                   <img
@@ -95,7 +96,7 @@ export default function Features(): ReactNode {
                 <h3 className={styles.itemTitle}>{feature.title}</h3>
                 <p className={styles.itemDescription}>{feature.description}</p>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
