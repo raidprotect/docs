@@ -356,7 +356,7 @@ export default async function createConfigAsync() {
                             },
                             {
                                 label: 'Documentation',
-                                to: '/',
+                                to: '/docs',
                                 target: '_self'
                             },
                             {
