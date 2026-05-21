@@ -1,4 +1,20 @@
 {
+  "legal.menu.legal": {
+    "message": "Aviso legal",
+    "description": "Legal pages menu — link to the Legal notice page"
+  },
+  "legal.menu.terms": {
+    "message": "Términos de uso",
+    "description": "Legal pages menu — link to the Terms of Service page"
+  },
+  "legal.menu.privacy": {
+    "message": "Política de privacidad",
+    "description": "Legal pages menu — link to the Privacy policy page"
+  },
+  "legal.menu.cookies": {
+    "message": "Política de cookies",
+    "description": "Legal pages menu — link to the Cookie policy page"
+  },
   "theme.ErrorPageContent.title": {
     "message": "Esta página ha fallado.",
     "description": "The title of the fallback page when the page crashed"

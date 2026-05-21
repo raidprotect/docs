@@ -70,32 +70,32 @@ export default async function createConfigAsync() {
                     pt: '/pt/'
                 },
                 legal: {
-                    fr: 'https://raidprotect.bot/legal',
-                    en: 'https://raidprotect.bot/en/legal',
-                    de: 'https://raidprotect.bot/de/legal',
-                    es: 'https://raidprotect.bot/es/legal',
-                    pt: 'https://raidprotect.bot/pt/legal'
+                    fr: '/legal',
+                    en: '/en/legal',
+                    de: '/de/legal',
+                    es: '/es/legal',
+                    pt: '/pt/legal'
                 },
                 terms: {
-                    fr: 'https://raidprotect.bot/terms',
-                    en: 'https://raidprotect.bot/en/terms',
-                    de: 'https://raidprotect.bot/de/terms',
-                    es: 'https://raidprotect.bot/es/terms',
-                    pt: 'https://raidprotect.bot/pt/terms'
+                    fr: '/terms',
+                    en: '/en/terms',
+                    de: '/de/terms',
+                    es: '/es/terms',
+                    pt: '/pt/terms'
                 },
                 privacy: {
-                    fr: 'https://raidprotect.bot/privacy',
-                    en: 'https://raidprotect.bot/en/privacy',
-                    de: 'https://raidprotect.bot/de/privacy',
-                    es: 'https://raidprotect.bot/es/privacy',
-                    pt: 'https://raidprotect.bot/pt/privacy'
+                    fr: '/privacy',
+                    en: '/en/privacy',
+                    de: '/de/privacy',
+                    es: '/es/privacy',
+                    pt: '/pt/privacy'
                 },
                 cookies: {
-                    fr: 'https://raidprotect.bot/cookies',
-                    en: 'https://raidprotect.bot/en/cookies',
-                    de: 'https://raidprotect.bot/de/cookies',
-                    es: 'https://raidprotect.bot/es/cookies',
-                    pt: 'https://raidprotect.bot/pt/cookies'
+                    fr: '/cookies',
+                    en: '/en/cookies',
+                    de: '/de/cookies',
+                    es: '/es/cookies',
+                    pt: '/pt/cookies'
                 },
                 geranium: {
                     fr: 'https://i.dfr.gg/geranium.webm',
