@@ -48,26 +48,30 @@ export default function LegalLayout({
 
   return (
     <Layout title={title} description={description}>
-      <header className={styles.hero}>
+      <section className={styles.heroSection}>
         <div className={styles.heroInner}>
-          <h1 className={styles.title}>{title}</h1>
-          <p className={styles.lastUpdated}>{lastUpdated}</p>
-          <nav className={styles.menu} aria-label={title}>
-            {MENU.map((item) => {
-              const isActive = currentPath === item.to;
-              return (
-                <Link
-                  key={item.to}
-                  to={item.to}
-                  className={clsx(styles.menuLink, isActive && styles.menuLinkActive)}
-                  aria-current={isActive ? 'page' : undefined}>
-                  <Translate id={item.id}>{item.defaultMessage}</Translate>
-                </Link>
-              );
-            })}
-          </nav>
+          <div className={styles.heroCard}>
+            <div className={styles.heroContent}>
+              <h1 className={styles.title}>{title}</h1>
+              <p className={styles.lastUpdated}>{lastUpdated}</p>
+            </div>
+            <nav className={styles.menu} aria-label={title}>
+              {MENU.map((item) => {
+                const isActive = currentPath === item.to;
+                return (
+                  <Link
+                    key={item.to}
+                    to={item.to}
+                    className={clsx(styles.menuLink, isActive && styles.menuLinkActive)}
+                    aria-current={isActive ? 'page' : undefined}>
+                    <Translate id={item.id}>{item.defaultMessage}</Translate>
+                  </Link>
+                );
+              })}
+            </nav>
+          </div>
         </div>
-      </header>
+      </section>
       <main className={styles.container}>{children}</main>
     </Layout>
   );
