@@ -17,7 +17,7 @@ type Server = {
   badge: Badge;
 };
 
-const SERVERS: Server[] = [
+const SERVERS_FR: Server[] = [
   {
     name: 'Wankil Studio',
     icon: '/img/landing/iconWankilStudio.webp',
@@ -140,6 +140,129 @@ const SERVERS: Server[] = [
   },
 ];
 
+const SERVERS_INTL: Server[] = [
+  {
+    name: 'FlexingSeal',
+    icon: '/img/landing/iconFlexingSeal.webp',
+    alt: 'FlexingSeal Discord server icon',
+    href: 'https://discord.com/invite/seal',
+    members: 9000,
+    badge: 'partner',
+  },
+  {
+    name: 'Eclipse',
+    icon: '/img/landing/iconEclipse.webp',
+    alt: 'Eclipse Discord server icon',
+    href: 'https://discord.com/invite/tradings',
+    members: 567000,
+    badge: null,
+  },
+  {
+    name: 'Slash FR',
+    icon: '/img/landing/iconSlashFR.webp',
+    alt: 'Slash FR Discord server icon',
+    href: 'https://discord.com/invite/fr',
+    members: 48500,
+    badge: null,
+  },
+  {
+    name: 'Art of War 3',
+    icon: '/img/landing/iconArtofWar3.webp',
+    alt: 'Art of War 3 Discord server icon',
+    href: 'https://discord.com/invite/artofwar3',
+    members: 26500,
+    badge: 'verified',
+  },
+  {
+    name: 'The Forge',
+    icon: '/img/landing/iconTheForge.webp',
+    alt: 'The Forge Discord server icon',
+    href: 'https://discord.com/invite/theeforge',
+    members: 285000,
+    badge: null,
+  },
+  {
+    name: 'Ligue 1 McDonald’s',
+    icon: '/img/landing/iconLigue1.webp',
+    alt: 'Ligue 1 Discord server icon',
+    href: 'https://discord.com/invite/ligue1',
+    members: 15000,
+    badge: 'verified',
+  },
+  {
+    name: 'Chatzone',
+    icon: '/img/landing/iconChatzone.webp',
+    alt: 'Chatzone Discord server icon',
+    href: 'https://discord.com/invite/chatzone',
+    members: 272000,
+    badge: null,
+  },
+  {
+    name: 'PUBG MOBILE UK',
+    icon: '/img/landing/iconPUBGMobileUK.webp',
+    alt: 'PUBG MOBILE UK Discord server icon',
+    href: 'https://discord.com/invite/pubgmuk',
+    members: 19500,
+    badge: 'verified',
+  },
+  {
+    name: 'District 10',
+    icon: '/img/landing/iconDistrict10.webp',
+    alt: 'District 10 Discord server icon',
+    href: 'https://discord.com/invite/district10',
+    members: 112000,
+    badge: null,
+  },
+  {
+    name: 'Rocket Baguette',
+    icon: '/img/landing/iconRocketBaguette.webp',
+    alt: 'Rocket Baguette Discord server icon',
+    href: 'https://discord.com/invite/rocketbaguette',
+    members: 19000,
+    badge: 'partner',
+  },
+  {
+    name: 'Clash.GG',
+    icon: '/img/landing/iconClashGG.webp',
+    alt: 'Clash.GG Discord server icon',
+    href: 'https://discord.com/invite/clashgg',
+    members: 110000,
+    badge: null,
+  },
+  {
+    name: 'NationGlory',
+    icon: '/img/landing/iconNationsGlory.webp',
+    alt: 'NationsGlory server icon',
+    href: 'https://discord.com/invite/nationsglory',
+    members: 51000,
+    badge: 'partner',
+  },
+  {
+    name: 'TEAM VITALITY',
+    icon: '/img/landing/iconTeamVitality.webp',
+    alt: 'TEAM VITALITY Discord server icon',
+    href: 'https://discord.com/invite/teamvitality',
+    members: 19500,
+    badge: null,
+  },
+  {
+    name: 'WeWard',
+    icon: '/img/landing/iconWeWard.webp',
+    alt: 'WeWard Discord server icon',
+    href: 'https://discord.com/invite/weward',
+    members: 17500,
+    badge: 'verified',
+  },
+  {
+    name: 'META LOCK',
+    icon: '/img/landing/iconMetaLock.webp',
+    alt: 'META LOCK Discord server icon',
+    href: 'https://discord.com/invite/metalock',
+    members: 108500,
+    badge: null,
+  },
+];
+
 const LOCALE_TO_BCP47: Record<string, string> = {
   fr: 'fr-FR',
   en: 'en-US',
@@ -210,6 +333,9 @@ export default function Servers(): ReactNode {
   const {
     i18n: {currentLocale},
   } = useDocusaurusContext();
+  // Webflow source listait des serveurs francophones sur la version FR et une
+  // sélection internationale (parfois différente) sur EN/DE/ES/PT.
+  const servers = currentLocale === 'fr' ? SERVERS_FR : SERVERS_INTL;
   return (
     <section className={clsx(shared.landing, styles.section)}>
       <div className={shared.container}>
@@ -223,7 +349,7 @@ export default function Servers(): ReactNode {
         <div className={styles.marqueeWrap} aria-hidden={false}>
           <div className={styles.track}>
             <div className={styles.group}>
-              {SERVERS.map((server) => (
+              {servers.map((server) => (
                 <ServerCard
                   key={`a-${server.name}`}
                   server={server}
@@ -232,7 +358,7 @@ export default function Servers(): ReactNode {
               ))}
             </div>
             <div className={styles.group} aria-hidden="true">
-              {SERVERS.map((server) => (
+              {servers.map((server) => (
                 <ServerCard
                   key={`b-${server.name}`}
                   server={server}
