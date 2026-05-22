@@ -1,5 +1,5 @@
 import React, {type ReactNode, useEffect, useState} from 'react';
-import Layout from '@theme/Layout';
+import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
 import styles from './thank-you.module.css';
 
@@ -187,9 +187,14 @@ export default function ThankYou(): ReactNode {
   }, []);
 
   return (
-    <Layout
-      title="Merci | RaidProtect"
-      description="Merci d'avoir invité RaidProtect ! Pour bien débuter, nous vous recommandons de consulter notre documentation et de rejoindre notre serveur Discord.">
+    <>
+      <Head>
+        <title>Merci | RaidProtect</title>
+        <meta
+          name="description"
+          content="Merci d'avoir invité RaidProtect ! Pour bien débuter, nous vous recommandons de consulter notre documentation et de rejoindre notre serveur Discord."
+        />
+      </Head>
       <main className={styles.page}>
         <div className={styles.card}>
           <Link to="/" className={styles.logoWrap}>
@@ -282,6 +287,6 @@ export default function ThankYou(): ReactNode {
           </div>
         </div>
       </main>
-    </Layout>
+    </>
   );
 }
