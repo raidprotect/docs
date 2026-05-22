@@ -1,0 +1,6 @@
+/* Wrapper partagé entre /frame/hero et /frame/cta.
+ * Reproduit body.body-frame du Webflow (background var(--color--top-gg) = #070510). */
+.frame {
+  background-color: #070510;
+  min-height: 100vh;
+}

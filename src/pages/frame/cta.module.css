@@ -1,0 +1,73 @@
+/* /frame/cta — reproduit la section CTA Webflow (cta-section + cta-wrap + cta-content-wrap). */
+
+.section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+@media (max-width: 991px) {
+  .section {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
+
+.wrap {
+  border-radius: 20px;
+  padding: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 991px) {
+  .wrap {
+    padding: 70px 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .wrap {
+    padding: 50px 24px;
+  }
+}
+
+.contentWrap {
+  z-index: 2;
+  text-align: center;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.title {
+  font-family: var(--ifm-heading-font-family);
+  color: #fff;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 1.2em;
+  margin: 0 0 16px;
+}
+
+@media (max-width: 767px) {
+  .title {
+    font-size: 38px;
+  }
+}
+
+.description {
+  color: #e1e0e9;
+  margin: 0 0 40px;
+  font-size: 18px;
+  line-height: 1.5em;
+}
+
+.buttonList {
+  grid-column-gap: 30px;
+  grid-row-gap: 15px;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
