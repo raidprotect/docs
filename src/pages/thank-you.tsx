@@ -162,28 +162,29 @@ export default function ThankYou(): ReactNode {
     const urlParams = new URLSearchParams(window.location.search);
 
     const guildId = urlParams.get('guild_id');
+    let cancelled = false;
     if (guildId) {
-      let cancelled = false;
       fetchServerInfo(guildId).then((info) => {
         if (!cancelled && info) {
           setServerInfo(info);
         }
       });
-      // Permission check is synchronous, so we can compute it without guarding cancellation.
-      const permissionsParam = urlParams.get('permissions');
-      if (permissionsParam) {
-        setPermissionWarning(computePermissionWarning(permissionsParam));
-      }
-      return () => {
-        cancelled = true;
-      };
     }
 
     const permissionsParam = urlParams.get('permissions');
     if (permissionsParam) {
       setPermissionWarning(computePermissionWarning(permissionsParam));
     }
-    return undefined;
+
+    // Redirection auto vers l'invite Discord après 60s, comme la page Webflow.
+    const redirectTimer = window.setTimeout(() => {
+      window.location.href = 'https://discord.com/invite/HfMYDHbgqc';
+    }, 60000);
+
+    return () => {
+      cancelled = true;
+      window.clearTimeout(redirectTimer);
+    };
   }, []);
 
   return (
