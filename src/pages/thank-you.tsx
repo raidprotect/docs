@@ -276,6 +276,7 @@ export default function ThankYou(): ReactNode {
       <Head>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
+        <meta name="robots" content="noindex, nofollow" />
       </Head>
       <main className={styles.page}>
         <div className={styles.card}>
