@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import Translate, {translate} from '@docusaurus/Translate';
+import {useDocsPreferredVersion} from '@docusaurus/plugin-content-docs/client';
 import Hero from '@site/src/components/landing/Hero';
 import Servers from '@site/src/components/landing/Servers';
 import shared from '@site/src/components/landing/styles/shared.module.css';
@@ -216,6 +217,13 @@ const FEATURES: Feature[] = [
 
 export default function Home(): ReactNode {
   const [counts, setCounts] = useState<Counts | null>(null);
+  const {savePreferredVersionName} = useDocsPreferredVersion();
+
+  // Sur la landing, on remet le sélecteur de version sur "stable" (lastVersion)
+  // en effaçant la préférence éventuellement mémorisée par l'utilisateur.
+  useEffect(() => {
+    savePreferredVersionName(null);
+  }, [savePreferredVersionName]);
 
   useEffect(() => {
     let cancelled = false;
