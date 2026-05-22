@@ -82,7 +82,7 @@
 
 .description {
   color: var(--color-gray-4);
-  margin: 0 0 10px;
+  margin: 0;
 }
 
 .buttonRow {
@@ -90,7 +90,7 @@
   grid-row-gap: 15px;
   flex-direction: column;
   padding-top: 20px;
-  padding-bottom: 0;
+  padding-bottom: 20px;
   display: flex;
 }
 
@@ -265,7 +265,7 @@
   grid-row-gap: 16px;
   justify-content: center;
   align-items: center;
-  margin-top: 8px;
+  margin-top: 0;
 }
 
 .langDropdown {
