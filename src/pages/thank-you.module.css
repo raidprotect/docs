@@ -1,0 +1,255 @@
+/*
+ * Thank-you page styles
+ * Mirrors the Webflow `.link-in-bio` layout.
+ * Colors reuse the same tokens already defined in src/components/landing/styles/shared.module.css
+ * so the look matches the rest of the site.
+ */
+
+.page {
+  --color-black: #040114;
+  --color-gray-1: #070417;
+  --color-gray-2: #1b1a25;
+  --color-gray-3: #242328;
+  --color-gray-4: #e1e0e9;
+  --color-white: #ffffff;
+  --color-primary-rp: #d35f5f;
+  --color-darker-primary: #bd5454;
+  --color-border-doc: #444950;
+
+  background-color: var(--color-black);
+  color: var(--color-gray-4);
+  font-size: 18px;
+  line-height: 1.5em;
+  min-height: 70vh;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.card {
+  z-index: 22;
+  border: 1px solid var(--color-gray-3);
+  border-radius: 20px;
+  background-color: var(--color-gray-1);
+  text-align: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 650px;
+  padding: 60px;
+  display: flex;
+  position: relative;
+}
+
+.logoWrap {
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none;
+  display: flex;
+}
+
+.logo {
+  height: 70px;
+  width: auto;
+}
+
+.title {
+  color: var(--color-white);
+  font-family: var(--ifm-heading-font-family, inherit);
+  font-size: 28px;
+  line-height: 1.25em;
+  margin: 0 0 20px;
+}
+
+.description {
+  color: var(--color-gray-4);
+  margin: 0 0 10px;
+}
+
+.buttonRow {
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  flex-direction: column;
+  padding-top: 20px;
+  padding-bottom: 0;
+  display: flex;
+}
+
+.btnPrimary {
+  display: inline-block;
+  border: 1px solid var(--color-darker-primary);
+  border-radius: 50px;
+  background-color: var(--color-darker-primary);
+  color: #fff;
+  text-align: center;
+  padding: 20px 28px 18px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.1em;
+  text-decoration: none;
+  transition: border-color 0.3s, background-color 0.3s, transform 0.3s, color 0.3s;
+}
+
+.btnPrimary:hover {
+  text-decoration: none;
+  color: #fff;
+  border-color: var(--color-darker-primary);
+  background-color: var(--color-darker-primary);
+  transform: translate3d(0, -3px, 0.01px);
+}
+
+.btnSecondary {
+  display: inline-block;
+  border: 1px solid var(--color-darker-primary);
+  border-radius: 50px;
+  background-color: transparent;
+  color: var(--color-white);
+  text-align: center;
+  padding: 20px 28px 18px;
+  font-size: 18px;
+  line-height: 1.1em;
+  text-decoration: none;
+  transition: border-color 0.3s, transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.btnSecondary:hover {
+  text-decoration: none;
+  color: #fff;
+  border-color: var(--color-darker-primary);
+  background-color: var(--color-darker-primary);
+  transform: translate3d(0, -3px, 0.01px);
+}
+
+/* Server card */
+
+.centerServer {
+  margin: 0 auto 20px;
+}
+
+.clientServer {
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  border: 1px solid var(--color-border-doc);
+  border-radius: 12px;
+  background-color: var(--color-gray-3);
+  width: auto;
+  min-width: 275px;
+  padding: 20px 24px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition: border-color 0.3s;
+}
+
+.clientServer:hover {
+  border-color: var(--color-primary-rp);
+  text-decoration: none;
+}
+
+.avatarInfo {
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 1.5em;
+  text-align: left;
+}
+
+.avatar {
+  object-fit: cover;
+  border-radius: 50%;
+  flex: none;
+  width: 50px;
+  height: 50px;
+}
+
+.serverInfos {
+  grid-column-gap: 6px;
+  grid-row-gap: 6px;
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-start;
+  display: flex;
+}
+
+.serverNameRow {
+  justify-content: flex-start;
+  align-items: center;
+  display: flex;
+}
+
+.serverName {
+  color: var(--color-white);
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.serverBadge {
+  margin-left: 10px;
+}
+
+.serverMembers {
+  color: var(--color-gray-4);
+  font-size: 14px;
+}
+
+/* Permission warning */
+
+.permissionWarning {
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 600px;
+  margin: 20px auto;
+  padding-bottom: 1px;
+  color: var(--color-white);
+}
+
+.success {
+  background: #003100;
+}
+
+.adminWarning {
+  background: #193c47;
+}
+
+.missingPermissions {
+  background: #4d3800;
+}
+
+.permissionList {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.permissionList li {
+  margin: 5px 0;
+}
+
+.permissionList code {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.95em;
+}
+
+@media screen and (max-width: 767px) {
+  .card {
+    padding: 40px 24px;
+  }
+  .title {
+    font-size: 22px;
+  }
+  .btnPrimary,
+  .btnSecondary {
+    padding: 20px 26px 16px;
+    font-size: 16px;
+  }
+}
