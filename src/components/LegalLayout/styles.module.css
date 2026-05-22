@@ -1,0 +1,153 @@
+/* Reproduction du design Webflow (raidprotectbot.webflow.css) pour les pages
+   légales : hero en carte centrée sombre + menu badges en pill + sections
+   espacées par des dividers. */
+
+.heroSection {
+  padding: 30px 20px 0;
+}
+
+.heroInner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.heroCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 50px;
+  border: 1px solid #242328;
+  border-radius: 20px;
+  background-color: #070417;
+  text-align: center;
+  overflow: hidden;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+}
+
+.title {
+  margin: 0 0 0;
+  font-family: var(--ifm-heading-font-family);
+  font-size: 62px;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.lastUpdated {
+  margin: 16px 0 0;
+  color: #e1e0e9;
+  font-size: 1rem;
+}
+
+.menu {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  max-width: 800px;
+  margin: 0;
+}
+
+.menuLink {
+  display: inline-block;
+  padding: 16px 22px 12px;
+  border: 1px solid var(--ifm-color-primary-darker);
+  border-radius: 40px;
+  background-color: #040114;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.111em;
+  text-decoration: none;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.menuLink:hover,
+.menuLinkActive {
+  background-color: var(--ifm-color-primary-darker);
+  border-color: var(--ifm-color-primary-darker);
+  color: #fff;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 60px 20px 80px;
+}
+
+.container :global(section) + :global(hr) {
+  border: 0;
+  height: 1px;
+  background-color: #d5dff0;
+  margin: 80px 0;
+  opacity: 0.15;
+}
+
+.container :global(h2) {
+  font-size: 32px;
+  line-height: 1.2;
+  margin: 0 0 24px;
+}
+
+.container :global(p) {
+  margin: 0 0 16px;
+  line-height: 1.6;
+}
+
+.container :global(a) {
+  color: var(--ifm-color-primary);
+  text-decoration: underline;
+}
+
+.container :global(strong) {
+  color: #fff;
+}
+
+/* Responsive — basé sur le @media du fichier Webflow original */
+@media (max-width: 991px) {
+  .title {
+    font-size: 50px;
+  }
+  .heroCard {
+    padding: 40px 30px;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .title {
+    font-size: 38px;
+  }
+  .heroCard {
+    padding: 32px 20px;
+    gap: 24px;
+  }
+  .menuLink {
+    font-size: 16px;
+    padding: 14px 18px 10px;
+  }
+  .container :global(h2) {
+    font-size: 26px;
+  }
+  .container :global(section) + :global(hr) {
+    margin: 50px 0;
+  }
+}
+
+@media (max-width: 479px) {
+  .title {
+    font-size: 32px;
+  }
+  .heroSection {
+    padding: 20px 12px 0;
+  }
+}
