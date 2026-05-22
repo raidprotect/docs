@@ -1,4 +1,4 @@
-import React, {type ReactNode, useEffect, useState} from 'react';
+import React, {type ReactNode, useEffect, useRef, useState} from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
@@ -27,6 +27,8 @@ function formatValue(value: number): FormattedValue {
   return {value: (value / 1_000).toFixed(1), unit: 'k'};
 }
 
+const COUNT_UP_DURATION_MS = 2000;
+
 function StatCounter({
   rawValue,
   label,
@@ -36,9 +38,81 @@ function StatCounter({
   label: string;
   fallback: string;
 }) {
+  const itemRef = useRef<HTMLDivElement>(null);
+  const animatedRef = useRef(false);
+  const [displayValue, setDisplayValue] = useState<string | null>(null);
+  const [unit, setUnit] = useState<string>('');
+
+  useEffect(() => {
+    if (rawValue == null) return undefined;
+    const formatted = formatValue(rawValue);
+    const finalNumeric = parseFloat(formatted.value);
+
+    const node = itemRef.current;
+    if (!node || typeof window === 'undefined') {
+      // SSR / no DOM — render the final value statically.
+      setDisplayValue(formatted.value);
+      setUnit(formatted.unit);
+      return undefined;
+    }
+
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    ).matches;
+
+    const startAnimation = () => {
+      if (animatedRef.current) return;
+      animatedRef.current = true;
+      setUnit(formatted.unit);
+
+      if (prefersReducedMotion) {
+        setDisplayValue(formatted.value);
+        return;
+      }
+
+      let rafId = 0;
+      let startTime: number | null = null;
+      const tick = (timestamp: number) => {
+        if (startTime === null) startTime = timestamp;
+        const elapsed = timestamp - startTime;
+        const progress = Math.min(elapsed / COUNT_UP_DURATION_MS, 1);
+        // cubic ease-out, identique à l'animation Webflow source
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = (eased * finalNumeric).toFixed(1);
+        setDisplayValue(current);
+        if (progress < 1) {
+          rafId = window.requestAnimationFrame(tick);
+        } else {
+          setDisplayValue(formatted.value);
+        }
+      };
+      rafId = window.requestAnimationFrame(tick);
+
+      return () => {
+        if (rafId) window.cancelAnimationFrame(rafId);
+      };
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            startAnimation();
+            observer.disconnect();
+            break;
+          }
+        }
+      },
+      {threshold: 0.1},
+    );
+    observer.observe(node);
+
+    return () => observer.disconnect();
+  }, [rawValue]);
+
   if (rawValue == null) {
     return (
-      <div className={styles.counterItem}>
+      <div ref={itemRef} className={styles.counterItem}>
         <div className={styles.counterTitle}>
           <span>{fallback}</span>
         </div>
@@ -46,12 +120,12 @@ function StatCounter({
       </div>
     );
   }
-  const formatted = formatValue(rawValue);
+
   return (
-    <div className={styles.counterItem}>
+    <div ref={itemRef} className={styles.counterItem}>
       <div className={styles.counterTitle}>
-        <span>{formatted.value}</span>
-        <span>{formatted.unit}</span>
+        <span>{displayValue ?? '0'}</span>
+        <span>{unit}</span>
       </div>
       <div className={styles.counterLabel}>{label}</div>
     </div>
