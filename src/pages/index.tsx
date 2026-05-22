@@ -160,7 +160,7 @@ export default function Home(): ReactNode {
       title="RaidProtect • Sécurisez votre serveur Discord"
       description="RaidProtect est un bot Discord français ayant pour mission de protéger simplement votre serveur des utilisateurs malintentionnés.">
       <main>
-        <Hero />
+        <Hero serverCount={counts?.servers} />
         <Servers />
 
         {/* About */}
