@@ -285,7 +285,112 @@ export default function ThankYou(): ReactNode {
               Consulter la documentation
             </Link>
           </div>
+
+          <div className={styles.footerThank}>
+            <div className={styles.langDropdown}>
+              <div className={styles.langTrigger}>
+                <span className={styles.iconLanguage} aria-hidden="true">
+                  <svg
+                    viewBox="0 0 20 20"
+                    width="20"
+                    height="20"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M10.7247 11.5584L8.60801 9.46669L8.63301 9.44169C10.083 7.82502 11.1163 5.96669 11.7247 4.00002H14.1663V2.33335H8.33301V0.666687H6.66634V2.33335H0.833008V3.99169H10.1413C9.58301 5.60002 8.69967 7.12502 7.49967 8.45835C6.72467 7.60002 6.08301 6.65835 5.57467 5.66669H3.90801C4.51634 7.02502 5.34967 8.30835 6.39134 9.46669L2.14967 13.65L3.33301 14.8334L7.49967 10.6667L10.0913 13.2584L10.7247 11.5584ZM15.4163 7.33335H13.7497L9.99967 17.3334H11.6663L12.5997 14.8334H16.558L17.4997 17.3334H19.1663L15.4163 7.33335ZM13.233 13.1667L14.583 9.55835L15.933 13.1667H13.233Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </span>
+                <span className={styles.currentLanguage}>Français</span>
+              </div>
+              <nav className={styles.langDropdownList}>
+                <Link
+                  to="/thank-you"
+                  className={`${styles.langDropdownItem} ${styles.langDropdownItemCurrent}`}>
+                  Français
+                </Link>
+                <Link to="/en/thank-you" className={styles.langDropdownItem}>
+                  English
+                </Link>
+                <Link to="/de/thank-you" className={styles.langDropdownItem}>
+                  Deutsch
+                </Link>
+                <Link to="/es/thank-you" className={styles.langDropdownItem}>
+                  Español
+                </Link>
+                <Link to="/pt/thank-you" className={styles.langDropdownItem}>
+                  Português
+                </Link>
+              </nav>
+            </div>
+
+            <div className={styles.socialWrap}>
+              <a
+                href="https://discord.com/invite/raidprotect"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialLink}
+                aria-label="Discord">
+                <img
+                  src="/img/landing/iconDiscord.svg"
+                  alt=""
+                  width={18}
+                  height={18}
+                  loading="eager"
+                  className={styles.socialIcon}
+                />
+              </a>
+              <a
+                href="https://x.com/raidprotect"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialLink}
+                aria-label="X">
+                <img
+                  src="/img/landing/iconX.svg"
+                  alt=""
+                  width={18}
+                  height={18}
+                  loading="eager"
+                  className={styles.socialIcon}
+                />
+              </a>
+              <a
+                href="https://www.youtube.com/@RaidProtect"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialLink}
+                aria-label="YouTube">
+                <img
+                  src="/img/landing/iconYouTube.svg"
+                  alt=""
+                  width={18}
+                  height={18}
+                  loading="lazy"
+                  className={styles.socialIcon}
+                />
+              </a>
+              <a
+                href="https://github.com/raidprotect"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialLink}
+                aria-label="GitHub">
+                <img
+                  src="/img/landing/iconGitHub.svg"
+                  alt=""
+                  width={18}
+                  height={18}
+                  loading="eager"
+                  className={styles.socialIcon}
+                />
+              </a>
+            </div>
+          </div>
         </div>
+
+        <div className={styles.decoration} aria-hidden="true" />
       </main>
     </>
   );
