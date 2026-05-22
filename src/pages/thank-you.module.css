@@ -20,11 +20,11 @@
   color: var(--color-gray-4);
   font-size: 18px;
   line-height: 1.5em;
-  min-height: 70vh;
+  min-height: 100vh;
   padding: 50px 20px;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .card {
@@ -57,10 +57,9 @@
 }
 
 .title {
-  color: var(--color-white);
-  font-family: var(--ifm-heading-font-family, inherit);
-  font-size: 28px;
-  line-height: 1.25em;
+  color: var(--color-gray-4);
+  font-size: 18px;
+  line-height: 1.5em;
   margin: 0 0 20px;
 }
 
@@ -74,7 +73,7 @@
   grid-row-gap: 15px;
   flex-direction: column;
   padding-top: 20px;
-  padding-bottom: 0;
+  padding-bottom: 20px;
   display: flex;
 }
 
@@ -126,18 +125,18 @@
 /* Server card */
 
 .centerServer {
-  margin: 0 auto 20px;
+  margin: 0 auto 30px;
 }
 
 .clientServer {
-  grid-column-gap: 15px;
-  grid-row-gap: 15px;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
   border: 1px solid var(--color-border-doc);
-  border-radius: 12px;
+  border-radius: 0.8rem;
   background-color: var(--color-gray-3);
   width: auto;
   min-width: 275px;
-  padding: 20px 24px;
+  padding: 30px;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
