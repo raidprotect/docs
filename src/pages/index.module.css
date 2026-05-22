@@ -107,7 +107,7 @@
 }
 
 .counterLabel {
-  color: #e1e0e9;
+  color: #fff;
   font-size: 18px;
   margin-top: 4px;
 }
@@ -167,7 +167,7 @@
 
 .featuresSubtitle {
   margin: 0;
-  color: #e1e0e9;
+  color: #fff;
   font-size: 18px;
   font-weight: 400;
 }
@@ -257,7 +257,7 @@
 
 .featuresItemDescription {
   margin: 0;
-  color: #e1e0e9;
+  color: #fff;
   font-size: 18px;
 }
 
@@ -334,7 +334,7 @@
 
 .pricingDescription {
   margin: 0 0 40px 0;
-  color: #e1e0e9;
+  color: #fff;
   font-size: 18px;
 }
 
@@ -429,7 +429,7 @@
 
 .itemTagline {
   margin: 0;
-  color: #e1e0e9;
+  color: #fff;
   font-size: 18px;
   line-height: 1.5em;
 }
@@ -450,7 +450,7 @@
   justify-content: flex-start;
   column-gap: 8px;
   row-gap: 8px;
-  color: #e1e0e9;
+  color: #fff;
 }
 
 .featureIcon {

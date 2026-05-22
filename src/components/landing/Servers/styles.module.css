@@ -6,7 +6,7 @@
 .title {
   text-align: center;
   margin: 0 0 20px 0;
-  color: #e1e0e9;
+  color: #fff;
   font-family: var(--ifm-font-family-base);
   font-size: 18px;
   font-weight: 400;
@@ -118,7 +118,7 @@
 }
 
 .memberCount {
-  color: #e1e0e9;
+  color: #fff;
   font-size: 14px;
 }
 
