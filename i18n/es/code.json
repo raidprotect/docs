@@ -415,5 +415,57 @@
   },
   "editor.preview.title": {
     "message": "Vista previa"
+  },
+  "hero.preTitle": {
+    "message": "Utilizado por más de {count} servidores",
+    "description": "Hero pre-title displayed above the main title; {count} is a locale-formatted number of servers"
+  },
+  "hero.title": {
+    "message": "El mejor bot de {highlight} para Discord",
+    "description": "Hero main title; {highlight} renders the gradient-highlighted word"
+  },
+  "hero.title.highlight": {
+    "message": "seguridad",
+    "description": "The highlighted word inside the hero title (security)"
+  },
+  "hero.description": {
+    "message": "Evita que los usuarios malintencionados dañen tu servidor de Discord.",
+    "description": "Hero description below the title"
+  },
+  "hero.cta.primary": {
+    "message": "Añadir a Discord",
+    "description": "Primary CTA: invite the bot to Discord"
+  },
+  "hero.cta.secondary": {
+    "message": "Ver funciones",
+    "description": "Secondary CTA: scroll to the features section"
+  },
+  "servers.title": {
+    "message": "Protegemos a los más grandes",
+    "description": "Servers marquee title: 'We protect the biggest'"
+  },
+  "servers.memberCount": {
+    "message": "{count} miembros",
+    "description": "Server card: number of members; {count} is locale-formatted"
+  },
+  "frame.cta.title": {
+    "message": "Mantente a la {highlight}",
+    "description": "Frame CTA title; {highlight} renders the gradient-highlighted word"
+  },
+  "frame.cta.title.highlight": {
+    "message": "vanguardia",
+    "description": "Highlighted word inside the frame CTA title"
+  },
+  "frame.cta.description": {
+    "message": "Añade RaidProtect y empieza a proteger tu servidor hoy mismo.",
+    "description": "Frame CTA description"
+  },
+  "frame.cta.primary": {
+    "message": "Añadir el bot",
+    "description": "Frame CTA primary button: add the bot to Discord"
+  },
+  "frame.cta.secondary": {
+    "message": "Unirse al servidor",
+    "description": "Frame CTA secondary button: join the Discord server"
   }
 }

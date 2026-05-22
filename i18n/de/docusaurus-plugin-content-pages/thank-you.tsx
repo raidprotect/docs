@@ -1,7 +1,7 @@
 import React, {type ReactNode, useEffect, useState} from 'react';
 import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
-import styles from './thank-you.module.css';
+import styles from '@site/src/pages/thank-you.module.css';
 
 type ServerBadge = 'partner' | 'verified' | null;
 
@@ -30,30 +30,30 @@ const BADGE_SRC: Record<Exclude<ServerBadge, null>, string> = {
 const REQUIRED_PERMISSIONS = 1117660769534n;
 const ADMIN_PERMISSION = 8n;
 
-// Order matches the Webflow source so the missing-permissions list reads the same.
+// Discord-style permission names (German).
 const PERMISSION_MESSAGES: Array<[string, bigint]> = [
-  ['Administrateur', ADMIN_PERMISSION],
-  ['Gérer le serveur', 32n],
-  ['Gérer les rôles', 268435456n],
-  ['Gérer les salons', 16n],
-  ['Expulser des membres', 2n],
-  ['Bannir des membres', 4n],
-  ['Gérer les pseudos', 134217728n],
-  ['Gérer les webhooks', 536870912n],
-  ['Voir les logs du serveur', 524288n],
-  ['Voir les salons', 1024n],
-  ['Modérer les membres', 1099511627776n],
-  ['Envoyer des messages', 2048n],
-  ['Gérer les messages', 8192n],
-  ['Gérer les fils', 17179869184n],
-  ['Intégrer des liens', 16384n],
-  ['Joindre des fichiers', 32768n],
-  ['Voir les anciens messages', 65536n],
-  ['Ajouter des réactions', 64n],
-  ['Utiliser des émojis externes', 262144n],
-  ['Rendre les membres muets', 4194304n],
-  ['Mettre en sourdine des membres', 8388608n],
-  ['Déplacer des membres', 16777216n],
+  ['Administrator', ADMIN_PERMISSION],
+  ['Server verwalten', 32n],
+  ['Rollen verwalten', 268435456n],
+  ['Kanäle verwalten', 16n],
+  ['Mitglieder kicken', 2n],
+  ['Mitglieder bannen', 4n],
+  ['Spitznamen verwalten', 134217728n],
+  ['Webhooks verwalten', 536870912n],
+  ['Audit-Log anzeigen', 524288n],
+  ['Kanäle anzeigen', 1024n],
+  ['Mitglieder moderieren', 1099511627776n],
+  ['Nachrichten senden', 2048n],
+  ['Nachrichten verwalten', 8192n],
+  ['Threads verwalten', 17179869184n],
+  ['Links einbetten', 16384n],
+  ['Dateien anhängen', 32768n],
+  ['Nachrichtenverlauf lesen', 65536n],
+  ['Reaktionen hinzufügen', 64n],
+  ['Externe Emojis verwenden', 262144n],
+  ['Mitglieder stummschalten', 4194304n],
+  ['Mitglieder taub schalten', 8388608n],
+  ['Mitglieder verschieben', 16777216n],
 ];
 
 async function fetchServerInfo(guildId: string): Promise<ServerInfo | null> {
@@ -62,15 +62,15 @@ async function fetchServerInfo(guildId: string): Promise<ServerInfo | null> {
       `https://discord.com/api/guilds/${guildId}/widget.json`,
     );
     if (!widgetResponse.ok) {
-      throw new Error('Widget désactivé.');
+      throw new Error('Widget deaktiviert.');
     }
     const widgetData = await widgetResponse.json();
 
-    const name: string = widgetData.name || 'Serveur inconnu';
+    const name: string = widgetData.name || 'Unbekannter Server';
     const members: string =
       typeof widgetData.presence_count === 'number'
-        ? `${widgetData.presence_count} membres en ligne`
-        : 'Nombre de membres inconnu';
+        ? `${widgetData.presence_count} Mitglieder online`
+        : 'Mitgliederzahl unbekannt';
     const inviteUrl: string = widgetData.instant_invite || '#';
 
     let iconUrl = DEFAULT_ICON_URL;
@@ -133,12 +133,12 @@ function computePermissionWarning(
 
   if (
     missingPermissions.length === 1 &&
-    missingPermissions[0] === 'Administrateur'
+    missingPermissions[0] === 'Administrator'
   ) {
     return {
       tone: 'admin',
       message:
-        '⚠️ Toutes les permissions spécifiques sont accordées, mais sans la permission Administrateur, le bot pourrait ne pas accéder à tous les salons.',
+        '⚠️ Alle spezifischen Berechtigungen sind erteilt, aber ohne die Administrator-Berechtigung kann der Bot möglicherweise nicht auf alle Kanäle zugreifen.',
       missing: [],
     };
   }
@@ -146,7 +146,7 @@ function computePermissionWarning(
   return {
     tone: 'missing',
     message:
-      "⚠️ Afin d'assurer le bon fonctionnement du bot, nous vous recommandons d'ajouter les permissions suivantes :",
+      '⚠️ Damit der Bot ordnungsgemäß funktioniert, empfehlen wir, folgende Berechtigungen hinzuzufügen:',
     missing: missingPermissions,
   };
 }
@@ -176,7 +176,7 @@ export default function ThankYou(): ReactNode {
       setPermissionWarning(computePermissionWarning(permissionsParam));
     }
 
-    // Redirection auto vers l'invite Discord après 60s, comme la page Webflow.
+    // Auto-redirect to Discord invite after 60s, matching the Webflow page.
     const redirectTimer = window.setTimeout(() => {
       window.location.href = 'https://discord.com/invite/HfMYDHbgqc';
     }, 60000);
@@ -190,10 +190,10 @@ export default function ThankYou(): ReactNode {
   return (
     <>
       <Head>
-        <title>Merci | RaidProtect</title>
+        <title>Vielen Dank | RaidProtect</title>
         <meta
           name="description"
-          content="Merci d'avoir invité RaidProtect ! Pour bien débuter, nous vous recommandons de consulter notre documentation et de rejoindre notre serveur Discord."
+          content="Vielen Dank, dass Sie RaidProtect eingeladen haben! Zum Einstieg empfehlen wir, unsere Dokumentation zu konsultieren und unserem Discord-Server beizutreten."
         />
       </Head>
       <main className={styles.page}>
@@ -210,7 +210,9 @@ export default function ThankYou(): ReactNode {
             />
           </Link>
 
-          <p className={styles.title}>Merci d'avoir invité RaidProtect !</p>
+          <p className={styles.title}>
+            Vielen Dank, dass Sie RaidProtect eingeladen haben!
+          </p>
 
           {serverInfo && (
             <div className={styles.centerServer}>
@@ -270,8 +272,8 @@ export default function ThankYou(): ReactNode {
           )}
 
           <p className={styles.description}>
-            Pour bien débuter, nous vous recommandons de consulter notre
-            documentation et de rejoindre notre serveur.
+            Zum Einstieg empfehlen wir, unsere Dokumentation zu konsultieren und
+            unserem Server beizutreten.
           </p>
 
           <div className={styles.buttonRow}>
@@ -280,10 +282,10 @@ export default function ThankYou(): ReactNode {
               target="_blank"
               rel="noopener noreferrer"
               className={styles.btnPrimary}>
-              Rejoindre notre serveur Discord
+              Unserem Discord-Server beitreten
             </a>
             <Link to="/docs" className={styles.btnSecondary}>
-              Consulter la documentation
+              Dokumentation anzeigen
             </Link>
           </div>
 
@@ -303,18 +305,18 @@ export default function ThankYou(): ReactNode {
                     />
                   </svg>
                 </span>
-                <span className={styles.currentLanguage}>Français</span>
+                <span className={styles.currentLanguage}>Deutsch</span>
               </div>
               <nav className={styles.langDropdownList}>
-                <a
-                  href="/thank-you"
-                  className={`${styles.langDropdownItem} ${styles.langDropdownItemCurrent}`}>
+                <a href="/thank-you" className={styles.langDropdownItem}>
                   Français
                 </a>
                 <a href="/en/thank-you" className={styles.langDropdownItem}>
                   English
                 </a>
-                <a href="/de/thank-you" className={styles.langDropdownItem}>
+                <a
+                  href="/de/thank-you"
+                  className={`${styles.langDropdownItem} ${styles.langDropdownItemCurrent}`}>
                   Deutsch
                 </a>
                 <a href="/es/thank-you" className={styles.langDropdownItem}>

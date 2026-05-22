@@ -415,5 +415,57 @@
   },
   "editor.preview.title": {
     "message": "Preview"
+  },
+  "hero.preTitle": {
+    "message": "Used by over {count} servers",
+    "description": "Hero pre-title displayed above the main title; {count} is a locale-formatted number of servers"
+  },
+  "hero.title": {
+    "message": "The best {highlight} Discord bot",
+    "description": "Hero main title; {highlight} renders the gradient-highlighted word"
+  },
+  "hero.title.highlight": {
+    "message": "security",
+    "description": "The highlighted word inside the hero title (security)"
+  },
+  "hero.description": {
+    "message": "Prevent malicious users from damaging your Discord server.",
+    "description": "Hero description below the title"
+  },
+  "hero.cta.primary": {
+    "message": "Add to Discord",
+    "description": "Primary CTA: invite the bot to Discord"
+  },
+  "hero.cta.secondary": {
+    "message": "View features",
+    "description": "Secondary CTA: scroll to the features section"
+  },
+  "servers.title": {
+    "message": "We protect the greatest",
+    "description": "Servers marquee title: 'We protect the biggest'"
+  },
+  "servers.memberCount": {
+    "message": "{count} members",
+    "description": "Server card: number of members (e.g. '40,000 members'); {count} is locale-formatted"
+  },
+  "frame.cta.title": {
+    "message": "Keeping one step {highlight}",
+    "description": "Frame CTA title; {highlight} renders the gradient-highlighted word"
+  },
+  "frame.cta.title.highlight": {
+    "message": "ahead",
+    "description": "Highlighted word inside the frame CTA title"
+  },
+  "frame.cta.description": {
+    "message": "Add RaidProtect and start protecting your server today.",
+    "description": "Frame CTA description"
+  },
+  "frame.cta.primary": {
+    "message": "Add the bot",
+    "description": "Frame CTA primary button: add the bot to Discord"
+  },
+  "frame.cta.secondary": {
+    "message": "Join the server",
+    "description": "Frame CTA secondary button: join the Discord server"
   }
 }

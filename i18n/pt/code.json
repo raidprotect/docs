@@ -415,5 +415,57 @@
   },
   "editor.preview.title": {
     "message": "Pré-visualização"
+  },
+  "hero.preTitle": {
+    "message": "Utilizado por mais de {count} servidores",
+    "description": "Hero pre-title displayed above the main title; {count} is a locale-formatted number of servers"
+  },
+  "hero.title": {
+    "message": "O melhor bot de {highlight} para Discord",
+    "description": "Hero main title; {highlight} renders the gradient-highlighted word"
+  },
+  "hero.title.highlight": {
+    "message": "segurança",
+    "description": "The highlighted word inside the hero title (security)"
+  },
+  "hero.description": {
+    "message": "Impeça que utilizadores maliciosos prejudiquem o seu servidor Discord.",
+    "description": "Hero description below the title"
+  },
+  "hero.cta.primary": {
+    "message": "Adicionar ao Discord",
+    "description": "Primary CTA: invite the bot to Discord"
+  },
+  "hero.cta.secondary": {
+    "message": "Ver funcionalidades",
+    "description": "Secondary CTA: scroll to the features section"
+  },
+  "servers.title": {
+    "message": "Protegemos os maiores",
+    "description": "Servers marquee title: 'We protect the biggest'"
+  },
+  "servers.memberCount": {
+    "message": "{count} membros",
+    "description": "Server card: number of members; {count} is locale-formatted"
+  },
+  "frame.cta.title": {
+    "message": "Manter-se um passo {highlight}",
+    "description": "Frame CTA title; {highlight} renders the gradient-highlighted word"
+  },
+  "frame.cta.title.highlight": {
+    "message": "à frente",
+    "description": "Highlighted word inside the frame CTA title"
+  },
+  "frame.cta.description": {
+    "message": "Adicione o RaidProtect e comece a proteger o seu servidor hoje mesmo.",
+    "description": "Frame CTA description"
+  },
+  "frame.cta.primary": {
+    "message": "Adicionar o bot",
+    "description": "Frame CTA primary button: add the bot to Discord"
+  },
+  "frame.cta.secondary": {
+    "message": "Entrar no servidor",
+    "description": "Frame CTA secondary button: join the Discord server"
   }
 }
