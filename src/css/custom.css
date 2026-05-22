@@ -4,6 +4,12 @@
  * work well for content-centric websites.
  */
 
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 /* You can override the default Infima variables here. */
 html[data-theme='dark'] {
   --ifm-background-color: #040114;

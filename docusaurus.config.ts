@@ -69,34 +69,6 @@ export default async function createConfigAsync() {
                     es: '/es/',
                     pt: '/pt/'
                 },
-                legal: {
-                    fr: '/legal',
-                    en: '/en/legal',
-                    de: '/de/legal',
-                    es: '/es/legal',
-                    pt: '/pt/legal'
-                },
-                terms: {
-                    fr: '/terms',
-                    en: '/en/terms',
-                    de: '/de/terms',
-                    es: '/es/terms',
-                    pt: '/pt/terms'
-                },
-                privacy: {
-                    fr: '/privacy',
-                    en: '/en/privacy',
-                    de: '/de/privacy',
-                    es: '/es/privacy',
-                    pt: '/pt/privacy'
-                },
-                cookies: {
-                    fr: '/cookies',
-                    en: '/en/cookies',
-                    de: '/de/cookies',
-                    es: '/es/cookies',
-                    pt: '/pt/cookies'
-                },
                 geranium: {
                     fr: 'https://i.dfr.gg/geranium.webm',
                     en: 'https://i.dfr.gg/en-geranium.webm',
@@ -356,7 +328,7 @@ export default async function createConfigAsync() {
                             },
                             {
                                 label: 'Documentation',
-                                to: '/',
+                                to: '/docs',
                                 target: '_self'
                             },
                             {
@@ -376,22 +348,22 @@ export default async function createConfigAsync() {
                         items: [
                             {
                                 label: 'Mentions légales',
-                                to: 'legal',
+                                to: '/legal',
                                 target: '_self'
                             },
                             {
                                 label: 'Conditions d\'utilisation',
-                                to: 'terms',
+                                to: '/terms',
                                 target: '_self'
                             },
                             {
                                 label: 'Politique de confidentialité',
-                                to: 'privacy',
+                                to: '/privacy',
                                 target: '_self'
                             },
                             {
                                 label: 'Politique des cookies',
-                                to: 'cookies',
+                                to: '/cookies',
                                 target: '_self'
                             }
                         ],

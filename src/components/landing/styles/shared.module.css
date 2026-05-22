@@ -1,0 +1,164 @@
+/* Shared landing-page tokens & utilities, mirroring the Webflow source */
+
+.landing {
+  /* Colors from raidprotectbot.webflow.css */
+  --color-black: #040114;
+  --color-gray-1: #070417;
+  --color-gray-2: #1b1a25;
+  --color-gray-3: #242328;
+  --color-gray-4: #e1e0e9;
+  --color-white: #ffffff;
+  --color-primary-1: #726cb3;
+  --color-primary-4: #a561a3;
+  --color-primary-rp: #d35f5f;
+  --color-darker-primary: #bd5454;
+  --color-border-doc: #444950;
+  --color-founder: #ffab22;
+  --color-enterprise: #5f6fd3;
+
+  --radius-sm: 10px;
+  --radius-md: 20px;
+  --radius-lg: 50px;
+  --radius-doc: 0.8rem;
+
+  --gradient-1: linear-gradient(180deg, var(--color-primary-rp) 40%, var(--color-primary-4));
+  --gradient-feature-icon: linear-gradient(
+    135deg,
+    var(--color-primary-1),
+    var(--color-primary-rp) 60%,
+    var(--color-primary-4)
+  );
+
+  color: var(--color-gray-4);
+  font-size: 18px;
+  line-height: 1.5em;
+  background-color: var(--color-black);
+}
+
+.container {
+  max-width: 1360px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.sectionSpacing {
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+.sectionSpacingTop {
+  padding-top: 150px;
+}
+
+.sectionSpacingBottom {
+  padding-bottom: 150px;
+}
+
+.textGradient {
+  background-image: var(--gradient-1);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.btnPrimary {
+  display: inline-block;
+  border: 1px solid var(--color-darker-primary);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-darker-primary);
+  color: #fff;
+  text-align: center;
+  padding: 20px 28px 18px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.1em;
+  text-decoration: none;
+  transition: border-color 0.3s, background-color 0.3s, transform 0.3s, color 0.3s;
+}
+
+.btnPrimary:hover {
+  text-decoration: none;
+  color: #fff;
+  border-color: var(--color-darker-primary);
+  background-color: var(--color-darker-primary);
+  transform: translate3d(0, -3px, 0.01px);
+}
+
+.btnPrimaryFounder {
+  border-color: var(--color-founder);
+  background-color: var(--color-founder);
+  color: #fff;
+}
+
+.btnPrimaryFounder:hover {
+  border-color: var(--color-founder);
+  background-color: var(--color-founder);
+}
+
+.btnSecondary {
+  display: inline-block;
+  border: 1px solid var(--color-darker-primary);
+  border-radius: var(--radius-lg);
+  background-color: transparent;
+  color: var(--color-white);
+  text-align: center;
+  padding: 20px 28px 18px;
+  font-size: 18px;
+  line-height: 1.1em;
+  text-decoration: none;
+  transition: border-color 0.3s, transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.btnSecondary:hover {
+  text-decoration: none;
+  color: #fff;
+  border-color: var(--color-darker-primary);
+  background-color: var(--color-darker-primary);
+  transform: translate3d(0, -3px, 0.01px);
+}
+
+.btnSecondaryEnterprise {
+  border-color: var(--color-enterprise);
+}
+
+.btnSecondaryEnterprise:hover {
+  border-color: var(--color-enterprise);
+  background-color: var(--color-enterprise);
+}
+
+@media screen and (max-width: 991px) {
+  .sectionSpacing {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .sectionSpacingTop {
+    padding-top: 100px;
+  }
+  .sectionSpacingBottom {
+    padding-bottom: 100px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .sectionSpacing {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .sectionSpacingTop {
+    padding-top: 80px;
+  }
+  .sectionSpacingBottom {
+    padding-bottom: 80px;
+  }
+  .btnPrimary,
+  .btnSecondary {
+    padding: 20px 26px 16px;
+    font-size: 16px;
+  }
+}
