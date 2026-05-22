@@ -1,7 +1,10 @@
 User-agent: *
 
-Disallow: /3.3.1/*
-Disallow: /en/3.3.1/*
-Disallow: /de/3.3.1/*
-Disallow: /es/3.3.1/*
-Disallow: /pt/3.3.1/*
+# Ancienne version des docs (3.3.2) — déconseillée au crawl
+Disallow: /docs/3.3.2/*
+Disallow: /en/docs/3.3.2/*
+Disallow: /de/docs/3.3.2/*
+Disallow: /es/docs/3.3.2/*
+Disallow: /pt/docs/3.3.2/*
+
+Sitemap: https://raidprotect.bot/sitemap.xml
