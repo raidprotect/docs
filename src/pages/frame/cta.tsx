@@ -1,5 +1,6 @@
 import React, {type ReactNode} from 'react';
 import Head from '@docusaurus/Head';
+import Translate from '@docusaurus/Translate';
 import clsx from 'clsx';
 import shared from '@site/src/components/landing/styles/shared.module.css';
 import frame from './frame.module.css';
@@ -19,12 +20,30 @@ export default function FrameCta(): ReactNode {
             <div className={styles.wrap}>
               <div className={styles.contentWrap}>
                 <h2 className={styles.title}>
-                  Garder une longueur{' '}
-                  <span className={shared.textGradient}>d'avance</span>
+                  <Translate
+                    id="frame.cta.title"
+                    description="Frame CTA title; {highlight} renders the gradient-highlighted word"
+                    values={{
+                      highlight: (
+                        <span className={shared.textGradient}>
+                          <Translate
+                            id="frame.cta.title.highlight"
+                            description="Highlighted word inside the frame CTA title">
+                            d'avance
+                          </Translate>
+                        </span>
+                      ),
+                    }}>
+                    {'Garder une longueur {highlight}'}
+                  </Translate>
                 </h2>
                 <p className={styles.description}>
-                  Ajoutez RaidProtect et commencez à protéger votre serveur dès
-                  aujourd'hui.
+                  <Translate
+                    id="frame.cta.description"
+                    description="Frame CTA description">
+                    Ajoutez RaidProtect et commencez à protéger votre serveur
+                    dès aujourd'hui.
+                  </Translate>
                 </p>
                 <div className={styles.buttonList}>
                   <a
@@ -32,14 +51,22 @@ export default function FrameCta(): ReactNode {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={shared.btnPrimary}>
-                    Ajouter le bot
+                    <Translate
+                      id="frame.cta.primary"
+                      description="Frame CTA primary button: add the bot to Discord">
+                      Ajouter le bot
+                    </Translate>
                   </a>
                   <a
                     href="https://raidprotect.bot/discord"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={shared.btnSecondary}>
-                    Rejoindre le serveur
+                    <Translate
+                      id="frame.cta.secondary"
+                      description="Frame CTA secondary button: join the Discord server">
+                      Rejoindre le serveur
+                    </Translate>
                   </a>
                 </div>
               </div>

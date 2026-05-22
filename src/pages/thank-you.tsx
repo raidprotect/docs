@@ -1,6 +1,8 @@
 import React, {type ReactNode, useEffect, useState} from 'react';
 import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
+import Translate, {translate} from '@docusaurus/Translate';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './thank-you.module.css';
 
 type ServerBadge = 'partner' | 'verified' | null;
@@ -31,29 +33,30 @@ const REQUIRED_PERMISSIONS = 1117660769534n;
 const ADMIN_PERMISSION = 8n;
 
 // Order matches the Webflow source so the missing-permissions list reads the same.
-const PERMISSION_MESSAGES: Array<[string, bigint]> = [
-  ['Administrateur', ADMIN_PERMISSION],
-  ['Gérer le serveur', 32n],
-  ['Gérer les rôles', 268435456n],
-  ['Gérer les salons', 16n],
-  ['Expulser des membres', 2n],
-  ['Bannir des membres', 4n],
-  ['Gérer les pseudos', 134217728n],
-  ['Gérer les webhooks', 536870912n],
-  ['Voir les logs du serveur', 524288n],
-  ['Voir les salons', 1024n],
-  ['Modérer les membres', 1099511627776n],
-  ['Envoyer des messages', 2048n],
-  ['Gérer les messages', 8192n],
-  ['Gérer les fils', 17179869184n],
-  ['Intégrer des liens', 16384n],
-  ['Joindre des fichiers', 32768n],
-  ['Voir les anciens messages', 65536n],
-  ['Ajouter des réactions', 64n],
-  ['Utiliser des émojis externes', 262144n],
-  ['Rendre les membres muets', 4194304n],
-  ['Mettre en sourdine des membres', 8388608n],
-  ['Déplacer des membres', 16777216n],
+// Tuple: [translation id, default FR label, bitmask].
+const PERMISSION_MESSAGES: Array<[string, string, bigint]> = [
+  ['permission.administrator', 'Administrateur', ADMIN_PERMISSION],
+  ['permission.manageServer', 'Gérer le serveur', 32n],
+  ['permission.manageRoles', 'Gérer les rôles', 268435456n],
+  ['permission.manageChannels', 'Gérer les salons', 16n],
+  ['permission.kickMembers', 'Expulser des membres', 2n],
+  ['permission.banMembers', 'Bannir des membres', 4n],
+  ['permission.manageNicknames', 'Gérer les pseudos', 134217728n],
+  ['permission.manageWebhooks', 'Gérer les webhooks', 536870912n],
+  ['permission.viewAuditLog', 'Voir les logs du serveur', 524288n],
+  ['permission.viewChannels', 'Voir les salons', 1024n],
+  ['permission.moderateMembers', 'Modérer les membres', 1099511627776n],
+  ['permission.sendMessages', 'Envoyer des messages', 2048n],
+  ['permission.manageMessages', 'Gérer les messages', 8192n],
+  ['permission.manageThreads', 'Gérer les fils', 17179869184n],
+  ['permission.embedLinks', 'Intégrer des liens', 16384n],
+  ['permission.attachFiles', 'Joindre des fichiers', 32768n],
+  ['permission.readMessageHistory', 'Voir les anciens messages', 65536n],
+  ['permission.addReactions', 'Ajouter des réactions', 64n],
+  ['permission.useExternalEmojis', 'Utiliser des émojis externes', 262144n],
+  ['permission.muteMembers', 'Rendre les membres muets', 4194304n],
+  ['permission.deafenMembers', 'Mettre en sourdine des membres', 8388608n],
+  ['permission.moveMembers', 'Déplacer des membres', 16777216n],
 ];
 
 async function fetchServerInfo(guildId: string): Promise<ServerInfo | null> {
@@ -66,11 +69,29 @@ async function fetchServerInfo(guildId: string): Promise<ServerInfo | null> {
     }
     const widgetData = await widgetResponse.json();
 
-    const name: string = widgetData.name || 'Serveur inconnu';
+    const unknownServerLabel = translate({
+      id: 'thankYou.server.unknown',
+      message: 'Serveur inconnu',
+      description: 'Fallback name shown when the Discord widget returns no server name',
+    });
+    const memberCountUnknownLabel = translate({
+      id: 'thankYou.server.memberCountUnknown',
+      message: 'Nombre de membres inconnu',
+      description: 'Fallback shown when the Discord widget returns no member count',
+    });
+
+    const name: string = widgetData.name || unknownServerLabel;
     const members: string =
       typeof widgetData.presence_count === 'number'
-        ? `${widgetData.presence_count} membres en ligne`
-        : 'Nombre de membres inconnu';
+        ? translate(
+            {
+              id: 'thankYou.server.membersOnline',
+              message: '{count} membres en ligne',
+              description: 'Number of members currently online on the invited server',
+            },
+            {count: widgetData.presence_count},
+          )
+        : memberCountUnknownLabel;
     const inviteUrl: string = widgetData.instant_invite || '#';
 
     let iconUrl = DEFAULT_ICON_URL;
@@ -121,37 +142,68 @@ function computePermissionWarning(
 
   const hasAdminPermission =
     (currentPermissions & ADMIN_PERMISSION) === ADMIN_PERMISSION;
-  const missingPermissions = PERMISSION_MESSAGES.filter(
-    ([, value]) =>
+  const localized = PERMISSION_MESSAGES.map(
+    ([id, defaultMessage, value]) =>
+      [
+        id,
+        translate({id, message: defaultMessage}),
+        value,
+      ] as [string, string, bigint],
+  );
+  const missingEntries = localized.filter(
+    ([, , value]) =>
       (REQUIRED_PERMISSIONS & value) === value &&
       (currentPermissions & value) !== value,
-  ).map(([name]) => name);
+  );
+  const missingPermissions = missingEntries.map(([, name]) => name);
 
   if (hasAdminPermission || missingPermissions.length === 0) {
     return null;
   }
 
   if (
-    missingPermissions.length === 1 &&
-    missingPermissions[0] === 'Administrateur'
+    missingEntries.length === 1 &&
+    missingEntries[0][0] === 'permission.administrator'
   ) {
     return {
       tone: 'admin',
-      message:
-        '⚠️ Toutes les permissions spécifiques sont accordées, mais sans la permission Administrateur, le bot pourrait ne pas accéder à tous les salons.',
+      message: translate({
+        id: 'thankYou.permissions.adminOnlyWarning',
+        message:
+          '⚠️ Toutes les permissions spécifiques sont accordées, mais sans la permission Administrateur, le bot pourrait ne pas accéder à tous les salons.',
+        description:
+          'Warning shown when the only missing permission is Administrator',
+      }),
       missing: [],
     };
   }
 
   return {
     tone: 'missing',
-    message:
-      "⚠️ Afin d'assurer le bon fonctionnement du bot, nous vous recommandons d'ajouter les permissions suivantes :",
+    message: translate({
+      id: 'thankYou.permissions.missingWarning',
+      message:
+        "⚠️ Afin d'assurer le bon fonctionnement du bot, nous vous recommandons d'ajouter les permissions suivantes :",
+      description: 'Warning shown when some required permissions are missing',
+    }),
     missing: missingPermissions,
   };
 }
 
+const LANGUAGES: Array<{locale: string; label: string; href: string}> = [
+  {locale: 'fr', label: 'Français', href: '/thank-you'},
+  {locale: 'en', label: 'English', href: '/en/thank-you'},
+  {locale: 'de', label: 'Deutsch', href: '/de/thank-you'},
+  {locale: 'es', label: 'Español', href: '/es/thank-you'},
+  {locale: 'pt', label: 'Português', href: '/pt/thank-you'},
+];
+
 export default function ThankYou(): ReactNode {
+  const {
+    i18n: {currentLocale},
+  } = useDocusaurusContext();
+  const currentLanguage =
+    LANGUAGES.find((lang) => lang.locale === currentLocale) ?? LANGUAGES[0];
   const [serverInfo, setServerInfo] = useState<ServerInfo | null>(null);
   const [permissionWarning, setPermissionWarning] =
     useState<PermissionWarning | null>(null);
@@ -187,14 +239,43 @@ export default function ThankYou(): ReactNode {
     };
   }, []);
 
+  const pageTitle = translate({
+    id: 'thankYou.head.title',
+    message: 'Merci | RaidProtect',
+    description: 'Browser tab title for the thank-you page',
+  });
+  const pageDescription = translate({
+    id: 'thankYou.head.description',
+    message:
+      "Merci d'avoir invité RaidProtect ! Pour bien débuter, nous vous recommandons de consulter notre documentation et de rejoindre notre serveur Discord.",
+    description: 'Meta description for the thank-you page',
+  });
+  const discordAriaLabel = translate({
+    id: 'thankYou.social.discord.ariaLabel',
+    message: 'Discord',
+    description: 'ARIA label for the Discord social link',
+  });
+  const xAriaLabel = translate({
+    id: 'thankYou.social.x.ariaLabel',
+    message: 'X',
+    description: 'ARIA label for the X (Twitter) social link',
+  });
+  const youtubeAriaLabel = translate({
+    id: 'thankYou.social.youtube.ariaLabel',
+    message: 'YouTube',
+    description: 'ARIA label for the YouTube social link',
+  });
+  const githubAriaLabel = translate({
+    id: 'thankYou.social.github.ariaLabel',
+    message: 'GitHub',
+    description: 'ARIA label for the GitHub social link',
+  });
+
   return (
     <>
       <Head>
-        <title>Merci | RaidProtect</title>
-        <meta
-          name="description"
-          content="Merci d'avoir invité RaidProtect ! Pour bien débuter, nous vous recommandons de consulter notre documentation et de rejoindre notre serveur Discord."
-        />
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDescription} />
       </Head>
       <main className={styles.page}>
         <div className={styles.card}>
@@ -210,7 +291,13 @@ export default function ThankYou(): ReactNode {
             />
           </Link>
 
-          <p className={styles.title}>Merci d'avoir invité RaidProtect !</p>
+          <p className={styles.title}>
+            <Translate
+              id="thankYou.title"
+              description="Main heading of the thank-you page">
+              Merci d'avoir invité RaidProtect !
+            </Translate>
+          </p>
 
           {serverInfo && (
             <div className={styles.centerServer}>
@@ -270,8 +357,12 @@ export default function ThankYou(): ReactNode {
           )}
 
           <p className={styles.description}>
-            Pour bien débuter, nous vous recommandons de consulter notre
-            documentation et de rejoindre notre serveur.
+            <Translate
+              id="thankYou.description"
+              description="Body description of the thank-you page">
+              Pour bien débuter, nous vous recommandons de consulter notre
+              documentation et de rejoindre notre serveur.
+            </Translate>
           </p>
 
           <div className={styles.buttonRow}>
@@ -280,10 +371,18 @@ export default function ThankYou(): ReactNode {
               target="_blank"
               rel="noopener noreferrer"
               className={styles.btnPrimary}>
-              Rejoindre notre serveur Discord
+              <Translate
+                id="thankYou.cta.joinDiscord"
+                description="Primary CTA on the thank-you page: join the Discord server">
+                Rejoindre notre serveur Discord
+              </Translate>
             </a>
             <Link to="/docs" className={styles.btnSecondary}>
-              Consulter la documentation
+              <Translate
+                id="thankYou.cta.viewDocs"
+                description="Secondary CTA on the thank-you page: open the documentation">
+                Consulter la documentation
+              </Translate>
             </Link>
           </div>
 
@@ -303,26 +402,23 @@ export default function ThankYou(): ReactNode {
                     />
                   </svg>
                 </span>
-                <span className={styles.currentLanguage}>Français</span>
+                <span className={styles.currentLanguage}>
+                  {currentLanguage.label}
+                </span>
               </div>
               <nav className={styles.langDropdownList}>
-                <Link
-                  to="/thank-you"
-                  className={`${styles.langDropdownItem} ${styles.langDropdownItemCurrent}`}>
-                  Français
-                </Link>
-                <Link to="/en/thank-you" className={styles.langDropdownItem}>
-                  English
-                </Link>
-                <Link to="/de/thank-you" className={styles.langDropdownItem}>
-                  Deutsch
-                </Link>
-                <Link to="/es/thank-you" className={styles.langDropdownItem}>
-                  Español
-                </Link>
-                <Link to="/pt/thank-you" className={styles.langDropdownItem}>
-                  Português
-                </Link>
+                {LANGUAGES.map((lang) => (
+                  <a
+                    key={lang.locale}
+                    href={lang.href}
+                    className={
+                      lang.locale === currentLanguage.locale
+                        ? `${styles.langDropdownItem} ${styles.langDropdownItemCurrent}`
+                        : styles.langDropdownItem
+                    }>
+                    {lang.label}
+                  </a>
+                ))}
               </nav>
             </div>
 
@@ -332,7 +428,7 @@ export default function ThankYou(): ReactNode {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialLink}
-                aria-label="Discord">
+                aria-label={discordAriaLabel}>
                 <img
                   src="/img/landing/iconDiscord.svg"
                   alt=""
@@ -347,7 +443,7 @@ export default function ThankYou(): ReactNode {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialLink}
-                aria-label="X">
+                aria-label={xAriaLabel}>
                 <img
                   src="/img/landing/iconX.svg"
                   alt=""
@@ -362,7 +458,7 @@ export default function ThankYou(): ReactNode {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialLink}
-                aria-label="YouTube">
+                aria-label={youtubeAriaLabel}>
                 <img
                   src="/img/landing/iconYouTube.svg"
                   alt=""
@@ -377,7 +473,7 @@ export default function ThankYou(): ReactNode {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialLink}
-                aria-label="GitHub">
+                aria-label={githubAriaLabel}>
                 <img
                   src="/img/landing/iconGitHub.svg"
                   alt=""

@@ -415,5 +415,437 @@
   },
   "editor.preview.title": {
     "message": "Pré-visualização"
+  },
+  "hero.preTitle": {
+    "message": "Utilizado por mais de {count} servidores",
+    "description": "Hero pre-title displayed above the main title; {count} is a locale-formatted number of servers"
+  },
+  "hero.title": {
+    "message": "O melhor bot de {highlight} para Discord",
+    "description": "Hero main title; {highlight} renders the gradient-highlighted word"
+  },
+  "hero.title.highlight": {
+    "message": "segurança",
+    "description": "The highlighted word inside the hero title (security)"
+  },
+  "hero.description": {
+    "message": "Impeça que utilizadores maliciosos prejudiquem o seu servidor Discord.",
+    "description": "Hero description below the title"
+  },
+  "hero.cta.primary": {
+    "message": "Adicionar ao Discord",
+    "description": "Primary CTA: invite the bot to Discord"
+  },
+  "hero.cta.secondary": {
+    "message": "Ver funcionalidades",
+    "description": "Secondary CTA: scroll to the features section"
+  },
+  "servers.title": {
+    "message": "Protegemos os maiores",
+    "description": "Servers marquee title: 'We protect the biggest'"
+  },
+  "servers.memberCount": {
+    "message": "{count} membros",
+    "description": "Server card: number of members; {count} is locale-formatted"
+  },
+  "frame.cta.title": {
+    "message": "Manter-se um passo {highlight}",
+    "description": "Frame CTA title; {highlight} renders the gradient-highlighted word"
+  },
+  "frame.cta.title.highlight": {
+    "message": "à frente",
+    "description": "Highlighted word inside the frame CTA title"
+  },
+  "frame.cta.description": {
+    "message": "Adicione o RaidProtect e comece a proteger o seu servidor hoje mesmo.",
+    "description": "Frame CTA description"
+  },
+  "frame.cta.primary": {
+    "message": "Adicionar o bot",
+    "description": "Frame CTA primary button: add the bot to Discord"
+  },
+  "frame.cta.secondary": {
+    "message": "Entrar no servidor",
+    "description": "Frame CTA secondary button: join the Discord server"
+  },
+  "landing.layout.title": {
+    "message": "RaidProtect • Proteja o seu servidor Discord",
+    "description": "Browser tab title for the landing page"
+  },
+  "landing.layout.description": {
+    "message": "O RaidProtect é um bot Discord francês que tem por missão proteger facilmente o seu servidor de utilizadores maliciosos.",
+    "description": "Meta description for the landing page"
+  },
+  "landing.about.title": {
+    "message": "Os nossos resultados têm {highlight}",
+    "description": "About section title; {highlight} renders the gradient-highlighted word"
+  },
+  "landing.about.title.highlight": {
+    "message": "impacto",
+    "description": "Highlighted word inside the about section title"
+  },
+  "landing.about.curve.ariaLabel": {
+    "message": "Crescimento do número de servidores",
+    "description": "ARIA label for the decorative SVG curve in the about section"
+  },
+  "landing.about.counter.servers": {
+    "message": "Servidores protegidos",
+    "description": "About stat label: number of secured servers"
+  },
+  "landing.about.counter.captcha": {
+    "message": "Captchas resolvidos",
+    "description": "About stat label: number of captchas solved"
+  },
+  "landing.about.counter.antispam": {
+    "message": "Spams bloqueados",
+    "description": "About stat label: number of spam messages blocked"
+  },
+  "landing.about.counter.users": {
+    "message": "Utilizadores protegidos",
+    "description": "About stat label: number of protected users"
+  },
+  "landing.features.title": {
+    "message": "As nossas {highlight}",
+    "description": "Features section title; {highlight} renders the gradient-highlighted word"
+  },
+  "landing.features.title.highlight": {
+    "message": "funcionalidades",
+    "description": "Highlighted word inside the features section title"
+  },
+  "landing.features.subtitle": {
+    "message": "Descubra o que faz de nós um dos melhores bots para proteger o seu servidor Discord de utilizadores maliciosos.",
+    "description": "Features section subtitle/description"
+  },
+  "landing.features.anti-spam.title": {
+    "message": "Proteção antispam",
+    "description": "Feature card title: anti-spam"
+  },
+  "landing.features.anti-spam.description": {
+    "message": "Sancione instantaneamente as tentativas de spam, sem qualquer intervenção da sua parte.",
+    "description": "Feature card description: anti-spam"
+  },
+  "landing.features.raid.title": {
+    "message": "Bloqueio de raids",
+    "description": "Feature card title: raid"
+  },
+  "landing.features.raid.description": {
+    "message": "Receia um raid? O nosso bot é capaz de o detetar e bloquear antes que afete o seu servidor.",
+    "description": "Feature card description: raid"
+  },
+  "landing.features.captcha.title": {
+    "message": "Proteção contra bots",
+    "description": "Feature card title: captcha"
+  },
+  "landing.features.captcha.description": {
+    "message": "Graças ao captcha, os seus membros têm de provar que são humanos. Diga adeus às contas automatizadas.",
+    "description": "Feature card description: captcha"
+  },
+  "landing.features.mod.title": {
+    "message": "Moderação e administração",
+    "description": "Feature card title: mod"
+  },
+  "landing.features.mod.description": {
+    "message": "Gira o seu servidor como um profissional graças às nossas várias funcionalidades de moderação e administração.",
+    "description": "Feature card description: mod"
+  },
+  "landing.features.tag.title": {
+    "message": "Cargo de Etiqueta",
+    "description": "Feature card title: tag"
+  },
+  "landing.features.tag.description": {
+    "message": "O Cargo de Etiqueta atribui automaticamente um cargo aos membros que adicionam a etiqueta do seu servidor.",
+    "description": "Feature card description: tag"
+  },
+  "landing.features.dm.title": {
+    "message": "Bloqueio de MP",
+    "description": "Feature card title: dm"
+  },
+  "landing.features.dm.description": {
+    "message": "Um escudo único contra spam, scam e burlas por mensagem privada.",
+    "description": "Feature card description: dm"
+  },
+  "landing.pricing.title": {
+    "message": "Manter-se um passo {highlight}",
+    "description": "Pricing section title; {highlight} renders the gradient-highlighted word"
+  },
+  "landing.pricing.title.highlight": {
+    "message": "à frente",
+    "description": "Highlighted word inside the pricing section title"
+  },
+  "landing.pricing.description": {
+    "message": "Adicione o RaidProtect e comece a proteger o seu servidor hoje mesmo.",
+    "description": "Pricing section description below the title"
+  },
+  "landing.pricing.basic.preTitle": {
+    "message": "Basic",
+    "description": "Pricing card pre-title for the Basic tier"
+  },
+  "landing.pricing.basic.price": {
+    "message": "Gratuito",
+    "description": "Pricing card price label for the Basic tier (free)"
+  },
+  "landing.pricing.basic.tagline": {
+    "message": "A segurança essencial garantida para sempre",
+    "description": "Pricing card tagline for the Basic tier"
+  },
+  "landing.pricing.basic.feature.1": {
+    "message": "Proteções antispam",
+    "description": "Basic tier feature 1"
+  },
+  "landing.pricing.basic.feature.2": {
+    "message": "Bloqueio automático de raids",
+    "description": "Basic tier feature 2"
+  },
+  "landing.pricing.basic.feature.3": {
+    "message": "Filtragem de bots maliciosos",
+    "description": "Basic tier feature 3"
+  },
+  "landing.pricing.basic.feature.4": {
+    "message": "Moderação e administração",
+    "description": "Basic tier feature 4"
+  },
+  "landing.pricing.basic.feature.5": {
+    "message": "E muito mais...",
+    "description": "Basic tier feature 5 (emphasis)"
+  },
+  "landing.pricing.basic.button": {
+    "message": "Adicionar ao Discord",
+    "description": "Basic tier CTA button: invite the bot"
+  },
+  "landing.pricing.founder.preTitle": {
+    "message": "Founder",
+    "description": "Pricing card pre-title for the Founder tier"
+  },
+  "landing.pricing.founder.price.label": {
+    "message": "Subscrição",
+    "description": "Founder tier price label (subscription)"
+  },
+  "landing.pricing.founder.price.amount": {
+    "message": "2,99 $",
+    "description": "Founder tier price amount; stays the same across locales"
+  },
+  "landing.pricing.founder.tagline": {
+    "message": "Oferta de lançamento reservada aos primeiros subscritores",
+    "description": "Pricing card tagline for the Founder tier"
+  },
+  "landing.pricing.founder.feature.1": {
+    "message": "Perfil do bot personalizável",
+    "description": "Founder tier feature 1"
+  },
+  "landing.pricing.founder.feature.2": {
+    "message": "Nomes de sanções personalizados",
+    "description": "Founder tier feature 2"
+  },
+  "landing.pricing.founder.feature.3": {
+    "message": "Acesso avançado ao Auth Manager",
+    "description": "Founder tier feature 3"
+  },
+  "landing.pricing.founder.feature.4": {
+    "message": "Acesso alargado ao Display Public",
+    "description": "Founder tier feature 4"
+  },
+  "landing.pricing.founder.feature.5": {
+    "message": "Acesso à Beta pública",
+    "description": "Founder tier feature 5"
+  },
+  "landing.pricing.founder.feature.6": {
+    "message": "Cargo exclusivo no nosso servidor",
+    "description": "Founder tier feature 6"
+  },
+  "landing.pricing.founder.button": {
+    "message": "Subscrever via Discord",
+    "description": "Founder tier CTA button: subscribe"
+  },
+  "landing.pricing.business.preTitle": {
+    "message": "Business",
+    "description": "Pricing card pre-title for the Business tier"
+  },
+  "landing.pricing.business.price": {
+    "message": "Sob consulta",
+    "description": "Pricing card price label for the Business tier (on request)"
+  },
+  "landing.pricing.business.tagline": {
+    "message": "Para projetos com exigências de segurança elevadas",
+    "description": "Pricing card tagline for the Business tier"
+  },
+  "landing.pricing.business.feature.1": {
+    "message": "Todas as funcionalidades Founder",
+    "description": "Business tier feature 1"
+  },
+  "landing.pricing.business.feature.2": {
+    "message": "Instância dedicada e isolada",
+    "description": "Business tier feature 2"
+  },
+  "landing.pricing.business.feature.3": {
+    "message": "Auditoria inicial do seu servidor",
+    "description": "Business tier feature 3"
+  },
+  "landing.pricing.business.feature.4": {
+    "message": "Integração com as suas ferramentas",
+    "description": "Business tier feature 4"
+  },
+  "landing.pricing.business.feature.5": {
+    "message": "Funcionalidades à medida",
+    "description": "Business tier feature 5"
+  },
+  "landing.pricing.business.feature.6": {
+    "message": "Acompanhamento regular com um especialista",
+    "description": "Business tier feature 6"
+  },
+  "landing.pricing.business.feature.7": {
+    "message": "Suporte prioritário",
+    "description": "Business tier feature 7"
+  },
+  "landing.pricing.business.button": {
+    "message": "Marcar reunião",
+    "description": "Business tier CTA button: book a meeting"
+  },
+  "thankYou.head.title": {
+    "message": "Obrigado | RaidProtect",
+    "description": "Browser tab title for the thank-you page"
+  },
+  "thankYou.head.description": {
+    "message": "Obrigado por convidar o RaidProtect! Para começar, recomendamos consultar a nossa documentação e entrar no nosso servidor Discord.",
+    "description": "Meta description for the thank-you page"
+  },
+  "thankYou.title": {
+    "message": "Obrigado por convidar o RaidProtect!",
+    "description": "Main heading of the thank-you page"
+  },
+  "thankYou.description": {
+    "message": "Para começar com o pé direito, recomendamos consultar a nossa documentação e entrar no nosso servidor.",
+    "description": "Body description of the thank-you page"
+  },
+  "thankYou.cta.joinDiscord": {
+    "message": "Entrar no nosso servidor Discord",
+    "description": "Primary CTA on the thank-you page: join the Discord server"
+  },
+  "thankYou.cta.viewDocs": {
+    "message": "Consultar a documentação",
+    "description": "Secondary CTA on the thank-you page: open the documentation"
+  },
+  "thankYou.server.unknown": {
+    "message": "Servidor desconhecido",
+    "description": "Fallback name shown when the Discord widget returns no server name"
+  },
+  "thankYou.server.memberCountUnknown": {
+    "message": "Número de membros desconhecido",
+    "description": "Fallback shown when the Discord widget returns no member count"
+  },
+  "thankYou.server.membersOnline": {
+    "message": "{count} membros online",
+    "description": "Number of members currently online on the invited server"
+  },
+  "thankYou.permissions.adminOnlyWarning": {
+    "message": "⚠️ Todas as permissões específicas estão concedidas, mas sem a permissão de Administrador o bot pode não conseguir aceder a todos os canais.",
+    "description": "Warning shown when the only missing permission is Administrator"
+  },
+  "thankYou.permissions.missingWarning": {
+    "message": "⚠️ Para garantir o bom funcionamento do bot, recomendamos adicionar as seguintes permissões:",
+    "description": "Warning shown when some required permissions are missing"
+  },
+  "thankYou.social.discord.ariaLabel": {
+    "message": "Discord",
+    "description": "ARIA label for the Discord social link"
+  },
+  "thankYou.social.x.ariaLabel": {
+    "message": "X",
+    "description": "ARIA label for the X (Twitter) social link"
+  },
+  "thankYou.social.youtube.ariaLabel": {
+    "message": "YouTube",
+    "description": "ARIA label for the YouTube social link"
+  },
+  "thankYou.social.github.ariaLabel": {
+    "message": "GitHub",
+    "description": "ARIA label for the GitHub social link"
+  },
+  "permission.administrator": {
+    "message": "Administrador",
+    "description": "Discord permission name"
+  },
+  "permission.manageServer": {
+    "message": "Gerir servidor",
+    "description": "Discord permission name"
+  },
+  "permission.manageRoles": {
+    "message": "Gerir cargos",
+    "description": "Discord permission name"
+  },
+  "permission.manageChannels": {
+    "message": "Gerir canais",
+    "description": "Discord permission name"
+  },
+  "permission.kickMembers": {
+    "message": "Expulsar membros",
+    "description": "Discord permission name"
+  },
+  "permission.banMembers": {
+    "message": "Banir membros",
+    "description": "Discord permission name"
+  },
+  "permission.manageNicknames": {
+    "message": "Gerir alcunhas",
+    "description": "Discord permission name"
+  },
+  "permission.manageWebhooks": {
+    "message": "Gerir webhooks",
+    "description": "Discord permission name"
+  },
+  "permission.viewAuditLog": {
+    "message": "Ver registo de auditoria",
+    "description": "Discord permission name"
+  },
+  "permission.viewChannels": {
+    "message": "Ver canais",
+    "description": "Discord permission name"
+  },
+  "permission.moderateMembers": {
+    "message": "Moderar membros",
+    "description": "Discord permission name"
+  },
+  "permission.sendMessages": {
+    "message": "Enviar mensagens",
+    "description": "Discord permission name"
+  },
+  "permission.manageMessages": {
+    "message": "Gerir mensagens",
+    "description": "Discord permission name"
+  },
+  "permission.manageThreads": {
+    "message": "Gerir tópicos",
+    "description": "Discord permission name"
+  },
+  "permission.embedLinks": {
+    "message": "Incorporar ligações",
+    "description": "Discord permission name"
+  },
+  "permission.attachFiles": {
+    "message": "Anexar ficheiros",
+    "description": "Discord permission name"
+  },
+  "permission.readMessageHistory": {
+    "message": "Ler histórico de mensagens",
+    "description": "Discord permission name"
+  },
+  "permission.addReactions": {
+    "message": "Adicionar reações",
+    "description": "Discord permission name"
+  },
+  "permission.useExternalEmojis": {
+    "message": "Usar emojis externos",
+    "description": "Discord permission name"
+  },
+  "permission.muteMembers": {
+    "message": "Silenciar membros",
+    "description": "Discord permission name"
+  },
+  "permission.deafenMembers": {
+    "message": "Ensurdecer membros",
+    "description": "Discord permission name"
+  },
+  "permission.moveMembers": {
+    "message": "Mover membros",
+    "description": "Discord permission name"
   }
 }
