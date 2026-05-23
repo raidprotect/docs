@@ -10,10 +10,7 @@ import Head from '@docusaurus/Head';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import {PageMetadata, useThemeConfig} from '@docusaurus/theme-common';
-import {
-  DEFAULT_SEARCH_TAG,
-  useAlternatePageUtils,
-} from '@docusaurus/theme-common/internal';
+import {DEFAULT_SEARCH_TAG} from '@docusaurus/theme-common/internal';
 import {useLocation} from '@docusaurus/router';
 import {applyTrailingSlash} from '@docusaurus/utils-common';
 import SearchMetadata from '@theme/SearchMetadata';
@@ -24,11 +21,37 @@ import SearchMetadata from '@theme/SearchMetadata';
 // See https://github.com/facebook/docusaurus/issues/3317
 function AlternateLangHeaders(): ReactNode {
   const {
+    siteConfig: {url: siteUrl},
     i18n: {currentLocale, defaultLocale, localeConfigs},
   } = useDocusaurusContext();
-  const alternatePageUtils = useAlternatePageUtils();
+  const {pathname} = useLocation();
 
-  const currentHtmlLang = localeConfigs[currentLocale]!.htmlLang;
+  const currentLocaleConfig = localeConfigs[currentLocale]!;
+  const currentLocaleBase = currentLocaleConfig.baseUrl; // ex: '/en/', '/'
+  const currentHtmlLang = currentLocaleConfig.htmlLang;
+
+  // Le useAlternatePageUtils de Docusaurus utilise pathname.replace(baseUrl, '')
+  // pour extraire le suffixe, ce qui échoue si le pathname est `/en` (sans slash
+  // final) alors que baseUrl du locale courant est `/en/`. Résultat : suffixe
+  // `/en` concaténé tel quel à la base de chaque locale, d'où des liens en
+  // double slash (`https://raidprotect.bot//en`). On strip ici manuellement en
+  // tolérant l'absence du slash de fin.
+  let suffix: string;
+  if (pathname.startsWith(currentLocaleBase)) {
+    suffix = pathname.slice(currentLocaleBase.length);
+  } else if (
+    currentLocaleBase.endsWith('/') &&
+    pathname === currentLocaleBase.slice(0, -1)
+  ) {
+    suffix = '';
+  } else {
+    suffix = pathname.replace(/^\//, '');
+  }
+
+  const buildUrl = (locale: string): string => {
+    const base = localeConfigs[locale]!.baseUrl;
+    return `${siteUrl}${base}${suffix}`;
+  };
 
   // HTML lang is a BCP 47 tag, but the Open Graph protocol requires
   // using underscores instead of dashes.
@@ -45,19 +68,13 @@ function AlternateLangHeaders(): ReactNode {
         <link
           key={locale}
           rel="alternate"
-          href={alternatePageUtils.createUrl({
-            locale,
-            fullyQualified: true,
-          })}
+          href={buildUrl(locale)}
           hrefLang={htmlLang}
         />
       ))}
       <link
         rel="alternate"
-        href={alternatePageUtils.createUrl({
-          locale: defaultLocale,
-          fullyQualified: true,
-        })}
+        href={buildUrl(defaultLocale)}
         hrefLang="x-default"
       />
 
