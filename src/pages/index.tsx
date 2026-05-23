@@ -1,8 +1,10 @@
 import React, {type ReactNode, useEffect, useRef, useState} from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
+import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
 import Translate, {translate} from '@docusaurus/Translate';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Hero from '@site/src/components/landing/Hero';
 import Servers from '@site/src/components/landing/Servers';
 import shared from '@site/src/components/landing/styles/shared.module.css';
@@ -216,6 +218,10 @@ const FEATURES: Feature[] = [
 
 export default function Home(): ReactNode {
   const [counts, setCounts] = useState<Counts | null>(null);
+  const {
+    i18n: {currentLocale, defaultLocale},
+    siteConfig: {url: siteUrl},
+  } = useDocusaurusContext();
 
   // Sur la landing, on remet le sélecteur de version sur "stable" (lastVersion)
   // en effaçant la préférence mémorisée. Accès direct au localStorage car le
@@ -267,8 +273,40 @@ export default function Home(): ReactNode {
     description: 'ARIA label for the decorative SVG curve in the about section',
   });
 
+  const landingUrl =
+    currentLocale === defaultLocale
+      ? `${siteUrl}/`
+      : `${siteUrl}/${currentLocale}/`;
+  const softwareApplicationLd = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    '@id': `${siteUrl}/#software`,
+    name: 'RaidProtect',
+    applicationCategory: 'SecurityApplication',
+    operatingSystem: 'Discord',
+    url: landingUrl,
+    description: layoutDescription,
+    inLanguage: currentLocale,
+    publisher: {'@id': `${siteUrl}/#organization`},
+    isPartOf: {'@id': `${siteUrl}/#website`},
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'EUR',
+    },
+  };
+  // Évite qu'un éventuel </script> dans la chaîne casse le parsing du HTML.
+  const softwareApplicationLdJson = JSON.stringify(
+    softwareApplicationLd,
+  ).replace(/</g, '\\u003c');
+
   return (
     <Layout title={layoutTitle} description={layoutDescription}>
+      <Head>
+        <script type="application/ld+json">
+          {softwareApplicationLdJson}
+        </script>
+      </Head>
       <main>
         <Hero serverCount={counts?.servers} />
         <Servers />

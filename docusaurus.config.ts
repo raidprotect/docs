@@ -188,12 +188,30 @@ export default async function createConfigAsync() {
                 innerHTML: JSON.stringify({
                     "@context": "https://schema.org",
                     "@graph": [
-                        { "@type": "Organization", "@id": "https://raidprotect.bot/#organization" },
+                        {
+                            "@type": "Organization",
+                            "@id": "https://raidprotect.bot/#organization",
+                            "name": "RaidProtect",
+                            "url": "https://raidprotect.bot/",
+                            "logo": {
+                                "@type": "ImageObject",
+                                "url": "https://raidprotect.bot/img/logo.png",
+                                "contentUrl": "https://raidprotect.bot/img/logo.png"
+                            },
+                            "description": "RaidProtect develops a Discord protection bot featuring captcha verification, anti-spam, raid mode and centralized moderation.",
+                            "sameAs": [
+                                "https://discord.com/invite/raidprotect",
+                                "https://x.com/raidprotect",
+                                "https://www.youtube.com/@RaidProtect",
+                                "https://github.com/raidprotect"
+                            ]
+                        },
                         {
                             "@type": "WebSite",
                             "@id": "https://raidprotect.bot/#website",
                             "url": "https://raidprotect.bot/",
                             "name": "RaidProtect",
+                            "description": "Official site of RaidProtect, the Discord protection bot.",
                             "publisher": { "@id": "https://raidprotect.bot/#organization" },
                             "inLanguage": ["fr", "en", "de", "es", "pt"]
                         }
