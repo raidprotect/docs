@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import Translate, {translate} from '@docusaurus/Translate';
-import {useDocsPreferredVersion} from '@docusaurus/plugin-content-docs/client';
 import Hero from '@site/src/components/landing/Hero';
 import Servers from '@site/src/components/landing/Servers';
 import shared from '@site/src/components/landing/styles/shared.module.css';
@@ -217,13 +216,19 @@ const FEATURES: Feature[] = [
 
 export default function Home(): ReactNode {
   const [counts, setCounts] = useState<Counts | null>(null);
-  const {savePreferredVersionName} = useDocsPreferredVersion();
 
   // Sur la landing, on remet le sélecteur de version sur "stable" (lastVersion)
-  // en effaçant la préférence éventuellement mémorisée par l'utilisateur.
+  // en effaçant la préférence mémorisée. Accès direct au localStorage car le
+  // hook useDocsPreferredVersion ne fonctionne que sur les pages docs (provider
+  // non monté sur la landing).
   useEffect(() => {
-    savePreferredVersionName(null);
-  }, [savePreferredVersionName]);
+    if (typeof window === 'undefined') return;
+    try {
+      window.localStorage.removeItem('docs-preferred-version-default');
+    } catch {
+      /* localStorage indisponible (Safari privé, etc.), tant pis */
+    }
+  }, []);
 
   useEffect(() => {
     let cancelled = false;
