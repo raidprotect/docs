@@ -127,7 +127,7 @@ function StatCounter({
     <div ref={itemRef} className={styles.counterItem}>
       <div className={styles.counterTitle}>
         <span>{displayValue ?? '0'}</span>
-        <span>{unit}</span>
+        <span className={styles.counterUnit}>{unit}</span>
       </div>
       <div className={styles.counterLabel}>{label}</div>
     </div>

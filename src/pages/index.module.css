@@ -106,6 +106,10 @@
   color: #fff;
 }
 
+.counterUnit {
+  color: var(--color-primary-rp);
+}
+
 .counterLabel {
   color: #fff;
   font-size: 18px;
