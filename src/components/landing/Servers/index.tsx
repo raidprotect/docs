@@ -293,7 +293,17 @@ function BadgeImg({badge}: {badge: Badge}) {
   );
 }
 
-function ServerCard({server, locale}: {server: Server; locale: string}) {
+function ServerCard({
+  server,
+  locale,
+  decorative = false,
+}: {
+  server: Server;
+  locale: string;
+  /** Carte du groupe dupliqué (aria-hidden) : on la sort de l'ordre de
+   *  tabulation pour éviter la violation axe « aria-hidden-focus ». */
+  decorative?: boolean;
+}) {
   const formatted = server.members.toLocaleString(
     LOCALE_TO_BCP47[locale] ?? locale,
   );
@@ -302,7 +312,8 @@ function ServerCard({server, locale}: {server: Server; locale: string}) {
       href={server.href}
       target="_blank"
       rel="noopener noreferrer"
-      className={styles.server}>
+      className={styles.server}
+      tabIndex={decorative ? -1 : undefined}>
       <div className={styles.avatarInfo}>
         <img
           src={server.icon}
@@ -363,6 +374,7 @@ export default function Servers(): ReactNode {
                   key={`b-${server.name}`}
                   server={server}
                   locale={currentLocale}
+                  decorative
                 />
               ))}
             </div>
