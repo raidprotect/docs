@@ -89,12 +89,14 @@
 .btnPrimaryFounder {
   border-color: var(--color-founder);
   background-color: var(--color-founder);
-  color: #fff;
+  /* Texte sombre sur le doré : le blanc tombait à ~1.9:1 (échec WCAG AA). */
+  color: var(--color-black);
 }
 
 .btnPrimaryFounder:hover {
   border-color: var(--color-founder);
   background-color: var(--color-founder);
+  color: var(--color-black);
 }
 
 .btnSecondary {
