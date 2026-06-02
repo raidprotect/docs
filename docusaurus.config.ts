@@ -23,7 +23,7 @@ export default async function createConfigAsync() {
         title: 'RaidProtect',
         tagline: 'Sécurisez votre serveur Discord',
         favicon: 'img/favicon.ico',
-        url: 'https://docs.raidprotect.bot',
+        url: 'https://raidprotect.bot',
         baseUrl: '/',
         organizationName: 'rapidprotect',
         projectName: 'raidprotect',
@@ -63,39 +63,11 @@ export default async function createConfigAsync() {
         customFields: {
             urls: {
                 main: {
-                    fr: 'https://raidprotect.bot',
-                    en: 'https://raidprotect.bot/en',
-                    de: 'https://raidprotect.bot/de',
-                    es: 'https://raidprotect.bot/es',
-                    pt: 'https://raidprotect.bot/pt'
-                },
-                legal: {
-                    fr: 'https://raidprotect.bot/legal',
-                    en: 'https://raidprotect.bot/en/legal',
-                    de: 'https://raidprotect.bot/de/legal',
-                    es: 'https://raidprotect.bot/es/legal',
-                    pt: 'https://raidprotect.bot/pt/legal'
-                },
-                terms: {
-                    fr: 'https://raidprotect.bot/terms',
-                    en: 'https://raidprotect.bot/en/terms',
-                    de: 'https://raidprotect.bot/de/terms',
-                    es: 'https://raidprotect.bot/es/terms',
-                    pt: 'https://raidprotect.bot/pt/terms'
-                },
-                privacy: {
-                    fr: 'https://raidprotect.bot/privacy',
-                    en: 'https://raidprotect.bot/en/privacy',
-                    de: 'https://raidprotect.bot/de/privacy',
-                    es: 'https://raidprotect.bot/es/privacy',
-                    pt: 'https://raidprotect.bot/pt/privacy'
-                },
-                cookies: {
-                    fr: 'https://raidprotect.bot/cookies',
-                    en: 'https://raidprotect.bot/en/cookies',
-                    de: 'https://raidprotect.bot/de/cookies',
-                    es: 'https://raidprotect.bot/es/cookies',
-                    pt: 'https://raidprotect.bot/pt/cookies'
+                    fr: '/',
+                    en: '/en/',
+                    de: '/de/',
+                    es: '/es/',
+                    pt: '/pt/'
                 },
                 geranium: {
                     fr: 'https://i.dfr.gg/geranium.webm',
@@ -114,11 +86,11 @@ export default async function createConfigAsync() {
                     pt: 'RaidProtect é um bot do Discord que protege seu servidor de usuários maliciosos graças ao seu anti-spam e captcha. <strong>E justo lá, um pequeno gerânio.&nbsp;</strong>'
                 },
                 announcementBar: {
-                    fr: '<strong>La mise à jour <a href="https://docs.raidprotect.bot/blog/3.3.3-modview">Vue de modération centralisée (3.3.3)</a> est disponible !</strong>',
-                    en: '<strong>The <a href="https://docs.raidprotect.bot/en/blog/3.3.3-modview">Centralized Moderation View (3.3.3)</a> update is now live!</strong>',
-                    de: '<strong>Das Update <a href="https://docs.raidprotect.bot/de/blog/3.3.3-modview">Zentrale Moderationsansicht (3.3.3)</a> ist jetzt verfügbar!</strong>',
-                    es: '<strong>¡La actualización <a href="https://docs.raidprotect.bot/es/blog/3.3.3-modview">Vista de moderación centralizada (3.3.3)</a> ya está disponible!</strong>',
-                    pt: '<strong>A atualização <a href="https://docs.raidprotect.bot/pt/blog/3.3.3-modview">Vista de moderação centralizada (3.3.3)</a> já está disponível!</strong>'
+                    fr: '<strong>La mise à jour <a href="https://raidprotect.bot/blog/3.3.3-modview">Vue de modération centralisée (3.3.3)</a> est disponible !</strong>',
+                    en: '<strong>The <a href="https://raidprotect.bot/en/blog/3.3.3-modview">Centralized Moderation View (3.3.3)</a> update is now live!</strong>',
+                    de: '<strong>Das Update <a href="https://raidprotect.bot/de/blog/3.3.3-modview">Zentrale Moderationsansicht (3.3.3)</a> ist jetzt verfügbar!</strong>',
+                    es: '<strong>¡La actualización <a href="https://raidprotect.bot/es/blog/3.3.3-modview">Vista de moderación centralizada (3.3.3)</a> ya está disponible!</strong>',
+                    pt: '<strong>A atualização <a href="https://raidprotect.bot/pt/blog/3.3.3-modview">Vista de moderação centralizada (3.3.3)</a> já está disponível!</strong>'
                 }
             },
             excludedCanonical: []
@@ -148,7 +120,7 @@ export default async function createConfigAsync() {
                 'classic',
                 {
                     docs: {
-                        routeBasePath: '/',
+                        routeBasePath: '/docs',
                         sidebarPath: './sidebars.ts',
                         editUrl: 'https://github.com/raidprotect/docs/tree/master/',
                         lastVersion: lastStableVersion,
@@ -183,7 +155,11 @@ export default async function createConfigAsync() {
                         blogSidebarTitle: 'Blog',
                         routeBasePath: '/blog'
                     },
-                    pages: false,
+                    pages: {
+                        path: 'src/pages',
+                        routeBasePath: '/',
+                        include: ['**/*.{js,jsx,ts,tsx,md,mdx}'],
+                    },
                     sitemap: {
                         lastmod: 'date',
                         ignorePatterns: ['**/beta/**'],
@@ -193,7 +169,7 @@ export default async function createConfigAsync() {
                             const items = await params.defaultCreateSitemapItems(params)
                             return items.map(i => ({
                                 ...i,
-                                priority: urlPriorities[i.url.replace(new RegExp('https://docs.raidprotect.bot/(en/)?'), '')] ?? 0.5
+                                priority: urlPriorities[i.url.replace(new RegExp('https://raidprotect.bot/(en/|de/|es/|pt/)?docs/'), '')] ?? 0.5
                             }))
                         },
                     },
@@ -212,12 +188,30 @@ export default async function createConfigAsync() {
                 innerHTML: JSON.stringify({
                     "@context": "https://schema.org",
                     "@graph": [
-                        { "@type": "Organization", "@id": "https://raidprotect.bot/#organization" },
+                        {
+                            "@type": "Organization",
+                            "@id": "https://raidprotect.bot/#organization",
+                            "name": "RaidProtect",
+                            "url": "https://raidprotect.bot/",
+                            "logo": {
+                                "@type": "ImageObject",
+                                "url": "https://raidprotect.bot/img/logo.png",
+                                "contentUrl": "https://raidprotect.bot/img/logo.png"
+                            },
+                            "description": "RaidProtect develops a Discord protection bot featuring captcha verification, anti-spam, raid mode and centralized moderation.",
+                            "sameAs": [
+                                "https://discord.com/invite/raidprotect",
+                                "https://x.com/raidprotect",
+                                "https://www.youtube.com/@RaidProtect",
+                                "https://github.com/raidprotect"
+                            ]
+                        },
                         {
                             "@type": "WebSite",
-                            "@id": "https://docs.raidprotect.bot/#website",
-                            "url": "https://docs.raidprotect.bot/",
-                            "name": "RaidProtect Docs",
+                            "@id": "https://raidprotect.bot/#website",
+                            "url": "https://raidprotect.bot/",
+                            "name": "RaidProtect",
+                            "description": "Official site of RaidProtect, the Discord protection bot.",
                             "publisher": { "@id": "https://raidprotect.bot/#organization" },
                             "inLanguage": ["fr", "en", "de", "es", "pt"]
                         }
@@ -238,7 +232,7 @@ export default async function createConfigAsync() {
             },
             announcementBar: {
                 id: '3.3.3',
-                content: '<strong>The <a href="https://docs.raidprotect.bot/en/blog/3.3.3-modview">Centralized Moderation View (3.3.3)</a> update is now live!</strong>',
+                content: '<strong>The <a href="https://raidprotect.bot/en/blog/3.3.3-modview">Centralized Moderation View (3.3.3)</a> update is now live!</strong>',
                 backgroundColor: '#BD5454',
                 textColor: '#FFFFFF',
                 isCloseable: false
@@ -352,7 +346,7 @@ export default async function createConfigAsync() {
                             },
                             {
                                 label: 'Documentation',
-                                to: '/',
+                                to: '/docs',
                                 target: '_self'
                             },
                             {
@@ -372,22 +366,22 @@ export default async function createConfigAsync() {
                         items: [
                             {
                                 label: 'Mentions légales',
-                                to: 'legal',
+                                to: '/legal',
                                 target: '_self'
                             },
                             {
                                 label: 'Conditions d\'utilisation',
-                                to: 'terms',
+                                to: '/terms',
                                 target: '_self'
                             },
                             {
                                 label: 'Politique de confidentialité',
-                                to: 'privacy',
+                                to: '/privacy',
                                 target: '_self'
                             },
                             {
                                 label: 'Politique des cookies',
-                                to: 'cookies',
+                                to: '/cookies',
                                 target: '_self'
                             }
                         ],

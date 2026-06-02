@@ -8,6 +8,7 @@ This license applies to all editorial content in this repository, including but 
 - `/blog`
 - `/i18n`
 - `/versioned_docs`
+- `/src/pages` (landing page, legal, terms, privacy, cookies, premium, and any other public-facing page — including their source code, layout, visual design, and embedded copy)
 
 ## All Rights Reserved
 

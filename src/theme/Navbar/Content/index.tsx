@@ -83,7 +83,13 @@ export default function NavbarContent(): ReactNode {
           {!mobileSidebar.disabled && <NavbarMobileSidebarToggle />}
           <NavbarLogo />
           <NavbarItems items={leftItems.map(i => {
-            if (i['to'] && urls[i['to']]) i['to'] = urls[i['to']][currentLocale] ?? i['to']
+            if (i['to'] && urls[i['to']]) {
+              const localizedPath = urls[i['to']][currentLocale] ?? i['to']
+              i['to'] = localizedPath
+              // Sans cela, un to="/" matche toutes les routes et le bouton reste actif partout.
+              const escaped = localizedPath.replace(/\/$/, '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+              i['activeBaseRegex'] = `^${escaped || ''}/?$`
+            }
             return i
           })} />
         </>

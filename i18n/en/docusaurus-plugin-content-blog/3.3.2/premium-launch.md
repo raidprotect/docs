@@ -39,11 +39,11 @@ Use `/settings` on your Discord server and click "Premium", or go directly to th
 
 ## ✨ What Premium offers today {#features}
 
-### 🏷️ [Customizable sanction names](/features/sanctions#custom-names)
+### 🏷️ [Customizable sanction names](/docs/features/sanctions#custom-names)
 
 Rename each sanction type to match your server's vocabulary. The displayed name, the verb used in messages, and the wording of the private message sent to the sanctioned member are all freely configurable.
 
-### 🔐 [Authentication Manager: extended limits](/features/authentication-manager)
+### 🔐 [Authentication Manager: extended limits](/docs/features/authentication-manager)
 
 In the free version, the Authentication Manager is limited to 3 protected roles, 20 users, and sessions of 8 hours maximum. Premium raises these limits:
 
@@ -53,7 +53,7 @@ In the free version, the Authentication Manager is limited to 3 protected roles,
 | Users | 20 | 50 |
 | Max. session duration | 8h | 24h |
 
-### 📋 [Information Panels: extended limits](/features/display)
+### 📋 [Information Panels: extended limits](/docs/features/display)
 
 Go from 2 to 4 public information panels (+ the slot reserved for Jail), to cover more content on your server.
 
@@ -63,7 +63,7 @@ Get early access to certain experimental features before their official release.
 
 ---
 
-For the full list of changes, check out [the changelog](/changelog).
+For the full list of changes, check out [the changelog](/docs/changelog).
 
 :::tip Useful resources
 - [Add RaidProtect to your server](https://raidprotect.bot/invite)
