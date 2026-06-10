@@ -1,0 +1,128 @@
+---
+title: 'Scam Crypto Casino (MrBeast, Elon Musk, Andrew Tate...): 2,3 M de imágenes bloqueadas en Discord'
+tags: [threats]
+authors: [zallom]
+slug: threat-weather-may-2026
+date: 2026-06-01
+image: ../../../../blog/3.4.0/assets/rp-scamlens-3-month-recap.webp
+description: Balance de mayo de 2026 en Discord, 2,3 millones de imágenes de scam cripto eliminadas por ScamLens (falsos sorteos de MrBeast, Elon Musk, Andrew Tate, casinos cripto tipo Stake y Kick) y 80 000 cuentas hackeadas identificadas. ScamLens cubre ahora el combo «3 imágenes», aparecido durante un pico de más de 2000 imágenes interceptadas en pocos minutos.
+---
+
+import Timestamp from '@site/src/components/Timestamp';
+import Head from '@docusaurus/Head';
+
+Balance de mayo de 2026 en los **365 000 servidores de Discord** protegidos por RaidProtect (del 1 de mayo al 1 de junio de 2026): **2,3 millones de imágenes de scam eliminadas** por ScamLens y **80 000 cuentas de Discord hackeadas** identificadas. Estas estafas **usurpan la imagen de famosos** como MrBeast, Elon Musk o Andrew Tate, que evidentemente no tienen ninguna relación con estos mensajes. Ampliamos además la cobertura a una nueva variante, el **combo «3 imágenes»**, detectado durante un **pico de más de 2 000 imágenes** interceptadas en pocos minutos.
+
+![RaidProtect: Meteorología de las amenazas Mayo 2026](../../../../blog/3.4.0/assets/rp-scamlens-3-month-recap.webp)
+
+{/* truncate */}
+
+## 🛰️ Recordatorio: ScamLens, el anti-scam de imágenes de RaidProtect {#what-is-scamlens}
+
+Para los servidores que descubren RaidProtect: ScamLens es el módulo que se ocupa de las **imágenes de scam**. En cuanto se publica una imagen, la coteja con su catálogo y **elimina** automáticamente las fraudulentas: **estafas cripto**, **falsos sorteos de famosos** (MrBeast, Elon Musk, Andrew Tate, Kick, Stake…), **falsas promociones de casinos en línea**. Nada que configurar ni mantener por tu parte: ScamLens funciona **por defecto** en cuanto [añades RaidProtect](https://raidprotect.bot/es/invite).
+<div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '280px 280px', gap: '8px'}}>
+  <img src={require('../../../../blog/3.4.0/assets/scam-1.png').default} alt="Andrew Tate Crypto Casino Scam 1" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.4.0/assets/scam-2.png').default} alt="Andrew Tate Crypto Casino Scam 2" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.4.0/assets/scam-3.png').default} alt="Andrew Tate Crypto Casino Scam 3" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.4.0/assets/scam-4.png').default} alt="Andrew Tate Crypto Casino Scam 4" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+</div>
+
+## 📊 Balance de ScamLens desde el 14 de febrero de 2026 {#stats}
+
+Datos acumulados desde la [activación anticipada de ScamLens](/es/blog/scamlens-early-activation) el <Timestamp value={1771023600} format="D" />:
+
+| **Indicador (acumulado desde el 14 de febrero)** | **1 de mayo de 2026** | **1 de junio de 2026** | **Evolución** |
+|---|---|---|---|
+| Imágenes analizadas (únicas) | 890 000 | **1 800 000** | **+100 %** |
+| Imágenes de scam detectadas (únicas) | 82 000 | **141 000** | **+72 %** |
+| Imágenes fraudulentas eliminadas | 1 400 000 | **2 300 000** | **+64 %** |
+| Cuentas de Discord hackeadas identificadas | 40 000 | **80 000** | **+100 %** |
+
+El número de **cuentas hackeadas identificadas se ha duplicado** en un mes y el volumen de imágenes eliminadas supera ya los **2,3 millones**. El catálogo de imágenes únicas también crece (+72 %): es sobre todo la señal de que aparecen **nuevos clusters visuales**. Un cluster visual es una misma imagen de scam **y todas sus microvariantes** (recortes, filtros, retoques); cuando el número de únicas sube tanto, son realmente **nuevos visuales** los que se lanzan, no solo variaciones de los antiguos.
+
+---
+
+## 🆕 Novedad: Cobertura del combo «3 imágenes» {#updates}
+
+Los estafadores declinan su visual en varios **formatos combinados** para engañar a la detección: 4 imágenes al principio, luego 2 imágenes el mes pasado (ver el [«2 imágenes»](/es/blog/threat-weather-april-2026#stats)), y ahora un **combo de 3 imágenes**. Observamos este nuevo formato durante un **pico de más de 2 000 imágenes** interceptadas en pocos minutos.
+
+Este combo de 3 imágenes llegó además con un **nuevo cluster visual**: un visual de scam inédito, aún no presente en nuestro catálogo. Cubrimos ambos de una sola vez, y ScamLens reconoce ahora este combo por completo, sin ninguna acción por tu parte. Cada imagen se sigue procesando en **~400 ms**, antes incluso de que la mayoría de miembros haya tenido tiempo de verla.
+
+---
+
+## ❓ FAQ {#faq}
+
+<Head>
+  <script type="application/ld+json">
+    {JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: '¿Qué es ScamLens en Discord?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'ScamLens es el módulo anti-scam de imágenes de RaidProtect, el bot de protección para Discord. Analiza cada imagen publicada en tiempo real y elimina automáticamente las que identifica como fraudulentas (estafas cripto, falsos sorteos de famosos, falsas promociones de casinos en línea), sin ninguna configuración.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '¿Cómo eliminar automáticamente las imágenes de estafa cripto en Discord?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Añade RaidProtect a tu servidor: ScamLens está activo por defecto y elimina las imágenes de estafa cripto en unos 400 ms, antes de que la mayoría de miembros las vea. Sin reglas que escribir ni listas negras que mantener.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '¿Por qué mi cuenta de Discord envía mensajes de estafa sola?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Tu cuenta probablemente ha sido hackeada. Los estafadores roban tu token de autenticación (web falsa, software infectado, extensión maliciosa) y lo usan para spamear imágenes de scam en todos los servidores donde estás, sin que lo sepas.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '¿Qué hago si un miembro de mi servidor de Discord difunde un scam cripto?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'No lo banees: casi siempre es una cuenta hackeada, no un usuario malicioso. Contáctalo en privado para que asegure su cuenta. ScamLens ya elimina la imagen al vuelo, sin castigar al propietario legítimo.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '¿Cómo reconocer un falso sorteo o una falsa promoción cripto en Discord?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Cualquier «regalo» cripto, casino en línea con logo de famoso (MrBeast, Elon Musk, Andrew Tate, Kick, Stake) o inversión «garantizada» es una estafa. Estas personalidades no están detrás de estos mensajes: los estafadores simplemente usurpan su imagen y su notoriedad. Discord nunca organiza distribuciones de criptomonedas, y ninguna marca seria hace spam multi-servidor.',
+          },
+        },
+      ],
+    })}
+  </script>
+</Head>
+
+#### ¿Qué es ScamLens en Discord? {#quest-ce-que-scamlens}
+ScamLens es el **módulo anti-scam de imágenes** de RaidProtect, el **bot de protección para Discord**. Analiza cada imagen publicada en tiempo real y **elimina automáticamente** las que identifica como fraudulentas (estafas cripto, falsos sorteos de famosos, falsas promociones de casinos en línea), **sin ninguna configuración**.
+
+#### ¿Cómo eliminar automáticamente las imágenes de estafa cripto en Discord? {#supprimer-images-arnaque-crypto}
+[Añade RaidProtect](https://raidprotect.bot/es/invite) a tu servidor: **ScamLens está activo por defecto** y elimina las imágenes de estafa cripto en **~400 ms**, antes de que la mayoría de miembros las vea. Sin reglas que escribir ni listas negras que mantener.
+
+#### ¿Por qué mi cuenta de Discord envía mensajes de estafa sola? {#compte-discord-envoie-messages-seul}
+Tu cuenta probablemente ha sido **hackeada**. Los estafadores roban tu **token de autenticación** (web falsa, software infectado, extensión maliciosa) y lo usan para spamear imágenes de scam en **todos los servidores donde estás**, sin que lo sepas.
+
+#### ¿Qué hago si un miembro de mi servidor de Discord difunde un scam cripto? {#membre-diffuse-scam-crypto}
+**No lo banees**: casi siempre es una **cuenta hackeada**, no un usuario malicioso. Contáctalo en privado para que asegure su cuenta. ScamLens ya elimina la imagen al vuelo, sin castigar al propietario legítimo.
+
+#### ¿Cómo reconocer un falso sorteo o una falsa promoción cripto en Discord? {#reconnaitre-fausse-promo-crypto}
+Cualquier **«regalo» cripto**, **casino en línea** con logo de famoso (MrBeast, Elon Musk, Andrew Tate, Kick, Stake) o **inversión «garantizada»** es una estafa. **Estas personalidades no están detrás de estos mensajes**: los estafadores simplemente usurpan su imagen y su notoriedad. Discord nunca organiza distribuciones de criptomonedas, y ninguna marca seria hace spam multi-servidor.
+
+---
+
+:::tip 📚 Recursos útiles
+- 🔗 [Añadir RaidProtect a tu servidor](https://raidprotect.bot/es/invite)
+- 📘 [Documentación HoneyPot](https://docs.raidprotect.bot/es/features/honeypot)
+- 💡 [Enviar una sugerencia](https://suggestions.raidprotect.bot/)
+- 📣 [Unirse a nuestro servidor de Discord](https://raidprotect.bot/discord)
+:::
