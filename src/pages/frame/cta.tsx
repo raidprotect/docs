@@ -1,12 +1,24 @@
 import React, {type ReactNode} from 'react';
 import Head from '@docusaurus/Head';
 import Translate from '@docusaurus/Translate';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import clsx from 'clsx';
+import {localizedRedirectUrl} from '@site/src/utils/links';
 import shared from '@site/src/components/landing/styles/shared.module.css';
 import frame from './frame.module.css';
 import styles from './cta.module.css';
 
 export default function FrameCta(): ReactNode {
+  const {
+    i18n: {currentLocale, defaultLocale},
+    siteConfig: {url: siteUrl},
+  } = useDocusaurusContext();
+  const inviteUrl = localizedRedirectUrl(
+    siteUrl,
+    currentLocale,
+    defaultLocale,
+    '/invite',
+  );
   return (
     <>
       <Head>
@@ -47,7 +59,7 @@ export default function FrameCta(): ReactNode {
                 </p>
                 <div className={styles.buttonList}>
                   <a
-                    href="https://raidprotect.bot/invite"
+                    href={inviteUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={shared.btnPrimary}>

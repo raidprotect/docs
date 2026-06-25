@@ -5,6 +5,7 @@ import Head from '@docusaurus/Head';
 import Link from '@docusaurus/Link';
 import Translate, {translate} from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import {localizedRedirectUrl} from '@site/src/utils/links';
 import Hero from '@site/src/components/landing/Hero';
 import Servers from '@site/src/components/landing/Servers';
 import shared from '@site/src/components/landing/styles/shared.module.css';
@@ -272,6 +273,21 @@ export default function Home(): ReactNode {
     message: 'Croissance du nombre de serveurs',
     description: 'ARIA label for the decorative SVG curve in the about section',
   });
+
+  // /invite et /appointment sont des redirections du domaine, localisées pour
+  // préserver la langue (fr = pas de préfixe).
+  const inviteUrl = localizedRedirectUrl(
+    siteUrl,
+    currentLocale,
+    defaultLocale,
+    '/invite',
+  );
+  const appointmentUrl = localizedRedirectUrl(
+    siteUrl,
+    currentLocale,
+    defaultLocale,
+    '/appointment',
+  );
 
   const landingUrl =
     currentLocale === defaultLocale
@@ -623,7 +639,7 @@ export default function Home(): ReactNode {
                 </div>
                 <div className={styles.buttonList}>
                   <a
-                    href="https://raidprotect.bot/invite"
+                    href={inviteUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={shared.btnSecondary}>
@@ -805,7 +821,7 @@ export default function Home(): ReactNode {
                 </div>
                 <div className={styles.buttonList}>
                   <a
-                    href="https://raidprotect.bot/appointment"
+                    href={appointmentUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={clsx(

@@ -2,6 +2,7 @@ import React, {type ReactNode} from 'react';
 import clsx from 'clsx';
 import Translate from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import {localizedRedirectUrl} from '@site/src/utils/links';
 import shared from '../styles/shared.module.css';
 import styles from './styles.module.css';
 
@@ -29,10 +30,17 @@ const LOCALE_TO_BCP47: Record<string, string> = {
 
 export default function Hero({serverCount}: HeroProps): ReactNode {
   const {
-    i18n: {currentLocale},
+    i18n: {currentLocale, defaultLocale},
+    siteConfig: {url: siteUrl},
   } = useDocusaurusContext();
   const bcp47 = LOCALE_TO_BCP47[currentLocale] ?? currentLocale;
   const formatted = roundedServerCount(serverCount).toLocaleString(bcp47);
+  const inviteUrl = localizedRedirectUrl(
+    siteUrl,
+    currentLocale,
+    defaultLocale,
+    '/invite',
+  );
   return (
     <section className={clsx(shared.landing, styles.section)}>
       <div className={shared.container}>
@@ -75,7 +83,7 @@ export default function Hero({serverCount}: HeroProps): ReactNode {
           </p>
           <div className={styles.buttonList}>
             <a
-              href="https://raidprotect.bot/invite"
+              href={inviteUrl}
               target="_blank"
               rel="noopener noreferrer"
               className={shared.btnPrimary}>
