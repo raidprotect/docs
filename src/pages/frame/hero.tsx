@@ -16,7 +16,7 @@ export default function FrameHero(): ReactNode {
 
   useEffect(() => {
     let cancelled = false;
-    fetch('https://docs.raidprotect.bot/counts.json')
+    fetch('/counts.json')
       .then((res) => (res.ok ? res.json() : null))
       .then((data: Counts | null) => {
         if (!cancelled && data) setCounts(data);

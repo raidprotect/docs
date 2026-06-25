@@ -239,7 +239,7 @@ export default function Home(): ReactNode {
 
   useEffect(() => {
     let cancelled = false;
-    fetch('https://docs.raidprotect.bot/counts.json')
+    fetch('/counts.json')
       .then((res) => {
         if (!res.ok) throw new Error('Erreur lors de la récupération des données');
         return res.json();
