@@ -403,9 +403,28 @@ body:not(.editor-page) [class*="expandButton"] {
 }
 
 @media screen and (min-width: 997px) {
+  /* Aligne le contenu de la navbar sur le même container centré (1140px) que le
+     footer : le logo et les items à droite partagent exactement la gouttière de
+     .container, donc le logo navbar et le logo footer ont la même position. */
+  .navbar {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .navbar__inner {
+    position: relative;
+    max-width: var(--ifm-container-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--ifm-spacing-horizontal);
+    padding-right: var(--ifm-spacing-horizontal);
+  }
+
+  /* left:1rem est désormais relatif à .navbar__inner (positionné), donc le logo
+     s'aligne sur le bord gauche du container, comme le logo du footer. */
   .navbar__brand {
     position: absolute;
-    left: 1rem;
+    left: var(--ifm-spacing-horizontal);
     top: 50%;
     transform: translateY(-50%);
   }
