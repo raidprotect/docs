@@ -114,6 +114,44 @@ body.premium-page::before {
   font-family: var(--ifm-font-family-base)
 }
 
+/* Bouton "Premium" de la navbar : pilule dégradée à la place des réseaux. */
+.navbar__link.navbar-premium {
+  margin-left: 0.6rem;
+  padding: 0.42rem 1.1rem;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 600;
+  background: linear-gradient(120deg, var(--ifm-color-primary) 0%, #a561a3 100%);
+  box-shadow: 0 8px 22px -10px rgba(211, 95, 95, 0.6);
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+
+.navbar__link.navbar-premium:hover {
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+  box-shadow: 0 12px 28px -10px rgba(211, 95, 95, 0.72);
+}
+
+/* Pas de soulignement "actif" sur le bouton quand on est sur /premium. */
+.navbar__link.navbar-premium.navbar__link--active {
+  color: #fff;
+}
+
+/* Variante dans le menu mobile (sidebar). */
+.menu__link.navbar-premium {
+  margin-top: 0.5rem;
+  border-radius: 999px;
+  color: #fff;
+  background: linear-gradient(120deg, var(--ifm-color-primary) 0%, #a561a3 100%);
+}
+
+.menu__link.navbar-premium:hover {
+  color: #fff;
+  filter: brightness(1.06);
+}
+
 .navbar-social {
   padding: 0;
   margin-left: 1rem;

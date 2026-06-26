@@ -300,28 +300,10 @@ export default async function createConfigAsync() {
                         // ],
                     },
                     {
-                        href: 'https://discord.com/invite/raidprotect',
-                        className: 'navbar-social navbar-discord',
+                        to: '/premium',
+                        label: 'Premium',
+                        className: 'navbar-premium',
                         position: 'right',
-                        'aria-label': 'Discord server',
-                    },
-                    {
-                        href: 'https://x.com/raidprotect',
-                        className: 'navbar-social navbar-x',
-                        position: 'right',
-                        'aria-label': 'Twitter',
-                    },
-                    {
-                        href: 'https://www.youtube.com/@RaidProtect',
-                        className: 'navbar-social navbar-youtube',
-                        position: 'right',
-                        'aria-label': 'YouTube',
-                    },
-                    {
-                        href: 'https://github.com/raidprotect',
-                        className: 'navbar-social navbar-github',
-                        position: 'right',
-                        'aria-label': 'GitHub repository',
                     }
                 ],
             },
