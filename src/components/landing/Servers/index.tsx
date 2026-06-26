@@ -340,7 +340,17 @@ function ServerCard({
   );
 }
 
-export default function Servers(): ReactNode {
+type ServersProps = {
+  /** Titre affiché au-dessus du marquee. Par défaut « Nous protégeons les plus
+   *  grands » (landing) ; surchargeable pour réutiliser le défilement ailleurs
+   *  (ex: « Ils nous font confiance » sur la page Premium). */
+  title?: ReactNode;
+  /** Rend le fond de section transparent au lieu du noir de marque, pour que le
+   *  marquee s'intègre sur une page au fond différent (ex: Premium). */
+  transparent?: boolean;
+};
+
+export default function Servers({title, transparent}: ServersProps = {}): ReactNode {
   const {
     i18n: {currentLocale},
   } = useDocusaurusContext();
@@ -348,14 +358,18 @@ export default function Servers(): ReactNode {
   // sélection internationale (parfois différente) sur EN/DE/ES/PT.
   const servers = currentLocale === 'fr' ? SERVERS_FR : SERVERS_INTL;
   return (
-    <section className={clsx(shared.landing, styles.section)}>
+    <section
+      className={clsx(shared.landing, styles.section)}
+      style={transparent ? {backgroundColor: 'transparent'} : undefined}>
       <div className={shared.container}>
         <p className={styles.title}>
-          <Translate
-            id="servers.title"
-            description="Servers marquee title: 'We protect the biggest'">
-            Nous protégeons les plus grands
-          </Translate>
+          {title ?? (
+            <Translate
+              id="servers.title"
+              description="Servers marquee title: 'We protect the biggest'">
+              Nous protégeons les plus grands
+            </Translate>
+          )}
         </p>
         <div className={styles.marqueeWrap} aria-hidden={false}>
           <div className={styles.track}>

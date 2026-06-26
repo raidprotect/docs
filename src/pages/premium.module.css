@@ -1,0 +1,928 @@
+/* =============================================================
+ * /premium : page marketing avec effets, animations, glow.
+ * Palette alignée sur custom.css (--ifm-color-primary: #D35F5F)
+ * ============================================================= */
+
+.page {
+  /* Variables locales : couleurs accent du Premium.
+   * À surcharger pour re-thématiser (ex. dans :root[data-theme='light']). */
+  --rp-premium-accent: #a561a3;
+  --rp-premium-glow: rgba(211, 95, 95, 0.18);
+  --rp-premium-glow-strong: rgba(211, 95, 95, 0.35);
+  --rp-premium-border: rgba(211, 95, 95, 0.25);
+  --rp-premium-border-strong: rgba(211, 95, 95, 0.40);
+  --rp-premium-tint: rgba(211, 95, 95, 0.05);
+  --rp-premium-gradient: linear-gradient(120deg, var(--ifm-color-primary) 0%, var(--rp-premium-accent) 100%);
+  --rp-surface: rgba(255, 255, 255, 0.04);
+  --rp-surface-strong: rgba(255, 255, 255, 0.08);
+  --rp-border: rgba(255, 255, 255, 0.08);
+  --rp-border-strong: rgba(255, 255, 255, 0.18);
+  --rp-text-soft: rgba(255, 255, 255, 0.72);
+  --rp-text-muted: rgba(255, 255, 255, 0.55);
+  --rp-text-dim: rgba(255, 255, 255, 0.25);
+
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  isolation: isolate;
+  background: var(--ifm-background-color);
+}
+
+/* ----- Halos d'arrière-plan animés ----- */
+.page::before,
+.page::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+  filter: blur(140px);
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.page::before {
+  width: 60vw;
+  height: 60vw;
+  top: -15vw;
+  left: -10vw;
+  background: radial-gradient(circle, var(--ifm-color-primary) 0%, transparent 70%);
+  animation: drift1 22s ease-in-out infinite alternate;
+}
+
+.page::after {
+  width: 50vw;
+  height: 50vw;
+  top: 30vh;
+  right: -15vw;
+  background: radial-gradient(circle, var(--rp-premium-accent) 0%, transparent 70%);
+  animation: drift2 28s ease-in-out infinite alternate;
+}
+
+@keyframes drift1 {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(8vw, 6vh) scale(1.15); }
+}
+@keyframes drift2 {
+  0%   { transform: translate(0, 0) scale(1.1); }
+  100% { transform: translate(-7vw, -4vh) scale(0.95); }
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ============================================================
+ * HERO
+ * ============================================================ */
+.hero {
+  padding: 7rem 0 4rem;
+  text-align: center;
+}
+
+.heroTitle {
+  margin: 1.4rem 0 1rem;
+  font-family: var(--ifm-heading-font-family);
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  background: linear-gradient(120deg,
+    #ffffff 0%,
+    #ffffff 35%,
+    var(--ifm-color-primary-light) 55%,
+    #ffffff 75%,
+    #ffffff 100%);
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 6s ease-in-out infinite, fadeUp 0.7s ease-out 0.15s both;
+}
+
+.heroTitleAccent {
+  display: block;
+  background: var(--rp-premium-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroSubtitle {
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  max-width: 640px;
+  margin: 0 auto;
+  color: var(--rp-text-soft);
+  line-height: 1.6;
+  animation: fadeUp 0.7s ease-out 0.25s both;
+}
+
+.heroCtas {
+  margin-top: 2.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+  animation: fadeUp 0.7s ease-out 0.35s both;
+}
+
+.ctaPrimary,
+.ctaSecondary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 12px;
+  font-family: var(--ifm-heading-font-family);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: transform .25s ease, box-shadow .25s ease;
+  overflow: hidden;
+}
+
+.ctaPrimary {
+  color: #fff;
+  background: var(--rp-premium-gradient);
+  box-shadow: 0 10px 30px -8px rgba(211, 95, 95, 0.55);
+}
+
+.ctaPrimary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.35) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform .9s ease;
+}
+
+.ctaPrimary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px -10px rgba(211, 95, 95, 0.7);
+  color: #fff;
+  text-decoration: none;
+}
+
+.ctaPrimary:hover::after {
+  transform: translateX(100%);
+}
+
+.ctaSecondary {
+  color: #fff;
+  border: 1px solid var(--rp-border-strong);
+  background: var(--rp-surface);
+  backdrop-filter: blur(10px);
+}
+
+.ctaSecondary:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.35);
+  background: var(--rp-surface-strong);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ============================================================
+ * STATS / SOCIAL PROOF
+ * ============================================================ */
+.statsSection {
+  padding: 2rem 0 4rem;
+}
+
+/* Pas de cartes : 4 chiffres alignés, séparés par de fins filets verticaux,
+   comme la section stats de la home. */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.statCard {
+  position: relative;
+  padding: 0.4rem 1.5rem;
+  text-align: center;
+}
+
+/* Filet vertical entre chaque KPI (pas avant le premier). */
+.statCard:not(:first-child)::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 58%;
+  background: var(--rp-border);
+}
+
+.statValue {
+  font-family: var(--ifm-heading-font-family);
+  font-size: clamp(2rem, 3.2vw, 2.7rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+
+.statUnit {
+  margin-left: 0.12em;
+  color: var(--ifm-color-primary);
+}
+
+.statSuffix {
+  margin-left: 0.12rem;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.statLabel {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--rp-text-muted);
+}
+
+/* ============================================================
+ * SECTION GENERIQUE
+ * ============================================================ */
+.section {
+  padding: 5rem 0;
+}
+
+.sectionEyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ifm-color-primary-light);
+  margin-bottom: 0.6rem;
+}
+
+.sectionTitle {
+  font-family: var(--ifm-heading-font-family);
+  font-size: clamp(2rem, 3.6vw, 2.8rem);
+  margin: 0 0 0.6rem;
+  letter-spacing: -0.02em;
+}
+
+.sectionSubtitle {
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 640px;
+  margin-bottom: 2.6rem;
+  line-height: 1.6;
+}
+
+/* En-tête de section : bloc titre à gauche, bouton "S'abonner" à droite (PC). */
+.sectionHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2.6rem;
+}
+
+/* La marge basse vit désormais sur .sectionHead, pas sur le sous-titre. */
+.sectionHead .sectionSubtitle {
+  margin-bottom: 0;
+}
+
+.sectionHeadCta {
+  flex: none;
+}
+
+/* Glow permanent ~ équivalent au survol du CTA d'abonnement du hero. */
+.ctaGlow {
+  box-shadow: 0 16px 40px -10px rgba(211, 95, 95, 0.7);
+}
+
+/* Le balayage lumineux (::after) tourne en continu au lieu de se déclencher
+   au survol ; le survol ne fait plus que soulever légèrement le bouton. */
+.ctaGlow::after {
+  transition: none;
+  animation: ctaSweep 3.2s ease-in-out infinite;
+}
+
+.ctaGlow:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 48px -8px rgba(211, 95, 95, 0.8);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ctaGlow::after {
+    animation: none;
+  }
+}
+
+/* ============================================================
+ * GRILLE D'AVANTAGES
+ * ============================================================ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+}
+
+.featureCard {
+  position: relative;
+  padding: 1.8rem;
+  border-radius: 18px;
+  background: linear-gradient(160deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+  border: 1px solid var(--rp-border);
+  overflow: hidden;
+  transition: transform .35s ease, border-color .35s ease;
+  isolation: isolate;
+}
+
+.featureCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(600px circle at var(--mx, 50%) var(--my, 50%),
+              var(--rp-premium-glow), transparent 40%);
+  opacity: 0;
+  transition: opacity .35s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.featureCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--rp-premium-border-strong);
+}
+
+.featureCard:hover::before {
+  opacity: 1;
+}
+
+.featureIcon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: linear-gradient(140deg, rgba(211, 95, 95, 0.22), rgba(165, 97, 163, 0.22));
+  border: 1px solid var(--rp-premium-border-strong);
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 12px var(--rp-premium-glow-strong));
+  overflow: hidden;
+}
+
+.featureIcon img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.featureTitle {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 1.3rem;
+  margin: 0 0 0.5rem;
+  color: #fff;
+}
+
+.featureDesc {
+  font-size: 0.97rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.featureMeta {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  font-size: 0.85rem;
+  color: var(--ifm-color-primary-light);
+  font-weight: 600;
+}
+
+/* ============================================================
+ * SECTION EXPERIMENTAL
+ * ============================================================ */
+.expSection {
+  padding: 4rem 0;
+  position: relative;
+}
+
+.expSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(211, 95, 95, 0.04) 50%, transparent 100%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.expCard {
+  position: relative;
+  padding: 1.8rem;
+  border-radius: 18px;
+  background: linear-gradient(160deg, rgba(211,95,95,0.08) 0%, rgba(165,97,163,0.05) 100%);
+  border: 1px solid var(--rp-premium-border);
+  overflow: hidden;
+  transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+}
+
+.expCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--rp-premium-border-strong);
+  box-shadow: 0 16px 36px -22px rgba(211, 95, 95, 0.35);
+}
+
+.expHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.9rem;
+}
+
+.expIcon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(211, 95, 95, 0.18);
+  border: 1px solid var(--rp-premium-border-strong);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.expIcon img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.expBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(211, 95, 95, 0.18);
+  border: 1px solid var(--rp-premium-border-strong);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ifm-color-primary-light);
+}
+
+.expBadgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ifm-color-primary);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+/* ============================================================
+ * TABLEAU COMPARATIF (desktop)
+ * ============================================================ */
+.compareWrap {
+  margin-top: 1rem;
+  padding: 1rem 0 0;
+  overflow-x: auto;
+}
+
+.compareTable {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+/* Reset des règles Infima : bordures de cellules, ligne épaisse sous le thead, zébrure. */
+.compareTable th,
+.compareTable td {
+  border: none;
+}
+
+.compareTable thead,
+.compareTable tbody,
+.compareTable thead tr,
+.compareTable tbody tr {
+  border: none;
+  background: transparent;
+}
+
+/* Séparateurs verticaux entre colonnes : seulement dans le body. */
+.compareTable tbody td:not(:last-child) {
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Le th sert de "container" : un petit padding qui crée le gap entre cartes. */
+.tierHeadCell {
+  vertical-align: top;
+  padding: 0.4rem 0.4rem 1.2rem;
+  background: transparent;
+}
+
+/* La div interne porte le look "carte". */
+.tierCard {
+  padding: 1.4rem 1.3rem 1.4rem;
+  border-radius: 14px;
+  background: transparent;
+  border: 1px solid var(--rp-border);
+  height: 100%;
+  min-height: 14rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.tierCardHighlight {
+  background: linear-gradient(160deg, rgba(211, 95, 95, 0.18), rgba(165, 97, 163, 0.10));
+  border-color: var(--rp-premium-border-strong);
+}
+
+/* Aligne tous les CTA au bas des cartes, peu importe la longueur du tagline / prix. */
+.tierCard .tierCta {
+  margin-top: auto;
+}
+
+/* Élargit la colonne Basic (col 2 du body) pour que la carte qui colspans cols 1+2
+ * ait visuellement plus d'espace. */
+.compareTable tbody td:nth-child(2) {
+  min-width: 6rem;
+}
+.compareTable tbody td:nth-child(3),
+.compareTable tbody td:nth-child(4) {
+  min-width: 8rem;
+}
+
+.tierName {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 1.4rem;
+  margin: 0 0 0.2rem;
+  color: #fff;
+}
+
+.tierTagline {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 0.9rem;
+  line-height: 1.4;
+}
+
+.tierPrice {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.tierPriceUnit {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--rp-text-muted);
+  margin-left: 0.25rem;
+}
+
+.tierCta {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid var(--rp-border-strong);
+  background: var(--rp-surface);
+  color: #fff;
+  transition: transform .25s ease, background .25s ease, border-color .25s ease;
+}
+
+.tierCta:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  text-decoration: none;
+}
+
+.tierCtaPrimary {
+  background: var(--rp-premium-gradient);
+  border: none;
+  box-shadow: 0 10px 25px -10px rgba(211, 95, 95, 0.55);
+}
+
+.tierCtaPrimary:hover {
+  background: var(--rp-premium-gradient);
+  box-shadow: 0 16px 30px -10px rgba(211, 95, 95, 0.7);
+}
+
+.compareTable tbody td {
+  padding: 0.85rem 1.4rem;
+  font-size: 0.95rem;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  vertical-align: middle;
+}
+
+.compareTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.compareTable tbody tr td:first-child {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+}
+
+/* Bande verticale subtile sur la colonne recommandée (3e colonne dans tbody). */
+.compareTable tbody tr:not(.compareCategory) td:nth-child(3) {
+  background: var(--rp-premium-tint);
+}
+
+.compareTable tbody tr:not(.compareCategory):hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.compareTable tbody tr:not(.compareCategory):hover td:nth-child(3) {
+  background: rgba(211, 95, 95, 0.09);
+}
+
+.compareCategory td {
+  padding: 1.6rem 1.4rem 0.7rem !important;
+  font-family: var(--ifm-heading-font-family);
+  font-size: 0.78rem !important;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ifm-color-primary-light) !important;
+  font-weight: 700 !important;
+  border-bottom: 1px solid var(--rp-premium-border) !important;
+  background: transparent;
+}
+
+/* Bouton de repli des catégories (desktop + mobile). Ne définit que la mise en
+   page et le reset du chrome : la typo vient du contexte (td ou .stackCategory). */
+.categoryToggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.55rem;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: opacity .2s ease;
+}
+
+.categoryToggle:hover {
+  opacity: 0.8;
+}
+
+/* Desktop : le bouton hérite de la typo de la cellule de catégorie. */
+.compareCategory .categoryToggle {
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+.categoryChevron {
+  flex: none;
+  display: inline-block;
+  font-size: 0.85em;
+  line-height: 1;
+  color: var(--ifm-color-primary-light);
+  transition: transform .25s ease;
+}
+
+/* Catégorie repliée : chevron pivoté vers la droite. */
+.categoryChevronCollapsed {
+  transform: rotate(-90deg);
+}
+
+.compareValue {
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+}
+
+.checkYes {
+  color: var(--ifm-color-primary-light);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.checkNo {
+  color: var(--rp-text-dim);
+  font-weight: 400;
+  font-size: 0.95rem;
+}
+
+/* ============================================================
+ * COMPARATIF MOBILE : cards empilées par offre
+ * ============================================================ */
+.compareStack {
+  display: none;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.stackCard {
+  border-radius: 18px;
+  border: 1px solid var(--rp-border);
+  background: linear-gradient(160deg, var(--rp-surface) 0%, rgba(255,255,255,0.01) 100%);
+  overflow: hidden;
+}
+
+.stackCardHighlight {
+  border-color: var(--rp-premium-border-strong);
+  background: linear-gradient(160deg, rgba(211, 95, 95, 0.14), rgba(165, 97, 163, 0.08));
+  box-shadow: 0 16px 40px -20px rgba(211, 95, 95, 0.45);
+}
+
+.stackHead {
+  padding: 1.4rem 1.3rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--rp-border);
+}
+
+.stackList {
+  margin: 0;
+  padding: 0.4rem 0 0.8rem;
+}
+
+.stackCategory {
+  padding: 1rem 1.3rem 0.5rem;
+  font-family: var(--ifm-heading-font-family);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ifm-color-primary-light);
+  font-weight: 700;
+  border-bottom: 1px solid var(--rp-premium-border);
+  margin-bottom: 0.25rem;
+}
+
+.stackRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.7rem 1.3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  margin: 0;
+}
+
+.stackRow:last-child {
+  border-bottom: none;
+}
+
+.stackRowLabel {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0;
+  flex: 1 1 auto;
+}
+
+.stackRowValue {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #fff;
+  font-weight: 500;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+ * FAQ / FOOTER CTA
+ * ============================================================ */
+.finalCta {
+  margin: 4rem 0 6rem;
+  padding: 3.5rem 2rem;
+  border-radius: 22px;
+  text-align: center;
+  background: linear-gradient(140deg, rgba(211, 95, 95, 0.18), rgba(165, 97, 163, 0.14));
+  border: 1px solid var(--rp-premium-border-strong);
+  position: relative;
+  overflow: hidden;
+}
+
+.finalCta::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: 50%;
+  width: 600px; height: 600px;
+  transform: translate(-50%, 0);
+  background: radial-gradient(circle, var(--rp-premium-glow-strong) 0%, transparent 60%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.finalCta h2 {
+  position: relative;
+  font-family: var(--ifm-heading-font-family);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  margin: 0 0 0.6rem;
+}
+
+.finalCta p {
+  position: relative;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 1.6rem;
+}
+
+.finalCta a {
+  position: relative;
+}
+
+/* ============================================================
+ * KEYFRAMES UTILS
+ * ============================================================ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1);   opacity: 1;   }
+  50%      { transform: scale(1.6); opacity: 0.4; }
+}
+
+@keyframes shine {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* Balayage lumineux qui traverse le bouton puis attend hors-champ avant de
+   recommencer (les deux extrémités sont hors du bouton, pas de saut visible). */
+@keyframes ctaSweep {
+  0%   { transform: translateX(-150%); }
+  35%  { transform: translateX(150%); }
+  100% { transform: translateX(150%); }
+}
+
+/* ============================================================
+ * RESPONSIVE
+ * ============================================================ */
+@media (max-width: 960px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.2rem 0;
+  }
+  /* En 2 colonnes, ne garder que le filet entre les deux colonnes. */
+  .statCard:not(:first-child)::before {
+    display: none;
+  }
+  .statCard:nth-child(even)::before {
+    display: block;
+  }
+}
+
+@media (max-width: 720px) {
+  .compareWrap { display: none; }
+
+  /* Carrousel horizontal : une offre à la fois, avec un aperçu des cartes
+     voisines sur les bords pour signaler qu'on peut glisser. */
+  .compareStack {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    /* On déborde jusqu'aux bords de l'écran, gouttières internes = container. */
+    margin: 1.5rem -1.5rem 0;
+    padding: 0.25rem 1.5rem 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 1.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .compareStack::-webkit-scrollbar {
+    display: none;
+  }
+
+  .stackCard {
+    flex: 0 0 84%;
+    scroll-snap-align: center;
+  }
+
+  /* Bouton "S'abonner" repassé sous le bloc titre. */
+  .sectionHead {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.4rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero { padding: 5rem 0 3rem; }
+  .section { padding: 3.5rem 0; }
+  .featureCard { padding: 1.4rem; }
+  .statValue { font-size: 1.9rem; }
+}
