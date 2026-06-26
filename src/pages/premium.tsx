@@ -52,7 +52,7 @@ type ExperimentCard = {
 
 const EXPERIMENTS: ExperimentCard[] = [
     {
-        icon: '/img/premium/iconSanctionsMUTE.png',
+        icon: '/img/icons/SanctionsTIMEOUT.svg',
         badge: 'Bêta publique',
         title: 'Conversion AutoMod en mute par rôle',
         description: 'Les timeouts appliqués par l\'AutoMod de Discord sont automatiquement convertis en mute par rôle au-delà du seuil configuré, pour une cohérence totale avec vos sanctions manuelles.',

@@ -45,16 +45,16 @@ function Footer(): ReactNode {
           </div>
           <div className="footer-social-list">
             <a href="https://discord.com/invite/raidprotect" target="_blank" className="social-link w-inline-block">
-              <img loading="eager" src="/img/discord.svg" alt="Logo Discord" className="social-icon" />
+              <img loading="eager" src="/img/icons/discord.svg" alt="Logo Discord" className="social-icon" />
             </a>
             <a href="https://x.com/raidprotect" target="_blank" className="social-link w-inline-block">
-              <img loading="eager" src="/img/x.svg" alt="Logo X (Twitter)" className="social-icon" />
+              <img loading="eager" src="/img/icons/x.svg" alt="Logo X (Twitter)" className="social-icon" />
             </a>
             <a href="https://www.youtube.com/@RaidProtect" target="_blank" className="social-link w-inline-block">
-              <img loading="eager" src="/img/youtube.svg" alt="Logo YouTube" className="social-icon" />
+              <img loading="eager" src="/img/icons/youtube.svg" alt="Logo YouTube" className="social-icon" />
             </a>
             <a href="https://github.com/raidprotect" target="_blank" className="social-link w-inline-block">
-              <img loading="eager" src="/img/github.svg" alt="Logo GitHub" className="social-icon" />
+              <img loading="eager" src="/img/icons/github.svg" alt="Logo GitHub" className="social-icon" />
             </a>
           </div>
         </div>

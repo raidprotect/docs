@@ -135,7 +135,7 @@ function StatCounter({
   );
 }
 
-const CHECK_ICON = '/img/landing/icon-02.svg';
+const CHECK_ICON = '/img/icons/icon-02.svg';
 
 function FeatureItem({children}: {children: ReactNode}) {
   return (
@@ -164,7 +164,7 @@ const FEATURES: Feature[] = [
   {
     slug: 'anti-spam',
     to: '/docs/features/anti-spam',
-    icon: '/img/landing/iconAntispamWhite.svg',
+    icon: '/img/icons/iconAntispamWhite.svg',
     iconAlt: 'RaidProtect icon Antispam',
     defaultTitle: 'Protection anti-spam',
     defaultDescription:
@@ -173,7 +173,7 @@ const FEATURES: Feature[] = [
   {
     slug: 'raid',
     to: '/docs/features/raid-mode',
-    icon: '/img/landing/iconAntiraidWhite.svg',
+    icon: '/img/icons/iconAntiraidWhite.svg',
     iconAlt: 'RaidProtect icon Antiraid',
     defaultTitle: 'Blocage des raids',
     defaultDescription:
@@ -182,7 +182,7 @@ const FEATURES: Feature[] = [
   {
     slug: 'captcha',
     to: '/docs/features/captcha',
-    icon: '/img/landing/iconCaptchaWhite.svg',
+    icon: '/img/icons/iconCaptchaWhite.svg',
     iconAlt: 'RaidProtect icon Captcha',
     defaultTitle: 'Protection contre les robots',
     defaultDescription:
@@ -191,7 +191,7 @@ const FEATURES: Feature[] = [
   {
     slug: 'mod',
     to: '/docs/features/utilities',
-    icon: '/img/landing/iconReportWhite.svg',
+    icon: '/img/icons/iconReportWhite.svg',
     iconAlt: 'RaidProtect icon Report',
     defaultTitle: 'Modération & administration',
     defaultDescription:
@@ -200,7 +200,7 @@ const FEATURES: Feature[] = [
   {
     slug: 'tag',
     to: '/docs/features/tag-role',
-    icon: '/img/landing/iconTagWhite.svg',
+    icon: '/img/icons/iconTagWhite.svg',
     iconAlt: 'RaidProtect icon Tag',
     defaultTitle: 'Rôle de Tag',
     defaultDescription:
@@ -209,7 +209,7 @@ const FEATURES: Feature[] = [
   {
     slug: 'dm',
     to: '/docs/features/dm-lock',
-    icon: '/img/landing/iconDmlockWhite.svg',
+    icon: '/img/icons/iconDmlockWhite.svg',
     iconAlt: 'RaidProtect icon DM Lock',
     defaultTitle: 'Fermeture des MP',
     defaultDescription:

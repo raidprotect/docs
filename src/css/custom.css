@@ -167,19 +167,19 @@ body.premium-page::before {
 }
 
 .navbar-discord::before {
-  mask-image: url('/img/discord.svg');
+  mask-image: url('/img/icons/discord.svg');
 }
 
 .navbar-x::before {
-  mask-image: url('/img/x.svg');
+  mask-image: url('/img/icons/x.svg');
 }
 
 .navbar-youtube::before {
-  mask-image: url('/img/youtube.svg');
+  mask-image: url('/img/icons/youtube.svg');
 }
 
 .navbar-github::before {
-  mask-image: url('/img/github.svg');
+  mask-image: url('/img/icons/github.svg');
 }
 
 .footer {
