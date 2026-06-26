@@ -1,0 +1,58 @@
+.cell {
+  position: relative;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  margin-left: 0.45rem;
+  padding: 2px;
+  border: none;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--ifm-color-emphasis-600);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+
+.cell:hover .button,
+.button:focus-visible {
+  opacity: 1;
+}
+
+.button:hover {
+  color: var(--ifm-color-primary);
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+.icon {
+  display: block;
+}
+
+.iconCheck {
+  display: none;
+  color: #3fb950;
+}
+
+.copied {
+  opacity: 1 !important;
+  color: #3fb950;
+}
+
+.copied .iconCopy {
+  display: none;
+}
+
+.copied .iconCheck {
+  display: block;
+}
+
+/* Sur écrans tactiles (pas de survol), le bouton reste visible mais discret. */
+@media (hover: none) {
+  .button {
+    opacity: 0.55;
+  }
+}

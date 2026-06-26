@@ -124,7 +124,7 @@ export default async function createConfigAsync() {
                         sidebarPath: './sidebars.ts',
                         editUrl: 'https://github.com/raidprotect/docs/tree/master/',
                         lastVersion: lastStableVersion,
-                        onlyIncludeVersions: ['current', lastStableVersion, '3.3.2'],
+                        onlyIncludeVersions: ['current', lastStableVersion],
                         versions: {
                             current: {
                                 label: 'Bêta 🚧',
@@ -132,9 +132,6 @@ export default async function createConfigAsync() {
                             },
                             [lastStableVersion]: {
                                 label: 'Stable',
-                            },
-                            '3.3.1': {
-                                label: 'Ancienne'
                             }
                         },
                         admonitions: {
@@ -271,21 +268,6 @@ export default async function createConfigAsync() {
                         label: 'Blog',
                     },
                     {
-                        type: 'docsVersionDropdown',
-                        position: 'right',
-                        dropdownActiveClassDisabled: true,
-                        // dropdownItemsAfter: [
-                        //     {
-                        //         type: 'html',
-                        //         value: '<hr class="dropdown-separator">',
-                        //     },
-                        //     {
-                        //         to: '/versions',
-                        //         label: 'All versions',
-                        //     },
-                        // ],
-                    },
-                    {
                         type: 'localeDropdown',
                         position: 'right',
                         // dropdownItemsAfter: [
@@ -300,28 +282,10 @@ export default async function createConfigAsync() {
                         // ],
                     },
                     {
-                        href: 'https://discord.com/invite/raidprotect',
-                        className: 'navbar-social navbar-discord',
+                        to: '/premium',
+                        label: 'Premium',
+                        className: 'navbar-premium',
                         position: 'right',
-                        'aria-label': 'Discord server',
-                    },
-                    {
-                        href: 'https://x.com/raidprotect',
-                        className: 'navbar-social navbar-x',
-                        position: 'right',
-                        'aria-label': 'Twitter',
-                    },
-                    {
-                        href: 'https://www.youtube.com/@RaidProtect',
-                        className: 'navbar-social navbar-youtube',
-                        position: 'right',
-                        'aria-label': 'YouTube',
-                    },
-                    {
-                        href: 'https://github.com/raidprotect',
-                        className: 'navbar-social navbar-github',
-                        position: 'right',
-                        'aria-label': 'GitHub repository',
                     }
                 ],
             },

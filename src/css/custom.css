@@ -66,6 +66,39 @@ body {
   margin-top: 15px;
 }
 
+/* Page Premium : navbar en verre dépoli (noir à opacité réduite + flou) pour
+   qu'elle se fonde dans le fond de la page au lieu de flotter comme une barre
+   noire pleine. */
+/* En haut de page : navbar totalement transparente (on voit les halos). */
+body.premium-page .navbar {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+  transition: background-color 0.25s ease, backdrop-filter 0.25s ease;
+}
+
+/* Dès qu'on scrolle : verre dépoli (noir translucide + flou). */
+body.premium-page.premium-nav-scrolled .navbar {
+  background: rgba(4, 1, 20, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Halos de fond fixes couvrant tout le viewport, navbar comprise : sans ça, la
+   zone derrière la navbar (le contenu de la page commence en dessous) reste
+   noire et le verre dépoli n'a rien de coloré à flouter. */
+body.premium-page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(50vw 50vw at 6% -6%, rgba(211, 95, 95, 0.20) 0%, transparent 62%),
+    radial-gradient(46vw 46vw at 102% 26%, rgba(165, 97, 163, 0.16) 0%, transparent 62%);
+}
+
 .navbar__brand .navbar__title {
   display: none;
 }
@@ -79,6 +112,44 @@ body {
 
 .navbar__item .navbar__link, .navbar__item .dropdown__menu {
   font-family: var(--ifm-font-family-base)
+}
+
+/* Bouton "Premium" de la navbar : pilule dégradée à la place des réseaux. */
+.navbar__link.navbar-premium {
+  margin-left: 0.6rem;
+  padding: 0.42rem 1.1rem;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 600;
+  background: linear-gradient(120deg, var(--ifm-color-primary) 0%, #a561a3 100%);
+  box-shadow: 0 8px 22px -10px rgba(211, 95, 95, 0.6);
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+
+.navbar__link.navbar-premium:hover {
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+  box-shadow: 0 12px 28px -10px rgba(211, 95, 95, 0.72);
+}
+
+/* Pas de soulignement "actif" sur le bouton quand on est sur /premium. */
+.navbar__link.navbar-premium.navbar__link--active {
+  color: #fff;
+}
+
+/* Variante dans le menu mobile (sidebar). */
+.menu__link.navbar-premium {
+  margin-top: 0.5rem;
+  border-radius: 999px;
+  color: #fff;
+  background: linear-gradient(120deg, var(--ifm-color-primary) 0%, #a561a3 100%);
+}
+
+.menu__link.navbar-premium:hover {
+  color: #fff;
+  filter: brightness(1.06);
 }
 
 .navbar-social {
