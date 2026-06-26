@@ -172,6 +172,11 @@ body.premium-page::before {
   box-shadow: 0 12px 28px -10px rgba(88, 101, 242, 0.8);
 }
 
+/* Masque la petite icône "lien externe" sur Support et Ajouter le bot. */
+.navbar-no-ext svg[class*='iconExternalLink'] {
+  display: none;
+}
+
 /* Variante "Ajouter le bot" dans le menu mobile (sidebar). */
 .menu__link.navbar-addbot {
   margin-top: 0.5rem;
