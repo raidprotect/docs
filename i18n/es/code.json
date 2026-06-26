@@ -405,7 +405,8 @@
     "message": "Cargando..."
   },
   "editor.authenticating": {
-    "message": "Autenticando..."
+    "message": "Autenticando...",
+    "description": "Authenticating message"
   },
   "editor.exitBar.backToDocs": {
     "message": "Volver a la documentación"
@@ -446,7 +447,7 @@
   },
   "servers.memberCount": {
     "message": "{count} miembros",
-    "description": "Server card: number of members; {count} is locale-formatted"
+    "description": "Server card: number of members (e.g. '40 000 members'); {count} is locale-formatted"
   },
   "frame.cta.title": {
     "message": "Mantente a la {highlight}",
@@ -847,5 +848,300 @@
   "permission.moveMembers": {
     "message": "Mover miembros",
     "description": "Discord permission name"
+  },
+  "premium.feature.customize.title": {
+    "message": "Personalización total del bot"
+  },
+  "premium.feature.customize.desc": {
+    "message": "Avatar, banner, apodo y estilo de escritura: RaidProtect adopta la identidad de tu servidor."
+  },
+  "premium.feature.authManager.title": {
+    "message": "Authentication Manager ampliado"
+  },
+  "premium.feature.authManager.desc": {
+    "message": "Más roles protegidos, más usuarios autorizados y sesiones el doble de largas."
+  },
+  "premium.feature.sanctionNames.title": {
+    "message": "Nombres de sanciones personalizables"
+  },
+  "premium.feature.sanctionNames.desc": {
+    "message": "Adapta cada sanción al vocabulario de tu comunidad."
+  },
+  "premium.feature.display.title": {
+    "message": "Más paneles de información"
+  },
+  "premium.feature.display.desc": {
+    "message": "El doble de paneles libres con /display public (2 → 4), espacio Jail siempre incluido."
+  },
+  "premium.feature.honeypot.title": {
+    "message": "Sanciones Honeypot avanzadas"
+  },
+  "premium.feature.honeypot.desc": {
+    "message": "Desbloquea Kick, Timeout, Jail y Mute en el módulo HoneyPot."
+  },
+  "premium.experiment.badge.publicBeta": {
+    "message": "Beta pública"
+  },
+  "premium.experiment.automod.title": {
+    "message": "Conversión de AutoMod a mute por rol"
+  },
+  "premium.experiment.automod.desc": {
+    "message": "Los timeouts aplicados por el AutoMod de Discord se convierten automáticamente en mute por rol más allá del umbral configurado, para una coherencia total con tus sanciones manuales."
+  },
+  "premium.experiment.badge.soon": {
+    "message": "Pronto"
+  },
+  "premium.experiment.more.title": {
+    "message": "Más experimentos en camino"
+  },
+  "premium.experiment.more.desc": {
+    "message": "Los suscriptores Premium reciben en primicia las funciones en beta pública. Aquí publicamos la lista actualizada a medida que llegan."
+  },
+  "premium.tier.free.name": {
+    "message": "Basic"
+  },
+  "premium.tier.free.tagline": {
+    "message": "La seguridad esencial, gratis para siempre."
+  },
+  "premium.tier.free.price": {
+    "message": "Gratis"
+  },
+  "premium.tier.free.cta": {
+    "message": "Añadir a Discord"
+  },
+  "premium.tier.founder.name": {
+    "message": "Founder"
+  },
+  "premium.tier.founder.tagline": {
+    "message": "Oferta de lanzamiento reservada a los primeros suscriptores."
+  },
+  "premium.tier.founder.priceUnit": {
+    "message": "/ mes"
+  },
+  "premium.tier.founder.cta": {
+    "message": "Suscribirse vía Discord"
+  },
+  "premium.tier.business.name": {
+    "message": "Business"
+  },
+  "premium.tier.business.tagline": {
+    "message": "Para proyectos con altas exigencias de seguridad."
+  },
+  "premium.tier.business.price": {
+    "message": "Bajo petición"
+  },
+  "premium.tier.business.cta": {
+    "message": "Pedir una cita"
+  },
+  "premium.compare.included": {
+    "message": "Incluido"
+  },
+  "premium.compare.notIncluded": {
+    "message": "No incluido"
+  },
+  "premium.compare.custom": {
+    "message": "Personalizado"
+  },
+  "premium.compare.cat.essential": {
+    "message": "Protección esencial"
+  },
+  "premium.compare.row.antispam": {
+    "message": "Anti-spam adaptativo"
+  },
+  "premium.compare.row.captcha": {
+    "message": "Captcha y verificación"
+  },
+  "premium.compare.row.antiraid": {
+    "message": "Anti-raid automático"
+  },
+  "premium.compare.row.antiscam": {
+    "message": "Anti-Scam y ScamLens"
+  },
+  "premium.compare.row.moderation": {
+    "message": "Moderación completa (ban, kick, mute, jail…)"
+  },
+  "premium.compare.cat.authManager": {
+    "message": "Authentication Manager"
+  },
+  "premium.compare.row.protectedRoles": {
+    "message": "Roles protegidos"
+  },
+  "premium.compare.row.authorizedUsers": {
+    "message": "Usuarios autorizados"
+  },
+  "premium.compare.row.sessionDuration": {
+    "message": "Duración de la sesión"
+  },
+  "premium.compare.cat.display": {
+    "message": "Display público"
+  },
+  "premium.compare.row.panels": {
+    "message": "Paneles de información"
+  },
+  "premium.compare.row.panels.free": {
+    "message": "2 + 1 Jail"
+  },
+  "premium.compare.row.panels.founder": {
+    "message": "4 + 1 Jail"
+  },
+  "premium.compare.cat.honeypot": {
+    "message": "HoneyPot"
+  },
+  "premium.compare.row.banSoftban": {
+    "message": "Baneo y softban"
+  },
+  "premium.compare.row.kickTimeout": {
+    "message": "Kick, Timeout, Jail, Mute"
+  },
+  "premium.compare.cat.customization": {
+    "message": "Personalización"
+  },
+  "premium.compare.row.botIdentity": {
+    "message": "Apodo, avatar y banner del bot"
+  },
+  "premium.compare.row.nameStyle": {
+    "message": "Estilo del nombre (8 fuentes, 4 efectos)"
+  },
+  "premium.compare.row.customSanctions": {
+    "message": "Nombres de sanciones personalizados"
+  },
+  "premium.compare.row.bio": {
+    "message": "Biografía personalizable"
+  },
+  "premium.compare.row.dedicatedInstance": {
+    "message": "Instancia dedicada y aislada"
+  },
+  "premium.compare.cat.support": {
+    "message": "Acompañamiento"
+  },
+  "premium.compare.row.communitySupport": {
+    "message": "Soporte comunitario"
+  },
+  "premium.compare.row.betaAccess": {
+    "message": "Acceso a las funciones en beta pública"
+  },
+  "premium.compare.row.exclusiveRole": {
+    "message": "Rol exclusivo en el servidor de RaidProtect"
+  },
+  "premium.compare.row.prioritySupport": {
+    "message": "Soporte prioritario"
+  },
+  "premium.compare.row.audit": {
+    "message": "Auditoría inicial del servidor"
+  },
+  "premium.compare.row.customIntegration": {
+    "message": "Integración a medida"
+  },
+  "premium.compare.row.expertFollowup": {
+    "message": "Seguimiento regular con un experto"
+  },
+  "premium.layout.title": {
+    "message": "Premium"
+  },
+  "premium.layout.description": {
+    "message": "Descubre RaidProtect Premium: personalización del bot, Authentication Manager ampliado, sanciones HoneyPot avanzadas, acceso a las funciones en beta pública."
+  },
+  "premium.hero.title.line1": {
+    "message": "Una protección a tu imagen,",
+    "description": "Première ligne du titre du hero premium"
+  },
+  "premium.hero.title.accent": {
+    "message": "sin concesiones",
+    "description": "Partie accentuée du titre du hero premium"
+  },
+  "premium.hero.subtitle": {
+    "message": "Desbloquea las funciones avanzadas de RaidProtect: personalización total, límites ampliados en los módulos clave, sanciones a medida y acceso anticipado a las novedades."
+  },
+  "premium.hero.cta.subscribe": {
+    "message": "Suscribirse por 2,99 $/mes"
+  },
+  "premium.hero.cta.compare": {
+    "message": "Comparar planes"
+  },
+  "premium.stats.servers": {
+    "message": "Servidores protegidos"
+  },
+  "premium.stats.users": {
+    "message": "Usuarios supervisados"
+  },
+  "premium.stats.captcha": {
+    "message": "Captchas resueltos"
+  },
+  "premium.stats.antispam": {
+    "message": "Mensajes anti-spam filtrados"
+  },
+  "premium.servers.title": {
+    "message": "Confían en nosotros"
+  },
+  "premium.features.eyebrow": {
+    "message": "Lo que desbloqueas"
+  },
+  "premium.features.title": {
+    "message": "Las ventajas clave de Premium"
+  },
+  "premium.features.subtitle": {
+    "message": "Cinco palancas concretas para ir más lejos con RaidProtect, sin cambiar tu manera de trabajar."
+  },
+  "premium.cta.subscribe": {
+    "message": "Suscribirse"
+  },
+  "premium.experiments.eyebrow": {
+    "message": "Programa de innovación"
+  },
+  "premium.experiments.title": {
+    "message": "Funciones en beta pública"
+  },
+  "premium.experiments.subtitle": {
+    "message": "Los suscriptores reciben en primicia las novedades en proceso de estabilización. Estos accesos evolucionan con cada actualización del bot."
+  },
+  "premium.experiment.learnMore": {
+    "message": "Saber más →"
+  },
+  "premium.compare.eyebrow": {
+    "message": "Comparativa de planes"
+  },
+  "premium.compare.title": {
+    "message": "Elige el plan que mejor se adapte a ti"
+  },
+  "premium.compare.subtitle": {
+    "message": "Todas las protecciones esenciales siguen siendo gratuitas. Premium abre la personalización y los límites ampliados. Business aporta una instancia dedicada y un acompañamiento humano."
+  },
+  "premium.finalCta.title": {
+    "message": "¿Listo para pasar a Premium?"
+  },
+  "premium.finalCta.subtitle": {
+    "message": "La oferta Founder es limitada en el tiempo: 2,99 $/mes de por vida para los primeros suscriptores."
+  },
+  "premium.finalCta.cta": {
+    "message": "Activar Premium ahora"
+  },
+  "commands.copy.label": {
+    "message": "Copier la commande",
+    "description": "Aria-label of the copy button on command cells"
+  },
+  "theme.docs.sidebar.versionLabel": {
+    "message": "Version",
+    "description": "Label of the version selector in the docs sidebar"
+  },
+  "editor.sidebar.title": {
+    "message": "Files"
+  },
+  "editor.contribute.title": {
+    "message": "Contribute to the documentation"
+  },
+  "editor.contribute.description": {
+    "message": "Help improve the documentation by editing existing pages. Choose a page below or search for one."
+  },
+  "editor.contribute.searchPlaceholder": {
+    "message": "Search for a page..."
+  },
+  "editor.contribute.noResults": {
+    "message": "No pages found."
+  },
+  "editor.contribute.featured": {
+    "message": "Suggested pages"
+  },
+  "premium.tier.founder.price": {
+    "message": "2,99 $"
   }
 }
