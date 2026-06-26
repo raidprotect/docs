@@ -866,5 +866,282 @@
   "permission.moveMembers": {
     "message": "Déplacer des membres",
     "description": "Discord permission name"
+  },
+  "premium.feature.customize.title": {
+    "message": "Personnalisation totale du bot"
+  },
+  "premium.feature.customize.desc": {
+    "message": "Avatar, bannière, pseudo et style d'écriture : RaidProtect prend l'identité de votre serveur."
+  },
+  "premium.feature.authManager.title": {
+    "message": "Authentication Manager étendu"
+  },
+  "premium.feature.authManager.desc": {
+    "message": "Plus de rôles protégés, plus d'utilisateurs autorisés et des sessions deux fois plus longues."
+  },
+  "premium.feature.sanctionNames.title": {
+    "message": "Noms de sanctions personnalisables"
+  },
+  "premium.feature.sanctionNames.desc": {
+    "message": "Adaptez chaque sanction au vocabulaire de votre communauté."
+  },
+  "premium.feature.display.title": {
+    "message": "Plus de panneaux d'information"
+  },
+  "premium.feature.display.desc": {
+    "message": "Deux fois plus de panneaux libres avec /display public (2 → 4), slot Jail toujours inclus."
+  },
+  "premium.feature.honeypot.title": {
+    "message": "Sanctions Honeypot avancées"
+  },
+  "premium.feature.honeypot.desc": {
+    "message": "Débloquez Kick, Timeout, Jail et Mute dans le module HoneyPot."
+  },
+  "premium.experiment.badge.publicBeta": {
+    "message": "Bêta publique"
+  },
+  "premium.experiment.automod.title": {
+    "message": "Conversion AutoMod en mute par rôle"
+  },
+  "premium.experiment.automod.desc": {
+    "message": "Les timeouts appliqués par l'AutoMod de Discord sont automatiquement convertis en mute par rôle au-delà du seuil configuré, pour une cohérence totale avec vos sanctions manuelles."
+  },
+  "premium.experiment.badge.soon": {
+    "message": "Bientôt"
+  },
+  "premium.experiment.more.title": {
+    "message": "D'autres expérimentations à venir"
+  },
+  "premium.experiment.more.desc": {
+    "message": "Les abonnés Premium reçoivent en avant-première les fonctionnalités en bêta publique. Nous publions ici la liste à jour à mesure qu'elles arrivent."
+  },
+  "premium.tier.free.name": {
+    "message": "Basic"
+  },
+  "premium.tier.free.tagline": {
+    "message": "La sécurité essentielle, gratuite pour toujours."
+  },
+  "premium.tier.free.price": {
+    "message": "Gratuit"
+  },
+  "premium.tier.free.cta": {
+    "message": "Ajouter à Discord"
+  },
+  "premium.tier.founder.name": {
+    "message": "Founder"
+  },
+  "premium.tier.founder.tagline": {
+    "message": "Offre de lancement réservée aux premiers abonnés."
+  },
+  "premium.tier.founder.priceUnit": {
+    "message": "/ mois"
+  },
+  "premium.tier.founder.cta": {
+    "message": "S'abonner via Discord"
+  },
+  "premium.tier.business.name": {
+    "message": "Business"
+  },
+  "premium.tier.business.tagline": {
+    "message": "Pour les projets aux exigences de sécurité élevées."
+  },
+  "premium.tier.business.price": {
+    "message": "Sur demande"
+  },
+  "premium.tier.business.cta": {
+    "message": "Prendre rendez-vous"
+  },
+  "premium.compare.included": {
+    "message": "Inclus"
+  },
+  "premium.compare.notIncluded": {
+    "message": "Non inclus"
+  },
+  "premium.compare.custom": {
+    "message": "Custom"
+  },
+  "premium.compare.cat.essential": {
+    "message": "Protection essentielle"
+  },
+  "premium.compare.row.antispam": {
+    "message": "Anti-spam adaptatif"
+  },
+  "premium.compare.row.captcha": {
+    "message": "Captcha & vérification"
+  },
+  "premium.compare.row.antiraid": {
+    "message": "Anti-raid automatique"
+  },
+  "premium.compare.row.antiscam": {
+    "message": "Anti-Scam & ScamLens"
+  },
+  "premium.compare.row.moderation": {
+    "message": "Modération complète (ban, kick, mute, jail…)"
+  },
+  "premium.compare.cat.authManager": {
+    "message": "Authentication Manager"
+  },
+  "premium.compare.row.protectedRoles": {
+    "message": "Rôles protégés"
+  },
+  "premium.compare.row.authorizedUsers": {
+    "message": "Utilisateurs autorisés"
+  },
+  "premium.compare.row.sessionDuration": {
+    "message": "Durée de session"
+  },
+  "premium.compare.cat.display": {
+    "message": "Display public"
+  },
+  "premium.compare.row.panels": {
+    "message": "Panneaux d'information"
+  },
+  "premium.compare.row.panels.free": {
+    "message": "2 + 1 Jail"
+  },
+  "premium.compare.row.panels.founder": {
+    "message": "4 + 1 Jail"
+  },
+  "premium.compare.cat.honeypot": {
+    "message": "HoneyPot"
+  },
+  "premium.compare.row.banSoftban": {
+    "message": "Bannissement & softban"
+  },
+  "premium.compare.row.kickTimeout": {
+    "message": "Kick, Timeout, Jail, Mute"
+  },
+  "premium.compare.cat.customization": {
+    "message": "Personnalisation"
+  },
+  "premium.compare.row.botIdentity": {
+    "message": "Pseudo, avatar et bannière du bot"
+  },
+  "premium.compare.row.nameStyle": {
+    "message": "Style d'écriture du nom (8 polices, 4 effets)"
+  },
+  "premium.compare.row.customSanctions": {
+    "message": "Noms de sanctions personnalisés"
+  },
+  "premium.compare.row.bio": {
+    "message": "Bio personnalisable"
+  },
+  "premium.compare.row.dedicatedInstance": {
+    "message": "Instance dédiée et isolée"
+  },
+  "premium.compare.cat.support": {
+    "message": "Accompagnement"
+  },
+  "premium.compare.row.communitySupport": {
+    "message": "Support communautaire"
+  },
+  "premium.compare.row.betaAccess": {
+    "message": "Accès aux fonctionnalités en bêta publique"
+  },
+  "premium.compare.row.exclusiveRole": {
+    "message": "Rôle exclusif sur le serveur RaidProtect"
+  },
+  "premium.compare.row.prioritySupport": {
+    "message": "Support prioritaire"
+  },
+  "premium.compare.row.audit": {
+    "message": "Audit initial du serveur"
+  },
+  "premium.compare.row.customIntegration": {
+    "message": "Intégration sur mesure"
+  },
+  "premium.compare.row.expertFollowup": {
+    "message": "Suivi régulier avec un expert"
+  },
+  "premium.layout.title": {
+    "message": "Premium"
+  },
+  "premium.layout.description": {
+    "message": "Découvrez RaidProtect Premium : personnalisation du bot, Authentication Manager étendu, sanctions HoneyPot avancées, accès aux fonctionnalités en bêta publique."
+  },
+  "premium.hero.title.line1": {
+    "message": "Une protection à votre image,",
+    "description": "Première ligne du titre du hero premium"
+  },
+  "premium.hero.title.accent": {
+    "message": "sans compromis",
+    "description": "Partie accentuée du titre du hero premium"
+  },
+  "premium.hero.subtitle": {
+    "message": "Débloquez les fonctionnalités avancées de RaidProtect : personnalisation totale, limites étendues sur les modules clés, sanctions sur-mesure et accès anticipé aux nouveautés."
+  },
+  "premium.hero.cta.subscribe": {
+    "message": "S'abonner pour 2,99 $/mois"
+  },
+  "premium.hero.cta.compare": {
+    "message": "Comparer les offres"
+  },
+  "premium.stats.servers": {
+    "message": "Serveurs protégés"
+  },
+  "premium.stats.users": {
+    "message": "Utilisateurs surveillés"
+  },
+  "premium.stats.captcha": {
+    "message": "Captchas résolus"
+  },
+  "premium.stats.antispam": {
+    "message": "Messages anti-spam filtrés"
+  },
+  "premium.servers.title": {
+    "message": "Ils nous font confiance"
+  },
+  "premium.features.eyebrow": {
+    "message": "Ce que vous débloquez"
+  },
+  "premium.features.title": {
+    "message": "Les avantages clés du Premium"
+  },
+  "premium.features.subtitle": {
+    "message": "Cinq leviers concrets pour aller plus loin avec RaidProtect, sans changer votre manière de travailler."
+  },
+  "premium.cta.subscribe": {
+    "message": "S'abonner"
+  },
+  "premium.experiments.eyebrow": {
+    "message": "Programme d'innovation"
+  },
+  "premium.experiments.title": {
+    "message": "Des fonctionnalités en bêta publique"
+  },
+  "premium.experiments.subtitle": {
+    "message": "Les abonnés reçoivent en avant-première les nouveautés en cours de stabilisation. Ces accès évoluent à chaque mise à jour du bot."
+  },
+  "premium.experiment.learnMore": {
+    "message": "En savoir plus →"
+  },
+  "premium.compare.eyebrow": {
+    "message": "Comparatif des offres"
+  },
+  "premium.compare.title": {
+    "message": "Choisissez l'offre qui vous correspond"
+  },
+  "premium.compare.subtitle": {
+    "message": "Toutes les protections essentielles restent gratuites. Le Premium ouvre la personnalisation et les limites étendues. Le Business apporte une instance dédiée et un accompagnement humain."
+  },
+  "premium.finalCta.title": {
+    "message": "Prêt à passer en Premium ?"
+  },
+  "premium.finalCta.subtitle": {
+    "message": "L'offre Founder est limitée dans le temps : 2,99 $/mois à vie pour les premiers abonnés."
+  },
+  "premium.finalCta.cta": {
+    "message": "Activer le Premium maintenant"
+  },
+  "commands.copy.label": {
+    "message": "Copier la commande",
+    "description": "Aria-label of the copy button on command cells"
+  },
+  "theme.docs.sidebar.versionLabel": {
+    "message": "Version",
+    "description": "Label of the version selector in the docs sidebar"
+  },
+  "premium.tier.founder.price": {
+    "message": "2,99 $"
   }
 }
