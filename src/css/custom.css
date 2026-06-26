@@ -172,21 +172,7 @@ body.premium-page::before {
   box-shadow: 0 12px 28px -10px rgba(88, 101, 242, 0.8);
 }
 
-/* Lien "Support" : action secondaire discrète, contour léger. */
-.navbar__link.navbar-support {
-  padding: 0.42rem 0.95rem;
-  border-radius: 999px;
-  border: 1px solid var(--ifm-color-emphasis-300);
-  transition: border-color .2s ease, color .2s ease;
-}
-
-.navbar__link.navbar-support:hover {
-  text-decoration: none;
-  border-color: var(--ifm-color-primary);
-  color: var(--ifm-color-primary);
-}
-
-/* Variantes dans le menu mobile (sidebar). */
+/* Variante "Ajouter le bot" dans le menu mobile (sidebar). */
 .menu__link.navbar-addbot {
   margin-top: 0.5rem;
   border-radius: 999px;
@@ -197,12 +183,6 @@ body.premium-page::before {
 .menu__link.navbar-addbot:hover {
   color: #fff;
   filter: brightness(1.07);
-}
-
-.menu__link.navbar-support {
-  margin-top: 0.5rem;
-  border: 1px solid var(--ifm-color-emphasis-300);
-  border-radius: 999px;
 }
 
 .navbar-social {

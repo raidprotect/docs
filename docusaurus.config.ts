@@ -270,8 +270,7 @@ export default async function createConfigAsync() {
                     {
                         href: 'https://discord.com/invite/raidprotect',
                         label: 'Support',
-                        className: 'navbar-support',
-                        position: 'right',
+                        position: 'left',
                         target: '_blank',
                         rel: 'noopener noreferrer',
                     },
