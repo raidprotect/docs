@@ -275,8 +275,8 @@ function BadgeImg({badge}: {badge: Badge}) {
   if (!badge) return null;
   const src =
     badge === 'verified'
-      ? '/img/landing/serverBadgeVerified.svg'
-      : '/img/landing/serverBadgePartner.svg';
+      ? '/img/icons/serverBadgeVerified.svg'
+      : '/img/icons/serverBadgePartner.svg';
   const alt =
     badge === 'verified'
       ? 'Discord server badge verified'

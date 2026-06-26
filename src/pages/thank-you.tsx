@@ -25,8 +25,8 @@ const DEFAULT_ICON_URL =
   'https://cdn.prod.website-files.com/677fbd67c3c9318f7fb56659/67c33922eb3265808c183c50_411d8a698dd15ddf.webp';
 
 const BADGE_SRC: Record<Exclude<ServerBadge, null>, string> = {
-  partner: '/img/landing/serverBadgePartner.svg',
-  verified: '/img/landing/serverBadgeVerified.svg',
+  partner: '/img/icons/serverBadgePartner.svg',
+  verified: '/img/icons/serverBadgeVerified.svg',
 };
 
 const REQUIRED_PERMISSIONS = 1117660769534n;
@@ -282,7 +282,7 @@ export default function ThankYou(): ReactNode {
         <div className={styles.card}>
           <Link to="/" className={styles.logoWrap}>
             <img
-              src="/img/landing/logoRaidProtect.svg"
+              src="/img/icons/extend_logo.svg"
               alt="RaidProtect title logo"
               width={528}
               height={70}
@@ -431,7 +431,7 @@ export default function ThankYou(): ReactNode {
                 className={styles.socialLink}
                 aria-label={discordAriaLabel}>
                 <img
-                  src="/img/landing/iconDiscord.svg"
+                  src="/img/icons/iconDiscord.svg"
                   alt=""
                   width={18}
                   height={18}
@@ -446,7 +446,7 @@ export default function ThankYou(): ReactNode {
                 className={styles.socialLink}
                 aria-label={xAriaLabel}>
                 <img
-                  src="/img/landing/iconX.svg"
+                  src="/img/icons/iconX.svg"
                   alt=""
                   width={18}
                   height={18}
@@ -461,7 +461,7 @@ export default function ThankYou(): ReactNode {
                 className={styles.socialLink}
                 aria-label={youtubeAriaLabel}>
                 <img
-                  src="/img/landing/iconYouTube.svg"
+                  src="/img/icons/youtube.svg"
                   alt=""
                   width={18}
                   height={18}
@@ -476,7 +476,7 @@ export default function ThankYou(): ReactNode {
                 className={styles.socialLink}
                 aria-label={githubAriaLabel}>
                 <img
-                  src="/img/landing/iconGitHub.svg"
+                  src="/img/icons/iconGitHub.svg"
                   alt=""
                   width={18}
                   height={18}

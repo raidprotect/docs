@@ -16,27 +16,27 @@ type FeatureCard = {
 
 const HEADLINE_FEATURES: FeatureCard[] = [
     {
-        icon: '/img/premium/iconCustomize.png',
+        icon: '/img/icons/iconCustomizeWhite.svg',
         title: 'Personnalisation totale du bot',
         description: 'Avatar, bannière, pseudo et style d\'écriture : RaidProtect prend l\'identité de votre serveur.',
     },
     {
-        icon: '/img/premium/iconAuthManagerWhite.png',
+        icon: '/img/icons/iconAuthManagerWhite.svg',
         title: 'Authentication Manager étendu',
         description: 'Plus de rôles protégés, plus d\'utilisateurs autorisés et des sessions deux fois plus longues.',
     },
     {
-        icon: '/img/premium/iconCustomWhite.png',
+        icon: '/img/icons/iconCustomWhite.svg',
         title: 'Noms de sanctions personnalisables',
         description: 'Adaptez chaque sanction au vocabulaire de votre communauté.',
     },
     {
-        icon: '/img/premium/iconDisplay.png',
+        icon: '/img/icons/iconDisplayWhite.svg',
         title: 'Plus de panneaux d\'information',
         description: 'Deux fois plus de panneaux libres avec /display public (2 → 4), slot Jail toujours inclus.',
     },
     {
-        icon: '/img/premium/iconHoneypotWhite.png',
+        icon: '/img/icons/iconHoneyPotWhite.svg',
         title: 'Sanctions Honeypot avancées',
         description: 'Débloquez Kick, Timeout, Jail et Mute dans le module HoneyPot.',
     },
@@ -52,14 +52,14 @@ type ExperimentCard = {
 
 const EXPERIMENTS: ExperimentCard[] = [
     {
-        icon: '/img/premium/iconSanctionsMUTE.png',
+        icon: '/img/icons/SanctionsTIMEOUT.svg',
         badge: 'Bêta publique',
         title: 'Conversion AutoMod en mute par rôle',
         description: 'Les timeouts appliqués par l\'AutoMod de Discord sont automatiquement convertis en mute par rôle au-delà du seuil configuré, pour une cohérence totale avec vos sanctions manuelles.',
         docsHref: '/docs/features/sanctions#mute-threshold',
     },
     {
-        icon: '/img/premium/iconBeta.png',
+        icon: '/img/icons/iconBetaWhite.svg',
         badge: 'Bientôt',
         title: 'D\'autres expérimentations à venir',
         description: 'Les abonnés Premium reçoivent en avant-première les fonctionnalités en bêta publique. Nous publions ici la liste à jour à mesure qu\'elles arrivent.',

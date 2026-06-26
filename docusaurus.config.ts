@@ -106,7 +106,7 @@ export default async function createConfigAsync() {
                     baseBranch: 'master',
                     defaultLocale: 'fr',
                     editPageTitle: 'Modifier la documentation',
-                    logoSrc: '/img/extend_logo.svg',
+                    logoSrc: '/img/icons/extend_logo.svg',
                     enableEditThisPage: true,
                     editUrlBranch: 'master',
                     storageKeyPrefix: 'rp-docs-editor',
@@ -243,7 +243,7 @@ export default async function createConfigAsync() {
                 title: null,
                 logo: {
                     alt: 'RaidProtect',
-                    src: 'img/extend_logo.svg',
+                    src: 'img/icons/extend_logo.svg',
                     href: 'main',
                     target: '_self',
                     height: '32px',
@@ -293,7 +293,7 @@ export default async function createConfigAsync() {
                 style: 'light',
                 logo: {
                     alt: 'RaidProtect',
-                    src: 'img/extend_logo.svg',
+                    src: 'img/icons/extend_logo.svg',
                     href: 'main',
                     target: '_self',
                     height: '36px',
