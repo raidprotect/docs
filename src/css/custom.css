@@ -403,9 +403,9 @@ body:not(.editor-page) [class*="expandButton"] {
 }
 
 @media screen and (min-width: 997px) {
-  /* Aligne le contenu de la navbar sur le même container centré (1140px) que le
-     footer : le logo et les items à droite partagent exactement la gouttière de
-     .container, donc le logo navbar et le logo footer ont la même position. */
+  /* Contenu de la navbar dans un container centré, calé sur celui du footer mais
+     légèrement plus large (1240 vs 1140px) pour écarter un peu le logo et les
+     boutons des bords du container du footer. */
   .navbar {
     padding-left: 0;
     padding-right: 0;
@@ -413,7 +413,7 @@ body:not(.editor-page) [class*="expandButton"] {
 
   .navbar__inner {
     position: relative;
-    max-width: var(--ifm-container-width);
+    max-width: 1240px;
     margin-left: auto;
     margin-right: auto;
     padding-left: var(--ifm-spacing-horizontal);
