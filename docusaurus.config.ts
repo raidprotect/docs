@@ -271,21 +271,6 @@ export default async function createConfigAsync() {
                         label: 'Blog',
                     },
                     {
-                        type: 'docsVersionDropdown',
-                        position: 'right',
-                        dropdownActiveClassDisabled: true,
-                        // dropdownItemsAfter: [
-                        //     {
-                        //         type: 'html',
-                        //         value: '<hr class="dropdown-separator">',
-                        //     },
-                        //     {
-                        //         to: '/versions',
-                        //         label: 'All versions',
-                        //     },
-                        // ],
-                    },
-                    {
                         type: 'localeDropdown',
                         position: 'right',
                         // dropdownItemsAfter: [

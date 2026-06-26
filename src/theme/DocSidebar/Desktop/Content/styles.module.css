@@ -1,0 +1,25 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+@media (min-width: 997px) {
+  /* Padding horizontal des deux côtés (le stock met 0 à droite) : laisse de
+     l'air et évite que le scrollbar overlay (macOS) recouvre le surlignage de
+     l'item actif. */
+  .menu {
+    flex-grow: 1;
+    padding: 0.5rem 0.6rem 0.5rem 0.75rem;
+  }
+  @supports (scrollbar-gutter: stable) {
+    .menu {
+      scrollbar-gutter: stable;
+    }
+  }
+
+  .menuWithAnnouncementBar {
+    margin-bottom: var(--docusaurus-announcement-bar-height);
+  }
+}
