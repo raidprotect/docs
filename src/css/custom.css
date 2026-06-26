@@ -152,6 +152,59 @@ body.premium-page::before {
   filter: brightness(1.06);
 }
 
+/* Bouton "Ajouter le bot" : CTA principal, pilule pleine (blurple Discord). */
+.navbar__link.navbar-addbot {
+  margin-left: 0.4rem;
+  padding: 0.42rem 1.1rem;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 600;
+  background: #5865f2;
+  box-shadow: 0 8px 22px -10px rgba(88, 101, 242, 0.7);
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+
+.navbar__link.navbar-addbot:hover {
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-1px);
+  filter: brightness(1.07);
+  box-shadow: 0 12px 28px -10px rgba(88, 101, 242, 0.8);
+}
+
+/* Lien "Support" : action secondaire discrète, contour léger. */
+.navbar__link.navbar-support {
+  padding: 0.42rem 0.95rem;
+  border-radius: 999px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  transition: border-color .2s ease, color .2s ease;
+}
+
+.navbar__link.navbar-support:hover {
+  text-decoration: none;
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+}
+
+/* Variantes dans le menu mobile (sidebar). */
+.menu__link.navbar-addbot {
+  margin-top: 0.5rem;
+  border-radius: 999px;
+  color: #fff;
+  background: #5865f2;
+}
+
+.menu__link.navbar-addbot:hover {
+  color: #fff;
+  filter: brightness(1.07);
+}
+
+.menu__link.navbar-support {
+  margin-top: 0.5rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 999px;
+}
+
 .navbar-social {
   padding: 0;
   margin-left: 1rem;
