@@ -124,7 +124,7 @@ export default async function createConfigAsync() {
                         sidebarPath: './sidebars.ts',
                         editUrl: 'https://github.com/raidprotect/docs/tree/master/',
                         lastVersion: lastStableVersion,
-                        onlyIncludeVersions: ['current', lastStableVersion, '3.3.2'],
+                        onlyIncludeVersions: ['current', lastStableVersion],
                         versions: {
                             current: {
                                 label: 'Bêta 🚧',
@@ -132,9 +132,6 @@ export default async function createConfigAsync() {
                             },
                             [lastStableVersion]: {
                                 label: 'Stable',
-                            },
-                            '3.3.1': {
-                                label: 'Ancienne'
                             }
                         },
                         admonitions: {
