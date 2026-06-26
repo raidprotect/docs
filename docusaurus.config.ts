@@ -276,6 +276,10 @@ export default async function createConfigAsync() {
                         rel: 'noopener noreferrer',
                     },
                     {
+                        type: 'localeDropdown',
+                        position: 'right',
+                    },
+                    {
                         // Redirection du domaine vers le flux d'ajout OAuth. URL
                         // absolue : lien externe (pas de vérification de lien
                         // cassé) et invitation identique quelle que soit la langue
@@ -289,10 +293,6 @@ export default async function createConfigAsync() {
                         to: '/premium',
                         label: 'Premium',
                         className: 'navbar-premium',
-                        position: 'right',
-                    },
-                    {
-                        type: 'localeDropdown',
                         position: 'right',
                     }
                 ],
