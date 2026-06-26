@@ -435,3 +435,31 @@ body:not(.editor-page) [class*="expandButton"] {
     grid-row-gap: 20px;
   }
 }
+
+/* Palier intermédiaire (tablette large / petit laptop) : avant le passage en
+   menu hamburger (<997px), la navbar a beaucoup d'items. On réduit le logo, la
+   taille des liens et le padding des boutons pour que "Accueil" ne chevauche
+   plus le logo. */
+@media screen and (min-width: 997px) and (max-width: 1200px) {
+  .navbar__brand .navbar__logo img {
+    width: 196px;
+    height: auto;
+  }
+
+  .navbar__items:not(.navbar__items--right) {
+    margin-left: 200px;
+  }
+
+  .navbar__item {
+    font-size: 15px;
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+
+  .navbar__link.navbar-addbot,
+  .navbar__link.navbar-premium {
+    margin-left: 0.3rem;
+    padding: 0.34rem 0.72rem;
+    font-size: 14px;
+  }
+}
