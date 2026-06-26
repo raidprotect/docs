@@ -329,7 +329,7 @@ export default function PremiumPage(): React.ReactNode {
             <Head>
                 <body className="premium-page" />
             </Head>
-            <div className={styles.page}>
+            <main className={styles.page}>
                 {/* ============= HERO ============= */}
                 <section className={styles.hero}>
                     <div className={styles.container}>
@@ -640,7 +640,7 @@ export default function PremiumPage(): React.ReactNode {
                         </Link>
                     </div>
                 </section>
-            </div>
+            </main>
         </Layout>
     )
 }

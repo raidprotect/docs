@@ -268,18 +268,26 @@ export default async function createConfigAsync() {
                         label: 'Blog',
                     },
                     {
+                        href: 'https://discord.com/invite/raidprotect',
+                        label: 'Support',
+                        className: 'navbar-no-ext',
+                        position: 'left',
+                        target: '_blank',
+                        rel: 'noopener noreferrer',
+                    },
+                    {
                         type: 'localeDropdown',
                         position: 'right',
-                        // dropdownItemsAfter: [
-                        //     {
-                        //         type: 'html',
-                        //         value: '<hr style="margin: 0.3rem 0;">',
-                        //     },
-                        //     {
-                        //         href: 'https://github.com/facebook/docusaurus/issues/3526',
-                        //         label: 'Help Us Translate',
-                        //     },
-                        // ],
+                    },
+                    {
+                        // Redirection du domaine vers le flux d'ajout OAuth. URL
+                        // absolue : lien externe (pas de vérification de lien
+                        // cassé) et invitation identique quelle que soit la langue
+                        // de l'interface.
+                        href: 'https://raidprotect.bot/invite',
+                        label: 'Ajouter le bot',
+                        className: 'navbar-addbot navbar-no-ext',
+                        position: 'right',
                     },
                     {
                         to: '/premium',

@@ -45,8 +45,10 @@
   background-color: var(--ifm-color-emphasis-200);
 }
 
+/* Même rouge que le fond de l'announcement bar (#BD5454) : plus foncé que
+   --ifm-color-primary, pour un contraste suffisant avec le texte blanc. */
 .segmentActive,
 .segmentActive:hover {
   color: #fff;
-  background-color: var(--ifm-color-primary);
+  background-color: #BD5454;
 }

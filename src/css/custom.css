@@ -152,6 +152,44 @@ body.premium-page::before {
   filter: brightness(1.06);
 }
 
+/* Bouton "Ajouter le bot" : CTA principal, pilule pleine (blurple Discord). */
+.navbar__link.navbar-addbot {
+  margin-left: 0.4rem;
+  padding: 0.42rem 1.1rem;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 600;
+  background: #5865f2;
+  box-shadow: 0 8px 22px -10px rgba(88, 101, 242, 0.7);
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+
+.navbar__link.navbar-addbot:hover {
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-1px);
+  filter: brightness(1.07);
+  box-shadow: 0 12px 28px -10px rgba(88, 101, 242, 0.8);
+}
+
+/* Masque la petite icône "lien externe" sur Support et Ajouter le bot. */
+.navbar-no-ext svg[class*='iconExternalLink'] {
+  display: none;
+}
+
+/* Variante "Ajouter le bot" dans le menu mobile (sidebar). */
+.menu__link.navbar-addbot {
+  margin-top: 0.5rem;
+  border-radius: 999px;
+  color: #fff;
+  background: #5865f2;
+}
+
+.menu__link.navbar-addbot:hover {
+  color: #fff;
+  filter: brightness(1.07);
+}
+
 .navbar-social {
   padding: 0;
   margin-left: 1rem;
@@ -365,9 +403,28 @@ body:not(.editor-page) [class*="expandButton"] {
 }
 
 @media screen and (min-width: 997px) {
+  /* Aligne le contenu de la navbar sur le même container centré (1140px) que le
+     footer : le logo et les items à droite partagent exactement la gouttière de
+     .container, donc le logo navbar et le logo footer ont la même position. */
+  .navbar {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .navbar__inner {
+    position: relative;
+    max-width: var(--ifm-container-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--ifm-spacing-horizontal);
+    padding-right: var(--ifm-spacing-horizontal);
+  }
+
+  /* left:1rem est désormais relatif à .navbar__inner (positionné), donc le logo
+     s'aligne sur le bord gauche du container, comme le logo du footer. */
   .navbar__brand {
     position: absolute;
-    left: 1rem;
+    left: var(--ifm-spacing-horizontal);
     top: 50%;
     transform: translateY(-50%);
   }
@@ -395,5 +452,33 @@ body:not(.editor-page) [class*="expandButton"] {
   .footer__col {
     grid-column-gap: 20px;
     grid-row-gap: 20px;
+  }
+}
+
+/* Palier intermédiaire (tablette large / petit laptop) : avant le passage en
+   menu hamburger (<997px), la navbar a beaucoup d'items. On réduit le logo, la
+   taille des liens et le padding des boutons pour que "Accueil" ne chevauche
+   plus le logo. */
+@media screen and (min-width: 997px) and (max-width: 1200px) {
+  .navbar__brand .navbar__logo img {
+    width: 196px;
+    height: auto;
+  }
+
+  .navbar__items:not(.navbar__items--right) {
+    margin-left: 200px;
+  }
+
+  .navbar__item {
+    font-size: 15px;
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+
+  .navbar__link.navbar-addbot,
+  .navbar__link.navbar-premium {
+    margin-left: 0.3rem;
+    padding: 0.34rem 0.72rem;
+    font-size: 14px;
   }
 }
