@@ -69,6 +69,15 @@ export default async function createConfigAsync() {
                     es: '/es/',
                     pt: '/pt/'
                 },
+                invite: {
+                    // URLs absolues (redirections du domaine) : localisées par
+                    // langue et non vérifiées par le broken-links checker.
+                    fr: 'https://raidprotect.bot/invite',
+                    en: 'https://raidprotect.bot/en/invite',
+                    de: 'https://raidprotect.bot/de/invite',
+                    es: 'https://raidprotect.bot/es/invite',
+                    pt: 'https://raidprotect.bot/pt/invite'
+                },
                 geranium: {
                     fr: 'https://i.dfr.gg/geranium.webm',
                     en: 'https://i.dfr.gg/en-geranium.webm',
@@ -280,11 +289,11 @@ export default async function createConfigAsync() {
                         position: 'right',
                     },
                     {
-                        // Redirection du domaine vers le flux d'ajout OAuth. URL
-                        // absolue : lien externe (pas de vérification de lien
-                        // cassé) et invitation identique quelle que soit la langue
-                        // de l'interface.
-                        href: 'https://raidprotect.bot/invite',
+                        // Redirection du domaine vers le flux d'ajout OAuth.
+                        // `to: 'invite'` est résolu par locale via customFields.urls
+                        // (URLs absolues localisées : /invite, /en/invite, …) dans
+                        // les swizzles Navbar/Content et MobileSidebar/PrimaryMenu.
+                        to: 'invite',
                         label: 'Ajouter le bot',
                         className: 'navbar-addbot navbar-no-ext',
                         position: 'right',

@@ -21,3 +21,34 @@ export function localizedRedirectUrl(
   const prefix = currentLocale === defaultLocale ? '' : `/${currentLocale}`;
   return `${siteUrl}${prefix}${path}`;
 }
+
+type UrlsMap = Record<string, Record<string, string>>;
+
+/**
+ * Localise un item de navbar dont le `to` est une clé de `customFields.urls`
+ * (ex: `main`, `invite`) : remplace la clé par l'URL de la locale courante.
+ *
+ * Renvoie une copie (pas de mutation de l'objet de config, partagé entre les
+ * rendus desktop et mobile). Pour un chemin interne, on cadre l'état « actif »
+ * sur l'URL exacte (sinon un `to="/"` matcherait toutes les routes) ; pour une
+ * URL absolue (lien externe, ex: redirection de domaine), pas d'état actif.
+ */
+export function localizeNavbarItemUrl<T>(
+  item: T,
+  urls: UrlsMap,
+  currentLocale: string,
+): T {
+  const key = (item as {to?: string}).to;
+  if (!key || !urls[key]) {
+    return item;
+  }
+  const resolved = urls[key][currentLocale] ?? key;
+  const next = {...item, to: resolved} as T & {activeBaseRegex?: string};
+  if (resolved.startsWith('/')) {
+    const escaped = resolved
+      .replace(/\/$/, '')
+      .replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    next.activeBaseRegex = `^${escaped || ''}/?$`;
+  }
+  return next;
+}
