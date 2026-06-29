@@ -98,17 +98,40 @@ function AlternateLangHeaders(): ReactNode {
 // Default canonical url inferred from current page location pathname
 function useDefaultCanonicalUrl() {
   const {
-    siteConfig: {url: siteUrl, baseUrl, trailingSlash},
+    siteConfig: {
+      url: siteUrl,
+      baseUrl,
+      trailingSlash,
+      customFields: {excludedCanonical},
+    },
   } = useDocusaurusContext();
 
   // TODO using useLocation().pathname is not a super idea
   // See https://github.com/facebook/docusaurus/issues/9170
   const {pathname} = useLocation();
 
-  const canonicalPathname = applyTrailingSlash(useBaseUrl(pathname), {
+  let canonicalPathname = applyTrailingSlash(useBaseUrl(pathname), {
     trailingSlash,
     baseUrl,
   });
+
+  // Les pages de la doc bêta (/docs/beta/…, et /<locale>/docs/beta/…) sont
+  // canonicalisées vers leur équivalent stable (/docs/…, servi à la racine de la
+  // version) pour éviter le contenu dupliqué bêta/stable côté SEO. La langue est
+  // préservée. Les chemins listés dans customFields.excludedCanonical (pages
+  // exclusives à la bêta) gardent leur propre canonical.
+  const betaPathRegex = /^(\/(?:en|de|es|pt))?\/docs\/beta(\/|$)/;
+
+  if (
+    betaPathRegex.test(canonicalPathname) &&
+    !(excludedCanonical as string[]).includes(pathname)
+  ) {
+    canonicalPathname = canonicalPathname.replace(
+      betaPathRegex,
+      (_match: string, lang: string | undefined, tail: string) =>
+        `${lang ?? ''}/docs${tail}`,
+    );
+  }
 
   return siteUrl + canonicalPathname;
 }
