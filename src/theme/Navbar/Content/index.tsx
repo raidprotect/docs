@@ -20,6 +20,7 @@ import NavbarSearch from '@theme/Navbar/Search';
 
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
+import {localizeNavbarItemUrl} from '@site/src/utils/links';
 import styles from './styles.module.css';
 
 function useNavbarItems() {
@@ -73,6 +74,14 @@ export default function NavbarContent(): ReactNode {
   const items = useNavbarItems();
   const [leftItems, rightItems] = splitNavbarItems(items);
 
+  // Localise les items dont le `to` est une clé de customFields.urls (main, invite…).
+  const localize = (i: NavbarItemConfig) =>
+    localizeNavbarItemUrl(
+      i,
+      urls as Record<string, Record<string, string>>,
+      currentLocale,
+    );
+
   const searchBarItem = items.find((item) => item.type === 'search');
 
   return (
@@ -82,23 +91,14 @@ export default function NavbarContent(): ReactNode {
         <>
           {!mobileSidebar.disabled && <NavbarMobileSidebarToggle />}
           <NavbarLogo />
-          <NavbarItems items={leftItems.map(i => {
-            if (i['to'] && urls[i['to']]) {
-              const localizedPath = urls[i['to']][currentLocale] ?? i['to']
-              i['to'] = localizedPath
-              // Sans cela, un to="/" matche toutes les routes et le bouton reste actif partout.
-              const escaped = localizedPath.replace(/\/$/, '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-              i['activeBaseRegex'] = `^${escaped || ''}/?$`
-            }
-            return i
-          })} />
+          <NavbarItems items={leftItems.map(localize)} />
         </>
       }
       right={
         // TODO stop hardcoding items?
         // Ask the user to add the respective navbar items => more flexible
         <>
-          <NavbarItems items={rightItems} />
+          <NavbarItems items={rightItems.map(localize)} />
           <NavbarColorModeToggle className={styles.colorModeToggle} />
           {!searchBarItem && (
             <NavbarSearch>
