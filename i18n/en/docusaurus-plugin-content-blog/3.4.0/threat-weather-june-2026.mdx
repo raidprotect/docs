@@ -44,11 +44,9 @@ The number of **hacked accounts identified has doubled again** in a month (80,00
 
 ## 🆕 Update: sanction on the very first image {#updates}
 
-Until now, when a hacked account dumped a wave of images, ScamLens **deleted all the messages first**, then applied the sanction (24 h timeout). The catch: during that cleanup, the account could **keep posting** for a few more seconds.
+Until now, when a hacked account dumped its wave, ScamLens **deleted all the messages first**, then sanctioned. During that cleanup, the account could keep going for a few seconds, and those waves **sometimes included role mentions** that flooded the server with notifications.
 
-Now we **flip the order**: as soon as ScamLens recognizes **the first scam image**, it **immediately sanctions the account** (24 h timeout), *then* cleans up the rest of the wave. The hacked account's access is cut off **on the very first image**, without giving it time to send any more.
-
-On big spikes (over 2,000 images within minutes), this sharply reduces the number of images that reach the channels before the sanction. Each image is still processed in **~400 ms**, and the legitimate owner regains control when the timeout expires: remember, it's **almost always a hacking victim**, not a malicious member.
+Now, on **the first scam image** detected, RaidProtect **deletes and sanctions immediately** (configurable sanction), then cleans up the rest. The hacked account is cut off on the spot, with no time to post more or ping the server.
 
 ---
 
@@ -73,7 +71,7 @@ On big spikes (over 2,000 images within minutes), this sharply reduces the numbe
           name: 'Does ScamLens delete the images or sanction the account first?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Since June 2026, ScamLens sanctions the account on the very first detected scam image (24 h timeout), then cleans up the rest of the wave. Before, it deleted all the messages first before sanctioning, which let a hacked account post a few more images.',
+            text: 'Since June 2026, ScamLens sanctions the account on the very first detected scam image (configurable sanction), then cleans up the rest of the wave. Before, it deleted all the messages first before sanctioning, which let a hacked account post a few more images.',
           },
         },
         {
@@ -109,7 +107,7 @@ On big spikes (over 2,000 images within minutes), this sharply reduces the numbe
 ScamLens is RaidProtect's **image anti-scam** module, the **Discord protection bot**. It analyzes every posted image in real time and **automatically deletes** the ones it identifies as fraudulent (crypto scams, fake celebrity giveaways, fake online casino promotions), **with no configuration at all**.
 
 #### Does ScamLens delete the images or sanction the account first? {#suppression-ou-sanction}
-Since June 2026, ScamLens **sanctions the account on the very first** detected scam image (24 h timeout), *then* cleans up the rest of the wave. Before, it deleted all the messages first before sanctioning, which let a hacked account post a few more images.
+Since June 2026, ScamLens **sanctions the account on the very first** detected scam image (configurable sanction), *then* cleans up the rest of the wave. Before, it deleted all the messages first before sanctioning, which let a hacked account post a few more images.
 
 #### Why is my Discord account sending scam messages on its own? {#compte-discord-envoie-messages-seul}
 Your account has most likely been **hacked**. Scammers steal your **authentication token** (fake site, infected software, malicious extension) and use it to spam scam images on **every server you are in**, without you knowing.

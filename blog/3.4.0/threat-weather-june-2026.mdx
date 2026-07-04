@@ -44,11 +44,9 @@ Les **comptes piratés identifiés ont de nouveau doublé** en un mois (80 000 �
 
 ## 🆕 Nouveauté : sanction dès la première image {#updates}
 
-Jusqu'ici, quand un compte piraté déversait une vague d'images, ScamLens **supprimait d'abord tous les messages**, puis appliquait la sanction (timeout 24 h). Le souci : pendant ce nettoyage, le compte pouvait **continuer à poster** quelques secondes de plus.
+Jusqu'ici, quand un compte piraté déversait sa vague, ScamLens **supprimait d'abord tous les messages**, puis sanctionnait. Pendant ce nettoyage, le compte pouvait continuer quelques secondes, et ces vagues **incluaient parfois des mentions de rôles** qui noyaient le serveur sous les notifications.
 
-Désormais, on **inverse l'ordre** : dès que ScamLens reconnaît **la première image d'arnaque**, il **sanctionne immédiatement le compte** (timeout 24 h), *puis* nettoie le reste de la vague. L'accès du compte piraté est coupé **dès la première image**, sans lui laisser le temps d'en envoyer d'autres.
-
-Sur les gros pics (plus de 2 000 images en quelques minutes), ça réduit fortement le nombre d'images qui atteignent les salons avant la sanction. Chaque image reste traitée en **~400 ms**, et le propriétaire légitime récupère la main à l'expiration du timeout : rappelons que c'est **presque toujours une victime de piratage**, pas un membre malveillant.
+Désormais, dès la **première image d'arnaque** détectée, RaidProtect **supprime et sanctionne immédiatement** (sanction configurable), puis nettoie le reste. Le compte piraté est coupé net, sans le temps d'en poster d'autres ni de pinger le serveur.
 
 ---
 
@@ -73,7 +71,7 @@ Sur les gros pics (plus de 2 000 images en quelques minutes), ça réduit fortem
           name: 'ScamLens supprime-t-il les images ou sanctionne-t-il le compte en premier ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Depuis juin 2026, ScamLens sanctionne le compte dès la première image d\'arnaque détectée (timeout 24 h), puis nettoie le reste de la vague. Avant, il supprimait d\'abord tous les messages avant de sanctionner, ce qui laissait un compte piraté poster quelques images de plus.',
+            text: 'Depuis juin 2026, ScamLens sanctionne le compte dès la première image d\'arnaque détectée (sanction configurable), puis nettoie le reste de la vague. Avant, il supprimait d\'abord tous les messages avant de sanctionner, ce qui laissait un compte piraté poster quelques images de plus.',
           },
         },
         {
@@ -109,7 +107,7 @@ Sur les gros pics (plus de 2 000 images en quelques minutes), ça réduit fortem
 ScamLens est le **module anti-scam d'images** de RaidProtect, le **bot de protection pour Discord**. Il analyse chaque image postée en temps réel et **supprime automatiquement** celles qu'il identifie comme frauduleuses (arnaques crypto, faux giveaways de célébrités, fausses promotions de casinos en ligne), **sans aucune configuration**.
 
 #### ScamLens supprime-t-il les images ou sanctionne-t-il le compte en premier ? {#suppression-ou-sanction}
-Depuis juin 2026, ScamLens **sanctionne le compte dès la première image** d'arnaque détectée (timeout 24 h), *puis* nettoie le reste de la vague. Avant, il supprimait d'abord tous les messages avant de sanctionner, ce qui laissait un compte piraté poster quelques images de plus.
+Depuis juin 2026, ScamLens **sanctionne le compte dès la première image** d'arnaque détectée (sanction configurable), *puis* nettoie le reste de la vague. Avant, il supprimait d'abord tous les messages avant de sanctionner, ce qui laissait un compte piraté poster quelques images de plus.
 
 #### Pourquoi mon compte Discord envoie-t-il des messages d'arnaque tout seul ? {#compte-discord-envoie-messages-seul}
 Votre compte a très probablement été **piraté**. Les arnaqueurs volent votre **token d'authentification** (faux site, logiciel vérolé, extension malveillante) puis l'utilisent pour spammer des images d'arnaque sur **tous les serveurs où vous êtes**, sans que vous le sachiez.

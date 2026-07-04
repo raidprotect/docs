@@ -44,11 +44,9 @@ O número de **contas pirateadas identificadas voltou a duplicar** num mês (80 
 
 ## 🆕 Novidade: sanção logo na primeira imagem {#updates}
 
-Até agora, quando uma conta pirateada despejava uma vaga de imagens, o ScamLens **removia primeiro todas as mensagens** e só depois aplicava a sanção (timeout de 24 h). O problema: durante essa limpeza, a conta podia **continuar a publicar** mais alguns segundos.
+Até agora, quando uma conta pirateada despejava a sua vaga, o ScamLens **removia primeiro todas as mensagens** e só depois sancionava. Durante essa limpeza, a conta podia continuar alguns segundos, e essas vagas **incluíam por vezes menções de cargos** que inundavam o servidor de notificações.
 
-Agora **invertemos a ordem**: assim que o ScamLens reconhece **a primeira imagem de scam**, **sanciona imediatamente a conta** (timeout de 24 h) e *depois* limpa o resto da vaga. O acesso da conta pirateada é cortado **logo na primeira imagem**, sem lhe dar tempo de enviar mais.
-
-Nos grandes picos (mais de 2 000 imagens em poucos minutos), isto reduz muito o número de imagens que chegam aos canais antes da sanção. Cada imagem continua a ser processada em **~400 ms**, e o proprietário legítimo recupera o controlo quando o timeout expira: lembra-te de que é **quase sempre uma vítima de pirataria**, não um membro malicioso.
+Agora, logo na **primeira imagem de scam** detetada, o RaidProtect **remove e sanciona imediatamente** (sanção configurável) e *depois* limpa o resto. A conta pirateada é cortada na hora, sem tempo de publicar mais nem de pingar o servidor.
 
 ---
 
@@ -73,7 +71,7 @@ Nos grandes picos (mais de 2 000 imagens em poucos minutos), isto reduz muito o 
           name: 'O ScamLens remove as imagens ou sanciona primeiro a conta?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Desde junho de 2026, o ScamLens sanciona a conta logo na primeira imagem de scam detetada (timeout de 24 h) e depois limpa o resto da vaga. Antes removia primeiro todas as mensagens antes de sancionar, o que deixava uma conta pirateada publicar mais algumas imagens.',
+            text: 'Desde junho de 2026, o ScamLens sanciona a conta logo na primeira imagem de scam detetada (sanção configurável) e depois limpa o resto da vaga. Antes removia primeiro todas as mensagens antes de sancionar, o que deixava uma conta pirateada publicar mais algumas imagens.',
           },
         },
         {
@@ -109,7 +107,7 @@ Nos grandes picos (mais de 2 000 imagens em poucos minutos), isto reduz muito o 
 O ScamLens é o **módulo anti-scam de imagens** do RaidProtect, o **bot de proteção para Discord**. Analisa cada imagem publicada em tempo real e **remove automaticamente** as que identifica como fraudulentas (scams cripto, falsos giveaways de celebridades, falsas promoções de casinos online), **sem qualquer configuração**.
 
 #### O ScamLens remove as imagens ou sanciona primeiro a conta? {#suppression-ou-sanction}
-Desde junho de 2026, o ScamLens **sanciona a conta logo na primeira** imagem de scam detetada (timeout de 24 h) e *depois* limpa o resto da vaga. Antes removia primeiro todas as mensagens antes de sancionar, o que deixava uma conta pirateada publicar mais algumas imagens.
+Desde junho de 2026, o ScamLens **sanciona a conta logo na primeira** imagem de scam detetada (sanção configurável) e *depois* limpa o resto da vaga. Antes removia primeiro todas as mensagens antes de sancionar, o que deixava uma conta pirateada publicar mais algumas imagens.
 
 #### Porque é que a minha conta Discord envia mensagens de scam sozinha? {#compte-discord-envoie-messages-seul}
 A tua conta foi muito provavelmente **pirateada**. Os burlões roubam o teu **token de autenticação** (site falso, software infetado, extensão maliciosa) e usam-no para enviar imagens de scam em spam em **todos os servidores onde estás**, sem que saibas.

@@ -44,11 +44,9 @@ El número de **cuentas hackeadas identificadas se ha vuelto a duplicar** en un 
 
 ## 🆕 Novedad: sanción desde la primera imagen {#updates}
 
-Hasta ahora, cuando una cuenta hackeada soltaba una oleada de imágenes, ScamLens **eliminaba primero todos los mensajes** y luego aplicaba la sanción (timeout de 24 h). El problema: durante esa limpieza, la cuenta podía **seguir publicando** unos segundos más.
+Hasta ahora, cuando una cuenta hackeada soltaba su oleada, ScamLens **eliminaba primero todos los mensajes** y luego sancionaba. Durante esa limpieza, la cuenta podía seguir unos segundos, y esas oleadas **incluían a veces menciones de roles** que inundaban el servidor de notificaciones.
 
-Ahora **invertimos el orden**: en cuanto ScamLens reconoce **la primera imagen de estafa**, **sanciona de inmediato la cuenta** (timeout de 24 h) y *después* limpia el resto de la oleada. El acceso de la cuenta hackeada se corta **desde la primera imagen**, sin darle tiempo a enviar más.
-
-En los grandes picos (más de 2 000 imágenes en pocos minutos), esto reduce mucho el número de imágenes que llegan a los canales antes de la sanción. Cada imagen se sigue procesando en **~400 ms**, y el propietario legítimo recupera el control al expirar el timeout: recuerda que es **casi siempre una víctima de hackeo**, no un miembro malintencionado.
+Ahora, a la **primera imagen de estafa** detectada, RaidProtect **elimina y sanciona de inmediato** (sanción configurable) y *después* limpia el resto. La cuenta hackeada se corta en el acto, sin tiempo de publicar más ni de pingear al servidor.
 
 ---
 
@@ -73,7 +71,7 @@ En los grandes picos (más de 2 000 imágenes en pocos minutos), esto reduce muc
           name: '¿ScamLens elimina las imágenes o sanciona primero la cuenta?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Desde junio de 2026, ScamLens sanciona la cuenta desde la primera imagen de estafa detectada (timeout de 24 h) y luego limpia el resto de la oleada. Antes eliminaba primero todos los mensajes antes de sancionar, lo que dejaba a una cuenta hackeada publicar algunas imágenes más.',
+            text: 'Desde junio de 2026, ScamLens sanciona la cuenta desde la primera imagen de estafa detectada (sanción configurable) y luego limpia el resto de la oleada. Antes eliminaba primero todos los mensajes antes de sancionar, lo que dejaba a una cuenta hackeada publicar algunas imágenes más.',
           },
         },
         {
@@ -109,7 +107,7 @@ En los grandes picos (más de 2 000 imágenes en pocos minutos), esto reduce muc
 ScamLens es el **módulo anti-scam de imágenes** de RaidProtect, el **bot de protección para Discord**. Analiza cada imagen publicada en tiempo real y **elimina automáticamente** las que identifica como fraudulentas (estafas cripto, falsos giveaways de famosos, falsas promociones de casinos en línea), **sin ninguna configuración**.
 
 #### ¿ScamLens elimina las imágenes o sanciona primero la cuenta? {#suppression-ou-sanction}
-Desde junio de 2026, ScamLens **sanciona la cuenta desde la primera** imagen de estafa detectada (timeout de 24 h) y *después* limpia el resto de la oleada. Antes eliminaba primero todos los mensajes antes de sancionar, lo que dejaba a una cuenta hackeada publicar algunas imágenes más.
+Desde junio de 2026, ScamLens **sanciona la cuenta desde la primera** imagen de estafa detectada (sanción configurable) y *después* limpia el resto de la oleada. Antes eliminaba primero todos los mensajes antes de sancionar, lo que dejaba a una cuenta hackeada publicar algunas imágenes más.
 
 #### ¿Por qué mi cuenta de Discord envía mensajes de estafa sola? {#compte-discord-envoie-messages-seul}
 Tu cuenta ha sido casi con toda seguridad **hackeada**. Los estafadores roban tu **token de autenticación** (sitio falso, software infectado, extensión maliciosa) y lo usan para spamear imágenes de estafa en **todos los servidores en los que estás**, sin que lo sepas.
