@@ -27,12 +27,12 @@ const SERVERS_FR: Server[] = [
     badge: 'verified',
   },
   {
-    name: 'Rocket League France',
-    icon: '/img/landing/iconRocketLeagueFrance.webp',
-    alt: 'Rocket League France Discord server icon',
-    href: 'https://discord.com/invite/rlfr',
-    members: 196500,
-    badge: 'partner',
+    name: 'Whiteout Survival',
+    icon: '/img/landing/iconWhiteoutSurvival.webp',
+    alt: 'Whiteout Survival Discord server icon',
+    href: 'https://discord.com/invite/whiteoutsurvival',
+    members: 1564000,
+    badge: null,
   },
   {
     name: 'Slash FR',
@@ -99,7 +99,7 @@ const SERVERS_FR: Server[] = [
     badge: 'verified',
   },
   {
-    name: 'NationGlory',
+    name: 'NationsGlory',
     icon: '/img/landing/iconNationsGlory.webp',
     alt: 'NationsGlory server icon',
     href: 'https://discord.com/invite/nationsglory',
@@ -150,11 +150,11 @@ const SERVERS_INTL: Server[] = [
     badge: 'partner',
   },
   {
-    name: 'Eclipse',
-    icon: '/img/landing/iconEclipse.webp',
-    alt: 'Eclipse Discord server icon',
-    href: 'https://discord.com/invite/tradings',
-    members: 567000,
+    name: 'Whiteout Survival',
+    icon: '/img/landing/iconWhiteoutSurvival.webp',
+    alt: 'Whiteout Survival Discord server icon',
+    href: 'https://discord.com/invite/whiteoutsurvival',
+    members: 1564000,
     badge: null,
   },
   {
@@ -230,7 +230,7 @@ const SERVERS_INTL: Server[] = [
     badge: null,
   },
   {
-    name: 'NationGlory',
+    name: 'NationsGlory',
     icon: '/img/landing/iconNationsGlory.webp',
     alt: 'NationsGlory server icon',
     href: 'https://discord.com/invite/nationsglory',
