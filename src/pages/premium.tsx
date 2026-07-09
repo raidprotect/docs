@@ -35,7 +35,7 @@ type Tier = {
 
 type Row =
     | { type: 'category'; label: string }
-    | { type: 'feature'; label: string; values: [React.ReactNode, React.ReactNode, React.ReactNode] }
+    | { type: 'feature'; label: string; values: [React.ReactNode, React.ReactNode, React.ReactNode]; small?: boolean }
 
 type Stats = {
     servers: number
@@ -377,13 +377,13 @@ export default function PremiumPage(): React.ReactNode {
     const custom = translate({ id: 'premium.compare.custom', message: 'Custom' })
 
     const COMPARE_ROWS: Row[] = [
-        { type: 'category', label: translate({ id: 'premium.compare.cat.essential', message: 'Protection essentielle' }) },
+        { type: 'category', label: translate({ id: 'premium.compare.cat.essential', message: 'Protection & modération' }) },
         { type: 'feature', label: translate({ id: 'premium.compare.row.antispam', message: 'Anti-spam adaptatif' }), values: [yes, yes, yes] },
         { type: 'feature', label: translate({ id: 'premium.compare.row.captcha', message: 'Captcha & vérification' }), values: [yes, yes, yes] },
         { type: 'feature', label: translate({ id: 'premium.compare.row.antiraid', message: 'Anti-raid automatique' }), values: [yes, yes, yes] },
-        { type: 'feature', label: translate({ id: 'premium.compare.row.kickMode', message: 'Mode expulsion + DM (Fermeture des Jointures & Mode raid)' }), values: [no, yes, yes] },
         { type: 'feature', label: translate({ id: 'premium.compare.row.antiscam', message: 'Anti-Scam & ScamLens' }), values: [yes, yes, yes] },
         { type: 'feature', label: translate({ id: 'premium.compare.row.moderation', message: 'Modération complète (ban, kick, mute, jail…)' }), values: [yes, yes, yes] },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.kickMode', message: 'Mode expulsion + DM (Fermeture des Jointures & Mode raid)' }), values: [no, yes, yes], small: true },
 
         { type: 'category', label: translate({ id: 'premium.compare.cat.authManager', message: 'Authentication Manager' }) },
         { type: 'feature', label: translate({ id: 'premium.compare.row.protectedRoles', message: 'Rôles protégés' }), values: ['3', '10', custom] },
@@ -459,7 +459,6 @@ export default function PremiumPage(): React.ReactNode {
                     <div className={styles.container}>
                         <span className={styles.heroBadge}>
                             <span className={styles.heroBadgeInner}>
-                                <span className={styles.heroBadgeDot} />
                                 <Translate id="premium.hero.badge" description="Badge de lancement au-dessus du titre du hero premium">
                                     Offre Founder · tarif verrouillé à vie
                                 </Translate>
@@ -579,7 +578,6 @@ export default function PremiumPage(): React.ReactNode {
                                     )}
                                     {feature.badge && (
                                         <span className={styles.expBadge}>
-                                            <span className={styles.expBadgeDot} />
                                             {feature.badge}
                                         </span>
                                     )}
@@ -618,6 +616,14 @@ export default function PremiumPage(): React.ReactNode {
                         {/* ----- Desktop : tableau ----- */}
                         <div className={styles.compareWrap}>
                             <table className={styles.compareTable}>
+                                {/* Largeurs figées : Basic couvre les colonnes 1+2 (libellés +
+                                    valeurs Basic), Founder et Business une colonne chacune. */}
+                                <colgroup>
+                                    <col style={{ width: '36%' }} />
+                                    <col style={{ width: '8%' }} />
+                                    <col style={{ width: '28%' }} />
+                                    <col style={{ width: '28%' }} />
+                                </colgroup>
                                 <thead>
                                     <tr>
                                         {TIERS.map((tier, index) => (
@@ -679,7 +685,7 @@ export default function PremiumPage(): React.ReactNode {
                                             if (collapsed[cat]) return null
                                             return (
                                                 <tr key={`row-${i}`}>
-                                                    <td>{row.label}</td>
+                                                    <td className={row.small ? styles.compareLabelSmall : undefined}>{row.label}</td>
                                                     <td className={styles.compareValue}>{row.values[0]}</td>
                                                     <td className={styles.compareValue}>{row.values[1]}</td>
                                                     <td className={styles.compareValue}>{row.values[2]}</td>
@@ -743,7 +749,7 @@ export default function PremiumPage(): React.ReactNode {
                                                 if (collapsed[cat]) return null
                                                 return (
                                                     <div key={`mrow-${i}-${tierIndex}`} className={styles.stackRow}>
-                                                        <dt className={styles.stackRowLabel}>{row.label}</dt>
+                                                        <dt className={`${styles.stackRowLabel} ${row.small ? styles.compareLabelSmall : ''}`}>{row.label}</dt>
                                                         <dd className={styles.stackRowValue}>{row.values[tierIndex]}</dd>
                                                     </div>
                                                 )

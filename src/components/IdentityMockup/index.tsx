@@ -24,6 +24,7 @@ type Identity = {
 
 const NAME = (slug: string) => `/img/identity/${slug}-name.svg`
 const BANNER = (slug: string) => `/img/identity/${slug}-banner.webp`
+const AVATAR = (slug: string) => `/img/identity/${slug}-avatar.webp`
 const ICON = (file: string) => `/img/landing/${file}`
 
 // Jeu d'identités piloté par les assets. RaidProtect en ancrage (logo + rouge),
@@ -36,7 +37,7 @@ const IDENTITIES: Identity[] = [
     { slug: 'ligue1', avatar: { kind: 'img', src: ICON('iconLigue1.webp') }, nameSrc: NAME('ligue1'), bannerSrc: BANNER('ligue1'), label: 'Ligue 1' },
     { slug: 'nationsglory', avatar: { kind: 'img', src: ICON('iconNationsGlory.webp') }, nameSrc: NAME('nationsglory'), bannerSrc: BANNER('nationsglory'), label: 'NG' },
     { slug: 'slashfr', avatar: { kind: 'img', src: ICON('iconSlashFR.webp') }, nameSrc: NAME('slashfr'), bannerSrc: BANNER('slashfr'), label: 'Rooster' },
-    { slug: 'whiteoutsurvival', avatar: { kind: 'img', src: ICON('iconWhiteoutSurvival.webp') }, nameSrc: NAME('whiteoutsurvival'), bannerSrc: BANNER('whiteoutsurvival'), label: 'Ben' },
+    { slug: 'whiteoutsurvival', avatar: { kind: 'img', src: AVATAR('whiteoutsurvival') }, nameSrc: NAME('whiteoutsurvival'), bannerSrc: BANNER('whiteoutsurvival'), label: 'Ben' },
 ]
 const COUNT = IDENTITIES.length
 
@@ -103,13 +104,15 @@ export default function IdentityMockup({ ctaHref = 'https://raidprotect.bot/foun
                     )}
                     <div className={styles.mockupAvatar} style={avatarBg(id)}>
                         {renderAvatarInner(id.avatar)}
-                        <span className={styles.mockupStatus} />
                     </div>
                     {old && (
                         <div key={`avatar-${prev}`} className={`${styles.mockupAvatar} ${styles.mockupAvatarPrev} ${styles.mockupFadeOut}`} style={avatarBg(old)}>
                             {renderAvatarInner(old.avatar)}
                         </div>
                     )}
+                    {/* Statut hors des avatars : calque au-dessus des deux, jamais masqué
+                        par le crossfade. */}
+                    <span className={styles.mockupStatus} />
                     <div className={styles.mockupBody}>
                         <div className={styles.mockupNameRow}>
                             <span className={styles.mockupNameWrap}>
@@ -130,7 +133,11 @@ export default function IdentityMockup({ ctaHref = 'https://raidprotect.bot/foun
                             <img className={styles.mockupSlash} src="/img/icons/iconSupportsCommand.svg" alt="" aria-hidden />
                         </div>
                         <div className={styles.mockupMutual}>
-                            <span className={styles.mockupMutualDots}><span /><span /><span /></span>
+                            <span className={styles.mockupMutualDots}>
+                                <img src={ICON('iconWankilStudio.webp')} alt="" aria-hidden loading="lazy" />
+                                <img src={ICON('iconTeamVitality.webp')} alt="" aria-hidden loading="lazy" />
+                                <img src={ICON('iconGenshinImpactFR.webp')} alt="" aria-hidden loading="lazy" />
+                            </span>
                             <Translate id="premium.mockup.mutual">40 serveurs en commun</Translate>
                         </div>
                         <div className={styles.mockupButtons}>
@@ -164,7 +171,11 @@ export default function IdentityMockup({ ctaHref = 'https://raidprotect.bot/foun
                     {ctaHref && (
                         <div className={styles.mockupHover}>
                             <Link to={ctaHref} className={styles.mockupHoverBtn} tabIndex={-1}>
-                                <span className={styles.mockupHoverPlus}>+</span>
+                                <span className={styles.mockupHoverPlus}>
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                        <path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" />
+                                    </svg>
+                                </span>
                                 <Translate id="premium.mockup.customize">Customiser mon RaidProtect</Translate>
                             </Link>
                         </div>

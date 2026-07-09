@@ -95,6 +95,8 @@
   height: 96px;
   border-radius: 50%;
   border: 6px solid var(--dc-card);
+  /* Clippe une image zoomée (avatarScale) au cercle. */
+  overflow: hidden;
 }
 
 /* Mark RaidProtect en blanc, via masque : le cercle (couleur primaire du
@@ -117,15 +119,20 @@
   object-fit: cover;
 }
 
+/* Pastille de statut « online » (vert plein), calque indépendant au-dessus des
+   deux avatars (z-index > .mockupAvatarPrev) pour ne jamais être masquée pendant
+   le crossfade. Position calée sur le bord bas-droit du cercle d'avatar
+   (avatar : top 68px, left 16px, 96px). */
 .mockupStatus {
   position: absolute;
-  right: -1px;
-  bottom: -1px;
-  width: 20px;
-  height: 20px;
+  left: 82px;
+  top: 134px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
   background: #23a55a;
   border: 4px solid var(--dc-card);
+  z-index: 4;
 }
 
 .mockupBody {
@@ -203,16 +210,18 @@
   display: inline-flex;
 }
 
-.mockupMutualDots span {
-  width: 15px;
-  height: 15px;
+/* Petites icônes de serveurs en commun, qui se chevauchent (comme Discord). */
+.mockupMutualDots img {
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   border: 2px solid var(--dc-card);
   margin-left: -5px;
+  object-fit: cover;
 }
-.mockupMutualDots span:first-child { margin-left: 0; background: #7b68ee; }
-.mockupMutualDots span:nth-child(2) { background: #3ba55d; }
-.mockupMutualDots span:nth-child(3) { background: #d35f5f; }
+.mockupMutualDots img:first-child {
+  margin-left: 0;
+}
 
 .mockupButtons {
   display: flex;
@@ -418,6 +427,4 @@
   height: 22px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.22);
-  font-size: 1.2rem;
-  line-height: 1;
 }
