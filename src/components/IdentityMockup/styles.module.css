@@ -1,0 +1,423 @@
+/* =============================================================
+ * IdentityMockup : maquette de profil Discord (décorative) qui fait défiler
+ * plusieurs identités (pseudo, avatar, bannière, style d'écriture).
+ * Composant autonome, réutilisable hors de la page Premium.
+ * Couleurs Discord réelles (pas les tokens de marque) pour le réalisme.
+ * ============================================================= */
+
+.root {
+  display: flex;
+  justify-content: center;
+  perspective: 1400px;
+}
+
+/* Wrapper de tangage : inclinaison 3D au repos, redressement fluide au survol.
+   Séparé de la carte pour ne pas entrer en conflit avec le flottement. */
+.tilt {
+  transform: rotateY(-9deg) rotateX(4deg);
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transform-style: preserve-3d;
+}
+
+.root:hover .tilt {
+  transform: rotateY(0deg) rotateX(0deg);
+}
+
+.mockup {
+  --dc-card: #232428;
+  --dc-box: #2b2d31;
+  --dc-text: #f2f3f5;
+  --dc-muted: #b5bac1;
+  --dc-faint: #949ba4;
+  --dc-blurple: #5865f2;
+  position: relative;
+  width: 100%;
+  max-width: 330px;
+  border-radius: 16px;
+  background: var(--dc-card);
+  box-shadow: 0 30px 70px -28px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+  /* Maquette décorative : rien n'est sélectionnable à l'intérieur. */
+  user-select: none;
+  -webkit-user-select: none;
+  /* Flottement vertical seulement : n'interfère pas avec le tangage du wrapper. */
+  animation: mockFloat 8s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes mockFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-9px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tilt { transform: none; }
+  .mockup { animation: none; }
+}
+
+/* Bouton "…" en haut à droite. */
+.mockupMenu {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 3;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--dc-text);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: default;
+}
+
+.mockupBanner {
+  /* Hauteur calée sur le ratio des bannières WebP (680×240 ≈ 2.83:1) pour une
+     largeur de maquette ~330px, sans écrasement. */
+  height: 116px;
+  /* Bannière WebP affichée en cover. */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Arrondi propre du haut même pendant la bascule d'identité. */
+  border-radius: 16px 16px 0 0;
+}
+
+.mockupAvatar {
+  position: absolute;
+  /* Calé sur le bas de la bannière (cf. hauteur ci-dessus). */
+  top: 68px;
+  left: 16px;
+  z-index: 2;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 6px solid var(--dc-card);
+}
+
+/* Mark RaidProtect en blanc, via masque : le cercle (couleur primaire du
+   preset) transparaît autour, comme l'avatar réel du bot. */
+.mockupAvatarMark {
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  -webkit-mask: url(/img/rp-mark.svg) center / contain no-repeat;
+  mask: url(/img/rp-mark.svg) center / contain no-repeat;
+}
+
+/* Vraie icône de serveur : remplit le cercle de l'avatar. */
+.mockupAvatarImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.mockupStatus {
+  position: absolute;
+  right: -1px;
+  bottom: -1px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #23a55a;
+  border: 4px solid var(--dc-card);
+}
+
+.mockupBody {
+  padding: 3.4rem 1rem 1rem;
+}
+
+.mockupNameRow {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+/* Nom rendu en image SVG (couleur/police/effet intégrés). Hauteur fixe pour un
+   alignement stable ; largeur automatique selon le viewBox du SVG. */
+.mockupNameImg {
+  display: block;
+  height: 24px;
+  width: auto;
+}
+
+/* Badge "✓ APP" (Verified App), reproduit à l'identique de Discord :
+   pilule blurple 16px de haut, radius 4px, coche SVG 16px + APP 12px semibold. */
+.mockupTag {
+  display: inline-flex;
+  align-items: center;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 4px;
+  background: var(--dc-blurple);
+  color: #fff;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  vertical-align: top;
+  flex-shrink: 0;
+}
+
+.mockupTagVerified {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-inline-start: -2px;
+}
+
+.mockupTagText {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+}
+
+.mockupUser {
+  margin-top: 0.3rem;
+  font-size: 0.92rem;
+  color: var(--dc-text);
+}
+
+/* Icône "supporte les commandes" ({ }), à côté du pseudo. */
+.mockupSlash {
+  display: inline-block;
+  height: 15px;
+  width: auto;
+  margin-inline-start: 4px;
+  vertical-align: -3px;
+}
+
+.mockupMutual {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--dc-faint);
+}
+
+.mockupMutualDots {
+  display: inline-flex;
+}
+
+.mockupMutualDots span {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid var(--dc-card);
+  margin-left: -5px;
+}
+.mockupMutualDots span:first-child { margin-left: 0; background: #7b68ee; }
+.mockupMutualDots span:nth-child(2) { background: #3ba55d; }
+.mockupMutualDots span:nth-child(3) { background: #d35f5f; }
+
+.mockupButtons {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0.8rem 0;
+}
+
+.mockupBtnDark,
+.mockupBtnBlurple {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.55rem 0.7rem;
+  border-radius: 8px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.mockupBtnIcon {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.mockupBtnDark {
+  background: #4e5058;
+}
+
+.mockupBtnBlurple {
+  background: var(--dc-blurple);
+}
+
+/* Description fixe (ne change pas pendant le cycle). */
+.mockupDesc {
+  margin: 0.7rem 0;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: var(--dc-muted);
+}
+
+.mockupActivity {
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  background: var(--dc-box);
+  margin-bottom: 0.9rem;
+}
+
+.mockupActivityLabel {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--dc-faint);
+}
+
+.mockupActivityValue {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--dc-text);
+}
+
+.mockupMessage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.9rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  background: #383a40;
+  font-size: 0.82rem;
+  color: var(--dc-faint);
+}
+
+.mockupEmoji {
+  font-size: 0.95rem;
+}
+
+/* ---- Bascule d'identité ---- */
+
+/* Crossfade des aplats (bannière + avatar) : le calque courant est déjà plein,
+   le calque sortant se fond de 1 → 0. Aucun clignotement. */
+.mockupFadeOut {
+  animation: mockFadeOut 0.85s ease forwards;
+  pointer-events: none;
+}
+
+@keyframes mockFadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+.mockupBannerPrev {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.mockupAvatarPrev {
+  z-index: 3;
+}
+
+/* Nom : défilement vertical dans une fenêtre (pas de cross-fondu, qui
+   superposerait deux mots = effet fantôme). Le nouveau monte depuis le bas,
+   l'ancien sort par le haut. */
+.mockupNameWrap {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  padding-right: 0.16em;
+}
+
+.mockupNamePrev {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.mockupNameIn {
+  animation: nameRollIn 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mockupNameOut {
+  animation: nameRollOut 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes nameRollIn {
+  from { transform: translateY(95%); opacity: 0; }
+  to   { transform: translateY(0);   opacity: 1; }
+}
+
+@keyframes nameRollOut {
+  from { transform: translateY(0);    opacity: 1; }
+  to   { transform: translateY(-95%); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mockupFadeOut,
+  .mockupNameIn,
+  .mockupNameOut { animation: none; }
+  .mockupFadeOut { opacity: 0; }
+}
+
+/* ---- Overlay au survol : CTA "+ Customiser" ---- */
+.mockupHover {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(4, 1, 20, 0.55);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  transition: opacity 0.28s ease;
+  pointer-events: none;
+}
+
+.root:hover .mockupHover {
+  opacity: 1;
+}
+
+.mockupHoverBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.2rem;
+  border-radius: 999px;
+  font-family: var(--ifm-heading-font-family);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(120deg, var(--ifm-color-primary) 0%, #a561a3 100%);
+  box-shadow: 0 12px 30px -8px rgba(211, 95, 95, 0.7);
+  transform: translateY(6px);
+  transition: transform 0.28s ease, filter 0.2s ease;
+  /* Cliquable uniquement quand l'overlay est révélé (voir :hover). */
+  pointer-events: none;
+}
+
+.root:hover .mockupHoverBtn {
+  transform: translateY(0);
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.mockupHoverBtn:hover {
+  color: #fff;
+  text-decoration: none;
+  filter: brightness(1.05);
+}
+
+.mockupHoverPlus {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  font-size: 1.2rem;
+  line-height: 1;
+}
