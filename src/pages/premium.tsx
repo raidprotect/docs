@@ -7,17 +7,17 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 
 import { localizedRedirectUrl } from '@site/src/utils/links'
 import Servers from '@site/src/components/landing/Servers'
+import IdentityMockup from '@site/src/components/IdentityMockup'
 import styles from './premium.module.css'
 
-type FeatureCard = {
-    icon: string
-    title: string
-    description: string
-}
+/** Type de mise en scène CSS associée à chaque avantage (aucune image). */
+type SceneKind = 'kickMode' | 'authLimits' | 'sanctionRename' | 'panels' | 'honeypot'
 
-type ExperimentCard = {
-    icon: string
-    badge: string
+type Feature = {
+    /** Mise en situation CSS ; absente pour les avantages sans illustration. */
+    scene?: SceneKind
+    /** Pastille optionnelle (ex. "Bêta publique" sur l'accès anticipé). */
+    badge?: string
     title: string
     description: string
     docsHref?: string
@@ -165,6 +165,100 @@ function StatCard({ value, label, suffix }: StatCardProps) {
     )
 }
 
+/**
+ * Mise en situation CSS d'un avantage (aucune image) : chaque "scène" illustre
+ * concrètement ce que le Premium débloque. Décoratif, donc aria-hidden côté
+ * appelant. Les valeurs chiffrées reprennent le comparatif (source: docs).
+ */
+function FeatureScene({ kind }: { kind: SceneKind }): React.ReactNode {
+    if (kind === 'kickMode') {
+        return (
+            <div className={styles.sceneDm}>
+                <div className={styles.dmBubble}>
+                    <span className={styles.dmMsg}>
+                        {translate({ id: 'premium.scene.kick.dm', message: 'Ce serveur subit un raid, tu pourras rejoindre dans peu de temps.' })}
+                    </span>
+                    <span className={styles.dmButton}>
+                        {translate({ id: 'premium.scene.kick.button', message: 'Rejoindre le serveur' })}
+                    </span>
+                </div>
+            </div>
+        )
+    }
+
+    if (kind === 'authLimits') {
+        const rows: [string, string, string][] = [
+            [translate({ id: 'premium.scene.auth.roles', message: 'Rôles protégés' }), '3', '10'],
+            [translate({ id: 'premium.scene.auth.users', message: 'Utilisateurs' }), '20', '50'],
+            [translate({ id: 'premium.scene.auth.session', message: 'Session' }), '8 h', '24 h'],
+        ]
+        return (
+            <div className={styles.sceneLimits}>
+                {rows.map(([label, free, prem]) => (
+                    <div key={label} className={styles.limitRow}>
+                        <span className={styles.limitLabel}>{label}</span>
+                        <span className={styles.limitFree}>{free}</span>
+                        <span className={styles.limitArrow}>→</span>
+                        <span className={styles.limitPrem}>{prem}</span>
+                    </div>
+                ))}
+            </div>
+        )
+    }
+
+    if (kind === 'sanctionRename') {
+        // Notifications DM de sanction avec des noms personnalisés, qui défilent
+        // en boucle (carrousel vertical). Doublé pour un défilement sans couture.
+        const notifs = [
+            translate({ id: 'premium.scene.sanction.n1', message: 'Vous avez reçu un carton jaune' }),
+            translate({ id: 'premium.scene.sanction.n2', message: 'Vous avez été mis au coin' }),
+            translate({ id: 'premium.scene.sanction.n3', message: 'Vous êtes banni du royaume' }),
+            translate({ id: 'premium.scene.sanction.n4', message: 'Vous partez en isolement' }),
+        ]
+        return (
+            <div className={styles.sceneNotif}>
+                <div className={styles.notifTrack}>
+                    {[...notifs, ...notifs].map((n, i) => (
+                        <div key={i} className={styles.notifItem}>
+                            <span className={styles.notifAvatar} />
+                            <span className={styles.notifText}>{n}</span>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        )
+    }
+
+    if (kind === 'panels') {
+        return (
+            <div className={styles.scenePanels}>
+                <span className={styles.panelTile} />
+                <span className={styles.panelTile} />
+                <span className={`${styles.panelTile} ${styles.panelTilePrem}`} />
+                <span className={`${styles.panelTile} ${styles.panelTilePrem}`} />
+                <span className={`${styles.panelTile} ${styles.panelTileJail}`}>
+                    <Translate id="premium.scene.panels.jail">Jail</Translate>
+                </span>
+            </div>
+        )
+    }
+
+    if (kind === 'honeypot') {
+        return (
+            <div className={styles.sceneChips}>
+                <span className={styles.chipBase}>Ban</span>
+                <span className={styles.chipBase}>Softban</span>
+                <span className={styles.chipUnlock}>Kick</span>
+                <span className={styles.chipUnlock}>Timeout</span>
+                <span className={styles.chipUnlock}>Jail</span>
+                <span className={styles.chipUnlock}>Mute</span>
+            </div>
+        )
+    }
+
+    return null
+}
+
 export default function PremiumPage(): React.ReactNode {
     useSpotlight(`.${styles.featureCard}`)
     const stats = useStats()
@@ -193,8 +287,16 @@ export default function PremiumPage(): React.ReactNode {
             document.body.classList.toggle('premium-nav-scrolled', window.scrollY > 8)
         }
         onScroll()
+        // Au rechargement, le navigateur restaure la position de scroll APRÈS le
+        // montage, sans forcément émettre d'événement 'scroll'. On re-teste donc
+        // au frame suivant et au 'load' pour appliquer le flou si on arrive déjà
+        // descendu dans la page.
+        const raf = requestAnimationFrame(onScroll)
+        window.addEventListener('load', onScroll)
         window.addEventListener('scroll', onScroll, { passive: true })
         return () => {
+            cancelAnimationFrame(raf)
+            window.removeEventListener('load', onScroll)
             window.removeEventListener('scroll', onScroll)
             document.body.classList.remove('premium-nav-scrolled')
         }
@@ -202,47 +304,45 @@ export default function PremiumPage(): React.ReactNode {
 
     // Les données textuelles sont construites au rendu pour que translate()
     // lise la locale courante (des constantes au niveau module seraient figées).
-    const HEADLINE_FEATURES: FeatureCard[] = [
+    // La feature vedette "bot à votre image" a son propre bloc dédié (mise en
+    // scène CSS). Les autres avantages, plus une carte "accès bêta", suivent en
+    // grille, chacun avec une petite mise en situation.
+    const FEATURES: Feature[] = [
         {
-            icon: '/img/icons/iconCustomizeWhite.svg',
-            title: translate({ id: 'premium.feature.customize.title', message: 'Personnalisation totale du bot' }),
-            description: translate({ id: 'premium.feature.customize.desc', message: 'Avatar, bannière, pseudo et style d\'écriture : RaidProtect prend l\'identité de votre serveur.' }),
-        },
-        {
-            icon: '/img/icons/iconAuthManagerWhite.svg',
+            scene: 'authLimits',
             title: translate({ id: 'premium.feature.authManager.title', message: 'Authentication Manager étendu' }),
             description: translate({ id: 'premium.feature.authManager.desc', message: 'Plus de rôles protégés, plus d\'utilisateurs autorisés et des sessions deux fois plus longues.' }),
+            docsHref: '/docs/features/authentication-manager',
         },
         {
-            icon: '/img/icons/iconCustomWhite.svg',
+            scene: 'sanctionRename',
             title: translate({ id: 'premium.feature.sanctionNames.title', message: 'Noms de sanctions personnalisables' }),
             description: translate({ id: 'premium.feature.sanctionNames.desc', message: 'Adaptez chaque sanction au vocabulaire de votre communauté.' }),
+            docsHref: '/docs/features/sanctions#custom-names',
         },
         {
-            icon: '/img/icons/iconDisplayWhite.svg',
+            scene: 'kickMode',
+            title: translate({ id: 'premium.feature.kickMode.title', message: 'Anti-raid en mode expulsion' }),
+            description: translate({ id: 'premium.feature.kickMode.desc', message: 'Expulsion + DM d\'explication au lieu d\'un blocage silencieux des invitations. Laissez entrer qui vous voulez avec /bypass.' }),
+            docsHref: '/docs/features/raid-mode',
+        },
+        {
+            scene: 'panels',
             title: translate({ id: 'premium.feature.display.title', message: 'Plus de panneaux d\'information' }),
             description: translate({ id: 'premium.feature.display.desc', message: 'Deux fois plus de panneaux libres avec /display public (2 → 4), slot Jail toujours inclus.' }),
+            docsHref: '/docs/features/display',
         },
         {
-            icon: '/img/icons/iconHoneyPotWhite.svg',
+            scene: 'honeypot',
             title: translate({ id: 'premium.feature.honeypot.title', message: 'Sanctions Honeypot avancées' }),
-            description: translate({ id: 'premium.feature.honeypot.desc', message: 'Débloquez Kick, Timeout, Jail et Mute dans le module HoneyPot.' }),
+            description: translate({ id: 'premium.feature.honeypot.desc', message: 'Débloquez Kick, Timeout, Jail et Mute : les messages du spammeur sont effacés dans tous les salons, comme avec un ban.' }),
+            docsHref: '/docs/features/honeypot',
         },
-    ]
-
-    const EXPERIMENTS: ExperimentCard[] = [
         {
-            icon: '/img/icons/SanctionsTIMEOUT.svg',
-            badge: translate({ id: 'premium.experiment.badge.publicBeta', message: 'Bêta publique' }),
-            title: translate({ id: 'premium.experiment.automod.title', message: 'Conversion AutoMod en mute par rôle' }),
-            description: translate({ id: 'premium.experiment.automod.desc', message: 'Les timeouts appliqués par l\'AutoMod de Discord sont automatiquement convertis en mute par rôle au-delà du seuil configuré, pour une cohérence totale avec vos sanctions manuelles.' }),
+            badge: translate({ id: 'premium.feature.beta.badge', message: 'Bêta publique' }),
+            title: translate({ id: 'premium.feature.beta.title', message: 'Accès anticipé aux nouveautés' }),
+            description: translate({ id: 'premium.feature.beta.desc', message: 'Les abonnés reçoivent en avant-première les fonctionnalités en bêta, comme la conversion des timeouts AutoMod en mute par rôle.' }),
             docsHref: '/docs/features/sanctions#mute-threshold',
-        },
-        {
-            icon: '/img/icons/iconBetaWhite.svg',
-            badge: translate({ id: 'premium.experiment.badge.soon', message: 'Bientôt' }),
-            title: translate({ id: 'premium.experiment.more.title', message: 'D\'autres expérimentations à venir' }),
-            description: translate({ id: 'premium.experiment.more.desc', message: 'Les abonnés Premium reçoivent en avant-première les fonctionnalités en bêta publique. Nous publions ici la liste à jour à mesure qu\'elles arrivent.' }),
         },
     ]
 
@@ -281,6 +381,7 @@ export default function PremiumPage(): React.ReactNode {
         { type: 'feature', label: translate({ id: 'premium.compare.row.antispam', message: 'Anti-spam adaptatif' }), values: [yes, yes, yes] },
         { type: 'feature', label: translate({ id: 'premium.compare.row.captcha', message: 'Captcha & vérification' }), values: [yes, yes, yes] },
         { type: 'feature', label: translate({ id: 'premium.compare.row.antiraid', message: 'Anti-raid automatique' }), values: [yes, yes, yes] },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.kickMode', message: 'Mode expulsion + DM (Fermeture des Jointures & Mode raid)' }), values: [no, yes, yes] },
         { type: 'feature', label: translate({ id: 'premium.compare.row.antiscam', message: 'Anti-Scam & ScamLens' }), values: [yes, yes, yes] },
         { type: 'feature', label: translate({ id: 'premium.compare.row.moderation', message: 'Modération complète (ban, kick, mute, jail…)' }), values: [yes, yes, yes] },
 
@@ -317,6 +418,29 @@ export default function PremiumPage(): React.ReactNode {
         { type: 'feature', label: translate({ id: 'premium.compare.row.expertFollowup', message: 'Suivi régulier avec un expert' }), values: [no, no, yes] },
     ]
 
+    const FAQ_ITEMS: { q: string; a: string }[] = [
+        {
+            q: translate({ id: 'premium.faq.q.freeChange', message: 'Est-ce que la version gratuite va être réduite ?' }),
+            a: translate({ id: 'premium.faq.a.freeChange', message: 'Non. La version gratuite reste complète et continuera d\'évoluer au même rythme. Le Premium s\'adresse aux serveurs qui ont besoin de plus : limites étendues, personnalisation avancée et accès anticipé.' }),
+        },
+        {
+            q: translate({ id: 'premium.faq.q.lifetime', message: 'Que signifie « tarif verrouillé à vie » ?' }),
+            a: translate({ id: 'premium.faq.a.lifetime', message: 'L\'offre Founder bloque votre tarif définitivement. Tant que votre abonnement reste actif, votre prix ne change pas, même quand de nouvelles formules seront introduites et que l\'offre Founder sera retirée de la boutique.' }),
+        },
+        {
+            q: translate({ id: 'premium.faq.q.activate', message: 'Comment activer le Premium ?' }),
+            a: translate({ id: 'premium.faq.a.activate', message: 'Tapez /settings sur votre serveur Discord et cliquez sur « Premium », ou rendez-vous directement sur la boutique de RaidProtect dans Discord. L\'activation prend quelques secondes.' }),
+        },
+        {
+            q: translate({ id: 'premium.faq.q.cancel', message: 'Puis-je annuler à tout moment ?' }),
+            a: translate({ id: 'premium.faq.a.cancel', message: 'Oui. L\'abonnement se gère depuis Discord et reste résiliable quand vous le souhaitez, sans engagement.' }),
+        },
+        {
+            q: translate({ id: 'premium.faq.q.businessDiff', message: 'Quelle différence entre Founder et Business ?' }),
+            a: translate({ id: 'premium.faq.a.businessDiff', message: 'Founder ouvre la personnalisation du bot et les limites étendues sur tous les modules. Business ajoute une instance dédiée et isolée ainsi qu\'un accompagnement humain (audit, intégration sur mesure, suivi expert), sur demande.' }),
+        },
+    ]
+
     const layoutTitle = translate({ id: 'premium.layout.title', message: 'Premium' })
     const layoutDescription = translate({
         id: 'premium.layout.description',
@@ -333,6 +457,14 @@ export default function PremiumPage(): React.ReactNode {
                 {/* ============= HERO ============= */}
                 <section className={styles.hero}>
                     <div className={styles.container}>
+                        <span className={styles.heroBadge}>
+                            <span className={styles.heroBadgeInner}>
+                                <span className={styles.heroBadgeDot} />
+                                <Translate id="premium.hero.badge" description="Badge de lancement au-dessus du titre du hero premium">
+                                    Offre Founder · tarif verrouillé à vie
+                                </Translate>
+                            </span>
+                        </span>
                         <h1 className={styles.heroTitle}>
                             <Translate id="premium.hero.title.line1" description="Première ligne du titre du hero premium">
                                 Une protection à votre image,
@@ -356,6 +488,11 @@ export default function PremiumPage(): React.ReactNode {
                                 <Translate id="premium.hero.cta.compare">Comparer les offres</Translate>
                             </a>
                         </div>
+                        <p className={styles.heroMicro}>
+                            <Translate id="premium.hero.micro" description="Microcopie de réassurance sous les CTA du hero">
+                                Annulable à tout moment · Activation en une commande · La version gratuite reste complète
+                            </Translate>
+                        </p>
                     </div>
                 </section>
 
@@ -374,6 +511,46 @@ export default function PremiumPage(): React.ReactNode {
                 {/* ============= ILS NOUS FONT CONFIANCE ============= */}
                 <Servers title={translate({ id: 'premium.servers.title', message: 'Ils nous font confiance' })} transparent />
 
+                {/* ============= FEATURE VEDETTE : BOT À VOTRE IMAGE ============= */}
+                <section className={`${styles.section} ${styles.flagshipSection}`}>
+                    <div className={styles.container}>
+                        <div className={styles.flagship}>
+                            <div className={styles.flagshipCopy}>
+                                <span className={styles.sectionEyebrow}>
+                                    <Translate id="premium.flagship.eyebrow">La signature du Premium</Translate>
+                                </span>
+                                <h2 className={styles.sectionTitle}>
+                                    <Translate id="premium.flagship.title">Le bot prend l'identité de votre serveur</Translate>
+                                </h2>
+                                <p className={styles.sectionSubtitle}>
+                                    <Translate id="premium.flagship.subtitle">
+                                        Avatar, bannière, pseudo et style d'écriture : RaidProtect ne ressemble plus à un bot générique, il porte les couleurs de votre communauté.
+                                    </Translate>
+                                </p>
+                                <ul className={styles.flagshipList}>
+                                    <li>
+                                        <Translate id="premium.flagship.item.avatar">Avatar &amp; bannière aux couleurs du serveur</Translate>
+                                    </li>
+                                    <li>
+                                        <Translate id="premium.flagship.item.name">Pseudo sur mesure</Translate>
+                                    </li>
+                                    <li>
+                                        <Translate id="premium.flagship.item.style">Style d'écriture du nom (8 polices, 4 effets)</Translate>
+                                    </li>
+                                </ul>
+                                <Link to="https://raidprotect.bot/founder" className={`${styles.ctaPrimary} ${styles.ctaGlow}`}>
+                                    <Translate id="premium.flagship.cta">Customiser mon RaidProtect</Translate>
+                                </Link>
+                            </div>
+
+                            {/* Maquette de profil Discord réutilisable (composant autonome). */}
+                            <div className={styles.flagshipVisual}>
+                                <IdentityMockup ctaHref="https://raidprotect.bot/founder" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 {/* ============= AVANTAGES PRINCIPAUX ============= */}
                 <section className={styles.section}>
                     <div className={styles.container}>
@@ -383,80 +560,35 @@ export default function PremiumPage(): React.ReactNode {
                                     <Translate id="premium.features.eyebrow">Ce que vous débloquez</Translate>
                                 </span>
                                 <h2 className={styles.sectionTitle}>
-                                    <Translate id="premium.features.title">Les avantages clés du Premium</Translate>
+                                    <Translate id="premium.features.title">Les autres avantages du Premium</Translate>
                                 </h2>
                                 <p className={styles.sectionSubtitle}>
                                     <Translate id="premium.features.subtitle">
-                                        Cinq leviers concrets pour aller plus loin avec RaidProtect, sans changer votre manière de travailler.
+                                        Des leviers concrets pour aller plus loin avec RaidProtect, sans changer votre manière de travailler.
                                     </Translate>
                                 </p>
                             </div>
-                            <Link
-                                to="https://raidprotect.bot/founder"
-                                className={`${styles.ctaPrimary} ${styles.ctaGlow} ${styles.sectionHeadCta}`}
-                            >
-                                <Translate id="premium.cta.subscribe">S'abonner</Translate>
-                            </Link>
                         </div>
                         <div className={styles.grid}>
-                            {HEADLINE_FEATURES.map(feature => (
-                                <article
-                                    key={feature.title}
-                                    className={styles.featureCard}
-                                >
-                                    <div className={styles.featureIcon} aria-hidden>
-                                        <img src={feature.icon} alt="" />
-                                    </div>
-                                    <h3 className={styles.featureTitle}>{feature.title}</h3>
-                                    <p className={styles.featureDesc}>{feature.description}</p>
-                                </article>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                {/* ============= EXPERIMENTS ============= */}
-                <section className={`${styles.section} ${styles.expSection}`}>
-                    <div className={styles.container}>
-                        <div className={styles.sectionHead}>
-                            <div>
-                                <span className={styles.sectionEyebrow}>
-                                    <Translate id="premium.experiments.eyebrow">Programme d'innovation</Translate>
-                                </span>
-                                <h2 className={styles.sectionTitle}>
-                                    <Translate id="premium.experiments.title">Des fonctionnalités en bêta publique</Translate>
-                                </h2>
-                                <p className={styles.sectionSubtitle}>
-                                    <Translate id="premium.experiments.subtitle">
-                                        Les abonnés reçoivent en avant-première les nouveautés en cours de stabilisation. Ces accès évoluent à chaque mise à jour du bot.
-                                    </Translate>
-                                </p>
-                            </div>
-                            <Link
-                                to="https://raidprotect.bot/founder"
-                                className={`${styles.ctaPrimary} ${styles.ctaGlow} ${styles.sectionHeadCta}`}
-                            >
-                                <Translate id="premium.cta.subscribe">S'abonner</Translate>
-                            </Link>
-                        </div>
-                        <div className={styles.grid}>
-                            {EXPERIMENTS.map(exp => (
-                                <article key={exp.title} className={styles.expCard}>
-                                    <div className={styles.expHeader}>
-                                        <div className={styles.expIcon} aria-hidden>
-                                            <img src={exp.icon} alt="" />
+                            {FEATURES.map(feature => (
+                                <article key={feature.title} className={styles.featureCard}>
+                                    {feature.scene && (
+                                        <div className={styles.featureScene} aria-hidden>
+                                            <FeatureScene kind={feature.scene} />
                                         </div>
+                                    )}
+                                    {feature.badge && (
                                         <span className={styles.expBadge}>
                                             <span className={styles.expBadgeDot} />
-                                            {exp.badge}
+                                            {feature.badge}
                                         </span>
-                                    </div>
-                                    <h3 className={styles.featureTitle}>{exp.title}</h3>
-                                    <p className={styles.featureDesc}>{exp.description}</p>
-                                    {exp.docsHref && (
+                                    )}
+                                    <h3 className={styles.featureTitle}>{feature.title}</h3>
+                                    <p className={styles.featureDesc}>{feature.description}</p>
+                                    {feature.docsHref && (
                                         <div className={styles.featureMeta}>
-                                            <Link to={exp.docsHref}>
-                                                <Translate id="premium.experiment.learnMore">En savoir plus →</Translate>
+                                            <Link to={feature.docsHref}>
+                                                <Translate id="premium.feature.learnMore">En savoir plus →</Translate>
                                             </Link>
                                         </div>
                                     )}
@@ -624,7 +756,7 @@ export default function PremiumPage(): React.ReactNode {
                     </div>
                 </section>
 
-                {/* ============= FINAL CTA ============= */}
+                {/* ============= FINAL CTA (au-dessus de la FAQ) ============= */}
                 <section className={styles.container}>
                     <div className={styles.finalCta}>
                         <h2>
@@ -632,12 +764,37 @@ export default function PremiumPage(): React.ReactNode {
                         </h2>
                         <p>
                             <Translate id="premium.finalCta.subtitle">
-                                L'offre Founder est limitée dans le temps : 2,99 $/mois à vie pour les premiers abonnés.
+                                L'offre Founder est limitée dans le temps : 2,99 $/mois à vie pour les premiers abonnés. Une fois fermée, ce tarif ne reviendra pas.
                             </Translate>
                         </p>
                         <Link to="https://raidprotect.bot/founder" className={`${styles.ctaPrimary} ${styles.ctaGlow}`}>
                             <Translate id="premium.finalCta.cta">Activer le Premium maintenant</Translate>
                         </Link>
+                    </div>
+                </section>
+
+                {/* ============= FAQ (tout en bas) ============= */}
+                <section className={styles.section}>
+                    <div className={styles.container}>
+                        <div>
+                            <span className={styles.sectionEyebrow}>
+                                <Translate id="premium.faq.eyebrow">Questions fréquentes</Translate>
+                            </span>
+                            <h2 className={styles.sectionTitle}>
+                                <Translate id="premium.faq.title">Tout ce qu'il faut savoir avant de vous abonner</Translate>
+                            </h2>
+                        </div>
+                        <div className={styles.faqList}>
+                            {FAQ_ITEMS.map((item, i) => (
+                                <details key={i} className={styles.faqItem}>
+                                    <summary className={styles.faqQuestion}>
+                                        {item.q}
+                                        <span className={styles.faqChevron} aria-hidden>▾</span>
+                                    </summary>
+                                    <p className={styles.faqAnswer}>{item.a}</p>
+                                </details>
+                            ))}
+                        </div>
                     </div>
                 </section>
             </main>

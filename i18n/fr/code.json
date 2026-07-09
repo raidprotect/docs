@@ -867,12 +867,6 @@
     "message": "Déplacer des membres",
     "description": "Discord permission name"
   },
-  "premium.feature.customize.title": {
-    "message": "Personnalisation totale du bot"
-  },
-  "premium.feature.customize.desc": {
-    "message": "Avatar, bannière, pseudo et style d'écriture : RaidProtect prend l'identité de votre serveur."
-  },
   "premium.feature.authManager.title": {
     "message": "Authentication Manager étendu"
   },
@@ -895,25 +889,8 @@
     "message": "Sanctions Honeypot avancées"
   },
   "premium.feature.honeypot.desc": {
-    "message": "Débloquez Kick, Timeout, Jail et Mute dans le module HoneyPot."
-  },
-  "premium.experiment.badge.publicBeta": {
-    "message": "Bêta publique"
-  },
-  "premium.experiment.automod.title": {
-    "message": "Conversion AutoMod en mute par rôle"
-  },
-  "premium.experiment.automod.desc": {
-    "message": "Les timeouts appliqués par l'AutoMod de Discord sont automatiquement convertis en mute par rôle au-delà du seuil configuré, pour une cohérence totale avec vos sanctions manuelles."
-  },
-  "premium.experiment.badge.soon": {
-    "message": "Bientôt"
-  },
-  "premium.experiment.more.title": {
-    "message": "D'autres expérimentations à venir"
-  },
-  "premium.experiment.more.desc": {
-    "message": "Les abonnés Premium reçoivent en avant-première les fonctionnalités en bêta publique. Nous publions ici la liste à jour à mesure qu'elles arrivent."
+    "message": "Débloquez Kick, Timeout, Jail et Mute : les messages du spammeur sont effacés dans tous les salons, comme avec un ban.",
+    "description": "Feature card desc: honeypot"
   },
   "premium.tier.free.name": {
     "message": "Basic"
@@ -1095,25 +1072,12 @@
     "message": "Ce que vous débloquez"
   },
   "premium.features.title": {
-    "message": "Les avantages clés du Premium"
+    "message": "Les autres avantages du Premium",
+    "description": "Features section title"
   },
   "premium.features.subtitle": {
-    "message": "Cinq leviers concrets pour aller plus loin avec RaidProtect, sans changer votre manière de travailler."
-  },
-  "premium.cta.subscribe": {
-    "message": "S'abonner"
-  },
-  "premium.experiments.eyebrow": {
-    "message": "Programme d'innovation"
-  },
-  "premium.experiments.title": {
-    "message": "Des fonctionnalités en bêta publique"
-  },
-  "premium.experiments.subtitle": {
-    "message": "Les abonnés reçoivent en avant-première les nouveautés en cours de stabilisation. Ces accès évoluent à chaque mise à jour du bot."
-  },
-  "premium.experiment.learnMore": {
-    "message": "En savoir plus →"
+    "message": "Des leviers concrets pour aller plus loin avec RaidProtect, sans changer votre manière de travailler.",
+    "description": "Features section subtitle"
   },
   "premium.compare.eyebrow": {
     "message": "Comparatif des offres"
@@ -1128,7 +1092,8 @@
     "message": "Prêt à passer en Premium ?"
   },
   "premium.finalCta.subtitle": {
-    "message": "L'offre Founder est limitée dans le temps : 2,99 $/mois à vie pour les premiers abonnés."
+    "message": "L'offre Founder est limitée dans le temps : 2,99 $/mois à vie pour les premiers abonnés. Une fois fermée, ce tarif ne reviendra pas.",
+    "description": "Final CTA subtitle"
   },
   "premium.finalCta.cta": {
     "message": "Activer le Premium maintenant"
@@ -1143,5 +1108,185 @@
   },
   "premium.tier.founder.price": {
     "message": "2,99 $"
+  },
+  "premium.hero.badge": {
+    "message": "Offre Founder · tarif verrouillé à vie",
+    "description": "Premium hero launch badge"
+  },
+  "premium.hero.micro": {
+    "message": "Annulable à tout moment · Activation en une commande · La version gratuite reste complète",
+    "description": "Reassurance microcopy under hero CTAs"
+  },
+  "premium.flagship.eyebrow": {
+    "message": "La signature du Premium",
+    "description": "Flagship feature eyebrow"
+  },
+  "premium.flagship.title": {
+    "message": "Le bot prend l'identité de votre serveur",
+    "description": "Flagship feature title"
+  },
+  "premium.flagship.subtitle": {
+    "message": "Avatar, bannière, pseudo et style d'écriture : RaidProtect ne ressemble plus à un bot générique, il porte les couleurs de votre communauté.",
+    "description": "Flagship feature subtitle"
+  },
+  "premium.flagship.item.avatar": {
+    "message": "Avatar & bannière aux couleurs du serveur",
+    "description": "Flagship bullet: avatar & banner"
+  },
+  "premium.flagship.item.name": {
+    "message": "Pseudo sur mesure",
+    "description": "Flagship bullet: custom nickname"
+  },
+  "premium.flagship.item.style": {
+    "message": "Style d'écriture du nom (8 polices, 4 effets)",
+    "description": "Flagship bullet: name styling"
+  },
+  "premium.flagship.cta": {
+    "message": "Customiser mon RaidProtect",
+    "description": "Flagship CTA button"
+  },
+  "premium.feature.kickMode.title": {
+    "message": "Anti-raid en mode expulsion",
+    "description": "Feature card title: kick mode anti-raid"
+  },
+  "premium.feature.kickMode.desc": {
+    "message": "Expulsion + DM d'explication au lieu d'un blocage silencieux des invitations. Laissez entrer qui vous voulez avec /bypass.",
+    "description": "Feature card desc: kick mode anti-raid"
+  },
+  "premium.feature.beta.badge": {
+    "message": "Bêta publique",
+    "description": "Feature card badge: public beta"
+  },
+  "premium.feature.beta.title": {
+    "message": "Accès anticipé aux nouveautés",
+    "description": "Feature card title: early access"
+  },
+  "premium.feature.beta.desc": {
+    "message": "Les abonnés reçoivent en avant-première les fonctionnalités en bêta, comme la conversion des timeouts AutoMod en mute par rôle.",
+    "description": "Feature card desc: early access"
+  },
+  "premium.feature.learnMore": {
+    "message": "En savoir plus →",
+    "description": "Feature card: learn more link"
+  },
+  "premium.compare.row.kickMode": {
+    "message": "Mode expulsion + DM (Fermeture des Jointures & Mode raid)",
+    "description": "Compare row: kick mode"
+  },
+  "premium.faq.eyebrow": {
+    "message": "Questions fréquentes",
+    "description": "FAQ eyebrow"
+  },
+  "premium.faq.title": {
+    "message": "Tout ce qu'il faut savoir avant de vous abonner",
+    "description": "FAQ title"
+  },
+  "premium.faq.q.freeChange": {
+    "message": "Est-ce que la version gratuite va être réduite ?",
+    "description": "FAQ question: free version"
+  },
+  "premium.faq.a.freeChange": {
+    "message": "Non. La version gratuite reste complète et continuera d'évoluer au même rythme. Le Premium s'adresse aux serveurs qui ont besoin de plus : limites étendues, personnalisation avancée et accès anticipé.",
+    "description": "FAQ answer: free version"
+  },
+  "premium.faq.q.lifetime": {
+    "message": "Que signifie « tarif verrouillé à vie » ?",
+    "description": "FAQ question: lifetime price"
+  },
+  "premium.faq.a.lifetime": {
+    "message": "L'offre Founder bloque votre tarif définitivement. Tant que votre abonnement reste actif, votre prix ne change pas, même quand de nouvelles formules seront introduites et que l'offre Founder sera retirée de la boutique.",
+    "description": "FAQ answer: lifetime price"
+  },
+  "premium.faq.q.activate": {
+    "message": "Comment activer le Premium ?",
+    "description": "FAQ question: activate premium"
+  },
+  "premium.faq.a.activate": {
+    "message": "Tapez /settings sur votre serveur Discord et cliquez sur « Premium », ou rendez-vous directement sur la boutique de RaidProtect dans Discord. L'activation prend quelques secondes.",
+    "description": "FAQ answer: activate premium"
+  },
+  "premium.faq.q.cancel": {
+    "message": "Puis-je annuler à tout moment ?",
+    "description": "FAQ question: cancel"
+  },
+  "premium.faq.a.cancel": {
+    "message": "Oui. L'abonnement se gère depuis Discord et reste résiliable quand vous le souhaitez, sans engagement.",
+    "description": "FAQ answer: cancel"
+  },
+  "premium.faq.q.businessDiff": {
+    "message": "Quelle différence entre Founder et Business ?",
+    "description": "FAQ question: founder vs business"
+  },
+  "premium.faq.a.businessDiff": {
+    "message": "Founder ouvre la personnalisation du bot et les limites étendues sur tous les modules. Business ajoute une instance dédiée et isolée ainsi qu'un accompagnement humain (audit, intégration sur mesure, suivi expert), sur demande.",
+    "description": "FAQ answer: founder vs business"
+  },
+  "premium.mockup.mutual": {
+    "message": "40 serveurs en commun",
+    "description": "Mockup: mutual servers"
+  },
+  "premium.mockup.addApp": {
+    "message": "Ajouter l'app",
+    "description": "Mockup: add app button"
+  },
+  "premium.mockup.store": {
+    "message": "Boutique",
+    "description": "Mockup: store button"
+  },
+  "premium.mockup.desc": {
+    "message": "Fonctionnalités avancées de modération et de sécurité propulsées par RaidProtect.",
+    "description": "Mockup: bot description"
+  },
+  "premium.mockup.watching": {
+    "message": "Regarde",
+    "description": "Mockup: activity 'Watching'"
+  },
+  "premium.mockup.message": {
+    "message": "Envoyer un message à @{name}",
+    "description": "Mockup: message bar"
+  },
+  "premium.mockup.customize": {
+    "message": "Customiser mon RaidProtect",
+    "description": "Mockup: hover CTA"
+  },
+  "premium.scene.auth.roles": {
+    "message": "Rôles protégés",
+    "description": "Scene: protected roles label"
+  },
+  "premium.scene.auth.users": {
+    "message": "Utilisateurs",
+    "description": "Scene: users label"
+  },
+  "premium.scene.auth.session": {
+    "message": "Session",
+    "description": "Scene: session label"
+  },
+  "premium.scene.panels.jail": {
+    "message": "Jail",
+    "description": "Scene: Jail panel tile"
+  },
+  "premium.scene.kick.dm": {
+    "message": "Ce serveur subit un raid, tu pourras rejoindre dans peu de temps.",
+    "description": "Scene: kick DM message"
+  },
+  "premium.scene.kick.button": {
+    "message": "Rejoindre le serveur",
+    "description": "Scene: kick DM join button"
+  },
+  "premium.scene.sanction.n1": {
+    "message": "Vous avez reçu un carton jaune",
+    "description": "Scene: sanction notif 1"
+  },
+  "premium.scene.sanction.n2": {
+    "message": "Vous avez été mis au coin",
+    "description": "Scene: sanction notif 2"
+  },
+  "premium.scene.sanction.n3": {
+    "message": "Vous êtes banni du royaume",
+    "description": "Scene: sanction notif 3"
+  },
+  "premium.scene.sanction.n4": {
+    "message": "Vous partez en isolement",
+    "description": "Scene: sanction notif 4"
   }
 }

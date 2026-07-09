@@ -83,6 +83,40 @@
   text-align: center;
 }
 
+/* Badge de lancement : pilule à bordure dégradée, écho du bouton "Premium" de
+   la navbar (custom.css) pour la cohérence de marque. */
+.heroBadge {
+  display: inline-block;
+  padding: 1px;
+  border-radius: 999px;
+  background: var(--rp-premium-gradient);
+  box-shadow: 0 8px 24px -12px rgba(211, 95, 95, 0.7);
+  animation: fadeUp 0.7s ease-out 0.05s both;
+}
+
+.heroBadgeInner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.95rem;
+  border-radius: 999px;
+  background: var(--ifm-background-color);
+  font-family: var(--ifm-heading-font-family);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #fff;
+}
+
+.heroBadgeDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ifm-color-primary);
+  box-shadow: 0 0 0 0 rgba(211, 95, 95, 0.6);
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
 .heroTitle {
   margin: 1.4rem 0 1rem;
   font-family: var(--ifm-heading-font-family);
@@ -126,6 +160,15 @@
   gap: 0.8rem;
   justify-content: center;
   animation: fadeUp 0.7s ease-out 0.35s both;
+}
+
+/* Microcopie de réassurance sous les CTA : lève les objections (engagement,
+   complexité, "est-ce un paywall") sans peser visuellement. */
+.heroMicro {
+  margin: 1.1rem auto 0;
+  font-size: 0.85rem;
+  color: var(--rp-text-muted);
+  animation: fadeUp 0.7s ease-out 0.45s both;
 }
 
 .ctaPrimary,
@@ -359,24 +402,19 @@
   opacity: 1;
 }
 
-.featureIcon {
-  width: 52px;
-  height: 52px;
+/* Zone de mise en situation en tête de carte : hauteur fixe pour aligner tous
+   les titres, quel que soit le contenu de la scène. */
+.featureScene {
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 96px;
+  padding: 0.9rem 1rem;
+  margin-bottom: 1.1rem;
   border-radius: 12px;
-  background: linear-gradient(140deg, rgba(211, 95, 95, 0.22), rgba(165, 97, 163, 0.22));
-  border: 1px solid var(--rp-premium-border-strong);
-  margin-bottom: 1rem;
-  filter: drop-shadow(0 0 12px var(--rp-premium-glow-strong));
+  background: linear-gradient(160deg, rgba(211, 95, 95, 0.08), rgba(165, 97, 163, 0.05));
+  border: 1px solid var(--rp-border);
   overflow: hidden;
-}
-
-.featureIcon img {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
 }
 
 .featureTitle {
@@ -403,65 +441,288 @@
 }
 
 /* ============================================================
- * SECTION EXPERIMENTAL
+ * MISES EN SITUATION (scènes CSS des avantages)
+ * Primitives réutilisées entre plusieurs avantages : chips, jauges, tuiles.
  * ============================================================ */
-.expSection {
-  padding: 4rem 0;
-  position: relative;
+/* Chip "déjà là / départ" : neutre et discret. */
+.chipBase {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.32rem 0.7rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--rp-text-muted);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--rp-border);
+  white-space: nowrap;
 }
 
-.expSection::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(211, 95, 95, 0.04) 50%, transparent 100%);
-  pointer-events: none;
-  z-index: -1;
+/* Chip "débloqué par le Premium" : dégradé de marque. */
+.chipUnlock {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.32rem 0.7rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(140deg, rgba(211, 95, 95, 0.28), rgba(165, 97, 163, 0.22));
+  border: 1px solid var(--rp-premium-border-strong);
+  white-space: nowrap;
 }
 
-.expCard {
-  position: relative;
-  padding: 1.8rem;
-  border-radius: 18px;
-  background: linear-gradient(160deg, rgba(211,95,95,0.08) 0%, rgba(165,97,163,0.05) 100%);
-  border: 1px solid var(--rp-premium-border);
+.limitArrow {
+  color: var(--ifm-color-primary-light);
+  font-weight: 700;
+}
+
+/* Scène "Authentication Manager" : trois jauges gratuit → premium. */
+.sceneLimits {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.limitRow {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.85rem;
+}
+
+.limitLabel {
+  color: var(--rp-text-soft);
+  text-align: left;
+}
+
+.limitFree {
+  color: var(--rp-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.limitPrem {
+  min-width: 2.4rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(140deg, rgba(211, 95, 95, 0.32), rgba(165, 97, 163, 0.24));
+  border: 1px solid var(--rp-premium-border-strong);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Scène "mode kick" : un DM d'explication + la bascule blocage → kick. */
+.sceneDm {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dmBubble {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 10px 10px 10px 3px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--rp-border);
+  text-align: left;
+}
+
+.dmName {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary-light);
+}
+
+.dmMsg {
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: var(--rp-text-soft);
+}
+
+/* Faux bouton Discord "lien vers le serveur" sous le message. */
+.dmButton {
+  align-self: flex-start;
+  margin-top: 0.15rem;
+  padding: 0.22rem 0.7rem;
+  border-radius: 6px;
+  background: #5865f2;
+  color: #fff;
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+
+/* Scène "noms de sanctions" : carrousel vertical de notifications DM qui défile
+   en boucle, avec des noms de sanctions personnalisés. Liste doublée dans le
+   JSX pour un défilement sans couture (translateY -50 % = un jeu complet). */
+.sceneNotif {
+  width: 100%;
+  height: 76px;
   overflow: hidden;
-  transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+  -webkit-mask: linear-gradient(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
+  mask: linear-gradient(180deg, transparent 0%, #000 22%, #000 78%, transparent 100%);
 }
 
-.expCard:hover {
-  transform: translateY(-4px);
-  border-color: var(--rp-premium-border-strong);
-  box-shadow: 0 16px 36px -22px rgba(211, 95, 95, 0.35);
+.notifTrack {
+  display: flex;
+  flex-direction: column;
+  animation: notifScroll 12s linear infinite;
 }
 
-.expHeader {
+@keyframes notifScroll {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-50%); }
+}
+
+.notifItem {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  margin-bottom: 0.9rem;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+  padding: 0.35rem 0.55rem;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--rp-border);
+  overflow: hidden;
 }
 
-.expIcon {
-  width: 40px;
-  height: 40px;
+/* Petit avatar (bot/serveur qui envoie le DM), aux couleurs de la marque. */
+.notifAvatar {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--rp-premium-gradient);
+}
+
+.notifText {
+  font-size: 0.78rem;
+  color: var(--rp-text-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notifTrack { animation: none; }
+}
+
+/* Scènes "renommage" et "beta" : lignes avant → après. */
+.sceneRename {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.renameRow {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
-  background: rgba(211, 95, 95, 0.18);
-  border: 1px solid var(--rp-premium-border-strong);
-  overflow: hidden;
-  flex-shrink: 0;
+  gap: 0.55rem;
 }
 
-.expIcon img {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
+/* Scène "chips" (HoneyPot) : rangée de sanctions. */
+.sceneChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  justify-content: center;
+}
+
+/* Scène "panneaux" : tuiles 2 gratuites + 2 premium + slot Jail. */
+.scenePanels {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.panelTile {
+  width: 34px;
+  height: 46px;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--rp-border);
+}
+
+.panelTilePrem {
+  background: linear-gradient(160deg, rgba(211, 95, 95, 0.3), rgba(165, 97, 163, 0.22));
+  border-color: var(--rp-premium-border-strong);
+}
+
+.panelTileJail {
+  width: auto;
+  padding: 0 0.55rem;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--rp-text-muted);
+  border-style: dashed;
+}
+
+/* ============================================================
+ * FEATURE VEDETTE : maquette Discord 100 % CSS
+ * ============================================================ */
+.flagshipSection {
+  padding-top: 3rem;
+}
+
+.flagship {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* Colonne texte : le sous-titre garde sa marge basse standard avant la liste. */
+.flagshipCopy .sectionSubtitle {
+  margin-bottom: 1.6rem;
+}
+
+.flagshipList {
+  list-style: none;
+  margin: 0 0 2rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.flagshipList li {
+  position: relative;
+  padding-left: 1.6rem;
+  color: var(--rp-text-soft);
+  font-size: 0.98rem;
+}
+
+/* Puce "✓" dégradée. */
+.flagshipList li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+  color: var(--ifm-color-primary-light);
+}
+
+/* --- La maquette : reproduction fidèle d'un profil de bot Discord.
+   Couleurs Discord réelles (pas les tokens de marque) pour le réalisme. --- */
+.flagshipVisual {
+  display: flex;
+  justify-content: center;
 }
 
 .expBadge {
+  margin-bottom: 0.9rem;
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -800,7 +1061,75 @@
 }
 
 /* ============================================================
- * FAQ / FOOTER CTA
+ * FAQ (accordéon natif <details>)
+ * ============================================================ */
+.faqList {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  max-width: 820px;
+}
+
+.faqItem {
+  border: 1px solid var(--rp-border);
+  border-radius: 14px;
+  background: var(--rp-surface);
+  overflow: hidden;
+  transition: border-color .25s ease, background .25s ease;
+}
+
+.faqItem[open] {
+  border-color: var(--rp-premium-border-strong);
+  background: var(--rp-premium-tint);
+}
+
+.faqQuestion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.15rem 1.4rem;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--ifm-heading-font-family);
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: #fff;
+  transition: color .2s ease;
+}
+
+.faqQuestion:hover {
+  color: var(--ifm-color-primary-light);
+}
+
+/* Retire le marqueur natif du <summary> (triangle par défaut). */
+.faqQuestion::-webkit-details-marker {
+  display: none;
+}
+
+.faqChevron {
+  flex: none;
+  font-size: 0.9em;
+  line-height: 1;
+  color: var(--ifm-color-primary-light);
+  transition: transform .25s ease;
+}
+
+.faqItem[open] .faqChevron {
+  transform: rotate(180deg);
+}
+
+.faqAnswer {
+  margin: 0;
+  padding: 0 1.4rem 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--rp-text-soft);
+}
+
+/* ============================================================
+ * FOOTER CTA
  * ============================================================ */
 .finalCta {
   margin: 4rem 0 6rem;
@@ -917,6 +1246,12 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 1.4rem;
+  }
+
+  /* Feature vedette : maquette repassée sous le texte. */
+  .flagship {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }
 
