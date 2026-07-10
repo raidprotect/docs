@@ -69,6 +69,30 @@ Lorsque l'auto raid mode se désactive (manuellement ou automatiquement après l
 Cette option est complémentaire de la [Fermeture des MP permanente](./dm-lock.mdx) : si vous l'activez sans avoir la fermeture permanente, les MP ne sont fermés que pendant un raid actif.
 :::
 
+#### Mode expulsion (Premium) {#kick-mode}
+
+Par défaut, le mode raid bloque les nouveaux arrivants au niveau de l'invitation. Avec le **mode expulsion**, les utilisateurs qui rejoignent pendant un raid sont expulsés par RaidProtect au lieu d'être bloqués à l'invitation.
+
+1. Faites la [commande `/settings`](../setup.md#settings).
+2. Cliquez sur le bouton "**Auto RaidMode**".
+3. Activez l'option "**Mode expulsion**".
+
+:::info
+Cette option est réservée aux serveurs **Premium**. Elle est nécessaire pour utiliser le [bypass du mode raid](#bypass-raid).
+:::
+
+### 🎫 Bypass du mode raid {#bypass-raid}
+
+Vous attendez un membre légitime pendant qu'un raid est en cours ? Autorisez-le à rejoindre malgré le mode raid :
+
+Utilisez la commande : ```/bypass raid [utilisateur]```
+
+Remplacez `[utilisateur]` par l'identifiant souhaité, ce dernier disposera de 10 minutes pour rejoindre le serveur sans être expulsé par le mode raid. Vous pouvez aussi utiliser la commande sans spécifier d'utilisateur pour connaître la liste actuelle des utilisateurs bypass (7 utilisateurs maximum simultanément).
+
+:::warning
+Le bypass du mode raid nécessite le [mode expulsion](#kick-mode) : un utilisateur bloqué au niveau de l'invitation ne peut pas être bypass.
+:::
+
 ## Âge Minimum {#minage}
 
 Pour renforcer la sécurité, vous pouvez exiger un âge minimum pour les comptes Discord des nouveaux membres.
