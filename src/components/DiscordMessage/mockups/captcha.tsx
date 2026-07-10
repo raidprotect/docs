@@ -13,7 +13,7 @@ export default function CaptchaMockup() {
         message: "Pour accéder au serveur, veuillez compléter ce captcha avec **6 lettres majuscules**.",
       }),
       "",
-      `ℹ️ ${translate({ id: "mockup.captcha.kick", message: "Expulsion automatique dans 5 minutes (2 essais restants)." })}`,
+      `![](/img/icons/iconInfo.svg) ${translate({ id: "mockup.captcha.kick", message: "Expulsion automatique dans 5 minutes (2 essais restants)." })}`,
       `-# ${translate({
         id: "mockup.captcha.footer",
         message: "Cela ne prend que quelques secondes et garantit la sécurité de notre communauté.",

@@ -7,24 +7,24 @@ import type { DiscordMessageData } from "../types";
 export default function AuditMockup() {
   const categories = [
     {
-      icon: "⚙️",
+      icon: "![](/img/icons/iconSettings.svg)",
       name: translate({ id: "mockup.audit.catServer", message: "Configuration du serveur" }),
       score: "90/100",
-      stats: "✅ 6 · ⚠️ 1 · ❌ 0",
+      stats: "![](/img/icons/iconSuccess.svg) 6 · ![](/img/icons/iconWarning.svg) 1 · ![](/img/icons/iconFail.svg) 0",
       id: "server",
     },
     {
-      icon: "🎭",
+      icon: "![](/img/icons/iconRole.svg)",
       name: translate({ id: "mockup.audit.catRoles", message: "Rôles" }),
       score: "75/100",
-      stats: "✅ 3 · ⚠️ 1 · ❌ 1",
+      stats: "![](/img/icons/iconSuccess.svg) 3 · ![](/img/icons/iconWarning.svg) 1 · ![](/img/icons/iconFail.svg) 1",
       id: "roles",
     },
     {
-      icon: "💬",
+      icon: "![](/img/icons/iconChannelText.svg)",
       name: translate({ id: "mockup.audit.catChannels", message: "Salons" }),
       score: "82/100",
-      stats: "✅ 2 · ⚠️ 1 · ❌ 0",
+      stats: "![](/img/icons/iconSuccess.svg) 2 · ![](/img/icons/iconWarning.svg) 1 · ![](/img/icons/iconFail.svg) 0",
       id: "channels",
     },
   ];
@@ -40,7 +40,7 @@ export default function AuditMockup() {
             components: [
               {
                 type: 10,
-                content: `## 🔎 ${translate({ id: "mockup.audit.title", message: "Audit de sécurité" })}\n-# Ma Communauté`,
+                content: `## ![](/img/icons/iconSearch.svg) ${translate({ id: "mockup.audit.title", message: "Audit de sécurité" })}\n-# Ma Communauté`,
               },
             ],
             accessory: {
@@ -81,13 +81,13 @@ export default function AuditMockup() {
             content: [
               `**${translate({ id: "mockup.audit.findings", message: "Problèmes détectés (2)" })}**`,
               "",
-              `❌ **${translate({ id: "mockup.audit.finding1", message: "Rôles administrateurs" })}**`,
+              `![](/img/icons/iconFail.svg) **${translate({ id: "mockup.audit.finding1", message: "Rôles administrateurs" })}**`,
               `> ${translate({
                 id: "mockup.audit.finding1Body",
                 message: "2 rôles disposent de la permission Administrateur sans protection. Intégrez-les à l'Authentication Manager.",
               })}`,
               "",
-              `⚠️ **${translate({ id: "mockup.audit.finding2", message: "Niveau de vérification" })}**`,
+              `![](/img/icons/iconWarning.svg) **${translate({ id: "mockup.audit.finding2", message: "Niveau de vérification" })}**`,
               `> ${translate({
                 id: "mockup.audit.finding2Body",
                 message: "Niveau trop bas. Réglez la vérification sur « Moyen » ou plus pour bloquer les comptes jetables.",

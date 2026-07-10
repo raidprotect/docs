@@ -39,7 +39,7 @@ export default function AuthenticationManagerMockup() {
                 style: 1,
                 label: translate({ id: "mockup.auth.otp", message: "S'authentifier avec l'OTP" }),
                 custom_id: "auth-otp",
-                emoji: { name: "⏱️" },
+                emoji: { name: "/img/icons/iconTime.svg" },
               },
               {
                 type: 2,

@@ -16,7 +16,7 @@ export default function ModerationMockup() {
             components: [
               {
                 type: 10,
-                content: `## ![](/img/icons/iconModView.svg) Arthur\n@Arthur (\`arthur\`)\n-# ✅ ${translate({
+                content: `## ![](/img/icons/iconModView.svg) Arthur\n@Arthur (\`arthur\`)\n-# ![](/img/icons/iconSucceed.svg) ${translate({
                   id: "mockup.modview.member",
                   message: "Membre du serveur",
                 })}`,
@@ -40,7 +40,7 @@ export default function ModerationMockup() {
             components: [
               {
                 type: 10,
-                content: `### 📝 ${translate({ id: "mockup.modview.note", message: "Note" })}\n-# ${translate({
+                content: `### ![](/img/icons/iconCustom.svg) ${translate({ id: "mockup.modview.note", message: "Note" })}\n-# ${translate({
                   id: "mockup.modview.noteEmpty",
                   message: "Aucune note.",
                 })}`,
@@ -73,13 +73,13 @@ export default function ModerationMockup() {
             type: 10,
             content: [
               `![](/img/icons/SanctionsTIMEOUT.svg) ${translate({ id: "mockup.modview.row1", message: "Timeout il y a 3 jours." })}`,
-              `-# 🪪 \`A1B2C3\` ![](/img/icons/SanctionStatusEXPIRED.svg) • ${translate({ id: "mockup.modview.mod", message: "Mod :" })} @Zallom`,
+              `-# ![](/img/icons/iconID.svg) \`A1B2C3\` ![](/img/icons/SanctionStatusEXPIRED.svg) • ${translate({ id: "mockup.modview.mod", message: "Mod :" })} @Zallom`,
               `![](/img/icons/SanctionsWARN.svg) ${translate({ id: "mockup.modview.row2", message: "Avertissement il y a 5 heures." })}`,
-              `-# 🪪 \`D4E5F6\` ![](/img/icons/SanctionStatusACTIVE.svg) • ${translate({ id: "mockup.modview.mod", message: "Mod :" })} @Chaussette`,
+              `-# ![](/img/icons/iconID.svg) \`D4E5F6\` ![](/img/icons/SanctionStatusACTIVE.svg) • ${translate({ id: "mockup.modview.mod", message: "Mod :" })} @Chaussette`,
             ].join("\n"),
           },
           { type: 13, divider: true },
-          { type: 10, content: "-# 🪪 582749300512348171" },
+          { type: 10, content: "-# ![](/img/icons/iconID.svg) `582749300512348171`" },
           {
             type: 1,
             components: [

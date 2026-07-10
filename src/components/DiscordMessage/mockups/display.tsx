@@ -55,7 +55,7 @@ export default function DisplayMockup() {
             style: 2,
             label: translate({ id: "mockup.display.translate", message: "Traduire" }),
             custom_id: "info-translate",
-            emoji: { name: "🌐" },
+            emoji: { name: "/img/icons/iconLanguage.svg" },
           },
           {
             type: 2,

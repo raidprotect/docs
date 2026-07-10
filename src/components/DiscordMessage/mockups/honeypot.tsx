@@ -17,7 +17,7 @@ export default function HoneypotMockup() {
               {
                 type: 10,
                 content: [
-                  `## ⚠️ ${translate({ id: "mockup.honeypot.title", message: "N'ENVOYEZ PAS DE MESSAGE ICI" })}`,
+                  `## ![](/img/icons/iconAlert.svg) ${translate({ id: "mockup.honeypot.title", message: "N'ENVOYEZ PAS DE MESSAGE ICI" })}`,
                   "",
                   translate({
                     id: "mockup.honeypot.body1",
@@ -30,7 +30,7 @@ export default function HoneypotMockup() {
                 ].join("\n"),
               },
             ],
-            accessory: { type: 11, media: { url: "/img/icons/iconHoneyPotWhite.svg" } },
+            accessory: { type: 11, media: { url: "/img/icons/iconHoneyPot.svg" } },
           },
           {
             type: 10,
@@ -46,7 +46,7 @@ export default function HoneypotMockup() {
             style: 2,
             label: translate({ id: "mockup.honeypot.translate", message: "Translate" }),
             custom_id: "honeypot-translate",
-            emoji: { name: "🌐" },
+            emoji: { name: "/img/icons/iconLanguage.svg" },
           },
         ],
       },

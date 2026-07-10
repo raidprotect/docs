@@ -16,7 +16,7 @@ export default function AntiSpamMockup() {
             components: [
               {
                 type: 10,
-                content: "## @Chaussette (`chaussette`)\n-# 🪪 582749300512348171",
+                content: "## @Chaussette (`chaussette`)\n-# ![](/img/icons/iconID.svg) `582749300512348171`",
               },
             ],
             accessory: { type: 11, media: { url: "/img/avatar/chaussette.webp" } },
@@ -31,7 +31,7 @@ export default function AntiSpamMockup() {
           },
           {
             type: 10,
-            content: `-# 🪪 \`A1B2C3\` • ${translate({ id: "mockup.antispam.mod", message: "Mod :" })} @RaidProtect (Antispam)`,
+            content: `-# ![](/img/icons/iconID.svg) \`A1B2C3\` • ${translate({ id: "mockup.antispam.mod", message: "Mod :" })} @RaidProtect (Antispam)`,
           },
           {
             type: 14,

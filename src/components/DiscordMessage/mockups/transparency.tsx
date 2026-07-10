@@ -9,7 +9,7 @@ export default function TransparencyMockup() {
       {
         color: 0xd35f5f,
         description: [
-          `## 🔍 ${translate({ id: "mockup.transparency.title", message: "Rapport de transparence" })}`,
+          `## ![](/img/icons/iconSearch.svg) ${translate({ id: "mockup.transparency.title", message: "Rapport de transparence" })}`,
           `![](/img/icons/iconCalendar.svg) ${translate({ id: "mockup.transparency.range", message: "1 juillet 2026 — 8 juillet 2026" })}`,
           "",
           translate({

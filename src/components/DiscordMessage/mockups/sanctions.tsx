@@ -32,7 +32,7 @@ export default function SanctionsMockup() {
             components: [
               {
                 type: 10,
-                content: `## ${translate({ id: "mockup.sanctions.user", message: "Utilisateur :" })}\n@Chaussette (\`chaussette\`)\n-# 🪪 582749300512348171`,
+                content: `## ${translate({ id: "mockup.sanctions.user", message: "Utilisateur :" })}\n@Chaussette (\`chaussette\`)\n-# ![](/img/icons/iconID.svg) \`582749300512348171\``,
               },
             ],
             accessory: { type: 11, media: { url: "/img/avatar/chaussette.webp" } },
@@ -62,7 +62,7 @@ export default function SanctionsMockup() {
             components: [
               {
                 type: 10,
-                content: `## ${translate({ id: "mockup.sanctions.moderator", message: "Modérateur :" })}\n@Zallom (\`zallom\`)\n-# 🪪 214798000185426442`,
+                content: `## ${translate({ id: "mockup.sanctions.moderator", message: "Modérateur :" })}\n@Zallom (\`zallom\`)\n-# ![](/img/icons/iconID.svg) \`214798000185426442\``,
               },
             ],
             accessory: { type: 11, media: { url: "/img/avatar/zallom.webp" } },
