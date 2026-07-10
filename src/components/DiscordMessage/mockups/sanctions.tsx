@@ -32,10 +32,10 @@ export default function SanctionsMockup() {
             components: [
               {
                 type: 10,
-                content: `## ${translate({ id: "mockup.sanctions.user", message: "Utilisateur :" })}\n@Chaussette (\`chaussette\`)\n-# ![](/img/icons/iconID.svg) \`582749300512348171\``,
+                content: `## ${translate({ id: "mockup.sanctions.user", message: "Utilisateur :" })}\n@Arthur (\`arthur\`)\n-# ![](/img/icons/iconID.svg) \`582749300512348171\``,
               },
             ],
-            accessory: { type: 11, media: { url: "/img/avatar/chaussette.webp" } },
+            accessory: { type: 11, media: { url: "/img/avatar/derrios.webp" } },
           },
           { type: 13, divider: true },
           {
