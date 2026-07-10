@@ -2,6 +2,10 @@
 title: HoneyPot
 ---
 
+import HoneypotMockup from '@site/src/components/DiscordMessage/mockups/honeypot';
+
+<HoneypotMockup />
+
 Le **HoneyPot** (ou salon-piège) de RaidProtect est un salon où **personne ne doit écrire**. Comme les vrais membres savent qu'il faut éviter ce salon, les seuls qui y postent sont les **comptes piratés** ou les robots de spam : RaidProtect les sanctionne automatiquement.
 
 :::info
