@@ -4,6 +4,10 @@ title: HoneyPot
 
 Le **HoneyPot** (ou salon-piège) de RaidProtect est un salon où **personne ne doit écrire**. Comme les vrais membres savent qu'il faut éviter ce salon, les seuls qui y postent sont les **comptes piratés** ou les robots de spam : RaidProtect les sanctionne automatiquement.
 
+:::info
+**Vous avez déjà ScamLens par défaut.** L'anti-arnaque [ScamLens](/blog/scamlens-early-activation) est actif sur votre serveur sans aucune configuration : spécialisé dans les **images d'arnaque**, il les détecte, les supprime et sanctionne le compte compromis avec une très grande fiabilité. Pour les scams par image, ScamLens suffit donc largement. Le HoneyPot est surtout utile si vous voulez une sécurité maximale et bloquer les **autres types de spam** : spam de liens, raids texte, robots.
+:::
+
 ## ❓ Comment ça marche ? {#working}
 
 Quand vous activez le HoneyPot, RaidProtect crée un salon textuel **tout en haut de votre serveur**, avec un nom clair tiré au hasard. Ce salon a trois caractéristiques :
@@ -15,10 +19,6 @@ Dès qu'un membre poste dans ce salon :
 - RaidProtect applique la **sanction que vous avez choisie** (bannissement, softban, kick, timeout, jail ou mute).
 - Les **messages envoyés par ce membre dans les 10 dernières minutes** sont supprimés sur tout le serveur, pour stopper le spam s'il s'est déjà répandu dans d'autres salons.
 - L'action est ajoutée aux logs de modération automatique (motif : *Spam via compte utilisateur compromis*).
-
-:::info
-Le HoneyPot fonctionne main dans la main avec [ScamLens](/blog/scamlens-early-activation), qui supprime les images d'arnaque sans punir le compte. Le HoneyPot, lui, attrape tout le reste : **nouvelles images d'arnaque pas encore connues**, **spam de liens**, **raids texte**, **robots**.
-:::
 
 ## 🛠️ Mettre en place le HoneyPot {#config}
 
@@ -70,7 +70,7 @@ Dans tous les cas, RaidProtect **ne sanctionne jamais lui-même ni les autres bo
 RaidProtect intègre déjà **[ScamLens](/blog/scamlens-early-activation)**, qui analyse les images et supprime celles qui sont des arnaques connues (crypto, faux giveaways, fausses promos de casinos).
 
 Les deux fonctionnent main dans la main :
-- **ScamLens passe en premier.** Si l'image postée dans le HoneyPot est déjà connue, elle est supprimée et le HoneyPot ne sanctionne pas.
+- **ScamLens passe en premier.** Si l'image postée dans le HoneyPot est déjà connue, c'est ScamLens qui supprime le message et sanctionne le compte compromis ; la sanction du HoneyPot ne s'applique pas en plus.
 - **Le HoneyPot prend le relais** sur tout le reste : nouvelles images pas encore connues, spam de liens, mentions massives, raids texte, robots.
 - **Chaque nouvelle image attrapée par un HoneyPot vient enrichir ScamLens**, qui pourra ensuite la bloquer sur tous les serveurs protégés.
 
