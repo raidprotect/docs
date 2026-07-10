@@ -2,6 +2,10 @@
 title: Transparence
 ---
 
+import TransparencyMockup from '@site/src/components/DiscordMessage/mockups/transparency';
+
+<TransparencyMockup />
+
 La Transparence permet de montrer à vos membres comment le serveur est modéré. Elle repose sur trois éléments complémentaires : des **récapitulatifs de modération périodiques**, un **modlog public** et la **commande `/transparency`**.
 
 ## 🛠️ Configuration de la Transparence {#config}
