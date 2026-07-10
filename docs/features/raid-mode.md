@@ -2,6 +2,10 @@
 title: Anti-raid
 ---
 
+import RaidModeMockup from '@site/src/components/DiscordMessage/mockups/raid-mode';
+
+<RaidModeMockup />
+
 ## Mode raid {#raid-mode}
 
 Le mode raid est une fonctionnalité d'urgence conçue pour bloquer instantanément tous les nouveaux utilisateurs tentant de rejoindre votre serveur, avec une durée maximale de 24 heures. Pour bloquer définitivement les nouveaux membres, utilisez la [commande `/joinlock`](./join-lock.mdx).
