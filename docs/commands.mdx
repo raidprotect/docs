@@ -27,6 +27,7 @@ Toutes les commandes RaidProtect, regroupées par catégorie. Cliquez sur le nom
 | [`/honeypot`](./features/honeypot.md#config) | `/honeypot` | Configure le salon-piège HoneyPot. |
 | [`/tagrole`](./features/tag-role.md) | `/tagrole` | Configure le rôle attribué aux membres qui portent le tag du serveur. |
 | [`/display public`](./features/display.mdx) | `/display public` | Gère les panneaux d’information publics de RaidProtect. |
+| [`/audit`](./features/audit.md) | `/audit` | Analyse la sécurité du serveur et propose de corriger les failles de configuration. |
 
 ## Modération {#moderation}
 
@@ -72,7 +73,7 @@ Toutes les commandes RaidProtect, regroupées par catégorie. Cliquez sur le nom
 | [`/sanctions info`](./features/sanctions.mdx#info) | `/sanctions info (id)` | Affiche les détails d’une sanction. |
 | [`/sanctions edit`](./features/sanctions.mdx#edit) | `/sanctions edit (id) [nouvelle_raison] [nouvelle_durée]` | Modifie la raison d’une sanction existante. |
 | [`/sanctions delete`](./features/sanctions.mdx#delete) | `/sanctions delete (id) [raison]` | Supprime une sanction de l’historique. |
-| [`/my-sanctions`](./features/utilities.mdx#my-sanctions) | `/my-sanctions` | Permet à un membre de consulter ses propres sanctions. |
+| [`/mes-sanctions`](./features/utilities.mdx#my-sanctions) | `/mes-sanctions` | Permet à un membre de consulter ses propres sanctions. |
 
 ## Anti-raid {#antiraid}
 
@@ -97,6 +98,7 @@ Toutes les commandes RaidProtect, regroupées par catégorie. Cliquez sur le nom
 |---|---|---|
 | [`/bypass captcha`](./features/captcha.md#bypass) | `/bypass captcha [@utilisateur]` | Autorise un utilisateur à rejoindre sans passer le captcha. |
 | [`/bypass minage`](./features/raid-mode.md#bypass-minage) | `/bypass minage [@utilisateur]` | Autorise un utilisateur à rejoindre sans respecter l’âge minimum. |
+| [`/bypass raid`](./features/raid-mode.md#bypass-raid) | `/bypass raid [@utilisateur]` | Autorise un utilisateur à rejoindre malgré le mode raid (nécessite le mode expulsion). |
 
 ## Utilitaires {#utilities}
 
@@ -104,7 +106,7 @@ Toutes les commandes RaidProtect, regroupées par catégorie. Cliquez sur le nom
 |---|---|---|
 | [`/userinfo`](./features/utilities.mdx#userinfo) | `/userinfo [@utilisateur]` | Affiche les informations d’un utilisateur. |
 | [`/serverinfo`](./features/utilities.mdx#serverinfo) | `/serverinfo` | Affiche les informations du serveur. |
-| [`/ds`](./features/utilities.mdx#discord-sanctions) | `/ds (@utilisateur)` | Affiche les sanctions Discord (DSA) d’un utilisateur. |
+| [`/discord-sanctions`](./features/utilities.mdx#discord-sanctions) | `/discord-sanctions (@utilisateur)` | Affiche les sanctions Discord (DSA) d’un utilisateur. |
 | [`/prune`](./features/utilities.mdx#prune) | `/prune [jours]` | Congédie les membres inactifs via un menu interactif. |
 | [`/channel duplicate`](./features/utilities.mdx#channel-duplicate) | `/channel duplicate (#salon)` | Duplique un salon avec ses paramètres et permissions. |
 | [`/channel clear`](./features/utilities.mdx#channel-clear) | `/channel clear (#salon)` | Supprime et re-crée un salon à l’identique. |
@@ -120,6 +122,7 @@ Toutes les commandes RaidProtect, regroupées par catégorie. Cliquez sur le nom
 | [`/about`](./readme.mdx) | `/about` | Affiche des informations générales sur RaidProtect. |
 | [`/help`](./readme.mdx) | `/help` | Affiche l’aide générale de RaidProtect. |
 | [`/invite`](./useful-links/index.mdx) | `/invite` | Affiche les liens utiles (invitation, support, page du bot). |
+| [`/transparency`](./features/transparency.md#command) | `/transparency` | Affiche le dernier rapport de transparence de modération du serveur. |
 | [`/changelog`](./changelog.mdx) | `/changelog` | Consulte le journal des modifications de RaidProtect. |
 | [`/feedback`](./features/utilities.mdx#feedback) | `/feedback` | Partage un avis, une suggestion ou un signalement de bug. |
 
