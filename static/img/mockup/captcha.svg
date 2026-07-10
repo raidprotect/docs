@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="350" height="100" viewBox="0 0 350 100">
+  <rect width="350" height="100" fill="#e8e6df"/>
+  <path d="M0 78 C60 40, 120 95, 180 60 S 300 30, 350 70" stroke="#b8b4a8" stroke-width="2" fill="none"/>
+  <path d="M0 30 C80 70, 150 20, 230 55 S 320 80, 350 25" stroke="#c4c0b4" stroke-width="2" fill="none"/>
+  <path d="M20 90 L340 12" stroke="#beb9ac" stroke-width="1.5"/>
+  <g font-family="Georgia, serif" font-size="46" font-weight="bold" fill="#4a4a55">
+    <text x="28" y="66" transform="rotate(-8 40 60)">R</text>
+    <text x="80" y="70" transform="rotate(6 90 60)">K</text>
+    <text x="132" y="62" transform="rotate(-12 142 60)">F</text>
+    <text x="184" y="72" transform="rotate(9 194 60)">T</text>
+    <text x="236" y="64" transform="rotate(-6 246 60)">Q</text>
+    <text x="292" y="70" transform="rotate(11 302 60)">Z</text>
+  </g>
+  <circle cx="55" cy="25" r="2" fill="#a8a496"/>
+  <circle cx="160" cy="85" r="2.5" fill="#a8a496"/>
+  <circle cx="265" cy="20" r="2" fill="#a8a496"/>
+  <circle cx="320" cy="88" r="2" fill="#a8a496"/>
+</svg>

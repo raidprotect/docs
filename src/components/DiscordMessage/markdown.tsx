@@ -19,17 +19,17 @@ export function formatInlineMarkdown(text: string): ReactNode[] {
       remaining = remaining.slice(iconMatch[0].length);
       continue;
     }
-    // **bold**
+    // **bold** (contenu re-parsé : code, mentions et icônes imbriqués)
     const boldMatch = remaining.match(/^\*\*(.+?)\*\*/);
     if (boldMatch) {
-      result.push(<strong key={key++}>{boldMatch[1]}</strong>);
+      result.push(<strong key={key++}>{formatInlineMarkdown(boldMatch[1])}</strong>);
       remaining = remaining.slice(boldMatch[0].length);
       continue;
     }
     // *italic*
     const italicMatch = remaining.match(/^\*(.+?)\*/);
     if (italicMatch) {
-      result.push(<em key={key++}>{italicMatch[1]}</em>);
+      result.push(<em key={key++}>{formatInlineMarkdown(italicMatch[1])}</em>);
       remaining = remaining.slice(italicMatch[0].length);
       continue;
     }
@@ -121,12 +121,17 @@ function formatDiscordLines(text: string): ReactNode {
     }
     flushQuote();
 
-    // ### heading (display: block, pas de <br> cumulé)
-    const headingMatch = line.match(/^###\s+(.*)/);
+    // #, ## et ### headings (display: block, pas de <br> cumulé)
+    const headingMatch = line.match(/^(#{1,3})\s+(.*)/);
     if (headingMatch) {
+      const levelClass = headingMatch[1].length === 1
+        ? styles.mdH1
+        : headingMatch[1].length === 2
+          ? styles.mdH2
+          : "";
       result.push(
-        <span key={key++} className={styles.mdHeading}>
-          {formatInlineMarkdown(headingMatch[1])}
+        <span key={key++} className={`${styles.mdHeading} ${levelClass}`}>
+          {formatInlineMarkdown(headingMatch[2])}
         </span>
       );
       prevBlock = true;
