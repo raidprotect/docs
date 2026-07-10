@@ -48,11 +48,23 @@ const sidebars: SidebarsConfig = {
                 },
                 {
                     type: 'doc',
+                    id: 'features/authentication-manager',
+                },
+                {
+                    type: 'doc',
                     id: 'features/sanctions',
                 },
                 {
                     type: 'doc',
                     id: 'features/moderation',
+                },
+                {
+                    type: 'doc',
+                    id: 'features/reports',
+                },
+                {
+                    type: 'doc',
+                    id: 'features/transparency',
                 },
                 {
                     type: 'doc',
@@ -68,10 +80,6 @@ const sidebars: SidebarsConfig = {
                 },
                 {
                     type: 'doc',
-                    id: 'features/reports',
-                },
-                {
-                    type: 'doc',
                     id: 'features/tag-role',
                 },
                 {
@@ -84,7 +92,7 @@ const sidebars: SidebarsConfig = {
                 },
                 {
                     type: 'doc',
-                    id: 'features/authentication-manager',
+                    id: 'features/audit',
                 },
             ],
         },
