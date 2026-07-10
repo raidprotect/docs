@@ -60,28 +60,44 @@ Vous pouvez personnaliser les sanctions appliquées selon le type de spam détec
 
 #### Types de sanctions et déclencheurs {#sanctions}
 
-Voici les différentes **sanctions disponibles** ainsi que les **déclencheurs (triggers)** que RaidProtect peut détecter, avec le **temps de timeout par défaut** si applicable :
+Voici les différentes **sanctions disponibles** :
 
-- **Warn** : Envoie un avertissement au membre.
-- **Kick** : Expulse le membre du serveur.
-- **Timeout** : Rend le membre muet pendant une durée définie.
-- **Softban** : Bannit puis débannit immédiatement le membre, supprimant ainsi ses messages.
-- **Ban** : Bannit définitivement le membre.
+- **Warn** : Envoie un avertissement au membre.
+- **Timeout** : Rend le membre muet pendant une durée définie.
+- **Mute** : Donne le [rôle Mute](./sanctions.mdx#mute) configuré sur votre serveur.
+- **Jail** : Donne le [rôle Jail](./sanctions.mdx#jail) configuré sur votre serveur.
+- **Kick** : Expulse le membre du serveur.
+- **Softban** : Bannit puis débannit immédiatement le membre, supprimant ainsi ses messages.
+- **Ban** : Bannit définitivement le membre.
+- **Désactiver** : Coupe complètement le déclencheur, aucune sanction ne sera appliquée.
 
-| Déclencheur (Trigger)                  | Description                                             | Durée du Timeout   |
-|----------------------------------------|---------------------------------------------------------|--------------------|
-| Spam                                   | Envoi répété de messages                                | 1 minute           |
-| Spam avec selfbot                      | Utilisation de selfbots pour spammer                    | 1 heure            |
-| Spam de mentions                       | Mentions massives répétées                              | 30 minutes         |
-| Spam de liens                          | Envoi massif de liens                                   | 24 heures          |
-| Spam de commandes externes             | Utilisation de commandes externes pour spammer          | 1 heure            |
-| Spam de duplicatas ou spam importants  | Messages copiés-collés ou spams excessifs               | 24 heures          |
+:::note
+Pour les déclencheurs "Spam de duplicatas ou spam importants" et "Spam multisalon", la sanction la plus douce sélectionnable est le **Timeout** (pas de Warn) : il s'agit de spam sérieux qui justifie une réponse ferme.
+:::
+
+Et les **déclencheurs (triggers)** que RaidProtect peut détecter, avec la sanction appliquée par défaut :
+
+| Déclencheur (Trigger)                  | Description                                              | Sanction par défaut |
+|----------------------------------------|----------------------------------------------------------|---------------------|
+| Spam                                   | Envoi répété de messages                                 | Warn                |
+| Spam avec selfbot                      | Utilisation de selfbots pour spammer                     | Softban             |
+| Spam de mentions                       | Mentions massives répétées                               | Softban             |
+| Spam de liens                          | Envoi massif de liens                                    | Ban                 |
+| Spam de commandes externes             | Utilisation de commandes externes pour spammer           | Ban                 |
+| Spam d'attachements                    | Envoi massif de fichiers ou d'images                     | Désactivé           |
+| Spam de duplicatas ou spam importants  | Messages copiés-collés ou spams excessifs                | Softban             |
+| Images d'arnaques (Crypto Scam)        | Images d'arnaque détectées par [ScamLens](/blog/threat-weather-june-2026) | Timeout             |
+| Spam multisalon                        | Spam réparti sur plusieurs salons                        | Jail                |
+
+:::info
+Le déclencheur **Spam multisalon** est particulier : sa sanction remplace celle du déclencheur d'origine lorsque le spam touche plusieurs salons, uniquement si elle est plus sévère.
+:::
 
 ![Capture d'écran des sanctions anti-spam](../assets/rp-settings-anti-spam-sanctions.webp)
 
 #### Durée des sanctions {#duration}
 
-Lorsque les sanctions appliquées par l'anti-spam supportent une durée (mute, timeout, jail), vous pouvez définir une **durée unique** appliquée à toutes ces sanctions plutôt que de garder la durée par défaut de chaque déclencheur.
+Lorsque les sanctions appliquées par l'anti-spam supportent une durée (mute, timeout, jail), vous pouvez définir une **durée unique** appliquée à toutes ces sanctions (1 heure par défaut).
 
 1. Faites la [commande `/settings`](../setup.md#settings).
 2. Cliquez sur le bouton "**Anti-spam**".
