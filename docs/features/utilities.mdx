@@ -65,6 +65,14 @@ Remplacez `[durée]` par le nombre de jours d'inactivité souhaité. Le bot affi
 
 La commande `/block` vous permet d'empêcher un utilisateur d'utiliser certaines fonctionnalités de RaidProtect sur votre serveur (par exemple, envoyer des signalements ou recevoir le rôle de tag).
 
+Lors du blocage ou du déblocage, RaidProtect vous propose de choisir les fonctionnalités concernées :
+
+| Type | Effet |
+|---|---|
+| **Toutes les interactions** | Bloque toutes les interactions avec le bot |
+| **Reports** | L'utilisateur ne pourra plus faire de [signalement](./reports.md) |
+| **Rôle de Tag** | L'utilisateur ne pourra plus recevoir le [rôle de tag](./tag-role.md) |
+
 ### Bloquer un utilisateur {#block-add}
 
 Utilisez la commande : ```/block add (utilisateur) [raison]```
@@ -83,9 +91,9 @@ Consultez la [page dédiée aux panneaux d'information](./display.mdx) pour en s
 
 ## 📜 Mes Sanctions {#my-sanctions}
 
-La commande `/my-sanctions` permet aux membres de consulter leurs propres sanctions sur le serveur, selon le [niveau de confidentialité](./sanctions.mdx#sanctions-privacy) configuré par les administrateurs.
+La commande `/mes-sanctions` permet aux membres de consulter leurs propres sanctions sur le serveur, selon le [niveau de confidentialité](./sanctions.mdx#sanctions-privacy) configuré par les administrateurs.
 
-Utilisez la commande : ```/my-sanctions```
+Utilisez la commande : ```/mes-sanctions```
 
 :::info
 Cette commande est également accessible via le bouton **Consulter mes sanctions** sur les [panneaux d'information](./display.mdx) si la fonctionnalité est activée.
@@ -209,11 +217,11 @@ Si la cible est un membre du serveur, les infos supplémentaires incluent :
 
 ## ⚖️ Sanctions Discord {#discord-sanctions}
 
-La commande `/ds` vous permet de visualiser les **sanctions émises par Discord** à l’encontre d’un utilisateur, conformément à la [réglementation européenne](https://transparency.dsa.ec.europa.eu/).
+La commande `/discord-sanctions` vous permet de visualiser les **sanctions émises par Discord** à l’encontre d’un utilisateur, conformément à la [réglementation européenne](https://transparency.dsa.ec.europa.eu/).
 
-Utilisez la commande : ```/ds (utilisateur)```
+Utilisez la commande : ```/discord-sanctions (utilisateur)```
 
-Remplacez `(utilisateur)` par la mention ou l’identifiant souhaité.
+Remplacez `(utilisateur)` par la mention ou l'identifiant souhaité. La commande est aussi accessible d'un clic droit sur un profil, via **`Applications`** puis **`Discord Sanctions`**.
 
 ### 📋 Informations affichées {#displayed-sanctions}
 
