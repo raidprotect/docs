@@ -24,5 +24,18 @@ La configuration se fait en quelques clics :
 ![Capture d'écran paramètre Rôle de Tag](../assets/rp-settings-tag-role.webp)
 
 :::tip
-Vos membres auront le rôle à leur prochaine modification de profil (Pseudo, Avatar, Bannière, Rôles, Tag…). Vous pouvez [demander au support](https://raidprotect.bot/discord) une synchronisation complète du rôle si vous avez beaucoup de membres possédant ou ayant possédé le Tag.
+Vos membres auront le rôle à leur prochaine modification de profil (Pseudo, Avatar, Bannière, Rôles, Tag…).
+:::
+
+## 🔄 Synchronisation du rôle {#sync}
+
+Pour attribuer immédiatement le rôle à tous les membres qui portent déjà le tag (et le retirer à ceux qui ne le portent plus), utilisez le bouton "**Synchroniser**" dans la configuration du Rôle de Tag :
+
+- **Gratuit** : une synchronisation offerte, une seule fois par serveur.
+- **Premium** : une synchronisation par semaine.
+
+La synchronisation est lancée en arrière-plan et continue même si le bot redémarre. Une seule synchronisation peut être en cours à la fois sur un serveur.
+
+:::note
+Le bouton "Synchroniser" est en cours de déploiement progressif. S'il n'est pas encore disponible sur votre serveur, vous pouvez [demander au support](https://raidprotect.bot/discord) une synchronisation complète du rôle.
 :::
