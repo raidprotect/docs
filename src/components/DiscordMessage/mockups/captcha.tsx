@@ -7,7 +7,7 @@ import type { DiscordMessageData } from "../types";
 export default function CaptchaMockup() {
   const message: DiscordMessageData = {
     content: [
-      `## ${translate({ id: "mockup.captcha.welcome", message: "Bienvenue sur Ma Communauté, @Chaussette !" })}`,
+      `## ${translate({ id: "mockup.captcha.welcome", message: "Bienvenue sur Ma Communauté, @Arthur !" })}`,
       translate({
         id: "mockup.captcha.instructions",
         message: "Pour accéder au serveur, veuillez compléter ce captcha avec **6 lettres majuscules**.",

@@ -22,8 +22,8 @@ export default function SanctionsMockup() {
             accessory: {
               type: 2,
               style: 4,
-              label: "🗑",
-              custom_id: "sanction-delete",
+              label: "", custom_id: "sanction-delete",
+              emoji: { name: "/img/icons/iconTrashWhite.svg" },
             },
           },
           { type: 13, divider: true },
@@ -52,8 +52,8 @@ export default function SanctionsMockup() {
             accessory: {
               type: 2,
               style: 1,
-              label: "✏️",
-              custom_id: "sanction-edit",
+              label: "", custom_id: "sanction-edit",
+              emoji: { name: "/img/icons/iconCustomWhite.svg" },
             },
           },
           { type: 13, divider: true },

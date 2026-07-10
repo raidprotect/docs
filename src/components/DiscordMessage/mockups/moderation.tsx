@@ -16,13 +16,13 @@ export default function ModerationMockup() {
             components: [
               {
                 type: 10,
-                content: `## 🔍 Chaussette\n@Chaussette (\`chaussette\`)\n-# ✅ ${translate({
+                content: `## ![](/img/icons/iconModView.svg) Arthur\n@Arthur (\`arthur\`)\n-# ✅ ${translate({
                   id: "mockup.modview.member",
                   message: "Membre du serveur",
                 })}`,
               },
             ],
-            accessory: { type: 11, media: { url: "/img/avatar/chaussette.webp" } },
+            accessory: { type: 11, media: { url: "/img/avatar/derrios.webp" } },
           },
           { type: 13, divider: true },
           {
@@ -30,7 +30,7 @@ export default function ModerationMockup() {
             content: [
               `**${translate({ id: "mockup.modview.created", message: "Création du compte" })}** 12/03/2021 (${translate({ id: "mockup.modview.createdRel", message: "il y a 5 ans" })})`,
               `**${translate({ id: "mockup.modview.joined", message: "Membre depuis" })}** 02/09/2024 (${translate({ id: "mockup.modview.joinedRel", message: "il y a 2 ans" })})`,
-              `**${translate({ id: "mockup.modview.nick", message: "Pseudo" })}** \`Chaussette 🧦\``,
+              `**${translate({ id: "mockup.modview.nick", message: "Pseudo" })}** \`Arthurio ⚡\``,
               `**${translate({ id: "mockup.modview.perms", message: "Permissions :" })}** ${translate({ id: "mockup.modview.permsValue", message: "Membre" })} (**4** ${translate({ id: "mockup.modview.roles", message: "rôles" })})`,
             ].join("\n"),
           },
@@ -59,7 +59,7 @@ export default function ModerationMockup() {
             components: [
               {
                 type: 10,
-                content: `### ⚖️ ${translate({ id: "mockup.modview.sanctions", message: "Dernières sanctions" })} (**2**/**5**)`,
+                content: `### ![](/img/icons/iconSanctions.svg) ${translate({ id: "mockup.modview.sanctions", message: "Dernières sanctions" })} (**2**/**5**)`,
               },
             ],
             accessory: {
@@ -75,7 +75,7 @@ export default function ModerationMockup() {
               `![](/img/icons/SanctionsTIMEOUT.svg) ${translate({ id: "mockup.modview.row1", message: "Timeout il y a 3 jours." })}`,
               `-# 🪪 \`A1B2C3\` ![](/img/icons/SanctionStatusEXPIRED.svg) • ${translate({ id: "mockup.modview.mod", message: "Mod :" })} @Zallom`,
               `![](/img/icons/SanctionsWARN.svg) ${translate({ id: "mockup.modview.row2", message: "Avertissement il y a 5 heures." })}`,
-              `-# 🪪 \`D4E5F6\` ![](/img/icons/SanctionStatusACTIVE.svg) • ${translate({ id: "mockup.modview.mod", message: "Mod :" })} @Arthur`,
+              `-# 🪪 \`D4E5F6\` ![](/img/icons/SanctionStatusACTIVE.svg) • ${translate({ id: "mockup.modview.mod", message: "Mod :" })} @Chaussette`,
             ].join("\n"),
           },
           { type: 13, divider: true },

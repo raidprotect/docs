@@ -14,7 +14,7 @@ export default function AuthenticationManagerMockup() {
           {
             type: 10,
             content: [
-              `## 🔑 ${translate({ id: "mockup.auth.title", message: "Authentification requise" })}`,
+              `## ![](/img/icons/iconKey.svg) ${translate({ id: "mockup.auth.title", message: "Authentification requise" })}`,
               "",
               translate({
                 id: "mockup.auth.body",
@@ -32,7 +32,7 @@ export default function AuthenticationManagerMockup() {
                 style: 1,
                 label: translate({ id: "mockup.auth.pin", message: "S'authentifier avec le PIN" }),
                 custom_id: "auth-pin",
-                emoji: { name: "🔢" },
+                emoji: { name: "/img/icons/iconPin.svg" },
               },
               {
                 type: 2,
@@ -46,7 +46,7 @@ export default function AuthenticationManagerMockup() {
                 style: 1,
                 label: translate({ id: "mockup.auth.passkey", message: "S'authentifier avec le Passkey" }),
                 custom_id: "auth-passkey",
-                emoji: { name: "🔑" },
+                emoji: { name: "/img/icons/iconKey.svg" },
               },
             ],
           },

@@ -10,7 +10,7 @@ export default function TransparencyMockup() {
         color: 0xd35f5f,
         description: [
           `## 🔍 ${translate({ id: "mockup.transparency.title", message: "Rapport de transparence" })}`,
-          `📅 ${translate({ id: "mockup.transparency.range", message: "1 juillet 2026 — 8 juillet 2026" })}`,
+          `![](/img/icons/iconCalendar.svg) ${translate({ id: "mockup.transparency.range", message: "1 juillet 2026 — 8 juillet 2026" })}`,
           "",
           translate({
             id: "mockup.transparency.intro",
@@ -23,11 +23,11 @@ export default function TransparencyMockup() {
           `![](/img/icons/SanctionsTIMEOUT.svg) **12** ${translate({ id: "mockup.transparency.timeouts", message: "timeouts" })}`,
           `![](/img/icons/SanctionsJAIL.svg) **1** ${translate({ id: "mockup.transparency.jails", message: "emprisonnement" })}`,
           `![](/img/icons/SanctionsWARN.svg) **8** ${translate({ id: "mockup.transparency.warns", message: "avertissements" })}`,
-          `⚖️ **4** ${translate({ id: "mockup.transparency.others", message: "autres actions" })}`,
+          `![](/img/icons/iconSanctions.svg) **4** ${translate({ id: "mockup.transparency.others", message: "autres actions" })}`,
           "",
-          `🛡️ **6** ${translate({ id: "mockup.transparency.scamlens", message: "arnaques bloquées par ScamLens" })}`,
+          `![](/img/icons/iconScamLens.svg) **6** ${translate({ id: "mockup.transparency.scamlens", message: "arnaques bloquées par ScamLens" })}`,
           "",
-          `🤖 **28** ${translate({ id: "mockup.transparency.automated", message: "automatiques" })} · 👤 **9** ${translate({ id: "mockup.transparency.human", message: "par l'équipe" })}`,
+          `![](/img/icons/iconBots.svg) **28** ${translate({ id: "mockup.transparency.automated", message: "automatiques" })} · ![](/img/icons/iconUser.svg) **9** ${translate({ id: "mockup.transparency.human", message: "par l'équipe" })}`,
         ].join("\n"),
       },
     ],

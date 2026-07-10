@@ -44,7 +44,7 @@ export default function HoneypotMockup() {
           {
             type: 2,
             style: 2,
-            label: translate({ id: "mockup.honeypot.translate", message: "Traduire" }),
+            label: translate({ id: "mockup.honeypot.translate", message: "Translate" }),
             custom_id: "honeypot-translate",
             emoji: { name: "🌐" },
           },

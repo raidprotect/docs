@@ -40,7 +40,7 @@ export default function DisplayMockup() {
           { type: 13, divider: true },
           {
             type: 10,
-            content: `### ⚖️ ${translate({ id: "mockup.display.sanctionsTitle", message: "Sanctions" })}\n${translate({
+            content: `### ![](/img/icons/iconSanctions.svg) ${translate({ id: "mockup.display.sanctionsTitle", message: "Sanctions" })}\n${translate({
               id: "mockup.display.sanctionsBody",
               message: "Consultez l'historique de vos sanctions personnelles appliquées sur ce serveur avec la commande `/mes-sanctions`.",
             })}`,
@@ -62,7 +62,7 @@ export default function DisplayMockup() {
             style: 2,
             label: translate({ id: "mockup.display.mySanctions", message: "Consulter mes sanctions" }),
             custom_id: "mysnctn-open",
-            emoji: { name: "⚖️" },
+            emoji: { name: "/img/icons/iconSanctions.svg" },
           },
           {
             type: 2,
