@@ -1,24 +1,89 @@
 import { useState } from "react";
+import { translate } from "@docusaurus/Translate";
 import type { DiscordMessageData } from "./types";
 import Embed from "./Embed";
 import ComponentRenderer from "./ComponentRenderer";
+import { formatDiscordMarkdown } from "./markdown";
 import styles from "./styles.module.css";
 
 const DEFAULT_AVATAR =
   "https://cdn.discordapp.com/embed/avatars/0.png";
 
+export interface ThreadLastMessage {
+  username: string;
+  avatar?: string;
+  bot?: boolean;
+  content: string;
+  when?: string;
+}
+
+/** Indicateur de fil replié sous le message (comme l'intégration Discord) :
+ *  nom + compteur en bleu, et aperçu du dernier message, sans ouvrir le fil. */
+export interface ThreadData {
+  name: string;
+  messageCount: number;
+  lastMessage?: ThreadLastMessage;
+}
+
+function Thread({ thread }: { thread: ThreadData }) {
+  const last = thread.lastMessage;
+  return (
+    <div className={styles.thread}>
+      <div className={styles.threadSpine} aria-hidden />
+      <div className={styles.threadCard}>
+        <div className={styles.threadHeader}>
+          <span className={styles.threadName}>{thread.name}</span>
+          <span className={styles.threadCount}>
+            {translate(
+              { id: "mockup.thread.messages", message: "{count} messages" },
+              { count: thread.messageCount }
+            )}
+            {" ›"}
+          </span>
+        </div>
+        {last && (
+          <div className={styles.threadLast}>
+            <img
+              className={styles.threadAvatar}
+              src={last.avatar || DEFAULT_AVATAR}
+              alt={last.username}
+              loading="lazy"
+            />
+            {last.bot && (
+              <span className={styles.threadAppBadge}>
+                <svg viewBox="0 0 16 16" aria-hidden="true">
+                  <path d="M7.4,11.17,4,8.62,5,7.26l2,1.53L10.64,4l1.36,1Z" fill="currentColor" />
+                </svg>
+                APP
+              </span>
+            )}
+            <span className={styles.threadLastAuthor}>{last.username}</span>
+            <svg className={styles.threadReplyArrow} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true">
+              <path d="M4 17v-2a4 4 0 0 1 4-4h11m0 0-4-4m4 4-4 4" />
+            </svg>
+            <span className={styles.threadLastContent}>{last.content}</span>
+            {last.when && <span className={styles.threadWhen}>{last.when}</span>}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function DiscordMessage({
   message,
   pages,
+  thread,
 }: {
   message: DiscordMessageData;
   pages?: Record<string, DiscordMessageData>;
+  thread?: ThreadData;
 }) {
   const [currentPage, setCurrentPage] = useState<string | null>(null);
   const pageKeys = pages ? new Set([...Object.keys(pages), "__back__"]) : new Set<string>();
 
   const current = currentPage && pages?.[currentPage] ? pages[currentPage] : message;
-  const { author, content, embeds, components } = current;
+  const { content, embeds, components } = current;
 
   const handleNavigate = (customId: string) => {
     if (customId === "__back__") {
@@ -30,26 +95,8 @@ export default function DiscordMessage({
 
   return (
     <div className={styles.message}>
-      <img
-        className={styles.avatar}
-        src={author.avatar || DEFAULT_AVATAR}
-        alt={author.username}
-        loading="lazy"
-      />
       <div className={styles.body}>
-        <div className={styles.header}>
-          <span className={styles.username}>{author.username}</span>
-          {author.bot && (
-            <span className={styles.appBadge}>
-              <svg className={styles.appBadgeCheck} viewBox="0 0 16 16" aria-hidden="true">
-                <path d="M7.4,11.17,4,8.62,5,7.26l2,1.53L10.64,4l1.36,1Z" fill="currentColor" />
-              </svg>
-              APP
-            </span>
-          )}
-        </div>
-
-        {content && <div className={styles.content}>{content}</div>}
+        {content && <div className={styles.content}>{formatDiscordMarkdown(content)}</div>}
 
         {embeds && embeds.length > 0 && (
           <div className={styles.embedsWrapper}>
@@ -71,6 +118,8 @@ export default function DiscordMessage({
             ))}
           </div>
         )}
+
+        {thread && <Thread thread={thread} />}
       </div>
     </div>
   );

@@ -3,17 +3,15 @@
 /* === Message wrapper === */
 .message {
   display: flex;
-  padding: 16px;
   font-family: "gg sans", "Noto Sans", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.375;
-  border-radius: 8px;
-  background: #313338;
   color: #dbdee1;
+  max-width: 420px;
+  margin: 1.25rem auto;
 }
 
 html[data-theme="light"] .message {
-  background: #ffffff;
   color: #313338;
 }
 
@@ -244,13 +242,13 @@ html[data-theme="light"] .embedFooter {
   align-items: center;
   justify-content: center;
   gap: 4px;
-  padding: 2px 16px;
+  padding: 3px 11px;
   height: 32px;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 16px;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   cursor: pointer;
   white-space: nowrap;
   transition: background-color 0.17s ease, color 0.17s ease;
@@ -272,39 +270,40 @@ html[data-theme="light"] .embedFooter {
 }
 
 .buttonSecondary {
-  background: #35373c;
-  color: #e0e1e5;
-}
-
-html[data-theme="light"] .buttonSecondary {
-  background: #6d6f78;
+  background: rgba(151, 151, 159, 0.12);
   color: #fff;
 }
 
+html[data-theme="light"] .buttonSecondary {
+  background: rgba(0, 0, 0, 0.08);
+  color: #313338;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
 .buttonSecondary:hover:not(:disabled) {
-  background: #404249;
+  background: rgba(151, 151, 159, 0.22);
 }
 
 html[data-theme="light"] .buttonSecondary:hover:not(:disabled) {
-  background: #4e5058;
+  background: rgba(0, 0, 0, 0.14);
 }
 
 .buttonSuccess {
-  background: #248046;
+  background: #008545;
   color: #fff;
 }
 
 .buttonSuccess:hover:not(:disabled) {
-  background: #1a6334;
+  background: #00753d;
 }
 
 .buttonDanger {
-  background: #da373c;
+  background: #d22d39;
   color: #fff;
 }
 
 .buttonDanger:hover:not(:disabled) {
-  background: #a12828;
+  background: #b52731;
 }
 
 .buttonLink {
@@ -352,17 +351,21 @@ html[data-theme="light"] .buttonLink:hover:not(:disabled) {
 }
 
 /* === Select === */
+.selectWrap {
+  position: relative;
+  width: 100%;
+}
+
 .select {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 400px;
   height: 40px;
   padding: 8px 12px;
-  border-radius: 4px;
-  background: #1e1f22;
-  color: #87898c;
+  border-radius: 8px;
+  background: #4c4f55;
+  color: #c8cad1;
   font-size: 14px;
   font-family: inherit;
   cursor: default;
@@ -539,9 +542,10 @@ html[data-theme="light"] .fileName {
 /* === Container === */
 .container {
   border-radius: 8px;
+  border: 1px solid #4c4f55;
   border-left: 4px solid transparent;
-  background: #2b2d31;
-  padding: 12px;
+  background: #393b40;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -549,6 +553,7 @@ html[data-theme="light"] .fileName {
 
 html[data-theme="light"] .container {
   background: #f2f3f5;
+  border-color: #e1e2e4;
 }
 
 /* === Discord Markdown === */
@@ -617,4 +622,258 @@ html[data-theme="light"] .mention:hover {
   .embedFieldWide {
     grid-column: auto;
   }
+}
+
+/* === Markdown partagé (embeds + Text Display) === */
+.inlineCode {
+  background: #1e1f22;
+  padding: 0 4px;
+  border-radius: 3px;
+  font-size: 85%;
+}
+
+html[data-theme="light"] .inlineCode {
+  background: #ebebeb;
+}
+
+.mdHeading {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 2px 0;
+}
+
+.mdSmall {
+  display: block;
+  font-size: 13px;
+  color: #949ba4;
+}
+
+html[data-theme="light"] .mdSmall {
+  color: #5c5e66;
+}
+
+/* === Thread (fil sous le message) === */
+.thread {
+  position: relative;
+  margin-top: 8px;
+  padding-left: 26px;
+}
+
+.threadSpine {
+  position: absolute;
+  left: 6px;
+  top: -10px;
+  width: 16px;
+  height: 30px;
+  border-left: 2px solid #4e5058;
+  border-bottom: 2px solid #4e5058;
+  border-bottom-left-radius: 10px;
+}
+
+html[data-theme="light"] .threadSpine {
+  border-color: #c4c9ce;
+}
+
+.threadCard {
+  background: #393b40;
+  border: 1px solid rgba(69, 69, 76, 1);
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.threadCard:hover {
+  border-color: #6a6d75;
+}
+
+html[data-theme="light"] .threadCard {
+  background: #f2f3f5;
+  border-color: #e1e2e4;
+}
+
+.threadHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.threadName {
+  font-weight: 700;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.threadCount {
+  font-size: 14px;
+  font-weight: 600;
+  color: #76aff6;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.threadCount:hover {
+  text-decoration: underline;
+}
+
+html[data-theme="light"] .threadCount {
+  color: #006ce7;
+}
+
+.threadLast {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  min-width: 0;
+}
+
+.threadAvatar {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.threadAppBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
+  padding: 0 4px;
+  height: 15px;
+  border-radius: 3px;
+  background: #5865f2;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.threadAppBadge svg {
+  width: 11px;
+  height: 11px;
+}
+
+.threadLastAuthor {
+  font-size: 13px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.threadReplyArrow {
+  width: 13px;
+  height: 13px;
+  color: #949ba4;
+  flex-shrink: 0;
+}
+
+.threadLastContent {
+  font-size: 13px;
+  color: #b5bac1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+html[data-theme="light"] .threadLastContent {
+  color: #4e5058;
+}
+
+.threadWhen {
+  font-size: 12px;
+  color: #949ba4;
+  flex-shrink: 0;
+  margin-left: auto;
+  padding-left: 8px;
+}
+
+
+/* === Select dropdown === */
+.selectValue {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  color: #f2f2f4;
+}
+
+.selectOpen .selectChevron {
+  transform: rotate(180deg);
+}
+
+.selectDropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: #2b2d31;
+  border: 1px solid #1e1f22;
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 20;
+}
+
+html[data-theme="light"] .selectDropdown {
+  background: #f2f3f5;
+  border-color: #e1e2e4;
+}
+
+.selectOption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #dbdee1;
+}
+
+html[data-theme="light"] .selectOption {
+  color: #313338;
+}
+
+.selectOption:hover {
+  background: #393b40;
+}
+
+html[data-theme="light"] .selectOption:hover {
+  background: #e3e5e8;
+}
+
+.selectOptionActive {
+  background: #404249;
+}
+
+.selectOptionBody {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.selectOptionLabel {
+  font-weight: 500;
+}
+
+.selectOptionDesc {
+  font-size: 12px;
+  color: #949ba4;
+}
+
+
+.inlineIcon {
+  width: 20px;
+  height: 20px;
+  vertical-align: -4px;
+  display: inline-block;
+}
+
+.mdHeading .inlineIcon {
+  width: 24px;
+  height: 24px;
+  vertical-align: -4px;
 }

@@ -178,7 +178,8 @@ export interface DiscordAuthor {
 
 export interface DiscordMessageData {
   content?: string;
-  author: DiscordAuthor;
+  /** Plus rendu (mockups épurées sans en-tête de message) ; conservé pour compat. */
+  author?: DiscordAuthor;
   embeds?: DiscordEmbed[];
   components?: Component[];
 }

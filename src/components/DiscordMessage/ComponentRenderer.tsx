@@ -1,4 +1,6 @@
-import type { Component } from "./types";
+import { useEffect, useRef, useState } from "react";
+import type { Component, StringSelect } from "./types";
+import { formatDiscordMarkdown } from "./markdown";
 import styles from "./styles.module.css";
 
 function ChevronDown() {
@@ -37,6 +39,17 @@ function FileIcon() {
 }
 
 function renderEmoji(emoji: { name: string; id?: string; animated?: boolean }) {
+  if (emoji.name.startsWith("/")) {
+    return (
+      <img
+        className={styles.buttonEmoji}
+        src={emoji.name}
+        alt=""
+        aria-hidden
+        loading="lazy"
+      />
+    );
+  }
   if (emoji.id) {
     const ext = emoji.animated ? "gif" : "png";
     return (
@@ -62,6 +75,54 @@ function SelectMenu({
     <div className={styles.select} data-disabled={disabled || undefined}>
       <span className={styles.selectPlaceholder}>{placeholder}</span>
       <ChevronDown />
+    </div>
+  );
+}
+
+function StringSelectMenu({ component }: { component: StringSelect }) {
+  const [open, setOpen] = useState(false);
+  const [selected, setSelected] = useState<string | null>(null);
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const current = component.options.find((o) => o.value === selected);
+
+  useEffect(() => {
+    if (!open) return;
+    const close = (e: PointerEvent) => {
+      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener("pointerdown", close);
+    return () => document.removeEventListener("pointerdown", close);
+  }, [open]);
+
+  return (
+    <div className={styles.selectWrap} ref={wrapRef}>
+      <div
+        className={`${styles.select} ${open ? styles.selectOpen : ""}`}
+        data-disabled={component.disabled || undefined}
+        onClick={() => !component.disabled && setOpen(!open)}
+      >
+        <span className={current ? styles.selectValue : styles.selectPlaceholder}>
+          {current ? current.label : component.placeholder || "Faites une sélection"}
+        </span>
+        <ChevronDown />
+      </div>
+      {open && (
+        <div className={styles.selectDropdown}>
+          {component.options.map((o) => (
+            <div
+              key={o.value}
+              className={`${styles.selectOption} ${selected === o.value ? styles.selectOptionActive : ""}`}
+              onClick={() => { setSelected(o.value === selected ? null : o.value); setOpen(false); }}
+            >
+              {o.emoji && renderEmoji(o.emoji)}
+              <span className={styles.selectOptionBody}>
+                <span className={styles.selectOptionLabel}>{o.label}</span>
+                {o.description && <span className={styles.selectOptionDesc}>{o.description}</span>}
+              </span>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -124,12 +185,7 @@ export default function ComponentRenderer({
 
     // String Select
     case 3:
-      return (
-        <SelectMenu
-          placeholder={component.placeholder || "Faites une sélection"}
-          disabled={component.disabled}
-        />
-      );
+      return <StringSelectMenu component={component} />;
 
     // User Select
     case 5:
@@ -190,7 +246,7 @@ export default function ComponentRenderer({
 
     // Text Display
     case 10:
-      return <div className={styles.textDisplay}>{component.content}</div>;
+      return <div className={styles.textDisplay}>{formatDiscordMarkdown(component.content)}</div>;
 
     // Thumbnail
     case 11:
