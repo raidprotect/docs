@@ -3,8 +3,9 @@ title: Rôle de Tag
 ---
 
 import TagRoleMockup from '@site/src/components/DiscordMessage/mockups/tag-role';
+import TagRoleConceptMockup from '@site/src/components/DiscordMessage/mockups/tag-role-concept';
 
-<TagRoleMockup />
+<TagRoleConceptMockup />
 
 Le Rôle de Tag permet d’attribuer automatiquement un rôle aux membres qui ajoutent [le tag de votre serveur](https://support.discord.com/hc/fr/articles/31444248479639-Tag-du-serveur) à leur profil Discord. En attribuant un rôle à ces membres, vous valorisez leur engagement et [les encouragez à représenter activement votre serveur](https://dfr.gg/blog/2025/05/09/revolution-boosts-tags-serveur-publics#tags). C’est un moyen simple mais efficace de renforcer l’identité collective, tout en récompensant les ambassadeurs les plus fidèles de votre communauté.
 
@@ -25,7 +26,7 @@ La configuration se fait en quelques clics :
 3. Sélectionnez un rôle existant via le sélecteur ou cliquez sur “**En créer un pour moi**”.
 4. Vous pouvez à tout moment désélectionner le rôle en cliquant sur le bouton “**Réinitialiser**”.
 
-![Capture d'écran paramètre Rôle de Tag](../assets/rp-settings-tag-role.webp)
+<TagRoleMockup />
 
 :::tip
 Vos membres auront le rôle à leur prochaine modification de profil (Pseudo, Avatar, Bannière, Rôles, Tag…).

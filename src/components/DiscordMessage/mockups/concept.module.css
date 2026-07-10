@@ -1,0 +1,208 @@
+/* Mockups "concept" : compositions pédagogiques qui montrent le mécanisme
+ * d'une fonctionnalité (config → effet), dans l'esthétique Discord. */
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 1.25rem 0;
+  font-family: "gg sans", "Noto Sans", Helvetica, Arial, sans-serif;
+  color: #dbdee1;
+}
+
+html[data-theme="light"] .row {
+  color: #313338;
+}
+
+.arrow {
+  width: 38px;
+  height: 38px;
+  color: #949ba4;
+  flex-shrink: 0;
+}
+
+/* === Mini panneau de configuration === */
+
+.configCard {
+  background: #393b40;
+  border: 1px solid #4c4f55;
+  border-radius: 8px;
+  padding: 14px 16px;
+  min-width: 190px;
+}
+
+html[data-theme="light"] .configCard {
+  background: #f2f3f5;
+  border-color: #e1e2e4;
+}
+
+.configTitle {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.configTitle img {
+  width: 18px;
+  height: 18px;
+}
+
+.configValue {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(88, 101, 242, 0.3);
+  color: #c9cdfb;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+html[data-theme="light"] .configValue {
+  background: rgba(88, 101, 242, 0.15);
+  color: #4752c4;
+}
+
+/* === Mini profil Discord === */
+
+.profileCard {
+  width: 250px;
+  background: #232428;
+  border: 1px solid #3f4147;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+html[data-theme="light"] .profileCard {
+  background: #ffffff;
+  border-color: #e1e2e4;
+}
+
+.profileBanner {
+  height: 56px;
+  background: linear-gradient(120deg, #d35f5f, #7d3a8f);
+}
+
+.profileBody {
+  padding: 0 14px 14px;
+}
+
+.profileAvatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 4px solid #232428;
+  margin-top: -32px;
+  display: block;
+}
+
+html[data-theme="light"] .profileAvatar {
+  border-color: #ffffff;
+}
+
+.profileName {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 17px;
+  margin-top: 6px;
+}
+
+.serverTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: #2b2d31;
+  border: 1px solid #4c4f55;
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #dbdee1;
+}
+
+html[data-theme="light"] .serverTag {
+  background: #f2f3f5;
+  border-color: #d0d2d6;
+  color: #313338;
+}
+
+.serverTagNew {
+  border-color: #d35f5f;
+  box-shadow: 0 0 6px rgba(211, 95, 95, 0.55);
+}
+
+.serverTag svg {
+  width: 11px;
+  height: 11px;
+  color: #d35f5f;
+}
+
+.profileUsername {
+  font-size: 13px;
+  color: #b5bac1;
+  margin-top: 1px;
+}
+
+html[data-theme="light"] .profileUsername {
+  color: #5c5e66;
+}
+
+.rolesLabel {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #b5bac1;
+  margin: 12px 0 6px;
+}
+
+html[data-theme="light"] .rolesLabel {
+  color: #5c5e66;
+}
+
+.roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.roleChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #2b2d31;
+  border: 1px solid #3f4147;
+  border-radius: 10px;
+  padding: 2px 8px 2px 6px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+html[data-theme="light"] .roleChip {
+  background: #f2f3f5;
+  border-color: #d0d2d6;
+}
+
+.roleDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #949ba4;
+}
+
+.roleChipNew {
+  border-color: #d35f5f;
+  box-shadow: 0 0 6px rgba(211, 95, 95, 0.55);
+}
+
+.roleChipNew .roleDot {
+  background: #d35f5f;
+}
