@@ -91,6 +91,7 @@ function formatDiscordLines(text: string): ReactNode {
   const lines = text.split("\n");
   const result: ReactNode[] = [];
   let quoteBuffer: string[] = [];
+  let codeBuffer: string[] | null = null;
   let key = 0;
   // Une ligne rendue en bloc (titre, sous-texte, citation) crée déjà son
   // retour à la ligne : la ligne suivante ne doit pas ajouter de <br>.
@@ -114,6 +115,30 @@ function formatDiscordLines(text: string): ReactNode {
   };
 
   for (const line of lines) {
+    // ```bloc de code``` (une ligne ou fence multi-lignes)
+    const singleCode = line.match(/^```(.+)```$/);
+    if (singleCode) {
+      flushQuote();
+      result.push(<pre key={key++} className={styles.codeBlock}>{singleCode[1]}</pre>);
+      prevBlock = true;
+      continue;
+    }
+    if (codeBuffer !== null) {
+      if (line.startsWith("```")) {
+        result.push(<pre key={key++} className={styles.codeBlock}>{codeBuffer.join("\n")}</pre>);
+        codeBuffer = null;
+        prevBlock = true;
+      } else {
+        codeBuffer.push(line);
+      }
+      continue;
+    }
+    if (line.startsWith("```")) {
+      flushQuote();
+      codeBuffer = [];
+      continue;
+    }
+
     const quoteMatch = line.match(/^>\s?(.*)/);
     if (quoteMatch) {
       quoteBuffer.push(quoteMatch[1]);
