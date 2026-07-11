@@ -102,7 +102,14 @@ function StringSelectMenu({ component }: { component: StringSelect }) {
         onClick={() => !component.disabled && setOpen(!open)}
       >
         <span className={current ? styles.selectValue : styles.selectPlaceholder}>
-          {current ? current.label : component.placeholder || "Faites une sélection"}
+          {current ? (
+            <>
+              {current.emoji && renderEmoji(current.emoji)}
+              {current.label}
+            </>
+          ) : (
+            component.placeholder || "Faites une sélection"
+          )}
         </span>
         <ChevronDown />
       </div>
