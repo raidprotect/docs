@@ -4,7 +4,7 @@ title: Captcha (Vérification)
 
 import CaptchaMockup from '@site/src/components/DiscordMessage/mockups/captcha';
 
-<CaptchaMockup />
+{/* <CaptchaMockup /> : masquée pour le moment */}
 
 Empêchez les selfbots d'accéder à votre serveur Discord et bloquez les raids grâce au système de captcha de RaidProtect.
 
