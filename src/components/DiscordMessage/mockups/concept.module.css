@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  user-select: none;
   gap: 20px;
   flex-wrap: wrap;
   margin: 1.25rem 0;
@@ -55,8 +56,8 @@ html[data-theme="light"] .configCard {
 .configValue {
   display: inline-flex;
   align-items: center;
-  background: rgba(88, 101, 242, 0.3);
-  color: #c9cdfb;
+  background: rgba(211, 95, 95, 0.25);
+  color: #e89a9a;
   border-radius: 4px;
   padding: 2px 8px;
   font-size: 14px;
@@ -64,17 +65,17 @@ html[data-theme="light"] .configCard {
 }
 
 html[data-theme="light"] .configValue {
-  background: rgba(88, 101, 242, 0.15);
-  color: #4752c4;
+  background: rgba(211, 95, 95, 0.14);
+  color: #b84848;
 }
 
-/* === Mini profil Discord === */
+/* === Mini profil Discord (popup fidèle) === */
 
 .profileCard {
-  width: 250px;
-  background: #232428;
-  border: 1px solid #3f4147;
-  border-radius: 10px;
+  width: 270px;
+  background: #131418;
+  border: 1px solid #2e2f34;
+  border-radius: 12px;
   overflow: hidden;
 }
 
@@ -84,20 +85,25 @@ html[data-theme="light"] .profileCard {
 }
 
 .profileBanner {
-  height: 56px;
-  background: linear-gradient(120deg, #d35f5f, #7d3a8f);
+  height: 92px;
+  background: url("/img/identity/raidprotect-banner.webp") center / cover no-repeat;
 }
 
 .profileBody {
-  padding: 0 14px 14px;
+  padding: 0 16px 14px;
+}
+
+.profileAvatarWrap {
+  position: relative;
+  width: 84px;
+  margin-top: -44px;
 }
 
 .profileAvatar {
-  width: 64px;
-  height: 64px;
+  width: 84px;
+  height: 84px;
   border-radius: 50%;
-  border: 4px solid #232428;
-  margin-top: -32px;
+  border: 5px solid #131418;
   display: block;
 }
 
@@ -105,27 +111,62 @@ html[data-theme="light"] .profileAvatar {
   border-color: #ffffff;
 }
 
+.profileStatus {
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #23a55a;
+  border: 4px solid #131418;
+}
+
+html[data-theme="light"] .profileStatus {
+  border-color: #ffffff;
+}
+
 .profileName {
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 1.2;
+  margin-top: 8px;
+  color: #e08585;
+}
+
+.profileUsernameRow {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-weight: 700;
-  font-size: 17px;
-  margin-top: 6px;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.profileUsername {
+  font-size: 14px;
+  color: #fbfcff;
+}
+
+html[data-theme="light"] .profileUsername {
+  color: #313338;
 }
 
 .serverTag {
   display: inline-flex;
   align-items: center;
   gap: 3px;
-  background: #2b2d31;
-  border: 1px solid #4c4f55;
-  border-radius: 4px;
-  padding: 1px 5px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  color: #dbdee1;
+  height: 20px;
+  background: #2c2d32;
+  border: 1px solid #3c3d42;
+  border-radius: 8px;
+  padding: 0 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fbfcff;
+}
+
+.serverTag img {
+  width: 14px;
+  height: 14px;
 }
 
 html[data-theme="light"] .serverTag {
@@ -136,54 +177,35 @@ html[data-theme="light"] .serverTag {
 
 .serverTagNew {
   border-color: #d35f5f;
-  box-shadow: 0 0 6px rgba(211, 95, 95, 0.55);
-}
-
-.serverTag svg {
-  width: 11px;
-  height: 11px;
-  color: #d35f5f;
-}
-
-.profileUsername {
-  font-size: 13px;
-  color: #b5bac1;
-  margin-top: 1px;
-}
-
-html[data-theme="light"] .profileUsername {
-  color: #5c5e66;
-}
-
-.rolesLabel {
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  color: #b5bac1;
-  margin: 12px 0 6px;
-}
-
-html[data-theme="light"] .rolesLabel {
-  color: #5c5e66;
+  box-shadow: 0 0 7px rgba(211, 95, 95, 0.6);
 }
 
 .roles {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.roles > * {
+  margin-right: 6px;
+}
+
+.roles > *:last-child {
+  margin-right: 0;
 }
 
 .roleChip {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  background: #2b2d31;
-  border: 1px solid #3f4147;
-  border-radius: 10px;
-  padding: 2px 8px 2px 6px;
+  gap: 6px;
+  height: 24px;
+  background: rgba(151, 151, 159, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 0 8px 0 6px;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 html[data-theme="light"] .roleChip {
@@ -192,17 +214,1298 @@ html[data-theme="light"] .roleChip {
 }
 
 .roleDot {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background: #949ba4;
 }
 
 .roleChipNew {
   border-color: #d35f5f;
-  box-shadow: 0 0 6px rgba(211, 95, 95, 0.55);
+  box-shadow: 0 0 7px rgba(211, 95, 95, 0.6);
 }
 
 .roleChipNew .roleDot {
   background: #d35f5f;
+}
+
+.roleAdd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 24px;
+  border-radius: 8px;
+  background: rgba(151, 151, 159, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #b5bac1;
+  font-size: 15px;
+  line-height: 1;
+}
+
+html[data-theme="light"] .roleChip,
+html[data-theme="light"] .roleAdd {
+  border-color: rgba(0, 0, 0, 0.12);
+  background: #f2f3f5;
+}
+
+/* === Animation du Rôle de Tag === */
+
+.profileName {
+  transition: color 0.4s ease;
+}
+
+.profileNameMuted {
+  color: #f2f2f4;
+}
+
+html[data-theme="light"] .profileNameMuted {
+  color: #313338;
+}
+
+.tagIn {
+  animation: conceptTagIn 0.3s ease;
+}
+
+@keyframes conceptTagIn {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+}
+
+.roleChipNew {
+  max-width: 180px;
+  transition: max-width 0.35s ease, opacity 0.3s ease, transform 0.3s ease,
+    padding 0.35s ease, border-width 0.35s ease, margin 0.35s ease;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.roleLabel {
+  min-width: 0;
+}
+
+.roleHidden {
+  max-width: 0;
+  opacity: 0;
+  transform: scale(0.75);
+  padding-left: 0;
+  padding-right: 0;
+  border-width: 0;
+  margin-right: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tagIn {
+    animation: none;
+  }
+  .roleChipNew {
+    transition: none;
+  }
+}
+
+.serverTag svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* === Curseur animé (clic sur un bouton de mockup) === */
+
+.animWrap {
+  position: relative;
+  max-width: 420px;
+  margin: 1.25rem auto;
+  user-select: none;
+  /* Hauteur de l'état final (pris en charge) : l'espace des éléments qui
+     apparaissent est réservé sous le fil pour ne jamais pousser la page. */
+  min-height: 362px;
+}
+
+.tight > * {
+  margin: 0 auto;
+}
+
+.selectSlot {
+  margin: 8px 0;
+}
+
+.cursor {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 32px;
+  height: 32px;
+  margin-left: -210px;
+  z-index: 20;
+  pointer-events: none;
+  transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+}
+
+.cursorRest {
+  transform: translate(350px, 300px);
+  opacity: 1;
+}
+
+.cursorIn {
+  transform: translate(78px, 162px);
+  opacity: 1;
+}
+
+.cursorClick {
+  transform: translate(78px, 162px) scale(0.8);
+  transition: transform 0.12s ease, opacity 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    display: none;
+  }
+}
+
+/* === Mise en scène de salon (message + barre de saisie) === */
+
+.animWrapWide {
+  max-width: 500px;
+}
+
+.wide > * {
+  max-width: 500px;
+}
+
+.chatMessage {
+  display: flex;
+  gap: 12px;
+  padding: 8px 4px 2px;
+  animation: chatIn 0.25s ease;
+}
+
+@keyframes chatIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+.chatRemoved {
+  animation: chatOut 0.35s ease forwards;
+}
+
+@keyframes chatOut {
+  to {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+}
+
+.chatAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.chatBody {
+  min-width: 0;
+}
+
+.chatHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.chatName {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.chatTime {
+  font-size: 11px;
+  color: #949ba4;
+}
+
+.chatText {
+  font-size: 14px;
+  color: #dbdee1;
+  word-break: break-word;
+}
+
+html[data-theme="light"] .chatText {
+  color: #313338;
+}
+
+.systemLine {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 4px 0;
+  font-size: 13.5px;
+  color: #23a55a;
+  font-weight: 500;
+  animation: chatIn 0.25s ease;
+}
+
+.chatInput {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+  background: #383a40;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: #dbdee1;
+  min-height: 40px;
+}
+
+html[data-theme="light"] .chatInput {
+  background: #ebedef;
+  color: #313338;
+}
+
+.chatPlaceholder {
+  color: #6d6f78;
+}
+
+.caret {
+  display: inline-block;
+  width: 1.5px;
+  height: 16px;
+  margin-left: 1px;
+  background: #dbdee1;
+  vertical-align: text-bottom;
+  animation: caretBlink 1s steps(1) infinite;
+}
+
+html[data-theme="light"] .caret {
+  background: #313338;
+}
+
+@keyframes caretBlink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chatMessage,
+  .systemLine {
+    animation: none;
+  }
+}
+
+/* Hauteurs réservées des mises en scène (état le plus haut du cycle),
+   le tampon restant est en bas pour ne jamais pousser la page. */
+.captchaWrap,
+.honeypotWrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.captchaWrap {
+  min-height: 330px;
+}
+
+.honeypotWrap {
+  min-height: 385px;
+}
+
+.captchaWrap .chatInput,
+.honeypotWrap .chatInput {
+  margin-top: auto;
+}
+
+.systemLineDanger {
+  color: #f0b232;
+}
+
+/* === Scène anti-raid : flux d'arrivées + liste des membres === */
+
+.raidScene {
+  display: flex;
+  gap: 14px;
+  align-items: stretch;
+}
+
+.raidFeed {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.joinMsg {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: #b5bac1;
+  padding: 2px 0;
+  animation: chatIn 0.25s ease;
+}
+
+html[data-theme="light"] .joinMsg {
+  color: #5c5e66;
+}
+
+.joinArrow {
+  width: 16px;
+  height: 16px;
+  color: #23a55a;
+  flex-shrink: 0;
+}
+
+.joinMsg strong {
+  color: #dbdee1;
+  font-weight: 600;
+}
+
+html[data-theme="light"] .joinMsg strong {
+  color: #313338;
+}
+
+.joinTime {
+  font-size: 11px;
+  color: #6d6f78;
+}
+
+.raidAlert {
+  margin-top: auto;
+  background: #393b40;
+  border: 1px solid #4c4f55;
+  border-left: 4px solid #e59400;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13.5px;
+  color: #dbdee1;
+  animation: chatIn 0.3s ease;
+}
+
+html[data-theme="light"] .raidAlert {
+  background: #f2f3f5;
+  border-color: #e1e2e4;
+  border-left-color: #e59400;
+  color: #313338;
+}
+
+.raidAlertTitle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.raidAlertTitle img {
+  width: 16px;
+  height: 16px;
+}
+
+.memberList {
+  width: 168px;
+  flex-shrink: 0;
+  background: #2b2d31;
+  border: 1px solid #3f4147;
+  border-radius: 8px;
+  padding: 10px 10px 6px;
+}
+
+html[data-theme="light"] .memberList {
+  background: #f2f3f5;
+  border-color: #e1e2e4;
+}
+
+.memberHeader {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #949ba4;
+  margin-bottom: 6px;
+}
+
+.memberRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 2px;
+  font-size: 13.5px;
+  font-weight: 500;
+  max-height: 34px;
+  animation: chatIn 0.25s ease;
+}
+
+.memberRow img {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.memberName {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.memberBot {
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
+  padding: 0 4px 0 2px;
+  height: 14px;
+  border-radius: 3px;
+  background: #5865f2;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.memberBot svg {
+  width: 11px;
+  height: 11px;
+  flex-shrink: 0;
+}
+
+.memberKicked {
+  transition: opacity 0.3s ease, max-height 0.35s ease, padding 0.35s ease;
+  opacity: 0;
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+}
+
+.raidScene {
+  min-height: 336px;
+}
+
+.commandMention {
+  background: rgba(88, 101, 242, 0.3);
+  color: #c9cdfb;
+  border-radius: 3px;
+  padding: 0 3px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+html[data-theme="light"] .commandMention {
+  background: rgba(88, 101, 242, 0.15);
+  color: #4752c4;
+}
+
+.memberNameRP {
+  color: #d35f5f;
+  font-weight: 600;
+}
+
+/* === Scène fermeture des MP : campagne de mass DM bloquée === */
+
+.dmWrap {
+  min-height: 0;
+}
+
+.dmScene {
+  display: flex;
+  gap: 14px;
+  align-items: stretch;
+  min-height: 226px;
+}
+
+.dmFeed {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dmCampaign {
+  font-size: 12px;
+  font-style: italic;
+  color: #949ba4;
+  margin-top: 2px;
+}
+
+.dmError {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 6px 4px 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: #f23f43;
+  animation: chatIn 0.25s ease;
+}
+
+.dmError svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.dmFriendTag {
+  font-size: 10px;
+  color: #949ba4;
+  flex-shrink: 0;
+}
+
+.dmStatus {
+  margin-left: auto;
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.dmStatus svg {
+  width: 14px;
+  height: 14px;
+}
+
+.dmStatusBlocked {
+  color: #f23f43;
+}
+
+.dmStatusOk {
+  color: #23a55a;
+}
+
+.dmSpinner {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(151, 151, 159, 0.25);
+  border-top-color: #b5bac1;
+  animation: dmSpin 0.7s linear infinite;
+}
+
+html[data-theme="light"] .dmSpinner {
+  border-color: rgba(76, 79, 85, 0.2);
+  border-top-color: #5c5e66;
+}
+
+@keyframes dmSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* === Scène anti-spam === */
+
+.chatCompact {
+  padding: 0 4px 2px 56px;
+  animation: chatIn 0.2s ease;
+}
+
+.spamWrap {
+  overflow: hidden;
+  max-height: 90px;
+  transition: max-height 0.35s ease, opacity 0.3s ease;
+}
+
+.spamCollapsed {
+  max-height: 0;
+  opacity: 0;
+}
+
+.antispamWrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 380px;
+}
+
+/* === Scène signalement : deux salons, menu contextuel, modal === */
+
+.reportsWrap {
+  max-width: 560px;
+  min-height: 390px;
+}
+
+.reportScene {
+  position: relative;
+  display: flex;
+  gap: 12px;
+  min-height: 390px;
+}
+
+.channelBar {
+  width: 150px;
+  flex-shrink: 0;
+  background: #2b2d31;
+  border: 1px solid #3f4147;
+  border-radius: 8px;
+  padding: 8px 6px;
+  align-self: stretch;
+}
+
+html[data-theme="light"] .channelBar {
+  background: #f2f3f5;
+  border-color: #e1e2e4;
+}
+
+.channelItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #949ba4;
+}
+
+.channelHash {
+  font-weight: 400;
+  color: #80848e;
+}
+
+.channelActive {
+  background: #393b40;
+  color: #f2f3f4;
+}
+
+html[data-theme="light"] .channelActive {
+  background: #e3e5e8;
+  color: #313338;
+}
+
+.channelBadge {
+  margin-left: auto;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  background: #f23f43;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  animation: badgePulse 1s ease infinite;
+}
+
+@keyframes badgePulse {
+  50% {
+    transform: scale(1.25);
+  }
+}
+
+.reportContent {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.ctxMenu {
+  position: absolute;
+  z-index: 8;
+  width: 200px;
+  background: #111214;
+  border: 1px solid #2e2f34;
+  border-radius: 8px;
+  padding: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  animation: chatIn 0.15s ease;
+}
+
+.ctxItem {
+  padding: 6px 8px;
+  border-radius: 4px;
+  font-size: 13.5px;
+  color: #dbdee1;
+}
+
+.ctxItemHover {
+  background: #4752c4;
+  color: #fff;
+}
+
+.ctxItemDanger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #f23f43;
+}
+
+.ctxItemDanger img {
+  width: 15px;
+  height: 15px;
+}
+
+.ctxSep {
+  height: 1px;
+  background: #2e2f34;
+  margin: 4px 6px;
+}
+
+.modalOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 9;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 8px;
+  animation: chatIn 0.15s ease;
+}
+
+.modal {
+  position: absolute;
+  z-index: 10;
+  top: 14px;
+  left: 170px;
+  width: 320px;
+  background: #313338;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+  animation: chatIn 0.2s ease;
+}
+
+.modalBody {
+  padding: 16px;
+}
+
+.modalTitle {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.modalLabel {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #b5bac1;
+  margin-bottom: 6px;
+}
+
+.modalInput {
+  background: #1e1f22;
+  border-radius: 4px;
+  padding: 9px 10px;
+  font-size: 14px;
+  color: #dbdee1;
+  min-height: 38px;
+}
+
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 14px;
+  background: #2b2d31;
+  padding: 12px 16px;
+}
+
+.modalCancel {
+  font-size: 14px;
+  color: #dbdee1;
+}
+
+.modalSubmit {
+  background: #d22d39;
+  color: #fff;
+  border-radius: 8px;
+  padding: 7px 18px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* === Scène signalement : sous-menu Applications et modal enrichie === */
+
+.channelClickable {
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.channelClickable:hover {
+  background: #35373c;
+  color: #dbdee1;
+}
+
+html[data-theme="light"] .channelClickable:hover {
+  background: #e3e5e8;
+  color: #313338;
+}
+
+.ctxItemFlex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.ctxChevron {
+  width: 12px;
+  height: 12px;
+  color: #949ba4;
+  flex-shrink: 0;
+}
+
+.ctxSub {
+  position: absolute;
+  z-index: 9;
+  width: 210px;
+  background: #111214;
+  border: 1px solid #2e2f34;
+  border-radius: 8px;
+  padding: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  animation: chatIn 0.12s ease;
+}
+
+.ctxAppIcon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.ctxItemApp {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+
+
+
+
+
+
+.modalHint {
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #6d6f78;
+}
+
+
+
+.modalSection {
+  margin-bottom: 12px;
+}
+
+
+.modalDocs {
+  background: #2b2d31;
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+}
+
+.modalDocsTitle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 700;
+  margin-bottom: 3px;
+}
+
+.modalDocsTitle img {
+  width: 15px;
+  height: 15px;
+}
+
+.modalDocsText {
+  font-size: 12.5px;
+  color: #b5bac1;
+  line-height: 1.4;
+}
+
+.modalDesc {
+  font-size: 11.5px;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #949ba4;
+  margin: -3px 0 6px;
+}
+
+.modalCheck {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: #1e1f22;
+  border-radius: 4px;
+  padding: 9px 10px;
+  font-size: 13px;
+  color: #dbdee1;
+}
+
+.modalCheckBox {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #6d6f78;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+
+
+/* Fond jaune de mention (message qui ping @everyone) */
+.chatPinged {
+  background: rgba(240, 178, 50, 0.09);
+  border-left: 2px solid #f0b232;
+  padding-left: 10px;
+  margin-left: -12px;
+  border-radius: 0 4px 4px 0;
+}
+
+html[data-theme="light"] .chatPinged {
+  background: rgba(240, 178, 50, 0.14);
+}
+
+
+.flushLeft > * {
+  margin: 4px 0 0;
+}
+
+/* === Scène Authentication Manager === */
+
+.authWrap {
+  position: relative;
+  max-width: 620px;
+  margin: 1.25rem auto;
+  user-select: none;
+}
+
+.authScene {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  min-height: 340px;
+}
+
+.authRight {
+  width: 290px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.authRight .chatInput {
+  margin-top: 12px;
+}
+
+.authVerify {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #393b40;
+  border: 1px solid #4c4f55;
+  border-radius: 10px;
+  padding: 28px 20px;
+  animation: chatIn 0.25s ease;
+}
+
+html[data-theme="light"] .authVerify {
+  background: #f2f3f5;
+  border-color: #e1e2e4;
+}
+
+.authVerify img {
+  width: 34px;
+  height: 34px;
+}
+
+.authVerifyLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: #b5bac1;
+}
+
+.authCheck {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #23a55a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: authPop 0.35s cubic-bezier(0.3, 1.6, 0.6, 1);
+}
+
+.authCheck svg {
+  width: 26px;
+  height: 26px;
+  color: #fff;
+}
+
+@keyframes authPop {
+  from {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+}
+
+.authVerified {
+  color: #23a55a;
+}
+
+
+/* États forcés du bouton pendant le passage de la souris simulée */
+.panelHover button {
+  background: #4752c4;
+}
+
+.panelActive button {
+  background: #3c45a5;
+  transform: translateY(1px);
+}
+
+.authCross {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #d22d39;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: authPop 0.35s cubic-bezier(0.3, 1.6, 0.6, 1);
+}
+
+.authCross svg {
+  width: 24px;
+  height: 24px;
+  color: #fff;
+}
+
+.authFailed {
+  color: #d22d39;
+}
+
+/* === Scène audit de sécurité (schématique) === */
+
+.auditWrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 302px;
+}
+
+.auditInvoked {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  color: #949ba4;
+  padding: 2px 4px 6px;
+}
+
+.auditInvoked img {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.auditInvoked strong {
+  color: #dbdee1;
+  font-weight: 600;
+}
+
+.auditFlex {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.auditCard {
+  flex-shrink: 0;
+  max-width: 300px;
+  background: #393b40;
+  border: 1px solid #4c4f55;
+  border-left: 4px solid #e58422;
+  border-radius: 8px;
+  padding: 14px 16px;
+  transition: border-left-color 0.5s ease;
+}
+
+html[data-theme="light"] .auditCard {
+  background: #f2f3f5;
+  border-color: #e1e2e4;
+  border-left-color: #e58422;
+}
+
+.auditCardClean {
+  border-left-color: #23a55a;
+}
+
+html[data-theme="light"] .auditCardClean {
+  border-left-color: #23a55a;
+}
+
+.auditTitle {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.auditTitle img {
+  width: 18px;
+  height: 18px;
+}
+
+.auditGuild {
+  font-size: 12px;
+  color: #949ba4;
+  margin: 1px 0 10px 25px;
+}
+
+.auditScore {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14.5px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.auditScore img {
+  width: 24px;
+  height: 24px;
+}
+
+.gaugeRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.gaugeLabel {
+  width: 64px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.gaugeLabel img {
+  width: 15px;
+  height: 15px;
+}
+
+.gauge {
+  display: block;
+  flex: 1;
+  height: 8px;
+  background: #2b2d31;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+html[data-theme="light"] .gauge {
+  background: #e1e2e4;
+}
+
+.gaugeFill {
+  display: block;
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.7s ease, background-color 0.5s ease;
+}
+
+.gaugeValue {
+  width: 30px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: #b5bac1;
+  flex-shrink: 0;
+  font-size: 12px;
+}
+
+.auditFix {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  background: #008545;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.15s ease;
+}
+
+.auditFixHover {
+  background: #00753d;
+}
+
+.auditFixActive {
+  background: #00602f;
+  transform: translateY(1px);
+}
+
+.auditClean {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #23a55a;
+  animation: chatIn 0.25s ease;
+}
+
+.auditClean img {
+  width: 16px;
+  height: 16px;
+}
+
+.auditEdited {
+  font-size: 11px;
+  font-weight: 400;
+  color: #6d6f78;
+}
+
+
+.auditLogs {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  padding-top: 6px;
+}
+
+.auditLogItem {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #2b2d31;
+  border: 1px solid #3f4147;
+  border-radius: 6px;
+  padding: 6px 9px;
+  font-size: 12px;
+  color: #b5bac1;
+  animation: chatIn 0.3s ease backwards;
+}
+
+html[data-theme="light"] .auditLogItem {
+  background: #f2f3f5;
+  border-color: #e1e2e4;
+  color: #5c5e66;
+}
+
+.auditLogItem img {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
 }
