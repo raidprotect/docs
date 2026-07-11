@@ -795,6 +795,9 @@ html[data-theme="light"] .threadLastContent {
 
 /* === Select dropdown === */
 .selectValue {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -885,4 +888,26 @@ html[data-theme="light"] .selectOption:hover {
 
 .mdH2 {
   font-size: 22px;
+}
+
+
+.codeBlock {
+  display: block;
+  background: #1e1f22;
+  border: 1px solid #2b2d31;
+  border-radius: 4px;
+  padding: 8px 10px;
+  margin: 4px 0 2px;
+  font-family: "SF Mono", "Consolas", "Monaco", monospace;
+  font-size: 13px;
+  line-height: 1.35;
+  color: #dbdee1;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+html[data-theme="light"] .codeBlock {
+  background: #f2f3f5;
+  border-color: #e1e2e4;
+  color: #313338;
 }
