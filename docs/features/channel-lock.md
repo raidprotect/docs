@@ -4,7 +4,7 @@ title: Verrouillage de salons
 
 import ChannelLockMockup from '@site/src/components/DiscordMessage/mockups/channel-lock';
 
-<ChannelLockMockup />
+{/* <ChannelLockMockup /> : masquée pour le moment */}
 
 Il arrive parfois qu’il soit nécessaire de verrouiller temporairement un salon pour empêcher les utilisateurs d’y envoyer des messages. Grâce à la commande de verrouillage, cela devient un jeu d’enfant !
 
