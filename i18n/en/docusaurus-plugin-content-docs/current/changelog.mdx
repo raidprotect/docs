@@ -6,6 +6,49 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Discover the detailed list of changes made to RaidProtect.
 
+## 3.3.4 (13/07/2026) {#3-3-4}
+
+- [Anti-spam](./features/anti-spam.mdx) V2:
+  - **Multi-channel spam**: a dedicated sanction when the spam spans several channels (Jail by default, Timeout minimum).
+  - New **attachment spam** [trigger](./features/anti-spam.mdx#triggers) (disabled by default).
+  - Spam messages are now **deleted whatever the sanction** (ban, jail, mute, kick or timeout).
+  - The **anti-scam sanction is configurable** from the [anti-spam sanctions menu](./features/anti-spam.mdx#sanctions) and follows the [HoneyPot sanction](./features/honeypot.md#sanction) by default; anti-scam incidents are sanctioned and logged instantly.
+  - Each trigger can be disabled individually with the new **Disable** option, and the sensitivity levels are replaced by a simple toggle.
+  - **Mute** and **Jail** fall back to a capped timeout when the corresponding role is not configured.
+  - Selfbots sending rich embeds are flagged, and scams blocked by ScamLens are counted in the [HoneyPot](./features/honeypot.md) flagged-accounts counter.
+- Complete rework of the **[Reports](./features/reports.md)** system:
+  - Reports are now grouped into **incidents**: several reports about the same member fold into a single incident, with a [configurable grouping mode](./features/reports.md#group).
+  - The report commands now open a **reason modal**, with a "what are you reporting" checklist on profile reports (including voice and DM activity).
+  - Each incident now opens a **thread** under the report: profile card of the reported member, per-message reason headers, name of the resolving moderator and rejection notes.
+  - New [reporter notification](./features/reports.md#notify): reporters can be notified in DM when their report is handled, with a configurable detail level (up to the accepted/rejected outcome).
+  - New [trusted role](./features/reports.md#trusted-role) (**Premium**): trusted members can apply a **preventive 24h timeout** when reporting, and their urgent reports ping the moderation role again.
+  - New [bad reporters protection](./features/reports.md#bad-reporters): repeat false reporters can be flagged, blocked or sanctioned automatically (configurable threshold, window and mode).
+  - Open report incidents are automatically closed when the member is sanctioned.
+  - Preventive sanctions are rewritten when a report is accepted, and cancelled when it is rejected.
+- New **[Transparency](./features/transparency.md)** system:
+  - [Periodic recaps](./features/transparency.md#recaps) of the server's moderation activity, posted automatically on a configurable schedule.
+  - New [public modlog](./features/transparency.md#modlog): sanctions can be published in a public channel, filtered by type and source, with a one-click creation of a read-only #public-modlog channel.
+  - New [`/transparency` command](./features/transparency.md#command) to show the recap of the last closed period on demand.
+- New [`/audit` command](./features/audit.md): a full **security audit** of the server with an overall score, [detailed checks](./features/audit.md#checks) (verification level, permissions, channels) and [one-click fixes](./features/audit.md#fix). Admin roles can be integrated into the Authentication Manager directly from the audit.
+- New [kick mode](./features/raid-mode.md#kick-mode) (**Premium**) for the raid mode and the join lock: newcomers are kicked with an explanation DM and a rejoin invite button, instead of natively pausing invites. The new [`/bypass raid` command](./features/raid-mode.md#bypass-raid) lets specific users in while it is active.
+- Message commands now follow the **Discord command permissions** (Integrations tab), with a read-only permissions panel in `/settings`.
+- RaidProtect now replies under **Discord's security incident alerts** when they are caused by the [DM Lock](./features/dm-lock.mdx), quoting the alert and explaining where to adjust the setting.
+- The [minimum account age](./features/raid-mode.md#minage) kick log now shows the required threshold as a timestamp.
+- Settings and setup:
+  - The `/settings` main menu is reorganized into logical rows.
+  - The setup message now links the commands directly and offers a button to change the log channel.
+  - A **disable captcha** button is offered when the captcha channel was deleted.
+- Internal migration of the Discord layer to shared libraries (`@fca.gg/discord`) to speed up future updates.
+- Fixes:
+  - Clearer error messages distinguishing **timeout** from **mute**, and administrator targets from role hierarchy issues.
+  - Fixed the automatic conversion of Discord AutoMod timeouts.
+  - Fixed `/serverinfo` vanity URL access, rules and statistics display.
+  - Fixed the `/discord-sanctions` alias and message-command prefix usage.
+  - Fixed the Jail applied to administrators with the replace-roles mode.
+  - Hardened webhook URL validation.
+  - Various fixes: sanction logs, captcha, DM Lock messages, moderation notes, Premium detection.
+  - Various translation fixes.
+
 ## 3.3.3 (30/04/2026) {#3-3-3}
 
 - New [command `/modview`](./features/moderation.mdx#modview) to open a centralized moderation view of a member (sanctions, note, snipe). <SuggestionLink id="544" />
