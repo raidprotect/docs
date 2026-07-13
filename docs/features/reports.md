@@ -2,6 +2,8 @@
 title: Signalements
 ---
 
+import { ReportsSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
+
 import ReportsMockup from '@site/src/components/DiscordMessage/mockups/reports';
 
 <ReportsMockup />
@@ -31,7 +33,7 @@ Remplacez `(membre)` par l'utilisateur souhaité et `(raison)` par le motif de l
 
 Avant que le système de signalement ne soit pleinement fonctionnel, il est impératif de configurer un **salon de signalement** où tous les signalements seront envoyés. Vous devez définir un salon de logs ou de notifications pour recevoir les alertes concernant les signalements.
 
-![Capture d'écran paramètre signalements](../assets/rp-settings-reports.webp)
+<ReportsSettingsMockup />
 
 ### Configurer le salon {#config-channel}
 
