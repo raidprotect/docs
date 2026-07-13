@@ -45,7 +45,9 @@ La commande `/settings` est la commande de gestion de vos paramètres une fois l
 2. Naviguez facilement entre les différentes sections pour trouver les paramètres que vous souhaitez modifier.
 3. Ajustez les options : Chaque catégorie présente une liste d’options modifiables sous forme de boutons ou menus déroulants.
 
-![Capture d'écran paramètres](./assets/rp-settings.webp)
+import SettingsMockup from '@site/src/components/DiscordMessage/mockups/settings';
+
+<SettingsMockup />
 
 ### 🔄 Réinitialiser un paramètre {#reset}
 
