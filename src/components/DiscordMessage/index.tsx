@@ -73,22 +73,31 @@ function Thread({ thread }: { thread: ThreadData }) {
 export default function DiscordMessage({
   message,
   pages,
+  actions,
   thread,
 }: {
   message: DiscordMessageData;
   pages?: Record<string, DiscordMessageData>;
+  /* Boutons interactifs sans navigation : la callback est appelée au clic
+     (toggles des mockups de configuration). */
+  actions?: Record<string, () => void>;
   thread?: ThreadData;
 }) {
   const [currentPage, setCurrentPage] = useState<string | null>(null);
   const pageKeys = pages ? new Set([...Object.keys(pages), "__back__"]) : new Set<string>();
+  if (actions) {
+    for (const key of Object.keys(actions)) pageKeys.add(key);
+  }
 
   const current = currentPage && pages?.[currentPage] ? pages[currentPage] : message;
   const { content, embeds, components } = current;
 
   const handleNavigate = (customId: string) => {
-    if (customId === "__back__") {
+    if (actions?.[customId]) {
+      actions[customId]();
+    } else if (customId === "__back__") {
       setCurrentPage(null);
-    } else if (pageKeys.has(customId)) {
+    } else if (pages?.[customId]) {
       setCurrentPage(customId);
     }
   };
