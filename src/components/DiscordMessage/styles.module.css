@@ -135,10 +135,19 @@ a.embedAuthorName:hover {
 .embedTitle {
   font-size: 16px;
   font-weight: 600;
-  color: #00aff4;
+  color: #f2f3f5;
 }
 
 html[data-theme="light"] .embedTitle {
+  color: #313338;
+}
+
+/* Le titre n'est bleu que lorsqu'il est cliquable (embed.url) */
+a.embedTitle {
+  color: #00aff4;
+}
+
+html[data-theme="light"] a.embedTitle {
   color: #006ce7;
 }
 
@@ -354,6 +363,9 @@ html[data-theme="light"] .buttonLink:hover:not(:disabled) {
 .selectWrap {
   position: relative;
   width: 100%;
+  /* Même plafond que .embed : les sélecteurs gardent la largeur de
+     l'embed au-dessus d'eux. */
+  max-width: 520px;
 }
 
 .select {
@@ -541,14 +553,29 @@ html[data-theme="light"] .fileName {
 
 /* === Container === */
 .container {
+  position: relative;
   border-radius: 8px;
   border: 1px solid #4c4f55;
-  border-left: 4px solid transparent;
   background: #393b40;
   padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+.containerAccent {
+  padding-left: 20px;
+}
+
+/* Barre d'accent droite comme sur les embeds : rayon léger (4px) sur les
+   coins extérieurs gauches uniquement, bords haut/bas droits. */
+.containerAccentBar {
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  width: 4px;
+  border-radius: 4px 0 0 4px;
 }
 
 html[data-theme="light"] .container {
