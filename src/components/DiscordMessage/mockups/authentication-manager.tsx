@@ -58,8 +58,10 @@ export default function AuthenticationManagerMockup() {
   const [arrived, setArrived] = useState(false);
   const sceneRef = useRef<HTMLDivElement>(null);
   const animated = useRef(false);
-  // Un cycle sur deux, l'authentification est refusée.
+  // Un cycle sur deux, l'authentification est refusée : c'est le cycle
+  // "hacker sur le compte", affiché dès le début du cycle sur le cadre.
   const attempt = useRef(0);
+  const [hacker, setHacker] = useState(false);
 
   useEffect(() => {
     setArrived(false);
@@ -103,6 +105,7 @@ export default function AuthenticationManagerMockup() {
     const t = setTimeout(() => {
       if (phase === 7 || phase === 8) {
         attempt.current++;
+        setHacker(attempt.current % 2 === 1);
         setTyped(0);
         setPhase(0);
       } else if (phase === 4) {
@@ -155,7 +158,15 @@ export default function AuthenticationManagerMockup() {
   return (
     <div className={concept.authWrap} aria-hidden>
       <div className={concept.authScene} ref={sceneRef}>
-        <div className={concept.authRight}>
+        <div className={`${concept.authRight} ${hacker ? concept.authFrameDanger : concept.authFrameOk}`}>
+          <svg className={concept.authFrameGlow} aria-hidden="true">
+            <rect rx={9} pathLength={100} />
+          </svg>
+          <span className={concept.authFrameLabel}>
+            {hacker
+              ? translate({ id: "mockup.authConcept.frameHacker", message: "Hacker sur le compte" })
+              : translate({ id: "mockup.authConcept.frameLegit", message: "Personne légitime" })}
+          </span>
           {panelOpen && (
             <div
               className={`${concept.tight} ${
