@@ -2,6 +2,8 @@
 title: Langue
 ---
 
+import { LanguageSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
+
 RaidProtect vous permet de choisir la langue utilisée par le bot pour s’adapter au mieux à votre communauté Discord.
 
 :::note
@@ -26,7 +28,7 @@ Si votre serveur est défini comme communautaire (paramètre Discord), RaidProte
 - Sélectionnez le bouton “**Langue**”.
 - Sélectionnez la langue souhaitée.
 
-![Capture d'écran paramètre langues](./assets/rp-settings-language.webp)
+<LanguageSettingsMockup />
 
 Une fois la langue sélectionnée, le bot adaptera automatiquement tous ses messages, notifications et commandes à la langue choisie pour votre serveur.
 
