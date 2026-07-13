@@ -2,6 +2,8 @@
 title: Utilisation d'un préfix
 ---
 
+import { PrefixSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
+
 ## Préfixe désactivé (par défaut) {#disabled}
 
 Par défaut, RaidProtect utilise uniquement les commandes Slash (`/`) pour interagir avec le bot. Cela garantit une utilisation intuitive et cohérente avec les standards de Discord.
@@ -33,7 +35,7 @@ Si vous préférez utiliser certaines commandes avec un préfixe personnalisé, 
 3. Activez ou désactivez le préfixe selon vos préférences.
 Si activé, personnalisez le préfixe en saisissant le caractère ou la chaîne souhaitée.
 
-![Capture d'écran paramètre préfixe](../assets/rp-settings-prefix.webp)
+<PrefixSettingsMockup />
 
 :::note
 Les commandes Slash (`/`) restent disponibles même si le préfixe est activé.
