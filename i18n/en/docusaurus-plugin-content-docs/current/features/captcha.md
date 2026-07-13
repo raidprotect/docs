@@ -2,15 +2,19 @@
 title: Captcha (Verification)
 ---
 
+import CaptchaMockup from '@site/src/components/DiscordMessage/mockups/captcha';
+
+{/* <CaptchaMockup /> : hidden for now */}
+
 Prevent selfbots from accessing your Discord server and block raids with RaidProtect's captcha system.
 
-The captcha is one of the most popular features of RaidProtect, although it remains entirely optional. It allows you to require each new user to complete a challenge consisting of entering a code, in order to verify that they are not a bot (selfbot).
+The captcha is one of RaidProtect's most popular features, although it remains entirely optional. It requires each new user to complete a challenge consisting of typing a code, in order to verify that they are not a bot (selfbot).
 
 ## ❓ How the captcha works {#working}
 
 The captcha relies on an **@Unverified** role and a channel named **#verification**. When a user joins your server:
-- The bot automatically assigns the **@Unverified** role to this user, limiting their access to only the **#verification** channel.
-- In this channel, an image containing 6 uppercase letters is sent by the bot. The user must type the letters in the channel to prove they are human.
+- The bot automatically assigns the **@Unverified** role to that user, limiting their access to only the **#verification** channel.
+- In this channel, the bot sends an image containing 6 uppercase letters. The user must type the letters in the channel to prove they are human.
 - If the answer is correct, the **@Unverified** role is removed and the user gains normal access to the server. Otherwise, they are automatically kicked.
 - When the captcha is enabled, RaidProtect automatically posts a message in the logs channel, indicating the account creation date of each new user.
 - RaidProtect automatically detects permission issues (channel and role) as well as the default visibility of the channel during the Discord onboarding process.
@@ -28,7 +32,7 @@ Setting up the captcha is quick and easy.
 
 1. Run the [`/settings` command](../setup.md#settings).
 2. Click the "**Captcha**" button.
-3. Choose the channel where captchas will be performed or use the "**Create one for me**" button.
+3. Choose the channel where captchas will be completed or use the "**Create one for me**" button.
 4. The **@Unverified** role is automatically created and configured.
 5. Configure the number of allowed attempts (between 1 and 3) and the maximum solving time (between 1 and 10 minutes).
 
@@ -60,4 +64,4 @@ If you use an automatic role (autorole) system other than RaidProtect, it may in
 
 Use the command: ```/bypass captcha [user]```
 
-Replace `[user]` with the desired identifier; they will have 10 minutes to join the server without needing to solve the captcha. If the user is already present, the captcha will be automatically resolved. You can also use the command without specifying a user to see the current list of bypassed users.
+Replace `[user]` with the desired identifier; that user will have 10 minutes to join the server without needing to solve the captcha. If the user is already present, the captcha will be resolved automatically. You can also use the command without specifying a user to see the current list of bypassed users.

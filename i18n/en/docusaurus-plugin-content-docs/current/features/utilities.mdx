@@ -13,7 +13,7 @@ In addition to core features like the captcha system and anti-raid protection, R
 
 ## 📋 Duplicate a Channel {#channel-duplicate}
 
-The `/channel duplicate` command allows you to fully duplicate a channel, including all its settings, permissions, and configurations. It goes beyond Discord's native feature, which does not allow duplicating **categories** and **certain specific settings** such as forum channel tags.
+The `/channel duplicate` command allows you to fully duplicate a channel, including all its settings, permissions, and configurations. It goes beyond Discord's native feature, which cannot duplicate **categories** and **certain specific settings** such as forum channel tags.
 
 Use the command: ```/channel duplicate [channel]```
 
@@ -31,12 +31,12 @@ This command duplicates all of the following elements:
 
 ### ⚙️ RaidProtect Configurations {#duplicate-config}
 
-When you duplicate a channel that has internal RaidProtect configurations, the bot will automatically offer you the option to:
+When you duplicate a channel that has internal RaidProtect configurations, the bot automatically offers you the option to:
 
 - **Replace** the existing configuration to use the new channel
 - **Duplicate** the configuration to keep both channels configured
 
-**Example**: If you duplicate the logs channel, RaidProtect will ask whether you want to update its configuration so that the new channel becomes the logs channel, or keep both channels configured according to your preference.
+**Example**: If you duplicate the logs channel, RaidProtect will offer to update its configuration so that the new channel becomes the logs channel, or to keep both channels configured, according to your preference.
 
 ## 🗑️ Delete and re-create a Channel {#channel-clear}
 
@@ -64,6 +64,14 @@ Replace `[duration]` with the desired number of days of inactivity. The bot disp
 ## 🚫 Block Users {#block}
 
 The `/block` command allows you to prevent a user from using certain RaidProtect features on your server (for example, sending reports or receiving the tag role).
+
+When blocking or unblocking, RaidProtect lets you choose which features are affected:
+
+| Type | Effect |
+|---|---|
+| **All interactions** | Blocks every interaction with the bot |
+| **Reports** | The user will no longer be able to send a [report](./reports.md) |
+| **Tag Role** | The user will no longer be able to receive the [tag role](./tag-role.md) |
 
 ### Block a user {#block-add}
 
@@ -99,7 +107,7 @@ Use the command: ```/serverinfo```
 
 ## 💬 Share feedback {#feedback}
 
-The `/feedback` command lets any server member **share feedback, a suggestion or a bug report** directly from Discord, without having to join the support server.
+The `/feedback` command lets any server member **share feedback, a suggestion, or a bug report** directly from Discord, without having to join the support server.
 
 Use the command: ```/feedback```
 
@@ -114,7 +122,7 @@ Use the command: ```/userinfo [user]```
 Replace `[user]` with the desired mention or ID.
 
 :::info
-The `userinfo` command is [usable by prefix](../guides/prefix.md).
+The `userinfo` command is [usable with a prefix](../guides/prefix.md).
 :::
 
 ### 📋 Displayed Information {#displayed-userinfo}
@@ -123,7 +131,7 @@ The `userinfo` command is [usable by prefix](../guides/prefix.md).
 - User's **profile picture**
 - **Profile banner**
 - **Profile badges**
-  - The Nitro, Booster, Quest, and Originally Name badges are not displayed.
+  - The Nitro, Booster, Quest, and Former name badges are not displayed.
 
 
 ### 🎭 Information about a server member {#displayed-memberinfo}
@@ -178,7 +186,7 @@ If the target is a server member, additional info includes:
     1️⃣ Has the permission:
     - `ADMINISTRATOR`
 
-    2️⃣ Has **all three** of the following permissions at the same time:
+    2️⃣ Has **all three of the following permissions at the same time**:
     - `MANAGE_GUILD`
     - `MANAGE_ROLES`
     - `MANAGE_CHANNELS`
@@ -202,18 +210,18 @@ If the target is a server member, additional info includes:
 | `STARTED_ONBOARDING`                     | <Icon src="/img/icons/OnboardingStarted.svg" alt="icon OnboardingStarted" title=":OnboardingStarted:"/>                | Started the onboarding process.                                   |
 | `COMPLETED_SERVER_GUIDE`                 | <Icon src="/img/icons/ServerGuideCompleted.svg" alt="icon ServerGuideCompleted" title=":ServerGuideCompleted:"/>       | Completed the server guide if enabled.                            |
 | `STARTED_SERVER_GUIDE`                   | <Icon src="/img/icons/ServerGuideStarted.svg" alt="icon ServerGuideStarted" title=":ServerGuideStarted:"/>             | Started the server guide.                                         |
-| `AUTOMOD_QUARANTINED_NAME`               | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | Quarantined by automoderation for the username.                   |
-| `AUTOMOD_QUARANTINED_GUILD_TAG`          | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | Quarantined by automoderation for the tag or nickname.            |
-| `BYPASSES_VERIFICATION`                  | <Icon src="/img/icons/BypassVerification.svg" alt="icon BypassVerification" title=":BypassVerification:"/>             | User can bypass server verification.                              |
-| `SPAMMER`                                | <Icon src="/img/icons/UnusualAccountActivity.svg" alt="icon UnusualAccountActivity" title=":UnusualAccountActivity:"/> | Account marked as spammer or unusual activity detected.           |
+| `AUTOMOD_QUARANTINED_NAME`               | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | Quarantined by automoderation because of the username.            |
+| `AUTOMOD_QUARANTINED_GUILD_TAG`          | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | Quarantined by automoderation because of the tag or nickname.     |
+| `BYPASSES_VERIFICATION`                  | <Icon src="/img/icons/BypassVerification.svg" alt="icon BypassVerification" title=":BypassVerification:"/>             | The user can bypass server verification.                          |
+| `SPAMMER`                                | <Icon src="/img/icons/UnusualAccountActivity.svg" alt="icon UnusualAccountActivity" title=":UnusualAccountActivity:"/> | Account marked as a spammer or unusual activity detected.         |
 
 ## ⚖️ Discord Sanctions {#discord-sanctions}
 
-The `/ds` command allows you to view the **sanctions issued by Discord** against a user, in accordance with [European regulations](https://transparency.dsa.ec.europa.eu/).
+The `/discord-sanctions` command allows you to view the **sanctions issued by Discord** against a user, in accordance with [European regulations](https://transparency.dsa.ec.europa.eu/).
 
-Use the command: ```/ds (user)```
+Use the command: ```/discord-sanctions (user)```
 
-Replace `(user)` with the desired mention or ID.
+Replace `(user)` with the desired mention or ID. The command is also accessible by right-clicking on a profile, via **`Apps`** then **`Discord Sanctions`**.
 
 ### 📋 Displayed Information {#displayed-sanctions}
 
@@ -244,12 +252,12 @@ Replace `(user)` with the desired mention or ID.
   </TabItem>
   <TabItem value="reports-not-found" label="No reports found">
 
-![Screenshot of Discord Sanctions not found](../assets/rp-ds-report-not-found.webp)
+![Screenshot of Discord Sanctions with no report found](../assets/rp-ds-report-not-found.webp)
 
   </TabItem>
 </Tabs>
 </SeparatedBox>
 
 :::note
-The command allows you to view the reports issued between August 22, 2024 and August 14, 2025. This information is provided directly by Discord and **cannot be modified** by RaidProtect.
+The command lets you view the reports issued between August 22, 2024 and August 14, 2025. This information is provided directly by Discord and **cannot be modified** by RaidProtect.
 :::

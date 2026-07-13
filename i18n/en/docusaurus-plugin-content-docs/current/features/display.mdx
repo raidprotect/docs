@@ -2,6 +2,10 @@
 title: Information Panels
 ---
 
+import DisplayMockup from '@site/src/components/DiscordMessage/mockups/display';
+
+<DisplayMockup />
+
 The `/display public` command allows you to create and manage public information panels displayed on your server. You can create multiple panels with different types of content and features.
 
 Use the command: ```/display public```
@@ -35,11 +39,11 @@ In addition to content, each panel can enable interactive features:
 
 ## 📌 Reserved slot {#reserved-slot}
 
-The last slot is reserved for **Jail** content and is automatically managed via `/settings` > Sanctions > [Jail](./sanctions.mdx#jail). Its channel can only be modified through this configuration.
+The last slot is reserved for **Jail** content and is automatically managed via `/settings` > Sanctions > [Jail](./sanctions.mdx#jail). Its channel can only be changed through this configuration.
 
 ## 🔄 Updating panels {#update}
 
-When you change the bot's language or the panel content is updated by RaidProtect, an indicator signals the panels that are not up to date. You can then click the "Update" button to refresh the panel.
+When you change the bot's language or the panel content is updated by RaidProtect, an indicator flags the panels that are out of date. You can then click the "Update" button to refresh the panel.
 
 ## ✏️ Edit or delete a panel {#edit}
 

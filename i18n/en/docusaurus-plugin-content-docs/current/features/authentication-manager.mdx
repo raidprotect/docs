@@ -2,6 +2,10 @@
 title: Authentication Manager
 ---
 
+import AuthenticationManagerMockup from '@site/src/components/DiscordMessage/mockups/authentication-manager';
+
+<AuthenticationManagerMockup />
+
 import SeparatedBox from '@site/src/components/SeparatedBox';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -78,7 +82,7 @@ When using a passkey, an external link opens in your browser to perform the veri
 
 ## 👤 Authentication profile (`/auth-profile`) {#auth-profile}
 
-The `/auth-profile` command allows you to manage your personal authentication profile. It is accessible in any server or via direct message.
+The `/auth-profile` command allows you to manage your personal authentication profile. It is accessible in any server or via DMs.
 
 ### First use {#onboarding}
 
@@ -96,7 +100,7 @@ Each passkey displays its device name and the date of last use.
 
 ### Active sessions {#profile-sessions}
 
-View your active sessions from your profile. In a direct message context, sessions from all your servers are visible.
+View your active sessions from your profile. In a DM context, sessions from all your servers are visible.
 
 ### Audit log {#profile-audit}
 
@@ -111,10 +115,10 @@ The **I forgot my credentials** button allows you to completely reset your accou
 - Requires complete reconfiguration.
 
 :::danger
-This action is irreversible. All your access will be immediately revoked.
+This action is irreversible. All your access will be revoked immediately.
 :::
 
-## 🔑 Authenticating (`/auth`) {#auth}
+## 🔑 Authenticate (`/auth`) {#auth}
 
 The `/auth` command allows you to authenticate to obtain a protected role.
 
@@ -128,7 +132,7 @@ The `/auth` command allows you to authenticate to obtain a protected role.
 6. On success, the Discord role is assigned to you and a session is created.
 
 :::info
-Only roles you have been assigned (status **Active**) appear in the menu.
+Only roles you have been assigned to (status **Active**) appear in the menu.
 :::
 
 ### Session management {#sessions}
@@ -141,7 +145,7 @@ From the `/auth` panel, you can:
 ### Security {#auth-security}
 
 - **Limited attempts**: After 5 failures, your account is locked for 1 hour. After 10 failures, the account is reset.
-- **Warning**: A warning message appears after 3 failed attempts.
+- **Warning**: A warning message appears starting from 3 failed attempts.
 
 ## ⚙️ Server configuration (`/auth-settings`) {#auth-settings}
 
@@ -153,7 +157,7 @@ The `/auth-settings` command is reserved for administrators and authorized manag
 | --------------- | -------------------------------------------------------------------------- |
 | Owner           | Full access                                                                |
 | Administrator   | Full access (unless the `ADMINISTRATOR` permission comes from an AM role)  |
-| Manager         | Limited access, must authenticate, can only manage roles below their ceiling |
+| Manager         | Limited access, must authenticate, can only manage lower roles             |
 
 Managers must reach a minimum security grade (configurable) to access the settings.
 
@@ -179,7 +183,7 @@ Managers must reach a minimum security grade (configurable) to access the settin
 :::
 
 :::tip
-If your role is configured to be **displayed separately** in the member list, consider keeping the original role (by removing its sensitive permissions) for display, and creating a new role with the actual permissions that you will protect via AM. This way, your members keep their visible role permanently, while the sensitive permissions are only assigned during authenticated sessions.
+If your role is configured to be **displayed separately** in the member list, consider keeping the original role (after removing its sensitive permissions) for display purposes, and creating a new role with the actual permissions that you will protect via AM. This way, your members keep their visible role permanently, while the sensitive permissions are only granted during authenticated sessions.
 :::
 
 #### Edit a role {#edit-role}
@@ -201,7 +205,7 @@ Permanently removes the role from the authentication system.
 1. Go to the **Users** tab.
 2. Click **Add a user**.
 3. Select the member and the roles to assign to them.
-4. The member receives a private message informing them of the invitation.
+4. The member receives a DM informing them of the invitation.
 
 :::info
 **Limits:** 20 users in the free version, 50 in the premium version.
@@ -211,7 +215,7 @@ Permanently removes the role from the authentication system.
 
 | **Status**  | **Description**                                                         |
 | ----------- | ----------------------------------------------------------------------- |
-| Invited     | The member has been added but has not yet configured their profile       |
+| Invited     | The member has been added but has not yet configured their profile      |
 | Pending     | The profile is configured, awaiting approval                            |
 | Active      | The member can authenticate to obtain the role                          |
 | Disabled    | Access to the role is temporarily suspended                             |

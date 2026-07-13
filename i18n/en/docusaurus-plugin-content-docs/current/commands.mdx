@@ -6,7 +6,7 @@ import CommandCopy from '@site/src/components/CommandCopy';
 
 <CommandCopy />
 
-All RaidProtect commands, grouped by category. Click on a command name to access its detailed documentation.
+All RaidProtect commands, grouped by category. Click a command name to access its detailed documentation.
 
 ## Prototype legend {#legend}
 
@@ -27,6 +27,7 @@ All RaidProtect commands, grouped by category. Click on a command name to access
 | [`/honeypot`](./features/honeypot.md#config) | `/honeypot` | Configures the HoneyPot trap channel. |
 | [`/tagrole`](./features/tag-role.md) | `/tagrole` | Configures the role granted to members who wear the server tag. |
 | [`/display public`](./features/display.mdx) | `/display public` | Manages RaidProtect's public information panels. |
+| [`/audit`](./features/audit.md) | `/audit` | Analyzes the server's security and offers to fix configuration flaws. |
 
 ## Moderation {#moderation}
 
@@ -53,7 +54,7 @@ All RaidProtect commands, grouped by category. Click on a command name to access
 | [`/clear`](./features/moderation.mdx#clear) | `/clear (number) [@user]` | Deletes a group of messages in a channel. |
 | [`/snipe`](./features/moderation.mdx#snipe) | `/snipe [@user] [--channel=#channel]` | Retrieves the last deleted message in the channel or from a user (1 h). |
 | [`/modview`](./features/moderation.mdx#modview) | `/modview (@user)` | Opens a centralized moderation view of a member (sanctions, note, snipe). |
-| [`/note`](./features/moderation.mdx#note) | `/note (@user)` | Adds or edits the internal moderation note of a member. |
+| [`/note`](./features/moderation.mdx#note) | `/note (@user)` | Adds or edits a member's internal moderation note. |
 | [`/nick`](./features/moderation.mdx#nick) | `/nick (@member) [nickname]` | Changes a member's nickname on the server (empty to reset). |
 
 ### Channel locking
@@ -62,7 +63,7 @@ All RaidProtect commands, grouped by category. Click on a command name to access
 |---|---|---|
 | [`/lock`](./features/channel-lock.md#lock) | `/lock [#channel] [duration] [reason]` | Locks a channel to prevent message sending (optional duration). |
 | [`/unlock`](./features/channel-lock.md#unlock) | `/unlock [#channel] [reason]` | Unlocks a previously locked channel. |
-| [`/slowmode`](./features/moderation.mdx#slowmode) | `/slowmode (delay) [duration] [#channel] [reason]` | Enables or modifies the slowmode of a channel (optional duration of effect). |
+| [`/slowmode`](./features/moderation.mdx#slowmode) | `/slowmode (delay) [duration] [#channel] [reason]` | Enables or modifies a channel's slowmode (optional duration of effect). |
 
 ## Sanctions history {#sanctions}
 
@@ -79,9 +80,9 @@ All RaidProtect commands, grouped by category. Click on a command name to access
 | Command | Prototype | Description |
 |---|---|---|
 | [`/raidmode`](./features/raid-mode.md#raid-mode) | `/raidmode [state] [duration]` | Enables or disables raid mode (blocks new arrivals). |
-| [`/joinlock`](./features/join-lock.mdx) | `/joinlock [state]` | Permanently closes server access to new members. |
-| [`/dmlock`](./features/dm-lock.mdx) | `/dmlock` | Enables or disables permanent DM closure for the server. |
-| [`/dmlock-info`](./features/dm-lock.mdx#info) | `/dmlock-info` | Informs members of the DM closure state. |
+| [`/joinlock`](./features/join-lock.mdx) | `/joinlock [state]` | Indefinitely closes server access to new members. |
+| [`/dmlock`](./features/dm-lock.mdx) | `/dmlock` | Enables or disables the permanent DM Lock for the server. |
+| [`/dmlock-info`](./features/dm-lock.mdx#info) | `/dmlock-info` | Informs members of the DM Lock status. |
 
 ## Authentication {#auth}
 
@@ -96,7 +97,8 @@ All RaidProtect commands, grouped by category. Click on a command name to access
 | Command | Prototype | Description |
 |---|---|---|
 | [`/bypass captcha`](./features/captcha.md#bypass) | `/bypass captcha [@user]` | Allows a user to join without going through the captcha. |
-| [`/bypass minage`](./features/raid-mode.md#bypass-minage) | `/bypass minage [@user]` | Allows a user to join without respecting the minimum account age. |
+| [`/bypass minage`](./features/raid-mode.md#bypass-minage) | `/bypass minage [@user]` | Allows a user to join without meeting the minimum account age. |
+| [`/bypass raid`](./features/raid-mode.md#bypass-raid) | `/bypass raid [@user]` | Allows a user to join despite raid mode (requires kick mode). |
 
 ## Utilities {#utilities}
 
@@ -104,7 +106,7 @@ All RaidProtect commands, grouped by category. Click on a command name to access
 |---|---|---|
 | [`/userinfo`](./features/utilities.mdx#userinfo) | `/userinfo [@user]` | Displays a user's information. |
 | [`/serverinfo`](./features/utilities.mdx#serverinfo) | `/serverinfo` | Displays the server information. |
-| [`/ds`](./features/utilities.mdx#discord-sanctions) | `/ds (@user)` | Displays a user's Discord (DSA) sanctions. |
+| [`/discord-sanctions`](./features/utilities.mdx#discord-sanctions) | `/discord-sanctions (@user)` | Displays a user's Discord (DSA) sanctions. |
 | [`/prune`](./features/utilities.mdx#prune) | `/prune [days]` | Kicks inactive members via an interactive menu. |
 | [`/channel duplicate`](./features/utilities.mdx#channel-duplicate) | `/channel duplicate (#channel)` | Duplicates a channel with its settings and permissions. |
 | [`/channel clear`](./features/utilities.mdx#channel-clear) | `/channel clear (#channel)` | Deletes and re-creates a channel identically. |
@@ -120,8 +122,9 @@ All RaidProtect commands, grouped by category. Click on a command name to access
 | [`/about`](./readme.mdx) | `/about` | Displays general information about RaidProtect. |
 | [`/help`](./readme.mdx) | `/help` | Displays RaidProtect's general help. |
 | [`/invite`](./useful-links/index.mdx) | `/invite` | Displays useful links (invitation, support, bot page). |
+| [`/transparency`](./features/transparency.md#command) | `/transparency` | Displays the server's latest moderation transparency report. |
 | [`/changelog`](./changelog.mdx) | `/changelog` | View RaidProtect's changelog. |
-| [`/feedback`](./features/utilities.mdx#feedback) | `/feedback` | Share feedback, a suggestion or report a bug. |
+| [`/feedback`](./features/utilities.mdx#feedback) | `/feedback` | Share feedback, a suggestion or a bug report. |
 
 ---
 
@@ -131,7 +134,7 @@ Both formats give you **exactly the same possibilities**: anything you can do vi
 
 ### Slash commands: the simplest way {#slash}
 
-Type `/` in a channel, choose the command, and **Discord prompts you for each parameter in a dedicated interface** (user picker, channel picker, autocomplete on durations, etc.). It's the recommended default — you don't have to memorize anything.
+Type `/` in a channel, choose the command, and **Discord prompts you for each parameter in a dedicated interface** (user picker, channel picker, autocomplete on durations, etc.). It is the recommended default: you don't have to memorize anything.
 
 ```
 /ban @member reason: scam spam
@@ -139,7 +142,7 @@ Type `/` in a channel, choose the command, and **Discord prompts you for each pa
 
 ### Message commands: the most complex way {#prefix}
 
-Once the [prefix is enabled in `/settings`](./guides/prefix.md), you can also write commands as plain messages (`?ban …`, `?kick …`, etc.). No graphical interface: you have to **know the syntax** (positional arguments, named flags, free-form trailing argument). In return, it's faster on the keyboard for moderators who know the commands.
+Once the [prefix is enabled in `/settings`](./guides/prefix.md), you can also write commands as plain messages (`?ban …`, `?kick …`, etc.). No graphical interface: you have to **know the syntax** (positional arguments, named flags, free-form trailing argument). In return, it's faster on the keyboard for moderators who know the commands well.
 
 #### Positional arguments
 
@@ -154,7 +157,7 @@ Given in the order of the prototype, without a name. These are the main argument
 
 For secondary options. Flags can be placed **anywhere** in the command, in any order.
 
-- `--silent` (boolean): just enables the option.
+- `--silent` (boolean): simply enables the option.
 - `--delete-messages=7d`: passes a value to the option.
 
 ```
@@ -164,7 +167,7 @@ For secondary options. Flags can be placed **anywhere** in the command, in any o
 
 #### "Rest" argument (free-form text)
 
-The last argument of certain commands (typically `[reason]`) captures **everything you write after**, spaces included, without needing quotes.
+The last argument of certain commands (typically `[reason]`) captures **everything you write after it**, spaces included, without needing quotes.
 
 ```
 ?warn @member you've broken rule 3 of the server again

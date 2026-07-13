@@ -1,28 +1,32 @@
 ---
-title: Sanctions History
+title: Sanction History
 ---
+
+import SanctionsMockup from '@site/src/components/DiscordMessage/mockups/sanctions';
+
+<SanctionsMockup />
 
 import Icon from "@site/src/components/Icon";
 
-RaidProtect's sanctions history allows you to track and manage all sanctions applied on your server. This system centralizes all moderation actions in a searchable and editable database, making it easier for your moderation team to work.
+RaidProtect's Sanction History lets you track and manage every sanction applied on your server. This system centralizes all moderation actions in a searchable and editable database, making your moderation team's work easier.
 
 ## ❓ How the history works {#working}
 
-The sanctions history automatically records all moderation actions performed on your server:
+The Sanction History automatically records all moderation actions performed on your server:
 
 - **Manual sanctions**: All moderation commands (`/ban`, `/tempban`, `/kick`, `/timeout`, `/warn`) are automatically recorded in the history.
-- **Automatic sanctions**: Sanctions applied by anti-spam are also added to the sanctions history.
+- **Automatic sanctions**: Sanctions applied by the anti-spam are also added to the Sanction History.
 - **Bans, kicks and timeouts**: Sanctions applied without using RaidProtect are added to the history.
-- **Discord's Automod**: Sanctions applied by Discord's automod are also added.
+- **Discord's AutoMod**: Sanctions applied by Discord's AutoMod are also added.
 - **Sanction notifications**: Sanctioned members receive a private message informing them of the sanction and its reason. The bot also sends a detailed acknowledgment confirming the delivery status: **received**, **DMs closed**, **expired** or **silent** (when the `[silent]` option is used). For kicks, softbans and temporary bans, this message also includes a **button with a server invite** so the member can come back once the sanction is over.
 
 :::info
-All recorded sanctions contain: the sanctioned user, the responsible moderator, the reason (up to 512 characters), the date and time, as well as the type of sanction and whether the user was notified.
+Every recorded sanction contains: the sanctioned user, the responsible moderator, the reason (up to 512 characters), the date and time, as well as the sanction type and whether the user was notified.
 :::
 
 ## 🔍 Search for sanctions {#search}
 
-The `/sanctions search` command allows you to search for sanctions in the history according to different criteria.
+The `/sanctions search` command lets you search for sanctions in the history using different criteria.
 
 Use the command: ```/sanctions search [user] [moderator] [type] [date] [status] [moderator_type]```
 
@@ -41,21 +45,21 @@ You can combine multiple criteria to refine your search. For example, search for
 
 ## ℹ️ View a sanction {#info}
 
-The `/sanctions info` command allows you to get detailed information about a specific sanction.
+The `/sanctions info` command lets you get detailed information about a specific sanction.
 
 Use the command: ```/sanctions info (id)```
 
-Replace `(id)` with the identifier of the sanction you want to view.
+Replace `(id)` with the ID of the sanction you want to view.
 
 ![Screenshot of sanction information](../assets/rp-sanctions-info.webp)
 
 ## ✏️ Edit a sanction {#edit}
 
-The `/sanctions edit` command allows you to modify the reason of an existing sanction, useful for correcting an error or adding details.
+The `/sanctions edit` command lets you edit the reason of an existing sanction, useful for correcting a mistake or adding details.
 
 Use the command: ```/sanctions edit (id) (new_reason)```
 
-Replace `(id)` with the identifier of the sanction to modify and `(new_reason)` with the new reason (maximum 512 characters).
+Replace `(id)` with the ID of the sanction to edit and `(new_reason)` with the new reason (maximum 512 characters).
 
 ![Screenshot of sanction editing](../assets/rp-sanctions-edit.webp)
 
@@ -65,11 +69,11 @@ Editing a sanction updates the record in the history but does not change the san
 
 ## 🗑️ Delete a sanction {#delete}
 
-The `/sanctions delete` command allows you to delete a sanction from the history. This action is irreversible.
+The `/sanctions delete` command lets you delete a sanction from the history. This action is irreversible.
 
 Use the command: ```/sanctions delete (id) [reason]```
 
-Replace `(id)` with the identifier of the sanction to delete. The `[reason]` parameter lets you **justify the deletion**, which will be recorded in the logs.
+Replace `(id)` with the ID of the sanction to delete. The `[reason]` parameter lets you **justify the deletion**, which will be recorded in the logs.
 
 ![Screenshot of sanction deletion](../assets/rp-sanctions-delete.webp)
 
@@ -81,16 +85,16 @@ Sanctions can have different statuses:
 | ------------- | ----------------------------------------------------------------------------------------------------------------------------| --------------------------------------------------------- |
 | `Active`      | <Icon src="/img/icons/SanctionStatusACTIVE.svg" alt="icon SanctionStatusACTIVE" title=":iconSanctionStatusACTIVE:"/>        | The sanction is in progress.                              |
 | `Expired`     | <Icon src="/img/icons/SanctionStatusEXPIRED.svg" alt="icon SanctionStatusEXPIRED" title=":iconSanctionStatusEXPIRED:"/>     | The sanction has expired.                                 |
-| `Canceled`    | <Icon src="/img/icons/SanctionStatusCANCELED.svg" alt="icon SanctionStatusCANCELED" title=":iconSanctionStatusCANCELED:"/>  | The sanction has been canceled by a moderator.            |
-| `Failed`      | <Icon src="/img/icons/SanctionStatusFAILED.svg" alt="icon SanctionStatusFAILED" title=":iconSanctionStatusFAILED:"/>        | The sanction has failed (missing permissions).            |
+| `Canceled`    | <Icon src="/img/icons/SanctionStatusCANCELED.svg" alt="icon SanctionStatusCANCELED" title=":iconSanctionStatusCANCELED:"/>  | The sanction was canceled by a moderator.                 |
+| `Failed`      | <Icon src="/img/icons/SanctionStatusFAILED.svg" alt="icon SanctionStatusFAILED" title=":iconSanctionStatusFAILED:"/>        | The sanction failed (missing permissions).                |
 
 ### Handling duplicates {#duplicates}
 
-When an active and previous sanction is found, you can:
+When an earlier, still active sanction is found, you can:
 
-- **Merge** the two sanctions: the durations will be added if possible and the reasons will be concatenated.
-- **Cancel** the active sanction and create a new sanction.
-- **Overwrite** the active sanction with the information of the typed sanction.
+- **Merge** the two sanctions: the durations will be added together if possible and the reasons will be concatenated.
+- **Cancel** the active sanction and create a new one.
+- **Overwrite** the active sanction with the information from the newly entered sanction.
 
 ![Screenshot of sanction status management](../assets/rp-sanctions-active-found.webp)
 
@@ -98,7 +102,7 @@ When an active and previous sanction is found, you can:
 
 ### Disable sanctions {#disable}
 
-You can **fully disable the sanctions system** on your server. When sanctions are disabled, RaidProtect no longer records any sanction in the history and the related commands are unavailable.
+You can **completely disable the sanctions system** on your server. When sanctions are disabled, RaidProtect no longer records any sanction in the history and the related commands are unavailable.
 
 1. Use the [command `/settings`](../setup.md#settings).
 2. Click on the "**Sanctions**" button.
@@ -106,7 +110,7 @@ You can **fully disable the sanctions system** on your server. When sanctions ar
 
 ### Jail {#jail}
 
-Configure the **Jail** to enable a role-based moderation sanction, more restrictive than a standard mute. Once configured, this role allows you to isolate a member with severely limited permissions and unlocks the use of the [`/jail`](./moderation.mdx#jail) and [`/tempjail`](./moderation.mdx#tempjail) commands.
+Configure the **Jail** to enable a role-based moderation sanction, more restrictive than a standard mute. Once configured, this role lets you isolate a member with heavily limited permissions and unlocks the [`/jail`](./moderation.mdx#jail) and [`/tempjail`](./moderation.mdx#tempjail) commands.
 
 1. Use the [command `/settings`](../setup.md#settings).
 2. Click on the "**Sanctions**" button.
@@ -121,12 +125,12 @@ When creating the role, you can also configure the **Jail information channel**:
 This channel corresponds to the reserved slot in the [information panels](./display.mdx), automatically managed by the Jail configuration.
 
 :::info
-If a Jail role is already configured, you can modify the information channel via the dedicated button in the Jail submenu.
+If a Jail role is already configured, you can change the information channel via the dedicated button in the Jail submenu.
 :::
 
 #### Roles during jail {#jail-roles}
 
-In the Jail submenu, the **Roles during jail** button controls what RaidProtect does with the member's roles while they are jailed. Two modes:
+In the Jail submenu, the **Roles during jail** button controls what RaidProtect does with a member's roles while they are jailed. Two modes:
 
 - **Add the jail role** *(default)*: the Jail role is simply added on top of the member's existing roles.
 - **Replace with the jail role**: RaidProtect **removes all of the member's roles** for the duration of the jail and restores them on release. Stricter, this prevents a role with explicit permissions from bypassing the Jail role's restrictions.
@@ -135,7 +139,7 @@ Click the button to switch between the two modes.
 
 ### Mute Role {#mute}
 
-Configure the **Mute role** to use a role-based sanction instead of Discord's timeout for extended durations. When the mute duration exceeds the defined threshold, the bot will automatically assign the Mute role to the member instead of applying a Discord timeout.
+Configure the **Mute role** to use a role-based sanction instead of Discord's timeout for extended durations. When a mute duration exceeds the defined threshold, the bot will automatically assign the Mute role to the member instead of applying a Discord timeout.
 
 1. Use the [command `/settings`](../setup.md#settings).
 2. Click on the "**Sanctions**" button.
@@ -144,7 +148,7 @@ Configure the **Mute role** to use a role-based sanction instead of Discord's ti
 
 #### Mute Threshold {#mute-threshold}
 
-Configure the **Mute role threshold** to define from what duration the bot will use a role-based mute instead of Discord's timeout. When a mute duration exceeds this threshold, the Mute role is automatically applied. A value of 0 completely disables the use of timeout.
+Configure the **Mute role threshold** to define the duration from which the bot will use a role-based mute instead of Discord's timeout. When a mute duration exceeds this threshold, the Mute role is automatically applied. A value of 0 completely disables the use of timeout.
 
 1. Use the [command `/settings`](../setup.md#settings).
 2. Click on the "**Sanctions**" button.
@@ -155,14 +159,14 @@ Configure the **Mute role threshold** to define from what duration the bot will 
 The 28-day timeout limit is imposed by Discord. Beyond this duration, the Mute role will always be used if configured.
 :::
 :::info
-**Timeouts applied by Discord's AutoMod** are automatically converted to a role-based mute when their duration exceeds the configured threshold, to ensure consistency with your manual sanctions. The duration remains capped at 28 days (Discord limit).
+**Timeouts applied by Discord's AutoMod** are automatically converted to a role-based mute when their duration exceeds the configured threshold, ensuring consistency with your manual sanctions. The duration remains capped at 28 days (Discord limit).
 
 This feature is currently in **public beta for Premium servers**.
 :::
 
 ### Sanctions Privacy {#sanctions-privacy}
 
-Configure the sanctions privacy level to control what information members can access regarding **their own sanctions**, via the [`/my-sanctions`](./utilities.mdx#my-sanctions) command or the **View my sanctions** button.
+Configure the sanctions privacy level to control what information members can access about **their own sanctions**, via the [`/my-sanctions`](./utilities.mdx#my-sanctions) command or the **View my sanctions** button.
 
 1. Use the [command `/settings`](../setup.md#settings).
 2. Click on the "**Sanctions**" button.
@@ -170,14 +174,14 @@ Configure the sanctions privacy level to control what information members can ac
 4. Choose the desired access level:
 
 | **Level**                           | **Description**                                                                                     |
-| ----------------------------------- | --------------------------------------------------------------------------------------------------- |
-| Disabled                            | Members cannot view their personal sanctions.                                                       |
-| Sanctions only                      | Members can only view their sanctions and the remaining time, if applicable.                        |
-| With reasons                        | Members can view their sanctions along with the reasons, without the moderator's identity.          |
-| With reasons and moderators         | Members can view all information: sanctions, reasons, and moderators.                               |
+| ------------------------------------ | --------------------------------------------------------------------------------------------------- |
+| Disabled                             | Members cannot view their personal sanctions.                                                       |
+| Sanctions only                       | Members can only view their sanctions and the remaining time, if applicable.                        |
+| With reasons                         | Members can view their sanctions along with the reasons, without the moderator's identity.          |
+| With reasons and moderators          | Members can view all information: sanctions, reasons, and moderators.                               |
 
 :::note
-Regardless of the selected level, **moderators retain full access** to the sanctions history via the moderation tools.
+Regardless of the selected level, **moderators retain full access** to the Sanction History via the moderation tools.
 :::
 
 ### Show media {#show-medias}
@@ -190,7 +194,7 @@ Configure the display of media in sanction reasons. When this option is disabled
 2. Click on the "**Sanctions**" button.
 3. Click on the "**Show media**" button to enable or disable the option.
 
-## ✨ Custom Sanction Names (Premium) {#custom-names}
+## ✨ Sanction Names (Premium) {#custom-names}
 
 With the premium version, you can customize the name of each sanction type to fit your server's vocabulary. For each type, you can configure:
 
@@ -208,7 +212,7 @@ The customizable sanction types are: Ban, Unban, Kick, Jail, Unjail, Timeout, Un
 4. Choose the sanction type to customize and enter the desired name, verb, and DM mode.
 
 :::tip
-Leave the fields empty to reset a sanction type to its default name. You can also use the "Reset all" button to reset all names.
+Leave the fields empty to reset a sanction type to its default name. You can also use the "Reset all" button to reset every name.
 :::
 
 ## 📊 Sanctions logs {#logs}
@@ -224,7 +228,7 @@ For better organization, you can configure a log channel dedicated specifically 
 1. Use the [command `/settings`](../setup.md#settings).
 2. Click on the "**Logs**" button.
 3. Select "**Moderation**".
-4. Choose the channel in which sanctions logs will be sent or use the "**Create one for me**" button.
+4. Choose the channel where sanctions logs will be sent or use the "**Create one for me**" button.
 
 :::note
 You can also choose whether RaidProtect logs actions performed by users without going through the bot.
@@ -236,4 +240,4 @@ You can also choose whether RaidProtect logs actions performed by users without 
 
 ## 📦 Import / Export sanctions {#import-export}
 
-RaidProtect allows you to import or export your server's sanctions history. To do so, visit our [support server](https://raidprotect.bot/discord) and send a private message to the support bot (at the top of the member list) which will guide you through the process.
+RaidProtect lets you import or export your server's Sanction History. To do so, visit our [support server](https://raidprotect.bot/discord) and send a private message to the support bot (at the very top of the member list), which will guide you through the process.
