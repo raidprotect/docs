@@ -507,9 +507,6 @@ export default function PremiumPage(): React.ReactNode {
                     </div>
                 </section>
 
-                {/* ============= ILS NOUS FONT CONFIANCE ============= */}
-                <Servers title={translate({ id: 'premium.servers.title', message: 'Ils nous font confiance' })} transparent />
-
                 {/* ============= FEATURE VEDETTE : BOT À VOTRE IMAGE ============= */}
                 <section className={`${styles.section} ${styles.flagshipSection}`}>
                     <div className={styles.container}>
@@ -549,6 +546,9 @@ export default function PremiumPage(): React.ReactNode {
                         </div>
                     </div>
                 </section>
+
+                {/* ============= ILS NOUS FONT CONFIANCE ============= */}
+                <Servers title={translate({ id: 'premium.servers.title', message: 'Ils nous font confiance' })} transparent />
 
                 {/* ============= AVANTAGES PRINCIPAUX ============= */}
                 <section className={styles.section}>
