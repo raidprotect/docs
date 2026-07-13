@@ -702,6 +702,22 @@ html[data-theme="light"] .commandMention {
   font-weight: 600;
 }
 
+/* Bouton Corriger grisé pendant le chargement, façon bouton Discord
+   désactivé, le spinner remplace l'icône. */
+.auditFixLoading {
+  opacity: 0.5;
+}
+
+/* Conteneur des embeds de configuration (/settings) : plus larges que les
+   scènes de chat, comme le vrai menu dans Discord. */
+.cfg {
+  max-width: 560px;
+}
+
+.cfg > div > * {
+  max-width: 560px;
+}
+
 /* === Scène fermeture des MP : campagne de mass DM bloquée === */
 
 .dmWrap {
@@ -1188,11 +1204,93 @@ html[data-theme="light"] .chatPinged {
 }
 
 .authRight {
+  position: relative;
   width: 290px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-height: 300px;
+  border: 1.5px solid transparent;
+  border-radius: 10px;
+  padding: 14px 12px 12px;
+  transition: border-color 0.4s ease;
+}
+
+.authFrameOk {
+  border-color: #23a55a;
+}
+
+.authFrameDanger {
+  border-color: #f23f43;
+}
+
+/* Lueur qui parcourt la bordure : part du texte en haut à gauche (début du
+   tracé du rect arrondi) et fait le tour dans le sens horaire. */
+.authFrameGlow {
+  position: absolute;
+  inset: -1.5px;
+  width: calc(100% + 3px);
+  height: calc(100% + 3px);
+  pointer-events: none;
+  overflow: visible;
+}
+
+.authFrameGlow rect {
+  x: 0.75px;
+  y: 0.75px;
+  width: calc(100% - 1.5px);
+  height: calc(100% - 1.5px);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-dasharray: 12 88;
+  filter: drop-shadow(0 0 3px currentColor);
+  animation: frameGlow 3.6s linear infinite;
+}
+
+.authFrameOk .authFrameGlow {
+  color: #2edc76;
+}
+
+.authFrameDanger .authFrameGlow {
+  color: #ff5860;
+}
+
+@keyframes frameGlow {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .authFrameGlow {
+    display: none;
+  }
+}
+
+.authFrameLabel {
+  position: absolute;
+  top: -9px;
+  left: 12px;
+  padding: 0 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: var(--ifm-background-color);
+  transition: color 0.4s ease;
+}
+
+.authFrameOk .authFrameLabel {
+  color: #23a55a;
+}
+
+.authFrameDanger .authFrameLabel {
+  color: #f23f43;
 }
 
 .authRight .chatInput {
