@@ -6,6 +6,49 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Découvrez la liste détaillée des modifications qui ont été apportées à RaidProtect.
 
+## 3.3.4 (13/07/2026) {#3-3-4}
+
+- [Anti-spam](./features/anti-spam.mdx) V2 :
+  - **Spam multi-salons** : une sanction dédiée lorsque le spam s’étend sur plusieurs salons (Jail par défaut, Timeout minimum).
+  - Nouveau [déclencheur](./features/anti-spam.mdx#triggers) **spam de pièces jointes** (désactivé par défaut).
+  - Les messages de spam sont désormais **supprimés quelle que soit la sanction** (ban, jail, mute, kick ou timeout).
+  - La **sanction anti-scam est configurable** depuis le [menu des sanctions de l’anti-spam](./features/anti-spam.mdx#sanctions) et suit par défaut la [sanction du HoneyPot](./features/honeypot.md#sanction) ; les incidents anti-scam sont sanctionnés et loggés instantanément.
+  - Chaque déclencheur peut être désactivé individuellement avec la nouvelle option **Désactiver**, et les niveaux de sensibilité sont remplacés par un simple interrupteur.
+  - Les sanctions **Mute** et **Jail** basculent sur un timeout plafonné lorsque le rôle correspondant n’est pas configuré.
+  - Les selfbots envoyant des rich embeds sont détectés, et les arnaques bloquées par ScamLens sont comptées dans le compteur de comptes signalés du [HoneyPot](./features/honeypot.md).
+- Refonte complète du système de **[Signalements](./features/reports.md)** :
+  - Les signalements sont désormais regroupés en **incidents** : plusieurs signalements visant le même membre se replient dans un seul incident, avec un [mode de regroupement configurable](./features/reports.md#group).
+  - Les commandes de signalement ouvrent désormais une **modale de raison**, avec une liste « que signalez-vous » sur les signalements de profil (dont l’activité vocale et en MP).
+  - Chaque incident ouvre désormais un **thread** sous le signalement : carte de profil du membre signalé, en-têtes de raison par message, nom du modérateur résolvant et notes de rejet.
+  - Nouvelle [notification du signaleur](./features/reports.md#notify) : les signaleurs peuvent être notifiés en MP quand leur signalement est traité, avec un niveau de détail configurable (jusqu’au verdict accepté/rejeté).
+  - Nouveau [rôle de confiance](./features/reports.md#trusted-role) (**Premium**) : les membres de confiance peuvent appliquer un **timeout préventif de 24h** en signalant, et leurs signalements urgents re-mentionnent le rôle de modération.
+  - Nouvelle [protection contre les mauvais signaleurs](./features/reports.md#bad-reporters) : les faux signaleurs récidivistes peuvent être repérés, bloqués ou sanctionnés automatiquement (seuil, fenêtre et mode configurables).
+  - Les incidents ouverts sont automatiquement clos lorsque le membre est sanctionné.
+  - Les sanctions préventives sont réécrites quand un signalement est accepté, et annulées quand il est rejeté.
+- Nouveau système de **[Transparence](./features/transparency.md)** :
+  - [Récaps périodiques](./features/transparency.md#recaps) de l’activité de modération du serveur, publiés automatiquement selon une planification configurable.
+  - Nouveau [modlog public](./features/transparency.md#modlog) : les sanctions peuvent être publiées dans un salon public, filtrées par type et par source, avec la création en un clic d’un salon #public-modlog en lecture seule.
+  - Nouvelle [commande `/transparency`](./features/transparency.md#command) pour afficher à la demande le récap de la dernière période écoulée.
+- Nouvelle [commande `/audit`](./features/audit.md) : un **audit de sécurité** complet du serveur avec un score global, des [vérifications détaillées](./features/audit.md#checks) (niveau de vérification, permissions, salons) et des [corrections en un clic](./features/audit.md#fix). Les rôles admin peuvent être intégrés à l’Authentication Manager directement depuis l’audit.
+- Nouveau [mode expulsion](./features/raid-mode.md#kick-mode) (**Premium**) pour le mode raid et la Fermeture des Jointures : les nouveaux arrivants sont expulsés avec un MP d’explication et un bouton d’invitation pour revenir, au lieu de la pause native des invitations. La nouvelle [commande `/bypass raid`](./features/raid-mode.md#bypass-raid) laisse entrer des utilisateurs spécifiques pendant qu’il est actif.
+- Les commandes par message respectent désormais les **permissions de commandes Discord** (onglet Intégrations), avec un panneau des permissions en lecture seule dans `/settings`.
+- RaidProtect répond désormais sous les **alertes de sécurité Discord** lorsqu’elles sont causées par la [Fermeture des MP](./features/dm-lock.mdx), en citant l’alerte et en expliquant où ajuster le paramètre.
+- Le log d’expulsion de l’[âge de compte minimum](./features/raid-mode.md#minage) affiche désormais le seuil requis sous forme de timestamp.
+- Paramètres et setup :
+  - Le menu principal de `/settings` est réorganisé en lignes logiques.
+  - Le message de setup lie désormais directement les commandes et propose un bouton pour changer le salon de logs.
+  - Un bouton **désactiver le captcha** est proposé lorsque le salon du captcha a été supprimé.
+- Migration interne de la couche Discord vers des librairies partagées (`@fca.gg/discord`) pour accélérer les prochaines mises à jour.
+- Correction :
+  - Messages d’erreur plus clairs distinguant **timeout** et **mute**, et les cibles administrateur des blocages de hiérarchie de rôles.
+  - Correction de la conversion automatique des timeouts de l’AutoMod Discord.
+  - Correction de `/serverinfo` : accès à l’URL personnalisée, règles et statistiques.
+  - Correction de l’alias `/discord-sanctions` et de l’usage du préfixe des commandes par message.
+  - Correction du Jail appliqué aux administrateurs avec le mode remplacement des rôles.
+  - Durcissement de la validation des URL de webhook.
+  - Corrections diverses : logs de sanction, captcha, messages de la Fermeture des MP, notes de modération, détection du Premium.
+  - Corrections de traductions diverses.
+
 ## 3.3.3 (30/04/2026) {#3-3-3}
 
 - Nouvelle [commande `/modview`](./features/moderation.mdx#modview) pour ouvrir une vue de modération centralisée d’un membre (sanctions, note, snipe). <SuggestionLink id="544" />
