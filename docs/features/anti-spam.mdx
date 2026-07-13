@@ -2,6 +2,8 @@
 title: Anti-spam
 ---
 
+import { AntiSpamSettingsMockup, AntiSpamSanctionsSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
+
 import AntiSpamMockup from '@site/src/components/DiscordMessage/mockups/anti-spam';
 
 <AntiSpamMockup />
@@ -29,7 +31,7 @@ RaidProtect offre trois niveaux de sécurité pour répondre aux besoins de votr
 - 🟠 **Moyen :** Sanctionne tous les spams, mais respecte les salons ignorés.
 - 🟢 **Faible :** Sanctionne uniquement les spams lourd.
 
-![Capture d'écran paramètre anti-spam](../assets/rp-settings-anti-spam.webp)
+<AntiSpamSettingsMockup />
 
 ### Changer le niveau de sécurité {#level}
 
@@ -97,7 +99,7 @@ Et les **déclencheurs (triggers)** que RaidProtect peut détecter, avec la sanc
 Le déclencheur **Spam multisalon** est particulier : sa sanction remplace celle du déclencheur d'origine lorsque le spam touche plusieurs salons, uniquement si elle est plus sévère.
 :::
 
-![Capture d'écran des sanctions anti-spam](../assets/rp-settings-anti-spam-sanctions.webp)
+<AntiSpamSanctionsSettingsMockup />
 
 #### Durée des sanctions {#duration}
 
