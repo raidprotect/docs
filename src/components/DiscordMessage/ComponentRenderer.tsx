@@ -333,10 +333,8 @@ export default function ComponentRenderer({
         : undefined;
 
       return (
-        <div
-          className={styles.container}
-          style={borderColor ? { borderLeftColor: borderColor } : undefined}
-        >
+        <div className={`${styles.container} ${borderColor ? styles.containerAccent : ""}`}>
+          {borderColor && <span className={styles.containerAccentBar} style={{ backgroundColor: borderColor }} />}
           {component.components.map((child, i) => (
             <ComponentRenderer key={i} component={child} navigableIds={navigableIds} onNavigate={onNavigate} />
           ))}
