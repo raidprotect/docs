@@ -2,6 +2,8 @@
 title: Anti-raid
 ---
 
+import { RaidModeSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
+
 import RaidModeMockup from '@site/src/components/DiscordMessage/mockups/raid-mode';
 
 <RaidModeMockup />
@@ -35,7 +37,7 @@ La commande `raidmode` est [utilisable par préfixe](../guides/prefix.md).
 
 Si votre serveur accueille souvent beaucoup de nouveaux membres simultanément, il est judicieux de modifier ce seuil pour éviter les faux-positifs.
 
-![Capture d'écran mode raid automatique](../assets/rp-settings-raid-mode.webp)
+<RaidModeSettingsMockup />
 
 #### Seuil de membres {#threshold}
 
