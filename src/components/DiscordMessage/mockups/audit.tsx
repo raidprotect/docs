@@ -8,9 +8,9 @@ import concept from "./concept.module.css";
  * audit logs défilent, tout est clean. Boucle. Statique (état corrigé) si
  * mouvement réduit.
  *
- * Phases : 0 repos, 1 curseur vers Corriger, 2 clic, 3 corrigé (édité),
- * 4 reset. */
-const PHASE_DURATIONS = [900, 1400, 300, 3800, 100];
+ * Phases : 0 repos, 1 curseur vers Corriger, 2 clic, 3 chargement (bouton
+ * grisé), 4 corrigé (édité), 5 reset. */
+const PHASE_DURATIONS = [900, 1400, 300, 1100, 3800, 100];
 
 const GAUGES = [
   { icon: "/img/icons/iconSettings.svg", labelId: "mockup.audit.gaugeServer", label: "Serveur", value: 68 },
@@ -22,12 +22,13 @@ const CURSOR_POS: Array<[number, number]> = [
   [340, 262], // 0 repos
   [120, 230], // 1 vers Corriger (recalé au runtime)
   [120, 230], // 2 clic
-  [340, 262], // 3 corrigé
-  [340, 262], // 4 reset
+  [120, 230], // 3 chargement (le curseur reste sur le bouton)
+  [340, 262], // 4 corrigé
+  [340, 262], // 5 reset
 ];
 
 function Cursor({ phase, target }: { phase: number; target: [number, number] | null }) {
-  const [x, y] = (phase === 1 || phase === 2) && target ? target : CURSOR_POS[phase];
+  const [x, y] = phase >= 1 && phase <= 3 && target ? target : CURSOR_POS[phase];
   return (
     <svg
       className={concept.cursor}
@@ -47,11 +48,9 @@ function Cursor({ phase, target }: { phase: number; target: [number, number] | n
 }
 
 export default function AuditMockup() {
-  const [phase, setPhase] = useState(3);
+  const [phase, setPhase] = useState(4);
   const [btnPos, setBtnPos] = useState<[number, number] | null>(null);
   const [arrived, setArrived] = useState(false);
-  // "Tout est clean !" n'apparaît qu'une fois la cascade des logs terminée.
-  const [cleanDone, setCleanDone] = useState(false);
   const sceneRef = useRef<HTMLDivElement>(null);
   const btnRef = useRef<HTMLSpanElement>(null);
   const animated = useRef(false);
@@ -60,14 +59,6 @@ export default function AuditMockup() {
     setArrived(false);
     const t = setTimeout(() => setArrived(true), 680);
     return () => clearTimeout(t);
-  }, [phase]);
-
-  useEffect(() => {
-    if (phase === 3) {
-      const t = setTimeout(() => setCleanDone(true), 900);
-      return () => clearTimeout(t);
-    }
-    setCleanDone(false);
   }, [phase]);
 
   useEffect(() => {
@@ -87,11 +78,12 @@ export default function AuditMockup() {
       setPhase(0);
       return;
     }
-    const t = setTimeout(() => setPhase(phase >= 4 ? 0 : phase + 1), PHASE_DURATIONS[phase]);
+    const t = setTimeout(() => setPhase(phase >= 5 ? 0 : phase + 1), PHASE_DURATIONS[phase]);
     return () => clearTimeout(t);
   }, [phase]);
 
-  const clean = phase >= 3;
+  const loading = phase === 3;
+  const clean = phase >= 4;
 
   return (
     <div className={`${concept.animWrap} ${concept.animWrapWide} ${concept.auditWrap}`} ref={sceneRef}>
@@ -153,23 +145,31 @@ export default function AuditMockup() {
                   <span
                     ref={btnRef}
                     className={`${concept.auditFix} ${
-                      phase === 2 ? concept.auditFixActive : phase === 1 && arrived ? concept.auditFixHover : ""
+                      loading
+                        ? concept.auditFixLoading
+                        : phase === 2
+                          ? concept.auditFixActive
+                          : phase === 1 && arrived
+                            ? concept.auditFixHover
+                            : ""
                     }`}
                   >
-                    <img src="/img/icons/iconSucceed.svg" alt="" width={15} height={15} loading="lazy" />
+                    {loading ? (
+                      <span className={concept.dmSpinner} />
+                    ) : (
+                      <img src="/img/icons/iconSucceed.svg" alt="" width={15} height={15} loading="lazy" />
+                    )}
                     {translate({ id: "mockup.audit.fix", message: "Corriger" })}
                   </span>
                 ) : (
                   <div style={{ minHeight: 30 }}>
-                    {cleanDone && (
-                      <div className={concept.auditClean}>
-                        <img src="/img/icons/iconSucceed.svg" alt="" loading="lazy" />
-                        {translate({ id: "mockup.audit.clean", message: "Tout est clean !" })}
-                        <span className={concept.auditEdited}>
-                          {translate({ id: "mockup.audit.edited", message: "(modifié)" })}
-                        </span>
-                      </div>
-                    )}
+                    <div className={concept.auditClean}>
+                      <img src="/img/icons/iconSucceed.svg" alt="" loading="lazy" />
+                      {translate({ id: "mockup.audit.clean", message: "Tout est clean !" })}
+                      <span className={concept.auditEdited}>
+                        {translate({ id: "mockup.audit.edited", message: "(modifié)" })}
+                      </span>
+                    </div>
                   </div>
                 )}
               </div>
