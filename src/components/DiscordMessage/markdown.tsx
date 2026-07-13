@@ -12,8 +12,8 @@ export function formatInlineMarkdown(text: string): ReactNode[] {
   let key = 0;
 
   while (remaining.length > 0) {
-    // ![](/img/...) : icône inline locale (emoji custom du bot)
-    const iconMatch = remaining.match(/^!\[\]\((\/[^)]+)\)/);
+    // ![](/img/...) ou ![](https://cdn...) : icône inline (emoji custom du bot)
+    const iconMatch = remaining.match(/^!\[\]\(((?:\/|https:\/\/)[^)]+)\)/);
     if (iconMatch) {
       result.push(<img key={key++} className={styles.inlineIcon} src={iconMatch[1]} alt="" aria-hidden loading="lazy" />);
       remaining = remaining.slice(iconMatch[0].length);
