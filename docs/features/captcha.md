@@ -2,6 +2,8 @@
 title: Captcha (Vérification)
 ---
 
+import { CaptchaSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
+
 import CaptchaMockup from '@site/src/components/DiscordMessage/mockups/captcha';
 
 {/* <CaptchaMockup /> : masquée pour le moment */}
@@ -36,7 +38,7 @@ La mise en place du captcha est simple et rapide.
 4. Le rôle **@Non vérifié** est automatiquement créé et configuré.
 5. Configurez le nombre d’essais autorisés (entre 1 et 3) ainsi que le temps de résolution maximal (entre 1 et 10 minutes).
 
-![Capture d'écran paramètre captcha](../assets/rp-settings-captcha.webp)
+<CaptchaSettingsMockup />
 
 ## ✨ Fonctionnalités supplémentaires {#additional-features}
 
