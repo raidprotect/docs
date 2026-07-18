@@ -6,7 +6,7 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Découvrez la liste détaillée des modifications qui ont été apportées à RaidProtect.
 
-## 3.3.4 (13/07/2026) {#3-3-4}
+## 3.4.0 (17/07/2026) {#3-4-0}
 
 - [Anti-spam](./features/anti-spam.mdx) V2 :
   - **Spam multi-salons** : une sanction dédiée lorsque le spam s’étend sur plusieurs salons (Jail par défaut, Timeout minimum).
@@ -31,7 +31,7 @@ Découvrez la liste détaillée des modifications qui ont été apportées à Ra
   - Nouvelle [commande `/transparency`](./features/transparency.md#command) pour afficher à la demande le récap de la dernière période écoulée.
 - Nouvelle [commande `/audit`](./features/audit.md) : un **audit de sécurité** complet du serveur avec un score global, des [vérifications détaillées](./features/audit.md#checks) (niveau de vérification, permissions, salons) et des [corrections en un clic](./features/audit.md#fix). Les rôles admin peuvent être intégrés à l’Authentication Manager directement depuis l’audit.
 - Nouveau [mode expulsion](./features/raid-mode.md#kick-mode) (**Premium**) pour le mode raid et la Fermeture des Jointures : les nouveaux arrivants sont expulsés avec un MP d’explication et un bouton d’invitation pour revenir, au lieu de la pause native des invitations. La nouvelle [commande `/bypass raid`](./features/raid-mode.md#bypass-raid) laisse entrer des utilisateurs spécifiques pendant qu’il est actif.
-- Les commandes par message respectent désormais les **permissions de commandes Discord** (onglet Intégrations), avec un panneau des permissions en lecture seule dans `/settings`.
+- Les [commandes par message](./guides/prefix.md#permissions) peuvent désormais suivre les **permissions de commandes Discord** (onglet Intégrations) via une nouvelle option de `/settings`.
 - RaidProtect répond désormais sous les **alertes de sécurité Discord** lorsqu’elles sont causées par la [Fermeture des MP](./features/dm-lock.mdx), en citant l’alerte et en expliquant où ajuster le paramètre.
 - Le log d’expulsion de l’[âge de compte minimum](./features/raid-mode.md#minage) affiche désormais le seuil requis sous forme de timestamp.
 - Paramètres et setup :
@@ -119,7 +119,7 @@ Découvrez la liste détaillée des modifications qui ont été apportées à Ra
   - Les commandes `/timeout` et `/untimeout` deviennent [`/mute`](./features/moderation.mdx#timeout) et [`/unmute`](./features/moderation.mdx#untimeout). Le timeout Discord reste utilisé par défaut en dessous du seuil.
   - Nouveau paramètre `[force_timeout]` pour forcer le timeout Discord quelle que soit la durée.
 - [Sanctionner via le menu contextuel](./features/moderation.mdx#context-menu) (clic droit sur un profil).
-- Nouvelle [commande `/my-sanctions`](./features/utilities.mdx#my-sanctions) pour permettre aux membres de consulter leurs propres sanctions.
+- Nouvelle [commande `/mes-sanctions`](./features/utilities.mdx#my-sanctions) pour permettre aux membres de consulter leurs propres sanctions.
 - Nouveau paramètre [Confidentialité des sanctions](./features/sanctions.mdx#sanctions-privacy) pour contrôler l'accès aux sanctions personnelles.
 - Nouveau paramètre [Afficher les médias](./features/sanctions.mdx#show-medias) dans les raisons de sanctions.
 - Refonte visuelle des filtres dans [`/sanctions search`](./features/sanctions.mdx#search) et ajout du filtre [type de modérateur](./features/sanctions.mdx#search).

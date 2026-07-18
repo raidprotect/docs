@@ -6,7 +6,7 @@ import { SanctionLogsSettingsMockup } from '@site/src/components/DiscordMessage/
 
 import SanctionsMockup from '@site/src/components/DiscordMessage/mockups/sanctions';
 
-<SanctionsMockup />
+{/* <SanctionsMockup /> masqué temporairement : mockup à améliorer */}
 
 import Icon from "@site/src/components/Icon";
 
@@ -168,7 +168,7 @@ Cette fonctionnalité est actuellement en **beta publique pour les serveurs Prem
 
 ### Confidentialité des Sanctions {#sanctions-privacy}
 
-Configurez le niveau de confidentialité des sanctions afin de contrôler les informations auxquelles les membres peuvent accéder concernant **leurs propres sanctions**, via la commande [`/my-sanctions`](./utilities.mdx#my-sanctions) ou le bouton **Consulter mes sanctions**.
+Configurez le niveau de confidentialité des sanctions afin de contrôler les informations auxquelles les membres peuvent accéder concernant **leurs propres sanctions**, via la commande [`/mes-sanctions`](./utilities.mdx#my-sanctions) ou le bouton **Consulter mes sanctions**.
 
 1. Faites la [commande `/settings`](../setup.md#settings).
 2. Cliquez sur le bouton "**Sanctions**".
@@ -188,7 +188,7 @@ Quel que soit le niveau sélectionné, **les modérateurs conservent un accès c
 
 ### Afficher les médias {#show-medias}
 
-Configurez l'affichage des médias dans les raisons de sanctions. Lorsque cette option est désactivée, les liens contenant les extensions suivantes sont automatiquement retirés des raisons de sanctions lors de l'affichage aux membres (via [`/my-sanctions`](./utilities.mdx#my-sanctions) ou les notifications de sanctions) :
+Configurez l'affichage des médias dans les raisons de sanctions. Lorsque cette option est désactivée, les liens contenant les extensions suivantes sont automatiquement retirés des raisons de sanctions lors de l'affichage aux membres (via [`/mes-sanctions`](./utilities.mdx#my-sanctions) ou les notifications de sanctions) :
 
 `png`, `jpg`, `jpeg`, `gif`, `webp`, `webm`, `mp4`
 

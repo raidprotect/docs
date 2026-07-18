@@ -41,3 +41,9 @@ Si activé, personnalisez le préfixe en saisissant le caractère ou la chaîne 
 Les commandes Slash (`/`) restent disponibles même si le préfixe est activé.
 Il est recommandé d’éviter les préfixes déjà utilisés par d’autres bots pour éviter les conflits de commandes.
 :::
+
+## 🔒 Appliquer les permissions de commandes {#permissions}
+
+Par défaut, les commandes par préfixe ne tiennent compte que des permissions Discord propres à chaque commande. Les autorisations que vous définissez dans Discord (**Paramètres du serveur → Intégrations → RaidProtect**, par rôle, membre ou salon) ne s’appliquent qu’aux commandes Slash.
+
+Pour les appliquer aussi aux commandes par préfixe, activez l’option **Appliquer aux commandes préfixe** dans le panneau des permissions de [`/settings`](../setup.md#settings). Elle est désactivée par défaut.

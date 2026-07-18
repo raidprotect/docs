@@ -35,14 +35,20 @@ Cliquez sur le bouton "**Détails**" d'une catégorie pour voir le résultat de 
 | Configuration du serveur | **Double authentification (2FA) pour la modération** |
 | Configuration du serveur | **Notifications par défaut** |
 | Configuration du serveur | **Alertes de raid** |
+| Configuration du serveur | **Fermeture des MP** * (serveurs communautaires) |
+| Configuration du serveur | **Nombre de bots installés** * |
 | Rôles | **Permissions de @everyone** |
 | Rôles | **Rôles auto-attribuables** |
+| Rôles | **Rôles à risque attribués par une invitation** |
 | Rôles | **Rôles administrateurs** |
-| Rôles | **Bots administrateurs** |
+| Rôles | **Bots administrateurs** * |
 | Salons | **Permissions de salon pour @everyone** |
 | Salons | **Permissions de salon redondantes** |
+| Salons | **Webhooks anciens** * |
 
-Si des permissions manquent à RaidProtect pour fonctionner correctement, un avertissement dédié est affiché en plus du score. L'audit se termine par une section "**Conseils**" qui vous suggère d'activer les protections RaidProtect encore désactivées ([HoneyPot](./honeypot.md), [Anti-spam](./anti-spam.mdx), [Auto RaidMode](./raid-mode.md), [Fermeture des MP](./dm-lock.mdx)).
+Les vérifications marquées d'un `*` sont **indicatives** : elles apparaissent dans le rapport mais n'influencent pas le score.
+
+Si des permissions manquent à RaidProtect pour fonctionner correctement, un avertissement dédié est affiché en plus du score.
 
 ## 🔧 Corriger les failles en un clic {#fix}
 
@@ -61,3 +67,9 @@ Pour les **rôles administrateurs** (et bots administrateurs), il n'existe pas d
 :::warning
 Pour appliquer les corrections, RaidProtect doit disposer des permissions `Gérer le serveur` et `Gérer les rôles`.
 :::
+
+## ✅ Écarter une alerte volontaire {#ignore}
+
+Certaines alertes correspondent à des choix assumés : un rôle administrateur de confiance, une permission laissée à `@everyone` en connaissance de cause, etc. Le bouton "**Marquer comme OK**", disponible dans le détail d'une catégorie, permet de les écarter.
+
+Une alerte ignorée disparaît du rapport et ne pèse plus sur votre score. Vous pouvez à tout moment consulter la liste des éléments ignorés (bouton "**Éléments ignorés**") et rétablir n'importe lequel d'entre eux.
