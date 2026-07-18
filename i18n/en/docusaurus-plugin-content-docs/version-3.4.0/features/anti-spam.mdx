@@ -92,7 +92,7 @@ And here are the **triggers** that RaidProtect can detect, with the sanction app
 | External command spam                  | Using external commands to spam                          | Ban                 |
 | Attachment spam                        | Mass sending of files or images                          | Disabled            |
 | Duplicate spam or heavy spam           | Copy-pasted messages or excessive spam                   | Softban             |
-| Scam images (Crypto Scam)              | Scam images detected by [ScamLens](/blog/threat-weather-june-2026) | Timeout             |
+| Scam images (Crypto Scam)              | Scam images detected by [ScamLens](./scam-images.md) | Timeout             |
 | Multi-channel spam                     | Spam spread across several channels                      | Jail                |
 
 :::info
@@ -100,6 +100,10 @@ The **Multi-channel spam** trigger is special: its sanction replaces the one fro
 :::
 
 <AntiSpamSanctionsSettingsMockup />
+
+:::info Premium: discreet moderation
+By default, every anti-spam sanction is announced by a **public message** in the channel. **Premium** servers can hide this message for more discreet moderation.
+:::
 
 #### Sanctions duration {#duration}
 

@@ -92,7 +92,7 @@ Y los **disparadores** que RaidProtect puede detectar, con la sancion aplicada p
 | Spam de comandos externos              | Uso de comandos externos para hacer spam                 | Baneo               |
 | Spam de adjuntos                       | Envio masivo de archivos o imagenes                      | Desactivado         |
 | Spam de duplicados o spam importante   | Mensajes copiados y pegados o spam excesivo              | Softban             |
-| Imagenes de estafa (Crypto Scam)       | Imagenes de estafa detectadas por [ScamLens](/blog/threat-weather-june-2026) | Timeout             |
+| Imagenes de estafa (Crypto Scam)       | Imagenes de estafa detectadas por [ScamLens](./scam-images.md) | Timeout             |
 | Spam multicanal                        | Spam repartido en varios canales                         | Jail                |
 
 :::info
@@ -100,6 +100,10 @@ El disparador **Spam multicanal** es particular: su sancion reemplaza a la del d
 :::
 
 <AntiSpamSanctionsSettingsMockup />
+
+:::info Premium: moderación discreta
+Por defecto, cada sanción del anti-spam se anuncia con un **mensaje público** en el canal. Los servidores **Premium** pueden ocultar este mensaje para una moderación más discreta.
+:::
 
 #### Duracion de las sanciones {#duration}
 

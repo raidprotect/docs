@@ -385,6 +385,9 @@ export default function PremiumPage(): React.ReactNode {
         { type: 'feature', label: translate({ id: 'premium.compare.row.moderation', message: 'Modération complète (ban, kick, mute, jail…)' }), values: [yes, yes, yes] },
         { type: 'feature', label: translate({ id: 'premium.compare.row.kickMode', message: 'Mode expulsion + DM (Fermeture des Jointures & Mode raid)' }), values: [no, yes, yes], small: true },
 
+        { type: 'category', label: translate({ id: 'premium.compare.cat.reports', message: 'Signalements' }) },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.trustedRole', message: 'Rôle de confiance (timeout préventif)' }), values: [no, yes, yes] },
+
         { type: 'category', label: translate({ id: 'premium.compare.cat.authManager', message: 'Authentication Manager' }) },
         { type: 'feature', label: translate({ id: 'premium.compare.row.protectedRoles', message: 'Rôles protégés' }), values: ['3', '10', custom] },
         { type: 'feature', label: translate({ id: 'premium.compare.row.authorizedUsers', message: 'Utilisateurs autorisés' }), values: ['20', '50', custom] },
@@ -411,6 +414,7 @@ export default function PremiumPage(): React.ReactNode {
 
         { type: 'category', label: translate({ id: 'premium.compare.cat.customization', message: 'Personnalisation' }) },
         { type: 'feature', label: translate({ id: 'premium.compare.row.botIdentity', message: 'Pseudo, avatar et bannière du bot' }), values: [no, yes, yes] },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.publicMessage', message: 'Message public de sanction masquable' }), values: [no, yes, yes] },
         { type: 'feature', label: translate({ id: 'premium.compare.row.nameStyle', message: 'Style d\'écriture du nom (8 polices, 4 effets)' }), values: [no, yes, yes] },
         { type: 'feature', label: translate({ id: 'premium.compare.row.customSanctions', message: 'Noms de sanctions personnalisés' }), values: [no, yes, yes] },
         { type: 'feature', label: translate({ id: 'premium.compare.row.bio', message: 'Bio personnalisable' }), values: [no, no, yes] },
