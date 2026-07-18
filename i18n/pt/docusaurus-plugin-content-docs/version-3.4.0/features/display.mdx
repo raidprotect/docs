@@ -1,0 +1,53 @@
+---
+title: Painéis de Informação
+---
+
+import DisplayMockup from '@site/src/components/DiscordMessage/mockups/display';
+
+<DisplayMockup />
+
+O comando `/display public` permite que você crie e gerencie painéis de informação públicos exibidos no seu servidor. Você pode criar vários painéis com diferentes tipos de conteúdo e funcionalidades.
+
+Use o comando: ```/display public```
+
+## ❓ Como funciona {#working}
+
+Cada painel de informação é publicado pelo bot em um canal à sua escolha. Você dispõe de vários espaços para criar painéis independentes, cada um com seu próprio conteúdo e suas próprias funcionalidades.
+
+:::info
+**Limites:** 2 espaços na versão gratuita, 4 na versão premium (+ 1 espaço reservado para o conteúdo Prisão).
+:::
+
+## 📄 Tipos de conteúdo {#content}
+
+Cada painel pode conter um ou mais dos seguintes conteúdos:
+
+- **Bloqueio de DMs**: Informa os membros sobre o estado do fechamento das DMs. Exibe se as DMs estão bloqueadas ou não e explica que apenas amigos, staff, bots e contatos anteriores podem enviar DMs.
+- **Prisão**: Exibe uma mensagem destinada aos membros presos, indicando que o acesso deles ao servidor foi limitado devido ao descumprimento das regras.
+- **Sanções**: Indica aos membros como consultar o histórico de suas sanções pessoais por meio do comando `/minhas-sancoes`.
+- **Denúncia**: Explica aos membros como denunciar um usuário ou uma mensagem por meio do comando `/report` ou do menu de contexto (clique com o botão direito).
+
+## ⚙️ Funcionalidades {#features}
+
+Além do conteúdo, cada painel pode ativar funcionalidades interativas:
+
+- **Tradução**: Adiciona um botão que permite aos membros traduzir o painel para todos os idiomas suportados pelo Discord.
+- **Acesso às sanções**: Adiciona um botão "Consultar minhas sanções" que permite aos membros consultar diretamente suas sanções.
+- **Denúncia**: Adiciona um botão "Denunciar" para denunciar rapidamente um usuário.
+
+{/* TODO: Adicionar uma captura de tela de /display public */}
+
+## 📌 Espaço reservado {#reserved-slot}
+
+O último espaço está reservado para o conteúdo **Prisão** e é gerenciado automaticamente via `/settings` > Sanções > [Prisão](./sanctions.mdx#jail). Seu canal só pode ser alterado por meio dessa configuração.
+
+## 🔄 Atualização dos painéis {#update}
+
+Quando você altera o idioma do bot ou o conteúdo dos painéis é atualizado pelo RaidProtect, um indicador sinaliza os painéis que estão desatualizados. Você pode então clicar no botão "Atualizar" para atualizar o painel.
+
+## ✏️ Editar ou excluir um painel {#edit}
+
+No menu `/display public`, cada espaço ocupado tem botões para:
+
+- **Editar**: Alterar o canal, o conteúdo ou as funcionalidades do painel.
+- **Excluir**: Remover o painel do canal e liberar o espaço.

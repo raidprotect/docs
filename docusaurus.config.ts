@@ -95,11 +95,11 @@ export default async function createConfigAsync() {
                     pt: 'RaidProtect é um bot do Discord que protege seu servidor de usuários maliciosos graças ao seu anti-spam e captcha. <strong>E justo lá, um pequeno gerânio.&nbsp;</strong>'
                 },
                 announcementBar: {
-                    fr: '<strong>La mise à jour <a href="https://raidprotect.bot/blog/3.3.3-modview">Vue de modération centralisée (3.3.3)</a> est disponible !</strong>',
-                    en: '<strong>The <a href="https://raidprotect.bot/en/blog/3.3.3-modview">Centralized Moderation View (3.3.3)</a> update is now live!</strong>',
-                    de: '<strong>Das Update <a href="https://raidprotect.bot/de/blog/3.3.3-modview">Zentrale Moderationsansicht (3.3.3)</a> ist jetzt verfügbar!</strong>',
-                    es: '<strong>¡La actualización <a href="https://raidprotect.bot/es/blog/3.3.3-modview">Vista de moderación centralizada (3.3.3)</a> ya está disponible!</strong>',
-                    pt: '<strong>A atualização <a href="https://raidprotect.bot/pt/blog/3.3.3-modview">Vista de moderação centralizada (3.3.3)</a> já está disponível!</strong>'
+                    fr: '<strong>La mise à jour <a href="https://raidprotect.bot/blog/3.4.0-antispam-update">Antispam Update</a> est disponible !</strong>',
+                    en: '<strong>The <a href="https://raidprotect.bot/en/blog/3.4.0-antispam-update">Antispam Update</a> is now live!</strong>',
+                    de: '<strong>Das <a href="https://raidprotect.bot/de/blog/3.4.0-antispam-update">Antispam Update</a> ist jetzt verfügbar!</strong>',
+                    es: '<strong>¡La actualización <a href="https://raidprotect.bot/es/blog/3.4.0-antispam-update">Antispam Update</a> ya está disponible!</strong>',
+                    pt: '<strong>A atualização <a href="https://raidprotect.bot/pt/blog/3.4.0-antispam-update">Antispam Update</a> já está disponível!</strong>'
                 }
             },
             excludedCanonical: []
@@ -140,7 +140,7 @@ export default async function createConfigAsync() {
                                 path: 'beta'
                             },
                             [lastStableVersion]: {
-                                label: 'Stable',
+                                label: `Stable - ${lastStableVersion}`,
                             }
                         },
                         admonitions: {
@@ -237,8 +237,8 @@ export default async function createConfigAsync() {
                 },
             },
             announcementBar: {
-                id: '3.3.3',
-                content: '<strong>The <a href="https://raidprotect.bot/en/blog/3.3.3-modview">Centralized Moderation View (3.3.3)</a> update is now live!</strong>',
+                id: '3.4.0',
+                content: '<strong>The <a href="https://raidprotect.bot/en/blog/3.4.0-antispam-update">Antispam Update</a> is now live!</strong>',
                 backgroundColor: '#BD5454',
                 textColor: '#FFFFFF',
                 isCloseable: false

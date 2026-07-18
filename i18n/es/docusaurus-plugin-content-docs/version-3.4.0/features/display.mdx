@@ -1,0 +1,53 @@
+---
+title: Paneles de información
+---
+
+import DisplayMockup from '@site/src/components/DiscordMessage/mockups/display';
+
+<DisplayMockup />
+
+El comando `/display public` te permite crear y gestionar paneles de información públicos que se muestran en tu servidor. Puedes crear varios paneles con diferentes tipos de contenido y funciones.
+
+Usa el comando: ```/display public```
+
+## ❓ Cómo funciona {#working}
+
+Cada panel de información es publicado por el bot en un canal de tu elección. Dispones de varios espacios para crear paneles independientes, cada uno con su propio contenido y sus propias funciones.
+
+:::info
+**Límites:** 2 espacios en la versión gratuita, 4 en la versión premium (+ 1 espacio reservado para el contenido del Calabozo).
+:::
+
+## 📄 Tipos de contenido {#content}
+
+Cada panel puede contener uno o varios de los siguientes tipos de contenido:
+
+- **Bloqueo de MD**: Informa a los miembros sobre el estado del bloqueo de los MD. Muestra si los MD están bloqueados o no, y explica que solo los amigos, el staff, los bots y los contactos previos pueden enviar MD.
+- **Calabozo**: Muestra un mensaje destinado a los miembros en el calabozo, indicando que su acceso al servidor ha sido restringido tras un incumplimiento de las reglas.
+- **Sanciones**: Indica a los miembros cómo consultar el historial de sus sanciones personales mediante el comando `/mis-sanciones`.
+- **Reporte**: Explica a los miembros cómo reportar a un usuario o un mensaje mediante el comando `/report` o el menú contextual (clic derecho).
+
+## ⚙️ Funciones {#features}
+
+Además del contenido, cada panel puede activar funciones interactivas:
+
+- **Traducción**: Añade un botón que permite a los miembros traducir el panel a todos los idiomas soportados por Discord.
+- **Acceso a las sanciones**: Añade un botón "Consultar mis sanciones" que permite a los miembros consultar directamente sus sanciones.
+- **Reporte**: Añade un botón "Reportar" para reportar rápidamente a un usuario.
+
+{/* TODO: Ajouter une capture d'écran de /display public */}
+
+## 📌 Espacio reservado {#reserved-slot}
+
+El último espacio está reservado para el contenido **Calabozo** y se gestiona automáticamente mediante `/settings` > Sanciones > [Calabozo](./sanctions.mdx#jail). Su canal solo puede modificarse a través de esta configuración.
+
+## 🔄 Actualización de los paneles {#update}
+
+Cuando cambias el idioma del bot o el contenido de los paneles es actualizado por RaidProtect, un indicador señala los paneles que no están actualizados. Entonces puedes hacer clic en el botón "Actualizar" para actualizar el panel.
+
+## ✏️ Modificar o eliminar un panel {#edit}
+
+Desde el menú `/display public`, cada espacio ocupado dispone de botones para:
+
+- **Modificar**: Cambiar el canal, el contenido o las funciones del panel.
+- **Eliminar**: Retirar el panel del canal y liberar el espacio.

@@ -1,0 +1,214 @@
+---
+title: Moderación
+---
+
+import ModerationMockup from '@site/src/components/DiscordMessage/mockups/moderation';
+
+{/* <ModerationMockup /> masqué temporairement : mockup à améliorer */}
+
+import Icon from "@site/src/components/Icon";
+
+Para facilitar el trabajo de tus moderadores, RaidProtect integra comandos de moderación muy prácticos que te permiten interactuar directamente con las funciones nativas de Discord, como el **baneo** y la **expulsión** de usuarios.
+
+Además de estas acciones, RaidProtect envía mensajes privados al usuario sancionado para explicarle la razón de su sanción, y esto también queda registrado en los logs del servidor para tu seguimiento.
+
+:::info
+Los comandos de moderación son [utilizables mediante prefijo](../guides/prefix).
+:::
+
+:::info
+Todos los comandos de sanción aceptan la opción `[silent]` para no notificar al objetivo por MD. Los MD de notificación (kick, softban, ban temporal) contienen un botón con una invitación al servidor.
+:::
+
+## 🔍 Vista de moderación de un miembro {#modview}
+
+El comando `/modview` abre una **vista de moderación centralizada** sobre un miembro: sus sanciones, su nota de moderación interna y el último mensaje que ha eliminado se agrupan en una sola respuesta, con acciones rápidas (sancionar, modificar la nota, etc.).
+
+Usa el comando: ```/modview (usuario)```
+
+Reemplaza `(usuario)` con la mención o el identificador deseado.
+
+:::tip
+El comando también es accesible mediante el menú contextual: clic derecho en un perfil → **Aplicaciones** → **Abrir Modview**.
+:::
+
+## 🖱️ Sancionar mediante el menú contextual {#context-menu}
+
+Además de los comandos slash, puedes sancionar a un miembro directamente desde su perfil mediante clic derecho: **Aplicaciones** → **RaidProtect** → **Sancionar**.
+
+Se abre entonces una ventana que te permite:
+- **Tipo de sanción**: Seleccionar el tipo de sanción a aplicar.
+- **Duración**: Indicar una duración (opcional, ej.: `1d 2h 30m`).
+- **Razón**: Precisar el motivo de la sanción.
+
+## <Icon src="/img/icons/SanctionsBAN.svg" alt="icon SanctionsBAN" title=":iconSanctionsBAN:"/> Banear a un usuario {#ban}
+
+El comando `/ban` te permite prohibir permanentemente el acceso de un usuario a tu servidor.
+
+Usa el comando: ```/ban (usuario) [delete-messages] [silent] [razón]```
+
+Reemplaza `(usuario)` con la mención o el identificador deseado y `[razón]` con el motivo de la sanción.
+
+- `[delete-messages]`: duración del historial a eliminar (por ejemplo `1h`, `1d`, `7d`). Discord limita la eliminación a un máximo de 7 días.
+- `[silent]`: no enviar MD al objetivo.
+
+:::tip
+Puedes banear a un usuario a partir de su [identificador de Discord](../guides/id), aunque no esté conectado ni presente en tu servidor.
+:::
+
+### <Icon src="/img/icons/SanctionsBANTemp.svg" alt="icon SanctionsBANTemp" title=":iconSanctionsBANTemp:"/>  Banear temporalmente a un usuario {#tempban}
+
+El comando `/tempban` te permite prohibir temporalmente el acceso de un usuario a tu servidor.
+
+Usa el comando: ```/tempban (usuario) (duración) [delete-messages] [silent] [razón]```
+
+Reemplaza `(usuario)` con la mención o el identificador deseado, `(duración)` con la duración del baneo y `[razón]` con el motivo de la sanción. El parámetro `[delete-messages]` permite eliminar el historial de mensajes del miembro (hasta 7 días).
+
+### <Icon src="/img/icons/SanctionsSOFTBAN.svg" alt="icon SanctionsSOFTBAN" title=":iconSanctionsSOFTBAN:"/> Softban a un usuario {#softban}
+
+El comando `/softban` banea e inmediatamente desbanea a un miembro. Esto permite **eliminar el historial de sus mensajes** sin excluirlo definitivamente del servidor: puede volver con una nueva invitación.
+
+Usa el comando: ```/softban (miembro) [delete-messages] [silent] [razón]```
+
+Reemplaza `(miembro)` con la mención o el identificador deseado y `[razón]` con el motivo de la sanción. El parámetro `[delete-messages]` permite elegir la duración de mensajes a eliminar (por defecto 1 día).
+
+:::tip
+El softban se adapta especialmente a las **cuentas hackeadas**: se limpia el spam y se libera la cuenta, sin excluir definitivamente al miembro una vez que haya asegurado su cuenta.
+:::
+
+### <Icon src="/img/icons/SanctionsUNBAN.svg" alt="icon SanctionsUNBAN" title=":iconSanctionsUNBAN:"/> Desbanear a un usuario {#unban}
+
+El comando `/unban` te permite retirar el baneo de un usuario previamente baneado, permitiéndole así unirse de nuevo a tu servidor.
+
+Usa el comando: ```/unban (usuario) [silent] [razón]```
+
+Reemplaza `(usuario)` con el identificador deseado y `[razón]` con el motivo del desbaneo.
+
+## <Icon src="/img/icons/SanctionsKICK.svg" alt="icon SanctionsKICK" title=":iconSanctionsKICK:" /> Expulsar a un usuario {#kick}
+
+El comando `/kick` te permite expulsar a un miembro de tu servidor sin banearlo. El usuario podrá volver a unirse al servidor si posee una invitación válida.
+
+Usa el comando: ```/kick (miembro) [silent] [razón]```
+
+Reemplaza `(miembro)` con la mención o el identificador deseado y `[razón]` con el motivo de la sanción.
+
+## <Icon src="/img/icons/SanctionsTIMEOUT.svg" alt="icon SanctionsTIMEOUT" title=":iconSanctionsTIMEOUT:" /> Silenciar (o Mute) a un usuario {#timeout}
+
+El comando `/mute` te permite restringir temporalmente la capacidad de un miembro para interactuar en el servidor. Durante este periodo, el miembro no podrá enviar mensajes, reaccionar, unirse a canales de voz ni enviar mensajes privados a otros miembros.
+
+Usa el comando: ```/mute (miembro) (duración) [force_timeout] [silent] [razón]```
+
+Reemplaza `(miembro)` con la mención o el identificador deseado, `(duración)` con la duración del silencio (ej.: `10m`, `1h`, `1d`) y `[razón]` con el motivo de la sanción.
+
+:::tip
+El parámetro `[force_timeout]` permite anular la regla del umbral y forzar el uso del timeout de Discord, incluso si hay un rol de Silencio configurado.
+
+Puedes configurar un [rol de Silencio](./sanctions.mdx#mute) y un [umbral de silencio](./sanctions.mdx#mute-threshold) en `/settings` > Sanciones. Más allá del umbral definido, el bot aplicará automáticamente el rol de Silencio en lugar del timeout de Discord, permitiendo duraciones superiores a 28 días.
+:::
+
+### <Icon src="/img/icons/SanctionsUNTIMEOUT.svg" alt="icon SanctionsUNTIMEOUT" title=":iconSanctionsUNTIMEOUT:" /> Quitar el silencio a un usuario {#untimeout}
+
+El comando `/unmute` te permite retirar inmediatamente las restricciones de un miembro silenciado, permitiéndole recuperar todas sus capacidades de interacción en el servidor.
+
+Usa el comando: ```/unmute (miembro) [silent] [razón]```
+
+Reemplaza `(miembro)` con la mención o el identificador deseado y `[razón]` con el motivo de la retirada del silencio.
+
+## <Icon src="/img/icons/SanctionsJAIL.svg" alt="icon SanctionsJAIL" title=":iconSanctionsJAIL:" /> Encarcelar a un usuario {#jail}
+
+El comando `/jail` te permite aislar a un miembro asignándole un rol restrictivo. El Jail tiene como objetivo ofrecer una alternativa al ban: el miembro conserva un acceso muy limitado al servidor en lugar de ser completamente excluido.
+
+Usa el comando: ```/jail (miembro) [silent] [razón]```
+
+Reemplaza `(miembro)` con la mención o el identificador deseado y `[razón]` con el motivo de la sanción.
+
+:::warning
+El [rol de Jail](./sanctions.mdx#jail) debe estar configurado mediante `/settings` antes de poder usar este comando.
+:::
+
+### <Icon src="/img/icons/SanctionsJAILTemp.svg" alt="icon SanctionsJAILTemp" title=":iconSanctionsJAILTemp:" /> Encarcelar temporalmente a un usuario {#tempjail}
+
+El comando `/tempjail` te permite encarcelar temporalmente a un miembro durante una duración definida.
+
+Usa el comando: ```/tempjail (miembro) (duración) [silent] [razón]```
+
+Reemplaza `(miembro)` con la mención o el identificador deseado, `(duración)` con la duración del encarcelamiento y `[razón]` con el motivo de la sanción.
+
+### <Icon src="/img/icons/SanctionsUNJAIL.svg" alt="icon SanctionsUNJAIL" title=":iconSanctionsUNJAIL:" /> Liberar a un usuario {#unjail}
+
+El comando `/unjail` te permite retirar el rol de Jail de un miembro, permitiéndole recuperar sus accesos normales al servidor.
+
+Usa el comando: ```/unjail (miembro) [silent] [razón]```
+
+Reemplaza `(miembro)` con la mención o el identificador deseado y `[razón]` con el motivo de la liberación.
+
+## <Icon src="/img/icons/SanctionsWARN.svg" alt="icon SanctionsWARN" title=":iconSanctionsWARN:" /> Advertir a un usuario {#warn}
+
+El comando `/warn` te permite advertir formalmente a un miembro mediante un mensaje privado enviado por el bot.
+
+Usa el comando: ```/warn (miembro) [silent] [razón]```
+
+Reemplaza `(miembro)` con la mención o el identificador deseado y `[razón]` con el motivo de la advertencia.
+
+## 📝 Nota de moderación {#note}
+
+El comando `/note` permite añadir o modificar la **nota de moderación interna** de un miembro, sin tener que pasar por [`/modview`](#modview). La nota solo es visible para los moderadores.
+
+Usa el comando: ```/note (usuario)```
+
+Reemplaza `(usuario)` con la mención o el identificador deseado. Se abre una ventana para escribir o modificar la nota.
+
+## 🏷️ Cambiar el apodo de un miembro {#nick}
+
+El comando `/nick` te permite modificar el apodo de un miembro en el servidor, o restablecerlo.
+
+Usa el comando: ```/nick (miembro) [apodo]```
+
+Reemplaza `(miembro)` con la mención o el identificador deseado. El parámetro `[apodo]` es el nuevo apodo a aplicar (32 caracteres máximo). Si se omite, el apodo del miembro se restablece.
+
+:::info
+El comando requiere el permiso de Discord **Gestionar apodos** y también es accesible mediante los alias `nickname`, `rename` y `setnick` como [comando con prefijo](../guides/prefix). Los cambios se registran en los logs del servidor.
+:::
+
+## 🧹 Eliminar un grupo de mensajes {#clear}
+
+El comando `/clear` te permite eliminar rápidamente una cierta cantidad de mensajes en un canal de texto. Puedes especificar un usuario para eliminar solo sus mensajes.
+
+Usa el comando: ```/clear (número) [usuario]```
+
+Reemplaza `(número)` con el número de mensajes que deseas eliminar (máximo 100). Añade `[usuario]` usando la mención o el identificador para apuntar únicamente a sus mensajes en el canal.
+
+## 🕒 Activar el modo lento en un canal {#slowmode}
+
+El comando `/slowmode` te permite activar o modificar el modo lento de un canal de texto, para limitar la frecuencia de los mensajes enviados por los usuarios.
+
+Usa el comando: ```/slowmode (intervalo) [duration] [canal] [razón]```
+
+- Reemplaza `(intervalo)` con la duración deseada entre cada mensaje (por ej.: `5s`, `1m`, `10m`, `1h`; `0` para desactivar).
+- Añade `[duration]` para desactivar automáticamente el modo lento tras esa duración (por ej. `30m`, `2h`).
+- Añade `[canal]` si deseas aplicar el modo lento a un canal distinto de aquel en el que escribes el comando.
+- Añade `[razón]` para precisar el motivo, que se registrará en los logs del servidor.
+
+## 🕵️ Recuperar un mensaje eliminado {#snipe}
+
+El comando `/snipe` permite recuperar el **último mensaje eliminado** en un canal, o el último mensaje eliminado de un usuario concreto, en la última hora.
+
+Usa el comando: ```/snipe [usuario]```
+
+- Sin argumento: muestra el último mensaje eliminado del canal actual.
+- Con `[usuario]`: muestra el último mensaje eliminado por ese usuario.
+
+Desde la respuesta, puedes **sancionar al autor** o **eliminar el mensaje** (si todavía está presente en el canal).
+
+:::info
+`/snipe` es una **solución temporal** a la espera de la actualización de los logs. Solo están disponibles los mensajes eliminados en la última hora.
+:::
+
+## 📋 Logs de moderación {#logs}
+
+Por defecto, los logs de moderación se envían al canal de logs principal de RaidProtect. Puedes configurar un canal de logs dedicado para separar las acciones de moderación de los demás logs.
+
+1. Ejecuta el [comando `/settings`](../setup.md#settings).
+2. Haz clic en el botón "**Logs**".
+3. Selecciona "**Moderación**".
+4. Elige el canal en el que se enviarán los logs de moderación o usa el botón "**Crear uno para mí**".

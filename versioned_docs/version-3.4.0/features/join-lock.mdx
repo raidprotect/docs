@@ -1,0 +1,38 @@
+---
+title: Fermeture des Jointures
+---
+
+import JoinLockMockup from '@site/src/components/DiscordMessage/mockups/join-lock';
+
+{/* <JoinLockMockup /> : masquée pour le moment */}
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+La fonctionnalité **Fermeture des Jointures** de RaidProtect permet de fermer l'accès aux nouvelles arrivées sur le serveur de façon permanente, surpassant ainsi la limitation native de Discord qui ne permet ce blocage que pour 24 heures via l'action de cybersécurité "Mettre les arrivées en pause".
+
+## 🚦 Cas d'usage et recommandations {#recommendations}
+
+- **Serveurs privés et fermés :** La Fermeture des Jointures est particulièrement recommandée pour les serveurs qui doivent rester privés et ne souhaitent aucune nouvelle arrivée (serveurs d'entreprise, équipes restreintes, groupes privés).
+- **Serveurs de staff :** Pour les serveurs dédiés à l'équipe de modération ou d'administration, où seuls les membres autorisés doivent avoir accès.
+- **Serveurs d'entreprise ou professionnels :** Pour les organisations qui utilisent Discord en interne et veulent garantir que seuls les employés actuels peuvent accéder au serveur.
+- **Communautés à taille limitée :** Pour les serveurs qui ont atteint leur taille maximale souhaitée et ne veulent plus accepter de nouveaux membres de façon permanente.
+
+## ❓ Fonctionnement de la Fermeture des Jointures {#working}
+
+RaidProtect ferme définitivement les jointures sur votre serveur. Contrairement à la fonctionnalité native de Discord qui nécessite un renouvellement manuel toutes les 24 heures, cette méthode permet un blocage permanent sans intervention.
+
+:::info
+Les membres déjà présents sur le serveur restent actifs et peuvent continuer à utiliser le serveur normalement.
+:::
+:::warning
+Les fonctions communautaires de Discord sont indispensables au bon fonctionnement de la Fermeture des Jointures. [Suivez notre guide pour vérifier l'activation de la communauté sur votre serveur.](../guides/community.md)
+:::
+
+## 🚩 Configuration de la Fermeture des Jointures {#config}
+
+1. Faites la commande `/joinlock`.
+2. Cliquez sur le bouton "**Activer**" ou "**Désactiver**".
+
+![Capture d'écran paramètre Fermeture des Jointures](../assets/rp-join-lock.webp)

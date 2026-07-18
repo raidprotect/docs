@@ -1,0 +1,237 @@
+---
+title: Authentication Manager
+---
+
+import AuthenticationManagerMockup from '@site/src/components/DiscordMessage/mockups/authentication-manager';
+
+<AuthenticationManagerMockup />
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Icon from "@site/src/components/Icon";
+
+O Authentication Manager (AM) do RaidProtect é um sistema de autenticação avançado que protege o acesso a determinados cargos do Discord através de uma verificação de identidade. Graças às passkeys (WebAuthn), códigos PIN e OTP, apenas os membros autenticados podem obter cargos sensíveis.
+
+## ❓ Funcionamento geral {#working}
+
+O Authentication Manager baseia-se em um sistema de **cargos protegidos** e **sessões temporárias**. Quando um administrador configura um cargo com o AM:
+
+1. O cargo do Discord fica protegido por uma autenticação obrigatória.
+2. Os membros autorizados devem autenticar-se através do comando `/auth` para obter o cargo.
+3. Uma **sessão temporária** é criada com uma duração definida (configurável).
+4. Quando a sessão expira, o cargo é removido automaticamente.
+
+:::info
+O Authentication Manager requer que cada membro crie um **perfil de autenticação** via `/auth-profile` antes de poder autenticar-se.
+:::
+
+## 🔐 Graus de segurança {#grades}
+
+Cada método de autenticação está associado a um **grau de segurança**. Os cargos protegidos exigem um grau mínimo que o membro deve atingir.
+
+| **Grau**                                                                    | **Condição**                          |
+| --------------------------------------------------------------------------- | ------------------------------------- |
+| <Icon src="/img/icons/RankS.svg" alt="icon RankS" title=":securityRankS:"/> | Pelo menos uma passkey registrada     |
+| <Icon src="/img/icons/RankA.svg" alt="icon RankA" title=":securityRankA:"/> | Código OTP (2FA) ativado              |
+| <Icon src="/img/icons/RankB.svg" alt="icon RankB" title=":securityRankB:"/> | PIN reforçado de 8 dígitos ou mais    |
+| <Icon src="/img/icons/RankC.svg" alt="icon RankC" title=":securityRankC:"/> | PIN reforçado de 6 dígitos ou mais    |
+| <Icon src="/img/icons/RankD.svg" alt="icon RankD" title=":securityRankD:"/> | PIN simples de 6 dígitos ou mais      |
+| <Icon src="/img/icons/RankE.svg" alt="icon RankE" title=":securityRankE:"/> | PIN simples de 4 dígitos ou mais      |
+
+:::tip
+O grau mais elevado entre os seus métodos configurados é retido automaticamente. Por exemplo, se você tiver um PIN simples (grau D) e uma passkey (grau S), o seu grau será **S**.
+:::
+
+## 🛡️ Métodos de autenticação {#methods}
+
+<SeparatedBox>
+<Tabs>
+<TabItem value="pin" label="PIN" default>
+
+O código PIN é o método mais simples. Estão disponíveis dois modos:
+
+- **PIN simples**: Entrada clássica em um formulário (de 4 a 12 dígitos).
+- **PIN reforçado**: Teclado numérico com disposição aleatória das teclas (de 6 a 12 dígitos), impedindo a observação por terceiros.
+
+:::warning
+Os PINs fracos são automaticamente rejeitados: dígitos idênticos repetidos, sequências crescentes/decrescentes e padrões comuns.
+:::
+
+</TabItem>
+<TabItem value="otp" label="OTP (Código 2FA)">
+
+O OTP utiliza o padrão TOTP (Time-based One-Time Password), compatível com aplicativos de autenticação como [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2), [Authy](https://authy.com/), [1Password](https://1password.com/), [Dashlane](https://www.dashlane.com/) ou [Bitwarden](https://bitwarden.com/).
+
+- Código de 6 dígitos renovado a cada 30 segundos.
+- Tolerância de uma janela de ±1 para compensar desvios de tempo.
+
+</TabItem>
+<TabItem value="passkey" label="Passkey (WebAuthn)">
+
+As passkeys oferecem o nível de segurança mais elevado (grau S). A autenticação é feita através do navegador utilizando:
+
+- **Impressão digital** ou **reconhecimento facial** (Touch ID, Face ID, Windows Hello).
+- **Chave de segurança física** (YubiKey, etc.).
+
+Ao utilizar uma passkey, um link externo é aberto no seu navegador para efetuar a verificação. Uma vez validada, o bot é notificado em tempo real e atribui-lhe o cargo.
+
+</TabItem>
+</Tabs>
+</SeparatedBox>
+
+## 👤 Perfil de autenticação (`/auth-profile`) {#auth-profile}
+
+O comando `/auth-profile` permite gerenciar o seu perfil de autenticação pessoal. Ele é acessível em qualquer servidor ou por mensagem privada.
+
+### Primeira utilização {#onboarding}
+
+Na primeira utilização, uma tela de boas-vindas explica o funcionamento do sistema. Clique em **Continuar** para configurar o seu primeiro método de autenticação.
+
+### Gerenciamento das autenticações {#manage-methods}
+
+A partir do seu perfil, você pode gerenciar os seus métodos de autenticação.
+
+- Adicionar, modificar ou excluir um **PIN** (simples ou reforçado).
+- Ativar o **OTP (2FA)** via QR code, regenerar o segredo ou desativar o método.
+- Adicionar uma **passkey** através da página de registro ou excluí-la.
+
+Cada passkey exibe o nome do dispositivo e a data da última utilização.
+
+### Sessões ativas {#profile-sessions}
+
+Consulte as suas sessões ativas a partir do seu perfil. Em contexto de mensagem privada, as sessões de todos os seus servidores são visíveis.
+
+### Registro de auditoria {#profile-audit}
+
+Consulte as 3 últimas ações realizadas na sua conta, com acesso ao registro completo paginado.
+
+### Redefinição da conta {#reset}
+
+O botão **Esqueci minhas auths** permite redefinir completamente a sua conta. Esta ação:
+
+- Exclui todos os seus métodos de autenticação.
+- Desativa todos os seus acessos aos cargos protegidos.
+- Requer uma reconfiguração completa.
+
+:::danger
+Esta ação é irreversível. Todos os seus acessos serão revogados imediatamente.
+:::
+
+## 🔑 Autenticar-se (`/auth`) {#auth}
+
+O comando `/auth` permite autenticar-se para obter um cargo protegido.
+
+### Processo de autenticação {#auth-flow}
+
+1. Execute `/auth` no servidor.
+2. Um menu suspenso exibe os cargos disponíveis com o seu grau exigido e a duração da sessão.
+3. Selecione um cargo.
+4. Escolha o seu método de autenticação entre os que satisfazem o grau mínimo do cargo.
+5. Efetue a verificação (PIN, OTP ou passkey).
+6. Em caso de sucesso, o cargo do Discord é atribuído a você e uma sessão é criada.
+
+:::info
+Apenas os cargos aos quais você foi atribuído (status **Ativo**) aparecem no menu.
+:::
+
+### Gerenciamento das sessões {#sessions}
+
+A partir do painel `/auth`, você pode:
+
+- **Estender uma sessão**: Autentique-se novamente para estender a duração da sessão ativa.
+- **Desconectar**: Revoga imediatamente a sessão e remove o cargo do Discord.
+
+### Segurança {#auth-security}
+
+- **Tentativas limitadas**: Após 5 falhas, a sua conta é bloqueada por 1 hora. Após 10 falhas, a conta é redefinida.
+- **Aviso**: Uma mensagem de aviso aparece a partir de 3 tentativas falhas.
+
+## ⚙️ Configuração do servidor (`/auth-settings`) {#auth-settings}
+
+O comando `/auth-settings` é reservado aos administradores e gerenciadores autorizados. Ele permite configurar todo o sistema de autenticação no servidor.
+
+### Permissões {#permissions}
+
+| **Cargo**       | **Acesso**                                                                |
+| --------------- | ------------------------------------------------------------------------- |
+| Proprietário    | Acesso completo                                                           |
+| Administrador   | Acesso completo (exceto se a permissão `ADMINISTRATOR` provier de um cargo AM) |
+| Gerenciador     | Acesso limitado, deve autenticar-se, só pode gerenciar os cargos inferiores |
+
+Os gerenciadores devem atingir um grau de segurança mínimo (configurável) para acessar as definições.
+
+### Definições do servidor {#server-settings}
+
+- **Duração de sessão padrão**: Duração das sessões para os novos cargos (até 8 horas na versão gratuita, 24 horas na versão premium).
+- **Grau mínimo padrão**: Grau de segurança mínimo aplicado aos novos cargos.
+- **Grau mínimo dos gerenciadores**: Grau exigido para que um membro seja gerenciador.
+- **URL do webhook**: Webhook do Discord para receber os logs de auditoria (opcional).
+
+### Aba Cargos {#roles-tab}
+
+#### Adicionar um cargo {#add-role}
+
+1. Abra `/auth-settings` e acesse a aba **Cargos**.
+2. Clique em **Adicionar um cargo**.
+3. Selecione o cargo do Discord a proteger.
+4. Defina o grau mínimo exigido.
+5. Defina a duração da sessão.
+
+:::info
+**Limites:** 3 cargos na versão gratuita, 10 cargos na versão premium.
+:::
+
+:::tip
+Se o seu cargo estiver configurado para ser **exibido separadamente** na lista de membros, considere manter o cargo original (removendo as suas permissões sensíveis) para a exibição, e criar um novo cargo com as permissões reais que você protegerá através do AM. Assim, os seus membros mantêm o seu cargo visível permanentemente, enquanto as permissões sensíveis só são atribuídas durante as sessões autenticadas.
+:::
+
+#### Modificar um cargo {#edit-role}
+
+Você pode modificar o grau mínimo e a duração de sessão de um cargo existente.
+
+#### Ativar / Desativar um cargo {#toggle-role}
+
+Um cargo pode ser pausado sem ser excluído. Os cargos inativos continuam a ocupar um espaço.
+
+#### Excluir um cargo {#delete-role}
+
+Exclui permanentemente o cargo do sistema de autenticação.
+
+### Aba Usuários {#users-tab}
+
+#### Adicionar um usuário {#add-user}
+
+1. Acesse a aba **Usuários**.
+2. Clique em **Adicionar um usuário**.
+3. Selecione o membro e os cargos a atribuir a ele.
+4. O membro recebe uma mensagem privada informando-o sobre o convite.
+
+:::info
+**Limites:** 20 usuários na versão gratuita, 50 na versão premium.
+:::
+
+#### Status dos membros {#member-status}
+
+| **Status**  | **Descrição**                                                     |
+| ----------- | ----------------------------------------------------------------- |
+| Convidado   | O membro foi adicionado mas ainda não configurou o seu perfil     |
+| Pendente    | O perfil está configurado, aguardando aprovação                   |
+| Ativo       | O membro pode autenticar-se para obter o cargo                    |
+| Desativado  | O acesso ao cargo está temporariamente suspenso                   |
+
+#### Promover a gerenciador {#promote-manager}
+
+Um gerenciador pode gerenciar os usuários e os cargos que se encontram abaixo do seu teto de permissões. O teto corresponde à posição mais elevada entre o cargo do Discord e o cargo AM ativo do gerenciador.
+
+#### Excluir um usuário {#delete-user}
+
+Remove o membro de todos os cargos protegidos no servidor.
+
+### Aba Logs {#logs-tab}
+
+Consulte o registro de auditoria do servidor com paginação. Cada entrada contém: o usuário, a ação, o tipo (AM ou Discord) e a data.
+
+### Aba Sessões {#sessions-tab}
+
+Consulte todas as sessões do servidor com o seu status (Ativa, Expirada, Revogada), o usuário, o cargo e as datas de criação e expiração.

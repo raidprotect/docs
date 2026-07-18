@@ -1,0 +1,38 @@
+---
+title: Bloqueo de acceso
+---
+
+import JoinLockMockup from '@site/src/components/DiscordMessage/mockups/join-lock';
+
+{/* <JoinLockMockup /> : oculta por el momento */}
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+La función **Bloqueo de acceso** de RaidProtect te permite cerrar permanentemente el acceso a las nuevas llegadas al servidor, superando así la limitación nativa de Discord que solo permite este bloqueo durante 24 horas mediante la acción de ciberseguridad "Pausar las llegadas".
+
+## 🚦 Casos de uso y recomendaciones {#recommendations}
+
+- **Servidores privados y cerrados:** El Bloqueo de acceso está especialmente recomendado para los servidores que deben permanecer privados y no desean ninguna nueva llegada (servidores de empresa, equipos restringidos, grupos privados).
+- **Servidores de staff:** Para los servidores dedicados al equipo de moderación o de administración, donde solo los miembros autorizados deben tener acceso.
+- **Servidores de empresa o profesionales:** Para las organizaciones que usan Discord de forma interna y quieren garantizar que solo los empleados actuales puedan acceder al servidor.
+- **Comunidades de tamaño limitado:** Para los servidores que han alcanzado el tamaño máximo deseado y ya no quieren aceptar nuevos miembros de forma permanente.
+
+## ❓ Cómo funciona el Bloqueo de acceso {#working}
+
+RaidProtect cierra definitivamente las llegadas a tu servidor. A diferencia de la función nativa de Discord que requiere una renovación manual cada 24 horas, este método permite un bloqueo permanente sin intervención.
+
+:::info
+Los miembros que ya están presentes en el servidor permanecen activos y pueden seguir usando el servidor normalmente.
+:::
+:::warning
+Las funciones comunitarias de Discord son indispensables para el buen funcionamiento del Bloqueo de acceso. [Sigue nuestra guía para verificar la activación de la comunidad en tu servidor.](../guides/community.md)
+:::
+
+## 🚩 Configuración del Bloqueo de acceso {#config}
+
+1. Usa el comando `/joinlock`.
+2. Haz clic en el botón "**Activar**" o "**Desactivar**".
+
+![Captura de pantalla del parámetro Bloqueo de acceso](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-join-lock.webp)

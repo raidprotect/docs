@@ -1,0 +1,75 @@
+---
+title: Bloqueio de DMs
+---
+
+import { DmLockSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
+
+import DmLockMockup from '@site/src/components/DiscordMessage/mockups/dm-lock';
+
+<DmLockMockup />
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+A funcionalidade **Bloqueio de DMs** do RaidProtect permite fechar permanentemente o acesso às mensagens diretas (DMs) enviadas a partir do servidor, superando assim a limitação nativa do Discord, que só permite esse bloqueio por 24 horas através da ação de cibersegurança "Pausar as DMs".
+
+## 🚦 Casos de uso e recomendações {#recommendations}
+
+- **Servidores expostos a spam ou assédio:** O Bloqueio de DMs é particularmente recomendado para comunidades públicas ou de grande audiência, onde os riscos de abuso por DM são maiores.
+- **Eventos temporários ou períodos sensíveis:** Durante lançamentos, anúncios importantes ou períodos de grande movimento (ex.: concursos, promoções), ativar o Bloqueio de DMs ajuda a prevenir tentativas de phishing ou golpe.
+- **Comunidades com público jovem:** Para servidores com um grande número de menores, restringir as DMs pode reforçar a segurança e prevenir comportamentos inadequados.
+- **Proteção contínua:** Graças à automatização, não há janela de vulnerabilidade ligada ao esquecimento da renovação manual.
+
+## ❓ Como funciona o Bloqueio de DMs {#working}
+
+O bot RaidProtect verifica regularmente o estado da configuração de bloqueio de DMs do servidor e, se necessário, reativa-o automaticamente para evitar qualquer período de vulnerabilidade entre duas renovações manuais. Essa tarefa é executada de forma transparente para os administradores e os membros do servidor.
+
+:::info
+Continua sendo possível enviar e receber mensagens com:
+- seus amigos
+- os bots
+- a equipe
+:::
+:::warning
+As funcionalidades comunitárias do Discord são indispensáveis para o bom funcionamento do Bloqueio de DMs. [Siga nosso guia para verificar a ativação da comunidade no seu servidor.](../guides/community.md)
+:::
+
+## 🚩 Configuração do Bloqueio de DMs {#config}
+
+1. Execute o [comando `/settings`](../setup.md#settings).
+2. Clique no botão "**Bloqueio de DMs**".
+3. Ative ou desative o fechamento automático das mensagens diretas.
+
+<DmLockSettingsMockup />
+
+## ℹ️ Comando /dmlock-info {#info}
+
+O comando `/dmlock-info` permite informar os membros sobre o estado atual do **Bloqueio de DMs** no servidor. Ele exibe uma mensagem clara que indica se a restrição está **ativada** ou **desativada**, acompanhada de uma explicação didática sobre sua utilidade.
+
+**Objetivo:**
+- Explicar por que as DMs estão restritas (combate ao spam, golpes, phishing).
+- Reduzir a confusão e as perguntas recorrentes dos novos membros.
+- Relembrar as condições para continuar trocando mensagens por DM (amigos, equipe, bots, contatos anteriores).
+
+**Exemplo de exibição**
+<SeparatedBox>
+<Tabs>
+  <TabItem value="enable" label="Ativado" default>
+
+![Captura de tela do comando dmlock-info ativado](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-dm-lock-info-enable.webp)
+
+  </TabItem>
+  <TabItem value="disable" label="Desativado">
+
+![Captura de tela do comando dmlock-info desativado](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-dm-lock-info-disable.webp)
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+### ⚙️ Boas práticas
+
+- Convide os membros ativos a usar `/dmlock-info` para responder às perguntas dos novos membros.
+- Exiba-o regularmente ou fixe-o nos seus canais de boas-vindas.
+- Combine-o com suas regras ou anúncios para relembrar a política anti-spam do servidor.

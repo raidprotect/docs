@@ -1,0 +1,237 @@
+---
+title: Authentication Manager
+---
+
+import AuthenticationManagerMockup from '@site/src/components/DiscordMessage/mockups/authentication-manager';
+
+<AuthenticationManagerMockup />
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Icon from "@site/src/components/Icon";
+
+Der Authentication Manager (AM) von RaidProtect ist ein fortschrittliches Authentifizierungssystem, das den Zugang zu bestimmten Discord-Rollen durch eine Identitätsverifizierung schützt. Dank Passkeys (WebAuthn), PIN-Codes und OTP können nur authentifizierte Mitglieder sensible Rollen erhalten.
+
+## ❓ Allgemeine Funktionsweise {#working}
+
+Der Authentication Manager basiert auf einem System aus **geschützten Rollen** und **temporären Sitzungen**. Wenn ein Administrator eine Rolle mit dem AM konfiguriert:
+
+1. Die Discord-Rolle wird durch eine obligatorische Authentifizierung geschützt.
+2. Autorisierte Mitglieder müssen sich über den Befehl `/auth` authentifizieren, um die Rolle zu erhalten.
+3. Eine **temporäre Sitzung** wird mit einer festgelegten Dauer erstellt (konfigurierbar).
+4. Nach Ablauf der Sitzung wird die Rolle automatisch entzogen.
+
+:::info
+Der Authentication Manager erfordert, dass jedes Mitglied vor dem Authentifizieren ein **Authentifizierungsprofil** über `/auth-profile` erstellt.
+:::
+
+## 🔐 Sicherheitsgrade {#grades}
+
+Jede Authentifizierungsmethode ist mit einem **Sicherheitsgrad** verknüpft. Geschützte Rollen erfordern einen Mindestgrad, den das Mitglied erreichen muss.
+
+| **Grad**                                                                    | **Bedingung**                         |
+| --------------------------------------------------------------------------- | ------------------------------------- |
+| <Icon src="/img/icons/RankS.svg" alt="icon RankS" title=":securityRankS:"/> | Mindestens ein registrierter Passkey  |
+| <Icon src="/img/icons/RankA.svg" alt="icon RankA" title=":securityRankA:"/> | OTP (2FA)-Code aktiviert              |
+| <Icon src="/img/icons/RankB.svg" alt="icon RankB" title=":securityRankB:"/> | Verstärkter PIN mit 8 Ziffern oder mehr    |
+| <Icon src="/img/icons/RankC.svg" alt="icon RankC" title=":securityRankC:"/> | Verstärkter PIN mit 6 Ziffern oder mehr    |
+| <Icon src="/img/icons/RankD.svg" alt="icon RankD" title=":securityRankD:"/> | Einfacher PIN mit 6 Ziffern oder mehr      |
+| <Icon src="/img/icons/RankE.svg" alt="icon RankE" title=":securityRankE:"/> | Einfacher PIN mit 4 Ziffern oder mehr      |
+
+:::tip
+Der höchste Grad unter Ihren konfigurierten Methoden wird automatisch übernommen. Wenn Sie beispielsweise einen einfachen PIN (Grad D) und einen Passkey (Grad S) haben, ist Ihr Grad **S**.
+:::
+
+## 🛡️ Authentifizierungsmethoden {#methods}
+
+<SeparatedBox>
+<Tabs>
+<TabItem value="pin" label="PIN" default>
+
+Der PIN-Code ist die einfachste Methode. Zwei Modi sind verfügbar:
+
+- **Einfacher PIN**: Klassische Eingabe über ein Formular (4 bis 12 Ziffern).
+- **Verstärkter PIN**: Numerische Tastatur mit zufälliger Tastenanordnung (6 bis 12 Ziffern), die das Ausspähen durch Dritte verhindert.
+
+:::warning
+Schwache PINs werden automatisch abgelehnt: wiederholte identische Ziffern, auf- oder absteigende Sequenzen sowie gängige Muster.
+:::
+
+</TabItem>
+<TabItem value="otp" label="OTP (2FA-Code)">
+
+Das OTP verwendet den TOTP-Standard (Time-based One-Time Password), der mit Authentifizierungs-Apps wie [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2), [Authy](https://authy.com/), [1Password](https://1password.com/), [Dashlane](https://www.dashlane.com/) oder [Bitwarden](https://bitwarden.com/) kompatibel ist.
+
+- 6-stelliger Code, der alle 30 Sekunden erneuert wird.
+- Toleranz eines Fensters von ±1, um Zeitabweichungen auszugleichen.
+
+</TabItem>
+<TabItem value="passkey" label="Passkey (WebAuthn)">
+
+Passkeys bieten das höchste Sicherheitsniveau (Grad S). Die Authentifizierung erfolgt über den Browser mithilfe von:
+
+- **Fingerabdruck** oder **Gesichtserkennung** (Touch ID, Face ID, Windows Hello).
+- **Physischem Sicherheitsschlüssel** (YubiKey usw.).
+
+Wenn Sie einen Passkey verwenden, öffnet sich ein externer Link in Ihrem Browser, um die Verifizierung durchzuführen. Nach der Bestätigung wird der Bot in Echtzeit benachrichtigt und weist Ihnen die Rolle zu.
+
+</TabItem>
+</Tabs>
+</SeparatedBox>
+
+## 👤 Authentifizierungsprofil (`/auth-profile`) {#auth-profile}
+
+Der Befehl `/auth-profile` ermöglicht es Ihnen, Ihr persönliches Authentifizierungsprofil zu verwalten. Er ist auf jedem Server oder per Direktnachricht zugänglich.
+
+### Erste Nutzung {#onboarding}
+
+Bei der ersten Nutzung erklärt Ihnen ein Willkommensbildschirm die Funktionsweise des Systems. Klicken Sie auf **Weiter**, um Ihre erste Authentifizierungsmethode zu konfigurieren.
+
+### Authentifizierungen verwalten {#manage-methods}
+
+Über Ihr Profil können Sie Ihre Authentifizierungsmethoden verwalten.
+
+- Einen **PIN** (einfach oder verstärkt) hinzufügen, ändern oder löschen.
+- Das **OTP (2FA)** per QR-Code aktivieren, das Secret neu generieren oder die Methode deaktivieren.
+- Einen **Passkey** über die Registrierungsseite hinzufügen oder löschen.
+
+Jeder Passkey zeigt seinen Gerätenamen und das Datum der letzten Nutzung an.
+
+### Aktive Sitzungen {#profile-sessions}
+
+Sehen Sie sich Ihre aktiven Sitzungen über Ihr Profil an. Im Kontext einer Direktnachricht sind die Sitzungen aller Ihrer Server sichtbar.
+
+### Prüfprotokoll {#profile-audit}
+
+Sehen Sie sich die letzten 3 auf Ihrem Konto durchgeführten Aktionen an, mit Zugang zum vollständigen paginierten Protokoll.
+
+### Konto zurücksetzen {#reset}
+
+Die Schaltfläche **Ich habe meine Anmeldedaten vergessen** ermöglicht es, Ihr Konto vollständig zurückzusetzen. Diese Aktion:
+
+- Löscht alle Ihre Authentifizierungsmethoden.
+- Deaktiviert alle Ihre Zugänge zu geschützten Rollen.
+- Erfordert eine vollständige Neukonfiguration.
+
+:::danger
+Diese Aktion ist unwiderruflich. Alle Ihre Zugänge werden sofort widerrufen.
+:::
+
+## 🔑 Sich authentifizieren (`/auth`) {#auth}
+
+Der Befehl `/auth` ermöglicht es Ihnen, sich zu authentifizieren, um eine geschützte Rolle zu erhalten.
+
+### Authentifizierungsablauf {#auth-flow}
+
+1. Führen Sie `/auth` auf dem Server aus.
+2. Ein Dropdown-Menü zeigt die verfügbaren Rollen mit ihrem erforderlichen Grad und der Sitzungsdauer an.
+3. Wählen Sie eine Rolle aus.
+4. Wählen Sie Ihre Authentifizierungsmethode aus denjenigen, die den Mindestgrad der Rolle erfüllen.
+5. Führen Sie die Verifizierung durch (PIN, OTP oder Passkey).
+6. Bei Erfolg wird Ihnen die Discord-Rolle zugewiesen und eine Sitzung erstellt.
+
+:::info
+Nur die Rollen, denen Sie zugewiesen wurden (Status **Aktiv**), erscheinen im Menü.
+:::
+
+### Sitzungsverwaltung {#sessions}
+
+Über das `/auth`-Panel können Sie:
+
+- **Eine Sitzung verlängern**: Authentifizieren Sie sich erneut, um die Dauer der aktiven Sitzung zu verlängern.
+- **Sich abmelden**: Widerruft die Sitzung sofort und entzieht die Discord-Rolle.
+
+### Sicherheit {#auth-security}
+
+- **Begrenzte Versuche**: Nach 5 Fehlversuchen wird Ihr Konto für 1 Stunde gesperrt. Nach 10 Fehlversuchen wird das Konto zurückgesetzt.
+- **Warnung**: Ab 3 fehlgeschlagenen Versuchen erscheint eine Warnmeldung.
+
+## ⚙️ Serverkonfiguration (`/auth-settings`) {#auth-settings}
+
+Der Befehl `/auth-settings` ist Administratoren und autorisierten Managern vorbehalten. Er ermöglicht die Konfiguration des gesamten Authentifizierungssystems auf dem Server.
+
+### Berechtigungen {#permissions}
+
+| **Rolle**       | **Zugang**                                                                |
+| --------------- | ------------------------------------------------------------------------- |
+| Eigentümer      | Vollständiger Zugang                                                       |
+| Administrator   | Vollständiger Zugang (außer wenn die Berechtigung `ADMINISTRATOR` von einer AM-Rolle stammt) |
+| Manager         | Eingeschränkter Zugang, muss sich authentifizieren, kann nur untergeordnete Rollen verwalten |
+
+Manager müssen einen (konfigurierbaren) Mindestsicherheitsgrad erreichen, um auf die Einstellungen zuzugreifen.
+
+### Servereinstellungen {#server-settings}
+
+- **Standard-Sitzungsdauer**: Dauer der Sitzungen für neue Rollen (bis zu 8 Stunden in der kostenlosen Version, 24 Stunden in der Premium-Version).
+- **Standard-Mindestgrad**: Auf neue Rollen angewendeter Mindestsicherheitsgrad.
+- **Mindestgrad der Manager**: Erforderlicher Grad, damit ein Mitglied Manager werden kann.
+- **Webhook-URL**: Discord-Webhook zum Empfangen der Prüfprotokolle (optional).
+
+### Rollen-Tab {#roles-tab}
+
+#### Eine Rolle hinzufügen {#add-role}
+
+1. Öffnen Sie `/auth-settings` und gehen Sie zum Tab **Rollen**.
+2. Klicken Sie auf **Rolle hinzufügen**.
+3. Wählen Sie die zu schützende Discord-Rolle aus.
+4. Legen Sie den erforderlichen Mindestgrad fest.
+5. Legen Sie die Sitzungsdauer fest.
+
+:::info
+**Limits:** 3 Rollen in der kostenlosen Version, 10 Rollen in der Premium-Version.
+:::
+
+:::tip
+Wenn Ihre Rolle so konfiguriert ist, dass sie **separat** in der Mitgliederliste angezeigt wird, sollten Sie daran denken, die ursprüngliche Rolle (indem Sie ihr die sensiblen Berechtigungen entziehen) für die Anzeige zu behalten und eine neue Rolle mit den tatsächlichen Berechtigungen zu erstellen, die Sie über den AM schützen. So behalten Ihre Mitglieder ihre Rolle dauerhaft sichtbar, während die sensiblen Berechtigungen nur während authentifizierter Sitzungen zugewiesen werden.
+:::
+
+#### Eine Rolle bearbeiten {#edit-role}
+
+Sie können den Mindestgrad und die Sitzungsdauer einer bestehenden Rolle ändern.
+
+#### Eine Rolle aktivieren / deaktivieren {#toggle-role}
+
+Eine Rolle kann pausiert werden, ohne sie zu löschen. Inaktive Rollen belegen weiterhin einen Platz.
+
+#### Eine Rolle löschen {#delete-role}
+
+Entfernt die Rolle dauerhaft aus dem Authentifizierungssystem.
+
+### Benutzer-Tab {#users-tab}
+
+#### Einen Benutzer hinzufügen {#add-user}
+
+1. Gehen Sie zum Tab **Benutzer**.
+2. Klicken Sie auf **Benutzer hinzufügen**.
+3. Wählen Sie das Mitglied und die ihm zuzuweisenden Rollen aus.
+4. Das Mitglied erhält eine Direktnachricht, die es über die Einladung informiert.
+
+:::info
+**Limits:** 20 Benutzer in der kostenlosen Version, 50 in der Premium-Version.
+:::
+
+#### Mitglieder-Status {#member-status}
+
+| **Status**  | **Beschreibung**                                                  |
+| ----------- | ----------------------------------------------------------------- |
+| Eingeladen  | Das Mitglied wurde hinzugefügt, hat sein Profil aber noch nicht konfiguriert |
+| Ausstehend  | Das Profil ist konfiguriert und wartet auf Genehmigung            |
+| Aktiv       | Das Mitglied kann sich authentifizieren, um die Rolle zu erhalten |
+| Deaktiviert | Der Zugang zur Rolle ist vorübergehend ausgesetzt                 |
+
+#### Zum Manager befördern {#promote-manager}
+
+Ein Manager kann Benutzer und Rollen verwalten, die sich unterhalb seiner Berechtigungsgrenze befinden. Die Grenze entspricht der höchsten Position zwischen der Discord-Rolle und der aktiven AM-Rolle des Managers.
+
+#### Einen Benutzer löschen {#delete-user}
+
+Entfernt das Mitglied von allen geschützten Rollen auf dem Server.
+
+### Protokoll-Tab {#logs-tab}
+
+Sehen Sie sich das Prüfprotokoll des Servers mit Paginierung an. Jeder Eintrag enthält: den Benutzer, die Aktion, den Typ (AM oder Discord) und das Datum.
+
+### Sitzungs-Tab {#sessions-tab}
+
+Sehen Sie sich alle Sitzungen des Servers mit ihrem Status (Aktiv, Abgelaufen, Widerrufen), dem Benutzer, der Rolle sowie den Erstellungs- und Ablaufdaten an.
