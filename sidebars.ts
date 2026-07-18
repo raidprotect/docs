@@ -44,6 +44,10 @@ const sidebars: SidebarsConfig = {
                 },
                 {
                     type: 'doc',
+                    id: 'features/scam-images',
+                },
+                {
+                    type: 'doc',
                     id: 'features/honeypot',
                 },
                 {
