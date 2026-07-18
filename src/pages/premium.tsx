@@ -401,6 +401,14 @@ export default function PremiumPage(): React.ReactNode {
         { type: 'feature', label: translate({ id: 'premium.compare.row.banSoftban', message: 'Bannissement & softban' }), values: [yes, yes, yes] },
         { type: 'feature', label: translate({ id: 'premium.compare.row.kickTimeout', message: 'Kick, Timeout, Jail, Mute' }), values: [no, yes, yes] },
 
+        { type: 'category', label: translate({ id: 'premium.compare.cat.transparency', message: 'Transparence' }) },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.recapCount', message: 'Récapitulatifs simultanés' }), values: ['1', '5', custom] },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.recapWindow', message: 'Fenêtre de publication des récaps' }), values: [
+            translate({ id: 'premium.compare.row.recapWindow.free', message: '12 h' }),
+            translate({ id: 'premium.compare.row.recapWindow.premium', message: '≈ 2 h' }),
+            translate({ id: 'premium.compare.row.recapWindow.business', message: '≈ 1 min' }),
+        ] },
+
         { type: 'category', label: translate({ id: 'premium.compare.cat.customization', message: 'Personnalisation' }) },
         { type: 'feature', label: translate({ id: 'premium.compare.row.botIdentity', message: 'Pseudo, avatar et bannière du bot' }), values: [no, yes, yes] },
         { type: 'feature', label: translate({ id: 'premium.compare.row.nameStyle', message: 'Style d\'écriture du nom (8 polices, 4 effets)' }), values: [no, yes, yes] },
