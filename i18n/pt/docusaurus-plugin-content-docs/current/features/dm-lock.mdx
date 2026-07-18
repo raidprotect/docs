@@ -1,62 +1,68 @@
 ---
-title: Bloqueio de MPs
+title: Bloqueio de DMs
 ---
+
+import { DmLockSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
+
+import DmLockMockup from '@site/src/components/DiscordMessage/mockups/dm-lock';
+
+<DmLockMockup />
 
 import SeparatedBox from '@site/src/components/SeparatedBox';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-A funcionalidade **Bloqueio de MPs** do RaidProtect permite-lhe fechar permanentemente o acesso às mensagens privadas (MPs) enviadas a partir do servidor, superando assim a limitação nativa do Discord que apenas permite este bloqueio durante 24 horas através da ação de segurança "Pausar MPs".
+A funcionalidade **Bloqueio de DMs** do RaidProtect permite fechar permanentemente o acesso às mensagens diretas (DMs) enviadas a partir do servidor, superando assim a limitação nativa do Discord, que só permite esse bloqueio por 24 horas através da ação de cibersegurança "Pausar as DMs".
 
-## 🚦 Casos de utilização e recomendações {#recommendations}
+## 🚦 Casos de uso e recomendações {#recommendations}
 
-- **Servidores expostos a spam ou assédio:** O Bloqueio de MPs é particularmente recomendado para comunidades públicas ou com grandes audiências, onde o risco de abuso de MPs é mais elevado.
-- **Eventos temporários ou períodos sensíveis:** Durante lançamentos, anúncios importantes ou períodos de grande tráfego (ex.: concursos, promoções), ativar o Bloqueio de MPs ajuda a prevenir tentativas de phishing ou burla.
-- **Comunidades com público jovem:** Para servidores com um grande número de menores, restringir as MPs pode reforçar a segurança e prevenir comportamentos inadequados.
-- **Proteção contínua:** Graças à automatização, não existe janela de vulnerabilidade relacionada com o esquecimento da renovação manual.
+- **Servidores expostos a spam ou assédio:** O Bloqueio de DMs é particularmente recomendado para comunidades públicas ou de grande audiência, onde os riscos de abuso por DM são maiores.
+- **Eventos temporários ou períodos sensíveis:** Durante lançamentos, anúncios importantes ou períodos de grande movimento (ex.: concursos, promoções), ativar o Bloqueio de DMs ajuda a prevenir tentativas de phishing ou golpe.
+- **Comunidades com público jovem:** Para servidores com um grande número de menores, restringir as DMs pode reforçar a segurança e prevenir comportamentos inadequados.
+- **Proteção contínua:** Graças à automatização, não há janela de vulnerabilidade ligada ao esquecimento da renovação manual.
 
-## ❓ Como funciona o Bloqueio de MPs {#working}
+## ❓ Como funciona o Bloqueio de DMs {#working}
 
-O bot RaidProtect verifica regularmente o estado da definição de bloqueio de MPs do servidor e, se necessário, reativa-a automaticamente para evitar qualquer período de vulnerabilidade entre duas renovações manuais. Esta tarefa funciona de forma transparente para administradores e membros do servidor.
+O bot RaidProtect verifica regularmente o estado da configuração de bloqueio de DMs do servidor e, se necessário, reativa-o automaticamente para evitar qualquer período de vulnerabilidade entre duas renovações manuais. Essa tarefa é executada de forma transparente para os administradores e os membros do servidor.
 
 :::info
-Continua a ser possível enviar e receber mensagens com:
-- amigos
-- bots
-- staff
+Continua sendo possível enviar e receber mensagens com:
+- seus amigos
+- os bots
+- a equipe
 :::
 :::warning
-As funcionalidades de comunidade do Discord são essenciais para o bom funcionamento do Bloqueio de MPs. [Siga o nosso guia para verificar que a comunidade está ativada no seu servidor.](../guides/community.md)
+As funcionalidades comunitárias do Discord são indispensáveis para o bom funcionamento do Bloqueio de DMs. [Siga nosso guia para verificar a ativação da comunidade no seu servidor.](../guides/community.md)
 :::
 
-## 🚩 Configuração do Bloqueio de MPs {#config}
+## 🚩 Configuração do Bloqueio de DMs {#config}
 
 1. Execute o [comando `/settings`](../setup.md#settings).
-2. Clique no botão "**Bloqueio de MPs**".
-3. Ative ou desative o fecho automático das mensagens privadas.
+2. Clique no botão "**Bloqueio de DMs**".
+3. Ative ou desative o fechamento automático das mensagens diretas.
 
-![Captura de ecrã das definições do Bloqueio de MPs](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-dm-lock.webp)
+<DmLockSettingsMockup />
 
 ## ℹ️ Comando /dmlock-info {#info}
 
-O comando `/dmlock-info` permite-lhe informar os membros sobre o estado atual do **Bloqueio de MPs** no servidor. Apresenta uma mensagem clara indicando se a restrição está **ativada** ou **desativada**, acompanhada de uma explicação educativa sobre o seu propósito.
+O comando `/dmlock-info` permite informar os membros sobre o estado atual do **Bloqueio de DMs** no servidor. Ele exibe uma mensagem clara que indica se a restrição está **ativada** ou **desativada**, acompanhada de uma explicação didática sobre sua utilidade.
 
 **Objetivo:**
-- Explicar por que razão as MPs estão restritas (combate ao spam, burlas, phishing).
-- Reduzir confusão e questões recorrentes dos novos membros.
-- Relembrar os membros das condições para continuar a trocar mensagens por MP (amigos, staff, bots, contactos anteriores).
+- Explicar por que as DMs estão restritas (combate ao spam, golpes, phishing).
+- Reduzir a confusão e as perguntas recorrentes dos novos membros.
+- Relembrar as condições para continuar trocando mensagens por DM (amigos, equipe, bots, contatos anteriores).
 
-**Exemplo de apresentação**
+**Exemplo de exibição**
 <SeparatedBox>
 <Tabs>
   <TabItem value="enable" label="Ativado" default>
 
-![Captura de ecrã do comando dmlock-info ativado](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-dm-lock-info-enable.webp)
+![Captura de tela do comando dmlock-info ativado](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-dm-lock-info-enable.webp)
 
   </TabItem>
   <TabItem value="disable" label="Desativado">
 
-![Captura de ecrã do comando dmlock-info desativado](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-dm-lock-info-disable.webp)
+![Captura de tela do comando dmlock-info desativado](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-dm-lock-info-disable.webp)
 
   </TabItem>
 </Tabs>
@@ -64,6 +70,6 @@ O comando `/dmlock-info` permite-lhe informar os membros sobre o estado atual do
 
 ### ⚙️ Boas práticas
 
-- Encoraje os membros ativos a utilizar `/dmlock-info` para responder às questões dos novos membros.
-- Apresente-o regularmente ou fixe-o nos seus canais de boas-vindas.
-- Combine-o com as suas regras ou anúncios para relembrar a política anti-spam do servidor.
+- Convide os membros ativos a usar `/dmlock-info` para responder às perguntas dos novos membros.
+- Exiba-o regularmente ou fixe-o nos seus canais de boas-vindas.
+- Combine-o com suas regras ou anúncios para relembrar a política anti-spam do servidor.

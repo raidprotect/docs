@@ -2,6 +2,8 @@
 title: Captcha (Verification)
 ---
 
+import { CaptchaSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
+
 import CaptchaMockup from '@site/src/components/DiscordMessage/mockups/captcha';
 
 {/* <CaptchaMockup /> : hidden for now */}
@@ -36,7 +38,7 @@ Setting up the captcha is quick and easy.
 4. The **@Unverified** role is automatically created and configured.
 5. Configure the number of allowed attempts (between 1 and 3) and the maximum solving time (between 1 and 10 minutes).
 
-![Captcha settings screenshot](../assets/rp-settings-captcha.webp)
+<CaptchaSettingsMockup />
 
 ## ✨ Additional features {#additional-features}
 

@@ -1,38 +1,44 @@
 ---
-title: Captcha (Verificacion)
+title: Captcha (Verificación)
 ---
 
-Evita que los selfbots accedan a tu servidor de Discord y bloquea los raids con el sistema de captcha de RaidProtect.
+import { CaptchaSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
 
-El captcha es una de las funciones mas populares de RaidProtect, aunque sigue siendo completamente opcional. Te permite exigir a cada nuevo usuario que complete un desafio que consiste en ingresar un codigo, para verificar que no es un bot (selfbot).
+import CaptchaMockup from '@site/src/components/DiscordMessage/mockups/captcha';
 
-## ❓ Como funciona el captcha {#working}
+{/* <CaptchaMockup /> : oculta por el momento */}
 
-El captcha se basa en un rol **@No verificado** y un canal llamado **#verificacion**. Cuando un usuario se une a tu servidor:
-- El bot asigna automaticamente el rol **@No verificado** a este usuario, limitando su acceso unicamente al canal **#verificacion**.
-- En este canal, el bot envia una imagen que contiene 6 letras mayusculas. El usuario debe escribir las letras en el canal para demostrar que es humano.
-- Si la respuesta es correcta, se elimina el rol **@No verificado** y el usuario obtiene acceso normal al servidor. De lo contrario, es expulsado automaticamente.
-- Cuando el captcha esta activado, RaidProtect publica automaticamente un mensaje en el canal de registros, indicando la fecha de creacion de la cuenta de cada nuevo usuario.
-- RaidProtect detecta automaticamente problemas de permisos (canal y rol) asi como la visibilidad predeterminada del canal durante el proceso de incorporacion de Discord.
+Evita que los selfbots accedan a tu servidor de Discord y bloquea los raids gracias al sistema de captcha de RaidProtect.
+
+El captcha es una de las funciones más populares de RaidProtect, aunque sigue siendo completamente opcional. Permite pedir a cada nuevo usuario que supere un desafío que consiste en escribir un código, con el fin de verificar que no se trata de un robot (selfbot).
+
+## ❓ Funcionamiento del captcha {#working}
+
+El captcha se basa en un rol **@No verificado** y un canal llamado **#verificación**. Cuando un usuario se une a tu servidor:
+- El bot asigna automáticamente el rol **@No verificado** a este usuario, limitando su acceso únicamente al canal **#verificación**.
+- En este canal, el bot envía una imagen que contiene 6 letras mayúsculas. El usuario debe transcribir las letras en el canal para demostrar que es humano.
+- Si la respuesta es correcta, se retira el rol **@No verificado** y el usuario accede con normalidad al servidor. En caso contrario, es expulsado automáticamente.
+- Cuando el captcha está activado, RaidProtect publica automáticamente un mensaje en el canal de registros, indicando la fecha de creación de la cuenta de cada nuevo usuario.
+- RaidProtect detecta automáticamente los problemas de permisos (canal y rol), así como la visibilidad predeterminada del canal durante el proceso de incorporación (onboarding) de Discord.
 
 :::info
-**Limite de tiempo e intentos:** Los usuarios tienen de **1 a 10 minutos** para completar el captcha (**5 minutos por defecto**) y de **1 a 3 intentos** (**2 intentos por defecto**). Despues de eso, son expulsados automaticamente del servidor.
+**Límite de tiempo e intentos:** Los usuarios disponen de **1 a 10 minutos** para completar el captcha (**5 minutos por defecto**) y de **1 a 3 intentos** (**2 intentos por defecto**). Pasado ese límite, son expulsados automáticamente del servidor.
 :::
 :::warning
-**Gestion de permisos:** Los permisos del rol **@No verificado** son configurados automaticamente por RaidProtect. Puedes renombrar el rol y el canal, pero no los elimines.
+**Gestión de permisos:** Los permisos del rol **@No verificado** son configurados automáticamente por RaidProtect. Puedes renombrar el rol y el canal, pero no los elimines.
 :::
 
-## 🚪 Configuracion del captcha {#config}
+## 🚪 Configuración del captcha {#config}
 
-Configurar el captcha es rapido y facil.
+La instalación del captcha es sencilla y rápida.
 
 1. Ejecuta el [comando `/settings`](../setup.md#settings).
-2. Haz clic en el boton "**Captcha**".
-3. Elige el canal donde se realizaran los captchas o usa el boton "**Crear uno para mi**".
-4. El rol **@No verificado** se crea y configura automaticamente.
-5. Configura el numero de intentos permitidos (entre 1 y 3) y el tiempo maximo de resolucion (entre 1 y 10 minutos).
+2. Haz clic en el botón "**Captcha**".
+3. Elige el canal en el que se realizarán los captchas o usa el botón "**Crear uno para mí**".
+4. El rol **@No verificado** se crea y se configura automáticamente.
+5. Configura el número de intentos permitidos (entre 1 y 3) así como el tiempo máximo de resolución (entre 1 y 10 minutos).
 
-![Captura de pantalla de la configuracion del captcha](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-captcha.webp)
+<CaptchaSettingsMockup />
 
 ## ✨ Funciones adicionales {#additional-features}
 
@@ -43,21 +49,21 @@ Para adaptarse a las necesidades de tu servidor, el captcha de RaidProtect ofrec
 Si tu servidor es popular, los registros relacionados con el captcha pueden saturar tu canal de registros principal. Puedes moverlos a otro canal.
 
 1. Ejecuta el [comando `/settings`](../setup.md#settings).
-2. Haz clic en el boton "**Registros**".
+2. Haz clic en el botón "**Registros**".
 3. Selecciona "**Captcha**".
-4. Elige el canal donde se almacenaran los registros del captcha o usa el boton "**Crear uno para mi**".
+4. Elige el canal en el que se indexarán los registros del captcha o usa el botón "**Crear uno para mí**".
 
-### Rol automatico {#autorole}
+### Rol automático {#autorole}
 
-Si usas un sistema de rol automatico (autorole) diferente al de RaidProtect, puede interferir con el captcha. Reemplaza tu autorole existente por el de RaidProtect.
+Si usas un sistema de rol automático (autorole) distinto al de RaidProtect, puede interferir con el captcha. Reemplaza tu autorole existente por el de RaidProtect.
 
 1. Ejecuta el [comando `/settings`](../setup.md#settings).
-2. Haz clic en el boton "**Captcha**".
-3. Selecciona "**Rol automatico**".
-4. Elige el rol que se otorgara a los miembros que hayan completado el captcha.
+2. Haz clic en el botón "**Captcha**".
+3. Selecciona "**Rol automático**".
+4. Elige el rol que se otorgará a los miembros que hayan validado el captcha.
 
-### Omision del captcha {#bypass}
+### Bypass del captcha {#bypass}
 
-Usa el comando: ```/bypass captcha [user]```
+Usa el comando: ```/bypass captcha [usuario]```
 
-Reemplaza `[user]` con el identificador deseado; tendra 10 minutos para unirse al servidor sin necesidad de resolver el captcha. Si el usuario ya esta presente, el captcha se resolvera automaticamente. Tambien puedes usar el comando sin especificar un usuario para ver la lista actual de usuarios con omision.
+Reemplaza `[usuario]` por el identificador deseado; este dispondrá de 10 minutos para unirse al servidor sin necesidad de resolver el captcha. Si el usuario ya está presente, el captcha se resolverá automáticamente. También puedes usar el comando sin especificar ningún usuario para conocer la lista actual de usuarios con bypass.

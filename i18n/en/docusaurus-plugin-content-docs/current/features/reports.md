@@ -2,6 +2,8 @@
 title: Reports
 ---
 
+import { ReportsSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
+
 import ReportsMockup from '@site/src/components/DiscordMessage/mockups/reports';
 
 <ReportsMockup />
@@ -31,7 +33,7 @@ Replace `(member)` with the desired user and `(reason)` with the reason for the 
 
 Before the reporting system is fully operational, you must configure a **report channel** where all reports will be sent. You need to set up a log or notification channel to receive alerts about reports.
 
-![Report settings screenshot](../assets/rp-settings-reports.webp)
+<ReportsSettingsMockup />
 
 ### Setting up the channel {#config-channel}
 

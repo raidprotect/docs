@@ -6,6 +6,49 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Descubre la lista detallada de cambios realizados en RaidProtect.
 
+## 3.4.0 (17/07/2026) {#3-4-0}
+
+- [Anti-spam](./features/anti-spam.mdx) V2:
+  - **Spam multicanal**: una sanción dedicada cuando el spam se extiende por varios canales (Jail por defecto, Timeout mínimo).
+  - Nuevo [disparador](./features/anti-spam.mdx#triggers) **spam de archivos adjuntos** (desactivado por defecto).
+  - Los mensajes de spam ahora se **eliminan sea cual sea la sanción** (ban, jail, mute, kick o timeout).
+  - La **sanción anti-scam es configurable** desde el [menú de sanciones del anti-spam](./features/anti-spam.mdx#sanctions) y sigue por defecto la [sanción del HoneyPot](./features/honeypot.md#sanction); los incidentes anti-scam se sancionan y registran al instante.
+  - Cada disparador puede desactivarse individualmente con la nueva opción **Desactivar**, y los niveles de sensibilidad se sustituyen por un simple interruptor.
+  - Las sanciones **Mute** y **Jail** cambian a un timeout limitado cuando el rol correspondiente no está configurado.
+  - Se detectan los selfbots que envían rich embeds, y las estafas bloqueadas por ScamLens se cuentan en el contador de cuentas señaladas del [HoneyPot](./features/honeypot.md).
+- Rediseño completo del sistema de **[Reportes](./features/reports.md)**:
+  - Los reportes ahora se agrupan en **incidentes**: varios reportes que apuntan al mismo miembro se pliegan en un solo incidente, con un [modo de agrupación configurable](./features/reports.md#group).
+  - Los comandos de reporte ahora abren un **modal de razón**, con una lista «qué estás reportando» en los reportes de perfil (incluida la actividad en voz y en MD).
+  - Cada incidente ahora abre un **hilo** bajo el reporte: tarjeta de perfil del miembro reportado, encabezados de razón por mensaje, nombre del moderador que lo resuelve y notas de rechazo.
+  - Nueva [notificación de quien reporta](./features/reports.md#notify): quienes reportan pueden ser notificados por MD cuando su reporte es tratado, con un nivel de detalle configurable (hasta el veredicto aceptado/rechazado).
+  - Nuevo [rol de confianza](./features/reports.md#trusted-role) (**Premium**): los miembros de confianza pueden aplicar un **timeout preventivo de 24h** al reportar, y sus reportes urgentes vuelven a mencionar al rol de moderación.
+  - Nueva [protección contra los malos reportadores](./features/reports.md#bad-reporters): los autores reincidentes de reportes falsos pueden ser detectados, bloqueados o sancionados automáticamente (umbral, ventana y modo configurables).
+  - Los incidentes abiertos se cierran automáticamente cuando el miembro es sancionado.
+  - Las sanciones preventivas se reescriben cuando un reporte es aceptado, y se anulan cuando es rechazado.
+- Nuevo sistema de **[Transparencia](./features/transparency.md)**:
+  - [Resúmenes periódicos](./features/transparency.md#recaps) de la actividad de moderación del servidor, publicados automáticamente según una planificación configurable.
+  - Nuevo [modlog público](./features/transparency.md#modlog): las sanciones pueden publicarse en un canal público, filtradas por tipo y por origen, con la creación en un clic de un canal #public-modlog de solo lectura.
+  - Nuevo [comando `/transparency`](./features/transparency.md#command) para mostrar bajo demanda el resumen del último período transcurrido.
+- Nuevo [comando `/audit`](./features/audit.md): una **auditoría de seguridad** completa del servidor con una puntuación global, [verificaciones detalladas](./features/audit.md#checks) (nivel de verificación, permisos, canales) y [correcciones en un clic](./features/audit.md#fix). Los roles de administrador pueden integrarse en el Authentication Manager directamente desde la auditoría.
+- Nuevo [modo expulsión](./features/raid-mode.md#kick-mode) (**Premium**) para el modo raid y el Bloqueo de entrada: los nuevos miembros son expulsados con un MD de explicación y un botón de invitación para volver, en lugar de la pausa nativa de las invitaciones. El nuevo [comando `/bypass raid`](./features/raid-mode.md#bypass-raid) deja entrar a usuarios específicos mientras está activo.
+- Los [comandos por mensaje](./guides/prefix.md#permissions) ahora pueden seguir los **permisos de comandos de Discord** (pestaña Integraciones) mediante una nueva opción en `/settings`.
+- RaidProtect ahora responde bajo las **alertas de seguridad de Discord** cuando son causadas por el [Bloqueo de MD](./features/dm-lock.mdx), citando la alerta y explicando dónde ajustar el parámetro.
+- El log de expulsión de la [antigüedad mínima de cuenta](./features/raid-mode.md#minage) ahora muestra el umbral requerido en forma de timestamp.
+- Ajustes y configuración:
+  - El menú principal de `/settings` se reorganiza en filas lógicas.
+  - El mensaje de configuración ahora enlaza directamente los comandos y ofrece un botón para cambiar el canal de logs.
+  - Se ofrece un botón **desactivar el captcha** cuando el canal del captcha ha sido eliminado.
+- Migración interna de la capa de Discord a librerías compartidas (`@fca.gg/discord`) para acelerar las próximas actualizaciones.
+- Corrección:
+  - Mensajes de error más claros que distinguen **timeout** y **mute**, y los objetivos administradores de los bloqueos de jerarquía de roles.
+  - Corrección de la conversión automática de los timeouts del AutoMod de Discord.
+  - Corrección de `/serverinfo`: acceso a la URL personalizada, reglas y estadísticas.
+  - Corrección del alias `/discord-sanctions` y del uso del prefijo de los comandos por mensaje.
+  - Corrección del Jail aplicado a los administradores con el modo de reemplazo de roles.
+  - Refuerzo de la validación de las URL de webhook.
+  - Correcciones diversas: logs de sanción, captcha, mensajes del Bloqueo de MD, notas de moderación, detección del Premium.
+  - Correcciones de traducciones diversas.
+
 ## 3.3.3 (30/04/2026) {#3-3-3}
 
 - Nuevo [comando `/modview`](./features/moderation.mdx#modview) para abrir una vista de moderacion centralizada de un miembro (sanciones, nota, snipe). <SuggestionLink id="544" />
@@ -76,7 +119,7 @@ Descubre la lista detallada de cambios realizados en RaidProtect.
   - Los comandos `/timeout` y `/untimeout` pasan a ser [`/mute`](./features/moderation.mdx#timeout) y [`/unmute`](./features/moderation.mdx#untimeout). El timeout de Discord sigue siendo utilizado por defecto por debajo del umbral.
   - Nuevo parametro `[force_timeout]` para forzar el timeout de Discord independientemente de la duracion.
 - [Sancion mediante menu contextual](./features/moderation.mdx#context-menu) (clic derecho en un perfil).
-- Nuevo [comando `/my-sanctions`](./features/utilities.mdx#my-sanctions) para permitir a los miembros ver sus propias sanciones.
+- Nuevo [comando `/mis-sanciones`](./features/utilities.mdx#my-sanctions) para permitir a los miembros ver sus propias sanciones.
 - Nueva configuracion de [Privacidad de sanciones](./features/sanctions.mdx#sanctions-privacy) para controlar el acceso a las sanciones personales.
 - Nueva configuracion de [Mostrar medios](./features/sanctions.mdx#show-medias) en las razones de sanciones.
 - Rediseno visual de los filtros en [`/sanctions search`](./features/sanctions.mdx#search) y adicion del filtro de [tipo de moderador](./features/sanctions.mdx#search).

@@ -2,33 +2,37 @@
 title: Bloqueio de Entradas
 ---
 
+import JoinLockMockup from '@site/src/components/DiscordMessage/mockups/join-lock';
+
+{/* <JoinLockMockup /> : masquée pour le moment */}
+
 import SeparatedBox from '@site/src/components/SeparatedBox';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-A funcionalidade **Bloqueio de Entradas** do RaidProtect permite-lhe fechar permanentemente o acesso a novas entradas no servidor, superando assim a limitação nativa do Discord que apenas permite este bloqueio durante 24 horas através da ação de segurança "Pausar entradas".
+A funcionalidade **Bloqueio de Entradas** do RaidProtect permite fechar permanentemente o acesso a novas entradas no servidor, superando assim a limitação nativa do Discord, que só permite esse bloqueio por 24 horas por meio da ação de segurança cibernética "Pausar entradas".
 
-## 🚦 Casos de utilização e recomendações {#recommendations}
+## 🚦 Casos de uso e recomendações {#recommendations}
 
-- **Servidores privados e fechados:** O Bloqueio de Entradas é particularmente recomendado para servidores que necessitam de permanecer privados e não pretendem novas entradas (servidores de empresas, equipas restritas, grupos privados).
-- **Servidores de staff:** Para servidores dedicados à equipa de moderação ou administração, onde apenas membros autorizados devem ter acesso.
-- **Servidores empresariais ou profissionais:** Para organizações que utilizam o Discord internamente e pretendem garantir que apenas os colaboradores atuais possam aceder ao servidor.
-- **Comunidades de tamanho limitado:** Para servidores que atingiram o tamanho máximo desejado e já não pretendem aceitar novos membros permanentemente.
+- **Servidores privados e fechados:** O Bloqueio de Entradas é especialmente recomendado para servidores que precisam permanecer privados e não desejam nenhuma nova entrada (servidores de empresas, equipes restritas, grupos privados).
+- **Servidores de staff:** Para servidores dedicados à equipe de moderação ou administração, onde apenas os membros autorizados devem ter acesso.
+- **Servidores empresariais ou profissionais:** Para organizações que usam o Discord internamente e querem garantir que apenas os funcionários atuais possam acessar o servidor.
+- **Comunidades de tamanho limitado:** Para servidores que atingiram o tamanho máximo desejado e não querem mais aceitar novos membros de forma permanente.
 
 ## ❓ Como funciona o Bloqueio de Entradas {#working}
 
-O RaidProtect fecha permanentemente as entradas no seu servidor. Ao contrário da funcionalidade nativa do Discord que requer renovação manual a cada 24 horas, este método permite um bloqueio permanente sem intervenção.
+O RaidProtect fecha definitivamente as entradas no seu servidor. Ao contrário da funcionalidade nativa do Discord, que exige uma renovação manual a cada 24 horas, esse método permite um bloqueio permanente sem intervenção.
 
 :::info
-Os membros que já se encontram no servidor permanecem ativos e podem continuar a utilizar o servidor normalmente.
+Os membros que já estão no servidor permanecem ativos e podem continuar a usar o servidor normalmente.
 :::
 :::warning
-As funcionalidades de comunidade do Discord são essenciais para o bom funcionamento do Bloqueio de Entradas. [Siga o nosso guia para verificar que a comunidade está ativada no seu servidor.](../guides/community.md)
+As funções comunitárias do Discord são indispensáveis para o bom funcionamento do Bloqueio de Entradas. [Siga o nosso guia para verificar a ativação da comunidade no seu servidor.](../guides/community.md)
 :::
 
 ## 🚩 Configuração do Bloqueio de Entradas {#config}
 
-1. Execute o comando `/joinlock`.
+1. Use o comando `/joinlock`.
 2. Clique no botão "**Ativar**" ou "**Desativar**".
 
-![Captura de ecrã das definições do Bloqueio de Entradas](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-join-lock.webp)
+![Captura de tela da configuração do Bloqueio de Entradas](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-join-lock.webp)

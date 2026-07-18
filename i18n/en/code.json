@@ -969,6 +969,24 @@
   "premium.compare.row.kickTimeout": {
     "message": "Kick, Timeout, Jail, Mute"
   },
+  "premium.compare.cat.transparency": {
+    "message": "Transparency"
+  },
+  "premium.compare.row.recapCount": {
+    "message": "Simultaneous recaps"
+  },
+  "premium.compare.row.recapWindow": {
+    "message": "Recap publication window"
+  },
+  "premium.compare.row.recapWindow.free": {
+    "message": "12 h"
+  },
+  "premium.compare.row.recapWindow.premium": {
+    "message": "≈ 2 h"
+  },
+  "premium.compare.row.recapWindow.business": {
+    "message": "≈ 1 min"
+  },
   "premium.compare.cat.customization": {
     "message": "Customization"
   },
@@ -2135,5 +2153,464 @@
   },
   "mockup.audit.log3": {
     "message": "Redundant channels cleaned up"
+  },
+  "mockup.settingsMenus.back": {
+    "message": "Back"
+  },
+  "mockup.settingsMenus.support": {
+    "message": "Support Server"
+  },
+  "mockup.settingsMenus.none": {
+    "message": "None"
+  },
+  "mockup.settingsMenus.enabled": {
+    "message": "Enabled"
+  },
+  "mockup.settingsMenus.disabled": {
+    "message": "Disabled"
+  },
+  "mockup.settingsMenus.disable": {
+    "message": "Disable"
+  },
+  "mockup.settingsMenus.enable": {
+    "message": "Enable"
+  },
+  "mockup.settingsMenus.reset": {
+    "message": "Reset"
+  },
+  "mockup.settingsMenus.antispam.title": {
+    "message": "Anti-spam configuration"
+  },
+  "mockup.settingsMenus.antispam.desc": {
+    "message": "Set up anti-spam to protect your Discord server from malicious user actions."
+  },
+  "mockup.settingsMenus.antispam.high": {
+    "message": "🔴 **High:** Sanctions all spam, including in ignored channels."
+  },
+  "mockup.settingsMenus.antispam.medium": {
+    "message": "🟡 **Medium:** Sanctions spam, but respects ignored channels."
+  },
+  "mockup.settingsMenus.antispam.low": {
+    "message": "🟢 **Low:** Only targets link, mention and selfbot spam."
+  },
+  "mockup.settingsMenus.antispam.level": {
+    "message": "Protection level"
+  },
+  "mockup.settingsMenus.antispam.channels": {
+    "message": "Ignored channel(s)"
+  },
+  "mockup.settingsMenus.antispam.roles": {
+    "message": "Ignored role(s)"
+  },
+  "mockup.settingsMenus.antispam.members": {
+    "message": "Ignored member(s)"
+  },
+  "mockup.settingsMenus.antispam.selChannels": {
+    "message": "Channel(s) to ignore (write to search)"
+  },
+  "mockup.settingsMenus.antispam.selRoles": {
+    "message": "Role(s) to ignore (write to search)"
+  },
+  "mockup.settingsMenus.antispam.selMembers": {
+    "message": "Member(s) to ignore (write to search)"
+  },
+  "mockup.settingsMenus.antispamSanctions.desc": {
+    "message": "You can customize the sanctions applied depending on the type of spam detected. This allows for a response adapted to the severity of the violation."
+  },
+  "mockup.settingsMenus.antispamSanctions.list": {
+    "message": "Sanctions:"
+  },
+  "mockup.sanction.warn": {
+    "message": "Warn"
+  },
+  "mockup.sanction.ban": {
+    "message": "Ban"
+  },
+  "mockup.settingsMenus.antispamSanctions.multichannel": {
+    "message": "Multi-channel spam"
+  },
+  "mockup.sanction.jail": {
+    "message": "Jail"
+  },
+  "mockup.settingsMenus.antispamSanctions.multichannelDesc": {
+    "message": "Replaces the trigger's sanction when spam spans several channels, only if it is more severe."
+  },
+  "mockup.settingsMenus.antispamSanctions.duration": {
+    "message": "Sanctions duration"
+  },
+  "mockup.settingsMenus.oneHour": {
+    "message": "1 hour"
+  },
+  "mockup.settingsMenus.antispamSanctions.publicMessage": {
+    "message": "Public sanction message"
+  },
+  "mockup.settingsMenus.antispamSanctions.publicMessageDesc": {
+    "message": "Posts a message in the channel to announce the sanction (e.g. 'member has been muted'). Can be disabled with premium."
+  },
+  "mockup.settingsMenus.antispamSanctions.selTrigger": {
+    "message": "Select a trigger"
+  },
+  "mockup.settingsMenus.trigger.spam": {
+    "message": "Spam"
+  },
+  "mockup.settingsMenus.trigger.selfbot": {
+    "message": "Spam with selfbot"
+  },
+  "mockup.settingsMenus.trigger.mentions": {
+    "message": "Spam of mentions"
+  },
+  "mockup.settingsMenus.trigger.links": {
+    "message": "Spam of links"
+  },
+  "mockup.settingsMenus.trigger.scam": {
+    "message": "Scam images (Crypto Scam)"
+  },
+  "mockup.settingsMenus.antispamSanctions.selSanction": {
+    "message": "Select a sanction"
+  },
+  "mockup.settingsMenus.antispamSanctions.customDuration": {
+    "message": "Custom duration value"
+  },
+  "mockup.settingsMenus.reports.title": {
+    "message": "Reporting System configuration"
+  },
+  "mockup.settingsMenus.reports.channelDesc": {
+    "message": "Configure the **channel** where **report notifications** will be sent."
+  },
+  "mockup.settingsMenus.reports.channel": {
+    "message": "Receiving reports"
+  },
+  "mockup.settingsMenus.reports.channelSel": {
+    "message": "Reception channel (write to search)"
+  },
+  "mockup.settingsMenus.createForMe": {
+    "message": "Create one for me"
+  },
+  "mockup.settingsMenus.reports.roleDesc": {
+    "message": "Configure the **role that will be notified** when a **new report** is received. Typically, a moderator role."
+  },
+  "mockup.settingsMenus.reports.role": {
+    "message": "Notification role"
+  },
+  "mockup.settingsMenus.reports.roleSel": {
+    "message": "Notification role (write to search)"
+  },
+  "mockup.settingsMenus.reports.notify": {
+    "message": "Reporter notification"
+  },
+  "mockup.settingsMenus.reports.notifyDesc": {
+    "message": "Choose **what reporters receive in DM** once their report has been handled."
+  },
+  "mockup.settingsMenus.reports.notifyValue": {
+    "message": "Handled only"
+  },
+  "mockup.settingsMenus.reports.notifySel": {
+    "message": "Notification level"
+  },
+  "mockup.settingsMenus.reports.notifyOutcome": {
+    "message": "With outcome"
+  },
+  "mockup.settingsMenus.reports.notifyModerator": {
+    "message": "With moderator"
+  },
+  "mockup.settingsMenus.reports.trusted": {
+    "message": "Trusted role"
+  },
+  "mockup.settingsMenus.reports.trustedDesc": {
+    "message": "Members with this **trusted role** can apply a **preventive 24h timeout** when they report, pending moderator review."
+  },
+  "mockup.settingsMenus.reports.trustedValue": {
+    "message": "Trusted member"
+  },
+  "mockup.settingsMenus.reports.trustedSel": {
+    "message": "Trusted role (write to search)"
+  },
+  "mockup.settingsMenus.reports.badTitle": {
+    "message": "Reporter reputation"
+  },
+  "mockup.settingsMenus.reports.badDesc": {
+    "message": "Act on members whose reports keep getting refused. Set the refused-report threshold, the time window, and what happens once the threshold is reached."
+  },
+  "mockup.settingsMenus.reports.badThreshold": {
+    "message": "Threshold"
+  },
+  "mockup.settingsMenus.reports.badWindow": {
+    "message": "Window"
+  },
+  "mockup.settingsMenus.reports.badWindowValue": {
+    "message": "30 days"
+  },
+  "mockup.settingsMenus.reports.badMode": {
+    "message": "Action"
+  },
+  "mockup.settingsMenus.reports.badModeNotify": {
+    "message": "Notify moderators"
+  },
+  "mockup.settingsMenus.reports.badThresholdSel": {
+    "message": "Refused reports before acting"
+  },
+  "mockup.settingsMenus.reports.badOpt3": {
+    "message": "3 reports"
+  },
+  "mockup.settingsMenus.reports.badOpt5": {
+    "message": "5 reports"
+  },
+  "mockup.settingsMenus.reports.badOpt10": {
+    "message": "10 reports"
+  },
+  "mockup.settingsMenus.reports.badWindowSel": {
+    "message": "Counting window"
+  },
+  "mockup.settingsMenus.reports.badWin7": {
+    "message": "7 days"
+  },
+  "mockup.settingsMenus.reports.badWin90": {
+    "message": "90 days"
+  },
+  "mockup.settingsMenus.reports.badModeSel": {
+    "message": "What happens at the threshold"
+  },
+  "mockup.settingsMenus.reports.badModeBlock": {
+    "message": "Auto-block"
+  },
+  "mockup.settingsMenus.reports.badModeSanction": {
+    "message": "Auto-sanction"
+  },
+  "mockup.settingsMenus.reports.badModeBoth": {
+    "message": "Block and sanction"
+  },
+  "mockup.settingsMenus.reports.desc": {
+    "message": "Enable the **Reporting System** to allow members to **easily notify your team** of problematic situations."
+  },
+  "mockup.settingsMenus.reports.group": {
+    "message": "Grouping"
+  },
+  "mockup.settingsMenus.reports.groupValue": {
+    "message": "Reports about the same member are grouped into a single alert."
+  },
+  "mockup.settingsMenus.reports.groupSeparate": {
+    "message": "Every report creates its own separate alert."
+  },
+  "mockup.settingsMenus.reports.btnChannel": {
+    "message": "Channel"
+  },
+  "mockup.settingsMenus.reports.btnRole": {
+    "message": "Role"
+  },
+  "mockup.settingsMenus.reports.badReporters": {
+    "message": "False reporters"
+  },
+  "mockup.settingsMenus.raidmode.title": {
+    "message": "Auto RaidMode configuration"
+  },
+  "mockup.settingsMenus.raidmode.thresholdDesc": {
+    "message": "Sets the maximum number of new members allowed to join the server within 10 seconds before RaidMode is activated."
+  },
+  "mockup.settingsMenus.raidmode.threshold": {
+    "message": "Number of members / 10 seconds"
+  },
+  "mockup.settingsMenus.raidmode.thresholdValue": {
+    "message": "10 members"
+  },
+  "mockup.settingsMenus.raidmode.opt5": {
+    "message": "5 members"
+  },
+  "mockup.settingsMenus.raidmode.opt20": {
+    "message": "20 members"
+  },
+  "mockup.settingsMenus.raidmode.opt30": {
+    "message": "30 members"
+  },
+  "mockup.settingsMenus.customValue": {
+    "message": "Custom value"
+  },
+  "mockup.settingsMenus.raidmode.durationDesc": {
+    "message": "Sets the duration for which RaidMode remains active before automatically deactivating."
+  },
+  "mockup.settingsMenus.raidmode.duration": {
+    "message": "Duration before deactivation"
+  },
+  "mockup.settingsMenus.raidmode.durationValue": {
+    "message": "5 minutes"
+  },
+  "mockup.settingsMenus.raidmode.optDur1": {
+    "message": "1 minute"
+  },
+  "mockup.settingsMenus.raidmode.optDur10": {
+    "message": "10 minutes"
+  },
+  "mockup.settingsMenus.raidmode.optDur30": {
+    "message": "30 minutes"
+  },
+  "mockup.settingsMenus.raidmode.desc": {
+    "message": "Configure automatic anti-raid mode, which determines the maximum number of members that can join your server in 10 seconds. When the threshold is exceeded, flagged members are kicked and invites are disabled for the configured duration."
+  },
+  "mockup.settingsMenus.raidmode.dmlock": {
+    "message": "Close DMs"
+  },
+  "mockup.settingsMenus.raidmode.kickMode": {
+    "message": "Kick mode"
+  },
+  "mockup.settingsMenus.raidmode.kickModeEnabled": {
+    "message": "Kicks members on join and sends them a DM with an invite to rejoin the server"
+  },
+  "mockup.settingsMenus.raidmode.kickModeValue": {
+    "message": "Disables invitations"
+  },
+  "mockup.settingsMenus.raidmode.btnThreshold": {
+    "message": "Members"
+  },
+  "mockup.settingsMenus.raidmode.btnDuration": {
+    "message": "Duration"
+  },
+  "mockup.settingsMenus.captcha.title": {
+    "message": "Captcha configuration"
+  },
+  "mockup.settingsMenus.captcha.desc": {
+    "message": "Configure Captcha to prevent selfbots from accessing your Discord server and block raids."
+  },
+  "mockup.settingsMenus.captcha.channel": {
+    "message": "Verification channel"
+  },
+  "mockup.settingsMenus.selChannel": {
+    "message": "Select a channel"
+  },
+  "mockup.settingsMenus.dmlock.title": {
+    "message": "DM Lock configuration"
+  },
+  "mockup.settingsMenus.dmlock.desc1": {
+    "message": "Configure direct messages closing to prevent phishing or scam attempts."
+  },
+  "mockup.settingsMenus.dmlock.desc2": {
+    "message": "RaidProtect will permanently disable direct messages until you disable this protection. We use the \"Discord Security Actions\" feature (limited to 24h by Discord, extended to always by RaidProtect)."
+  },
+  "mockup.settingsMenus.dmlock.warning": {
+    "message": "Only bots, members who have already exchanged or are friends and staff will be able to receive DMs with this mode."
+  },
+  "mockup.settingsMenus.dmlock.state": {
+    "message": "DM Lock state"
+  },
+  "mockup.settingsMenus.dmlock.suggest": {
+    "message": "Make a suggestion"
+  },
+  "mockup.settingsMenus.language.title": {
+    "message": "Language configuration"
+  },
+  "mockup.settingsMenus.language.desc": {
+    "message": "The configured language only affects public messages sent by RaidProtect in your server (logs, captcha messages, reports, etc.). Private or temporary messages remain displayed in the language of the user interacting with the bot."
+  },
+  "mockup.settingsMenus.language.selected": {
+    "message": "Selected language"
+  },
+  "mockup.settingsMenus.language.value": {
+    "message": "English"
+  },
+  "mockup.settingsMenus.prefix.title": {
+    "message": "Prefix configuration"
+  },
+  "mockup.settingsMenus.prefix.desc1": {
+    "message": "Select a prefix for message commands. If none is set, message commands will be disabled."
+  },
+  "mockup.settingsMenus.prefix.commands": {
+    "message": "Commands usable by prefix:"
+  },
+  "mockup.settingsMenus.prefix.deleteDesc": {
+    "message": "**Delinvoke:** Automatically deletes the message containing the command when using prefix commands."
+  },
+  "mockup.settingsMenus.prefix.field": {
+    "message": "Prefix"
+  },
+  "mockup.settingsMenus.prefix.delete": {
+    "message": "Delinvoke"
+  },
+  "mockup.settingsMenus.prefix.sel": {
+    "message": "Select a prefix"
+  },
+  "mockup.settingsMenus.prefix.custom": {
+    "message": "Custom value"
+  },
+  "mockup.settingsMenus.logs.title": {
+    "message": "Bot Logs configuration"
+  },
+  "mockup.settingsMenus.logs.desc": {
+    "message": "By default, moderation logs are sent in the RaidProtect log channel. If you wish, you can select another channel."
+  },
+  "mockup.settingsMenus.logs.channel": {
+    "message": "Configured channel"
+  },
+  "mockup.settings.title": {
+    "message": "Main settings menu"
+  },
+  "mockup.settings.desc1": {
+    "message": "This menu allows you to view, adjust or customize features!"
+  },
+  "mockup.settings.desc2": {
+    "message": "Each category presents a list of customizable options in the form of buttons or dropdown menus. Use the buttons below to configure the various features and settings."
+  },
+  "mockup.settings.language": {
+    "message": "Language"
+  },
+  "mockup.settings.languageValue": {
+    "message": "English"
+  },
+  "mockup.settings.prefix": {
+    "message": "Prefix"
+  },
+  "mockup.settings.disabled": {
+    "message": "Disabled"
+  },
+  "mockup.settings.raidmodeValue": {
+    "message": "10 members / 10 seconds"
+  },
+  "mockup.settings.locking": {
+    "message": "Channel padlock"
+  },
+  "mockup.settings.lockingValue": {
+    "message": "Don't rename with the padlock"
+  },
+  "mockup.settings.minage": {
+    "message": "Minimum Age"
+  },
+  "mockup.settings.minageValue": {
+    "message": "2 hours"
+  },
+  "mockup.settings.enabled": {
+    "message": "Enabled"
+  },
+  "mockup.settings.logsGeneral": {
+    "message": "General"
+  },
+  "mockup.settings.logsModeration": {
+    "message": "Moderation"
+  },
+  "mockup.settings.reports": {
+    "message": "Reports"
+  },
+  "mockup.settings.tagrole": {
+    "message": "Tag Role"
+  },
+  "mockup.settings.dmlock": {
+    "message": "DM Lock"
+  },
+  "mockup.settings.lockEmoji": {
+    "message": "Padlock on locked channels"
+  },
+  "mockup.settings.transparency": {
+    "message": "Transparency"
+  },
+  "mockup.settings.support": {
+    "message": "Support Server"
+  },
+  "mockup.settings.customize": {
+    "message": "Customize"
+  },
+  "mockup.tagrole.desc3": {
+    "message": "Members will receive the role the next time they update their profile (Username, Avatar, Banner, Roles, Tag…). You can ask support for a full sync of the role if you have many members who currently have or previously had the tag."
+  },
+  "mockup.tagrole.create": {
+    "message": "Create one for me"
+  },
+  "mockup.tagrole.refresh": {
+    "message": "Refresh"
   }
 }

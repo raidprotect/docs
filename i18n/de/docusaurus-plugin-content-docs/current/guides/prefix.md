@@ -1,14 +1,16 @@
 ---
-title: Verwendung eines Prefixes
+title: Verwendung eines Präfixes
 ---
 
-## Prefix deaktiviert (Standard) {#disabled}
+import { PrefixSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
 
-Standardmäßig verwendet RaidProtect ausschließlich Slash-Befehle (`/`) zur Interaktion mit dem Bot. Dies gewährleistet eine intuitive Nutzung, die den Discord-Standards entspricht.
+## Präfix deaktiviert (standardmäßig) {#disabled}
 
-## Prefix aktiviert (optional) {#activated}
+Standardmäßig verwendet RaidProtect ausschließlich Slash-Befehle (`/`), um mit dem Bot zu interagieren. Dies gewährleistet eine intuitive und mit den Discord-Standards konsistente Nutzung.
 
-Wenn Sie bestimmte Befehle lieber mit einem benutzerdefinierten Prefix verwenden möchten, können Sie diese Option aktivieren. Der Standard-Prefix bei Aktivierung ist `?`, kann aber nach Ihren Bedürfnissen geändert werden. Nach der Aktivierung können folgende Befehle mit dem konfigurierten Prefix verwendet werden:
+## Präfix aktiviert (optional) {#activated}
+
+Wenn Sie es vorziehen, bestimmte Befehle mit einem benutzerdefinierten Präfix zu verwenden, können Sie diese Option aktivieren. Das Standard-Präfix bei Aktivierung ist `?`, es kann jedoch nach Ihren Bedürfnissen geändert werden. Nach der Aktivierung sind diese Befehle mit dem konfigurierten Präfix verwendbar:
 - [`?raidmode`](../features/raid-mode.md)
 - [`?ban`](../features/moderation.mdx#ban)
 - [`?tempban`](../features/moderation.mdx#tempban)
@@ -26,16 +28,22 @@ Wenn Sie bestimmte Befehle lieber mit einem benutzerdefinierten Prefix verwenden
 - [`?userinfo` | `?ui`](../features/utilities#userinfo)
 - [`?clear`](../features/moderation#clear)
 
-## So aktivieren oder deaktivieren Sie den Prefix {#config}
+## 💬 So aktivieren oder deaktivieren Sie das Präfix {#config}
 
-1. Öffnen Sie das Einstellungsmenü, indem Sie [`/settings`](../setup.md#settings) eingeben.
-2. Navigieren Sie zur Option "**Prefix**" der Befehle.
-3. Aktivieren oder deaktivieren Sie den Prefix nach Ihren Wünschen.
-Falls aktiviert, passen Sie den Prefix an, indem Sie das gewünschte Zeichen oder die gewünschte Zeichenkette eingeben.
+1. Öffnen Sie das Konfigurationsmenü, indem Sie [`/settings`](../setup.md#settings) eingeben.
+2. Rufen Sie die Option "**Präfix**" der Befehle auf.
+3. Aktivieren oder deaktivieren Sie das Präfix nach Ihren Präferenzen.
+Falls aktiviert, passen Sie das Präfix an, indem Sie das gewünschte Zeichen oder die gewünschte Zeichenkette eingeben.
 
-![Screenshot Prefix-Einstellung](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-prefix.webp)
+<PrefixSettingsMockup />
 
 :::note
-Slash-Befehle (`/`) bleiben auch bei aktiviertem Prefix verfügbar.
-Es wird empfohlen, Prefixe zu vermeiden, die bereits von anderen Bots verwendet werden, um Befehlskonflikte zu verhindern.
+Die Slash-Befehle (`/`) bleiben auch bei aktiviertem Präfix verfügbar.
+Es wird empfohlen, Präfixe zu vermeiden, die bereits von anderen Bots verwendet werden, um Befehlskonflikte zu vermeiden.
 :::
+
+## 🔒 Befehlsberechtigungen anwenden {#permissions}
+
+Standardmäßig berücksichtigen Präfix-Befehle nur die eigenen Discord-Berechtigungen jedes Befehls. Die Regeln, die Sie in Discord festlegen (**Servereinstellungen → Integrationen → RaidProtect**, pro Rolle, Mitglied oder Kanal), gelten nur für Slash-Befehle.
+
+Um sie auch auf Präfix-Befehle anzuwenden, aktivieren Sie die Option **Auf Präfix-Befehle anwenden** im Berechtigungspanel von [`/settings`](../setup.md#settings). Sie ist standardmäßig deaktiviert.

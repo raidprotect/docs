@@ -2,6 +2,8 @@
 title: Anti-raid
 ---
 
+import { RaidModeSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
+
 import RaidModeMockup from '@site/src/components/DiscordMessage/mockups/raid-mode';
 
 <RaidModeMockup />
@@ -35,7 +37,7 @@ The `raidmode` command is [usable via prefix](../guides/prefix.md).
 
 If your server often welcomes many new members simultaneously, it is wise to adjust this threshold to avoid false positives.
 
-![Automatic raid mode screenshot](../assets/rp-settings-raid-mode.webp)
+<RaidModeSettingsMockup />
 
 #### Member threshold {#threshold}
 

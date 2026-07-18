@@ -871,8 +871,7 @@
     "message": "Sanções Honeypot avançadas"
   },
   "premium.feature.honeypot.desc": {
-    "message": "Desbloqueie Kick, Timeout, Jail e Mute: as mensagens do spammer são apagadas em todos os canais, como num ban.",
-    "description": "Feature card desc: honeypot"
+    "message": "Desbloqueie Kick, Timeout, Jail e Mute: as mensagens do spammer são apagadas em todos os canais, como num ban."
   },
   "premium.tier.free.name": {
     "message": "Basic"
@@ -970,6 +969,24 @@
   "premium.compare.row.kickTimeout": {
     "message": "Kick, Timeout, Jail, Mute"
   },
+  "premium.compare.cat.transparency": {
+    "message": "Transparência"
+  },
+  "premium.compare.row.recapCount": {
+    "message": "Recapitulações simultâneas"
+  },
+  "premium.compare.row.recapWindow": {
+    "message": "Janela de publicação das recapitulações"
+  },
+  "premium.compare.row.recapWindow.free": {
+    "message": "12 h"
+  },
+  "premium.compare.row.recapWindow.premium": {
+    "message": "≈ 2 h"
+  },
+  "premium.compare.row.recapWindow.business": {
+    "message": "≈ 1 min"
+  },
   "premium.compare.cat.customization": {
     "message": "Personalização"
   },
@@ -1054,12 +1071,10 @@
     "message": "O que você desbloqueia"
   },
   "premium.features.title": {
-    "message": "As outras vantagens do Premium",
-    "description": "Features section title"
+    "message": "As outras vantagens do Premium"
   },
   "premium.features.subtitle": {
-    "message": "Alavancas concretas para ir mais longe com o RaidProtect, sem mudar sua forma de trabalhar.",
-    "description": "Features section subtitle"
+    "message": "Alavancas concretas para ir mais longe com o RaidProtect, sem mudar sua forma de trabalhar."
   },
   "premium.compare.eyebrow": {
     "message": "Comparativo de planos"
@@ -1074,8 +1089,7 @@
     "message": "Pronto para passar para o Premium?"
   },
   "premium.finalCta.subtitle": {
-    "message": "A oferta Founder é por tempo limitado: US$ 2,99/mês para sempre para os primeiros assinantes. Depois de encerrada, esse preço não volta.",
-    "description": "Final CTA subtitle"
+    "message": "A oferta Founder é por tempo limitado: US$ 2,99/mês para sempre para os primeiros assinantes. Depois de encerrada, esse preço não volta."
   },
   "premium.finalCta.cta": {
     "message": "Ativar o Premium agora"
@@ -1111,182 +1125,1471 @@
   },
   "premium.hero.badge": {
     "message": "Oferta Founder · preço bloqueado para sempre",
-    "description": "Premium hero launch badge"
+    "description": "Badge de lancement au-dessus du titre du hero premium"
   },
   "premium.hero.micro": {
     "message": "Cancele quando quiser · Ativação com um comando · A versão gratuita continua completa",
-    "description": "Reassurance microcopy under hero CTAs"
+    "description": "Microcopie de réassurance sous les CTA du hero"
   },
   "premium.flagship.eyebrow": {
-    "message": "A assinatura do Premium",
-    "description": "Flagship feature eyebrow"
+    "message": "A assinatura do Premium"
   },
   "premium.flagship.title": {
-    "message": "O bot assume a identidade do seu servidor",
-    "description": "Flagship feature title"
+    "message": "O bot assume a identidade do seu servidor"
   },
   "premium.flagship.subtitle": {
-    "message": "Avatar, banner, apelido e estilo do nome: o RaidProtect deixa de parecer um bot genérico e veste as cores da sua comunidade.",
-    "description": "Flagship feature subtitle"
+    "message": "Avatar, banner, apelido e estilo do nome: o RaidProtect deixa de parecer um bot genérico e veste as cores da sua comunidade."
   },
   "premium.flagship.item.avatar": {
-    "message": "Avatar e banner com as cores do servidor",
-    "description": "Flagship bullet: avatar & banner"
+    "message": "Avatar e banner com as cores do servidor"
   },
   "premium.flagship.item.name": {
-    "message": "Apelido personalizado",
-    "description": "Flagship bullet: custom nickname"
+    "message": "Apelido personalizado"
   },
   "premium.flagship.item.style": {
-    "message": "Estilo do nome (8 fontes, 4 efeitos)",
-    "description": "Flagship bullet: name styling"
+    "message": "Estilo do nome (8 fontes, 4 efeitos)"
   },
   "premium.flagship.cta": {
-    "message": "Personalizar meu RaidProtect",
-    "description": "Flagship CTA button"
+    "message": "Personalizar meu RaidProtect"
   },
   "premium.feature.kickMode.title": {
-    "message": "Anti-raid em modo expulsão",
-    "description": "Feature card title: kick mode anti-raid"
+    "message": "Anti-raid em modo expulsão"
   },
   "premium.feature.kickMode.desc": {
-    "message": "Expulsão + DM de explicação em vez de bloquear convites em silêncio. Deixe entrar quem quiser com /bypass.",
-    "description": "Feature card desc: kick mode anti-raid"
+    "message": "Expulsão + DM de explicação em vez de bloquear convites em silêncio. Deixe entrar quem quiser com /bypass."
   },
   "premium.feature.beta.badge": {
-    "message": "Beta pública",
-    "description": "Feature card badge: public beta"
+    "message": "Beta pública"
   },
   "premium.feature.beta.title": {
-    "message": "Acesso antecipado às novidades",
-    "description": "Feature card title: early access"
+    "message": "Acesso antecipado às novidades"
   },
   "premium.feature.beta.desc": {
-    "message": "Os assinantes recebem antes as funcionalidades beta, como converter os timeouts do AutoMod em mute por cargo.",
-    "description": "Feature card desc: early access"
+    "message": "Os assinantes recebem antes as funcionalidades beta, como converter os timeouts do AutoMod em mute por cargo."
   },
   "premium.feature.learnMore": {
-    "message": "Saiba mais →",
-    "description": "Feature card: learn more link"
+    "message": "Saiba mais →"
   },
   "premium.compare.row.kickMode": {
-    "message": "Modo expulsão + DM (Bloqueio de entradas e Modo raid)",
-    "description": "Compare row: kick mode"
+    "message": "Modo expulsão + DM (Bloqueio de entradas e Modo raid)"
   },
   "premium.faq.eyebrow": {
-    "message": "Perguntas frequentes",
-    "description": "FAQ eyebrow"
+    "message": "Perguntas frequentes"
   },
   "premium.faq.title": {
-    "message": "Tudo o que você precisa saber antes de assinar",
-    "description": "FAQ title"
+    "message": "Tudo o que você precisa saber antes de assinar"
   },
   "premium.faq.q.freeChange": {
-    "message": "A versão gratuita vai ser reduzida?",
-    "description": "FAQ question: free version"
+    "message": "A versão gratuita vai ser reduzida?"
   },
   "premium.faq.a.freeChange": {
-    "message": "Não. A versão gratuita continua completa e vai continuar evoluindo no mesmo ritmo. O Premium é para servidores que precisam de mais: limites ampliados, personalização avançada e acesso antecipado.",
-    "description": "FAQ answer: free version"
+    "message": "Não. A versão gratuita continua completa e vai continuar evoluindo no mesmo ritmo. O Premium é para servidores que precisam de mais: limites ampliados, personalização avançada e acesso antecipado."
   },
   "premium.faq.q.lifetime": {
-    "message": "O que significa “preço bloqueado para sempre”?",
-    "description": "FAQ question: lifetime price"
+    "message": "O que significa “preço bloqueado para sempre”?"
   },
   "premium.faq.a.lifetime": {
-    "message": "A oferta Founder bloqueia o seu preço definitivamente. Enquanto a sua assinatura estiver ativa, o preço não muda, mesmo quando novos planos forem lançados e a oferta Founder for retirada da loja.",
-    "description": "FAQ answer: lifetime price"
+    "message": "A oferta Founder bloqueia o seu preço definitivamente. Enquanto a sua assinatura estiver ativa, o preço não muda, mesmo quando novos planos forem lançados e a oferta Founder for retirada da loja."
   },
   "premium.faq.q.activate": {
-    "message": "Como ativar o Premium?",
-    "description": "FAQ question: activate premium"
+    "message": "Como ativar o Premium?"
   },
   "premium.faq.a.activate": {
-    "message": "Digite /settings no seu servidor do Discord e clique em “Premium”, ou vá direto à loja do RaidProtect no Discord. A ativação leva alguns segundos.",
-    "description": "FAQ answer: activate premium"
+    "message": "Digite /settings no seu servidor do Discord e clique em “Premium”, ou vá direto à loja do RaidProtect no Discord. A ativação leva alguns segundos."
   },
   "premium.faq.q.cancel": {
-    "message": "Posso cancelar quando quiser?",
-    "description": "FAQ question: cancel"
+    "message": "Posso cancelar quando quiser?"
   },
   "premium.faq.a.cancel": {
-    "message": "Sim. A assinatura é gerenciada pelo Discord e pode ser cancelada quando quiser, sem compromisso.",
-    "description": "FAQ answer: cancel"
+    "message": "Sim. A assinatura é gerenciada pelo Discord e pode ser cancelada quando quiser, sem compromisso."
   },
   "premium.faq.q.businessDiff": {
-    "message": "Qual é a diferença entre Founder e Business?",
-    "description": "FAQ question: founder vs business"
+    "message": "Qual é a diferença entre Founder e Business?"
   },
   "premium.faq.a.businessDiff": {
-    "message": "O Founder libera a personalização do bot e os limites ampliados em todos os módulos. O Business acrescenta uma instância dedicada e isolada, além de acompanhamento humano (auditoria, integração sob medida, acompanhamento especializado), sob demanda.",
-    "description": "FAQ answer: founder vs business"
+    "message": "O Founder libera a personalização do bot e os limites ampliados em todos os módulos. O Business acrescenta uma instância dedicada e isolada, além de acompanhamento humano (auditoria, integração sob medida, acompanhamento especializado), sob demanda."
   },
   "premium.mockup.mutual": {
-    "message": "40 servidores em comum",
-    "description": "Mockup: mutual servers"
+    "message": "40 servidores em comum"
   },
   "premium.mockup.addApp": {
-    "message": "Adicionar app",
-    "description": "Mockup: add app button"
+    "message": "Adicionar app"
   },
   "premium.mockup.store": {
-    "message": "Loja",
-    "description": "Mockup: store button"
+    "message": "Loja"
   },
   "premium.mockup.desc": {
-    "message": "Recursos avançados de moderação e segurança powered by RaidProtect.",
-    "description": "Mockup: bot description"
+    "message": "Recursos avançados de moderação e segurança powered by RaidProtect."
   },
   "premium.mockup.watching": {
-    "message": "Assistindo",
-    "description": "Mockup: activity 'Watching'"
+    "message": "Assistindo"
   },
   "premium.mockup.message": {
-    "message": "Enviar mensagem para @{name}",
-    "description": "Mockup: message bar"
+    "message": "Enviar mensagem para @{name}"
   },
   "premium.mockup.customize": {
-    "message": "Personalizar meu RaidProtect",
-    "description": "Mockup: hover CTA"
+    "message": "Personalizar meu RaidProtect"
   },
   "premium.scene.auth.roles": {
-    "message": "Cargos protegidos",
-    "description": "Scene: protected roles label"
+    "message": "Cargos protegidos"
   },
   "premium.scene.auth.users": {
-    "message": "Usuários",
-    "description": "Scene: users label"
+    "message": "Usuários"
   },
   "premium.scene.auth.session": {
-    "message": "Sessão",
-    "description": "Scene: session label"
+    "message": "Sessão"
   },
   "premium.scene.panels.jail": {
-    "message": "Jail",
-    "description": "Scene: Jail panel tile"
+    "message": "Jail"
   },
   "premium.scene.kick.dm": {
-    "message": "Este servidor está sofrendo um raid, você poderá entrar em breve.",
-    "description": "Scene: kick DM message"
+    "message": "Este servidor está sofrendo um raid, você poderá entrar em breve."
   },
   "premium.scene.kick.button": {
-    "message": "Entrar no servidor",
-    "description": "Scene: kick DM join button"
+    "message": "Entrar no servidor"
   },
   "premium.scene.sanction.n1": {
-    "message": "Você recebeu um cartão amarelo",
-    "description": "Scene: sanction notif 1"
+    "message": "Você recebeu um cartão amarelo"
   },
   "premium.scene.sanction.n2": {
-    "message": "Você foi colocado de castigo",
-    "description": "Scene: sanction notif 2"
+    "message": "Você foi colocado de castigo"
   },
   "premium.scene.sanction.n3": {
-    "message": "Você foi banido do reino",
-    "description": "Scene: sanction notif 3"
+    "message": "Você foi banido do reino"
   },
   "premium.scene.sanction.n4": {
-    "message": "Você vai para o isolamento",
-    "description": "Scene: sanction notif 4"
+    "message": "Você vai para o isolamento"
+  },
+  "mockup.thread.messages": {
+    "message": "{count} mensagens"
+  },
+  "communities.creators.meta.title": {
+    "message": "RaidProtect pour les créateurs & streamers",
+    "description": "Browser tab title for the creators community landing page"
+  },
+  "communities.creators.meta.description": {
+    "message": "Un live, un short viral, un shoutout : votre serveur peut doubler en une nuit, raids et bots compris. RaidProtect absorbe les pics et filtre les indésirables.",
+    "description": "Meta description for the creators community landing page"
+  },
+  "communities.creators.eyebrow": {
+    "message": "Pour les créateurs & streamers",
+    "description": "Creators landing: small pill above the title"
+  },
+  "communities.creators.hero.title": {
+    "message": "La protection Discord pensée pour les {highlight}",
+    "description": "Creators landing: hero H1; {highlight} renders the accented word"
+  },
+  "communities.creators.hero.title.highlight": {
+    "message": "créateurs",
+    "description": "Highlighted word inside the creators hero title"
+  },
+  "communities.creators.hero.description": {
+    "message": "Un live, un short viral, un shoutout : votre serveur peut doubler en une nuit, raids et bots compris. RaidProtect absorbe les pics, filtre les indésirables et laisse votre communauté tranquille.",
+    "description": "Creators landing: hero subtitle"
+  },
+  "communities.creators.hero.secondaryCta": {
+    "message": "Découvrir la protection",
+    "description": "Creators landing: secondary CTA label"
+  },
+  "communities.creators.threats.title": {
+    "message": "Le revers de la viralité",
+    "description": "Creators landing: threats section title"
+  },
+  "communities.creators.threats.subtitle": {
+    "message": "Plus votre audience grandit, plus votre serveur attire ce que vous ne voulez pas y voir.",
+    "description": "Creators landing: threats section subtitle"
+  },
+  "communities.creators.threat.raid.title": {
+    "message": "Raids après un live ou un shoutout",
+    "description": "Creators threat 1 title"
+  },
+  "communities.creators.threat.raid.description": {
+    "message": "Un pic de visibilité attire aussi les trolls : des vagues de comptes débarquent pour spammer et perturber votre chat.",
+    "description": "Creators threat 1 description"
+  },
+  "communities.creators.threat.bots.title": {
+    "message": "Bots et comptes jetables",
+    "description": "Creators threat 2 title"
+  },
+  "communities.creators.threat.bots.description": {
+    "message": "Self-bots, comptes recyclés et fermes d'abonnés polluent votre serveur dès qu'il commence à grossir.",
+    "description": "Creators threat 2 description"
+  },
+  "communities.creators.threat.spam.title": {
+    "message": "Spam et auto-promo sauvage",
+    "description": "Creators threat 3 title"
+  },
+  "communities.creators.threat.spam.description": {
+    "message": "Liens d'autopromo, scams « free nitro » et flood d'émojis noient les vraies discussions de votre communauté.",
+    "description": "Creators threat 3 description"
+  },
+  "communities.creators.features.title": {
+    "message": "Pensé pour encaisser les pics",
+    "description": "Creators landing: features section title"
+  },
+  "communities.creators.features.subtitle": {
+    "message": "Les protections de RaidProtect, réglées pour les communautés qui grandissent vite.",
+    "description": "Creators landing: features section subtitle"
+  },
+  "communities.creators.feature.antiraid.title": {
+    "message": "Blocage des raids",
+    "description": "Creators feature Anti-raid title"
+  },
+  "communities.creators.feature.antiraid.description": {
+    "message": "Détecte les arrivées massives post-live et verrouille le serveur le temps que la vague passe.",
+    "description": "Creators feature Anti-raid description"
+  },
+  "communities.creators.feature.captcha.title": {
+    "message": "Captcha à l'entrée",
+    "description": "Creators feature Captcha title"
+  },
+  "communities.creators.feature.captcha.description": {
+    "message": "Filtre les bots et les comptes jetables avant qu'ils n'accèdent à vos salons.",
+    "description": "Creators feature Captcha description"
+  },
+  "communities.creators.feature.antispam.title": {
+    "message": "Anti-spam automatique",
+    "description": "Creators feature Anti-spam title"
+  },
+  "communities.creators.feature.antispam.description": {
+    "message": "Sanctionne le flood, l'autopromo et les liens « free nitro » sans que vous leviez le petit doigt.",
+    "description": "Creators feature Anti-spam description"
+  },
+  "communities.creators.feature.mod.title": {
+    "message": "Modération & administration",
+    "description": "Creators feature Moderation title"
+  },
+  "communities.creators.feature.mod.description": {
+    "message": "Donnez à vos modérateurs les bons outils pour gérer une communauté qui grandit vite.",
+    "description": "Creators feature Moderation description"
+  },
+  "communities.creators.feature.dm.title": {
+    "message": "Fermeture des MP",
+    "description": "Creators feature DM Lock title"
+  },
+  "communities.creators.feature.dm.description": {
+    "message": "Empêchez les arnaqueurs de harceler vos membres en message privé en se faisant passer pour vous.",
+    "description": "Creators feature DM Lock description"
+  },
+  "communities.creators.feature.tag.title": {
+    "message": "Rôle de Tag",
+    "description": "Creators feature Tag role title"
+  },
+  "communities.creators.feature.tag.description": {
+    "message": "Attribuez automatiquement un rôle aux fans qui affichent le tag de votre serveur.",
+    "description": "Creators feature Tag role description"
+  },
+  "communities.creators.stat.servers": {
+    "message": "serveurs Discord protégés",
+    "description": "Creators stat: protected servers"
+  },
+  "communities.creators.stat.monitoring": {
+    "message": "surveillance automatique",
+    "description": "Creators stat: monitoring"
+  },
+  "communities.creators.stat.price": {
+    "message": "pour démarrer, pour toujours",
+    "description": "Creators stat: free"
+  },
+  "communities.creators.stat.languages": {
+    "message": "langues prises en charge",
+    "description": "Creators stat: languages"
+  },
+  "communities.creators.cta.title": {
+    "message": "Prêt à protéger votre {highlight} ?",
+    "description": "Creators landing: final CTA title; {highlight} renders the accented word"
+  },
+  "communities.creators.cta.title.highlight": {
+    "message": "communauté",
+    "description": "Highlighted word inside the creators final CTA title"
+  },
+  "communities.creators.cta.description": {
+    "message": "Ajoutez RaidProtect en quelques secondes et concentrez-vous sur votre contenu, pas sur la modération.",
+    "description": "Creators landing: final CTA description"
+  },
+  "communities.creators.cta.addToDiscord": {
+    "message": "Ajouter à Discord",
+    "description": "Creators landing: primary CTA (add bot to Discord)"
+  },
+  "communities.crypto.meta.title": {
+    "message": "RaidProtect pour les serveurs crypto & Web3",
+    "description": "Browser tab title for the crypto community landing page"
+  },
+  "communities.crypto.meta.description": {
+    "message": "Les serveurs crypto sont la cible n°1 des scams, du phishing et des drainers de wallet. RaidProtect verrouille les MP, filtre les bots et bloque les raids.",
+    "description": "Meta description for the crypto community landing page"
+  },
+  "communities.crypto.eyebrow": {
+    "message": "Pour les serveurs crypto & Web3",
+    "description": "Crypto landing: small pill above the title"
+  },
+  "communities.crypto.hero.title": {
+    "message": "Protégez votre communauté {highlight} des arnaques",
+    "description": "Crypto landing: hero H1; {highlight} renders the accented word"
+  },
+  "communities.crypto.hero.title.highlight": {
+    "message": "crypto",
+    "description": "Highlighted word inside the crypto hero title"
+  },
+  "communities.crypto.hero.description": {
+    "message": "Les serveurs crypto sont la cible n°1 des scams, du phishing et des drainers de wallet. RaidProtect verrouille les messages privés, filtre les bots et bloque les raids avant qu'ils n'atteignent vos membres.",
+    "description": "Crypto landing: hero subtitle"
+  },
+  "communities.crypto.hero.secondaryCta": {
+    "message": "Découvrir la protection",
+    "description": "Crypto landing: secondary CTA label"
+  },
+  "communities.crypto.threats.title": {
+    "message": "Ce que vous affrontez chaque jour",
+    "description": "Crypto landing: threats section title"
+  },
+  "communities.crypto.threats.subtitle": {
+    "message": "Les communautés crypto attirent des attaques ciblées que la modération manuelle ne peut pas suivre.",
+    "description": "Crypto landing: threats section subtitle"
+  },
+  "communities.crypto.threat.dm.title": {
+    "message": "Arnaques et drainers en MP",
+    "description": "Crypto threat 1 title"
+  },
+  "communities.crypto.threat.dm.description": {
+    "message": "Faux supports, fausses promos, liens de connexion piégés : les escrocs ciblent vos membres en message privé, là où la modération ne voit rien.",
+    "description": "Crypto threat 1 description"
+  },
+  "communities.crypto.threat.bots.title": {
+    "message": "Vagues de faux comptes",
+    "description": "Crypto threat 2 title"
+  },
+  "communities.crypto.threat.bots.description": {
+    "message": "Les bots s'inscrivent en masse pour spammer de faux airdrops et gonfler artificiellement votre communauté.",
+    "description": "Crypto threat 2 description"
+  },
+  "communities.crypto.threat.spam.title": {
+    "message": "Spam de liens et phishing",
+    "description": "Crypto threat 3 title"
+  },
+  "communities.crypto.threat.spam.description": {
+    "message": "Un seul compte compromis suffit à inonder vos salons de liens malveillants en quelques secondes.",
+    "description": "Crypto threat 3 description"
+  },
+  "communities.crypto.features.title": {
+    "message": "Votre arsenal anti-scam",
+    "description": "Crypto landing: features section title"
+  },
+  "communities.crypto.features.subtitle": {
+    "message": "Les protections de RaidProtect, réglées pour les menaces propres à l'univers crypto.",
+    "description": "Crypto landing: features section subtitle"
+  },
+  "communities.crypto.feature.dm.title": {
+    "message": "Fermeture des MP",
+    "description": "Crypto feature DM Lock title"
+  },
+  "communities.crypto.feature.dm.description": {
+    "message": "Bloquez les messages privés entre vos membres : l'angle d'attaque favori des arnaqueurs crypto disparaît.",
+    "description": "Crypto feature DM Lock description"
+  },
+  "communities.crypto.feature.captcha.title": {
+    "message": "Captcha à l'entrée",
+    "description": "Crypto feature Captcha title"
+  },
+  "communities.crypto.feature.captcha.description": {
+    "message": "Chaque nouvel arrivant prouve qu'il est humain avant d'accéder au serveur. Adieu les fermes de bots.",
+    "description": "Crypto feature Captcha description"
+  },
+  "communities.crypto.feature.antispam.title": {
+    "message": "Anti-spam automatique",
+    "description": "Crypto feature Anti-spam title"
+  },
+  "communities.crypto.feature.antispam.description": {
+    "message": "Les envois massifs de liens et de messages identiques sont sanctionnés instantanément, sans intervention.",
+    "description": "Crypto feature Anti-spam description"
+  },
+  "communities.crypto.feature.antiraid.title": {
+    "message": "Blocage des raids",
+    "description": "Crypto feature Anti-raid title"
+  },
+  "communities.crypto.feature.antiraid.description": {
+    "message": "Une arrivée anormale de comptes ? RaidProtect détecte le raid et verrouille le serveur avant l'impact.",
+    "description": "Crypto feature Anti-raid description"
+  },
+  "communities.crypto.feature.mod.title": {
+    "message": "Modération & administration",
+    "description": "Crypto feature Moderation title"
+  },
+  "communities.crypto.feature.mod.description": {
+    "message": "Sanctions, journaux et outils de gestion pour garder le contrôle, même quand la communauté explose.",
+    "description": "Crypto feature Moderation description"
+  },
+  "communities.crypto.feature.tag.title": {
+    "message": "Rôle de Tag",
+    "description": "Crypto feature Tag role title"
+  },
+  "communities.crypto.feature.tag.description": {
+    "message": "Récompensez les membres qui portent le tag de votre serveur avec un rôle attribué automatiquement.",
+    "description": "Crypto feature Tag role description"
+  },
+  "communities.crypto.stat.servers": {
+    "message": "serveurs Discord protégés",
+    "description": "Crypto stat: protected servers"
+  },
+  "communities.crypto.stat.monitoring": {
+    "message": "surveillance automatique",
+    "description": "Crypto stat: monitoring"
+  },
+  "communities.crypto.stat.price": {
+    "message": "pour démarrer, pour toujours",
+    "description": "Crypto stat: free"
+  },
+  "communities.crypto.stat.languages": {
+    "message": "langues prises en charge",
+    "description": "Crypto stat: languages"
+  },
+  "communities.crypto.cta.title": {
+    "message": "Prêt à blinder votre serveur {highlight} ?",
+    "description": "Crypto landing: final CTA title; {highlight} renders the accented word"
+  },
+  "communities.crypto.cta.title.highlight": {
+    "message": "crypto",
+    "description": "Highlighted word inside the crypto final CTA title"
+  },
+  "communities.crypto.cta.description": {
+    "message": "Ajoutez RaidProtect en quelques secondes et protégez votre communauté dès aujourd'hui.",
+    "description": "Crypto landing: final CTA description"
+  },
+  "communities.crypto.cta.addToDiscord": {
+    "message": "Ajouter à Discord",
+    "description": "Crypto landing: primary CTA (add bot to Discord)"
+  },
+  "communities.games.meta.title": {
+    "message": "RaidProtect pour les serveurs de jeux & gaming",
+    "description": "Browser tab title for the games community landing page"
+  },
+  "communities.games.meta.description": {
+    "message": "FiveM, Roblox, Minecraft ou un Discord de jeu qui cartonne : RaidProtect bloque les raids, filtre les bots et stoppe le spam de cheats automatiquement.",
+    "description": "Meta description for the games community landing page"
+  },
+  "communities.games.eyebrow": {
+    "message": "Pour les serveurs de jeux & gaming",
+    "description": "Games landing: small pill above the title"
+  },
+  "communities.games.hero.title": {
+    "message": "Protégez votre communauté {highlight} des raids",
+    "description": "Games landing: hero H1; {highlight} renders the accented word"
+  },
+  "communities.games.hero.title.highlight": {
+    "message": "gaming",
+    "description": "Highlighted word inside the games hero title"
+  },
+  "communities.games.hero.description": {
+    "message": "FiveM, Roblox, Minecraft ou un Discord de jeu qui cartonne : dès que ça grossit, ça attire les raids, les bots et les vendeurs de cheats. RaidProtect filtre tout ça automatiquement pour que vos joueurs profitent du jeu, pas du spam.",
+    "description": "Games landing: hero subtitle"
+  },
+  "communities.games.hero.secondaryCta": {
+    "message": "Découvrir la protection",
+    "description": "Games landing: secondary CTA label"
+  },
+  "communities.games.threats.title": {
+    "message": "Ce qui menace votre serveur",
+    "description": "Games landing: threats section title"
+  },
+  "communities.games.threats.subtitle": {
+    "message": "Un serveur de jeu populaire est une cible permanente pour les raids et les arnaqueurs.",
+    "description": "Games landing: threats section subtitle"
+  },
+  "communities.games.threat.raid.title": {
+    "message": "Raids et invasions de trolls",
+    "description": "Games threat 1 title"
+  },
+  "communities.games.threat.raid.description": {
+    "message": "Dès qu'un serveur de jeu prend de l'ampleur, il attire des vagues de comptes jetables qui viennent spammer et troller en masse.",
+    "description": "Games threat 1 description"
+  },
+  "communities.games.threat.bots.title": {
+    "message": "Bots et fermes de comptes",
+    "description": "Games threat 2 title"
+  },
+  "communities.games.threat.bots.description": {
+    "message": "Vendeurs de cheats, services de boosting et faux comptes s'inscrivent en masse pour polluer votre communauté.",
+    "description": "Games threat 2 description"
+  },
+  "communities.games.threat.spam.title": {
+    "message": "Arnaques « free robux » & cheats",
+    "description": "Games threat 3 title"
+  },
+  "communities.games.threat.spam.description": {
+    "message": "Spam de liens d'arnaque, ventes de comptes et fausses promos noient le chat de votre serveur en quelques secondes.",
+    "description": "Games threat 3 description"
+  },
+  "communities.games.features.title": {
+    "message": "Pensé pour les grosses communautés",
+    "description": "Games landing: features section title"
+  },
+  "communities.games.features.subtitle": {
+    "message": "Les protections de RaidProtect, réglées pour les serveurs de jeu qui ne dorment jamais.",
+    "description": "Games landing: features section subtitle"
+  },
+  "communities.games.feature.antiraid.title": {
+    "message": "Blocage des raids",
+    "description": "Games feature Anti-raid title"
+  },
+  "communities.games.feature.antiraid.description": {
+    "message": "Détecte les invasions de comptes et verrouille le serveur avant que les trolls ne gâchent l'ambiance.",
+    "description": "Games feature Anti-raid description"
+  },
+  "communities.games.feature.captcha.title": {
+    "message": "Captcha à l'entrée",
+    "description": "Games feature Captcha title"
+  },
+  "communities.games.feature.captcha.description": {
+    "message": "Chaque joueur prouve qu'il est humain avant d'entrer. Les fermes de bots restent à la porte.",
+    "description": "Games feature Captcha description"
+  },
+  "communities.games.feature.antispam.title": {
+    "message": "Anti-spam automatique",
+    "description": "Games feature Anti-spam title"
+  },
+  "communities.games.feature.antispam.description": {
+    "message": "Pub de cheats, ventes de comptes et liens d'arnaque sont sanctionnés instantanément, sans intervention.",
+    "description": "Games feature Anti-spam description"
+  },
+  "communities.games.feature.mod.title": {
+    "message": "Modération & administration",
+    "description": "Games feature Moderation title"
+  },
+  "communities.games.feature.mod.description": {
+    "message": "Tout l'outillage pour gérer une grosse communauté de joueurs et son équipe de modération.",
+    "description": "Games feature Moderation description"
+  },
+  "communities.games.feature.dm.title": {
+    "message": "Fermeture des MP",
+    "description": "Games feature DM Lock title"
+  },
+  "communities.games.feature.dm.description": {
+    "message": "Protégez vos joueurs des arnaqueurs qui les démarchent en privé avec de fausses promos et de faux giveaways.",
+    "description": "Games feature DM Lock description"
+  },
+  "communities.games.feature.tag.title": {
+    "message": "Rôle de Tag",
+    "description": "Games feature Tag role title"
+  },
+  "communities.games.feature.tag.description": {
+    "message": "Récompensez les joueurs qui affichent le tag de votre serveur avec un rôle attribué automatiquement.",
+    "description": "Games feature Tag role description"
+  },
+  "communities.games.stat.servers": {
+    "message": "serveurs Discord protégés",
+    "description": "Games stat: protected servers"
+  },
+  "communities.games.stat.monitoring": {
+    "message": "surveillance automatique",
+    "description": "Games stat: monitoring"
+  },
+  "communities.games.stat.price": {
+    "message": "pour démarrer, pour toujours",
+    "description": "Games stat: free"
+  },
+  "communities.games.stat.languages": {
+    "message": "langues prises en charge",
+    "description": "Games stat: languages"
+  },
+  "communities.games.cta.title": {
+    "message": "Prêt à sécuriser votre serveur {highlight} ?",
+    "description": "Games landing: final CTA title; {highlight} renders the accented word"
+  },
+  "communities.games.cta.title.highlight": {
+    "message": "gaming",
+    "description": "Highlighted word inside the games final CTA title"
+  },
+  "communities.games.cta.description": {
+    "message": "Ajoutez RaidProtect en quelques secondes et laissez vos joueurs se concentrer sur le jeu.",
+    "description": "Games landing: final CTA description"
+  },
+  "communities.games.cta.addToDiscord": {
+    "message": "Ajouter à Discord",
+    "description": "Games landing: primary CTA (add bot to Discord)"
+  },
+  "mockup.antispam.sanction": {
+    "message": "Softban :"
+  },
+  "mockup.antispam.reason": {
+    "message": "Spam de menções"
+  },
+  "mockup.antispam.mod": {
+    "message": "Mod :"
+  },
+  "mockup.antispam.time1": {
+    "message": "hoje às 21:07"
+  },
+  "mockup.antispam.ambient": {
+    "message": "alguém pra uma partida hoje à noite?"
+  },
+  "mockup.antispam.time2": {
+    "message": "hoje às 21:08"
+  },
+  "mockup.antispam.time3": {
+    "message": "hoje às 21:08"
+  },
+  "mockup.audit.invoked": {
+    "message": "usou"
+  },
+  "mockup.audit.title": {
+    "message": "Auditoria de segurança"
+  },
+  "mockup.audit.scoreClean": {
+    "message": "Pontuação geral : 100/100"
+  },
+  "mockup.audit.score": {
+    "message": "Pontuação geral : 65/100"
+  },
+  "mockup.audit.fix": {
+    "message": "Corrigir"
+  },
+  "mockup.audit.clean": {
+    "message": "Está tudo limpo!"
+  },
+  "mockup.audit.edited": {
+    "message": "(editada)"
+  },
+  "mockup.auth.title": {
+    "message": "Autenticação necessária"
+  },
+  "mockup.auth.bodyShort": {
+    "message": "Para receber @Admin, autentique-se."
+  },
+  "mockup.auth.session": {
+    "message": "Duração da sessão : 8h"
+  },
+  "mockup.authConcept.authenticate": {
+    "message": "Autenticar"
+  },
+  "mockup.authConcept.frameHacker": {
+    "message": "Hacker na conta"
+  },
+  "mockup.authConcept.frameLegit": {
+    "message": "Pessoa legítima"
+  },
+  "mockup.authConcept.verifying": {
+    "message": "Verificando a passkey…"
+  },
+  "mockup.authConcept.refused": {
+    "message": "Recusado : nenhuma passkey válida"
+  },
+  "mockup.authConcept.granted": {
+    "message": "Cargo @Admin atribuído · sessão 8h"
+  },
+  "mockup.authConcept.verified": {
+    "message": "Verificado"
+  },
+  "mockup.authConcept.inputPlaceholder": {
+    "message": "Conversar em #staff"
+  },
+  "mockup.authConcept.roleMember": {
+    "message": "Membro"
+  },
+  "mockup.captcha.welcome": {
+    "message": "Bem-vindo à Minha Comunidade, @Arthur!"
+  },
+  "mockup.captcha.instructions": {
+    "message": "Para acessar o servidor, complete este captcha com **6 letras maiúsculas**."
+  },
+  "mockup.captcha.kick": {
+    "message": "Expulsão automática em 5 minutos (2 tentativas restantes)."
+  },
+  "mockup.captcha.footer": {
+    "message": "Leva apenas alguns segundos e garante a segurança da nossa comunidade."
+  },
+  "mockup.captcha.now": {
+    "message": "hoje às 18:42"
+  },
+  "mockup.captcha.verified": {
+    "message": "Arthur foi verificado e entrou no servidor!"
+  },
+  "mockup.captcha.inputPlaceholder": {
+    "message": "Conversar em #verificação"
+  },
+  "mockup.lock.title": {
+    "message": "O canal está bloqueado."
+  },
+  "mockup.lock.reasonLabel": {
+    "message": "Motivo :"
+  },
+  "mockup.lock.reason": {
+    "message": "Raid em andamento"
+  },
+  "mockup.lock.until": {
+    "message": "O canal será desbloqueado em 1 hora."
+  },
+  "mockup.display.dmlockTitle": {
+    "message": "Bloqueio de DMs"
+  },
+  "mockup.display.enabled": {
+    "message": "Ativado"
+  },
+  "mockup.display.dmlockBody": {
+    "message": "As mensagens privadas estão fechadas neste servidor. Apenas seus amigos, staff, bots ou contatos anteriores podem enviar mensagens privadas. Esta restrição visa protegê-lo de golpes, publicidade e roubo de contas."
+  },
+  "mockup.display.dmlockFooter": {
+    "message": "Adicione um membro como amigo para conversar."
+  },
+  "mockup.display.sanctionsTitle": {
+    "message": "Sanções"
+  },
+  "mockup.display.sanctionsBody": {
+    "message": "Consulte o histórico das suas sanções pessoais aplicadas neste servidor com o comando `/minhas-sancoes`."
+  },
+  "mockup.display.translate": {
+    "message": "Traduzir"
+  },
+  "mockup.display.mySanctions": {
+    "message": "Consultar minhas sanções"
+  },
+  "mockup.display.report": {
+    "message": "Denunciar um membro"
+  },
+  "mockup.dmlockConcept.activated": {
+    "message": "Zallom ativou o Bloqueio de DMs."
+  },
+  "mockup.dmlockConcept.time": {
+    "message": "hoje às 03:12"
+  },
+  "mockup.dmlockConcept.campaign": {
+    "message": "enviado em DM para todos os membros do servidor…"
+  },
+  "mockup.dmlockConcept.undelivered": {
+    "message": "Sua mensagem não pôde ser entregue."
+  },
+  "mockup.dmlockConcept.targets": {
+    "message": "Mass DM · {delivered}/{total} recebidos"
+  },
+  "mockup.dmlockConcept.friend": {
+    "message": "amigo"
+  },
+  "mockup.honeypot.title": {
+    "message": "NÃO ENVIE NENHUMA MENSAGEM AQUI"
+  },
+  "mockup.honeypot.body1": {
+    "message": "Este canal serve para detectar **contas automatizadas**."
+  },
+  "mockup.honeypot.body2": {
+    "message": "Qualquer mensagem enviada aqui resulta em uma **sanção automática** (Softban)."
+  },
+  "mockup.honeypot.count": {
+    "message": "{count} contas sinalizadas"
+  },
+  "mockup.honeypot.translate": {
+    "message": "Translate"
+  },
+  "mockup.honeypot.now": {
+    "message": "hoje às {time}"
+  },
+  "mockup.honeypot.sanctioned": {
+    "message": "Chaussette foi softbanido e suas mensagens excluídas."
+  },
+  "mockup.honeypot.inputPlaceholder": {
+    "message": "Conversar em #honeypot"
+  },
+  "mockup.joinlock.title": {
+    "message": "Status do Join lock"
+  },
+  "mockup.joinlock.line1": {
+    "message": "O Join lock está atualmente **ativado**!"
+  },
+  "mockup.joinlock.line2": {
+    "message": "Isso significa que *ninguém pode entrar no servidor*."
+  },
+  "mockup.joinlock.disable": {
+    "message": "Desativar"
+  },
+  "mockup.modview.member": {
+    "message": "Membro do servidor"
+  },
+  "mockup.modview.created": {
+    "message": "Conta criada"
+  },
+  "mockup.modview.createdRel": {
+    "message": "há 5 anos"
+  },
+  "mockup.modview.joined": {
+    "message": "Membro desde"
+  },
+  "mockup.modview.joinedRel": {
+    "message": "há 2 anos"
+  },
+  "mockup.modview.nick": {
+    "message": "Apelido"
+  },
+  "mockup.modview.perms": {
+    "message": "Permissões :"
+  },
+  "mockup.modview.permsValue": {
+    "message": "Membro"
+  },
+  "mockup.modview.roles": {
+    "message": "cargos"
+  },
+  "mockup.modview.note": {
+    "message": "Nota"
+  },
+  "mockup.modview.noteEmpty": {
+    "message": "Sem nota."
+  },
+  "mockup.modview.noteEdit": {
+    "message": "Editar"
+  },
+  "mockup.modview.sanctions": {
+    "message": "Últimas sanções"
+  },
+  "mockup.modview.sanctionsAll": {
+    "message": "Ver todas as sanções"
+  },
+  "mockup.modview.row1": {
+    "message": "Timeout há 3 dias."
+  },
+  "mockup.modview.mod": {
+    "message": "Mod :"
+  },
+  "mockup.modview.row2": {
+    "message": "Aviso há 5 horas."
+  },
+  "mockup.modview.sanctionPlaceholder": {
+    "message": "Sancionar o usuário"
+  },
+  "mockup.raidmode.joined": {
+    "message": "entrou no servidor."
+  },
+  "mockup.raidmode.title": {
+    "message": "RaidMode automático ativado!"
+  },
+  "mockup.raidmode.body": {
+    "message": "Os novos membros são expulsos. Para desativá-lo, use o comando"
+  },
+  "mockup.raidmode.members": {
+    "message": "Membros - {count}"
+  },
+  "mockup.reports.title": {
+    "message": "Nova denúncia"
+  },
+  "mockup.reports.member": {
+    "message": "Membro denunciado"
+  },
+  "mockup.reports.count": {
+    "message": "1 mensagem e 1 perfil denunciados por 2 usuários"
+  },
+  "mockup.reports.claimed": {
+    "message": "Assumido"
+  },
+  "mockup.reports.claim": {
+    "message": "Assumir"
+  },
+  "mockup.reports.resolve": {
+    "message": "Resolvido"
+  },
+  "mockup.reports.refuse": {
+    "message": "Recusar"
+  },
+  "mockup.reports.claimedBy": {
+    "message": "Tratado por"
+  },
+  "mockup.reports.sanction": {
+    "message": "Sancionar este membro…"
+  },
+  "mockup.reports.threadName": {
+    "message": "Denúncia : @chaussette"
+  },
+  "mockup.reports.threadLast": {
+    "message": "também denunciou este membro"
+  },
+  "mockup.reports.threadWhen": {
+    "message": "há 17 min"
+  },
+  "mockup.reports.channelGeneral": {
+    "message": "geral"
+  },
+  "mockup.reports.channelReports": {
+    "message": "denúncias"
+  },
+  "mockup.reports.time1": {
+    "message": "hoje às 18:41"
+  },
+  "mockup.reports.ambient": {
+    "message": "boas-vindas aos novos!"
+  },
+  "mockup.reports.time2": {
+    "message": "hoje às 18:42"
+  },
+  "mockup.reports.ctxReply": {
+    "message": "Responder"
+  },
+  "mockup.reports.ctxCopy": {
+    "message": "Copiar texto"
+  },
+  "mockup.reports.ctxApps": {
+    "message": "Aplicativos"
+  },
+  "mockup.reports.ctxReport": {
+    "message": "Denunciar Mensagem"
+  },
+  "mockup.reports.modalTitle": {
+    "message": "Denunciar uma mensagem"
+  },
+  "mockup.reports.modalReason": {
+    "message": "Motivo"
+  },
+  "mockup.reports.modalPreventive": {
+    "message": "Ação preventiva"
+  },
+  "mockup.reports.modalPreventiveDesc": {
+    "message": "Como membro de confiança, você pode aplicar uma medida imediata."
+  },
+  "mockup.reports.modalPreventiveOption": {
+    "message": "Timeout preventivo de 24h (enquanto aguarda um moderador)"
+  },
+  "mockup.reports.modalCancel": {
+    "message": "Cancelar"
+  },
+  "mockup.reports.modalSubmit": {
+    "message": "Enviar"
+  },
+  "mockup.sanctions.title": {
+    "message": "Sanção"
+  },
+  "mockup.sanctions.user": {
+    "message": "Usuário :"
+  },
+  "mockup.sanctions.row": {
+    "message": "Timeout há 2 horas até amanhã 18:42 (`1d`)."
+  },
+  "mockup.sanctions.reason": {
+    "message": "Publicidade repetida em #geral"
+  },
+  "mockup.sanctions.moderator": {
+    "message": "Moderador :"
+  },
+  "mockup.settingsMenus.back": {
+    "message": "Voltar"
+  },
+  "mockup.settingsMenus.support": {
+    "message": "Servidor de Suporte"
+  },
+  "mockup.settingsMenus.none": {
+    "message": "Nenhum"
+  },
+  "mockup.settingsMenus.enabled": {
+    "message": "Ativado"
+  },
+  "mockup.settingsMenus.disabled": {
+    "message": "Desativado"
+  },
+  "mockup.settingsMenus.disable": {
+    "message": "Desativar"
+  },
+  "mockup.settingsMenus.enable": {
+    "message": "Ativar"
+  },
+  "mockup.settingsMenus.reset": {
+    "message": "Redefinir"
+  },
+  "mockup.settingsMenus.antispam.title": {
+    "message": "Configuração do Anti-spam"
+  },
+  "mockup.settingsMenus.antispam.desc": {
+    "message": "Configure o anti-spam para proteger seu servidor Discord de ações maliciosas de usuários."
+  },
+  "mockup.settingsMenus.antispam.high": {
+    "message": "🔴 **Alto:** Sanciona todos os spams, incluindo nos canais ignorados."
+  },
+  "mockup.settingsMenus.antispam.medium": {
+    "message": "🟡 **Médio:** Sanciona os spams, mas respeita os canais ignorados."
+  },
+  "mockup.settingsMenus.antispam.low": {
+    "message": "🟢 **Baixo:** Foca apenas nos spams de links, menções e selfbots."
+  },
+  "mockup.settingsMenus.antispam.level": {
+    "message": "Nível de proteção"
+  },
+  "mockup.settingsMenus.antispam.channels": {
+    "message": "Canal(is) ignorado(s)"
+  },
+  "mockup.settingsMenus.antispam.roles": {
+    "message": "Cargo(s) ignorado(s)"
+  },
+  "mockup.settingsMenus.antispam.members": {
+    "message": "Membro(s) ignorado(s)"
+  },
+  "mockup.settingsMenus.antispam.selChannels": {
+    "message": "Canal(is) a ignorar (escreva para pesquisar)"
+  },
+  "mockup.settingsMenus.antispam.selRoles": {
+    "message": "Cargo(s) a ignorar (escreva para pesquisar)"
+  },
+  "mockup.settingsMenus.antispam.selMembers": {
+    "message": "Membro(s) a ignorar (escreva para pesquisar)"
+  },
+  "mockup.settingsMenus.antispamSanctions.desc": {
+    "message": "Você pode personalizar as sanções aplicadas dependendo do tipo de spam detectado. Isso permite uma resposta adaptada à gravidade da violação."
+  },
+  "mockup.settingsMenus.antispamSanctions.list": {
+    "message": "Sanções :"
+  },
+  "mockup.sanction.warn": {
+    "message": "Aviso"
+  },
+  "mockup.sanction.ban": {
+    "message": "Banimento"
+  },
+  "mockup.settingsMenus.antispamSanctions.multichannel": {
+    "message": "Spam multicanal"
+  },
+  "mockup.sanction.jail": {
+    "message": "Prisão"
+  },
+  "mockup.settingsMenus.antispamSanctions.multichannelDesc": {
+    "message": "Substitui a sanção do gatilho quando o spam abrange vários canais, apenas se for mais severa."
+  },
+  "mockup.settingsMenus.antispamSanctions.duration": {
+    "message": "Duração das sanções"
+  },
+  "mockup.settingsMenus.oneHour": {
+    "message": "1 hora"
+  },
+  "mockup.settingsMenus.antispamSanctions.publicMessage": {
+    "message": "Mensagem pública de sanção"
+  },
+  "mockup.settingsMenus.antispamSanctions.publicMessageDesc": {
+    "message": "Envia uma mensagem no canal para sinalizar a sanção (ex. 'membro foi silenciado'). Desativável no premium."
+  },
+  "mockup.settingsMenus.antispamSanctions.selTrigger": {
+    "message": "Selecione um gatilho"
+  },
+  "mockup.settingsMenus.trigger.spam": {
+    "message": "Spam"
+  },
+  "mockup.settingsMenus.trigger.selfbot": {
+    "message": "Spam com selfbot"
+  },
+  "mockup.settingsMenus.trigger.mentions": {
+    "message": "Spam de menções"
+  },
+  "mockup.settingsMenus.trigger.links": {
+    "message": "Spam de links"
+  },
+  "mockup.settingsMenus.trigger.scam": {
+    "message": "Imagens de golpe (Crypto Scam)"
+  },
+  "mockup.settingsMenus.antispamSanctions.selSanction": {
+    "message": "Selecione uma sanção"
+  },
+  "mockup.settingsMenus.antispamSanctions.customDuration": {
+    "message": "Duração personalizada"
+  },
+  "mockup.settingsMenus.reports.title": {
+    "message": "Configuração do Sistema de Denúncias"
+  },
+  "mockup.settingsMenus.reports.channelDesc": {
+    "message": "Configure o **canal** onde as **notificações de denúncia** serão enviadas."
+  },
+  "mockup.settingsMenus.reports.channel": {
+    "message": "Recebimento de denúncias"
+  },
+  "mockup.settingsMenus.reports.channelSel": {
+    "message": "Canal de recebimento (escreva para pesquisar)"
+  },
+  "mockup.settingsMenus.createForMe": {
+    "message": "Criar um para mim"
+  },
+  "mockup.settingsMenus.reports.roleDesc": {
+    "message": "Configure o **cargo que será notificado** quando uma **nova denúncia** for recebida. Normalmente, um cargo de moderador."
+  },
+  "mockup.settingsMenus.reports.role": {
+    "message": "Cargo de notificação"
+  },
+  "mockup.settingsMenus.reports.roleSel": {
+    "message": "Cargo de notificação (escreva para pesquisar)"
+  },
+  "mockup.settingsMenus.reports.notify": {
+    "message": "Notificação do denunciante"
+  },
+  "mockup.settingsMenus.reports.notifyDesc": {
+    "message": "Escolha **o que os membros que denunciaram recebem em DM**, uma vez que sua denúncia seja tratada."
+  },
+  "mockup.settingsMenus.reports.notifyValue": {
+    "message": "Apenas tratamento"
+  },
+  "mockup.settingsMenus.reports.notifySel": {
+    "message": "Nível de notificação"
+  },
+  "mockup.settingsMenus.reports.notifyOutcome": {
+    "message": "Com o resultado"
+  },
+  "mockup.settingsMenus.reports.notifyModerator": {
+    "message": "Com o moderador"
+  },
+  "mockup.settingsMenus.reports.trusted": {
+    "message": "Cargo de confiança"
+  },
+  "mockup.settingsMenus.reports.trustedDesc": {
+    "message": "Os membros com este **cargo de confiança** podem aplicar um **timeout preventivo de 24h** ao denunciar, enquanto aguardam que um moderador trate a denúncia."
+  },
+  "mockup.settingsMenus.reports.trustedValue": {
+    "message": "Membro de confiança"
+  },
+  "mockup.settingsMenus.reports.trustedSel": {
+    "message": "Cargo de confiança (escreva para pesquisar)"
+  },
+  "mockup.settingsMenus.reports.badTitle": {
+    "message": "Reputação dos denunciantes"
+  },
+  "mockup.settingsMenus.reports.badDesc": {
+    "message": "Agir sobre os membros cujas denúncias são regularmente recusadas. Defina o limite de denúncias recusadas, a janela de cálculo e o que acontece quando o limite é atingido."
+  },
+  "mockup.settingsMenus.reports.badThreshold": {
+    "message": "Limite"
+  },
+  "mockup.settingsMenus.reports.badWindow": {
+    "message": "Janela"
+  },
+  "mockup.settingsMenus.reports.badWindowValue": {
+    "message": "30 dias"
+  },
+  "mockup.settingsMenus.reports.badMode": {
+    "message": "Ação"
+  },
+  "mockup.settingsMenus.reports.badModeNotify": {
+    "message": "Notificar os moderadores"
+  },
+  "mockup.settingsMenus.reports.badThresholdSel": {
+    "message": "Denúncias recusadas antes da ação"
+  },
+  "mockup.settingsMenus.reports.badOpt3": {
+    "message": "3 denúncias"
+  },
+  "mockup.settingsMenus.reports.badOpt5": {
+    "message": "5 denúncias"
+  },
+  "mockup.settingsMenus.reports.badOpt10": {
+    "message": "10 denúncias"
+  },
+  "mockup.settingsMenus.reports.badWindowSel": {
+    "message": "Duração do cálculo"
+  },
+  "mockup.settingsMenus.reports.badWin7": {
+    "message": "7 dias"
+  },
+  "mockup.settingsMenus.reports.badWin90": {
+    "message": "90 dias"
+  },
+  "mockup.settingsMenus.reports.badModeSel": {
+    "message": "O que fazer ao atingir o limite"
+  },
+  "mockup.settingsMenus.reports.badModeBlock": {
+    "message": "Bloquear automaticamente"
+  },
+  "mockup.settingsMenus.reports.badModeSanction": {
+    "message": "Sancionar automaticamente"
+  },
+  "mockup.settingsMenus.reports.badModeBoth": {
+    "message": "Bloquear e sancionar"
+  },
+  "mockup.settingsMenus.reports.desc": {
+    "message": "Ative o sistema de denúncias para permitir que os membros notifiquem facilmente sua equipe sobre situações problemáticas."
+  },
+  "mockup.settingsMenus.reports.group": {
+    "message": "Agrupamento"
+  },
+  "mockup.settingsMenus.reports.groupValue": {
+    "message": "As denúncias contra o mesmo membro são agrupadas em um único alerta."
+  },
+  "mockup.settingsMenus.reports.groupSeparate": {
+    "message": "Cada denúncia cria seu próprio alerta separado."
+  },
+  "mockup.settingsMenus.reports.btnChannel": {
+    "message": "Canal"
+  },
+  "mockup.settingsMenus.reports.btnRole": {
+    "message": "Cargo"
+  },
+  "mockup.settingsMenus.reports.badReporters": {
+    "message": "Denunciantes falsos"
+  },
+  "mockup.settingsMenus.raidmode.title": {
+    "message": "Configuração do Auto RaidMode"
+  },
+  "mockup.settingsMenus.raidmode.thresholdDesc": {
+    "message": "Define o número máximo de novos membros permitidos a entrar no servidor em um período de 10 segundos antes da ativação do RaidMode."
+  },
+  "mockup.settingsMenus.raidmode.threshold": {
+    "message": "Número de membros / 10 segundos"
+  },
+  "mockup.settingsMenus.raidmode.thresholdValue": {
+    "message": "10 membros"
+  },
+  "mockup.settingsMenus.raidmode.opt5": {
+    "message": "5 membros"
+  },
+  "mockup.settingsMenus.raidmode.opt20": {
+    "message": "20 membros"
+  },
+  "mockup.settingsMenus.raidmode.opt30": {
+    "message": "30 membros"
+  },
+  "mockup.settingsMenus.customValue": {
+    "message": "Valor personalizado"
+  },
+  "mockup.settingsMenus.raidmode.durationDesc": {
+    "message": "Define a duração durante a qual o RaidMode permanece ativo antes de se desativar automaticamente."
+  },
+  "mockup.settingsMenus.raidmode.duration": {
+    "message": "Duração antes da desativação"
+  },
+  "mockup.settingsMenus.raidmode.durationValue": {
+    "message": "5 minutos"
+  },
+  "mockup.settingsMenus.raidmode.optDur1": {
+    "message": "1 minuto"
+  },
+  "mockup.settingsMenus.raidmode.optDur10": {
+    "message": "10 minutos"
+  },
+  "mockup.settingsMenus.raidmode.optDur30": {
+    "message": "30 minutos"
+  },
+  "mockup.settingsMenus.raidmode.desc": {
+    "message": "Configure o modo anti-raid automático, que determina o número máximo de membros que podem entrar no seu servidor em 10 segundos. Quando o limite é ultrapassado, os membros sinalizados são expulsos e os convites são desativados pela duração configurada."
+  },
+  "mockup.settingsMenus.raidmode.dmlock": {
+    "message": "Fechar as DM"
+  },
+  "mockup.settingsMenus.raidmode.kickMode": {
+    "message": "Modo de expulsão"
+  },
+  "mockup.settingsMenus.raidmode.kickModeEnabled": {
+    "message": "Expulsa os membros ao entrar e envia uma mensagem privada com um convite para entrar no servidor novamente"
+  },
+  "mockup.settingsMenus.raidmode.kickModeValue": {
+    "message": "Desativação dos convites"
+  },
+  "mockup.settingsMenus.raidmode.btnThreshold": {
+    "message": "Número de membros"
+  },
+  "mockup.settingsMenus.raidmode.btnDuration": {
+    "message": "Duração"
+  },
+  "mockup.settingsMenus.captcha.title": {
+    "message": "Configuração do Captcha"
+  },
+  "mockup.settingsMenus.captcha.desc": {
+    "message": "Configure o Captcha para impedir que selfbots acessem seu servidor Discord e bloquear raids."
+  },
+  "mockup.settingsMenus.captcha.channel": {
+    "message": "Canal de verificação"
+  },
+  "mockup.settingsMenus.selChannel": {
+    "message": "Selecione um canal"
+  },
+  "mockup.settingsMenus.dmlock.title": {
+    "message": "Configuração do Bloqueio de DMs"
+  },
+  "mockup.settingsMenus.dmlock.desc1": {
+    "message": "Configure o fechamento de mensagens diretas para prevenir tentativas de phishing ou golpes."
+  },
+  "mockup.settingsMenus.dmlock.desc2": {
+    "message": "O RaidProtect desativará as mensagens privadas permanentemente até que você desative esta proteção. Usamos o recurso \"Ações de Segurança do Discord\" (limitado a 24h pelo Discord, estendido para sempre pelo RaidProtect)."
+  },
+  "mockup.settingsMenus.dmlock.warning": {
+    "message": "Apenas os bots, os membros que já trocaram mensagens ou que são amigos e a staff poderão receber DMs com este modo."
+  },
+  "mockup.settingsMenus.dmlock.state": {
+    "message": "Estado do Bloqueio de DMs"
+  },
+  "mockup.settingsMenus.dmlock.suggest": {
+    "message": "Fazer uma sugestão"
+  },
+  "mockup.settingsMenus.language.title": {
+    "message": "Configuração do idioma"
+  },
+  "mockup.settingsMenus.language.desc": {
+    "message": "O idioma configurado afeta apenas as mensagens públicas enviadas pelo RaidProtect no seu servidor (logs, mensagens de captcha, denúncias, etc.). Mensagens privadas ou temporárias permanecem exibidas no idioma do usuário que interage com o bot."
+  },
+  "mockup.settingsMenus.language.selected": {
+    "message": "Idioma selecionado"
+  },
+  "mockup.settingsMenus.language.value": {
+    "message": "Français"
+  },
+  "mockup.settingsMenus.prefix.title": {
+    "message": "Configuração do prefixo"
+  },
+  "mockup.settingsMenus.prefix.desc1": {
+    "message": "Selecione um prefixo para comandos de mensagem. Se nenhum, os comandos de mensagem ficam desativados."
+  },
+  "mockup.settingsMenus.prefix.commands": {
+    "message": "Comandos utilizáveis por prefixo :"
+  },
+  "mockup.settingsMenus.prefix.deleteDesc": {
+    "message": "**Exclusão na invocação :** Exclui automaticamente a mensagem que contém o comando ao usar comandos por prefixo."
+  },
+  "mockup.settingsMenus.prefix.field": {
+    "message": "Prefixo"
+  },
+  "mockup.settingsMenus.prefix.delete": {
+    "message": "Exclusão na invocação"
+  },
+  "mockup.settingsMenus.prefix.sel": {
+    "message": "Selecione um prefixo"
+  },
+  "mockup.settingsMenus.prefix.custom": {
+    "message": "Valor personalizado"
+  },
+  "mockup.settingsMenus.logs.title": {
+    "message": "Configuração dos Logs"
+  },
+  "mockup.settingsMenus.logs.desc": {
+    "message": "Por padrão, os logs de moderação são enviados no canal de logs do RaidProtect. Se desejar, você pode selecionar outro canal."
+  },
+  "mockup.settingsMenus.logs.channel": {
+    "message": "Canal configurado"
+  },
+  "mockup.settings.title": {
+    "message": "Menu principal de configurações"
+  },
+  "mockup.settings.desc1": {
+    "message": "Este menu permite que você visualize, ajuste ou personalize as funcionalidades!"
+  },
+  "mockup.settings.desc2": {
+    "message": "Cada categoria apresenta uma lista de opções personalizáveis na forma de botões ou menus suspensos. Use os botões abaixo para configurar as diferentes funcionalidades."
+  },
+  "mockup.settings.language": {
+    "message": "Idioma"
+  },
+  "mockup.settings.languageValue": {
+    "message": "Français"
+  },
+  "mockup.settings.prefix": {
+    "message": "Prefixo"
+  },
+  "mockup.settings.disabled": {
+    "message": "Desativado"
+  },
+  "mockup.settings.raidmodeValue": {
+    "message": "10 membros / 10 segundos"
+  },
+  "mockup.settings.locking": {
+    "message": "Bloqueio de canal"
+  },
+  "mockup.settings.lockingValue": {
+    "message": "Não renomear com o cadeado"
+  },
+  "mockup.settings.minage": {
+    "message": "Idade Mínima"
+  },
+  "mockup.settings.minageValue": {
+    "message": "2 horas"
+  },
+  "mockup.settings.enabled": {
+    "message": "Ativado"
+  },
+  "mockup.settings.logsGeneral": {
+    "message": "Geral"
+  },
+  "mockup.settings.logsModeration": {
+    "message": "Moderação"
+  },
+  "mockup.settings.reports": {
+    "message": "Denúncias"
+  },
+  "mockup.settings.tagrole": {
+    "message": "Cargo de Tag"
+  },
+  "mockup.settings.dmlock": {
+    "message": "Bloqueio de DMs"
+  },
+  "mockup.settings.lockEmoji": {
+    "message": "Cadeado nos canais bloqueados"
+  },
+  "mockup.settings.transparency": {
+    "message": "Transparência"
+  },
+  "mockup.settings.support": {
+    "message": "Servidor de Suporte"
+  },
+  "mockup.settings.customize": {
+    "message": "Personalizar"
+  },
+  "mockup.tagroleConcept.config": {
+    "message": "Cargo de Tag"
+  },
+  "mockup.tagroleConcept.roleTag": {
+    "message": "Cargo de Tag"
+  },
+  "mockup.tagroleConcept.roleMember": {
+    "message": "Membro"
+  },
+  "mockup.tagrole.title": {
+    "message": "Configuração do Cargo de Tag"
+  },
+  "mockup.tagrole.desc1": {
+    "message": "Configure o **Cargo de Tag do Servidor** para **atribuir automaticamente um cargo** aos membros que adicionam a **tag do servidor ao perfil deles**."
+  },
+  "mockup.tagrole.desc2": {
+    "message": "Se o membro remover a tag, o cargo será automaticamente removido."
+  },
+  "mockup.tagrole.desc3": {
+    "message": "Seus membros receberão o cargo na próxima modificação de perfil (Apelido, Avatar, Banner, Cargos, Tag…). Você pode solicitar ao suporte uma sincronização completa do cargo se tiver muitos membros que possuem ou já possuíram a Tag."
+  },
+  "mockup.tagrole.field": {
+    "message": "Cargo de Tag"
+  },
+  "mockup.tagrole.placeholder": {
+    "message": "Cargo de Tag (escreva para pesquisar)"
+  },
+  "mockup.tagrole.create": {
+    "message": "Criar um para mim"
+  },
+  "mockup.tagrole.reset": {
+    "message": "Redefinir"
+  },
+  "mockup.tagrole.refresh": {
+    "message": "Atualizar"
+  },
+  "mockup.tagrole.back": {
+    "message": "Voltar"
+  },
+  "mockup.transparency.title": {
+    "message": "Relatório de transparência"
+  },
+  "mockup.transparency.range": {
+    "message": "1 de julho de 2026 a 8 de julho de 2026"
+  },
+  "mockup.transparency.intro": {
+    "message": "**37** ações de moderação foram realizadas durante este período."
+  },
+  "mockup.transparency.bans": {
+    "message": "banimentos"
+  },
+  "mockup.transparency.softbans": {
+    "message": "softbans"
+  },
+  "mockup.transparency.kicks": {
+    "message": "expulsões"
+  },
+  "mockup.transparency.timeouts": {
+    "message": "timeouts"
+  },
+  "mockup.transparency.jails": {
+    "message": "prisões"
+  },
+  "mockup.transparency.warns": {
+    "message": "avisos"
+  },
+  "mockup.transparency.others": {
+    "message": "outras ações"
+  },
+  "mockup.transparency.scamlens": {
+    "message": "golpes bloqueados pelo ScamLens"
+  },
+  "mockup.transparency.automated": {
+    "message": "automáticas"
+  },
+  "mockup.transparency.human": {
+    "message": "pela equipe"
   }
 }

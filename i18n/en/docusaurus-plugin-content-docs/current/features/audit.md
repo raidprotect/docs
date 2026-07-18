@@ -35,14 +35,20 @@ Click a category's "**Details**" button to see the result of each check, then "*
 | Server configuration | **Two-factor authentication (2FA) for moderation** |
 | Server configuration | **Default notifications** |
 | Server configuration | **Raid alerts** |
+| Server configuration | **DM Lock** * (community servers) |
+| Server configuration | **Number of installed bots** * |
 | Roles | **@everyone permissions** |
 | Roles | **Self-assignable roles** |
+| Roles | **Risky roles granted by an invite** |
 | Roles | **Administrator roles** |
-| Roles | **Administrator bots** |
+| Roles | **Administrator bots** * |
 | Channels | **Channel permissions for @everyone** |
 | Channels | **Redundant channel permissions** |
+| Channels | **Stale webhooks** * |
 
-If RaidProtect is missing permissions it needs to work properly, a dedicated warning is displayed in addition to the score. The audit ends with a "**Tips**" section that suggests enabling the RaidProtect protections that are still disabled ([HoneyPot](./honeypot.md), [Anti-spam](./anti-spam.mdx), [Auto RaidMode](./raid-mode.md), [DM Lock](./dm-lock.mdx)).
+Checks marked with a `*` are **advisory**: they appear in the report but do not affect the score.
+
+If RaidProtect is missing permissions it needs to work properly, a dedicated warning is displayed in addition to the score.
 
 ## 🔧 Fix flaws in one click {#fix}
 
@@ -61,3 +67,9 @@ For **administrator roles** (and administrator bots), there is no automatic fix:
 :::warning
 To apply the fixes, RaidProtect must have the `Manage Server` and `Manage Roles` permissions.
 :::
+
+## ✅ Dismiss a deliberate alert {#ignore}
+
+Some alerts reflect deliberate choices: a trusted administrator role, a permission knowingly left to `@everyone`, and so on. The "**Mark as OK**" button, available in a category's details, lets you dismiss them.
+
+A dismissed alert disappears from the report and no longer counts against your score. You can review the list of dismissed items at any time (the "**Ignored items**" button) and restore any of them.

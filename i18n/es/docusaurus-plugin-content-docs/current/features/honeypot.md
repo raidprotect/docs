@@ -2,7 +2,15 @@
 title: HoneyPot
 ---
 
+import HoneypotMockup from '@site/src/components/DiscordMessage/mockups/honeypot';
+
+<HoneypotMockup />
+
 El **HoneyPot** (o canal-trampa) de RaidProtect es un canal donde **nadie debe escribir**. Como los miembros reales saben que hay que evitar este canal, los unicos que publican en el son las **cuentas hackeadas** o los bots de spam: RaidProtect los sanciona automaticamente.
+
+:::info
+**Ya tienes ScamLens por defecto.** El anti-estafa [ScamLens](/blog/scamlens-early-activation) esta activo en tu servidor sin ninguna configuracion: especializado en las **imagenes de estafa**, las detecta, las elimina y sanciona a la cuenta comprometida con una fiabilidad muy alta. Para las estafas por imagen, ScamLens es mas que suficiente. El HoneyPot resulta util sobre todo si quieres una seguridad maxima y bloquear los **otros tipos de spam**: spam de enlaces, raids de texto, bots.
+:::
 
 ## ❓ Como funciona {#working}
 
@@ -14,11 +22,7 @@ Cuando activas el HoneyPot, RaidProtect crea un canal de texto **en lo mas alto 
 En cuanto un miembro publica en este canal:
 - RaidProtect aplica la **sancion que has elegido** (baneo, softban, kick, timeout, jail o silencio).
 - Los **mensajes enviados por ese miembro en los ultimos 10 minutos** se eliminan en todo el servidor, para detener el spam si ya se ha extendido a otros canales.
-- La accion se anade a los registros de moderacion automatica (motivo: *Spam mediante cuenta de usuario comprometida*).
-
-:::info
-El HoneyPot funciona codo con codo con [ScamLens](/blog/scamlens-early-activation), que elimina las imagenes de scam sin castigar a la cuenta. El HoneyPot, por su parte, atrapa todo lo demas: **nuevas imagenes de scam aun no conocidas**, **spam de enlaces**, **raids de texto**, **bots**.
-:::
+- La accion se anade a los registros de moderacion automatica (motivo: *Spam a traves de cuenta de usuario comprometida*).
 
 ## 🛠️ Configurar el HoneyPot {#config}
 
@@ -37,9 +41,9 @@ Hay varias sanciones disponibles:
 | Sancion | Efecto | Disponibilidad |
 |---|---|---|
 | **Baneo** | Excluye al miembro del servidor y elimina sus mensajes recientes | Gratuito |
-| **Softban** | Banea y desbanea: elimina los mensajes, pero el miembro puede volver | Gratuito |
+| **Softban** | Banea y luego desbanea: elimina los mensajes, pero el miembro puede volver | Gratuito |
 | **Expulsion (Kick)** | Excluye al miembro, que puede volver libremente | Premium |
-| **Timeout** | Impide al miembro hablar durante un tiempo definido (max 28 dias) | Premium |
+| **Timeout** | Impide al miembro hablar durante un tiempo elegido (max 28 dias) | Premium |
 | **Jail** | Asigna el rol Jail configurado en tu servidor | Premium |
 | **Silencio** | Asigna el rol de Silencio configurado en tu servidor | Premium |
 
@@ -57,7 +61,7 @@ Para las demas sanciones (Kick, Timeout, Jail, Silencio), RaidProtect debe hacer
 ### Miembros ignorados {#ignore}
 
 Puedes elegir **a quien no se sanciona** en caso de mensaje en el HoneyPot:
-- **Nadie** *(por defecto)*: todo el mundo es sancionado, incluido el staff. Solo los miembros que el bot no puede moderar (rol mas alto que el de RaidProtect) son automaticamente respetados.
+- **Nadie** *(por defecto)*: todo el mundo es sancionado, incluido el staff. Solo los miembros que el bot no puede moderar (rol mas alto que el de RaidProtect) se respetan automaticamente.
 - **Staff**: los miembros con el permiso `Administrador`, `Gestionar el servidor` o `Gestionar canales` no son sancionados.
 - **Miembros ignorados por el Antispam**: RaidProtect reutiliza la lista del [Anti-spam](./anti-spam.mdx). Si la lista esta vacia, se vuelve al modo "Staff".
 
@@ -67,10 +71,10 @@ En todos los casos, RaidProtect **nunca se sanciona a si mismo ni a otros bots**
 
 ## 🤝 HoneyPot y ScamLens, mejor juntos {#scamlens-combo}
 
-RaidProtect ya integra **[ScamLens](/blog/scamlens-early-activation)**, que analiza las imagenes y elimina las que son scams conocidos (cripto, falsos sorteos, falsas promociones de casinos).
+RaidProtect ya integra **[ScamLens](/blog/scamlens-early-activation)**, que analiza las imagenes y elimina las que son estafas conocidas (cripto, falsos sorteos, falsas promociones de casinos).
 
 Ambos funcionan codo con codo:
-- **ScamLens pasa primero.** Si la imagen publicada en el HoneyPot ya es conocida, se elimina y el HoneyPot no sanciona.
+- **ScamLens pasa primero.** Si la imagen publicada en el HoneyPot ya es conocida, es ScamLens quien elimina el mensaje y sanciona a la cuenta comprometida; la sancion del HoneyPot no se aplica ademas.
 - **El HoneyPot toma el relevo** en todo lo demas: nuevas imagenes aun no conocidas, spam de enlaces, menciones masivas, raids de texto, bots.
 - **Cada nueva imagen atrapada por un HoneyPot enriquece ScamLens**, que podra entonces bloquearla en todos los servidores protegidos.
 

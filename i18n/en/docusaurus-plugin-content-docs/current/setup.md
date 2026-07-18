@@ -45,7 +45,9 @@ The `/settings` command is the go-to command for managing your settings after in
 2. Easily navigate between different sections to find the settings you want to modify.
 3. Adjust the options: Each category presents a list of customizable options in the form of buttons or dropdown menus.
 
-![Settings screenshot](./assets/rp-settings.webp)
+import SettingsMockup from '@site/src/components/DiscordMessage/mockups/settings';
+
+<SettingsMockup />
 
 ### 🔄 Resetting a Setting {#reset}
 

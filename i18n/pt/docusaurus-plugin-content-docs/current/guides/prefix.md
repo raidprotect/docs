@@ -2,13 +2,15 @@
 title: Utilização de um Prefixo
 ---
 
-## Prefixo desativado (predefinido) {#disabled}
+import { PrefixSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
 
-Por defeito, o RaidProtect utiliza apenas Slash commands (`/`) para interagir com o bot. Isto garante uma utilização intuitiva e consistente com os padrões do Discord.
+## Prefixo desativado (padrão) {#disabled}
+
+Por padrão, o RaidProtect usa apenas comandos Slash (`/`) para interagir com o bot. Isso garante um uso intuitivo e consistente com os padrões do Discord.
 
 ## Prefixo ativado (opcional) {#activated}
 
-Se preferir utilizar determinados comandos com um prefixo personalizado, pode ativar esta opção. O prefixo predefinido quando ativado é `?`, mas pode ser alterado conforme as suas necessidades. Uma vez ativado, os seguintes comandos podem ser utilizados com o prefixo configurado:
+Se você preferir usar determinados comandos com um prefixo personalizado, pode ativar essa opção. O prefixo padrão, quando ativado, é `?`, mas ele pode ser alterado conforme suas necessidades. Uma vez ativado, estes comandos podem ser usados com o prefixo configurado:
 - [`?raidmode`](../features/raid-mode.md)
 - [`?ban`](../features/moderation.mdx#ban)
 - [`?tempban`](../features/moderation.mdx#tempban)
@@ -26,16 +28,22 @@ Se preferir utilizar determinados comandos com um prefixo personalizado, pode at
 - [`?userinfo` | `?ui`](../features/utilities#userinfo)
 - [`?clear`](../features/moderation#clear)
 
-## Como ativar ou desativar o prefixo {#config}
+## 💬 Como ativar ou desativar o prefixo {#config}
 
-1. Abra o menu de definições escrevendo [`/settings`](../setup.md#settings).
-2. Navegue até à opção de comando "**Prefixo**".
-3. Ative ou desative o prefixo conforme as suas preferências.
-Se ativado, personalize o prefixo introduzindo o carácter ou cadeia de caracteres desejado.
+1. Abra o menu de configurações digitando [`/settings`](../setup.md#settings).
+2. Acesse a opção "**Prefixo**" dos comandos.
+3. Ative ou desative o prefixo conforme suas preferências.
+Se ativado, personalize o prefixo digitando o caractere ou a sequência de caracteres desejada.
 
-![Captura de ecrã da definição de prefixo](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-prefix.webp)
+<PrefixSettingsMockup />
 
 :::note
-Os Slash commands (`/`) permanecem disponíveis mesmo que o prefixo esteja ativado.
-É recomendável evitar prefixos já utilizados por outros bots para prevenir conflitos de comandos.
+Os comandos Slash (`/`) permanecem disponíveis mesmo que o prefixo esteja ativado.
+É recomendável evitar prefixos já utilizados por outros bots para evitar conflitos de comandos.
 :::
+
+## 🔒 Aplicar as permissões de comandos {#permissions}
+
+Por padrão, os comandos prefixo levam em conta apenas as permissões do Discord próprias de cada comando. As regras que você define no Discord (**Configurações do servidor → Integrações → RaidProtect**, por cargo, membro ou canal) se aplicam somente aos comandos Slash.
+
+Para aplicá-las também aos comandos prefixo, ative a opção **Aplicar aos comandos prefixo** no painel de permissões de [`/settings`](../setup.md#settings). Ela está desativada por padrão.

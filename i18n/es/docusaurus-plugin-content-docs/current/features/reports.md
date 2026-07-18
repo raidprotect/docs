@@ -2,63 +2,118 @@
 title: Reportes
 ---
 
-El sistema de reportes de RaidProtect permite a tu comunidad reportar rapidamente cualquier contenido problematico o usuarios sospechosos. Funciona de dos maneras diferentes y puede configurarse para optimizar el proceso de gestion de reportes.
+import { ReportsSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
+
+import ReportsMockup from '@site/src/components/DiscordMessage/mockups/reports';
+
+<ReportsMockup />
+
+El sistema de reportes de RaidProtect permite a tu comunidad reportar rapidamente cualquier contenido problematico o usuario sospechoso. Funciona de dos maneras diferentes y puede configurarse para optimizar el proceso de gestion de los reportes.
 
 ## ❓ Como funcionan los reportes {#working}
 Los miembros pueden reportar contenido a traves de 4 metodos principales.
 
 1. **Clic derecho en un mensaje**
-Un miembro puede hacer clic derecho en un mensaje que considere que viola las reglas, seleccionar **`Aplicaciones`** y luego hacer clic en **`Reportar mensaje`**. Aparecera una ventana emergente que permite al usuario agregar una explicacion.
+Un miembro puede hacer clic derecho en un mensaje que considere que infringe el reglamento, seleccionar **`Aplicaciones`** y luego hacer clic en **`Reportar este mensaje`**. Aparecera una ventana emergente que permite al usuario anadir una explicacion.
 
 2. **Clic derecho en un perfil**
-De manera similar, un miembro puede hacer clic derecho en un perfil que considere problematico, elegir **`Aplicaciones`** y luego hacer clic en **`Reportar miembro`**. Se abrira una ventana emergente para que el usuario proporcione detalles adicionales sobre la situacion.
+De la misma manera, un miembro puede hacer clic derecho en un perfil que considere problematico, elegir **`Aplicaciones`** y luego hacer clic en **`Reportar al usuario`**. Se abrira entonces una ventana emergente para que el usuario precise lo que reporta (foto de perfil, nombre de usuario, biografia, actividad en voz, actividad en mensajes privados) y aporte detalles adicionales.
 
 3. **Boton en un panel de informacion**
-Si la funcion "Reportar" esta activada en un [panel de informacion (`/display public`)](./display.mdx), un boton "Reportar" esta disponible directamente debajo del panel, permitiendo a los miembros reportar rapidamente a un usuario.
+Si la funcion "Reporte" esta activada en un [panel de informacion (`/display public`)](./display.mdx), un boton "Reportar" esta disponible directamente bajo el panel, lo que permite a los miembros reportar rapidamente a un usuario.
 
 4. **Comando Slash**
-Los miembros tambien pueden reportar un mensaje o usuario mediante el comando **`/report`** en cualquier canal del servidor.
+Los miembros tambien pueden reportar un mensaje o un usuario mediante el comando **`/report`** en cualquier canal del servidor.
 
-Usa el comando: ```/report (member) (reason)```
+Usa el comando: ```/report (miembro) (razon)```
 
-Reemplaza `(member)` con el usuario deseado y `(reason)` con la razon de la infraccion.
+Reemplaza `(miembro)` con el usuario deseado y `(razon)` con el motivo de la infraccion.
 
-## 🚩 Configuracion de reportes {#config}
+## 🚩 Configuracion de los reportes {#config}
 
-Antes de que el sistema de reportes sea completamente operativo, es imprescindible configurar un **canal de reportes** donde se enviaran todos los reportes. Necesitas configurar un canal de registros o notificaciones para recibir alertas sobre los reportes.
+Antes de que el sistema de reportes sea plenamente funcional, es imprescindible configurar un **canal de reportes** al que se enviaran todos los reportes. Debes definir un canal de registros o de notificaciones para recibir las alertas relativas a los reportes.
 
-![Captura de pantalla de la configuracion de reportes](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-reports.webp)
+<ReportsSettingsMockup />
 
 ### Configurar el canal {#config-channel}
 
-1. Usa el [comando `/settings`](../setup.md#settings).
+1. Ejecuta el [comando `/settings`](../setup.md#settings).
 2. Selecciona el boton "**Reportes**".
 3. Haz clic en el boton "**Canal**".
-4. Elige el canal deseado (_por ejemplo: #reportes_).
-Si no tienes un canal adecuado, puedes optar por crear uno automaticamente usando el boton "**Crear uno para mi**".
+4. Selecciona el canal deseado (_por ejemplo: #reportes o #reports_).
+Si no dispones de un canal adecuado, puedes optar por crear uno automaticamente desde el boton "**Crear uno para mi**".
 
 ### Configurar el rol de notificacion {#config-role}
 
-1. Usa el [comando `/settings`](../setup.md#settings).
+1. Ejecuta el [comando `/settings`](../setup.md#settings).
 2. Selecciona el boton "**Reportes**".
 3. Haz clic en el boton "**Rol**".
-4. Elige el rol deseado (_por ejemplo: @Moderador o @Ping de reportes_).
-Si no tienes un rol adecuado, puedes optar por crear uno automaticamente con el boton "**Crear uno para mi**".
+4. Selecciona el rol deseado (_por ejemplo: @Moderador o @Notifs reportes_).
+Si no dispones de un rol adecuado, puedes optar por crear uno automaticamente desde el boton "**Crear uno para mi**".
 
 :::warning
-El canal debe estar restringido a moderadores y administradores para asegurar una gestion adecuada de los reportes.
+El canal debe estar reservado a los moderadores y administradores para garantizar una gestion correcta de los reportes.
 :::
 
-## Gestion de reportes {#manage}
+### Agrupacion de los reportes {#group}
 
-Como moderador de la comunidad, puedes elegir aceptar o rechazar un reporte.
+El boton "**Agrupacion**" determina como se presentan varios reportes que apuntan al mismo miembro:
 
-- **✅ Aceptar un reporte:** Si el reporte es valido, haz clic en el boton "Aceptar" debajo de la alerta. Este boton no desencadena ninguna accion especifica, pero indica a otros moderadores que consideras que este reporte esta gestionado, fomentando la coordinacion y organizacion.
+- **Activado**: los reportes que apuntan al mismo miembro se agrupan en una sola alerta.
+- **Desactivado**: cada reporte crea su propia alerta separada.
 
-- **👁️ Ver contexto:** Para ver el mensaje reportado y su contexto, haz clic en "Ver mensaje" debajo de la alerta.
+### Notificacion del reportante {#notify}
 
-- **❌ Rechazar un reporte:** Si el reporte no es legitimo, haz clic en el boton "Rechazar" debajo de la alerta. Al igual que el boton "Aceptar", no hay una accion especifica asociada a este boton; simplemente informa a otros moderadores de tu decision.
+Desde el boton "**Notificacion del reportante**", eliges lo que el miembro que origino el reporte recibe como respuesta:
+
+| Nivel | Efecto |
+|---|---|
+| **Desactivado** | Los reportantes no reciben ninguna notificacion. |
+| **Solo el tratamiento** | Se indica al reportante que su reporte ha sido tratado. |
+| **Con el resultado** | Se indica si el reporte fue aceptado o rechazado. |
+| **Con el moderador** | Se indica tambien que moderador trato el reporte. |
+
+### Rol de confianza (Premium) {#trusted-role}
+
+El "**Rol de confianza**" permite a tus miembros mas fiables actuar de inmediato en caso de urgencia: cuando un miembro que dispone de este rol realiza un reporte, puede marcar la opcion "**Accion preventiva**" para aplicar un **timeout preventivo de 24 horas** al usuario reportado, a la espera de que un moderador trate el reporte.
+
+- El timeout preventivo es **silencioso**: el usuario reportado no recibe ningun MD mientras un moderador no haya confirmado la sancion.
+- Si el reporte se refiere a un mensaje, este se elimina.
+- La sancion esta vinculada al reporte: el moderador que lo trata puede confirmarla o anularla.
+
+:::info
+Esta funcion esta reservada a los servidores **Premium**.
+:::
+
+### Reputacion de los reportantes {#bad-reporters}
+
+El boton "**Reportantes falsos**" permite actuar sobre los miembros cuyos reportes son rechazados con regularidad:
+
+- **Umbral**: numero de reportes rechazados antes de actuar (3, 5, 6, 10 o 15; 0 para desactivar).
+- **Ventana**: periodo de calculo (7, 14, 30, 60 o 90 dias).
+- **Accion** una vez alcanzado el umbral:
+  - **Notificar a los moderadores**: se envia una alerta con botones "**Bloquear los reportes**" y de sancion.
+  - **Bloquear automaticamente**: el miembro ya no puede enviar reportes.
+  - **Sancionar automaticamente**: se aplica la sancion configurada.
+  - **Bloquear y sancionar**: combina las dos acciones anteriores.
+- **Sancion**: la sancion aplicada en modo automatico (Advertencia, Timeout, Silencio, Expulsion o Baneo).
+
+:::tip
+Tambien puedes bloquear manualmente a un miembro de los reportes en cualquier momento con el [comando `/block`](./utilities.mdx#block).
+:::
+
+## Gestionar los reportes {#manage}
+
+Cada reporte llega al canal configurado en forma de una alerta con varias acciones:
+
+- **🙋 Encargarse:** Haz clic en "**Encargarse**" para indicar a los demas moderadores que te ocupas de este reporte. El boton se convierte entonces en "**En curso**".
+
+- **✅ Resuelto:** Si el reporte es valido pero no es necesaria ninguna sancion (situacion resuelta de otra forma: llamada de atencion, mensaje eliminado por su autor...), haz clic en "**Resuelto**". El reporte se marca como aceptado, sin sancionar al usuario reportado. Para sancionar, usa mas bien el menu "**Sancionar a este miembro…**" que aparece a continuacion.
+
+- **❌ Rechazar:** Si el reporte no es legitimo, haz clic en "**Rechazar**". Los rechazos se contabilizan para la [reputacion de los reportantes](#bad-reporters).
+
+- **⚖️ Sancionar:** El menu "**Sancionar a este miembro…**" bajo la alerta permite aplicar directamente una sancion al usuario reportado, sin salir del canal de reportes.
 
 :::note
-Asegurate de que tus moderadores esten bien capacitados en el uso de esta funcion y anima a tus miembros activos a usarla de manera responsable.
+Asegurate de que tus moderadores esten bien formados en el uso de esta funcion y anima a tus miembros activos a usarla de manera responsable.
 :::

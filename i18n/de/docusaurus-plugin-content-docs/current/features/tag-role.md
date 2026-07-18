@@ -2,27 +2,45 @@
 title: Tag-Rolle
 ---
 
-Die Tag-Rolle weist automatisch allen Mitgliedern eine Rolle zu, die [den Tag deines Servers](https://support.discord.com/hc/en-us/articles/31444248479639-Server-Tags) in ihr Discord-Profil einfügen. Durch das Vergeben dieser Rolle würdigst du ihr Engagement und [motivierst sie, deinen Server aktiv zu repräsentieren](https://dfr.gg/blog/2025/05/09/revolution-boosts-tags-serveur-publics#tags). Eine einfache, aber effektive Methode, um die gemeinsame Identität zu stärken und die treuesten Botschafter deiner Community zu belohnen.
+import TagRoleMockup from '@site/src/components/DiscordMessage/mockups/tag-role';
+import TagRoleConceptMockup from '@site/src/components/DiscordMessage/mockups/tag-role-concept';
 
-## ❓ Wie die Tag-Rolle funktioniert {#working}
+<TagRoleConceptMockup />
 
-Ganz einfach: Sobald ein Mitglied den Server-Tag in sein Discord-Profil einträgt, weist RaidProtect ihm automatisch eine bestimmte Rolle zu.
-Entfernt das Mitglied den Tag, wird auch die Rolle entfernt.
+Die Tag-Rolle ermöglicht es, Mitgliedern automatisch eine Rolle zuzuweisen, die [den Tag Ihres Servers](https://support.discord.com/hc/de/articles/31444248479639-Server-Tags) zu ihrem Discord-Profil hinzufügen. Indem Sie diesen Mitgliedern eine Rolle zuweisen, würdigen Sie ihr Engagement und [motivieren sie, Ihren Server aktiv zu repräsentieren](https://dfr.gg/blog/2025/05/09/revolution-boosts-tags-serveur-publics#tags). Eine einfache, aber effektive Methode, um die gemeinsame Identität zu stärken und gleichzeitig die treuesten Botschafter Ihrer Community zu belohnen.
+
+## ❓ Funktionsweise der Tag-Rolle {#working}
+
+Das Prinzip ist einfach. Sobald ein Mitglied den Server-Tag zu seinem Discord-Profil hinzufügt, weist RaidProtect ihm automatisch eine bestimmte Rolle zu.
+Entfernt das Mitglied den Tag, wird ihm die Rolle wieder entzogen.
 
 :::info
-Ist die Tag-Funktion nicht aktiviert oder steht sie deinem Server noch nicht zur Verfügung, hat die Tag-Rolle keine Wirkung.
+Ist der Tag nicht aktiviert oder steht Ihrem Server die Funktion noch nicht zur Verfügung, hat die Tag-Rolle keine Wirkung.
 :::
 
-## 🎖️ Die Tag-Rolle konfigurieren {#config}
+## 🎖️ Konfiguration der Tag-Rolle {#config}
 
 Die Einrichtung dauert nur wenige Klicks:
-1. Nutze den [Befehl `/settings`](../setup.md#settings).
-2. Klicke auf die Schaltfläche "**Tag-Rolle**".
-3. Wähle eine bestehende Rolle im Auswahlmenü oder klicke auf "**Einen für mich erstellen**".
-4. Du kannst die Rolle jederzeit wieder abwählen, indem du auf "**Zurücksetzen**" klickst.
+1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
+2. Klicken Sie auf die Schaltfläche "**Tag-Rolle**".
+3. Wählen Sie eine bestehende Rolle über das Auswahlmenü oder klicken Sie auf "**Einen für mich erstellen**".
+4. Sie können die Rolle jederzeit abwählen, indem Sie auf die Schaltfläche "**Zurücksetzen**" klicken.
 
-![Screenshot der Tag-Rolle-Einstellungen](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-tag-role.webp)
+<TagRoleMockup />
 
 :::tip
-Mitglieder erhalten die Rolle, wenn sie ihr Profil das nächste Mal aktualisieren (Benutzername, Avatar, Banner, Rollen, Tag...). Du kannst [den Support kontaktieren](https://raidprotect.bot/discord), um eine vollständige Rollensynchronisierung anzufordern, falls viele Mitglieder den Tag aktuell oder früher verwendet haben.
+Ihre Mitglieder erhalten die Rolle bei ihrer nächsten Profiländerung (Benutzername, Avatar, Banner, Rollen, Tag…).
+:::
+
+## 🔄 Synchronisierung der Rolle {#sync}
+
+Um die Rolle sofort allen Mitgliedern zuzuweisen, die den Tag bereits tragen (und sie denjenigen zu entziehen, die ihn nicht mehr tragen), verwenden Sie die Schaltfläche "**Synchronisieren**" in der Konfiguration der Tag-Rolle:
+
+- **Kostenlos**: eine kostenlose Synchronisierung, nur einmal pro Server.
+- **Premium**: eine Synchronisierung pro Woche.
+
+Die Synchronisierung wird im Hintergrund gestartet und läuft auch dann weiter, wenn der Bot neu startet. Es kann immer nur eine Synchronisierung gleichzeitig auf einem Server laufen.
+
+:::note
+Die Schaltfläche "Synchronisieren" wird schrittweise ausgerollt. Falls sie auf Ihrem Server noch nicht verfügbar ist, können Sie [beim Support](https://raidprotect.bot/discord) eine vollständige Synchronisierung der Rolle anfordern.
 :::

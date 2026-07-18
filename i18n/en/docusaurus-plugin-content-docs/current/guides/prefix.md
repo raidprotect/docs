@@ -2,6 +2,8 @@
 title: Using a Prefix
 ---
 
+import { PrefixSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
+
 ## Prefix disabled (default) {#disabled}
 
 By default, RaidProtect only uses Slash commands (`/`) to interact with the bot. This ensures intuitive and consistent usage with Discord standards.
@@ -33,9 +35,15 @@ If you prefer to use certain commands with a custom prefix, you can enable this 
 3. Enable or disable the prefix according to your preferences.
 If enabled, customize the prefix by entering the desired character or string.
 
-![Prefix setting screenshot](../assets/rp-settings-prefix.webp)
+<PrefixSettingsMockup />
 
 :::note
 Slash commands (`/`) remain available even if the prefix is enabled.
 It is recommended to avoid prefixes already used by other bots to prevent command conflicts.
 :::
+
+## 🔒 Apply command permissions {#permissions}
+
+By default, prefix commands only account for each command's own Discord permissions. The rules you set in Discord (**Server Settings → Integrations → RaidProtect**, per role, member or channel) apply to slash commands only.
+
+To apply them to prefix commands as well, enable the **Apply to prefix commands** option in the permissions panel of [`/settings`](../setup.md#settings). It is off by default.

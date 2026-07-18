@@ -6,7 +6,7 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Discover the detailed list of changes made to RaidProtect.
 
-## 3.3.4 (13/07/2026) {#3-3-4}
+## 3.4.0 (17/07/2026) {#3-4-0}
 
 - [Anti-spam](./features/anti-spam.mdx) V2:
   - **Multi-channel spam**: a dedicated sanction when the spam spans several channels (Jail by default, Timeout minimum).
@@ -31,7 +31,7 @@ Discover the detailed list of changes made to RaidProtect.
   - New [`/transparency` command](./features/transparency.md#command) to show the recap of the last closed period on demand.
 - New [`/audit` command](./features/audit.md): a full **security audit** of the server with an overall score, [detailed checks](./features/audit.md#checks) (verification level, permissions, channels) and [one-click fixes](./features/audit.md#fix). Admin roles can be integrated into the Authentication Manager directly from the audit.
 - New [kick mode](./features/raid-mode.md#kick-mode) (**Premium**) for the raid mode and the join lock: newcomers are kicked with an explanation DM and a rejoin invite button, instead of natively pausing invites. The new [`/bypass raid` command](./features/raid-mode.md#bypass-raid) lets specific users in while it is active.
-- Message commands now follow the **Discord command permissions** (Integrations tab), with a read-only permissions panel in `/settings`.
+- [Message commands](./guides/prefix.md#permissions) can now follow the **Discord command permissions** (Integrations tab) via a new option in `/settings`.
 - RaidProtect now replies under **Discord's security incident alerts** when they are caused by the [DM Lock](./features/dm-lock.mdx), quoting the alert and explaining where to adjust the setting.
 - The [minimum account age](./features/raid-mode.md#minage) kick log now shows the required threshold as a timestamp.
 - Settings and setup:

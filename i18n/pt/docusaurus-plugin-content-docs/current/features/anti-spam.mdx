@@ -2,30 +2,36 @@
 title: Anti-spam
 ---
 
+import { AntiSpamSettingsMockup, AntiSpamSanctionsSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
+
+import AntiSpamMockup from '@site/src/components/DiscordMessage/mockups/anti-spam';
+
+<AntiSpamMockup />
+
 import SeparatedBox from '@site/src/components/SeparatedBox';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-O Anti-spam do RaidProtect é uma ferramenta poderosa para prevenir spam no seu servidor Discord. Graças ao seu sistema de deteção automática, resolve os problemas por si só, sem necessitar da sua intervenção.
+O Anti-spam do RaidProtect é uma ferramenta poderosa para impedir o spam no seu servidor Discord. Graças ao seu sistema de detecção automática, ele cuida dos problemas sozinho, sem que você precise intervir.
 
 ## ❓ Como funciona o anti-spam {#working}
 
-O anti-spam do RaidProtect deteta e bloqueia automaticamente comportamentos suspeitos. Distingue dois tipos de spam.
-- **Spam pesado:** Mensagens contendo links de convite, menções em massa ou imagens. Este tipo de spam é frequentemente utilizado durante raids.
-- **Spam ligeiro:** Mensagens enviadas com frequência, mas menos intrusivas.
+O anti-spam do RaidProtect detecta e bloqueia automaticamente os comportamentos suspeitos. Ele diferencia dois tipos de spam.
+- **Spam pesado:** Mensagens contendo links de convite, menções em massa ou imagens. Esse tipo de spam costuma ser usado durante raids.
+- **Spam leve:** Mensagens enviadas com frequência, mas menos intrusivas.
 
-O anti-spam do RaidProtect atua de duas formas.
-- **Sanções:** Expulsão ou banimento automático de spammers.
-- **Notificações:** Envio de mensagens para o canal de registos para reportar spam bloqueado com uma pré-visualização das ações detetadas.
+O anti-spam do RaidProtect atua de duas maneiras.
+- **Sanções:** Expulsão ou banimento automático dos spammers.
+- **Notificações:** Envio de mensagens para o canal de logs para sinalizar os spams bloqueados, com uma prévia das ações detectadas.
 
 ## 🛡️ Configuração do anti-spam {#config}
 
 O RaidProtect oferece três níveis de segurança para atender às necessidades do seu servidor.
-- 🔴 **Alto:** Sanciona todo o spam e até spam pesado em canais ignorados.
-- 🟠 **Médio:** Sanciona todo o spam, mas respeita os canais ignorados.
+- 🔴 **Alto:** Sanciona todos os spams e até o spam pesado nos canais ignorados.
+- 🟠 **Médio:** Sanciona todos os spams, mas respeita os canais ignorados.
 - 🟢 **Baixo:** Sanciona apenas o spam pesado.
 
-![Captura de ecrã das definições do anti-spam](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-anti-spam.webp)
+<AntiSpamSettingsMockup />
 
 ### Alterar o nível de segurança {#level}
 
@@ -33,79 +39,95 @@ O RaidProtect oferece três níveis de segurança para atender às necessidades 
 2. Clique no botão "**Anti-spam**".
 3. Selecione o nível de anti-spam desejado no primeiro seletor.
 
-### Gerir cargos, utilizadores e canais ignorados {#ignore}
+### Gerenciar cargos, usuários e canais ignorados {#ignore}
 
-Pode excluir determinados canais, cargos ou mesmo utilizadores da monitorização do anti-spam para maior flexibilidade. 😉
+Você pode excluir certos canais, cargos ou até usuários da vigilância do anti-spam para ter mais flexibilidade. 😉
 1. Execute o [comando `/settings`](../setup.md#settings).
 2. Clique no botão "**Anti-spam**".
-3. Selecione as diferentes opções a ignorar nos vários seletores:
+3. Selecione as diferentes opções a ignorar nos diversos seletores:
 - Canal(is) a ignorar
 - Cargo(s) a ignorar
 - Membro(s) a ignorar
 
 :::info
-Canais com "**spam**" no nome são automaticamente ignorados. Utilizadores com permissão de administrador são completamente ignorados.
+Os canais que contêm "**spam**" no nome são ignorados automaticamente. As pessoas com a permissão de administrador são totalmente ignoradas.
 :::
 
-### Configurar sanções por gatilho {#triggers}
+### Configurar as sanções por gatilho {#triggers}
 
-Pode personalizar as sanções aplicadas com base no tipo de spam detetado. Isto permite uma resposta adaptada à gravidade da infração.
+Você pode personalizar as sanções aplicadas conforme o tipo de spam detectado. Isso permite uma resposta adaptada à gravidade da infração.
 
 1. Execute o [comando `/settings`](../setup.md#settings).
 2. Clique no botão "**Anti-spam**".
-3. Vá ao separador "**Sanções**".
-4. Para cada gatilho, selecione uma sanção específica. Pode modificar estes valores através dos menus suspensos:
+3. Vá até a aba "**Sanções**".
+4. Para cada gatilho, selecione uma sanção específica. Você pode modificar esses valores por meio dos menus suspensos:
 - **Selecionar um gatilho**: escolha o tipo de spam a configurar.
 - **Selecionar uma sanção**: escolha a sanção correspondente.
 
 #### Tipos de sanções e gatilhos {#sanctions}
 
-Eis as diferentes **sanções disponíveis**, bem como os **gatilhos** que o RaidProtect pode detetar, com a **duração de timeout predefinida** se aplicável:
+Estas são as diferentes **sanções disponíveis**:
 
 - **Aviso**: Envia um aviso ao membro.
-- **Expulsão**: Expulsa o membro do servidor.
 - **Timeout**: Silencia o membro durante um período definido.
-- **Softban**: Bane e desbane imediatamente o membro, eliminando assim as suas mensagens.
-- **Banimento**: Bane permanentemente o membro.
+- **Mute**: Atribui o [cargo Mute](./sanctions.mdx#mute) configurado no seu servidor.
+- **Jail**: Atribui o [cargo Jail](./sanctions.mdx#jail) configurado no seu servidor.
+- **Kick**: Expulsa o membro do servidor.
+- **Softban**: Bane e desbane imediatamente o membro, excluindo assim suas mensagens.
+- **Ban**: Bane definitivamente o membro.
+- **Desativar**: Desliga completamente o gatilho, nenhuma sanção será aplicada.
 
-| Gatilho                                | Descrição                                               | Duração do Timeout |
-|----------------------------------------|---------------------------------------------------------|--------------------|
-| Spam                                   | Envio repetido de mensagens                             | 1 minuto           |
-| Spam de selfbot                        | Utilização de selfbots para spam                        | 1 hora             |
-| Spam de menções                        | Menções em massa repetidas                              | 30 minutos         |
-| Spam de links                          | Envio massivo de links                                  | 24 horas           |
-| Spam de comandos externos              | Utilização de comandos externos para spam               | 1 hora             |
-| Spam duplicado ou spam pesado          | Mensagens copiadas ou spam excessivo                    | 24 horas           |
+:::note
+Para os gatilhos "Spam de duplicatas ou spam importante" e "Spam multicanal", a sanção mais branda que pode ser selecionada é o **Timeout** (não há Aviso): trata-se de spam sério, que justifica uma resposta firme.
+:::
 
-![Captura de ecrã das sanções do anti-spam](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-anti-spam-sanctions.webp)
+E os **gatilhos** que o RaidProtect pode detectar, com a sanção aplicada por padrão:
+
+| Gatilho                                | Descrição                                                | Sanção padrão       |
+|----------------------------------------|----------------------------------------------------------|---------------------|
+| Spam                                   | Envio repetido de mensagens                              | Aviso               |
+| Spam com selfbot                       | Uso de selfbots para dar spam                            | Softban             |
+| Spam de menções                        | Menções em massa repetidas                               | Softban             |
+| Spam de links                          | Envio massivo de links                                   | Ban                 |
+| Spam de comandos externos              | Uso de comandos externos para dar spam                   | Ban                 |
+| Spam de anexos                         | Envio massivo de arquivos ou imagens                     | Desativado          |
+| Spam de duplicatas ou spam importante  | Mensagens copiadas e coladas ou spam excessivo           | Softban             |
+| Imagens de fraude (Crypto Scam)        | Imagens de fraude detectadas pelo [ScamLens](/blog/threat-weather-june-2026) | Timeout             |
+| Spam multicanal                        | Spam distribuído por vários canais                       | Jail                |
+
+:::info
+O gatilho **Spam multicanal** é especial: a sua sanção substitui a do gatilho de origem quando o spam atinge vários canais, mas apenas se for mais severa.
+:::
+
+<AntiSpamSanctionsSettingsMockup />
 
 #### Duração das sanções {#duration}
 
-Quando as sanções aplicadas pelo anti-spam suportam uma duração (mute, timeout, jail), pode definir uma **duração única** aplicada a todas estas sanções em vez de manter a duração predefinida de cada gatilho.
+Quando as sanções aplicadas pelo anti-spam suportam uma duração (mute, timeout, jail), você pode definir uma **duração única** aplicada a todas essas sanções (1 hora por padrão).
 
 1. Execute o [comando `/settings`](../setup.md#settings).
 2. Clique no botão "**Anti-spam**".
-3. Vá ao separador "**Sanções**".
-4. Selecione uma duração predefinida no seletor "**Duração das sanções**", ou clique em "**Duração personalizada**" para introduzir o valor à sua escolha (por ex. `30m`, `2h`, `7d`).
+3. Vá até a aba "**Sanções**".
+4. Selecione uma duração predefinida no seletor "**Duração das sanções**", ou clique em "**Duração personalizada**" para digitar o valor que preferir (por ex. `30m`, `2h`, `7d`).
 
 :::info
-A duração é ignorada para as sanções que não a suportam (kick, softban, ban, warn).
+A duração é ignorada para as sanções que não a suportam (kick, softban, ban, aviso).
 :::
 
-## 📑 Registos do anti-spam {#logs}
+## 📑 Logs do anti-spam {#logs}
 
-São gerados registos detalhados com todas as mensagens eliminadas pelo anti-spam. Pode simplesmente descarregar ou expandir o conteúdo.
+São gerados logs detalhados com o conjunto das mensagens excluídas pelo anti-spam. Você pode simplesmente baixar ou expandir o conteúdo.
 
 <SeparatedBox>
 <Tabs>
   <TabItem value="animator" label="Recolhido" default>
 
-![Captura de ecrã dos registos do anti-spam](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-logs-anti-spam.webp)
+![Captura de tela dos logs do anti-spam](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-logs-anti-spam.webp)
 
   </TabItem>
-  <TabItem value="moderator" label="Expandido">
+  <TabItem value="moderator" label="Expandidos">
 
-![Captura de ecrã dos registos expandidos do anti-spam](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-logs-anti-spam-expand.webp)
+![Captura de tela dos logs do anti-spam expandidos](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-logs-anti-spam-expand.webp)
 
   </TabItem>
 </Tabs>

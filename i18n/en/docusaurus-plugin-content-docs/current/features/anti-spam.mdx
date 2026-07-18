@@ -2,6 +2,8 @@
 title: Anti-spam
 ---
 
+import { AntiSpamSettingsMockup, AntiSpamSanctionsSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
+
 import AntiSpamMockup from '@site/src/components/DiscordMessage/mockups/anti-spam';
 
 <AntiSpamMockup />
@@ -29,7 +31,7 @@ RaidProtect offers three security levels to meet your server's needs.
 - 🟠 **Medium:** Sanctions all spam, but respects ignored channels.
 - 🟢 **Low:** Sanctions only heavy spam.
 
-![Anti-spam settings screenshot](../assets/rp-settings-anti-spam.webp)
+<AntiSpamSettingsMockup />
 
 ### Change the security level {#level}
 
@@ -97,7 +99,7 @@ And here are the **triggers** that RaidProtect can detect, with the sanction app
 The **Multi-channel spam** trigger is special: its sanction replaces the one from the original trigger when the spam hits several channels, but only if it is more severe.
 :::
 
-![Anti-spam sanctions screenshot](../assets/rp-settings-anti-spam-sanctions.webp)
+<AntiSpamSanctionsSettingsMockup />
 
 #### Sanctions duration {#duration}
 

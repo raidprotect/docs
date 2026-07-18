@@ -2,63 +2,118 @@
 title: Denúncias
 ---
 
-O sistema de denúncias do RaidProtect permite à sua comunidade reportar rapidamente qualquer conteúdo problemático ou utilizadores suspeitos. Funciona de duas formas diferentes e pode ser configurado para otimizar o processo de gestão das denúncias.
+import { ReportsSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
 
-## ❓ Como funcionam as Denúncias {#working}
-Os membros podem denunciar conteúdo através de 4 métodos principais.
+import ReportsMockup from '@site/src/components/DiscordMessage/mockups/reports';
 
-1. **Clique direito numa mensagem**
-Um membro pode clicar com o botão direito numa mensagem que considere violar as regras, selecionar **`Aplicações`** e depois clicar em **`Denunciar Mensagem`**. Aparecerá uma janela que permite ao utilizador adicionar uma explicação.
+<ReportsMockup />
 
-2. **Clique direito num perfil**
-Da mesma forma, um membro pode clicar com o botão direito num perfil que considere problemático, escolher **`Aplicações`** e depois clicar em **`Denunciar Membro`**. Abre-se então uma janela para permitir ao utilizador fornecer detalhes adicionais sobre a situação.
+O sistema de denúncias do RaidProtect permite que a sua comunidade denuncie rapidamente qualquer conteúdo problemático ou usuário suspeito. Ele funciona de duas formas diferentes e pode ser configurado para otimizar o processo de gestão das denúncias.
 
-3. **Botão num painel de informação**
-Se a funcionalidade "Denúncia" estiver ativada num [painel de informação (`/display public`)](./display.mdx), um botão "Denunciar" está disponível diretamente abaixo do painel, permitindo aos membros denunciar rapidamente um utilizador.
+## ❓ Como funcionam as denúncias {#working}
+Os membros podem denunciar um conteúdo por meio de 4 métodos principais.
+
+1. **Clique direito em uma mensagem** 
+Um membro pode clicar com o botão direito em uma mensagem que considere violar as regras, selecionar **`Aplicativos`** e, em seguida, clicar em **`Denunciar esta mensagem`**. Uma janela será aberta, permitindo que o usuário adicione uma explicação.
+
+2. **Clique direito em um perfil** 
+Da mesma forma, um membro pode clicar com o botão direito em um perfil que considere problemático, escolher **`Aplicativos`** e, em seguida, clicar em **`Denunciar o usuário`**. Uma janela será então aberta para permitir que o usuário especifique o que está denunciando (foto de perfil, nome de usuário, bio, atividade em voz, atividade em mensagens privadas) e forneça detalhes adicionais.
+
+3. **Botão em um painel de informação**
+Se a funcionalidade "Denúncia" estiver ativada em um [painel de informação (`/display public`)](./display.mdx), um botão "Denunciar" fica disponível diretamente abaixo do painel, permitindo que os membros denunciem rapidamente um usuário.
 
 4. **Slash Command**
-Os membros podem também denunciar uma mensagem ou utilizador através do comando **`/report`** em qualquer canal do servidor.
+Os membros também podem denunciar uma mensagem ou um usuário por meio do comando **`/report`** em qualquer canal do servidor.
 
-Utilize o comando: ```/report (member) (reason)```
+Utilize o comando: ```/report (membro) (motivo)```
 
-Substitua `(member)` pelo utilizador desejado e `(reason)` pela razão da infração.
+Substitua `(membro)` pelo usuário desejado e `(motivo)` pela razão da infração.
 
-## 🚩 Configurar as Denúncias {#config}
+## 🚩 Configuração das denúncias {#config}
 
-Antes que o sistema de denúncias esteja totalmente operacional, é imperativo configurar um **canal de denúncias** onde todas as denúncias serão enviadas. Precisa de configurar um canal de registos ou notificações para receber alertas relativos às denúncias.
+Antes que o sistema de denúncias fique totalmente operacional, é imprescindível configurar um **canal de denúncias** para onde todas as denúncias serão enviadas. Você deve definir um canal de logs ou de notificações para receber os alertas relativos às denúncias.
 
-![Captura de ecrã das definições de denúncias](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-reports.webp)
+<ReportsSettingsMockup />
 
-### Configurar o Canal {#config-channel}
+### Configurar o canal {#config-channel}
 
-1. Utilize o [comando `/settings`](../setup.md#settings).
+1. Execute o [comando `/settings`](../setup.md#settings).
 2. Selecione o botão "**Denúncias**".
 3. Clique no botão "**Canal**".
-4. Escolha o canal desejado (_ex.: #denúncias_).
-Se não tiver um canal adequado, pode optar por criar um automaticamente utilizando o botão "**Criar um para mim**".
+4. Selecione o canal desejado (_ex.: #denúncias ou #reports_). 
+Se você não tiver um canal adequado, pode optar por criar um automaticamente pelo botão "**Criar um para mim**".
 
-### Configurar o Cargo de Notificação {#config-role}
+### Configurar o cargo de notificação {#config-role}
 
-1. Utilize o [comando `/settings`](../setup.md#settings).
+1. Execute o [comando `/settings`](../setup.md#settings).
 2. Selecione o botão "**Denúncias**".
 3. Clique no botão "**Cargo**".
-4. Escolha o cargo desejado (_ex.: @Moderador ou @Ping de Denúncias_).
-Se não tiver um cargo adequado, pode optar por criar um automaticamente com o botão "**Criar um para mim**".
+4. Selecione o cargo desejado (_ex.: @Moderador ou @Notif de denúncias_). 
+Se você não tiver um cargo adequado, pode optar por criar um automaticamente pelo botão "**Criar um para mim**".
 
 :::warning
-O canal deve ser restrito a moderadores e administradores para garantir uma gestão adequada das denúncias.
+O canal deve ser reservado a moderadores e administradores, a fim de garantir uma gestão correta das denúncias.
 :::
 
-## Gerir as Denúncias {#manage}
+### Agrupamento das denúncias {#group}
 
-Como moderador da comunidade, pode escolher aceitar ou rejeitar uma denúncia.
+O botão "**Agrupamento**" determina como várias denúncias que visam o mesmo membro são apresentadas:
 
-- **✅ Aceitar uma denúncia:** Se a denúncia for válida, clique no botão "Aceitar" abaixo do alerta. Este botão não desencadeia nenhuma ação específica, mas indica aos outros moderadores que considera esta denúncia como tratada, promovendo a coordenação e organização.
+- **Ativado**: as denúncias que visam o mesmo membro são reunidas em um único alerta.
+- **Desativado**: cada denúncia cria seu próprio alerta separado.
 
-- **👁️ Ver Contexto:** Para ver a mensagem denunciada e o contexto, clique em "Ver Mensagem" abaixo do alerta.
+### Notificação do denunciante {#notify}
 
-- **❌ Rejeitar uma denúncia:** Se a denúncia não for legítima, clique no botão "Rejeitar" abaixo do alerta. Tal como o botão "Aceitar", nenhuma ação específica está associada a este botão; apenas informa os outros moderadores da sua decisão.
+Pelo botão "**Notificação do denunciante**", você escolhe o retorno que o membro que originou a denúncia recebe:
+
+| Nível | Efeito |
+|---|---|
+| **Desativado** | Os denunciantes não recebem nenhuma notificação. |
+| **Apenas processamento** | Informa-se ao denunciante que a sua denúncia foi processada. |
+| **Com o desfecho** | Indica-se se a denúncia foi aceita ou recusada. |
+| **Com o moderador** | Indica-se também qual moderador processou a denúncia. |
+
+### Cargo de confiança (Premium) {#trusted-role}
+
+O "**Cargo de confiança**" permite que os seus membros mais confiáveis ajam imediatamente em caso de emergência: quando um membro que possui esse cargo faz uma denúncia, ele pode marcar a opção "**Ação preventiva**" para aplicar um **timeout preventivo de 24 horas** ao usuário denunciado, enquanto aguarda que um moderador processe a denúncia.
+
+- O timeout preventivo é **silencioso**: o usuário denunciado não recebe DM enquanto um moderador não confirmar a sanção.
+- Se a denúncia for sobre uma mensagem, essa mensagem é excluída.
+- A sanção fica vinculada à denúncia: o moderador que a processa pode confirmá-la ou cancelá-la.
+
+:::info
+Esta funcionalidade é reservada aos servidores **Premium**.
+:::
+
+### Reputação dos denunciantes {#bad-reporters}
+
+O botão "**Falsos denunciantes**" permite agir sobre os membros cujas denúncias são recusadas com frequência:
+
+- **Limite**: número de denúncias recusadas antes da ação (3, 5, 6, 10 ou 15; 0 para desativar).
+- **Janela**: período de cálculo (7, 14, 30, 60 ou 90 dias).
+- **Ação** quando o limite é atingido:
+  - **Notificar os moderadores**: um alerta é enviado com botões "**Bloquear as denúncias**" e de sanção.
+  - **Bloquear automaticamente**: o membro não pode mais enviar denúncias.
+  - **Sancionar automaticamente**: a sanção configurada é aplicada.
+  - **Bloquear e sancionar**: combina as duas ações anteriores.
+- **Sanção**: a sanção aplicada no modo automático (Aviso, Timeout, Mute, Kick ou Ban).
+
+:::tip
+Você também pode bloquear manualmente um membro das denúncias a qualquer momento com o [comando `/block`](./utilities.mdx#block).
+:::
+
+## Gerenciar as denúncias {#manage}
+
+Cada denúncia chega ao canal configurado na forma de um alerta com várias ações:
+
+- **🙋 Assumir:** Clique em "**Assumir**" para indicar aos outros moderadores que você está cuidando desta denúncia. O botão passa então a ser "**Assumida**".
+
+- **✅ Resolvido:** Se a denúncia for válida, mas nenhuma sanção for necessária (situação resolvida de outra forma: chamada de atenção, mensagem excluída pelo próprio autor...), clique em "**Resolvido**". A denúncia é marcada como aceita, sem sancionar o usuário denunciado. Para sancionar, use antes o menu "**Sancionar este membro…**" abaixo.
+
+- **❌ Recusar:** Se a denúncia não for legítima, clique em "**Recusar**". As recusas são contabilizadas para a [reputação dos denunciantes](#bad-reporters).
+
+- **⚖️ Sancionar:** O menu "**Sancionar este membro…**" abaixo do alerta permite aplicar diretamente uma sanção ao usuário denunciado, sem sair do canal de denúncias.
 
 :::note
-Certifique-se de que os seus moderadores estão bem formados na utilização desta funcionalidade e encoraje os seus membros ativos a utilizá-la de forma responsável!
+Certifique-se de que os seus moderadores estão bem preparados para o uso desta funcionalidade e incentive os seus membros ativos a utilizá-la de forma responsável! 
 :::
