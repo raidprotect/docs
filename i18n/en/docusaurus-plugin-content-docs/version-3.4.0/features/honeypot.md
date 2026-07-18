@@ -9,7 +9,7 @@ import HoneypotMockup from '@site/src/components/DiscordMessage/mockups/honeypot
 RaidProtect's **HoneyPot** (or trap channel) is a channel where **no one should write**. Since real members know to stay away from it, the only ones who post there are **hacked accounts** or spam bots: RaidProtect sanctions them automatically.
 
 :::info
-**You already have ScamLens by default.** The [ScamLens](/blog/scamlens-early-activation) anti-scam is active on your server with no configuration at all: it specializes in **scam images**, detecting them, deleting them, and sanctioning the compromised account with very high reliability. For image-based scams, ScamLens is more than enough on its own. The HoneyPot is mainly useful if you want maximum security and to block the **other types of spam**: link spam, text raids, bots.
+**You already have ScamLens by default.** The [ScamLens](./scam-images.md) anti-scam is active on your server with no configuration at all: it specializes in **scam images**, detecting them, deleting them, and sanctioning the compromised account with very high reliability. For image-based scams, ScamLens is more than enough on its own. The HoneyPot is mainly useful if you want maximum security and to block the **other types of spam**: link spam, text raids, bots.
 :::
 
 ## ❓ How does it work? {#working}
@@ -71,7 +71,7 @@ In every case, RaidProtect **never sanctions itself or other bots**. Bots do not
 
 ## 🤝 HoneyPot and ScamLens, better together {#scamlens-combo}
 
-RaidProtect already includes **[ScamLens](/blog/scamlens-early-activation)**, which analyzes images and deletes the ones that are known scams (crypto, fake giveaways, fake casino promotions).
+RaidProtect already includes **[ScamLens](./scam-images.md)**, which analyzes images and deletes the ones that are known scams (crypto, fake giveaways, fake casino promotions).
 
 The two work hand in hand:
 - **ScamLens runs first.** If the image posted in the HoneyPot is already known, ScamLens is the one that deletes the message and sanctions the compromised account; the HoneyPot sanction is not applied on top.

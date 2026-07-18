@@ -9,7 +9,7 @@ import HoneypotMockup from '@site/src/components/DiscordMessage/mockups/honeypot
 Der **HoneyPot** (oder Fallenkanal) von RaidProtect ist ein Kanal, in dem **niemand schreiben sollte**. Da echte Mitglieder wissen, dass dieser Kanal zu meiden ist, sind die Einzigen, die dort posten, **gehackte Konten** oder Spam-Bots: RaidProtect sanktioniert sie automatisch.
 
 :::info
-**Sie haben ScamLens bereits standardmäßig.** Der Betrugsschutz [ScamLens](/blog/scamlens-early-activation) ist ohne jede Konfiguration auf Ihrem Server aktiv: Auf **Betrugsbilder** spezialisiert, erkennt er sie, entfernt sie und sanktioniert das kompromittierte Konto mit sehr hoher Zuverlässigkeit. Für Betrugsmaschen per Bild reicht ScamLens also völlig aus. Der HoneyPot ist vor allem dann nützlich, wenn Sie maximale Sicherheit wollen und die **anderen Spam-Arten** blockieren möchten: Link-Spam, Text-Raids, Bots.
+**Sie haben ScamLens bereits standardmäßig.** Der Betrugsschutz [ScamLens](./scam-images.md) ist ohne jede Konfiguration auf Ihrem Server aktiv: Auf **Betrugsbilder** spezialisiert, erkennt er sie, entfernt sie und sanktioniert das kompromittierte Konto mit sehr hoher Zuverlässigkeit. Für Betrugsmaschen per Bild reicht ScamLens also völlig aus. Der HoneyPot ist vor allem dann nützlich, wenn Sie maximale Sicherheit wollen und die **anderen Spam-Arten** blockieren möchten: Link-Spam, Text-Raids, Bots.
 :::
 
 ## ❓ Wie funktioniert es? {#working}
@@ -71,7 +71,7 @@ In allen Fällen sanktioniert RaidProtect **niemals sich selbst oder andere Bots
 
 ## 🤝 HoneyPot und ScamLens, gemeinsam besser {#scamlens-combo}
 
-RaidProtect integriert bereits **[ScamLens](/blog/scamlens-early-activation)**, das Bilder analysiert und diejenigen entfernt, die bekannte Betrugsmaschen sind (Krypto, gefälschte Giveaways, gefälschte Casino-Werbung).
+RaidProtect integriert bereits **[ScamLens](./scam-images.md)**, das Bilder analysiert und diejenigen entfernt, die bekannte Betrugsmaschen sind (Krypto, gefälschte Giveaways, gefälschte Casino-Werbung).
 
 Beide arbeiten Hand in Hand:
 - **ScamLens kommt zuerst.** Wenn das im HoneyPot gepostete Bild bereits bekannt ist, entfernt ScamLens die Nachricht und sanktioniert das kompromittierte Konto; die Sanktion des HoneyPot kommt dann nicht zusätzlich zur Anwendung.

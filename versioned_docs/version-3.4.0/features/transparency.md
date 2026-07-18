@@ -28,7 +28,7 @@ Les fréquences disponibles sont : **Hebdomadaire** (par défaut), **Toutes les 
 Le récap contient :
 - le **nombre total d'actions de modération** sur la période ;
 - le détail par type de sanction (bannissements, softbans, expulsions, timeouts, mutes, emprisonnements, avertissements et autres actions) ;
-- le nombre d'**arnaques bloquées par [ScamLens](/blog/threat-weather-june-2026)** ;
+- le nombre d'**arnaques bloquées par [ScamLens](./scam-images.md)** ;
 - la répartition entre actions **automatiques** et actions **de l'équipe**.
 
 :::info

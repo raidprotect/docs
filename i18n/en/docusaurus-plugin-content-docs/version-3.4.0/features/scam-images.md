@@ -38,4 +38,13 @@ Every scam blocked by ScamLens:
 - is counted in the [HoneyPot](./honeypot.md) public caught-accounts counter;
 - strengthens protection across **every server** using RaidProtect.
 
-We regularly publish public reports about the scams detected and blocked: find them in the [**Threat weather**](/blog/tags/threats). To learn more about ScamLens, read [our introduction](/blog/scamlens-early-activation).
+### Our monthly reports {#recaps}
+
+Every month we publish the **[Threat weather](/blog/tags/threats)**, a public review of ScamLens activity. Cumulative figures since the [launch on 14 February 2026](/blog/scamlens-early-activation), across all servers protected by RaidProtect:
+
+| Report | Scam images deleted | Compromised accounts identified |
+|---|---|---|
+| [1-month review](/blog/scamlens-1-month-recap) *(Mar 2026)* | 260,000 | 15,000 |
+| [April 2026](/blog/threat-weather-april-2026) | 1,400,000 | 40,000 |
+| [May 2026](/blog/threat-weather-may-2026) | 2,300,000 | 80,000 |
+| [June 2026](/blog/threat-weather-june-2026) | 4,000,000 | 160,000 |

@@ -28,7 +28,7 @@ As frequências disponíveis são: **Semanal** (padrão), **Quinzenal**, **Mensa
 O resumo contém:
 - o **número total de ações de moderação** no período;
 - o detalhe por tipo de sanção (banimentos, softbans, expulsões, timeouts, mutes, prisões, advertências e outras ações);
-- o número de **golpes bloqueados pelo [ScamLens](/blog/threat-weather-june-2026)**;
+- o número de **golpes bloqueados pelo [ScamLens](./scam-images.md)**;
 - a divisão entre ações **automáticas** e ações **da equipe**.
 
 :::info

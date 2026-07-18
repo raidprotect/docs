@@ -9,7 +9,7 @@ import HoneypotMockup from '@site/src/components/DiscordMessage/mockups/honeypot
 O **HoneyPot** (ou canal-armadilha) do RaidProtect é um canal onde **ninguém deve escrever**. Como os membros reais sabem que precisam evitar esse canal, os únicos que publicam ali são as **contas invadidas** ou os bots de spam: o RaidProtect os sanciona automaticamente.
 
 :::info
-**Você já tem o ScamLens por padrão.** O antifraude [ScamLens](/blog/scamlens-early-activation) está ativo no seu servidor sem nenhuma configuração: especializado em **imagens de fraude**, ele as detecta, as remove e sanciona a conta comprometida com altíssima confiabilidade. Para as fraudes por imagem, o ScamLens já é mais que suficiente. O HoneyPot é útil sobretudo se você quiser segurança máxima e bloquear os **outros tipos de spam**: spam de links, raids de texto, bots.
+**Você já tem o ScamLens por padrão.** O antifraude [ScamLens](./scam-images.md) está ativo no seu servidor sem nenhuma configuração: especializado em **imagens de fraude**, ele as detecta, as remove e sanciona a conta comprometida com altíssima confiabilidade. Para as fraudes por imagem, o ScamLens já é mais que suficiente. O HoneyPot é útil sobretudo se você quiser segurança máxima e bloquear os **outros tipos de spam**: spam de links, raids de texto, bots.
 :::
 
 ## ❓ Como funciona? {#working}
@@ -71,7 +71,7 @@ Em todos os casos, o RaidProtect **nunca sanciona a si mesmo nem os outros bots*
 
 ## 🤝 HoneyPot e ScamLens, melhor juntos {#scamlens-combo}
 
-O RaidProtect já integra o **[ScamLens](/blog/scamlens-early-activation)**, que analisa as imagens e remove as que são fraudes conhecidas (cripto, falsos giveaways, falsas promoções de cassinos).
+O RaidProtect já integra o **[ScamLens](./scam-images.md)**, que analisa as imagens e remove as que são fraudes conhecidas (cripto, falsos giveaways, falsas promoções de cassinos).
 
 Os dois funcionam de mãos dadas:
 - **O ScamLens age primeiro.** Se a imagem publicada no HoneyPot já for conhecida, é o ScamLens que exclui a mensagem e sanciona a conta comprometida; a sanção do HoneyPot não é aplicada por cima.

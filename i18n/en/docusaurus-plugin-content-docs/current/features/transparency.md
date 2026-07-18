@@ -28,7 +28,7 @@ The available frequencies are: **Weekly** (default), **Every two weeks**, **Mont
 The recap contains:
 - the **total number of moderation actions** over the period;
 - the breakdown by sanction type (bans, softbans, kicks, timeouts, mutes, jails, warns and other actions);
-- the number of **scams blocked by [ScamLens](/blog/threat-weather-june-2026)**;
+- the number of **scams blocked by [ScamLens](./scam-images.md)**;
 - the split between **automatic** actions and **team** actions.
 
 :::info

@@ -38,4 +38,13 @@ Cada estafa bloqueada por ScamLens:
 - se cuenta en el contador público de cuentas atrapadas del [HoneyPot](./honeypot.md);
 - refuerza la protección de **todos los servidores** que usan RaidProtect.
 
-Publicamos regularmente informes públicos sobre las estafas detectadas y bloqueadas: encuéntralos en la [**Meteorología de amenazas**](/blog/tags/threats). Para conocer ScamLens en detalle, lee [nuestra presentación](/blog/scamlens-early-activation).
+### Nuestros informes mensuales {#recaps}
+
+Cada mes publicamos la **[Meteorología de amenazas](/blog/tags/threats)**, un balance público de la actividad de ScamLens. Cifras acumuladas desde el [lanzamiento el 14 de febrero de 2026](/blog/scamlens-early-activation), en todos los servidores protegidos por RaidProtect:
+
+| Informe | Imágenes de estafa eliminadas | Cuentas comprometidas identificadas |
+|---|---|---|
+| [Balance a 1 mes](/blog/scamlens-1-month-recap) *(mar. 2026)* | 260.000 | 15.000 |
+| [Abril 2026](/blog/threat-weather-april-2026) | 1.400.000 | 40.000 |
+| [Mayo 2026](/blog/threat-weather-may-2026) | 2.300.000 | 80.000 |
+| [Junio 2026](/blog/threat-weather-june-2026) | 4.000.000 | 160.000 |

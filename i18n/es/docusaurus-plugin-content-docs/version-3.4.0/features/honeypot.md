@@ -9,7 +9,7 @@ import HoneypotMockup from '@site/src/components/DiscordMessage/mockups/honeypot
 El **HoneyPot** (o canal-trampa) de RaidProtect es un canal donde **nadie debe escribir**. Como los miembros reales saben que hay que evitar este canal, los unicos que publican en el son las **cuentas hackeadas** o los bots de spam: RaidProtect los sanciona automaticamente.
 
 :::info
-**Ya tienes ScamLens por defecto.** El anti-estafa [ScamLens](/blog/scamlens-early-activation) esta activo en tu servidor sin ninguna configuracion: especializado en las **imagenes de estafa**, las detecta, las elimina y sanciona a la cuenta comprometida con una fiabilidad muy alta. Para las estafas por imagen, ScamLens es mas que suficiente. El HoneyPot resulta util sobre todo si quieres una seguridad maxima y bloquear los **otros tipos de spam**: spam de enlaces, raids de texto, bots.
+**Ya tienes ScamLens por defecto.** El anti-estafa [ScamLens](./scam-images.md) esta activo en tu servidor sin ninguna configuracion: especializado en las **imagenes de estafa**, las detecta, las elimina y sanciona a la cuenta comprometida con una fiabilidad muy alta. Para las estafas por imagen, ScamLens es mas que suficiente. El HoneyPot resulta util sobre todo si quieres una seguridad maxima y bloquear los **otros tipos de spam**: spam de enlaces, raids de texto, bots.
 :::
 
 ## ❓ Como funciona {#working}
@@ -71,7 +71,7 @@ En todos los casos, RaidProtect **nunca se sanciona a si mismo ni a otros bots**
 
 ## 🤝 HoneyPot y ScamLens, mejor juntos {#scamlens-combo}
 
-RaidProtect ya integra **[ScamLens](/blog/scamlens-early-activation)**, que analiza las imagenes y elimina las que son estafas conocidas (cripto, falsos sorteos, falsas promociones de casinos).
+RaidProtect ya integra **[ScamLens](./scam-images.md)**, que analiza las imagenes y elimina las que son estafas conocidas (cripto, falsos sorteos, falsas promociones de casinos).
 
 Ambos funcionan codo con codo:
 - **ScamLens pasa primero.** Si la imagen publicada en el HoneyPot ya es conocida, es ScamLens quien elimina el mensaje y sanciona a la cuenta comprometida; la sancion del HoneyPot no se aplica ademas.

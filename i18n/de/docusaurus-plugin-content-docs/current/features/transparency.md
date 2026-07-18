@@ -28,7 +28,7 @@ Die verfügbaren Häufigkeiten sind: **Wöchentlich** (Standard), **Alle zwei Wo
 Die Zusammenfassung enthält:
 - die **Gesamtzahl der Moderationsaktionen** im Zeitraum;
 - die Aufschlüsselung nach Sanktionstyp (Bannungen, Softbans, Kicks, Timeouts, Mutes, Einsperrungen, Verwarnungen und andere Aktionen);
-- die Anzahl der **von [ScamLens](/blog/threat-weather-june-2026) blockierten Betrugsversuche**;
+- die Anzahl der **von [ScamLens](./scam-images.md) blockierten Betrugsversuche**;
 - die Aufteilung zwischen **automatischen** Aktionen und Aktionen **des Teams**.
 
 :::info

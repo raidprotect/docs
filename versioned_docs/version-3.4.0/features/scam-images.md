@@ -38,4 +38,13 @@ Chaque arnaque bloquée par ScamLens :
 - est comptée dans le compteur public de comptes attrapés du [HoneyPot](./honeypot.md) ;
 - vient renforcer la protection de **tous les serveurs** utilisant RaidProtect.
 
-Nous publions régulièrement des rapports publics sur les arnaques détectées et bloquées : retrouvez-les dans la [**Météo des menaces**](/blog/tags/threats). Pour découvrir ScamLens en détail, lisez [notre présentation](/blog/scamlens-early-activation).
+### Nos rapports mensuels {#recaps}
+
+Chaque mois, nous publions la **[Météo des menaces](/blog/tags/threats)**, un bilan public de l'activité de ScamLens. Chiffres cumulés depuis le [lancement le 14 février 2026](/blog/scamlens-early-activation), sur l'ensemble des serveurs protégés par RaidProtect :
+
+| Rapport | Images d'arnaque supprimées | Comptes piratés identifiés |
+|---|---|---|
+| [Bilan à 1 mois](/blog/scamlens-1-month-recap) *(mars 2026)* | 260 000 | 15 000 |
+| [Avril 2026](/blog/threat-weather-april-2026) | 1 400 000 | 40 000 |
+| [Mai 2026](/blog/threat-weather-may-2026) | 2 300 000 | 80 000 |
+| [Juin 2026](/blog/threat-weather-june-2026) | 4 000 000 | 160 000 |

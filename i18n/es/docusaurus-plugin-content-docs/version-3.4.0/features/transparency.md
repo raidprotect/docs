@@ -28,7 +28,7 @@ Las frecuencias disponibles son: **Semanal** (por defecto), **Cada dos semanas**
 El resumen contiene:
 - el **número total de acciones de moderación** del periodo;
 - el detalle por tipo de sanción (baneos, softbans, expulsiones, timeouts, silencios, encarcelamientos, advertencias y otras acciones);
-- el número de **estafas bloqueadas por [ScamLens](/blog/threat-weather-june-2026)**;
+- el número de **estafas bloqueadas por [ScamLens](./scam-images.md)**;
 - el reparto entre acciones **automáticas** y acciones **del equipo**.
 
 :::info

@@ -38,4 +38,13 @@ Jeder von ScamLens blockierte Betrug:
 - wird im öffentlichen Zähler der gefangenen Konten des [HoneyPots](./honeypot.md) mitgezählt;
 - stärkt den Schutz **aller Server**, die RaidProtect nutzen.
 
-Wir veröffentlichen regelmäßig öffentliche Berichte über die erkannten und blockierten Betrugsversuche: Sie finden sie in der [**Bedrohungswetter**](/blog/tags/threats). Um ScamLens im Detail kennenzulernen, lesen Sie [unsere Vorstellung](/blog/scamlens-early-activation).
+### Unsere monatlichen Berichte {#recaps}
+
+Jeden Monat veröffentlichen wir das **[Bedrohungswetter](/blog/tags/threats)**, eine öffentliche Bilanz der ScamLens-Aktivität. Kumulierte Zahlen seit dem [Start am 14. Februar 2026](/blog/scamlens-early-activation), über alle von RaidProtect geschützten Server:
+
+| Bericht | Gelöschte Betrugsbilder | Erkannte gehackte Konten |
+|---|---|---|
+| [1-Monats-Bilanz](/blog/scamlens-1-month-recap) *(März 2026)* | 260.000 | 15.000 |
+| [April 2026](/blog/threat-weather-april-2026) | 1.400.000 | 40.000 |
+| [Mai 2026](/blog/threat-weather-may-2026) | 2.300.000 | 80.000 |
+| [Juni 2026](/blog/threat-weather-june-2026) | 4.000.000 | 160.000 |

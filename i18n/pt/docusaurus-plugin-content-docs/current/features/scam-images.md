@@ -38,4 +38,13 @@ Cada golpe bloqueado pelo ScamLens:
 - é contado no contador público de contas capturadas do [HoneyPot](./honeypot.md);
 - reforça a proteção de **todos os servidores** que usam o RaidProtect.
 
-Publicamos regularmente relatórios públicos sobre os golpes detectados e bloqueados: encontre-os na [**Previsão de ameaças**](/blog/tags/threats). Para conhecer o ScamLens em detalhe, leia [nossa apresentação](/blog/scamlens-early-activation).
+### Nossos relatórios mensais {#recaps}
+
+Todo mês publicamos a **[Previsão de ameaças](/blog/tags/threats)**, um balanço público da atividade do ScamLens. Números acumulados desde o [lançamento em 14 de fevereiro de 2026](/blog/scamlens-early-activation), em todos os servidores protegidos pelo RaidProtect:
+
+| Relatório | Imagens de golpe removidas | Contas comprometidas identificadas |
+|---|---|---|
+| [Balanço de 1 mês](/blog/scamlens-1-month-recap) *(mar. 2026)* | 260.000 | 15.000 |
+| [Abril de 2026](/blog/threat-weather-april-2026) | 1.400.000 | 40.000 |
+| [Maio de 2026](/blog/threat-weather-may-2026) | 2.300.000 | 80.000 |
+| [Junho de 2026](/blog/threat-weather-june-2026) | 4.000.000 | 160.000 |
