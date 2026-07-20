@@ -55,7 +55,7 @@ The **Softban** is a good compromise: it cleans up the messages and removes the 
 
 :::info
 Only **Ban** and **Softban** let Discord natively delete the hacked account's messages **everywhere on the server** in one go.
-For the other sanctions (Kick, Timeout, Jail, Mute), RaidProtect has to perform a manual cross-channel deletion, which is much more costly on the bot side, so they are reserved for Premium servers.
+For the other sanctions (Kick, Timeout, Jail, Mute), RaidProtect has to perform a manual cross-channel deletion, which is much more costly on the bot side, so they are reserved for [Premium](/en/premium) servers.
 :::
 
 ### Ignored members {#ignore}

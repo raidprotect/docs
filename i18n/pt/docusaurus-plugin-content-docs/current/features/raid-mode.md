@@ -84,7 +84,7 @@ Por padrão, o modo raid bloqueia os novos participantes no nível do convite. C
 3. Ative a opção "**Modo expulsão**".
 
 :::info
-Esta opção é reservada aos servidores **Premium**. Ela é necessária para usar o [bypass do modo raid](#bypass-raid).
+Esta opção é reservada aos servidores [**Premium**](/pt/premium). Ela é necessária para usar o [bypass do modo raid](#bypass-raid).
 :::
 
 ### 🎫 Bypass do modo raid {#bypass-raid}

@@ -82,7 +82,7 @@ O "**Cargo de confiança**" permite que os seus membros mais confiáveis ajam im
 - A sanção fica vinculada à denúncia: o moderador que a processa pode confirmá-la ou cancelá-la.
 
 :::info
-Esta funcionalidade é reservada aos servidores **Premium**.
+Esta funcionalidade é reservada aos servidores [**Premium**](/pt/premium).
 :::
 
 ### Reputação dos denunciantes {#bad-reporters}

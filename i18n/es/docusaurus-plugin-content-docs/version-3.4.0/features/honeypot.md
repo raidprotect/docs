@@ -55,7 +55,7 @@ El **Softban** es un buen compromiso: limpia los mensajes y expulsa la cuenta ha
 
 :::info
 Solo el **Baneo** y el **Softban** permiten a Discord eliminar de forma nativa los mensajes de la cuenta hackeada **en todo el servidor** de una sola vez.  
-Para las demas sanciones (Kick, Timeout, Jail, Silencio), RaidProtect debe hacer una eliminacion entre canales manual, mucho mas costosa para el bot, asi que estan reservadas a los servidores Premium.
+Para las demas sanciones (Kick, Timeout, Jail, Silencio), RaidProtect debe hacer una eliminacion entre canales manual, mucho mas costosa para el bot, asi que estan reservadas a los servidores [Premium](/es/premium).
 :::
 
 ### Miembros ignorados {#ignore}

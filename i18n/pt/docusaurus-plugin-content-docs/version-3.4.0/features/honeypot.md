@@ -55,7 +55,7 @@ O **Softban** é um bom meio-termo: ele limpa as mensagens e expulsa a conta inv
 
 :::info
 Apenas o **Banimento** e o **Softban** permitem que o Discord exclua nativamente as mensagens da conta invadida **em todo o servidor** de uma só vez.  
-Para as outras sanções (Kick, Timeout, Jail, Mute), o RaidProtect precisa fazer uma exclusão entre canais manual, muito mais custosa para o bot, por isso elas ficam reservadas aos servidores Premium.
+Para as outras sanções (Kick, Timeout, Jail, Mute), o RaidProtect precisa fazer uma exclusão entre canais manual, muito mais custosa para o bot, por isso elas ficam reservadas aos servidores [Premium](/pt/premium).
 :::
 
 ### Membros ignorados {#ignore}

@@ -82,7 +82,7 @@ Le "**Rôle de confiance**" permet à vos membres les plus fiables d'agir imméd
 - La sanction est liée au signalement : le modérateur qui le traite peut la confirmer ou l'annuler.
 
 :::info
-Cette fonctionnalité est réservée aux serveurs **Premium**.
+Cette fonctionnalité est réservée aux serveurs [**Premium**](/premium).
 :::
 
 ### Réputation des signaleurs {#bad-reporters}

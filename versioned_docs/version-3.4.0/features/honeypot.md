@@ -55,7 +55,7 @@ Le **Softban** est un bon compromis : il nettoie les messages et expulse le com
 
 :::info
 Seuls le **Bannissement** et le **Softban** permettent à Discord de supprimer nativement les messages du compte piraté **partout sur le serveur** d'un seul coup.  
-Pour les autres sanctions (Kick, Timeout, Jail, Mute), RaidProtect doit faire une suppression inter-salons manuelle, beaucoup plus coûteuse côté bot, elles sont donc réservées aux serveurs Premium.
+Pour les autres sanctions (Kick, Timeout, Jail, Mute), RaidProtect doit faire une suppression inter-salons manuelle, beaucoup plus coûteuse côté bot, elles sont donc réservées aux serveurs [Premium](/premium).
 :::
 
 ### Membres ignorés {#ignore}

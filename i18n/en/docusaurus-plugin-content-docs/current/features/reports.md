@@ -82,7 +82,7 @@ The "**Trusted role**" allows your most reliable members to act immediately in a
 - The sanction is tied to the report: the moderator who handles it can confirm or cancel it.
 
 :::info
-This feature is reserved for **Premium** servers.
+This feature is reserved for [**Premium**](/en/premium) servers.
 :::
 
 ### Reporter reputation {#bad-reporters}

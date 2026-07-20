@@ -82,7 +82,7 @@ Die „**Vertrauensrolle**" ermöglicht es Ihren zuverlässigsten Mitgliedern, i
 - Die Sanktion ist mit der Meldung verknüpft: Der Moderator, der sie bearbeitet, kann sie bestätigen oder aufheben.
 
 :::info
-Diese Funktion ist **Premium**-Servern vorbehalten.
+Diese Funktion ist [**Premium**](/de/premium)-Servern vorbehalten.
 :::
 
 ### Reputation der Melder {#bad-reporters}

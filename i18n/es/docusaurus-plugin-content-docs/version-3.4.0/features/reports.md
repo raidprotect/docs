@@ -82,7 +82,7 @@ El "**Rol de confianza**" permite a tus miembros mas fiables actuar de inmediato
 - La sancion esta vinculada al reporte: el moderador que lo trata puede confirmarla o anularla.
 
 :::info
-Esta funcion esta reservada a los servidores **Premium**.
+Esta funcion esta reservada a los servidores [**Premium**](/es/premium).
 :::
 
 ### Reputacion de los reportantes {#bad-reporters}

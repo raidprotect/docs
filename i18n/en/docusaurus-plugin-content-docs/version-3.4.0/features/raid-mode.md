@@ -84,7 +84,7 @@ By default, raid mode blocks newcomers at the invite level. With **kick mode**, 
 3. Enable the "**Kick mode**" option.
 
 :::info
-This option is reserved for **Premium** servers. It is required to use the [raid mode bypass](#bypass-raid).
+This option is reserved for [**Premium**](/en/premium) servers. It is required to use the [raid mode bypass](#bypass-raid).
 :::
 
 ### 🎫 Raid mode bypass {#bypass-raid}

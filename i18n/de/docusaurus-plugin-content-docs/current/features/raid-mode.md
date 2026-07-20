@@ -84,7 +84,7 @@ Standardmäßig blockiert der Raid-Modus die neuen Ankömmlinge auf Einladungseb
 3. Aktivieren Sie die Option „**Kick-Modus**".
 
 :::info
-Diese Option ist **Premium**-Servern vorbehalten. Sie ist erforderlich, um den [Bypass des Raid-Modus](#bypass-raid) zu verwenden.
+Diese Option ist [**Premium**](/de/premium)-Servern vorbehalten. Sie ist erforderlich, um den [Bypass des Raid-Modus](#bypass-raid) zu verwenden.
 :::
 
 ### 🎫 Bypass des Raid-Modus {#bypass-raid}

@@ -55,7 +55,7 @@ Der **Softban** ist ein guter Kompromiss: Er räumt die Nachrichten auf und schl
 
 :::info
 Nur **Bann** und **Softban** ermöglichen es Discord, die Nachrichten des gehackten Kontos **überall auf dem Server** auf einen Schlag nativ zu löschen.  
-Für die anderen Sanktionen (Kick, Timeout, Jail, Mute) muss RaidProtect eine manuelle kanalübergreifende Löschung vornehmen, die botseitig deutlich aufwändiger ist; sie sind daher Premium-Servern vorbehalten.
+Für die anderen Sanktionen (Kick, Timeout, Jail, Mute) muss RaidProtect eine manuelle kanalübergreifende Löschung vornehmen, die botseitig deutlich aufwändiger ist; sie sind daher [Premium](/de/premium)-Servern vorbehalten.
 :::
 
 ### Ignorierte Mitglieder {#ignore}

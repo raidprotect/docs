@@ -84,7 +84,7 @@ Por defecto, el modo raid bloquea a los recien llegados a nivel de la invitacion
 3. Activa la opcion "**Modo expulsion**".
 
 :::info
-Esta opcion esta reservada a los servidores **Premium**. Es necesaria para usar el [bypass del modo raid](#bypass-raid).
+Esta opcion esta reservada a los servidores [**Premium**](/es/premium). Es necesaria para usar el [bypass del modo raid](#bypass-raid).
 :::
 
 ### 🎫 Bypass del modo raid {#bypass-raid}
