@@ -74,7 +74,6 @@ export default function TagRoleConceptMockup() {
               <span className={styles.roleDot} />
               {translate({ id: "mockup.tagroleConcept.roleMember", message: "Membre" })}
             </span>
-            <span className={styles.roleAdd}>+</span>
           </div>
         </div>
       </div>
