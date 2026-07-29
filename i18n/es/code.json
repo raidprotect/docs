@@ -525,6 +525,14 @@
     "message": "Sanciona al instante los intentos de spam, sin necesidad de intervención por tu parte.",
     "description": "Feature card description: anti-spam"
   },
+  "landing.features.anti-spam.addBot": {
+    "message": "Proteger mi servidor",
+    "description": "Feature row primary button (invite the bot): anti-spam"
+  },
+  "landing.features.anti-spam.cta": {
+    "message": "Configurar el antispam",
+    "description": "Feature row call to action: anti-spam"
+  },
   "landing.features.raid.title": {
     "message": "Bloqueo de raids",
     "description": "Feature card title: raid"
@@ -532,6 +540,14 @@
   "landing.features.raid.description": {
     "message": "¿Temes un raid? Nuestro bot puede detectarlo y bloquearlo antes de que afecte a tu servidor.",
     "description": "Feature card description: raid"
+  },
+  "landing.features.raid.addBot": {
+    "message": "Bloquear los raids",
+    "description": "Feature row primary button (invite the bot): raid"
+  },
+  "landing.features.raid.cta": {
+    "message": "Descubrir el modo raid",
+    "description": "Feature row call to action: raid"
   },
   "landing.features.captcha.title": {
     "message": "Protección contra bots",
@@ -541,6 +557,30 @@
     "message": "Gracias al captcha, tus miembros deben demostrar que son humanos. Di adiós a las cuentas automatizadas.",
     "description": "Feature card description: captcha"
   },
+  "landing.features.captcha.addBot": {
+    "message": "Filtrar los robots",
+    "description": "Feature row primary button (invite the bot): captcha"
+  },
+  "landing.features.captcha.cta": {
+    "message": "Activar el captcha",
+    "description": "Feature row call to action: captcha"
+  },
+  "landing.features.auth.title": {
+    "message": "Authentication Manager",
+    "description": "Feature card title: auth"
+  },
+  "landing.features.auth.description": {
+    "message": "Protege el acceso a tus roles sensibles con una verificación de identidad real: passkeys, código PIN u OTP.",
+    "description": "Feature card description: auth"
+  },
+  "landing.features.auth.addBot": {
+    "message": "Blindar mis roles",
+    "description": "Feature row primary button (invite the bot): auth"
+  },
+  "landing.features.auth.cta": {
+    "message": "Proteger mis roles",
+    "description": "Feature row call to action: auth"
+  },
   "landing.features.mod.title": {
     "message": "Moderación y administración",
     "description": "Feature card title: mod"
@@ -549,13 +589,29 @@
     "message": "Administra tu servidor como un profesional con nuestras diversas funciones de moderación y administración.",
     "description": "Feature card description: mod"
   },
+  "landing.features.mod.addBot": {
+    "message": "Equipar a mis moderadores",
+    "description": "Feature row primary button (invite the bot): mod"
+  },
+  "landing.features.mod.cta": {
+    "message": "Ver las herramientas de moderación",
+    "description": "Feature row call to action: mod"
+  },
   "landing.features.tag.title": {
     "message": "Rol por etiqueta",
     "description": "Feature card title: tag"
   },
   "landing.features.tag.description": {
-    "message": "El Rol por etiqueta asigna automáticamente un rol a los miembros que añaden la etiqueta de tu servidor.",
+    "message": "Asigna automáticamente un rol a los miembros que lucen la etiqueta de tu servidor y recompensa su compromiso.",
     "description": "Feature card description: tag"
+  },
+  "landing.features.tag.addBot": {
+    "message": "Recompensar a mis miembros",
+    "description": "Feature row primary button (invite the bot): tag"
+  },
+  "landing.features.tag.cta": {
+    "message": "Configurar el Rol de etiqueta",
+    "description": "Feature row call to action: tag"
   },
   "landing.features.dm.title": {
     "message": "Bloqueo de MP",
@@ -564,6 +620,14 @@
   "landing.features.dm.description": {
     "message": "Un escudo único contra el spam, el scam y las estafas por mensaje privado.",
     "description": "Feature card description: dm"
+  },
+  "landing.features.dm.addBot": {
+    "message": "Frenar el scam por MD",
+    "description": "Feature row primary button (invite the bot): dm"
+  },
+  "landing.features.dm.cta": {
+    "message": "Proteger los MD",
+    "description": "Feature row call to action: dm"
   },
   "landing.pricing.title": {
     "message": "Mantente a la {highlight}",
@@ -1128,7 +1192,7 @@
     "description": "Badge de lancement au-dessus du titre du hero premium"
   },
   "premium.hero.micro": {
-    "message": "Cancela cuando quieras · Activación con un comando · La versión gratuita sigue completa",
+    "message": "Cancela cuando quieras",
     "description": "Microcopie de réassurance sous les CTA du hero"
   },
   "premium.flagship.eyebrow": {
@@ -1962,6 +2026,21 @@
   "mockup.modview.sanctionPlaceholder": {
     "message": "Sancionar al usuario"
   },
+  "mockup.modview.time": {
+    "message": "hoy a las 19:03"
+  },
+  "mockup.modview.chat": {
+    "message": "de verdad que aquí hacéis las cosas fatal"
+  },
+  "mockup.modview.ctxOpen": {
+    "message": "Abrir ModView"
+  },
+  "mockup.modview.ephemeral": {
+    "message": "Solo tú puedes ver esto"
+  },
+  "mockup.modview.dismiss": {
+    "message": "Descartar mensaje"
+  },
   "mockup.raidmode.joined": {
     "message": "se ha unido al servidor."
   },
@@ -2600,5 +2679,53 @@
   },
   "mockup.transparency.human": {
     "message": "por el equipo"
+  },
+  "premium.hero.founder.taken": {
+    "message": "plazas Founder (precio bloqueado de por vida)",
+    "description": "Libellé du compteur Founder (places prises)"
+  },
+  "premium.hero.founder.remaining": {
+    "message": "Solo quedan {remaining} al precio bloqueado de por vida",
+    "description": "Places Founder restantes"
+  },
+  "landing.features.further.eyebrow": {
+    "message": "¿Quieres ir más lejos?",
+    "description": "Features section go-further offers"
+  },
+  "landing.features.further.founder.name": {
+    "message": "Founder",
+    "description": "Founder offer card name (plan name)"
+  },
+  "landing.features.further.founder.price": {
+    "message": "2,99 $/mes",
+    "description": "Founder offer card price"
+  },
+  "landing.features.further.founder.desc": {
+    "message": "Personaliza el bot a tu imagen, amplía los límites de cada módulo y recibe las novedades en acceso anticipado.",
+    "description": "Features section go-further offers"
+  },
+  "landing.features.further.founder.subscribe": {
+    "message": "Suscribirse vía Discord",
+    "description": "Subscribe CTA on the Founder card"
+  },
+  "landing.features.further.business.name": {
+    "message": "Business",
+    "description": "Features section go-further offers"
+  },
+  "landing.features.further.business.price": {
+    "message": "Bajo solicitud",
+    "description": "Business offer card price"
+  },
+  "landing.features.further.business.desc": {
+    "message": "Instancia dedicada y aislada, auditoría de seguridad y acompañamiento humano para proyectos exigentes.",
+    "description": "Features section go-further offers"
+  },
+  "landing.features.further.business.call": {
+    "message": "Reservar una llamada",
+    "description": "Features section go-further offers"
+  },
+  "landing.features.further.discover": {
+    "message": "Descubrir",
+    "description": "Features section go-further offers"
   }
 }

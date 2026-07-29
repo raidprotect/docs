@@ -525,6 +525,14 @@
     "message": "Sanction spam attempts instantly, without any intervention on your part.",
     "description": "Feature card description: anti-spam"
   },
+  "landing.features.anti-spam.addBot": {
+    "message": "Protect my server",
+    "description": "Feature row primary button (invite the bot): anti-spam"
+  },
+  "landing.features.anti-spam.cta": {
+    "message": "Set up anti-spam",
+    "description": "Feature row call to action: anti-spam"
+  },
   "landing.features.raid.title": {
     "message": "Blocking raids",
     "description": "Feature card title: raid"
@@ -532,6 +540,14 @@
   "landing.features.raid.description": {
     "message": "Worried about a raid? Our bot is capable of detecting and blocking it before it even impacts your server.",
     "description": "Feature card description: raid"
+  },
+  "landing.features.raid.addBot": {
+    "message": "Block raids",
+    "description": "Feature row primary button (invite the bot): raid"
+  },
+  "landing.features.raid.cta": {
+    "message": "Discover raid mode",
+    "description": "Feature row call to action: raid"
   },
   "landing.features.captcha.title": {
     "message": "Protection against bots",
@@ -541,6 +557,30 @@
     "message": "With captcha, your members have to prove they're human. Say goodbye to automated accounts.",
     "description": "Feature card description: captcha"
   },
+  "landing.features.captcha.addBot": {
+    "message": "Filter out bots",
+    "description": "Feature row primary button (invite the bot): captcha"
+  },
+  "landing.features.captcha.cta": {
+    "message": "Turn on the captcha",
+    "description": "Feature row call to action: captcha"
+  },
+  "landing.features.auth.title": {
+    "message": "Authentication Manager",
+    "description": "Feature card title: auth"
+  },
+  "landing.features.auth.description": {
+    "message": "Protect access to your sensitive roles with real identity verification: passkeys, PIN code or OTP.",
+    "description": "Feature card description: auth"
+  },
+  "landing.features.auth.addBot": {
+    "message": "Lock down my roles",
+    "description": "Feature row primary button (invite the bot): auth"
+  },
+  "landing.features.auth.cta": {
+    "message": "Secure my roles",
+    "description": "Feature row call to action: auth"
+  },
   "landing.features.mod.title": {
     "message": "Moderation & administration",
     "description": "Feature card title: mod"
@@ -549,13 +589,29 @@
     "message": "Manage your server like a pro with our various moderation and administration features.",
     "description": "Feature card description: mod"
   },
+  "landing.features.mod.addBot": {
+    "message": "Equip my moderators",
+    "description": "Feature row primary button (invite the bot): mod"
+  },
+  "landing.features.mod.cta": {
+    "message": "See the moderation tools",
+    "description": "Feature row call to action: mod"
+  },
   "landing.features.tag.title": {
     "message": "Tag Role",
     "description": "Feature card title: tag"
   },
   "landing.features.tag.description": {
-    "message": "Tag Role automatically assigns a role to members who add your server's tag.",
+    "message": "Automatically grant a role to members who display your server's tag, and reward their engagement.",
     "description": "Feature card description: tag"
+  },
+  "landing.features.tag.addBot": {
+    "message": "Reward my members",
+    "description": "Feature row primary button (invite the bot): tag"
+  },
+  "landing.features.tag.cta": {
+    "message": "Set up the Tag Role",
+    "description": "Feature row call to action: tag"
   },
   "landing.features.dm.title": {
     "message": "DM Lock",
@@ -564,6 +620,14 @@
   "landing.features.dm.description": {
     "message": "An unprecedented shield against spam, scam and private message scams.",
     "description": "Feature card description: dm"
+  },
+  "landing.features.dm.addBot": {
+    "message": "Shut out DM scams",
+    "description": "Feature row primary button (invite the bot): dm"
+  },
+  "landing.features.dm.cta": {
+    "message": "Protect DMs",
+    "description": "Feature row call to action: dm"
   },
   "landing.pricing.title": {
     "message": "Keeping one step {highlight}",
@@ -1128,7 +1192,7 @@
     "description": "Badge de lancement au-dessus du titre du hero premium"
   },
   "premium.hero.micro": {
-    "message": "Cancel anytime · One-command activation · The free version stays complete",
+    "message": "Cancel anytime",
     "description": "Microcopie de réassurance sous les CTA du hero"
   },
   "premium.flagship.eyebrow": {
@@ -1962,6 +2026,21 @@
   "mockup.modview.sanctionPlaceholder": {
     "message": "Sanction the user"
   },
+  "mockup.modview.time": {
+    "message": "today at 19:03"
+  },
+  "mockup.modview.chat": {
+    "message": "you people really don't know what you're doing"
+  },
+  "mockup.modview.ctxOpen": {
+    "message": "Open ModView"
+  },
+  "mockup.modview.ephemeral": {
+    "message": "Only you can see this"
+  },
+  "mockup.modview.dismiss": {
+    "message": "Dismiss message"
+  },
   "mockup.raidmode.joined": {
     "message": "joined the server."
   },
@@ -2621,5 +2700,53 @@
   },
   "mockup.tagrole.refresh": {
     "message": "Refresh"
+  },
+  "premium.hero.founder.taken": {
+    "message": "Founder spots (price locked for life)",
+    "description": "Libellé du compteur Founder (places prises)"
+  },
+  "premium.hero.founder.remaining": {
+    "message": "Only {remaining} left at the lifetime-locked price",
+    "description": "Places Founder restantes"
+  },
+  "landing.features.further.eyebrow": {
+    "message": "Want to go further?",
+    "description": "Features section go-further offers"
+  },
+  "landing.features.further.founder.name": {
+    "message": "Founder",
+    "description": "Founder offer card name (plan name)"
+  },
+  "landing.features.further.founder.price": {
+    "message": "$2.99/month",
+    "description": "Founder offer card price"
+  },
+  "landing.features.further.founder.desc": {
+    "message": "Make the bot your own, extend every module's limits and get new features in early access.",
+    "description": "Features section go-further offers"
+  },
+  "landing.features.further.founder.subscribe": {
+    "message": "Subscribe via Discord",
+    "description": "Subscribe CTA on the Founder card"
+  },
+  "landing.features.further.business.name": {
+    "message": "Business",
+    "description": "Features section go-further offers"
+  },
+  "landing.features.further.business.price": {
+    "message": "On request",
+    "description": "Business offer card price"
+  },
+  "landing.features.further.business.desc": {
+    "message": "A dedicated, isolated instance, a security audit and hands-on support for high-stakes projects.",
+    "description": "Features section go-further offers"
+  },
+  "landing.features.further.business.call": {
+    "message": "Book a call",
+    "description": "Features section go-further offers"
+  },
+  "landing.features.further.discover": {
+    "message": "Discover",
+    "description": "Features section go-further offers"
   }
 }

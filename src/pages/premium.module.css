@@ -13,6 +13,11 @@
   --rp-premium-border-strong: rgba(211, 95, 95, 0.40);
   --rp-premium-tint: rgba(211, 95, 95, 0.05);
   --rp-premium-gradient: linear-gradient(120deg, var(--ifm-color-primary) 0%, var(--rp-premium-accent) 100%);
+  /* Variante assombrie réservée aux boutons portant du texte blanc : le
+   * dégradé vif (#d35f5f/#a561a3) plafonne à 3,8-4,3:1 avec du blanc (échec
+   * WCAG AA). Ces teintes plus profondes montent à ~5,8-6,3:1 sans changer la
+   * tonalité rouge→violet. Le dégradé vif reste utilisé pour le décoratif. */
+  --rp-premium-gradient-cta: linear-gradient(120deg, #b04141 0%, #8a4788 100%);
   --rp-surface: rgba(255, 255, 255, 0.04);
   --rp-surface-strong: rgba(255, 255, 255, 0.08);
   --rp-border: rgba(255, 255, 255, 0.08);
@@ -83,49 +88,16 @@
   text-align: center;
 }
 
-/* Badge de lancement : pilule à bordure dégradée, écho du bouton "Premium" de
-   la navbar (custom.css) pour la cohérence de marque. */
-.heroBadge {
-  display: inline-block;
-  padding: 1px;
-  border-radius: 999px;
-  background: var(--rp-premium-gradient);
-  box-shadow: 0 8px 24px -12px rgba(211, 95, 95, 0.7);
-  animation: fadeUp 0.7s ease-out 0.05s both;
-}
-
-.heroBadgeInner {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.4rem 0.95rem;
-  border-radius: 999px;
-  background: var(--ifm-background-color);
-  font-family: var(--ifm-heading-font-family);
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  color: #fff;
-}
-
-
+/* Titre du hero : première ligne en blanc plein ; seule la partie accentuée
+   « sans compromis » porte le dégradé de marque (.heroTitleAccent). */
 .heroTitle {
   margin: 1.4rem 0 1rem;
   font-family: var(--ifm-heading-font-family);
   font-size: clamp(2.6rem, 6vw, 4.6rem);
   line-height: 1.05;
   letter-spacing: -0.02em;
-  background: linear-gradient(120deg,
-    #ffffff 0%,
-    #ffffff 35%,
-    var(--ifm-color-primary-light) 55%,
-    #ffffff 75%,
-    #ffffff 100%);
-  background-size: 200% 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine 6s ease-in-out infinite, fadeUp 0.7s ease-out 0.15s both;
+  color: #fff;
+  animation: fadeUp 0.7s ease-out 0.15s both;
 }
 
 .heroTitleAccent {
@@ -154,8 +126,52 @@
   animation: fadeUp 0.7s ease-out 0.35s both;
 }
 
-/* Microcopie de réassurance sous les CTA : lève les objections (engagement,
-   complexité, "est-ce un paywall") sans peser visuellement. */
+/* Compteur de rareté Founder, placé au-dessus du titre (à la place du badge) :
+   il donne le ton de l'offre limitée dès le premier regard. */
+.founder {
+  max-width: 440px;
+  margin: 0 auto;
+  animation: fadeUp 0.7s ease-out 0.05s both;
+}
+.founderHead {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.55rem;
+  font-size: 0.85rem;
+}
+.founderCount {
+  color: var(--rp-text-soft);
+}
+.founderCount strong {
+  color: var(--rp-premium-accent);
+  font-weight: 700;
+}
+.founderCountLabel {
+  color: var(--rp-text-muted);
+}
+.founderTrack {
+  height: 7px;
+  border-radius: 999px;
+  background: var(--rp-surface-strong);
+  border: 1px solid var(--rp-premium-border);
+  overflow: hidden;
+}
+.founderFill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--rp-premium-gradient);
+  box-shadow: 0 0 14px -2px var(--rp-premium-glow-strong);
+  transition: width 1.1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .founderFill { transition: none; }
+}
+@media (max-width: 560px) {
+  .founderHead { flex-direction: column; gap: 0.15rem; }
+}
+
 .heroMicro {
   margin: 1.1rem auto 0;
   font-size: 0.85rem;
@@ -181,7 +197,7 @@
 
 .ctaPrimary {
   color: #fff;
-  background: var(--rp-premium-gradient);
+  background: var(--rp-premium-gradient-cta);
   box-shadow: 0 10px 30px -8px rgba(211, 95, 95, 0.55);
 }
 
@@ -868,13 +884,13 @@
 }
 
 .tierCtaPrimary {
-  background: var(--rp-premium-gradient);
+  background: var(--rp-premium-gradient-cta);
   border: none;
   box-shadow: 0 10px 25px -10px rgba(211, 95, 95, 0.55);
 }
 
 .tierCtaPrimary:hover {
-  background: var(--rp-premium-gradient);
+  background: var(--rp-premium-gradient-cta);
   box-shadow: 0 16px 30px -10px rgba(211, 95, 95, 0.7);
 }
 
@@ -1173,11 +1189,6 @@
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(18px); }
   to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes shine {
-  0%   { background-position: 0% 50%; }
-  100% { background-position: 200% 50%; }
 }
 
 /* Balayage lumineux qui traverse le bouton puis attend hors-champ avant de

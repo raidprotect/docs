@@ -12,7 +12,7 @@ type HeroProps = {
   serverCount?: number;
 };
 
-const PRE_TITLE_FALLBACK = 350_000;
+const PRE_TITLE_FALLBACK = 380_000;
 const PRE_TITLE_STEP = 50_000;
 
 function roundedServerCount(raw: number | undefined): number {

@@ -42,14 +42,18 @@ type Stats = {
     users: number
     captcha: number
     antispam: number
+    founder?: number
 }
 
 const FALLBACK_STATS: Stats = {
-    servers: 300000,
-    users: 30000000,
-    captcha: 15000000,
-    antispam: 1500000,
+    servers: 385786,
+    users: 50440378,
+    captcha: 14515925,
+    antispam: 1435257,
+    founder: 36,
 }
+
+const FOUNDER_GOAL = 100
 
 /**
  * Fait suivre la souris sur les cartes pour le radial-gradient.
@@ -93,6 +97,7 @@ function useStats(): Stats {
                     users: typeof data.users === 'number' ? data.users : FALLBACK_STATS.users,
                     captcha: typeof data.captcha === 'number' ? data.captcha : FALLBACK_STATS.captcha,
                     antispam: typeof data.antispam === 'number' ? data.antispam : FALLBACK_STATS.antispam,
+                    founder: typeof data.founder === 'number' ? data.founder : FALLBACK_STATS.founder,
                 })
             })
             .catch(() => {})
@@ -161,6 +166,44 @@ function StatCard({ value, label, suffix }: StatCardProps) {
                 {suffix && <span className={styles.statSuffix}>{suffix}</span>}
             </div>
             <div className={styles.statLabel}>{label}</div>
+        </div>
+    )
+}
+
+/**
+ * Compteur de rareté Founder. Ne s'affiche que si counts.json expose un champ
+ * `founder` numérique : jamais de chiffre inventé.
+ */
+function FounderScarcity({ taken }: { taken: number }) {
+    const ref = useRef<HTMLDivElement>(null)
+    const [shown, setShown] = useState(false)
+    const clamped = Math.max(0, Math.min(taken, FOUNDER_GOAL))
+    const pct = Math.round((clamped / FOUNDER_GOAL) * 100)
+
+    useEffect(() => {
+        const el = ref.current
+        if (!el) return
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(entry => { if (entry.isIntersecting) setShown(true) })
+        }, { threshold: 0.4 })
+        obs.observe(el)
+        return () => obs.disconnect()
+    }, [])
+
+    return (
+        <div className={styles.founder} ref={ref}>
+            <div className={styles.founderHead}>
+                <span className={styles.founderCount}>
+                    <strong>{clamped}</strong>/{FOUNDER_GOAL}
+                    <span className={styles.founderCountLabel}>
+                        {' '}
+                        <Translate id="premium.hero.founder.taken" description="Libellé du compteur Founder (places prises, tarif verrouillé à vie)">places Founder (tarif verrouillé à vie)</Translate>
+                    </span>
+                </span>
+            </div>
+            <div className={styles.founderTrack} role="progressbar" aria-valuenow={clamped} aria-valuemin={0} aria-valuemax={FOUNDER_GOAL}>
+                <div className={styles.founderFill} style={{ width: shown ? `${pct}%` : 0 }} />
+            </div>
         </div>
     )
 }
@@ -469,13 +512,7 @@ export default function PremiumPage(): React.ReactNode {
                 {/* ============= HERO ============= */}
                 <section className={styles.hero}>
                     <div className={styles.container}>
-                        <span className={styles.heroBadge}>
-                            <span className={styles.heroBadgeInner}>
-                                <Translate id="premium.hero.badge" description="Badge de lancement au-dessus du titre du hero premium">
-                                    Offre Founder · tarif verrouillé à vie
-                                </Translate>
-                            </span>
-                        </span>
+                        {typeof stats.founder === 'number' && <FounderScarcity taken={stats.founder} />}
                         <h1 className={styles.heroTitle}>
                             <Translate id="premium.hero.title.line1" description="Première ligne du titre du hero premium">
                                 Une protection à votre image,
@@ -501,7 +538,7 @@ export default function PremiumPage(): React.ReactNode {
                         </div>
                         <p className={styles.heroMicro}>
                             <Translate id="premium.hero.micro" description="Microcopie de réassurance sous les CTA du hero">
-                                Annulable à tout moment · Activation en une commande · La version gratuite reste complète
+                                Annulable à tout moment
                             </Translate>
                         </p>
                     </div>

@@ -1,0 +1,372 @@
+/* Section "fonctionnalités" : une ligne par fonctionnalité, le mockup animé
+ * d'un côté et le texte de l'autre, en alternance. */
+
+.section {
+  position: relative;
+}
+
+.titleWrap {
+  max-width: 780px;
+  margin: 0 auto 110px;
+  text-align: center;
+}
+
+.sectionTitle {
+  margin: 0 0 10px 0;
+  font-family: var(--ifm-heading-font-family);
+  color: #fff;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 1.2em;
+}
+
+.sectionSubtitle {
+  margin: 0;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 130px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 90px;
+  align-items: center;
+}
+
+.rowReversed .visual {
+  order: 2;
+}
+
+/* Apparition à l'approche de l'écran. L'état masqué n'est posé qu'après le
+   montage : sans JavaScript, la ligne s'affiche normalement. */
+.row {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.rowHidden {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .row,
+  .rowHidden {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* === Mockup === */
+
+/* Bloc (et non flex) : les mockups conservent ainsi leur largeur de 420 px,
+   dont dépend le calcul de position de leur curseur animé. */
+.visual {
+  min-width: 0;
+}
+
+/* Les mockups portent leur propre marge verticale, inutile ici. */
+.visual > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* === Colonne de texte === */
+
+.text {
+  min-width: 0;
+}
+
+.title {
+  margin: 0 0 16px 0;
+  font-family: var(--ifm-heading-font-family);
+  color: #fff;
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 1.2em;
+}
+
+.description {
+  margin: 0 0 28px 0;
+  max-width: 46ch;
+  color: rgba(225, 224, 233, 0.78);
+  font-size: 18px;
+  line-height: 1.6em;
+}
+
+/* Deux actions sur la même ligne quoi qu'il arrive : le bouton plein
+   « Ajouter le bot » et le lien vers la doc de la fonctionnalité. On interdit
+   le retour à la ligne et la coupure des libellés. */
+.actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 12px 20px;
+}
+
+.addBot {
+  display: inline-block;
+  flex-shrink: 0;
+  white-space: nowrap;
+  border: 1px solid var(--color-darker-primary);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-darker-primary);
+  color: #fff;
+  padding: 15px 26px 13px;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.1em;
+  text-decoration: none;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.3s, color 0.3s;
+}
+
+.addBot:hover {
+  color: #fff;
+  text-decoration: none;
+  transform: translate3d(0, -3px, 0.01px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .addBot:hover {
+    transform: none;
+  }
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  color: var(--color-primary-rp);
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.cta:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.ctaArrow {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s;
+}
+
+.cta:hover .ctaArrow {
+  transform: translate3d(4px, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta:hover .ctaArrow {
+    transform: none;
+  }
+}
+
+/* === Adaptatif === */
+
+@media (max-width: 996px) {
+  .titleWrap {
+    margin-bottom: 70px;
+  }
+
+  .sectionTitle {
+    font-size: 38px;
+  }
+
+  .rows {
+    gap: 90px;
+  }
+
+  .row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+  }
+
+  /* Sur petit écran, le texte passe toujours avant le mockup. */
+  .rowReversed .visual,
+  .visual {
+    order: 2;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .description {
+    max-width: none;
+  }
+}
+
+/* Le bouton et le lien doc restent sur une seule ligne sur desktop et tablette.
+   Sur téléphone, certains libellés longs (ex. « Récompenser mes membres » +
+   « Mettre en place le Rôle de Tag ») ne peuvent pas tenir côte à côte sans
+   déborder : on autorise alors le retour à la ligne pour préserver la mise en
+   page. */
+@media (max-width: 650px) {
+  .actions {
+    flex-wrap: wrap;
+    gap: 12px 20px;
+  }
+}
+
+/* === Pont vers les offres payantes (fin de section) === */
+
+.goFurther {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.goFurtherEyebrow {
+  margin: 0 0 32px 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.offerCards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.offerCard {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 30px 30px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  background: linear-gradient(
+    160deg,
+    rgba(114, 108, 179, 0.1),
+    rgba(211, 95, 95, 0.05) 60%,
+    rgba(7, 4, 23, 0) 100%
+  );
+}
+
+.offerName {
+  margin: 0 0 6px 0;
+  font-family: var(--ifm-heading-font-family);
+  color: #fff;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.offerPrice {
+  margin: 0 0 16px 0;
+  font-family: var(--ifm-heading-font-family);
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.offerDesc {
+  margin: 0 0 24px 0;
+  flex: 1;
+  color: rgba(225, 224, 233, 0.78);
+  font-size: 16px;
+  line-height: 1.55em;
+}
+
+.offerActions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+
+/* Accent couleur repris des abonnements : doré pour Founder, bleu pour Business. */
+.offerCardFounder {
+  border-color: rgba(255, 171, 34, 0.28);
+}
+
+.offerCardBusiness {
+  border-color: rgba(95, 111, 211, 0.28);
+}
+
+.offerNameFounder {
+  color: var(--color-founder);
+}
+
+.offerNameBusiness {
+  color: var(--color-enterprise);
+}
+
+/* Vrais boutons (et non liens texte) au bas de chaque carte. */
+.offerBtn {
+  display: inline-block;
+  border: 1px solid transparent;
+  border-radius: var(--radius-lg);
+  padding: 14px 24px 12px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.1em;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.3s, background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.offerBtn:hover {
+  text-decoration: none;
+  transform: translate3d(0, -3px, 0.01px);
+}
+
+.offerBtnFounder {
+  border-color: var(--color-founder);
+  background-color: var(--color-founder);
+  /* Texte sombre sur le doré : le blanc échoue au contraste WCAG AA. */
+  color: var(--color-black);
+}
+
+.offerBtnFounder:hover {
+  color: var(--color-black);
+}
+
+.offerBtnBusiness {
+  border-color: var(--color-enterprise);
+  background-color: var(--color-enterprise);
+  color: #fff;
+}
+
+.offerBtnBusiness:hover {
+  color: #fff;
+}
+
+.offerBtnOutline {
+  border-color: rgba(255, 255, 255, 0.22);
+  background-color: transparent;
+  color: #fff;
+}
+
+.offerBtnOutline:hover {
+  color: #fff;
+  border-color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .offerBtn:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 996px) {
+  .goFurther {
+    margin-top: 60px;
+  }
+  .offerCards {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 460px;
+  }
+}

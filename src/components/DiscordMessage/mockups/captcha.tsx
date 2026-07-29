@@ -81,27 +81,31 @@ export default function CaptchaMockup() {
         <DiscordMessage message={message} />
       </div>
 
-      {sent && (
-        <div className={concept.chatMessage}>
-          <img className={concept.chatAvatar} src="/img/avatar/derrios.webp" alt="" loading="lazy" />
-          <div className={concept.chatBody}>
-            <div className={concept.chatHeader}>
-              <span className={concept.chatName}>Arthur</span>
-              <span className={concept.chatTime}>
-                {translate({ id: "mockup.captcha.now", message: "aujourd'hui à 18:42" })}
-              </span>
+      {/* Espace réservé pour les messages : sa hauteur est fixe, la barre de
+          saisie en dessous ne bouge donc jamais quand un message arrive. */}
+      <div className={concept.captchaFeed}>
+        {sent && (
+          <div className={concept.chatMessage}>
+            <img className={concept.chatAvatar} src="/img/avatar/derrios.webp" alt="" loading="lazy" />
+            <div className={concept.chatBody}>
+              <div className={concept.chatHeader}>
+                <span className={concept.chatName}>Arthur</span>
+                <span className={concept.chatTime}>
+                  {translate({ id: "mockup.captcha.now", message: "aujourd'hui à 18:42" })}
+                </span>
+              </div>
+              <div className={concept.chatText}>{CODE}</div>
             </div>
-            <div className={concept.chatText}>{CODE}</div>
           </div>
-        </div>
-      )}
+        )}
 
-      {verified && (
-        <div className={concept.systemLine}>
-          <img src="/img/icons/iconSucceed.svg" alt="" width={16} height={16} loading="lazy" />
-          {translate({ id: "mockup.captcha.verified", message: "Arthur a été vérifié et a rejoint le serveur !" })}
-        </div>
-      )}
+        {verified && (
+          <div className={concept.systemLine}>
+            <img src="/img/icons/iconSucceed.svg" alt="" width={16} height={16} loading="lazy" />
+            {translate({ id: "mockup.captcha.verified", message: "Arthur a été vérifié et a rejoint le serveur !" })}
+          </div>
+        )}
+      </div>
 
       <div className={concept.chatInput}>
         {animated.current && phase === 1 ? (

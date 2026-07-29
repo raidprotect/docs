@@ -2,12 +2,11 @@ import React, {type ReactNode, useEffect, useRef, useState} from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
-import Link from '@docusaurus/Link';
 import Translate, {translate} from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import {localizedRedirectUrl} from '@site/src/utils/links';
 import Hero from '@site/src/components/landing/Hero';
 import Servers from '@site/src/components/landing/Servers';
+import Features from '@site/src/components/landing/Features';
 import shared from '@site/src/components/landing/styles/shared.module.css';
 import styles from './index.module.css';
 
@@ -135,88 +134,6 @@ function StatCounter({
   );
 }
 
-const CHECK_ICON = '/img/icons/icon-02.svg';
-
-function FeatureItem({children}: {children: ReactNode}) {
-  return (
-    <div className={styles.featureItem}>
-      <img
-        src={CHECK_ICON}
-        alt=""
-        loading="lazy"
-        className={styles.featureIcon}
-      />
-      <div>{children}</div>
-    </div>
-  );
-}
-
-type Feature = {
-  slug: string;
-  to: string;
-  icon: string;
-  iconAlt: string;
-  defaultTitle: string;
-  defaultDescription: string;
-};
-
-const FEATURES: Feature[] = [
-  {
-    slug: 'anti-spam',
-    to: '/docs/features/anti-spam',
-    icon: '/img/icons/iconAntispamWhite.svg',
-    iconAlt: 'RaidProtect icon Antispam',
-    defaultTitle: 'Protection anti-spam',
-    defaultDescription:
-      'Sanctionnez instantanément les tentatives de spam, sans aucune intervention de votre part.',
-  },
-  {
-    slug: 'raid',
-    to: '/docs/features/raid-mode',
-    icon: '/img/icons/iconAntiraidWhite.svg',
-    iconAlt: 'RaidProtect icon Antiraid',
-    defaultTitle: 'Blocage des raids',
-    defaultDescription:
-      "Vous craignez un raid ? Notre bot est capable de le détecter et de le bloquer avant même qu'il impacte votre serveur.",
-  },
-  {
-    slug: 'captcha',
-    to: '/docs/features/captcha',
-    icon: '/img/icons/iconCaptchaWhite.svg',
-    iconAlt: 'RaidProtect icon Captcha',
-    defaultTitle: 'Protection contre les robots',
-    defaultDescription:
-      "Grâce au captcha, vos membres doivent prouver qu'ils sont humains. Dites adieu aux comptes automatisés.",
-  },
-  {
-    slug: 'mod',
-    to: '/docs/features/utilities',
-    icon: '/img/icons/iconReportWhite.svg',
-    iconAlt: 'RaidProtect icon Report',
-    defaultTitle: 'Modération & administration',
-    defaultDescription:
-      "Gérez votre serveur comme un pro avec nos diverses fonctionalités de modération et d'administration.",
-  },
-  {
-    slug: 'tag',
-    to: '/docs/features/tag-role',
-    icon: '/img/icons/iconTagWhite.svg',
-    iconAlt: 'RaidProtect icon Tag',
-    defaultTitle: 'Rôle de Tag',
-    defaultDescription:
-      'Le Rôle de Tag permet d’attribuer automatiquement un rôle aux membres qui ajoutent le tag de votre serveur.',
-  },
-  {
-    slug: 'dm',
-    to: '/docs/features/dm-lock',
-    icon: '/img/icons/iconDmlockWhite.svg',
-    iconAlt: 'RaidProtect icon DM Lock',
-    defaultTitle: 'Fermeture des MP',
-    defaultDescription:
-      'Un bouclier inédit contre le spam, le scam et les arnaques par message privé.',
-  },
-];
-
 export default function Home(): ReactNode {
   const [counts, setCounts] = useState<Counts | null>(null);
   const {
@@ -274,21 +191,6 @@ export default function Home(): ReactNode {
     description: 'ARIA label for the decorative SVG curve in the about section',
   });
 
-  // /invite et /appointment sont des redirections du domaine, localisées pour
-  // préserver la langue (fr = pas de préfixe).
-  const inviteUrl = localizedRedirectUrl(
-    siteUrl,
-    currentLocale,
-    defaultLocale,
-    '/invite',
-  );
-  const appointmentUrl = localizedRedirectUrl(
-    siteUrl,
-    currentLocale,
-    defaultLocale,
-    '/appointment',
-  );
-
   const landingUrl =
     currentLocale === defaultLocale
       ? `${siteUrl}/`
@@ -319,6 +221,8 @@ export default function Home(): ReactNode {
   return (
     <Layout title={layoutTitle} description={layoutDescription}>
       <Head>
+        {/* Pas de suffixe « | RaidProtect » sur la home. */}
+        <title>{layoutTitle}</title>
         <script type="application/ld+json">
           {softwareApplicationLdJson}
         </script>
@@ -424,7 +328,7 @@ export default function Home(): ReactNode {
                     message: 'Serveurs sécurisés',
                     description: 'About stat label: number of secured servers',
                   })}
-                  fallback="350k"
+                  fallback="380k"
                 />
                 <StatCounter
                   rawValue={counts?.captcha}
@@ -433,7 +337,7 @@ export default function Home(): ReactNode {
                     message: 'Captchas résolus',
                     description: 'About stat label: number of captchas solved',
                   })}
-                  fallback="—"
+                  fallback="14.5M"
                 />
                 <StatCounter
                   rawValue={counts?.antispam}
@@ -442,7 +346,7 @@ export default function Home(): ReactNode {
                     message: 'Spams bloqués',
                     description: 'About stat label: number of spam messages blocked',
                   })}
-                  fallback="—"
+                  fallback="1.4M"
                 />
                 <StatCounter
                   rawValue={counts?.users}
@@ -451,394 +355,14 @@ export default function Home(): ReactNode {
                     message: 'Utilisateurs protégés',
                     description: 'About stat label: number of protected users',
                   })}
-                  fallback="—"
+                  fallback="50M"
                 />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Features */}
-        <section
-          id="features"
-          className={clsx(
-            shared.landing,
-            shared.sectionSpacing,
-            styles.featuresSection,
-          )}>
-          <div className={shared.container}>
-            <div className={styles.featuresTitleWrap}>
-              <h2 className={styles.featuresTitle}>
-                <Translate
-                  id="landing.features.title"
-                  description="Features section title; {highlight} renders the gradient-highlighted word"
-                  values={{
-                    highlight: (
-                      <span className={shared.textGradient}>
-                        <Translate
-                          id="landing.features.title.highlight"
-                          description="Highlighted word inside the features section title">
-                          fonctionnalités
-                        </Translate>
-                      </span>
-                    ),
-                  }}>
-                  {'Nos {highlight}'}
-                </Translate>
-              </h2>
-              <p className={styles.featuresSubtitle}>
-                <Translate
-                  id="landing.features.subtitle"
-                  description="Features section subtitle/description">
-                  Découvrez ce qui fait de nous l'un des meilleurs bots pour
-                  protéger votre serveur Discord des utilisateurs malintentionnés.
-                </Translate>
-              </p>
-            </div>
-            <div className={styles.featuresGrid}>
-              <div className={styles.featuresDecoration} aria-hidden="true" />
-              {FEATURES.map((feature) => {
-                const title = translate({
-                  id: `landing.features.${feature.slug}.title`,
-                  message: feature.defaultTitle,
-                  description: `Feature card title: ${feature.slug}`,
-                });
-                const description = translate({
-                  id: `landing.features.${feature.slug}.description`,
-                  message: feature.defaultDescription,
-                  description: `Feature card description: ${feature.slug}`,
-                });
-                return (
-                  <Link
-                    key={feature.slug}
-                    to={feature.to}
-                    className={styles.featuresItem}>
-                    <div className={styles.featuresIconWrap}>
-                      <div className={styles.featuresIconBg}>
-                        <img
-                          src={feature.icon}
-                          alt={feature.iconAlt}
-                          loading="eager"
-                          className={styles.featuresIcon}
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <h3 className={styles.featuresItemTitle}>{title}</h3>
-                      <p className={styles.featuresItemDescription}>
-                        {description}
-                      </p>
-                    </div>
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* Pricing */}
-        <section
-          id="pricing"
-          className={clsx(shared.landing, styles.pricingSection)}>
-          <div className={shared.container}>
-            <div className={styles.pricingTitleWrap}>
-              <div className={styles.pricingTitleInner}>
-                <h2 className={styles.pricingTitle}>
-                  <Translate
-                    id="landing.pricing.title"
-                    description="Pricing section title; {highlight} renders the gradient-highlighted word"
-                    values={{
-                      highlight: (
-                        <span className={shared.textGradient}>
-                          <Translate
-                            id="landing.pricing.title.highlight"
-                            description="Highlighted word inside the pricing section title">
-                            d'avance
-                          </Translate>
-                        </span>
-                      ),
-                    }}>
-                    {'Garder une longueur {highlight}'}
-                  </Translate>
-                </h2>
-                <p className={styles.pricingDescription}>
-                  <Translate
-                    id="landing.pricing.description"
-                    description="Pricing section description below the title">
-                    Ajoutez RaidProtect et commencez à protéger votre serveur dès
-                    aujourd'hui.
-                  </Translate>
-                </p>
-              </div>
-              <div className={styles.pricingDecoration} aria-hidden="true" />
-            </div>
-            <div className={styles.pricingGrid}>
-              {/* Basic */}
-              <div className={styles.pricingItem}>
-                <div className={styles.preTitle}>
-                  <Translate
-                    id="landing.pricing.basic.preTitle"
-                    description="Pricing card pre-title for the Basic tier">
-                    Basic
-                  </Translate>
-                </div>
-                <div className={styles.priceWrap}>
-                  <h2 className={styles.price}>
-                    <Translate
-                      id="landing.pricing.basic.price"
-                      description="Pricing card price label for the Basic tier (free)">
-                      Gratuit
-                    </Translate>
-                  </h2>
-                </div>
-                <p className={styles.itemTagline}>
-                  <Translate
-                    id="landing.pricing.basic.tagline"
-                    description="Pricing card tagline for the Basic tier">
-                    La sécurité essentielle assurée pour toujours
-                  </Translate>
-                </p>
-                <div className={styles.featureList}>
-                  <FeatureItem>
-                    <Translate
-                      id="landing.pricing.basic.feature.1"
-                      description="Basic tier feature 1">
-                      Protections anti-spam
-                    </Translate>
-                  </FeatureItem>
-                  <FeatureItem>
-                    <Translate
-                      id="landing.pricing.basic.feature.2"
-                      description="Basic tier feature 2">
-                      Blocage automatique des raids
-                    </Translate>
-                  </FeatureItem>
-                  <FeatureItem>
-                    <Translate
-                      id="landing.pricing.basic.feature.3"
-                      description="Basic tier feature 3">
-                      Filtrage des bots malveillants
-                    </Translate>
-                  </FeatureItem>
-                  <FeatureItem>
-                    <Translate
-                      id="landing.pricing.basic.feature.4"
-                      description="Basic tier feature 4">
-                      Modération & administration
-                    </Translate>
-                  </FeatureItem>
-                  <FeatureItem>
-                    <strong>
-                      <Translate
-                        id="landing.pricing.basic.feature.5"
-                        description="Basic tier feature 5 (emphasis)">
-                        Et bien plus encore...
-                      </Translate>
-                    </strong>
-                  </FeatureItem>
-                </div>
-                <div className={styles.buttonList}>
-                  <a
-                    href={inviteUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={shared.btnSecondary}>
-                    <Translate
-                      id="landing.pricing.basic.button"
-                      description="Basic tier CTA button: invite the bot">
-                      Ajouter à Discord
-                    </Translate>
-                  </a>
-                </div>
-              </div>
-
-              {/* Founder */}
-              <div className={clsx(styles.pricingItem, styles.pricingItemCenter)}>
-                <div className={clsx(styles.preTitle, styles.preTitleFounder)}>
-                  <Translate
-                    id="landing.pricing.founder.preTitle"
-                    description="Pricing card pre-title for the Founder tier">
-                    Founder
-                  </Translate>
-                </div>
-                <div className={styles.priceWrap}>
-                  <h2 className={styles.price}>
-                    <Translate
-                      id="landing.pricing.founder.price.label"
-                      description="Founder tier price label (subscription)">
-                      Abonnement
-                    </Translate>
-                  </h2>
-                  <h2 className={clsx(styles.price, styles.priceCenter)}>
-                    <Translate
-                      id="landing.pricing.founder.price.amount"
-                      description="Founder tier price amount; stays the same across locales">
-                      2,99 $
-                    </Translate>
-                  </h2>
-                </div>
-                <p className={styles.itemTagline}>
-                  <Translate
-                    id="landing.pricing.founder.tagline"
-                    description="Pricing card tagline for the Founder tier">
-                    Offre de lancement réservée aux premiers abonnés
-                  </Translate>
-                </p>
-                <div className={styles.featureList}>
-                  <FeatureItem>
-                    <Translate
-                      id="landing.pricing.founder.feature.1"
-                      description="Founder tier feature 1">
-                      Profil du bot personnalisable
-                    </Translate>
-                  </FeatureItem>
-                  <FeatureItem>
-                    <Translate
-                      id="landing.pricing.founder.feature.2"
-                      description="Founder tier feature 2">
-                      Noms de sanctions custom
-                    </Translate>
-                  </FeatureItem>
-                  <FeatureItem>
-                    <Translate
-                      id="landing.pricing.founder.feature.3"
-                      description="Founder tier feature 3">
-                      Accès avancé à l'Auth Manager
-                    </Translate>
-                  </FeatureItem>
-                  <FeatureItem>
-                    <Translate
-                      id="landing.pricing.founder.feature.4"
-                      description="Founder tier feature 4">
-                      Accès étendu au Display Public
-                    </Translate>
-                  </FeatureItem>
-                  <FeatureItem>
-                    <Translate
-                      id="landing.pricing.founder.feature.5"
-                      description="Founder tier feature 5">
-                      Accès à la Bêta publique
-                    </Translate>
-                  </FeatureItem>
-                  <FeatureItem>
-                    <Translate
-                      id="landing.pricing.founder.feature.6"
-                      description="Founder tier feature 6">
-                      Rôle exclusif sur notre serveur
-                    </Translate>
-                  </FeatureItem>
-                </div>
-                <div className={styles.buttonList}>
-                  <a
-                    href="https://raidprotect.bot/founder"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={clsx(shared.btnPrimary, shared.btnPrimaryFounder)}>
-                    <Translate
-                      id="landing.pricing.founder.button"
-                      description="Founder tier CTA button: subscribe">
-                      S'abonner via Discord
-                    </Translate>
-                  </a>
-                </div>
-              </div>
-
-              {/* Business */}
-              <div className={styles.pricingItem}>
-                <div className={clsx(styles.preTitle, styles.preTitleEnterprise)}>
-                  <Translate
-                    id="landing.pricing.business.preTitle"
-                    description="Pricing card pre-title for the Business tier">
-                    Business
-                  </Translate>
-                </div>
-                <div className={styles.priceWrap}>
-                  <h2 className={styles.price}>
-                    <Translate
-                      id="landing.pricing.business.price"
-                      description="Pricing card price label for the Business tier (on request)">
-                      Sur demande
-                    </Translate>
-                  </h2>
-                </div>
-                <p className={styles.itemTagline}>
-                  <Translate
-                    id="landing.pricing.business.tagline"
-                    description="Pricing card tagline for the Business tier">
-                    Pour les projets aux exigences de sécurité élevées
-                  </Translate>
-                </p>
-                <div className={styles.featureList}>
-                  <FeatureItem>
-                    <Translate
-                      id="landing.pricing.business.feature.1"
-                      description="Business tier feature 1">
-                      Les fonctionnalités Founder
-                    </Translate>
-                  </FeatureItem>
-                  <FeatureItem>
-                    <Translate
-                      id="landing.pricing.business.feature.2"
-                      description="Business tier feature 2">
-                      Instance dédiée et isolée
-                    </Translate>
-                  </FeatureItem>
-                  <FeatureItem>
-                    <Translate
-                      id="landing.pricing.business.feature.3"
-                      description="Business tier feature 3">
-                      Audit initial de votre serveur
-                    </Translate>
-                  </FeatureItem>
-                  <FeatureItem>
-                    <Translate
-                      id="landing.pricing.business.feature.4"
-                      description="Business tier feature 4">
-                      Intégration avec vos outils
-                    </Translate>
-                  </FeatureItem>
-                  <FeatureItem>
-                    <Translate
-                      id="landing.pricing.business.feature.5"
-                      description="Business tier feature 5">
-                      Fonctionnalités sur mesure
-                    </Translate>
-                  </FeatureItem>
-                  <FeatureItem>
-                    <Translate
-                      id="landing.pricing.business.feature.6"
-                      description="Business tier feature 6">
-                      Suivi régulier avec un expert
-                    </Translate>
-                  </FeatureItem>
-                  <FeatureItem>
-                    <Translate
-                      id="landing.pricing.business.feature.7"
-                      description="Business tier feature 7">
-                      Support prioritaire
-                    </Translate>
-                  </FeatureItem>
-                </div>
-                <div className={styles.buttonList}>
-                  <a
-                    href={appointmentUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={clsx(
-                      shared.btnSecondary,
-                      shared.btnSecondaryEnterprise,
-                    )}>
-                    <Translate
-                      id="landing.pricing.business.button"
-                      description="Business tier CTA button: book a meeting">
-                      Prendre rendez-vous
-                    </Translate>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <Features />
       </main>
     </Layout>
   );

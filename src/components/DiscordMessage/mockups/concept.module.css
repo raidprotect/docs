@@ -516,6 +516,12 @@ html[data-theme="light"] .caret {
   margin-top: auto;
 }
 
+/* Zone d'accueil des messages, à hauteur fixe : le message d'Arthur puis la
+   ligne de vérification s'y affichent sans jamais pousser la barre de saisie. */
+.captchaFeed {
+  min-height: 104px;
+}
+
 .systemLineDanger {
   color: #f0b232;
 }
@@ -845,6 +851,62 @@ html[data-theme="light"] .dmSpinner {
   display: flex;
   gap: 12px;
   min-height: 390px;
+}
+
+/* Vue de modération : la hauteur est réservée pour l'état ModView ouverte,
+   l'animation ne doit jamais pousser le contenu de la page. */
+.modviewWrap {
+  max-width: 560px;
+  min-height: 640px;
+}
+
+.modviewScene {
+  position: relative;
+  display: flex;
+  min-height: 640px;
+}
+
+/* Mode statique (landing) : la ModView est affichée seule, sans le message ni
+   le parcours au-dessus. La scène épouse alors la hauteur de la carte. */
+.modviewStatic,
+.modviewStatic .modviewScene {
+  min-height: 0;
+}
+
+.ephemeral {
+  margin-top: 6px;
+  animation: chatIn 0.2s ease;
+}
+
+/* La carte ModView s'aligne à gauche, sur la ligne de vue des messages,
+   au lieu d'être centrée dans la scène. */
+.ephemeralCard > * {
+  margin: 0 auto 0 0;
+}
+
+.ephemeralNote {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 4px;
+  padding-left: 2px;
+  font-size: 0.75rem;
+  color: #949ba4;
+}
+
+.ephemeralIcon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.ephemeralSep {
+  opacity: 0.6;
+}
+
+.ephemeralDismiss {
+  color: #00a8fc;
+  cursor: pointer;
 }
 
 .channelBar {
