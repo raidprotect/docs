@@ -1,5 +1,6 @@
 ---
 title: Installation
+description: "Installez et configurez RaidProtect sur votre serveur Discord en quelques minutes, grâce à la commande /settings et au menu de configuration."
 ---
 
 RaidProtect simplifie la gestion de votre serveur grâce à deux outils puissants ; la commande [`/setup`](#install) pour une configuration guidée étape par étape et la commande [`/settings`](#settings) pour modifier vos paramètres à tout moment via un menu centralisé. Ce guide d’installation vous explique comment les utiliser efficacement.

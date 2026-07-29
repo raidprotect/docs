@@ -1,5 +1,6 @@
 ---
 title: Anti-raid
+description: "Le mode raid de RaidProtect bloque instantanément les arrivées massives sur votre serveur Discord, automatiquement dès qu'une vague suspecte est détectée."
 ---
 
 import { RaidModeSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';

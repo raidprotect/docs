@@ -1,5 +1,6 @@
 ---
 title: HoneyPot
+description: "RaidProtect's HoneyPot is an anti-spam trap channel that automatically catches and sanctions hacked accounts and spam bots on your Discord server."
 ---
 
 import HoneypotMockup from '@site/src/components/DiscordMessage/mockups/honeypot';

@@ -1,5 +1,6 @@
 ---
 title: Einen Verstoß an Discord melden
+description: "Sind Sie auf einen bösartigen Nutzer auf Discord gestoßen? Erfahren Sie, wie Sie ihn bei Discord melden, damit er an der Quelle geahndet wird."
 ---
 Haben Sie einen böswilligen Benutzer auf Discord angetroffen? Melden Sie ihn, damit er bestraft werden kann.
 

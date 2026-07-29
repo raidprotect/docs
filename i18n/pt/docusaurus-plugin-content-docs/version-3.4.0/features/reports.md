@@ -1,5 +1,6 @@
 ---
 title: Denúncias
+description: "O sistema de denúncias do RaidProtect permite que a sua comunidade sinalize conteúdos e membros suspeitos, com uma gestão clara para os moderadores."
 ---
 
 import { ReportsSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';

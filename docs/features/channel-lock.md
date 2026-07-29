@@ -1,5 +1,6 @@
 ---
 title: Verrouillage de salons
+description: "La commande /lock de RaidProtect verrouille un salon en un instant pour empêcher l'envoi de messages, temporairement ou jusqu'à déverrouillage."
 ---
 
 import ChannelLockMockup from '@site/src/components/DiscordMessage/mockups/channel-lock';

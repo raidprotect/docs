@@ -1,5 +1,6 @@
 ---
 title: Captcha (Vérification)
+description: "Le captcha de RaidProtect bloque les selfbots et les raids : chaque nouveau membre doit prouver qu'il est humain avant d'accéder à votre serveur Discord."
 ---
 
 import { CaptchaSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';

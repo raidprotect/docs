@@ -1,5 +1,6 @@
 ---
 title: Idioma
+description: "Mude o idioma do RaidProtect para se adaptar à sua comunidade: o bot está disponível em francês, inglês, alemão, espanhol e português."
 ---
 
 import { LanguageSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';

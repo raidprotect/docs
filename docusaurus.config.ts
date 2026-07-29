@@ -173,9 +173,12 @@ export default async function createConfigAsync() {
                         changefreq: null,
                         async createSitemapItems(params) {
                             const items = await params.defaultCreateSitemapItems(params)
+                            const isHome = (url: string) => /^https:\/\/raidprotect\.bot\/(en|de|es|pt)?\/?$/.test(url)
                             return items.map(i => ({
                                 ...i,
-                                priority: urlPriorities[i.url.replace(new RegExp('https://raidprotect.bot/(en/|de/|es/|pt/)?docs/'), '')] ?? 0.5
+                                priority: isHome(i.url)
+                                    ? 1.0
+                                    : urlPriorities[i.url.replace(new RegExp('https://raidprotect.bot/(en/|de/|es/|pt/)?docs/'), '')] ?? 0.5
                             }))
                         },
                     },
@@ -228,7 +231,9 @@ export default async function createConfigAsync() {
         themeConfig: {
             image: 'https://cdn.prod.website-files.com/677fbd67c3c9318f7fb56659/678fefffd131bc2bbafd4468_RP-embed.webp',
             metadata: [
-                { name: 'theme-color', content: '#D35F5F' }
+                { name: 'theme-color', content: '#D35F5F' },
+                { property: 'og:site_name', content: 'RaidProtect' },
+                { property: 'og:type', content: 'website' },
             ],
             docs: {
                 versionPersistence: 'localStorage',

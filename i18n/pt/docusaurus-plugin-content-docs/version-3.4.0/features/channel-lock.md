@@ -1,5 +1,6 @@
 ---
 title: Bloqueio de Canal
+description: "O comando /lock do RaidProtect bloqueia um canal num instante para impedir o envio de mensagens, temporariamente ou até você desbloquear."
 ---
 
 import ChannelLockMockup from '@site/src/components/DiscordMessage/mockups/channel-lock';

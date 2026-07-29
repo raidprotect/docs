@@ -1,5 +1,6 @@
 ---
 title: Reportes
+description: "El sistema de reportes de RaidProtect permite a tu comunidad señalar contenidos y miembros sospechosos, con una gestión clara para tus moderadores."
 ---
 
 import { ReportsSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';

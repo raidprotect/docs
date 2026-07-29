@@ -1,5 +1,6 @@
 ---
 title: Problemas frecuentes
+description: "¿Un problema con RaidProtect? Encuentra aquí las soluciones a los fallos más comunes para poner tu bot a punto de nuevo."
 ---
 
 Tienes un problema con RaidProtect? La solucion probablemente esta aqui.

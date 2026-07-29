@@ -1,5 +1,6 @@
 ---
 title: Anomalias
+description: "Um problema com o RaidProtect? Encontre aqui as soluções para os problemas mais comuns e deixe o seu bot de volta aos trilhos."
 ---
 
 Tem um problema com o RaidProtect? A solução provavelmente encontra-se aqui.

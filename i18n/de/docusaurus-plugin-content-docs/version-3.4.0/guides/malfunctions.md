@@ -1,5 +1,6 @@
 ---
 title: Fehlfunktionen
+description: "Ein Problem mit RaidProtect? Hier finden Sie Lösungen für die häufigsten Störungen, um Ihren Bot wieder flottzumachen."
 ---
 
 Ein Problem mit RaidProtect? Die Lösung finden Sie wahrscheinlich hier.

@@ -1,5 +1,6 @@
 ---
 title: Rol de etiqueta
+description: "El Rol de etiqueta de RaidProtect asigna automáticamente un rol a los miembros que lucen la etiqueta de tu servidor de Discord y recompensa su compromiso."
 ---
 
 import TagRoleMockup from '@site/src/components/DiscordMessage/mockups/tag-role';

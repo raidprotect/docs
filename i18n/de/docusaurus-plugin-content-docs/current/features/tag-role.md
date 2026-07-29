@@ -1,5 +1,6 @@
 ---
 title: Tag-Rolle
+description: "Die Tag-Rolle von RaidProtect vergibt automatisch eine Rolle an Mitglieder, die das Tag Ihres Discord-Servers tragen, und belohnt ihr Engagement."
 ---
 
 import TagRoleMockup from '@site/src/components/DiscordMessage/mockups/tag-role';

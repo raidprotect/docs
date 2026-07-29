@@ -1,5 +1,6 @@
 ---
 title: Reports
+description: "RaidProtect's report system lets your community flag suspicious content and members, with a clear handling flow for your moderators."
 ---
 
 import { ReportsSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';

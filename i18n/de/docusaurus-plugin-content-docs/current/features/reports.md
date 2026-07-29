@@ -1,5 +1,6 @@
 ---
 title: Meldungen
+description: "Das Meldesystem von RaidProtect lässt Ihre Community verdächtige Inhalte und Mitglieder melden, mit einem klaren Ablauf für Ihre Moderatoren."
 ---
 
 import { ReportsSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';

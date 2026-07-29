@@ -1,5 +1,6 @@
 ---
 title: HoneyPot
+description: "Le HoneyPot de RaidProtect est un salon-piège antispam qui repère et sanctionne automatiquement les comptes piratés et robots de spam sur votre serveur Discord."
 ---
 
 import HoneypotMockup from '@site/src/components/DiscordMessage/mockups/honeypot';

@@ -1,5 +1,6 @@
 ---
 title: Report a Violation to Discord
+description: "Ran into a malicious user on Discord? Learn how to report them to Discord so they're actioned at the source."
 ---
 Have you encountered a malicious user on Discord? Report them so they can be sanctioned.
 

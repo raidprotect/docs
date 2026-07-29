@@ -1,5 +1,6 @@
 ---
 title: Reportar una infraccion a Discord
+description: "¿Te has topado con un usuario malintencionado en Discord? Aprende a denunciarlo a Discord para que sea sancionado en la fuente."
 ---
 Has encontrado un usuario malicioso en Discord? Reportalo para que pueda ser sancionado.
 

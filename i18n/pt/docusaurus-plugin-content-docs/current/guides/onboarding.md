@@ -1,5 +1,6 @@
 ---
 title: Processo de Integração e Captcha
+description: "Configure as boas-vindas do Discord para o captcha do RaidProtect funcionar: torne o canal de verificação visível para os novos membros."
 ---
 
 Se o canal `#verification` não estiver visível por defeito para os novos membros, isto pode impedir o bom funcionamento do sistema de Captcha. Eis como corrigir este problema passo a passo.

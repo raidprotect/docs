@@ -1,5 +1,6 @@
 ---
 title: Imagens de golpe
+description: "O ScamLens, o antigolpe do RaidProtect, detecta e remove automaticamente imagens de golpe no seu servidor Discord. Ativo por padrão, sem configuração."
 ---
 
 import { AntiSpamSanctionsSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';

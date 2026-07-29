@@ -1,5 +1,6 @@
 ---
 title: Community aktivieren
+description: "Aktivieren Sie die Discord-Community Ihres Servers, um die erweiterten Sicherheitseinstellungen von RaidProtect freizuschalten: Captcha, Raid-Modus und mehr."
 ---
 
 Die Aktivierung der Community-Funktion macht mehrere erweiterte Sicherheitseinstellungen verfügbar, die für das ordnungsgemäße Funktionieren bestimmter RaidProtect-Funktionen wie **DM Lock** oder **Raid-Modus** unerlässlich sind.

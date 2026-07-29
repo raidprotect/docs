@@ -1,5 +1,6 @@
 ---
 title: Signalements
+description: "Le système de signalement de RaidProtect permet à votre communauté de remonter les contenus et membres suspects, avec une gestion claire pour vos modérateurs."
 ---
 
 import { ReportsSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';

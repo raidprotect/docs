@@ -1,5 +1,6 @@
 ---
 title: Imágenes de estafa
+description: "ScamLens, el antiestafa de RaidProtect, detecta y elimina automáticamente las imágenes de estafa en tu servidor de Discord. Activo por defecto, sin configuración."
 ---
 
 import { AntiSpamSanctionsSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';

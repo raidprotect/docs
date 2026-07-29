@@ -1,5 +1,6 @@
 ---
 title: Channel Lock
+description: "RaidProtect's /lock command locks a channel in an instant to stop new messages, temporarily or until you unlock it."
 ---
 
 import ChannelLockMockup from '@site/src/components/DiscordMessage/mockups/channel-lock';

@@ -1,5 +1,6 @@
 ---
 title: Using a Prefix
+description: "Enable RaidProtect's prefix commands alongside Slash commands, and customize the prefix used on your Discord server."
 ---
 
 import { PrefixSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';

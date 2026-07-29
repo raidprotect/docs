@@ -1,5 +1,6 @@
 ---
 title: Transparenz
+description: "Die Transparenz von RaidProtect zeigt Ihren Mitgliedern, wie der Server moderiert wird: regelmäßige Zusammenfassungen, ein öffentliches Modlog und der Befehl /transparency."
 ---
 
 import TransparencyMockup from '@site/src/components/DiscordMessage/mockups/transparency';

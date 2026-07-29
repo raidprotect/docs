@@ -1,5 +1,6 @@
 ---
 title: Denunciar uma Violação ao Discord
+description: "Encontrou um usuário malicioso no Discord? Saiba como denunciá-lo ao Discord para que seja punido na origem."
 ---
 Encontrou um utilizador malicioso no Discord? Denuncie-o para que possa ser sancionado.
 

@@ -1,5 +1,6 @@
 ---
 title: Sicherheitsaudit
+description: "Der Befehl /audit von RaidProtect prüft die Sicherheit Ihres Discord-Servers, findet Konfigurationslücken und behebt sie auf Wunsch mit einem Klick."
 ---
 
 import AuditMockup from '@site/src/components/DiscordMessage/mockups/audit';

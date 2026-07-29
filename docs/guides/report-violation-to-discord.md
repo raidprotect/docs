@@ -1,5 +1,6 @@
 ---
 title: Signaler une infraction à Discord
+description: "Vous avez croisé un utilisateur malintentionné sur Discord ? Apprenez à le signaler à Discord pour qu'il soit sanctionné à la source."
 ---
 Vous avez rencontré un utilisateur malintentionné sur Discord ? Signalez-le afin que ce dernier soit sanctionné.
 

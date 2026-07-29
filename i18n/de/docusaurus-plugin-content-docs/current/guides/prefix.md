@@ -1,5 +1,6 @@
 ---
 title: Verwendung eines Präfixes
+description: "Aktivieren Sie die Präfix-Befehle von RaidProtect zusätzlich zu den Slash-Befehlen und passen Sie das Präfix auf Ihrem Discord-Server an."
 ---
 
 import { PrefixSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';

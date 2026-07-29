@@ -1,5 +1,6 @@
 ---
 title: Processus d’accueil et Captcha
+description: "Configurez le processus d'accueil Discord pour que le captcha de RaidProtect fonctionne : rendez le salon de vérification visible aux nouveaux membres."
 ---
 
 Si le salon `#vérification` n’est pas visible par défaut pour les nouveaux membres, cela peut empêcher le bon fonctionnement du système Captcha. Voici comment corriger ce problème étape par étape.

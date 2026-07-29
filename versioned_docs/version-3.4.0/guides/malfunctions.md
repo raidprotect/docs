@@ -1,5 +1,6 @@
 ---
 title: Dysfonctionnements
+description: "Un problème avec RaidProtect ? Retrouvez ici les solutions aux dysfonctionnements les plus courants pour remettre votre bot d'aplomb."
 ---
 
 Un problème avec RaidProtect ? La solution se trouve sûrement ici.

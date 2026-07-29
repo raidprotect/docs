@@ -1,5 +1,6 @@
 ---
 title: Activar la comunidad
+description: "Activa la comunidad de Discord de tu servidor para desbloquear los ajustes de seguridad avanzados que RaidProtect necesita: captcha, modo raid y más."
 ---
 
 Activar la funcion de comunidad hace que varias configuraciones de seguridad avanzadas esten disponibles, las cuales son esenciales para el correcto funcionamiento de ciertas funciones de RaidProtect como **Bloqueo de MD** o **Modo raid**.

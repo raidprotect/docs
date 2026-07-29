@@ -1,5 +1,6 @@
 ---
 title: Scam images
+description: "ScamLens, RaidProtect's anti-scam, automatically detects and removes scam images on your Discord server. Active by default, no setup required."
 ---
 
 import { AntiSpamSanctionsSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';

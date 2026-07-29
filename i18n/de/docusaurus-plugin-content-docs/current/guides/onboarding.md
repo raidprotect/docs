@@ -1,5 +1,6 @@
 ---
 title: Onboarding-Prozess und Captcha
+description: "Richten Sie das Discord-Onboarding ein, damit das Captcha von RaidProtect funktioniert: Machen Sie den Verifizierungskanal für neue Mitglieder sichtbar."
 ---
 
 Wenn der Kanal `#verification` für neue Mitglieder standardmäßig nicht sichtbar ist, kann dies das ordnungsgemäße Funktionieren des Captcha-Systems verhindern. Hier erfahren Sie Schritt für Schritt, wie Sie dieses Problem beheben können.

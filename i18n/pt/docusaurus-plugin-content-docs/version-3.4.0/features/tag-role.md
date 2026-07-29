@@ -1,5 +1,6 @@
 ---
 title: Tag de Cargo
+description: "O Tag de Cargo do RaidProtect atribui automaticamente um cargo aos membros que exibem a tag do seu servidor Discord e recompensa o engajamento deles."
 ---
 
 import TagRoleMockup from '@site/src/components/DiscordMessage/mockups/tag-role';

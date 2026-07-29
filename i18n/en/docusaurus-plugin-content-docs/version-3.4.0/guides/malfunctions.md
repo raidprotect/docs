@@ -1,5 +1,6 @@
 ---
 title: Malfunctions
+description: "Having an issue with RaidProtect? Find fixes for the most common malfunctions here to get your bot back on track."
 ---
 
 Having a problem with RaidProtect? The solution is probably here.

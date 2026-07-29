@@ -1,5 +1,6 @@
 ---
 title: Enable Community
+description: "Enable your server's Discord community to unlock the advanced safety settings RaidProtect relies on: captcha, raid mode and more."
 ---
 
 Enabling the community feature makes several advanced security settings available that are essential for the proper functioning of certain RaidProtect features such as **DM Lock** or **Raid Mode**.

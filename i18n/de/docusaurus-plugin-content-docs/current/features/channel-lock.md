@@ -1,5 +1,6 @@
 ---
 title: Kanalsperre
+description: "Der Befehl /lock von RaidProtect sperrt einen Kanal im Nu, um neue Nachrichten zu verhindern, vorübergehend oder bis zur Entsperrung."
 ---
 
 import ChannelLockMockup from '@site/src/components/DiscordMessage/mockups/channel-lock';

@@ -1,5 +1,6 @@
 ---
 title: Tag Role
+description: "RaidProtect's Tag Role automatically grants a role to members who display your Discord server's tag, rewarding their engagement."
 ---
 
 import TagRoleMockup from '@site/src/components/DiscordMessage/mockups/tag-role';
