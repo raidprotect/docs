@@ -403,9 +403,10 @@ body:not(.editor-page) [class*="expandButton"] {
 }
 
 @media screen and (min-width: 997px) {
-  /* Contenu de la navbar dans un container centré, calé sur celui du footer mais
-     légèrement plus large (1240 vs 1140px) pour écarter un peu le logo et les
-     boutons des bords du container du footer. */
+  /* Contenu de la navbar dans un container centré calé sur la colonne de
+     contenu (même max-width 1360px et même padding 30px que le container des
+     pages) : le logo et les boutons s'alignent ainsi verticalement avec le
+     contenu (titres de sections, cartes) à 30px du bord du container. */
   .navbar {
     padding-left: 0;
     padding-right: 0;
@@ -413,18 +414,18 @@ body:not(.editor-page) [class*="expandButton"] {
 
   .navbar__inner {
     position: relative;
-    max-width: 1240px;
+    max-width: 1360px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: var(--ifm-spacing-horizontal);
-    padding-right: var(--ifm-spacing-horizontal);
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
-  /* left:1rem est désormais relatif à .navbar__inner (positionné), donc le logo
-     s'aligne sur le bord gauche du container, comme le logo du footer. */
+  /* left relatif à .navbar__inner (positionné) et calé sur le padding du
+     container de contenu : le logo s'aligne sur la colonne de contenu. */
   .navbar__brand {
     position: absolute;
-    left: var(--ifm-spacing-horizontal);
+    left: 30px;
     top: 50%;
     transform: translateY(-50%);
   }
@@ -434,6 +435,20 @@ body:not(.editor-page) [class*="expandButton"] {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  /* Docs uniquement : la navbar épouse la pleine largeur de la mise en page doc
+     (sidebar collée à gauche, TOC à droite) au lieu du container 1240px centré.
+     Le logo et les boutons se calent ainsi près des bords, alignés sur la
+     colonne de la sidebar et sur la TOC. Le <html> porte .docs-wrapper. */
+  .docs-wrapper .navbar__inner {
+    max-width: none;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .docs-wrapper .navbar__brand {
+    left: 24px;
   }
 
   .footer__grid {
