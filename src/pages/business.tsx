@@ -180,9 +180,9 @@ const MODERATORS: Moderator[] = [
   {avatar: '/img/avatar/derrios.webp', name: 'Arthur', handle: 'derrios', badges: ['mod', 'hse', 'botdev', 'buggold'], created: '2016-12', since: ''},
   {avatar: '/img/business/mods/grifgrif.webp', name: 'Varyn', handle: 'grifgrif', badges: ['mod', 'hse', 'botdev'], created: '2018-01', since: ''},
   {avatar: '/img/avatar/ichii.webp', name: 'Ethan', handle: 'ichiidev', badges: ['mod', 'hse', 'botdev'], created: '2019-01', since: ''},
-  {avatar: '/img/business/mods/chancesphere.webp', name: 'Chancesphere', handle: 'chancesphere574', badges: ['mod'], created: '2016-09', since: ''},
+  {avatar: '/img/business/mods/chancesphere.webp', name: 'ChanceSphere', handle: 'chancesphere574', badges: ['mod'], created: '2016-09', since: ''},
   {avatar: '/img/business/mods/mapidae.webp', name: 'Mattéo', handle: 'mapidae', badges: ['mod'], created: '2018-05', since: ''},
-  {avatar: '/img/business/mods/syfor.webp', name: 'Syfor', handle: 'syfor', badges: ['mod', 'buggold'], created: '2018-01', since: ''},
+  {avatar: '/img/business/mods/syfor.webp', name: 'Pierre', handle: 'syfor', badges: ['mod', 'buggold'], created: '2018-01', since: ''},
 ];
 
 // Formate « YYYY-MM » selon la locale (« déc. 2016 », « Dec 2016 », « Dez. 2016 »…).
