@@ -1,0 +1,52 @@
+/* Embed d'un mockup isolé (voir embed.tsx). Le fond sombre vient de .frame ;
+   on ne fait que centrer le mockup et gérer la variante claire. */
+.frameEmbed {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 20px;
+}
+
+/* Variante claire (?theme=light) : on neutralise le fond sombre de .frame. */
+html[data-theme='light'] .frameEmbed {
+  background-color: #ffffff;
+}
+
+.stage {
+  width: 100%;
+  max-width: 640px;
+}
+
+/* Les mockups réservent leur hauteur via une marge auto : on la retire ici
+   pour qu'ils soient bien centrés dans la frame. */
+.stage > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Galerie de repli quand aucun ?m= valide n'est fourni. */
+.gallery {
+  color: #dbdee1;
+  font-family: var(--ifm-font-family-base);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+html[data-theme='light'] .gallery {
+  color: #313338;
+}
+
+.galleryHint code {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+
+.galleryList {
+  margin: 12px 0 0;
+  padding-left: 20px;
+}
+
+.galleryList a {
+  color: #d35f5f;
+}
