@@ -522,6 +522,14 @@ html[data-theme="light"] .caret {
   min-height: 104px;
 }
 
+/* Barre de saisie à hauteur fixe : au tout début de la saisie, l'input est
+   vide l'espace d'une frame (40 px) avant de retrouver sa hauteur pleine
+   (47 px). Sans hauteur figée, le mockup centré dans sa ligne tremblait de
+   quelques pixels à chaque cycle. */
+.captchaWrap .chatInput {
+  height: 47px;
+}
+
 .systemLineDanger {
   color: #f0b232;
 }
