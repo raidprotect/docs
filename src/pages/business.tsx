@@ -16,7 +16,7 @@ const BRANDS: Brand[] = [
   {name: 'Game One', logo: '/img/business/logos/gameone.svg', url: 'https://www.gameone.fr'},
   {name: 'CYRILmp4', logo: '/img/business/logos/cyrilmp4.svg', url: 'https://www.youtube.com/@CYRILmp4'},
   {name: 'HugoDécrypte', logo: '/img/business/logos/hugodecrypte.svg', url: 'https://hugodecrypte.com'},
-  {name: 'Century Games', logo: '/img/business/logos/centurygames.svg', url: 'https://www.centurygames.com'},
+  // Masqué pour l'instant : {name: 'Century Games', logo: '/img/business/logos/centurygames.svg', url: 'https://www.centurygames.com'},
 ];
 
 function BrandLogo({brand}: {brand: Brand}): ReactNode {
