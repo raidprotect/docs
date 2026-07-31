@@ -2739,5 +2739,241 @@
   "landing.businessBubble.close": {
     "message": "Fechar",
     "description": "Aria-label for closing the business bubble"
+  },
+  "business.cta.call": {
+    "message": "Agendar uma chamada",
+    "description": "Business page (/business)"
+  },
+  "business.meta.description": {
+    "message": "RaidProtect Business: auditoria com um especialista, instância dedicada e isolada, proteções à medida e desenvolvimento personalizado para organizações exigentes.",
+    "description": "Business page (/business)"
+  },
+  "business.hero.title": {
+    "message": "Muito mais que um bot:",
+    "description": "Business page (/business)"
+  },
+  "business.hero.titleAccent": {
+    "message": "o seu parceiro no Discord",
+    "description": "Business page (/business)"
+  },
+  "business.hero.subtitle": {
+    "message": "A proteção e a moderação do seu servidor Discord, geridas de ponta a ponta pelos nossos especialistas. Uma oferta à medida, adaptada à sua organização.",
+    "description": "Business page (/business)"
+  },
+  "business.hero.cta.offer": {
+    "message": "Ver a oferta",
+    "description": "Business page (/business)"
+  },
+  "business.trust.label": {
+    "message": "Eles confiam em nós",
+    "description": "Business page (/business)"
+  },
+  "business.who.eyebrow": {
+    "message": "Para quem?",
+    "description": "Business page (/business)"
+  },
+  "business.who.title": {
+    "message": "Quando o padrão já não basta",
+    "description": "Business page (/business)"
+  },
+  "business.who.sub": {
+    "message": "Grandes comunidades, marcas, media, criadores: nesta escala, uma falha de segurança ou um raid compromete a sua imagem. Precisa de mais do que uma subscrição: um interlocutor, garantias e uma proteção gerida por humanos.",
+    "description": "Business page (/business)"
+  },
+  "business.offer.eyebrow": {
+    "message": "A oferta Business",
+    "description": "Business page (/business)"
+  },
+  "business.offer.title": {
+    "message": "Proteção e moderação, à medida",
+    "description": "Business page (/business)"
+  },
+  "business.offer.sub": {
+    "message": "Tudo é opcional: compõe a sua oferta à la carte, apenas com o que precisa.",
+    "description": "Business page (/business)"
+  },
+  "business.offer.audit.title": {
+    "message": "Auditoria de segurança com um especialista",
+    "description": "Business page (/business)"
+  },
+  "business.offer.audit.desc": {
+    "message": "Um especialista analisa o seu servidor e define consigo a estratégia de proteção adequada.",
+    "description": "Business page (/business)"
+  },
+  "business.offer.instance.title": {
+    "message": "Instância dedicada e isolada",
+    "description": "Business page (/business)"
+  },
+  "business.offer.instance.desc": {
+    "message": "A sua própria instância do RaidProtect, isolada e à sua imagem, para desempenho e segurança.",
+    "description": "Business page (/business)"
+  },
+  "business.offer.custom.title": {
+    "message": "Proteções à medida",
+    "description": "Business page (/business)"
+  },
+  "business.offer.custom.desc": {
+    "message": "Módulos e regras desenvolvidos a pedido, consoante as ameaças específicas do seu servidor.",
+    "description": "Business page (/business)"
+  },
+  "business.offer.bot.title": {
+    "message": "Bot totalmente personalizado",
+    "description": "Business page (/business)"
+  },
+  "business.offer.bot.desc": {
+    "message": "Os nossos programadores concebem as funcionalidades específicas para as suas necessidades.",
+    "description": "Business page (/business)"
+  },
+  "business.offer.followup.title": {
+    "message": "Acompanhamento humano",
+    "description": "Business page (/business)"
+  },
+  "business.offer.followup.desc": {
+    "message": "Pontos de situação regulares com um especialista, sempre que necessário, para ajustar a sua proteção.",
+    "description": "Business page (/business)"
+  },
+  "business.offer.mods.title": {
+    "message": "Moderadores profissionais",
+    "description": "Business page (/business)"
+  },
+  "business.offer.mods.desc": {
+    "message": "Moderadores formados e certificados pela Discord, como reforço ou assumindo por completo a sua moderação.",
+    "description": "Business page (/business)"
+  },
+  "business.mods.eyebrow": {
+    "message": "Moderação humana",
+    "description": "Business page (/business)"
+  },
+  "business.mods.title": {
+    "message": "Uma equipa certificada pela Discord",
+    "description": "Business page (/business)"
+  },
+  "business.mods.sub": {
+    "message": "Moderadores experientes e certificados, como reforço pontual ou assumindo por completo o seu servidor.",
+    "description": "Business page (/business)"
+  },
+  "business.mods.created": {
+    "message": "Conta criada",
+    "description": "Business page (/business)"
+  },
+  "business.mods.since": {
+    "message": "Modera desde",
+    "description": "Business page (/business)"
+  },
+  "business.badge.mod": {
+    "message": "Programa de moderação da Discord",
+    "description": "Business page (/business)"
+  },
+  "business.badge.hypesquad": {
+    "message": "HypeSquad",
+    "description": "Business page (/business)"
+  },
+  "business.badge.nitro": {
+    "message": "Nitro",
+    "description": "Business page (/business)"
+  },
+  "business.badge.boost": {
+    "message": "Impulsionador de servidor",
+    "description": "Business page (/business)"
+  },
+  "business.badge.activedev": {
+    "message": "Programador ativo",
+    "description": "Business page (/business)"
+  },
+  "business.security.eyebrow": {
+    "message": "Segurança e conformidade",
+    "description": "Business page (/business)"
+  },
+  "business.security.title": {
+    "message": "Uma infraestrutura conforme e controlada",
+    "description": "Business page (/business)"
+  },
+  "business.security.encrypted.title": {
+    "message": "Dados encriptados",
+    "description": "Business page (/business)"
+  },
+  "business.security.encrypted.desc": {
+    "message": "Encriptação em repouso numa máquina dedicada e controlo de acesso rigoroso.",
+    "description": "Business page (/business)"
+  },
+  "business.security.eu.title": {
+    "message": "Alojamento na UE",
+    "description": "Business page (/business)"
+  },
+  "business.security.eu.desc": {
+    "message": "Infraestrutura principal na Alemanha, sem transferência para fora da União Europeia.",
+    "description": "Business page (/business)"
+  },
+  "business.security.gdpr.title": {
+    "message": "Conformidade com o RGPD assumida",
+    "description": "Business page (/business)"
+  },
+  "business.security.gdpr.desc": {
+    "message": "Responsabilidade claramente definida e uma política de privacidade transparente.",
+    "description": "Business page (/business)"
+  },
+  "business.security.noai.title": {
+    "message": "Sem exploração indevida",
+    "description": "Business page (/business)"
+  },
+  "business.security.noai.desc": {
+    "message": "Os seus dados não servem para publicidade nem para treinar modelos de IA.",
+    "description": "Business page (/business)"
+  },
+  "business.steps.eyebrow": {
+    "message": "Como funciona",
+    "description": "Business page (/business)"
+  },
+  "business.steps.title": {
+    "message": "Da auditoria ao acompanhamento",
+    "description": "Business page (/business)"
+  },
+  "business.steps.audit.title": {
+    "message": "Auditoria",
+    "description": "Business page (/business)"
+  },
+  "business.steps.audit.desc": {
+    "message": "Estudamos o seu servidor, os seus riscos e as suas necessidades com um especialista.",
+    "description": "Business page (/business)"
+  },
+  "business.steps.setup.title": {
+    "message": "Implementação",
+    "description": "Business page (/business)"
+  },
+  "business.steps.setup.desc": {
+    "message": "Instância dedicada, proteções à medida e desenvolvimentos específicos implementados para si.",
+    "description": "Business page (/business)"
+  },
+  "business.steps.followup.title": {
+    "message": "Acompanhamento",
+    "description": "Business page (/business)"
+  },
+  "business.steps.followup.desc": {
+    "message": "Pontos de situação regulares para ajustar, evoluir e antecipar as ameaças.",
+    "description": "Business page (/business)"
+  },
+  "business.stats.servers": {
+    "message": "servidores protegidos",
+    "description": "Business page (/business)"
+  },
+  "business.stats.users": {
+    "message": "utilizadores protegidos",
+    "description": "Business page (/business)"
+  },
+  "business.stats.spam": {
+    "message": "spam bloqueado",
+    "description": "Business page (/business)"
+  },
+  "business.final.title": {
+    "message": "Vamos falar do seu projeto",
+    "description": "Business page (/business)"
+  },
+  "business.final.sub": {
+    "message": "Uma chamada de 30 minutos para perceber as suas necessidades e definir a proteção adequada ao seu servidor.",
+    "description": "Business page (/business)"
+  },
+  "business.final.fcaNote": {
+    "message": "Precisa de ir além da proteção? Dinamização, remodelação de servidor, gestão de comunidade: é o trabalho da nossa agência, {link}.",
+    "description": "Business page (/business)"
   }
 }

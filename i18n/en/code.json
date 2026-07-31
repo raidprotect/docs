@@ -2760,5 +2760,241 @@
   "landing.businessBubble.close": {
     "message": "Close",
     "description": "Aria-label for closing the business bubble"
+  },
+  "business.cta.call": {
+    "message": "Book a call",
+    "description": "Business page (/business)"
+  },
+  "business.meta.description": {
+    "message": "RaidProtect Business: audit with an expert, dedicated and isolated instance, tailor-made protections and custom development for demanding organisations.",
+    "description": "Business page (/business)"
+  },
+  "business.hero.title": {
+    "message": "Much more than a bot:",
+    "description": "Business page (/business)"
+  },
+  "business.hero.titleAccent": {
+    "message": "your Discord partner",
+    "description": "Business page (/business)"
+  },
+  "business.hero.subtitle": {
+    "message": "The protection and moderation of your Discord server, handled end to end by our experts. A tailor-made offer, adapted to your organisation.",
+    "description": "Business page (/business)"
+  },
+  "business.hero.cta.offer": {
+    "message": "See the offer",
+    "description": "Business page (/business)"
+  },
+  "business.trust.label": {
+    "message": "They trust us",
+    "description": "Business page (/business)"
+  },
+  "business.who.eyebrow": {
+    "message": "Who is it for?",
+    "description": "Business page (/business)"
+  },
+  "business.who.title": {
+    "message": "When the standard is no longer enough",
+    "description": "Business page (/business)"
+  },
+  "business.who.sub": {
+    "message": "Large communities, brands, media, creators: at this scale, a security breach or a raid puts your image on the line. You need more than a subscription: a point of contact, guarantees and protection managed by humans.",
+    "description": "Business page (/business)"
+  },
+  "business.offer.eyebrow": {
+    "message": "The Business offer",
+    "description": "Business page (/business)"
+  },
+  "business.offer.title": {
+    "message": "Protection and moderation, tailor-made",
+    "description": "Business page (/business)"
+  },
+  "business.offer.sub": {
+    "message": "Everything is optional: you build your offer à la carte, with only what you need.",
+    "description": "Business page (/business)"
+  },
+  "business.offer.audit.title": {
+    "message": "Security audit with an expert",
+    "description": "Business page (/business)"
+  },
+  "business.offer.audit.desc": {
+    "message": "An expert analyses your server and defines the right protection strategy with you.",
+    "description": "Business page (/business)"
+  },
+  "business.offer.instance.title": {
+    "message": "Dedicated, isolated instance",
+    "description": "Business page (/business)"
+  },
+  "business.offer.instance.desc": {
+    "message": "Your own RaidProtect instance, isolated and in your image, for performance and security.",
+    "description": "Business page (/business)"
+  },
+  "business.offer.custom.title": {
+    "message": "Tailor-made protections",
+    "description": "Business page (/business)"
+  },
+  "business.offer.custom.desc": {
+    "message": "Modules and rules developed on demand, based on the threats specific to your server.",
+    "description": "Business page (/business)"
+  },
+  "business.offer.bot.title": {
+    "message": "Fully custom bot",
+    "description": "Business page (/business)"
+  },
+  "business.offer.bot.desc": {
+    "message": "Our developers build the features specific to your needs.",
+    "description": "Business page (/business)"
+  },
+  "business.offer.followup.title": {
+    "message": "Human follow-up",
+    "description": "Business page (/business)"
+  },
+  "business.offer.followup.desc": {
+    "message": "Regular check-ins with an expert, as often as needed, to fine-tune your protection.",
+    "description": "Business page (/business)"
+  },
+  "business.offer.mods.title": {
+    "message": "Professional moderators",
+    "description": "Business page (/business)"
+  },
+  "business.offer.mods.desc": {
+    "message": "Moderators trained and certified by Discord, as reinforcement or taking full charge of your moderation.",
+    "description": "Business page (/business)"
+  },
+  "business.mods.eyebrow": {
+    "message": "Human moderation",
+    "description": "Business page (/business)"
+  },
+  "business.mods.title": {
+    "message": "A team certified by Discord",
+    "description": "Business page (/business)"
+  },
+  "business.mods.sub": {
+    "message": "Experienced, certified moderators, as occasional reinforcement or taking full charge of your server.",
+    "description": "Business page (/business)"
+  },
+  "business.mods.created": {
+    "message": "Account created",
+    "description": "Business page (/business)"
+  },
+  "business.mods.since": {
+    "message": "Moderating since",
+    "description": "Business page (/business)"
+  },
+  "business.badge.mod": {
+    "message": "Discord Moderator Program",
+    "description": "Business page (/business)"
+  },
+  "business.badge.hypesquad": {
+    "message": "HypeSquad",
+    "description": "Business page (/business)"
+  },
+  "business.badge.nitro": {
+    "message": "Nitro",
+    "description": "Business page (/business)"
+  },
+  "business.badge.boost": {
+    "message": "Server Booster",
+    "description": "Business page (/business)"
+  },
+  "business.badge.activedev": {
+    "message": "Active Developer",
+    "description": "Business page (/business)"
+  },
+  "business.security.eyebrow": {
+    "message": "Security & compliance",
+    "description": "Business page (/business)"
+  },
+  "business.security.title": {
+    "message": "Compliant, well-controlled infrastructure",
+    "description": "Business page (/business)"
+  },
+  "business.security.encrypted.title": {
+    "message": "Encrypted data",
+    "description": "Business page (/business)"
+  },
+  "business.security.encrypted.desc": {
+    "message": "Encryption at rest on a dedicated machine and strict access control.",
+    "description": "Business page (/business)"
+  },
+  "business.security.eu.title": {
+    "message": "Hosting in the EU",
+    "description": "Business page (/business)"
+  },
+  "business.security.eu.desc": {
+    "message": "Main infrastructure in Germany, with no transfer outside the European Union.",
+    "description": "Business page (/business)"
+  },
+  "business.security.gdpr.title": {
+    "message": "GDPR compliance we stand behind",
+    "description": "Business page (/business)"
+  },
+  "business.security.gdpr.desc": {
+    "message": "Clearly defined responsibility and a transparent privacy policy.",
+    "description": "Business page (/business)"
+  },
+  "business.security.noai.title": {
+    "message": "No hidden exploitation",
+    "description": "Business page (/business)"
+  },
+  "business.security.noai.desc": {
+    "message": "Your data is used neither for advertising nor for training AI models.",
+    "description": "Business page (/business)"
+  },
+  "business.steps.eyebrow": {
+    "message": "How it works",
+    "description": "Business page (/business)"
+  },
+  "business.steps.title": {
+    "message": "From audit to follow-up",
+    "description": "Business page (/business)"
+  },
+  "business.steps.audit.title": {
+    "message": "Audit",
+    "description": "Business page (/business)"
+  },
+  "business.steps.audit.desc": {
+    "message": "We study your server, your risks and your needs with an expert.",
+    "description": "Business page (/business)"
+  },
+  "business.steps.setup.title": {
+    "message": "Setup",
+    "description": "Business page (/business)"
+  },
+  "business.steps.setup.desc": {
+    "message": "Dedicated instance, tailor-made protections and specific developments deployed for you.",
+    "description": "Business page (/business)"
+  },
+  "business.steps.followup.title": {
+    "message": "Follow-up",
+    "description": "Business page (/business)"
+  },
+  "business.steps.followup.desc": {
+    "message": "Regular check-ins to adjust, evolve and anticipate threats.",
+    "description": "Business page (/business)"
+  },
+  "business.stats.servers": {
+    "message": "protected servers",
+    "description": "Business page (/business)"
+  },
+  "business.stats.users": {
+    "message": "protected users",
+    "description": "Business page (/business)"
+  },
+  "business.stats.spam": {
+    "message": "spam blocked",
+    "description": "Business page (/business)"
+  },
+  "business.final.title": {
+    "message": "Let’s talk about your project",
+    "description": "Business page (/business)"
+  },
+  "business.final.sub": {
+    "message": "A 30-minute call to pin down your needs and define the right protection for your server.",
+    "description": "Business page (/business)"
+  },
+  "business.final.fcaNote": {
+    "message": "Need to go beyond protection? Events, server redesign, community management: that’s the job of our agency, {link}.",
+    "description": "Business page (/business)"
   }
 }

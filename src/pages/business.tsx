@@ -1,12 +1,9 @@
 import React, {type ReactNode, useEffect, useRef, useState} from 'react';
 import Layout from '@theme/Layout';
-import Link from '@docusaurus/Link';
+import Translate, {translate} from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {localizedRedirectUrl} from '@site/src/utils/links';
 import styles from './business.module.css';
-
-/* Page V1 en français : contenu encore mouvant (marques, détail de l'offre),
-   i18n à faire une fois la structure validée. */
 
 type Brand = {name: string; logo?: string; url?: string; frOnly?: boolean};
 
@@ -197,8 +194,9 @@ const BADGES: Record<ModBadgeType, {label: string; cls: string; glyph: ReactNode
 
 function BadgeChip({type}: {type: ModBadgeType}): ReactNode {
   const b = BADGES[type];
+  const label = translate({id: `business.badge.${type}`, message: b.label, description: 'Discord badge label'});
   return (
-    <span className={`${styles.modBadge} ${styles[b.cls]}`} title={b.label} aria-label={b.label}>
+    <span className={`${styles.modBadge} ${styles[b.cls]}`} title={label} aria-label={label}>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.9} aria-hidden="true">
         {b.glyph}
       </svg>
@@ -267,12 +265,20 @@ function ModeratorCard({mod}: {mod: Moderator}): ReactNode {
         <div className={styles.modMeta}>
           <div className={styles.modMetaRow}>
             <MetaIcon name="calendar" />
-            <span className={styles.modMetaLabel}>Compte créé</span>
+            <span className={styles.modMetaLabel}>
+              <Translate id="business.mods.created" description="Moderator card: account creation date label">
+                Compte créé
+              </Translate>
+            </span>
             <span className={styles.modMetaValue}>{mod.created}</span>
           </div>
           <div className={styles.modMetaRow}>
             <MetaIcon name="shield" />
-            <span className={styles.modMetaLabel}>Modère depuis</span>
+            <span className={styles.modMetaLabel}>
+              <Translate id="business.mods.since" description="Moderator card: moderating-since label">
+                Modère depuis
+              </Translate>
+            </span>
             <span className={styles.modMetaValue}>{mod.since}</span>
           </div>
         </div>
@@ -281,77 +287,90 @@ function ModeratorCard({mod}: {mod: Moderator}): ReactNode {
   );
 }
 
-type Offer = {icon: IconName; title: string; desc: string};
+// title/desc = messages par défaut (fr) ; la traduction se fait au rendu via
+// translate({id: `business.offer.${id}.title`, ...}) pour lire la locale.
+type Offer = {icon: IconName; id: string; title: string; desc: string};
 
 const OFFERS: Offer[] = [
   {
     icon: 'audit',
+    id: 'audit',
     title: 'Audit de sécurité avec un expert',
     desc: 'Un expert analyse votre serveur et définit avec vous la stratégie de protection adaptée.',
   },
   {
     icon: 'shield',
+    id: 'instance',
     title: 'Instance dédiée et isolée',
     desc: 'Votre propre instance de RaidProtect, isolée et à votre image, pour la performance et la sécurité.',
   },
   {
     icon: 'wrench',
+    id: 'custom',
     title: 'Protections sur-mesure',
     desc: 'Des modules et des règles développés à la demande, selon les menaces propres à votre serveur.',
   },
   {
     icon: 'code',
+    id: 'bot',
     title: 'Bot entièrement personnalisé',
     desc: 'Nos développeurs conçoivent les fonctionnalités spécifiques à vos besoins.',
   },
   {
     icon: 'call',
+    id: 'followup',
     title: 'Suivi humain',
     desc: 'Des points réguliers avec un expert, autant que nécessaire, pour ajuster votre protection.',
   },
   {
     icon: 'access',
+    id: 'mods',
     title: 'Modérateurs professionnels',
     desc: 'Des modérateurs formés et certifiés par Discord, en renfort ou en prise en charge complète de votre modération.',
   },
 ];
 
-const SECURITY: {icon: IconName; title: string; desc: string}[] = [
+const SECURITY: {icon: IconName; id: string; title: string; desc: string}[] = [
   {
     icon: 'lock',
+    id: 'encrypted',
     title: 'Données chiffrées',
     desc: "Chiffrement au repos sur une machine dédiée et contrôle d'accès strict.",
   },
   {
     icon: 'eu',
+    id: 'eu',
     title: 'Hébergement dans l’UE',
     desc: 'Infrastructure principale en Allemagne, sans transfert hors Union européenne.',
   },
   {
     icon: 'access',
+    id: 'gdpr',
     title: 'Conformité RGPD assumée',
     desc: 'Responsabilité clairement définie et politique de confidentialité transparente.',
   },
   {
     icon: 'noAi',
+    id: 'noai',
     title: 'Aucune exploitation détournée',
     desc: "Vos données ne servent ni à la publicité, ni à l'entraînement de modèles d'IA.",
   },
 ];
 
-const STEPS: {title: string; desc: string}[] = [
-  {title: 'Audit', desc: 'On étudie votre serveur, vos risques et vos besoins avec un expert.'},
+const STEPS: {id: string; title: string; desc: string}[] = [
+  {id: 'audit', title: 'Audit', desc: 'On étudie votre serveur, vos risques et vos besoins avec un expert.'},
   {
+    id: 'setup',
     title: 'Mise en place',
     desc: 'Instance dédiée, protections sur-mesure et développements spécifiques déployés pour vous.',
   },
-  {title: 'Suivi', desc: 'Des points réguliers pour ajuster, faire évoluer et anticiper les menaces.'},
+  {id: 'followup', title: 'Suivi', desc: 'Des points réguliers pour ajuster, faire évoluer et anticiper les menaces.'},
 ];
 
-const STATS: {value: string; unit: string; label: string}[] = [
-  {value: '380', unit: 'K+', label: 'serveurs protégés'},
-  {value: '50', unit: 'M+', label: 'utilisateurs protégés'},
-  {value: '1.4', unit: 'M+', label: 'spams bloqués'},
+const STATS: {id: string; value: string; unit: string; label: string}[] = [
+  {id: 'servers', value: '380', unit: 'K+', label: 'serveurs protégés'},
+  {id: 'users', value: '50', unit: 'M+', label: 'utilisateurs protégés'},
+  {id: 'spam', value: '1.4', unit: 'M+', label: 'spams bloqués'},
 ];
 
 export default function Business(): ReactNode {
@@ -361,23 +380,42 @@ export default function Business(): ReactNode {
   } = useDocusaurusContext();
   const appointmentUrl = localizedRedirectUrl(siteUrl, currentLocale, defaultLocale, '/appointment');
   const brands = BRANDS.filter((b) => !b.frOnly || currentLocale === 'fr');
+  // Libellé partagé par les trois boutons « Réserver un appel ».
+  const callLabel = translate({
+    id: 'business.cta.call',
+    message: 'Réserver un appel',
+    description: 'Business CTA: book a call',
+  });
 
   return (
     <Layout
       title="RaidProtect Business"
-      description="RaidProtect Business : audit avec un expert, instance dédiée et isolée, protections sur-mesure et développement custom pour les organisations exigeantes.">
+      description={translate({
+        id: 'business.meta.description',
+        message:
+          'RaidProtect Business : audit avec un expert, instance dédiée et isolée, protections sur-mesure et développement custom pour les organisations exigeantes.',
+        description: 'Business page meta description',
+      })}>
       <main className={styles.page}>
         {/* HERO */}
         <section className={styles.hero}>
           <div className={styles.container}>
             <span className={styles.eyebrow}>RaidProtect Business</span>
             <h1 className={styles.title}>
-              Bien plus qu’un bot :
-              <span className={styles.titleAccent}>votre partenaire Discord</span>
+              <Translate id="business.hero.title" description="Business hero title, first line">
+                Bien plus qu’un bot :
+              </Translate>
+              <span className={styles.titleAccent}>
+                <Translate id="business.hero.titleAccent" description="Business hero title, accented second line">
+                  votre partenaire Discord
+                </Translate>
+              </span>
             </h1>
             <p className={styles.subtitle}>
-              La protection et la modération de votre serveur Discord, prises en charge de bout en
-              bout par nos experts. Une offre sur-mesure, adaptée à votre organisation.
+              <Translate id="business.hero.subtitle" description="Business hero subtitle">
+                La protection et la modération de votre serveur Discord, prises en charge de bout en
+                bout par nos experts. Une offre sur-mesure, adaptée à votre organisation.
+              </Translate>
             </p>
             <div className={styles.ctas}>
               <a
@@ -385,10 +423,12 @@ export default function Business(): ReactNode {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.ctaPrimary}>
-                Réserver un appel
+                {callLabel}
               </a>
               <a href="#offre" className={styles.ctaSecondary}>
-                Voir l’offre
+                <Translate id="business.hero.cta.offer" description="Business hero secondary CTA: see the offer">
+                  Voir l’offre
+                </Translate>
               </a>
             </div>
           </div>
@@ -397,7 +437,11 @@ export default function Business(): ReactNode {
         {/* BANDEAU CONFIANCE */}
         <section className={styles.trust}>
           <div className={styles.container}>
-            <p className={styles.trustLabel}>Ils nous font confiance</p>
+            <p className={styles.trustLabel}>
+              <Translate id="business.trust.label" description="Trust band label above brand logos">
+                Ils nous font confiance
+              </Translate>
+            </p>
             <div className={styles.trustBar}>
               {brands.map((b) => (
                 <BrandLogo key={b.name} brand={b} />
@@ -410,12 +454,22 @@ export default function Business(): ReactNode {
         <section className={styles.section}>
           <div className={styles.container}>
             <div className={styles.sectionHead}>
-              <span className={styles.sectionEyebrow}>Pour qui ?</span>
-              <h2 className={styles.sectionTitle}>Quand le standard ne suffit plus</h2>
+              <span className={styles.sectionEyebrow}>
+                <Translate id="business.who.eyebrow" description="Who-is-it-for section eyebrow">
+                  Pour qui ?
+                </Translate>
+              </span>
+              <h2 className={styles.sectionTitle}>
+                <Translate id="business.who.title" description="Who-is-it-for section title">
+                  Quand le standard ne suffit plus
+                </Translate>
+              </h2>
               <p className={styles.sectionSub}>
-                Grandes communautés, marques, médias, créateurs : à cette échelle, une faille de
-                sécurité ou un raid engage votre image. Il vous faut plus qu’un abonnement — un
-                interlocuteur, des garanties, et une protection gérée par des humains.
+                <Translate id="business.who.sub" description="Who-is-it-for section paragraph">
+                  Grandes communautés, marques, médias, créateurs : à cette échelle, une faille de
+                  sécurité ou un raid engage votre image. Il vous faut plus qu’un abonnement : un
+                  interlocuteur, des garanties et une protection gérée par des humains.
+                </Translate>
               </p>
             </div>
           </div>
@@ -425,27 +479,41 @@ export default function Business(): ReactNode {
         <section id="offre" className={styles.section}>
           <div className={styles.container}>
             <div className={styles.sectionHead}>
-              <span className={styles.sectionEyebrow}>L’offre Business</span>
-              <h2 className={styles.sectionTitle}>Protection et modération, sur-mesure</h2>
+              <span className={styles.sectionEyebrow}>
+                <Translate id="business.offer.eyebrow" description="Offer section eyebrow">
+                  L’offre Business
+                </Translate>
+              </span>
+              <h2 className={styles.sectionTitle}>
+                <Translate id="business.offer.title" description="Offer section title">
+                  Protection et modération, sur-mesure
+                </Translate>
+              </h2>
               <p className={styles.sectionSub}>
-                Tout est optionnel : vous composez votre offre à la carte, uniquement avec ce dont
-                vous avez besoin.
+                <Translate id="business.offer.sub" description="Offer section subtitle">
+                  Tout est optionnel : vous composez votre offre à la carte, uniquement avec ce dont
+                  vous avez besoin.
+                </Translate>
               </p>
             </div>
             <div className={styles.offerGrid}>
               {OFFERS.map((o) => (
-                <div key={o.title} className={styles.offerCard}>
+                <div key={o.id} className={styles.offerCard}>
                   <span className={styles.offerIcon}>
                     <Icon name={o.icon} />
                   </span>
-                  <h3 className={styles.offerName}>{o.title}</h3>
-                  <p className={styles.offerDesc}>{o.desc}</p>
+                  <h3 className={styles.offerName}>
+                    {translate({id: `business.offer.${o.id}.title`, message: o.title, description: 'Offer card title'})}
+                  </h3>
+                  <p className={styles.offerDesc}>
+                    {translate({id: `business.offer.${o.id}.desc`, message: o.desc, description: 'Offer card description'})}
+                  </p>
                 </div>
               ))}
             </div>
             <div className={styles.sectionCta}>
               <a href="#contact" className={styles.ctaPrimary}>
-                Réserver un appel
+                {callLabel}
               </a>
             </div>
           </div>
@@ -456,11 +524,21 @@ export default function Business(): ReactNode {
           <section className={styles.section}>
             <div className={styles.container}>
               <div className={styles.sectionHead}>
-                <span className={styles.sectionEyebrow}>Modération humaine</span>
-                <h2 className={styles.sectionTitle}>Une équipe certifiée par Discord</h2>
+                <span className={styles.sectionEyebrow}>
+                  <Translate id="business.mods.eyebrow" description="Moderators section eyebrow">
+                    Modération humaine
+                  </Translate>
+                </span>
+                <h2 className={styles.sectionTitle}>
+                  <Translate id="business.mods.title" description="Moderators section title">
+                    Une équipe certifiée par Discord
+                  </Translate>
+                </h2>
                 <p className={styles.sectionSub}>
-                  Des modérateurs expérimentés et certifiés, en renfort ponctuel ou en prise en
-                  charge complète de votre serveur.
+                  <Translate id="business.mods.sub" description="Moderators section subtitle">
+                    Des modérateurs expérimentés et certifiés, en renfort ponctuel ou en prise en
+                    charge complète de votre serveur.
+                  </Translate>
                 </p>
               </div>
               <div className={styles.modGrid}>
@@ -476,18 +554,30 @@ export default function Business(): ReactNode {
         <section className={styles.section}>
           <div className={styles.container}>
             <div className={styles.sectionHead}>
-              <span className={styles.sectionEyebrow}>Sécurité &amp; conformité</span>
-              <h2 className={styles.sectionTitle}>Une infrastructure conforme et maîtrisée</h2>
+              <span className={styles.sectionEyebrow}>
+                <Translate id="business.security.eyebrow" description="Security section eyebrow">
+                  Sécurité &amp; conformité
+                </Translate>
+              </span>
+              <h2 className={styles.sectionTitle}>
+                <Translate id="business.security.title" description="Security section title">
+                  Une infrastructure conforme et maîtrisée
+                </Translate>
+              </h2>
             </div>
             <div className={styles.securityGrid}>
               {SECURITY.map((s) => (
-                <div key={s.title} className={styles.securityCard}>
+                <div key={s.id} className={styles.securityCard}>
                   <span className={styles.securityIcon}>
                     <Icon name={s.icon} />
                   </span>
                   <div>
-                    <h3 className={styles.securityName}>{s.title}</h3>
-                    <p className={styles.securityDesc}>{s.desc}</p>
+                    <h3 className={styles.securityName}>
+                      {translate({id: `business.security.${s.id}.title`, message: s.title, description: 'Security card title'})}
+                    </h3>
+                    <p className={styles.securityDesc}>
+                      {translate({id: `business.security.${s.id}.desc`, message: s.desc, description: 'Security card description'})}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -499,15 +589,27 @@ export default function Business(): ReactNode {
         <section className={styles.section}>
           <div className={styles.container}>
             <div className={styles.sectionHead}>
-              <span className={styles.sectionEyebrow}>Comment ça se passe</span>
-              <h2 className={styles.sectionTitle}>De l’audit au suivi</h2>
+              <span className={styles.sectionEyebrow}>
+                <Translate id="business.steps.eyebrow" description="Steps section eyebrow">
+                  Comment ça se passe
+                </Translate>
+              </span>
+              <h2 className={styles.sectionTitle}>
+                <Translate id="business.steps.title" description="Steps section title">
+                  De l’audit au suivi
+                </Translate>
+              </h2>
             </div>
             <div className={styles.steps}>
               {STEPS.map((s, i) => (
-                <div key={s.title} className={styles.step}>
+                <div key={s.id} className={styles.step}>
                   <span className={styles.stepNum}>{i + 1}</span>
-                  <h3 className={styles.stepName}>{s.title}</h3>
-                  <p className={styles.stepDesc}>{s.desc}</p>
+                  <h3 className={styles.stepName}>
+                    {translate({id: `business.steps.${s.id}.title`, message: s.title, description: 'Step title'})}
+                  </h3>
+                  <p className={styles.stepDesc}>
+                    {translate({id: `business.steps.${s.id}.desc`, message: s.desc, description: 'Step description'})}
+                  </p>
                 </div>
               ))}
             </div>
@@ -519,12 +621,14 @@ export default function Business(): ReactNode {
           <div className={styles.container}>
             <div className={styles.statsGrid}>
               {STATS.map((s) => (
-                <div key={s.label} className={styles.statCard}>
+                <div key={s.id} className={styles.statCard}>
                   <span className={styles.statValue}>
                     {s.value}
                     <span className={styles.statUnit}>{s.unit}</span>
                   </span>
-                  <span className={styles.statLabel}>{s.label}</span>
+                  <span className={styles.statLabel}>
+                    {translate({id: `business.stats.${s.id}`, message: s.label, description: 'Stat label'})}
+                  </span>
                 </div>
               ))}
             </div>
@@ -534,29 +638,41 @@ export default function Business(): ReactNode {
         {/* CTA FINAL */}
         <section id="contact" className={styles.finalCta}>
           <div className={styles.container}>
-            <h2 className={styles.finalTitle}>Discutons de votre projet</h2>
+            <h2 className={styles.finalTitle}>
+              <Translate id="business.final.title" description="Final CTA title">
+                Discutons de votre projet
+              </Translate>
+            </h2>
             <p className={styles.finalSub}>
-              Un appel de 30 minutes pour cerner vos besoins et définir la protection adaptée à
-              votre serveur.
+              <Translate id="business.final.sub" description="Final CTA subtitle">
+                Un appel de 30 minutes pour cerner vos besoins et définir la protection adaptée à
+                votre serveur.
+              </Translate>
             </p>
             <a
               href={appointmentUrl}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.ctaPrimary}>
-              Réserver un appel
+              {callLabel}
             </a>
             <p className={styles.fcaNote}>
-              Besoin d’aller au-delà de la protection ? Animation, refonte de serveur, community
-              management : c’est le métier de notre agence,{' '}
-              <a
-                href="https://fca.gg"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.fcaLink}>
-                French Community Agency
-              </a>
-              .
+              <Translate
+                id="business.final.fcaNote"
+                description="Final note about the FCA agency; {link} renders the agency link"
+                values={{
+                  link: (
+                    <a
+                      href="https://fca.gg"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.fcaLink}>
+                      French Community Agency
+                    </a>
+                  ),
+                }}>
+                {'Besoin d’aller au-delà de la protection ? Animation, refonte de serveur, community management : c’est le métier de notre agence, {link}.'}
+              </Translate>
             </p>
           </div>
         </section>
