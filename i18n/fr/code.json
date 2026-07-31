@@ -2718,5 +2718,17 @@
   "landing.features.further.discover": {
     "message": "Découvrir",
     "description": "Features section go-further offers"
+  },
+  "landing.businessBubble.title": {
+    "message": "Vous êtes une entreprise ?",
+    "description": "Floating bubble on the landing that guides companies to the Business page"
+  },
+  "landing.businessBubble.sub": {
+    "message": "Découvrir l’offre Business",
+    "description": "Floating bubble on the landing that guides companies to the Business page"
+  },
+  "landing.businessBubble.close": {
+    "message": "Fermer",
+    "description": "Aria-label for closing the business bubble"
   }
 }
