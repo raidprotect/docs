@@ -861,6 +861,17 @@
   margin-left: 0.25rem;
 }
 
+/* Prix futur barré, avant le tarif Founder actuel. */
+.tierPriceStrike {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--rp-text-muted);
+  text-decoration: line-through;
+  text-decoration-color: var(--rp-premium-primary, #d35f5f);
+  margin-right: 0.4rem;
+  vertical-align: middle;
+}
+
 .tierCta {
   display: inline-block;
   margin-top: 1rem;

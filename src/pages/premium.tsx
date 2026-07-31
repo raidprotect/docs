@@ -29,6 +29,8 @@ type Tier = {
     tagline: string
     price: string
     priceUnit?: string
+    /* Prix futur (hors offre Founder), affiché barré avant le prix actuel. */
+    priceStrike?: string
     cta: { label: string; href: string; primary?: boolean; internal?: boolean }
     highlight?: boolean
 }
@@ -402,6 +404,7 @@ export default function PremiumPage(): React.ReactNode {
             name: translate({ id: 'premium.tier.founder.name', message: 'Founder' }),
             tagline: translate({ id: 'premium.tier.founder.tagline', message: 'Offre de lancement réservée aux premiers abonnés.' }),
             price: translate({ id: 'premium.tier.founder.price', message: '2,99 $' }),
+            priceStrike: translate({ id: 'premium.tier.founder.priceStrike', message: '5,99 $' }),
             priceUnit: translate({ id: 'premium.tier.founder.priceUnit', message: '/ mois' }),
             cta: { label: translate({ id: 'premium.tier.founder.cta', message: 'S\'abonner via Discord' }), href: 'https://raidprotect.bot/founder', primary: true },
             highlight: true,
@@ -687,6 +690,9 @@ export default function PremiumPage(): React.ReactNode {
                                                     <div className={styles.tierName}>{tier.name}</div>
                                                     <div className={styles.tierTagline}>{tier.tagline}</div>
                                                     <div className={styles.tierPrice}>
+                                                        {tier.priceStrike && (
+                                                            <span className={styles.tierPriceStrike}>{tier.priceStrike}</span>
+                                                        )}
                                                         {tier.price}
                                                         {tier.priceUnit && (
                                                             <span className={styles.tierPriceUnit}>{tier.priceUnit}</span>
@@ -757,6 +763,9 @@ export default function PremiumPage(): React.ReactNode {
                                         <div className={styles.tierName}>{tier.name}</div>
                                         <div className={styles.tierTagline}>{tier.tagline}</div>
                                         <div className={styles.tierPrice}>
+                                            {tier.priceStrike && (
+                                                <span className={styles.tierPriceStrike}>{tier.priceStrike}</span>
+                                            )}
                                             {tier.price}
                                             {tier.priceUnit && (
                                                 <span className={styles.tierPriceUnit}>{tier.priceUnit}</span>
