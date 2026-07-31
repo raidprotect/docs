@@ -308,127 +308,104 @@
   line-height: 1.55;
 }
 
-/* === MODÉRATEURS (mini-cartes « haut de profil » Discord) === */
+/* === MODÉRATEURS (cartes compactes : avatar à gauche, infos à droite) === */
 
 .modGrid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 14px;
 }
 
 .modCard {
-  --mod-card-bg: #0d0b1e;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
   border: 1px solid var(--biz-border);
-  border-radius: var(--biz-radius);
-  background: var(--mod-card-bg);
+  border-radius: 14px;
+  background: #0d0b1e;
   transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
 .modCard:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   border-color: rgba(211, 95, 95, 0.32);
 }
 
-.modBanner {
-  height: 54px;
-  background: var(--biz-gradient);
-}
-
-.modAvatarWrap {
-  padding: 0 16px;
-  margin-top: -30px;
-}
-
 .modAvatar {
-  display: block;
-  width: 64px;
-  height: 64px;
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
   border-radius: 50%;
-  border: 5px solid var(--mod-card-bg);
-  background: var(--mod-card-bg);
   object-fit: cover;
 }
 
 .modBody {
-  padding: 8px 16px 18px;
+  flex: 1;
+  min-width: 0;
 }
 
 .modIdentity {
   display: flex;
-  flex-direction: column;
-  line-height: 1.25;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3px 8px;
+  line-height: 1.2;
 }
 
 .modName {
   font-family: var(--ifm-heading-font-family);
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #fff;
 }
 
 .modHandle {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--biz-text-muted);
 }
 
 .modBadges {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 11px;
+  align-items: center;
+  gap: 5px;
+  margin-top: 8px;
 }
 
+/* Badges = vrais SVG Discord (couleurs natives), sans pastille de fond. */
 .modBadge {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 7px;
-  color: #fff;
+  cursor: default;
 }
 
-.modBadge svg {
-  width: 14px;
-  height: 14px;
+.modBadge img {
+  display: block;
+  width: 21px;
+  height: 21px;
 }
 
-.badgeMod {
-  background: #5865f2;
-}
-
-.badgeHype {
-  background: #45ddc0;
-}
-
-.badgeNitro {
-  background: linear-gradient(135deg, #ff73fa 0%, #5865f2 100%);
-}
-
-.badgeBoost {
-  background: #e26ee5;
-}
-
-.badgeDev {
-  background: #3ba55c;
-}
-
+/* Ligne méta inline façon Discord : logo Discord + date · bouclier + année,
+   avec un tooltip au survol (le libellé complet). */
 .modMeta {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-top: 14px;
-  padding: 11px 12px;
-  border-radius: 10px;
-  background: rgba(0, 0, 0, 0.28);
-}
-
-.modMetaRow {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.8rem;
+  margin-top: 8px;
+  font-size: 0.82rem;
+  color: var(--biz-text-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.modMetaItem {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: default;
 }
 
 .modMetaIcon {
@@ -438,15 +415,44 @@
   color: var(--biz-text-muted);
 }
 
-.modMetaLabel {
+.modMetaSep {
   color: var(--biz-text-muted);
 }
 
-.modMetaValue {
-  margin-left: auto;
+.modMetaItem::after,
+.modBadge::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: calc(100% + 7px);
+  left: 50%;
+  transform: translateX(-50%) translateY(3px);
+  padding: 4px 9px;
+  border-radius: 7px;
+  background: #05030f;
+  border: 1px solid var(--biz-border);
   color: var(--biz-text);
+  font-size: 0.72rem;
   font-weight: 600;
-  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0 8px 20px -8px rgba(0, 0, 0, 0.75);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 5;
+}
+
+.modMetaItem:hover::after,
+.modBadge:hover::after {
+  opacity: 1;
+  transform: translateX(-50%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modMetaItem::after,
+  .modBadge::after {
+    transition: opacity 0.15s ease;
+    transform: translateX(-50%);
+  }
 }
 
 /* === SÉCURITÉ === */
@@ -649,8 +655,7 @@
 @media (max-width: 900px) {
   .offerGrid,
   .steps,
-  .statsGrid,
-  .modGrid {
+  .statsGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .securityGrid {
@@ -664,8 +669,7 @@
   }
   .offerGrid,
   .steps,
-  .statsGrid,
-  .modGrid {
+  .statsGrid {
     grid-template-columns: minmax(0, 1fr);
   }
   .statsGrid {

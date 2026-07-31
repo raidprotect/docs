@@ -140,66 +140,24 @@ function Icon({name}: {name: IconName}): ReactNode {
 
 /* === Modérateurs : mini-cartes façon « haut de profil » Discord === */
 
-type ModBadgeType = 'mod' | 'hypesquad' | 'nitro' | 'boost' | 'activedev';
+type ModBadgeType = 'mod' | 'hse' | 'botdev' | 'bug' | 'buggold';
 
-// Badges Discord redessinés en SVG (glyphe blanc sur pastille colorée).
-const BADGES: Record<ModBadgeType, {label: string; cls: string; glyph: ReactNode}> = {
-  mod: {
-    label: 'Programme de modération Discord',
-    cls: 'badgeMod',
-    glyph: (
-      <>
-        <path d="M12 3.4l6.3 2.2v4.2c0 3.7-2.6 6.7-6.3 7.7-3.7-1-6.3-4-6.3-7.7V5.6L12 3.4z" />
-        <path d="M9.2 11.2l1.9 1.9 3.6-3.8" strokeLinecap="round" strokeLinejoin="round" />
-      </>
-    ),
-  },
-  hypesquad: {
-    label: 'HypeSquad',
-    cls: 'badgeHype',
-    glyph: (
-      <>
-        <path d="M12 3.4l6 2.1-.9 7-5.1 4.1-5.1-4.1-.9-7 6-2.1z" strokeLinejoin="round" />
-        <path d="M12 8v4.5" strokeLinecap="round" />
-      </>
-    ),
-  },
-  nitro: {
-    label: 'Nitro',
-    cls: 'badgeNitro',
-    glyph: <path d="M12 3.4l5 4.4-5 12.4-5-12.4 5-4.4z" strokeLinejoin="round" />,
-  },
-  boost: {
-    label: 'Booster de serveur',
-    cls: 'badgeBoost',
-    glyph: (
-      <>
-        <path d="M12 3.4l6.4 4.5v5.7L12 20.6l-6.4-6.6V7.9L12 3.4z" strokeLinejoin="round" />
-        <path d="M9.4 12L12 9.4l2.6 2.6" strokeLinecap="round" strokeLinejoin="round" />
-      </>
-    ),
-  },
-  activedev: {
-    label: 'Développeur actif',
-    cls: 'badgeDev',
-    glyph: (
-      <path
-        d="M9 8.4l-3.4 3.6L9 15.6M15 8.4l3.4 3.6L15 15.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    ),
-  },
+// Vrais badges Discord (SVG officiels récupérés depuis dfr.gg/team). On ne
+// garde que ceux qui distinguent un modérateur pro : pas les badges de maison.
+const BADGES: Record<ModBadgeType, {file: string; label: string}> = {
+  mod: {file: 'mod', label: 'Modérateur certifié'},
+  hse: {file: 'hse', label: 'HypeSquad Events'},
+  botdev: {file: 'botdev', label: 'Développeur de bot vérifié'},
+  bug: {file: 'bug-hunter', label: 'Bug Hunter'},
+  buggold: {file: 'bug-hunter-gold', label: 'Bug Hunter Gold'},
 };
 
 function BadgeChip({type}: {type: ModBadgeType}): ReactNode {
   const b = BADGES[type];
   const label = translate({id: `business.badge.${type}`, message: b.label, description: 'Discord badge label'});
   return (
-    <span className={`${styles.modBadge} ${styles[b.cls]}`} title={label} aria-label={label}>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.9} aria-hidden="true">
-        {b.glyph}
-      </svg>
+    <span className={styles.modBadge} aria-label={label} data-label={label}>
+      <img src={`/img/business/badges/${b.file}.svg`} alt="" loading="lazy" />
     </span>
   );
 }
@@ -213,43 +171,62 @@ type Moderator = {
   since: string;
 };
 
-// À remplir avec les vrais profils des modérateurs professionnels (avatar,
-// pseudo, @handle, badges, date de création du compte, année de début). Tant
-// que la liste est vide, la section n'est pas rendue (garde plus bas).
-// Exemples de structure (placeholders, à remplacer) :
-// {avatar: '/img/avatar/dawoox.webp', name: 'Dawoox', handle: 'dawoox', badges: ['mod', 'hypesquad', 'nitro'], created: 'mars 2016', since: '2020'},
-// {avatar: '/img/avatar/ichii.webp', name: 'Ichii', handle: 'ichii', badges: ['mod', 'boost'], created: 'juin 2017', since: '2021'},
-// {avatar: '/img/avatar/furymob.webp', name: 'FuryMob', handle: 'furymob', badges: ['mod', 'activedev', 'nitro'], created: 'févr. 2015', since: '2019'},
-const MODERATORS: Moderator[] = [];
+// Modérateurs professionnels. Badges = vrais badges Discord (voir BADGES).
+// created/since au format « YYYY-MM » : formatés selon la locale au rendu (voir
+// formatMonthYear). created = création du compte (déduite de l'ID Discord).
+// since (Modère depuis) laissé vide pour l'instant : ce segment n'est alors pas
+// rendu.
+const MODERATORS: Moderator[] = [
+  {avatar: '/img/avatar/derrios.webp', name: 'Arthur', handle: 'derrios', badges: ['mod', 'hse', 'botdev', 'buggold'], created: '2016-12', since: ''},
+  {avatar: '/img/business/mods/grifgrif.webp', name: 'Varyn', handle: 'grifgrif', badges: ['mod', 'hse', 'botdev'], created: '2018-01', since: ''},
+  {avatar: '/img/avatar/ichii.webp', name: 'Ethan', handle: 'ichiidev', badges: ['mod', 'hse', 'botdev'], created: '2019-01', since: ''},
+  {avatar: '/img/business/mods/chancesphere.webp', name: 'Chancesphere', handle: 'chancesphere574', badges: ['mod'], created: '2016-09', since: ''},
+  {avatar: '/img/business/mods/mapidae.webp', name: 'Mattéo', handle: 'mapidae', badges: ['mod'], created: '2018-05', since: ''},
+  {avatar: '/img/business/mods/syfor.webp', name: 'Syfor', handle: 'syfor', badges: ['mod', 'buggold'], created: '2018-01', since: ''},
+];
 
-function MetaIcon({name}: {name: 'calendar' | 'shield'}): ReactNode {
+// Formate « YYYY-MM » selon la locale (« déc. 2016 », « Dec 2016 », « Dez. 2016 »…).
+// Toute autre valeur (année seule, etc.) est renvoyée telle quelle.
+function formatMonthYear(value: string, locale: string): string {
+  const m = /^(\d{4})-(\d{2})$/.exec(value);
+  if (!m) return value;
+  const date = new Date(Date.UTC(Number(m[1]), Number(m[2]) - 1, 1));
+  return new Intl.DateTimeFormat(locale, {month: 'short', year: 'numeric', timeZone: 'UTC'}).format(date);
+}
+
+function MetaGlyph({name}: {name: 'discord' | 'mod'}): ReactNode {
+  if (name === 'discord') {
+    return (
+      <svg className={styles.modMetaIcon} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M19.27 5.33A16.6 16.6 0 0 0 15.2 4a.06.06 0 0 0-.07.03c-.18.31-.37.72-.5 1.04a15.3 15.3 0 0 0-4.27 0A9.5 9.5 0 0 0 9.85 4a.06.06 0 0 0-.06-.03 16.6 16.6 0 0 0-4.08 1.33.05.05 0 0 0-.03.02C3.06 9.05 2.33 12.66 2.7 16.22a.07.07 0 0 0 .03.05 16.7 16.7 0 0 0 5.02 2.53.06.06 0 0 0 .07-.02c.39-.53.73-1.08 1.03-1.67a.06.06 0 0 0-.04-.09c-.55-.2-1.07-.46-1.57-.75a.06.06 0 0 1 0-.11l.31-.24a.06.06 0 0 1 .06 0 11.9 11.9 0 0 0 10.11 0 .06.06 0 0 1 .07 0l.31.24a.06.06 0 0 1 0 .11c-.5.3-1.02.55-1.58.75a.06.06 0 0 0-.03.09c.3.58.65 1.14 1.03 1.67a.06.06 0 0 0 .07.02 16.6 16.6 0 0 0 5.03-2.53.06.06 0 0 0 .02-.05c.44-4.12-.73-7.7-3.1-10.87a.05.05 0 0 0-.02-.02ZM8.68 14.05c-.99 0-1.8-.9-1.8-2.02s.8-2.02 1.8-2.02 1.82.91 1.8 2.02c0 1.11-.8 2.02-1.8 2.02Zm6.65 0c-.99 0-1.8-.9-1.8-2.02s.8-2.02 1.8-2.02 1.82.91 1.8 2.02c0 1.11-.8 2.02-1.8 2.02Z" />
+      </svg>
+    );
+  }
   return (
-    <svg
-      className={styles.modMetaIcon}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={1.7}
-      aria-hidden="true">
-      {name === 'calendar' ? (
-        <>
-          <rect x="4" y="5" width="16" height="15" rx="2" />
-          <path d="M4 9h16M8 3v4M16 3v4" strokeLinecap="round" />
-        </>
-      ) : (
-        <path d="M12 3l7 3v5c0 4.3-2.9 7.7-7 9-4.1-1.3-7-4.7-7-9V6l7-3z" strokeLinejoin="round" />
-      )}
+    <svg className={styles.modMetaIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} aria-hidden="true">
+      <path d="M12 3l7 3v5c0 4.3-2.9 7.7-7 9-4.1-1.3-7-4.7-7-9V6l7-3z" strokeLinejoin="round" />
+      <path d="M9.2 11.4l1.9 1.9 3.6-3.8" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
 
 function ModeratorCard({mod}: {mod: Moderator}): ReactNode {
+  const {
+    i18n: {currentLocale},
+  } = useDocusaurusContext();
+  const createdLabel = translate({
+    id: 'business.mods.created',
+    message: 'Compte créé',
+    description: 'Moderator card: account creation date label',
+  });
+  const sinceLabel = translate({
+    id: 'business.mods.since',
+    message: 'Modère depuis',
+    description: 'Moderator card: moderating-since label',
+  });
   return (
     <div className={styles.modCard}>
-      <div className={styles.modBanner} />
-      <div className={styles.modAvatarWrap}>
-        <img className={styles.modAvatar} src={mod.avatar} alt="" loading="lazy" />
-      </div>
+      <img className={styles.modAvatar} src={mod.avatar} alt="" loading="lazy" />
       <div className={styles.modBody}>
         <div className={styles.modIdentity}>
           <span className={styles.modName}>{mod.name}</span>
@@ -262,26 +239,27 @@ function ModeratorCard({mod}: {mod: Moderator}): ReactNode {
             ))}
           </div>
         )}
-        <div className={styles.modMeta}>
-          <div className={styles.modMetaRow}>
-            <MetaIcon name="calendar" />
-            <span className={styles.modMetaLabel}>
-              <Translate id="business.mods.created" description="Moderator card: account creation date label">
-                Compte créé
-              </Translate>
-            </span>
-            <span className={styles.modMetaValue}>{mod.created}</span>
+        {(mod.created || mod.since) && (
+          <div className={styles.modMeta}>
+            {mod.created && (
+              <span className={styles.modMetaItem} aria-label={createdLabel} data-label={createdLabel}>
+                <MetaGlyph name="discord" />
+                {formatMonthYear(mod.created, currentLocale)}
+              </span>
+            )}
+            {mod.created && mod.since && (
+              <span className={styles.modMetaSep} aria-hidden="true">
+                ·
+              </span>
+            )}
+            {mod.since && (
+              <span className={styles.modMetaItem} aria-label={sinceLabel} data-label={sinceLabel}>
+                <MetaGlyph name="mod" />
+                {formatMonthYear(mod.since, currentLocale)}
+              </span>
+            )}
           </div>
-          <div className={styles.modMetaRow}>
-            <MetaIcon name="shield" />
-            <span className={styles.modMetaLabel}>
-              <Translate id="business.mods.since" description="Moderator card: moderating-since label">
-                Modère depuis
-              </Translate>
-            </span>
-            <span className={styles.modMetaValue}>{mod.since}</span>
-          </div>
-        </div>
+        )}
       </div>
     </div>
   );
