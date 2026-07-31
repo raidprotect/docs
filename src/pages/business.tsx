@@ -357,6 +357,9 @@ export default function Business(): ReactNode {
     siteConfig: {url: siteUrl},
   } = useDocusaurusContext();
   const appointmentUrl = localizedRedirectUrl(siteUrl, currentLocale, defaultLocale, '/appointment');
+  // Le site FCA n'est en français que sur son domaine racine ; les autres
+  // langues sont servies sous /en.
+  const fcaUrl = currentLocale === 'fr' ? 'https://fca.gg' : 'https://fca.gg/en';
   // Libellé partagé par les trois boutons « Réserver un appel ».
   const callLabel = translate({
     id: 'business.cta.call',
@@ -640,7 +643,7 @@ export default function Business(): ReactNode {
                 values={{
                   link: (
                     <a
-                      href="https://fca.gg"
+                      href={fcaUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className={styles.fcaLink}>
