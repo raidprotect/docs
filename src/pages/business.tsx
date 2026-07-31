@@ -5,7 +5,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {localizedRedirectUrl} from '@site/src/utils/links';
 import styles from './business.module.css';
 
-type Brand = {name: string; logo?: string; url?: string; frOnly?: boolean};
+type Brand = {name: string; logo?: string; url?: string};
 
 // Bandeau de confiance : logos "full" (wordmarks SVG) façon fca.gg, sans
 // distinction de formule. Déposer les fichiers dans static/img/business/logos/ ;
@@ -14,8 +14,8 @@ type Brand = {name: string; logo?: string; url?: string; frOnly?: boolean};
 const BRANDS: Brand[] = [
   {name: 'Ligue 1 McDonald’s', logo: '/img/business/logos/ligue1.svg', url: 'https://www.ligue1.com'},
   {name: 'Game One', logo: '/img/business/logos/gameone.svg', url: 'https://www.gameone.fr'},
-  {name: 'CYRILmp4', logo: '/img/business/logos/cyrilmp4.svg', url: 'https://www.youtube.com/@CYRILmp4', frOnly: true},
-  {name: 'HugoDécrypte', logo: '/img/business/logos/hugodecrypte.svg', url: 'https://hugodecrypte.com', frOnly: true},
+  {name: 'CYRILmp4', logo: '/img/business/logos/cyrilmp4.svg', url: 'https://www.youtube.com/@CYRILmp4'},
+  {name: 'HugoDécrypte', logo: '/img/business/logos/hugodecrypte.svg', url: 'https://hugodecrypte.com'},
   {name: 'Century Games', logo: '/img/business/logos/centurygames.svg', url: 'https://www.centurygames.com'},
 ];
 
@@ -357,7 +357,6 @@ export default function Business(): ReactNode {
     siteConfig: {url: siteUrl},
   } = useDocusaurusContext();
   const appointmentUrl = localizedRedirectUrl(siteUrl, currentLocale, defaultLocale, '/appointment');
-  const brands = BRANDS.filter((b) => !b.frOnly || currentLocale === 'fr');
   // Libellé partagé par les trois boutons « Réserver un appel ».
   const callLabel = translate({
     id: 'business.cta.call',
@@ -421,7 +420,7 @@ export default function Business(): ReactNode {
               </Translate>
             </p>
             <div className={styles.trustBar}>
-              {brands.map((b) => (
+              {BRANDS.map((b) => (
                 <BrandLogo key={b.name} brand={b} />
               ))}
             </div>
