@@ -324,7 +324,7 @@ export default function Features(): ReactNode {
                   className={clsx(styles.offerBtn, styles.offerBtnBusiness)}>
                   <Translate id="landing.features.further.business.call" description="Book a call CTA on the Business card">Réserver un appel</Translate>
                 </a>
-                <Link to="/premium" className={clsx(styles.offerBtn, styles.offerBtnOutline)}>
+                <Link to="/business" className={clsx(styles.offerBtn, styles.offerBtnOutline)}>
                   <Translate id="landing.features.further.discover" description="Discover CTA on offer cards">Découvrir</Translate>
                 </Link>
               </div>

@@ -29,7 +29,7 @@ type Tier = {
     tagline: string
     price: string
     priceUnit?: string
-    cta: { label: string; href: string; primary?: boolean }
+    cta: { label: string; href: string; primary?: boolean; internal?: boolean }
     highlight?: boolean
 }
 
@@ -411,7 +411,7 @@ export default function PremiumPage(): React.ReactNode {
             name: translate({ id: 'premium.tier.business.name', message: 'Business' }),
             tagline: translate({ id: 'premium.tier.business.tagline', message: 'Pour les projets aux exigences de sécurité élevées.' }),
             price: translate({ id: 'premium.tier.business.price', message: 'Sur demande' }),
-            cta: { label: translate({ id: 'premium.tier.business.cta', message: 'Prendre rendez-vous' }), href: '/appointment' },
+            cta: { label: translate({ id: 'premium.tier.business.cta', message: 'En savoir plus' }), href: '/business', internal: true },
         },
     ]
 
@@ -551,7 +551,7 @@ export default function PremiumPage(): React.ReactNode {
                             <StatCard value={stats.servers} label={translate({ id: 'premium.stats.servers', message: 'Serveurs protégés' })} />
                             <StatCard value={stats.users} label={translate({ id: 'premium.stats.users', message: 'Utilisateurs surveillés' })} />
                             <StatCard value={stats.captcha} label={translate({ id: 'premium.stats.captcha', message: 'Captchas résolus' })} />
-                            <StatCard value={stats.antispam} label={translate({ id: 'premium.stats.antispam', message: 'Messages anti-spam filtrés' })} />
+                            <StatCard value={stats.antispam} label={translate({ id: 'premium.stats.antispam', message: 'Messages de spam filtrés' })} />
                         </div>
                     </div>
                 </section>
@@ -693,7 +693,7 @@ export default function PremiumPage(): React.ReactNode {
                                                         )}
                                                     </div>
                                                     <Link
-                                                        to={ctaHref(tier.cta.href)}
+                                                        to={tier.cta.internal ? tier.cta.href : ctaHref(tier.cta.href)}
                                                         className={`${styles.tierCta} ${tier.cta.primary ? styles.tierCtaPrimary : ''}`}
                                                     >
                                                         {tier.cta.label}
@@ -763,7 +763,7 @@ export default function PremiumPage(): React.ReactNode {
                                             )}
                                         </div>
                                         <Link
-                                            to={ctaHref(tier.cta.href)}
+                                            to={tier.cta.internal ? tier.cta.href : ctaHref(tier.cta.href)}
                                             className={`${styles.tierCta} ${tier.cta.primary ? styles.tierCtaPrimary : ''}`}
                                         >
                                             {tier.cta.label}

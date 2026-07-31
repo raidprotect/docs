@@ -7,6 +7,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Hero from '@site/src/components/landing/Hero';
 import Servers from '@site/src/components/landing/Servers';
 import Features from '@site/src/components/landing/Features';
+import BusinessBubble from '@site/src/components/landing/BusinessBubble';
 import shared from '@site/src/components/landing/styles/shared.module.css';
 import styles from './index.module.css';
 
@@ -113,10 +114,16 @@ function StatCounter({
   }, [rawValue]);
 
   if (rawValue == null) {
+    // Fallback (counts.json indisponible) : on sépare le nombre de son unité
+    // (« 380k » -> « 380 » + « k ») pour colorer l'unité comme en mode live.
+    const fbMatch = /^([\d.,\s]+)(.*)$/.exec(fallback);
+    const fbNumber = fbMatch ? fbMatch[1] : fallback;
+    const fbUnit = fbMatch ? fbMatch[2] : '';
     return (
       <div ref={itemRef} className={styles.counterItem}>
         <div className={styles.counterTitle}>
-          <span>{fallback}</span>
+          <span>{fbNumber}</span>
+          {fbUnit && <span className={styles.counterUnit}>{fbUnit}</span>}
         </div>
         <div className={styles.counterLabel}>{label}</div>
       </div>
@@ -364,6 +371,7 @@ export default function Home(): ReactNode {
 
         <Features />
       </main>
+      <BusinessBubble />
     </Layout>
   );
 }

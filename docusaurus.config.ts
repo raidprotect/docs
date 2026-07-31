@@ -341,6 +341,11 @@ export default async function createConfigAsync() {
                                 target: '_self'
                             },
                             {
+                                label: 'Business',
+                                to: '/business',
+                                target: '_self'
+                            },
+                            {
                                 label: 'Suggestions',
                                 to: 'https://suggestions.raidprotect.bot',
                                 target: '_self'

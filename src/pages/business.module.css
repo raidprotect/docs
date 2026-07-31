@@ -1,0 +1,674 @@
+/* =============================================================
+ * /business : page marketing B2B (offre sur-mesure).
+ * Palette alignée sur /premium et custom.css.
+ * ============================================================= */
+
+.page {
+  --biz-bg: #040114;
+  --biz-primary: #d35f5f;
+  --biz-accent: #a561a3;
+  --biz-gradient: linear-gradient(120deg, #d35f5f 0%, #a561a3 100%);
+  /* Variante assombrie pour les boutons à texte blanc (contraste WCAG AA). */
+  --biz-gradient-cta: linear-gradient(120deg, #b04141 0%, #8a4788 100%);
+  --biz-text: #fff;
+  --biz-text-soft: rgba(255, 255, 255, 0.74);
+  --biz-text-muted: rgba(255, 255, 255, 0.5);
+  --biz-surface: rgba(255, 255, 255, 0.04);
+  --biz-surface-strong: rgba(255, 255, 255, 0.07);
+  --biz-border: rgba(255, 255, 255, 0.09);
+  --biz-radius: 18px;
+
+  background-color: var(--biz-bg);
+  color: var(--biz-text);
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* === HERO === */
+
+.hero {
+  position: relative;
+  padding: 130px 0 40px;
+  text-align: center;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(46vw 42vw at 12% -10%, rgba(211, 95, 95, 0.22) 0%, transparent 60%),
+    radial-gradient(42vw 42vw at 100% 8%, rgba(165, 97, 163, 0.18) 0%, transparent 60%);
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 22px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--biz-border);
+  background: var(--biz-surface);
+  font-family: var(--ifm-heading-font-family);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--biz-text-soft);
+}
+
+.title {
+  margin: 0 auto 22px;
+  max-width: 15ch;
+  font-family: var(--ifm-heading-font-family);
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.titleAccent {
+  display: block;
+  background: var(--biz-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  margin: 0 auto 34px;
+  max-width: 62ch;
+  color: var(--biz-text-soft);
+  font-size: clamp(1rem, 1.35vw, 1.2rem);
+  line-height: 1.6;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+}
+
+.ctaPrimary {
+  display: inline-block;
+  padding: 15px 30px 13px;
+  border-radius: 999px;
+  background: var(--biz-gradient-cta);
+  color: #fff;
+  font-family: var(--ifm-heading-font-family);
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 12px 30px -10px rgba(211, 95, 95, 0.5);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
+}
+
+.ctaPrimary:hover {
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-3px);
+  box-shadow: 0 18px 38px -12px rgba(211, 95, 95, 0.65);
+}
+
+.ctaSecondary {
+  display: inline-block;
+  padding: 15px 26px 13px;
+  border-radius: 999px;
+  border: 1px solid var(--biz-border);
+  background: var(--biz-surface);
+  color: #fff;
+  font-family: var(--ifm-heading-font-family);
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+}
+
+.ctaSecondary:hover {
+  color: #fff;
+  text-decoration: none;
+  border-color: rgba(255, 255, 255, 0.28);
+  background: var(--biz-surface-strong);
+  transform: translateY(-3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ctaPrimary:hover,
+  .ctaSecondary:hover {
+    transform: none;
+  }
+}
+
+/* === BANDEAU CONFIANCE === */
+
+.trust {
+  padding: 6px 0 40px;
+}
+
+.trustLabel {
+  margin: 0 0 22px;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--biz-text-muted);
+}
+
+/* Mur de logos monochromes blancs, directement sur le fond sombre (pas de
+   barre claire) : le filtre normalise n'importe quel logo (noir, coloré,
+   néon) en une silhouette blanche homogène. */
+.trustBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 22px 54px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.brandLink {
+  display: inline-flex;
+  align-items: center;
+}
+
+.brandLogo {
+  height: 30px;
+  width: auto;
+  max-width: 170px;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: opacity 0.25s ease;
+}
+
+.brandLink:hover .brandLogo,
+.brandLogo:hover {
+  opacity: 1;
+}
+
+.brandWordmark {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.82);
+  transition: color 0.25s ease;
+}
+
+.brandLink:hover .brandWordmark {
+  color: #fff;
+}
+
+/* === SECTIONS === */
+
+.section {
+  padding: 60px 0;
+}
+
+.sectionHead {
+  max-width: 720px;
+  margin: 0 auto 44px;
+  text-align: center;
+}
+
+.sectionEyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: var(--biz-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sectionTitle {
+  margin: 0 0 14px;
+  font-family: var(--ifm-heading-font-family);
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+
+.sectionSub {
+  margin: 0;
+  color: var(--biz-text-soft);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* === OFFRE (grille de cartes) === */
+
+.offerGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.offerCard {
+  padding: 28px 26px;
+  border: 1px solid var(--biz-border);
+  border-radius: var(--biz-radius);
+  background: linear-gradient(
+    160deg,
+    rgba(211, 95, 95, 0.06),
+    rgba(165, 97, 163, 0.04) 55%,
+    rgba(7, 4, 23, 0) 100%
+  );
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.offerCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(211, 95, 95, 0.32);
+}
+
+.offerIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 18px;
+  border-radius: 12px;
+  background: var(--biz-surface-strong);
+  border: 1px solid var(--biz-border);
+  color: var(--biz-primary);
+}
+
+.offerIcon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.offerName {
+  margin: 0 0 10px;
+  font-family: var(--ifm-heading-font-family);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.offerDesc {
+  margin: 0;
+  color: var(--biz-text-soft);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+/* === MODÉRATEURS (mini-cartes « haut de profil » Discord) === */
+
+.modGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.modCard {
+  --mod-card-bg: #0d0b1e;
+  overflow: hidden;
+  border: 1px solid var(--biz-border);
+  border-radius: var(--biz-radius);
+  background: var(--mod-card-bg);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.modCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(211, 95, 95, 0.32);
+}
+
+.modBanner {
+  height: 54px;
+  background: var(--biz-gradient);
+}
+
+.modAvatarWrap {
+  padding: 0 16px;
+  margin-top: -30px;
+}
+
+.modAvatar {
+  display: block;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 5px solid var(--mod-card-bg);
+  background: var(--mod-card-bg);
+  object-fit: cover;
+}
+
+.modBody {
+  padding: 8px 16px 18px;
+}
+
+.modIdentity {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.modName {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.modHandle {
+  font-size: 0.82rem;
+  color: var(--biz-text-muted);
+}
+
+.modBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 11px;
+}
+
+.modBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+  color: #fff;
+}
+
+.modBadge svg {
+  width: 14px;
+  height: 14px;
+}
+
+.badgeMod {
+  background: #5865f2;
+}
+
+.badgeHype {
+  background: #45ddc0;
+}
+
+.badgeNitro {
+  background: linear-gradient(135deg, #ff73fa 0%, #5865f2 100%);
+}
+
+.badgeBoost {
+  background: #e26ee5;
+}
+
+.badgeDev {
+  background: #3ba55c;
+}
+
+.modMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 11px 12px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.modMetaRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+}
+
+.modMetaIcon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  color: var(--biz-text-muted);
+}
+
+.modMetaLabel {
+  color: var(--biz-text-muted);
+}
+
+.modMetaValue {
+  margin-left: auto;
+  color: var(--biz-text);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* === SÉCURITÉ === */
+
+.securityGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.securityCard {
+  display: flex;
+  gap: 16px;
+  padding: 22px 24px;
+  border: 1px solid var(--biz-border);
+  border-radius: var(--biz-radius);
+  background: var(--biz-surface);
+}
+
+.securityIcon {
+  display: inline-flex;
+  align-items: flex-start;
+  color: var(--biz-accent);
+  flex-shrink: 0;
+}
+
+.securityIcon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.securityName {
+  margin: 0 0 6px;
+  font-family: var(--ifm-heading-font-family);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.securityDesc {
+  margin: 0;
+  color: var(--biz-text-soft);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* === ÉTAPES === */
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  counter-reset: step;
+}
+
+.step {
+  padding: 28px 26px;
+  border: 1px solid var(--biz-border);
+  border-radius: var(--biz-radius);
+  background: var(--biz-surface);
+}
+
+.stepNum {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  background: var(--biz-gradient-cta);
+  font-family: var(--ifm-heading-font-family);
+  font-weight: 700;
+  color: #fff;
+}
+
+.stepName {
+  margin: 0 0 8px;
+  font-family: var(--ifm-heading-font-family);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.stepDesc {
+  margin: 0;
+  color: var(--biz-text-soft);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+/* === CHIFFRES === */
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.statCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 30px 20px;
+  border: 1px solid var(--biz-border);
+  border-radius: var(--biz-radius);
+  background: var(--biz-surface);
+  text-align: center;
+}
+
+.statValue {
+  font-family: var(--ifm-heading-font-family);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+  color: #fff;
+}
+
+.statUnit {
+  margin-left: 0.08em;
+  color: var(--biz-primary);
+}
+
+/* === Note FCA (au-delà de la protection), sous le CTA final === */
+
+.fcaNote {
+  margin: 26px auto 0;
+  max-width: 58ch;
+  color: var(--biz-text-muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.fcaLink {
+  color: var(--biz-text-soft);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+.fcaLink:hover {
+  color: #fff;
+}
+
+.statLabel {
+  color: var(--biz-text-soft);
+  font-size: 0.95rem;
+}
+
+/* === CTA FINAL === */
+
+/* CTA relais en bas de section : renvoie vers le CTA final pour un visiteur
+   déjà convaincu, sans l'obliger à parcourir la suite. */
+.sectionCta {
+  margin-top: 44px;
+  text-align: center;
+}
+
+.finalCta {
+  margin: 40px auto 100px;
+  padding: 60px 24px;
+  text-align: center;
+  /* Décalage pour que l'ancre #contact ne passe pas sous la navbar sticky. */
+  scroll-margin-top: 90px;
+}
+
+.finalCta .container {
+  max-width: 760px;
+  padding: 56px 32px;
+  border: 1px solid var(--biz-border);
+  border-radius: 28px;
+  background:
+    radial-gradient(60% 120% at 50% 0%, rgba(211, 95, 95, 0.14) 0%, transparent 70%),
+    var(--biz-surface);
+}
+
+.finalTitle {
+  margin: 0 0 14px;
+  font-family: var(--ifm-heading-font-family);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  color: #fff;
+}
+
+.finalSub {
+  margin: 0 auto 30px;
+  max-width: 52ch;
+  color: var(--biz-text-soft);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* === Adaptatif === */
+
+@media (max-width: 900px) {
+  .offerGrid,
+  .steps,
+  .statsGrid,
+  .modGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .securityGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 100px 0 70px;
+  }
+  .offerGrid,
+  .steps,
+  .statsGrid,
+  .modGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .statsGrid {
+    max-width: 320px;
+  }
+}
