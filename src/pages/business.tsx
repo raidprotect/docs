@@ -310,16 +310,14 @@ function ModeratorCard({mod}: {mod: Moderator}): ReactNode {
             )}
             {mod.langs.length > 0 && (
               <span className={styles.modLangs}>
-                {mod.langs.map((l) => (
-                  <img
-                    key={l}
-                    className={styles.modLang}
-                    src={`/img/lang/${l}.png`}
-                    alt={langLabel(l, currentLocale)}
-                    title={langLabel(l, currentLocale)}
-                    loading="lazy"
-                  />
-                ))}
+                {mod.langs.map((l) => {
+                  const name = langLabel(l, currentLocale);
+                  return (
+                    <span key={l} className={styles.modLangItem} aria-label={name} data-label={name}>
+                      <img className={styles.modLang} src={`/img/lang/${l}.png`} alt="" loading="lazy" />
+                    </span>
+                  );
+                })}
               </span>
             )}
           </div>

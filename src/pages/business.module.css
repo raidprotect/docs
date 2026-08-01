@@ -419,8 +419,9 @@
   color: var(--biz-text-muted);
 }
 
-/* Tooltip simple des dates (libellé seul). */
-.modMetaItem::after {
+/* Tooltip simple des dates et des drapeaux de langues (libellé seul). */
+.modMetaItem::after,
+.modLangItem::after {
   content: attr(data-label);
   position: absolute;
   bottom: calc(100% + 7px);
@@ -441,7 +442,8 @@
   z-index: 5;
 }
 
-.modMetaItem:hover::after {
+.modMetaItem:hover::after,
+.modLangItem:hover::after {
   opacity: 1;
   transform: translateX(-50%);
 }
@@ -495,6 +497,12 @@
   gap: 5px;
 }
 
+.modLangItem {
+  position: relative;
+  display: inline-flex;
+  cursor: default;
+}
+
 .modLang {
   display: block;
   width: 20px;
@@ -504,6 +512,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .modMetaItem::after,
+  .modLangItem::after,
   .badgeTip {
     transition: opacity 0.15s ease;
     transform: translateX(-50%);
