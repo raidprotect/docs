@@ -159,7 +159,7 @@ const BADGES: Record<ModBadgeType, {file: string; label: string; desc: string}> 
   botdev: {
     file: 'botdev',
     label: 'Développeur de bot vérifié',
-    desc: 'Développeur d’un bot Discord vérifié et approuvé par la plateforme.',
+    desc: 'Contribution à un bot Discord vérifié et approuvé par la plateforme.',
   },
   bug: {
     file: 'bug-hunter',
@@ -216,11 +216,11 @@ type Moderator = {
 // rendu. langs = langues parlées (TODO : à confirmer par personne, défaut fr).
 const MODERATORS: Moderator[] = [
   {avatar: '/img/avatar/derrios.webp', name: 'Arthur', handle: 'derrios', badges: ['mod', 'hse', 'botdev', 'buggold'], langs: ['fr'], created: '2016-12', since: ''},
-  {avatar: '/img/business/mods/grifgrif.webp', name: 'Varyn', handle: 'grifgrif', badges: ['mod', 'hse', 'botdev'], langs: ['fr'], created: '2018-01', since: ''},
-  {avatar: '/img/avatar/ichii.webp', name: 'Ethan', handle: 'ichiidev', badges: ['mod', 'hse', 'botdev'], langs: ['fr'], created: '2019-01', since: ''},
-  {avatar: '/img/business/mods/chancesphere.webp', name: 'ChanceSphere', handle: 'chancesphere574', badges: ['mod'], langs: ['fr'], created: '2016-09', since: ''},
+  {avatar: '/img/business/mods/grifgrif.webp', name: 'Varyn', handle: 'grifgrif', badges: ['mod', 'hse', 'botdev'], langs: ['fr', 'en'], created: '2018-01', since: ''},
+  {avatar: '/img/avatar/ichii.webp', name: 'Ethan', handle: 'ichiidev', badges: ['mod', 'hse', 'botdev'], langs: ['fr', 'en'], created: '2019-01', since: ''},
+  {avatar: '/img/business/mods/chancesphere.webp', name: 'ChanceSphere', handle: 'chancesphere574', badges: ['mod'], langs: ['fr', 'en'], created: '2016-09', since: ''},
   {avatar: '/img/business/mods/mapidae.webp', name: 'Mattéo', handle: 'mapidae', badges: ['mod'], langs: ['fr'], created: '2018-05', since: ''},
-  {avatar: '/img/business/mods/syfor.webp', name: 'Pierre', handle: 'syfor', badges: ['mod', 'buggold'], langs: ['fr'], created: '2018-01', since: ''},
+  {avatar: '/img/business/mods/syfor.webp', name: 'Pierre', handle: 'syfor', badges: ['mod', 'buggold'], langs: ['fr', 'en'], created: '2018-01', since: ''},
 ];
 
 // Formate « YYYY-MM » selon la locale (« déc. 2016 », « Dec 2016 », « Dez. 2016 »…).
@@ -302,7 +302,7 @@ function ModeratorCard({mod}: {mod: Moderator}): ReactNode {
                   <img
                     key={l}
                     className={styles.modLang}
-                    src={`/img/business/langs/${l}.png`}
+                    src={`/img/lang/${l}.png`}
                     alt={LANG_NAMES[l]}
                     title={LANG_NAMES[l]}
                     loading="lazy"

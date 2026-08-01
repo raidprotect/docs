@@ -77,7 +77,12 @@ export default function LocaleDropdownNavbarItem({
   } = useDocusaurusContext();
 
   const localeItems = locales.map((locale) => ({
-    label: utils.getLabel(locale),
+    label: (
+      <>
+        <img className={styles.flag} src={`/img/lang/${locale}.png`} alt="" />
+        {utils.getLabel(locale)}
+      </>
+    ),
     lang: utils.getLang(locale),
     to: utils.getURL(locale, {queryString}),
     target: '_self',
@@ -109,7 +114,11 @@ export default function LocaleDropdownNavbarItem({
       mobile={mobile}
       label={
         <>
-          <IconLanguage className={styles.iconLanguage} />
+          {mobile ? (
+            <IconLanguage className={styles.iconLanguage} />
+          ) : (
+            <img className={styles.toggleFlag} src={`/img/lang/${currentLocale}.png`} alt="" />
+          )}
           {dropdownLabel}
         </>
       }
