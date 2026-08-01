@@ -218,7 +218,7 @@ const MODERATORS: Moderator[] = [
   {avatar: '/img/avatar/derrios.webp', name: 'Arthur', handle: 'derrios', badges: ['mod', 'hse', 'botdev', 'buggold'], langs: ['fr'], created: '2016-12', since: ''},
   {avatar: '/img/business/mods/grifgrif.webp', name: 'Varyn', handle: 'grifgrif', badges: ['mod', 'hse', 'botdev'], langs: ['fr', 'en'], created: '2018-01', since: ''},
   {avatar: '/img/avatar/ichii.webp', name: 'Ethan', handle: 'ichiidev', badges: ['mod', 'hse', 'botdev'], langs: ['fr', 'en'], created: '2019-01', since: ''},
-  {avatar: '/img/business/mods/chancesphere.webp', name: 'ChanceSphere', handle: 'chancesphere574', badges: ['mod'], langs: ['fr', 'en'], created: '2016-09', since: ''},
+  {avatar: '/img/business/mods/chancesphere.webp', name: 'Dillan', handle: 'chancesphere574', badges: ['mod'], langs: ['fr', 'en'], created: '2016-09', since: ''},
   {avatar: '/img/business/mods/mapidae.webp', name: 'Mattéo', handle: 'mapidae', badges: ['mod'], langs: ['fr'], created: '2018-05', since: ''},
   {avatar: '/img/business/mods/syfor.webp', name: 'Pierre', handle: 'syfor', badges: ['mod', 'buggold'], langs: ['fr', 'en'], created: '2018-01', since: ''},
 ];
