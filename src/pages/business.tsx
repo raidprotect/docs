@@ -190,7 +190,7 @@ function BadgeChip({type}: {type: ModBadgeType}): ReactNode {
 
 type LangCode = 'fr' | 'en' | 'es' | 'de' | 'pt';
 
-// Autonymes (universels) pour l'infobulle/alt des drapeaux de langues.
+// Autonymes (secours si Intl.DisplayNames indisponible).
 const LANG_NAMES: Record<LangCode, string> = {
   fr: 'Français',
   en: 'English',
@@ -198,6 +198,18 @@ const LANG_NAMES: Record<LangCode, string> = {
   de: 'Deutsch',
   pt: 'Português',
 };
+
+// Nom d'une langue dans la langue courante du site (ex. site en → « French »),
+// pour l'infobulle des drapeaux. Repli sur l'autonyme si indisponible.
+function langLabel(code: LangCode, locale: string): string {
+  try {
+    const name = new Intl.DisplayNames([locale], {type: 'language'}).of(code);
+    if (name) return name.charAt(0).toUpperCase() + name.slice(1);
+  } catch {
+    /* Intl.DisplayNames indisponible */
+  }
+  return LANG_NAMES[code];
+}
 
 type Moderator = {
   avatar: string;
@@ -303,8 +315,8 @@ function ModeratorCard({mod}: {mod: Moderator}): ReactNode {
                     key={l}
                     className={styles.modLang}
                     src={`/img/lang/${l}.png`}
-                    alt={LANG_NAMES[l]}
-                    title={LANG_NAMES[l]}
+                    alt={langLabel(l, currentLocale)}
+                    title={langLabel(l, currentLocale)}
                     loading="lazy"
                   />
                 ))}
