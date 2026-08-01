@@ -332,7 +332,7 @@ const OFFERS: Offer[] = [
     icon: 'shield',
     id: 'instance',
     title: 'Instance dédiée et isolée',
-    desc: 'Votre propre instance de RaidProtect, isolée et à votre image, pour la performance et la sécurité.',
+    desc: 'Votre serveur tourne sur sa propre instance, à l’écart des milliers d’autres : aucun ralentissement ni risque partagé, et une protection taillée précisément pour vous.',
   },
   {
     icon: 'wrench',
@@ -568,8 +568,9 @@ export default function Business(): ReactNode {
                 </h2>
                 <p className={styles.sectionSub}>
                   <Translate id="business.mods.sub" description="Moderators section subtitle">
-                    Des modérateurs expérimentés et certifiés, en renfort ponctuel ou en prise en
-                    charge complète de votre serveur.
+                    Formés et certifiés par le programme de modération officiel de Discord, en
+                    français comme en anglais. En renfort ponctuel ou en prise en charge complète
+                    de votre serveur.
                   </Translate>
                 </p>
               </div>
