@@ -144,29 +144,67 @@ type ModBadgeType = 'mod' | 'hse' | 'botdev' | 'bug' | 'buggold';
 
 // Vrais badges Discord (SVG officiels récupérés depuis dfr.gg/team). On ne
 // garde que ceux qui distinguent un modérateur pro : pas les badges de maison.
-const BADGES: Record<ModBadgeType, {file: string; label: string}> = {
-  mod: {file: 'mod', label: 'Modérateur certifié'},
-  hse: {file: 'hse', label: 'HypeSquad Events'},
-  botdev: {file: 'botdev', label: 'Développeur de bot vérifié'},
-  bug: {file: 'bug-hunter', label: 'Bug Hunter'},
-  buggold: {file: 'bug-hunter-gold', label: 'Bug Hunter Gold'},
+// desc = explication montrée dans le tooltip au survol.
+const BADGES: Record<ModBadgeType, {file: string; label: string; desc: string}> = {
+  mod: {
+    file: 'mod',
+    label: 'Modérateur certifié',
+    desc: 'A suivi et validé le programme de modération de Discord : formation et examen officiels.',
+  },
+  hse: {
+    file: 'hse',
+    label: 'HypeSquad Events',
+    desc: 'Ambassadeur de Discord, engagé de longue date dans les évènements officiels de la plateforme.',
+  },
+  botdev: {
+    file: 'botdev',
+    label: 'Développeur de bot vérifié',
+    desc: 'Développeur d’un bot Discord vérifié et approuvé par la plateforme.',
+  },
+  bug: {
+    file: 'bug-hunter',
+    label: 'Bug Hunter',
+    desc: 'Bonne connaissance de la plateforme et contribution active à l’amélioration de Discord.',
+  },
+  buggold: {
+    file: 'bug-hunter-gold',
+    label: 'Bug Hunter Gold',
+    desc: 'Contribution majeure à la détection de bugs : expertise reconnue de Discord.',
+  },
 };
 
 function BadgeChip({type}: {type: ModBadgeType}): ReactNode {
   const b = BADGES[type];
   const label = translate({id: `business.badge.${type}`, message: b.label, description: 'Discord badge label'});
+  const desc = translate({id: `business.badge.${type}.desc`, message: b.desc, description: 'Discord badge explanation'});
   return (
-    <span className={styles.modBadge} aria-label={label} data-label={label}>
+    <span className={styles.modBadge} aria-label={`${label} : ${desc}`}>
       <img src={`/img/business/badges/${b.file}.svg`} alt="" loading="lazy" />
+      <span className={styles.badgeTip} aria-hidden="true">
+        <strong className={styles.badgeTipTitle}>{label}</strong>
+        <span className={styles.badgeTipDesc}>{desc}</span>
+      </span>
     </span>
   );
 }
+
+type LangCode = 'fr' | 'en' | 'es' | 'de' | 'pt';
+
+// Autonymes (universels) pour l'infobulle/alt des drapeaux de langues.
+const LANG_NAMES: Record<LangCode, string> = {
+  fr: 'Français',
+  en: 'English',
+  es: 'Español',
+  de: 'Deutsch',
+  pt: 'Português',
+};
 
 type Moderator = {
   avatar: string;
   name: string;
   handle: string;
   badges: ModBadgeType[];
+  langs: LangCode[];
   created: string;
   since: string;
 };
@@ -175,14 +213,14 @@ type Moderator = {
 // created/since au format « YYYY-MM » : formatés selon la locale au rendu (voir
 // formatMonthYear). created = création du compte (déduite de l'ID Discord).
 // since (Modère depuis) laissé vide pour l'instant : ce segment n'est alors pas
-// rendu.
+// rendu. langs = langues parlées (TODO : à confirmer par personne, défaut fr).
 const MODERATORS: Moderator[] = [
-  {avatar: '/img/avatar/derrios.webp', name: 'Arthur', handle: 'derrios', badges: ['mod', 'hse', 'botdev', 'buggold'], created: '2016-12', since: ''},
-  {avatar: '/img/business/mods/grifgrif.webp', name: 'Varyn', handle: 'grifgrif', badges: ['mod', 'hse', 'botdev'], created: '2018-01', since: ''},
-  {avatar: '/img/avatar/ichii.webp', name: 'Ethan', handle: 'ichiidev', badges: ['mod', 'hse', 'botdev'], created: '2019-01', since: ''},
-  {avatar: '/img/business/mods/chancesphere.webp', name: 'ChanceSphere', handle: 'chancesphere574', badges: ['mod'], created: '2016-09', since: ''},
-  {avatar: '/img/business/mods/mapidae.webp', name: 'Mattéo', handle: 'mapidae', badges: ['mod'], created: '2018-05', since: ''},
-  {avatar: '/img/business/mods/syfor.webp', name: 'Pierre', handle: 'syfor', badges: ['mod', 'buggold'], created: '2018-01', since: ''},
+  {avatar: '/img/avatar/derrios.webp', name: 'Arthur', handle: 'derrios', badges: ['mod', 'hse', 'botdev', 'buggold'], langs: ['fr'], created: '2016-12', since: ''},
+  {avatar: '/img/business/mods/grifgrif.webp', name: 'Varyn', handle: 'grifgrif', badges: ['mod', 'hse', 'botdev'], langs: ['fr'], created: '2018-01', since: ''},
+  {avatar: '/img/avatar/ichii.webp', name: 'Ethan', handle: 'ichiidev', badges: ['mod', 'hse', 'botdev'], langs: ['fr'], created: '2019-01', since: ''},
+  {avatar: '/img/business/mods/chancesphere.webp', name: 'ChanceSphere', handle: 'chancesphere574', badges: ['mod'], langs: ['fr'], created: '2016-09', since: ''},
+  {avatar: '/img/business/mods/mapidae.webp', name: 'Mattéo', handle: 'mapidae', badges: ['mod'], langs: ['fr'], created: '2018-05', since: ''},
+  {avatar: '/img/business/mods/syfor.webp', name: 'Pierre', handle: 'syfor', badges: ['mod', 'buggold'], langs: ['fr'], created: '2018-01', since: ''},
 ];
 
 // Formate « YYYY-MM » selon la locale (« déc. 2016 », « Dec 2016 », « Dez. 2016 »…).
@@ -239,7 +277,7 @@ function ModeratorCard({mod}: {mod: Moderator}): ReactNode {
             ))}
           </div>
         )}
-        {(mod.created || mod.since) && (
+        {(mod.created || mod.since || mod.langs.length > 0) && (
           <div className={styles.modMeta}>
             {mod.created && (
               <span className={styles.modMetaItem} aria-label={createdLabel} data-label={createdLabel}>
@@ -256,6 +294,20 @@ function ModeratorCard({mod}: {mod: Moderator}): ReactNode {
               <span className={styles.modMetaItem} aria-label={sinceLabel} data-label={sinceLabel}>
                 <MetaGlyph name="mod" />
                 {formatMonthYear(mod.since, currentLocale)}
+              </span>
+            )}
+            {mod.langs.length > 0 && (
+              <span className={styles.modLangs}>
+                {mod.langs.map((l) => (
+                  <img
+                    key={l}
+                    className={styles.modLang}
+                    src={`/img/business/langs/${l}.png`}
+                    alt={LANG_NAMES[l]}
+                    title={LANG_NAMES[l]}
+                    loading="lazy"
+                  />
+                ))}
               </span>
             )}
           </div>

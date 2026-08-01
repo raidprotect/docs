@@ -419,8 +419,8 @@
   color: var(--biz-text-muted);
 }
 
-.modMetaItem::after,
-.modBadge::after {
+/* Tooltip simple des dates (libellé seul). */
+.modMetaItem::after {
   content: attr(data-label);
   position: absolute;
   bottom: calc(100% + 7px);
@@ -441,15 +441,70 @@
   z-index: 5;
 }
 
-.modMetaItem:hover::after,
-.modBadge:hover::after {
+.modMetaItem:hover::after {
   opacity: 1;
   transform: translateX(-50%);
 }
 
+/* Tooltip riche des badges : titre + explication. */
+.badgeTip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(3px);
+  width: max-content;
+  max-width: 230px;
+  padding: 8px 11px;
+  border-radius: 9px;
+  background: #05030f;
+  border: 1px solid var(--biz-border);
+  box-shadow: 0 10px 26px -10px rgba(0, 0, 0, 0.8);
+  text-align: left;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 6;
+}
+
+.modBadge:hover .badgeTip {
+  opacity: 1;
+  transform: translateX(-50%);
+}
+
+.badgeTipTitle {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--biz-text);
+}
+
+.badgeTipDesc {
+  display: block;
+  margin-top: 3px;
+  font-size: 0.72rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--biz-text-soft);
+}
+
+/* Drapeaux de langues parlées, poussés à droite de la ligne méta. */
+.modLangs {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.modLang {
+  display: block;
+  width: 20px;
+  height: auto;
+  border-radius: 3px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .modMetaItem::after,
-  .modBadge::after {
+  .badgeTip {
     transition: opacity 0.15s ease;
     transform: translateX(-50%);
   }
