@@ -84,38 +84,36 @@ export default function AntiScamMockup() {
         </div>
       </div>
 
-      {posted && (
-        <div className={`${concept.scamMsgWrap} ${removed ? concept.scamMsgRemoved : ""}`}>
-          <div className={concept.chatMessage}>
-            <img className={concept.chatAvatar} src="/img/avatar/chaussette.webp" alt="" loading="lazy" />
-            <div className={concept.chatBody}>
-              <div className={concept.chatHeader}>
-                <span className={concept.chatName}>Chaussette</span>
-                <span className={concept.chatTime}>
-                  {translate({ id: "mockup.antiscam.time2", message: "aujourd'hui à 19:33" })}
-                </span>
+      {posted && !removed && (
+        <div className={`${concept.chatMessage} ${concept.scamStatic}`}>
+          <img className={concept.chatAvatar} src="/img/avatar/chaussette.webp" alt="" loading="lazy" />
+          <div className={concept.chatBody}>
+            <div className={concept.chatHeader}>
+              <span className={concept.chatName}>Chaussette</span>
+              <span className={concept.chatTime}>
+                {translate({ id: "mockup.antiscam.time2", message: "aujourd'hui à 19:33" })}
+              </span>
+            </div>
+            <div className={concept.scamImageWrap}>
+              <div className={`${concept.scamGrid} ${detected ? concept.scamGridBlur : ""}`}>
+                {[1, 2, 3, 4].map((n) => (
+                  <img key={n} className={concept.scamCell} src={`/img/mockup/scam${n}.png`} alt="" loading="lazy" />
+                ))}
               </div>
-              <div className={concept.scamImageWrap}>
-                <div className={`${concept.scamGrid} ${detected ? concept.scamGridBlur : ""}`}>
-                  {[1, 2, 3, 4].map((n) => (
-                    <img key={n} className={concept.scamCell} src={`/img/mockup/scam${n}.png`} alt="" loading="lazy" />
-                  ))}
+              {scanning && <span className={concept.scamScan} />}
+              {detected && (
+                <div className={concept.scamFlag}>
+                  <img src="/img/icons/iconScamLens.svg" alt="" width={28} height={28} />
+                  {translate({ id: "mockup.antiscam.detected", message: "Arnaque détectée" })}
                 </div>
-                {scanning && <span className={concept.scamScan} />}
-                {detected && (
-                  <div className={concept.scamFlag}>
-                    <img src="/img/icons/iconScamLens.svg" alt="" width={28} height={28} />
-                    {translate({ id: "mockup.antiscam.detected", message: "Arnaque détectée" })}
-                  </div>
-                )}
-              </div>
+              )}
             </div>
           </div>
         </div>
       )}
 
       {removed && (
-        <div className={concept.chatMessage}>
+        <div className={`${concept.chatMessage} ${concept.scamStatic}`}>
           <img className={concept.chatAvatar} src="/img/logo.png" alt="" loading="lazy" />
           <div className={concept.chatBody}>
             <div className={concept.chatHeader}>

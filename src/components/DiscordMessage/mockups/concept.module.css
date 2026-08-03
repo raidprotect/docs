@@ -849,22 +849,21 @@ html[data-theme="light"] .dmSpinner {
 
 /* === Scène ScamLens (anti-scam d'images) === */
 
+/* Hauteur réservée légèrement au-dessus de l'état le plus haut (la fresque,
+   ~341 px) : le bloc garde une hauteur constante quel que soit le pas de
+   l'animation, donc la page de doc ne bouge jamais. */
 .scamWrap {
   display: flex;
   flex-direction: column;
-  min-height: 400px;
+  min-height: 350px;
 }
 
-/* Message de scam : se replie quand ScamLens le supprime. */
-.scamMsgWrap {
-  overflow: hidden;
-  max-height: 340px;
-  transition: max-height 0.4s ease, opacity 0.3s ease;
-}
-
-.scamMsgWrap.scamMsgRemoved {
-  max-height: 0;
-  opacity: 0;
+/* Messages du mockup (scam posté, log de sanction) : pas d'animation
+   d'apparition, pour ne pas « pop » ni décaler la page dans la doc. La hauteur
+   du bloc est réservée (.scamWrap min-height), l'échange scam -> log se fait
+   sans transition, à hauteur constante. */
+.chatMessage.scamStatic {
+  animation: none;
 }
 
 .scamImageWrap {
@@ -940,9 +939,6 @@ html[data-theme="light"] .dmSpinner {
 @media (prefers-reduced-motion: reduce) {
   .scamScan {
     display: none;
-  }
-  .scamMsgWrap {
-    transition: none;
   }
 }
 
