@@ -847,6 +847,97 @@ html[data-theme="light"] .dmSpinner {
   min-height: 380px;
 }
 
+/* === Scène ScamLens (anti-scam d'images) === */
+
+.scamWrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+}
+
+/* Message de scam : se replie quand ScamLens le supprime. */
+.scamMsgWrap {
+  overflow: hidden;
+  max-height: 340px;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.scamMsgWrap.scamMsgRemoved {
+  max-height: 0;
+  opacity: 0;
+}
+
+.scamImageWrap {
+  position: relative;
+  display: inline-block;
+  margin-top: 4px;
+  border-radius: 8px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.scamImage {
+  display: block;
+  width: auto;
+  max-width: 240px;
+  max-height: 232px;
+  border-radius: 8px;
+  transition: filter 0.35s ease;
+}
+
+.scamImageBlur {
+  filter: blur(7px) brightness(0.55);
+}
+
+/* Ligne de scan qui balaie l'image (ScamLens analyse l'image). */
+.scamScan {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #4ea1ff 45%, #8fd0ff 50%, #4ea1ff 55%, transparent);
+  box-shadow: 0 0 12px 2px rgba(78, 161, 255, 0.7);
+  animation: scamScan 0.52s ease-in-out;
+}
+
+@keyframes scamScan {
+  from {
+    top: 0;
+  }
+  to {
+    top: 100%;
+  }
+}
+
+/* Voile « Arnaque détectée » par-dessus l'image floutée. */
+.scamFlag {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px;
+  text-align: center;
+  background: rgba(90, 15, 15, 0.4);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+  animation: chatIn 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scamScan {
+    display: none;
+  }
+  .scamMsgWrap {
+    transition: none;
+  }
+}
+
 /* === Scène signalement : deux salons, menu contextuel, modal === */
 
 .reportsWrap {

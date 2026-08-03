@@ -2,6 +2,7 @@ import React, {type ComponentType, type ReactNode} from 'react';
 import Head from '@docusaurus/Head';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import AntiSpamMockup from '@site/src/components/DiscordMessage/mockups/anti-spam';
+import AntiScamMockup from '@site/src/components/DiscordMessage/mockups/anti-scam';
 import RaidModeMockup from '@site/src/components/DiscordMessage/mockups/raid-mode';
 import CaptchaMockup from '@site/src/components/DiscordMessage/mockups/captcha';
 import ModerationMockup from '@site/src/components/DiscordMessage/mockups/moderation';
@@ -18,6 +19,7 @@ import styles from './embed.module.css';
 
 const MOCKUPS: Record<string, ComponentType> = {
   'anti-spam': AntiSpamMockup,
+  'anti-scam': AntiScamMockup,
   'raid-mode': RaidModeMockup,
   captcha: CaptchaMockup,
   'authentication-manager': AuthenticationManagerMockup,
