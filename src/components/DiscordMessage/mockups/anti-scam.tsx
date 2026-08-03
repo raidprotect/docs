@@ -96,16 +96,15 @@ export default function AntiScamMockup() {
                 </span>
               </div>
               <div className={concept.scamImageWrap}>
-                <img
-                  className={`${concept.scamImage} ${detected ? concept.scamImageBlur : ""}`}
-                  src="/img/mockup/scam.png"
-                  alt=""
-                  loading="lazy"
-                />
+                <div className={`${concept.scamGrid} ${detected ? concept.scamGridBlur : ""}`}>
+                  {[1, 2, 3, 4].map((n) => (
+                    <img key={n} className={concept.scamCell} src={`/img/mockup/scam${n}.png`} alt="" loading="lazy" />
+                  ))}
+                </div>
                 {scanning && <span className={concept.scamScan} />}
                 {detected && (
                   <div className={concept.scamFlag}>
-                    <img src="/img/icons/iconScamLens.svg" alt="" width={26} height={26} />
+                    <img src="/img/icons/iconScamLens.svg" alt="" width={28} height={28} />
                     {translate({ id: "mockup.antiscam.detected", message: "Arnaque détectée" })}
                   </div>
                 )}

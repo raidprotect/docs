@@ -876,17 +876,25 @@ html[data-theme="light"] .dmSpinner {
   line-height: 0;
 }
 
-.scamImage {
-  display: block;
-  width: auto;
-  max-width: 240px;
-  max-height: 232px;
-  border-radius: 8px;
+/* Fresque de 4 images (mosaïque façon Discord). */
+.scamGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 116px);
+  grid-auto-rows: 116px;
+  gap: 3px;
   transition: filter 0.35s ease;
 }
 
-.scamImageBlur {
+.scamGridBlur {
   filter: blur(7px) brightness(0.55);
+}
+
+.scamCell {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
 }
 
 /* Ligne de scan qui balaie l'image (ScamLens analyse l'image). */
