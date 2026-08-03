@@ -33,7 +33,7 @@ export default function TagRoleMockup() {
         fields: [
           {
             name: `${E("1398382673491398756")} ${translate({ id: "mockup.tagrole.field", message: "Rôle de Tag" })}`,
-            value: "> @Rôle de Tag",
+            value: "> @[Rôle de Tag]",
           },
         ],
         footer: { text: "RaidProtect v3.4.0 • Configuration > Rôle de Tag" },

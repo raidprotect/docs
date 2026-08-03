@@ -51,7 +51,14 @@ export function formatInlineMarkdown(text: string): ReactNode[] {
       remaining = remaining.slice(channelMatch[0].length);
       continue;
     }
-    // @role or @user mention
+    // @[Nom de rôle] mention : nom multi-mots (avec espaces), délimité par [ ].
+    const roleMentionMatch = remaining.match(/^@\[([^\]]+)\]/);
+    if (roleMentionMatch) {
+      result.push(<span key={key++} className={styles.mention}>@{roleMentionMatch[1]}</span>);
+      remaining = remaining.slice(roleMentionMatch[0].length);
+      continue;
+    }
+    // @role or @user mention (un seul mot)
     const mentionMatch = remaining.match(/^@([\wÀ-ɏ]+)/);
     if (mentionMatch) {
       result.push(<span key={key++} className={styles.mention}>@{mentionMatch[1]}</span>);

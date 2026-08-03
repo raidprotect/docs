@@ -423,7 +423,7 @@ export function ReportsSettingsMockup() {
       fields: [
         {
           name: translate({ id: "mockup.settingsMenus.reports.trusted", message: "Rôle de confiance" }),
-          value: `> @${translate({ id: "mockup.settingsMenus.reports.trustedValue", message: "Membre de confiance" })}`,
+          value: `> @[${translate({ id: "mockup.settingsMenus.reports.trustedValue", message: "Membre de confiance" })}]`,
         },
       ],
       footerPath: "Signalements > Rôle de confiance",
@@ -525,7 +525,7 @@ export function ReportsSettingsMockup() {
           },
           {
             name: `${E(ICON.premium)} ${translate({ id: "mockup.settingsMenus.reports.trusted", message: "Rôle de confiance" })}`,
-            value: `> @${translate({ id: "mockup.settingsMenus.reports.trustedValue", message: "Membre de confiance" })}`,
+            value: `> @[${translate({ id: "mockup.settingsMenus.reports.trustedValue", message: "Membre de confiance" })}]`,
             inline: true,
           },
         ],
