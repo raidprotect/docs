@@ -858,13 +858,11 @@ html[data-theme="light"] .dmSpinner {
   min-height: 350px;
 }
 
-/* Messages du mockup (scam posté, log de sanction) : pas d'animation
-   d'apparition, pour ne pas « pop » ni décaler la page dans la doc. La hauteur
-   du bloc est réservée (.scamWrap min-height), l'échange scam -> log se fait
-   sans transition, à hauteur constante. */
-.chatMessage.scamStatic {
-  animation: none;
-}
+/* Les messages gardent leur petite animation d'apparition (chatIn : opacity +
+   translateY en transform, sans impact sur la mise en page). Le saut de page
+   venait du repli animé de la fresque (max-height) qui chevauchait l'apparition
+   du log : on échange désormais scam -> log instantanément, à hauteur réservée
+   constante (.scamWrap), donc la page de doc ne bouge pas. */
 
 .scamImageWrap {
   position: relative;

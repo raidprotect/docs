@@ -85,7 +85,7 @@ export default function AntiScamMockup() {
       </div>
 
       {posted && !removed && (
-        <div className={`${concept.chatMessage} ${concept.scamStatic}`}>
+        <div className={concept.chatMessage}>
           <img className={concept.chatAvatar} src="/img/avatar/chaussette.webp" alt="" loading="lazy" />
           <div className={concept.chatBody}>
             <div className={concept.chatHeader}>
@@ -113,7 +113,7 @@ export default function AntiScamMockup() {
       )}
 
       {removed && (
-        <div className={`${concept.chatMessage} ${concept.scamStatic}`}>
+        <div className={concept.chatMessage}>
           <img className={concept.chatAvatar} src="/img/logo.png" alt="" loading="lazy" />
           <div className={concept.chatBody}>
             <div className={concept.chatHeader}>
