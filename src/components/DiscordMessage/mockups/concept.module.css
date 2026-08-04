@@ -850,12 +850,12 @@ html[data-theme="light"] .dmSpinner {
 /* === Scène ScamLens (anti-scam d'images) === */
 
 /* Hauteur réservée légèrement au-dessus de l'état le plus haut (la fresque,
-   ~341 px) : le bloc garde une hauteur constante quel que soit le pas de
-   l'animation, donc la page de doc ne bouge jamais. */
+   ~410 px avec le message d'ambiance) : le bloc garde une hauteur constante
+   quel que soit le pas de l'animation, donc la page de doc ne bouge jamais. */
 .scamWrap {
   display: flex;
   flex-direction: column;
-  min-height: 350px;
+  min-height: 420px;
 }
 
 /* Les messages gardent leur petite animation d'apparition (chatIn : opacity +
@@ -876,8 +876,8 @@ html[data-theme="light"] .dmSpinner {
 /* Fresque de 4 images (mosaïque façon Discord). */
 .scamGrid {
   display: grid;
-  grid-template-columns: repeat(2, 116px);
-  grid-auto-rows: 116px;
+  grid-template-columns: repeat(2, 150px);
+  grid-auto-rows: 150px;
   gap: 3px;
   transition: filter 0.35s ease;
 }
