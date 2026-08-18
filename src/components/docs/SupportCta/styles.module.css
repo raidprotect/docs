@@ -1,0 +1,242 @@
+/* Encart support en fin de page docs. On s'appuie sur les variables Infima
+ * (présentes dans le thème doc) plutôt que sur les tokens --color-* de la
+ * landing, qui ne sont pas définis dans ce contexte.
+ * La carte serveur reproduit la carte d'invitation Discord de dfr.gg. */
+
+.wrap {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px 40px;
+  margin-top: 3rem;
+  padding: 32px 36px;
+  border-radius: 16px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background-color: var(--ifm-background-surface-color);
+}
+
+.glow {
+  position: absolute;
+  inset: auto auto -140px -100px;
+  width: 320px;
+  height: 260px;
+  background-image: linear-gradient(120deg, var(--ifm-color-primary) 0%, #a561a3 100%);
+  opacity: 0.16;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.text {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 300px;
+  min-width: 0;
+}
+
+.title {
+  margin: 0 0 8px 0;
+  font-size: 1.55rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--ifm-heading-color);
+}
+
+.subtitle {
+  margin: 0 0 22px 0;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* Bouton principal : dégradé de marque, texte blanc lisible. */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border-radius: 10px;
+  background-image: linear-gradient(120deg, var(--ifm-color-primary) 0%, #a561a3 100%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.98rem;
+  text-decoration: none;
+  transition: filter 0.25s;
+}
+
+.button:hover {
+  filter: brightness(1.08);
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ===== Carte serveur (façon carte d'invitation Discord) ===== */
+
+.card {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 324px;
+  max-width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background-color: var(--ifm-background-color);
+}
+
+.banner {
+  display: block;
+  height: 100px;
+  background-image: linear-gradient(120deg, var(--ifm-color-primary) 0%, #a561a3 100%);
+}
+
+.bannerImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cardBody {
+  padding: 14px 16px 16px;
+}
+
+.cardHead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Icône + nom cliquables, sans style de lien (pas de couleur ni soulignement). */
+.plainLink {
+  display: inline-flex;
+  color: inherit;
+  text-decoration: none;
+}
+
+.plainLink:hover,
+.plainLink:focus {
+  color: inherit;
+  text-decoration: none;
+}
+
+.icon {
+  flex: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  object-fit: cover;
+  background-color: var(--ifm-background-surface-color);
+}
+
+.meta {
+  display: flex;
+  flex-flow: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.nameRow {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.name,
+.name:hover,
+.name:focus {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ifm-heading-color);
+  white-space: nowrap;
+}
+
+.badge {
+  flex: none;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.78rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.online,
+.members {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.onlineDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #23a55a;
+}
+
+.members::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--ifm-color-emphasis-400);
+}
+
+/* Champ d'invitation copiable */
+.invite {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 8px 8px 8px 14px;
+  border-radius: 8px;
+  background-color: color-mix(in srgb, var(--ifm-color-emphasis-100) 60%, transparent);
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.inviteCode {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-800);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.copyBtn {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--ifm-color-emphasis-600);
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.copyBtn:hover {
+  background-color: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-900);
+}
+
+@media (max-width: 768px) {
+  .wrap {
+    padding: 26px 22px;
+  }
+  .card {
+    flex-basis: 100%;
+  }
+}

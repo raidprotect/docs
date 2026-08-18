@@ -2995,5 +2995,29 @@
   "business.badge.buggold.desc": {
     "message": "Contribución importante a la detección de errores: experiencia reconocida en Discord.",
     "description": "Business page (/business)"
+  },
+  "docs.support.title": {
+    "message": "¿Necesitas ayuda?",
+    "description": "Heading of the end-of-doc support CTA"
+  },
+  "docs.support.subtitle": {
+    "message": "¿Una pregunta, un error o dudas con la configuración? Nuestro equipo y nuestra comunidad te responden directamente en Discord.",
+    "description": "Body text of the end-of-doc support CTA"
+  },
+  "docs.support.cta": {
+    "message": "Unirse al soporte",
+    "description": "Button label of the end-of-doc support CTA"
+  },
+  "docs.support.members": {
+    "message": "{count} miembros",
+    "description": "Support server total member count"
+  },
+  "docs.support.online": {
+    "message": "{count} en línea",
+    "description": "Support server online (present) member count"
+  },
+  "docs.support.copy": {
+    "message": "Copiar el enlace de invitación",
+    "description": "Aria label for the copy-invite button"
   }
 }

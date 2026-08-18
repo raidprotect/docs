@@ -3016,5 +3016,29 @@
   "business.badge.buggold.desc": {
     "message": "Major contribution to bug hunting: recognised Discord expertise.",
     "description": "Business page (/business)"
+  },
+  "docs.support.title": {
+    "message": "Need help?",
+    "description": "Heading of the end-of-doc support CTA"
+  },
+  "docs.support.subtitle": {
+    "message": "A question, a bug or unsure about the setup? Our team and community answer you directly on Discord.",
+    "description": "Body text of the end-of-doc support CTA"
+  },
+  "docs.support.cta": {
+    "message": "Join the support server",
+    "description": "Button label of the end-of-doc support CTA"
+  },
+  "docs.support.members": {
+    "message": "{count} members",
+    "description": "Support server total member count"
+  },
+  "docs.support.online": {
+    "message": "{count} online",
+    "description": "Support server online (present) member count"
+  },
+  "docs.support.copy": {
+    "message": "Copy the invitation link",
+    "description": "Aria label for the copy-invite button"
   }
 }
