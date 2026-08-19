@@ -2676,5 +2676,349 @@
   "tools.timezone.help": {
     "message": "Copy the value above and paste it into RaidProtect when a time zone is requested (it uses the standard “Continent/City” format, for example {code}).",
     "description": "Timezone tool: closing help paragraph; {code} renders an example zone in a <code> tag"
+  },
+  "communities.games.meta.title": {
+    "message": "RaidProtect for gaming & game servers",
+    "description": "Browser tab title for the games community landing page"
+  },
+  "communities.games.meta.description": {
+    "message": "FiveM, Roblox, Minecraft or a booming gaming Discord: RaidProtect blocks raids, filters bots and stops cheat spam automatically.",
+    "description": "Meta description for the games community landing page"
+  },
+  "communities.games.hero.title": {
+    "message": "Protect your {highlight} community from raids",
+    "description": "Games landing: hero H1; {highlight} renders the accented word"
+  },
+  "communities.games.hero.title.highlight": {
+    "message": "gaming",
+    "description": "Highlighted word inside the games hero title"
+  },
+  "communities.games.hero.description": {
+    "message": "FiveM, Roblox, Minecraft or a booming gaming Discord: as soon as it grows, it attracts raids, bots and cheat sellers. RaidProtect filters all of it automatically so your players enjoy the game, not the spam.",
+    "description": "Games landing: hero subtitle"
+  },
+  "communities.games.hero.secondaryCta": {
+    "message": "Discover the protection",
+    "description": "Games landing: secondary CTA label"
+  },
+  "communities.games.threats.title": {
+    "message": "What threatens your server",
+    "description": "Games landing: threats section title"
+  },
+  "communities.games.threats.subtitle": {
+    "message": "A popular gaming server is a permanent target for raids and scammers.",
+    "description": "Games landing: threats section subtitle"
+  },
+  "communities.games.threat.raid.title": {
+    "message": "Raids and troll invasions",
+    "description": "Games threat 1 title"
+  },
+  "communities.games.threat.raid.description": {
+    "message": "As soon as a gaming server grows, it draws waves of throwaway accounts that come to spam and troll en masse.",
+    "description": "Games threat 1 description"
+  },
+  "communities.games.threat.bots.title": {
+    "message": "Bots and account farms",
+    "description": "Games threat 2 title"
+  },
+  "communities.games.threat.bots.description": {
+    "message": "Cheat sellers, boosting services and fake accounts sign up en masse to pollute your community.",
+    "description": "Games threat 2 description"
+  },
+  "communities.games.threat.spam.title": {
+    "message": "“Free robux” scams & cheats",
+    "description": "Games threat 3 title"
+  },
+  "communities.games.threat.spam.description": {
+    "message": "Scam link spam, account sales and fake promos flood your server's chat within seconds.",
+    "description": "Games threat 3 description"
+  },
+  "communities.games.features.title": {
+    "message": "Built for large communities",
+    "description": "Games landing: features section title"
+  },
+  "communities.games.features.subtitle": {
+    "message": "RaidProtect's protections, tuned for gaming servers that never sleep.",
+    "description": "Games landing: features section subtitle"
+  },
+  "communities.games.feature.antiraid.title": {
+    "message": "Anti-raid & lockdown",
+    "description": "Games feature Anti-raid title"
+  },
+  "communities.games.feature.antiraid.description": {
+    "message": "As soon as a wave of accounts arrives, RaidProtect closes new joins and locks the channels until the raid passes, well beyond Discord's 24-hour limit.",
+    "description": "Games feature Anti-raid description"
+  },
+  "communities.games.feature.antiraid.cta": {
+    "message": "Discover raid mode",
+    "description": "Games feature Anti-raid CTA"
+  },
+  "communities.games.feature.antispam.title": {
+    "message": "Automatic anti-spam",
+    "description": "Games feature Anti-spam title"
+  },
+  "communities.games.feature.antispam.description": {
+    "message": "Cheat ads, account sales and scam links are sanctioned instantly, with no intervention.",
+    "description": "Games feature Anti-spam description"
+  },
+  "communities.games.feature.antispam.cta": {
+    "message": "Set up anti-spam",
+    "description": "Games feature Anti-spam CTA"
+  },
+  "communities.games.feature.captcha.title": {
+    "message": "Captcha on entry",
+    "description": "Games feature Captcha title"
+  },
+  "communities.games.feature.captcha.description": {
+    "message": "Each player proves they're human before entering. Bot farms stay at the door.",
+    "description": "Games feature Captcha description"
+  },
+  "communities.games.feature.captcha.cta": {
+    "message": "Enable captcha",
+    "description": "Games feature Captcha CTA"
+  },
+  "communities.games.feature.reports.title": {
+    "message": "Community reports",
+    "description": "Games feature Reports title"
+  },
+  "communities.games.feature.reports.description": {
+    "message": "Your players flag suspicious content and accounts in one click: on a large server, the community moderates with you.",
+    "description": "Games feature Reports description"
+  },
+  "communities.games.feature.reports.cta": {
+    "message": "Discover reports",
+    "description": "Games feature Reports CTA"
+  },
+  "communities.games.socialProof.title": {
+    "message": "They protect their gaming community with RaidProtect",
+    "description": "Games social proof marquee title"
+  },
+  "communities.games.stat.servers": {
+    "message": "protected Discord servers",
+    "description": "Games stat: protected servers"
+  },
+  "communities.games.stat.scamlens": {
+    "message": "image scams blocked",
+    "description": "Games stat: scam images blocked by ScamLens across the network"
+  },
+  "communities.games.stat.members": {
+    "message": "protected members",
+    "description": "Games stat: protected members"
+  },
+  "communities.games.stat.spam": {
+    "message": "spam messages blocked",
+    "description": "Games stat: spam messages blocked"
+  },
+  "communities.games.premium.title": {
+    "message": "Premium for gaming servers that never sleep",
+    "description": "Games premium block title"
+  },
+  "communities.games.premium.description": {
+    "message": "The free version already holds up. Premium adds the heavy-duty responses for big waves.",
+    "description": "Games premium block description"
+  },
+  "communities.games.premium.perk1": {
+    "message": "Anti-raid kick mode to clear out big troll waves",
+    "description": "Games premium perk 1"
+  },
+  "communities.games.premium.perk2": {
+    "message": "Advanced HoneyPot sanctions (kick, timeout, jail) against bots",
+    "description": "Games premium perk 2"
+  },
+  "communities.games.premium.perk3": {
+    "message": "Discreet moderation: sanctions no longer post a message in the chat",
+    "description": "Games premium perk 3"
+  },
+  "communities.games.premium.cta": {
+    "message": "Discover premium",
+    "description": "Games premium CTA label"
+  },
+  "communities.games.cta.title": {
+    "message": "Ready to secure your {highlight} server?",
+    "description": "Games landing: final CTA title; {highlight} renders the accented word"
+  },
+  "communities.games.cta.title.highlight": {
+    "message": "gaming",
+    "description": "Highlighted word inside the games final CTA title"
+  },
+  "communities.games.cta.description": {
+    "message": "Add RaidProtect in seconds and let your players focus on the game.",
+    "description": "Games landing: final CTA description"
+  },
+  "communities.games.cta.addToDiscord": {
+    "message": "Add to Discord",
+    "description": "Games landing: primary CTA (add bot to Discord)"
+  },
+  "communities.creators.meta.title": {
+    "message": "RaidProtect for creators & streamers",
+    "description": "Browser tab title for the creators community landing page"
+  },
+  "communities.creators.meta.description": {
+    "message": "A livestream, a viral short, a shoutout: your server can double overnight, raids and bots included. RaidProtect absorbs the spikes and filters out the unwanted.",
+    "description": "Meta description for the creators community landing page"
+  },
+  "communities.creators.hero.title": {
+    "message": "The Discord protection built for {highlight}",
+    "description": "Creators landing: hero H1; {highlight} renders the accented word"
+  },
+  "communities.creators.hero.title.highlight": {
+    "message": "creators",
+    "description": "Highlighted word inside the creators hero title"
+  },
+  "communities.creators.hero.description": {
+    "message": "A livestream, a viral short, a shoutout: your server can double overnight, raids and bots included. RaidProtect absorbs the spikes, filters out the unwanted and leaves your community in peace.",
+    "description": "Creators landing: hero subtitle"
+  },
+  "communities.creators.hero.secondaryCta": {
+    "message": "Discover the protection",
+    "description": "Creators landing: secondary CTA label"
+  },
+  "communities.creators.threats.title": {
+    "message": "The flip side of going viral",
+    "description": "Creators landing: threats section title"
+  },
+  "communities.creators.threats.subtitle": {
+    "message": "The more your audience grows, the more your server attracts what you don't want to see there.",
+    "description": "Creators landing: threats section subtitle"
+  },
+  "communities.creators.threat.raid.title": {
+    "message": "Raids after a stream or a shoutout",
+    "description": "Creators threat 1 title"
+  },
+  "communities.creators.threat.raid.description": {
+    "message": "A visibility spike also attracts trolls: waves of accounts show up to spam and disrupt your chat.",
+    "description": "Creators threat 1 description"
+  },
+  "communities.creators.threat.bots.title": {
+    "message": "Bots and throwaway accounts",
+    "description": "Creators threat 2 title"
+  },
+  "communities.creators.threat.bots.description": {
+    "message": "Self-bots, recycled accounts and follower farms pollute your server as soon as it starts growing.",
+    "description": "Creators threat 2 description"
+  },
+  "communities.creators.threat.spam.title": {
+    "message": "Spam and rampant self-promo",
+    "description": "Creators threat 3 title"
+  },
+  "communities.creators.threat.spam.description": {
+    "message": "Self-promo links, “free nitro” scams and emoji floods drown out your community's real conversations.",
+    "description": "Creators threat 3 description"
+  },
+  "communities.creators.features.title": {
+    "message": "Built to absorb the spikes",
+    "description": "Creators landing: features section title"
+  },
+  "communities.creators.features.subtitle": {
+    "message": "RaidProtect's protections, tuned for fast-growing communities.",
+    "description": "Creators landing: features section subtitle"
+  },
+  "communities.creators.feature.antiraid.title": {
+    "message": "Anti-raid built for spikes",
+    "description": "Creators feature Anti-raid title"
+  },
+  "communities.creators.feature.antiraid.description": {
+    "message": "After a stream or a shoutout, RaidProtect closes new joins and locks the channels until the spike passes, then reopens on its own.",
+    "description": "Creators feature Anti-raid description"
+  },
+  "communities.creators.feature.antiraid.cta": {
+    "message": "Discover raid mode",
+    "description": "Creators feature Anti-raid CTA"
+  },
+  "communities.creators.feature.antispam.title": {
+    "message": "Automatic anti-spam",
+    "description": "Creators feature Anti-spam title"
+  },
+  "communities.creators.feature.antispam.description": {
+    "message": "Sanctions flooding, self-promo and “free nitro” links without you lifting a finger.",
+    "description": "Creators feature Anti-spam description"
+  },
+  "communities.creators.feature.antispam.cta": {
+    "message": "Set up anti-spam",
+    "description": "Creators feature Anti-spam CTA"
+  },
+  "communities.creators.feature.dm.title": {
+    "message": "DM lockdown",
+    "description": "Creators feature DM Lock title"
+  },
+  "communities.creators.feature.dm.description": {
+    "message": "Stop scammers from harassing your members in DMs by impersonating you.",
+    "description": "Creators feature DM Lock description"
+  },
+  "communities.creators.feature.dm.cta": {
+    "message": "Protect DMs",
+    "description": "Creators feature DM Lock CTA"
+  },
+  "communities.creators.feature.transparency.title": {
+    "message": "Moderation transparency",
+    "description": "Creators feature Transparency title"
+  },
+  "communities.creators.feature.transparency.description": {
+    "message": "A public modlog and regular recaps show your audience a healthy, well-run community.",
+    "description": "Creators feature Transparency description"
+  },
+  "communities.creators.feature.transparency.cta": {
+    "message": "Discover transparency",
+    "description": "Creators feature Transparency CTA"
+  },
+  "communities.creators.socialProof.title": {
+    "message": "Creators who protect their community with RaidProtect",
+    "description": "Creators social proof marquee title"
+  },
+  "communities.creators.stat.servers": {
+    "message": "protected Discord servers",
+    "description": "Creators stat: protected servers"
+  },
+  "communities.creators.stat.scamlens": {
+    "message": "image scams blocked",
+    "description": "Creators stat: scam images blocked by ScamLens across the network"
+  },
+  "communities.creators.stat.members": {
+    "message": "protected members",
+    "description": "Creators stat: protected members"
+  },
+  "communities.creators.stat.spam": {
+    "message": "spam messages blocked",
+    "description": "Creators stat: spam messages blocked"
+  },
+  "communities.creators.premium.title": {
+    "message": "Premium to support your growth",
+    "description": "Creators premium block title"
+  },
+  "communities.creators.premium.description": {
+    "message": "The free version already protects your community. Premium equips it to grow with peace of mind.",
+    "description": "Creators premium block description"
+  },
+  "communities.creators.premium.perk1": {
+    "message": "Several transparency recaps in parallel (one public, one for the team)",
+    "description": "Creators premium perk 1"
+  },
+  "communities.creators.premium.perk2": {
+    "message": "Trusted role to let your regulars handle reports",
+    "description": "Creators premium perk 2"
+  },
+  "communities.creators.premium.perk3": {
+    "message": "Weekly Tag Role sync for your ambassadors",
+    "description": "Creators premium perk 3"
+  },
+  "communities.creators.premium.cta": {
+    "message": "Discover premium",
+    "description": "Creators premium CTA label"
+  },
+  "communities.creators.cta.title": {
+    "message": "Ready to protect your {highlight}?",
+    "description": "Creators landing: final CTA title; {highlight} renders the accented word"
+  },
+  "communities.creators.cta.title.highlight": {
+    "message": "community",
+    "description": "Highlighted word inside the creators final CTA title"
+  },
+  "communities.creators.cta.description": {
+    "message": "Add RaidProtect in seconds and focus on your content, not on moderation.",
+    "description": "Creators landing: final CTA description"
+  },
+  "communities.creators.cta.addToDiscord": {
+    "message": "Add to Discord",
+    "description": "Creators landing: primary CTA (add bot to Discord)"
   }
 }
