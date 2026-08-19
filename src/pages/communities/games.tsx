@@ -52,10 +52,9 @@ export default function GamesCommunity(): ReactNode {
       <Translate
         id="communities.games.hero.description"
         description="Games landing: hero subtitle">
-        FiveM, Roblox, Minecraft ou un Discord de jeu qui cartonne : dès que ça
-        grossit, ça attire les raids, les bots et les vendeurs de cheats.
-        RaidProtect filtre tout ça automatiquement pour que vos joueurs profitent
-        du jeu, pas du spam.
+        FiveM, Roblox, Minecraft : dès qu'un serveur de jeu grossit, il attire
+        les raids, les bots et les vendeurs de cheats. RaidProtect les bloque
+        automatiquement, avant qu'ils n'atteignent vos joueurs.
       </Translate>
     ),
     secondaryCta: {
