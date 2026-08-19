@@ -1,0 +1,235 @@
+/* Page-outil « fuseau horaire » (non référencée). Reprend les tokens de
+ * shared.landing (couleurs, rayons) pour rester dans le thème. */
+
+.wrap {
+  position: relative;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 80px 0 120px;
+}
+
+.glow {
+  position: absolute;
+  inset: -40px 0 auto 0;
+  height: 280px;
+  margin: auto;
+  width: min(520px, 90%);
+  background-image: var(--gradient-1);
+  opacity: 0.22;
+  filter: blur(150px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.title {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 14px 0;
+  font-family: var(--ifm-heading-font-family);
+  color: #fff;
+  font-size: 46px;
+  font-weight: 600;
+  line-height: 1.15em;
+}
+
+.intro {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 40px 0;
+  color: var(--color-gray-4);
+  font-size: 18px;
+  line-height: 1.6em;
+}
+
+.card {
+  position: relative;
+  z-index: 2;
+  padding: 32px 28px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-gray-1);
+  box-shadow: inset 0 0 0 1px var(--color-gray-3);
+}
+
+.cardLabel {
+  margin-bottom: 14px;
+  color: var(--color-gray-4);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.valueRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.value {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-black);
+  box-shadow: inset 0 0 0 1px var(--color-gray-3);
+  color: #fff;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 24px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.copyBtn {
+  flex: none;
+  border: 1px solid var(--color-darker-primary);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-darker-primary);
+  color: #fff;
+  padding: 14px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s, opacity 0.2s;
+}
+
+.copyBtn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.copyBtn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 14px;
+  margin-top: 18px;
+}
+
+.offset {
+  padding: 4px 10px;
+  border-radius: var(--radius-lg);
+  background-color: color-mix(in srgb, var(--color-primary-1) 22%, transparent);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.clock {
+  color: var(--color-gray-4);
+  font-size: 15px;
+}
+
+.clock::first-letter {
+  text-transform: uppercase;
+}
+
+.detected {
+  margin-top: 16px;
+  color: var(--color-gray-4);
+  font-size: 15px;
+}
+
+.linkBtn {
+  border: 0;
+  background: none;
+  padding: 0;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.changeBlock {
+  position: relative;
+  z-index: 2;
+  margin-top: 40px;
+}
+
+.changeTitle {
+  margin: 0 0 6px 0;
+  font-family: var(--ifm-heading-font-family);
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.changeHint {
+  margin: 0 0 16px 0;
+  color: var(--color-gray-4);
+  font-size: 15px;
+  line-height: 1.6em;
+}
+
+.search,
+.select {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-gray-1);
+  border: 1px solid var(--color-gray-3);
+  color: #fff;
+  font-size: 16px;
+}
+
+.search {
+  padding: 12px 16px;
+  margin-bottom: 12px;
+}
+
+.search::placeholder {
+  color: color-mix(in srgb, var(--color-gray-4) 70%, transparent);
+}
+
+.select {
+  padding: 6px;
+  font-family: var(--ifm-font-family-monospace);
+}
+
+.select option {
+  padding: 6px 10px;
+  background-color: var(--color-gray-1);
+  color: #fff;
+}
+
+.search:focus,
+.select:focus {
+  outline: none;
+  border-color: var(--color-primary-rp);
+}
+
+.help {
+  position: relative;
+  z-index: 2;
+  margin-top: 40px;
+  color: var(--color-gray-4);
+  font-size: 15px;
+  line-height: 1.7em;
+}
+
+.help code,
+.detected code {
+  padding: 2px 6px;
+  border-radius: 6px;
+  background-color: var(--color-gray-2);
+  font-size: 0.9em;
+}
+
+@media screen and (max-width: 767px) {
+  .wrap {
+    padding: 50px 0 80px;
+  }
+  .title {
+    font-size: 36px;
+  }
+  .value {
+    font-size: 20px;
+  }
+  .copyBtn {
+    flex: 1 1 auto;
+  }
+}

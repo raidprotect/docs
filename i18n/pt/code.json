@@ -1336,450 +1336,6 @@
   "mockup.thread.messages": {
     "message": "{count} mensagens"
   },
-  "communities.creators.meta.title": {
-    "message": "RaidProtect pour les créateurs & streamers",
-    "description": "Browser tab title for the creators community landing page"
-  },
-  "communities.creators.meta.description": {
-    "message": "Un live, un short viral, un shoutout : votre serveur peut doubler en une nuit, raids et bots compris. RaidProtect absorbe les pics et filtre les indésirables.",
-    "description": "Meta description for the creators community landing page"
-  },
-  "communities.creators.eyebrow": {
-    "message": "Pour les créateurs & streamers",
-    "description": "Creators landing: small pill above the title"
-  },
-  "communities.creators.hero.title": {
-    "message": "La protection Discord pensée pour les {highlight}",
-    "description": "Creators landing: hero H1; {highlight} renders the accented word"
-  },
-  "communities.creators.hero.title.highlight": {
-    "message": "créateurs",
-    "description": "Highlighted word inside the creators hero title"
-  },
-  "communities.creators.hero.description": {
-    "message": "Un live, un short viral, un shoutout : votre serveur peut doubler en une nuit, raids et bots compris. RaidProtect absorbe les pics, filtre les indésirables et laisse votre communauté tranquille.",
-    "description": "Creators landing: hero subtitle"
-  },
-  "communities.creators.hero.secondaryCta": {
-    "message": "Découvrir la protection",
-    "description": "Creators landing: secondary CTA label"
-  },
-  "communities.creators.threats.title": {
-    "message": "Le revers de la viralité",
-    "description": "Creators landing: threats section title"
-  },
-  "communities.creators.threats.subtitle": {
-    "message": "Plus votre audience grandit, plus votre serveur attire ce que vous ne voulez pas y voir.",
-    "description": "Creators landing: threats section subtitle"
-  },
-  "communities.creators.threat.raid.title": {
-    "message": "Raids après un live ou un shoutout",
-    "description": "Creators threat 1 title"
-  },
-  "communities.creators.threat.raid.description": {
-    "message": "Un pic de visibilité attire aussi les trolls : des vagues de comptes débarquent pour spammer et perturber votre chat.",
-    "description": "Creators threat 1 description"
-  },
-  "communities.creators.threat.bots.title": {
-    "message": "Bots et comptes jetables",
-    "description": "Creators threat 2 title"
-  },
-  "communities.creators.threat.bots.description": {
-    "message": "Self-bots, comptes recyclés et fermes d'abonnés polluent votre serveur dès qu'il commence à grossir.",
-    "description": "Creators threat 2 description"
-  },
-  "communities.creators.threat.spam.title": {
-    "message": "Spam et auto-promo sauvage",
-    "description": "Creators threat 3 title"
-  },
-  "communities.creators.threat.spam.description": {
-    "message": "Liens d'autopromo, scams « free nitro » et flood d'émojis noient les vraies discussions de votre communauté.",
-    "description": "Creators threat 3 description"
-  },
-  "communities.creators.features.title": {
-    "message": "Pensé pour encaisser les pics",
-    "description": "Creators landing: features section title"
-  },
-  "communities.creators.features.subtitle": {
-    "message": "Les protections de RaidProtect, réglées pour les communautés qui grandissent vite.",
-    "description": "Creators landing: features section subtitle"
-  },
-  "communities.creators.feature.antiraid.title": {
-    "message": "Blocage des raids",
-    "description": "Creators feature Anti-raid title"
-  },
-  "communities.creators.feature.antiraid.description": {
-    "message": "Détecte les arrivées massives post-live et verrouille le serveur le temps que la vague passe.",
-    "description": "Creators feature Anti-raid description"
-  },
-  "communities.creators.feature.captcha.title": {
-    "message": "Captcha à l'entrée",
-    "description": "Creators feature Captcha title"
-  },
-  "communities.creators.feature.captcha.description": {
-    "message": "Filtre les bots et les comptes jetables avant qu'ils n'accèdent à vos salons.",
-    "description": "Creators feature Captcha description"
-  },
-  "communities.creators.feature.antispam.title": {
-    "message": "Anti-spam automatique",
-    "description": "Creators feature Anti-spam title"
-  },
-  "communities.creators.feature.antispam.description": {
-    "message": "Sanctionne le flood, l'autopromo et les liens « free nitro » sans que vous leviez le petit doigt.",
-    "description": "Creators feature Anti-spam description"
-  },
-  "communities.creators.feature.mod.title": {
-    "message": "Modération & administration",
-    "description": "Creators feature Moderation title"
-  },
-  "communities.creators.feature.mod.description": {
-    "message": "Donnez à vos modérateurs les bons outils pour gérer une communauté qui grandit vite.",
-    "description": "Creators feature Moderation description"
-  },
-  "communities.creators.feature.dm.title": {
-    "message": "Fermeture des MP",
-    "description": "Creators feature DM Lock title"
-  },
-  "communities.creators.feature.dm.description": {
-    "message": "Empêchez les arnaqueurs de harceler vos membres en message privé en se faisant passer pour vous.",
-    "description": "Creators feature DM Lock description"
-  },
-  "communities.creators.feature.tag.title": {
-    "message": "Rôle de Tag",
-    "description": "Creators feature Tag role title"
-  },
-  "communities.creators.feature.tag.description": {
-    "message": "Attribuez automatiquement un rôle aux fans qui affichent le tag de votre serveur.",
-    "description": "Creators feature Tag role description"
-  },
-  "communities.creators.stat.servers": {
-    "message": "serveurs Discord protégés",
-    "description": "Creators stat: protected servers"
-  },
-  "communities.creators.stat.monitoring": {
-    "message": "surveillance automatique",
-    "description": "Creators stat: monitoring"
-  },
-  "communities.creators.stat.price": {
-    "message": "pour démarrer, pour toujours",
-    "description": "Creators stat: free"
-  },
-  "communities.creators.stat.languages": {
-    "message": "langues prises en charge",
-    "description": "Creators stat: languages"
-  },
-  "communities.creators.cta.title": {
-    "message": "Prêt à protéger votre {highlight} ?",
-    "description": "Creators landing: final CTA title; {highlight} renders the accented word"
-  },
-  "communities.creators.cta.title.highlight": {
-    "message": "communauté",
-    "description": "Highlighted word inside the creators final CTA title"
-  },
-  "communities.creators.cta.description": {
-    "message": "Ajoutez RaidProtect en quelques secondes et concentrez-vous sur votre contenu, pas sur la modération.",
-    "description": "Creators landing: final CTA description"
-  },
-  "communities.creators.cta.addToDiscord": {
-    "message": "Ajouter à Discord",
-    "description": "Creators landing: primary CTA (add bot to Discord)"
-  },
-  "communities.crypto.meta.title": {
-    "message": "RaidProtect pour les serveurs crypto & Web3",
-    "description": "Browser tab title for the crypto community landing page"
-  },
-  "communities.crypto.meta.description": {
-    "message": "Les serveurs crypto sont la cible n°1 des scams, du phishing et des drainers de wallet. RaidProtect verrouille les MP, filtre les bots et bloque les raids.",
-    "description": "Meta description for the crypto community landing page"
-  },
-  "communities.crypto.eyebrow": {
-    "message": "Pour les serveurs crypto & Web3",
-    "description": "Crypto landing: small pill above the title"
-  },
-  "communities.crypto.hero.title": {
-    "message": "Protégez votre communauté {highlight} des arnaques",
-    "description": "Crypto landing: hero H1; {highlight} renders the accented word"
-  },
-  "communities.crypto.hero.title.highlight": {
-    "message": "crypto",
-    "description": "Highlighted word inside the crypto hero title"
-  },
-  "communities.crypto.hero.description": {
-    "message": "Les serveurs crypto sont la cible n°1 des scams, du phishing et des drainers de wallet. RaidProtect verrouille les messages privés, filtre les bots et bloque les raids avant qu'ils n'atteignent vos membres.",
-    "description": "Crypto landing: hero subtitle"
-  },
-  "communities.crypto.hero.secondaryCta": {
-    "message": "Découvrir la protection",
-    "description": "Crypto landing: secondary CTA label"
-  },
-  "communities.crypto.threats.title": {
-    "message": "Ce que vous affrontez chaque jour",
-    "description": "Crypto landing: threats section title"
-  },
-  "communities.crypto.threats.subtitle": {
-    "message": "Les communautés crypto attirent des attaques ciblées que la modération manuelle ne peut pas suivre.",
-    "description": "Crypto landing: threats section subtitle"
-  },
-  "communities.crypto.threat.dm.title": {
-    "message": "Arnaques et drainers en MP",
-    "description": "Crypto threat 1 title"
-  },
-  "communities.crypto.threat.dm.description": {
-    "message": "Faux supports, fausses promos, liens de connexion piégés : les escrocs ciblent vos membres en message privé, là où la modération ne voit rien.",
-    "description": "Crypto threat 1 description"
-  },
-  "communities.crypto.threat.bots.title": {
-    "message": "Vagues de faux comptes",
-    "description": "Crypto threat 2 title"
-  },
-  "communities.crypto.threat.bots.description": {
-    "message": "Les bots s'inscrivent en masse pour spammer de faux airdrops et gonfler artificiellement votre communauté.",
-    "description": "Crypto threat 2 description"
-  },
-  "communities.crypto.threat.spam.title": {
-    "message": "Spam de liens et phishing",
-    "description": "Crypto threat 3 title"
-  },
-  "communities.crypto.threat.spam.description": {
-    "message": "Un seul compte compromis suffit à inonder vos salons de liens malveillants en quelques secondes.",
-    "description": "Crypto threat 3 description"
-  },
-  "communities.crypto.features.title": {
-    "message": "Votre arsenal anti-scam",
-    "description": "Crypto landing: features section title"
-  },
-  "communities.crypto.features.subtitle": {
-    "message": "Les protections de RaidProtect, réglées pour les menaces propres à l'univers crypto.",
-    "description": "Crypto landing: features section subtitle"
-  },
-  "communities.crypto.feature.dm.title": {
-    "message": "Fermeture des MP",
-    "description": "Crypto feature DM Lock title"
-  },
-  "communities.crypto.feature.dm.description": {
-    "message": "Bloquez les messages privés entre vos membres : l'angle d'attaque favori des arnaqueurs crypto disparaît.",
-    "description": "Crypto feature DM Lock description"
-  },
-  "communities.crypto.feature.captcha.title": {
-    "message": "Captcha à l'entrée",
-    "description": "Crypto feature Captcha title"
-  },
-  "communities.crypto.feature.captcha.description": {
-    "message": "Chaque nouvel arrivant prouve qu'il est humain avant d'accéder au serveur. Adieu les fermes de bots.",
-    "description": "Crypto feature Captcha description"
-  },
-  "communities.crypto.feature.antispam.title": {
-    "message": "Anti-spam automatique",
-    "description": "Crypto feature Anti-spam title"
-  },
-  "communities.crypto.feature.antispam.description": {
-    "message": "Les envois massifs de liens et de messages identiques sont sanctionnés instantanément, sans intervention.",
-    "description": "Crypto feature Anti-spam description"
-  },
-  "communities.crypto.feature.antiraid.title": {
-    "message": "Blocage des raids",
-    "description": "Crypto feature Anti-raid title"
-  },
-  "communities.crypto.feature.antiraid.description": {
-    "message": "Une arrivée anormale de comptes ? RaidProtect détecte le raid et verrouille le serveur avant l'impact.",
-    "description": "Crypto feature Anti-raid description"
-  },
-  "communities.crypto.feature.mod.title": {
-    "message": "Modération & administration",
-    "description": "Crypto feature Moderation title"
-  },
-  "communities.crypto.feature.mod.description": {
-    "message": "Sanctions, journaux et outils de gestion pour garder le contrôle, même quand la communauté explose.",
-    "description": "Crypto feature Moderation description"
-  },
-  "communities.crypto.feature.tag.title": {
-    "message": "Rôle de Tag",
-    "description": "Crypto feature Tag role title"
-  },
-  "communities.crypto.feature.tag.description": {
-    "message": "Récompensez les membres qui portent le tag de votre serveur avec un rôle attribué automatiquement.",
-    "description": "Crypto feature Tag role description"
-  },
-  "communities.crypto.stat.servers": {
-    "message": "serveurs Discord protégés",
-    "description": "Crypto stat: protected servers"
-  },
-  "communities.crypto.stat.monitoring": {
-    "message": "surveillance automatique",
-    "description": "Crypto stat: monitoring"
-  },
-  "communities.crypto.stat.price": {
-    "message": "pour démarrer, pour toujours",
-    "description": "Crypto stat: free"
-  },
-  "communities.crypto.stat.languages": {
-    "message": "langues prises en charge",
-    "description": "Crypto stat: languages"
-  },
-  "communities.crypto.cta.title": {
-    "message": "Prêt à blinder votre serveur {highlight} ?",
-    "description": "Crypto landing: final CTA title; {highlight} renders the accented word"
-  },
-  "communities.crypto.cta.title.highlight": {
-    "message": "crypto",
-    "description": "Highlighted word inside the crypto final CTA title"
-  },
-  "communities.crypto.cta.description": {
-    "message": "Ajoutez RaidProtect en quelques secondes et protégez votre communauté dès aujourd'hui.",
-    "description": "Crypto landing: final CTA description"
-  },
-  "communities.crypto.cta.addToDiscord": {
-    "message": "Ajouter à Discord",
-    "description": "Crypto landing: primary CTA (add bot to Discord)"
-  },
-  "communities.games.meta.title": {
-    "message": "RaidProtect pour les serveurs de jeux & gaming",
-    "description": "Browser tab title for the games community landing page"
-  },
-  "communities.games.meta.description": {
-    "message": "FiveM, Roblox, Minecraft ou un Discord de jeu qui cartonne : RaidProtect bloque les raids, filtre les bots et stoppe le spam de cheats automatiquement.",
-    "description": "Meta description for the games community landing page"
-  },
-  "communities.games.eyebrow": {
-    "message": "Pour les serveurs de jeux & gaming",
-    "description": "Games landing: small pill above the title"
-  },
-  "communities.games.hero.title": {
-    "message": "Protégez votre communauté {highlight} des raids",
-    "description": "Games landing: hero H1; {highlight} renders the accented word"
-  },
-  "communities.games.hero.title.highlight": {
-    "message": "gaming",
-    "description": "Highlighted word inside the games hero title"
-  },
-  "communities.games.hero.description": {
-    "message": "FiveM, Roblox, Minecraft ou un Discord de jeu qui cartonne : dès que ça grossit, ça attire les raids, les bots et les vendeurs de cheats. RaidProtect filtre tout ça automatiquement pour que vos joueurs profitent du jeu, pas du spam.",
-    "description": "Games landing: hero subtitle"
-  },
-  "communities.games.hero.secondaryCta": {
-    "message": "Découvrir la protection",
-    "description": "Games landing: secondary CTA label"
-  },
-  "communities.games.threats.title": {
-    "message": "Ce qui menace votre serveur",
-    "description": "Games landing: threats section title"
-  },
-  "communities.games.threats.subtitle": {
-    "message": "Un serveur de jeu populaire est une cible permanente pour les raids et les arnaqueurs.",
-    "description": "Games landing: threats section subtitle"
-  },
-  "communities.games.threat.raid.title": {
-    "message": "Raids et invasions de trolls",
-    "description": "Games threat 1 title"
-  },
-  "communities.games.threat.raid.description": {
-    "message": "Dès qu'un serveur de jeu prend de l'ampleur, il attire des vagues de comptes jetables qui viennent spammer et troller en masse.",
-    "description": "Games threat 1 description"
-  },
-  "communities.games.threat.bots.title": {
-    "message": "Bots et fermes de comptes",
-    "description": "Games threat 2 title"
-  },
-  "communities.games.threat.bots.description": {
-    "message": "Vendeurs de cheats, services de boosting et faux comptes s'inscrivent en masse pour polluer votre communauté.",
-    "description": "Games threat 2 description"
-  },
-  "communities.games.threat.spam.title": {
-    "message": "Arnaques « free robux » & cheats",
-    "description": "Games threat 3 title"
-  },
-  "communities.games.threat.spam.description": {
-    "message": "Spam de liens d'arnaque, ventes de comptes et fausses promos noient le chat de votre serveur en quelques secondes.",
-    "description": "Games threat 3 description"
-  },
-  "communities.games.features.title": {
-    "message": "Pensé pour les grosses communautés",
-    "description": "Games landing: features section title"
-  },
-  "communities.games.features.subtitle": {
-    "message": "Les protections de RaidProtect, réglées pour les serveurs de jeu qui ne dorment jamais.",
-    "description": "Games landing: features section subtitle"
-  },
-  "communities.games.feature.antiraid.title": {
-    "message": "Blocage des raids",
-    "description": "Games feature Anti-raid title"
-  },
-  "communities.games.feature.antiraid.description": {
-    "message": "Détecte les invasions de comptes et verrouille le serveur avant que les trolls ne gâchent l'ambiance.",
-    "description": "Games feature Anti-raid description"
-  },
-  "communities.games.feature.captcha.title": {
-    "message": "Captcha à l'entrée",
-    "description": "Games feature Captcha title"
-  },
-  "communities.games.feature.captcha.description": {
-    "message": "Chaque joueur prouve qu'il est humain avant d'entrer. Les fermes de bots restent à la porte.",
-    "description": "Games feature Captcha description"
-  },
-  "communities.games.feature.antispam.title": {
-    "message": "Anti-spam automatique",
-    "description": "Games feature Anti-spam title"
-  },
-  "communities.games.feature.antispam.description": {
-    "message": "Pub de cheats, ventes de comptes et liens d'arnaque sont sanctionnés instantanément, sans intervention.",
-    "description": "Games feature Anti-spam description"
-  },
-  "communities.games.feature.mod.title": {
-    "message": "Modération & administration",
-    "description": "Games feature Moderation title"
-  },
-  "communities.games.feature.mod.description": {
-    "message": "Tout l'outillage pour gérer une grosse communauté de joueurs et son équipe de modération.",
-    "description": "Games feature Moderation description"
-  },
-  "communities.games.feature.dm.title": {
-    "message": "Fermeture des MP",
-    "description": "Games feature DM Lock title"
-  },
-  "communities.games.feature.dm.description": {
-    "message": "Protégez vos joueurs des arnaqueurs qui les démarchent en privé avec de fausses promos et de faux giveaways.",
-    "description": "Games feature DM Lock description"
-  },
-  "communities.games.feature.tag.title": {
-    "message": "Rôle de Tag",
-    "description": "Games feature Tag role title"
-  },
-  "communities.games.feature.tag.description": {
-    "message": "Récompensez les joueurs qui affichent le tag de votre serveur avec un rôle attribué automatiquement.",
-    "description": "Games feature Tag role description"
-  },
-  "communities.games.stat.servers": {
-    "message": "serveurs Discord protégés",
-    "description": "Games stat: protected servers"
-  },
-  "communities.games.stat.monitoring": {
-    "message": "surveillance automatique",
-    "description": "Games stat: monitoring"
-  },
-  "communities.games.stat.price": {
-    "message": "pour démarrer, pour toujours",
-    "description": "Games stat: free"
-  },
-  "communities.games.stat.languages": {
-    "message": "langues prises en charge",
-    "description": "Games stat: languages"
-  },
-  "communities.games.cta.title": {
-    "message": "Prêt à sécuriser votre serveur {highlight} ?",
-    "description": "Games landing: final CTA title; {highlight} renders the accented word"
-  },
-  "communities.games.cta.title.highlight": {
-    "message": "gaming",
-    "description": "Highlighted word inside the games final CTA title"
-  },
-  "communities.games.cta.description": {
-    "message": "Ajoutez RaidProtect en quelques secondes et laissez vos joueurs se concentrer sur le jeu.",
-    "description": "Games landing: final CTA description"
-  },
-  "communities.games.cta.addToDiscord": {
-    "message": "Ajouter à Discord",
-    "description": "Games landing: primary CTA (add bot to Discord)"
-  },
   "mockup.antispam.sanction": {
     "message": "Softban :"
   },
@@ -2996,6 +2552,26 @@
     "message": "Contribuição importante na deteção de bugs: experiência reconhecida na Discord.",
     "description": "Business page (/business)"
   },
+  "communities.tabs.security": {
+    "message": "Segurança",
+    "description": "Carousel tab label: base security universe"
+  },
+  "communities.tabs.crypto": {
+    "message": "Cripto",
+    "description": "Carousel tab label: crypto universe"
+  },
+  "communities.tabs.games": {
+    "message": "Gaming",
+    "description": "Carousel tab label: gaming universe"
+  },
+  "communities.tabs.creators": {
+    "message": "Criadores",
+    "description": "Carousel tab label: creators universe"
+  },
+  "hero.cta.appointment": {
+    "message": "Profissional? Agende uma chamada",
+    "description": "Tertiary CTA below the hero buttons: professionals can book a call"
+  },
   "docs.support.title": {
     "message": "Precisa de ajuda?",
     "description": "Heading of the end-of-doc support CTA"
@@ -3019,5 +2595,65 @@
   "docs.support.copy": {
     "message": "Copiar o link de convite",
     "description": "Aria label for the copy-invite button"
+  },
+  "tools.timezone.meta.title": {
+    "message": "Encontrar o seu fuso horário",
+    "description": "Timezone tool: page/tab title"
+  },
+  "tools.timezone.title": {
+    "message": "O seu fuso horário",
+    "description": "Timezone tool: main heading"
+  },
+  "tools.timezone.intro": {
+    "message": "Algumas definições do RaidProtect pedem um fuso horário. Aqui está o do seu dispositivo, pronto a colar. Tudo acontece no seu navegador, nada é enviado.",
+    "description": "Timezone tool: intro paragraph"
+  },
+  "tools.timezone.cardLabel": {
+    "message": "Indique no RaidProtect",
+    "description": "Timezone tool: label above the value to paste"
+  },
+  "tools.timezone.copy": {
+    "message": "Copiar",
+    "description": "Timezone tool: copy button label"
+  },
+  "tools.timezone.copied": {
+    "message": "Copiado!",
+    "description": "Timezone tool: copy button, after copying"
+  },
+  "tools.timezone.detectedAuto": {
+    "message": "Detetado automaticamente neste dispositivo.",
+    "description": "Timezone tool: shown when the selected zone is the detected one"
+  },
+  "tools.timezone.detectedOn": {
+    "message": "Detetado neste dispositivo:",
+    "description": "Timezone tool: prefix before a button restoring the detected zone"
+  },
+  "tools.timezone.changeTitle": {
+    "message": "Não é o correto?",
+    "description": "Timezone tool: heading of the change section"
+  },
+  "tools.timezone.changeHint": {
+    "message": "Procure a sua cidade ou região e escolha o fuso na lista.",
+    "description": "Timezone tool: hint under the change heading"
+  },
+  "tools.timezone.searchPlaceholder": {
+    "message": "Pesquisar (ex. Paris, New York, Reunion…)",
+    "description": "Timezone tool: search input placeholder"
+  },
+  "tools.timezone.searchAria": {
+    "message": "Pesquisar um fuso horário",
+    "description": "Timezone tool: search input aria-label"
+  },
+  "tools.timezone.listAria": {
+    "message": "Lista de fusos horários",
+    "description": "Timezone tool: timezone list aria-label"
+  },
+  "tools.timezone.noResult": {
+    "message": "Sem resultados",
+    "description": "Timezone tool: empty search result"
+  },
+  "tools.timezone.help": {
+    "message": "Copie o valor acima e cole-o no RaidProtect quando lhe for pedido um fuso horário (usa o formato padrão «Continente/Cidade», por exemplo {code}).",
+    "description": "Timezone tool: closing help paragraph; {code} renders an example zone in a <code> tag"
   }
 }

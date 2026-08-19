@@ -1,0 +1,95 @@
+/* Bandeau chiffré animé. Reprend les tokens de shared.landing (via .root de la
+ * page) : --cv-gradient / --cv-accent, couleurs de marque, rayons. */
+
+/* Bandeau ouvert (pas de boîte) : les chiffres respirent sur le fond de page,
+ * séparés par de fines hairlines, avec un léger halo d'accent derrière. */
+.band {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px 0;
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: min(640px, 85%);
+  height: 180px;
+  background-image: var(--cv-gradient);
+  opacity: 0.12;
+  filter: blur(130px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.item {
+  position: relative;
+  z-index: 2;
+  padding: 8px 14px;
+  text-align: center;
+}
+
+/* Hairline verticale entre les stats (pas avant la première). */
+.item:not(:first-child)::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    color-mix(in srgb, var(--color-gray-4) 20%, transparent) 25% 75%,
+    transparent
+  );
+}
+
+.value {
+  display: inline-flex;
+  align-items: baseline;
+  white-space: nowrap;
+  font-family: var(--ifm-heading-font-family);
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.02em;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+  background-image: var(--cv-gradient);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.plus {
+  margin-left: 1px;
+}
+
+.label {
+  margin-top: 14px;
+  color: var(--color-gray-4);
+  font-size: 14px;
+  line-height: 1.45em;
+  letter-spacing: 0.02em;
+}
+
+@media screen and (max-width: 991px) {
+  .value {
+    font-size: 34px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .band {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 0;
+  }
+  /* En 2 colonnes : pas de hairline en début de rangée. */
+  .item:nth-child(odd)::before {
+    display: none;
+  }
+  .value {
+    font-size: 44px;
+  }
+}

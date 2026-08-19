@@ -1,0 +1,466 @@
+/* Landing verticalisée par typologie de serveur.
+ * Réutilise les tokens de `shared.landing` (couleurs, rayons, polices) et y
+ * superpose un accent par verticale via --cv-accent / --cv-glow / --cv-gradient
+ * posés en inline-style sur .root. */
+
+.root {
+  /* Repli si une page oublie de fournir l'accent : on retombe sur la marque. */
+  --cv-accent: var(--color-primary-rp);
+  --cv-glow: rgba(211, 95, 95, 0.4);
+  --cv-gradient: var(--gradient-1);
+  display: block;
+  overflow-x: clip;
+}
+
+/* ===== Hero ===== */
+
+.hero {
+  position: relative;
+  padding-top: 48px;
+  padding-bottom: 130px;
+  overflow: clip;
+}
+
+.heroGlow {
+  position: absolute;
+  inset: -120px 0 auto 0;
+  height: 420px;
+  margin: auto;
+  width: min(720px, 90%);
+  background-image: var(--cv-gradient);
+  opacity: 0.28;
+  filter: blur(150px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  text-align: center;
+}
+
+.heroTabs {
+  margin-bottom: 26px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-gray-2);
+  padding: 8px 16px 7px;
+  margin-bottom: 22px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4em;
+  color: #fff;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--cv-accent) 55%, transparent);
+}
+
+.eyebrowDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--cv-accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--cv-accent) 30%, transparent);
+}
+
+.heroTitle {
+  margin: 0 0 18px 0;
+  max-width: 22ch;
+  font-family: var(--ifm-heading-font-family);
+  color: #fff;
+  font-size: 68px;
+  font-weight: 600;
+  line-height: 1.15em;
+}
+
+.heroDescription {
+  width: min(620px, 100%);
+  margin: 0 0 44px 0;
+  color: var(--color-gray-4);
+  font-size: 19px;
+  line-height: 1.6em;
+}
+
+.heroButtons {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 18px;
+  row-gap: 14px;
+}
+
+/* Le mot surligné reprend le dégradé d'accent de la verticale. */
+.highlight {
+  background-image: var(--cv-gradient);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Le bouton primaire prend la teinte d'accent plutôt que le rouge de marque.
+ * Le texte utilise --cv-on-accent pour rester lisible (sombre sur l'or). */
+.accentButton {
+  border-color: var(--cv-accent);
+  background-color: var(--cv-accent);
+  color: var(--cv-on-accent);
+}
+
+.accentButton:hover {
+  border-color: var(--cv-accent);
+  background-color: var(--cv-accent);
+  color: var(--cv-on-accent);
+  filter: brightness(1.08);
+}
+
+.accentButtonGhost {
+  border-color: color-mix(in srgb, var(--cv-accent) 70%, transparent);
+}
+
+.accentButtonGhost:hover {
+  border-color: var(--cv-accent);
+  background-color: var(--cv-accent);
+}
+
+/* ===== Sections génériques ===== */
+
+.section {
+  position: relative;
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+
+.sectionHead {
+  width: min(620px, 100%);
+  margin: 0 auto 60px auto;
+  text-align: center;
+}
+
+.sectionTitle {
+  margin: 0 0 14px 0;
+  font-family: var(--ifm-heading-font-family);
+  color: #fff;
+  font-size: 46px;
+  font-weight: 600;
+  line-height: 1.2em;
+}
+
+.sectionSubtitle {
+  margin: 0;
+  color: var(--color-gray-4);
+  font-size: 18px;
+  line-height: 1.6em;
+}
+
+/* ===== Menaces ===== */
+
+.threatsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.threatCard {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  padding: 32px 28px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-gray-1);
+  box-shadow: inset 0 0 0 1px var(--color-gray-3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.threatCard:hover {
+  transform: translate3d(0, -4px, 0.01px);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--cv-accent) 60%, transparent);
+}
+
+.threatIconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 22px;
+  border-radius: var(--radius-sm);
+  background-color: color-mix(in srgb, var(--cv-accent) 16%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--cv-accent) 45%, transparent);
+}
+
+.threatIcon {
+  width: 28px;
+  height: 28px;
+}
+
+.threatTitle {
+  margin: 0 0 10px 0;
+  font-family: var(--ifm-heading-font-family);
+  color: #fff;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.3em;
+}
+
+.threatDescription {
+  margin: 0;
+  color: var(--color-gray-4);
+  font-size: 16px;
+  line-height: 1.6em;
+}
+
+/* ===== Fonctionnalités ===== */
+
+.featuresGlow {
+  position: absolute;
+  inset: 40px 0 auto 0;
+  height: 160px;
+  margin: auto;
+  width: 520px;
+  background-image: var(--cv-gradient);
+  opacity: 0.32;
+  filter: blur(150px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Les lignes de fonctionnalités (mockups alternés) vivent dans le composant
+ * FeatureRows, qui réutilise le CSS de la section « fonctionnalités » de
+ * l'accueil. */
+
+/* ===== Statistiques ===== */
+
+.statsSection {
+  padding-top: 30px;
+}
+
+/* ===== CTA final ===== */
+
+.ctaSection {
+  padding-bottom: 150px;
+}
+
+.ctaBand {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  text-align: center;
+  padding: 70px 40px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-gray-1);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--cv-accent) 35%, transparent);
+}
+
+.ctaGlow {
+  position: absolute;
+  inset: auto 0 -160px 0;
+  height: 320px;
+  margin: auto;
+  width: min(620px, 90%);
+  background-image: var(--cv-gradient);
+  opacity: 0.3;
+  filter: blur(140px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ctaTitle {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 14px 0;
+  font-family: var(--ifm-heading-font-family);
+  color: #fff;
+  font-size: 44px;
+  font-weight: 600;
+  line-height: 1.2em;
+}
+
+.ctaDescription {
+  position: relative;
+  z-index: 2;
+  width: min(560px, 100%);
+  margin: 0 0 36px 0;
+  color: var(--color-gray-4);
+  font-size: 18px;
+  line-height: 1.6em;
+}
+
+/* ===== Appel au premium ===== */
+
+.premiumSection {
+  padding-top: 0;
+}
+
+.premiumBand {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px 56px;
+  padding: 56px 48px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-gray-1);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-founder) 40%, transparent);
+}
+
+.premiumGlow {
+  position: absolute;
+  inset: auto auto -160px -120px;
+  width: 380px;
+  height: 320px;
+  background-color: var(--color-founder);
+  opacity: 0.18;
+  filter: blur(150px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.premiumBody {
+  position: relative;
+  z-index: 2;
+  flex: 1 1 340px;
+}
+
+.premiumEyebrow {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 5px 14px 4px;
+  border-radius: var(--radius-lg);
+  background-color: color-mix(in srgb, var(--color-founder) 18%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-founder) 55%, transparent);
+  color: var(--color-founder);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.premiumTitle {
+  margin: 0 0 14px 0;
+  font-family: var(--ifm-heading-font-family);
+  color: #fff;
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.25em;
+}
+
+.premiumDescription {
+  margin: 0 0 28px 0;
+  color: var(--color-gray-4);
+  font-size: 17px;
+  line-height: 1.6em;
+}
+
+.premiumActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.premiumPerks {
+  position: relative;
+  z-index: 2;
+  flex: 1 1 320px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column;
+  gap: 18px;
+}
+
+.premiumPerk {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+.premiumCheck {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  margin-top: 1px;
+  color: var(--color-founder);
+}
+
+/* ===== Responsive ===== */
+
+@media screen and (max-width: 991px) {
+  .hero {
+    padding-top: 50px;
+    padding-bottom: 90px;
+  }
+  .heroTitle {
+    font-size: 52px;
+  }
+  .section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .sectionTitle,
+  .ctaTitle {
+    font-size: 38px;
+  }
+  .premiumTitle {
+    font-size: 30px;
+  }
+  .threatsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .featuresGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px 24px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .heroTitle {
+    font-size: 40px;
+  }
+  .heroDescription {
+    font-size: 17px;
+  }
+  .sectionTitle,
+  .ctaTitle {
+    font-size: 32px;
+  }
+  .threatsGrid {
+    grid-template-columns: 1fr;
+  }
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+  .statsGrid {
+    padding: 36px 24px;
+  }
+  .statValue {
+    font-size: 36px;
+  }
+  .ctaBand {
+    padding: 50px 24px;
+  }
+  .premiumBand {
+    padding: 40px 24px;
+  }
+  .premiumTitle {
+    font-size: 26px;
+  }
+}

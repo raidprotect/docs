@@ -7,7 +7,7 @@ import styles from './styles.module.css';
 
 type Badge = 'verified' | 'partner' | null;
 
-type Server = {
+export type Server = {
   name: string;
   icon: string;
   alt: string;
@@ -17,7 +17,7 @@ type Server = {
   badge: Badge;
 };
 
-const SERVERS_FR: Server[] = [
+export const SERVERS_FR: Server[] = [
   {
     name: 'Wankil Studio',
     icon: '/img/landing/iconWankilStudio.webp',
@@ -140,7 +140,7 @@ const SERVERS_FR: Server[] = [
   },
 ];
 
-const SERVERS_INTL: Server[] = [
+export const SERVERS_INTL: Server[] = [
   {
     name: 'FlexingSeal',
     icon: '/img/landing/iconFlexingSeal.webp',
@@ -348,15 +348,23 @@ type ServersProps = {
   /** Rend le fond de section transparent au lieu du noir de marque, pour que le
    *  marquee s'intègre sur une page au fond différent (ex: Premium). */
   transparent?: boolean;
+  /** Liste de serveurs personnalisée (ex: marquee ciblé par verticale). Par
+   *  défaut, la sélection dépend de la locale. */
+  servers?: Server[];
 };
 
-export default function Servers({title, transparent}: ServersProps = {}): ReactNode {
+export default function Servers({
+  title,
+  transparent,
+  servers: serversProp,
+}: ServersProps = {}): ReactNode {
   const {
     i18n: {currentLocale},
   } = useDocusaurusContext();
   // Webflow source listait des serveurs francophones sur la version FR et une
   // sélection internationale (parfois différente) sur EN/DE/ES/PT.
-  const servers = currentLocale === 'fr' ? SERVERS_FR : SERVERS_INTL;
+  const servers =
+    serversProp ?? (currentLocale === 'fr' ? SERVERS_FR : SERVERS_INTL);
   return (
     <section
       className={clsx(shared.landing, styles.section)}

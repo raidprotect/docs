@@ -1,0 +1,158 @@
+/* Hero-carrousel de l'accueil. Reprend la mise en forme du hero d'origine et y
+ * ajoute la barre d'onglets et un halo teinté par l'univers actif. Seul le
+ * slide actif est monté (hauteur naturelle) ; il se remplace au clic sur un
+ * onglet avec une brève animation d'apparition. */
+
+.section {
+  --cv-accent: var(--color-primary-rp);
+  --cv-gradient: var(--gradient-1);
+  padding-top: 44px;
+  padding-bottom: 90px;
+  position: relative;
+  overflow-x: clip;
+}
+
+.glow {
+  position: absolute;
+  inset: -140px 0 auto 0;
+  height: 440px;
+  margin: auto;
+  width: min(760px, 92%);
+  background-image: var(--cv-gradient);
+  opacity: 0.22;
+  filter: blur(150px);
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.6s;
+}
+
+.content {
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  position: relative;
+}
+
+.preTitleWrap {
+  border-radius: 50px;
+  background-color: #1b1a25;
+  background-image: linear-gradient(180deg, #d35f5f 40%, #a561a3);
+  margin-bottom: 20px;
+  padding: 1px;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.preTitleText {
+  border-radius: 50px;
+  background-color: #1b1a25;
+  padding: 7px 14px 5px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5em;
+  color: #fff;
+  text-align: center;
+}
+
+/* Slide actif : hauteur naturelle, brève apparition au changement d'onglet. */
+.slide {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  animation: slideIn 0.45s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.title {
+  margin: 0 0 10px 0;
+  font-family: var(--ifm-heading-font-family);
+  color: #fff;
+  font-size: 68px;
+  font-weight: 600;
+  line-height: 1.2em;
+  max-width: 22ch;
+}
+
+.description {
+  width: 75%;
+  font-family: var(--ifm-font-family-base);
+  margin-top: 0;
+  margin-bottom: 50px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.buttonList {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 30px;
+  row-gap: 15px;
+}
+
+/* Lien tertiaire discret sous les CTAs : réservation d'appel (pros). */
+.proLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 22px;
+  color: var(--color-gray-4);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+.proLink:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.proArrow {
+  transition: transform 0.25s;
+}
+
+.proLink:hover .proArrow {
+  transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide {
+    animation: none;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .section {
+    padding-top: 50px;
+    padding-bottom: 64px;
+  }
+  .description {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .section {
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+  .title {
+    font-size: 48px;
+  }
+}

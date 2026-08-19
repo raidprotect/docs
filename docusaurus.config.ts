@@ -168,7 +168,7 @@ export default async function createConfigAsync() {
                     },
                     sitemap: {
                         lastmod: 'date',
-                        ignorePatterns: ['**/beta/**'],
+                        ignorePatterns: ['**/beta/**', '/tools/**', '**/tools/**'],
                         filename: 'sitemap.xml',
                         changefreq: null,
                         async createSitemapItems(params) {

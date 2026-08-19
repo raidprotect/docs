@@ -4,7 +4,7 @@ import Layout from '@theme/Layout';
 import Head from '@docusaurus/Head';
 import Translate, {translate} from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Hero from '@site/src/components/landing/Hero';
+import HeroCarousel from '@site/src/components/landing/HeroCarousel';
 import Servers from '@site/src/components/landing/Servers';
 import Features from '@site/src/components/landing/Features';
 import BusinessBubble from '@site/src/components/landing/BusinessBubble';
@@ -235,7 +235,7 @@ export default function Home(): ReactNode {
         </script>
       </Head>
       <main>
-        <Hero serverCount={counts?.servers} />
+        <HeroCarousel serverCount={counts?.servers} />
         <Servers />
 
         {/* About */}
