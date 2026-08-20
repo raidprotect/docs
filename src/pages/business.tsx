@@ -407,10 +407,32 @@ const STEPS: {id: string; title: string; desc: string}[] = [
   {id: 'followup', title: 'Suivi', desc: 'Des points réguliers pour ajuster, faire évoluer et anticiper les menaces.'},
 ];
 
-const STATS: {id: string; value: string; unit: string; label: string}[] = [
-  {id: 'servers', value: '380', unit: 'K+', label: 'serveurs protégés'},
-  {id: 'users', value: '50', unit: 'M+', label: 'utilisateurs protégés'},
-  {id: 'spam', value: '1.4', unit: 'M+', label: 'spams bloqués'},
+/** Chiffres réels partagés avec l'accueil (servis en prod via /counts.json). */
+type Counts = {
+  servers: number;
+  users: number;
+  captcha: number;
+  antispam: number;
+};
+
+/** Formate un entier façon « 380 K+ » / « 1.4 M+ » : unité en majuscule avec
+ *  « + », décimale supprimée si le nombre est entier. */
+function formatCount(value: number): {value: string; unit: string} {
+  const [num, unit] =
+    value >= 1_000_000 ? [value / 1_000_000, 'M+'] : [value / 1_000, 'K+'];
+  return {value: num.toFixed(1).replace(/\.0$/, ''), unit};
+}
+
+const STATS: {
+  id: string;
+  countKey: keyof Counts;
+  fbValue: string;
+  fbUnit: string;
+  label: string;
+}[] = [
+  {id: 'servers', countKey: 'servers', fbValue: '380', fbUnit: 'K+', label: 'serveurs protégés'},
+  {id: 'users', countKey: 'users', fbValue: '50', fbUnit: 'M+', label: 'utilisateurs protégés'},
+  {id: 'spam', countKey: 'antispam', fbValue: '1.4', fbUnit: 'M+', label: 'spams bloqués'},
 ];
 
 export default function Business(): ReactNode {
@@ -419,6 +441,23 @@ export default function Business(): ReactNode {
     siteConfig: {url: siteUrl},
   } = useDocusaurusContext();
   const appointmentUrl = localizedRedirectUrl(siteUrl, currentLocale, defaultLocale, '/appointment');
+  // Chiffres réels (best-effort) : servis par le domaine en prod, absents en
+  // local — on retombe alors sur les valeurs de repli des STATS.
+  const [counts, setCounts] = useState<Counts | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    fetch('/counts.json')
+      .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
+      .then((data: Counts) => {
+        if (!cancelled) setCounts(data);
+      })
+      .catch(() => {
+        /* stats best-effort : le repli statique reste affiché */
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
   // Le site FCA n'est en français que sur son domaine racine ; les autres
   // langues sont servies sous /en.
   const fcaUrl = currentLocale === 'fr' ? 'https://fca.gg' : 'https://fca.gg/en';
@@ -663,17 +702,24 @@ export default function Business(): ReactNode {
         <section className={styles.section}>
           <div className={styles.container}>
             <div className={styles.statsGrid}>
-              {STATS.map((s) => (
-                <div key={s.id} className={styles.statCard}>
-                  <span className={styles.statValue}>
-                    {s.value}
-                    <span className={styles.statUnit}>{s.unit}</span>
-                  </span>
-                  <span className={styles.statLabel}>
-                    {translate({id: `business.stats.${s.id}`, message: s.label, description: 'Stat label'})}
-                  </span>
-                </div>
-              ))}
+              {STATS.map((s) => {
+                const raw = counts?.[s.countKey];
+                const {value, unit} =
+                  raw != null
+                    ? formatCount(raw)
+                    : {value: s.fbValue, unit: s.fbUnit};
+                return (
+                  <div key={s.id} className={styles.statCard}>
+                    <span className={styles.statValue}>
+                      {value}
+                      <span className={styles.statUnit}>{unit}</span>
+                    </span>
+                    <span className={styles.statLabel}>
+                      {translate({id: `business.stats.${s.id}`, message: s.label, description: 'Stat label'})}
+                    </span>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
