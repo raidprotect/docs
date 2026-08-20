@@ -14,6 +14,7 @@ import StatBand, {
   type CommunityStat,
 } from '@site/src/components/communities/StatBand';
 import BusinessBubble from '@site/src/components/landing/BusinessBubble';
+import ProLinks from '@site/src/components/landing/ProLinks';
 import shared from '@site/src/components/landing/styles/shared.module.css';
 import styles from './styles.module.css';
 
@@ -166,6 +167,7 @@ export default function CommunityLanding({
                   {content.secondaryCta.label}
                 </Link>
               </div>
+              <ProLinks />
             </div>
           </div>
         </section>

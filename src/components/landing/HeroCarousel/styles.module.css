@@ -104,32 +104,6 @@
   row-gap: 15px;
 }
 
-/* Lien tertiaire discret sous les CTAs : réservation d'appel (pros). */
-.proLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  margin-top: 22px;
-  color: var(--color-gray-4);
-  font-size: 15px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: color 0.25s;
-}
-
-.proLink:hover {
-  color: #fff;
-  text-decoration: none;
-}
-
-.proArrow {
-  transition: transform 0.25s;
-}
-
-.proLink:hover .proArrow {
-  transform: translateX(3px);
-}
-
 @media (prefers-reduced-motion: reduce) {
   .slide {
     animation: none;

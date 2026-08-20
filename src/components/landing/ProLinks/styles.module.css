@@ -1,0 +1,49 @@
+/* Ligne « pro » condensée : libellé discret + deux liens séparés par un point.
+ * S'appuie sur les tokens de shared.landing (--color-gray-4), présents sur
+ * l'accueil comme sur les pages communautés. */
+
+.pro {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px 12px;
+  margin-top: 22px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.label {
+  color: var(--color-gray-4);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.25s;
+}
+
+.link:hover {
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.75;
+}
+
+.arrow {
+  transition: transform 0.25s;
+}
+
+.link:hover .arrow {
+  transform: translateX(3px);
+}
+
+/* Séparateur point entre les deux liens. */
+.sep {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: var(--color-gray-4);
+}

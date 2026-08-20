@@ -4,6 +4,7 @@ import Translate from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import {localizedRedirectUrl} from '@site/src/utils/links';
 import CommunityTabs from '@site/src/components/communities/CommunityTabs';
+import ProLinks from '@site/src/components/landing/ProLinks';
 import {ENTRY_BY_ID} from '@site/src/components/communities/registry';
 import shared from '../styles/shared.module.css';
 import styles from './styles.module.css';
@@ -50,12 +51,6 @@ export default function HeroCarousel({serverCount}: HeroCarouselProps): ReactNod
     defaultLocale,
     '/invite',
   );
-  const appointmentUrl = localizedRedirectUrl(
-    siteUrl,
-    currentLocale,
-    defaultLocale,
-    '/appointment',
-  );
 
   return (
     <section className={clsx(shared.landing, styles.section)}>
@@ -98,20 +93,7 @@ export default function HeroCarousel({serverCount}: HeroCarouselProps): ReactNod
                 </Translate>
               </a>
             </div>
-            <a
-              href={appointmentUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.proLink}>
-              <Translate
-                id="hero.cta.appointment"
-                description="Tertiary CTA below the hero buttons: professionals can book a call">
-                Professionnel ? Réservez un appel
-              </Translate>
-              <span className={styles.proArrow} aria-hidden="true">
-                →
-              </span>
-            </a>
+            <ProLinks />
           </div>
         </div>
       </div>

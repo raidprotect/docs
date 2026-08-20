@@ -2673,7 +2673,7 @@
     "description": "Highlighted word inside the games hero title"
   },
   "communities.games.hero.description": {
-    "message": "FiveM, Roblox, Minecraft: assim que um servidor de jogo cresce, atrai raids, bots e vendedores de cheats. O RaidProtect bloqueia-os automaticamente, antes de chegarem aos seus jogadores.",
+    "message": "FiveM, Roblox, Minecraft: um servidor de jogo em crescimento atrai raids, bots e vendedores de cheats. O RaidProtect bloqueia-os antes de chegarem aos seus jogadores.",
     "description": "Games landing: hero subtitle"
   },
   "communities.games.hero.secondaryCta": {
@@ -2999,5 +2999,17 @@
   "communities.creators.cta.addToDiscord": {
     "message": "Adicionar ao Discord",
     "description": "Creators landing: primary CTA (add bot to Discord)"
+  },
+  "cta.pro.label": {
+    "message": "Profissional?",
+    "description": "Prefix of the professional links line under the hero buttons"
+  },
+  "cta.pro.offer": {
+    "message": "Descobrir a nossa oferta",
+    "description": "Pro line: link to the Business offer page"
+  },
+  "cta.pro.call": {
+    "message": "Agendar uma chamada",
+    "description": "Pro line: link to book a call"
   }
 }
