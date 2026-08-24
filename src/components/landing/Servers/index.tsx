@@ -11,7 +11,9 @@ export type Server = {
   name: string;
   icon: string;
   alt: string;
-  href: string;
+  /** Invitation du serveur. Absente si aucun lien public connu : la carte est
+   *  alors rendue sans lien. */
+  href?: string;
   /** Raw member count (rounded). Localised at render time. */
   members: number;
   badge: Badge;
@@ -307,36 +309,42 @@ function ServerCard({
   const formatted = server.members.toLocaleString(
     LOCALE_TO_BCP47[locale] ?? locale,
   );
-  return (
+  const inner = (
+    <div className={styles.avatarInfo}>
+      <img
+        src={server.icon}
+        alt={server.alt}
+        loading="lazy"
+        className={styles.avatar}
+      />
+      <div className={styles.infos}>
+        <div className={styles.nameRow}>
+          <div className={styles.name}>{server.name}</div>
+          <BadgeImg badge={server.badge} />
+        </div>
+        <div className={styles.memberCount}>
+          <Translate
+            id="servers.memberCount"
+            description="Server card: number of members (e.g. '40 000 members'); {count} is locale-formatted"
+            values={{count: formatted}}>
+            {'{count} membres'}
+          </Translate>
+        </div>
+      </div>
+    </div>
+  );
+  // Sans invitation connue, la carte reste une simple vignette (pas de lien).
+  return server.href ? (
     <a
       href={server.href}
       target="_blank"
       rel="noopener noreferrer"
       className={styles.server}
       tabIndex={decorative ? -1 : undefined}>
-      <div className={styles.avatarInfo}>
-        <img
-          src={server.icon}
-          alt={server.alt}
-          loading="lazy"
-          className={styles.avatar}
-        />
-        <div className={styles.infos}>
-          <div className={styles.nameRow}>
-            <div className={styles.name}>{server.name}</div>
-            <BadgeImg badge={server.badge} />
-          </div>
-          <div className={styles.memberCount}>
-            <Translate
-              id="servers.memberCount"
-              description="Server card: number of members (e.g. '40 000 members'); {count} is locale-formatted"
-              values={{count: formatted}}>
-              {'{count} membres'}
-            </Translate>
-          </div>
-        </div>
-      </div>
+      {inner}
     </a>
+  ) : (
+    <div className={styles.server}>{inner}</div>
   );
 }
 
