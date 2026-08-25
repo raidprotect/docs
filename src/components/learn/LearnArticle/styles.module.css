@@ -1,0 +1,305 @@
+/* Article de glossaire « Learn ». Lecture confortable sur une colonne étroite,
+ * en réutilisant les tokens de shared.landing. */
+
+.page {
+  padding-top: 56px;
+  padding-bottom: 120px;
+}
+
+.article {
+  width: min(760px, 100%);
+  margin: 0 auto;
+}
+
+/* Fil d'Ariane */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 26px;
+  font-size: 14px;
+  color: var(--color-gray-4);
+}
+
+.crumb {
+  color: var(--color-gray-4);
+  text-decoration: none;
+}
+
+.crumb:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.crumbSep {
+  color: var(--color-gray-3);
+}
+
+.crumbCurrent {
+  color: #fff;
+}
+
+/* En-tête */
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 5px 14px 4px;
+  border-radius: var(--radius-lg);
+  background-color: color-mix(in srgb, var(--color-primary-rp) 14%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-primary-rp) 45%, transparent);
+  color: var(--color-primary-rp);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0 0 24px 0;
+  font-family: var(--ifm-heading-font-family);
+  color: #fff;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.15em;
+}
+
+/* Encadré définition (TL;DR) */
+.definition {
+  position: relative;
+  padding: 22px 24px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-gray-1);
+  box-shadow: inset 0 0 0 1px var(--color-gray-3);
+  border-left: 3px solid var(--color-primary-rp);
+}
+
+.definitionLabel {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--color-primary-rp);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.definitionText {
+  margin: 0;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.6em;
+}
+
+/* Corps */
+.body {
+  margin-top: 44px;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.sectionHeading {
+  margin: 0 0 16px 0;
+  font-family: var(--ifm-heading-font-family);
+  color: #fff;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.25em;
+}
+
+.sectionBody {
+  color: var(--color-gray-4);
+  font-size: 17px;
+  line-height: 1.7em;
+}
+
+.sectionBody :global(p) {
+  margin: 0 0 16px 0;
+}
+
+.sectionBody :global(a) {
+  color: var(--color-primary-rp);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.sectionBody :global(a:hover) {
+  text-decoration: underline;
+}
+
+.sectionBody :global(strong) {
+  color: #fff;
+  font-weight: 600;
+}
+
+.sectionBody :global(ul) {
+  margin: 0 0 16px 0;
+  padding-left: 22px;
+}
+
+.sectionBody :global(li) {
+  margin-bottom: 8px;
+}
+
+/* Petit tableau comparatif éventuel */
+.sectionBody :global(table) {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 4px 0 20px 0;
+  font-size: 15.5px;
+}
+
+.sectionBody :global(th),
+.sectionBody :global(td) {
+  padding: 10px 14px;
+  text-align: left;
+  border: 1px solid var(--color-gray-3);
+  vertical-align: top;
+}
+
+.sectionBody :global(th) {
+  background-color: var(--color-gray-1);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* FAQ */
+.faq {
+  margin-top: 8px;
+  margin-bottom: 48px;
+}
+
+.faqList {
+  display: flex;
+  flex-flow: column;
+  gap: 12px;
+}
+
+.faqItem {
+  border-radius: var(--radius-sm);
+  background-color: var(--color-gray-1);
+  box-shadow: inset 0 0 0 1px var(--color-gray-3);
+  padding: 4px 20px;
+}
+
+.faqQuestion {
+  cursor: pointer;
+  padding: 16px 0;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  list-style: none;
+}
+
+.faqQuestion::-webkit-details-marker {
+  display: none;
+}
+
+.faqQuestion::after {
+  content: '+';
+  float: right;
+  color: var(--color-primary-rp);
+  font-weight: 400;
+}
+
+.faqItem[open] .faqQuestion::after {
+  content: '−';
+}
+
+.faqAnswer {
+  margin: 0;
+  padding: 0 0 18px 0;
+  color: var(--color-gray-4);
+  font-size: 16px;
+  line-height: 1.65em;
+}
+
+/* CTA produit */
+.cta {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 44px 32px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-gray-1);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-primary-rp) 35%, transparent);
+  margin-bottom: 48px;
+}
+
+.ctaGlow {
+  position: absolute;
+  inset: auto 0 -160px 0;
+  height: 300px;
+  margin: auto;
+  width: min(520px, 90%);
+  background-image: var(--gradient-1);
+  opacity: 0.28;
+  filter: blur(140px);
+  pointer-events: none;
+}
+
+.ctaTitle {
+  position: relative;
+  margin: 0 0 12px 0;
+  font-family: var(--ifm-heading-font-family);
+  color: #fff;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.ctaText {
+  position: relative;
+  width: min(500px, 100%);
+  margin: 0 auto 24px auto;
+  color: var(--color-gray-4);
+  font-size: 16px;
+  line-height: 1.6em;
+}
+
+/* Maillage interne */
+.related {
+  border-top: 1px solid var(--color-gray-3);
+  padding-top: 32px;
+}
+
+.relatedTitle {
+  margin: 0 0 18px 0;
+  font-family: var(--ifm-heading-font-family);
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.relatedList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 24px;
+}
+
+.relatedLink {
+  color: var(--color-gray-4);
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.2s;
+}
+
+.relatedLink:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 767px) {
+  .title {
+    font-size: 32px;
+  }
+  .sectionHeading {
+    font-size: 22px;
+  }
+  .relatedList {
+    grid-template-columns: 1fr;
+  }
+}
