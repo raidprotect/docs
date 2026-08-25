@@ -34,4 +34,10 @@ export const LEARN_ARTICLES: LearnEntry[] = [
     teaser:
       "Le vol du token qui authentifie un compte Discord. Comment ça marche et comment s'en protéger.",
   },
+  {
+    slug: 'honeypot-actif',
+    term: 'Faut-il animer un HoneyPot ?',
+    teaser:
+      "Le mythe du salon « chaud » : pourquoi un bot qui poste pour animer un HoneyPot est inutile, voire contre-productif.",
+  },
 ];

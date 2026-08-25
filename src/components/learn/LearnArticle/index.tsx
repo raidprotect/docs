@@ -34,9 +34,12 @@ export type LearnRelated = {
 
 export type LearnContent = {
   slug: string;
+  /** « term » = entrée de glossaire (schema DefinedTerm) ; « explainer » =
+   *  article d'explication / mythe débunké (schema Article). Défaut : term. */
+  kind?: 'term' | 'explainer';
   metaTitle: string;
   metaDescription: string;
-  /** Terme défini (sujet de la page), ex. « Raid Discord ». */
+  /** Terme défini ou sujet de la page, ex. « Raid Discord ». */
   term: string;
   /** Titre H1 (peut différer du terme, ex. une question). */
   title: ReactNode;
@@ -82,17 +85,31 @@ export default function LearnArticle({
           {'@type': 'ListItem', position: 3, name: content.term, item: pageUrl},
         ],
       },
-      {
-        '@type': 'DefinedTerm',
-        name: content.term,
-        description: content.definitionText,
-        inDefinedTermSet: {
-          '@type': 'DefinedTermSet',
-          name: 'Glossaire de la sécurité Discord — RaidProtect',
-          url: hubUrl,
-        },
-        url: pageUrl,
-      },
+      content.kind === 'explainer'
+        ? {
+            '@type': 'Article',
+            headline: content.metaTitle,
+            description: content.definitionText,
+            inLanguage: currentLocale,
+            url: pageUrl,
+            mainEntityOfPage: pageUrl,
+            publisher: {
+              '@type': 'Organization',
+              name: 'RaidProtect',
+              url: `${siteUrl}${prefix}/`,
+            },
+          }
+        : {
+            '@type': 'DefinedTerm',
+            name: content.term,
+            description: content.definitionText,
+            inDefinedTermSet: {
+              '@type': 'DefinedTermSet',
+              name: 'Glossaire de la sécurité Discord — RaidProtect',
+              url: hubUrl,
+            },
+            url: pageUrl,
+          },
       ...(content.faq.length
         ? [
             {
