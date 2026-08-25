@@ -341,6 +341,11 @@ export default async function createConfigAsync() {
                                 target: '_self'
                             },
                             {
+                                label: 'Learn',
+                                to: '/learn',
+                                target: '_self'
+                            },
+                            {
                                 label: 'Business',
                                 to: '/business',
                                 target: '_self'

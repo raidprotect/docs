@@ -67,7 +67,9 @@
 .definition {
   position: relative;
   padding: 22px 24px;
-  border-radius: var(--radius-md);
+  /* Coins gauche carrés pour que la barre d'accent reste bien droite (elle ne
+   * suit pas l'arrondi) ; seuls les coins droits sont arrondis. */
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
   background-color: var(--color-gray-1);
   box-shadow: inset 0 0 0 1px var(--color-gray-3);
   border-left: 3px solid var(--color-primary-rp);
