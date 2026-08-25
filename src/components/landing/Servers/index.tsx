@@ -265,6 +265,29 @@ export const SERVERS_INTL: Server[] = [
   },
 ];
 
+/* Marquee de la locale portugaise : la sélection internationale, précédée du
+ * gros LOUD et complétée par la Comunidade Escoteiros. */
+export const SERVERS_PT: Server[] = [
+  {
+    name: 'LOUD',
+    icon: '/img/landing/iconLoud.webp',
+    alt: 'LOUD Discord server icon',
+    href: 'https://discord.com/invite/loud',
+    members: 700000,
+    badge: 'verified',
+  },
+  ...SERVERS_INTL.slice(0, 4),
+  {
+    name: 'Comunidade Escoteiros',
+    icon: '/img/landing/iconEscoteiros.webp',
+    alt: 'Comunidade Escoteiros Discord server icon',
+    href: 'https://discord.com/invite/escoteiros',
+    members: 23000,
+    badge: null,
+  },
+  ...SERVERS_INTL.slice(4),
+];
+
 const LOCALE_TO_BCP47: Record<string, string> = {
   fr: 'fr-FR',
   en: 'en-US',
@@ -372,7 +395,12 @@ export default function Servers({
   // Webflow source listait des serveurs francophones sur la version FR et une
   // sélection internationale (parfois différente) sur EN/DE/ES/PT.
   const servers =
-    serversProp ?? (currentLocale === 'fr' ? SERVERS_FR : SERVERS_INTL);
+    serversProp ??
+    (currentLocale === 'fr'
+      ? SERVERS_FR
+      : currentLocale === 'pt'
+        ? SERVERS_PT
+        : SERVERS_INTL);
   return (
     <section
       className={clsx(shared.landing, styles.section)}
