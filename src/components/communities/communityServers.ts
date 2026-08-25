@@ -46,6 +46,21 @@ const EXTRA_GAMING: Server[] = [
     members: 44000,
     badge: 'verified',
   },
+  {
+    name: 'Lords Mobile FR',
+    icon: '/img/communities/lordsmobilefr.webp',
+    alt: 'Lords Mobile FR Discord server icon',
+    href: 'https://discord.com/invite/lordsmobilefr',
+    members: 27000,
+    badge: 'verified',
+  },
+  {
+    name: 'Minecraft.fr',
+    icon: '/img/communities/minecraftfr.webp',
+    alt: 'Minecraft.fr Discord server icon',
+    members: 19000,
+    badge: null,
+  },
 ];
 
 const EXTRA_CREATORS: Server[] = [
@@ -109,10 +124,12 @@ function pick(names: string[]): Server[] {
 export const GAMING_SERVERS: Server[] = pick([
   'Whiteout Survival', // 1,56 M
   'Fortnite House',
+  'Minecraft.fr',
   'Call of Duty: Mobile', // 515 k, partenaire
   'Genshin Impact FR',
   'The Forge', // 285 k
   'NationsGlory',
+  'Lords Mobile FR',
   'BattleBit Remastered Official', // 142 k, vérifié
   'Clash Royale FR',
   'Darktide', // 138 k, vérifié

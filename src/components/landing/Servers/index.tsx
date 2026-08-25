@@ -94,10 +94,10 @@ export const SERVERS_FR: Server[] = [
   },
   {
     name: 'PUBG MOBILE FRANCE',
-    icon: '/img/landing/iconPUBGMobileFrance.webp',
+    icon: '/img/landing/iconPUBGMobileFrance.webp?v=2',
     alt: 'PUBG MOBILE FRANCE Discord server icon',
     href: 'https://discord.com/invite/pubgmfr',
-    members: 18000,
+    members: 19000,
     badge: 'verified',
   },
   {
@@ -110,7 +110,7 @@ export const SERVERS_FR: Server[] = [
   },
   {
     name: 'MASTU',
-    icon: '/img/landing/iconMastu.webp',
+    icon: '/img/landing/iconMastu.webp?v=2',
     alt: 'MASTU Discord server icon',
     href: 'https://discord.com/invite/mastu',
     members: 17000,
