@@ -67,12 +67,22 @@
 .definition {
   position: relative;
   padding: 22px 24px;
-  /* Coins gauche carrés pour que la barre d'accent reste bien droite (elle ne
-   * suit pas l'arrondi) ; seuls les coins droits sont arrondis. */
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  border-radius: var(--radius-md);
   background-color: var(--color-gray-1);
   box-shadow: inset 0 0 0 1px var(--color-gray-3);
-  border-left: 3px solid var(--color-primary-rp);
+}
+
+/* Barre d'accent droite à l'intérieur : la box garde ses coins arrondis, mais
+ * la barre reste rectangulaire (insérée du rayon en haut/bas pour ne pas
+ * dépasser des coins et garder des extrémités plates). */
+.definition::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: var(--radius-md);
+  bottom: var(--radius-md);
+  width: 3px;
+  background-color: var(--color-primary-rp);
 }
 
 .definitionLabel {
