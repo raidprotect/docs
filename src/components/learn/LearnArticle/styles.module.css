@@ -66,22 +66,23 @@
 /* Encadré définition (TL;DR) */
 .definition {
   position: relative;
+  /* Découpe la barre d'accent sur les coins arrondis, façon embed Discord. */
+  overflow: hidden;
   padding: 22px 24px;
   border-radius: var(--radius-md);
   background-color: var(--color-gray-1);
   box-shadow: inset 0 0 0 1px var(--color-gray-3);
 }
 
-/* Barre d'accent droite à l'intérieur : la box garde ses coins arrondis, mais
- * la barre reste rectangulaire (insérée du rayon en haut/bas pour ne pas
- * dépasser des coins et garder des extrémités plates). */
+/* Barre d'accent pleine hauteur, collée à gauche : le container (overflow:
+ * hidden + border-radius) la coupe sur les coins arrondis. */
 .definition::before {
   content: '';
   position: absolute;
   left: 0;
-  top: var(--radius-md);
-  bottom: var(--radius-md);
-  width: 3px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
   background-color: var(--color-primary-rp);
 }
 
