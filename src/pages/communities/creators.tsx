@@ -353,12 +353,6 @@ export default function CreatorsCommunity(): ReactNode {
           description="Creators premium perk 2">
           Rôle de confiance pour laisser vos habitués traiter les signalements
         </Translate>,
-        <Translate
-          key="p3"
-          id="communities.creators.premium.perk3"
-          description="Creators premium perk 3">
-          Synchronisation hebdomadaire du Rôle de Tag pour vos ambassadeurs
-        </Translate>,
       ],
       ctaLabel: (
         <Translate
