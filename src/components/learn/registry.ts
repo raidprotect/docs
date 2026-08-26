@@ -46,10 +46,4 @@ export const LEARN_ARTICLES: LearnEntry[] = [
     teaser:
       "Le mythe du salon « chaud » : pourquoi un bot qui poste pour animer un HoneyPot est inutile, voire contre-productif.",
   },
-  {
-    slug: 'raid-spam-flood',
-    term: 'Raid, spam ou flood ?',
-    teaser:
-      "Trois mots souvent confondus : une invasion, un contenu indésirable et une avalanche de messages. La clarification, avec les protections.",
-  },
 ];

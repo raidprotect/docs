@@ -86,11 +86,9 @@ export default function SpamDiscordPage(): ReactNode {
               description="p with links"
               values={{
                 flood: (
-                  <Link to="/learn/raid-spam-flood">
-                    <Translate id="learn.spam-discord.s2.flood" description="link">
-                      flood
-                    </Translate>
-                  </Link>
+                  <Translate id="learn.spam-discord.s2.flood" description="inline term">
+                    flood
+                  </Translate>
                 ),
                 raid: (
                   <Link to="/learn/discord-raid">
@@ -289,19 +287,19 @@ export default function SpamDiscordPage(): ReactNode {
     related: [
       {
         label: (
-          <Translate id="learn.spam-discord.rel1" description="related">
-            Raid, spam ou flood : quelle différence ?
-          </Translate>
-        ),
-        to: '/learn/raid-spam-flood',
-      },
-      {
-        label: (
-          <Translate id="learn.spam-discord.rel2" description="related">
+          <Translate id="learn.spam-discord.rel1b" description="related">
             Qu'est-ce qu'un raid Discord ?
           </Translate>
         ),
         to: '/learn/discord-raid',
+      },
+      {
+        label: (
+          <Translate id="learn.spam-discord.rel2b" description="related">
+            Qu'est-ce qu'un self-bot ?
+          </Translate>
+        ),
+        to: '/learn/self-bot',
       },
       {
         label: (
