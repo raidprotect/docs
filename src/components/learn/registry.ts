@@ -23,6 +23,12 @@ export const LEARN_ARTICLES: LearnEntry[] = [
       "La destruction d'un serveur de l'intérieur par abus de permissions. Différence avec un raid, et comment l'éviter.",
   },
   {
+    slug: 'spam-discord',
+    term: 'Spam Discord',
+    teaser:
+      "Les messages non sollicités et répétitifs qui noient un serveur : ses formes, pourquoi c'est un problème, et comment l'arrêter.",
+  },
+  {
     slug: 'self-bot',
     term: 'Self-bot',
     teaser:
