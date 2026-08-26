@@ -41,7 +41,7 @@ export const LEARN_ARTICLES: LearnEntry[] = [
       "Le vol du token qui authentifie un compte Discord. Comment ça marche et comment s'en protéger.",
   },
   {
-    slug: 'moindre-privilege',
+    slug: 'least-privilege',
     term: 'Le moindre privilège',
     teaser:
       "Ne donner à chacun que les permissions nécessaires : votre meilleure défense anti-nuke, jusqu'à l'Authentication Manager.",
