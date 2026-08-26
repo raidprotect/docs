@@ -167,7 +167,7 @@ export default function HoneypotActifPage(): ReactNode {
                   ),
                 }}>
                 {
-                  "Résultat : {strong}. Il n'a pas besoin de paraître vivant. Au contraire — moins il y a d'activité légitime, plus le moindre message devient un signal d'alarme fiable."
+                  "Résultat : {strong}. Il n'a pas besoin de paraître vivant. Au contraire, moins il y a d'activité légitime, plus le moindre message devient un signal d'alarme fiable."
                 }
               </Translate>
             </p>

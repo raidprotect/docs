@@ -105,7 +105,7 @@ export default function LearnArticle({
             description: content.definitionText,
             inDefinedTermSet: {
               '@type': 'DefinedTermSet',
-              name: 'Glossaire de la sécurité Discord — RaidProtect',
+              name: 'Glossaire de la sécurité Discord de RaidProtect',
               url: hubUrl,
             },
             url: pageUrl,
