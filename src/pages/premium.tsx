@@ -638,7 +638,7 @@ export default function PremiumPage(): React.ReactNode {
                                     {feature.docsHref && (
                                         <div className={styles.featureMeta}>
                                             <Link to={feature.docsHref}>
-                                                <Translate id="premium.feature.learnMore">En savoir plus →</Translate>
+                                                <Translate id="premium.feature.learnMore">En savoir plus</Translate>
                                             </Link>
                                         </div>
                                     )}

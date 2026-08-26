@@ -23,9 +23,6 @@ export default function ProLinks({className}: {className?: string}): ReactNode {
           description="Pro line: link to the Business offer page">
           Découvrir notre offre
         </Translate>
-        <span className={styles.arrow} aria-hidden="true">
-          →
-        </span>
       </Link>
     </div>
   );

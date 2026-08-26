@@ -228,7 +228,6 @@ export default function LearnArticle({
                     <li key={i}>
                       <Link to={r.to} className={styles.relatedLink}>
                         {r.label}
-                        <span aria-hidden="true"> →</span>
                       </Link>
                     </li>
                   ))}

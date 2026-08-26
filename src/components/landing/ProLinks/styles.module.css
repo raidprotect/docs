@@ -32,12 +32,3 @@
   text-decoration: none;
   opacity: 0.85;
 }
-
-.arrow {
-  font-size: 0.95em;
-  transition: transform 0.25s;
-}
-
-.link:hover .arrow {
-  transform: translateX(4px);
-}

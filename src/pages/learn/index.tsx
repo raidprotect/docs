@@ -54,7 +54,7 @@ export default function LearnHub(): ReactNode {
                   <span className={styles.cardTerm}>{entry.term}</span>
                   <span className={styles.cardTeaser}>{entry.teaser}</span>
                   <span className={styles.cardArrow} aria-hidden="true">
-                    Lire →
+                    Lire
                   </span>
                 </Link>
               </li>
