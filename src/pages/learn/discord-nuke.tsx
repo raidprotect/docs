@@ -211,20 +211,33 @@ export default function DiscordNukePage(): ReactNode {
           <>
             <p>
               <Translate id="learn.discord-nuke.s4.intro" description="p">
-                La prévention repose sur un principe simple : limiter qui peut
-                faire des dégâts.
+                La meilleure défense se joue en amont : un nuke vient presque
+                toujours d'un compte privilégié, donc tout se joue sur la confiance
+                que vous accordez avant de distribuer des permissions.
               </Translate>
             </p>
             <ul>
               <li>
                 <strong>
                   <Translate id="learn.discord-nuke.s4.i1.t" description="li title">
-                    Moindre privilège.
+                    Le moindre privilège, la vraie solution.
                   </Translate>
                 </strong>{' '}
-                <Translate id="learn.discord-nuke.s4.i1.b" description="li body">
-                  N'accordez « Administrateur », « Gérer les salons » ou « Gérer
-                  les rôles » qu'aux personnes réellement de confiance.
+                <Translate
+                  id="learn.discord-nuke.s4.i1.b2"
+                  description="li body with link"
+                  values={{
+                    link: (
+                      <Link to="/learn/least-privilege">
+                        <Translate id="learn.discord-nuke.s4.i1.link" description="link label">
+                          moindre privilège
+                        </Translate>
+                      </Link>
+                    ),
+                  }}>
+                  {
+                    "C'est de loin la protection la plus efficace. N'accordez « Administrateur », « Gérer les salons » ou « Gérer les rôles » qu'aux personnes en qui vous avez vraiment confiance, et donnez à chacun le strict minimum : c'est le principe du {link}."
+                  }
                 </Translate>
               </li>
               <li>
@@ -252,24 +265,47 @@ export default function DiscordNukePage(): ReactNode {
               </li>
               <li>
                 <strong>
-                  <Translate id="learn.discord-nuke.s4.i4.t" description="li title">
+                  <Translate id="learn.discord-nuke.s4.i4b.t" description="li title">
+                    Verrouillez les rôles sensibles.
+                  </Translate>
+                </strong>{' '}
+                <Translate
+                  id="learn.discord-nuke.s4.i4b.b"
+                  description="li body with link"
+                  values={{
+                    link: (
+                      <Link to="/docs/features/authentication-manager">
+                        <Translate id="learn.discord-nuke.s4.i4b.link" description="link label">
+                          Authentication Manager
+                        </Translate>
+                      </Link>
+                    ),
+                  }}>
+                  {
+                    "L'{link} de RaidProtect protège l'accès aux rôles sensibles par une vérification d'identité (passkey, PIN, OTP) et des sessions temporaires : même le compte d'une personne de confiance, s'il est piraté, ne garde pas un accès admin permanent."
+                  }
+                </Translate>
+              </li>
+              <li>
+                <strong>
+                  <Translate id="learn.discord-nuke.s4.i5.t" description="li title">
                     Auditez votre configuration.
                   </Translate>
                 </strong>{' '}
                 <Translate
-                  id="learn.discord-nuke.s4.i4.b"
+                  id="learn.discord-nuke.s4.i5.b"
                   description="li body with link"
                   values={{
                     link: (
                       <Link to="/docs/features/audit">
-                        <Translate id="learn.discord-nuke.s4.i4.link" description="link label">
+                        <Translate id="learn.discord-nuke.s4.i5.link" description="link label">
                           audit de sécurité
                         </Translate>
                       </Link>
                     ),
                   }}>
                   {
-                    "L’{link} de RaidProtect passe en revue les permissions et les réglages à risque de votre serveur, et vous montre quoi corriger."
+                    "L'{link} de RaidProtect passe en revue les permissions et les réglages à risque de votre serveur, et vous montre quoi corriger."
                   }
                 </Translate>
               </li>
@@ -344,6 +380,14 @@ export default function DiscordNukePage(): ReactNode {
       {
         label: (
           <Translate id="learn.discord-nuke.rel2" description="related">
+            Le principe du moindre privilège
+          </Translate>
+        ),
+        to: '/learn/least-privilege',
+      },
+      {
+        label: (
+          <Translate id="learn.discord-nuke.rel3b" description="related">
             Qu'est-ce qu'un token grabber ?
           </Translate>
         ),
@@ -351,19 +395,11 @@ export default function DiscordNukePage(): ReactNode {
       },
       {
         label: (
-          <Translate id="learn.discord-nuke.rel3" description="related">
-            L'audit de sécurité RaidProtect
+          <Translate id="learn.discord-nuke.rel4b" description="related">
+            L'Authentication Manager
           </Translate>
         ),
-        to: '/docs/features/audit',
-      },
-      {
-        label: (
-          <Translate id="learn.discord-nuke.rel4" description="related">
-            Les outils de modération
-          </Translate>
-        ),
-        to: '/docs/features/moderation',
+        to: '/docs/features/authentication-manager',
       },
     ],
   };
