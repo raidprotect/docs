@@ -47,7 +47,7 @@ export const LEARN_ARTICLES: LearnEntry[] = [
       "Ne donner à chacun que les permissions nécessaires : votre meilleure défense anti-nuke, jusqu'à l'Authentication Manager.",
   },
   {
-    slug: 'honeypot-actif',
+    slug: 'honeypot-warming',
     term: 'Faut-il animer un HoneyPot ?',
     teaser:
       "Le mythe du salon « chaud » : pourquoi un bot qui poste pour animer un HoneyPot est inutile, voire contre-productif.",

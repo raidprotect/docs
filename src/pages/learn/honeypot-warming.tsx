@@ -10,27 +10,27 @@ import LearnArticle, {
 
 export default function HoneypotActifPage(): ReactNode {
   const content: LearnContent = {
-    slug: 'honeypot-actif',
+    slug: 'honeypot-warming',
     kind: 'explainer',
     metaTitle: translate({
-      id: 'learn.honeypot-actif.metaTitle',
+      id: 'learn.honeypot-warming.metaTitle',
       message: "Salon HoneyPot « actif » : faut-il un bot pour l'animer ?",
       description: 'Learn explainer meta title: honeypot activity',
     }),
     metaDescription: translate({
-      id: 'learn.honeypot-actif.metaDescription',
+      id: 'learn.honeypot-warming.metaDescription',
       message:
         "Faut-il faire tourner un bot qui poste des messages pour qu'un salon HoneyPot paraisse actif ? Non : on explique simplement pourquoi c'est inutile.",
       description: 'Learn explainer meta description: honeypot activity',
     }),
     term: 'HoneyPot « actif »',
     title: (
-      <Translate id="learn.honeypot-actif.title" description="H1">
+      <Translate id="learn.honeypot-warming.title" description="H1">
         Faut-il un bot pour garder un salon HoneyPot « actif » ?
       </Translate>
     ),
     definition: (
-      <Translate id="learn.honeypot-actif.definition" description="TL;DR answer">
+      <Translate id="learn.honeypot-warming.definition" description="TL;DR answer">
         Non. Un salon HoneyPot n'a pas besoin d'être « animé » par un bot. Pour
         savoir si un salon est actif, il faut lire les messages… et donc voir qui
         les a écrits. Une fausse activité est donc immédiatement repérable, et de
@@ -42,26 +42,26 @@ export default function HoneypotActifPage(): ReactNode {
     sections: [
       {
         heading: (
-          <Translate id="learn.honeypot-actif.s1.h" description="h">
+          <Translate id="learn.honeypot-warming.s1.h" description="h">
             Rappel : c'est quoi un salon HoneyPot ?
           </Translate>
         ),
         body: (
           <p>
             <Translate
-              id="learn.honeypot-actif.s1.p1"
+              id="learn.honeypot-warming.s1.p1"
               description="p with links"
               values={{
                 hp: (
                   <Link to="/docs/features/honeypot">
-                    <Translate id="learn.honeypot-actif.s1.hp" description="link">
+                    <Translate id="learn.honeypot-warming.s1.hp" description="link">
                       HoneyPot
                     </Translate>
                   </Link>
                 ),
                 bot: (
                   <Link to="/learn/self-bot">
-                    <Translate id="learn.honeypot-actif.s1.bot" description="link">
+                    <Translate id="learn.honeypot-warming.s1.bot" description="link">
                       comptes automatisés
                     </Translate>
                   </Link>
@@ -76,13 +76,13 @@ export default function HoneypotActifPage(): ReactNode {
       },
       {
         heading: (
-          <Translate id="learn.honeypot-actif.s2.h" description="h">
+          <Translate id="learn.honeypot-warming.s2.h" description="h">
             L'idée reçue : « il faut que le salon ait l'air vivant »
           </Translate>
         ),
         body: (
           <p>
-            <Translate id="learn.honeypot-actif.s2.p1" description="p">
+            <Translate id="learn.honeypot-warming.s2.p1" description="p">
               On lit parfois ce conseil : faire tourner un bot qui poste des
               messages dans le HoneyPot pour le rendre « chaud », histoire que les
               spammeurs le croient actif et viennent y poster. L'intention paraît
@@ -93,21 +93,21 @@ export default function HoneypotActifPage(): ReactNode {
       },
       {
         heading: (
-          <Translate id="learn.honeypot-actif.s3.h" description="h">
+          <Translate id="learn.honeypot-warming.s3.h" description="h">
             Pourquoi ça ne marche pas
           </Translate>
         ),
         body: (
           <>
             <p>
-              <Translate id="learn.honeypot-actif.s3.p1" description="p">
+              <Translate id="learn.honeypot-warming.s3.p1" description="p">
                 Posez-vous la question : comment sait-on qu'un salon est « actif » ?
                 Il faut lire ses derniers messages. Il n'y a pas d'autre moyen.
               </Translate>
             </p>
             <p>
               <Translate
-                id="learn.honeypot-actif.s3.p2"
+                id="learn.honeypot-warming.s3.p2"
                 description="p with emphasis"
                 values={{
                   strong: (
@@ -122,7 +122,7 @@ export default function HoneypotActifPage(): ReactNode {
               </Translate>
             </p>
             <p>
-              <Translate id="learn.honeypot-actif.s3.p3" description="p">
+              <Translate id="learn.honeypot-warming.s3.p3" description="p">
                 Autrement dit : il n'existe aucun moyen d'automatiser
                 « intelligemment » un faux salon vivant. L'auteur des messages
                 trahit toujours le fait que l'activité est bidon.
@@ -133,14 +133,14 @@ export default function HoneypotActifPage(): ReactNode {
       },
       {
         heading: (
-          <Translate id="learn.honeypot-actif.s4.h" description="h">
+          <Translate id="learn.honeypot-warming.s4.h" description="h">
             Et surtout : personne ne regarde
           </Translate>
         ),
         body: (
           <>
             <p>
-              <Translate id="learn.honeypot-actif.s4.p1" description="p">
+              <Translate id="learn.honeypot-warming.s4.p1" description="p">
                 Il y a plus simple encore. Pour vérifier l'activité d'un salon
                 avant d'y envoyer des comptes, un attaquant devrait se connecter,
                 récupérer l'historique des messages et l'analyser. C'est lourd,
@@ -148,7 +148,7 @@ export default function HoneypotActifPage(): ReactNode {
               </Translate>
             </p>
             <p>
-              <Translate id="learn.honeypot-actif.s4.p2" description="p">
+              <Translate id="learn.honeypot-warming.s4.p2" description="p">
                 Or les personnes qui automatisent des comptes pour spammer en masse
                 ne font pas ça : c'est trop compliqué et trop lourd pour rien. Elles
                 envoient leurs comptes partout, sans se poser la question.
@@ -156,7 +156,7 @@ export default function HoneypotActifPage(): ReactNode {
             </p>
             <p>
               <Translate
-                id="learn.honeypot-actif.s4.p3"
+                id="learn.honeypot-warming.s4.p3"
                 description="p with emphasis"
                 values={{
                   strong: (
@@ -176,26 +176,26 @@ export default function HoneypotActifPage(): ReactNode {
       },
       {
         heading: (
-          <Translate id="learn.honeypot-actif.s5.h" description="h">
+          <Translate id="learn.honeypot-warming.s5.h" description="h">
             Ce qu'il faut retenir
           </Translate>
         ),
         body: (
           <ul>
             <li>
-              <Translate id="learn.honeypot-actif.s5.i1" description="li">
+              <Translate id="learn.honeypot-warming.s5.i1" description="li">
                 Laissez votre salon HoneyPot vide : n'y écrivez pas, et n'y mettez
                 pas de bot pour l'animer.
               </Translate>
             </li>
             <li>
-              <Translate id="learn.honeypot-actif.s5.i2" description="li">
+              <Translate id="learn.honeypot-warming.s5.i2" description="li">
                 Une fausse activité est repérable (l'auteur des messages est
                 visible) et ne trompe personne.
               </Translate>
             </li>
             <li>
-              <Translate id="learn.honeypot-actif.s5.i3" description="li">
+              <Translate id="learn.honeypot-warming.s5.i3" description="li">
                 De toute façon, les spammeurs automatisés ne vérifient pas
                 l'activité d'un salon : c'est trop coûteux pour eux.
               </Translate>
@@ -207,12 +207,12 @@ export default function HoneypotActifPage(): ReactNode {
     faq: [
       {
         question: translate({
-          id: 'learn.honeypot-actif.faq.q1',
+          id: 'learn.honeypot-warming.faq.q1',
           message: 'Faut-il écrire dans mon salon HoneyPot ?',
           description: 'faq q',
         }),
         answer: translate({
-          id: 'learn.honeypot-actif.faq.a1',
+          id: 'learn.honeypot-warming.faq.a1',
           message:
             "Non. Il doit rester vide et silencieux : aucun vrai membre n'a de raison d'y poster, donc tout message y est un signal fiable de compte indésirable.",
           description: 'faq a',
@@ -220,12 +220,12 @@ export default function HoneypotActifPage(): ReactNode {
       },
       {
         question: translate({
-          id: 'learn.honeypot-actif.faq.q2',
+          id: 'learn.honeypot-warming.faq.q2',
           message: "Un bot qui « chauffe » le salon, ça aide ?",
           description: 'faq q',
         }),
         answer: translate({
-          id: 'learn.honeypot-actif.faq.a2',
+          id: 'learn.honeypot-warming.faq.a2',
           message:
             "Non. Cela crée une fausse activité facilement repérable, car l'auteur de chaque message est visible, et cela consomme des ressources pour rien.",
           description: 'faq a',
@@ -233,12 +233,12 @@ export default function HoneypotActifPage(): ReactNode {
       },
       {
         question: translate({
-          id: 'learn.honeypot-actif.faq.q3',
+          id: 'learn.honeypot-warming.faq.q3',
           message: 'Les spammeurs vérifient-ils si un salon est actif ?',
           description: 'faq q',
         }),
         answer: translate({
-          id: 'learn.honeypot-actif.faq.a3',
+          id: 'learn.honeypot-warming.faq.a3',
           message:
             "En pratique, non. Analyser l'activité d'un salon avant d'y poster serait trop lourd et trop coûteux : les comptes automatisés spamment sans faire cette vérification.",
           description: 'faq a',
@@ -246,12 +246,12 @@ export default function HoneypotActifPage(): ReactNode {
       },
       {
         question: translate({
-          id: 'learn.honeypot-actif.faq.q4',
+          id: 'learn.honeypot-warming.faq.q4',
           message: 'Comment un HoneyPot piège-t-il les bots, alors ?',
           description: 'faq q',
         }),
         answer: translate({
-          id: 'learn.honeypot-actif.faq.a4',
+          id: 'learn.honeypot-warming.faq.a4',
           message:
             "Justement parce qu'il est silencieux : comme personne de légitime n'y écrit, tout compte qui y poste se dénonce de lui-même et peut être sanctionné automatiquement.",
           description: 'faq a',
@@ -261,7 +261,7 @@ export default function HoneypotActifPage(): ReactNode {
     related: [
       {
         label: (
-          <Translate id="learn.honeypot-actif.rel1" description="related">
+          <Translate id="learn.honeypot-warming.rel1" description="related">
             Le salon-piège HoneyPot
           </Translate>
         ),
@@ -269,7 +269,7 @@ export default function HoneypotActifPage(): ReactNode {
       },
       {
         label: (
-          <Translate id="learn.honeypot-actif.rel2" description="related">
+          <Translate id="learn.honeypot-warming.rel2" description="related">
             Qu'est-ce qu'un self-bot ?
           </Translate>
         ),
@@ -277,7 +277,7 @@ export default function HoneypotActifPage(): ReactNode {
       },
       {
         label: (
-          <Translate id="learn.honeypot-actif.rel3" description="related">
+          <Translate id="learn.honeypot-warming.rel3" description="related">
             Qu'est-ce qu'un raid Discord ?
           </Translate>
         ),
@@ -285,7 +285,7 @@ export default function HoneypotActifPage(): ReactNode {
       },
       {
         label: (
-          <Translate id="learn.honeypot-actif.rel4" description="related">
+          <Translate id="learn.honeypot-warming.rel4" description="related">
             L'anti-spam de RaidProtect
           </Translate>
         ),
