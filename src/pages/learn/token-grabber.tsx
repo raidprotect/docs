@@ -166,8 +166,19 @@ export default function TokenGrabberPage(): ReactNode {
             </li>
             <li>
               <strong>
-                <Translate id="learn.token-grabber.s4.i4.t" description="li title">
-                  Côté serveur, appliquez le moindre privilège.
+                <Translate
+                  id="learn.token-grabber.s4.i4.t"
+                  description="li title with link"
+                  values={{
+                    link: (
+                      <Link to="/learn/least-privilege">
+                        <Translate id="learn.token-grabber.s4.i4.link" description="link">
+                          moindre privilège
+                        </Translate>
+                      </Link>
+                    ),
+                  }}>
+                  {'Côté serveur, appliquez le {link}.'}
                 </Translate>
               </strong>{' '}
               <Translate id="learn.token-grabber.s4.i4.b" description="li body">

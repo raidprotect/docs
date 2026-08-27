@@ -53,10 +53,21 @@ export default function DiscordNukePage(): ReactNode {
               </Translate>
             </p>
             <p>
-              <Translate id="learn.discord-nuke.s1.p2" description="p">
-                Trois cas reviennent le plus souvent : un membre du staff dont le
-                compte est compromis (token volé, phishing), un bot malveillant
-                ajouté avec trop de permissions, ou un modérateur mal intentionné.
+              <Translate
+                id="learn.discord-nuke.s1.p2"
+                description="p with link"
+                values={{
+                  token: (
+                    <Link to="/learn/token-grabber">
+                      <Translate id="learn.discord-nuke.s1.p2.token" description="link">
+                        token volé
+                      </Translate>
+                    </Link>
+                  ),
+                }}>
+                {
+                  "Trois cas reviennent le plus souvent : un membre du staff dont le compte est compromis ({token}, phishing), un bot malveillant ajouté avec trop de permissions, ou un modérateur mal intentionné."
+                }
               </Translate>
             </p>
             <p>

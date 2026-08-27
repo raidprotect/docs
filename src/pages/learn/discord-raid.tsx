@@ -175,8 +175,8 @@ export default function DiscordRaidPage(): ReactNode {
                 description="summary with bold"
                 values={{
                   raid: <strong>raid</strong>,
-                  nuke: <strong>nuke</strong>,
-                  spam: <strong>spam</strong>,
+                  nuke: <Link to="/learn/discord-nuke">nuke</Link>,
+                  spam: <Link to="/learn/spam-discord">spam</Link>,
                 }}>
                 {
                   'En résumé : un {raid} est une invasion par le nombre, un {nuke} est une destruction par abus de permissions, et le {spam} est le symptôme le plus visible des deux.'
