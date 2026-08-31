@@ -52,4 +52,10 @@ export const LEARN_ARTICLES: LearnEntry[] = [
     teaser:
       "Le mythe du salon « chaud » : pourquoi un bot qui poste pour animer un HoneyPot est inutile, voire contre-productif.",
   },
+  {
+    slug: 'server-raidable',
+    term: '« This server is raidable »',
+    teaser:
+      "Ce que veut vraiment dire ce message (bots type Jalapeno), pourquoi le test est trompeur, et les deux façons de corriger.",
+  },
 ];
