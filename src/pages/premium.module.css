@@ -481,8 +481,9 @@
 }
 
 .limitArrow {
+  display: inline-flex;
+  align-items: center;
   color: var(--ifm-color-primary-light);
-  font-weight: 700;
 }
 
 /* Scène "Authentication Manager" : trois jauges gratuit → premium. */

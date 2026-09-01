@@ -243,7 +243,11 @@ function FeatureScene({ kind }: { kind: SceneKind }): React.ReactNode {
                     <div key={label} className={styles.limitRow}>
                         <span className={styles.limitLabel}>{label}</span>
                         <span className={styles.limitFree}>{free}</span>
-                        <span className={styles.limitArrow}>→</span>
+                        <span className={styles.limitArrow} aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M5 12h13M13 6l6 6-6 6" />
+                            </svg>
+                        </span>
                         <span className={styles.limitPrem}>{prem}</span>
                     </div>
                 ))}
@@ -374,7 +378,7 @@ export default function PremiumPage(): React.ReactNode {
         {
             scene: 'panels',
             title: translate({ id: 'premium.feature.display.title', message: 'Plus de panneaux d\'information' }),
-            description: translate({ id: 'premium.feature.display.desc', message: 'Deux fois plus de panneaux libres avec /display public (2 → 4), slot Jail toujours inclus.' }),
+            description: translate({ id: 'premium.feature.display.desc', message: 'Deux fois plus de panneaux libres avec /display public (de 2 à 4), slot Jail toujours inclus.' }),
             docsHref: '/docs/features/display',
         },
         {
@@ -528,7 +532,7 @@ export default function PremiumPage(): React.ReactNode {
                         </h1>
                         <p className={styles.heroSubtitle}>
                             <Translate id="premium.hero.subtitle">
-                                Débloquez les fonctionnalités avancées de RaidProtect : personnalisation totale, limites étendues sur les modules clés, sanctions sur-mesure et accès anticipé aux nouveautés.
+                                Personnalisez RaidProtect aux couleurs de votre serveur, poussez les limites de vos modules et recevez les nouveautés en avant-première.
                             </Translate>
                         </p>
                         <div className={styles.heroCtas}>
@@ -615,7 +619,7 @@ export default function PremiumPage(): React.ReactNode {
                                 </h2>
                                 <p className={styles.sectionSubtitle}>
                                     <Translate id="premium.features.subtitle">
-                                        Des leviers concrets pour aller plus loin avec RaidProtect, sans changer votre manière de travailler.
+                                        Des limites plus hautes, des sanctions à votre vocabulaire et un accès anticipé aux nouveautés.
                                     </Translate>
                                 </p>
                             </div>
