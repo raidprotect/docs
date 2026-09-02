@@ -4455,5 +4455,73 @@
   "learn.server-raidable.s2.strong": {
     "message": "una cuenta de administrador siempre mostrará «raidable»",
     "description": "bold emphasis: an admin account always shows raidable"
+  },
+  "learn.discord-raid.cardTerm": {
+    "message": "Raid de Discord",
+    "description": "Learn hub card term: discord-raid"
+  },
+  "learn.discord-raid.cardTeaser": {
+    "message": "La llegada coordinada de cuentas para saturar un servidor: definición, diferencia con un nuke y cómo bloquearlo.",
+    "description": "Learn hub card teaser: discord-raid"
+  },
+  "learn.discord-nuke.cardTerm": {
+    "message": "Nuke de Discord",
+    "description": "Learn hub card term: discord-nuke"
+  },
+  "learn.discord-nuke.cardTeaser": {
+    "message": "La destrucción de un servidor desde dentro por abuso de permisos. Diferencia con un raid y cómo evitarlo.",
+    "description": "Learn hub card teaser: discord-nuke"
+  },
+  "learn.spam-discord.cardTerm": {
+    "message": "Spam de Discord",
+    "description": "Learn hub card term: spam-discord"
+  },
+  "learn.spam-discord.cardTeaser": {
+    "message": "Los mensajes no solicitados y repetitivos que inundan un servidor: sus formas, por qué es un problema y cómo detenerlo.",
+    "description": "Learn hub card teaser: spam-discord"
+  },
+  "learn.self-bot.cardTerm": {
+    "message": "Self-bot",
+    "description": "Learn hub card term: self-bot"
+  },
+  "learn.self-bot.cardTeaser": {
+    "message": "Una cuenta de usuario automatizada, prohibida por Discord. Cómo alimenta raids y spam, y cómo bloquearla.",
+    "description": "Learn hub card teaser: self-bot"
+  },
+  "learn.token-grabber.cardTerm": {
+    "message": "Token grabber",
+    "description": "Learn hub card term: token-grabber"
+  },
+  "learn.token-grabber.cardTeaser": {
+    "message": "El robo del token que autentica una cuenta de Discord. Cómo funciona y cómo protegerse.",
+    "description": "Learn hub card teaser: token-grabber"
+  },
+  "learn.least-privilege.cardTerm": {
+    "message": "El mínimo privilegio",
+    "description": "Learn hub card term: least-privilege"
+  },
+  "learn.least-privilege.cardTeaser": {
+    "message": "Dar a cada uno solo los permisos necesarios: tu mejor defensa anti-nuke, hasta el Authentication Manager.",
+    "description": "Learn hub card teaser: least-privilege"
+  },
+  "learn.honeypot-warming.cardTerm": {
+    "message": "¿Hay que animar un HoneyPot?",
+    "description": "Learn hub card term: honeypot-warming"
+  },
+  "learn.honeypot-warming.cardTeaser": {
+    "message": "El mito del canal «caliente»: por qué un bot que publica para animar un HoneyPot es inútil, incluso contraproducente.",
+    "description": "Learn hub card teaser: honeypot-warming"
+  },
+  "learn.server-raidable.cardTerm": {
+    "message": "«This server is raidable»",
+    "description": "Learn hub card term: server-raidable"
+  },
+  "learn.server-raidable.cardTeaser": {
+    "message": "Lo que realmente significa este mensaje (bots tipo Jalapeno), por qué la prueba es engañosa y las dos formas de corregirlo.",
+    "description": "Learn hub card teaser: server-raidable"
+  },
+  "learn.hub.readMore": {
+    "message": "Leer",
+    "description": "Learn hub card read link"
   }
 }
