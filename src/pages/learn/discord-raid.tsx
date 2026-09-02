@@ -23,7 +23,11 @@ export default function DiscordRaidPage(): ReactNode {
         "Un raid Discord, c'est l'arrivée coordonnée de dizaines de comptes pour spammer et saturer un serveur. Définition, différence avec un nuke, et comment le bloquer.",
       description: 'Learn article meta description: Discord raid',
     }),
-    term: 'Raid Discord',
+    term: translate({
+      id: 'learn.discord-raid.term',
+      message: 'Raid Discord',
+      description: 'Learn glossary term name (breadcrumb + schema)',
+    }),
     title: (
       <Translate id="learn.discord-raid.title" description="Discord raid H1">
         Qu'est-ce qu'un raid Discord ?
@@ -36,8 +40,11 @@ export default function DiscordRaidPage(): ReactNode {
         perturber ou de le saturer en quelques minutes.
       </Translate>
     ),
-    definitionText:
-      "Un raid Discord est l'arrivée soudaine et coordonnée de nombreux comptes, souvent des bots, sur un serveur, dans le but de le spammer, de le perturber ou de le saturer en quelques minutes.",
+    definitionText: translate({
+      id: 'learn.discord-raid.definitionText',
+      message: "Un raid Discord est l'arrivée soudaine et coordonnée de nombreux comptes, souvent des bots, sur un serveur, dans le but de le spammer, de le perturber ou de le saturer en quelques minutes.",
+      description: 'Learn definition plain text for schema.org',
+    }),
     sections: [
       {
         heading: (
@@ -62,8 +69,12 @@ export default function DiscordRaidPage(): ReactNode {
                   code: <code>@everyone</code>,
                   strong: (
                     <strong>
-                      saturer le serveur plus vite que les modérateurs ne peuvent
-                      réagir
+                      <Translate
+                        id="learn.discord-raid.s2.strong"
+                        description="bold emphasis: raid goal">
+                        saturer le serveur plus vite que les modérateurs ne
+                        peuvent réagir
+                      </Translate>
                     </strong>
                   ),
                 }}>
@@ -318,7 +329,17 @@ export default function DiscordRaidPage(): ReactNode {
               <Translate
                 id="learn.discord-raid.s4.outro"
                 description="outro with bold stat"
-                values={{count: <strong>380 000 serveurs</strong>}}>
+                values={{
+                  count: (
+                    <strong>
+                      <Translate
+                        id="learn.stat.protectedServers"
+                        description="bold stat: number of protected servers">
+                        380 000 serveurs
+                      </Translate>
+                    </strong>
+                  ),
+                }}>
                 {
                   'C’est exactement ce que RaidProtect automatise : le bot protège aujourd’hui plus de {count} et a déjà bloqué des millions de messages de spam.'
                 }

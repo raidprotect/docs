@@ -21,7 +21,11 @@ export default function SelfBotPage(): ReactNode {
         "Un self-bot automatise un compte utilisateur Discord via l'API, ce qui est interdit par Discord. Ce que c'est, comment il sert aux raids et au spam, et comment s'en protéger.",
       description: 'Learn article meta description: self-bot',
     }),
-    term: 'Self-bot',
+    term: translate({
+      id: 'learn.self-bot.term',
+      message: 'Self-bot',
+      description: 'Learn glossary term name (breadcrumb + schema)',
+    }),
     title: (
       <Translate id="learn.self-bot.title" description="H1">
         Qu'est-ce qu'un self-bot Discord ?
@@ -34,8 +38,11 @@ export default function SelfBotPage(): ReactNode {
         par les Conditions d'utilisation de Discord.
       </Translate>
     ),
-    definitionText:
-      "Un self-bot est un compte utilisateur Discord (pas un vrai bot) piloté automatiquement par un script qui utilise l'API à sa place. C'est interdit par les Conditions d'utilisation de Discord.",
+    definitionText: translate({
+      id: 'learn.self-bot.definitionText',
+      message: "Un self-bot est un compte utilisateur Discord (pas un vrai bot) piloté automatiquement par un script qui utilise l'API à sa place. C'est interdit par les Conditions d'utilisation de Discord.",
+      description: 'Learn definition plain text for schema.org',
+    }),
     sections: [
       {
         heading: (

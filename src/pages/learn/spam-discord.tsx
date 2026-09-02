@@ -21,7 +21,11 @@ export default function SpamDiscordPage(): ReactNode {
         "Le spam Discord, c'est l'envoi de messages non sollicités et répétitifs sur un serveur ou en privé. Ses formes, pourquoi c'est un problème, et comment l'arrêter.",
       description: 'Learn article meta description: Discord spam',
     }),
-    term: 'Spam Discord',
+    term: translate({
+      id: 'learn.spam-discord.term',
+      message: 'Spam Discord',
+      description: 'Learn glossary term name (breadcrumb + schema)',
+    }),
     title: (
       <Translate id="learn.spam-discord.title" description="H1">
         Qu'est-ce que le spam Discord ?
@@ -35,8 +39,11 @@ export default function SpamDiscordPage(): ReactNode {
         entière.
       </Translate>
     ),
-    definitionText:
-      "Le spam Discord, c'est l'envoi de messages non sollicités et répétitifs sur un serveur ou en message privé : publicités, liens d'arnaque, faux Nitro, mentions en masse. Il peut venir d'un seul compte comme d'une vague entière.",
+    definitionText: translate({
+      id: 'learn.spam-discord.definitionText',
+      message: "Le spam Discord, c'est l'envoi de messages non sollicités et répétitifs sur un serveur ou en message privé : publicités, liens d'arnaque, faux Nitro, mentions en masse. Il peut venir d'un seul compte comme d'une vague entière.",
+      description: 'Learn definition plain text for schema.org',
+    }),
     sections: [
       {
         heading: (
@@ -220,7 +227,17 @@ export default function SpamDiscordPage(): ReactNode {
               <Translate
                 id="learn.spam-discord.s4.outro"
                 description="outro with stat"
-                values={{count: <strong>380 000 serveurs</strong>}}>
+                values={{
+                  count: (
+                    <strong>
+                      <Translate
+                        id="learn.stat.protectedServers"
+                        description="bold stat: number of protected servers">
+                        380 000 serveurs
+                      </Translate>
+                    </strong>
+                  ),
+                }}>
                 {
                   "C'est ce que RaidProtect automatise : le bot protège plus de {count} et a déjà bloqué des millions de messages de spam."
                 }

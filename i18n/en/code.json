@@ -3028,5 +3028,1453 @@
   "cta.pro.call": {
     "message": "Book a call",
     "description": "Pro line: link to book a call"
+  },
+  "learn.discord-nuke.metaTitle": {
+    "message": "Discord Nuke: What It Is and How to Protect Your Server",
+    "description": "Learn article meta title: Discord nuke"
+  },
+  "learn.discord-nuke.metaDescription": {
+    "message": "A Discord nuke is the destruction of a server from the inside through permission abuse: deleted channels, mass bans. Definition, how it differs from a raid, and prevention.",
+    "description": "Learn article meta description: Discord nuke"
+  },
+  "learn.discord-nuke.title": {
+    "message": "What is a Discord nuke?",
+    "description": "H1"
+  },
+  "learn.discord-nuke.definition": {
+    "message": "A Discord nuke is the destruction of a server from the inside, by a member or bot holding elevated permissions: mass deletion of channels and roles, chain bans, spam via webhooks.",
+    "description": "definition"
+  },
+  "learn.discord-nuke.s1.h": {
+    "message": "How does a nuke happen?",
+    "description": "h"
+  },
+  "learn.discord-nuke.s1.p1": {
+    "message": "Unlike a raid, a nuke doesn't come from a wave of outside accounts: it starts from an account already on the server that holds elevated privileges.",
+    "description": "p"
+  },
+  "learn.discord-nuke.s1.p2": {
+    "message": "Three cases come up most often: a staff member whose account is compromised ({token}, phishing), a malicious bot added with too many permissions, or a rogue moderator.",
+    "description": "p with link"
+  },
+  "learn.discord-nuke.s1.p2.token": {
+    "message": "stolen token",
+    "description": "link"
+  },
+  "learn.discord-nuke.s1.p3": {
+    "message": "In a few seconds, a script deletes the channels, recreates hundreds of them to spam, bans members, and wipes the roles. That speed is what makes a nuke so destructive.",
+    "description": "p"
+  },
+  "learn.discord-nuke.s2.h": {
+    "message": "Nuke or raid: what's the difference?",
+    "description": "h"
+  },
+  "learn.discord-nuke.s2.intro": {
+    "message": "People often confuse the two, but the angle of attack is opposite, and so is the protection.",
+    "description": "p"
+  },
+  "learn.discord-nuke.s2.r1": {
+    "message": "Origin",
+    "description": "row label"
+  },
+  "learn.discord-nuke.s2.raid.origin": {
+    "message": "From the outside",
+    "description": "cell"
+  },
+  "learn.discord-nuke.s2.nuke.origin": {
+    "message": "From the inside",
+    "description": "cell"
+  },
+  "learn.discord-nuke.s2.r2": {
+    "message": "Vector",
+    "description": "row label"
+  },
+  "learn.discord-nuke.s2.raid.vec": {
+    "message": "Numbers: a wave of accounts",
+    "description": "cell"
+  },
+  "learn.discord-nuke.s2.nuke.vec": {
+    "message": "Permissions: a privileged account",
+    "description": "cell"
+  },
+  "learn.discord-nuke.s2.r3": {
+    "message": "Key protection",
+    "description": "row label"
+  },
+  "learn.discord-nuke.s2.raid.prot": {
+    "message": "Entry verification, anti-raid",
+    "description": "cell"
+  },
+  "learn.discord-nuke.s2.nuke.prot": {
+    "message": "Least privilege, 2FA, bot control",
+    "description": "cell"
+  },
+  "learn.discord-nuke.s2.summary": {
+    "message": "The takeaway: you don't protect against a nuke the way you protect against a {link}. Blocking arrivals is pointless if the threat already holds the keys to the server.",
+    "description": "summary with link"
+  },
+  "learn.discord-nuke.s2.link": {
+    "message": "Discord raid",
+    "description": "link label"
+  },
+  "learn.discord-nuke.s3.h": {
+    "message": "Why it's especially dangerous",
+    "description": "h"
+  },
+  "learn.discord-nuke.s3.i1": {
+    "message": "It's almost instant and often irreversible: deleted channels, messages, and roles can't be recovered natively.",
+    "description": "li"
+  },
+  "learn.discord-nuke.s3.i2": {
+    "message": "Once it starts, it's hard to stop, because the attacker already has the permissions they need.",
+    "description": "li"
+  },
+  "learn.discord-nuke.s3.i3": {
+    "message": "Banned members and a scattered community take a long time to rebuild, even after a restore.",
+    "description": "li"
+  },
+  "learn.discord-nuke.s4.h": {
+    "message": "How to protect your server from a nuke?",
+    "description": "h"
+  },
+  "learn.discord-nuke.s4.intro": {
+    "message": "The best defense happens upstream: a nuke almost always comes from a privileged account, so everything hinges on the trust you extend before handing out permissions.",
+    "description": "p"
+  },
+  "learn.discord-nuke.s4.i1.t": {
+    "message": "Least privilege, the real solution.",
+    "description": "li title"
+  },
+  "learn.discord-nuke.s4.i1.b2": {
+    "message": "This is by far the most effective protection. Only grant \"Administrator\", \"Manage Channels\", or \"Manage Roles\" to people you genuinely trust, and give everyone the strict minimum: that's the principle of {link}.",
+    "description": "li body with link"
+  },
+  "learn.discord-nuke.s4.i1.link": {
+    "message": "least privilege",
+    "description": "link label"
+  },
+  "learn.discord-nuke.s4.i2.t": {
+    "message": "Require 2FA.",
+    "description": "li title"
+  },
+  "learn.discord-nuke.s4.i2.b": {
+    "message": "Enable required two-factor authentication for moderation: a hacked staff account becomes much harder to exploit.",
+    "description": "li body"
+  },
+  "learn.discord-nuke.s4.i3.t": {
+    "message": "Control your bots.",
+    "description": "li title"
+  },
+  "learn.discord-nuke.s4.i3.b": {
+    "message": "Only add trusted bots and remove admin from those that don't need it: a single compromised bot can nuke on its own.",
+    "description": "li body"
+  },
+  "learn.discord-nuke.s4.i4b.t": {
+    "message": "Lock down sensitive roles.",
+    "description": "li title"
+  },
+  "learn.discord-nuke.s4.i4b.b": {
+    "message": "RaidProtect's {link} protects access to sensitive roles with an identity check (passkey, PIN, OTP) and temporary sessions: even a trusted person's account, if hacked, doesn't keep permanent admin access.",
+    "description": "li body with link"
+  },
+  "learn.discord-nuke.s4.i4b.link": {
+    "message": "Authentication Manager",
+    "description": "link label"
+  },
+  "learn.discord-nuke.s4.i5.t": {
+    "message": "Audit your configuration.",
+    "description": "li title"
+  },
+  "learn.discord-nuke.s4.i5.b": {
+    "message": "RaidProtect's {link} reviews your server's permissions and risky settings, and shows you what to fix.",
+    "description": "li body with link"
+  },
+  "learn.discord-nuke.s4.i5.link": {
+    "message": "security audit",
+    "description": "link label"
+  },
+  "learn.discord-nuke.faq.q1": {
+    "message": "Are a nuke and a raid the same thing?",
+    "description": "faq q"
+  },
+  "learn.discord-nuke.faq.a1": {
+    "message": "No. A raid comes from the outside (a wave of accounts pouring in), while a nuke comes from the inside (an account or bot with permissions that destroys the server).",
+    "description": "faq a"
+  },
+  "learn.discord-nuke.faq.q2": {
+    "message": "Can you recover a server after a nuke?",
+    "description": "faq q"
+  },
+  "learn.discord-nuke.faq.a2": {
+    "message": "Deleted channels, messages, and roles can't be recovered natively: hence the importance of prevention. Bans, on the other hand, can be lifted as long as the server still exists.",
+    "description": "faq a"
+  },
+  "learn.discord-nuke.faq.q3": {
+    "message": "Can a bot nuke my server?",
+    "description": "faq q"
+  },
+  "learn.discord-nuke.faq.a3": {
+    "message": "Yes, if it holds elevated permissions. Only grant admin to trusted bots, and check the permissions of every bot you add.",
+    "description": "faq a"
+  },
+  "learn.discord-nuke.faq.q4": {
+    "message": "Where does a compromised staff account come from?",
+    "description": "faq q"
+  },
+  "learn.discord-nuke.faq.a4": {
+    "message": "Most often from a token stolen by a token grabber or a phishing attempt. That's why 2FA and caution around files and links are essential.",
+    "description": "faq a"
+  },
+  "learn.discord-nuke.rel1": {
+    "message": "What is a Discord raid?",
+    "description": "related"
+  },
+  "learn.discord-nuke.rel2": {
+    "message": "The principle of least privilege",
+    "description": "related"
+  },
+  "learn.discord-nuke.rel3b": {
+    "message": "What is a token grabber?",
+    "description": "related"
+  },
+  "learn.discord-nuke.rel4b": {
+    "message": "The Authentication Manager",
+    "description": "related"
+  },
+  "learn.discord-raid.metaTitle": {
+    "message": "Discord Raid: Definition and How to Protect Against It",
+    "description": "Learn article meta title: Discord raid"
+  },
+  "learn.discord-raid.metaDescription": {
+    "message": "A Discord raid is the coordinated arrival of dozens of accounts to spam and flood a server. Definition, how it differs from a nuke, and how to block it.",
+    "description": "Learn article meta description: Discord raid"
+  },
+  "learn.discord-raid.title": {
+    "message": "What is a Discord raid?",
+    "description": "Discord raid H1"
+  },
+  "learn.discord-raid.definition": {
+    "message": "A Discord raid is the sudden, coordinated arrival of many accounts, often bots, on a server, aiming to spam it, disrupt it, or flood it within minutes.",
+    "description": "Discord raid definition"
+  },
+  "learn.discord-raid.s1.h": {
+    "message": "How does a raid unfold?",
+    "description": "section heading"
+  },
+  "learn.discord-raid.s1.p1": {
+    "message": "A raid almost always follows the same script. An invite link leaks or is shared publicly, then a wave of accounts joins the server all at once.",
+    "description": "paragraph"
+  },
+  "learn.discord-raid.s1.p2": {
+    "message": "Once inside, the participants go on the attack: mass messages, repeated {code} mentions, scam links, shocking images, or emoji floods. The goal is to {strong}.",
+    "description": "paragraph with inline emphasis"
+  },
+  "learn.discord-raid.s1.p3": {
+    "message": "Most raids are automated: not humans but bots driven from a single tool, capable of going from a few accounts to several hundred in seconds.",
+    "description": "paragraph"
+  },
+  "learn.discord-raid.s2.h": {
+    "message": "Raid, nuke, or spam: what's the difference?",
+    "description": "section heading"
+  },
+  "learn.discord-raid.s2.intro": {
+    "message": "These three terms are often confused, yet they describe very different attacks. And the distinction changes how you protect against them.",
+    "description": "intro"
+  },
+  "learn.discord-raid.s2.col1": {
+    "message": "Threat",
+    "description": "table col"
+  },
+  "learn.discord-raid.s2.col2": {
+    "message": "Origin",
+    "description": "table col"
+  },
+  "learn.discord-raid.s2.col3": {
+    "message": "What happens",
+    "description": "table col"
+  },
+  "learn.discord-raid.s2.raid.origin": {
+    "message": "From the outside",
+    "description": "cell"
+  },
+  "learn.discord-raid.s2.raid.what": {
+    "message": "A wave of accounts joins the server to disrupt and spam it through sheer numbers.",
+    "description": "cell"
+  },
+  "learn.discord-raid.s2.nuke.origin": {
+    "message": "From the inside",
+    "description": "cell"
+  },
+  "learn.discord-raid.s2.nuke.what": {
+    "message": "A member or bot with elevated permissions (a compromised admin, a malicious bot) destroys the server: deleting channels and roles, mass bans.",
+    "description": "cell"
+  },
+  "learn.discord-raid.s2.spam.origin": {
+    "message": "Internal or external",
+    "description": "cell"
+  },
+  "learn.discord-raid.s2.spam.what": {
+    "message": "A flood of repeated messages, often the visible symptom of a raid, but possible from a single account too.",
+    "description": "cell"
+  },
+  "learn.discord-raid.s2.summary": {
+    "message": "In short: a {raid} is an invasion by numbers, a {nuke} is destruction through permission abuse, and {spam} is the most visible symptom of both.",
+    "description": "summary with bold"
+  },
+  "learn.discord-raid.s3.h": {
+    "message": "What are the consequences for your server?",
+    "description": "section heading"
+  },
+  "learn.discord-raid.s3.i1": {
+    "message": "The chat gets drowned out: real conversations become unreadable.",
+    "description": "li"
+  },
+  "learn.discord-raid.s3.i2": {
+    "message": "Scam links and shocking content are pushed to your members.",
+    "description": "li"
+  },
+  "learn.discord-raid.s3.i3": {
+    "message": "Members leave the server and your reputation takes a hit.",
+    "description": "li"
+  },
+  "learn.discord-raid.s3.i4": {
+    "message": "Your moderation team is overwhelmed and burns out.",
+    "description": "li"
+  },
+  "learn.discord-raid.s4.h": {
+    "message": "How to protect your server from raids?",
+    "description": "section heading"
+  },
+  "learn.discord-raid.s4.intro": {
+    "message": "No single measure is enough: solid anti-raid protection relies on several complementary layers.",
+    "description": "intro"
+  },
+  "learn.discord-raid.s4.i1.t": {
+    "message": "Entry verification.",
+    "description": "li title"
+  },
+  "learn.discord-raid.s4.i1.b": {
+    "message": "A {link} forces every new member to prove they're human, which blocks waves of bots before they reach the server.",
+    "description": "li body with link"
+  },
+  "learn.discord-raid.s4.i1.link": {
+    "message": "captcha",
+    "description": "link label"
+  },
+  "learn.discord-raid.s4.i2.t": {
+    "message": "Automatic wave detection.",
+    "description": "li title"
+  },
+  "learn.discord-raid.s4.i2.b": {
+    "message": "The {link} spots an abnormal spike in connections and locks the server down while the wave passes.",
+    "description": "li body with link"
+  },
+  "learn.discord-raid.s4.i2.link": {
+    "message": "anti-raid mode",
+    "description": "link label"
+  },
+  "learn.discord-raid.s4.i3.t": {
+    "message": "Bot trap.",
+    "description": "li title"
+  },
+  "learn.discord-raid.s4.i3.b": {
+    "message": "A {link} channel lures automated accounts and punishes them without ever touching real members.",
+    "description": "li body with link"
+  },
+  "learn.discord-raid.s4.i3.link": {
+    "message": "HoneyPot",
+    "description": "link label"
+  },
+  "learn.discord-raid.s4.i4.t": {
+    "message": "Minimal permissions.",
+    "description": "li title"
+  },
+  "learn.discord-raid.s4.i4.b": {
+    "message": "Only entrust sensitive roles to trusted people, to also limit the risk of a nuke.",
+    "description": "li body"
+  },
+  "learn.discord-raid.s4.outro": {
+    "message": "This is exactly what RaidProtect automates: the bot protects over {count} today and has already blocked millions of spam messages.",
+    "description": "outro with bold stat"
+  },
+  "learn.discord-raid.faq.q1": {
+    "message": "Is a Discord raid illegal?",
+    "description": "faq q"
+  },
+  "learn.discord-raid.faq.a1": {
+    "message": "Organizing or taking part in a raid to harm a server violates Discord's Terms of Service and can lead to the suspension of the accounts involved. Depending on the content shared, it can also amount to harassment.",
+    "description": "faq a"
+  },
+  "learn.discord-raid.faq.q2": {
+    "message": "How many accounts does it take to call it a raid?",
+    "description": "faq q"
+  },
+  "learn.discord-raid.faq.a2": {
+    "message": "There's no official threshold. A raid is defined by coordination and simultaneity, not by a precise number: from a few dozen accounts to several thousand via bots.",
+    "description": "faq a"
+  },
+  "learn.discord-raid.faq.q3": {
+    "message": "How do you stop a raid that's already underway?",
+    "description": "faq q"
+  },
+  "learn.discord-raid.faq.a3": {
+    "message": "Lock down the server (close off arrivals and channels), kick the recently joined accounts, then check permissions. A bot like RaidProtect detects the wave and applies this lockdown automatically.",
+    "description": "faq a"
+  },
+  "learn.discord-raid.faq.q4": {
+    "message": "Are a raid and a nuke the same thing?",
+    "description": "faq q"
+  },
+  "learn.discord-raid.faq.a4": {
+    "message": "No. A raid comes from the outside (a wave of accounts pouring in), while a nuke comes from the inside (a member or bot with permissions that destroys the server). The two call for different protections.",
+    "description": "faq a"
+  },
+  "learn.discord-raid.rel1": {
+    "message": "What is a Discord nuke?",
+    "description": "related link"
+  },
+  "learn.discord-raid.rel2b": {
+    "message": "What is a self-bot?",
+    "description": "related link"
+  },
+  "learn.discord-raid.rel3b": {
+    "message": "RaidProtect's anti-raid mode",
+    "description": "related link"
+  },
+  "learn.discord-raid.rel4b": {
+    "message": "Captcha verification",
+    "description": "related link"
+  },
+  "learn.honeypot-warming.metaTitle": {
+    "message": "\"Active\" HoneyPot Channel: Do You Need a Bot to Keep It Busy?",
+    "description": "Learn explainer meta title: honeypot activity"
+  },
+  "learn.honeypot-warming.metaDescription": {
+    "message": "Do you need to run a bot posting messages so a HoneyPot channel looks active? No: here's simply why it's pointless.",
+    "description": "Learn explainer meta description: honeypot activity"
+  },
+  "learn.honeypot-warming.title": {
+    "message": "Do you need a bot to keep a HoneyPot channel \"active\"?",
+    "description": "H1"
+  },
+  "learn.honeypot-warming.definition": {
+    "message": "No. A HoneyPot channel doesn't need to be \"kept busy\" by a bot. To tell whether a channel is active, you have to read the messages... and therefore see who wrote them. Fake activity is instantly spottable, and in any case the accounts that spam don't run that check.",
+    "description": "TL;DR answer"
+  },
+  "learn.honeypot-warming.s1.h": {
+    "message": "Reminder: what is a HoneyPot channel?",
+    "description": "h"
+  },
+  "learn.honeypot-warming.s1.p1": {
+    "message": "A {hp} channel is a trap: no real member has any reason to post in it. So any account that posts there is almost certainly a spammer, and it gets punished automatically. It's a simple and formidable way to catch {bot}.",
+    "description": "p with links"
+  },
+  "learn.honeypot-warming.s1.hp": {
+    "message": "HoneyPot",
+    "description": "link"
+  },
+  "learn.honeypot-warming.s1.bot": {
+    "message": "automated accounts",
+    "description": "link"
+  },
+  "learn.honeypot-warming.s2.h": {
+    "message": "The misconception: \"the channel needs to look alive\"",
+    "description": "h"
+  },
+  "learn.honeypot-warming.s2.p1": {
+    "message": "You sometimes read this advice: run a bot that posts messages in the HoneyPot to \"warm\" it up, so spammers think it's active and come post there. The intention sounds logical... but it doesn't hold up, and it's actually counterproductive.",
+    "description": "p"
+  },
+  "learn.honeypot-warming.s3.h": {
+    "message": "Why it doesn't work",
+    "description": "h"
+  },
+  "learn.honeypot-warming.s3.p1": {
+    "message": "Ask yourself: how do you know a channel is \"active\"? You have to read its latest messages. There's no other way.",
+    "description": "p"
+  },
+  "learn.honeypot-warming.s3.p2": {
+    "message": "And there's the problem: {strong}. Every message shows its author. So if a bot \"warmed up\" the channel, anyone looking would see that all the activity comes from one and the same bot. The trick is obvious right away.",
+    "description": "p with emphasis"
+  },
+  "learn.honeypot-warming.s3.p3": {
+    "message": "In other words: there's no way to \"cleverly\" automate a fake living channel. The author of the messages always gives away the fact that the activity is fake.",
+    "description": "p"
+  },
+  "learn.honeypot-warming.s4.h": {
+    "message": "And above all: nobody's looking",
+    "description": "h"
+  },
+  "learn.honeypot-warming.s4.p1": {
+    "message": "There's an even simpler point. To check a channel's activity before sending accounts to it, an attacker would have to log in, pull the message history, and analyze it. That's heavy, costly, and slow.",
+    "description": "p"
+  },
+  "learn.honeypot-warming.s4.p2": {
+    "message": "But the people who automate accounts to mass-spam don't do that: it's far too complicated and heavy for nothing. They send their accounts everywhere, without asking the question.",
+    "description": "p"
+  },
+  "learn.honeypot-warming.s4.p3": {
+    "message": "The result: {strong}. It doesn't need to look alive. On the contrary, the less legitimate activity there is, the more any single message becomes a reliable alarm signal.",
+    "description": "p with emphasis"
+  },
+  "learn.honeypot-warming.s5.h": {
+    "message": "What to remember",
+    "description": "h"
+  },
+  "learn.honeypot-warming.s5.i1": {
+    "message": "Leave your HoneyPot channel empty: don't write in it, and don't put a bot there to keep it busy.",
+    "description": "li"
+  },
+  "learn.honeypot-warming.s5.i2": {
+    "message": "Fake activity is spottable (the author of each message is visible) and fools no one.",
+    "description": "li"
+  },
+  "learn.honeypot-warming.s5.i3": {
+    "message": "In any case, automated spammers don't check a channel's activity: it's too costly for them.",
+    "description": "li"
+  },
+  "learn.honeypot-warming.faq.q1": {
+    "message": "Should I write in my HoneyPot channel?",
+    "description": "faq q"
+  },
+  "learn.honeypot-warming.faq.a1": {
+    "message": "No. It should stay empty and silent: no real member has any reason to post there, so any message in it is a reliable signal of an unwanted account.",
+    "description": "faq a"
+  },
+  "learn.honeypot-warming.faq.q2": {
+    "message": "Does a bot \"warming up\" the channel help?",
+    "description": "faq q"
+  },
+  "learn.honeypot-warming.faq.a2": {
+    "message": "No. It creates fake activity that's easy to spot, because the author of each message is visible, and it burns resources for nothing.",
+    "description": "faq a"
+  },
+  "learn.honeypot-warming.faq.q3": {
+    "message": "Do spammers check whether a channel is active?",
+    "description": "faq q"
+  },
+  "learn.honeypot-warming.faq.a3": {
+    "message": "In practice, no. Analyzing a channel's activity before posting would be far too heavy and too costly: automated accounts spam without running that check.",
+    "description": "faq a"
+  },
+  "learn.honeypot-warming.faq.q4": {
+    "message": "So how does a HoneyPot trap bots?",
+    "description": "faq q"
+  },
+  "learn.honeypot-warming.faq.a4": {
+    "message": "Precisely because it's silent: since no legitimate person writes there, any account that posts gives itself away and can be punished automatically.",
+    "description": "faq a"
+  },
+  "learn.honeypot-warming.rel1": {
+    "message": "The HoneyPot trap channel",
+    "description": "related"
+  },
+  "learn.honeypot-warming.rel2": {
+    "message": "What is a self-bot?",
+    "description": "related"
+  },
+  "learn.honeypot-warming.rel3": {
+    "message": "What is a Discord raid?",
+    "description": "related"
+  },
+  "learn.honeypot-warming.rel4": {
+    "message": "RaidProtect's anti-spam",
+    "description": "related"
+  },
+  "learn.hub.metaTitle": {
+    "message": "Learn: The Discord Security Glossary",
+    "description": "Learn hub meta title"
+  },
+  "learn.hub.metaDescription": {
+    "message": "Understand Discord threats (raid, nuke, self-bot, phishing...) and how to protect your server. RaidProtect's clear, jargon-free glossary.",
+    "description": "Learn hub meta description"
+  },
+  "learn.eyebrow": {
+    "message": "Discord security glossary",
+    "description": "Learn section eyebrow"
+  },
+  "learn.hub.title": {
+    "message": "Understand the security of your Discord server",
+    "description": "Learn hub title"
+  },
+  "learn.hub.intro": {
+    "message": "Raid, nuke, self-bot, phishing... These words come up often and are easily confused. We explain them simply, with the right habits to protect your community.",
+    "description": "Learn hub intro"
+  },
+  "learn.least-privilege.metaTitle": {
+    "message": "Least Privilege on Discord: The Best Anti-Nuke Defense",
+    "description": "Learn article meta title: least privilege"
+  },
+  "learn.least-privilege.metaDescription": {
+    "message": "Least privilege means giving each member and bot only the permissions they strictly need. Why it's your best anti-nuke defense, and how to apply it.",
+    "description": "Learn article meta description: least privilege"
+  },
+  "learn.least-privilege.title": {
+    "message": "The principle of least privilege on Discord",
+    "description": "H1"
+  },
+  "learn.least-privilege.definition": {
+    "message": "The principle of least privilege means giving each member and each bot only the permissions strictly necessary for their role, and nothing more. The fewer all-powerful accounts there are, the less damage a compromised account can do.",
+    "description": "definition"
+  },
+  "learn.least-privilege.s1.h": {
+    "message": "What it involves",
+    "description": "h"
+  },
+  "learn.least-privilege.s1.p1": {
+    "message": "Each person and each bot only gets {strong}. On Discord, that means avoiding handing out the \"Administrator\" permission left and right, favoring granular permissions split by role (manage messages, kick, manage channels...), and keeping a clear role hierarchy.",
+    "description": "p with emphasis"
+  },
+  "learn.least-privilege.s2.h": {
+    "message": "Why it's your best anti-nuke defense",
+    "description": "h"
+  },
+  "learn.least-privilege.s2.p1": {
+    "message": "Most {nuke} come from a privileged account: a staff member whose account is compromised (via a {token} or phishing), or a malicious bot with too many permissions. If no one has more permissions than they need, even a hacked account can't destroy everything. Least privilege reduces the blast radius.",
+    "description": "p with links"
+  },
+  "learn.least-privilege.s2.nuke": {
+    "message": "nuke",
+    "description": "link"
+  },
+  "learn.least-privilege.s2.token": {
+    "message": "stolen token",
+    "description": "link"
+  },
+  "learn.least-privilege.s3.h": {
+    "message": "Best practices on Discord",
+    "description": "h"
+  },
+  "learn.least-privilege.s3.i1": {
+    "message": "Only grant \"Administrator\" to a very small number of trusted people.",
+    "description": "li"
+  },
+  "learn.least-privilege.s3.i2": {
+    "message": "Favor granular permissions per role rather than global admin.",
+    "description": "li"
+  },
+  "learn.least-privilege.s3.i3": {
+    "message": "Remove admin from bots that don't need it: a single compromised bot can nuke on its own.",
+    "description": "li"
+  },
+  "learn.least-privilege.s3.i4": {
+    "message": "Enable required 2FA for moderation.",
+    "description": "li"
+  },
+  "learn.least-privilege.s3.i5": {
+    "message": "Regularly check who has which permissions: RaidProtect's {link} spots risky permissions.",
+    "description": "li with link"
+  },
+  "learn.least-privilege.s3.i5.link": {
+    "message": "security audit",
+    "description": "link"
+  },
+  "learn.least-privilege.s4.h": {
+    "message": "Going further: locking down access to sensitive roles",
+    "description": "h"
+  },
+  "learn.least-privilege.s4.p1": {
+    "message": "Least privilege reduces the number of powerful accounts, but those accounts remain a prime target. That's where RaidProtect's Authentication Manager comes in.",
+    "description": "p"
+  },
+  "learn.least-privilege.s4.p2": {
+    "message": "The {link} protects access to sensitive roles with a real identity check (passkey, PIN, or OTP): getting the role requires authenticating via {auth}. Above all, access is granted for a temporary session that expires, after which the sensitive role is removed automatically.",
+    "description": "p with code and link"
+  },
+  "learn.least-privilege.s4.link": {
+    "message": "Authentication Manager",
+    "description": "link"
+  },
+  "learn.least-privilege.s4.p3": {
+    "message": "The result: even if a staff member's account is compromised, the attacker doesn't get {strong}. They'd also have to pass the authentication, and the access window stays short. It's least privilege applied not only to \"who\", but also to \"for how long\".",
+    "description": "p with emphasis"
+  },
+  "learn.least-privilege.faq.q1": {
+    "message": "What is least privilege, in plain terms?",
+    "description": "faq q"
+  },
+  "learn.least-privilege.faq.a1": {
+    "message": "Giving each member and each bot just what they need, nothing more. The fewer all-powerful accounts there are, the less damage a compromised account can cause.",
+    "description": "faq a"
+  },
+  "learn.least-privilege.faq.q2": {
+    "message": "How does least privilege protect against a nuke?",
+    "description": "faq q"
+  },
+  "learn.least-privilege.faq.a2": {
+    "message": "A nuke almost always comes from a privileged account. By limiting everyone's permissions, a compromised account can't delete channels or mass-ban: it simply doesn't have the right to.",
+    "description": "faq a"
+  },
+  "learn.least-privilege.faq.q3": {
+    "message": "Should you give a bot administrator?",
+    "description": "faq q"
+  },
+  "learn.least-privilege.faq.a3": {
+    "message": "Only if it genuinely needs it. A bot with too many permissions is a risk: favor targeted permissions, and only grant admin to trusted bots that require it.",
+    "description": "faq a"
+  },
+  "learn.least-privilege.faq.q4": {
+    "message": "What's the connection with the Authentication Manager?",
+    "description": "faq q"
+  },
+  "learn.least-privilege.faq.a4": {
+    "message": "It takes the principle further: it protects access to sensitive roles with an identity check and temporary sessions, so a compromised account doesn't keep permanent administrator access.",
+    "description": "faq a"
+  },
+  "learn.least-privilege.rel1": {
+    "message": "What is a Discord nuke?",
+    "description": "related"
+  },
+  "learn.least-privilege.rel2": {
+    "message": "What is a token grabber?",
+    "description": "related"
+  },
+  "learn.least-privilege.rel3": {
+    "message": "The Authentication Manager",
+    "description": "related"
+  },
+  "learn.least-privilege.rel4": {
+    "message": "The RaidProtect security audit",
+    "description": "related"
+  },
+  "learn.self-bot.metaTitle": {
+    "message": "Discord Self-Bot: Definition and Risks for Your Server",
+    "description": "Learn article meta title: self-bot"
+  },
+  "learn.self-bot.metaDescription": {
+    "message": "A self-bot automates a Discord user account via the API, which Discord forbids. What it is, how it's used for raids and spam, and how to protect against it.",
+    "description": "Learn article meta description: self-bot"
+  },
+  "learn.self-bot.title": {
+    "message": "What is a Discord self-bot?",
+    "description": "H1"
+  },
+  "learn.self-bot.definition": {
+    "message": "A self-bot is a Discord user account (not a real bot) driven automatically by a script that uses the API in its place. It's forbidden by Discord's Terms of Service.",
+    "description": "definition"
+  },
+  "learn.self-bot.s1.h": {
+    "message": "Self-bot or regular bot: what's the difference?",
+    "description": "h"
+  },
+  "learn.self-bot.s1.p1": {
+    "message": "An official bot is registered with Discord, added through an authorization, displays an \"APP\" badge, and only has the permissions you grant it. A self-bot, on the other hand, hijacks a normal human account to act on its own.",
+    "description": "p"
+  },
+  "learn.self-bot.s1.col1": {
+    "message": "Official bot",
+    "description": "col"
+  },
+  "learn.self-bot.s1.col2": {
+    "message": "Self-bot",
+    "description": "col"
+  },
+  "learn.self-bot.s1.r1": {
+    "message": "Nature",
+    "description": "row"
+  },
+  "learn.self-bot.s1.bot.nature": {
+    "message": "Registered application",
+    "description": "cell"
+  },
+  "learn.self-bot.s1.self.nature": {
+    "message": "Hijacked user account",
+    "description": "cell"
+  },
+  "learn.self-bot.s1.r2": {
+    "message": "Visibility",
+    "description": "row"
+  },
+  "learn.self-bot.s1.bot.vis": {
+    "message": "Visible \"APP\" badge",
+    "description": "cell"
+  },
+  "learn.self-bot.s1.self.vis": {
+    "message": "Indistinguishable from a real member",
+    "description": "cell"
+  },
+  "learn.self-bot.s1.r3": {
+    "message": "Status",
+    "description": "row"
+  },
+  "learn.self-bot.s1.bot.status": {
+    "message": "Allowed",
+    "description": "cell"
+  },
+  "learn.self-bot.s1.self.status": {
+    "message": "Forbidden by Discord",
+    "description": "cell"
+  },
+  "learn.self-bot.s2.h": {
+    "message": "What are self-bots used for?",
+    "description": "h"
+  },
+  "learn.self-bot.s2.p1": {
+    "message": "Used maliciously, self-bots mainly serve to act en masse while posing as real users:",
+    "description": "p"
+  },
+  "learn.self-bot.s2.i1": {
+    "message": "Inflating {link}: hundreds of self-bots join a server to spam it simultaneously.",
+    "description": "li with link"
+  },
+  "learn.self-bot.s2.i1.link": {
+    "message": "raids",
+    "description": "link"
+  },
+  "learn.self-bot.s2.i2": {
+    "message": "Sending scams and advertising via direct message at scale.",
+    "description": "li"
+  },
+  "learn.self-bot.s2.i3": {
+    "message": "Scraping a server's member list to target them elsewhere.",
+    "description": "li"
+  },
+  "learn.self-bot.s3.h": {
+    "message": "Why it's forbidden and risky",
+    "description": "h"
+  },
+  "learn.self-bot.s3.p1": {
+    "message": "Automating a user account violates Discord's Terms of Service and risks the account being banned. For a server, the real danger lies elsewhere: a self-bot is hard to tell apart from a normal member, which lets it slip under the radar of standard moderation.",
+    "description": "p"
+  },
+  "learn.self-bot.s4.h": {
+    "message": "How to protect your server from self-bots?",
+    "description": "h"
+  },
+  "learn.self-bot.s4.i1.t": {
+    "message": "Entry verification.",
+    "description": "li title"
+  },
+  "learn.self-bot.s4.i1.b": {
+    "message": "A {link} stops most self-bot farms before they even reach the server.",
+    "description": "li body with link"
+  },
+  "learn.self-bot.s4.i1.link": {
+    "message": "captcha",
+    "description": "link"
+  },
+  "learn.self-bot.s4.i2.t": {
+    "message": "Bot trap.",
+    "description": "li title"
+  },
+  "learn.self-bot.s4.i2.b": {
+    "message": "A {link} channel lures automated accounts and punishes them without touching real members.",
+    "description": "li body with link"
+  },
+  "learn.self-bot.s4.i2.link": {
+    "message": "HoneyPot",
+    "description": "link"
+  },
+  "learn.self-bot.s4.i3.t": {
+    "message": "Anti-spam.",
+    "description": "li title"
+  },
+  "learn.self-bot.s4.i3.b": {
+    "message": "The {link} spots the flooding behavior typical of automated accounts and reacts on its own.",
+    "description": "li body with link"
+  },
+  "learn.self-bot.s4.i3.link": {
+    "message": "anti-spam",
+    "description": "link"
+  },
+  "learn.self-bot.faq.q1": {
+    "message": "Is a self-bot legal?",
+    "description": "faq q"
+  },
+  "learn.self-bot.faq.a1": {
+    "message": "No. Automating a user account violates Discord's Terms of Service and risks a permanent ban of the account.",
+    "description": "faq a"
+  },
+  "learn.self-bot.faq.q2": {
+    "message": "How do you recognize a self-bot?",
+    "description": "faq q"
+  },
+  "learn.self-bot.faq.a2": {
+    "message": "It has no \"APP\" badge and behaves abnormally (very fast messages, instant reactions, constant presence). To the naked eye it's hard: hence the value of a captcha and anti-spam.",
+    "description": "faq a"
+  },
+  "learn.self-bot.faq.q3": {
+    "message": "Can a self-bot raid my server?",
+    "description": "faq q"
+  },
+  "learn.self-bot.faq.a3": {
+    "message": "Yes. Automated raids often rely on dozens or hundreds of self-bots that join and spam at the same time.",
+    "description": "faq a"
+  },
+  "learn.self-bot.faq.q4": {
+    "message": "Does a captcha block self-bots?",
+    "description": "faq q"
+  },
+  "learn.self-bot.faq.a4": {
+    "message": "It blocks the vast majority of self-bot farms at the entrance, since they can't solve the verification automatically.",
+    "description": "faq a"
+  },
+  "learn.self-bot.rel1": {
+    "message": "What is a Discord raid?",
+    "description": "related"
+  },
+  "learn.self-bot.rel2": {
+    "message": "What is a token grabber?",
+    "description": "related"
+  },
+  "learn.self-bot.rel3": {
+    "message": "Captcha verification",
+    "description": "related"
+  },
+  "learn.self-bot.rel4": {
+    "message": "RaidProtect's anti-spam",
+    "description": "related"
+  },
+  "learn.server-raidable.metaTitle": {
+    "message": "\"This Server Is Raidable\": What It Means and How to Fix It",
+    "description": "Learn explainer meta title: this server is raidable"
+  },
+  "learn.server-raidable.metaDescription": {
+    "message": "A bot like Jalapeno shows \"this server is raidable\"? That message only flags that external apps are allowed. What it really means, and how to protect your server.",
+    "description": "Learn explainer meta description: this server is raidable"
+  },
+  "learn.server-raidable.title": {
+    "message": "\"This server is raidable\": should you worry?",
+    "description": "H1"
+  },
+  "learn.server-raidable.definition": {
+    "message": "The \"this server is raidable\" message comes from a bot like Jalapeno, installed as a user app. It simply flags that your members can use external apps, which could be used to spam via follow-up messages. It's not a flaw in itself, and two settings are enough to protect against it.",
+    "description": "TL;DR"
+  },
+  "learn.server-raidable.s1.h": {
+    "message": "Where does external-app spam come from?",
+    "description": "h"
+  },
+  "learn.server-raidable.s1.p1": {
+    "message": "Discord lets you install apps directly on your account, the \"user apps\". Once installed, you can use their commands in any server that allows external apps, even if the app isn't added there.",
+    "description": "p"
+  },
+  "learn.server-raidable.s1.p2": {
+    "message": "Some malicious apps take advantage of this: through a command, they send a burst of follow-up messages into the channel, which lets them {spam} a server without even being invited. The message appears under the app's name, but it's a member who triggered it.",
+    "description": "p with link"
+  },
+  "learn.server-raidable.s1.spam": {
+    "message": "spam",
+    "description": "link"
+  },
+  "learn.server-raidable.s2.h": {
+    "message": "\"This server is raidable\": what it really means",
+    "description": "h"
+  },
+  "learn.server-raidable.s2.p1": {
+    "message": "Bots like Jalapeno offer a command that displays \"this server is raidable\". In reality, this test just checks one single thing: do members have permission to use external apps? If so, it shows \"raidable\".",
+    "description": "p"
+  },
+  "learn.server-raidable.s2.p2": {
+    "message": "It's misleading. Having that permission enabled doesn't mean your server is defenseless. And above all, watch out for the trap: {strong}, because an administrator bypasses all permissions. You could believe there's a problem that doesn't exist, even after fixing it.",
+    "description": "p with emphasis"
+  },
+  "learn.server-raidable.s3.h": {
+    "message": "How to fix \"this server is raidable\"",
+    "description": "h"
+  },
+  "learn.server-raidable.s3.intro": {
+    "message": "Two solutions, depending on whether or not you want to keep external apps.",
+    "description": "p"
+  },
+  "learn.server-raidable.s3.i1.t": {
+    "message": "Disable external apps.",
+    "description": "li title"
+  },
+  "learn.server-raidable.s3.i1.b": {
+    "message": "In the @everyone role permissions (or per channel), remove \"Use External Apps\". Members will no longer be able to trigger user apps. Be sure to test with a non-administrator account: an admin bypasses the permission and will still see \"raidable\".",
+    "description": "li body"
+  },
+  "learn.server-raidable.s3.i2.t": {
+    "message": "Add RaidProtect.",
+    "description": "li title"
+  },
+  "learn.server-raidable.s3.i2.b": {
+    "message": "If you'd rather keep external apps (they have legitimate uses), RaidProtect's {link} detects follow-up message spam, traces it back to the member who triggered it, and punishes them automatically. Those who try to \"raid\" you this way get kicked out immediately.",
+    "description": "li body with link"
+  },
+  "learn.server-raidable.s3.i2.link": {
+    "message": "anti-spam",
+    "description": "link"
+  },
+  "learn.server-raidable.faq.q1": {
+    "message": "What does \"this server is raidable\" mean?",
+    "description": "faq q"
+  },
+  "learn.server-raidable.faq.a1": {
+    "message": "That your members can use external apps, which could be used to spam a channel via follow-up messages. It's not a flaw in itself.",
+    "description": "faq a"
+  },
+  "learn.server-raidable.faq.q2": {
+    "message": "Is Jalapeno's \"raidable\" test reliable?",
+    "description": "faq q"
+  },
+  "learn.server-raidable.faq.a2": {
+    "message": "It just checks one permission. And if you test with an administrator account, it will always show \"raidable\", because admins bypass permissions. Take it with a lot of skepticism.",
+    "description": "faq a"
+  },
+  "learn.server-raidable.faq.q3": {
+    "message": "How do you get rid of the \"this server is raidable\" message?",
+    "description": "faq q"
+  },
+  "learn.server-raidable.faq.a3": {
+    "message": "Disable \"Use External Apps\" for members (testing with a non-admin account), or add RaidProtect, whose anti-spam spots and punishes these attempts.",
+    "description": "faq a"
+  },
+  "learn.server-raidable.faq.q4": {
+    "message": "Do you really need to disable external apps?",
+    "description": "faq q"
+  },
+  "learn.server-raidable.faq.a4": {
+    "message": "Not necessarily: they have legitimate uses. With an anti-spam like RaidProtect's, you can keep them while staying protected against follow-up message spam.",
+    "description": "faq a"
+  },
+  "learn.server-raidable.rel1": {
+    "message": "RaidProtect's anti-spam",
+    "description": "related"
+  },
+  "learn.server-raidable.rel2": {
+    "message": "What is Discord spam?",
+    "description": "related"
+  },
+  "learn.server-raidable.rel3": {
+    "message": "What is a Discord raid?",
+    "description": "related"
+  },
+  "learn.server-raidable.rel4": {
+    "message": "What is a self-bot?",
+    "description": "related"
+  },
+  "learn.spam-discord.metaTitle": {
+    "message": "Discord Spam: What It Is and How to Stop It",
+    "description": "Learn article meta title: Discord spam"
+  },
+  "learn.spam-discord.metaDescription": {
+    "message": "Discord spam is the sending of unsolicited, repetitive messages on a server or in DMs. Its forms, why it's a problem, and how to stop it.",
+    "description": "Learn article meta description: Discord spam"
+  },
+  "learn.spam-discord.title": {
+    "message": "What is Discord spam?",
+    "description": "H1"
+  },
+  "learn.spam-discord.definition": {
+    "message": "Discord spam is the sending of unsolicited, repetitive messages on a server or in a direct message: ads, scam links, fake Nitro, mass mentions. It can come from a single account as well as an entire wave.",
+    "description": "definition"
+  },
+  "learn.spam-discord.s1.h": {
+    "message": "The most common forms of spam",
+    "description": "h"
+  },
+  "learn.spam-discord.s1.i1": {
+    "message": "Rampant self-promotion: links and invites to other servers, posted on a loop.",
+    "description": "li"
+  },
+  "learn.spam-discord.s1.i2": {
+    "message": "Scam and phishing links: fake \"free Nitro\", wallet drainers, fake promotions.",
+    "description": "li"
+  },
+  "learn.spam-discord.s1.i3": {
+    "message": "Flood: @everyone mentions, emojis, or messages repeated very fast to saturate the chat.",
+    "description": "li"
+  },
+  "learn.spam-discord.s1.i4": {
+    "message": "Direct message spam: your members receive ads or scams in DMs.",
+    "description": "li"
+  },
+  "learn.spam-discord.s2.h": {
+    "message": "Spam, flood, raid: where does spam fit?",
+    "description": "h"
+  },
+  "learn.spam-discord.s2.p1": {
+    "message": "Spam refers to the content (unwanted, repetitive messages). {flood} is one form of it, focused on volume and speed, while a {raid} is an invasion of accounts that often uses spam as a weapon. A single account can spam without there being a raid.",
+    "description": "p with links"
+  },
+  "learn.spam-discord.s2.flood": {
+    "message": "Flood",
+    "description": "inline term"
+  },
+  "learn.spam-discord.s2.raid": {
+    "message": "raid",
+    "description": "link"
+  },
+  "learn.spam-discord.s3.h": {
+    "message": "Why it's a problem",
+    "description": "h"
+  },
+  "learn.spam-discord.s3.i1": {
+    "message": "The chat gets drowned out and real conversations become unreadable.",
+    "description": "li"
+  },
+  "learn.spam-discord.s3.i2": {
+    "message": "Scam links reach your members and expose your community.",
+    "description": "li"
+  },
+  "learn.spam-discord.s3.i3": {
+    "message": "Members get tired and leave, and your moderation burns out.",
+    "description": "li"
+  },
+  "learn.spam-discord.s4.h": {
+    "message": "How to stop spam on your server?",
+    "description": "h"
+  },
+  "learn.spam-discord.s4.intro": {
+    "message": "The right approach combines several protections that complement each other.",
+    "description": "p"
+  },
+  "learn.spam-discord.s4.i1.t": {
+    "message": "Automatic anti-spam.",
+    "description": "li title"
+  },
+  "learn.spam-discord.s4.i1.b": {
+    "message": "The {link} spots repetitive messages, abnormal rates, and mass mentions, then punishes on its own.",
+    "description": "li body with link"
+  },
+  "learn.spam-discord.s4.i1.link": {
+    "message": "anti-spam",
+    "description": "link"
+  },
+  "learn.spam-discord.s4.i2.t": {
+    "message": "Entry verification.",
+    "description": "li title"
+  },
+  "learn.spam-discord.s4.i2.b": {
+    "message": "A {link} blocks spam bot farms before they reach the server.",
+    "description": "li body with link"
+  },
+  "learn.spam-discord.s4.i2.link": {
+    "message": "captcha",
+    "description": "link"
+  },
+  "learn.spam-discord.s4.i3.t": {
+    "message": "Closing off direct messages.",
+    "description": "li title"
+  },
+  "learn.spam-discord.s4.i3.b": {
+    "message": "The {link} stops spammers from contacting your members privately.",
+    "description": "li body with link"
+  },
+  "learn.spam-discord.s4.i3.link": {
+    "message": "DM closing",
+    "description": "link"
+  },
+  "learn.spam-discord.s4.outro": {
+    "message": "This is what RaidProtect automates: the bot protects over {count} and has already blocked millions of spam messages.",
+    "description": "outro with stat"
+  },
+  "learn.spam-discord.faq.q1": {
+    "message": "Is spam forbidden on Discord?",
+    "description": "faq q"
+  },
+  "learn.spam-discord.faq.a1": {
+    "message": "Yes: spam violates Discord's Terms of Service. Servers can punish the culprits, and accounts that spam massively can be banned by Discord.",
+    "description": "faq a"
+  },
+  "learn.spam-discord.faq.q2": {
+    "message": "Can a single account spam?",
+    "description": "faq q"
+  },
+  "learn.spam-discord.faq.a2": {
+    "message": "Yes. Unlike a raid, spam doesn't require a wave of accounts: a single account, or a self-bot, is enough to spam.",
+    "description": "faq a"
+  },
+  "learn.spam-discord.faq.q3": {
+    "message": "How do you block spam automatically?",
+    "description": "faq q"
+  },
+  "learn.spam-discord.faq.a3": {
+    "message": "An anti-spam spots repetitive messages, overly fast sends, and mass mentions, and applies a punishment without any action on your part.",
+    "description": "faq a"
+  },
+  "learn.spam-discord.faq.q4": {
+    "message": "Are spam and flood the same thing?",
+    "description": "faq q"
+  },
+  "learn.spam-discord.faq.a4": {
+    "message": "Flood is a form of spam focused on volume and speed (saturating a channel). All flood is spam, but not all spam is necessarily flood.",
+    "description": "faq a"
+  },
+  "learn.spam-discord.rel1b": {
+    "message": "What is a Discord raid?",
+    "description": "related"
+  },
+  "learn.spam-discord.rel2b": {
+    "message": "What is a self-bot?",
+    "description": "related"
+  },
+  "learn.spam-discord.rel3": {
+    "message": "RaidProtect's anti-spam",
+    "description": "related"
+  },
+  "learn.spam-discord.rel4": {
+    "message": "Protecting your members' DMs",
+    "description": "related"
+  },
+  "learn.token-grabber.metaTitle": {
+    "message": "Discord Token Grabber: How an Account Gets Stolen",
+    "description": "Learn article meta title: token grabber"
+  },
+  "learn.token-grabber.metaDescription": {
+    "message": "A token grabber is malware that steals a Discord account's token to hijack it, without a password. How it works and how to protect yourself.",
+    "description": "Learn article meta description: token grabber"
+  },
+  "learn.token-grabber.title": {
+    "message": "What is a token grabber?",
+    "description": "H1"
+  },
+  "learn.token-grabber.definition": {
+    "message": "A token grabber is malware designed to steal your Discord token, the key that authenticates your account. With that token, an attacker can control your account without a password.",
+    "description": "definition"
+  },
+  "learn.token-grabber.s1.h": {
+    "message": "What is a Discord token?",
+    "description": "h"
+  },
+  "learn.token-grabber.s1.p1": {
+    "message": "The token is a secret string that proves to Discord that it's really you. Your app stores it locally to keep you logged in. Anyone who gets hold of it can log in as you, without a password and without triggering two-factor authentication.",
+    "description": "p"
+  },
+  "learn.token-grabber.s2.h": {
+    "message": "How a token grabber steals your account",
+    "description": "h"
+  },
+  "learn.token-grabber.s2.p1": {
+    "message": "The trap almost always arrives through a file or link you're pushed to open:",
+    "description": "p"
+  },
+  "learn.token-grabber.s2.i1": {
+    "message": "Fake software, cheats, cracks, or \"Discord tools\" to download.",
+    "description": "li"
+  },
+  "learn.token-grabber.s2.i2": {
+    "message": "Fake \"free Nitro\" offers and phishing links.",
+    "description": "li"
+  },
+  "learn.token-grabber.s2.i3": {
+    "message": "Booby-trapped extensions or scripts.",
+    "description": "li"
+  },
+  "learn.token-grabber.s2.p2": {
+    "message": "Once run, the program reads the local files where the token is stored and sends it to the attacker, often within seconds and without the slightest visible sign.",
+    "description": "p"
+  },
+  "learn.token-grabber.s3.h": {
+    "message": "The risk for your servers",
+    "description": "h"
+  },
+  "learn.token-grabber.s3.p1": {
+    "message": "With your account, the attacker sends scams to your friends and joins your servers. And if you're an admin or moderator, a stolen token is one of the most common ways to {link} a server from the inside: it's the starting point of many attacks.",
+    "description": "p with link"
+  },
+  "learn.token-grabber.s3.link": {
+    "message": "nuke",
+    "description": "link"
+  },
+  "learn.token-grabber.s4.h": {
+    "message": "How to protect yourself from a token grabber?",
+    "description": "h"
+  },
+  "learn.token-grabber.s4.i1.t": {
+    "message": "Don't run anything untrusted.",
+    "description": "li title"
+  },
+  "learn.token-grabber.s4.i1.b": {
+    "message": "Cheats, cracks, Discord \"tools\", and files received from unknown sources are the number-one vector.",
+    "description": "li body"
+  },
+  "learn.token-grabber.s4.i2.t": {
+    "message": "Be wary of \"free\".",
+    "description": "li title"
+  },
+  "learn.token-grabber.s4.i2.b": {
+    "message": "\"Free Nitro\" and links too good to be true are phishing in the vast majority of cases.",
+    "description": "li body"
+  },
+  "learn.token-grabber.s4.i3.t": {
+    "message": "React fast if you're compromised.",
+    "description": "li title"
+  },
+  "learn.token-grabber.s4.i3.b": {
+    "message": "Change your password immediately: that invalidates the stolen token and logs the attacker out.",
+    "description": "li body"
+  },
+  "learn.token-grabber.s4.i4.t": {
+    "message": "On the server side, apply {link}.",
+    "description": "li title with link"
+  },
+  "learn.token-grabber.s4.i4.link": {
+    "message": "least privilege",
+    "description": "link"
+  },
+  "learn.token-grabber.s4.i4.b": {
+    "message": "That way, even a compromised staff member's account can't destroy everything.",
+    "description": "li body"
+  },
+  "learn.token-grabber.faq.q1": {
+    "message": "Does a token grabber steal my password?",
+    "description": "faq q"
+  },
+  "learn.token-grabber.faq.a1": {
+    "message": "No: it steals the session token, which is enough to access the account without the password. That's exactly what makes it dangerous.",
+    "description": "faq a"
+  },
+  "learn.token-grabber.faq.q2": {
+    "message": "Does two-factor authentication protect against a token grabber?",
+    "description": "faq q"
+  },
+  "learn.token-grabber.faq.a2": {
+    "message": "Not directly, because a token that's already stolen bypasses the login. But it protects the password change and the reconnection, and changing your password invalidates the stolen token.",
+    "description": "faq a"
+  },
+  "learn.token-grabber.faq.q3": {
+    "message": "How do I know if my token has been stolen?",
+    "description": "faq q"
+  },
+  "learn.token-grabber.faq.a3": {
+    "message": "Watch for any unknown activity: messages you didn't write, servers joined or left, scam DMs sent in your name. At the slightest doubt, change your password.",
+    "description": "faq a"
+  },
+  "learn.token-grabber.faq.q4": {
+    "message": "What's the connection with a nuke?",
+    "description": "faq q"
+  },
+  "learn.token-grabber.faq.a4": {
+    "message": "A token stolen from an administrator is one of the most common ways to nuke a server: the attacker acts from a legitimate, privileged account.",
+    "description": "faq a"
+  },
+  "learn.token-grabber.rel1": {
+    "message": "What is a Discord nuke?",
+    "description": "related"
+  },
+  "learn.token-grabber.rel2": {
+    "message": "What is a self-bot?",
+    "description": "related"
+  },
+  "learn.token-grabber.rel3": {
+    "message": "Protecting your members' DMs",
+    "description": "related"
+  },
+  "learn.token-grabber.rel4": {
+    "message": "What is a Discord raid?",
+    "description": "related"
+  },
+  "learn.breadcrumb.hub": {
+    "message": "Learn",
+    "description": "Learn breadcrumb: hub label"
+  },
+  "learn.definition.label": {
+    "message": "In brief",
+    "description": "Definition box label"
+  },
+  "learn.faq.title": {
+    "message": "Frequently asked questions",
+    "description": "FAQ section title"
+  },
+  "learn.cta.title": {
+    "message": "Protect your server in seconds",
+    "description": "Learn CTA title"
+  },
+  "learn.cta.text": {
+    "message": "RaidProtect blocks raids, filters bots, and stops spam automatically, on over 380,000 Discord servers.",
+    "description": "Learn CTA text"
+  },
+  "learn.cta.button": {
+    "message": "Add RaidProtect",
+    "description": "Learn CTA button"
+  },
+  "learn.related.title": {
+    "message": "Read also",
+    "description": "Related links title"
+  },
+  "learn.discord-nuke.term": {
+    "message": "Discord nuke",
+    "description": "Learn glossary term name (breadcrumb + schema)"
+  },
+  "learn.discord-nuke.definitionText": {
+    "message": "A Discord nuke is the destruction of a server from the inside, by a member or bot with elevated permissions: mass deletion of channels and roles, chained bans, spam through webhooks.",
+    "description": "Learn definition plain text for schema.org"
+  },
+  "learn.discord-raid.term": {
+    "message": "Discord raid",
+    "description": "Learn glossary term name (breadcrumb + schema)"
+  },
+  "learn.discord-raid.definitionText": {
+    "message": "A Discord raid is the sudden, coordinated arrival of many accounts, often bots, on a server, aiming to spam, disrupt, or overwhelm it within minutes.",
+    "description": "Learn definition plain text for schema.org"
+  },
+  "learn.honeypot-warming.term": {
+    "message": "\"Active\" HoneyPot",
+    "description": "Learn glossary term name (breadcrumb + schema)"
+  },
+  "learn.honeypot-warming.definitionText": {
+    "message": "No. A HoneyPot channel does not need to be kept active by a bot. To tell whether a channel is active, you have to read the messages and therefore see who wrote them: fake activity is immediately obvious, and spamming accounts do not run that check anyway.",
+    "description": "Learn definition plain text for schema.org"
+  },
+  "learn.least-privilege.term": {
+    "message": "Least privilege",
+    "description": "Learn glossary term name (breadcrumb + schema)"
+  },
+  "learn.least-privilege.definitionText": {
+    "message": "The principle of least privilege means giving each member and each bot only the permissions strictly needed for their role, and nothing more. The fewer all-powerful accounts there are, the less damage a compromised account can do.",
+    "description": "Learn definition plain text for schema.org"
+  },
+  "learn.self-bot.term": {
+    "message": "Self-bot",
+    "description": "Learn glossary term name (breadcrumb + schema)"
+  },
+  "learn.self-bot.definitionText": {
+    "message": "A self-bot is a Discord user account (not a real bot) driven automatically by a script that uses the API in its place. It is forbidden by Discord's Terms of Service.",
+    "description": "Learn definition plain text for schema.org"
+  },
+  "learn.server-raidable.term": {
+    "message": "\"This server is raidable\"",
+    "description": "Learn glossary term name (breadcrumb + schema)"
+  },
+  "learn.server-raidable.definitionText": {
+    "message": "The \"this server is raidable\" message comes from a bot like Jalapeno, installed as a user app. It simply signals that your members can use external apps, which could be used to spam through follow-up messages. It is not a flaw in itself, and two settings are enough to protect against it.",
+    "description": "Learn definition plain text for schema.org"
+  },
+  "learn.spam-discord.term": {
+    "message": "Discord spam",
+    "description": "Learn glossary term name (breadcrumb + schema)"
+  },
+  "learn.spam-discord.definitionText": {
+    "message": "Discord spam is the sending of unsolicited, repetitive messages on a server or in direct messages: ads, scam links, fake Nitro, mass mentions. It can come from a single account or from an entire wave.",
+    "description": "Learn definition plain text for schema.org"
+  },
+  "learn.token-grabber.term": {
+    "message": "Token grabber",
+    "description": "Learn glossary term name (breadcrumb + schema)"
+  },
+  "learn.token-grabber.definitionText": {
+    "message": "A token grabber is malware designed to steal the Discord token, the key that authenticates your account. With that token, an attacker can control your account without a password.",
+    "description": "Learn definition plain text for schema.org"
+  },
+  "learn.discord-raid.s2.strong": {
+    "message": "overwhelm the server faster than the moderators can react",
+    "description": "bold emphasis: raid goal"
+  },
+  "learn.stat.protectedServers": {
+    "message": "380,000 servers",
+    "description": "bold stat: number of protected servers"
+  },
+  "learn.honeypot-warming.s2.strong": {
+    "message": "reading the messages also means seeing who wrote them",
+    "description": "bold emphasis: reading messages reveals authors"
+  },
+  "learn.honeypot-warming.s3.strong": {
+    "message": "a HoneyPot works precisely because it is empty and silent",
+    "description": "bold emphasis: honeypot works because it is empty"
+  },
+  "learn.least-privilege.s1.strong": {
+    "message": "just what they need, and nothing more",
+    "description": "bold emphasis: just enough, nothing more"
+  },
+  "learn.least-privilege.s3.strong": {
+    "message": "permanent administrator access",
+    "description": "bold emphasis: permanent administrator access"
+  },
+  "learn.server-raidable.s2.strong": {
+    "message": "an administrator account will always show \"raidable\"",
+    "description": "bold emphasis: an admin account always shows raidable"
   }
 }

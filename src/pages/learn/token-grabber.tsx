@@ -21,7 +21,11 @@ export default function TokenGrabberPage(): ReactNode {
         "Un token grabber est un programme malveillant qui vole le token Discord d'un compte pour le pirater, sans mot de passe. Comment ça marche et comment se protéger.",
       description: 'Learn article meta description: token grabber',
     }),
-    term: 'Token grabber',
+    term: translate({
+      id: 'learn.token-grabber.term',
+      message: 'Token grabber',
+      description: 'Learn glossary term name (breadcrumb + schema)',
+    }),
     title: (
       <Translate id="learn.token-grabber.title" description="H1">
         Qu'est-ce qu'un token grabber ?
@@ -34,8 +38,11 @@ export default function TokenGrabberPage(): ReactNode {
         peut contrôler votre compte sans mot de passe.
       </Translate>
     ),
-    definitionText:
-      "Un token grabber est un programme malveillant conçu pour voler le token Discord, la clé qui authentifie votre compte. Avec ce token, un attaquant peut contrôler votre compte sans mot de passe.",
+    definitionText: translate({
+      id: 'learn.token-grabber.definitionText',
+      message: "Un token grabber est un programme malveillant conçu pour voler le token Discord, la clé qui authentifie votre compte. Avec ce token, un attaquant peut contrôler votre compte sans mot de passe.",
+      description: 'Learn definition plain text for schema.org',
+    }),
     sections: [
       {
         heading: (

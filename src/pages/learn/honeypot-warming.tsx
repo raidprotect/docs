@@ -23,7 +23,11 @@ export default function HoneypotActifPage(): ReactNode {
         "Faut-il faire tourner un bot qui poste des messages pour qu'un salon HoneyPot paraisse actif ? Non : on explique simplement pourquoi c'est inutile.",
       description: 'Learn explainer meta description: honeypot activity',
     }),
-    term: 'HoneyPot « actif »',
+    term: translate({
+      id: 'learn.honeypot-warming.term',
+      message: 'HoneyPot « actif »',
+      description: 'Learn glossary term name (breadcrumb + schema)',
+    }),
     title: (
       <Translate id="learn.honeypot-warming.title" description="H1">
         Faut-il un bot pour garder un salon HoneyPot « actif » ?
@@ -37,8 +41,11 @@ export default function HoneypotActifPage(): ReactNode {
         toute façon les comptes qui spamment ne font pas cette vérification.
       </Translate>
     ),
-    definitionText:
-      "Non. Un salon HoneyPot n'a pas besoin d'être animé par un bot. Pour savoir si un salon est actif, il faut lire les messages et donc voir qui les a écrits : une fausse activité est immédiatement repérable, et les comptes qui spamment ne font de toute façon pas cette vérification.",
+    definitionText: translate({
+      id: 'learn.honeypot-warming.definitionText',
+      message: "Non. Un salon HoneyPot n'a pas besoin d'être animé par un bot. Pour savoir si un salon est actif, il faut lire les messages et donc voir qui les a écrits : une fausse activité est immédiatement repérable, et les comptes qui spamment ne font de toute façon pas cette vérification.",
+      description: 'Learn definition plain text for schema.org',
+    }),
     sections: [
       {
         heading: (
@@ -112,7 +119,11 @@ export default function HoneypotActifPage(): ReactNode {
                 values={{
                   strong: (
                     <strong>
-                      lire les messages, c'est aussi voir qui les a écrits
+                      <Translate
+                        id="learn.honeypot-warming.s2.strong"
+                        description="bold emphasis: reading messages reveals authors">
+                        lire les messages, c'est aussi voir qui les a écrits
+                      </Translate>
                     </strong>
                   ),
                 }}>
@@ -161,8 +172,12 @@ export default function HoneypotActifPage(): ReactNode {
                 values={{
                   strong: (
                     <strong>
-                      un HoneyPot fonctionne justement parce qu'il est vide et
-                      silencieux
+                      <Translate
+                        id="learn.honeypot-warming.s3.strong"
+                        description="bold emphasis: honeypot works because it is empty">
+                        un HoneyPot fonctionne justement parce qu'il est vide et
+                        silencieux
+                      </Translate>
                     </strong>
                   ),
                 }}>

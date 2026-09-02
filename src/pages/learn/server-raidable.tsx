@@ -23,7 +23,11 @@ export default function ServerRaidablePage(): ReactNode {
         "Un bot comme Jalapeno affiche « this server is raidable » ? Ce message signale seulement que les applications externes sont autorisées. Ce que ça veut vraiment dire, et comment protéger votre serveur.",
       description: 'Learn explainer meta description: this server is raidable',
     }),
-    term: '« This server is raidable »',
+    term: translate({
+      id: 'learn.server-raidable.term',
+      message: '« This server is raidable »',
+      description: 'Learn glossary term name (breadcrumb + schema)',
+    }),
     title: (
       <Translate id="learn.server-raidable.title" description="H1">
         « This server is raidable » : faut-il s'inquiéter ?
@@ -38,8 +42,11 @@ export default function ServerRaidablePage(): ReactNode {
         réglages suffisent à s'en protéger.
       </Translate>
     ),
-    definitionText:
-      "Le message « this server is raidable » vient d'un bot comme Jalapeno, installé en application utilisateur. Il signale simplement que vos membres peuvent utiliser des applications externes, ce qui pourrait servir à spammer via des messages de suivi. Ce n'est pas une faille en soi, et deux réglages suffisent à s'en protéger.",
+    definitionText: translate({
+      id: 'learn.server-raidable.definitionText',
+      message: "Le message « this server is raidable » vient d'un bot comme Jalapeno, installé en application utilisateur. Il signale simplement que vos membres peuvent utiliser des applications externes, ce qui pourrait servir à spammer via des messages de suivi. Ce n'est pas une faille en soi, et deux réglages suffisent à s'en protéger.",
+      description: 'Learn definition plain text for schema.org',
+    }),
     sections: [
       {
         heading: (
@@ -103,7 +110,11 @@ export default function ServerRaidablePage(): ReactNode {
                 values={{
                   strong: (
                     <strong>
-                      un compte administrateur affichera toujours « raidable »
+                      <Translate
+                        id="learn.server-raidable.s2.strong"
+                        description="bold emphasis: an admin account always shows raidable">
+                        un compte administrateur affichera toujours « raidable »
+                      </Translate>
                     </strong>
                   ),
                 }}>

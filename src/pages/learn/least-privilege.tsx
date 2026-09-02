@@ -21,7 +21,11 @@ export default function MoindrePrivilegePage(): ReactNode {
         "Le moindre privilège, c'est ne donner à chaque membre et bot que les permissions strictement nécessaires. Pourquoi c'est votre meilleure défense anti-nuke, et comment l'appliquer.",
       description: 'Learn article meta description: least privilege',
     }),
-    term: 'Moindre privilège',
+    term: translate({
+      id: 'learn.least-privilege.term',
+      message: 'Moindre privilège',
+      description: 'Learn glossary term name (breadcrumb + schema)',
+    }),
     title: (
       <Translate id="learn.least-privilege.title" description="H1">
         Le principe du moindre privilège sur Discord
@@ -35,8 +39,11 @@ export default function MoindrePrivilegePage(): ReactNode {
         peut faire de dégâts.
       </Translate>
     ),
-    definitionText:
-      "Le principe du moindre privilège consiste à ne donner à chaque membre et à chaque bot que les permissions strictement nécessaires à leur rôle, et rien de plus. Moins il y a de comptes tout-puissants, moins un compte compromis peut faire de dégâts.",
+    definitionText: translate({
+      id: 'learn.least-privilege.definitionText',
+      message: "Le principe du moindre privilège consiste à ne donner à chaque membre et à chaque bot que les permissions strictement nécessaires à leur rôle, et rien de plus. Moins il y a de comptes tout-puissants, moins un compte compromis peut faire de dégâts.",
+      description: 'Learn definition plain text for schema.org',
+    }),
     sections: [
       {
         heading: (
@@ -51,7 +58,13 @@ export default function MoindrePrivilegePage(): ReactNode {
               description="p with emphasis"
               values={{
                 strong: (
-                  <strong>juste ce qu'il faut, et rien de plus</strong>
+                  <strong>
+                    <Translate
+                      id="learn.least-privilege.s1.strong"
+                      description="bold emphasis: just enough, nothing more">
+                      juste ce qu'il faut, et rien de plus
+                    </Translate>
+                  </strong>
                 ),
               }}>
               {
@@ -188,7 +201,11 @@ export default function MoindrePrivilegePage(): ReactNode {
                 values={{
                   strong: (
                     <strong>
-                      un accès administrateur permanent
+                      <Translate
+                        id="learn.least-privilege.s3.strong"
+                        description="bold emphasis: permanent administrator access">
+                        un accès administrateur permanent
+                      </Translate>
                     </strong>
                   ),
                 }}>

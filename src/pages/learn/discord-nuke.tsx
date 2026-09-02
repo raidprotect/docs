@@ -21,7 +21,11 @@ export default function DiscordNukePage(): ReactNode {
         "Un nuke Discord, c'est la destruction d'un serveur de l'intérieur par abus de permissions : salons supprimés, bannissements de masse. Définition, différence avec un raid, et prévention.",
       description: 'Learn article meta description: Discord nuke',
     }),
-    term: 'Nuke Discord',
+    term: translate({
+      id: 'learn.discord-nuke.term',
+      message: 'Nuke Discord',
+      description: 'Learn glossary term name (breadcrumb + schema)',
+    }),
     title: (
       <Translate id="learn.discord-nuke.title" description="H1">
         Qu'est-ce qu'un nuke Discord ?
@@ -34,8 +38,11 @@ export default function DiscordNukePage(): ReactNode {
         salons et de rôles, bannissements en chaîne, spam via webhooks.
       </Translate>
     ),
-    definitionText:
-      "Un nuke Discord est la destruction d'un serveur depuis l'intérieur, par un membre ou un bot disposant de permissions élevées : suppression massive de salons et de rôles, bannissements en chaîne, spam via webhooks.",
+    definitionText: translate({
+      id: 'learn.discord-nuke.definitionText',
+      message: "Un nuke Discord est la destruction d'un serveur depuis l'intérieur, par un membre ou un bot disposant de permissions élevées : suppression massive de salons et de rôles, bannissements en chaîne, spam via webhooks.",
+      description: 'Learn definition plain text for schema.org',
+    }),
     sections: [
       {
         heading: (
