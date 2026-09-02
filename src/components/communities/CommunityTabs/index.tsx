@@ -31,7 +31,6 @@ export default function CommunityTabs({
             style={tabStyle}
             className={clsx(styles.tab, active && styles.tabActive)}
             aria-current={active ? 'page' : undefined}>
-            <span className={styles.dot} aria-hidden="true" />
             <span className={styles.label}>{entry.tabLabel}</span>
           </Link>
         );
