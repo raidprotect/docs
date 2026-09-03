@@ -335,8 +335,10 @@
 }
 
 .offerBtnBusiness {
-  border-color: var(--color-enterprise);
-  background-color: var(--color-enterprise);
+  /* Assombri pour passer le contraste WCAG AA du texte blanc : le bleu de marque
+   * seul plafonne à ~4.4:1 (sous le seuil 4.5:1). */
+  border-color: color-mix(in srgb, var(--color-enterprise) 85%, #000);
+  background-color: color-mix(in srgb, var(--color-enterprise) 85%, #000);
   color: #fff;
 }
 

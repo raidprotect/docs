@@ -6,13 +6,17 @@
   opacity: 0;
   transform: translateY(16px);
   pointer-events: none;
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  /* Masquée = hors de l'ordre de tabulation (les liens ne doivent pas rester
+   * focusables sous aria-hidden). visibility se transitionne discrètement. */
+  visibility: hidden;
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s ease;
 }
 
 .visible {
   opacity: 0.88;
   transform: none;
   pointer-events: auto;
+  visibility: visible;
 }
 
 .wrap.visible:hover {

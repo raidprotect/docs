@@ -79,7 +79,7 @@ export default function LocaleDropdownNavbarItem({
   const localeItems = locales.map((locale) => ({
     label: (
       <>
-        <img className={styles.flag} src={`/img/lang/${locale}.png`} alt="" />
+        <img className={styles.flag} src={`/img/lang/${locale}.svg`} alt="" width={24} height={16} loading="lazy" />
         {utils.getLabel(locale)}
       </>
     ),
@@ -117,7 +117,7 @@ export default function LocaleDropdownNavbarItem({
           {mobile ? (
             <IconLanguage className={styles.iconLanguage} />
           ) : (
-            <img className={styles.toggleFlag} src={`/img/lang/${currentLocale}.png`} alt="" />
+            <img className={styles.toggleFlag} src={`/img/lang/${currentLocale}.svg`} alt="" width={24} height={16} />
           )}
           {dropdownLabel}
         </>
