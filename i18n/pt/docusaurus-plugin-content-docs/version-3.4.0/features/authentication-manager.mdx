@@ -14,7 +14,7 @@ import Icon from "@site/src/components/Icon";
 
 O Authentication Manager (AM) do RaidProtect é um sistema de autenticação avançado que protege o acesso a determinados cargos do Discord através de uma verificação de identidade. Graças às passkeys (WebAuthn), códigos PIN e OTP, apenas os membros autenticados podem obter cargos sensíveis.
 
-## ❓ Funcionamento geral {#working}
+## ❓ Como funciona o Authentication Manager? {#working}
 
 O Authentication Manager baseia-se em um sistema de **cargos protegidos** e **sessões temporárias**. Quando um administrador configura um cargo com o AM:
 
@@ -236,3 +236,21 @@ Consulte o registro de auditoria do servidor com paginação. Cada entrada cont�
 ### Aba Sessões {#sessions-tab}
 
 Consulte todas as sessões do servidor com o seu status (Ativa, Expirada, Revogada), o usuário, o cargo e as datas de criação e expiração.
+
+## Perguntas frequentes {#faq}
+
+### Quais métodos de autenticação estão disponíveis?
+
+Existem três métodos: o código PIN (simples ou reforçado), o OTP (código 2FA no padrão TOTP) e as passkeys (WebAuthn). As passkeys oferecem o nível de segurança mais alto (grau S).
+
+### O que acontece quando uma sessão expira?
+
+O cargo protegido é automaticamente removido do membro. Ele deve se reautenticar via `/auth` para obtê-lo de novo, ou prolongar a sua sessão antes que ela expire.
+
+### O que fazer se eu esquecer as minhas credenciais?
+
+No seu perfil `/auth-profile`, o botão « Esqueci minhas credenciais » redefine totalmente a sua conta: todos os seus métodos são removidos e os seus acessos revogados. Essa ação é irreversível e exige uma reconfiguração completa.
+
+### Quantos cargos é possível proteger com o Authentication Manager?
+
+Você pode proteger 3 cargos na versão gratuita e 10 cargos na versão premium, para respectivamente 20 e 50 usuários.

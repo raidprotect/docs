@@ -7,7 +7,7 @@ import HoneypotMockup from '@site/src/components/DiscordMessage/mockups/honeypot
 
 <HoneypotMockup />
 
-O **HoneyPot** (ou canal-armadilha) do RaidProtect é um canal onde **ninguém deve escrever**. Como os membros reais sabem que precisam evitar esse canal, os únicos que publicam ali são as **contas invadidas** ou os bots de spam: o RaidProtect os sanciona automaticamente.
+O **HoneyPot** (ou canal-armadilha) do RaidProtect é uma funcionalidade antispam: um canal onde **ninguém deve escrever**. Como os membros reais sabem que precisam evitar esse canal, os únicos que publicam ali são as **contas invadidas** ou os bots de spam: o RaidProtect os sanciona automaticamente.
 
 :::info
 **Você já tem o ScamLens por padrão.** O antifraude [ScamLens](./scam-images.md) está ativo no seu servidor sem nenhuma configuração: especializado em **imagens de fraude**, ele as detecta, as remove e sanciona a conta comprometida com altíssima confiabilidade. Para as fraudes por imagem, o ScamLens já é mais que suficiente. O HoneyPot é útil sobretudo se você quiser segurança máxima e bloquear os **outros tipos de spam**: spam de links, raids de texto, bots.
@@ -80,3 +80,21 @@ Os dois funcionam de mãos dadas:
 - **Cada nova imagem capturada por um HoneyPot enriquece o ScamLens**, que poderá depois bloqueá-la em todos os servidores protegidos.
 
 O ScamLens já está ativo por padrão no seu servidor. **Ativar o HoneyPot não quebra nada**: ele apenas complementa o que já existe, e ajuda o RaidProtect a proteger melhor toda a comunidade.
+
+## Perguntas frequentes {#faq}
+
+### O HoneyPot é útil se eu já tenho o ScamLens?
+
+Para os golpes por imagem, o ScamLens já é mais que suficiente: ele está ativo por padrão e os detecta, remove e sanciona sozinho. O HoneyPot é útil sobretudo para bloquear os outros tipos de spam, como o spam de links, os raids de texto e os bots.
+
+### Qual sanção o HoneyPot aplica?
+
+Você escolhe a sanção: Banimento e Softban são gratuitos, enquanto Kick, Timeout, Jail e Mute são reservados aos servidores Premium. O Softban é um bom meio-termo, pois limpa as mensagens e expulsa a conta invadida ao mesmo tempo em que deixa o dono legítimo voltar.
+
+### Os membros da equipe são sancionados se escreverem no HoneyPot?
+
+Isso depende da opção « Membros ignorados ». Por padrão, todo mundo é sancionado, até a equipe. O RaidProtect nunca sanciona a si mesmo, e os bots nunca acionam a armadilha.
+
+### O que acontece com as mensagens de uma conta capturada pelo HoneyPot?
+
+Além da sanção, as mensagens enviadas por esse membro nos últimos 10 minutos são excluídas em todo o servidor, para conter o spam caso ele já tenha se espalhado por outros canais.

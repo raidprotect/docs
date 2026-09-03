@@ -11,7 +11,7 @@ RaidProtect protege automáticamente tu servidor contra las **imágenes de estaf
 ScamLens está **activado por defecto en cuanto RaidProtect llega a tu servidor**. Estás protegido de inmediato, sin configurar nada.
 :::
 
-## ❓ Cómo funciona {#working}
+## ❓ ¿Cómo funciona? {#working}
 
 En cuanto se publica una imagen, ScamLens la analiza. Si es una estafa conocida:
 
@@ -21,7 +21,7 @@ En cuanto se publica una imagen, ScamLens la analiza. Si es una estafa conocida:
 
 ScamLens solo se ocupa de las **imágenes**. Los demás tipos de spam los gestionan el [Anti-spam](./anti-spam.mdx) y el [HoneyPot](./honeypot.md).
 
-## 🔧 Desactivar o reactivar {#config}
+## 🔧 ¿Cómo desactivar o reactivar ScamLens? {#config}
 
 La sanción aplicada a las imágenes de estafa **sigue por defecto la de tu [HoneyPot](./honeypot.md#sanction)** (o un Timeout si el HoneyPot no está activado). Puedes modificarla, desactivarla o reactivarla desde el mismo menú:
 
@@ -49,3 +49,17 @@ Cada mes publicamos la **[Meteorología de amenazas](/blog/tags/threats)**, un b
 | [Abril 2026](/blog/threat-weather-april-2026) | 1.400.000 | 40.000 |
 | [Mayo 2026](/blog/threat-weather-may-2026) | 2.300.000 | 80.000 |
 | [Junio 2026](/blog/threat-weather-june-2026) | 4.000.000 | 160.000 |
+
+## Preguntas frecuentes {#faq}
+
+### ¿Hay que configurar ScamLens?
+
+No. ScamLens está activado por defecto en cuanto RaidProtect llega a tu servidor. Estás protegido de inmediato, sin configurar nada.
+
+### ¿ScamLens bloquea algo más que las imágenes?
+
+No, ScamLens solo se ocupa de las imágenes de estafa. Los demás tipos de spam los gestionan el [Anti-spam](./anti-spam.mdx) y el [HoneyPot](./honeypot.md).
+
+### ¿Qué sanción se aplica a una imagen de estafa?
+
+Por defecto, ScamLens aplica la sanción de tu [HoneyPot](./honeypot.md#sanction), o un Timeout si el HoneyPot no está activado. Puedes modificarla, desactivarla o reactivarla desde el menú Anti-spam, en las Sanciones.

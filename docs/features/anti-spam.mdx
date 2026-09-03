@@ -13,9 +13,9 @@ import SeparatedBox from '@site/src/components/SeparatedBox';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-L’Anti-spam de RaidProtect est un outil performant pour empêcher les spams sur votre serveur Discord. Grâce à son système de détection automatique, il s’occupe des problèmes tout seul, sans que vous ayez à intervenir.
+L'anti-spam de RaidProtect détecte et sanctionne automatiquement le spam sur votre serveur Discord : messages répétés, mentions massives, flood et envois massifs de liens, sans qu'un modérateur ait à intervenir. Grâce à sa détection automatique, il s'occupe des problèmes tout seul.
 
-## ❓ Fonctionnement de l’anti-spam {#working}
+## ❓ Comment fonctionne l'anti-spam ? {#working}
 
 L'anti-spam de RaidProtect détecte et bloque automatiquement les comportements suspects. Il différencie deux types de spams.
 - **Spam lourd :** Messages contenant des liens d'invitation, des mentions massives ou des images. Ces spams sont souvent utilisés lors de raids.
@@ -27,18 +27,15 @@ L'anti-spam de RaidProtect agit de deux manières.
 
 ## 🛡️ Configuration de l’anti-spam {#config}
 
-RaidProtect offre trois niveaux de sécurité pour répondre aux besoins de votre serveur.
-- 🔴 **Haut :** Sanctionne tous les spams et même le spam lourd dans les salons ignorés.
-- 🟠 **Moyen :** Sanctionne tous les spams, mais respecte les salons ignorés.
-- 🟢 **Faible :** Sanctionne uniquement les spams lourd.
+L’anti-spam s’active ou se désactive d’un simple interrupteur. Une fois activé, il surveille tout le serveur (hors salons, rôles et membres ignorés) et applique, pour chaque type de spam, la sanction que vous avez définie.
 
 <AntiSpamSettingsMockup />
 
-### Changer le niveau de sécurité {#level}
+### Activer ou désactiver l’anti-spam {#toggle}
 
 1. Faites la [commande `/settings`](../setup.md#settings).
 2. Cliquez sur le bouton “**Anti-spam**”.
-3. Sélectionnez le niveau de l’anti-spam souhaité dans le premier sélecteur.
+3. Activez ou désactivez l’anti-spam. Toute la finesse se règle ensuite par déclencheur, dans l’onglet “**Sanctions**”.
 
 ### Gérer les rôles, utilisateurs et salons ignorés {#ignore}
 
@@ -137,3 +134,21 @@ Des logs détaillés sont générés avec ensemble des messages supprimés par l
   </TabItem>
 </Tabs>
 </SeparatedBox>
+
+## Questions fréquentes {#faq}
+
+### L'anti-spam fonctionne-t-il sans configuration ?
+
+Oui. Il détecte et bloque automatiquement les comportements de spam dès l'installation. Vous pouvez ensuite personnaliser la sanction de chaque type de spam selon vos besoins.
+
+### L’anti-spam a-t-il des niveaux de sécurité (haut, moyen, bas) ?
+
+Non. L’anti-spam s’active ou se désactive simplement. La finesse se règle par déclencheur : chaque type de spam a sa propre sanction, que vous pouvez ajuster ou désactiver complètement.
+
+### Peut-on exclure certains salons ou membres de l'anti-spam ?
+
+Oui, vous pouvez ignorer des salons, des rôles ou des membres précis. Les salons dont le nom contient « spam » sont ignorés automatiquement, et les membres ayant la permission administrateur sont toujours ignorés.
+
+### Peut-on choisir la sanction appliquée au spam ?
+
+Oui. Chaque type de spam (déclencheur) peut recevoir sa propre sanction, du simple Warn au Ban, en passant par Timeout, Mute, Jail, Kick ou Softban. Vous pouvez aussi désactiver complètement un déclencheur.

@@ -13,9 +13,9 @@ import SeparatedBox from '@site/src/components/SeparatedBox';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-RaidProtect's Anti-spam is a powerful tool to prevent spam on your Discord server. Thanks to its automatic detection system, it handles problems on its own, without requiring your intervention.
+RaidProtect's anti-spam automatically detects and sanctions spam on your Discord server: repeated messages, mass mentions, flood and mass link sending, without a moderator having to step in. Thanks to its automatic detection, it handles problems on its own.
 
-## ❓ How anti-spam works {#working}
+## ❓ How does anti-spam work? {#working}
 
 RaidProtect's anti-spam automatically detects and blocks suspicious behavior. It distinguishes between two types of spam.
 - **Heavy spam:** Messages containing invite links, mass mentions, or images. This kind of spam is often used during raids.
@@ -27,18 +27,15 @@ RaidProtect's anti-spam acts in two ways.
 
 ## 🛡️ Anti-spam configuration {#config}
 
-RaidProtect offers three security levels to meet your server's needs.
-- 🔴 **High:** Sanctions all spam, and even heavy spam in ignored channels.
-- 🟠 **Medium:** Sanctions all spam, but respects ignored channels.
-- 🟢 **Low:** Sanctions only heavy spam.
+The anti-spam is turned on or off with a simple switch. Once enabled, it watches the whole server (except ignored channels, roles, and members) and applies, for each type of spam, the sanction you defined.
 
 <AntiSpamSettingsMockup />
 
-### Change the security level {#level}
+### Enable or disable the anti-spam {#toggle}
 
 1. Run the [`/settings` command](../setup.md#settings).
 2. Click the "**Anti-spam**" button.
-3. Select the desired anti-spam level in the first selector.
+3. Enable or disable the anti-spam. Everything else is tuned per trigger, in the "**Sanctions**" tab.
 
 ### Manage ignored roles, users, and channels {#ignore}
 
@@ -137,3 +134,21 @@ Detailed logs are generated with all the messages deleted by the anti-spam. You 
   </TabItem>
 </Tabs>
 </SeparatedBox>
+
+## Frequently asked questions {#faq}
+
+### Does anti-spam work without any configuration?
+
+Yes. It automatically detects and blocks spam behavior right from installation. You can then customize the sanction for each type of spam to fit your needs.
+
+### Does the anti-spam have security levels (high, medium, low)?
+
+No. The anti-spam is simply enabled or disabled. Fine-tuning is per trigger: each type of spam has its own sanction, which you can adjust or disable completely.
+
+### Can I exclude certain channels or members from anti-spam?
+
+Yes, you can ignore specific channels, roles or members. Channels whose name contains "spam" are ignored automatically, and members with the administrator permission are always ignored.
+
+### Can I choose the sanction applied to spam?
+
+Yes. Each type of spam (trigger) can get its own sanction, from a simple Warn to a Ban, including Timeout, Mute, Jail, Kick or Softban. You can also disable a trigger completely.

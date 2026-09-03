@@ -9,7 +9,7 @@ import CaptchaMockup from '@site/src/components/DiscordMessage/mockups/captcha';
 
 {/* <CaptchaMockup /> : vorerst ausgeblendet */}
 
-Verhindern Sie, dass Selfbots auf Ihren Discord-Server zugreifen, und blockieren Sie Raids dank des Captcha-Systems von RaidProtect.
+Das Captcha von RaidProtect fordert jedes neue Mitglied auf, einen Code abzutippen, bevor es Ihren Discord-Server betritt. So blockiert es Selfbots und Raids, indem es Konten herausfiltert, die keine Menschen sind.
 
 Das Captcha ist eine der beliebtesten Funktionen von RaidProtect, obwohl es vollkommen optional bleibt. Es ermöglicht, jeden neuen Benutzer aufzufordern, eine Aufgabe zu lösen, bei der ein Code eingegeben werden muss, um zu überprüfen, dass es sich nicht um einen Roboter (Selfbot) handelt.
 
@@ -29,7 +29,7 @@ Das Captcha basiert auf einer Rolle **@Nicht verifiziert** und einem Kanal namen
 **Berechtigungsverwaltung:** Die Berechtigungen der Rolle **@Nicht verifiziert** werden automatisch von RaidProtect konfiguriert. Sie können die Rolle und den Kanal umbenennen, aber löschen Sie sie nicht.
 :::
 
-## 🚪 Konfiguration des Captchas {#config}
+## 🚪 Wie konfiguriert man das Captcha? {#config}
 
 Die Einrichtung des Captchas ist einfach und schnell.
 
@@ -68,3 +68,21 @@ Wenn Sie ein automatisches Rollensystem (Autorole) verwenden, das nicht von Raid
 Verwenden Sie den Befehl: ```/bypass captcha [benutzer]```
 
 Ersetzen Sie `[benutzer]` durch die gewünschte Kennung; diese Person hat dann 10 Minuten Zeit, dem Server beizutreten, ohne das Captcha lösen zu müssen. Wenn der Benutzer bereits anwesend ist, wird das Captcha automatisch gelöst. Sie können den Befehl auch ohne Angabe eines Benutzers verwenden, um die aktuelle Liste der Bypass-Benutzer anzuzeigen.
+
+## Häufig gestellte Fragen {#faq}
+
+### Wie viel Zeit hat man, um das Captcha zu lösen?
+
+Neue Mitglieder haben 1 bis 10 Minuten Zeit (standardmäßig 5 Minuten) und 1 bis 3 Versuche (standardmäßig 2 Versuche). Danach werden sie automatisch vom Server gekickt.
+
+### Was passiert, wenn ein Mitglied das Captcha nicht besteht?
+
+Wenn es seine Versuche aufbraucht oder die Zeit überschreitet, wird es automatisch vom Server gekickt. Es kann jedoch zurückkehren und das Captcha erneut versuchen.
+
+### Kann man ein Mitglied vom Captcha ausnehmen?
+
+Ja, mit dem Befehl `/bypass captcha [benutzer]`. Das Mitglied hat dann 10 Minuten Zeit, beizutreten, ohne das Captcha zu lösen, und wenn es bereits anwesend ist, wird das Captcha automatisch gelöst.
+
+### Kann man die Rolle @Nicht verifiziert und den Kanal #verifizierung umbenennen?
+
+Ja, Sie können sie frei umbenennen. Löschen Sie sie nicht, da RaidProtect sie für die Funktion des Captchas benötigt und ihre Berechtigungen automatisch konfiguriert.

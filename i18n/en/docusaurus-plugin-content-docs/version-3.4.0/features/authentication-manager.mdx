@@ -14,7 +14,7 @@ import Icon from "@site/src/components/Icon";
 
 RaidProtect's Authentication Manager (AM) is an advanced authentication system that protects access to certain Discord roles through identity verification. Using passkeys (WebAuthn), PIN codes and OTP, only authenticated members can obtain sensitive roles.
 
-## ❓ How it works {#working}
+## ❓ How does the Authentication Manager work? {#working}
 
 The Authentication Manager is based on a system of **protected roles** and **temporary sessions**. When an administrator configures a role with AM:
 
@@ -236,3 +236,21 @@ View the server's audit log with pagination. Each entry contains: the user, the 
 ### Sessions tab {#sessions-tab}
 
 View all server sessions with their status (Active, Expired, Revoked), the user, the role, and the creation and expiration dates.
+
+## Frequently asked questions {#faq}
+
+### Which authentication methods are available?
+
+There are three methods: the PIN code (simple or reinforced), OTP (a 2FA code following the TOTP standard) and passkeys (WebAuthn). Passkeys offer the highest level of security (grade S).
+
+### What happens when a session expires?
+
+The protected role is automatically removed from the member. They must re-authenticate via `/auth` to obtain it again, or extend their session before it expires.
+
+### What if I forget my credentials?
+
+From your `/auth-profile`, the "I forgot my credentials" button fully resets your account: all your methods are deleted and your access is revoked. This action is irreversible and requires a complete reconfiguration.
+
+### How many roles can I protect with the Authentication Manager?
+
+You can protect 3 roles in the free version and 10 roles in the premium version, for 20 and 50 users respectively.

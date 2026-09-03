@@ -9,9 +9,9 @@ import ReportsMockup from '@site/src/components/DiscordMessage/mockups/reports';
 
 <ReportsMockup />
 
-The RaidProtect reporting system allows your community to quickly report any problematic content or suspicious user. It operates in two different ways and can be configured to optimize the report management process.
+The RaidProtect reporting system lets your community flag any suspicious message or member to your moderators in a few clicks, through a right-click, a dedicated button or the `/report` command. It can be configured to streamline how your team handles reports.
 
-## ❓ How reports work {#working}
+## ❓ How do reports work? {#working}
 Members can report content through 4 main methods.
 
 1. **Right-click on a message** 
@@ -118,3 +118,17 @@ Each report arrives in the configured channel as an alert with several actions:
 :::note
 Make sure your moderators are well trained in using this feature and encourage your active members to use it responsibly! 
 :::
+
+## Frequently asked questions {#faq}
+
+### How do I report a member or a message?
+
+A member can right-click on a message or a profile, choose "Apps" then "Report Message" or "Report Member". They can also use the button on an information panel, or the `/report (member) (reason)` command in any channel.
+
+### Where do reports go?
+
+They are sent to the report channel you configure. This channel should be restricted to moderators and administrators to ensure reports are handled properly.
+
+### How do I limit false reports?
+
+The "Bad reporters" button acts on members whose reports are regularly rejected. You set a threshold and a calculation window, then an automatic action: notify moderators, block reports, sanction, or both. You can also block a member manually with the [`/block` command](./utilities.mdx#block).

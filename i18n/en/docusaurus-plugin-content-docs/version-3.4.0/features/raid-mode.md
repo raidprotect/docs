@@ -11,9 +11,9 @@ import RaidModeMockup from '@site/src/components/DiscordMessage/mockups/raid-mod
 
 ## Raid mode {#raid-mode}
 
-Raid mode is an emergency feature designed to instantly block all new users attempting to join your server, with a maximum duration of 24 hours. To permanently block new members, use the [`/joinlock` command](./join-lock.mdx).
+RaidProtect's raid mode is an emergency feature that instantly blocks all new users attempting to join your server, for a maximum duration of 24 hours. Our protection bot turns it on by itself as soon as it detects a suspicious wave of joins, and you can also trigger it manually. To permanently block new members, use the [`/joinlock` command](./join-lock.mdx).
 
-### ❓ How raid mode works {#working}
+### ❓ How does raid mode work? {#working}
 
 RaidProtect automatically activates raid mode if a large number of users join your server in a short period of time. By default, raid mode activates if more than 10 users join your server in less than 10 seconds. When raid mode is enabled, no user can join the server. They are blocked at the invite level.
 
@@ -113,3 +113,21 @@ To strengthen security, you can require a minimum age for new members' Discord a
 Use the command: ```/bypass minage [user]```
 
 Replace `[user]` with the desired identifier; they will have 10 minutes to join the server without being kicked due to the age requirement. You can also use the command without specifying a user to see the current list of bypassed users.
+
+## Frequently asked questions {#faq}
+
+### Does raid mode activate automatically?
+
+Yes. By default, we activate raid mode as soon as more than 10 users join your server in less than 10 seconds. This threshold is configurable in the auto raid mode settings.
+
+### How do I activate raid mode manually?
+
+A user with kick permissions runs the `/raidmode` command. A message is then posted in the logs channel to signal the activation, and no member can join the server anymore.
+
+### Does raid mode turn off on its own?
+
+Raid mode activated manually does not stop automatically: remember to disable it with the same command once the threat has passed. The auto raid mode, on the other hand, turns off after the duration you configured (5 minutes by default, 24 hours maximum).
+
+### Can I let a legitimate member join during a raid?
+
+Yes, with the `/bypass raid [user]` command: the member then has 10 minutes to join without being kicked (7 bypassed users maximum at the same time). The bypass requires kick mode, reserved for Premium servers.

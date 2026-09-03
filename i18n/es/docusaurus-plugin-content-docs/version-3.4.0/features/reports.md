@@ -9,9 +9,9 @@ import ReportsMockup from '@site/src/components/DiscordMessage/mockups/reports';
 
 <ReportsMockup />
 
-El sistema de reportes de RaidProtect permite a tu comunidad reportar rapidamente cualquier contenido problematico o usuario sospechoso. Funciona de dos maneras diferentes y puede configurarse para optimizar el proceso de gestion de los reportes.
+El sistema de reportes de RaidProtect permite a tu comunidad remontar en unos clics cualquier mensaje o miembro sospechoso a tus moderadores, mediante un clic derecho, un botón dedicado o el comando `/report`. Se configura para optimizar el tratamiento de los reportes por parte de tu equipo.
 
-## ❓ Como funcionan los reportes {#working}
+## ❓ ¿Cómo funcionan los reportes? {#working}
 Los miembros pueden reportar contenido a traves de 4 metodos principales.
 
 1. **Clic derecho en un mensaje**
@@ -118,3 +118,17 @@ Cada reporte llega al canal configurado en forma de una alerta con varias accion
 :::note
 Asegurate de que tus moderadores esten bien formados en el uso de esta funcion y anima a tus miembros activos a usarla de manera responsable.
 :::
+
+## Preguntas frecuentes {#faq}
+
+### ¿Cómo reportar a un miembro o un mensaje?
+
+Un miembro puede hacer clic derecho en un mensaje o en un perfil, elegir «Aplicaciones» y luego «Reportar este mensaje» o «Reportar al usuario». También puede usar el botón de un panel de información, o el comando `/report (miembro) (razón)` en cualquier canal.
+
+### ¿Dónde llegan los reportes?
+
+Se envían al canal de reportes que configures. Este canal debe estar reservado a los moderadores y administradores para garantizar un tratamiento correcto de los reportes.
+
+### ¿Cómo limitar los reportes falsos?
+
+El botón «Reportantes falsos» actúa sobre los miembros cuyos reportes son rechazados con regularidad. Defines un umbral y una ventana de cálculo, y luego una acción automática: notificar a los moderadores, bloquear los reportes, sancionar, o ambas cosas. También puedes bloquear a un miembro manualmente con el [comando `/block`](./utilities.mdx#block).

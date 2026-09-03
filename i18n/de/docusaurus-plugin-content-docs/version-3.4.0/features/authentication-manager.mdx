@@ -14,7 +14,7 @@ import Icon from "@site/src/components/Icon";
 
 Der Authentication Manager (AM) von RaidProtect ist ein fortschrittliches Authentifizierungssystem, das den Zugang zu bestimmten Discord-Rollen durch eine Identitätsverifizierung schützt. Dank Passkeys (WebAuthn), PIN-Codes und OTP können nur authentifizierte Mitglieder sensible Rollen erhalten.
 
-## ❓ Allgemeine Funktionsweise {#working}
+## ❓ Wie funktioniert der Authentication Manager? {#working}
 
 Der Authentication Manager basiert auf einem System aus **geschützten Rollen** und **temporären Sitzungen**. Wenn ein Administrator eine Rolle mit dem AM konfiguriert:
 
@@ -236,3 +236,21 @@ Sehen Sie sich das Prüfprotokoll des Servers mit Paginierung an. Jeder Eintrag 
 ### Sitzungs-Tab {#sessions-tab}
 
 Sehen Sie sich alle Sitzungen des Servers mit ihrem Status (Aktiv, Abgelaufen, Widerrufen), dem Benutzer, der Rolle sowie den Erstellungs- und Ablaufdaten an.
+
+## Häufig gestellte Fragen {#faq}
+
+### Welche Authentifizierungsmethoden sind verfügbar?
+
+Es gibt drei Methoden: den PIN-Code (einfach oder verstärkt), das OTP (2FA-Code nach dem TOTP-Standard) und die Passkeys (WebAuthn). Passkeys bieten das höchste Sicherheitsniveau (Grad S).
+
+### Was passiert, wenn eine Sitzung abläuft?
+
+Die geschützte Rolle wird dem Mitglied automatisch entzogen. Es muss sich über `/auth` erneut authentifizieren, um sie wieder zu erhalten, oder seine Sitzung verlängern, bevor sie abläuft.
+
+### Was tun, wenn ich meine Anmeldedaten vergesse?
+
+Über Ihr Profil `/auth-profile` setzt die Schaltfläche „Ich habe meine Anmeldedaten vergessen" Ihr Konto vollständig zurück: Alle Ihre Methoden werden gelöscht und Ihre Zugänge widerrufen. Diese Aktion ist unwiderruflich und erfordert eine vollständige Neukonfiguration.
+
+### Wie viele Rollen kann man mit dem Authentication Manager schützen?
+
+Sie können 3 Rollen in der kostenlosen Version und 10 Rollen in der Premium-Version schützen, für jeweils 20 bzw. 50 Benutzer.

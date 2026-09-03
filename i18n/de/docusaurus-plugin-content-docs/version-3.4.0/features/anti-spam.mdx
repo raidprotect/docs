@@ -13,9 +13,9 @@ import SeparatedBox from '@site/src/components/SeparatedBox';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Der Anti-Spam von RaidProtect ist ein leistungsstarkes Werkzeug, um Spam auf Ihrem Discord-Server zu verhindern. Dank seines automatischen Erkennungssystems kümmert er sich selbstständig um die Probleme, ohne dass Sie eingreifen müssen.
+Der Anti-Spam von RaidProtect erkennt und ahndet Spam auf Ihrem Discord-Server automatisch: wiederholte Nachrichten, Massen-Erwähnungen, Flood und massenhaft gesendete Links, ohne dass ein Moderator eingreifen muss. Dank seiner automatischen Erkennung kümmert er sich ganz von selbst um die Probleme.
 
-## ❓ Funktionsweise des Anti-Spam {#working}
+## ❓ Wie funktioniert der Anti-Spam? {#working}
 
 Der Anti-Spam von RaidProtect erkennt und blockiert automatisch verdächtige Verhaltensweisen. Er unterscheidet zwischen zwei Arten von Spam.
 - **Schwerer Spam:** Nachrichten mit Einladungslinks, Massen-Erwähnungen oder Bildern. Dieser Spam wird häufig bei Raids verwendet.
@@ -27,18 +27,15 @@ Der Anti-Spam von RaidProtect handelt auf zwei Arten.
 
 ## 🛡️ Anti-Spam-Konfiguration {#config}
 
-RaidProtect bietet drei Sicherheitsstufen, um den Anforderungen Ihres Servers gerecht zu werden.
-- 🔴 **Hoch:** Sanktioniert jeglichen Spam und sogar schweren Spam in den ignorierten Kanälen.
-- 🟠 **Mittel:** Sanktioniert jeglichen Spam, respektiert aber die ignorierten Kanäle.
-- 🟢 **Niedrig:** Sanktioniert nur schweren Spam.
+Der Anti-Spam wird per Schalter ein- oder ausgeschaltet. Sobald er aktiviert ist, überwacht er den gesamten Server (mit Ausnahme der ignorierten Kanäle, Rollen und Mitglieder) und wendet für jede Spam-Art die von Ihnen festgelegte Sanktion an.
 
 <AntiSpamSettingsMockup />
 
-### Sicherheitsstufe ändern {#level}
+### Anti-Spam aktivieren oder deaktivieren {#toggle}
 
 1. Führen Sie den [`/settings`-Befehl](../setup.md#settings) aus.
 2. Klicken Sie auf die Schaltfläche „**Anti-spam**".
-3. Wählen Sie die gewünschte Anti-Spam-Stufe im ersten Selektor.
+3. Aktivieren oder deaktivieren Sie den Anti-Spam. Die gesamte Feinabstimmung erfolgt anschließend pro Auslöser im Tab „**Sanktionen**".
 
 ### Ignorierte Rollen, Nutzer und Kanäle verwalten {#ignore}
 
@@ -137,3 +134,21 @@ Es werden detaillierte Logs mit allen vom Anti-Spam gelöschten Nachrichten gene
   </TabItem>
 </Tabs>
 </SeparatedBox>
+
+## Häufig gestellte Fragen {#faq}
+
+### Funktioniert der Anti-Spam ohne Konfiguration?
+
+Ja. Er erkennt und blockiert Spam-Verhalten automatisch ab der Installation. Anschließend können Sie die Sanktion für jede Spam-Art nach Ihren Bedürfnissen anpassen.
+
+### Hat der Anti-Spam Sicherheitsstufen (hoch, mittel, niedrig)?
+
+Nein. Der Anti-Spam wird einfach ein- oder ausgeschaltet. Die Feinabstimmung erfolgt pro Auslöser: Jede Spam-Art hat ihre eigene Sanktion, die Sie anpassen oder vollständig deaktivieren können.
+
+### Kann man bestimmte Kanäle oder Mitglieder vom Anti-Spam ausschließen?
+
+Ja, Sie können bestimmte Kanäle, Rollen oder Mitglieder ignorieren. Kanäle, deren Name „spam" enthält, werden automatisch ignoriert, und Mitglieder mit Administratorberechtigung werden immer ignoriert.
+
+### Kann man die auf Spam angewendete Sanktion wählen?
+
+Ja. Jede Spam-Art (Auslöser) kann eine eigene Sanktion erhalten, vom einfachen Warn bis zum Ban, über Timeout, Mute, Jail, Kick oder Softban. Sie können einen Auslöser auch vollständig deaktivieren.

@@ -7,7 +7,7 @@ import HoneypotMockup from '@site/src/components/DiscordMessage/mockups/honeypot
 
 <HoneypotMockup />
 
-RaidProtect's **HoneyPot** (or trap channel) is a channel where **no one should write**. Since real members know to stay away from it, the only ones who post there are **hacked accounts** or spam bots: RaidProtect sanctions them automatically.
+RaidProtect's **HoneyPot** (or trap channel) is an anti-spam feature: a channel where **no one should write**. Since real members know to stay away from it, the only ones who post there are **hacked accounts** or spam bots: RaidProtect sanctions them automatically.
 
 :::info
 **You already have ScamLens by default.** The [ScamLens](./scam-images.md) anti-scam is active on your server with no configuration at all: it specializes in **scam images**, detecting them, deleting them, and sanctioning the compromised account with very high reliability. For image-based scams, ScamLens is more than enough on its own. The HoneyPot is mainly useful if you want maximum security and to block the **other types of spam**: link spam, text raids, bots.
@@ -80,3 +80,21 @@ The two work hand in hand:
 - **Every new image caught by a HoneyPot enriches ScamLens**, which can then block it across all protected servers.
 
 ScamLens is already active by default on your server. **Enabling the HoneyPot doesn't break anything**: it simply complements what is already there, and it helps RaidProtect protect the whole community better.
+
+## Frequently asked questions {#faq}
+
+### Is the HoneyPot useful if I already have ScamLens?
+
+For image scams, ScamLens is more than enough: it is active by default and detects, deletes and sanctions them on its own. The HoneyPot is mainly useful for blocking the other types of spam, such as link spam, text raids and bots.
+
+### Which sanction does the HoneyPot apply?
+
+You choose the sanction: Ban and Softban are free, while Kick, Timeout, Jail and Mute are reserved for Premium servers. The Softban is a good compromise, since it cleans up the messages and removes the hacked account while letting the legitimate owner come back.
+
+### Are staff members sanctioned if they write in the HoneyPot?
+
+It depends on the "Ignored members" option. By default, everyone is sanctioned, even staff. RaidProtect never sanctions itself, and bots never trigger the trap.
+
+### What happens to the messages of an account caught by the HoneyPot?
+
+On top of the sanction, the messages sent by that member in the past 10 minutes are deleted across the whole server, to stop the spam if it has already spread to other channels.

@@ -9,7 +9,7 @@ import CaptchaMockup from '@site/src/components/DiscordMessage/mockups/captcha';
 
 {/* <CaptchaMockup /> : oculta por el momento */}
 
-Evita que los selfbots accedan a tu servidor de Discord y bloquea los raids gracias al sistema de captcha de RaidProtect.
+El captcha de RaidProtect pide a cada nuevo miembro que copie un código antes de acceder a tu servidor de Discord, lo que bloquea los selfbots y los raids al filtrar las cuentas que no son humanas.
 
 El captcha es una de las funciones más populares de RaidProtect, aunque sigue siendo completamente opcional. Permite pedir a cada nuevo usuario que supere un desafío que consiste en escribir un código, con el fin de verificar que no se trata de un robot (selfbot).
 
@@ -29,7 +29,7 @@ El captcha se basa en un rol **@No verificado** y un canal llamado **#verificaci
 **Gestión de permisos:** Los permisos del rol **@No verificado** son configurados automáticamente por RaidProtect. Puedes renombrar el rol y el canal, pero no los elimines.
 :::
 
-## 🚪 Configuración del captcha {#config}
+## 🚪 ¿Cómo configurar el captcha? {#config}
 
 La instalación del captcha es sencilla y rápida.
 
@@ -68,3 +68,21 @@ Si usas un sistema de rol automático (autorole) distinto al de RaidProtect, pue
 Usa el comando: ```/bypass captcha [usuario]```
 
 Reemplaza `[usuario]` por el identificador deseado; este dispondrá de 10 minutos para unirse al servidor sin necesidad de resolver el captcha. Si el usuario ya está presente, el captcha se resolverá automáticamente. También puedes usar el comando sin especificar ningún usuario para conocer la lista actual de usuarios con bypass.
+
+## Preguntas frecuentes {#faq}
+
+### ¿Cuánto tiempo hay para resolver el captcha?
+
+Los nuevos miembros disponen de 1 a 10 minutos (5 minutos por defecto) y de 1 a 3 intentos (2 intentos por defecto). Pasado ese límite, son expulsados automáticamente del servidor.
+
+### ¿Qué pasa si un miembro falla el captcha?
+
+Si agota sus intentos o supera el plazo, es expulsado automáticamente del servidor. No obstante, puede volver y reintentar el captcha.
+
+### ¿Se puede eximir a un miembro del captcha?
+
+Sí, con el comando `/bypass captcha [usuario]`. El miembro dispone de 10 minutos para unirse sin resolver el captcha, y si ya está presente, el captcha se resuelve automáticamente.
+
+### ¿Se pueden renombrar el rol @No verificado y el canal #verificación?
+
+Sí, puedes renombrarlos libremente. No los elimines, porque RaidProtect los necesita para que el captcha funcione y configura sus permisos automáticamente.

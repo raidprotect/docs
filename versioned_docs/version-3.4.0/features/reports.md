@@ -9,9 +9,9 @@ import ReportsMockup from '@site/src/components/DiscordMessage/mockups/reports';
 
 <ReportsMockup />
 
-Le système de signalement de RaidProtect permet à votre communauté de signaler rapidement tout contenu problématique ou utilisateur suspect. Il fonctionne de deux manières différentes, et peut être configuré pour optimiser le processus de gestion des signalements.
+Le système de signalement de RaidProtect permet à votre communauté de remonter en quelques clics tout message ou membre suspect à vos modérateurs, via un clic droit, un bouton dédié ou la commande `/report`. Il se configure pour optimiser le traitement des signalements par votre équipe.
 
-## ❓ Fonctionnement des signalements {#working}
+## ❓ Comment fonctionnent les signalements ? {#working}
 Les membres peuvent signaler un contenu via 4 méthodes principales.
 
 1. **Clic droit sur un message** 
@@ -118,3 +118,17 @@ Chaque signalement arrive dans le salon configuré sous forme d'une alerte avec 
 :::note
 Assurez-vous que vos modérateurs sont bien formés à l'utilisation de cette fonctionnalité et encouragez vos membres actifs à l'utiliser de manière responsable ! 
 :::
+
+## Questions fréquentes {#faq}
+
+### Comment signaler un membre ou un message ?
+
+Un membre peut faire un clic droit sur un message ou un profil, choisir « Applications » puis « Signaler ce message » ou « Signaler l'utilisateur ». Il peut aussi passer par le bouton d'un panneau d'information, ou par la commande `/report (membre) (raison)` dans n'importe quel salon.
+
+### Où arrivent les signalements ?
+
+Ils sont envoyés dans le salon de signalement que vous configurez. Ce salon doit être réservé aux modérateurs et administrateurs pour assurer un traitement correct des signalements.
+
+### Comment limiter les faux signalements ?
+
+Le bouton « Faux signaleurs » agit sur les membres dont les signalements sont régulièrement refusés. Vous définissez un seuil et une fenêtre de calcul, puis une action automatique : notifier les modérateurs, bloquer les signalements, sanctionner, ou les deux. Vous pouvez aussi bloquer un membre manuellement avec la [commande `/block`](./utilities.mdx#block).

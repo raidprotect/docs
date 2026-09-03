@@ -11,7 +11,7 @@ RaidProtect schützt Ihren Server automatisch vor **Betrugsbildern** (Krypto-Bet
 ScamLens ist **standardmäßig aktiviert, sobald RaidProtect Ihrem Server beitritt**. Sie sind sofort geschützt, ohne etwas einzustellen.
 :::
 
-## ❓ So funktioniert es {#working}
+## ❓ So funktioniert es? {#working}
 
 Sobald ein Bild gepostet wird, analysiert ScamLens es. Handelt es sich um einen bekannten Betrug:
 
@@ -21,7 +21,7 @@ Sobald ein Bild gepostet wird, analysiert ScamLens es. Handelt es sich um einen 
 
 ScamLens kümmert sich nur um **Bilder**. Andere Spam-Arten werden vom [Anti-spam](./anti-spam.mdx) und vom [HoneyPot](./honeypot.md) behandelt.
 
-## 🔧 Deaktivieren oder wieder aktivieren {#config}
+## 🔧 Wie deaktiviert oder reaktiviert man ScamLens? {#config}
 
 Die auf Betrugsbilder angewandte Sanktion **folgt standardmäßig der Ihres [HoneyPots](./honeypot.md#sanction)** (oder ein Timeout, wenn der HoneyPot nicht aktiviert ist). Sie können sie über dasselbe Menü ändern, deaktivieren oder wieder aktivieren:
 
@@ -49,3 +49,17 @@ Jeden Monat veröffentlichen wir das **[Bedrohungswetter](/blog/tags/threats)**,
 | [April 2026](/blog/threat-weather-april-2026) | 1.400.000 | 40.000 |
 | [Mai 2026](/blog/threat-weather-may-2026) | 2.300.000 | 80.000 |
 | [Juni 2026](/blog/threat-weather-june-2026) | 4.000.000 | 160.000 |
+
+## Häufig gestellte Fragen {#faq}
+
+### Muss man ScamLens konfigurieren?
+
+Nein. ScamLens ist standardmäßig aktiviert, sobald RaidProtect Ihrem Server beitritt. Sie sind sofort geschützt, ohne etwas einzustellen.
+
+### Blockiert ScamLens etwas anderes als Bilder?
+
+Nein, ScamLens kümmert sich nur um Betrugsbilder. Andere Spam-Arten werden vom [Anti-spam](./anti-spam.mdx) und vom [HoneyPot](./honeypot.md) behandelt.
+
+### Welche Sanktion wird auf ein Betrugsbild angewendet?
+
+Standardmäßig wendet ScamLens die Sanktion Ihres [HoneyPots](./honeypot.md#sanction) an, oder ein Timeout, wenn der HoneyPot nicht aktiviert ist. Sie können sie über das Menü Anti-spam unter den Sanktionen ändern, deaktivieren oder wieder aktivieren.

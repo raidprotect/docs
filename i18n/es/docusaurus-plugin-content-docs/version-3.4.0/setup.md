@@ -3,7 +3,22 @@ title: Instalación
 description: "Instala y configura RaidProtect en tu servidor de Discord en minutos con el comando /settings y el menú de configuración."
 ---
 
+import Head from '@docusaurus/Head';
+
+<Head>
+  <script type="application/ld+json">{`{"@context":"https://schema.org","@type":"HowTo","name":"Configurar RaidProtect en un servidor de Discord","description":"Instalar y configurar el bot de protección RaidProtect con los comandos /setup y /settings.","step":[{"@type":"HowToStep","position":1,"name":"Lanzar /setup","text":"Escribe /setup en un canal donde el bot esté activo para iniciar la configuración guiada."},{"@type":"HowToStep","position":2,"name":"Configuración recomendada","text":"Selecciona «Configuración recomendada» y activa o desactiva las funciones clave mediante el menú de selección."},{"@type":"HowToStep","position":3,"name":"Validar los cambios","text":"El bot muestra un resumen de las funciones activadas y de los cambios antes de aplicarlos al servidor."},{"@type":"HowToStep","position":4,"name":"Ajustar con /settings","text":"Usa /settings en cualquier momento para visualizar, modificar o restablecer tus parámetros."}]}`}</script>
+</Head>
+
 RaidProtect simplifica la gestión de tu servidor gracias a dos herramientas potentes: el comando [`/setup`](#install) para una configuración guiada paso a paso y el comando [`/settings`](#settings) para modificar tus parámetros en cualquier momento a través de un menú centralizado. Esta guía de instalación te explica cómo usarlos de manera eficaz.
+
+## Por dónde empezar {#etapes}
+
+Para un servidor que parte de cero, este es el orden recomendado:
+
+1. **Activa el modo Comunidad de Discord** (Ajustes del servidor, luego «Activar la comunidad»). Es un requisito previo para el [captcha](./features/captcha) y el [modo raid](./features/raid-mode).
+2. **Lanza [`/setup`](#install)**: aquí eliges qué funciones activar, mediante la configuración recomendada. RaidProtect crea automáticamente el canal de registros y aplica los cambios tras un resumen.
+3. **Ajusta el [anti-spam](./features/anti-spam)**: sus sanciones se personalizan por tipo de spam.
+4. **Ajusta en cualquier momento con [`/settings`](#settings).**
 
 ## Instalación guiada {#install}
 
@@ -58,6 +73,19 @@ import SettingsMockup from '@site/src/components/DiscordMessage/mockups/settings
 ![Captura de pantalla del botón restablecer](../../../en/docusaurus-plugin-content-docs/current/assets/rp-button-reset.webp)
 
 El bot confirmará el restablecimiento antes de aplicar los cambios.
+
+## ¿Qué configuración para tu servidor? {#quelle-config}
+
+La configuración recomendada de `/setup` ya te guía en estas decisiones. Si empiezas desde cero, o si preparas tu instalación con una IA, localiza lo que corresponde a tu servidor: cada necesidad apunta a la función que la resuelve.
+
+- **Raids, oleadas de cuentas que llegan de golpe**: el [modo raid](./features/raid-mode) cierra las entradas y bloquea los canales mientras dura el ataque.
+- **Spam, publicidad, enlaces de estafa**: el [anti-spam](./features/anti-spam) sanciona automáticamente, y el [HoneyPot](./features/honeypot) atrapa las cuentas de spam.
+- **Bots que se registran en masa**: el [captcha](./features/captcha) hace que cada recién llegado demuestre que es humano.
+- **Estafas por imagen** (falsos giveaways, phishing): [ScamLens](./features/scam-images) las detecta y las elimina.
+- **Riesgo de nuke o cuentas del staff hackeadas**: aplica el [mínimo privilegio](/es/learn/least-privilege) y el [Authentication Manager](./features/authentication-manager).
+- **Una comunidad que puede ayudarte a moderar**: activa los [reportes](./features/reports).
+
+Luego ajusta las [sanciones](./features/sanctions) (expulsión, timeout, baneo, jail) a tu servidor.
 
 :::info ¿Un problema de configuración?
 Si encuentras un problema, consulta la sección [Problemas frecuentes](./guides/malfunctions) o únete a nuestro [servidor de soporte](https://raidprotect.bot/discord) para obtener ayuda.

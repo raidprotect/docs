@@ -9,9 +9,9 @@ import ReportsMockup from '@site/src/components/DiscordMessage/mockups/reports';
 
 <ReportsMockup />
 
-O sistema de denúncias do RaidProtect permite que a sua comunidade denuncie rapidamente qualquer conteúdo problemático ou usuário suspeito. Ele funciona de duas formas diferentes e pode ser configurado para otimizar o processo de gestão das denúncias.
+O sistema de denúncias do RaidProtect permite que a sua comunidade encaminhe em poucos cliques qualquer mensagem ou membro suspeito aos seus moderadores, por meio de um clique direito, de um botão dedicado ou do comando `/report`. Ele se configura para otimizar o tratamento das denúncias pela sua equipe.
 
-## ❓ Como funcionam as denúncias {#working}
+## ❓ Como funcionam as denúncias? {#working}
 Os membros podem denunciar um conteúdo por meio de 4 métodos principais.
 
 1. **Clique direito em uma mensagem** 
@@ -118,3 +118,17 @@ Cada denúncia chega ao canal configurado na forma de um alerta com várias aç�
 :::note
 Certifique-se de que os seus moderadores estão bem preparados para o uso desta funcionalidade e incentive os seus membros ativos a utilizá-la de forma responsável! 
 :::
+
+## Perguntas frequentes {#faq}
+
+### Como denunciar um membro ou uma mensagem?
+
+Um membro pode clicar com o botão direito em uma mensagem ou em um perfil, escolher « Aplicativos » e depois « Denunciar esta mensagem » ou « Denunciar o usuário ». Ele também pode usar o botão de um painel de informações, ou o comando `/report (membro) (motivo)` em qualquer canal.
+
+### Onde chegam as denúncias?
+
+Elas são enviadas ao canal de denúncias que você configura. Esse canal deve ser reservado aos moderadores e administradores para garantir um tratamento correto das denúncias.
+
+### Como limitar as denúncias falsas?
+
+O botão « Denunciantes falsos » atua sobre os membros cujas denúncias são regularmente recusadas. Você define um limite e uma janela de cálculo, e depois uma ação automática: notificar os moderadores, bloquear as denúncias, sancionar, ou ambos. Você também pode bloquear um membro manualmente com o [comando `/block`](./utilities.mdx#block).

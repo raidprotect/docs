@@ -9,9 +9,9 @@ import ReportsMockup from '@site/src/components/DiscordMessage/mockups/reports';
 
 <ReportsMockup />
 
-Das Meldesystem von RaidProtect ermöglicht es Ihrer Community, jeden problematischen Inhalt oder verdächtigen Nutzer schnell zu melden. Es funktioniert auf zwei verschiedene Arten und lässt sich konfigurieren, um die Bearbeitung der Meldungen zu optimieren.
+Das Meldesystem von RaidProtect ermöglicht es Ihrer Community, jede verdächtige Nachricht oder jedes verdächtige Mitglied mit wenigen Klicks an Ihre Moderatoren zu melden, per Rechtsklick, über eine eigene Schaltfläche oder mit dem Befehl `/report`. Es lässt sich konfigurieren, um die Bearbeitung der Meldungen durch Ihr Team zu optimieren.
 
-## ❓ Funktionsweise der Meldungen {#working}
+## ❓ Wie funktionieren die Meldungen? {#working}
 Mitglieder können einen Inhalt über 4 Hauptmethoden melden.
 
 1. **Rechtsklick auf eine Nachricht**
@@ -118,3 +118,17 @@ Jede Meldung erreicht den konfigurierten Kanal in Form einer Warnung mit mehrere
 :::note
 Stellen Sie sicher, dass Ihre Moderatoren im Umgang mit dieser Funktion gut geschult sind, und ermutigen Sie Ihre aktiven Mitglieder, sie verantwortungsvoll zu nutzen!
 :::
+
+## Häufig gestellte Fragen {#faq}
+
+### Wie meldet man ein Mitglied oder eine Nachricht?
+
+Ein Mitglied kann mit Rechtsklick auf eine Nachricht oder ein Profil „Anwendungen" und dann „Nachricht melden" oder „Benutzer melden" wählen. Es kann auch die Schaltfläche eines Informationspanels nutzen oder den Befehl `/report (mitglied) (grund)` in einem beliebigen Kanal verwenden.
+
+### Wo kommen die Meldungen an?
+
+Sie werden in den Meldekanal gesendet, den Sie konfigurieren. Dieser Kanal sollte Moderatoren und Administratoren vorbehalten sein, um eine ordnungsgemäße Bearbeitung der Meldungen zu gewährleisten.
+
+### Wie begrenzt man Falschmeldungen?
+
+Die Schaltfläche „Falschmelder" wirkt auf Mitglieder, deren Meldungen regelmäßig abgelehnt werden. Sie legen eine Schwelle und ein Zeitfenster fest und anschließend eine automatische Aktion: Moderatoren benachrichtigen, Meldungen blockieren, sanktionieren oder beides. Sie können ein Mitglied auch manuell mit dem [`/block`-Befehl](./utilities.mdx#block) blockieren.

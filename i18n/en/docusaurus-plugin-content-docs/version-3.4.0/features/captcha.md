@@ -9,7 +9,7 @@ import CaptchaMockup from '@site/src/components/DiscordMessage/mockups/captcha';
 
 {/* <CaptchaMockup /> : hidden for now */}
 
-Prevent selfbots from accessing your Discord server and block raids with RaidProtect's captcha system.
+RaidProtect's captcha asks every new member to type back a code before accessing your Discord server, which blocks selfbots and raids by filtering out accounts that are not human.
 
 The captcha is one of RaidProtect's most popular features, although it remains entirely optional. It requires each new user to complete a challenge consisting of typing a code, in order to verify that they are not a bot (selfbot).
 
@@ -29,7 +29,7 @@ The captcha relies on an **@Unverified** role and a channel named **#verificatio
 **Permission management:** The permissions of the **@Unverified** role are automatically configured by RaidProtect. You can rename the role and the channel, but do not delete them.
 :::
 
-## 🚪 Captcha configuration {#config}
+## 🚪 How to configure the captcha? {#config}
 
 Setting up the captcha is quick and easy.
 
@@ -68,3 +68,21 @@ If you use an automatic role (autorole) system other than RaidProtect, it may in
 Use the command: ```/bypass captcha [user]```
 
 Replace `[user]` with the desired identifier; that user will have 10 minutes to join the server without needing to solve the captcha. If the user is already present, the captcha will be resolved automatically. You can also use the command without specifying a user to see the current list of bypassed users.
+
+## Frequently asked questions {#faq}
+
+### How long do members have to solve the captcha?
+
+New members have between 1 and 10 minutes (5 minutes by default) and between 1 and 3 attempts (2 attempts by default). Beyond that, they are automatically kicked from the server.
+
+### What happens if a member fails the captcha?
+
+If they use up their attempts or run out of time, they are automatically kicked from the server. They can, however, come back and try the captcha again.
+
+### Can I exempt a member from the captcha?
+
+Yes, with the `/bypass captcha [user]` command. The member has 10 minutes to join without solving the captcha, and if they are already present, the captcha is resolved automatically.
+
+### Can I rename the @Unverified role and the #verification channel?
+
+Yes, you can rename them freely. Do not delete them, as RaidProtect needs them to run the captcha and configures their permissions automatically.

@@ -11,7 +11,7 @@ RaidProtect automatically protects your server against **scam images** (crypto s
 ScamLens is **enabled by default the moment RaidProtect joins your server**. You are protected right away, with nothing to configure.
 :::
 
-## ❓ How it works {#working}
+## ❓ How does it work? {#working}
 
 As soon as an image is posted, ScamLens analyzes it. If it is a known scam:
 
@@ -21,7 +21,7 @@ As soon as an image is posted, ScamLens analyzes it. If it is a known scam:
 
 ScamLens only handles **images**. Other types of spam are handled by the [Anti-spam](./anti-spam.mdx) and the [HoneyPot](./honeypot.md).
 
-## 🔧 Disable or re-enable {#config}
+## 🔧 How to disable or re-enable ScamLens? {#config}
 
 The sanction applied to scam images **follows your [HoneyPot](./honeypot.md#sanction) sanction by default** (or a Timeout if the HoneyPot is not enabled). You can change it, disable it or re-enable it from the same menu:
 
@@ -49,3 +49,17 @@ Every month we publish the **[Threat weather](/blog/tags/threats)**, a public re
 | [April 2026](/blog/threat-weather-april-2026) | 1,400,000 | 40,000 |
 | [May 2026](/blog/threat-weather-may-2026) | 2,300,000 | 80,000 |
 | [June 2026](/blog/threat-weather-june-2026) | 4,000,000 | 160,000 |
+
+## Frequently asked questions {#faq}
+
+### Do I need to configure ScamLens?
+
+No. ScamLens is enabled by default the moment RaidProtect joins your server. You are protected right away, with nothing to configure.
+
+### Does ScamLens block anything other than images?
+
+No, ScamLens only handles scam images. Other types of spam are handled by the [Anti-spam](./anti-spam.mdx) and the [HoneyPot](./honeypot.md).
+
+### Which sanction is applied to a scam image?
+
+By default, ScamLens applies your [HoneyPot](./honeypot.md#sanction) sanction, or a Timeout if the HoneyPot is not enabled. You can change it, disable it or re-enable it from the Anti-spam menu, under Sanctions.

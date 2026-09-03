@@ -11,9 +11,9 @@ import RaidModeMockup from '@site/src/components/DiscordMessage/mockups/raid-mod
 
 ## Mode raid {#raid-mode}
 
-Le mode raid est une fonctionnalité d'urgence conçue pour bloquer instantanément tous les nouveaux utilisateurs tentant de rejoindre votre serveur, avec une durée maximale de 24 heures. Pour bloquer définitivement les nouveaux membres, utilisez la [commande `/joinlock`](./join-lock.mdx).
+Le mode raid de RaidProtect est une fonctionnalité d'urgence qui bloque instantanément tous les nouveaux utilisateurs tentant de rejoindre votre serveur, pendant une durée maximale de 24 heures. Notre bot de protection l'active seul dès qu'il détecte une vague d'arrivées suspecte, et vous pouvez aussi le déclencher à la main. Pour bloquer définitivement les nouveaux membres, utilisez la [commande `/joinlock`](./join-lock.mdx).
 
-### ❓ Fonctionnement du mode raid {#working}
+### ❓ Comment fonctionne le mode raid ? {#working}
 
 RaidProtect active automatiquement le mode raid si un grand nombre d’utilisateurs rejoint votre serveur en un court laps de temps. Par défaut, le mode raid s'active si plus de 10 utilisateurs rejoignent votre serveur en moins de 10 secondes. Lorsque le mode raid est activé, aucun utilisateur ne peut rejoindre le serveur. Ils sont bloqués au niveau de l’invitation.
 
@@ -113,3 +113,21 @@ Pour renforcer la sécurité, vous pouvez exiger un âge minimum pour les compte
 Utilisez la commande : ```/bypass minage [utilisateur]```
 
 Remplacez `[utilisateur]` par l’identifiant souhaité, ce dernier disposera de 10 minutes pour rejoindre le serveur sans être expulsé par l'âge requis. Vous pouvez aussi utiliser la commande sans spécifier d'utilisateur pour connaître la liste actuelle des utilisateurs bypass.
+
+## Questions fréquentes {#faq}
+
+### Le mode raid s'active-t-il automatiquement ?
+
+Oui. Par défaut, nous activons le mode raid dès que plus de 10 utilisateurs rejoignent votre serveur en moins de 10 secondes. Ce seuil est configurable dans les paramètres de l'auto raid mode.
+
+### Comment activer le mode raid manuellement ?
+
+Un utilisateur disposant de la permission d'expulsion exécute la commande `/raidmode`. Un message est alors publié dans le salon de logs pour signaler l'activation, et plus aucun membre ne peut rejoindre le serveur.
+
+### Le mode raid se désactive-t-il tout seul ?
+
+Le mode raid activé manuellement ne s'arrête pas automatiquement : pensez à le désactiver avec la même commande une fois la menace écartée. L'auto raid mode, lui, se coupe après la durée que vous avez configurée (5 minutes par défaut, 24 heures maximum).
+
+### Peut-on laisser un membre légitime rejoindre pendant un raid ?
+
+Oui, avec la commande `/bypass raid [utilisateur]` : le membre dispose alors de 10 minutes pour rejoindre sans être expulsé (7 utilisateurs bypass maximum en même temps). Le bypass nécessite le mode expulsion, réservé aux serveurs Premium.

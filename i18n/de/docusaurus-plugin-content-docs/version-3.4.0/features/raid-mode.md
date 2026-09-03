@@ -11,9 +11,9 @@ import RaidModeMockup from '@site/src/components/DiscordMessage/mockups/raid-mod
 
 ## Raid-Modus {#raid-mode}
 
-Der Raid-Modus ist eine Notfallfunktion, die darauf ausgelegt ist, alle neuen Nutzer, die versuchen, Ihrem Server beizutreten, sofort zu blockieren, mit einer maximalen Dauer von 24 Stunden. Um neue Mitglieder dauerhaft zu blockieren, verwenden Sie den [`/joinlock`-Befehl](./join-lock.mdx).
+Der Raid-Modus von RaidProtect ist eine Notfallfunktion, die alle neuen Nutzer, die versuchen, Ihrem Server beizutreten, sofort für eine maximale Dauer von 24 Stunden blockiert. Unser Schutzbot aktiviert ihn selbst, sobald er eine verdächtige Beitrittswelle erkennt, und Sie können ihn auch manuell auslösen. Um neue Mitglieder dauerhaft zu blockieren, verwenden Sie den [`/joinlock`-Befehl](./join-lock.mdx).
 
-### ❓ Funktionsweise des Raid-Modus {#working}
+### ❓ Wie funktioniert der Raid-Modus? {#working}
 
 RaidProtect aktiviert den Raid-Modus automatisch, wenn eine große Anzahl von Nutzern Ihrem Server in kurzer Zeit beitritt. Standardmäßig wird der Raid-Modus aktiviert, wenn mehr als 10 Nutzer Ihrem Server in weniger als 10 Sekunden beitreten. Wenn der Raid-Modus aktiviert ist, kann kein Nutzer dem Server beitreten. Sie werden auf Einladungsebene blockiert.
 
@@ -113,3 +113,21 @@ Um die Sicherheit zu erhöhen, können Sie ein Mindestalter für die Discord-Kon
 Verwenden Sie den Befehl: ```/bypass minage [benutzer]```
 
 Ersetzen Sie `[benutzer]` durch die gewünschte Kennung; diese Person hat dann 10 Minuten Zeit, dem Server beizutreten, ohne aufgrund des erforderlichen Alters gekickt zu werden. Sie können den Befehl auch ohne Angabe eines Nutzers verwenden, um die aktuelle Liste der Bypass-Nutzer anzuzeigen.
+
+## Häufig gestellte Fragen {#faq}
+
+### Aktiviert sich der Raid-Modus automatisch?
+
+Ja. Standardmäßig aktivieren wir den Raid-Modus, sobald mehr als 10 Nutzer Ihrem Server in weniger als 10 Sekunden beitreten. Dieser Schwellenwert ist in den Einstellungen des Auto RaidMode konfigurierbar.
+
+### Wie aktiviert man den Raid-Modus manuell?
+
+Ein Nutzer mit Kick-Berechtigung führt den Befehl `/raidmode` aus. Anschließend wird eine Nachricht im Log-Kanal veröffentlicht, um die Aktivierung zu signalisieren, und kein Mitglied kann dem Server mehr beitreten.
+
+### Deaktiviert sich der Raid-Modus von selbst?
+
+Der manuell aktivierte Raid-Modus stoppt nicht automatisch: Denken Sie daran, ihn mit demselben Befehl zu deaktivieren, sobald die Bedrohung vorüber ist. Der Auto RaidMode hingegen schaltet sich nach der von Ihnen konfigurierten Dauer ab (standardmäßig 5 Minuten, maximal 24 Stunden).
+
+### Kann man ein legitimes Mitglied während eines Raids beitreten lassen?
+
+Ja, mit dem Befehl `/bypass raid [benutzer]`: Das Mitglied hat dann 10 Minuten Zeit, beizutreten, ohne gekickt zu werden (maximal 7 Bypass-Nutzer gleichzeitig). Der Bypass erfordert den Kick-Modus, der Premium-Servern vorbehalten ist.
