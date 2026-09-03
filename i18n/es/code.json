@@ -4523,5 +4523,37 @@
   "learn.hub.readMore": {
     "message": "Leer",
     "description": "Learn hub card read link"
+  },
+  "home.schema.feature.antiraid": {
+    "message": "Protección anti-raid (modo raid, bloqueo de canales)",
+    "description": "SoftwareApplication featureList item"
+  },
+  "home.schema.feature.captcha": {
+    "message": "Captcha de verificación en la entrada",
+    "description": "SoftwareApplication featureList item"
+  },
+  "home.schema.feature.antispam": {
+    "message": "Anti-spam automático (flood, enlaces de estafa, menciones masivas)",
+    "description": "SoftwareApplication featureList item"
+  },
+  "home.schema.feature.honeypot": {
+    "message": "HoneyPot anti-spam",
+    "description": "SoftwareApplication featureList item"
+  },
+  "home.schema.feature.scamlens": {
+    "message": "ScamLens: detección de estafas en imágenes",
+    "description": "SoftwareApplication featureList item"
+  },
+  "home.schema.feature.authmanager": {
+    "message": "Authentication Manager: protección de las cuentas del staff",
+    "description": "SoftwareApplication featureList item"
+  },
+  "home.schema.feature.reports": {
+    "message": "Reportes de la comunidad",
+    "description": "SoftwareApplication featureList item"
+  },
+  "home.schema.feature.moderation": {
+    "message": "Moderación y sanciones (expulsión, timeout, baneo, jail)",
+    "description": "SoftwareApplication featureList item"
   }
 }

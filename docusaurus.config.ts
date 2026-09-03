@@ -105,6 +105,7 @@ export default async function createConfigAsync() {
             excludedCanonical: []
         },
         plugins: [
+            require.resolve('./plugins/llms-txt'),
             [
                 'docusaurus-plugin-github-editor',
                 {

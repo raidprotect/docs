@@ -212,6 +212,50 @@ export default function Home(): ReactNode {
     url: landingUrl,
     description: layoutDescription,
     inLanguage: currentLocale,
+    featureList: [
+      translate({
+        id: 'home.schema.feature.antiraid',
+        message: 'Protection anti-raid (mode raid, verrouillage des salons)',
+        description: 'SoftwareApplication featureList item',
+      }),
+      translate({
+        id: 'home.schema.feature.captcha',
+        message: "Captcha de vérification à l'entrée",
+        description: 'SoftwareApplication featureList item',
+      }),
+      translate({
+        id: 'home.schema.feature.antispam',
+        message:
+          'Anti-spam automatique (flood, liens d’arnaque, mentions de masse)',
+        description: 'SoftwareApplication featureList item',
+      }),
+      translate({
+        id: 'home.schema.feature.honeypot',
+        message: 'HoneyPot anti-spam',
+        description: 'SoftwareApplication featureList item',
+      }),
+      translate({
+        id: 'home.schema.feature.scamlens',
+        message: 'ScamLens : détection des arnaques en image',
+        description: 'SoftwareApplication featureList item',
+      }),
+      translate({
+        id: 'home.schema.feature.authmanager',
+        message: 'Authentication Manager : protection des comptes du staff',
+        description: 'SoftwareApplication featureList item',
+      }),
+      translate({
+        id: 'home.schema.feature.reports',
+        message: 'Signalements communautaires',
+        description: 'SoftwareApplication featureList item',
+      }),
+      translate({
+        id: 'home.schema.feature.moderation',
+        message:
+          'Modération et sanctions (expulsion, timeout, bannissement, jail)',
+        description: 'SoftwareApplication featureList item',
+      }),
+    ],
     publisher: {'@id': `${siteUrl}/#organization`},
     isPartOf: {'@id': `${siteUrl}/#website`},
     offers: {

@@ -4544,5 +4544,37 @@
   "learn.hub.readMore": {
     "message": "Read",
     "description": "Learn hub card read link"
+  },
+  "home.schema.feature.antiraid": {
+    "message": "Anti-raid protection (raid mode, channel lockdown)",
+    "description": "SoftwareApplication featureList item"
+  },
+  "home.schema.feature.captcha": {
+    "message": "Verification captcha at entry",
+    "description": "SoftwareApplication featureList item"
+  },
+  "home.schema.feature.antispam": {
+    "message": "Automatic anti-spam (flood, scam links, mass mentions)",
+    "description": "SoftwareApplication featureList item"
+  },
+  "home.schema.feature.honeypot": {
+    "message": "Anti-spam HoneyPot",
+    "description": "SoftwareApplication featureList item"
+  },
+  "home.schema.feature.scamlens": {
+    "message": "ScamLens: image scam detection",
+    "description": "SoftwareApplication featureList item"
+  },
+  "home.schema.feature.authmanager": {
+    "message": "Authentication Manager: staff account protection",
+    "description": "SoftwareApplication featureList item"
+  },
+  "home.schema.feature.reports": {
+    "message": "Community reports",
+    "description": "SoftwareApplication featureList item"
+  },
+  "home.schema.feature.moderation": {
+    "message": "Moderation and sanctions (kick, timeout, ban, jail)",
+    "description": "SoftwareApplication featureList item"
   }
 }
