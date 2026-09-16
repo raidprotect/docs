@@ -202,7 +202,7 @@ export default function LearnArticle({
               <p className={styles.ctaText}>
                 <Translate id="learn.cta.text" description="Learn CTA text">
                   RaidProtect bloque les raids, filtre les bots et arrête le spam
-                  automatiquement, sur plus de 380 000 serveurs Discord.
+                  automatiquement, sur plus de 400 000 serveurs Discord.
                 </Translate>
               </p>
               <a

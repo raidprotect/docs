@@ -430,8 +430,8 @@ const STATS: {
   fbUnit: string;
   label: string;
 }[] = [
-  {id: 'servers', countKey: 'servers', fbValue: '380', fbUnit: 'K+', label: 'serveurs protégés'},
-  {id: 'users', countKey: 'users', fbValue: '50', fbUnit: 'M+', label: 'utilisateurs protégés'},
+  {id: 'servers', countKey: 'servers', fbValue: '400', fbUnit: 'K+', label: 'serveurs protégés'},
+  {id: 'users', countKey: 'users', fbValue: '55', fbUnit: 'M+', label: 'utilisateurs protégés'},
   {id: 'spam', countKey: 'antispam', fbValue: '1.4', fbUnit: 'M+', label: 'spams bloqués'},
 ];
 

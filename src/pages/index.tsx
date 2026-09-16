@@ -379,7 +379,7 @@ export default function Home(): ReactNode {
                     message: 'Serveurs sécurisés',
                     description: 'About stat label: number of secured servers',
                   })}
-                  fallback="380k"
+                  fallback="400k"
                 />
                 <StatCounter
                   rawValue={counts?.captcha}
@@ -406,7 +406,7 @@ export default function Home(): ReactNode {
                     message: 'Utilisateurs protégés',
                     description: 'About stat label: number of protected users',
                   })}
-                  fallback="50M"
+                  fallback="55M"
                 />
               </div>
             </div>

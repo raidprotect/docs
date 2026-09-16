@@ -335,7 +335,7 @@ export default function DiscordRaidPage(): ReactNode {
                       <Translate
                         id="learn.stat.protectedServers"
                         description="bold stat: number of protected servers">
-                        380 000 serveurs
+                        400 000 serveurs
                       </Translate>
                     </strong>
                   ),
