@@ -106,6 +106,7 @@ export default async function createConfigAsync() {
         },
         plugins: [
             require.resolve('./plugins/llms-txt'),
+            require.resolve('./plugins/og-images'),
             [
                 'docusaurus-plugin-github-editor',
                 {
@@ -235,6 +236,8 @@ export default async function createConfigAsync() {
                 { name: 'theme-color', content: '#D35F5F' },
                 { property: 'og:site_name', content: 'RaidProtect' },
                 { property: 'og:type', content: 'website' },
+                { name: 'twitter:site', content: '@raidprotect' },
+                { name: 'twitter:creator', content: '@raidprotect' },
             ],
             docs: {
                 versionPersistence: 'localStorage',
