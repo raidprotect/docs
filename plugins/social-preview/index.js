@@ -361,7 +361,8 @@ module.exports = function socialPreviewPlugin(context) {
           .replace(/<meta[^>]+property="og:image(:width|:height|:alt)?"[^>]*>/gi, '')
           .replace(/<meta[^>]+name="twitter:image"[^>]*>/gi, '')
           .replace(/<meta[^>]+name="twitter:card"[^>]*>/gi, '')
-          .replace(/<meta[^>]+property="og:type"[^>]*>/gi, '');
+          .replace(/<meta[^>]+property="og:type"[^>]*>/gi, '')
+          .replace(/<script id="discord:component-embed"[^>]*>[\s\S]*?<\/script>/gi, '');
         const tags =
           `<meta property="og:image" content="${url}"/>` +
           `<meta property="og:image:width" content="1200"/>` +
@@ -375,7 +376,37 @@ module.exports = function socialPreviewPlugin(context) {
         count++;
       }
 
-      console.log(`[social-preview] (${currentLocale}) ${count} images OG (docs, learn, marketing, accueil).`);
+      /* La carte de l'accueil (logo, accroche, chiffre clé) fait une carte
+       * générique parfaitement valable : on la duplique plutôt que d'en
+       * composer une seconde qui dirait la même chose. */
+      const homeCard = path.join(ogDir, 'home.png');
+      if (fs.existsSync(homeCard)) fs.copyFileSync(homeCard, path.join(ogDir, 'default.png'));
+
+      /* Repli : les pages que le plugin n'illustre pas (mentions légales,
+       * listings, doc bêta…) n'ont plus d'image depuis que `themeConfig.image`
+       * a été retiré. On leur donne la carte générique. Les pages qui ont déjà
+       * une og:image sont laissées telles quelles : c'est le cas des articles
+       * de blog, dont l'image vient de leur frontmatter via react-helmet. Une
+       * page, un seul acteur qui écrit la balise. */
+      const defaultUrl = `${base}/img/og/default.png`;
+      let fallback = 0;
+      for (const file of walk(outDir)) {
+        const rel = path.relative(outDir, file).split(path.sep).join('/');
+        if (LOCALES.includes(rel.split('/')[0])) continue;
+        const html = fs.readFileSync(file, 'utf8');
+        if (/<meta[^>]+property="og:image"/i.test(html)) continue;
+        const tags =
+          `<meta property="og:image" content="${defaultUrl}"/>` +
+          `<meta property="og:image:width" content="1200"/>` +
+          `<meta property="og:image:height" content="630"/>` +
+          `<meta property="og:image:alt" content="RaidProtect"/>` +
+          `<meta name="twitter:image" content="${defaultUrl}"/>` +
+          `<meta name="twitter:card" content="summary_large_image"/>`;
+        fs.writeFileSync(file, html.replace('</head>', `${tags}</head>`));
+        fallback++;
+      }
+
+      console.log(`[social-preview] (${currentLocale}) ${count} images OG + ${fallback} pages sur la carte générique.`);
 
       const embeds = injectComponentEmbeds({
         siteDir: context.siteDir,

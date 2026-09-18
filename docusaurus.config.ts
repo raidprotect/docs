@@ -231,7 +231,6 @@ export default async function createConfigAsync() {
             }
         ],
         themeConfig: {
-            image: 'https://cdn.prod.website-files.com/677fbd67c3c9318f7fb56659/678fefffd131bc2bbafd4468_RP-embed.webp',
             metadata: [
                 { name: 'theme-color', content: '#D35F5F' },
                 { property: 'og:site_name', content: 'RaidProtect' },
