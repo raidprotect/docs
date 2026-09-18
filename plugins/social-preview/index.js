@@ -1,4 +1,7 @@
-/* Plugin Docusaurus : génère au build une image Open Graph (1200x630) par page
+/* Plugin Docusaurus « social-preview » : gère l'aperçu des liens du site
+ * quand ils sont partagés ailleurs.
+ *
+ * Génère au build une image Open Graph (1200x630) par page
  * de doc, de glossaire, d'article de blog et pour les pages marketing, à partir
  * du titre + l'icône de la fonctionnalité (et un chiffre clé sur l'accueil),
  * puis injecte og:image / twitter:image / og:type / og:image:alt dans le HTML.
@@ -130,17 +133,17 @@ function extractTitle(html) {
 
 const el = (type, style, children) => ({type, props: {style, ...(children !== undefined ? {children} : {})}});
 
-module.exports = function ogImagesPlugin(context) {
+module.exports = function socialPreviewPlugin(context) {
   const {currentLocale, defaultLocale} = context.i18n;
   const localePrefix = currentLocale === defaultLocale ? '' : `/${currentLocale}`;
   const cat = CATEGORY[currentLocale] || CATEGORY[defaultLocale] || CATEGORY.fr;
   const tagline = TAGLINE[currentLocale] || TAGLINE[defaultLocale] || TAGLINE.fr;
   const stat = STAT[currentLocale] || STAT[defaultLocale] || STAT.fr;
   const iconsDir = path.join(context.siteDir, 'static/img/icons');
-  const cacheDir = path.join(context.siteDir, 'node_modules/.cache/og-images');
+  const cacheDir = path.join(context.siteDir, 'node_modules/.cache/social-preview');
 
   return {
-    name: 'og-images',
+    name: 'social-preview',
     async postBuild({siteConfig, outDir}) {
       const satori = (await import('satori')).default;
       const {Resvg} = require('@resvg/resvg-js');
@@ -370,7 +373,7 @@ module.exports = function ogImagesPlugin(context) {
         count++;
       }
 
-      console.log(`[og-images] (${currentLocale}) ${count} images OG (docs, learn, marketing, accueil).`);
+      console.log(`[social-preview] (${currentLocale}) ${count} images OG (docs, learn, marketing, accueil).`);
     },
   };
 };

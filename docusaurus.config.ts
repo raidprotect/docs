@@ -106,7 +106,7 @@ export default async function createConfigAsync() {
         },
         plugins: [
             require.resolve('./plugins/llms-txt'),
-            require.resolve('./plugins/og-images'),
+            require.resolve('./plugins/social-preview'),
             [
                 'docusaurus-plugin-github-editor',
                 {
