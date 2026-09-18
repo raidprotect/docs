@@ -1,10 +1,11 @@
 /* Plugin Docusaurus « social-preview » : gère l'aperçu des liens du site
  * quand ils sont partagés ailleurs.
  *
- * Génère au build une image Open Graph (1200x630) par page
+ * Passe 1 (ce fichier) : génère au build une image Open Graph (1200x630) par page
  * de doc, de glossaire, d'article de blog et pour les pages marketing, à partir
  * du titre + l'icône de la fonctionnalité (et un chiffre clé sur l'accueil),
- * puis injecte og:image / twitter:image / og:type / og:image:alt dans le HTML.
+ * puis injecte og:image / twitter:image / og:type / og:image:alt et le payload
+ * discord:component-embed (carte enrichie quand le lien est collé dans Discord).
  * Rendu via Satori (HTML/CSS -> SVG) + resvg (SVG -> PNG) + sharp (compression).
  * Tourne par locale (titres localisés). Cache persistant pour des rebuilds rapides.
  *
@@ -13,6 +14,7 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const injectComponentEmbeds = require('./component-embed');
 
 const TEMPLATE_VERSION = '3'; // bump pour invalider le cache
 const LOCALES = ['en', 'de', 'es', 'pt'];
@@ -374,6 +376,15 @@ module.exports = function socialPreviewPlugin(context) {
       }
 
       console.log(`[social-preview] (${currentLocale}) ${count} images OG (docs, learn, marketing, accueil).`);
+
+      const embeds = injectComponentEmbeds({
+        siteDir: context.siteDir,
+        outDir,
+        base,
+        locale: currentLocale,
+        marketing: MARKETING,
+      });
+      console.log(`[social-preview] (${currentLocale}) ${embeds} cartes Discord.`);
     },
   };
 };
