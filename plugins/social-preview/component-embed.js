@@ -15,6 +15,18 @@ const ACCENT_COLOR = 0xd35f5f; // --ifm-color-primary
 const SUPPORT_URL = 'https://raidprotect.bot/discord';
 const MAX_COMPONENTS = 40;
 
+// Derniers articles listés sur la carte du hub Blog.
+const LATEST_POSTS = 2;
+// Articles mis en avant sur la carte du hub Learn.
+const FEATURED_LEARN = ['discord-raid', 'discord-nuke', 'discord-sanctions'];
+// Entrées mises en avant sur la carte de l'accueil de la documentation.
+const DOCS_QUICK_LINKS = [
+  'docs/setup.html',
+  'docs/features.html',
+  'docs/commands.html',
+  'docs/guides/malfunctions.html',
+];
+
 const T = {
   fr: {
     docs: 'Documentation',
@@ -24,6 +36,9 @@ const T = {
       `Découvrez la liste complète des nouveautés dans le [changelog ${v}](${url}).`,
     threats: (url) =>
       `ScamLens tourne par défaut sur tous les serveurs protégés : [comment ça marche](${url}).`,
+    latestPosts: 'Derniers articles',
+    featuredLearn: 'Articles à la une',
+    startHere: 'Pour commencer',
   },
   en: {
     docs: 'Documentation',
@@ -32,6 +47,9 @@ const T = {
     changelog: (v, url) => `See the full list of changes in the [${v} changelog](${url}).`,
     threats: (url) =>
       `ScamLens runs by default on every protected server: [how it works](${url}).`,
+    latestPosts: 'Latest posts',
+    featuredLearn: 'Featured articles',
+    startHere: 'Start here',
   },
   de: {
     docs: 'Dokumentation',
@@ -41,6 +59,9 @@ const T = {
       `Die vollständige Liste der Neuerungen steht im [Changelog ${v}](${url}).`,
     threats: (url) =>
       `ScamLens läuft standardmäßig auf jedem geschützten Server: [so funktioniert es](${url}).`,
+    latestPosts: 'Neueste Beiträge',
+    featuredLearn: 'Ausgewählte Artikel',
+    startHere: 'Zum Einstieg',
   },
   es: {
     docs: 'Documentación',
@@ -50,6 +71,9 @@ const T = {
       `Consulta la lista completa de novedades en el [changelog ${v}](${url}).`,
     threats: (url) =>
       `ScamLens funciona por defecto en todos los servidores protegidos: [cómo funciona](${url}).`,
+    latestPosts: 'Últimos artículos',
+    featuredLearn: 'Artículos destacados',
+    startHere: 'Para empezar',
   },
   pt: {
     docs: 'Documentação',
@@ -58,6 +82,9 @@ const T = {
     changelog: (v, url) => `Veja a lista completa das novidades no [changelog ${v}](${url}).`,
     threats: (url) =>
       `O ScamLens funciona por padrão em todos os servidores protegidos: [como funciona](${url}).`,
+    latestPosts: 'Últimos artigos',
+    featuredLearn: 'Artigos em destaque',
+    startHere: 'Para começar',
   },
 };
 
@@ -142,6 +169,12 @@ const textDisplay = (content) => ({type: 10, content});
 const separator = () => ({type: 14, spacing: 1});
 const gallery = (url, description) => ({type: 12, items: [{media: {url}, description}]});
 
+const section = (content, thumbnailUrl) => ({
+  type: 9,
+  components: [textDisplay(content)],
+  accessory: {type: 11, media: {url: thumbnailUrl}},
+});
+
 function footerRow(t, base) {
   return {
     type: 1,
@@ -206,6 +239,9 @@ module.exports = function injectComponentEmbeds({siteDir, outDir, base, locale, 
     if (/\/(tags|page|archive)\b/.test(rel) || /^blog\/authors/.test(rel)) continue;
     pages.push({rel, kind: 'blog-post'});
   }
+  addIfExists('docs.html', 'docs-index');
+  addIfExists('learn.html', 'learn-index');
+  addIfExists('blog.html', 'blog-index');
   addIfExists('index.html', 'home');
   for (const rel of marketing) addIfExists(rel, 'marketing');
 
@@ -228,7 +264,10 @@ module.exports = function injectComponentEmbeds({siteDir, outDir, base, locale, 
     const pageUrl = urlOf(p.rel);
     const head = `# [${escapeMd(withBrand(m.title))}](${pageUrl})`;
     const components = [];
-    if (image) components.push(gallery(image, m.title));
+    // Sur les hubs qui listent des entrées, les vignettes portent déjà les
+    // illustrations : une grande image en tête rendrait la carte interminable.
+    const listsEntries = p.kind === 'blog-index' || p.kind === 'learn-index';
+    if (image && !listsEntries) components.push(gallery(image, m.title));
     components.push(textDisplay(`${head}\n${trim(m.description, 220) || ''}`.trim()));
 
     if (p.kind === 'blog-post') {
@@ -240,6 +279,38 @@ module.exports = function injectComponentEmbeds({siteDir, outDir, base, locale, 
         );
       } else if (post && post.tags.includes('threats')) {
         components.push(textDisplay(t.threats(`${base}/docs/features/scam-images`)));
+      }
+    }
+
+    if (p.kind === 'blog-index' || p.kind === 'learn-index') {
+      const label = p.kind === 'blog-index' ? t.latestPosts : t.featuredLearn;
+      const rels =
+        p.kind === 'blog-index'
+          ? posts.slice(0, LATEST_POSTS).map((x) => `blog/${x.slug}.html`)
+          : FEATURED_LEARN.map((s) => `learn/${s}.html`);
+      const entries = [];
+      for (const rel of rels) {
+        const em = metaOf(rel);
+        if (!em || !em.title || !em.image) continue;
+        entries.push(
+          section(
+            `**[${escapeMd(em.title)}](${urlOf(rel)})**\n${trim(em.description, 110) || ''}`.trim(),
+            em.image,
+          ),
+        );
+      }
+      if (entries.length) {
+        components.push(separator(), textDisplay(`**${label}**`), ...entries);
+      }
+    }
+
+    if (p.kind === 'docs-index') {
+      const links = DOCS_QUICK_LINKS.map((rel) => {
+        const em = metaOf(rel);
+        return em && em.title ? `- [${escapeMd(em.title)}](${urlOf(rel)})` : null;
+      }).filter(Boolean);
+      if (links.length) {
+        components.push(textDisplay(`**${t.startHere}**\n${links.join('\n')}`));
       }
     }
 
