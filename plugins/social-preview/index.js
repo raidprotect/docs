@@ -1,7 +1,11 @@
-/* Plugin Docusaurus : génère au build une image Open Graph (1200x630) par page
+/* Plugin Docusaurus « social-preview » : gère l'aperçu des liens du site
+ * quand ils sont partagés ailleurs.
+ *
+ * Passe 1 (ce fichier) : génère au build une image Open Graph (1200x630) par page
  * de doc, de glossaire, d'article de blog et pour les pages marketing, à partir
  * du titre + l'icône de la fonctionnalité (et un chiffre clé sur l'accueil),
- * puis injecte og:image / twitter:image / og:type / og:image:alt dans le HTML.
+ * puis injecte og:image / twitter:image / og:type / og:image:alt et le payload
+ * discord:component-embed (carte enrichie quand le lien est collé dans Discord).
  * Rendu via Satori (HTML/CSS -> SVG) + resvg (SVG -> PNG) + sharp (compression).
  * Tourne par locale (titres localisés). Cache persistant pour des rebuilds rapides.
  *
@@ -10,6 +14,7 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const injectComponentEmbeds = require('./component-embed');
 
 const TEMPLATE_VERSION = '3'; // bump pour invalider le cache
 const LOCALES = ['en', 'de', 'es', 'pt'];
@@ -130,17 +135,17 @@ function extractTitle(html) {
 
 const el = (type, style, children) => ({type, props: {style, ...(children !== undefined ? {children} : {})}});
 
-module.exports = function ogImagesPlugin(context) {
+module.exports = function socialPreviewPlugin(context) {
   const {currentLocale, defaultLocale} = context.i18n;
   const localePrefix = currentLocale === defaultLocale ? '' : `/${currentLocale}`;
   const cat = CATEGORY[currentLocale] || CATEGORY[defaultLocale] || CATEGORY.fr;
   const tagline = TAGLINE[currentLocale] || TAGLINE[defaultLocale] || TAGLINE.fr;
   const stat = STAT[currentLocale] || STAT[defaultLocale] || STAT.fr;
   const iconsDir = path.join(context.siteDir, 'static/img/icons');
-  const cacheDir = path.join(context.siteDir, 'node_modules/.cache/og-images');
+  const cacheDir = path.join(context.siteDir, 'node_modules/.cache/social-preview');
 
   return {
-    name: 'og-images',
+    name: 'social-preview',
     async postBuild({siteConfig, outDir}) {
       const satori = (await import('satori')).default;
       const {Resvg} = require('@resvg/resvg-js');
@@ -356,7 +361,8 @@ module.exports = function ogImagesPlugin(context) {
           .replace(/<meta[^>]+property="og:image(:width|:height|:alt)?"[^>]*>/gi, '')
           .replace(/<meta[^>]+name="twitter:image"[^>]*>/gi, '')
           .replace(/<meta[^>]+name="twitter:card"[^>]*>/gi, '')
-          .replace(/<meta[^>]+property="og:type"[^>]*>/gi, '');
+          .replace(/<meta[^>]+property="og:type"[^>]*>/gi, '')
+          .replace(/<script id="discord:component-embed"[^>]*>[\s\S]*?<\/script>/gi, '');
         const tags =
           `<meta property="og:image" content="${url}"/>` +
           `<meta property="og:image:width" content="1200"/>` +
@@ -370,7 +376,46 @@ module.exports = function ogImagesPlugin(context) {
         count++;
       }
 
-      console.log(`[og-images] (${currentLocale}) ${count} images OG (docs, learn, marketing, accueil).`);
+      /* La carte de l'accueil (logo, accroche, chiffre clé) fait une carte
+       * générique parfaitement valable : on la duplique plutôt que d'en
+       * composer une seconde qui dirait la même chose. */
+      const homeCard = path.join(ogDir, 'home.png');
+      if (fs.existsSync(homeCard)) fs.copyFileSync(homeCard, path.join(ogDir, 'default.png'));
+
+      /* Repli : les pages que le plugin n'illustre pas (mentions légales,
+       * listings, doc bêta…) n'ont plus d'image depuis que `themeConfig.image`
+       * a été retiré. On leur donne la carte générique. Les pages qui ont déjà
+       * une og:image sont laissées telles quelles : c'est le cas des articles
+       * de blog, dont l'image vient de leur frontmatter via react-helmet. Une
+       * page, un seul acteur qui écrit la balise. */
+      const defaultUrl = `${base}/img/og/default.png`;
+      let fallback = 0;
+      for (const file of walk(outDir)) {
+        const rel = path.relative(outDir, file).split(path.sep).join('/');
+        if (LOCALES.includes(rel.split('/')[0])) continue;
+        const html = fs.readFileSync(file, 'utf8');
+        if (/<meta[^>]+property="og:image"/i.test(html)) continue;
+        const tags =
+          `<meta property="og:image" content="${defaultUrl}"/>` +
+          `<meta property="og:image:width" content="1200"/>` +
+          `<meta property="og:image:height" content="630"/>` +
+          `<meta property="og:image:alt" content="RaidProtect"/>` +
+          `<meta name="twitter:image" content="${defaultUrl}"/>` +
+          `<meta name="twitter:card" content="summary_large_image"/>`;
+        fs.writeFileSync(file, html.replace('</head>', `${tags}</head>`));
+        fallback++;
+      }
+
+      console.log(`[social-preview] (${currentLocale}) ${count} images OG + ${fallback} pages sur la carte générique.`);
+
+      const embeds = injectComponentEmbeds({
+        siteDir: context.siteDir,
+        outDir,
+        base,
+        locale: currentLocale,
+        marketing: MARKETING,
+      });
+      console.log(`[social-preview] (${currentLocale}) ${embeds} cartes Discord.`);
     },
   };
 };
