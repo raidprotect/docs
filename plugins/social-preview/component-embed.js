@@ -175,11 +175,12 @@ const section = (content, thumbnailUrl) => ({
   accessory: {type: 11, media: {url: thumbnailUrl}},
 });
 
-function footerRow(t, base) {
+function footerRow(t, base, {onDocs} = {}) {
   return {
     type: 1,
     components: [
-      {type: 2, style: 5, url: `${base}/docs`, label: t.docs},
+      // Inutile de renvoyer vers la documentation depuis la documentation.
+      ...(onDocs ? [] : [{type: 2, style: 5, url: `${base}/docs`, label: t.docs}]),
       {type: 2, style: 5, url: SUPPORT_URL, label: t.support},
       {type: 2, style: 5, url: `${base}/invite`, label: t.invite},
     ],
@@ -262,13 +263,14 @@ module.exports = function injectComponentEmbeds({siteDir, outDir, base, locale, 
     }
 
     const pageUrl = urlOf(p.rel);
+    const onDocs = p.rel === 'docs.html' || p.rel.startsWith('docs/');
     const head = `# [${escapeMd(withBrand(m.title))}](${pageUrl})`;
     const components = [];
     // Sur les hubs qui listent des entrées, les vignettes portent déjà les
     // illustrations : une grande image en tête rendrait la carte interminable.
     const listsEntries = p.kind === 'blog-index' || p.kind === 'learn-index';
     if (image && !listsEntries) components.push(gallery(image, m.title));
-    components.push(textDisplay(`${head}\n${trim(m.description, 220) || ''}`.trim()));
+    components.push(textDisplay(`${head}\n${trim(m.description, 150) || ''}`.trim()));
 
     if (p.kind === 'blog-post') {
       const post = posts.find((x) => x.slug === p.rel.replace(/^blog\//, '').replace(/\.html$/, ''));
@@ -314,7 +316,7 @@ module.exports = function injectComponentEmbeds({siteDir, outDir, base, locale, 
       }
     }
 
-    components.push(separator(), footerRow(t, base));
+    components.push(footerRow(t, base, {onDocs}));
 
     const tag = scriptTag(components);
     if (countComponents({components}) > MAX_COMPONENTS) {
