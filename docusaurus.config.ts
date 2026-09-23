@@ -398,10 +398,6 @@ export default async function createConfigAsync() {
                         rel: 'noopener noreferrer',
                     },
                     {
-                        type: 'search',
-                        position: 'right',
-                    },
-                    {
                         type: 'localeDropdown',
                         position: 'right',
                     },
