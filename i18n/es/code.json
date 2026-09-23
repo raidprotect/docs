@@ -3357,11 +3357,15 @@
     "description": "li title"
   },
   "learn.discord-raid.s4.i3.b": {
-    "message": "Un canal {link} atrae a las cuentas automatizadas y las sanciona sin tocar jamás a los miembros reales.",
+    "message": "Un canal {link} atrae a las cuentas automatizadas y las {sanction} sin tocar jamás a los miembros reales.",
     "description": "li body with link"
   },
   "learn.discord-raid.s4.i3.link": {
     "message": "HoneyPot",
+    "description": "link label"
+  },
+  "learn.discord-raid.s4.i3.sanction": {
+    "message": "sanciona",
     "description": "link label"
   },
   "learn.discord-raid.s4.i4.t": {
@@ -3369,8 +3373,12 @@
     "description": "li title"
   },
   "learn.discord-raid.s4.i4.b": {
-    "message": "Confía los roles sensibles solo a las personas de confianza, para limitar también el riesgo de nuke.",
-    "description": "li body"
+    "message": "Confía los {roles} solo a las personas de confianza, para limitar también el riesgo de nuke.",
+    "description": "li body with link"
+  },
+  "learn.discord-raid.s4.i4.roles": {
+    "message": "roles sensibles",
+    "description": "link label"
   },
   "learn.discord-raid.s4.outro": {
     "message": "Es exactamente lo que RaidProtect automatiza: hoy el bot protege más de {count} y ya ha bloqueado millones de mensajes de spam.",
@@ -3904,6 +3912,10 @@
     "message": "El anti-spam de RaidProtect",
     "description": "related"
   },
+  "learn.self-bot.rel5": {
+    "message": "¿Hace falta un bot para mantener un canal HoneyPot «activo»?",
+    "description": "related"
+  },
   "learn.server-raidable.metaTitle": {
     "message": "«This server is raidable»: qué significa y cómo corregirlo",
     "description": "Learn explainer meta title: this server is raidable"
@@ -4188,6 +4200,14 @@
     "message": "Proteger los MP de tus miembros",
     "description": "related"
   },
+  "learn.spam-discord.rel5": {
+    "message": "Ban, kick, timeout: las sanciones de Discord",
+    "description": "related"
+  },
+  "learn.spam-discord.rel6": {
+    "message": "«This server is raidable»: ¿hay que preocuparse?",
+    "description": "related"
+  },
   "learn.token-grabber.metaTitle": {
     "message": "Token grabber en Discord: cómo roban una cuenta",
     "description": "Learn article meta title: token grabber"
@@ -4285,8 +4305,12 @@
     "description": "link"
   },
   "learn.token-grabber.s4.i4.b": {
-    "message": "Así, ni siquiera la cuenta comprometida de un miembro del staff puede destruirlo todo.",
-    "description": "li body"
+    "message": "Así, ni siquiera la {staff} puede destruirlo todo.",
+    "description": "li body with link"
+  },
+  "learn.token-grabber.s4.i4.staff": {
+    "message": "cuenta comprometida de un miembro del staff",
+    "description": "link label"
   },
   "learn.token-grabber.faq.q1": {
     "message": "¿Un token grabber roba mi contraseña?",
@@ -4334,6 +4358,10 @@
   },
   "learn.token-grabber.rel4": {
     "message": "¿Qué es un raid en Discord?",
+    "description": "related"
+  },
+  "learn.token-grabber.rel5": {
+    "message": "¿Qué sanción para una cuenta hackeada?",
     "description": "related"
   },
   "learn.breadcrumb.hub": {

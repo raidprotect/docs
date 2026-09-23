@@ -3378,11 +3378,15 @@
     "description": "li title"
   },
   "learn.discord-raid.s4.i3.b": {
-    "message": "A {link} channel lures automated accounts and punishes them without ever touching real members.",
+    "message": "A {link} channel lures automated accounts and {sanction} them without ever touching real members.",
     "description": "li body with link"
   },
   "learn.discord-raid.s4.i3.link": {
     "message": "HoneyPot",
+    "description": "link label"
+  },
+  "learn.discord-raid.s4.i3.sanction": {
+    "message": "punishes",
     "description": "link label"
   },
   "learn.discord-raid.s4.i4.t": {
@@ -3390,8 +3394,12 @@
     "description": "li title"
   },
   "learn.discord-raid.s4.i4.b": {
-    "message": "Only entrust sensitive roles to trusted people, to also limit the risk of a nuke.",
-    "description": "li body"
+    "message": "Only entrust {roles} to trusted people, to also limit the risk of a nuke.",
+    "description": "li body with link"
+  },
+  "learn.discord-raid.s4.i4.roles": {
+    "message": "sensitive roles",
+    "description": "link label"
   },
   "learn.discord-raid.s4.outro": {
     "message": "This is exactly what RaidProtect automates: the bot protects over {count} today and has already blocked millions of spam messages.",
@@ -3925,6 +3933,10 @@
     "message": "RaidProtect's anti-spam",
     "description": "related"
   },
+  "learn.self-bot.rel5": {
+    "message": "Do you need a bot to keep a HoneyPot channel \"active\"?",
+    "description": "related"
+  },
   "learn.server-raidable.metaTitle": {
     "message": "\"This Server Is Raidable\": What It Means and How to Fix It",
     "description": "Learn explainer meta title: this server is raidable"
@@ -4209,6 +4221,14 @@
     "message": "Protecting your members' DMs",
     "description": "related"
   },
+  "learn.spam-discord.rel5": {
+    "message": "Ban, kick, timeout: Discord sanctions",
+    "description": "related"
+  },
+  "learn.spam-discord.rel6": {
+    "message": "\"This server is raidable\": should you worry?",
+    "description": "related"
+  },
   "learn.token-grabber.metaTitle": {
     "message": "Discord Token Grabber: How an Account Gets Stolen",
     "description": "Learn article meta title: token grabber"
@@ -4306,8 +4326,12 @@
     "description": "link"
   },
   "learn.token-grabber.s4.i4.b": {
-    "message": "That way, even a compromised staff member's account can't destroy everything.",
-    "description": "li body"
+    "message": "That way, even the account of a {staff} can't destroy everything.",
+    "description": "li body with link"
+  },
+  "learn.token-grabber.s4.i4.staff": {
+    "message": "compromised staff member",
+    "description": "link label"
   },
   "learn.token-grabber.faq.q1": {
     "message": "Does a token grabber steal my password?",
@@ -4355,6 +4379,10 @@
   },
   "learn.token-grabber.rel4": {
     "message": "What is a Discord raid?",
+    "description": "related"
+  },
+  "learn.token-grabber.rel5": {
+    "message": "Which sanction for a hacked account?",
     "description": "related"
   },
   "learn.breadcrumb.hub": {
