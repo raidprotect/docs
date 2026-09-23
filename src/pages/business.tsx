@@ -485,7 +485,7 @@ export default function Business(): ReactNode {
             <h1 className={styles.title}>
               <Translate id="business.hero.title" description="Business hero title, first line">
                 Bien plus qu’un bot :
-              </Translate>
+              </Translate>{' '}
               <span className={styles.titleAccent}>
                 <Translate id="business.hero.titleAccent" description="Business hero title, accented second line">
                   votre partenaire Discord
@@ -516,7 +516,7 @@ export default function Business(): ReactNode {
         </section>
 
         {/* BANDEAU CONFIANCE */}
-        <section className={styles.trust}>
+        <section className={styles.trust} data-search-ignore>
           <div className={styles.container}>
             <p className={styles.trustLabel}>
               <Translate id="business.trust.label" description="Trust band label above brand logos">
