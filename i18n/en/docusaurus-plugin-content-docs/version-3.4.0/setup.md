@@ -15,7 +15,7 @@ RaidProtect simplifies server management with two powerful tools: the [`/setup`]
 
 For a server starting from scratch, here is the recommended order:
 
-1. **Enable Discord's Community mode** (Server Settings, then "Enable Community"). It is a prerequisite for the [captcha](./features/captcha) and [raid mode](./features/raid-mode).
+1. **Enable Discord's [Community mode](./guides/community)** (Server Settings, then "Enable Community"). It is a prerequisite for the [captcha](./features/captcha) and [raid mode](./features/raid-mode).
 2. **Run [`/setup`](#install)**: this is where you choose which features to enable, via the recommended configuration. RaidProtect automatically creates the logs channel and applies the changes after a summary.
 3. **Set up the [anti-spam](./features/anti-spam)**: its sanctions are customized per type of spam.
 4. **Adjust anything at any time with [`/settings`](#settings).**

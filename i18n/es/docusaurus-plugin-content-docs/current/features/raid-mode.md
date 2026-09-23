@@ -94,7 +94,7 @@ Esta opcion esta reservada a los servidores [**Premium**](/es/premium). Es neces
 
 Usa el comando: ```/bypass raid [usuario]```
 
-Reemplaza `[usuario]` con el identificador deseado; este dispondra de 10 minutos para unirse al servidor sin ser expulsado por el modo raid. Tambien puedes usar el comando sin especificar un usuario para conocer la lista actual de usuarios con bypass (7 usuarios maximo simultaneamente).
+Reemplaza `[usuario]` con el [identificador](../guides/id.mdx) deseado; este dispondra de 10 minutos para unirse al servidor sin ser expulsado por el modo raid. Tambien puedes usar el comando sin especificar un usuario para conocer la lista actual de usuarios con bypass (7 usuarios maximo simultaneamente).
 
 :::warning
 El bypass del modo raid requiere el [modo expulsion](#kick-mode): un usuario bloqueado a nivel de la invitacion no puede tener bypass.

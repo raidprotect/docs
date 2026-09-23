@@ -94,7 +94,7 @@ Expecting a legitimate member while a raid is in progress? Allow them to join de
 
 Use the command: ```/bypass raid [user]```
 
-Replace `[user]` with the desired identifier; they will have 10 minutes to join the server without being kicked by raid mode. You can also use the command without specifying a user to see the current list of bypassed users (7 users maximum at the same time).
+Replace `[user]` with the desired [identifier](../guides/id.mdx); they will have 10 minutes to join the server without being kicked by raid mode. You can also use the command without specifying a user to see the current list of bypassed users (7 users maximum at the same time).
 
 :::warning
 The raid mode bypass requires [kick mode](#kick-mode): a user blocked at the invite level cannot be bypassed.

@@ -94,7 +94,7 @@ Vous attendez un membre légitime pendant qu'un raid est en cours ? Autorisez-le
 
 Utilisez la commande : ```/bypass raid [utilisateur]```
 
-Remplacez `[utilisateur]` par l'identifiant souhaité, ce dernier disposera de 10 minutes pour rejoindre le serveur sans être expulsé par le mode raid. Vous pouvez aussi utiliser la commande sans spécifier d'utilisateur pour connaître la liste actuelle des utilisateurs bypass (7 utilisateurs maximum simultanément).
+Remplacez `[utilisateur]` par l'[identifiant](../guides/id.mdx) souhaité, ce dernier disposera de 10 minutes pour rejoindre le serveur sans être expulsé par le mode raid. Vous pouvez aussi utiliser la commande sans spécifier d'utilisateur pour connaître la liste actuelle des utilisateurs bypass (7 utilisateurs maximum simultanément).
 
 :::warning
 Le bypass du mode raid nécessite le [mode expulsion](#kick-mode) : un utilisateur bloqué au niveau de l'invitation ne peut pas être bypass.

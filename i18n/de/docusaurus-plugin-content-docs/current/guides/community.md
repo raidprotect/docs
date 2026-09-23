@@ -35,4 +35,4 @@ Wenn die Community auf Ihrem Server bereits aktiviert ist, heißt der Abschnitt 
 ## DM Lock & Raid-Modus Module nach der Aktivierung verwenden {#use}
 
 - Führen Sie den Befehl [`/settings`](../setup.md#settings) aus, um das RaidProtect-Einstellungsmenü zu öffnen.
-- Aktivieren oder deaktivieren Sie die gewünschten Module (DM Lock, Raid-Modus...) über das interaktive Menü.
+- Aktivieren oder deaktivieren Sie die gewünschten Module ([DM Lock](../features/dm-lock.mdx), [Raid-Modus](../features/raid-mode.md)...) über das interaktive Menü.

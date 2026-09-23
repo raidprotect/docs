@@ -20,7 +20,7 @@ Das Captcha basiert auf einer Rolle **@Nicht verifiziert** und einem Kanal namen
 - In diesem Kanal wird vom Bot ein Bild mit 6 Großbuchstaben gesendet. Der Benutzer muss die Buchstaben im Kanal eingeben, um zu beweisen, dass er ein Mensch ist.
 - Wenn die Antwort korrekt ist, wird die Rolle **@Nicht verifiziert** entfernt und der Benutzer erhält normalen Zugang zum Server. Andernfalls wird er automatisch gekickt.
 - Wenn das Captcha aktiviert ist, veröffentlicht RaidProtect automatisch eine Nachricht im Log-Kanal, die das Erstellungsdatum des Kontos jedes neuen Benutzers angibt.
-- RaidProtect erkennt automatisch Berechtigungsprobleme (Kanal und Rolle) sowie die Standard-Sichtbarkeit des Kanals während des Discord-Onboarding-Prozesses.
+- RaidProtect erkennt automatisch Berechtigungsprobleme (Kanal und Rolle) sowie die Standard-Sichtbarkeit des Kanals während des [Discord-Onboarding-Prozesses](../guides/onboarding.md).
 
 :::info
 **Zeitlimit und Versuche:** Die Benutzer haben **1 bis 10 Minuten** Zeit, um das Captcha abzuschließen (**standardmäßig 5 Minuten**) und **1 bis 3 Versuche** (**standardmäßig 2 Versuche**). Danach werden sie automatisch vom Server gekickt.
@@ -67,7 +67,7 @@ Wenn Sie ein automatisches Rollensystem (Autorole) verwenden, das nicht von Raid
 
 Verwenden Sie den Befehl: ```/bypass captcha [benutzer]```
 
-Ersetzen Sie `[benutzer]` durch die gewünschte Kennung; diese Person hat dann 10 Minuten Zeit, dem Server beizutreten, ohne das Captcha lösen zu müssen. Wenn der Benutzer bereits anwesend ist, wird das Captcha automatisch gelöst. Sie können den Befehl auch ohne Angabe eines Benutzers verwenden, um die aktuelle Liste der Bypass-Benutzer anzuzeigen.
+Ersetzen Sie `[benutzer]` durch die gewünschte [Kennung](../guides/id.mdx); diese Person hat dann 10 Minuten Zeit, dem Server beizutreten, ohne das Captcha lösen zu müssen. Wenn der Benutzer bereits anwesend ist, wird das Captcha automatisch gelöst. Sie können den Befehl auch ohne Angabe eines Benutzers verwenden, um die aktuelle Liste der Bypass-Benutzer anzuzeigen.
 
 ## Häufig gestellte Fragen {#faq}
 

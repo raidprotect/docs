@@ -45,8 +45,8 @@ Plusieurs sanctions sont disponibles :
 | **Softban** | Bannit puis débannit : supprime les messages, mais le membre peut revenir | Gratuit |
 | **Expulsion (Kick)** | Exclut le membre, qui peut revenir librement | Premium |
 | **Timeout** | Empêche le membre de parler pendant un temps choisi (max 28 jours) | Premium |
-| **Jail** | Donne le rôle Jail configuré sur votre serveur | Premium |
-| **Mute** | Donne le rôle Mute configuré sur votre serveur | Premium |
+| **Jail** | Donne le [rôle Jail](./sanctions.mdx#jail) configuré sur votre serveur | Premium |
+| **Mute** | Donne le [rôle Mute](./sanctions.mdx#mute) configuré sur votre serveur | Premium |
 
 Pour les sanctions à durée (Bannissement, Timeout, Jail, Mute), vous pouvez choisir une **durée prête à l'emploi** (de 5 minutes à 28 jours) ou une **durée personnalisée** via le bouton dédié (par exemple `5m`, `1h`, `2d` ; minimum 1 minute).
 

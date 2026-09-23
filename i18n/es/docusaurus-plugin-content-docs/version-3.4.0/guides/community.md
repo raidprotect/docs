@@ -35,4 +35,4 @@ Si la comunidad ya esta activada en tu servidor, la seccion se llamara **Vista g
 ## Uso de los modulos Bloqueo de MD y Modo raid despues de la activacion {#use}
 
 - Ejecuta el comando [`/settings`](../setup.md#settings) para abrir el menu de configuracion de RaidProtect.
-- Activa o desactiva los modulos deseados (Bloqueo de MD, Modo raid...) desde el menu interactivo.
+- Activa o desactiva los modulos deseados ([Bloqueo de MD](../features/dm-lock.mdx), [Modo raid](../features/raid-mode.md)...) desde el menu interactivo.

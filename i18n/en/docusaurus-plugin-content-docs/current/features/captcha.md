@@ -20,7 +20,7 @@ The captcha relies on an **@Unverified** role and a channel named **#verificatio
 - In this channel, the bot sends an image containing 6 uppercase letters. The user must type the letters in the channel to prove they are human.
 - If the answer is correct, the **@Unverified** role is removed and the user gains normal access to the server. Otherwise, they are automatically kicked.
 - When the captcha is enabled, RaidProtect automatically posts a message in the logs channel, indicating the account creation date of each new user.
-- RaidProtect automatically detects permission issues (channel and role) as well as the default visibility of the channel during the Discord onboarding process.
+- RaidProtect automatically detects permission issues (channel and role) as well as the default visibility of the channel during the Discord [onboarding process](../guides/onboarding.md).
 
 :::info
 **Time limit and attempts:** Users have **1 to 10 minutes** to complete the captcha (**5 minutes by default**) and **1 to 3 attempts** (**2 attempts by default**). Beyond that, they are automatically kicked from the server.
@@ -67,7 +67,7 @@ If you use an automatic role (autorole) system other than RaidProtect, it may in
 
 Use the command: ```/bypass captcha [user]```
 
-Replace `[user]` with the desired identifier; that user will have 10 minutes to join the server without needing to solve the captcha. If the user is already present, the captcha will be resolved automatically. You can also use the command without specifying a user to see the current list of bypassed users.
+Replace `[user]` with the desired [identifier](../guides/id.mdx); that user will have 10 minutes to join the server without needing to solve the captcha. If the user is already present, the captcha will be resolved automatically. You can also use the command without specifying a user to see the current list of bypassed users.
 
 ## Frequently asked questions {#faq}
 

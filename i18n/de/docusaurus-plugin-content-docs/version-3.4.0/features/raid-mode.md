@@ -94,7 +94,7 @@ Sie erwarten ein legitimes Mitglied, während ein Raid im Gange ist? Erlauben Si
 
 Verwenden Sie den Befehl: ```/bypass raid [benutzer]```
 
-Ersetzen Sie `[benutzer]` durch die gewünschte Kennung; diese Person hat dann 10 Minuten Zeit, dem Server beizutreten, ohne vom Raid-Modus gekickt zu werden. Sie können den Befehl auch ohne Angabe eines Nutzers verwenden, um die aktuelle Liste der Bypass-Nutzer anzuzeigen (maximal 7 Nutzer gleichzeitig).
+Ersetzen Sie `[benutzer]` durch die gewünschte [Kennung](../guides/id.mdx); diese Person hat dann 10 Minuten Zeit, dem Server beizutreten, ohne vom Raid-Modus gekickt zu werden. Sie können den Befehl auch ohne Angabe eines Nutzers verwenden, um die aktuelle Liste der Bypass-Nutzer anzuzeigen (maximal 7 Nutzer gleichzeitig).
 
 :::warning
 Der Bypass des Raid-Modus erfordert den [Kick-Modus](#kick-mode): Ein Nutzer, der auf Einladungsebene blockiert ist, kann nicht per Bypass zugelassen werden.

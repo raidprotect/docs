@@ -15,7 +15,7 @@ RaidProtect simplifie la gestion de votre serveur grâce à deux outils puissant
 
 Pour un serveur qui part de zéro, voici l’ordre conseillé :
 
-1. **Activez le mode Communauté de Discord** (Paramètres du serveur, puis « Activer la communauté »). C’est un prérequis pour le [captcha](./features/captcha) et le [mode raid](./features/raid-mode).
+1. **Activez le [mode Communauté](./guides/community) de Discord** (Paramètres du serveur, puis « Activer la communauté »). C’est un prérequis pour le [captcha](./features/captcha) et le [mode raid](./features/raid-mode).
 2. **Lancez [`/setup`](#install)** : c’est là que vous choisissez les fonctionnalités à activer, via la configuration recommandée. RaidProtect crée automatiquement le salon de logs et applique les changements après un récapitulatif.
 3. **Réglez l’[anti-spam](./features/anti-spam)** : ses sanctions se personnalisent par type de spam.
 4. **Ajustez à tout moment avec [`/settings`](#settings).**

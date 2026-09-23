@@ -45,8 +45,8 @@ Várias sanções estão disponíveis:
 | **Softban** | Bane e depois desbane: apaga as mensagens, mas o membro pode voltar | Gratuito |
 | **Expulsão (Kick)** | Exclui o membro, que pode voltar livremente | Premium |
 | **Timeout** | Impede o membro de falar durante um tempo escolhido (máx. 28 dias) | Premium |
-| **Jail** | Atribui o cargo Jail configurado no seu servidor | Premium |
-| **Mute** | Atribui o cargo Mute configurado no seu servidor | Premium |
+| **Jail** | Atribui o [cargo Jail](./sanctions.mdx#jail) configurado no seu servidor | Premium |
+| **Mute** | Atribui o [cargo Mute](./sanctions.mdx#mute) configurado no seu servidor | Premium |
 
 Para as sanções com duração (Banimento, Timeout, Jail, Mute), você pode escolher uma **duração pronta para usar** (de 5 minutos a 28 dias) ou uma **duração personalizada** por meio do botão dedicado (por exemplo `5m`, `1h`, `2d`; mínimo 1 minuto).
 
