@@ -5,7 +5,7 @@ description: "ScamLens, RaidProtect's anti-scam, automatically detects and remov
 
 import { AntiSpamSanctionsSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
 
-RaidProtect automatically protects your server against **scam images** (crypto scams, fake giveaways, fake casino promotions). This protection is called **ScamLens**: it analyzes posted images, deletes the ones that are known scams and sanctions the account behind the message (often a compromised account).
+RaidProtect automatically protects your server against **scam images** (crypto scams, fake giveaways, fake casino promotions). This protection is called **ScamLens**: it analyzes posted images, deletes the ones that are known scams and sanctions the account behind the message (often a [compromised account](/en/learn/token-grabber)).
 
 :::tip No setup required
 ScamLens is **enabled by default the moment RaidProtect joins your server**. You are protected right away, with nothing to configure.

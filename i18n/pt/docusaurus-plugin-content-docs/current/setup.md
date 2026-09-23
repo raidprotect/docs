@@ -15,7 +15,7 @@ O RaidProtect simplifica o gerenciamento do seu servidor graças a duas ferramen
 
 Para um servidor que começa do zero, esta é a ordem recomendada:
 
-1. **Ative o modo Comunidade do Discord** (Configurações do servidor, depois "Ativar comunidade"). É um pré-requisito para o [captcha](./features/captcha) e o [modo raid](./features/raid-mode).
+1. **Ative o [modo Comunidade](./guides/community) do Discord** (Configurações do servidor, depois "Ativar comunidade"). É um pré-requisito para o [captcha](./features/captcha) e o [modo raid](./features/raid-mode).
 2. **Execute [`/setup`](#install)**: é aqui que você escolhe quais funcionalidades ativar, pela configuração recomendada. O RaidProtect cria o canal de logs automaticamente e aplica as mudanças após um resumo.
 3. **Ajuste o [anti-spam](./features/anti-spam)**: suas sanções são personalizadas por tipo de spam.
 4. **Ajuste a qualquer momento com [`/settings`](#settings).**
@@ -78,11 +78,11 @@ O bot confirmará a redefinição antes de aplicar as alterações.
 
 A configuração recomendada do `/setup` já orienta você nessas escolhas. Se você está começando do zero, ou se está preparando a sua instalação com uma IA, identifique o que corresponde ao seu servidor: cada necessidade aponta para a funcionalidade que a resolve.
 
-- **Raids, ondas de contas que chegam de uma vez**: o [modo raid](./features/raid-mode) fecha as entradas e bloqueia os canais durante o ataque.
-- **Spam, publicidade, links de golpe**: o [anti-spam](./features/anti-spam) sanciona automaticamente, e o [HoneyPot](./features/honeypot) captura as contas de spam.
-- **Bots que se inscrevem em massa**: o [captcha](./features/captcha) faz cada novo membro provar que é humano.
+- **[Raids](/pt/learn/discord-raid), ondas de contas que chegam de uma vez**: o [modo raid](./features/raid-mode) fecha as entradas e bloqueia os canais durante o ataque.
+- **[Spam](/pt/learn/spam-discord), publicidade, links de golpe**: o [anti-spam](./features/anti-spam) sanciona automaticamente, e o [HoneyPot](./features/honeypot) captura as contas de spam.
+- **[Bots](/pt/learn/self-bot) que entram em massa**: o [captcha](./features/captcha) faz cada novo membro provar que é humano.
 - **Golpes em imagem** (falsos giveaways, phishing): o [ScamLens](./features/scam-images) os detecta e os remove.
-- **Risco de nuke ou contas da equipe hackeadas**: aplique o [menor privilégio](/pt/learn/least-privilege) e o [Authentication Manager](./features/authentication-manager).
+- **Risco de [nuke](/pt/learn/discord-nuke) ou contas da equipe hackeadas**: aplique o [menor privilégio](/pt/learn/least-privilege) e o [Authentication Manager](./features/authentication-manager).
 - **Uma comunidade que pode ajudar você a moderar**: ative as [denúncias](./features/reports).
 
 Em seguida, ajuste as [sanções](./features/sanctions) (expulsão, timeout, banimento, jail) ao seu servidor.

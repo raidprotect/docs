@@ -35,4 +35,4 @@ Se a comunidade já estiver ativada no seu servidor, a secção chamar-se-á **V
 ## Utilizar os módulos Bloqueio de MPs e Modo Raid após a ativação {#use}
 
 - Execute o comando [`/settings`](../setup.md#settings) para abrir o menu de definições do RaidProtect.
-- Ative ou desative os módulos desejados (Bloqueio de MPs, Modo Raid...) a partir do menu interativo.
+- Ative ou desative os módulos desejados ([Bloqueio de MPs](../features/dm-lock.mdx), [Modo Raid](../features/raid-mode.md)...) a partir do menu interativo.

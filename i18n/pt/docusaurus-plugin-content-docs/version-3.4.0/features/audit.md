@@ -7,7 +7,7 @@ import AuditMockup from '@site/src/components/DiscordMessage/mockups/audit';
 
 <AuditMockup />
 
-O comando `/audit` analisa a configuração do seu servidor Discord e identifica as falhas de segurança: permissões excessivamente permissivas, nível de verificação insuficiente, cargos administradores não protegidos, etc. Em seguida, ele propõe corrigir a maioria dos problemas com um clique.
+O comando `/audit` analisa a configuração do seu servidor Discord e identifica as falhas de segurança: permissões excessivamente permissivas, nível de verificação insuficiente, [cargos administradores não protegidos](/pt/learn/least-privilege), etc. Em seguida, ele propõe corrigir a maioria dos problemas com um clique.
 
 Utilize o comando: ```/audit```
 

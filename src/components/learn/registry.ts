@@ -98,6 +98,20 @@ export const LEARN_ARTICLES: LearnEntry[] = [
     }),
   },
   {
+    slug: 'discord-sanctions',
+    term: translate({
+      id: 'learn.discord-sanctions.cardTerm',
+      message: 'Les sanctions Discord',
+      description: 'Learn hub card term: discord-sanctions',
+    }),
+    teaser: translate({
+      id: 'learn.discord-sanctions.cardTeaser',
+      message:
+        "Ban, softban, kick, timeout, mute, jail : ce que fait vraiment chaque sanction, et laquelle choisir.",
+      description: 'Learn hub card teaser: discord-sanctions',
+    }),
+  },
+  {
     slug: 'honeypot-warming',
     term: translate({
       id: 'learn.honeypot-warming.cardTerm',

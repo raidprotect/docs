@@ -7,7 +7,7 @@ import HoneypotMockup from '@site/src/components/DiscordMessage/mockups/honeypot
 
 <HoneypotMockup />
 
-Der **HoneyPot** (oder Fallenkanal) von RaidProtect ist eine Antispam-Funktion: ein Kanal, in dem **niemand schreiben sollte**. Da echte Mitglieder wissen, dass dieser Kanal zu meiden ist, sind die Einzigen, die dort posten, **gehackte Konten** oder Spam-Bots: RaidProtect sanktioniert sie automatisch.
+Der **HoneyPot** (oder Fallenkanal) von RaidProtect ist eine Antispam-Funktion: ein Kanal, in dem **[niemand schreiben sollte](/de/learn/honeypot-warming)**. Da echte Mitglieder wissen, dass dieser Kanal zu meiden ist, sind die Einzigen, die dort posten, **[gehackte Konten](/de/learn/token-grabber)** oder Spam-Bots: RaidProtect sanktioniert sie automatisch.
 
 :::info
 **Sie haben ScamLens bereits standardmäßig.** Der Betrugsschutz [ScamLens](./scam-images.md) ist ohne jede Konfiguration auf Ihrem Server aktiv: Auf **Betrugsbilder** spezialisiert, erkennt er sie, entfernt sie und sanktioniert das kompromittierte Konto mit sehr hoher Zuverlässigkeit. Für Betrugsmaschen per Bild reicht ScamLens also völlig aus. Der HoneyPot ist vor allem dann nützlich, wenn Sie maximale Sicherheit wollen und die **anderen Spam-Arten** blockieren möchten: Link-Spam, Text-Raids, Bots.
@@ -37,7 +37,7 @@ Sobald der Kanal erstellt ist, können Sie:
 
 ### Die Sanktion auswählen {#sanction}
 
-Mehrere Sanktionen stehen zur Verfügung:
+Mehrere [Sanktionen](/de/learn/discord-sanctions) stehen zur Verfügung:
 
 | Sanktion | Wirkung | Verfügbarkeit |
 |---|---|---|
@@ -45,8 +45,8 @@ Mehrere Sanktionen stehen zur Verfügung:
 | **Softban** | Bannt und entbannt: löscht die Nachrichten, das Mitglied kann jedoch zurückkehren | Kostenlos |
 | **Kick (Ausschluss)** | Schließt das Mitglied aus, das frei zurückkehren kann | Premium |
 | **Timeout** | Verhindert, dass das Mitglied für eine gewählte Zeit spricht (max. 28 Tage) | Premium |
-| **Jail** | Weist die auf Ihrem Server konfigurierte Jail-Rolle zu | Premium |
-| **Mute** | Weist die auf Ihrem Server konfigurierte Mute-Rolle zu | Premium |
+| **Jail** | Weist die auf Ihrem Server konfigurierte [Jail-Rolle](./sanctions.mdx#jail) zu | Premium |
+| **Mute** | Weist die auf Ihrem Server konfigurierte [Mute-Rolle](./sanctions.mdx#mute) zu | Premium |
 
 Für Sanktionen mit Dauer (Bann, Timeout, Jail, Mute) können Sie eine **gebrauchsfertige Dauer** wählen (von 5 Minuten bis 28 Tagen) oder eine **benutzerdefinierte Dauer** über die entsprechende Schaltfläche (zum Beispiel `5m`, `1h`, `2d`; Minimum 1 Minute).
 

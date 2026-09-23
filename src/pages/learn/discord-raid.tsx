@@ -307,9 +307,16 @@ export default function DiscordRaidPage(): ReactNode {
                         </Translate>
                       </Link>
                     ),
+                    sanction: (
+                      <Link to="/learn/discord-sanctions">
+                        <Translate id="learn.discord-raid.s4.i3.sanction" description="link label">
+                          sanctionne
+                        </Translate>
+                      </Link>
+                    ),
                   }}>
                   {
-                    'Un salon {link} attire les comptes automatisés et les sanctionne sans jamais toucher aux vrais membres.'
+                    'Un salon {link} attire les comptes automatisés et les {sanction} sans jamais toucher aux vrais membres.'
                   }
                 </Translate>
               </li>
@@ -319,9 +326,19 @@ export default function DiscordRaidPage(): ReactNode {
                     Permissions minimales.
                   </Translate>
                 </strong>{' '}
-                <Translate id="learn.discord-raid.s4.i4.b" description="li body">
-                  Ne confiez les rôles sensibles qu'aux personnes de confiance,
-                  pour limiter aussi le risque de nuke.
+                <Translate
+                  id="learn.discord-raid.s4.i4.b"
+                  description="li body with link"
+                  values={{
+                    roles: (
+                      <Link to="/learn/least-privilege">
+                        <Translate id="learn.discord-raid.s4.i4.roles" description="link label">
+                          rôles sensibles
+                        </Translate>
+                      </Link>
+                    ),
+                  }}>
+                  {"Ne confiez les {roles} qu'aux personnes de confiance, pour limiter aussi le risque de nuke."}
                 </Translate>
               </li>
             </ul>

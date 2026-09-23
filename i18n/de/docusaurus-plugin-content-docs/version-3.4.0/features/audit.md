@@ -7,7 +7,7 @@ import AuditMockup from '@site/src/components/DiscordMessage/mockups/audit';
 
 <AuditMockup />
 
-Der Befehl `/audit` analysiert die Konfiguration Ihres Discord-Servers und identifiziert Sicherheitslücken: zu großzügige Berechtigungen, unzureichende Verifizierungsstufe, ungeschützte Administrator-Rollen usw. Anschließend bietet er Ihnen an, die meisten Probleme mit einem Klick zu beheben.
+Der Befehl `/audit` analysiert die Konfiguration Ihres Discord-Servers und identifiziert Sicherheitslücken: zu großzügige Berechtigungen, unzureichende Verifizierungsstufe, [ungeschützte Administrator-Rollen](/de/learn/least-privilege) usw. Anschließend bietet er Ihnen an, die meisten Probleme mit einem Klick zu beheben.
 
 Verwenden Sie den Befehl: ```/audit```
 

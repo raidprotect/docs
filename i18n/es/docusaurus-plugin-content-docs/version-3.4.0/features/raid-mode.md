@@ -11,7 +11,7 @@ import RaidModeMockup from '@site/src/components/DiscordMessage/mockups/raid-mod
 
 ## Modo raid {#raid-mode}
 
-El modo raid de RaidProtect es una función de emergencia que bloquea al instante a todos los nuevos usuarios que intenten unirse a tu servidor, durante una duración máxima de 24 horas. Nuestro bot de protección lo activa por sí solo en cuanto detecta una oleada de llegadas sospechosa, y tú también puedes desencadenarlo a mano. Para bloquear de forma permanente a los nuevos miembros, usa el [comando `/joinlock`](./join-lock.mdx).
+El modo raid de RaidProtect es una función de emergencia que bloquea al instante a todos los nuevos usuarios que intenten unirse a tu servidor, durante una duración máxima de 24 horas. Nuestro bot de protección lo activa por sí solo en cuanto detecta una [oleada de llegadas sospechosa](/es/learn/discord-raid), y tú también puedes desencadenarlo a mano. Para bloquear de forma permanente a los nuevos miembros, usa el [comando `/joinlock`](./join-lock.mdx).
 
 ### ❓ ¿Cómo funciona el modo raid? {#working}
 
@@ -94,7 +94,7 @@ Esta opcion esta reservada a los servidores [**Premium**](/es/premium). Es neces
 
 Usa el comando: ```/bypass raid [usuario]```
 
-Reemplaza `[usuario]` con el identificador deseado; este dispondra de 10 minutos para unirse al servidor sin ser expulsado por el modo raid. Tambien puedes usar el comando sin especificar un usuario para conocer la lista actual de usuarios con bypass (7 usuarios maximo simultaneamente).
+Reemplaza `[usuario]` con el [identificador](../guides/id.mdx) deseado; este dispondra de 10 minutos para unirse al servidor sin ser expulsado por el modo raid. Tambien puedes usar el comando sin especificar un usuario para conocer la lista actual de usuarios con bypass (7 usuarios maximo simultaneamente).
 
 :::warning
 El bypass del modo raid requiere el [modo expulsion](#kick-mode): un usuario bloqueado a nivel de la invitacion no puede tener bypass.

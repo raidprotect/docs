@@ -13,7 +13,7 @@ import SeparatedBox from '@site/src/components/SeparatedBox';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-L'anti-spam de RaidProtect détecte et sanctionne automatiquement le spam sur votre serveur Discord : messages répétés, mentions massives, flood et envois massifs de liens, sans qu'un modérateur ait à intervenir. Grâce à sa détection automatique, il s'occupe des problèmes tout seul.
+L'anti-spam de RaidProtect détecte et sanctionne automatiquement le [spam](/learn/spam-discord) sur votre serveur Discord : messages répétés, mentions massives, flood et envois massifs de liens, sans qu'un modérateur ait à intervenir. Grâce à sa détection automatique, il s'occupe des problèmes tout seul.
 
 ## ❓ Comment fonctionne l'anti-spam ? {#working}
 
@@ -64,7 +64,7 @@ Vous pouvez personnaliser les sanctions appliquées selon le type de spam détec
 
 #### Types de sanctions et déclencheurs {#sanctions}
 
-Voici les différentes **sanctions disponibles** :
+Voici les différentes **[sanctions disponibles](/learn/discord-sanctions)** :
 
 - **Warn** : Envoie un avertissement au membre.
 - **Timeout** : Rend le membre muet pendant une durée définie.
@@ -84,10 +84,10 @@ Et les **déclencheurs (triggers)** que RaidProtect peut détecter, avec la sanc
 | Déclencheur (Trigger)                  | Description                                              | Sanction par défaut |
 |----------------------------------------|----------------------------------------------------------|---------------------|
 | Spam                                   | Envoi répété de messages                                 | Warn                |
-| Spam avec selfbot                      | Utilisation de selfbots pour spammer                     | Softban             |
+| Spam avec selfbot                      | Utilisation de [selfbots](/learn/self-bot) pour spammer  | Softban             |
 | Spam de mentions                       | Mentions massives répétées                               | Softban             |
 | Spam de liens                          | Envoi massif de liens                                    | Ban                 |
-| Spam de commandes externes             | Utilisation de commandes externes pour spammer           | Ban                 |
+| Spam de commandes externes             | Utilisation de [commandes externes](/learn/server-raidable) pour spammer           | Ban                 |
 | Spam d'attachements                    | Envoi massif de fichiers ou d'images                     | Désactivé           |
 | Spam de duplicatas ou spam importants  | Messages copiés-collés ou spams excessifs                | Softban             |
 | Images d'arnaques (Crypto Scam)        | Images d'arnaque détectées par [ScamLens](./scam-images.md) | Timeout             |

@@ -15,7 +15,7 @@ RaidProtect simplifies server management with two powerful tools: the [`/setup`]
 
 For a server starting from scratch, here is the recommended order:
 
-1. **Enable Discord's Community mode** (Server Settings, then "Enable Community"). It is a prerequisite for the [captcha](./features/captcha) and [raid mode](./features/raid-mode).
+1. **Enable Discord's [Community mode](./guides/community)** (Server Settings, then "Enable Community"). It is a prerequisite for the [captcha](./features/captcha) and [raid mode](./features/raid-mode).
 2. **Run [`/setup`](#install)**: this is where you choose which features to enable, via the recommended configuration. RaidProtect automatically creates the logs channel and applies the changes after a summary.
 3. **Set up the [anti-spam](./features/anti-spam)**: its sanctions are customized per type of spam.
 4. **Adjust anything at any time with [`/settings`](#settings).**
@@ -78,11 +78,11 @@ The bot will confirm the reset before applying the changes.
 
 The recommended configuration in `/setup` already guides you through these choices. If you are starting from scratch, or preparing your installation with an AI, spot what matches your server: each need points to the feature that answers it.
 
-- **Raids, waves of accounts arriving all at once**: [raid mode](./features/raid-mode) closes off arrivals and locks the channels for the duration of the attack.
-- **Spam, advertising, scam links**: the [anti-spam](./features/anti-spam) sanctions automatically, and the [HoneyPot](./features/honeypot) traps spam accounts.
-- **Bots signing up en masse**: the [captcha](./features/captcha) makes every newcomer prove they are human.
+- **[Raids](/en/learn/discord-raid), waves of accounts arriving all at once**: [raid mode](./features/raid-mode) closes off arrivals and locks the channels for the duration of the attack.
+- **[Spam](/en/learn/spam-discord), advertising, scam links**: the [anti-spam](./features/anti-spam) sanctions automatically, and the [HoneyPot](./features/honeypot) traps spam accounts.
+- **[Bots](/en/learn/self-bot) joining en masse**: the [captcha](./features/captcha) makes every newcomer prove they are human.
 - **Image scams** (fake giveaways, phishing): [ScamLens](./features/scam-images) detects and removes them.
-- **A nuke risk or hacked staff accounts**: apply [least privilege](/en/learn/least-privilege) and the [Authentication Manager](./features/authentication-manager).
+- **A [nuke](/en/learn/discord-nuke) risk or hacked staff accounts**: apply [least privilege](/en/learn/least-privilege) and the [Authentication Manager](./features/authentication-manager).
 - **A community that can help you moderate**: enable [reports](./features/reports).
 
 Then adjust the [sanctions](./features/sanctions) (kick, timeout, ban, jail) to fit your server.

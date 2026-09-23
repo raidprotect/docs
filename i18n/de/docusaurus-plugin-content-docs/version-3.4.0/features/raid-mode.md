@@ -11,7 +11,7 @@ import RaidModeMockup from '@site/src/components/DiscordMessage/mockups/raid-mod
 
 ## Raid-Modus {#raid-mode}
 
-Der Raid-Modus von RaidProtect ist eine Notfallfunktion, die alle neuen Nutzer, die versuchen, Ihrem Server beizutreten, sofort für eine maximale Dauer von 24 Stunden blockiert. Unser Schutzbot aktiviert ihn selbst, sobald er eine verdächtige Beitrittswelle erkennt, und Sie können ihn auch manuell auslösen. Um neue Mitglieder dauerhaft zu blockieren, verwenden Sie den [`/joinlock`-Befehl](./join-lock.mdx).
+Der Raid-Modus von RaidProtect ist eine Notfallfunktion, die alle neuen Nutzer, die versuchen, Ihrem Server beizutreten, sofort für eine maximale Dauer von 24 Stunden blockiert. Unser Schutzbot aktiviert ihn selbst, sobald er eine [verdächtige Beitrittswelle](/de/learn/discord-raid) erkennt, und Sie können ihn auch manuell auslösen. Um neue Mitglieder dauerhaft zu blockieren, verwenden Sie den [`/joinlock`-Befehl](./join-lock.mdx).
 
 ### ❓ Wie funktioniert der Raid-Modus? {#working}
 
@@ -94,7 +94,7 @@ Sie erwarten ein legitimes Mitglied, während ein Raid im Gange ist? Erlauben Si
 
 Verwenden Sie den Befehl: ```/bypass raid [benutzer]```
 
-Ersetzen Sie `[benutzer]` durch die gewünschte Kennung; diese Person hat dann 10 Minuten Zeit, dem Server beizutreten, ohne vom Raid-Modus gekickt zu werden. Sie können den Befehl auch ohne Angabe eines Nutzers verwenden, um die aktuelle Liste der Bypass-Nutzer anzuzeigen (maximal 7 Nutzer gleichzeitig).
+Ersetzen Sie `[benutzer]` durch die gewünschte [Kennung](../guides/id.mdx); diese Person hat dann 10 Minuten Zeit, dem Server beizutreten, ohne vom Raid-Modus gekickt zu werden. Sie können den Befehl auch ohne Angabe eines Nutzers verwenden, um die aktuelle Liste der Bypass-Nutzer anzuzeigen (maximal 7 Nutzer gleichzeitig).
 
 :::warning
 Der Bypass des Raid-Modus erfordert den [Kick-Modus](#kick-mode): Ein Nutzer, der auf Einladungsebene blockiert ist, kann nicht per Bypass zugelassen werden.

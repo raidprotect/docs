@@ -188,9 +188,19 @@ export default function TokenGrabberPage(): ReactNode {
                   {'Côté serveur, appliquez le {link}.'}
                 </Translate>
               </strong>{' '}
-              <Translate id="learn.token-grabber.s4.i4.b" description="li body">
-                Ainsi, même le compte d'un membre du staff compromis ne peut pas
-                tout détruire.
+              <Translate
+                id="learn.token-grabber.s4.i4.b"
+                description="li body with link"
+                values={{
+                  staff: (
+                    <Link to="/docs/features/authentication-manager">
+                      <Translate id="learn.token-grabber.s4.i4.staff" description="link label">
+                        compte d'un membre du staff compromis
+                      </Translate>
+                    </Link>
+                  ),
+                }}>
+                {'Ainsi, même le {staff} ne peut pas tout détruire.'}
               </Translate>
             </li>
           </ul>
@@ -283,6 +293,14 @@ export default function TokenGrabberPage(): ReactNode {
           </Translate>
         ),
         to: '/learn/discord-raid',
+      },
+      {
+        label: (
+          <Translate id="learn.token-grabber.rel5" description="related">
+            Quelle sanction pour un compte piraté ?
+          </Translate>
+        ),
+        to: '/learn/discord-sanctions',
       },
     ],
   };

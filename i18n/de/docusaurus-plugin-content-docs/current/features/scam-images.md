@@ -5,7 +5,7 @@ description: "ScamLens, der Anti-Scam-Schutz von RaidProtect, erkennt und entfer
 
 import { AntiSpamSanctionsSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
 
-RaidProtect schützt Ihren Server automatisch vor **Betrugsbildern** (Krypto-Betrug, gefälschte Giveaways, gefälschte Casino-Werbung). Dieser Schutz heißt **ScamLens**: Er analysiert gepostete Bilder, löscht die, die bekannte Betrugsversuche sind, und sanktioniert das Konto hinter der Nachricht (oft ein gehacktes Konto).
+RaidProtect schützt Ihren Server automatisch vor **Betrugsbildern** (Krypto-Betrug, gefälschte Giveaways, gefälschte Casino-Werbung). Dieser Schutz heißt **ScamLens**: Er analysiert gepostete Bilder, löscht die, die bekannte Betrugsversuche sind, und sanktioniert das Konto hinter der Nachricht (oft ein [gehacktes Konto](/de/learn/token-grabber)).
 
 :::tip Keine Konfiguration nötig
 ScamLens ist **standardmäßig aktiviert, sobald RaidProtect Ihrem Server beitritt**. Sie sind sofort geschützt, ohne etwas einzustellen.

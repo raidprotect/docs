@@ -11,7 +11,7 @@ import RaidModeMockup from '@site/src/components/DiscordMessage/mockups/raid-mod
 
 ## Modo raid {#raid-mode}
 
-O modo raid do RaidProtect é uma funcionalidade de emergência que bloqueia instantaneamente todos os novos usuários que tentam entrar no seu servidor, por uma duração máxima de 24 horas. O nosso bot de proteção o ativa sozinho assim que detecta uma onda de entradas suspeita, e você também pode acioná-lo manualmente. Para bloquear permanentemente os novos membros, utilize o [comando `/joinlock`](./join-lock.mdx).
+O modo raid do RaidProtect é uma funcionalidade de emergência que bloqueia instantaneamente todos os novos usuários que tentam entrar no seu servidor, por uma duração máxima de 24 horas. O nosso bot de proteção o ativa sozinho assim que detecta uma [onda de entradas suspeita](/pt/learn/discord-raid), e você também pode acioná-lo manualmente. Para bloquear permanentemente os novos membros, utilize o [comando `/joinlock`](./join-lock.mdx).
 
 ### ❓ Como funciona o modo raid? {#working}
 
@@ -94,7 +94,7 @@ Você está esperando um membro legítimo enquanto um raid está em andamento? A
 
 Utilize o comando: ```/bypass raid [usuário]```
 
-Substitua `[usuário]` pelo identificador desejado; ele terá 10 minutos para entrar no servidor sem ser expulso pelo modo raid. Você também pode usar o comando sem especificar um usuário para ver a lista atual de usuários com bypass (máximo de 7 usuários ao mesmo tempo).
+Substitua `[usuário]` pelo [identificador](../guides/id.mdx) desejado; ele terá 10 minutos para entrar no servidor sem ser expulso pelo modo raid. Você também pode usar o comando sem especificar um usuário para ver a lista atual de usuários com bypass (máximo de 7 usuários ao mesmo tempo).
 
 :::warning
 O bypass do modo raid requer o [modo expulsão](#kick-mode): um usuário bloqueado no nível do convite não pode receber bypass.

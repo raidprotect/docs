@@ -9,7 +9,7 @@ import CaptchaMockup from '@site/src/components/DiscordMessage/mockups/captcha';
 
 {/* <CaptchaMockup /> : oculta por el momento */}
 
-El captcha de RaidProtect pide a cada nuevo miembro que copie un código antes de acceder a tu servidor de Discord, lo que bloquea los selfbots y los raids al filtrar las cuentas que no son humanas.
+El captcha de RaidProtect pide a cada nuevo miembro que copie un código antes de acceder a tu servidor de Discord, lo que bloquea los [selfbots](/es/learn/self-bot) y los [raids](/es/learn/discord-raid) al filtrar las cuentas que no son humanas.
 
 El captcha es una de las funciones más populares de RaidProtect, aunque sigue siendo completamente opcional. Permite pedir a cada nuevo usuario que supere un desafío que consiste en escribir un código, con el fin de verificar que no se trata de un robot (selfbot).
 
@@ -20,7 +20,7 @@ El captcha se basa en un rol **@No verificado** y un canal llamado **#verificaci
 - En este canal, el bot envía una imagen que contiene 6 letras mayúsculas. El usuario debe transcribir las letras en el canal para demostrar que es humano.
 - Si la respuesta es correcta, se retira el rol **@No verificado** y el usuario accede con normalidad al servidor. En caso contrario, es expulsado automáticamente.
 - Cuando el captcha está activado, RaidProtect publica automáticamente un mensaje en el canal de registros, indicando la fecha de creación de la cuenta de cada nuevo usuario.
-- RaidProtect detecta automáticamente los problemas de permisos (canal y rol), así como la visibilidad predeterminada del canal durante el proceso de incorporación (onboarding) de Discord.
+- RaidProtect detecta automáticamente los problemas de permisos (canal y rol), así como la visibilidad predeterminada del canal durante el [proceso de incorporación](../guides/onboarding.md) (onboarding) de Discord.
 
 :::info
 **Límite de tiempo e intentos:** Los usuarios disponen de **1 a 10 minutos** para completar el captcha (**5 minutos por defecto**) y de **1 a 3 intentos** (**2 intentos por defecto**). Pasado ese límite, son expulsados automáticamente del servidor.
@@ -67,7 +67,7 @@ Si usas un sistema de rol automático (autorole) distinto al de RaidProtect, pue
 
 Usa el comando: ```/bypass captcha [usuario]```
 
-Reemplaza `[usuario]` por el identificador deseado; este dispondrá de 10 minutos para unirse al servidor sin necesidad de resolver el captcha. Si el usuario ya está presente, el captcha se resolverá automáticamente. También puedes usar el comando sin especificar ningún usuario para conocer la lista actual de usuarios con bypass.
+Reemplaza `[usuario]` por el [identificador](../guides/id.mdx) deseado; este dispondrá de 10 minutos para unirse al servidor sin necesidad de resolver el captcha. Si el usuario ya está presente, el captcha se resolverá automáticamente. También puedes usar el comando sin especificar ningún usuario para conocer la lista actual de usuarios con bypass.
 
 ## Preguntas frecuentes {#faq}
 

@@ -43,7 +43,7 @@ Der [Anti-Spam](../features/anti-spam.mdx) ist eine der Hauptfunktionen von Raid
 
 - **Überprüfen Sie die Berechtigungen des Spammers.** Administratoren werden ignoriert. Wenn Sie also den Anti-Spam auf Ihrem eigenen Server testen, wird er Sie möglicherweise nicht erkennen.
 
-- **Ist der Spam lang genug?** Der Bot erkennt Spam in der Regel erst ab mehr als 5 Nachrichten. Seien Sie nicht zu ungeduldig.
+- **Ist der Spam lang genug?** Der Bot erkennt [Spam](/de/learn/spam-discord) in der Regel erst ab mehr als 5 Nachrichten. Seien Sie nicht zu ungeduldig.
 
 Wenn trotz alledem Spam immer noch nicht erkannt wird, [kontaktieren Sie uns auf unserem Support-Server](https://raidprotect.bot/discord) und fügen Sie einen **Screenshot des Problems** bei.
 

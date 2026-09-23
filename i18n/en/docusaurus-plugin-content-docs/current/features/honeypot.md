@@ -7,7 +7,7 @@ import HoneypotMockup from '@site/src/components/DiscordMessage/mockups/honeypot
 
 <HoneypotMockup />
 
-RaidProtect's **HoneyPot** (or trap channel) is an anti-spam feature: a channel where **no one should write**. Since real members know to stay away from it, the only ones who post there are **hacked accounts** or spam bots: RaidProtect sanctions them automatically.
+RaidProtect's **HoneyPot** (or trap channel) is an anti-spam feature: a channel where **[no one should write](/en/learn/honeypot-warming)**. Since real members know to stay away from it, the only ones who post there are **[hacked accounts](/en/learn/token-grabber)** or spam bots: RaidProtect sanctions them automatically.
 
 :::info
 **You already have ScamLens by default.** The [ScamLens](./scam-images.md) anti-scam is active on your server with no configuration at all: it specializes in **scam images**, detecting them, deleting them, and sanctioning the compromised account with very high reliability. For image-based scams, ScamLens is more than enough on its own. The HoneyPot is mainly useful if you want maximum security and to block the **other types of spam**: link spam, text raids, bots.
@@ -37,7 +37,7 @@ Once the channel is created, you can:
 
 ### Choose the sanction {#sanction}
 
-Several sanctions are available:
+Several [sanctions](/en/learn/discord-sanctions) are available:
 
 | Sanction | Effect | Availability |
 |---|---|---|
@@ -45,8 +45,8 @@ Several sanctions are available:
 | **Softban** | Bans then unbans: deletes the messages, but the member can come back | Free |
 | **Kick** | Removes the member, who can rejoin freely | Premium |
 | **Timeout** | Prevents the member from speaking for a chosen time (max 28 days) | Premium |
-| **Jail** | Assigns the Jail role configured on your server | Premium |
-| **Mute** | Assigns the Mute role configured on your server | Premium |
+| **Jail** | Assigns the [Jail role](./sanctions.mdx#jail) configured on your server | Premium |
+| **Mute** | Assigns the [Mute role](./sanctions.mdx#mute) configured on your server | Premium |
 
 For sanctions with a duration (Ban, Timeout, Jail, Mute), you can pick a **ready-to-use duration** (from 5 minutes to 28 days) or a **custom duration** via the dedicated button (for example `5m`, `1h`, `2d`; minimum 1 minute).
 

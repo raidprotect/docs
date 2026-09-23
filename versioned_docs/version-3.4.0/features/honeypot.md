@@ -7,7 +7,7 @@ import HoneypotMockup from '@site/src/components/DiscordMessage/mockups/honeypot
 
 <HoneypotMockup />
 
-Le **HoneyPot** (ou salon-piège) de RaidProtect est une fonctionnalité antispam : un salon où **personne ne doit écrire**. Comme les vrais membres savent qu'il faut éviter ce salon, les seuls qui y postent sont les **comptes piratés** ou les robots de spam : RaidProtect les sanctionne automatiquement.
+Le **HoneyPot** (ou salon-piège) de RaidProtect est une fonctionnalité antispam : un salon où **[personne ne doit écrire](/learn/honeypot-warming)**. Comme les vrais membres savent qu'il faut éviter ce salon, les seuls qui y postent sont les **[comptes piratés](/learn/token-grabber)** ou les robots de spam : RaidProtect les sanctionne automatiquement.
 
 :::info
 **Vous avez déjà ScamLens par défaut.** L'anti-arnaque [ScamLens](./scam-images.md) est actif sur votre serveur sans aucune configuration : spécialisé dans les **images d'arnaque**, il les détecte, les supprime et sanctionne le compte compromis avec une très grande fiabilité. Pour les scams par image, ScamLens suffit donc largement. Le HoneyPot est surtout utile si vous voulez une sécurité maximale et bloquer les **autres types de spam** : spam de liens, raids texte, robots.
@@ -37,7 +37,7 @@ Une fois le salon créé, vous pouvez :
 
 ### Choisir la sanction {#sanction}
 
-Plusieurs sanctions sont disponibles :
+Plusieurs [sanctions](/learn/discord-sanctions) sont disponibles :
 
 | Sanction | Effet | Disponibilité |
 |---|---|---|
@@ -45,8 +45,8 @@ Plusieurs sanctions sont disponibles :
 | **Softban** | Bannit puis débannit : supprime les messages, mais le membre peut revenir | Gratuit |
 | **Expulsion (Kick)** | Exclut le membre, qui peut revenir librement | Premium |
 | **Timeout** | Empêche le membre de parler pendant un temps choisi (max 28 jours) | Premium |
-| **Jail** | Donne le rôle Jail configuré sur votre serveur | Premium |
-| **Mute** | Donne le rôle Mute configuré sur votre serveur | Premium |
+| **Jail** | Donne le [rôle Jail](./sanctions.mdx#jail) configuré sur votre serveur | Premium |
+| **Mute** | Donne le [rôle Mute](./sanctions.mdx#mute) configuré sur votre serveur | Premium |
 
 Pour les sanctions à durée (Bannissement, Timeout, Jail, Mute), vous pouvez choisir une **durée prête à l'emploi** (de 5 minutes à 28 jours) ou une **durée personnalisée** via le bouton dédié (par exemple `5m`, `1h`, `2d` ; minimum 1 minute).
 

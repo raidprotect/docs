@@ -374,6 +374,14 @@ export default function SelfBotPage(): ReactNode {
         ),
         to: '/docs/features/anti-spam',
       },
+      {
+        label: (
+          <Translate id="learn.self-bot.rel5" description="related">
+            Faut-il un bot pour garder un salon HoneyPot « actif » ?
+          </Translate>
+        ),
+        to: '/learn/honeypot-warming',
+      },
     ],
   };
 

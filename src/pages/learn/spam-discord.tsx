@@ -334,6 +334,22 @@ export default function SpamDiscordPage(): ReactNode {
         ),
         to: '/docs/features/dm-lock',
       },
+      {
+        label: (
+          <Translate id="learn.spam-discord.rel5" description="related">
+            Ban, kick, timeout : les sanctions Discord
+          </Translate>
+        ),
+        to: '/learn/discord-sanctions',
+      },
+      {
+        label: (
+          <Translate id="learn.spam-discord.rel6" description="related">
+            « This server is raidable » : faut-il s'inquiéter ?
+          </Translate>
+        ),
+        to: '/learn/server-raidable',
+      },
     ],
   };
 
