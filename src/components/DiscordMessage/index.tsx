@@ -28,7 +28,7 @@ export interface ThreadData {
 function Thread({ thread }: { thread: ThreadData }) {
   const last = thread.lastMessage;
   return (
-    <div className={styles.thread}>
+    <div className={styles.thread} data-search-ignore>
       <div className={styles.threadSpine} aria-hidden />
       <div className={styles.threadCard}>
         <div className={styles.threadHeader}>
@@ -103,7 +103,7 @@ export default function DiscordMessage({
   };
 
   return (
-    <div className={styles.message}>
+    <div className={styles.message} data-search-ignore>
       <div className={styles.body}>
         {content && <div className={styles.content}>{formatDiscordMarkdown(content)}</div>}
 
