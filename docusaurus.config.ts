@@ -1,12 +1,15 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import type {PluginOptions as SearchOptions} from 'docusaurus-plugin-enhanced-local-search';
 
 import versions from './versions.json';
 
 const lastStableVersion = versions.find((version) => version !== 'beta')
 
 const defaultLocale = 'fr'
+
+const quickLinks = {fr: 'Liens rapides', en: 'Quick links', de: 'Schnellzugriff', es: 'Accesos rápidos', pt: 'Acesso rápido'}
 
 const urlPriorities = {
     'features/captcha': 0.8,
@@ -107,6 +110,95 @@ export default async function createConfigAsync() {
         plugins: [
             require.resolve('./plugins/llms-txt'),
             require.resolve('./plugins/social-preview'),
+            [
+                'docusaurus-plugin-enhanced-local-search',
+                {
+                    // Seulement la documentation, le glossaire et le blog : les pages
+                    // marketing et légales ne sont pas indexées.
+                    ignorePatterns: ['^/(?!(docs|learn|blog)(/|$))'],
+                    categories: [
+                        {match: '^/docs(/|$)', label: {fr: 'Documentation', en: 'Documentation', de: 'Dokumentation', es: 'Documentación', pt: 'Documentação'}},
+                        {match: '^/learn(/|$)', label: {fr: 'Glossaire', en: 'Glossary', de: 'Glossar', es: 'Glosario', pt: 'Glossário'}},
+                        // Le blog passe toujours après la documentation et le glossaire.
+                        {match: '^/blog(/|$)', label: 'Blog', priority: -1},
+                    ],
+                    // Une seule liste pour toutes les langues : un terme absent d'une
+                    // langue n'y a simplement aucun effet.
+                    synonyms: [
+                        ['mp', 'dm', 'message privé', 'messages privés', 'direct message', 'private message'],
+                        ['ban', 'bannissement', 'bannir', 'bann', 'baneo', 'banimento'],
+                        ['kick', 'expulsion', 'expulser', 'expulsar', 'rauswurf'],
+                        ['membre', 'utilisateur'],
+                        ['member', 'user'],
+                        ['mitglied', 'benutzer', 'nutzer'],
+                        ['miembro', 'usuario'],
+                        ['membro', 'usuário'],
+                        ['raid', 'raidmode'],
+                    ],
+                    // Raccourcis mis en avant quand on tape « ajouter », « premium »…
+                    customEntries: [
+                        {
+                            title: {fr: 'Ajouter le bot', en: 'Add the bot', de: 'Bot hinzufügen', es: 'Añadir el bot', pt: 'Adicionar o bot'},
+                            url: {
+                                fr: 'https://raidprotect.bot/invite',
+                                en: 'https://raidprotect.bot/en/invite',
+                                de: 'https://raidprotect.bot/de/invite',
+                                es: 'https://raidprotect.bot/es/invite',
+                                pt: 'https://raidprotect.bot/pt/invite',
+                            },
+                            description: {
+                                fr: 'Invitez RaidProtect sur votre serveur Discord.',
+                                en: 'Invite RaidProtect to your Discord server.',
+                                de: 'Laden Sie RaidProtect auf Ihren Discord-Server ein.',
+                                es: 'Invita a RaidProtect a tu servidor de Discord.',
+                                pt: 'Convide o RaidProtect para o seu servidor do Discord.',
+                            },
+                            keywords: {
+                                fr: ['inviter', 'invitation', 'installer', 'rajouter'],
+                                en: ['invite', 'install'],
+                                de: ['einladen', 'installieren', 'hinzufügen'],
+                                es: ['invitar', 'instalar', 'agregar'],
+                                pt: ['convidar', 'instalar'],
+                            },
+                            category: quickLinks,
+                            priority: 2,
+                        },
+                        {
+                            title: 'Premium',
+                            url: '/premium',
+                            keywords: {
+                                fr: ['abonnement', 'payant', 'prix', 'tarif'],
+                                en: ['subscription', 'paid', 'price', 'pricing'],
+                                de: ['abonnement', 'abo', 'preis'],
+                                es: ['suscripción', 'pago', 'precio'],
+                                pt: ['assinatura', 'pago', 'preço'],
+                            },
+                            category: quickLinks,
+                        },
+                        {
+                            title: {fr: 'Serveur de support', en: 'Support server', de: 'Support-Server', es: 'Servidor de soporte', pt: 'Servidor de suporte'},
+                            url: 'https://discord.com/invite/raidprotect',
+                            keywords: {
+                                fr: ['aide', 'contact', 'discord'],
+                                en: ['help', 'contact', 'discord'],
+                                de: ['hilfe', 'kontakt', 'discord'],
+                                es: ['ayuda', 'contacto', 'discord'],
+                                pt: ['ajuda', 'contato', 'discord'],
+                            },
+                            category: quickLinks,
+                        },
+                    ],
+                    // Affichées quand le champ est vide (fenêtre ⌘K et page /search).
+                    suggestions: [
+                        {label: {fr: 'Installation', en: 'Installation', de: 'Installation', es: 'Instalación', pt: 'Instalação'}, href: '/docs/setup'},
+                        {label: 'Captcha', href: '/docs/features/captcha'},
+                        {label: {fr: 'Anti-spam', en: 'Anti-spam', de: 'Anti-Spam', es: 'Anti-spam', pt: 'Anti-spam'}, href: '/docs/features/anti-spam'},
+                        {label: {fr: 'Mode raid', en: 'Raid mode', de: 'Raid-Modus', es: 'Modo raid', pt: 'Modo raid'}, href: '/docs/features/raid-mode'},
+                        {label: {fr: 'Liste des commandes', en: 'Command list', de: 'Befehlsliste', es: 'Lista de comandos', pt: 'Lista de comandos'}, href: '/docs/commands'},
+                    ],
+                    searchPagePath: 'search',
+                } satisfies Partial<SearchOptions>,
+            ],
             [
                 'docusaurus-plugin-github-editor',
                 {
@@ -291,6 +383,10 @@ export default async function createConfigAsync() {
                         position: 'left',
                         target: '_blank',
                         rel: 'noopener noreferrer',
+                    },
+                    {
+                        type: 'search',
+                        position: 'right',
                     },
                     {
                         type: 'localeDropdown',
