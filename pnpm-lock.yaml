@@ -27,8 +27,8 @@ importers:
         specifier: ^2.0.0
         version: 2.1.1
       docusaurus-plugin-enhanced-local-search:
-        specifier: ^1.0.0
-        version: 1.0.0(@docusaurus/core@3.10.2(@mdx-js/react@3.1.1(@types/react@19.2.14)(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^1.1.3
+        version: 1.1.3(@docusaurus/core@3.10.2(@mdx-js/react@3.1.1(@types/react@19.2.14)(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       docusaurus-plugin-github-editor:
         specifier: ^1.1.0
         version: 1.1.0(@docusaurus/core@3.10.2(@mdx-js/react@3.1.1(@types/react@19.2.14)(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -2847,8 +2847,8 @@ packages:
     resolution: {integrity: sha512-l4gcSouhcgIKRvyy99RNVOgxXiicE+2jZoNmaNmZ6JXiGajBOJAesk1OBlJuM5k2c+eudGdLxDqXuPCKIj6kpw==}
     engines: {node: '>=6'}
 
-  docusaurus-plugin-enhanced-local-search@1.0.0:
-    resolution: {integrity: sha512-7tciLRLX9D1pbBS7iGFNyze7UMN7QoScVsX+J1md/QLfwfOGiiBkBnTghrwLg2Lq4wP9S64gvVDtnnctrBlxXg==}
+  docusaurus-plugin-enhanced-local-search@1.1.3:
+    resolution: {integrity: sha512-UVAhbFfNU6UEiSRRi3pajTiFFmIoW2fHNUD8Zpf8pqhri1onUei060yHTJ6AvWaOFmr/cgrhX/mAGxT6GpdzZg==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       '@docusaurus/core': ^3.0.0
@@ -9436,7 +9436,7 @@ snapshots:
     dependencies:
       '@leichtgewicht/ip-codec': 2.0.5
 
-  docusaurus-plugin-enhanced-local-search@1.0.0(@docusaurus/core@3.10.2(@mdx-js/react@3.1.1(@types/react@19.2.14)(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  docusaurus-plugin-enhanced-local-search@1.1.3(@docusaurus/core@3.10.2(@mdx-js/react@3.1.1(@types/react@19.2.14)(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.2.14)(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.6.3)
       '@docusaurus/utils-validation': 3.10.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)

@@ -121,11 +121,14 @@ export default async function createConfigAsync() {
                     // Seulement la documentation, le glossaire et le blog : les pages
                     // marketing et légales ne sont pas indexées.
                     ignorePatterns: ['^/(?!(docs|learn|blog)(/|$))'],
+                    // Ordre par défaut : documentation, glossaire, blog. La catégorie de
+                    // la page où l'on ouvre la recherche passe devant (contextualPriority).
                     categories: [
-                        {match: '^/docs(/|$)', label: {fr: 'Documentation', en: 'Documentation', de: 'Dokumentation', es: 'Documentación', pt: 'Documentação'}},
-                        {match: '^/learn(/|$)', label: {fr: 'Glossaire', en: 'Glossary', de: 'Glossar', es: 'Glosario', pt: 'Glossário'}},
-                        // Le blog passe toujours après la documentation et le glossaire.
-                        {match: '^/blog(/|$)', label: 'Blog', priority: -1},
+                        {id: 'docs', match: '^/docs(/|$)', label: {fr: 'Documentation', en: 'Documentation', de: 'Dokumentation', es: 'Documentación', pt: 'Documentação'}, priority: 2},
+                        {id: 'glossary', match: '^/learn(/|$)', label: {fr: 'Glossaire', en: 'Glossary', de: 'Glossar', es: 'Glosario', pt: 'Glossário'}, priority: 1},
+                        {id: 'blog', match: '^/blog(/|$)', label: 'Blog', priority: 0},
+                        // Sans match : regroupe les entrées manuelles, toujours en tête.
+                        {id: 'quick', label: quickLinks, priority: 10},
                     ],
                     // Une seule liste pour toutes les langues : un terme absent d'une
                     // langue n'y a simplement aucun effet.
