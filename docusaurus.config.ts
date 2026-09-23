@@ -22,6 +22,11 @@ const urlPriorities = {
 }
 
 export default async function createConfigAsync() {
+    // Docusaurus charge la config une fois par langue : la recherche du JSON-LD
+    // pointe vers la page /search de la langue en cours.
+    const currentLocale = process.env.DOCUSAURUS_CURRENT_LOCALE ?? defaultLocale
+    const searchPrefix = currentLocale === defaultLocale ? '' : `/${currentLocale}`
+
     return {
         title: 'RaidProtect',
         tagline: 'Sécurisez votre serveur Discord',
@@ -316,7 +321,15 @@ export default async function createConfigAsync() {
                             "name": "RaidProtect",
                             "description": "Official site of RaidProtect, the Discord protection bot.",
                             "publisher": { "@id": "https://raidprotect.bot/#organization" },
-                            "inLanguage": ["fr", "en", "de", "es", "pt"]
+                            "inLanguage": ["fr", "en", "de", "es", "pt"],
+                            "potentialAction": {
+                                "@type": "SearchAction",
+                                "target": {
+                                    "@type": "EntryPoint",
+                                    "urlTemplate": `https://raidprotect.bot${searchPrefix}/search?q={search_term_string}`
+                                },
+                                "query-input": "required name=search_term_string"
+                            }
                         }
                     ]
                 })
