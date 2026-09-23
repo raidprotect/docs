@@ -291,6 +291,17 @@ body.premium-page::before {
   --lsearch-bar-width: 16rem;
 }
 
+/* Réglages de la recherche, posés sur body : la fenêtre ⌘K et les barres en
+ * héritent, quel que soit l'ordre de chargement des feuilles de style.
+ * - Objectivity dessine ses lettres un peu au-dessus du centre de sa boîte :
+ *   on redescend le texte pour l'aligner sur la loupe.
+ * - Résultat sélectionné : rouge le plus foncé de la charte, lisible en blanc
+ *   (contraste 6,1:1, contre 3,8:1 avec le rouge principal). */
+body {
+  --lsearch-text-offset: 1px;
+  --lsearch-hit-active-bg: var(--ifm-color-primary-darkest);
+}
+
 .social-link:hover, .navbar-social:hover {
    transform: translateY(-3px);
 }
