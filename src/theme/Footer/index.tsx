@@ -59,7 +59,7 @@ function Footer(): ReactNode {
             </a>
           </div>
           <div className="footer__search">
-            <SearchInput showShortcut={false} />
+            <SearchInput />
           </div>
         </div>
         {links.map((column, i) => (
