@@ -286,6 +286,11 @@ body.premium-page::before {
   display: flex;
 }
 
+.footer__search {
+  margin-top: 20px;
+  --lsearch-bar-width: 16rem;
+}
+
 .social-link:hover, .navbar-social:hover {
    transform: translateY(-3px);
 }
