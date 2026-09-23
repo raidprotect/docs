@@ -148,14 +148,14 @@ export default function LearnArticle({
             </nav>
 
             <header className={styles.header}>
-              <span className={styles.eyebrow}>
+              <span className={styles.eyebrow} data-search-ignore>
                 <Translate id="learn.eyebrow" description="Learn section eyebrow">
                   Glossaire sécurité Discord
                 </Translate>
               </span>
               <h1 className={styles.title}>{content.title}</h1>
               <div className={styles.definition}>
-                <span className={styles.definitionLabel}>
+                <span className={styles.definitionLabel} data-search-ignore>
                   <Translate id="learn.definition.label" description="Definition box label">
                     En bref
                   </Translate>
@@ -192,7 +192,7 @@ export default function LearnArticle({
             )}
 
             {/* CTA produit, tie-in naturel */}
-            <aside className={styles.cta}>
+            <aside className={styles.cta} data-search-ignore>
               <div className={styles.ctaGlow} aria-hidden="true" />
               <h2 className={styles.ctaTitle}>
                 <Translate id="learn.cta.title" description="Learn CTA title">
@@ -217,7 +217,7 @@ export default function LearnArticle({
             </aside>
 
             {content.related.length > 0 && (
-              <section className={styles.related}>
+              <section className={styles.related} data-search-ignore>
                 <h2 className={styles.relatedTitle}>
                   <Translate id="learn.related.title" description="Related links title">
                     À lire aussi

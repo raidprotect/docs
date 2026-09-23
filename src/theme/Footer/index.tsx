@@ -14,6 +14,7 @@ import { Column } from './Column';
 import clsx from 'clsx';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Translate from '@docusaurus/Translate';
+import SearchInput from '@theme/SearchInput';
 
 function Footer(): ReactNode {
   const {
@@ -56,6 +57,9 @@ function Footer(): ReactNode {
             <a href="https://github.com/raidprotect" target="_blank" className="social-link w-inline-block">
               <img loading="eager" src="/img/icons/github.svg" alt="Logo GitHub" className="social-icon" />
             </a>
+          </div>
+          <div className="footer__search">
+            <SearchInput />
           </div>
         </div>
         {links.map((column, i) => (

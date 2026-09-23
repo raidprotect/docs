@@ -1,0 +1,18 @@
+.wrap {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 8px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--ifm-heading-color);
+}
+
+.subtitle {
+  margin: 0 0 4px;
+  font-size: 0.98rem;
+  color: var(--ifm-color-emphasis-700);
+}
