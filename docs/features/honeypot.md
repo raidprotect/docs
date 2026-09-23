@@ -7,7 +7,7 @@ import HoneypotMockup from '@site/src/components/DiscordMessage/mockups/honeypot
 
 <HoneypotMockup />
 
-Le **HoneyPot** (ou salon-piège) de RaidProtect est une fonctionnalité antispam : un salon où **personne ne doit écrire**. Comme les vrais membres savent qu'il faut éviter ce salon, les seuls qui y postent sont les **comptes piratés** ou les robots de spam : RaidProtect les sanctionne automatiquement.
+Le **HoneyPot** (ou salon-piège) de RaidProtect est une fonctionnalité antispam : un salon où **[personne ne doit écrire](/learn/honeypot-warming)**. Comme les vrais membres savent qu'il faut éviter ce salon, les seuls qui y postent sont les **[comptes piratés](/learn/token-grabber)** ou les robots de spam : RaidProtect les sanctionne automatiquement.
 
 :::info
 **Vous avez déjà ScamLens par défaut.** L'anti-arnaque [ScamLens](./scam-images.md) est actif sur votre serveur sans aucune configuration : spécialisé dans les **images d'arnaque**, il les détecte, les supprime et sanctionne le compte compromis avec une très grande fiabilité. Pour les scams par image, ScamLens suffit donc largement. Le HoneyPot est surtout utile si vous voulez une sécurité maximale et bloquer les **autres types de spam** : spam de liens, raids texte, robots.
@@ -37,7 +37,7 @@ Une fois le salon créé, vous pouvez :
 
 ### Choisir la sanction {#sanction}
 
-Plusieurs sanctions sont disponibles :
+Plusieurs [sanctions](/learn/discord-sanctions) sont disponibles :
 
 | Sanction | Effet | Disponibilité |
 |---|---|---|

@@ -43,7 +43,7 @@ O [anti-spam](../features/anti-spam.mdx) é uma das principais funcionalidades d
 
 - **Verifique as permissões do spammer.** Os administradores são ignorados, portanto, se estiver a testar o anti-spam no seu próprio servidor, este pode não o detetar.
 
-- **O spam é suficientemente longo?** O bot geralmente só deteta spam a partir de mais de 5 mensagens. Não seja demasiado apressado.
+- **O spam é suficientemente longo?** O bot geralmente só deteta [spam](/pt/learn/spam-discord) a partir de mais de 5 mensagens. Não seja demasiado apressado.
 
 Se apesar de tudo isto, o spam continuar a não ser detetado, [contacte-nos no nosso servidor de suporte](https://raidprotect.bot/discord) com uma **captura de ecrã do problema**.
 

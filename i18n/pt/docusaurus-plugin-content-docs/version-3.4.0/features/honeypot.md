@@ -7,7 +7,7 @@ import HoneypotMockup from '@site/src/components/DiscordMessage/mockups/honeypot
 
 <HoneypotMockup />
 
-O **HoneyPot** (ou canal-armadilha) do RaidProtect é uma funcionalidade antispam: um canal onde **ninguém deve escrever**. Como os membros reais sabem que precisam evitar esse canal, os únicos que publicam ali são as **contas invadidas** ou os bots de spam: o RaidProtect os sanciona automaticamente.
+O **HoneyPot** (ou canal-armadilha) do RaidProtect é uma funcionalidade antispam: um canal onde **[ninguém deve escrever](/pt/learn/honeypot-warming)**. Como os membros reais sabem que precisam evitar esse canal, os únicos que publicam ali são as **[contas invadidas](/pt/learn/token-grabber)** ou os bots de spam: o RaidProtect os sanciona automaticamente.
 
 :::info
 **Você já tem o ScamLens por padrão.** O antifraude [ScamLens](./scam-images.md) está ativo no seu servidor sem nenhuma configuração: especializado em **imagens de fraude**, ele as detecta, as remove e sanciona a conta comprometida com altíssima confiabilidade. Para as fraudes por imagem, o ScamLens já é mais que suficiente. O HoneyPot é útil sobretudo se você quiser segurança máxima e bloquear os **outros tipos de spam**: spam de links, raids de texto, bots.
@@ -37,7 +37,7 @@ Depois que o canal for criado, você pode:
 
 ### Escolher a sanção {#sanction}
 
-Várias sanções estão disponíveis:
+Várias [sanções](/pt/learn/discord-sanctions) estão disponíveis:
 
 | Sanção | Efeito | Disponibilidade |
 |---|---|---|

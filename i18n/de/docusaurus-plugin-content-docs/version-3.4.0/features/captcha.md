@@ -9,7 +9,7 @@ import CaptchaMockup from '@site/src/components/DiscordMessage/mockups/captcha';
 
 {/* <CaptchaMockup /> : vorerst ausgeblendet */}
 
-Das Captcha von RaidProtect fordert jedes neue Mitglied auf, einen Code abzutippen, bevor es Ihren Discord-Server betritt. So blockiert es Selfbots und Raids, indem es Konten herausfiltert, die keine Menschen sind.
+Das Captcha von RaidProtect fordert jedes neue Mitglied auf, einen Code abzutippen, bevor es Ihren Discord-Server betritt. So blockiert es [Selfbots](/de/learn/self-bot) und [Raids](/de/learn/discord-raid), indem es Konten herausfiltert, die keine Menschen sind.
 
 Das Captcha ist eine der beliebtesten Funktionen von RaidProtect, obwohl es vollkommen optional bleibt. Es ermöglicht, jeden neuen Benutzer aufzufordern, eine Aufgabe zu lösen, bei der ein Code eingegeben werden muss, um zu überprüfen, dass es sich nicht um einen Roboter (Selfbot) handelt.
 

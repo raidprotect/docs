@@ -11,7 +11,7 @@ import RaidModeMockup from '@site/src/components/DiscordMessage/mockups/raid-mod
 
 ## Raid-Modus {#raid-mode}
 
-Der Raid-Modus von RaidProtect ist eine Notfallfunktion, die alle neuen Nutzer, die versuchen, Ihrem Server beizutreten, sofort für eine maximale Dauer von 24 Stunden blockiert. Unser Schutzbot aktiviert ihn selbst, sobald er eine verdächtige Beitrittswelle erkennt, und Sie können ihn auch manuell auslösen. Um neue Mitglieder dauerhaft zu blockieren, verwenden Sie den [`/joinlock`-Befehl](./join-lock.mdx).
+Der Raid-Modus von RaidProtect ist eine Notfallfunktion, die alle neuen Nutzer, die versuchen, Ihrem Server beizutreten, sofort für eine maximale Dauer von 24 Stunden blockiert. Unser Schutzbot aktiviert ihn selbst, sobald er eine [verdächtige Beitrittswelle](/de/learn/discord-raid) erkennt, und Sie können ihn auch manuell auslösen. Um neue Mitglieder dauerhaft zu blockieren, verwenden Sie den [`/joinlock`-Befehl](./join-lock.mdx).
 
 ### ❓ Wie funktioniert der Raid-Modus? {#working}
 

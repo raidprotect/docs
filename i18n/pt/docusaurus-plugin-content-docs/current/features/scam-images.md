@@ -5,7 +5,7 @@ description: "O ScamLens, o antigolpe do RaidProtect, detecta e remove automatic
 
 import { AntiSpamSanctionsSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
 
-O RaidProtect protege automaticamente o seu servidor contra as **imagens de golpe** (golpes de cripto, falsos giveaways, falsas promoções de cassinos). Essa proteção se chama **ScamLens**: ela analisa as imagens publicadas, exclui as que são golpes conhecidos e sanciona a conta que originou a mensagem (muitas vezes uma conta comprometida).
+O RaidProtect protege automaticamente o seu servidor contra as **imagens de golpe** (golpes de cripto, falsos giveaways, falsas promoções de cassinos). Essa proteção se chama **ScamLens**: ela analisa as imagens publicadas, exclui as que são golpes conhecidos e sanciona a conta que originou a mensagem (muitas vezes uma [conta comprometida](/pt/learn/token-grabber)).
 
 :::tip Sem configuração necessária
 O ScamLens está **ativado por padrão assim que o RaidProtect chega ao seu servidor**. Você está protegido imediatamente, sem configurar nada.

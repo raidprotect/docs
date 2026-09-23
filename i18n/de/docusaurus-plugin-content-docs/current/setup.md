@@ -78,11 +78,11 @@ Der Bot bestätigt das Zurücksetzen, bevor er die Änderungen übernimmt.
 
 Die empfohlene Konfiguration von `/setup` führt Sie bereits durch diese Entscheidungen. Wenn Sie bei null anfangen oder Ihre Einrichtung mit einer KI vorbereiten, finden Sie heraus, was zu Ihrem Server passt: Jeder Bedarf verweist auf die Funktion, die ihn abdeckt.
 
-- **Raids, Wellen von Konten, die auf einen Schlag hereinströmen**: der [Raid-Modus](./features/raid-mode) schließt die Zugänge und sperrt die Kanäle für die Dauer des Angriffs.
-- **Spam, Werbung, Betrugslinks**: der [Anti-Spam](./features/anti-spam) sanktioniert automatisch, und der [HoneyPot](./features/honeypot) fängt Spam-Konten ab.
-- **Bots, die sich massenhaft anmelden**: das [Captcha](./features/captcha) lässt jeden Ankömmling beweisen, dass er ein Mensch ist.
+- **[Raids](/de/learn/discord-raid), Wellen von Konten, die auf einen Schlag hereinströmen**: der [Raid-Modus](./features/raid-mode) schließt die Zugänge und sperrt die Kanäle für die Dauer des Angriffs.
+- **[Spam](/de/learn/spam-discord), Werbung, Betrugslinks**: der [Anti-Spam](./features/anti-spam) sanktioniert automatisch, und der [HoneyPot](./features/honeypot) fängt Spam-Konten ab.
+- **[Bots](/de/learn/self-bot), die massenhaft beitreten**: das [Captcha](./features/captcha) lässt jeden Ankömmling beweisen, dass er ein Mensch ist.
 - **Betrug per Bild** (gefälschte Giveaways, Phishing): [ScamLens](./features/scam-images) erkennt und entfernt ihn.
-- **Ein Nuke-Risiko oder gehackte Staff-Konten**: wenden Sie die [geringsten Rechte](/de/learn/least-privilege) und den [Authentication Manager](./features/authentication-manager) an.
+- **Ein [Nuke](/de/learn/discord-nuke)-Risiko oder gehackte Staff-Konten**: wenden Sie die [geringsten Rechte](/de/learn/least-privilege) und den [Authentication Manager](./features/authentication-manager) an.
 - **Eine Community, die Ihnen beim Moderieren helfen kann**: aktivieren Sie die [Meldungen](./features/reports).
 
 Passen Sie anschließend die [Sanktionen](./features/sanctions) (Kick, Timeout, Bann, Jail) an Ihren Server an.

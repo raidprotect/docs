@@ -7,7 +7,7 @@ import HoneypotMockup from '@site/src/components/DiscordMessage/mockups/honeypot
 
 <HoneypotMockup />
 
-Der **HoneyPot** (oder Fallenkanal) von RaidProtect ist eine Antispam-Funktion: ein Kanal, in dem **niemand schreiben sollte**. Da echte Mitglieder wissen, dass dieser Kanal zu meiden ist, sind die Einzigen, die dort posten, **gehackte Konten** oder Spam-Bots: RaidProtect sanktioniert sie automatisch.
+Der **HoneyPot** (oder Fallenkanal) von RaidProtect ist eine Antispam-Funktion: ein Kanal, in dem **[niemand schreiben sollte](/de/learn/honeypot-warming)**. Da echte Mitglieder wissen, dass dieser Kanal zu meiden ist, sind die Einzigen, die dort posten, **[gehackte Konten](/de/learn/token-grabber)** oder Spam-Bots: RaidProtect sanktioniert sie automatisch.
 
 :::info
 **Sie haben ScamLens bereits standardmäßig.** Der Betrugsschutz [ScamLens](./scam-images.md) ist ohne jede Konfiguration auf Ihrem Server aktiv: Auf **Betrugsbilder** spezialisiert, erkennt er sie, entfernt sie und sanktioniert das kompromittierte Konto mit sehr hoher Zuverlässigkeit. Für Betrugsmaschen per Bild reicht ScamLens also völlig aus. Der HoneyPot ist vor allem dann nützlich, wenn Sie maximale Sicherheit wollen und die **anderen Spam-Arten** blockieren möchten: Link-Spam, Text-Raids, Bots.
@@ -37,7 +37,7 @@ Sobald der Kanal erstellt ist, können Sie:
 
 ### Die Sanktion auswählen {#sanction}
 
-Mehrere Sanktionen stehen zur Verfügung:
+Mehrere [Sanktionen](/de/learn/discord-sanctions) stehen zur Verfügung:
 
 | Sanktion | Wirkung | Verfügbarkeit |
 |---|---|---|

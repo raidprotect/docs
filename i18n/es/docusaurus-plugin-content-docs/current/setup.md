@@ -78,11 +78,11 @@ El bot confirmará el restablecimiento antes de aplicar los cambios.
 
 La configuración recomendada de `/setup` ya te guía en estas decisiones. Si empiezas desde cero, o si preparas tu instalación con una IA, localiza lo que corresponde a tu servidor: cada necesidad apunta a la función que la resuelve.
 
-- **Raids, oleadas de cuentas que llegan de golpe**: el [modo raid](./features/raid-mode) cierra las entradas y bloquea los canales mientras dura el ataque.
-- **Spam, publicidad, enlaces de estafa**: el [anti-spam](./features/anti-spam) sanciona automáticamente, y el [HoneyPot](./features/honeypot) atrapa las cuentas de spam.
-- **Bots que se registran en masa**: el [captcha](./features/captcha) hace que cada recién llegado demuestre que es humano.
+- **[Raids](/es/learn/discord-raid), oleadas de cuentas que llegan de golpe**: el [modo raid](./features/raid-mode) cierra las entradas y bloquea los canales mientras dura el ataque.
+- **[Spam](/es/learn/spam-discord), publicidad, enlaces de estafa**: el [anti-spam](./features/anti-spam) sanciona automáticamente, y el [HoneyPot](./features/honeypot) atrapa las cuentas de spam.
+- **[Bots](/es/learn/self-bot) que entran en masa**: el [captcha](./features/captcha) hace que cada recién llegado demuestre que es humano.
 - **Estafas por imagen** (falsos giveaways, phishing): [ScamLens](./features/scam-images) las detecta y las elimina.
-- **Riesgo de nuke o cuentas del staff hackeadas**: aplica el [mínimo privilegio](/es/learn/least-privilege) y el [Authentication Manager](./features/authentication-manager).
+- **Riesgo de [nuke](/es/learn/discord-nuke) o cuentas del staff hackeadas**: aplica el [mínimo privilegio](/es/learn/least-privilege) y el [Authentication Manager](./features/authentication-manager).
 - **Una comunidad que puede ayudarte a moderar**: activa los [reportes](./features/reports).
 
 Luego ajusta las [sanciones](./features/sanctions) (expulsión, timeout, baneo, jail) a tu servidor.

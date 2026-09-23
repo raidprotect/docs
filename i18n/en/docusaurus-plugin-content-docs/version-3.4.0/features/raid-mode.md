@@ -11,7 +11,7 @@ import RaidModeMockup from '@site/src/components/DiscordMessage/mockups/raid-mod
 
 ## Raid mode {#raid-mode}
 
-RaidProtect's raid mode is an emergency feature that instantly blocks all new users attempting to join your server, for a maximum duration of 24 hours. Our protection bot turns it on by itself as soon as it detects a suspicious wave of joins, and you can also trigger it manually. To permanently block new members, use the [`/joinlock` command](./join-lock.mdx).
+RaidProtect's raid mode is an emergency feature that instantly blocks all new users attempting to join your server, for a maximum duration of 24 hours. Our protection bot turns it on by itself as soon as it detects a [suspicious wave of joins](/en/learn/discord-raid), and you can also trigger it manually. To permanently block new members, use the [`/joinlock` command](./join-lock.mdx).
 
 ### ❓ How does raid mode work? {#working}
 

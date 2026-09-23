@@ -43,7 +43,7 @@ The [anti-spam](../features/anti-spam.mdx) is one of RaidProtect's main features
 
 - **Check the spammer's permissions.** Administrators are ignored, so if you are testing the anti-spam on your own server, it may not detect you.
 
-- **Is the spam long enough?** The bot generally only detects spam starting from more than 5 messages. Don't be too hasty.
+- **Is the spam long enough?** The bot generally only detects [spam](/en/learn/spam-discord) starting from more than 5 messages. Don't be too hasty.
 
 If despite all this, spam is still not detected, [contact us on our support server](https://raidprotect.bot/discord) with a **screenshot of the problem**.
 
