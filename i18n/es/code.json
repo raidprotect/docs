@@ -4456,6 +4456,382 @@
     "message": "una cuenta de administrador siempre mostrará «raidable»",
     "description": "bold emphasis: an admin account always shows raidable"
   },
+  "learn.discord-sanctions.metaTitle": {
+    "message": "Ban, kick, timeout, mute: las sanciones de Discord explicadas",
+    "description": "Learn term meta title: discord sanctions"
+  },
+  "learn.discord-sanctions.metaDescription": {
+    "message": "Ban, softban, kick, timeout, mute, jail, advertencia: qué hace realmente cada sanción de Discord, cuál elegir y los errores más frecuentes.",
+    "description": "Learn term meta description: discord sanctions"
+  },
+  "learn.discord-sanctions.term": {
+    "message": "Las sanciones de Discord",
+    "description": "Learn glossary term name (breadcrumb + schema)"
+  },
+  "learn.discord-sanctions.title": {
+    "message": "Ban, kick, timeout, mute: las sanciones de Discord explicadas",
+    "description": "H1"
+  },
+  "learn.discord-sanctions.definition": {
+    "message": "En Discord, tres acciones de moderación son nativas: la exclusión temporal (timeout), la expulsión (kick) y el baneo (ban). RaidProtect las gestiona por ti y añade otras cuatro (advertencia, mute, jail, softban): a ese conjunto lo llamamos sanciones. No son equivalentes: algunas borran los mensajes, otras dejan volver al miembro y otras dependen por completo de tus permisos de canal.",
+    "description": "TL;DR"
+  },
+  "learn.discord-sanctions.definitionText": {
+    "message": "En Discord, tres acciones de moderación son nativas: la exclusión temporal (timeout), la expulsión (kick) y el baneo (ban). RaidProtect las gestiona por ti y añade otras cuatro (advertencia, mute, jail, softban): a ese conjunto lo llamamos sanciones. No son equivalentes: algunas borran los mensajes, otras dejan volver al miembro y otras dependen por completo de tus permisos de canal.",
+    "description": "Learn definition plain text for schema.org"
+  },
+  "learn.discord-sanctions.s0.h": {
+    "message": "¿Acción de moderación o sanción?",
+    "description": "h"
+  },
+  "learn.discord-sanctions.s0.p1": {
+    "message": "Discord ofrece una base de {actions} nativas: lo que tu servidor sabe hacer por sí solo, sin bot, y lo que encuentras en su registro de auditoría. Son tres.",
+    "description": "p with emphasis"
+  },
+  "learn.discord-sanctions.s0.actions": {
+    "message": "acciones de moderación",
+    "description": "bold term"
+  },
+  "learn.discord-sanctions.s0.p2": {
+    "message": "RaidProtect, por su parte, habla de {sanctions}. La palabra engloba esas acciones nativas, que dispara en tu lugar, y las que añade por encima. Cuando eliges una sanción en los ajustes del bot, tomas indistintamente de las dos familias, y todo acaba en el mismo {history}.",
+    "description": "p with emphasis and link"
+  },
+  "learn.discord-sanctions.s0.sanctions": {
+    "message": "sanciones",
+    "description": "bold term"
+  },
+  "learn.discord-sanctions.s0.history": {
+    "message": "historial",
+    "description": "link"
+  },
+  "learn.discord-sanctions.s1.h": {
+    "message": "Las tres acciones de moderación de Discord",
+    "description": "h"
+  },
+  "learn.discord-sanctions.s1.intro": {
+    "message": "Estas tres existen sin ningún bot. RaidProtect solo las dispara por ti, más rápido y dejando constancia.",
+    "description": "p"
+  },
+  "learn.discord-sanctions.s1.warn.t": {
+    "message": "Advertencia (warn).",
+    "description": "li title"
+  },
+  "learn.discord-sanctions.s1.warn.b": {
+    "message": "Sin efecto técnico: se avisa al miembro y el registro queda en su historial. Útil para documentar antes de ir más lejos.",
+    "description": "li body"
+  },
+  "learn.discord-sanctions.s1.timeout.t": {
+    "message": "Timeout (exclusión temporal).",
+    "description": "li title"
+  },
+  "learn.discord-sanctions.s1.timeout.b": {
+    "message": "El miembro sigue en el servidor pero ya no puede escribir, reaccionar ni hablar en voz, durante 28 días como máximo.",
+    "description": "li body"
+  },
+  "learn.discord-sanctions.s1.mute.t": {
+    "message": "Mute.",
+    "description": "li title"
+  },
+  "learn.discord-sanctions.s1.mute.b": {
+    "message": "Un rol que retira el permiso de escribir. Depende por completo de tus permisos de canal.",
+    "description": "li body"
+  },
+  "learn.discord-sanctions.s1.jail.t": {
+    "message": "Jail (prisión).",
+    "description": "li title"
+  },
+  "learn.discord-sanctions.s1.jail.b": {
+    "message": "Un rol que corta el acceso a todo el servidor salvo a un canal, el tiempo de hablar con el miembro. Combinado con el Bloqueo de MD, priva de los mismos derechos que un baneo.",
+    "description": "li body"
+  },
+  "learn.discord-sanctions.s1.kick.t": {
+    "message": "Expulsión (kick).",
+    "description": "li title"
+  },
+  "learn.discord-sanctions.s1.kick.b": {
+    "message": "El miembro sale del servidor, sus mensajes se quedan y puede volver con una nueva invitación.",
+    "description": "li body"
+  },
+  "learn.discord-sanctions.s1.softban.t": {
+    "message": "Softban.",
+    "description": "li title"
+  },
+  "learn.discord-sanctions.s1.softban.b": {
+    "message": "Un baneo seguido de un desbaneo inmediato, encadenado por el bot: los mensajes recientes desaparecen y el miembro puede volver.",
+    "description": "li body"
+  },
+  "learn.discord-sanctions.s1.ban.t": {
+    "message": "Baneo (ban).",
+    "description": "li title"
+  },
+  "learn.discord-sanctions.s1.ban.b": {
+    "message": "El miembro queda excluido de forma duradera y no puede volver mientras el baneo se mantenga. Discord puede borrar sus mensajes recientes de paso.",
+    "description": "li body"
+  },
+  "learn.discord-sanctions.s1b.h": {
+    "message": "Las cuatro sanciones que añade RaidProtect",
+    "description": "h"
+  },
+  "learn.discord-sanctions.s1b.intro": {
+    "message": "Estas no existen en Discord: las fabrica el bot, a partir de roles o de encadenamientos de acciones nativas.",
+    "description": "p"
+  },
+  "learn.discord-sanctions.s2.h": {
+    "message": "Timeout o mute: la confusión más frecuente",
+    "description": "h"
+  },
+  "learn.discord-sanctions.s2.p1": {
+    "message": "Los dos impiden hablar, pero no de la misma manera. El timeout es una función nativa de Discord: se aplica en todo el servidor, en texto y en voz, sobrevive a un cambio de rol y el miembro ve una cuenta atrás. Su límite es la duración: 28 días como máximo.",
+    "description": "p"
+  },
+  "learn.discord-sanctions.s2.p2": {
+    "message": "El mute, en cambio, se apoya en un {role} que asigna el bot. Solo vale lo que valen tus permisos: si un canal olvida denegar la palabra a ese rol, o si se crea un canal nuevo sin heredar esos permisos, el miembro sigue escribiendo. A cambio, un mute puede durar indefinidamente y se ajusta canal por canal.",
+    "description": "p"
+  },
+  "learn.discord-sanctions.s2.role": {
+    "message": "rol Mute",
+    "description": "link"
+  },
+  "learn.discord-sanctions.s2.p3": {
+    "message": "En resumen: el timeout para calmar rápido y con fiabilidad, el mute para una restricción larga o a medida.",
+    "description": "p"
+  },
+  "learn.discord-sanctions.s3.h": {
+    "message": "Kick, softban, ban: lo que cambia de verdad",
+    "description": "h"
+  },
+  "learn.discord-sanctions.s3.intro": {
+    "message": "Las tres sacan al miembro del servidor, pero sus consecuencias no tienen nada que ver.",
+    "description": "p"
+  },
+  "learn.discord-sanctions.s3.kick.t": {
+    "message": "La expulsión",
+    "description": "li title"
+  },
+  "learn.discord-sanctions.s3.kick.b": {
+    "message": "no borra ningún mensaje y no bloquea el regreso. Sirve para interrumpir a alguien, no para apartarlo.",
+    "description": "li body"
+  },
+  "learn.discord-sanctions.s3.softban.t": {
+    "message": "El softban",
+    "description": "li title"
+  },
+  "learn.discord-sanctions.s3.softban.b": {
+    "message": "limpia los mensajes recientes, cosa que el kick no hace, y deja la puerta abierta. Es la respuesta correcta a una {hacked} que spamea: el dueño legítimo volverá cuando recupere su cuenta.",
+    "description": "li body"
+  },
+  "learn.discord-sanctions.s3.hacked": {
+    "message": "cuenta hackeada",
+    "description": "link"
+  },
+  "learn.discord-sanctions.s3.ban.t": {
+    "message": "El baneo",
+    "description": "li title"
+  },
+  "learn.discord-sanctions.s3.ban.b": {
+    "message": "es la única medida que impide de verdad el regreso. Resérvalo para las cuentas creadas para hacer daño, los reincidentes y los {raid}.",
+    "description": "li body"
+  },
+  "learn.discord-sanctions.s3.raid": {
+    "message": "raids",
+    "description": "link"
+  },
+  "learn.discord-sanctions.sjail.h": {
+    "message": "Jail + Bloqueo de MD: un ban, sin los daños colaterales",
+    "description": "h"
+  },
+  "learn.discord-sanctions.sjail.p1": {
+    "message": "Un baneo hace dos cosas a la vez:",
+    "description": "p"
+  },
+  "learn.discord-sanctions.sjail.b1": {
+    "message": "corta el acceso al servidor;",
+    "description": "li"
+  },
+  "learn.discord-sanctions.sjail.b2": {
+    "message": "corta el acceso a tus miembros, ya que Discord reserva los mensajes privados a quienes comparten un servidor o son amigos.",
+    "description": "li"
+  },
+  "learn.discord-sanctions.sjail.p2": {
+    "message": "Esa combinación es lo que lo hace radical. Se puede reproducir sin excluir a nadie:",
+    "description": "p"
+  },
+  "learn.discord-sanctions.sjail.b3": {
+    "message": "el {jail} encierra al miembro en un canal y le quita el resto del servidor;",
+    "description": "li with link"
+  },
+  "learn.discord-sanctions.sjail.b4": {
+    "message": "el {dmlock} le impide escribir en privado a los demás miembros.",
+    "description": "li with link"
+  },
+  "learn.discord-sanctions.sjail.jail": {
+    "message": "jail",
+    "description": "link"
+  },
+  "learn.discord-sanctions.sjail.dmlock": {
+    "message": "Bloqueo de MD",
+    "description": "link"
+  },
+  "learn.discord-sanctions.sjail.p3": {
+    "message": "Las mismas excepciones que para un baneo: amigos, bots, staff. Desde el punto de vista de lo que la persona todavía puede hacer, jail + Bloqueo de MD = un baneo.",
+    "description": "p"
+  },
+  "learn.discord-sanctions.sjail.p4": {
+    "message": "Salvo que un baneo no se detiene en la cuenta señalada: Discord le añade un bloqueo a nivel de dirección IP, para impedir el regreso con otra cuenta.",
+    "description": "p"
+  },
+  "learn.discord-sanctions.sjail.p5": {
+    "message": "Pero una IPv4 pública la comparte muchísima gente (router familiar, residencia de estudiantes, red asociativa, operador móvil con CGNAT), y esas direcciones se reasignan con regularidad. Cuentas que no han hecho nada acaban bloqueadas a la entrada de tu servidor, a veces meses después.",
+    "description": "p"
+  },
+  "learn.discord-sanctions.sjail.p6": {
+    "message": "De ahí nuestra recomendación: el jail como reflejo por defecto, el baneo para las cuentas desechables creadas solo para atacarte. Los mismos derechos retirados, ningún daño colateral, y es reversible.",
+    "description": "p"
+  },
+  "learn.discord-sanctions.s4.h": {
+    "message": "Qué sanción para qué situación",
+    "description": "h"
+  },
+  "learn.discord-sanctions.s4.intro": {
+    "message": "No existe un baremo universal, pero esta escala cubre la gran mayoría de los casos.",
+    "description": "li"
+  },
+  "learn.discord-sanctions.s4.i1": {
+    "message": "Un desliz aislado: una advertencia y, si se repite, un timeout corto.",
+    "description": "li"
+  },
+  "learn.discord-sanctions.s4.i2": {
+    "message": "Una discusión que se calienta: un timeout de unas horas, hasta que baje la tensión.",
+    "description": "li"
+  },
+  "learn.discord-sanctions.s4.i3": {
+    "message": "Un miembro al que hay que hablar en privado: el jail, que lo aísla en un canal dedicado sin expulsarlo.",
+    "description": "li"
+  },
+  "learn.discord-sanctions.s4.i4": {
+    "message": "Una cuenta hackeada que spamea: un softban, que limpia sin castigar a la víctima.",
+    "description": "li"
+  },
+  "learn.discord-sanctions.s4.i5": {
+    "message": "Un {selfbot} o una cuenta de raid: un baneo, sin dudarlo.",
+    "description": "li"
+  },
+  "learn.discord-sanctions.s4.selfbot": {
+    "message": "self-bot",
+    "description": "link"
+  },
+  "learn.discord-sanctions.s4.outro": {
+    "message": "El {antispam} de RaidProtect aplica este tipo de escala por su cuenta: eliges la sanción para cada tipo de spam y el bot se encarga.",
+    "description": "p"
+  },
+  "learn.discord-sanctions.s4.antispam": {
+    "message": "anti-spam",
+    "description": "link"
+  },
+  "learn.discord-sanctions.s5.h": {
+    "message": "Los errores más frecuentes",
+    "description": "h"
+  },
+  "learn.discord-sanctions.s5.i1.t": {
+    "message": "Banear una cuenta hackeada.",
+    "description": "li title"
+  },
+  "learn.discord-sanctions.s5.i1.b": {
+    "message": "El dueño es una víctima, no un atacante. El softban limpia los daños y le deja una salida.",
+    "description": "li body"
+  },
+  "learn.discord-sanctions.s5.i2.t": {
+    "message": "Confiar en un mute mal configurado.",
+    "description": "li title"
+  },
+  "learn.discord-sanctions.s5.i2.b": {
+    "message": "Un rol Mute que no está denegado en todos los canales no sirve de nada. Compruébalo tras cada canal nuevo, o usa mejor el timeout.",
+    "description": "li body"
+  },
+  "learn.discord-sanctions.s5.i3.t": {
+    "message": "Olvidar la jerarquía de roles.",
+    "description": "li title"
+  },
+  "learn.discord-sanctions.s5.i3.b": {
+    "message": "Un bot solo puede sancionar a los miembros situados por debajo de él en la lista de roles. Es lo primero que hay que mirar cuando una sanción no pasa.",
+    "description": "li body"
+  },
+  "learn.discord-sanctions.s5.i4.t": {
+    "message": "No guardar nada.",
+    "description": "li title"
+  },
+  "learn.discord-sanctions.s5.i4.b": {
+    "message": "Una sanción sin rastro es una decisión que no se puede explicar ni revisar. RaidProtect conserva cada acción en un {history}.",
+    "description": "li body"
+  },
+  "learn.discord-sanctions.s5.history": {
+    "message": "historial consultable",
+    "description": "link"
+  },
+  "learn.discord-sanctions.faq.q1": {
+    "message": "¿Cuál es la diferencia entre un timeout y un mute en Discord?",
+    "description": "faq q"
+  },
+  "learn.discord-sanctions.faq.a1": {
+    "message": "El timeout es nativo: se aplica en todas partes, en texto y en voz, y dura 28 días como máximo. El mute es un rol que asigna un bot: puede durar indefinidamente, pero solo funciona si los permisos de todos tus canales deniegan realmente la palabra a ese rol.",
+    "description": "faq a"
+  },
+  "learn.discord-sanctions.faq.q2": {
+    "message": "¿Qué es un softban?",
+    "description": "faq q"
+  },
+  "learn.discord-sanctions.faq.a2": {
+    "message": "Un baneo seguido de un desbaneo inmediato. Borra los mensajes recientes del miembro, como un ban, pero le deja volver. Es la respuesta ideal a una cuenta hackeada que spamea.",
+    "description": "faq a"
+  },
+  "learn.discord-sanctions.faq.q3": {
+    "message": "¿Cuánto puede durar un timeout de Discord?",
+    "description": "faq q"
+  },
+  "learn.discord-sanctions.faq.a3": {
+    "message": "28 días como máximo, es un límite que fija Discord. Más allá hay que pasar por un mute, un jail o un baneo temporal.",
+    "description": "faq a"
+  },
+  "learn.discord-sanctions.faq.q4": {
+    "message": "¿Puede volver un miembro expulsado?",
+    "description": "faq q"
+  },
+  "learn.discord-sanctions.faq.a4": {
+    "message": "Sí. La expulsión solo saca al miembro del servidor: puede volver con cualquier invitación válida. Solo el baneo impide el regreso.",
+    "description": "faq a"
+  },
+  "learn.discord-sanctions.faq.q5": {
+    "message": "¿Qué sanción aplicar a una cuenta hackeada que spamea?",
+    "description": "faq q"
+  },
+  "learn.discord-sanctions.faq.a5": {
+    "message": "El softban: borra los mensajes de estafa y expulsa la cuenta, dejando volver al dueño legítimo cuando haya asegurado su cuenta.",
+    "description": "faq a"
+  },
+  "learn.discord-sanctions.faq.q6": {
+    "message": "¿Por qué preferir un jail a un baneo?",
+    "description": "faq q"
+  },
+  "learn.discord-sanctions.faq.a6": {
+    "message": "Porque un jail combinado con el Bloqueo de MD priva de los mismos derechos que un ban, sin su efecto secundario: el baneo va acompañado de un bloqueo por dirección IP y, como una IPv4 suele compartirse entre varios hogares y reasignarse con regularidad, puede bloquear cuentas que no han hecho nada. Además, el jail es reversible.",
+    "description": "faq a"
+  },
+  "learn.discord-sanctions.rel1": {
+    "message": "El historial de sanciones de RaidProtect",
+    "description": "related"
+  },
+  "learn.discord-sanctions.rel2": {
+    "message": "Los comandos de moderación",
+    "description": "related"
+  },
+  "learn.discord-sanctions.rel3": {
+    "message": "¿Qué es el spam de Discord?",
+    "description": "related"
+  },
+  "learn.discord-sanctions.rel4": {
+    "message": "¿Qué es un token grabber?",
+    "description": "related"
+  },
   "learn.discord-raid.cardTerm": {
     "message": "Raid de Discord",
     "description": "Learn hub card term: discord-raid"
@@ -4519,6 +4895,14 @@
   "learn.server-raidable.cardTeaser": {
     "message": "Lo que realmente significa este mensaje (bots tipo Jalapeno), por qué la prueba es engañosa y las dos formas de corregirlo.",
     "description": "Learn hub card teaser: server-raidable"
+  },
+  "learn.discord-sanctions.cardTerm": {
+    "message": "Las sanciones de Discord",
+    "description": "Learn hub card term: discord-sanctions"
+  },
+  "learn.discord-sanctions.cardTeaser": {
+    "message": "Ban, softban, kick, timeout, mute, jail: qué hace realmente cada sanción y cuál elegir.",
+    "description": "Learn hub card teaser: discord-sanctions"
   },
   "learn.hub.readMore": {
     "message": "Leer",
