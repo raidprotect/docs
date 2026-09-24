@@ -118,14 +118,15 @@ export default async function createConfigAsync() {
             [
                 'docusaurus-plugin-enhanced-local-search',
                 {
-                    // Seulement la documentation, le glossaire et le blog : les pages
-                    // marketing et légales ne sont pas indexées.
-                    ignorePatterns: ['^/(?!(docs|learn|blog)(/|$))'],
-                    // Ordre par défaut : documentation, glossaire, blog. La catégorie de
+                    // Documentation, glossaire, blog et offres (Premium, Business) : les
+                    // autres pages marketing et les pages légales ne sont pas indexées.
+                    ignorePatterns: ['^/(?!(docs|learn|blog|premium|business)(/|$))'],
+                    // Ordre par défaut : documentation, glossaire, offres, blog. La catégorie de
                     // la page où l'on ouvre la recherche passe devant (contextualPriority).
                     categories: [
-                        {id: 'docs', match: '^/docs(/|$)', label: {fr: 'Documentation', en: 'Documentation', de: 'Dokumentation', es: 'Documentación', pt: 'Documentação'}, priority: 2},
-                        {id: 'glossary', match: '^/learn(/|$)', label: {fr: 'Glossaire', en: 'Glossary', de: 'Glossar', es: 'Glosario', pt: 'Glossário'}, priority: 1},
+                        {id: 'docs', match: '^/docs(/|$)', label: {fr: 'Documentation', en: 'Documentation', de: 'Dokumentation', es: 'Documentación', pt: 'Documentação'}, priority: 3},
+                        {id: 'glossary', match: '^/learn(/|$)', label: {fr: 'Glossaire', en: 'Glossary', de: 'Glossar', es: 'Glosario', pt: 'Glossário'}, priority: 2},
+                        {id: 'offers', match: '^/(premium|business)(/|$)', label: {fr: 'Offres', en: 'Plans', de: 'Angebote', es: 'Planes', pt: 'Planos'}, priority: 1},
                         {id: 'blog', match: '^/blog(/|$)', label: 'Blog', priority: 0},
                         // Sans match : regroupe les entrées manuelles, toujours en tête.
                         {id: 'quick', label: quickLinks, priority: 10},
@@ -171,17 +172,47 @@ export default async function createConfigAsync() {
                             category: quickLinks,
                             priority: 2,
                         },
+                        // standalone : la page Premium est indexée (catégorie Offres), le
+                        // raccourci reste un résultat à part, en tête.
                         {
                             title: 'Premium',
                             url: '/premium',
+                            description: {
+                                fr: 'Personnalisez le bot aux couleurs de votre serveur et débloquez les fonctionnalités avancées.',
+                                en: "Customize the bot with your server's identity and unlock advanced features.",
+                                de: 'Passen Sie den Bot an Ihren Server an und schalten Sie erweiterte Funktionen frei.',
+                                es: 'Personaliza el bot con la identidad de tu servidor y desbloquea funciones avanzadas.',
+                                pt: 'Personalize o bot com a identidade do seu servidor e desbloqueie recursos avançados.',
+                            },
                             keywords: {
-                                fr: ['abonnement', 'payant', 'prix', 'tarif'],
-                                en: ['subscription', 'paid', 'price', 'pricing'],
-                                de: ['abonnement', 'abo', 'preis'],
-                                es: ['suscripción', 'pago', 'precio'],
-                                pt: ['assinatura', 'pago', 'preço'],
+                                fr: ['abonnement', 'payant', 'prix', 'tarif', 'personnaliser', 'customiser', 'custom', 'avatar', 'bannière', 'pseudo'],
+                                en: ['subscription', 'paid', 'price', 'pricing', 'customize', 'custom', 'avatar', 'banner', 'nickname'],
+                                de: ['abonnement', 'abo', 'preis', 'anpassen', 'custom', 'avatar', 'banner'],
+                                es: ['suscripción', 'pago', 'precio', 'personalizar', 'custom', 'avatar', 'banner'],
+                                pt: ['assinatura', 'pago', 'preço', 'personalizar', 'custom', 'avatar', 'banner'],
                             },
                             category: quickLinks,
+                            standalone: true,
+                        },
+                        {
+                            title: 'RaidProtect Business',
+                            url: '/business',
+                            description: {
+                                fr: 'Un bot entièrement sur mesure, une instance dédiée et un suivi humain pour les grandes communautés.',
+                                en: 'A fully custom bot, a dedicated instance and human follow-up for large communities.',
+                                de: 'Ein vollständig maßgeschneiderter Bot, eine eigene Instanz und persönliche Betreuung für große Communities.',
+                                es: 'Un bot totalmente a medida, una instancia dedicada y seguimiento humano para grandes comunidades.',
+                                pt: 'Um bot totalmente sob medida, uma instância dedicada e acompanhamento humano para grandes comunidades.',
+                            },
+                            keywords: {
+                                fr: ['custom bot', 'bot personnalisé', 'bot sur mesure', 'marque blanche', 'instance dédiée', 'entreprise', 'business'],
+                                en: ['custom bot', 'white label', 'dedicated instance', 'enterprise', 'company', 'business'],
+                                de: ['custom bot', 'eigener bot', 'individueller bot', 'eigene instanz', 'unternehmen', 'business'],
+                                es: ['custom bot', 'bot personalizado', 'bot a medida', 'instancia dedicada', 'empresa', 'business'],
+                                pt: ['custom bot', 'bot personalizado', 'bot sob medida', 'instância dedicada', 'empresa', 'business'],
+                            },
+                            category: quickLinks,
+                            standalone: true,
                         },
                         {
                             title: {fr: 'Serveur de support', en: 'Support server', de: 'Support-Server', es: 'Servidor de soporte', pt: 'Servidor de suporte'},
