@@ -523,7 +523,7 @@ export default function PremiumPage(): React.ReactNode {
                         <h1 className={styles.heroTitle}>
                             <Translate id="premium.hero.title.line1" description="Première ligne du titre du hero premium">
                                 Une protection à votre image,
-                            </Translate>
+                            </Translate>{' '}
                             <span className={styles.heroTitleAccent}>
                                 <Translate id="premium.hero.title.accent" description="Partie accentuée du titre du hero premium">
                                     sans compromis
@@ -552,7 +552,7 @@ export default function PremiumPage(): React.ReactNode {
                 </section>
 
                 {/* ============= SOCIAL PROOF / STATS ============= */}
-                <section className={styles.statsSection}>
+                <section className={styles.statsSection} data-search-ignore>
                     <div className={styles.container}>
                         <div className={styles.statsGrid}>
                             <StatCard value={stats.servers} label={translate({ id: 'premium.stats.servers', message: 'Serveurs protégés' })} />
@@ -596,7 +596,7 @@ export default function PremiumPage(): React.ReactNode {
                             </div>
 
                             {/* Maquette de profil Discord réutilisable (composant autonome). */}
-                            <div className={styles.flagshipVisual}>
+                            <div className={styles.flagshipVisual} data-search-ignore>
                                 <IdentityMockup ctaHref="https://raidprotect.bot/founder" />
                             </div>
                         </div>
@@ -604,7 +604,9 @@ export default function PremiumPage(): React.ReactNode {
                 </section>
 
                 {/* ============= ILS NOUS FONT CONFIANCE ============= */}
-                <Servers title={translate({ id: 'premium.servers.title', message: 'Ils nous font confiance' })} transparent />
+                <div data-search-ignore>
+                    <Servers title={translate({ id: 'premium.servers.title', message: 'Ils nous font confiance' })} transparent />
+                </div>
 
                 {/* ============= AVANTAGES PRINCIPAUX ============= */}
                 <section className={styles.section}>
