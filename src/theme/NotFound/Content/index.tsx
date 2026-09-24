@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import Translate from '@docusaurus/Translate';
 import type {Props} from '@theme/NotFound/Content';
 import Heading from '@theme/Heading';
+import SearchHero from '@theme/SearchHero';
 import styles from './styles.module.css';
 
 export default function NotFoundContent({className}: Props): ReactNode {
@@ -25,6 +26,10 @@ export default function NotFoundContent({className}: Props): ReactNode {
               The page you are looking for does not exist or has been moved.
             </Translate>
           </p>
+          {/* La page cherchée n'existe pas : on propose de la chercher avant les boutons. */}
+          <div className={styles.search}>
+            <SearchHero />
+          </div>
           <div className={styles.buttonList}>
             {/* "btn-primary button-row w-button" */}
             <a href="/" className={clsx(styles.primaryButton, styles.button)}>
