@@ -4975,5 +4975,193 @@
   "home.schema.feature.moderation": {
     "message": "Moderação e sanções (expulsão, timeout, banimento, jail)",
     "description": "SoftwareApplication featureList item"
+  },
+  "status.head.title": {
+    "message": "RaidProtect status",
+    "description": "Status page: browser tab title"
+  },
+  "status.head.description": {
+    "message": "Live status of RaidProtect: clusters, shards and per-server lookup.",
+    "description": "Status page: meta description"
+  },
+  "status.title": {
+    "message": "RaidProtect status",
+    "description": "Status page: main heading"
+  },
+  "status.subtitle": {
+    "message": "Live overview. Refreshes every 30 seconds.",
+    "description": "Status page: subtitle"
+  },
+  "status.banner.operational": {
+    "message": "All systems operational",
+    "description": "Status page: global banner, everything works"
+  },
+  "status.banner.disruption": {
+    "message": "Service disruption",
+    "description": "Status page: global banner, some clusters are degraded or down"
+  },
+  "status.banner.outage": {
+    "message": "Outage",
+    "description": "Status page: global banner, outage"
+  },
+  "status.banner.loading": {
+    "message": "Loading status…",
+    "description": "Status page: global banner while loading"
+  },
+  "status.banner.unavailable": {
+    "message": "Status unavailable",
+    "description": "Status page: global banner when the status cannot be fetched"
+  },
+  "status.outage.description": {
+    "message": "No data is available right now.",
+    "description": "Status page: text under the outage banner when the API answers 503"
+  },
+  "status.unavailable.description": {
+    "message": "We can't fetch the status right now. Please try again in a few moments.",
+    "description": "Status page: text under the unavailable banner"
+  },
+  "status.stale": {
+    "message": "Data from {seconds} s ago",
+    "description": "Status page: age of stale data in seconds"
+  },
+  "status.partial": {
+    "message": "Partial data",
+    "description": "Status page: discreet note when the data is incomplete"
+  },
+  "status.totals.shards": {
+    "message": "Shards",
+    "description": "Status page: total shards"
+  },
+  "status.totals.shardsReady": {
+    "message": "Ready shards",
+    "description": "Status page: ready shards"
+  },
+  "status.totals.guilds": {
+    "message": "Servers",
+    "description": "Status page: total servers"
+  },
+  "status.totals.members": {
+    "message": "Members",
+    "description": "Status page: total members"
+  },
+  "status.clusters.title": {
+    "message": "Clusters",
+    "description": "Status page: heading of the clusters grid"
+  },
+  "status.cluster.label": {
+    "message": "Cluster {id}",
+    "description": "Status page: cluster name"
+  },
+  "status.cluster.unassigned": {
+    "message": "Unassigned",
+    "description": "Status page: pseudo-cluster holding shards without an owner"
+  },
+  "status.cluster.ready": {
+    "message": "{ready}/{total} ready",
+    "description": "Status page: ready shards over total shards in a cluster"
+  },
+  "status.state.operational": {
+    "message": "Operational",
+    "description": "Status page: cluster state operational"
+  },
+  "status.state.degraded": {
+    "message": "Degraded",
+    "description": "Status page: cluster state degraded"
+  },
+  "status.state.down": {
+    "message": "Down",
+    "description": "Status page: cluster state down"
+  },
+  "status.shardState.ready": {
+    "message": "Ready",
+    "description": "Status page: shard state ready"
+  },
+  "status.shardState.starting": {
+    "message": "Starting",
+    "description": "Status page: shard state starting"
+  },
+  "status.shardState.reconnecting": {
+    "message": "Reconnecting",
+    "description": "Status page: shard state reconnecting"
+  },
+  "status.shardState.down": {
+    "message": "Down",
+    "description": "Status page: shard state down"
+  },
+  "status.shard.label": {
+    "message": "Shard {id}",
+    "description": "Status page: shard name"
+  },
+  "status.shard.guilds": {
+    "message": "{count} server|{count} servers",
+    "description": "Status page: number of servers on a shard (singular|plural)"
+  },
+  "status.lookup.title": {
+    "message": "Find your server's shard",
+    "description": "Status page: heading of the server lookup section"
+  },
+  "status.lookup.label": {
+    "message": "Your server's ID or invite",
+    "description": "Status page: label of the server lookup field"
+  },
+  "status.lookup.placeholder": {
+    "message": "123456789012345678 or discord.gg/abc",
+    "description": "Status page: placeholder of the server lookup field"
+  },
+  "status.lookup.searching": {
+    "message": "Searching…",
+    "description": "Status page: lookup button while searching"
+  },
+  "status.lookup.submit": {
+    "message": "Search",
+    "description": "Status page: lookup button"
+  },
+  "status.lookup.intro": {
+    "message": "This server would be served by shard {shard}.",
+    "description": "Status page: lookup result, wording must not claim the bot is on the server"
+  },
+  "status.lookup.shard": {
+    "message": "Shard {shard}: {state}",
+    "description": "Status page: lookup result shard line"
+  },
+  "status.lookup.noCluster": {
+    "message": "No cluster holds this shard right now.",
+    "description": "Status page: lookup result when no cluster holds the shard"
+  },
+  "status.lookup.cluster": {
+    "message": "{cluster}: {state}",
+    "description": "Status page: lookup result cluster line"
+  },
+  "status.lookup.disclaimer": {
+    "message": "This lookup only tells where the server would be served. It does not say whether RaidProtect is on that server.",
+    "description": "Status page: lookup disclaimer, the search does not tell whether the bot is on the server"
+  },
+  "status.lookup.error.invalidQuery": {
+    "message": "Enter your server's ID (a string of digits) or a valid invite link.",
+    "description": "Status page: lookup error, query is not a snowflake or an invite"
+  },
+  "status.lookup.error.inviteNotFound": {
+    "message": "This invite was not found or has expired.",
+    "description": "Status page: lookup error, invite unknown or expired"
+  },
+  "status.lookup.error.rateLimitedNoDelay": {
+    "message": "Too many searches. Try again in a moment.",
+    "description": "Status page: lookup error, rate limited without delay"
+  },
+  "status.lookup.error.rateLimited": {
+    "message": "Too many searches. Try again in {seconds} s.",
+    "description": "Status page: lookup error, rate limited with delay in seconds"
+  },
+  "status.lookup.error.unavailable": {
+    "message": "The lookup is unavailable right now.",
+    "description": "Status page: lookup error, service unavailable"
+  },
+  "status.outdated": {
+    "message": "Last updated {seconds} s ago",
+    "description": "Status page: shown when the last successful refresh is older than 90 seconds"
+  },
+  "status.banner.unknown": {
+    "message": "Unknown status",
+    "description": "Status page: global banner when the API returns no cluster"
   }
 }
