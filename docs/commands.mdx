@@ -27,6 +27,8 @@ Toutes les commandes RaidProtect, regroupées par catégorie. Cliquez sur le nom
 | [`/honeypot`](./features/honeypot.md#config) | `/honeypot` | Configure le salon-piège HoneyPot. |
 | [`/tagrole`](./features/tag-role.md) | `/tagrole` | Configure le rôle attribué aux membres qui portent le tag du serveur. |
 | [`/display public`](./features/display.mdx) | `/display public` | Gère les panneaux d’information publics de RaidProtect. |
+| [`/display staff`](./features/display.mdx#staff) | `/display staff` | Gère les panneaux réservés au staff (DISCON, messages internes). |
+| [`/discon`](./features/discon.md) | `/discon` | Met en place le panneau DISCON qui règle le niveau de danger du serveur. |
 | [`/audit`](./features/audit.md) | `/audit` | Analyse la sécurité du serveur et propose de corriger les failles de configuration. |
 
 ## Modération {#moderation}
@@ -35,7 +37,7 @@ Toutes les commandes RaidProtect, regroupées par catégorie. Cliquez sur le nom
 
 | Commande | Prototype | Description |
 |---|---|---|
-| [`/ban`](./features/moderation.mdx#ban) | `/ban (@utilisateur) [durée] [--delete-messages=durée] [--silent] [raison]` | Bannit définitivement un utilisateur. |
+| [`/ban`](./features/moderation.mdx#ban) | `/ban (@utilisateur) [durée] [--delete-messages=durée] [--silent] [raison]` | Bannit un utilisateur, définitivement ou pour la durée indiquée. |
 | [`/tempban`](./features/moderation.mdx#tempban) | `/tempban (@utilisateur) (durée) [--delete-messages=durée] [--silent] [raison]` | Bannit un utilisateur pour une durée définie. |
 | [`/softban`](./features/moderation.mdx#softban) | `/softban (@membre) [--delete-messages=durée] [--silent] [raison]` | Bannit puis débannit un membre pour supprimer ses messages. |
 | [`/unban`](./features/moderation.mdx#unban) | `/unban (@utilisateur) [--silent] [raison]` | Lève un bannissement. |
@@ -51,11 +53,12 @@ Toutes les commandes RaidProtect, regroupées par catégorie. Cliquez sur le nom
 
 | Commande | Prototype | Description |
 |---|---|---|
-| [`/clear`](./features/moderation.mdx#clear) | `/clear (nombre) [@utilisateur]` | Supprime un groupe de messages dans un salon. |
-| [`/snipe`](./features/moderation.mdx#snipe) | `/snipe [@utilisateur] [--channel=#salon]` | Récupère le dernier message supprimé dans le salon ou d’un utilisateur (1 h). |
+| [`/clear`](./features/moderation.mdx#clear) | `/clear (nombre) [@utilisateur]` | Supprime de 2 à 100 messages dans un salon. |
+| [`/snipe`](./features/moderation.mdx#snipe) | `/snipe [@utilisateur] [--channel=#salon]` | Récupère le dernier message supprimé dans le salon ou d’un utilisateur (1 h, nécessite la mise en cache des messages). |
 | [`/modview`](./features/moderation.mdx#modview) | `/modview (@utilisateur)` | Ouvre une vue de modération centralisée d’un membre (sanctions, note, snipe). |
 | [`/note`](./features/moderation.mdx#note) | `/note (@utilisateur)` | Ajoute ou modifie la note de modération interne d’un membre. |
 | [`/nick`](./features/moderation.mdx#nick) | `/nick (@membre) [pseudo]` | Change le pseudo d’un membre sur le serveur (vide pour réinitialiser). |
+| [`/onduty`](./features/moderation.mdx#onduty) | `/onduty` | Ajoute ou retire le rôle « en service » du modérateur qui l’utilise. |
 
 ### Verrouillage de salons
 
@@ -69,17 +72,18 @@ Toutes les commandes RaidProtect, regroupées par catégorie. Cliquez sur le nom
 
 | Commande | Prototype | Description |
 |---|---|---|
-| [`/sanctions search`](./features/sanctions.mdx#search) | `/sanctions search [@utilisateur] [@modérateur] [type] [raison] [date] [statut] [type-modérateur]` | Recherche dans l’historique avec des filtres (utilisateur, modérateur, type, date, statut…). |
+| [`/sanctions search`](./features/sanctions.mdx#search) | `/sanctions search [@utilisateur] [@modérateur] [type] [date] [statut] [type-modérateur]` | Recherche dans l’historique avec des filtres (utilisateur, modérateur, type, date, statut…). |
 | [`/sanctions info`](./features/sanctions.mdx#info) | `/sanctions info (id)` | Affiche les détails d’une sanction. |
-| [`/sanctions edit`](./features/sanctions.mdx#edit) | `/sanctions edit (id) [nouvelle_raison] [nouvelle_durée]` | Modifie la raison d’une sanction existante. |
+| [`/sanctions edit`](./features/sanctions.mdx#edit) | `/sanctions edit (id) [nouvelle_raison] [nouvelle_durée]` | Modifie la raison ou la durée d’une sanction existante. |
 | [`/sanctions delete`](./features/sanctions.mdx#delete) | `/sanctions delete (id) [raison]` | Supprime une sanction de l’historique. |
 | [`/mes-sanctions`](./features/utilities.mdx#my-sanctions) | `/mes-sanctions` | Permet à un membre de consulter ses propres sanctions. |
+| [`/alt`](./features/alt-accounts.md) | `/alt [@membre] [@autre]` | Lie les comptes d’une même personne pour qu’ils partagent leurs sanctions (bêta Premium). |
 
 ## Anti-raid {#antiraid}
 
 | Commande | Prototype | Description |
 |---|---|---|
-| [`/raidmode`](./features/raid-mode.md#raid-mode) | `/raidmode [état] [durée]` | Active ou désactive le mode raid (blocage des nouvelles arrivées). |
+| [`/raidmode`](./features/raid-mode.md#raid-mode) | `/raidmode [état] [durée]` | Active ou désactive le mode raid, qui bloque ou filtre les nouvelles arrivées. |
 | [`/joinlock`](./features/join-lock.mdx) | `/joinlock [état]` | Ferme indéfiniment l’accès au serveur aux nouveaux membres. |
 | [`/dmlock`](./features/dm-lock.mdx) | `/dmlock` | Active ou désactive la fermeture permanente des MP du serveur. |
 | [`/dmlock-info`](./features/dm-lock.mdx#info) | `/dmlock-info` | Informe les membres de l’état de la fermeture des MP. |
@@ -97,7 +101,7 @@ Toutes les commandes RaidProtect, regroupées par catégorie. Cliquez sur le nom
 | Commande | Prototype | Description |
 |---|---|---|
 | [`/bypass captcha`](./features/captcha.md#bypass) | `/bypass captcha [@utilisateur]` | Autorise un utilisateur à rejoindre sans passer le captcha. |
-| [`/bypass minage`](./features/raid-mode.md#bypass-minage) | `/bypass minage [@utilisateur]` | Autorise un utilisateur à rejoindre sans respecter l’âge minimum. |
+| [`/bypass minage`](./features/onboarding.md#bypass-minage) | `/bypass minage [@utilisateur]` | Autorise un utilisateur à rejoindre sans respecter l’âge minimum. |
 | [`/bypass raid`](./features/raid-mode.md#bypass-raid) | `/bypass raid [@utilisateur]` | Autorise un utilisateur à rejoindre malgré le mode raid (nécessite le mode expulsion). |
 
 ## Utilitaires {#utilities}
@@ -106,14 +110,15 @@ Toutes les commandes RaidProtect, regroupées par catégorie. Cliquez sur le nom
 |---|---|---|
 | [`/userinfo`](./features/utilities.mdx#userinfo) | `/userinfo [@utilisateur]` | Affiche les informations d’un utilisateur. |
 | [`/serverinfo`](./features/utilities.mdx#serverinfo) | `/serverinfo` | Affiche les informations du serveur. |
-| [`/discord-sanctions`](./features/utilities.mdx#discord-sanctions) | `/discord-sanctions (@utilisateur)` | Affiche les sanctions Discord (DSA) d’un utilisateur. |
+| [`/discord-sanctions`](./features/utilities.mdx#discord-sanctions) | `/discord-sanctions [@utilisateur]` | Affiche les sanctions Discord (DSA) d’un utilisateur, ou les statistiques globales sans utilisateur. |
+| [`/inviteinfo`](./features/utilities.mdx#inviteinfo) | `/inviteinfo (invitation)` | Affiche les informations d’une invitation Discord (code ou lien). |
 | [`/prune`](./features/utilities.mdx#prune) | `/prune [jours]` | Congédie les membres inactifs via un menu interactif. |
 | [`/channel duplicate`](./features/utilities.mdx#channel-duplicate) | `/channel duplicate (#salon)` | Duplique un salon avec ses paramètres et permissions. |
 | [`/channel clear`](./features/utilities.mdx#channel-clear) | `/channel clear (#salon)` | Supprime et re-crée un salon à l’identique. |
 | [`/block add`](./features/utilities.mdx#block-add) | `/block add [@utilisateur] [raison]` | Empêche un utilisateur d’utiliser certaines fonctionnalités. |
 | [`/block remove`](./features/utilities.mdx#block-remove) | `/block remove [@utilisateur] [raison]` | Lève le blocage d’un utilisateur. |
 | [`/block list`](./features/utilities.mdx#block-list) | `/block list` | Liste les utilisateurs bloqués. |
-| [`/report`](./features/reports.md) | `/report (@membre) (raison)` | Permet aux membres de signaler une situation à la modération. |
+| [`/report`](./features/reports.md) | `/report (@membre)` | Permet aux membres de signaler un membre à la modération (raison saisie dans une fenêtre). |
 
 ## Informations & aide {#info}
 
@@ -125,16 +130,24 @@ Toutes les commandes RaidProtect, regroupées par catégorie. Cliquez sur le nom
 | [`/transparency`](./features/transparency.md#command) | `/transparency` | Affiche le dernier rapport de transparence de modération du serveur. |
 | [`/changelog`](./changelog.mdx) | `/changelog` | Consulte le journal des modifications de RaidProtect. |
 | [`/feedback`](./features/utilities.mdx#feedback) | `/feedback` | Partage un avis, une suggestion ou un signalement de bug. |
+| [`/privacy`](./features/utilities.mdx#privacy) | `/privacy` | Affiche ce que RaidProtect conserve sur ce serveur. |
+
+## Menus contextuels {#context-menus}
+
+Certaines actions s’ouvrent d’un clic droit, dans le menu **Applications** :
+
+- Sur un membre : **Ouvrir Modview** ([vue de modération](./features/moderation.mdx#modview)), **Sanctionner** ([sanction en une fenêtre](./features/moderation.mdx#context-menu)), **Discord Sanctions** ([sanctions Discord](./features/utilities.mdx#discord-sanctions)) et **Signaler l’utilisateur** ([signalement](./features/reports.md)).
+- Sur un message : **Signaler ce message** ([signalement](./features/reports.md)).
 
 ---
 
 ## ⚙️ Deux façons d’utiliser une commande {#usage}
 
-Les deux formats donnent **exactement les mêmes possibilités** : tout ce qui est faisable en slash est faisable en message, et inversement. La différence est uniquement dans la façon de saisir la commande.
+Les commandes de modération courantes existent en deux formats : en slash, et en message avec un préfixe. Les autres, comme `/sanctions`, `/snipe` ou `/audit`, ne s’utilisent qu’en slash. La [liste des commandes par messages](./guides/prefix.md#activated) indique celles qui acceptent un préfixe.
 
 ### Slash commands : la plus simple {#slash}
 
-Tapez `/` dans un salon, choisissez la commande, et **Discord vous propose chaque paramètre dans une interface dédiée** (sélecteur d’utilisateur, sélecteur de salon, autocomplete sur les durées, etc.). C’est la façon recommandée par défaut — vous n’avez rien à mémoriser.
+Tapez `/` dans un salon, choisissez la commande, et **Discord vous propose chaque paramètre dans une interface dédiée** (sélecteur d’utilisateur, sélecteur de salon, autocomplete sur les durées, etc.). C’est la façon recommandée par défaut : vous n’avez rien à mémoriser.
 
 ```
 /ban @membre raison: spam de scam
@@ -142,7 +155,7 @@ Tapez `/` dans un salon, choisissez la commande, et **Discord vous propose chaqu
 
 ### Message commands : la plus complexe {#prefix}
 
-Une fois le [préfixe activé dans `/settings`](./guides/prefix.md), vous pouvez aussi écrire les commandes en message classique (`?ban …`, `?kick …`, etc.). Pas d’interface graphique : il faut **connaître la syntaxe** (arguments positionnels, flags nommés, argument libre en fin de ligne). En contrepartie, c’est plus rapide au clavier pour les modérateurs qui maîtrisent les commandes.
+Une fois les [commandes par messages activées dans `/settings`](./guides/prefix.md), vous pouvez aussi écrire les commandes en message classique (`?ban …`, `?kick …`, etc.). Pas d’interface graphique : il faut **connaître la syntaxe** (arguments positionnels, flags nommés, argument libre en fin de ligne). En contrepartie, c’est plus rapide au clavier pour les modérateurs qui maîtrisent les commandes.
 
 #### Arguments positionnels
 
