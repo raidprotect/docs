@@ -1,11 +1,15 @@
-import React, {useEffect, useId, useState, type ReactNode} from 'react'
+import React, {useEffect, useId, useRef, useState, type ReactNode} from 'react'
 import {translate} from '@docusaurus/Translate'
 import {usePluralForm} from '@docusaurus/theme-common'
 import {clusterName, clusterStateLabel, shardStateLabel} from './labels'
 import type {ClusterInfo} from './types'
 import styles from '@site/src/pages/status.module.css'
 
-function ClusterCell({cluster, locale}: {cluster: ClusterInfo; locale: string}): ReactNode {
+/** Résultat de la recherche d'un serveur : cluster à ouvrir, shard à mettre en évidence. */
+export type SearchHit = {clusterId: number | 'unassigned'; shard: number; token: number}
+
+function ClusterCell({cluster, locale, hit}: {cluster: ClusterInfo; locale: string; hit: SearchHit | null}): ReactNode {
+    const cellRef = useRef<HTMLLIElement>(null)
     const detailId = useId()
     const [pinned, setPinned] = useState(false)
     // Échap masque le détail même si le survol ou le focus le gardent ouvert (WCAG 1.4.13).
@@ -24,6 +28,17 @@ function ClusterCell({cluster, locale}: {cluster: ClusterInfo; locale: string}):
         setDismissed(true)
     }
 
+    // Une recherche ouvre le détail (état épinglé) et y fait défiler. Les rafraîchissements
+    // gardent le même jeton : le détail reste tel que l'utilisateur l'a laissé.
+    const hitToken = hit?.token
+    useEffect(() => {
+        if (hitToken === undefined) return
+        setDismissed(false)
+        setPinned(true)
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        cellRef.current?.scrollIntoView({block: 'nearest', behavior: reduced ? 'auto' : 'smooth'})
+    }, [hitToken])
+
     // Échap doit fermer le détail même si le focus est ailleurs (survol seul).
     useEffect(() => {
         if (!visible) return undefined
@@ -39,6 +54,7 @@ function ClusterCell({cluster, locale}: {cluster: ClusterInfo; locale: string}):
 
     return (
         <li
+            ref={cellRef}
             className={`${styles.cell} ${pinned ? styles.cellPinned : ''} ${dismissed ? styles.cellDismissed : ''}`}
             onKeyDown={(e) => {
                 if (e.key === 'Escape') dismiss()
@@ -78,7 +94,7 @@ function ClusterCell({cluster, locale}: {cluster: ClusterInfo; locale: string}):
                     <strong>{name}</strong>
                     <ul className={styles.shardList}>
                         {cluster.shards.map((shard) => (
-                            <li key={shard.id} className={styles.shardRow}>
+                            <li key={shard.id} className={`${styles.shardRow} ${hit?.shard === shard.id ? styles.shardHit : ''}`} aria-current={hit?.shard === shard.id ? 'true' : undefined}>
                                 <span>{translate({id: 'status.shard.label', message: 'Shard {id}', description: 'Status page: shard name'}, {id: shard.id})}</span>
                                 <span className={`${styles.shardState} ${styles[`tone_${shard.state === 'ready' ? 'operational' : shard.state === 'down' ? 'down' : 'degraded'}`]}`}>
                                     {shardStateLabel(shard.state)}
@@ -98,11 +114,11 @@ function ClusterCell({cluster, locale}: {cluster: ClusterInfo; locale: string}):
     )
 }
 
-export default function ClusterGrid({clusters, locale}: {clusters: ClusterInfo[]; locale: string}): ReactNode {
+export default function ClusterGrid({clusters, locale, hit}: {clusters: ClusterInfo[]; locale: string; hit: SearchHit | null}): ReactNode {
     return (
         <ul className={styles.grid}>
             {clusters.map((cluster) => (
-                <ClusterCell key={String(cluster.id)} cluster={cluster} locale={locale} />
+                <ClusterCell key={String(cluster.id)} cluster={cluster} locale={locale} hit={hit?.clusterId === cluster.id ? hit : null} />
             ))}
         </ul>
     )

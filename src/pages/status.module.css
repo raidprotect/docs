@@ -223,6 +223,12 @@
     font-weight: 600;
 }
 
+.shardHit {
+    font-weight: 700;
+    background: var(--ifm-color-emphasis-200);
+    box-shadow: -3px 0 0 var(--ifm-color-primary);
+}
+
 .shardGuilds {
     color: var(--ifm-color-emphasis-700);
     white-space: nowrap;
@@ -288,24 +294,10 @@
 }
 
 .lookupResult {
-    padding: 0.9rem 1.1rem;
+    margin: 0;
+    padding: 0.75rem 1rem;
     border: 1px solid var(--ifm-color-emphasis-300);
     border-radius: 10px;
     background: var(--ifm-card-background-color);
-}
-
-.lookupIntro {
-    margin: 0 0 0.4rem;
     font-weight: 600;
-}
-
-.lookupFacts {
-    margin: 0 0 0.6rem;
-    padding-left: 1.2rem;
-}
-
-.lookupNote {
-    margin: 0;
-    font-size: 0.85rem;
-    color: var(--ifm-color-emphasis-700);
 }

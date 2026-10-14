@@ -1,74 +1,75 @@
 import React, {useEffect, useRef, useState, type FormEvent, type ReactNode} from 'react'
 import Translate, {translate} from '@docusaurus/Translate'
-import {clusterName, clusterStateLabel, shardStateLabel} from './labels'
-import {parseRetryAfter, type GuildLookupResult} from './types'
+import {clusterName, clusterStateLabel} from './labels'
+import {fetchInviteGuildId, fleetUsable, LookupError, parseQuery, type Located, type LookupFailure} from './lookup'
+import type {FleetStatus} from './types'
 import styles from '@site/src/pages/status.module.css'
 
-type LookupError = 'invalid_query' | 'invite_not_found' | 'rate_limited' | 'unavailable'
-
-type Outcome =
-    | {kind: 'result'; result: GuildLookupResult}
-    | {kind: 'error'; error: LookupError; retryAfter: number | null}
-
-function errorMessage(error: LookupError, retryAfter: number | null): string {
+function errorMessage(error: LookupFailure): string {
     switch (error) {
         case 'invalid_query':
             return translate({id: 'status.lookup.error.invalidQuery', message: "Entre l'identifiant de ton serveur (une suite de chiffres) ou un lien d'invitation valide.", description: 'Status page: lookup error, query is not a snowflake or an invite'})
         case 'invite_not_found':
-            return translate({id: 'status.lookup.error.inviteNotFound', message: "Cette invitation est introuvable ou a expiré.", description: 'Status page: lookup error, invite unknown or expired'})
+            return translate({id: 'status.lookup.error.inviteNotFound', message: 'Invitation inconnue ou expirée', description: 'Status page: lookup error, invite unknown or expired'})
         case 'rate_limited':
-            return retryAfter === null
-                ? translate({id: 'status.lookup.error.rateLimitedNoDelay', message: 'Trop de recherches. Réessaie dans un instant.', description: 'Status page: lookup error, rate limited without delay'})
-                : translate({id: 'status.lookup.error.rateLimited', message: 'Trop de recherches. Réessaie dans {seconds} s.', description: 'Status page: lookup error, rate limited with delay in seconds'}, {seconds: retryAfter})
+            return translate({id: 'status.lookup.error.rateLimited', message: 'Trop de recherches, réessaie dans un instant', description: 'Status page: lookup error, Discord rate limited the invite lookup'})
+        case 'fleet_unavailable':
+            return translate({id: 'status.lookup.error.fleetUnavailable', message: "État de la flotte indisponible, réessaie dans un instant", description: 'Status page: lookup error, no fleet data to compute the shard'})
         default:
-            return translate({id: 'status.lookup.error.unavailable', message: 'La recherche est indisponible pour le moment.', description: 'Status page: lookup error, service unavailable'})
+            return translate({id: 'status.lookup.error.network', message: 'La recherche a échoué, réessaie dans un instant.', description: 'Status page: lookup error, the invite lookup failed on the network'})
     }
 }
 
-const KNOWN_ERRORS: LookupError[] = ['invalid_query', 'invite_not_found', 'rate_limited', 'unavailable']
+type Props = {
+    /** Dernière réponse de /public/status ; sert au calcul du shard. */
+    fleet: FleetStatus | null
+    /** Emplacement du dernier identifiant cherché, recalculé à chaque rafraîchissement ; null sans recherche. */
+    located: Located | null
+    /** Reçoit l'identifiant de serveur trouvé par la recherche. */
+    onFound: (guildId: string) => void
+}
 
-export default function GuildLookup({apiUrl}: {apiUrl: string}): ReactNode {
+export default function GuildLookup({fleet, located, onFound}: Props): ReactNode {
     const [query, setQuery] = useState('')
     const [busy, setBusy] = useState(false)
-    const [outcome, setOutcome] = useState<Outcome | null>(null)
+    const [error, setError] = useState<LookupFailure | null>(null)
     const controllerRef = useRef<AbortController | null>(null)
 
     useEffect(() => () => controllerRef.current?.abort(), [])
 
     const onSubmit = async (event: FormEvent) => {
         event.preventDefault()
-        const q = query.trim()
-        if (!q || busy) return
-        if (!apiUrl) {
-            setOutcome({kind: 'error', error: 'unavailable', retryAfter: null})
+        controllerRef.current?.abort()
+        controllerRef.current = null
+        setBusy(false)
+        const parsed = parseQuery(query)
+        if (!query.trim()) return
+        if (!parsed) {
+            setError('invalid_query')
+            return
+        }
+        if (!fleetUsable(fleet)) {
+            setError('fleet_unavailable')
+            return
+        }
+        setError(null)
+        if (parsed.kind === 'id') {
+            onFound(parsed.id)
             return
         }
         const controller = new AbortController()
         controllerRef.current = controller
         setBusy(true)
         try {
-            const response = await fetch(`${apiUrl}/public/status/guild?q=${encodeURIComponent(q)}`, {
-                signal: controller.signal,
-                headers: {Accept: 'application/json'},
-            })
-            if (response.ok) {
-                setOutcome({kind: 'result', result: (await response.json()) as GuildLookupResult})
-            } else {
-                let error: LookupError = 'unavailable'
-                try {
-                    const body = (await response.json()) as {error?: string}
-                    if (KNOWN_ERRORS.includes(body.error as LookupError)) error = body.error as LookupError
-                } catch {
-                    // Corps illisible : on retombe sur « indisponible ».
-                }
-                setOutcome({kind: 'error', error, retryAfter: parseRetryAfter(response.headers.get('Retry-After'))})
-            }
-        } catch {
+            onFound(await fetchInviteGuildId(parsed.code, controller.signal))
+        } catch (e) {
             if (controller.signal.aborted) return
-            setOutcome({kind: 'error', error: 'unavailable', retryAfter: null})
+            setError(e instanceof LookupError ? e.failure : 'network')
         } finally {
-            if (controllerRef.current === controller) controllerRef.current = null
-            setBusy(false)
+            if (controllerRef.current === controller) {
+                controllerRef.current = null
+                setBusy(false)
+            }
         }
     }
 
@@ -99,7 +100,7 @@ export default function GuildLookup({apiUrl}: {apiUrl: string}): ReactNode {
                         placeholder={translate({id: 'status.lookup.placeholder', message: '123456789012345678 ou discord.gg/abc', description: 'Status page: placeholder of the server lookup field'})}
                         onChange={(e) => setQuery(e.target.value)}
                     />
-                    <button type="submit" className={styles.lookupButton} disabled={busy || !query.trim()}>
+                    <button type="submit" className={styles.lookupButton} disabled={!query.trim()}>
                         {busy
                             ? translate({id: 'status.lookup.searching', message: 'Recherche…', description: 'Status page: lookup button while searching'})
                             : translate({id: 'status.lookup.submit', message: 'Rechercher', description: 'Status page: lookup button'})}
@@ -107,30 +108,16 @@ export default function GuildLookup({apiUrl}: {apiUrl: string}): ReactNode {
                 </div>
             </form>
             <div className={styles.lookupOutput} aria-live="polite">
-                {outcome?.kind === 'error' && (
-                    <p className={styles.lookupError}>{errorMessage(outcome.error, outcome.retryAfter)}</p>
-                )}
-                {outcome?.kind === 'result' && (
-                    <div className={styles.lookupResult}>
-                        <p className={styles.lookupIntro}>
-                            {translate({id: 'status.lookup.intro', message: 'Ce serveur serait servi par le shard {shard}.', description: 'Status page: lookup result, wording must not claim the bot is on the server'}, {shard: outcome.result.shard})}
-                        </p>
-                        <ul className={styles.lookupFacts}>
-                            <li>
-                                {translate({id: 'status.lookup.shard', message: 'Shard {shard} : {state}', description: 'Status page: lookup result shard line'}, {shard: outcome.result.shard, state: shardStateLabel(outcome.result.shardState)})}
-                            </li>
-                            <li>
-                                {outcome.result.cluster === null
-                                    ? translate({id: 'status.lookup.noCluster', message: 'Aucun cluster ne porte ce shard pour le moment.', description: 'Status page: lookup result when no cluster holds the shard'})
-                                    : translate({id: 'status.lookup.cluster', message: '{cluster} : {state}', description: 'Status page: lookup result cluster line'}, {cluster: clusterName(outcome.result.cluster), state: clusterStateLabel(outcome.result.clusterState)})}
-                            </li>
-                        </ul>
-                        <p className={styles.lookupNote}>
-                            <Translate id="status.lookup.disclaimer" description="Status page: lookup disclaimer, the search does not tell whether the bot is on the server">
-                                Cette recherche indique seulement où le serveur serait servi. Elle ne dit pas si RaidProtect est présent sur ce serveur.
-                            </Translate>
-                        </p>
-                    </div>
+                {error && <p className={styles.lookupError}>{errorMessage(error)}</p>}
+                {!error && located && (
+                    <p className={styles.lookupResult}>
+                        {located.cluster === null
+                            ? translate({id: 'status.lookup.unassigned', message: 'Shard {shard} : non assigné pour le moment', description: 'Status page: lookup result when the shard is unassigned or absent from the grid'}, {shard: located.shard})
+                            : translate(
+                                  {id: 'status.lookup.result', message: 'Ce serveur serait servi par le shard {shard}, {cluster} ({state})', description: 'Status page: lookup result, wording must not claim the bot is on the server'},
+                                  {shard: located.shard, cluster: clusterName(located.cluster.id), state: clusterStateLabel(located.cluster.state).toLowerCase()},
+                              )}
+                    </p>
                 )}
             </div>
         </section>

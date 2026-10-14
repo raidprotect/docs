@@ -23,14 +23,6 @@ export type FleetStatus = {
     clusters: ClusterInfo[]
 }
 
-export type GuildLookupResult = {
-    guildId: string
-    shard: number
-    cluster: number | null
-    shardState: ShardState
-    clusterState: ClusterState
-}
-
 export type GlobalState = 'operational' | 'disruption' | 'outage' | 'unknown'
 
 /** Déduit le bandeau global des états de clusters. */

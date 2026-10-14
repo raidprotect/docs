@@ -1,10 +1,11 @@
-import React, {useEffect, useState, type ReactNode} from 'react'
+import React, {useEffect, useMemo, useState, type ReactNode} from 'react'
 import Layout from '@theme/Layout'
 import Translate, {translate} from '@docusaurus/Translate'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 
-import ClusterGrid from '@site/src/components/status/ClusterGrid'
+import ClusterGrid, {type SearchHit} from '@site/src/components/status/ClusterGrid'
 import GuildLookup from '@site/src/components/status/GuildLookup'
+import {locate} from '@site/src/components/status/lookup'
 import {deriveGlobalState, type GlobalState} from '@site/src/components/status/types'
 import {useFleetStatus} from '@site/src/components/status/useFleetStatus'
 import styles from './status.module.css'
@@ -50,6 +51,10 @@ export default function StatusPage(): ReactNode {
         }, 5000)
         return () => clearInterval(timer)
     }, [lastOkAt])
+    // Dernier serveur cherché ; le shard est recalculé sur chaque nouvelle réponse (total de l'époque en cours).
+    const [search, setSearch] = useState<{guildId: string; token: number} | null>(null)
+    const located = useMemo(() => (search ? locate(search.guildId, data) : null), [search, data])
+    const hit: SearchHit | null = search && located?.cluster ? {clusterId: located.cluster.id, shard: located.shard, token: search.token} : null
     const outdatedSeconds = lastOkAt !== null && Date.now() - lastOkAt > 90_000 ? Math.round((Date.now() - lastOkAt) / 1000) : null
 
     const totals: Array<[string, number]> = data
@@ -132,12 +137,12 @@ export default function StatusPage(): ReactNode {
                                     Clusters
                                 </Translate>
                             </h2>
-                            <ClusterGrid clusters={data.clusters} locale={locale} />
+                            <ClusterGrid clusters={data.clusters} locale={locale} hit={hit} />
                         </section>
                     </>
                 )}
 
-                <GuildLookup apiUrl={apiUrl} />
+                <GuildLookup fleet={data} located={located} onFound={(guildId) => setSearch((s) => ({guildId, token: (s?.token ?? 0) + 1}))} />
             </main>
         </Layout>
     )
