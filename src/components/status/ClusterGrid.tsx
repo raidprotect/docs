@@ -8,8 +8,10 @@ import styles from '@site/src/pages/status.module.css'
 /** Résultat de la recherche d'un serveur : cluster à ouvrir, shard à mettre en évidence. */
 export type SearchHit = {clusterId: number | 'unassigned'; shard: number; token: number}
 
-function ClusterCell({cluster, locale, hit}: {cluster: ClusterInfo; locale: string; hit: SearchHit | null}): ReactNode {
+function ClusterCell({cluster, locale, hit, claimScroll}: {cluster: ClusterInfo; locale: string; hit: SearchHit | null; claimScroll: (token: number) => boolean}): ReactNode {
     const cellRef = useRef<HTMLLIElement>(null)
+    // Vrai tant que le détail est épinglé par la recherche et non repris par l'utilisateur.
+    const openedBySearch = useRef(false)
     const detailId = useId()
     const [pinned, setPinned] = useState(false)
     // Échap masque le détail même si le survol ou le focus le gardent ouvert (WCAG 1.4.13).
@@ -24,6 +26,7 @@ function ClusterCell({cluster, locale, hit}: {cluster: ClusterInfo; locale: stri
     const number = new Intl.NumberFormat(locale)
 
     const dismiss = () => {
+        openedBySearch.current = false
         setPinned(false)
         setDismissed(true)
     }
@@ -32,9 +35,18 @@ function ClusterCell({cluster, locale, hit}: {cluster: ClusterInfo; locale: stri
     // gardent le même jeton : le détail reste tel que l'utilisateur l'a laissé.
     const hitToken = hit?.token
     useEffect(() => {
-        if (hitToken === undefined) return
+        if (hitToken === undefined) {
+            // La recherche a quitté ce cluster : on le referme s'il n'a pas été repris à la main.
+            if (openedBySearch.current) {
+                openedBySearch.current = false
+                setPinned(false)
+            }
+            return
+        }
+        openedBySearch.current = true
         setDismissed(false)
         setPinned(true)
+        if (!claimScroll(hitToken)) return
         const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
         cellRef.current?.scrollIntoView({block: 'nearest', behavior: reduced ? 'auto' : 'smooth'})
     }, [hitToken])
@@ -44,6 +56,7 @@ function ClusterCell({cluster, locale, hit}: {cluster: ClusterInfo; locale: stri
         if (!visible) return undefined
         const onKeyDown = (e: KeyboardEvent) => {
             if (e.key === 'Escape') {
+                openedBySearch.current = false
                 setPinned(false)
                 setDismissed(true)
             }
@@ -76,6 +89,7 @@ function ClusterCell({cluster, locale, hit}: {cluster: ClusterInfo; locale: stri
                 aria-describedby={detailId}
                 aria-expanded={visible}
                 onClick={() => {
+                    openedBySearch.current = false
                     setDismissed(false)
                     setPinned((p) => !p)
                 }}>
@@ -115,10 +129,17 @@ function ClusterCell({cluster, locale, hit}: {cluster: ClusterInfo; locale: stri
 }
 
 export default function ClusterGrid({clusters, locale, hit}: {clusters: ClusterInfo[]; locale: string; hit: SearchHit | null}): ReactNode {
+    // Défilement une seule fois par recherche, pas à chaque rafraîchissement.
+    const scrolledToken = useRef<number | null>(null)
+    const claimScroll = (token: number): boolean => {
+        if (scrolledToken.current === token) return false
+        scrolledToken.current = token
+        return true
+    }
     return (
         <ul className={styles.grid}>
             {clusters.map((cluster) => (
-                <ClusterCell key={String(cluster.id)} cluster={cluster} locale={locale} hit={hit?.clusterId === cluster.id ? hit : null} />
+                <ClusterCell key={String(cluster.id)} cluster={cluster} locale={locale} hit={hit?.clusterId === cluster.id ? hit : null} claimScroll={claimScroll} />
             ))}
         </ul>
     )
