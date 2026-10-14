@@ -40,7 +40,19 @@ const sidebars: SidebarsConfig = {
                 },
                 {
                     type: 'doc',
+                    id: 'features/onboarding',
+                },
+                {
+                    type: 'doc',
+                    id: 'features/discon',
+                },
+                {
+                    type: 'doc',
                     id: 'features/anti-spam',
+                },
+                {
+                    type: 'doc',
+                    id: 'features/slowmode',
                 },
                 {
                     type: 'doc',
@@ -57,6 +69,10 @@ const sidebars: SidebarsConfig = {
                 {
                     type: 'doc',
                     id: 'features/sanctions',
+                },
+                {
+                    type: 'doc',
+                    id: 'features/alt-accounts',
                 },
                 {
                     type: 'doc',
