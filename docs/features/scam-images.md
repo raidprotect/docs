@@ -3,8 +3,8 @@ title: Images d'arnaque
 description: "ScamLens, l'anti-arnaque de RaidProtect, détecte et supprime automatiquement les images d'arnaque sur votre serveur Discord. Actif par défaut, sans configuration."
 ---
 
-import { AntiSpamSanctionsSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
 import AntiScamMockup from '@site/src/components/DiscordMessage/mockups/anti-scam';
+import Settings from '@site/src/components/DiscordMessage/mockups/v2';
 
 RaidProtect protège automatiquement votre serveur contre les **images d'arnaque** (arnaques crypto, faux giveaways, fausses promotions de casinos). Cette protection s'appelle **ScamLens** : elle analyse les images postées, supprime celles qui sont des arnaques connues et sanctionne le compte à l'origine du message (souvent un [compte piraté](/learn/token-grabber)).
 
@@ -16,30 +16,81 @@ ScamLens est **activé par défaut dès que RaidProtect arrive sur votre serveur
 
 ## ❓ Comment ça marche ? {#working}
 
-Dès qu'une image est postée, ScamLens l'analyse. Si c'est une arnaque connue :
+ScamLens compare l'**empreinte** de chaque image postée à celles des arnaques connues. Rien n'est lu du texte des messages. Seuls les messages dont toutes les pièces jointes sont des images **JPEG ou PNG** sont analysés.
 
-1. L'incident est **enregistré dans les logs de modération** (avec l'image concernée) avant toute suppression.
-2. Le message est **supprimé**.
-3. Le compte à l'origine est **sanctionné**.
+Selon la correspondance trouvée :
+
+- **Correspondance certaine** : le message est **supprimé** immédiatement et son auteur est **sanctionné**. Le log de sanction précise le salon touché et le nombre d'autres salons où l'auteur pouvait poster des images.
+- **Correspondance incertaine** : le message est supprimé **par précaution**, sans sanction. Si l'image est confirmée comme une arnaque par la suite, la sanction arrive plus tard (dans les 24 heures).
+
+Le motif de sanction est « Arnaque (Images Crypto) détectée ». Sur un serveur [Premium](/premium), le membre sanctionné reçoit aussi un message privé.
 
 ScamLens ne s'occupe que des **images**. Les autres types de spam sont gérés par l'[Anti-spam](./anti-spam.mdx) et le [HoneyPot](./honeypot.md).
 
-## 🔧 Comment désactiver ou réactiver ScamLens ? {#config}
+## 🔧 Configurer ScamLens {#config}
 
-La sanction appliquée aux images d'arnaque suit **par défaut celle de votre [HoneyPot](./honeypot.md#sanction)** (ou un Timeout si le HoneyPot n'est pas activé). Vous pouvez la modifier, la désactiver ou la réactiver depuis le même menu :
+ScamLens se règle dans le module **Automod** de l'onglet “**Protection**”, sur l'écran “**Filtre d'images**”.
 
 1. Faites la [commande `/settings`](../setup.md#settings).
-2. Ouvrez le module **Anti-spam**, puis le menu **Sanctions**.
-3. Dans la liste des déclencheurs, sélectionnez **« Images d'arnaques (Crypto Scam) »** et choisissez la sanction voulue. Pour couper la protection, réinitialisez la sanction de ce déclencheur.
+2. Ouvrez l'onglet “**Protection**”.
+3. Cliquez sur “**Configurer**” à côté de “**Automod**”.
+4. Cliquez sur “**Configurer**” à côté de “**Images**”.
 
-<AntiSpamSanctionsSettingsMockup />
+<Settings start="imageFilter" />
+
+### Activer ou désactiver ScamLens {#toggle}
+
+Sur l'écran “**Filtre d'images**”, cliquez sur “**Désactiver**” (ou “**Activer**”) en haut à droite. Chaque changement est consigné dans vos logs.
+
+### Choisir la sanction et sa durée {#sanction}
+
+Dans le sélecteur “**Sanction appliquée**”, choisissez :
+- “**Par défaut**” : la sanction de votre [HoneyPot](./honeypot.md#sanction) s'il est actif, sinon une exclusion temporaire (Timeout) ;
+- ou une sanction précise : Bannissement, Softban, Jail, Expulsion, Mute, Timeout ou Avertissement.
+
+Dans le sélecteur “**Durée de la sanction**”, choisissez 5 minutes, 1 heure, 1 jour ou “**Valeur personnalisée**” (par exemple `30m`, `2h`, `7d`). L'option “**Par défaut**” suit la durée de votre HoneyPot s'il est actif, sinon **1 jour**. Une durée choisie ici est propre à ScamLens, indépendante de l'Anti-spam et du HoneyPot. Elle s'applique aussi aux sanctions arrivées plus tard.
+
+:::info
+- Un **Jail** ou un **Mute** sans rôle configuré devient un **Timeout**.
+- Le message public qui annonce la sanction suit le réglage “**Message public de sanction**” de l'[Anti-spam](./anti-spam.mdx#public-message), désactivable en Premium. Il n'est jamais posté dans le salon du HoneyPot.
+:::
+
+## 🗂️ Catalogue d'images (Premium) {#catalog}
+
+En plus du catalogue global « Crypto Scam », géré par nos soins et appliqué sur tous les serveurs, les serveurs [Premium](/premium) peuvent bloquer **leurs propres images**, quel que soit leur contenu : captures de faux Nitro, visuels d'un scam qui cible votre communauté, images interdites sur votre serveur…
+
+**Limites :** 2 listes par serveur, 10 images par envoi.
+
+### Créer une liste {#lists}
+
+1. Faites la [commande `/settings`](../setup.md#settings).
+2. Ouvrez l'onglet “**Protection**”.
+3. Cliquez sur “**Configurer**” à côté de “**Automod**”.
+4. Cliquez sur “**Configurer**” à côté de “**Images**”.
+5. Dans “**Catalogue d'images**”, cliquez sur “**Créer une liste**” et donnez-lui un nom.
+6. Choisissez le “**Salon de vérification**” de la liste.
+7. Cliquez sur “**Ajouter des images**” et envoyez jusqu'à 10 images. Le résultat indique les images ajoutées, les variantes rattachées, les doublons ignorés et les images refusées.
+
+Les images d'une liste sont supprimées dès qu'elles réapparaissent sur votre serveur, et leur auteur reçoit la sanction choisie plus haut.
+
+:::warning Une liste = un seul registre d'images
+Rangez dans une liste un seul type de contenu. Mélanger des images sans rapport dans une même liste corrompt la détection : créez plutôt une seconde liste.
+:::
+
+### Salon de vérification {#review}
+
+Quand une image ressemble à une image de votre liste sans correspondance certaine, nous la signalons dans le **salon de vérification** de la liste (« Vérification requise : liste … »), avec deux boutons :
+- “**Confirmer, c'est interdit**” : l'image rejoint le catalogue, le message est supprimé et son auteur sanctionné ;
+- “**Écarter, c'est sain**” : cette image ne déclenchera plus de vérification.
+
+Il faut la permission `Gérer le serveur` pour trancher. Sans salon de vérification, les correspondances incertaines restent silencieuses.
 
 ## 📊 Transparence {#reports}
 
 Chaque arnaque bloquée par ScamLens :
 
 - apparaît dans les [récaps de Transparence](./transparency.md#recaps) de votre serveur (« X arnaques bloquées par ScamLens ») ;
-- est comptée dans le compteur public de comptes attrapés du [HoneyPot](./honeypot.md) ;
+- est comptée dans le compteur de comptes signalés du [HoneyPot](./honeypot.md) ;
 - vient renforcer la protection de **tous les serveurs** utilisant RaidProtect.
 
 ### Nos rapports mensuels {#recaps}
@@ -61,8 +112,12 @@ Non. ScamLens est activé par défaut dès que RaidProtect arrive sur votre serv
 
 ### ScamLens bloque-t-il autre chose que les images ?
 
-Non, ScamLens ne s'occupe que des images d'arnaque. Les autres types de spam sont gérés par l'[Anti-spam](./anti-spam.mdx) et le [HoneyPot](./honeypot.md).
+Non, ScamLens ne s'occupe que des images (JPEG et PNG). Par défaut, il bloque les images d'arnaque connues. Les serveurs Premium peuvent aussi y ajouter leurs propres images grâce au catalogue d'images. Les autres types de spam sont gérés par l'[Anti-spam](./anti-spam.mdx) et le [HoneyPot](./honeypot.md).
 
 ### Quelle sanction est appliquée à une image d'arnaque ?
 
-Par défaut, ScamLens applique la sanction de votre [HoneyPot](./honeypot.md#sanction), ou un Timeout si le HoneyPot n'est pas activé. Vous pouvez la modifier, la désactiver ou la réactiver depuis le menu Anti-spam, dans les Sanctions.
+Par défaut, ScamLens applique la sanction et la durée de votre [HoneyPot](./honeypot.md#sanction), ou un Timeout d'un jour si le HoneyPot n'est pas activé. Vous pouvez choisir une autre sanction et une autre durée dans /settings, onglet Protection, module Automod, écran Filtre d'images.
+
+### Comment désactiver ScamLens ?
+
+Dans /settings, onglet Protection, cliquez sur « Configurer » à côté d'Automod, puis à côté d'Images, et utilisez l'interrupteur en haut à droite de l'écran Filtre d'images.
