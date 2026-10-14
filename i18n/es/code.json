@@ -5117,7 +5117,7 @@
     "description": "Status page: lookup button"
   },
   "status.lookup.error.invalidQuery": {
-    "message": "Enter your server's ID (a string of digits) or a valid invite link.",
+    "message": "Enter your server's ID (a string of digits) or a valid invite link",
     "description": "Status page: lookup error, query is not a snowflake or an invite"
   },
   "status.lookup.error.inviteNotFound": {
@@ -5133,7 +5133,7 @@
     "description": "Status page: lookup error, no fleet data to compute the shard"
   },
   "status.lookup.error.network": {
-    "message": "The lookup failed, try again in a moment.",
+    "message": "The lookup failed, try again in a moment",
     "description": "Status page: lookup error, the invite lookup failed on the network"
   },
   "status.lookup.unassigned": {
@@ -5141,7 +5141,7 @@
     "description": "Status page: lookup result when the shard is unassigned or absent from the grid"
   },
   "status.lookup.result": {
-    "message": "This server would be served by shard {shard}, {cluster} ({state})",
+    "message": "This server would be served by shard {shard}, cluster {cluster} ({state})",
     "description": "Status page: lookup result, wording must not claim the bot is on the server"
   },
   "status.outdated": {
