@@ -5137,45 +5137,33 @@
     "message": "Search",
     "description": "Status page: lookup button"
   },
-  "status.lookup.intro": {
-    "message": "This server would be served by shard {shard}.",
-    "description": "Status page: lookup result, wording must not claim the bot is on the server"
-  },
-  "status.lookup.shard": {
-    "message": "Shard {shard}: {state}",
-    "description": "Status page: lookup result shard line"
-  },
-  "status.lookup.noCluster": {
-    "message": "No cluster holds this shard right now.",
-    "description": "Status page: lookup result when no cluster holds the shard"
-  },
-  "status.lookup.cluster": {
-    "message": "{cluster}: {state}",
-    "description": "Status page: lookup result cluster line"
-  },
-  "status.lookup.disclaimer": {
-    "message": "This lookup only tells where the server would be served. It does not say whether RaidProtect is on that server.",
-    "description": "Status page: lookup disclaimer, the search does not tell whether the bot is on the server"
-  },
   "status.lookup.error.invalidQuery": {
     "message": "Enter your server's ID (a string of digits) or a valid invite link.",
     "description": "Status page: lookup error, query is not a snowflake or an invite"
   },
   "status.lookup.error.inviteNotFound": {
-    "message": "This invite was not found or has expired.",
+    "message": "Unknown or expired invite",
     "description": "Status page: lookup error, invite unknown or expired"
   },
-  "status.lookup.error.rateLimitedNoDelay": {
-    "message": "Too many searches. Try again in a moment.",
-    "description": "Status page: lookup error, rate limited without delay"
-  },
   "status.lookup.error.rateLimited": {
-    "message": "Too many searches. Try again in {seconds} s.",
-    "description": "Status page: lookup error, rate limited with delay in seconds"
+    "message": "Too many searches, try again in a moment",
+    "description": "Status page: lookup error, Discord rate limited the invite lookup"
   },
-  "status.lookup.error.unavailable": {
-    "message": "The lookup is unavailable right now.",
-    "description": "Status page: lookup error, service unavailable"
+  "status.lookup.error.fleetUnavailable": {
+    "message": "Fleet status unavailable, try again in a moment",
+    "description": "Status page: lookup error, no fleet data to compute the shard"
+  },
+  "status.lookup.error.network": {
+    "message": "The lookup failed, try again in a moment.",
+    "description": "Status page: lookup error, the invite lookup failed on the network"
+  },
+  "status.lookup.unassigned": {
+    "message": "Shard {shard}: not assigned right now",
+    "description": "Status page: lookup result when the shard is unassigned or absent from the grid"
+  },
+  "status.lookup.result": {
+    "message": "This server would be served by shard {shard}, {cluster} ({state})",
+    "description": "Status page: lookup result, wording must not claim the bot is on the server"
   },
   "status.outdated": {
     "message": "Last updated {seconds} s ago",
