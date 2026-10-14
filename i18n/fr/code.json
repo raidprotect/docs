@@ -2286,5 +2286,181 @@
   "landing.businessBubble.close": {
     "message": "Fermer",
     "description": "Aria-label for closing the business bubble"
+  },
+  "status.head.title": {
+    "message": "Statut de RaidProtect",
+    "description": "Status page: browser tab title"
+  },
+  "status.head.description": {
+    "message": "L'état en direct de RaidProtect : clusters, shards et recherche par serveur.",
+    "description": "Status page: meta description"
+  },
+  "status.title": {
+    "message": "État de RaidProtect",
+    "description": "Status page: main heading"
+  },
+  "status.subtitle": {
+    "message": "Suivi en direct. Mise à jour toutes les 30 secondes.",
+    "description": "Status page: subtitle"
+  },
+  "status.banner.operational": {
+    "message": "Tout va bien",
+    "description": "Status page: global banner, everything works"
+  },
+  "status.banner.disruption": {
+    "message": "Perturbation en cours",
+    "description": "Status page: global banner, some clusters are degraded or down"
+  },
+  "status.banner.outage": {
+    "message": "Panne",
+    "description": "Status page: global banner, outage"
+  },
+  "status.banner.loading": {
+    "message": "Chargement de l'état…",
+    "description": "Status page: global banner while loading"
+  },
+  "status.banner.unavailable": {
+    "message": "Statut indisponible",
+    "description": "Status page: global banner when the status cannot be fetched"
+  },
+  "status.outage.description": {
+    "message": "Aucune donnée n'est disponible pour le moment.",
+    "description": "Status page: text under the outage banner when the API answers 503"
+  },
+  "status.unavailable.description": {
+    "message": "Impossible de récupérer l'état pour le moment. Réessaie dans quelques instants.",
+    "description": "Status page: text under the unavailable banner"
+  },
+  "status.stale": {
+    "message": "Données d'il y a {seconds} s",
+    "description": "Status page: age of stale data in seconds"
+  },
+  "status.partial": {
+    "message": "Données partielles",
+    "description": "Status page: discreet note when the data is incomplete"
+  },
+  "status.totals.shards": {
+    "message": "Shards",
+    "description": "Status page: total shards"
+  },
+  "status.totals.shardsReady": {
+    "message": "Shards prêts",
+    "description": "Status page: ready shards"
+  },
+  "status.totals.guilds": {
+    "message": "Serveurs",
+    "description": "Status page: total servers"
+  },
+  "status.totals.members": {
+    "message": "Membres",
+    "description": "Status page: total members"
+  },
+  "status.clusters.title": {
+    "message": "Clusters",
+    "description": "Status page: heading of the clusters grid"
+  },
+  "status.cluster.label": {
+    "message": "Cluster {id}",
+    "description": "Status page: cluster name"
+  },
+  "status.cluster.unassigned": {
+    "message": "Non assigné",
+    "description": "Status page: pseudo-cluster holding shards without an owner"
+  },
+  "status.cluster.ready": {
+    "message": "{ready}/{total} prêts",
+    "description": "Status page: ready shards over total shards in a cluster"
+  },
+  "status.state.operational": {
+    "message": "Opérationnel",
+    "description": "Status page: cluster state operational"
+  },
+  "status.state.degraded": {
+    "message": "Dégradé",
+    "description": "Status page: cluster state degraded"
+  },
+  "status.state.down": {
+    "message": "Hors service",
+    "description": "Status page: cluster state down"
+  },
+  "status.shardState.ready": {
+    "message": "Prêt",
+    "description": "Status page: shard state ready"
+  },
+  "status.shardState.starting": {
+    "message": "Démarrage",
+    "description": "Status page: shard state starting"
+  },
+  "status.shardState.reconnecting": {
+    "message": "Reconnexion",
+    "description": "Status page: shard state reconnecting"
+  },
+  "status.shardState.down": {
+    "message": "Hors service",
+    "description": "Status page: shard state down"
+  },
+  "status.shard.label": {
+    "message": "Shard {id}",
+    "description": "Status page: shard name"
+  },
+  "status.shard.guilds": {
+    "message": "{count} serveur|{count} serveurs",
+    "description": "Status page: number of servers on a shard (singular|plural)"
+  },
+  "status.lookup.title": {
+    "message": "Trouver le shard de ton serveur",
+    "description": "Status page: heading of the server lookup section"
+  },
+  "status.lookup.label": {
+    "message": "Identifiant ou invitation de ton serveur",
+    "description": "Status page: label of the server lookup field"
+  },
+  "status.lookup.placeholder": {
+    "message": "123456789012345678 ou discord.gg/abc",
+    "description": "Status page: placeholder of the server lookup field"
+  },
+  "status.lookup.searching": {
+    "message": "Recherche…",
+    "description": "Status page: lookup button while searching"
+  },
+  "status.lookup.submit": {
+    "message": "Rechercher",
+    "description": "Status page: lookup button"
+  },
+  "status.lookup.error.invalidQuery": {
+    "message": "Entre l'identifiant de ton serveur (une suite de chiffres) ou un lien d'invitation valide",
+    "description": "Status page: lookup error, query is not a snowflake or an invite"
+  },
+  "status.lookup.error.inviteNotFound": {
+    "message": "Invitation inconnue ou expirée",
+    "description": "Status page: lookup error, invite unknown or expired"
+  },
+  "status.lookup.error.rateLimited": {
+    "message": "Trop de recherches, réessaie dans un instant",
+    "description": "Status page: lookup error, Discord rate limited the invite lookup"
+  },
+  "status.lookup.error.fleetUnavailable": {
+    "message": "État de la flotte indisponible, réessaie dans un instant",
+    "description": "Status page: lookup error, no fleet data to compute the shard"
+  },
+  "status.lookup.error.network": {
+    "message": "La recherche a échoué, réessaie dans un instant",
+    "description": "Status page: lookup error, the invite lookup failed on the network"
+  },
+  "status.lookup.unassigned": {
+    "message": "Shard {shard} : non assigné pour le moment",
+    "description": "Status page: lookup result when the shard is unassigned or absent from the grid"
+  },
+  "status.lookup.result": {
+    "message": "Ce serveur serait servi par le shard {shard}, cluster {cluster} ({state})",
+    "description": "Status page: lookup result, wording must not claim the bot is on the server"
+  },
+  "status.outdated": {
+    "message": "Dernière mise à jour il y a {seconds} s",
+    "description": "Status page: shown when the last successful refresh is older than 90 seconds"
+  },
+  "status.banner.unknown": {
+    "message": "État inconnu",
+    "description": "Status page: global banner when the API returns no cluster"
   }
 }

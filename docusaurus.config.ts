@@ -69,6 +69,9 @@ export default async function createConfigAsync() {
         },
         trailingSlash: false,
         customFields: {
+            // URL publique de la gateway (STATUS_API_URL au build, sans slash final).
+            // Vide : la page /status affiche un état indisponible sans appel réseau.
+            statusApiUrl: (process.env.STATUS_API_URL ?? '').trim().replace(/\/+$/, ''),
             urls: {
                 main: {
                     fr: '/',

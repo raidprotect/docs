@@ -1,0 +1,303 @@
+.page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2.5rem 1rem 4rem;
+}
+
+.header {
+    margin-bottom: 1.5rem;
+}
+
+.title {
+    margin: 0 0 0.25rem;
+}
+
+.subtitle {
+    margin: 0;
+    color: var(--ifm-color-emphasis-700);
+}
+
+/* Teintes d'état : texte toujours présent à côté, la couleur ne porte pas seule le sens. */
+.tone_operational {
+    --tone: #1a7f37;
+    --tone-bg: rgba(26, 127, 55, 0.12);
+}
+.tone_degraded {
+    --tone: #9a6700;
+    --tone-bg: rgba(154, 103, 0, 0.14);
+}
+.tone_down {
+    --tone: #cf222e;
+    --tone-bg: rgba(207, 34, 46, 0.12);
+}
+.tone_neutral {
+    --tone: var(--ifm-color-emphasis-700);
+    --tone-bg: var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .tone_operational {
+    --tone: #56d364;
+    --tone-bg: rgba(86, 211, 100, 0.14);
+}
+[data-theme='dark'] .tone_degraded {
+    --tone: #e3b341;
+    --tone-bg: rgba(227, 179, 65, 0.14);
+}
+[data-theme='dark'] .tone_down {
+    --tone: #ff7b72;
+    --tone-bg: rgba(255, 123, 114, 0.14);
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 1.1rem 1.25rem;
+    border: 1px solid var(--tone);
+    border-radius: 12px;
+    background: var(--tone-bg);
+}
+
+.bannerDot,
+.dot {
+    flex: none;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background: var(--tone);
+}
+
+.bannerTitle {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--ifm-font-color-base);
+}
+
+.bannerText {
+    margin: 0.15rem 0 0;
+    font-size: 0.9rem;
+    color: var(--ifm-color-emphasis-800);
+}
+
+.totals {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+}
+
+.total {
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--ifm-color-emphasis-300);
+    border-radius: 10px;
+    background: var(--ifm-card-background-color);
+}
+
+.total dt {
+    font-size: 0.85rem;
+    color: var(--ifm-color-emphasis-700);
+}
+
+.total dd {
+    margin: 0.1rem 0 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.sectionTitle {
+    margin: 2rem 0 0.75rem;
+    font-size: 1.25rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.cell {
+    position: relative;
+}
+
+.cellButton {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    column-gap: 0.55rem;
+    row-gap: 0.1rem;
+    width: 100%;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid var(--tone);
+    border-radius: 10px;
+    background: var(--tone-bg);
+    color: var(--ifm-font-color-base);
+    text-align: left;
+    cursor: pointer;
+    font: inherit;
+}
+
+.cellButton:focus-visible {
+    outline: 3px solid var(--ifm-color-primary);
+    outline-offset: 2px;
+}
+
+.cellName {
+    font-weight: 600;
+}
+
+.cellState,
+.cellMeta {
+    grid-column: 2;
+    font-size: 0.82rem;
+    color: var(--ifm-color-emphasis-800);
+}
+
+.detail {
+    display: none;
+    position: absolute;
+    z-index: 5;
+    top: 100%;
+    left: 0;
+    min-width: 260px;
+    max-width: min(340px, 90vw);
+    /* Écart transparent entre la tuile et le détail : le survol ne tombe pas dedans. */
+    padding-top: 0.35rem;
+}
+
+.detailBox {
+    max-height: 320px;
+    overflow-y: auto;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid var(--ifm-color-emphasis-400);
+    border-radius: 10px;
+    background: var(--ifm-background-surface-color);
+    box-shadow: var(--ifm-global-shadow-md);
+    font-size: 0.85rem;
+}
+
+.cell:hover .detail,
+.cell:focus-within .detail,
+.cellPinned .detail {
+    display: block;
+}
+
+.cell.cellDismissed .detail {
+    display: none;
+}
+
+.detailBox:focus-visible {
+    outline: 3px solid var(--ifm-color-primary);
+    outline-offset: 1px;
+}
+
+.freshness {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--ifm-color-emphasis-700);
+}
+
+.freshness p {
+    margin: 0;
+}
+
+.shardList {
+    margin: 0.4rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.shardRow {
+    display: grid;
+    grid-template-columns: 5.5rem 1fr auto;
+    gap: 0.5rem;
+    padding: 0.2rem 0;
+    border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.shardState {
+    color: var(--tone);
+    font-weight: 600;
+}
+
+.shardHit {
+    font-weight: 700;
+    background: var(--ifm-color-emphasis-200);
+    box-shadow: -3px 0 0 var(--ifm-color-primary);
+}
+
+.shardGuilds {
+    color: var(--ifm-color-emphasis-700);
+    white-space: nowrap;
+}
+
+.lookup {
+    margin-top: 1rem;
+}
+
+.lookupLabel {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+}
+
+.lookupRow {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.lookupInput {
+    flex: 1 1 260px;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--ifm-color-emphasis-400);
+    border-radius: 8px;
+    background: var(--ifm-background-surface-color);
+    color: var(--ifm-font-color-base);
+    font: inherit;
+}
+
+.lookupInput:focus-visible {
+    outline: 3px solid var(--ifm-color-primary);
+    outline-offset: 1px;
+}
+
+.lookupButton {
+    padding: 0.6rem 1.2rem;
+    border: 0;
+    border-radius: 8px;
+    background: var(--ifm-color-primary);
+    color: var(--ifm-color-white, #fff);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.lookupButton:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.lookupOutput {
+    margin-top: 1rem;
+}
+
+.lookupError {
+    margin: 0;
+    padding: 0.75rem 1rem;
+    border: 1px solid #cf222e;
+    border-radius: 8px;
+    background: rgba(207, 34, 46, 0.1);
+}
+
+.lookupResult {
+    margin: 0;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--ifm-color-emphasis-300);
+    border-radius: 10px;
+    background: var(--ifm-card-background-color);
+    font-weight: 600;
+}
