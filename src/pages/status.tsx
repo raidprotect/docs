@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo, useState, type ReactNode} from 'react'
+import React, {useEffect, useMemo, useRef, useState, type ReactNode} from 'react'
 import Layout from '@theme/Layout'
 import Translate, {translate} from '@docusaurus/Translate'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
@@ -53,6 +53,7 @@ export default function StatusPage(): ReactNode {
     }, [lastOkAt])
     // Dernier serveur cherché ; le shard est recalculé sur chaque nouvelle réponse (total de l'époque en cours).
     const [search, setSearch] = useState<{guildId: string; token: number} | null>(null)
+    const searchCount = useRef(0)
     const located = useMemo(() => (search ? locate(search.guildId, data) : null), [search, data])
     const hit: SearchHit | null = search && located?.cluster ? {clusterId: located.cluster.id, shard: located.shard, token: search.token} : null
     const outdatedSeconds = lastOkAt !== null && Date.now() - lastOkAt > 90_000 ? Math.round((Date.now() - lastOkAt) / 1000) : null
@@ -142,7 +143,7 @@ export default function StatusPage(): ReactNode {
                     </>
                 )}
 
-                <GuildLookup fleet={data} located={located} onFound={(guildId) => setSearch((s) => ({guildId, token: (s?.token ?? 0) + 1}))} />
+                <GuildLookup fleet={data} located={located} onReset={() => setSearch(null)} onFound={(guildId) => setSearch({guildId, token: ++searchCount.current})} />
             </main>
         </Layout>
     )

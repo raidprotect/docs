@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState, type FormEvent, type ReactNode} from 'react'
 import Translate, {translate} from '@docusaurus/Translate'
-import {clusterName, clusterStateLabel} from './labels'
+import {clusterStateLabel} from './labels'
 import {fetchInviteGuildId, fleetUsable, LookupError, parseQuery, type Located, type LookupFailure} from './lookup'
 import type {FleetStatus} from './types'
 import styles from '@site/src/pages/status.module.css'
@@ -16,7 +16,7 @@ function errorMessage(error: LookupFailure): string {
         case 'fleet_unavailable':
             return translate({id: 'status.lookup.error.fleetUnavailable', message: "État de la flotte indisponible, réessaie dans un instant", description: 'Status page: lookup error, no fleet data to compute the shard'})
         default:
-            return translate({id: 'status.lookup.error.network', message: 'La recherche a échoué, réessaie dans un instant.', description: 'Status page: lookup error, the invite lookup failed on the network'})
+            return translate({id: 'status.lookup.error.network', message: 'La recherche a échoué, réessaie dans un instant', description: 'Status page: lookup error, the invite lookup failed on the network'})
     }
 }
 
@@ -27,9 +27,11 @@ type Props = {
     located: Located | null
     /** Reçoit l'identifiant de serveur trouvé par la recherche. */
     onFound: (guildId: string) => void
+    /** Efface le résultat précédent dès qu'une nouvelle recherche démarre. */
+    onReset: () => void
 }
 
-export default function GuildLookup({fleet, located, onFound}: Props): ReactNode {
+export default function GuildLookup({fleet, located, onFound, onReset}: Props): ReactNode {
     const [query, setQuery] = useState('')
     const [busy, setBusy] = useState(false)
     const [error, setError] = useState<LookupFailure | null>(null)
@@ -42,6 +44,7 @@ export default function GuildLookup({fleet, located, onFound}: Props): ReactNode
         controllerRef.current?.abort()
         controllerRef.current = null
         setBusy(false)
+        onReset()
         const parsed = parseQuery(query)
         if (!query.trim()) return
         if (!parsed) {
@@ -114,8 +117,8 @@ export default function GuildLookup({fleet, located, onFound}: Props): ReactNode
                         {located.cluster === null
                             ? translate({id: 'status.lookup.unassigned', message: 'Shard {shard} : non assigné pour le moment', description: 'Status page: lookup result when the shard is unassigned or absent from the grid'}, {shard: located.shard})
                             : translate(
-                                  {id: 'status.lookup.result', message: 'Ce serveur serait servi par le shard {shard}, {cluster} ({state})', description: 'Status page: lookup result, wording must not claim the bot is on the server'},
-                                  {shard: located.shard, cluster: clusterName(located.cluster.id), state: clusterStateLabel(located.cluster.state).toLowerCase()},
+                                  {id: 'status.lookup.result', message: 'Ce serveur serait servi par le shard {shard}, cluster {cluster} ({state})', description: 'Status page: lookup result, wording must not claim the bot is on the server'},
+                                  {shard: located.shard, cluster: String(located.cluster.id), state: clusterStateLabel(located.cluster.state)},
                               )}
                     </p>
                 )}
