@@ -67,13 +67,23 @@ function renderEmoji(emoji: { name: string; id?: string; animated?: boolean }) {
 function SelectMenu({
   placeholder,
   disabled,
+  values,
 }: {
   placeholder: string;
   disabled?: boolean;
+  values?: string[];
 }) {
   return (
     <div className={styles.select} data-disabled={disabled || undefined}>
-      <span className={styles.selectPlaceholder}>{placeholder}</span>
+      {values && values.length > 0 ? (
+        <span className={styles.selectValues}>
+          {values.map((v) => (
+            <span key={v} className={styles.selectChip}>{v.replace(/^@\[(.*)\]$/, "@$1")}</span>
+          ))}
+        </span>
+      ) : (
+        <span className={styles.selectPlaceholder}>{placeholder}</span>
+      )}
       <ChevronDown />
     </div>
   );
@@ -81,7 +91,9 @@ function SelectMenu({
 
 function StringSelectMenu({ component }: { component: StringSelect }) {
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState<string | null>(null);
+  const [selected, setSelected] = useState<string | null>(
+    () => component.options.find((o) => o.default)?.value ?? null
+  );
   const wrapRef = useRef<HTMLDivElement>(null);
   const current = component.options.find((o) => o.value === selected);
 
@@ -202,6 +214,7 @@ export default function ComponentRenderer({
             component.placeholder || "Sélectionner un utilisateur"
           }
           disabled={component.disabled}
+          values={component.values}
         />
       );
 
@@ -211,6 +224,7 @@ export default function ComponentRenderer({
         <SelectMenu
           placeholder={component.placeholder || "Sélectionner un rôle"}
           disabled={component.disabled}
+          values={component.values}
         />
       );
 
@@ -222,6 +236,7 @@ export default function ComponentRenderer({
             component.placeholder || "Faites une sélection"
           }
           disabled={component.disabled}
+          values={component.values}
         />
       );
 
@@ -231,6 +246,7 @@ export default function ComponentRenderer({
         <SelectMenu
           placeholder={component.placeholder || "Sélectionner un salon"}
           disabled={component.disabled}
+          values={component.values}
         />
       );
 

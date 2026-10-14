@@ -938,3 +938,30 @@ html[data-theme="light"] .codeBlock {
   border-color: #e1e2e4;
   color: #313338;
 }
+
+/* === Sélecteurs avec valeurs présélectionnées (salon, rôle, membre) === */
+.selectValues {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.selectChip {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 4px;
+  background: #313338;
+  color: #f2f2f4;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+html[data-theme="light"] .selectChip {
+  background: #fff;
+  color: #313338;
+}
