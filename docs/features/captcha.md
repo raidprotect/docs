@@ -3,30 +3,56 @@ title: Captcha (Vérification)
 description: "Le captcha de RaidProtect bloque les selfbots et les raids : chaque nouveau membre doit prouver qu'il est humain avant d'accéder à votre serveur Discord."
 ---
 
-import { CaptchaSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
+import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
 
 import CaptchaMockup from '@site/src/components/DiscordMessage/mockups/captcha';
 
-{/* <CaptchaMockup /> : masquée pour le moment */}
+{/* <CaptchaMockup /> : obsolète en 3.5.0 (montre le mode Challenge avec expulsion automatique) */}
 
-Le captcha de RaidProtect demande à chaque nouveau membre de recopier un code avant d'accéder à votre serveur Discord, ce qui bloque les [selfbots](/learn/self-bot) et les [raids](/learn/discord-raid) en filtrant les comptes qui ne sont pas humains.
+Le **captcha** de RaidProtect demande à chaque nouveau membre de recopier un code avant d'accéder à votre serveur Discord, ce qui bloque les [selfbots](/learn/self-bot) et les [raids](/learn/discord-raid) en filtrant les comptes qui ne sont pas humains.
 
-Le captcha est l’une des fonctionnalités les plus populaires de RaidProtect, bien qu’il reste entièrement optionnel. Il permet de demander à chaque nouvel utilisateur de relever un défi consistant à saisir un code, afin de vérifier qu’il ne s’agit pas d’un robot (selfbot).
+C'est l'une des fonctionnalités les plus populaires de RaidProtect, et elle reste entièrement optionnelle. Vous choisissez quand l'imposer : à chaque arrivée, seulement pendant un raid, ou aussi pour les comptes suspects.
 
 ## ❓ Fonctionnement du captcha {#working}
 
-Le captcha repose sur un rôle **@Non vérifié** et un salon nommé **#vérification**. Lorsqu'un utilisateur rejoint votre serveur :
-- Le bot attribue automatiquement le rôle **@Non vérifié** à cet utilisateur, limitant son accès uniquement au salon **#vérification**.
-- Dans ce salon, une image contenant 6 lettres majuscules est envoyée par le bot. L'utilisateur doit retranscrire les lettres dans le salon pour prouver qu'il est humain.
-- Si la réponse est correcte, le rôle **@Non vérifié** est retiré et l'utilisateur accède normalement au serveur. Dans le cas contraire, il est automatiquement expulsé.
-- Lorsque le captcha est activé, RaidProtect publie automatiquement un message dans le salon de logs, indiquant la date de création du compte de chaque nouvel utilisateur.
-- RaidProtect détecte automatiquement les problèmes de permissions (salon et rôle) ainsi que la visibilité par défaut du salon lors du [processus d'accueil](../guides/onboarding.md) Discord.
+Le captcha repose sur un rôle **@Non vérifié** et un salon **#vérification**. Lorsqu'un utilisateur rejoint votre serveur :
+- **Mise en attente :** nous lui donnons le rôle **@Non vérifié**, qui limite son accès au seul salon **#vérification**.
+- **Épreuve :** il recopie un code de 6 lettres majuscules affiché sur une image. La façon de le faire dépend du [mode d'affichage](#display-mode).
+- **Réussite :** le rôle **@Non vérifié** est retiré et le membre accède au serveur. Ses [rôles automatiques](./onboarding.md#autorole) et le [message de bienvenue](./onboarding.md#welcome-message) partent à ce moment-là.
+- **Échec :** quand il épuise ses essais, il est expulsé ou mis au jail, selon votre réglage. Il peut revenir et retenter le captcha après une expulsion.
+- **Logs :** chaque arrivée est notée dans le salon de logs avec la date de création du compte, ainsi que les réussites, les échecs et les délais expirés.
+- **Diagnostic :** RaidProtect repère seul les problèmes de permissions, de visibilité du salon dans le [Processus d'accueil](../guides/onboarding.md) Discord et les fuites du rôle **@Non vérifié**, et propose de les corriger.
 
 :::info
-**Délai et essais :** Les utilisateurs disposent de **1 à 10 minutes** pour compléter le captcha (**5 minutes par défaut**) et de **1 à 3 essais** (**2 essais par défaut**). Au-delà, ils sont automatiquement expulsés du serveur.
+**Pas d'expulsion par défaut.** Un captcha neuf n'expulse plus les membres qui ne le résolvent pas : ils restent sur le serveur, sans accès, jusqu'à leur vérification. Vous pouvez régler un [délai avant expulsion](#timeout).
 :::
 :::warning
-**Gestion des permissions :** Les permissions du rôle **@Non vérifié** sont configurées automatiquement par RaidProtect. Vous pouvez renommer le rôle et le salon, mais ne les supprimez pas.
+**Gestion des permissions :** les permissions du rôle **@Non vérifié** sont configurées automatiquement par RaidProtect. Vous pouvez renommer le rôle et le salon, mais ne les supprimez pas. RaidProtect a besoin des permissions `KICK_MEMBERS` et `MANAGE_ROLES`, et doit être placé au-dessus du rôle **@Non vérifié**.
+:::
+
+### Modes d'affichage {#display-mode}
+
+| Mode | Ce que voit le nouveau membre |
+|---|---|
+| **Panneau (Interactif)**, par défaut | Un message permanent “**Système de vérification**” avec un bouton “**Vérifier**”. Le captcha s'ouvre en privé (seul le membre le voit) et le code se saisit dans une fenêtre. Le membre ne peut pas écrire dans **#vérification**. |
+| **Challenge (Classique)** | Une image est postée dans **#vérification** à son arrivée, et il tape le code en message dans le salon. |
+
+Le mode Panneau garde le salon propre et permet des réglages en plus : choix de la sanction quand les essais sont épuisés, [captcha gelé pendant un raid](./raid-mode.md#action), [retenue à l'entrée des comptes trop récents](./onboarding.md#minage). Le mode Challenge expulse toujours le membre à la fin du temps imparti ou quand ses essais sont épuisés.
+
+### Déclenchement {#trigger}
+
+| Déclenchement | Quand le captcha s'applique |
+|---|---|
+| **En permanence**, par défaut | À chaque arrivée, sans condition. |
+| **Automatique** | Seulement pendant un raid ou un niveau DISCON élevé. Les autres arrivants entrent directement. |
+| **Intelligent (Public Beta)** ([Premium](/premium)) | Comme Automatique, plus les comptes qui semblent suspects. |
+
+Avec **Automatique**, le captcha s'impose pendant un raid seulement si l'[Auto RaidMode](./raid-mode.md#action) est réglé sur “**Envoyer au captcha**” ou “**Captcha gelé pendant le raid**”, et pendant une alerte [DISCON](./discon.md) à partir du niveau 3.
+
+Le déclenchement **Intelligent** évalue chaque arrivant sans appel extérieur, à partir de signaux simples : compte signalé comme spammeur par Discord, pseudo mis en quarantaine par l'AutoMod de Discord, compte très récent, pseudo qui semble généré, avatar par défaut, retour sur le serveur. Un membre approuvé à la main par votre équipe n'est jamais considéré comme suspect.
+
+:::note
+Le déclenchement intelligent est en **Public Beta**, réservée pour l'instant aux serveurs [**Premium**](/premium).
 :::
 
 ## 🚪 Comment configurer le captcha ? {#config}
@@ -34,50 +60,136 @@ Le captcha repose sur un rôle **@Non vérifié** et un salon nommé **#vérifi
 La mise en place du captcha est simple et rapide.
 
 1. Faites la [commande `/settings`](../setup.md#settings).
-2. Cliquez sur le bouton “**Captcha**”.
-3. Choisissez le salon dans lequel les captchas seront réalisés ou utilisez le bouton “**En créer un pour moi**”.
-4. Le rôle **@Non vérifié** est automatiquement créé et configuré.
-5. Configurez le nombre d’essais autorisés (entre 1 et 3) ainsi que le temps de résolution maximal (entre 1 et 10 minutes).
+2. Ouvrez l'onglet “**Arrivées**”.
+3. Cliquez sur “**Configurer**” à côté de “**Captcha**”.
+4. Choisissez le salon dans lequel les captchas seront réalisés, ou utilisez le bouton “**En créer un pour moi**”.
+5. Cliquez sur “**Activer**”. Le rôle **@Non vérifié** est créé et ses permissions sont posées dans tous les salons.
 
-<CaptchaSettingsMockup />
+Le captcha démarre en mode **Panneau (Interactif)**, déclenché **En permanence**, avec 2 essais et sans délai avant expulsion. Vous pouvez ensuite ajuster chaque réglage depuis le même écran.
+
+<Settings start="captcha" />
+
+### Mode d'affichage et déclenchement {#mode}
+
+1. Faites la [commande `/settings`](../setup.md#settings).
+2. Ouvrez l'onglet “**Arrivées**”.
+3. Cliquez sur “**Configurer**” à côté de “**Captcha**”.
+4. Dans “**Mode d'affichage**”, choisissez “**Panneau (Interactif)**” ou “**Challenge (Classique)**”.
+5. Dans “**Déclenchement**”, choisissez “**En permanence**”, “**Automatique**” ou “**Intelligent (Public Beta)**”.
+
+:::info
+Certains réglages ont besoin du mode Panneau (captcha gelé pendant un raid, retenue à l'entrée de l'âge minimum). Si vous passez en Challenge, RaidProtect liste ces réglages et vous propose de les adapter avant de changer de mode.
+:::
+
+### Difficulté {#difficulty}
+
+1. Faites la [commande `/settings`](../setup.md#settings).
+2. Ouvrez l'onglet “**Arrivées**”.
+3. Cliquez sur “**Configurer**” à côté de “**Captcha**”.
+4. Cliquez sur “**Modifier**” à côté de “**Difficulté**”.
+5. Réglez les champs de la fenêtre, puis validez.
+
+<SettingsModal name="captchaDifficulty" />
+
+| Réglage | Valeurs | Par défaut |
+|---|---|---|
+| “**Essais**” | 1, 2 ou 3 essais | 2 essais |
+| “**Action quand les essais sont épuisés**” (Panneau) | “**Essais épuisés : Expulser**” ou “**Essais épuisés : Jail**” | Expulser |
+| “**Temps de résolution**” (Panneau) | Désactivé, 2, 3 ou 5 minutes : le temps laissé pour taper le code après le clic sur “**Vérifier**” | 3 minutes |
+| “**Temps de résolution (avant expulsion)**” (Challenge) | 3, 5, 10 ou 15 minutes, ou une valeur de 30 secondes à 15 minutes : passé ce délai, le membre est expulsé | 5 minutes |
+
+:::info
+Le choix “**Essais épuisés : Jail**” place le membre au [jail](./sanctions.mdx#jail) au lieu de l'expulser. Il faut pour cela un Rôle de Jail configuré dans l'onglet “**Modération**” > “**Sanctions**”.
+:::
+
+### Délai avant expulsion {#timeout}
+
+En mode Panneau, ce délai est compté dès l'arrivée du membre : s'il n'est pas vérifié à temps, il est expulsé (ou mis au jail si c'est votre réglage d'échec).
+
+1. Faites la [commande `/settings`](../setup.md#settings).
+2. Ouvrez l'onglet “**Arrivées**”.
+3. Cliquez sur “**Configurer**” à côté de “**Captcha**”.
+4. Dans “**Délai avant expulsion**”, choisissez “**Désactivé**”, 5, 15 ou 30 minutes, ou une “**Valeur personnalisée**” de 30 secondes à 30 minutes.
+
+:::warning
+Avec le délai désactivé, les comptes non vérifiés restent sur le serveur et peuvent écrire en MP à vos membres. Mettez un délai, ou fermez les MP avec la [Fermeture des MP](./dm-lock.mdx).
+:::
+
+### Alertes de l'écran Captcha {#alerts}
+
+L'écran du captcha affiche des encarts quand quelque chose empêche la vérification de bien fonctionner :
+- **Salon invisible à l'arrivée :** le salon de vérification n'est dans aucun salon par défaut du Processus d'accueil Discord. Cliquez sur “**Déplacer dans** _catégorie_” ou “**Créer une nouvelle catégorie**” pour que nous le corrigions, ou suivez le [guide du Processus d'accueil](../guides/onboarding.md).
+- **Fuites du rôle @Non vérifié :** des rôles donnés par le Processus d'accueil Discord en même temps que **@Non vérifié** contournent la vérification, le rôle **@Non vérifié** porte des permissions, **@everyone** a la permission `ADMINISTRATOR`, ou des salons restent visibles aux membres en vérification (ou au jail). Le bouton “**Corriger**” ferme les salons concernés.
+- **Niveau de vérification Élevé :** ce niveau Discord fait attendre 10 minutes avant de pouvoir écrire. Le captcha filtre déjà l'entrée : le niveau conseillé avec le captcha est **Moyen**.
+- **Permissions manquantes :** RaidProtect a besoin de `KICK_MEMBERS` et `MANAGE_ROLES`.
+
+Une fois le problème réglé, cliquez sur “**Actualiser**”.
+
+### Désactiver ou supprimer le captcha {#disable}
+
+1. Faites la [commande `/settings`](../setup.md#settings).
+2. Ouvrez l'onglet “**Arrivées**”.
+3. Cliquez sur “**Configurer**” à côté de “**Captcha**”.
+4. Dans “**Mode d'affichage**”, choisissez :
+   - “**Désactivé**” pour suspendre la vérification sans rien perdre de votre configuration ;
+   - “**Supprimer**” pour effacer la configuration et le rôle de vérification. RaidProtect vous demande une confirmation.
+
+:::tip
+Pour que le captcha se fasse discret hors des raids, réglez plutôt son [déclenchement](#trigger) sur **Automatique** que de le désactiver.
+:::
 
 ## ✨ Fonctionnalités supplémentaires {#additional-features}
-
-Pour s’adapter aux besoins de votre serveur, le captcha de RaidProtect propose des options personnalisables.
 
 ### Logs séparés {#logs}
 
 Si votre serveur est populaire, les logs liés au captcha peuvent encombrer votre salon de logs principal. Vous pouvez les déplacer dans un autre salon.
 
 1. Faites la [commande `/settings`](../setup.md#settings).
-2. Cliquez sur le bouton “**Logs**”.
-3. Sélectionnez “**Captcha**”.
-4. Choisissez le salon dans lequel les logs du captcha seront indexées ou utilisez le bouton “**En créer un pour moi**”.
+2. Ouvrez l'onglet “**Arrivées**”.
+3. Cliquez sur “**Configurer**” à côté de “**Captcha**”.
+4. Cliquez sur “**Modifier**” à côté de “**Logs**”.
+5. Choisissez le salon dans lequel les logs du captcha seront envoyés.
+
+Vous retrouvez aussi ce réglage dans l'onglet “**Modération**” > “**Logs**”, à la ligne “**Captcha**”.
 
 ### Rôle automatique {#autorole}
 
-Si vous utilisez un système de rôle automatique (autorole) autre que RaidProtect, cela peut interférer avec le captcha. Remplacez votre autorole existant par celui de RaidProtect.
-
-1. Faites la [commande `/settings`](../setup.md#settings).
-2. Cliquez sur le bouton “**Captcha**”.
-3. Sélectionnez “**Rôle automatique**”.
-4. Choisissez le rôle qui sera donné aux membres ayant validé le captcha.
+Le rôle automatique ne se règle plus dans le captcha : il a rejoint les [Rôles automatiques](./onboarding.md#autorole) de l'onglet “**Arrivées**”, qui acceptent plusieurs rôles. Votre ancien réglage y a été repris automatiquement. Quand le captcha est actif, ces rôles sont donnés après la réussite du captcha.
 
 ### Bypass du captcha {#bypass}
 
-Utilisez la commande : ```/bypass captcha [utilisateur]```
+Utilisez la commande : ```/bypass captcha [utilisateur]```
 
-Remplacez `[utilisateur]` par l’[identifiant](../guides/id.mdx) souhaité, ce dernier disposera de 10 minutes pour rejoindre le serveur sans avoir besoin de résoudre le captcha. Si l'utilisateur est déjà présent, le captcha sera résolu automatiquement. Vous pouvez aussi utiliser la commande sans spécifier d'utilisateur pour connaître la liste actuelle des utilisateurs bypass.
+Remplacez `[utilisateur]` par l'[identifiant](../guides/id.mdx) souhaité, ce dernier disposera de 10 minutes pour rejoindre le serveur sans avoir besoin de résoudre le captcha. Si l'utilisateur est déjà présent, le captcha sera résolu automatiquement. Vous pouvez aussi utiliser la commande sans spécifier d'utilisateur pour connaître la liste actuelle des utilisateurs bypass.
+
+## 🤝 Captcha et anti-raid, c'est mieux ensemble {#raid}
+
+Le captcha travaille avec les autres protections des arrivées :
+- **[Auto RaidMode](./raid-mode.md#action) :** avec l'action “**Envoyer au captcha**”, les arrivants d'une vague passent le captcha au lieu d'être expulsés. Avec “**Captcha gelé pendant le raid**”, ils attendent derrière le captcha et le passent après la vague. Le panneau affiche alors « La vérification est suspendue. Le serveur est en alerte ».
+- **[Âge minimum du compte](./onboarding.md#minage) :** l'action “**Retenir à l'entrée**” bloque un compte trop récent sur un captcha qu'il ne pourra résoudre qu'une fois l'âge atteint.
+- **DISCON :** avec le déclenchement Automatique ou Intelligent, une alerte DISCON de niveau 3 ou plus grave impose le captcha à tous les arrivants.
 
 ## Questions fréquentes {#faq}
 
 ### Combien de temps a-t-on pour résoudre le captcha ?
 
-Les nouveaux membres disposent de 1 à 10 minutes (5 minutes par défaut) et de 1 à 3 essais (2 essais par défaut). Au-delà, ils sont automatiquement expulsés du serveur.
+En mode Panneau, le membre a 2 essais par défaut (1 à 3) et 3 minutes pour taper le code après avoir cliqué sur “**Vérifier**”. Aucun délai d'expulsion n'est appliqué par défaut, mais vous pouvez en régler un jusqu'à 30 minutes. En mode Challenge, il a 5 minutes par défaut (de 30 secondes à 15 minutes) avant d'être expulsé.
 
 ### Que se passe-t-il si un membre échoue le captcha ?
 
-S'il épuise ses essais ou dépasse le délai, il est automatiquement expulsé du serveur. Il peut toutefois revenir et retenter le captcha.
+Quand il épuise ses essais, il est expulsé du serveur ou, en mode Panneau, mis au jail si vous l'avez choisi. Après une expulsion, il peut revenir et retenter le captcha.
+
+### Les membres non vérifiés sont-ils expulsés automatiquement ?
+
+Pas sur un captcha neuf : en mode Panneau, le délai avant expulsion est désactivé par défaut. Les membres non vérifiés restent sur le serveur sans accès aux salons. Réglez un délai avant expulsion, ou fermez les MP du serveur, pour éviter qu'ils écrivent à vos membres en privé.
+
+### Peut-on n'activer le captcha que pendant un raid ?
+
+Oui. Réglez son déclenchement sur **Automatique** et l'action de l'Auto RaidMode sur “**Envoyer au captcha**” ou “**Captcha gelé pendant le raid**”. Le reste du temps, les arrivants entrent directement.
+
+### Faut-il activer la communauté Discord pour utiliser le captcha ?
+
+Non, le captcha fonctionne sans la communauté. Si elle est activée, vérifiez que le salon de vérification fait partie des salons par défaut du [Processus d'accueil](../guides/onboarding.md).
 
 ### Peut-on exempter un membre du captcha ?
 
