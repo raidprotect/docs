@@ -550,3 +550,26 @@ body:not(.editor-page) [class*="expandButton"] {
   align-items: center;
   gap: 0.35rem;
 }
+
+.feature-badge-tooltip {
+  position: fixed;
+  z-index: 1000;
+  padding: 0.25rem 0.55rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  background: #111214;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -100%);
+  transition: opacity 0.1s ease;
+}
+
+.feature-badge-tooltip--visible {
+  opacity: 1;
+}
