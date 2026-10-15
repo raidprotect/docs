@@ -17,7 +17,7 @@ C'est l'une des fonctionnalités les plus populaires de RaidProtect, et elle res
 
 Le captcha repose sur un rôle **@Non vérifié** et un salon **#vérification**. Lorsqu'un utilisateur rejoint votre serveur :
 - **Mise en attente :** nous lui donnons le rôle **@Non vérifié**, qui limite son accès au seul salon **#vérification**.
-- **Épreuve :** il recopie un code de 6 lettres majuscules affiché sur une image. La façon de le faire dépend du [mode d'affichage](#display-mode). En mode Panneau, il peut aussi résoudre un puzzle dans l'[Activity RaidProtect](#activity).
+- **Épreuve :** il recopie un code affiché sur une image. La façon de le faire dépend du [mode d'affichage](#display-mode). En mode Panneau, il peut aussi résoudre un puzzle dans l'[Activity RaidProtect](#activity).
 - **Réussite :** le rôle **@Non vérifié** est retiré et le membre accède au serveur. Ses [rôles automatiques](./onboarding.md#autorole) et le [message de bienvenue](./onboarding.md#welcome-message) partent à ce moment-là.
 - **Échec :** quand il épuise ses essais, il est expulsé ou mis au jail, selon votre réglage. Il peut revenir et retenter le captcha après une expulsion.
 - **Logs :** chaque arrivée est notée dans le salon de logs avec la date de création du compte, ainsi que les réussites, les échecs et les délais expirés.
@@ -91,7 +91,7 @@ Le réglage est désactivé par défaut et n'apparaît qu'en mode Panneau. Une f
 - **Réussite ou échec :** le verdict de l'Activity compte comme un code saisi. Un échec consomme un essai, et la sanction prévue tombe quand les essais sont épuisés. Le temps de résolution s'applique comme d'habitude.
 - **Transmis à l'équipe :** quand le résultat est incertain, le membre reste en attente et le salon de logs du captcha vous prévient. Acceptez-le avec le [bypass](#bypass) ou sanctionnez-le.
 - **Comptes liés :** les logs du captcha listent les comptes probablement liés, avec un indice de confiance. Le membre n'en voit rien.
-- **Alerte de raid :** si plusieurs comptes passent par le même appareil, les logs du captcha vous le signalent.
+- **Alerte de raid :** les logs du captcha signalent les arrivées groupées suspectes.
 - **Code en image en secours :** si l'Activity n'est pas disponible, “**Vérifier**” affiche le code en image habituel.
 
 :::info
@@ -182,7 +182,7 @@ Remplacez `[utilisateur]` par l'[identifiant](../guides/id.mdx) souhaité, ce de
 ## 🤝 Captcha et anti-raid, c'est mieux ensemble {#raid}
 
 Le captcha travaille avec les autres protections des arrivées :
-- **[Auto RaidMode](./raid-mode.md#action) :** avec l'action “**Envoyer au captcha**”, les arrivants d'une vague passent le captcha au lieu d'être expulsés. Avec “**Captcha gelé pendant le raid**”, ils attendent derrière le captcha et le passent après la vague. Le panneau affiche alors « La vérification est suspendue. Le serveur est en alerte ».
+- **[Auto RaidMode](./raid-mode.md#action) :** avec l'action “**Envoyer au captcha**”, les arrivants d'une vague passent le captcha au lieu d'être expulsés. Avec “**Captcha gelé pendant le raid**”, ils attendent derrière le captcha et le passent après la vague.
 - **[Âge minimum du compte](./onboarding.md#minage) :** l'action “**Retenir à l'entrée**” bloque un compte trop récent sur un captcha qu'il ne pourra résoudre qu'une fois l'âge atteint.
 - **[DISCON](./discon.md#captcha) :** dès le niveau 4, le captcha est activé s'il est configuré, même si vous l'aviez désactivé. À partir du niveau 3, il s'impose à tous les arrivants, quel que soit son déclenchement (en expérimentation avec la Shield Update).
 
