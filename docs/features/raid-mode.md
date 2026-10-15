@@ -96,9 +96,6 @@ La durée par défaut est de 5 minutes.
 :::tip
 Avec les actions captcha, réglez le [déclenchement du captcha](./captcha.md#trigger) sur **Automatique** : le captcha ne s'impose alors que pendant les raids, et vos arrivants entrent directement le reste du temps.
 :::
-:::info
-Si le captcha devient inutilisable pendant un raid (configuration incomplète, ou mode Challenge avec le captcha gelé), nous retombons sur l'expulsion des arrivants. Les arrivants renvoyés derrière le captcha perdent leurs [rôles automatiques](./onboarding.md#autorole) et les retrouvent à la réussite.
-:::
 
 #### Mode expulsion <span className="badge-premium">Premium</span> {#kick-mode}
 
