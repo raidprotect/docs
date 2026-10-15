@@ -15,10 +15,9 @@ Le slowmode préventif est réservé aux serveurs [Premium](/premium). Il fait p
 
 - **Un débit cible** : pour chaque salon régulé, vous choisissez un nombre de messages par minute à ne pas dépasser en moyenne (30 par défaut).
 - **Des bornes** : le mode lent reste toujours entre le **slowmode minimum** et le **slowmode maximum** que vous avez fixés pour le salon.
-- **Une réévaluation continue** : toutes les 10 secondes, nous comparons le débit réel à la cible. Tant que l'écart reste faible, nous ne touchons à rien. Au-delà, nous montons ou descendons le mode lent, plus vite à la hausse qu'à la baisse.
-- **Une réaction immédiate aux afflux** : si un salon reçoit d'un coup beaucoup plus de messages que la cible, le mode lent monte sans attendre la prochaine réévaluation.
+- **Un ajustement continu** : nous ajustons le mode lent selon le débit réel, et il monte tout de suite quand un salon s'emballe.
 - **Une redescente progressive** : quand le salon se calme, le mode lent revient peu à peu vers le minimum.
-- **Pas d'emballement** : nous modifions le mode lent au plus une fois toutes les 5 secondes, avec le motif « Slowmode automatique » dans le journal d'audit. Les messages des bots ne sont pas comptés.
+- **Journal d'audit** : chaque changement porte le motif « Slowmode automatique ».
 
 ## 🛠️ Configuration du slowmode préventif {#config}
 
@@ -31,8 +30,6 @@ Le slowmode préventif est réservé aux serveurs [Premium](/premium). Il fait p
 5. Choisissez le salon (salon textuel ou salon d'annonces).
 
 <Settings start="slowmode" />
-
-Un nouveau salon reprend les réglages du dernier salon ajouté. Vous pouvez ensuite les modifier.
 
 **Limites :** 5 salons régulés par serveur.
 
