@@ -120,7 +120,7 @@ Fonctionnement du timeout préventif :
 - La sanction est liée au signalement : le modérateur qui le traite peut la confirmer ou l'annuler.
 
 :::info
-Cette fonctionnalité est réservée aux serveurs [**Premium**](/premium). Sans premium, la ligne affiche “**Désactivé**” et le bouton présente l'offre.
+Cette fonctionnalité est réservée aux serveurs [**Premium**](/premium).
 :::
 
 ### Réputation des signaleurs {#bad-reporters}

@@ -43,10 +43,6 @@ Vous retrouvez aussi les comptes liés d'un membre dans la [vue de modération `
 La commande `/alt` et ses boutons demandent la permission **Bannir des membres**.
 :::
 
-:::tip
-Si vous liez un compte à un groupe dont un compte est déjà banni, RaidProtect vous le signale et propose “**Bannir aussi**”, “**Lever le ban**” ou “**Plus tard**”.
-:::
-
 ## 🛠️ Configuration des doubles comptes {#config}
 
 1. Faites la [commande `/settings`](../setup.md#settings).
