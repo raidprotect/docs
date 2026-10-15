@@ -9,11 +9,7 @@ L'**accueil** de RaidProtect s'occupe des nouveaux membres de votre serveur Disc
 
 ## ❓ Comment ça marche ? {#working}
 
-Quand un utilisateur rejoint votre serveur, nous traitons son arrivée dans cet ordre :
-- **Mode raid :** pendant une vague, l'[action pendant le raid](./raid-mode.md#action) s'applique.
-- **Âge minimum du compte :** si son compte est trop récent, l'[action choisie](#minage-action) s'applique (expulsion, jail ou retenue à l'entrée).
-- **Captcha :** s'il est actif et déclenché, le membre doit le résoudre avant d'aller plus loin.
-- **Admission :** une fois admis (dès son arrivée, ou après la réussite du captcha), il reçoit ses [rôles automatiques](#autorole) et son [message de bienvenue](#welcome-message).
+Quand un utilisateur rejoint votre serveur, le [mode raid](./raid-mode.md#action), l'[âge minimum du compte](#minage) puis le [captcha](./captcha.md) s'appliquent avant son admission. Une fois admis, il reçoit ses [rôles automatiques](#autorole) et son [message de bienvenue](#welcome-message).
 
 ## 👋 Message de bienvenue {#welcome-message}
 
@@ -80,7 +76,7 @@ Avec le [Premium](/premium), cliquez sur “**Couleur**” dans “**Contenu du 
 
 ### Afflux et raids {#welcome-raid}
 
-- **Regroupement :** quand beaucoup de membres arrivent en même temps, nous regroupons jusqu'à 5 arrivants par message pour ne pas inonder le salon. Les boutons affichés sont alors ceux d'un seul message.
+- **Regroupement :** quand beaucoup de membres arrivent en même temps, les arrivées sont regroupées pour ne pas inonder le salon.
 - **Silence pendant une vague :** tant que le [mode raid](./raid-mode.md) tenu par RaidProtect ou la [Fermeture des Jointures](./join-lock.mdx) est actif, aucun message de bienvenue n'est envoyé.
 
 ## 🏷️ Rôles automatiques {#autorole}
@@ -102,7 +98,7 @@ Pour retirer tous les rôles automatiques, cliquez sur “**Réinitialiser**”.
 Évitez les rôles qui portent des permissions : un rôle donné automatiquement ne devrait accorder aucun pouvoir. RaidProtect refuse les rôles gérés par une intégration, les rôles au-dessus du sien ou du vôtre, et ceux qui portent une permission de modération. Il vous alerte si un rôle choisi gagne des permissions plus tard.
 :::
 :::info
-Si votre serveur utilise un autre bot pour son rôle automatique, il risque de donner le rôle avant le captcha. Remplacez-le par les rôles automatiques de RaidProtect. Pendant un raid réglé sur “**Envoyer au captcha**”, les arrivants renvoyés derrière le captcha perdent leurs rôles automatiques et les retrouvent à la réussite.
+Si votre serveur utilise un autre bot pour son rôle automatique, il risque de donner le rôle avant le captcha. Remplacez-le par les rôles automatiques de RaidProtect.
 :::
 
 ## 🎂 Âge minimum du compte {#minage}
@@ -130,9 +126,8 @@ Pour désactiver le filtre, cliquez sur “**Réinitialiser**”. RaidProtect a 
 Le compte reçoit un message privé avec la date à laquelle il aura accès au serveur. Les expulsions, mises au jail et bannissements sont notés dans le salon de logs.
 
 :::info
-- “**Jail jusqu'à l'âge requis**” demande un Rôle de Jail, configuré dans l'onglet “**Modération**” > “**Sanctions**”. Sans lui, RaidProtect vous propose de le configurer ou de vous replier sur “**Bannir jusqu'à l'âge requis**” : le compte sort du serveur et son bannissement est levé automatiquement à la bonne date. Si le Rôle de Jail disparaît plus tard, nous expulsons les comptes trop récents.
-- “**Retenir à l'entrée**” demande un captcha actif en mode **Panneau (Interactif)**. Si le captcha n'est pas utilisable à l'arrivée du compte, nous l'expulsons.
-- L'expulsion, le jail et la retenue suivent vos changements d'ancienneté. Les bannissements déjà posés gardent leur date de levée.
+- “**Jail jusqu'à l'âge requis**” demande un Rôle de Jail, configuré dans l'onglet “**Modération**” > “**Sanctions**”. Sans lui, RaidProtect vous propose de le configurer ou de vous replier sur “**Bannir jusqu'à l'âge requis**” : le compte sort du serveur et son bannissement est levé automatiquement à la bonne date.
+- “**Retenir à l'entrée**” demande un captcha actif en mode **Panneau (Interactif)**.
 :::
 
 ### 🎫 Bypass de l'âge minimum {#bypass-minage}
