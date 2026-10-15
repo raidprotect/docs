@@ -34,7 +34,7 @@ Le slowmode préventif est réservé aux serveurs [Premium](/premium). Il fait p
 **Limites :** 5 salons régulés par serveur.
 
 :::warning Permissions requises
-RaidProtect doit avoir la permission `Gérer les salons` dans chaque salon régulé. Nous la vérifions à l'ajout, et un encart d'erreur s'affiche si elle manque.
+RaidProtect doit avoir la permission `Gérer les salons` dans chaque salon régulé.
 :::
 
 ### Régler un salon {#channel}
