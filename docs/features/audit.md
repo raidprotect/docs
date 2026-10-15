@@ -89,12 +89,7 @@ La liste détaille, salon par salon, chaque permission et la raison pour laquell
 - Corriger une catégorie corrige aussi les salons qui lui sont synchronisés.
 - Les permissions d'un rôle **Administrateur** sont listées à part, dans “**Sans effet sur un rôle Administrateur**” : Discord les ignore, et nous ne les retirons jamais, car elles s'appliqueront si ce rôle perd Administrateur.
 
-L'analyse tient compte des verrouillages temporaires :
-
-- les salons verrouillés par [`/lock`](./channel-lock.md) sont écartés ;
-- pendant le niveau 1 de [DISCON](./discon.md), les refus sont jugés sur les permissions qu'@everyone retrouvera ensuite ;
-- les accords d'expression des rôles d'équipe ne sont pas comptés comme redondants (voir [plus haut](#checks)) ;
-- une permission vocale posée sur un salon textuel (héritée de sa catégorie) n'est pas signalée.
+L'analyse tient compte des verrouillages en cours, par [`/lock`](./channel-lock.md) ou par le [DISCON](./discon.md).
 
 ## ✅ Écarter une alerte volontaire {#ignore}
 
