@@ -68,7 +68,6 @@ Les PIN trop simples sont refusés : chiffres répétés, suites croissantes ou 
 L'OTP utilise le standard TOTP (Time-based One-Time Password), compatible avec les applications d'authentification telles que [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2), [Authy](https://authy.com/), [1Password](https://1password.com/), [Dashlane](https://www.dashlane.com/) ou [Bitwarden](https://bitwarden.com/).
 
 - Code à 6 chiffres renouvelé toutes les 30 secondes.
-- Tolérance d'une fenêtre de ±1 pour compenser les décalages d'horloge.
 
 </TabItem>
 <TabItem value="passkey" label="Passkey (WebAuthn)">
@@ -78,7 +77,7 @@ Les passkeys offrent le niveau de sécurité le plus élevé (grade S). L'authen
 - **Empreinte digitale** ou **reconnaissance faciale** (Touch ID, Face ID, Windows Hello).
 - **Clé de sécurité physique** (YubiKey, etc.).
 
-Lorsque vous utilisez une passkey, un lien externe s'ouvre dans votre navigateur, dans la langue de votre Discord. Une fois la vérification validée, le bot est prévenu en temps réel et vous attribue le rôle.
+Lorsque vous utilisez une passkey, un lien externe s'ouvre dans votre navigateur, dans la langue de votre Discord. Une fois la vérification validée, le rôle vous est attribué.
 
 </TabItem>
 </Tabs>
@@ -269,7 +268,7 @@ L'onglet Utilisateurs liste les membres rattachés à au moins un rôle protég�
 Le membre reçoit un MP : il peut utiliser le rôle tout de suite si son grade suffit, sinon il est invité à configurer une méthode de grade suffisant.
 
 :::info
-Pour éviter le spam, nous envoyons au plus 1 invitation par membre et par minute, et 20 invitations par serveur sur 10 minutes. Les invitations bloquées peuvent être renvoyées plus tard depuis la fiche du membre.
+Les invitations sont limitées pour éviter le spam. Celles qui sont bloquées peuvent être renvoyées plus tard depuis la fiche du membre.
 :::
 
 #### Fiche utilisateur et statuts {#member-status}
@@ -285,7 +284,7 @@ Cliquez sur “**Gérer**” pour ouvrir la fiche d'un membre : son grade, son i
 
 #### Promouvoir en gestionnaire {#promote-manager}
 
-“**Promouvoir gestionnaire**” donne au membre l'accès au panneau de configuration, à condition d'atteindre le grade minimum des gestionnaires. Un gestionnaire gère les utilisateurs et les rôles situés sous son plafond de permissions, qui correspond à la position la plus élevée entre son rôle Discord et son rôle AM actif. “**Retirer gestionnaire**” lui retire cet accès.
+“**Promouvoir gestionnaire**” donne au membre l'accès au panneau de configuration, à condition d'atteindre le grade minimum des gestionnaires. Un gestionnaire gère les utilisateurs et les rôles situés sous lui. “**Retirer gestionnaire**” lui retire cet accès.
 
 #### Supprimer un utilisateur {#delete-user}
 
