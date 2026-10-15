@@ -49,7 +49,7 @@ Le mode Panneau garde le salon propre et permet des réglages en plus : choix de
 
 Avec **Automatique**, le captcha s'impose pendant un raid seulement si l'[Auto RaidMode](./raid-mode.md#action) est réglé sur “**Envoyer au captcha**” ou “**Captcha gelé pendant le raid**”, et pendant une alerte [DISCON](./discon.md) à partir du niveau 3 (en expérimentation avec la Shield Update).
 
-Le déclenchement **Intelligent** évalue chaque arrivant sans appel extérieur, à partir de signaux simples : compte signalé comme spammeur par Discord, pseudo mis en quarantaine par l'AutoMod de Discord, compte très récent, pseudo qui semble généré, avatar par défaut, retour sur le serveur. Un membre approuvé à la main par votre équipe n'est jamais considéré comme suspect.
+Le déclenchement **Intelligent** évalue le profil de chaque arrivant. Un membre approuvé à la main par votre équipe n'est jamais considéré comme suspect.
 
 :::note
 Le déclenchement intelligent est en **Public Beta**, réservée pour l'instant aux serveurs [**Premium**](/premium).
@@ -77,11 +77,7 @@ Le captcha démarre en mode **Panneau (Interactif)**, déclenché **En permanenc
 4. Dans “**Mode d'affichage**”, choisissez “**Panneau (Interactif)**” ou “**Challenge (Classique)**”.
 5. Dans “**Déclenchement**”, choisissez “**En permanence**”, “**Automatique**” ou “**Intelligent (Public Beta)**”.
 
-:::info
-Certains réglages ont besoin du mode Panneau (captcha gelé pendant un raid, retenue à l'entrée de l'âge minimum). Si vous passez en Challenge, RaidProtect liste ces réglages et vous propose de les adapter avant de changer de mode.
-:::
-
-### Détection des doubles comptes (bêta) {#activity}
+### Détection des doubles comptes <span className="badge-experiment">Expérimentation</span> {#activity}
 
 En mode **Panneau**, le bouton “**Vérifier**” peut ouvrir l'**Activity RaidProtect** au lieu du code en image : le membre résout un petit puzzle directement dans Discord, et nous repérons au passage les comptes probablement tenus par la même personne.
 
@@ -94,8 +90,8 @@ Le réglage est désactivé par défaut et n'apparaît qu'en mode Panneau. Une f
 
 - **Réussite ou échec :** le verdict de l'Activity compte comme un code saisi. Un échec consomme un essai, et la sanction prévue tombe quand les essais sont épuisés. Le temps de résolution s'applique comme d'habitude.
 - **Transmis à l'équipe :** quand le résultat est incertain, le membre reste en attente et le salon de logs du captcha vous prévient. Acceptez-le avec le [bypass](#bypass) ou sanctionnez-le.
-- **Comptes liés :** les logs du captcha listent jusqu'à 5 comptes probablement liés, avec un indice de confiance et la preuve trouvée (même client Discord, même installation de Discord, même ordinateur, même modèle de téléphone, appareil semblable). Le membre n'en voit rien.
-- **Alerte de raid :** si plusieurs comptes passent par le même appareil en 5 minutes, les logs du captcha vous le signalent.
+- **Comptes liés :** les logs du captcha listent les comptes probablement liés, avec un indice de confiance. Le membre n'en voit rien.
+- **Alerte de raid :** si plusieurs comptes passent par le même appareil, les logs du captcha vous le signalent.
 - **Code en image en secours :** si l'Activity n'est pas disponible, “**Vérifier**” affiche le code en image habituel.
 
 :::info
