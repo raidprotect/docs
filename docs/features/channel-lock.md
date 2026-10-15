@@ -52,7 +52,7 @@ Pour activer ou désactiver le cadenas :
 <Settings start="home:utilities" />
 
 :::info
-Le renommage demande la permission “**Gérer les salons**”. Un salon dont le nom fait déjà 98 caractères ou plus n'est pas renommé.
+Le renommage demande la permission “**Gérer les salons**”.
 :::
 
 ## Questions fréquentes {#faq}
