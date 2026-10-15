@@ -188,7 +188,7 @@ Remplacez `[utilisateur]` par l'[identifiant](../guides/id.mdx) souhaité, ce de
 Le captcha travaille avec les autres protections des arrivées :
 - **[Auto RaidMode](./raid-mode.md#action) :** avec l'action “**Envoyer au captcha**”, les arrivants d'une vague passent le captcha au lieu d'être expulsés. Avec “**Captcha gelé pendant le raid**”, ils attendent derrière le captcha et le passent après la vague. Le panneau affiche alors « La vérification est suspendue. Le serveur est en alerte ».
 - **[Âge minimum du compte](./onboarding.md#minage) :** l'action “**Retenir à l'entrée**” bloque un compte trop récent sur un captcha qu'il ne pourra résoudre qu'une fois l'âge atteint.
-- **DISCON :** avec le déclenchement Automatique ou Intelligent, une alerte DISCON de niveau 3 ou plus grave impose le captcha à tous les arrivants.
+- **[DISCON](./discon.md#captcha) :** dès le niveau 4, le captcha est activé s'il est configuré, même si vous l'aviez désactivé. À partir du niveau 3, il s'impose à tous les arrivants, quel que soit son déclenchement (en expérimentation avec la Shield Update).
 
 ## Questions fréquentes {#faq}
 

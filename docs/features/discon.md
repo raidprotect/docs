@@ -25,7 +25,7 @@ Le DISCON fait partie de la **Shield Update**, prévue pour la version 3.6.0. En
 |---|---|---|
 | 🔵 **DISCON 5** | Tout va bien | Vérification Discord moyenne, rien d'autre. C'est le niveau par défaut. |
 | 🟢 **DISCON 4** | Vigilance | [Captcha](./captcha.md) activé s'il est configuré (salon et rôle). Sans captcha, vérification Discord élevée à la place. |
-| 🟡 **DISCON 3** | Alerte | Vérification Discord maximale, captcha activé s'il est configuré, [Fermeture des MP](./dm-lock.mdx). Le captcha et l'âge minimum s'appliquent à **tous** les arrivants. |
+| 🟡 **DISCON 3** | Alerte | Vérification Discord maximale, captcha activé s'il est configuré, [Fermeture des MP](./dm-lock.mdx). Le captcha s'applique à **tous** les arrivants. |
 | 🔴 **DISCON 2** | Critique | Tout le niveau 3, plus le **captcha gelé** : personne n'entre. Sans captcha, nous activons le [mode raid](./raid-mode.md) à la place. |
 | ⚪ **DISCON 1** | Catastrophe | Tout le niveau 2, plus le **verrouillage** : @everyone ne peut plus écrire, réagir, parler en vocal ni utiliser de commandes. |
 
@@ -35,7 +35,7 @@ Chaque niveau fixe le niveau de vérification Discord de votre serveur : moyenne
 
 ### Captcha à l'entrée et captcha gelé {#captcha}
 
-- **Niveau 4** : nous activons le captcha s'il est configuré, sans toucher à son salon ni à son rôle. Il suit alors votre réglage de [déclenchement](./captcha.md#config).
+- **Niveau 4** : nous activons le captcha s'il est configuré, même si vous l'aviez désactivé, sans toucher à son salon ni à son rôle. Il suit alors votre réglage de [déclenchement](./captcha.md#trigger) : en **Automatique**, il ne s'impose encore à personne en dehors d'un raid.
 - **Niveau 3** : le captcha s'impose à tous les arrivants, quel que soit son déclenchement (voir [priorité sur les déclencheurs](#priority)).
 - **Niveaux 2 et 1** : nous passons le captcha en mode **Panneau** et le **gelons**. Les arrivants reçoivent le rôle de vérification et attendent derrière la porte : ils ne peuvent pas résoudre l'épreuve tant que le niveau tient. Une fois le niveau remonté, ils passent le captcha normalement, sans avoir à rejoindre de nouveau. En redescendant, nous rendons au captcha le mode d'affichage qu'il avait avant.
 
@@ -74,7 +74,9 @@ Les rôles de votre équipe peuvent garder leurs propres accords de salon : c'es
 
 ## ⚖️ Priorité sur les déclencheurs automatiques {#priority}
 
-Le [captcha](./captcha.md#config) et l'[âge minimum du compte](./raid-mode.md#minage) ont un réglage de déclenchement (Automatique, Intelligent, En permanence). À partir du **niveau 3**, le DISCON passe avant ce réglage : les deux filtres s'appliquent à **tous** les arrivants, sans évaluation au cas par cas. Le DISCON est une décision de votre équipe, un déclencheur automatique ne la discute pas.
+Le [captcha](./captcha.md#trigger) a un réglage de déclenchement (Automatique, Intelligent, En permanence). À partir du **niveau 3**, le DISCON passe avant ce réglage : le captcha s'applique à **tous** les arrivants, sans évaluation au cas par cas. Le DISCON est une décision de votre équipe, un déclencheur automatique ne la discute pas.
+
+Pour cela, le captcha doit être [configuré](./captcha.md#config), avec son salon et son rôle. S'il est simplement désactivé, nous l'activons pour la durée de l'alerte. S'il n'a jamais été configuré, le DISCON ne peut pas l'imposer : la vérification Discord est renforcée et, aux niveaux 2 et 1, le [mode raid](./raid-mode.md) prend le relais.
 
 ## 🛠️ Configuration du DISCON {#config}
 
