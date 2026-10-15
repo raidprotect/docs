@@ -16,12 +16,12 @@ ScamLens est **activé par défaut dès que RaidProtect arrive sur votre serveur
 
 ## ❓ Comment ça marche ? {#working}
 
-ScamLens compare l'**empreinte** de chaque image postée à celles des arnaques connues. Rien n'est lu du texte des messages. Seuls les messages dont toutes les pièces jointes sont des images **JPEG ou PNG** sont analysés.
+ScamLens compare chaque image postée aux arnaques connues. Rien n'est lu du texte des messages.
 
 Selon la correspondance trouvée :
 
-- **Correspondance certaine** : le message est **supprimé** immédiatement et son auteur est **sanctionné**. Le log de sanction précise le salon touché et le nombre d'autres salons où l'auteur pouvait poster des images.
-- **Correspondance incertaine** : le message est supprimé **par précaution**, sans sanction. Si l'image est confirmée comme une arnaque par la suite, la sanction arrive plus tard (dans les 24 heures).
+- **Correspondance certaine** : le message est **supprimé** immédiatement et son auteur est **sanctionné**. Le log de sanction précise le salon touché.
+- **Correspondance incertaine** : le message est supprimé **par précaution**, sans sanction. Si l'image est confirmée comme une arnaque par la suite, la sanction peut arriver plus tard.
 
 Le motif de sanction est « Arnaque (Images Crypto) détectée ». Sur un serveur [Premium](/premium), le membre sanctionné reçoit aussi un message privé.
 
@@ -52,7 +52,7 @@ Dans le sélecteur “**Durée de la sanction**”, choisissez 5 minutes, 1 heur
 
 :::info
 - Un **Jail** ou un **Mute** sans rôle configuré devient un **Timeout**.
-- Le message public qui annonce la sanction suit le réglage “**Message public de sanction**” de l'[Anti-spam](./anti-spam.mdx#public-message), désactivable en Premium. Il n'est jamais posté dans le salon du HoneyPot.
+- Le message public qui annonce la sanction suit le réglage “**Message public de sanction**” de l'[Anti-spam](./anti-spam.mdx#public-message), désactivable en Premium.
 :::
 
 ## 🗂️ Catalogue d'images <span className="badge-premium">Premium</span> {#catalog}
@@ -112,7 +112,7 @@ Non. ScamLens est activé par défaut dès que RaidProtect arrive sur votre serv
 
 ### ScamLens bloque-t-il autre chose que les images ?
 
-Non, ScamLens ne s'occupe que des images (JPEG et PNG). Par défaut, il bloque les images d'arnaque connues. Les serveurs Premium peuvent aussi y ajouter leurs propres images grâce au catalogue d'images. Les autres types de spam sont gérés par l'[Anti-spam](./anti-spam.mdx) et le [HoneyPot](./honeypot.md).
+Non, ScamLens ne s'occupe que des images. Par défaut, il bloque les images d'arnaque connues. Les serveurs Premium peuvent aussi y ajouter leurs propres images grâce au catalogue d'images. Les autres types de spam sont gérés par l'[Anti-spam](./anti-spam.mdx) et le [HoneyPot](./honeypot.md).
 
 ### Quelle sanction est appliquée à une image d'arnaque ?
 
