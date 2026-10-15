@@ -72,8 +72,8 @@ Pour attribuer immédiatement le rôle à tous les membres qui portent déjà le
 
 La synchronisation est lancée en arrière-plan et continue même si le bot redémarre. Une seule synchronisation peut être en cours à la fois sur un serveur.
 
-:::note
-Le bouton “**Synchroniser**” n'est pour l'instant proposé qu'à un petit nombre de serveurs. S'il n'apparaît pas sur votre serveur, vous pouvez [demander au support](https://raidprotect.bot/discord) une synchronisation complète du rôle.
+:::info Expérimentation
+La synchronisation est en expérimentation : le bouton “**Synchroniser**” n'est pour l'instant proposé qu'à un petit nombre de serveurs. S'il n'apparaît pas sur votre serveur, vous pouvez [demander au support](https://raidprotect.bot/discord) une synchronisation complète du rôle.
 :::
 
 ## Questions fréquentes {#faq}
