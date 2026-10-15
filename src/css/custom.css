@@ -513,3 +513,33 @@ body:not(.editor-page) [class*="expandButton"] {
     font-size: 14px;
   }
 }
+
+/* Sidebar : badges Premium (étoile) et expérimentation (fiole) à droite du titre. */
+.sidebar-premium > .menu__link,
+.sidebar-experiment > .menu__link {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.sidebar-experiment > .menu__link::before,
+.sidebar-premium > .menu__link::after {
+  content: '';
+  flex: none;
+  width: 0.9rem;
+  height: 0.9rem;
+  -webkit-mask: var(--sidebar-badge) center / contain no-repeat;
+  mask: var(--sidebar-badge) center / contain no-repeat;
+}
+
+.sidebar-experiment > .menu__link::before {
+  order: 1;
+  --sidebar-badge: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 2v7.53a2 2 0 0 1-.21.9L4.72 20.55A1 1 0 0 0 5.62 22h12.76a1 1 0 0 0 .9-1.45l-5.07-10.12a2 2 0 0 1-.21-.9V2'/%3E%3Cpath d='M8.5 2h7'/%3E%3Cpath d='M7 16h10'/%3E%3C/svg%3E");
+  background: #3ba55c;
+}
+
+.sidebar-premium > .menu__link::after {
+  order: 2;
+  --sidebar-badge: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2l2.9 6.26 6.85.74-5.1 4.62 1.42 6.75L12 16.9l-6.07 3.47 1.42-6.75L2.25 9l6.85-.74z'/%3E%3C/svg%3E");
+  background: linear-gradient(120deg, var(--ifm-color-primary) 0%, #a561a3 100%);
+}
