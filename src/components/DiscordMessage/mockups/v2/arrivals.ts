@@ -91,6 +91,18 @@ export function arrivalsPart({ s, flip }: Ctx): Part {
           ],
           edit("modal:captchaDifficulty")
         ),
+        setting(
+          "iconActivity",
+          t("captcha.activity", "Détection des doubles comptes (bêta)"),
+          s.captchaActivity
+            ? t("captcha.activityOn", "Activée : « Vérifier » ouvre l'Activity RaidProtect")
+            : t("captcha.activityOff", "Désactivée : code en image"),
+          toggle(s.captchaActivity, "toggle:captchaActivity"),
+          t(
+            "captcha.activityHint",
+            "Un puzzle dans une Activity Discord, qui signale aussi à votre équipe les comptes probablement tenus par la même personne. Ils ne sont jamais sanctionnés automatiquement."
+          )
+        ),
         heading("iconTime", t("captcha.timeout", "Délai avant expulsion")),
         select(t("captcha.timeoutPh", "Selectionner un délai"), [
           { label: t("disabled", "Désactivé"), emoji: "iconDisable" },
@@ -282,6 +294,7 @@ export function arrivalsPart({ s, flip }: Ctx): Part {
       "toggle:antiraidCloseDm": flip("antiraidCloseDm"),
       "toggle:welcome": flip("welcome"),
       "toggle:welcomeMention": flip("welcomeMention"),
+      "toggle:captchaActivity": flip("captchaActivity"),
     },
   };
 }

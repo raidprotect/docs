@@ -8,6 +8,7 @@ export interface State {
   antiraidCloseDm: boolean;
   welcome: boolean;
   welcomeMention: boolean;
+  captchaActivity: boolean;
   antispam: boolean;
   antispamAdvanced: boolean;
   imageFilter: boolean;
@@ -31,6 +32,7 @@ export const INITIAL: State = {
   antiraidCloseDm: false,
   welcome: true,
   welcomeMention: true,
+  captchaActivity: false,
   antispam: true,
   antispamAdvanced: false,
   imageFilter: true,
