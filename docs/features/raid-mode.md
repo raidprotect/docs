@@ -100,7 +100,7 @@ Avec les actions captcha, réglez le [déclenchement du captcha](./captcha.md#tr
 Si le captcha devient inutilisable pendant un raid (configuration incomplète, ou mode Challenge avec le captcha gelé), nous retombons sur l'expulsion des arrivants. Les arrivants renvoyés derrière le captcha perdent leurs [rôles automatiques](./onboarding.md#autorole) et les retrouvent à la réussite.
 :::
 
-#### Mode expulsion (Premium) {#kick-mode}
+#### Mode expulsion <span className="badge-premium">Premium</span> {#kick-mode}
 
 L'ancien interrupteur “**Mode expulsion**” est devenu l'action “**Expulser les arrivants**” de l'[action pendant le raid](#action). Elle reste réservée aux serveurs [**Premium**](/premium) et fonctionne sans la communauté Discord.
 

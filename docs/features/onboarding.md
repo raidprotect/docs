@@ -74,7 +74,7 @@ Pour modifier ou supprimer un bouton, sélectionnez-le dans la même liste.
 
 **Limites :** 2 boutons en version gratuite, 4 boutons en version [premium](/premium). Si le Premium expire, seuls les 2 premiers boutons restent affichés.
 
-### Couleur (Premium) {#welcome-color}
+### Couleur <span className="badge-premium">Premium</span> {#welcome-color}
 
 Avec le [Premium](/premium), cliquez sur “**Couleur**” dans “**Contenu du message**” pour choisir la couleur de la barre à gauche du message : une couleur RaidProtect de la liste, ou un code hexadécimal (par exemple `#D35F5F`). Sans choix, le message reprend la couleur du pseudo du bot si vous l'avez [personnalisé](/premium), sinon la couleur par défaut. La carte de bienvenue est teintée de la même couleur.
 

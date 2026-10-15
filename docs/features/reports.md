@@ -101,7 +101,7 @@ Le signaleur ne reçoit qu'un seul message par signalement, même s'il a été r
 
 <a id="config-trusted-role"></a>
 
-### Rôle de confiance (Premium) {#trusted-role}
+### Rôle de confiance <span className="badge-premium">Premium</span> {#trusted-role}
 
 Le “**Rôle de confiance**” permet à vos membres les plus fiables d'agir immédiatement en cas d'urgence : lorsqu'un membre disposant de ce rôle effectue un signalement, il peut cocher l'option “**Action préventive**” pour appliquer un **timeout préventif de 24 heures** à l'utilisateur signalé, en attendant qu'un modérateur traite le signalement.
 

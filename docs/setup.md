@@ -93,7 +93,7 @@ Sans réglage, le serveur est en UTC.
 
 La réinitialisation s'applique tout de suite, sans confirmation. Seules les actions destructrices, comme la suppression du captcha, vous demandent de confirmer.
 
-### 🎨 Personnaliser le bot (Premium) {#customize}
+### 🎨 Personnaliser le bot <span className="badge-premium">Premium</span> {#customize}
 
 Le bouton “**Personnaliser**”, en bas du tableau de bord, change l'apparence de RaidProtect sur votre serveur : pseudo, avatar, bannière, police, effet et couleurs du pseudo.
 

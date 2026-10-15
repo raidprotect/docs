@@ -160,7 +160,7 @@ Les sanctions qui ont une durée (mute, timeout, jail) utilisent la **durée par
 - Quand le spam multisalon prend le relais, c'est sa durée qui s'applique.
 :::
 
-### Message public de sanction (Premium) {#public-message}
+### Message public de sanction <span className="badge-premium">Premium</span> {#public-message}
 
 Par défaut, chaque sanction de l'anti-spam est annoncée par un **message public** dans le salon (par exemple « membre a été mute »). Les serveurs [Premium](/premium) peuvent le masquer pour une modération plus discrète.
 
@@ -207,7 +207,7 @@ RaidProtect travaille avec l'**AutoMod de Discord** :
 - **Spam de messages bloqués** : quand un membre enchaîne les messages bloqués par vos règles AutoMod, le déclencheur “**Spam de messages bloqués (AutoMod)**” le sanctionne (famille **Automatisé**). Pour cela, la règle AutoMod doit envoyer ses **alertes** dans un salon que RaidProtect peut voir : c'est grâce à ces alertes que nous repérons les messages bloqués.
 - **Avertissement à chaque message bloqué** : si les sanctions sont actives sur votre serveur, chaque message bloqué par une règle AutoMod est enregistré comme un avertissement dans l'historique du membre, sauf si la règle applique déjà un timeout. Le membre ne reçoit pas de message privé pour cet avertissement. Plus de détails sur la page des [sanctions](./sanctions.mdx).
 
-## 🐢 Slowmode préventif {#slowmode}
+## 🐢 Slowmode préventif <span className="badge-experiment">Expérimentation</span> <span className="badge-premium">Premium</span> {#slowmode}
 
 Pour calmer un salon très actif sans sanctionner personne, le [slowmode préventif](./slowmode.md) (Premium, en expérimentation avec la Shield Update) ajuste automatiquement le mode lent de vos salons selon leur débit de messages.
 

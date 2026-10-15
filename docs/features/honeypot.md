@@ -74,7 +74,7 @@ Pour les autres sanctions (Kick, Timeout, Jail, Mute), RaidProtect doit faire un
 - Si votre serveur perd le Premium, une sanction Premium repasse automatiquement en **Softban** au prochain déclenchement.
 :::
 
-### Délai avant sanction {#grace}
+### Délai avant sanction <span className="badge-experiment">Expérimentation</span> {#grace}
 
 Un membre de bonne foi peut écrire dans le HoneyPot par erreur. Le **délai avant sanction** lui laisse le temps de le signaler avant d'être sanctionné.
 

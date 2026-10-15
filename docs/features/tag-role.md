@@ -63,7 +63,7 @@ L'écran de configuration vous prévient quand le Rôle de Tag ne peut pas fonct
 
 Après correction, cliquez sur “**Actualiser**” pour vérifier de nouveau.
 
-## 🔄 Synchronisation du rôle {#sync}
+## 🔄 Synchronisation du rôle <span className="badge-experiment">Expérimentation</span> {#sync}
 
 Pour attribuer immédiatement le rôle à tous les membres qui portent déjà le tag (et le retirer à ceux qui ne le portent plus), utilisez le bouton “**Synchroniser**” dans la configuration du Rôle de Tag :
 

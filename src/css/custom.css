@@ -514,7 +514,38 @@ body:not(.editor-page) [class*="expandButton"] {
   }
 }
 
-/* Sidebar : badges expérimentation (fiole) et Premium (étoile du bot) à droite du titre. */
+/* Badges expérimentation (fiole) et Premium (étoile du bot) : titres, sommaire et sidebar. */
+:root {
+  --badge-experiment-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 2v7.53a2 2 0 0 1-.21.9L4.72 20.55A1 1 0 0 0 5.62 22h12.76a1 1 0 0 0 .9-1.45l-5.07-10.12a2 2 0 0 1-.21-.9V2'/%3E%3Cpath d='M8.5 2h7'/%3E%3Cpath d='M7 16h10'/%3E%3C/svg%3E");
+  --badge-experiment-color: #3ba55c;
+  --badge-premium-image: url('/img/icons/premium.png');
+}
+
+.badge-experiment,
+.badge-premium {
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  min-width: 12px;
+  min-height: 12px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-indent: 200%;
+  white-space: nowrap;
+}
+
+.badge-experiment,
+.sidebar-experiment > .menu__link::before {
+  -webkit-mask: var(--badge-experiment-mask) center / contain no-repeat;
+  mask: var(--badge-experiment-mask) center / contain no-repeat;
+  background: var(--badge-experiment-color);
+}
+
+.badge-premium,
+.sidebar-premium > .menu__link::after {
+  background: var(--badge-premium-image) center / contain no-repeat;
+}
+
 .sidebar-premium > .menu__link,
 .sidebar-experiment > .menu__link {
   display: flex;
@@ -532,12 +563,8 @@ body:not(.editor-page) [class*="expandButton"] {
 
 .sidebar-experiment > .menu__link::before {
   order: 1;
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 2v7.53a2 2 0 0 1-.21.9L4.72 20.55A1 1 0 0 0 5.62 22h12.76a1 1 0 0 0 .9-1.45l-5.07-10.12a2 2 0 0 1-.21-.9V2'/%3E%3Cpath d='M8.5 2h7'/%3E%3Cpath d='M7 16h10'/%3E%3C/svg%3E") center / contain no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 2v7.53a2 2 0 0 1-.21.9L4.72 20.55A1 1 0 0 0 5.62 22h12.76a1 1 0 0 0 .9-1.45l-5.07-10.12a2 2 0 0 1-.21-.9V2'/%3E%3Cpath d='M8.5 2h7'/%3E%3Cpath d='M7 16h10'/%3E%3C/svg%3E") center / contain no-repeat;
-  background: #3ba55c;
 }
 
 .sidebar-premium > .menu__link::after {
   order: 2;
-  background: url('/img/icons/premium.png') center / contain no-repeat;
 }
