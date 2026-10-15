@@ -17,7 +17,7 @@ La Transparence permet de montrer à vos membres comment le serveur est modéré
 2. Ouvrez l'onglet “**Modération**”.
 3. Cliquez sur “**Configurer**” à côté de “**Transparence**”.
 
-L'écran vous donne accès aux “**Récaps périodiques**”, au “**Modlog public**” et à la bascule de la “**Commande /transparency**”. Dans l'onglet “**Modération**”, la ligne “**Transparence**” s'affiche “**Activé**” dès que la commande ou le modlog public est actif.
+L'écran vous donne accès aux “**Récaps périodiques**”, au “**Modlog public**” et à la bascule de la “**Commande /transparency**”.
 
 <Settings start="transparency" />
 
@@ -90,10 +90,6 @@ Le modlog public publie **chaque action de modération** dans un salon visible p
 <Settings start="modlog" />
 
 Lorsque l'action est automatique et que l'affichage du modérateur est activé, le modlog indique "RaidProtect" à la place du nom du modérateur.
-
-:::note
-La publication est volontairement régulée pour éviter d'inonder le salon lors d'un raid : les messages sont envoyés progressivement.
-:::
 
 ## 📜 La commande `/transparency` {#command}
 
