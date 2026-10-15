@@ -7,8 +7,8 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 
 Les **doubles comptes** permettent à votre équipe de déclarer que plusieurs comptes Discord appartiennent à une même personne. Les [sanctions](./sanctions.mdx) de l'un s'étendent alors aux autres : un membre banni ne revient plus avec un second compte pour contourner sa sanction.
 
-:::note Beta publique Premium
-Les doubles comptes sont en **beta publique**, réservée aux serveurs [Premium](/premium). Sur les autres serveurs, la commande `/alt` présente l'offre et la ligne “**Doubles comptes**” n'apparaît pas dans `/settings`.
+:::info Expérimentation : Identity Update
+Les doubles comptes font partie de l'**Identity Update**, prévue pour la version 3.7.0. En attendant sa sortie, ils sont en expérimentation, en bêta publique pour les serveurs [Premium](/premium). Sur les autres serveurs, la commande `/alt` présente l'offre Premium, la ligne “**Doubles comptes**” n'apparaît pas dans `/settings` et les sanctions ne s'étendent pas aux comptes liés.
 :::
 
 ## ❓ Comment ça marche ? {#working}
@@ -120,4 +120,4 @@ Oui. Dans le panneau `/alt`, cliquez sur “**Lier un membre**” et saisissez s
 
 ### Qui peut utiliser /alt ?
 
-Les membres qui ont la permission **Bannir des membres**, sur un serveur [Premium](/premium) pendant la beta publique.
+Les membres qui ont la permission **Bannir des membres**, sur un serveur [Premium](/premium) tant que l'Identity Update est en expérimentation.

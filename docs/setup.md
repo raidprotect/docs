@@ -60,9 +60,11 @@ Les réglages sont rangés en cinq onglets :
 
 - **Général** : [langue](./language.md), [commandes par messages](./guides/prefix.md), [permissions](./guides/prefix.md#permissions) et fuseau horaire du serveur.
 - **Arrivées** : [Auto RaidMode](./features/raid-mode.md), [captcha](./features/captcha.md), [âge minimum du compte](./features/onboarding.md#minage), [rôles automatiques](./features/onboarding.md#autorole) et [message de bienvenue](./features/onboarding.md#welcome-message).
-- **Protection** : [DISCON](./features/discon.md), [anti-spam](./features/anti-spam.mdx), Automod et [filtre d'images](./features/scam-images.md), [HoneyPot](./features/honeypot.md), [slowmode préventif](./features/slowmode.md), [Authentification Manager](./features/authentication-manager.mdx) et [fermeture des MP](./features/dm-lock.mdx).
-- **Modération** : [sanctions](./features/sanctions.mdx), logs, [signalements](./features/reports.md) et [transparence](./features/transparency.md).
+- **Protection** : [DISCON](./features/discon.md)\*, [anti-spam](./features/anti-spam.mdx), Automod et [filtre d'images](./features/scam-images.md), [HoneyPot](./features/honeypot.md), [slowmode préventif](./features/slowmode.md)\*, [Authentification Manager](./features/authentication-manager.mdx) et [fermeture des MP](./features/dm-lock.mdx).
+- **Modération** : [sanctions](./features/sanctions.mdx), [doubles comptes](./features/alt-accounts.md)\*, logs, [signalements](./features/reports.md) et [transparence](./features/transparency.md).
 - **Utilitaires** : [rôle de tag](./features/tag-role.md), [verrouillage de salon](./features/channel-lock.md), [rôle en service](./features/moderation.mdx#onduty) et mise en cache des messages.
+
+\* En expérimentation : ces lignes n'apparaissent que sur les serveurs qui ont accès à la Shield Update (DISCON, slowmode préventif) ou à l'Identity Update (doubles comptes), en bêta publique [Premium](/premium).
 
 Chaque ligne affiche la valeur actuelle du réglage et un bouton : “**Configurer**” ouvre un écran dédié, “**Modifier**” ouvre une fenêtre de saisie. Un écran se lit toujours de la même façon : un titre avec, s'il y en a un, l'interrupteur général du module, un fil d'Ariane cliquable pour remonter d'un niveau, puis les réglages. Tout changement s'applique immédiatement.
 

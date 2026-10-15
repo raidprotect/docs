@@ -15,8 +15,8 @@ Le **DISCON** est le niveau de danger de votre serveur, sur le modèle du DEFCON
 - **Un retour propre** : en redescendant, nous ne coupons que ce que le DISCON a lui-même activé. Un captcha, une Fermeture des MP ou un mode raid que vous aviez activés à la main restent en place.
 - **Un changement manuel** : le niveau ne change jamais tout seul, c'est votre équipe qui décide.
 
-:::info
-Le DISCON est gratuit. Seul le [salon vocal de statut](#voice) demande le [Premium](/premium).
+:::info Expérimentation : Shield Update
+Le DISCON fait partie de la **Shield Update**, prévue pour la version 3.6.0. En attendant sa sortie, il est en expérimentation, en bêta publique pour les serveurs [Premium](/premium). Sur les autres serveurs, la commande `/discon` présente l'offre Premium et la ligne “**DISCON**” n'apparaît pas dans `/settings`. Le [salon vocal de statut](#voice) demande le Premium.
 :::
 
 ## 🚦 Les cinq niveaux {#levels}

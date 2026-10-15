@@ -7,8 +7,8 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 
 Le **slowmode préventif** de RaidProtect ajuste automatiquement le [mode lent](./moderation.mdx#slowmode) de vos salons pour tenir un **débit cible** de messages par minute. Quand un salon s'emballe (annonce, live, afflux de nouveaux membres, début de [raid](/learn/discord-raid)), nous montons le mode lent ; quand il se calme, nous le redescendons. Vos modérateurs n'ont plus à surveiller le chat pour le régler à la main.
 
-:::info Premium
-Le slowmode préventif est réservé aux serveurs [Premium](/premium).
+:::info Expérimentation : Shield Update
+Le slowmode préventif est réservé aux serveurs [Premium](/premium). Il fait partie de la **Shield Update**, prévue pour la version 3.6.0, en expérimentation d'ici sa sortie : la ligne “**Slowmode préventif**” n'apparaît dans `/settings` que sur les serveurs qui y ont accès.
 :::
 
 ## ❓ Comment ça marche ? {#working}
@@ -85,7 +85,7 @@ Jusqu'à 5 salons par serveur, avec chacun son débit cible et ses bornes.
 
 ### Le slowmode préventif est-il gratuit ?
 
-Non, il est réservé aux serveurs Premium. L'écran reste visible dans /settings, mais l'ajout d'un salon demande le Premium.
+Non, il est réservé aux serveurs Premium. Il fait aussi partie de la Shield Update, encore en expérimentation.
 
 ### Que se passe-t-il si je règle le mode lent à la main ?
 
