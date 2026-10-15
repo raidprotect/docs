@@ -34,7 +34,7 @@ La commande `/setup` est réservée aux administrateurs. Elle installe en une fo
 1. Faites la commande `/setup`.
 2. Dans le menu “**Choisir les modules à installer**”, sélectionnez les fonctionnalités voulues : Commandes par messages, Auto RaidMode, Captcha, Âge minimum du compte, Anti-spam, Signalements, Rôle de Tag, Fermeture des MP et HoneyPot. Les modules déjà actifs sont précochés.
 3. Cliquez sur “**Activer**”.
-4. Le bot affiche un récapitulatif : un nom entre accents graves désigne ce qu'il va **créer**, une mention désigne ce qu'il **réutilise**. Cliquez de nouveau sur “**Activer**” pour appliquer, ou sur “**Retour**” pour modifier la sélection.
+4. Le bot récapitule ce qu'il va créer ou réutiliser. Cliquez de nouveau sur “**Activer**” pour appliquer, ou sur “**Retour**” pour modifier la sélection.
 
 <Settings start="setup" />
 
@@ -66,14 +66,14 @@ Les réglages sont rangés en cinq onglets :
 
 \* En expérimentation : ces lignes n'apparaissent que sur les serveurs qui ont accès à la Shield Update (DISCON, slowmode préventif) ou à l'Identity Update (doubles comptes), en bêta publique [Premium](/premium).
 
-Chaque ligne affiche la valeur actuelle du réglage et un bouton : “**Configurer**” ouvre un écran dédié, “**Modifier**” ouvre une fenêtre de saisie. Un écran se lit toujours de la même façon : un titre avec, s'il y en a un, l'interrupteur général du module, un fil d'Ariane cliquable pour remonter d'un niveau, puis les réglages. Tout changement s'applique immédiatement.
+Chaque ligne affiche la valeur actuelle du réglage et un bouton : “**Configurer**” ouvre un écran dédié, “**Modifier**” ouvre une fenêtre de saisie. Tout changement s'applique immédiatement.
 
 Explorez le tableau de bord ci-dessous, les boutons sont cliquables :
 
 <Settings start="home:arrivals" />
 
 :::info Fonctionnalités Premium
-Les écrans réservés au [Premium](/premium) restent consultables. Le bot ne vous arrête qu'au moment de modifier un réglage réservé, et vous explique alors ce que le Premium apporte.
+Les écrans réservés au [Premium](/premium) restent consultables.
 :::
 
 ### 🕒 Fuseau horaire {#timezone}
