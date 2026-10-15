@@ -19,7 +19,7 @@ Le **HoneyPot** (ou salon-piège) de RaidProtect est une fonctionnalité antispa
 Quand vous activez le HoneyPot, RaidProtect crée un salon textuel **tout en haut de votre serveur**, avec un nom clair tiré au hasard. Ce salon a trois caractéristiques :
 - **Tout le monde peut y écrire**, y compris les membres qui n'ont pas encore validé le captcha et ceux qui ont le [rôle Jail](./sanctions.mdx#jail). C'est fait exprès : un compte piraté ou un robot ne doit pas pouvoir éviter le piège.
 - **Un message d'avertissement** (« N'ENVOYEZ PAS DE MESSAGE ICI ») est posté à la création du salon, avec un bouton “**Translate**” pour que chacun puisse le lire dans sa langue.
-- **Un compteur de comptes signalés** apparaît sous forme de bouton à côté de “**Translate**” dès le premier compte attrapé. Il additionne les comptes sanctionnés par le HoneyPot et par [ScamLens](./scam-images.md). Un clic dessus explique le fonctionnement du piège.
+- **Un compteur de comptes signalés** apparaît sous forme de bouton à côté de “**Translate**” dès le premier compte attrapé.
 
 Dès qu'un membre poste dans ce salon :
 - RaidProtect applique la **sanction que vous avez choisie** (bannissement, softban, kick, timeout, jail ou mute), sans lui envoyer de message privé.
@@ -66,7 +66,7 @@ Le **Softban** est un bon compromis : il nettoie les messages et expulse le comp
 
 :::info
 Seuls le **Bannissement** et le **Softban** permettent à Discord de supprimer nativement les messages du compte piraté **partout sur le serveur** d'un seul coup.  
-Pour les autres sanctions (Kick, Timeout, Jail, Mute), RaidProtect doit faire une suppression inter-salons manuelle, beaucoup plus coûteuse côté bot, elles sont donc réservées aux serveurs [Premium](/premium).
+Pour les autres sanctions (Kick, Timeout, Jail, Mute), RaidProtect supprime lui-même les messages : elles sont réservées aux serveurs [Premium](/premium).
 :::
 
 :::info
@@ -90,11 +90,10 @@ Le délai avant sanction fait partie de la **Shield Update**, prévue pour la ve
 Avec un délai :
 - le message est **retiré** et le membre est **mentionné** dans le salon-piège, avec le bouton “**C'était une erreur**” ;
 - seul ce membre peut cliquer sur le bouton. S'il clique à temps, aucune sanction n'est appliquée ;
-- sans clic avant la fin du délai, la sanction tombe. Un membre qui a quitté le serveur entre-temps n'est pas sanctionné ;
-- les autres messages postés dans le piège pendant l'attente sont supprimés.
+- sans clic avant la fin du délai, la sanction tombe.
 
 :::info
-Un robot de spam poste généralement le même texte partout. Si le **même message** a été posté dans un autre salon dans les 2 minutes avant, ou pendant le délai, nous sanctionnons **tout de suite**, sans attendre.
+Un robot de spam poste généralement le même texte partout. Un compte qui poste le **même message** ailleurs est sanctionné **tout de suite**, sans attendre.
 :::
 
 ### Membres ignorés {#ignore}
