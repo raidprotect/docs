@@ -17,7 +17,7 @@ C'est l'une des fonctionnalités les plus populaires de RaidProtect, et elle res
 
 Le captcha repose sur un rôle **@Non vérifié** et un salon **#vérification**. Lorsqu'un utilisateur rejoint votre serveur :
 - **Mise en attente :** nous lui donnons le rôle **@Non vérifié**, qui limite son accès au seul salon **#vérification**.
-- **Épreuve :** il recopie un code de 6 lettres majuscules affiché sur une image. La façon de le faire dépend du [mode d'affichage](#display-mode).
+- **Épreuve :** il recopie un code de 6 lettres majuscules affiché sur une image. La façon de le faire dépend du [mode d'affichage](#display-mode). En mode Panneau, il peut aussi résoudre un puzzle dans l'[Activity RaidProtect](#activity).
 - **Réussite :** le rôle **@Non vérifié** est retiré et le membre accède au serveur. Ses [rôles automatiques](./onboarding.md#autorole) et le [message de bienvenue](./onboarding.md#welcome-message) partent à ce moment-là.
 - **Échec :** quand il épuise ses essais, il est expulsé ou mis au jail, selon votre réglage. Il peut revenir et retenter le captcha après une expulsion.
 - **Logs :** chaque arrivée est notée dans le salon de logs avec la date de création du compte, ainsi que les réussites, les échecs et les délais expirés.
@@ -47,7 +47,7 @@ Le mode Panneau garde le salon propre et permet des réglages en plus : choix de
 | **Automatique** | Seulement pendant un raid ou un niveau DISCON élevé. Les autres arrivants entrent directement. |
 | **Intelligent (Public Beta)** ([Premium](/premium)) | Comme Automatique, plus les comptes qui semblent suspects. |
 
-Avec **Automatique**, le captcha s'impose pendant un raid seulement si l'[Auto RaidMode](./raid-mode.md#action) est réglé sur “**Envoyer au captcha**” ou “**Captcha gelé pendant le raid**”, et pendant une alerte [DISCON](./discon.md) à partir du niveau 3.
+Avec **Automatique**, le captcha s'impose pendant un raid seulement si l'[Auto RaidMode](./raid-mode.md#action) est réglé sur “**Envoyer au captcha**” ou “**Captcha gelé pendant le raid**”, et pendant une alerte [DISCON](./discon.md) à partir du niveau 3 (en expérimentation avec la Shield Update).
 
 Le déclenchement **Intelligent** évalue chaque arrivant sans appel extérieur, à partir de signaux simples : compte signalé comme spammeur par Discord, pseudo mis en quarantaine par l'AutoMod de Discord, compte très récent, pseudo qui semble généré, avatar par défaut, retour sur le serveur. Un membre approuvé à la main par votre équipe n'est jamais considéré comme suspect.
 
@@ -79,6 +79,27 @@ Le captcha démarre en mode **Panneau (Interactif)**, déclenché **En permanenc
 
 :::info
 Certains réglages ont besoin du mode Panneau (captcha gelé pendant un raid, retenue à l'entrée de l'âge minimum). Si vous passez en Challenge, RaidProtect liste ces réglages et vous propose de les adapter avant de changer de mode.
+:::
+
+### Détection des doubles comptes (bêta) {#activity}
+
+En mode **Panneau**, le bouton “**Vérifier**” peut ouvrir l'**Activity RaidProtect** au lieu du code en image : le membre résout un petit puzzle directement dans Discord, et nous repérons au passage les comptes probablement tenus par la même personne.
+
+1. Faites la [commande `/settings`](../setup.md#settings).
+2. Ouvrez l'onglet “**Arrivées**”.
+3. Cliquez sur “**Configurer**” à côté de “**Captcha**”.
+4. Cliquez sur “**Activer**” à côté de “**Détection des doubles comptes (bêta)**”.
+
+Le réglage est désactivé par défaut et n'apparaît qu'en mode Panneau. Une fois activé :
+
+- **Réussite ou échec :** le verdict de l'Activity compte comme un code saisi. Un échec consomme un essai, et la sanction prévue tombe quand les essais sont épuisés. Le temps de résolution s'applique comme d'habitude.
+- **Transmis à l'équipe :** quand le résultat est incertain, le membre reste en attente et le salon de logs du captcha vous prévient. Acceptez-le avec le [bypass](#bypass) ou sanctionnez-le.
+- **Comptes liés :** les logs du captcha listent jusqu'à 5 comptes probablement liés, avec un indice de confiance et la preuve trouvée (même client Discord, même installation de Discord, même ordinateur, même modèle de téléphone, appareil semblable). Le membre n'en voit rien.
+- **Alerte de raid :** si plusieurs comptes passent par le même appareil en 5 minutes, les logs du captcha vous le signalent.
+- **Code en image en secours :** si l'Activity n'est pas disponible, “**Vérifier**” affiche le code en image habituel.
+
+:::info
+Les comptes liés détectés par l'Activity ne sont **jamais sanctionnés automatiquement** : ils sont seulement montrés à votre équipe, qui décide. Pour lier des comptes et partager leurs sanctions, utilisez les [doubles comptes](./alt-accounts.md).
 :::
 
 ### Difficulté {#difficulty}
