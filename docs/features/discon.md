@@ -31,7 +31,7 @@ Le DISCON fait partie de la **Shield Update**, prévue pour la version 3.6.0. En
 
 ### Vérification Discord {#verification}
 
-Chaque niveau fixe le niveau de vérification Discord de votre serveur : moyenne aux niveaux 5 et 4 (élevée au niveau 4 si le captcha n'est pas configuré), maximale du niveau 3 au niveau 1. Nous ne la modifions que si elle diffère de la valeur attendue.
+Chaque niveau fixe le niveau de vérification Discord de votre serveur : moyenne aux niveaux 5 et 4 (élevée au niveau 4 si le captcha n'est pas configuré), maximale du niveau 3 au niveau 1.
 
 ### Captcha à l'entrée et captcha gelé {#captcha}
 
@@ -45,7 +45,7 @@ Chaque niveau fixe le niveau de vérification Discord de votre serveur : moyenne
 
 ### Verrouillage du niveau 1 {#lockdown}
 
-Au niveau 1, nous retirons au rôle **@everyone** les permissions d'expression : envoyer des messages (y compris dans les fils), ajouter des réactions, créer des fils, envoyer des messages vocaux, joindre des fichiers, parler en vocal et utiliser les commandes d'application. Nous gardons une copie des permissions d'origine et les rétablissons à l'identique en redescendant.
+Au niveau 1, nous retirons au rôle **@everyone** les permissions d'expression : envoyer des messages (y compris dans les fils), ajouter des réactions, créer des fils, envoyer des messages vocaux, joindre des fichiers, parler en vocal et utiliser les commandes d'application. Elles sont rétablies à l'identique en redescendant.
 
 ## 🧩 Prérequis des niveaux 2 et 1 {#requirements}
 
@@ -53,8 +53,6 @@ Pour que les niveaux 2 et 1 retiennent vraiment les arrivants à l'entrée, l'un
 
 - **Un captcha configuré** (salon et rôle de vérification) : c'est la solution recommandée. Le captcha gelé retient tout le monde, puis laisse entrer les membres légitimes une fois le calme revenu. [Configurez le captcha](./captcha.md#config).
 - **Sinon, l'action de l'Auto RaidMode sur “Expulser les arrivants”** : sans captcha, nous activons le mode raid, et c'est son action qui décide du sort des arrivants. Avec l'action “**Bloquer les invitations**” (réglage par défaut), le mode raid ouvert par le DISCON n'expulse personne. Réglez-la dans la [configuration de l'Auto RaidMode](./raid-mode.md#config).
-
-Le barème en tient compte : la mention « mode raid, les arrivants sont expulsés » n'apparaît que si votre Auto RaidMode expulse.
 
 Le verrouillage du niveau 1 demande aussi que RaidProtect puisse modifier le rôle @everyone (permission “**Gérer les rôles**”). S'il n'y parvient pas, un avertissement vous le signale.
 
@@ -94,7 +92,7 @@ Sous la configuration, vous retrouvez le niveau actuel, les cinq boutons de nive
 
 Les boutons du panneau ne demandent aucune permission : **c'est l'accès au salon qui fait office de contrôle**. Choisissez donc un salon réservé à votre équipe.
 
-- Si vous choisissez un salon visible par tout le serveur, nous le refusons et vous l'indiquons, car n'importe quel membre pourrait y changer le niveau.
+- Un salon visible par tout le serveur est refusé : n'importe quel membre pourrait y changer le niveau.
 - “**Créer le salon du panneau**” crée un salon `#discon` invisible pour @everyone. Ouvrez-le ensuite aux rôles de votre équipe.
 
 ### Salon vocal de statut <span className="badge-premium">Premium</span> {#voice}
