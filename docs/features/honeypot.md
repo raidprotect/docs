@@ -79,7 +79,7 @@ Pour les autres sanctions (Kick, Timeout, Jail, Mute), RaidProtect doit faire un
 Un membre de bonne foi peut écrire dans le HoneyPot par erreur. Le **délai avant sanction** lui laisse le temps de le signaler avant d'être sanctionné.
 
 :::info Expérimentation : Shield Update
-Le délai avant sanction fait partie de la **Shield Update**, prévue pour la version 3.6.0. En attendant sa sortie, il est en expérimentation, en bêta publique pour les serveurs [Premium](/premium). Sur les autres serveurs, la sanction reste immédiate.
+Le délai avant sanction fait partie de la **Shield Update**, prévue pour la version 3.6.0. En attendant sa sortie, il est en expérimentation, en bêta publique pour les serveurs [Premium](/premium).
 :::
 
 1. Faites la [commande `/settings`](../setup.md#settings).
