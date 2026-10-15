@@ -11,7 +11,7 @@ Le **DISCON** est le niveau de danger de votre serveur, sur le modèle du DEFCON
 
 - **Cinq niveaux** : du niveau 5 (calme) au niveau 1 (catastrophe). Plus le niveau est bas, plus la protection est stricte.
 - **Un panneau pour l'équipe** : un message posté dans un salon réservé au staff, avec un bouton par niveau. Un clic suffit pour changer de niveau.
-- **Des effets calculés pour votre serveur** : ce que fait un niveau dépend de votre configuration (captcha configuré ou non, mode Communauté, action de l'Auto RaidMode). Le barème affiché dans `/discon` et sur le panneau décrit exactement ce qui se passera chez vous.
+- **Des effets calculés pour votre serveur** : ce que fait un niveau dépend de votre configuration (captcha configuré ou non, mode Communauté, action de l'Auto RaidMode). Le barème affiché dans la configuration et sur le panneau décrit exactement ce qui se passera chez vous.
 - **Un retour propre** : en redescendant, nous ne coupons que ce que le DISCON a lui-même activé. Un captcha, une Fermeture des MP ou un mode raid que vous aviez activés à la main restent en place.
 - **Un changement manuel** : le niveau ne change jamais tout seul, c'est votre équipe qui décide.
 
@@ -54,7 +54,7 @@ Pour que les niveaux 2 et 1 retiennent vraiment les arrivants à l'entrée, l'un
 - **Un captcha configuré** (salon et rôle de vérification) : c'est la solution recommandée. Le captcha gelé retient tout le monde, puis laisse entrer les membres légitimes une fois le calme revenu. [Configurez le captcha](./captcha.md#config).
 - **Sinon, l'action de l'Auto RaidMode sur “Expulser les arrivants”** : sans captcha, nous activons le mode raid, et c'est son action qui décide du sort des arrivants. Avec l'action “**Bloquer les invitations**” (réglage par défaut), le mode raid ouvert par le DISCON n'expulse personne. Réglez-la dans la [configuration de l'Auto RaidMode](./raid-mode.md#config).
 
-Le barème de `/discon` en tient compte : la mention « mode raid, les arrivants sont expulsés » n'apparaît que si votre Auto RaidMode expulse.
+Le barème en tient compte : la mention « mode raid, les arrivants sont expulsés » n'apparaît que si votre Auto RaidMode expulse.
 
 Le verrouillage du niveau 1 demande aussi que RaidProtect puisse modifier le rôle @everyone (permission “**Gérer les rôles**”). S'il n'y parvient pas, un avertissement vous le signale.
 
@@ -97,7 +97,7 @@ Les boutons du panneau ne demandent aucune permission : **c'est l'accès au salo
 - Si vous choisissez un salon visible par tout le serveur, nous le refusons et vous l'indiquons, car n'importe quel membre pourrait y changer le niveau.
 - “**Créer le salon du panneau**” crée un salon `#discon` invisible pour @everyone. Ouvrez-le ensuite aux rôles de votre équipe.
 
-### Salon vocal de statut (Premium) {#voice}
+### Salon vocal de statut <span className="badge-premium">Premium</span> {#voice}
 
 Un salon vocal dont le nom affiche le niveau en cours, visible d'un coup d'œil dans la liste des salons : `🔵 DISCON 5`, `🟢 DISCON 4`, `🟡 DISCON 3`, `🔴 DISCON 2`, `⚪ DISCON 1`. Personne ne peut s'y connecter. “**Créer le salon de statut**” le crée à côté du salon du panneau, avec les mêmes permissions.
 
@@ -122,19 +122,11 @@ Chaque changement de niveau est inscrit dans vos [logs serveur](./moderation.mdx
 - « Le **niveau de danger** est monté de 5 à 3 par @Modérateur. »
 - « Le **niveau de danger** est redescendu de 3 à 5 par @Modérateur. »
 
-## ℹ️ Commande /discon {#command}
-
-Utilisez la commande : ```/discon```
-
-Elle ouvre directement l'écran de configuration du DISCON, sans passer par `/settings`. Elle est réservée aux administrateurs. RaidProtect a besoin des permissions “**Gérer le serveur**” et “**Gérer les salons**”.
-
-<Settings start="disconCommand" />
-
 ## Questions fréquentes {#faq}
 
 ### Qui peut changer le niveau DISCON ?
 
-Toute personne qui voit le salon du panneau. Les boutons ne vérifient aucune permission : c'est le salon, réservé à l'équipe, qui sert de filtre. Les administrateurs peuvent aussi changer de niveau depuis `/discon` ou `/settings`.
+Toute personne qui voit le salon du panneau. Les boutons ne vérifient aucune permission : c'est le salon, réservé à l'équipe, qui sert de filtre. Les administrateurs peuvent aussi changer de niveau depuis `/settings`.
 
 ### Le niveau DISCON change-t-il automatiquement pendant un raid ?
 
