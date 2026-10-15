@@ -534,37 +534,19 @@ body:not(.editor-page) [class*="expandButton"] {
   white-space: nowrap;
 }
 
-.badge-experiment,
-.sidebar-experiment > .menu__link::before {
+.badge-experiment {
   -webkit-mask: var(--badge-experiment-mask) center / contain no-repeat;
   mask: var(--badge-experiment-mask) center / contain no-repeat;
   background: var(--badge-experiment-color);
 }
 
-.badge-premium,
-.sidebar-premium > .menu__link::after {
+.badge-premium {
   background: var(--badge-premium-image) center / contain no-repeat;
+  cursor: pointer;
 }
 
-.sidebar-premium > .menu__link,
-.sidebar-experiment > .menu__link {
-  display: flex;
+.sidebar-badged {
+  display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-}
-
-.sidebar-experiment > .menu__link::before,
-.sidebar-premium > .menu__link::after {
-  content: '';
-  flex: none;
-  width: 0.9rem;
-  height: 0.9rem;
-}
-
-.sidebar-experiment > .menu__link::before {
-  order: 1;
-}
-
-.sidebar-premium > .menu__link::after {
-  order: 2;
 }

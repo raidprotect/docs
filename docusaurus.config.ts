@@ -112,6 +112,7 @@ export default async function createConfigAsync() {
             },
             excludedCanonical: []
         },
+        clientModules: [require.resolve('./src/clientModules/featureBadges.ts')],
         plugins: [
             require.resolve('./plugins/llms-txt'),
             require.resolve('./plugins/social-preview'),

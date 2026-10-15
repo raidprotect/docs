@@ -45,7 +45,7 @@ const sidebars: SidebarsConfig = {
                 {
                     type: 'doc',
                     id: 'features/discon',
-                    className: 'sidebar-experiment',
+                    customProps: {badges: ['experiment']},
                 },
                 {
                     type: 'doc',
@@ -54,7 +54,7 @@ const sidebars: SidebarsConfig = {
                 {
                     type: 'doc',
                     id: 'features/slowmode',
-                    className: 'sidebar-premium sidebar-experiment',
+                    customProps: {badges: ['experiment', 'premium']},
                 },
                 {
                     type: 'doc',
@@ -75,7 +75,7 @@ const sidebars: SidebarsConfig = {
                 {
                     type: 'doc',
                     id: 'features/alt-accounts',
-                    className: 'sidebar-experiment',
+                    customProps: {badges: ['experiment']},
                 },
                 {
                     type: 'doc',
