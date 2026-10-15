@@ -70,8 +70,6 @@ Pour attribuer immédiatement le rôle à tous les membres qui portent déjà le
 - **Gratuit** : une synchronisation offerte, une seule fois par serveur.
 - **[Premium](/premium)** : une synchronisation par semaine.
 
-La synchronisation est lancée en arrière-plan et continue même si le bot redémarre. Une seule synchronisation peut être en cours à la fois sur un serveur.
-
 :::info Expérimentation
 La synchronisation est en expérimentation : le bouton “**Synchroniser**” n'est pour l'instant proposé qu'à un petit nombre de serveurs. S'il n'apparaît pas sur votre serveur, vous pouvez [demander au support](https://raidprotect.bot/discord) une synchronisation complète du rôle.
 :::
