@@ -16,14 +16,12 @@ L'**anti-spam** de RaidProtect détecte et sanctionne automatiquement le [spam](
 
 ## ❓ Comment fonctionne l'anti-spam ? {#working}
 
-Nous analysons chaque message en le comparant aux messages récents de son auteur, sur plusieurs fenêtres de temps (de quelques secondes à quelques minutes), dans le salon courant et à l'échelle du serveur.
+Nous analysons chaque message en le comparant aux messages récents de son auteur.
 
 - **Dix déclencheurs** : chaque type de spam a son propre déclencheur (spam, flood, fichiers, duplicatas, liens, mentions, selfbot, commandes externes, messages bloqués par l'AutoMod, multisalon). Le détail est dans le [tableau des déclencheurs](#triggers).
 - **Quatre familles** : les déclencheurs sont regroupés par nature (**Excès**, **Spam**, **Automatisé** et **Spam multisalon**), ce qui permet de régler les sanctions en quelques clics.
 - **La sanction la plus sévère l'emporte** : quand un spam franchit plusieurs déclencheurs à la fois, nous appliquons la sanction la plus forte.
-- **Un message seul ne déclenche jamais** : il faut une répétition. Les messages publiés avant une sanction ne sont plus comptés ensuite.
-- **Doublons approximatifs** : deux messages presque identiques (un mot ou un emoji changé, des lettres remplacées par des chiffres) comptent comme des doublons.
-- **Motif détaillé** : la raison de la sanction précise ce qui a été mesuré, par exemple « Spam (9 messages en 15 secondes dans #général) ».
+- **Motif détaillé** : la raison de la sanction précise ce qui a été détecté.
 - **Logs** : chaque sanction est envoyée dans votre salon de logs avec les messages supprimés (voir [les logs](#logs)).
 
 L'anti-spam est **désactivé par défaut**. Il s'active pendant la [commande `/setup`](../setup.md) si vous le cochez, ou à tout moment depuis `/settings`.
@@ -97,15 +95,15 @@ Chaque famille regroupe des déclencheurs de même nature. Voici les déclencheu
 | **Excès** | Flood (écran rempli) | Messages qui remplissent l'écran : longs textes, images, aperçus de liens, stickers | Timeout |
 | **Excès** | Spam de fichiers | Envoi massif de fichiers ou d'images | Timeout |
 | **Spam** | Spam de duplicatas | Messages copiés-collés ou presque identiques | Softban |
-| **Spam** | Spam de liens | Envoi massif de liens. Un lien déjà posté compte double. Les GIF Tenor et Giphy et les liens Discord ne comptent pas. | Softban |
-| **Spam** | Spam de mentions | Mentions massives. `@everyone` et `@here` comptent pour 5 mentions quand ils notifient vraiment. | Softban |
+| **Spam** | Spam de liens | Envoi massif de liens | Softban |
+| **Spam** | Spam de mentions | Mentions massives | Softban |
 | **Automatisé** | Spam avec selfbot | Utilisation de [selfbots](/learn/self-bot) pour spammer | Bannissement |
 | **Automatisé** | Spam de commandes externes | Utilisation de [commandes externes](/learn/server-raidable) pour spammer | Bannissement |
 | **Automatisé** | Spam de messages bloqués (AutoMod) | Messages à répétition bloqués par l'[AutoMod de Discord](#automod) | Bannissement |
 | *(à part)* | Spam multisalon | Le même message posté dans plusieurs salons en peu de temps | Jail |
 
 :::info Spam multisalon
-Le **Spam multisalon** est particulier : sa sanction remplace celle du déclencheur d'origine quand le spam touche plusieurs salons, uniquement si elle est plus sévère. Il se déclenche dès 3 salons en 30 secondes, ou dès 2 salons si le message est long ou contient un lien ou une mention. Le désactiver coupe aussi toute la surveillance à l'échelle du serveur.
+Le **Spam multisalon** est particulier : sa sanction remplace celle du déclencheur d'origine quand le spam touche plusieurs salons, uniquement si elle est plus sévère. Le désactiver coupe aussi toute la surveillance à l'échelle du serveur.
 :::
 
 Voici les **[sanctions disponibles](/learn/discord-sanctions)** pour chaque famille ou déclencheur :
@@ -137,7 +135,7 @@ Si vous voulez une sanction différente pour un seul déclencheur (par exemple b
 
 <SettingsModal name="antispamFamily" />
 
-Le mode avancé reste affiché tant qu'une famille a des réglages différents selon le déclencheur. Pour revenir au mode simple, cliquez à nouveau sur “**Mode avancé**” et cochez “**J'ai compris, aligner les familles**” : chaque déclencheur prend alors la sanction et la durée du premier déclencheur de sa famille.
+Le mode avancé reste affiché tant qu'une famille a des réglages différents selon le déclencheur. Pour revenir au mode simple, cliquez à nouveau sur “**Mode avancé**” et cochez “**J'ai compris, aligner les familles**”.
 
 #### Durée des sanctions {#duration}
 
@@ -186,13 +184,7 @@ Un membre a spammé sans être sanctionné, ou au contraire un membre a été sa
 
 <SettingsModal name="antispamSimulate" />
 
-Nous vérifions ensuite, point par point :
-- que RaidProtect a les permissions de modération nécessaires ;
-- que l'anti-spam est activé ;
-- que le membre est en dessous de RaidProtect dans la hiérarchie des rôles ;
-- que le membre n'est pas exempté (rôle ou membre ignoré, ou permissions de modération) ;
-- que le salon n'est pas ignoré ;
-- que la sanction de ce type de spam est active.
+La simulation vérifie les permissions, les exemptions et la sanction prévue.
 
 Le résultat indique aussi le **pic de la dernière heure** pour ce membre, en pourcentage du seuil, puis le verdict et la sanction qui serait appliquée.
 
