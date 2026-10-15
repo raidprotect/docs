@@ -105,8 +105,6 @@ Un salon vocal dont le nom affiche le niveau en cours, visible d'un coup d'œil 
 Discord limite le renommage d'un salon à environ 2 fois toutes les 10 minutes. Si vous changez de niveau plus vite, le nom du salon vocal peut prendre du retard : le panneau reste la référence.
 :::
 
-Sans Premium, l'écran reste accessible et le prompt Premium s'affiche au moment de choisir ou de créer le salon. Un salon vocal choisi pendant une période Premium n'est pas supprimé à son expiration, il n'est simplement plus renommé.
-
 ## 📟 Le panneau DISCON {#panel}
 
 Le panneau est un message posté dans le salon choisi. Il affiche le niveau actuel, la légende des cinq niveaux avec leurs effets sur votre serveur, et cinq boutons de niveau. Sa couleur suit le niveau en cours.
