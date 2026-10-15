@@ -1,4 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import type { CSSProperties } from "react";
+import { createPortal } from "react-dom";
 import type { Component, StringSelect } from "./types";
 import { formatDiscordMarkdown } from "./markdown";
 import styles from "./styles.module.css";
@@ -95,15 +97,44 @@ function StringSelectMenu({ component }: { component: StringSelect }) {
     () => component.options.find((o) => o.default)?.value ?? null
   );
   const wrapRef = useRef<HTMLDivElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [position, setPosition] = useState<CSSProperties>({});
   const current = component.options.find((o) => o.value === selected);
 
   useEffect(() => {
     if (!open) return;
     const close = (e: PointerEvent) => {
-      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) setOpen(false);
+      const target = e.target as Node;
+      if (wrapRef.current?.contains(target) || dropdownRef.current?.contains(target)) return;
+      setOpen(false);
     };
     document.addEventListener("pointerdown", close);
     return () => document.removeEventListener("pointerdown", close);
+  }, [open]);
+
+  // Menu rendu dans <body> en position fixe : il passe au-dessus des modales et des conteneurs qui défilent.
+  useLayoutEffect(() => {
+    if (!open) return;
+    const place = () => {
+      const rect = wrapRef.current?.getBoundingClientRect();
+      if (!rect) return;
+      const below = window.innerHeight - rect.bottom - 8;
+      const above = rect.top - 8;
+      const up = below < 240 && above > below;
+      setPosition({
+        left: rect.left,
+        width: rect.width,
+        maxHeight: Math.min(320, up ? above : below),
+        ...(up ? { bottom: window.innerHeight - rect.top + 4 } : { top: rect.bottom + 4 }),
+      });
+    };
+    place();
+    window.addEventListener("scroll", place, true);
+    window.addEventListener("resize", place);
+    return () => {
+      window.removeEventListener("scroll", place, true);
+      window.removeEventListener("resize", place);
+    };
   }, [open]);
 
   return (
@@ -125,8 +156,8 @@ function StringSelectMenu({ component }: { component: StringSelect }) {
         </span>
         <ChevronDown />
       </div>
-      {open && (
-        <div className={styles.selectDropdown}>
+      {open && createPortal(
+        <div className={styles.selectDropdown} ref={dropdownRef} style={position}>
           {component.options.map((o) => (
             <div
               key={o.value}
@@ -140,7 +171,8 @@ function StringSelectMenu({ component }: { component: StringSelect }) {
               </span>
             </div>
           ))}
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );

@@ -837,15 +837,16 @@ html[data-theme="light"] .threadLastContent {
 }
 
 .selectDropdown {
-  position: absolute;
-  top: calc(100% + 4px);
-  left: 0;
-  right: 0;
+  position: fixed;
   background: #2b2d31;
   border: 1px solid #1e1f22;
   border-radius: 8px;
-  overflow: hidden;
-  z-index: 20;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.24);
+  font-family: "gg sans", "Noto Sans", Helvetica, Arial, sans-serif;
+  line-height: 1.375;
+  text-align: left;
 }
 
 html[data-theme="light"] .selectDropdown {
