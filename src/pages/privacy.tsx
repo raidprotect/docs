@@ -5,7 +5,7 @@ export default function Privacy(): ReactNode {
   return (
     <LegalLayout
       title="Politique de confidentialité"
-      lastUpdated="Dernière mise à jour : 1 février 2025"
+      lastUpdated="Dernière mise à jour : 18 Octobre 2026"
       description="Découvrez comment RaidProtect protège vos données personnelles et assure la sécurité de votre vie privée en utilisant nos services. Politique de confidentialité détaillée.">
       <section>
         <p>
@@ -28,7 +28,7 @@ export default function Privacy(): ReactNode {
           <strong>RaidProtect</strong> et le site web collectent et traitent les catégories de
           données suivantes :
         </p>
-        <h3>1.1. Données collectées par l'Application</h3>
+        <h3>1.1. Données collectées par l'Application Discord</h3>
         <ul>
           <li>
             <strong>Configuration des serveurs Discord</strong> : informations sur les paramètres
@@ -57,6 +57,18 @@ export default function Privacy(): ReactNode {
             web, telles que l'adresse IP, le type de navigateur ou les cookies.
           </li>
         </ul>
+        <h3>1.3. Données collectées par l'Application web</h3>
+        <ul>
+          <li>
+            <strong>Données relatives à l'appareil</strong> : informations sur l'appareil utilisé
+            pour accéder aux services web (ex : système d'exploitation, navigateur).
+          </li>
+          <li>
+            <strong>Données relatives à l'utilisateur</strong> : informations sur l'utilisateur,
+            telles que les préférences de langue, le compte Discord utilisé et les interactions
+            avec l'application web.
+          </li>
+        </ul>
       </section>
       <section>
         <h2>2. Finalités du traitement</h2>
@@ -72,6 +84,10 @@ export default function Privacy(): ReactNode {
             administrateurs.
           </li>
           <li>Maintenir et améliorer les services en analysant l'utilisation.</li>
+          <li>
+            Protéger les utilisateurs et prévenir les abus, les spams ou les comportements
+            malveillants.
+          </li>
         </ol>
         <p>Les données ne sont pas utilisées à des fins commerciales ou publicitaires.</p>
       </section>
@@ -94,6 +110,11 @@ export default function Privacy(): ReactNode {
           <li>
             <strong>Données de navigation</strong> : conservées conformément aux dispositions
             légales applicables.
+          </li>
+          <li>
+            <strong>Données relatives à l'appareil et à l'utilisateur</strong> : conservées
+            365 jours à compter de la dernière interaction avec l'application web ou jusau'au
+            retrait du consentement de l'utilisateur.
           </li>
         </ul>
       </section>
