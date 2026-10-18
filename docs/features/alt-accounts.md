@@ -92,7 +92,7 @@ La sanction de contournement s'applique à un compte lié pris en mode “**Piè
 Un timeout demande toujours une durée, de 28 jours au plus. Le mute et l'emprisonnement demandent que leur [rôle](./sanctions.mdx#config) soit configuré.
 :::
 
-### Un seul compte par personne <span className="badge-premium">Premium</span> {#single-account}
+### Un seul compte par personne {#single-account}
 
 Avec ce réglage, seul le **compte principal** de chaque groupe circule sur le serveur. Les autres comptes sont mis en **quarantaine** avec le [rôle de jail](./sanctions.mdx#jail) (sanction “**Quarantaine**” dans l'historique). Ils en sortent d'eux-mêmes s'ils deviennent le compte principal ou s'ils sont retirés du groupe.
 
