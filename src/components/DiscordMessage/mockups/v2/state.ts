@@ -25,6 +25,7 @@ export interface State {
   recapFeed: boolean;
   slowmodeChannel: boolean;
   quarantineSync: boolean;
+  serverRefs: boolean;
 }
 
 export const INITIAL: State = {
@@ -49,6 +50,7 @@ export const INITIAL: State = {
   recapFeed: true,
   slowmodeChannel: true,
   quarantineSync: true,
+  serverRefs: true,
 };
 
 export interface Ctx {

@@ -218,6 +218,66 @@ export function protectionPart({ s, flip }: Ctx, disconState: { level: number; s
       docs: "features/scam-images",
       body: [
         setting("iconScamLens", "Images", t("automod.default", "Par défaut"), configure("imageFilter", "iconScamLensWhite"), t("automod.imagesHint", "Arnaques connues, comparées par empreinte")),
+        setting(
+          "iconLinks",
+          t("servers.name", "Autres serveurs"),
+          t("servers.short", "Invitations, transferts et tags d'autres serveurs"),
+          configure("serverRefs"),
+          t("servers.hint", "Supprime les invitations et messages transférés d'autres serveurs, met en quarantaine leurs tags.")
+        ),
+      ],
+    });
+
+  const SERVER_KINDS: Array<[string, string, IconName, number]> = [
+    ["link", t("servers.link", "Invitation"), "iconLinks", 2],
+    ["forward", t("servers.forward", "Message transféré ou lien de salon"), "iconLinks", 0],
+    ["tag", t("servers.tag", "Tag de serveur affiché"), "iconTag", 1],
+  ];
+
+  const serverModes = (selected: number): Opt[] => [
+    { label: t("disabled", "Désactivé"), emoji: "iconToggleDisable", default: selected === 0 },
+    { label: t("servers.blocklist", "Liste noire"), emoji: "iconFail", default: selected === 1 },
+    { label: t("servers.allowlist", "Liste blanche"), emoji: "iconSuccess", default: selected === 2 },
+  ];
+
+  const serverRefs = (): Component[] =>
+    screen({
+      tab: "protection",
+      icon: "iconLinks",
+      title: t("servers.title", "Références à d'autres serveurs"),
+      desc: t(
+        "servers.desc",
+        "Choisissez, pour chaque comportement, une liste noire (ces serveurs sont refusés) ou une liste blanche (seuls ces serveurs passent). Votre serveur passe toujours, et votre équipe (Gérer le serveur, Gérer les messages) n'est jamais visée."
+      ),
+      accessory: toggle(s.serverRefs, "toggle:serverRefs"),
+      crumbs: [{ label: "Automod", id: "automod" }, { label: t("servers.name", "Autres serveurs") }],
+      docs: "features/server-references",
+      body: [
+        ...SERVER_KINDS.flatMap(([, label, icon, mode]) => [
+          heading(icon, label),
+          select(t("servers.modePh", "Choisir un mode"), serverModes(mode)),
+        ]),
+        sep(),
+        heading("iconSanctions", t("servers.sanction", "Sanction des messages supprimés")),
+        select(t("sanctionPh", "Sélectionner une sanction"), [
+          { label: t("servers.none", "Message supprimé seulement"), emoji: "iconTrash" },
+          ...SANCTIONS.map(([label, emoji]) => ({ label: sanctionLabel(label), emoji, default: label === "Timeout" })),
+        ]),
+        select(t("durationPh", "Sélectionner une durée"), [
+          { label: "10 minutes", emoji: "iconTime" },
+          { label: t("oneHour", "1 heure"), emoji: "iconTime" },
+          { label: t("oneDay", "1 jour"), emoji: "iconTime", default: true },
+          { label: t("sevenDays", "7 jours"), emoji: "iconTime" },
+          custom(),
+        ]),
+        sep(),
+        text(
+          `### ${i("iconFail")} ${t("servers.blockList", "Liste noire")} (1)\n- **Serveur de pub** \`123456789012345678\`\n### ${i("iconSuccess")} ${t("servers.allowList", "Liste blanche")} (1)\n- **Serveur partenaire** \`234567890123456789\``
+        ),
+        row(
+          btn({ label: t("servers.add", "Ajouter un serveur"), style: 1, emoji: "iconCreateWhite" }),
+          btn({ label: t("servers.remove", "Retirer"), style: 2, emoji: "iconTrash" })
+        ),
       ],
     });
 
@@ -498,6 +558,7 @@ export function protectionPart({ s, flip }: Ctx, disconState: { level: number; s
       antispamSanctions,
       automod,
       imageFilter,
+      serverRefs,
       honeypot: honeypot(),
       honeypotCommand: honeypot(true),
       slowmode,
@@ -509,6 +570,7 @@ export function protectionPart({ s, flip }: Ctx, disconState: { level: number; s
       "toggle:antispam": flip("antispam"),
       "toggle:antispamAdvanced": flip("antispamAdvanced"),
       "toggle:imageFilter": flip("imageFilter"),
+      "toggle:serverRefs": flip("serverRefs"),
       "toggle:honeypot": flip("honeypot"),
       ...Object.fromEntries([5, 4, 3, 2, 1].map((n) => [`discon:level:${n}`, () => disconState.setLevel(n)])),
     },
