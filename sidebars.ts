@@ -62,6 +62,11 @@ const sidebars: SidebarsConfig = {
                 },
                 {
                     type: 'doc',
+                    id: 'features/server-references',
+                    customProps: {badges: ['experiment']},
+                },
+                {
+                    type: 'doc',
                     id: 'features/honeypot',
                 },
                 {
