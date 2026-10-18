@@ -17,7 +17,7 @@ C'est l'une des fonctionnalités les plus populaires de RaidProtect, et elle res
 
 Le captcha repose sur un rôle **@Non vérifié** et un salon **#vérification**. Lorsqu'un utilisateur rejoint votre serveur :
 - **Mise en attente :** nous lui donnons le rôle **@Non vérifié**, qui limite son accès au seul salon **#vérification**.
-- **Épreuve :** il recopie un code affiché sur une image. La façon de le faire dépend du [mode d'affichage](#display-mode). En mode Panneau, il peut aussi résoudre un puzzle dans l'[Activity RaidProtect](#activity).
+- **Épreuve :** en mode Panneau, il résout un puzzle dans l'[Activity RaidProtect](#activity). En mode Challenge, il recopie un code affiché sur une image. Voir les [modes d'affichage](#display-mode).
 - **Réussite :** le rôle **@Non vérifié** est retiré et le membre accède au serveur. Ses [rôles automatiques](./onboarding.md#autorole) et le [message de bienvenue](./onboarding.md#welcome-message) partent à ce moment-là.
 - **Échec :** quand il épuise ses essais, il est expulsé ou mis au jail, selon votre réglage. Il peut revenir et retenter le captcha après une expulsion.
 - **Logs :** chaque arrivée est notée dans le salon de logs avec la date de création du compte, ainsi que les réussites, les échecs et les délais expirés.
@@ -34,7 +34,7 @@ Le captcha repose sur un rôle **@Non vérifié** et un salon **#vérification**
 
 | Mode | Ce que voit le nouveau membre |
 |---|---|
-| **Panneau (Interactif)**, par défaut | Un message permanent “**Système de vérification**” avec un bouton “**Vérifier**”. Le captcha s'ouvre en privé (seul le membre le voit) et le code se saisit dans une fenêtre. Le membre ne peut pas écrire dans **#vérification**. |
+| **Panneau (Interactif)**, par défaut | Un message permanent “**Système de vérification**” avec un bouton “**Vérifier**”, qui ouvre l'[Activity RaidProtect](#activity). Le membre ne peut pas écrire dans **#vérification**. |
 | **Challenge (Classique)** | Une image est postée dans **#vérification** à son arrivée, et il tape le code en message dans le salon. |
 
 Le mode Panneau garde le salon propre et permet des réglages en plus : choix de la sanction quand les essais sont épuisés, [captcha gelé pendant un raid](./raid-mode.md#action), [retenue à l'entrée des comptes trop récents](./onboarding.md#minage). Le mode Challenge expulse toujours le membre à la fin du temps imparti ou quand ses essais sont épuisés.
@@ -77,26 +77,38 @@ Le captcha démarre en mode **Panneau (Interactif)**, déclenché **En permanenc
 4. Dans “**Mode d'affichage**”, choisissez “**Panneau (Interactif)**” ou “**Challenge (Classique)**”.
 5. Dans “**Déclenchement**”, choisissez “**En permanence**”, “**Automatique**” ou “**Intelligent (Public Beta)**”.
 
-### Détection des doubles comptes <span className="badge-experiment">Expérimentation</span> {#activity}
+### Vérification dans l'Activity {#activity}
 
-En mode **Panneau**, le bouton “**Vérifier**” peut ouvrir l'**Activity RaidProtect** au lieu du code en image : le membre résout un petit puzzle directement dans Discord, et nous repérons au passage les comptes probablement tenus par la même personne.
+En mode **Panneau**, le bouton “**Vérifier**” ouvre l'**Activity RaidProtect** : le membre résout un petit puzzle directement dans Discord, aux couleurs de votre serveur et avec les liens de salon de votre [Processus d'accueil](../guides/onboarding.md). Une fois vérifié, il y découvre sa [carte de bienvenue](./onboarding.md#welcome-message).
+
+- **Puzzle raté :** comme un code faux, il consomme un essai, et la sanction prévue tombe quand les essais sont épuisés.
+- **Robot :** un captcha résolu par un automate est sanctionné tout de suite, par une expulsion ou un jail selon votre réglage.
+- **Revue par votre équipe :** en cas de doute, le membre reste bloqué à l'entrée, sans délai qui court, et votre équipe reçoit un rapport automatique du captcha. Il arrive dans les [logs du captcha](#logs), à défaut dans le salon des [signalements](./reports.md), à défaut dans les logs du serveur. “**Laisser entrer**” lui donne accès, ou sanctionnez-le depuis le rapport.
+- **Vérification de l'appareil refusée :** l'Activity demande au membre son accord avant de vérifier son appareil. S'il refuse, il est sanctionné comme après un échec.
+- **Activity qui ne s'ouvre pas :** le membre peut cliquer sur “**Saisir un code**”. Un code correct passe alors en revue par votre équipe.
+- **Effacement des données :** un membre peut demander l'effacement de ses données de vérification à [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot). Il repasse alors le captcha, et ses sanctions restent.
+
+#### Doubles comptes repérés par le captcha <span className="badge-experiment">Expérimentation</span> {#activity-alts}
+
+Avec l'[Identity Update](./alt-accounts.md), l'Activity repère aussi les arrivants probablement tenus par la même personne qu'un membre de votre serveur :
+
+- **Lien sûr :** les comptes sont liés automatiquement dans [`/alt`](./alt-accounts.md#alt). Les logs du captcha le signalent, avec un bouton “**Délier**”.
+- **Lien probable :** le membre passe en revue. “**Lier les comptes**” les lie dans `/alt` et le laisse entrer.
+
+Seuls les comptes de votre serveur vous sont montrés : rien n'est dit des autres serveurs.
+
+:::info Expérimentation : Identity Update
+Le repérage des doubles comptes fait partie de l'**Identity Update**, prévue pour la version 3.7.0. En attendant sa sortie, il est en expérimentation, en bêta publique pour les serveurs [Premium](/premium).
+:::
+
+### Mode test {#test-mode}
 
 1. Faites la [commande `/settings`](../setup.md#settings).
 2. Ouvrez l'onglet “**Arrivées**”.
 3. Cliquez sur “**Configurer**” à côté de “**Captcha**”.
-4. Cliquez sur “**Activer**” à côté de “**Détection des doubles comptes (bêta)**”.
+4. Cliquez sur “**Activer**” à côté de “**Mode test**”.
 
-Le réglage est désactivé par défaut et n'apparaît qu'en mode Panneau. Une fois activé :
-
-- **Réussite ou échec :** le verdict de l'Activity compte comme un code saisi. Un échec consomme un essai, et la sanction prévue tombe quand les essais sont épuisés. Le temps de résolution s'applique comme d'habitude.
-- **Transmis à l'équipe :** quand le résultat est incertain, le membre reste en attente et le salon de logs du captcha vous prévient. Acceptez-le avec le [bypass](#bypass) ou sanctionnez-le.
-- **Comptes liés :** les logs du captcha listent les comptes probablement liés, avec un indice de confiance. Le membre n'en voit rien.
-- **Alerte de raid :** les logs du captcha signalent les arrivées groupées suspectes.
-- **Code en image en secours :** si l'Activity n'est pas disponible, “**Vérifier**” affiche le code en image habituel.
-
-:::info
-Les comptes liés détectés par l'Activity ne sont **jamais sanctionnés automatiquement** : ils sont seulement montrés à votre équipe, qui décide. Pour lier des comptes et partager leurs sanctions, utilisez les [doubles comptes](./alt-accounts.md).
-:::
+En mode Panneau, un membre de votre équipe déjà vérifié (permission **Gérer le serveur**, ou le propriétaire) peut alors cliquer sur “**Vérifier**” pour refaire le captcha autant qu'il veut. Le résultat part dans les logs du captcha, rien n'est appliqué.
 
 ### Difficulté {#difficulty}
 
