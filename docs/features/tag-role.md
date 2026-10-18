@@ -63,17 +63,6 @@ L'écran de configuration vous prévient quand le Rôle de Tag ne peut pas fonct
 
 Après correction, cliquez sur “**Actualiser**” pour vérifier de nouveau.
 
-## 🔄 Synchronisation du rôle <span className="badge-experiment">Expérimentation</span> {#sync}
-
-Pour attribuer immédiatement le rôle à tous les membres qui portent déjà le tag (et le retirer à ceux qui ne le portent plus), utilisez le bouton “**Synchroniser**” dans la configuration du Rôle de Tag :
-
-- **Gratuit** : une synchronisation offerte, une seule fois par serveur.
-- **[Premium](/premium)** : une synchronisation par semaine.
-
-:::info Expérimentation
-La synchronisation est en expérimentation : le bouton “**Synchroniser**” n'est pour l'instant proposé qu'à un petit nombre de serveurs. S'il n'apparaît pas sur votre serveur, vous pouvez [demander au support](https://raidprotect.bot/discord) une synchronisation complète du rôle.
-:::
-
 ## Questions fréquentes {#faq}
 
 ### Pourquoi un membre avec le tag n'a-t-il pas encore le rôle ?
