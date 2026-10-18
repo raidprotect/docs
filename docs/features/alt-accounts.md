@@ -14,20 +14,21 @@ Les doubles comptes font partie de l'**Identity Update**, prévue pour la versio
 ## ❓ Comment ça marche ? {#working}
 
 - **Un groupe par personne** : un groupe rassemble les comptes que votre équipe considère comme une même personne. Les groupes sont propres à votre serveur : rien n'est partagé avec d'autres serveurs.
-- **Sanctions partagées** : le bannissement, l'expulsion, le mute, l'emprisonnement et le timeout s'étendent aux autres comptes du groupe, selon le mode que vous choisissez pour chaque sanction. La sanction reste au nom du compte visé, les autres en reçoivent le statut.
-- **Levée commune** : lever la sanction de l'un des comptes, quel qu'il soit, la lève pour tous.
+- **Sanctions partagées** ([Premium](/premium)) : le bannissement, l'expulsion, le mute, l'emprisonnement et le timeout s'étendent aux autres comptes du groupe, selon le [mode](#modes) que vous choisissez pour chaque sanction. La sanction reste au nom du compte visé, les autres en reçoivent le statut. Sans Premium, les comptes se lient et se consultent, mais aucune sanction ne s'étend : le log de la sanction cite alors les autres comptes du membre.
+- **Levée commune** : lever la sanction de l'un des comptes, quel qu'il soit, la lève pour tous, avec ou sans Premium.
 - **Recherche groupée** : [rechercher les sanctions](./sanctions.mdx#search) d'un compte montre aussi celles des autres comptes du groupe.
 - **AutoMod de Discord** : les timeouts et mutes posés par l'AutoMod de Discord s'étendent aussi aux comptes liés.
+- **Repérés par le captcha** : l'[Activity du captcha](./captcha.md#activity-alts) peut lier d'elle-même deux comptes sûrs d'être la même personne, ou proposer le lien à votre équipe.
 - **Logs** : les liens, les retraits et les changements de compte principal sont enregistrés dans les [logs de modération](./moderation.mdx#logs).
 
-**Limites :** jusqu'à 15 comptes par groupe, nombre de groupes illimité.
+**Limites :** aucune, ni sur le nombre de comptes par groupe ni sur le nombre de groupes.
 
 ## 🔗 Lier des comptes avec /alt {#alt}
 
 Utilisez la commande : ```/alt [membre] [autre]```
 
-- Sans option : affiche la liste des groupes de comptes liés du serveur.
-- Avec `[membre]` : affiche le groupe de ce compte. Chaque compte y apparaît avec son état (banni du serveur, sur le serveur, pas sur le serveur, en quarantaine), le compte principal en tête.
+- Sans option : affiche la liste des groupes de comptes liés du serveur. Le bouton “**Lier des comptes**” y lie deux membres du serveur, ou deux comptes absents par leurs identifiants.
+- Avec `[membre]` : affiche le groupe de ce compte, ou ce compte seul s'il n'est lié à aucun autre. Chaque compte y apparaît avec son état (banni du serveur, sur le serveur, pas sur le serveur, en quarantaine), le compte principal en tête.
 - Avec `[membre]` et `[autre]` : lie directement les deux comptes, déclarés comme la même personne.
 
 Remplacez `[membre]` et `[autre]` par la mention ou l'[identifiant](../guides/id.mdx) des comptes souhaités. Les bots ne peuvent pas être liés.
@@ -51,7 +52,7 @@ La commande `/alt` et ses boutons demandent la permission **Bannir des membres**
 
 <Settings start="alts" />
 
-### Sanctions des comptes liés {#modes}
+### Sanctions des comptes liés <span className="badge-premium">Premium</span> {#modes}
 
 Pour chaque sanction, choisissez comment elle s'étend au groupe :
 
@@ -69,6 +70,12 @@ Le sélecteur “**Tout régler sur…**” de l'écran applique le même mode �
 | “**Piège**” | Seul le compte visé est sanctionné. Un autre compte du groupe qui arrive ou écrit pendant la sanction est pris pour contournement et reçoit la [sanction de contournement](#evasion). | Toutes sauf l'expulsion |
 | “**Désactivé**” | La sanction ne vise que le compte choisi. | Toutes |
 
+### Comptes protégés et garde-fous {#safeguards}
+
+- **Comptes protégés** : une sanction ne s'étend jamais au propriétaire du serveur, aux bots, aux modérateurs ni à vous-même.
+- **Beaucoup de comptes d'un coup** : au-delà de 10 comptes liés, les suivants ne sont pas sanctionnés tout de suite. Le message de la sanction propose de les sanctionner aussi d'un clic.
+- **Pause automatique** : si trop de comptes liés sont sanctionnés automatiquement en une heure, ces sanctions automatiques se mettent en pause sur le serveur, et vos logs vous préviennent. Elles reprennent quand le rythme redescend. Les sanctions à la main ne sont pas touchées.
+
 ### Sanction de contournement {#evasion}
 
 La sanction de contournement s'applique à un compte lié pris en mode “**Piège**” : il arrive sur le serveur ou y écrit pendant la sanction de son groupe.
@@ -85,7 +92,7 @@ La sanction de contournement s'applique à un compte lié pris en mode “**Piè
 Un timeout demande toujours une durée, de 28 jours au plus. Le mute et l'emprisonnement demandent que leur [rôle](./sanctions.mdx#config) soit configuré.
 :::
 
-### Un seul compte par personne {#single-account}
+### Un seul compte par personne <span className="badge-premium">Premium</span> {#single-account}
 
 Avec ce réglage, seul le **compte principal** de chaque groupe circule sur le serveur. Les autres comptes sont mis en **quarantaine** avec le [rôle de jail](./sanctions.mdx#jail) (sanction “**Quarantaine**” dans l'historique). Ils en sortent d'eux-mêmes s'ils deviennent le compte principal ou s'ils sont retirés du groupe.
 
