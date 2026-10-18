@@ -93,14 +93,14 @@ export function arrivalsPart({ s, flip }: Ctx): Part {
         ),
         setting(
           "iconActivity",
-          t("captcha.activity", "Détection des doubles comptes (bêta)"),
-          s.captchaActivity
-            ? t("captcha.activityOn", "Activée : « Vérifier » ouvre l'Activity RaidProtect")
-            : t("captcha.activityOff", "Désactivée : code en image"),
-          toggle(s.captchaActivity, "toggle:captchaActivity"),
+          t("captcha.testMode", "Mode test"),
+          s.captchaTestMode
+            ? t("captcha.testModeOn", "Activé : votre équipe déjà vérifiée peut relancer le captcha")
+            : t("disabled", "Désactivé"),
+          toggle(s.captchaTestMode, "toggle:captchaTestMode"),
           t(
-            "captcha.activityHint",
-            "Un puzzle dans une Activity Discord, qui signale aussi à votre équipe les comptes probablement tenus par la même personne. Ils ne sont jamais sanctionnés automatiquement."
+            "captcha.testModeHint",
+            "Un membre de l'équipe (Gérer le serveur) déjà vérifié clique sur « Vérifier » pour refaire le captcha autant qu'il veut. Le résultat part dans les logs du captcha, rien n'est appliqué."
           )
         ),
         heading("iconTime", t("captcha.timeout", "Délai avant expulsion")),
@@ -294,7 +294,7 @@ export function arrivalsPart({ s, flip }: Ctx): Part {
       "toggle:antiraidCloseDm": flip("antiraidCloseDm"),
       "toggle:welcome": flip("welcome"),
       "toggle:welcomeMention": flip("welcomeMention"),
-      "toggle:captchaActivity": flip("captchaActivity"),
+      "toggle:captchaTestMode": flip("captchaTestMode"),
     },
   };
 }
