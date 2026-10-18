@@ -70,12 +70,6 @@ Le sélecteur “**Tout régler sur…**” de l'écran applique le même mode �
 | “**Piège**” | Seul le compte visé est sanctionné. Un autre compte du groupe qui arrive ou écrit pendant la sanction est pris pour contournement et reçoit la [sanction de contournement](#evasion). | Toutes sauf l'expulsion |
 | “**Désactivé**” | La sanction ne vise que le compte choisi. | Toutes |
 
-### Comptes protégés et garde-fous {#safeguards}
-
-- **Comptes protégés** : une sanction ne s'étend jamais au propriétaire du serveur, aux bots, aux modérateurs ni à vous-même.
-- **Beaucoup de comptes d'un coup** : au-delà de 10 comptes liés, les suivants ne sont pas sanctionnés tout de suite. Le message de la sanction propose de les sanctionner aussi d'un clic.
-- **Pause automatique** : si trop de comptes liés sont sanctionnés automatiquement en une heure, ces sanctions automatiques se mettent en pause sur le serveur, et vos logs vous préviennent. Elles reprennent quand le rythme redescend. Les sanctions à la main ne sont pas touchées.
-
 ### Sanction de contournement {#evasion}
 
 La sanction de contournement s'applique à un compte lié pris en mode “**Piège**” : il arrive sur le serveur ou y écrit pendant la sanction de son groupe.
