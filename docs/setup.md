@@ -40,7 +40,7 @@ La commande `/setup` est réservée aux administrateurs. Elle installe en une fo
 
 À la validation, RaidProtect :
 
-- crée le salon `#raidprotect-logs` s'il n'existe pas, visible du staff seulement ;
+- crée le salon `#raidprotect-logs` s'il n'existe pas, visible des administrateurs et de la personne qui a ajouté le bot ;
 - retire à `@everyone` les permissions dangereuses (Administrateur, Bannir, Expulser, Gérer le serveur, les salons, les rôles, les messages, les webhooks et les fils, Mentionner @everyone, Exclure temporairement) ;
 - active chaque module choisi avec ses valeurs par défaut : préfixe `?`, Auto RaidMode à 10 membres en 10 secondes, captcha en mode Panneau avec le salon `#vérification` et le rôle `@Non vérifié`, âge minimum de 6 heures, anti-spam et signalements activés, rôle `@Tag`, fermeture des MP, salon piège du [HoneyPot](./features/honeypot.md).
 
@@ -49,6 +49,22 @@ Décocher un module dans `/setup` ne le désactive pas. Pour couper une fonction
 :::
 
 Les [rôles automatiques et le message de bienvenue](./features/onboarding.md) ne font pas partie de l'assistant : réglez-les dans l'onglet “**Arrivées**” de `/settings`.
+
+### 🧭 Nouvel assistant d'installation <span className="badge-experiment">Expérimentation</span> {#wizard}
+
+Un nouvel assistant `/setup` remplace la liste de modules par un parcours guidé :
+
+- **Section par section** : Général (avec la langue du serveur), Arrivées, Protection et Modération, une étape à la fois. Une **vue condensée** rassemble tout sur un seul écran, à un clic.
+- **Des propositions adaptées** : selon la taille du serveur, s'il est public, communautaire ou s'il a un tag, l'assistant précoche les protections conseillées et dit pourquoi.
+- **Plus de modules** : le [message de bienvenue](./features/onboarding.md#welcome-message) (avec son salon), le filtre [Autres serveurs](./features/server-references.md), qui supprime les invitations vers d'autres serveurs, et le [slowmode préventif](./features/slowmode.md) ([Premium](/premium)) sur le salon de votre choix. Le [DISCON](./features/discon.md) y est expliqué : il est toujours actif, sans rien installer.
+- **Une vérification avant de commencer** : il signale les permissions qui manquent à RaidProtect et les rôles placés au-dessus du sien, avec un bouton “**Revérifier**”.
+- **Un récapitulatif** de ce qui sera créé, modifié ou réglé. Rien n'est appliqué avant “**Installer**”.
+- **Un serveur déjà configuré est vérifié, pas refait** : le panneau du captcha en place et la fermeture des MP déjà active sont conservés.
+- **Et ensuite** : un aperçu de l'[audit de sécurité](./features/audit.md) termine l'installation, avec des raccourcis pour tester le captcha, personnaliser le message de bienvenue ou ouvrir tous les réglages. Une étape en échec se reprend en relançant `/setup`.
+
+:::info Expérimentation : Shield Update
+Le nouvel assistant d'installation arrive avec la **Shield Update**, prévue pour la version 3.6.0. Il n'est pour l'instant proposé qu'à un petit nombre de serveurs.
+:::
 
 ## Modifier la configuration {#settings}
 
@@ -60,13 +76,15 @@ Les réglages sont rangés en cinq onglets :
 
 - **Général** : [langue](./language.md), [commandes par messages](./guides/prefix.md), [permissions](./guides/prefix.md#permissions) et fuseau horaire du serveur.
 - **Arrivées** : [Auto RaidMode](./features/raid-mode.md), [captcha](./features/captcha.md), [âge minimum du compte](./features/onboarding.md#minage), [rôles automatiques](./features/onboarding.md#autorole) et [message de bienvenue](./features/onboarding.md#welcome-message).
-- **Protection** : [DISCON](./features/discon.md)\*, [anti-spam](./features/anti-spam.mdx), Automod et [filtre d'images](./features/scam-images.md), [HoneyPot](./features/honeypot.md), [slowmode préventif](./features/slowmode.md)\*, [Authentification Manager](./features/authentication-manager.mdx) et [fermeture des MP](./features/dm-lock.mdx).
+- **Protection** : [DISCON](./features/discon.md)\*, [anti-spam](./features/anti-spam.mdx), Automod ([filtre d'images](./features/scam-images.md) et [autres serveurs](./features/server-references.md)\*), [HoneyPot](./features/honeypot.md), [slowmode préventif](./features/slowmode.md)\*, [Authentification Manager](./features/authentication-manager.mdx) et [fermeture des MP](./features/dm-lock.mdx).
 - **Modération** : [sanctions](./features/sanctions.mdx), [doubles comptes](./features/alt-accounts.md)\*, logs, [signalements](./features/reports.md) et [transparence](./features/transparency.md).
 - **Utilitaires** : [rôle de tag](./features/tag-role.md), [verrouillage de salon](./features/channel-lock.md), [rôle en service](./features/moderation.mdx#onduty) et mise en cache des messages.
 
-\* En expérimentation : ces lignes n'apparaissent que sur les serveurs qui ont accès à la Shield Update (DISCON, slowmode préventif) ou à l'Identity Update (doubles comptes), en bêta publique [Premium](/premium).
+\* En expérimentation : ces lignes n'apparaissent que sur les serveurs qui ont accès à la Shield Update (DISCON, autres serveurs, slowmode préventif) ou à l'Identity Update (doubles comptes), en bêta publique [Premium](/premium).
 
 Chaque ligne affiche la valeur actuelle du réglage et un bouton : “**Configurer**” ouvre un écran dédié, “**Modifier**” ouvre une fenêtre de saisie. Tout changement s'applique immédiatement.
+
+Après une mise à jour, une pastille **Nouveau** signale pendant deux semaines les réglages qui viennent d'arriver, ainsi que leur onglet tant que vous ne l'avez pas ouvert.
 
 Explorez le tableau de bord ci-dessous, les boutons sont cliquables :
 
