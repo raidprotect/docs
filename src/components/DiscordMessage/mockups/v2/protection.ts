@@ -409,7 +409,7 @@ export function protectionPart({ s, flip }: Ctx, disconState: { level: number; s
         s.slowmodeChannel
           ? section(`${i("iconToggleEnable")} ${CH("général")} · ${t("slowmode.rate30", "30 messages / min")}`, btn({ label: t("edit", "Modifier"), emoji: "iconCustomWhite", id: "slowmodeChannel" }))
           : section(`> ${free}`, btn({ label: t("add", "Ajouter"), style: 3, emoji: "iconCreateWhite", id: "modal:slowmodeAdd" })),
-        ...[1, 2, 3, 4].map(() => section(`> ${free}`, btn({ label: t("add", "Ajouter"), style: 3, emoji: "iconCreateWhite", id: "modal:slowmodeAdd" }))),
+        ...[1, 2, 3, 4, 5].map(() => section(`> ${free}`, btn({ label: t("add", "Ajouter"), style: 3, emoji: "iconCreateWhite", id: "modal:slowmodeAdd" }))),
       ],
     });
 

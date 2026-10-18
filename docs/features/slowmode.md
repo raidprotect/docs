@@ -31,7 +31,7 @@ Le slowmode préventif est réservé aux serveurs [Premium](/premium). Il fait p
 
 <Settings start="slowmode" />
 
-**Limites :** 5 salons régulés par serveur.
+**Limites :** 6 salons régulés par serveur.
 
 :::warning Permissions requises
 RaidProtect doit avoir la permission `Gérer les salons` dans chaque salon régulé.
@@ -78,7 +78,7 @@ L'[anti-spam](./anti-spam.mdx) sanctionne les membres qui spamment. Le slowmode 
 
 ### Combien de salons peut-on réguler ?
 
-Jusqu'à 5 salons par serveur, avec chacun son débit cible et ses bornes.
+Jusqu'à 6 salons par serveur, avec chacun son débit cible et ses bornes.
 
 ### Le slowmode préventif est-il gratuit ?
 
