@@ -5,7 +5,7 @@ export default function Privacy(): ReactNode {
   return (
     <LegalLayout
       title="Politique de confidentialité"
-      lastUpdated="Dernière mise à jour : 18 Octobre 2026"
+      lastUpdated="Dernière mise à jour : 18 octobre 2026"
       description="Découvrez comment RaidProtect protège vos données personnelles et assure la sécurité de votre vie privée en utilisant nos services. Politique de confidentialité détaillée.">
       <section>
         <p>
