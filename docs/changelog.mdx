@@ -16,6 +16,8 @@ L'Identity Update est en expérimentation : en attendant sa sortie en 3.7.0, ell
 - [Sanctions des comptes liés](./features/alt-accounts.md#modes) réglables par type, avec un mode **Piège** et une [sanction de contournement](./features/alt-accounts.md#evasion) pour le compte lié qui arrive ou écrit pendant la sanction.
 - Les comptes liés absents du serveur sont sanctionnés à leur arrivée.
 - Nouveau réglage [Un seul compte par personne](./features/alt-accounts.md#single-account) : les comptes secondaires sont mis en quarantaine.
+- Le [captcha](./features/captcha.md#activity-alts) repère les doubles comptes : il lie lui-même les comptes sûrs d'être la même personne, et propose à votre équipe les liens probables.
+- Les sanctions des comptes liés sont réservées au **Premium** et épargnent toujours les [comptes protégés](./features/alt-accounts.md#safeguards) (propriétaire, bots, modérateurs). Sans Premium, `/alt` lie et consulte les comptes sans limite.
 
 ## 3.6.0 Shield Update <span className="badge-experiment">Expérimentation</span> {#3-6-0}
 
@@ -26,27 +28,31 @@ La Shield Update est en expérimentation : en attendant sa sortie en 3.6.0, elle
 - Nouveau **[DISCON](./features/discon.md)** : un niveau de danger du serveur en cinq crans, réglable d'un clic avec la commande `/discon` ou depuis un [panneau pour l'équipe](./features/discon.md#panel). Chaque niveau durcit automatiquement le serveur (vérification, captcha, fermeture des MP, mode raid, verrouillage), et un [salon vocal](./features/discon.md#voice) affiche le niveau en cours.
 - Nouveau [slowmode préventif](./features/slowmode.md) (**Premium**) : le mode lent des salons choisis s'ajuste tout seul pour tenir le débit de messages que vous fixez.
 - [HoneyPot](./features/honeypot.md) : nouveau [délai avant sanction](./features/honeypot.md#grace), qui laisse à un membre de bonne foi le temps de dire qu'il s'est trompé.
+- Nouveau filtre [Autres serveurs](./features/server-references.md) dans l'Automod : invitations, messages transférés, liens de salon et tags d'autres serveurs, en liste noire ou en liste blanche.
+- Nouvelle sanction **Quarantaine**, synchronisée avec la [quarantaine de Discord](./features/sanctions.mdx#discord-quarantine).
+- [ScamLens](./features/scam-images.md) : [catalogue d'images](./features/scam-images.md#catalog) (**Premium**) pour bloquer vos propres images d'arnaque.
+- Chaque message bloqué par l'AutoMod de Discord crée un [avertissement](./features/sanctions.mdx) silencieux au nom de “Discord Automod”.
+- Nouvel [assistant d'installation](./setup.md#wizard) : un parcours guidé section par section, des protections proposées selon votre serveur et un aperçu de l'audit pour finir.
 - [Anti-spam](./features/anti-spam.mdx) V3, déjà en place pour tous depuis la 3.5.0 :
-  - Nouveau moteur de détection : doublons approchés, liens répétés, emojis et charabia, flood, et un spam multi-salons repéré dès 2 ou 3 salons.
+  - Nouveau moteur de détection : doublons approchés, liens répétés, emojis et charabia, flood, et le spam réparti sur plusieurs salons.
   - [Préréglages](./features/anti-spam.mdx#presets) et sanctions par famille, avec un [mode avancé](./features/anti-spam.mdx#advanced) pour régler chaque déclencheur et sa [durée](./features/anti-spam.mdx#duration).
   - [Simulation](./features/anti-spam.mdx#simulation) pour comprendre pourquoi un spam a été sanctionné ou non.
 
 ## 3.5.0 Onboarding Update (JJ/MM/2026) {#3-5-0}
 
-- Refonte de **[`/settings`](./setup.md#settings)** en tableau de bord à cinq onglets (Général, Arrivées, Protection, Modération, Utilitaires), avec des écrans et des fenêtres de saisie natives. Les écrans [Premium](/premium) restent consultables, le bot ne vous arrête qu'au moment de modifier un réglage réservé.
+- Refonte de **[`/settings`](./setup.md#settings)** en tableau de bord à cinq onglets (Général, Arrivées, Protection, Modération, Utilitaires), avec des écrans et des fenêtres de saisie natives, et une pastille **Nouveau** sur ce qui vient d'arriver. Les écrans [Premium](/premium) restent consultables, le bot ne vous arrête qu'au moment de modifier un réglage réservé.
 - Arrivées :
   - Nouveau [message de bienvenue](./features/onboarding.md#welcome-message) avec carte de bienvenue, variables et boutons, qui se tait pendant un raid.
   - Les [rôles automatiques](./features/onboarding.md#autorole) quittent le captcha et acceptent plusieurs rôles, donnés une fois la vérification passée.
   - L'[âge minimum du compte](./features/onboarding.md#minage) propose [plusieurs actions](./features/onboarding.md#minage-action) : expulser, jail jusqu'à l'âge requis ou retenir à l'entrée derrière le captcha.
   - L'[Auto RaidMode](./features/raid-mode.md#action) choisit son action pendant le raid : bloquer les invitations, expulser les arrivants (**Premium**), envoyer au captcha ou geler le captcha. Seul le blocage des invitations demande encore la communauté Discord.
   - Le [captcha](./features/captcha.md) gagne un [mode d'affichage](./features/captcha.md#display-mode) Panneau et un [déclenchement](./features/captcha.md#trigger) Automatique, Intelligent (bêta publique, **Premium**) ou En permanence. Son écran signale les salons et les rôles qui permettent de contourner la vérification, avec un bouton pour corriger.
-  - Nouvelle [détection des doubles comptes](./features/captcha.md#activity) (bêta) : en mode Panneau, le captcha s'ouvre dans l'Activity RaidProtect et signale à votre équipe les comptes probablement tenus par la même personne.
+  - En mode Panneau, le captcha s'ouvre dans l'[Activity RaidProtect](./features/captcha.md#activity) : un puzzle plus dur pour les automates, aux couleurs de votre serveur, et une revue par votre équipe en cas de doute.
+  - Nouveau [mode test](./features/captcha.md#test-mode) du captcha, pour que votre équipe le refasse sans rien appliquer.
 - Protection :
-  - [ScamLens](./features/scam-images.md) : [catalogue d'images](./features/scam-images.md#catalog) (**Premium**) pour bloquer vos propres images d'arnaque.
   - L'[Authentification Manager](./features/authentication-manager.mdx) est intégré à `/settings`, ses liens d'authentification sont traduits.
   - La [Fermeture des MP](./features/dm-lock.mdx) se règle dans une fenêtre de saisie.
 - Modération :
-  - Nouvelle sanction **Quarantaine**, synchronisée avec la [quarantaine de Discord](./features/sanctions.mdx#discord-quarantine).
   - Nouvelle commande [`/onduty`](./features/moderation.mdx#onduty) et rôle en service pour signaler les modérateurs disponibles.
   - Nouveau panneau [`/display staff`](./features/display.mdx#staff) pour informer votre équipe.
   - `/discord-sanctions` affiche des statistiques globales quand aucun utilisateur n'est précisé.
