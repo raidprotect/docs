@@ -113,7 +113,7 @@ export default function Privacy(): ReactNode {
           </li>
           <li>
             <strong>Données relatives à l'appareil et à l'utilisateur</strong> : conservées
-            365 jours à compter de la dernière interaction avec l'application web ou jusau'au
+            365 jours à compter de la dernière interaction avec l'application web ou jusqu'au
             retrait du consentement de l'utilisateur.
           </li>
         </ul>
