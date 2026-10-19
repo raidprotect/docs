@@ -45,14 +45,14 @@ Le mode Panneau garde le salon propre et permet des réglages en plus : choix de
 |---|---|
 | **En permanence**, par défaut | À chaque arrivée, sans condition. |
 | **Automatique** | Seulement pendant un raid ou un niveau DISCON élevé. Les autres arrivants entrent directement. |
-| **Intelligent (Public Beta)** ([Premium](/premium)) | Comme Automatique, plus les comptes qui semblent suspects. |
+| **Intelligent** <span className="badge-experiment">Expérimentation</span> | Comme Automatique, plus les comptes qui semblent suspects. |
 
 Avec **Automatique**, le captcha s'impose pendant un raid seulement si l'[Auto RaidMode](./raid-mode.md#action) est réglé sur “**Envoyer au captcha**” ou “**Captcha gelé pendant le raid**”, et pendant une alerte [DISCON](./discon.md) à partir du niveau 3 (en expérimentation avec la Shield Update).
 
 Le déclenchement **Intelligent** évalue le profil de chaque arrivant. Un membre approuvé à la main par votre équipe n'est jamais considéré comme suspect.
 
-:::note
-Le déclenchement intelligent est en **Public Beta**, réservée pour l'instant aux serveurs [**Premium**](/premium).
+:::info Expérimentation : Shield Update
+Le déclenchement Intelligent fait partie de la **Shield Update**, prévue pour la version 3.6.0. En attendant sa sortie, il est en expérimentation, en bêta publique pour les serveurs [Premium](/premium). Sans l'expérimentation, il n'est pas proposé.
 :::
 
 ## 🚪 Comment configurer le captcha ? {#config}
@@ -75,7 +75,7 @@ Le captcha démarre en mode **Panneau (Interactif)**, déclenché **En permanenc
 2. Ouvrez l'onglet “**Arrivées**”.
 3. Cliquez sur “**Configurer**” à côté de “**Captcha**”.
 4. Dans “**Mode d'affichage**”, choisissez “**Panneau (Interactif)**” ou “**Challenge (Classique)**”.
-5. Dans “**Déclenchement**”, choisissez “**En permanence**”, “**Automatique**” ou “**Intelligent (Public Beta)**”.
+5. Dans “**Déclenchement**”, choisissez “**En permanence**”, “**Automatique**” ou “**Intelligent**” (Shield Update).
 
 ### Vérification dans l'Activity {#activity}
 

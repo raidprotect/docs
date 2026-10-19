@@ -74,7 +74,7 @@ export function arrivalsPart({ s, flip }: Ctx): Part {
         heading("iconAntiraid", t("captcha.trigger", "Déclenchement")),
         select(t("captcha.triggerPh", "Choisir le déclenchement"), [
           { label: t("captcha.auto", "Automatique"), description: t("captcha.autoDesc", "Seulement pendant un raid ou un niveau DISCON élevé"), emoji: "iconAntiraid" },
-          { label: t("captcha.smart", "Intelligent (Public Beta)"), description: t("captcha.smartDesc", "Idem, plus les comptes qui semblent suspects"), emoji: "iconPremium" },
+          { label: t("captcha.smart", "Intelligent"), description: t("captcha.smartDesc", "Idem, plus les comptes qui semblent suspects"), emoji: "iconSearch" },
           { label: t("captcha.always", "En permanence"), description: t("captcha.alwaysDesc", "À chaque arrivée, sans condition"), emoji: "iconCaptcha", default: true },
         ]),
         sep(),
