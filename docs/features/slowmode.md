@@ -66,10 +66,6 @@ Depuis l'écran d'un salon, vous pouvez aussi :
 
 Si un modérateur utilise la [commande `/slowmode`](./moderation.mdx#slowmode) sur un salon régulé, sa valeur manuelle est appliquée et la **régulation automatique est désactivée** pour ce salon. Un message le signale. Pour relancer la régulation, réactivez-la depuis l'écran du salon dans `/settings`.
 
-## 💎 Perte du Premium {#premium-loss}
-
-Si votre serveur perd le Premium, la régulation s'arrête et chaque salon revient à son slowmode minimum. Vos réglages sont conservés : ils reprennent dès que le Premium est de retour.
-
 ## Questions fréquentes {#faq}
 
 ### Quelle différence entre le slowmode préventif et l'anti-spam ?
