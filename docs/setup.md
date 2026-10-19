@@ -56,7 +56,7 @@ Un nouvel assistant `/setup` remplace la liste de modules par un parcours guidé
 
 - **Section par section** : Général (avec la langue du serveur), Arrivées, Protection et Modération, une étape à la fois. Une **vue condensée** rassemble tout sur un seul écran, à un clic.
 - **Des propositions adaptées** : selon la taille du serveur, s'il est public, communautaire ou s'il a un tag, l'assistant précoche les protections conseillées et dit pourquoi.
-- **Plus de modules** : le [message de bienvenue](./features/onboarding.md#welcome-message) (avec son salon), le filtre [Autres serveurs](./features/server-references.md), qui supprime les invitations vers d'autres serveurs, et le [slowmode préventif](./features/slowmode.md) ([Premium](/premium)) sur le salon de votre choix. Le [DISCON](./features/discon.md) y est expliqué : il est toujours actif, sans rien installer.
+- **Plus de modules** : le [message de bienvenue](./features/onboarding.md#welcome-message) (avec son salon), le filtre [Autres serveurs](./features/automod.md#servers), qui supprime les invitations vers d'autres serveurs, et le [slowmode préventif](./features/slowmode.md) ([Premium](/premium)) sur le salon de votre choix. Le [DISCON](./features/discon.md) y est expliqué : il est toujours actif, sans rien installer.
 - **Une vérification avant de commencer** : il signale les permissions qui manquent à RaidProtect et les rôles placés au-dessus du sien, avec un bouton “**Revérifier**”.
 - **Un récapitulatif** de ce qui sera créé, modifié ou réglé. Rien n'est appliqué avant “**Installer**”.
 - **Un serveur déjà configuré est vérifié, pas refait** : le panneau du captcha en place et la fermeture des MP déjà active sont conservés.
@@ -76,7 +76,7 @@ Les réglages sont rangés en cinq onglets :
 
 - **Général** : [langue](./language.md), [commandes par messages](./guides/prefix.md), [permissions](./guides/prefix.md#permissions) et fuseau horaire du serveur.
 - **Arrivées** : [Auto RaidMode](./features/raid-mode.md), [captcha](./features/captcha.md), [âge minimum du compte](./features/onboarding.md#minage), [rôles automatiques](./features/onboarding.md#autorole) et [message de bienvenue](./features/onboarding.md#welcome-message).
-- **Protection** : [DISCON](./features/discon.md)\*, [anti-spam](./features/anti-spam.mdx), Automod ([filtre d'images](./features/scam-images.md) et [autres serveurs](./features/server-references.md)\*), [HoneyPot](./features/honeypot.md), [slowmode préventif](./features/slowmode.md)\*, [Authentification Manager](./features/authentication-manager.mdx) et [fermeture des MP](./features/dm-lock.mdx).
+- **Protection** : [DISCON](./features/discon.md)\*, [anti-spam](./features/anti-spam.mdx), [Automod](./features/automod.md) ([filtre d'images](./features/scam-images.md) et [autres serveurs](./features/automod.md#servers)\*), [HoneyPot](./features/honeypot.md), [slowmode préventif](./features/slowmode.md)\*, [Authentification Manager](./features/authentication-manager.mdx) et [fermeture des MP](./features/dm-lock.mdx).
 - **Modération** : [sanctions](./features/sanctions.mdx), [doubles comptes](./features/alt-accounts.md)\*, logs, [signalements](./features/reports.md) et [transparence](./features/transparency.md).
 - **Utilitaires** : [rôle de tag](./features/tag-role.md), [verrouillage de salon](./features/channel-lock.md), [rôle en service](./features/moderation.mdx#onduty) et mise en cache des messages.
 

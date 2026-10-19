@@ -215,7 +215,7 @@ export function protectionPart({ s, flip }: Ctx, disconState: { level: number; s
         "Les filtres qui reconnaissent un contenu déjà vu ailleurs et le retirent avant qu'il ne circule. Chacun décide de la sanction appliquée à son auteur."
       ),
       crumbs: [{ label: "Automod" }],
-      docs: "features/scam-images",
+      docs: "features/automod",
       body: [
         setting("iconScamLens", "Images", t("automod.default", "Par défaut"), configure("imageFilter", "iconScamLensWhite"), t("automod.imagesHint", "Arnaques connues, comparées par empreinte")),
         setting(
@@ -251,7 +251,7 @@ export function protectionPart({ s, flip }: Ctx, disconState: { level: number; s
       ),
       accessory: toggle(s.serverRefs, "toggle:serverRefs"),
       crumbs: [{ label: "Automod", id: "automod" }, { label: t("servers.name", "Autres serveurs") }],
-      docs: "features/server-references",
+      docs: "features/automod#servers",
       body: [
         ...SERVER_KINDS.flatMap(([, label, icon, mode]) => [
           heading(icon, label),

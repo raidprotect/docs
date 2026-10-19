@@ -58,12 +58,11 @@ const sidebars: SidebarsConfig = {
                 },
                 {
                     type: 'doc',
-                    id: 'features/scam-images',
+                    id: 'features/automod',
                 },
                 {
                     type: 'doc',
-                    id: 'features/server-references',
-                    customProps: {badges: ['experiment']},
+                    id: 'features/scam-images',
                 },
                 {
                     type: 'doc',

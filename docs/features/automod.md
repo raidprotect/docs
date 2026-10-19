@@ -1,17 +1,35 @@
 ---
-title: Autres serveurs
-description: "RaidProtect filtre les références à d'autres serveurs Discord : invitations, messages transférés, liens de salon et tags de serveur, en liste noire ou blanche."
+title: Automod
+description: "L'Automod de RaidProtect retire automatiquement les images d'arnaque et les références à d'autres serveurs Discord : invitations, messages transférés, liens de salon et tags de serveur."
 ---
 
 import Settings from '@site/src/components/DiscordMessage/mockups/v2';
 
-Le filtre **Autres serveurs** de RaidProtect contrôle ce qui renvoie vers d'autres serveurs Discord : les **invitations**, les **messages transférés** et les **liens de salon**, ainsi que les **tags de serveur** affichés par vos membres. Il bloque la publicité sauvage et les serveurs concurrents ou malveillants, sans toucher à vos partenaires.
+L'**Automod** de RaidProtect regroupe les filtres qui retirent automatiquement un contenu indésirable dès qu'il est posté. Chaque filtre a sa propre sanction pour l'auteur du message.
+
+Pour l'ouvrir :
+
+1. Faites la [commande `/settings`](../setup.md#settings).
+2. Ouvrez l'onglet “**Protection**”.
+3. Cliquez sur “**Configurer**” à côté de “**Automod**”.
+
+<Settings start="automod" />
+
+## 🖼️ Images d'arnaque {#images}
+
+Le filtre **Images** supprime les images d'arnaque connues (arnaques crypto, faux giveaways, fausses promotions de casinos) et sanctionne leur auteur. Il est **actif par défaut**, sans rien configurer.
+
+Tout le détail, la sanction et le catalogue d'images sont sur la page [Images d'arnaque](./scam-images.md).
+
+## 🔗 Autres serveurs <span className="badge-experiment">Expérimentation</span> {#servers}
+
+Le filtre **Autres serveurs** contrôle ce qui renvoie vers d'autres serveurs Discord : les **invitations**, les **messages transférés** et les **liens de salon**, ainsi que les **tags de serveur** affichés par vos membres. Il bloque la publicité sauvage et les serveurs concurrents ou malveillants, sans toucher à vos partenaires.
 
 :::info Expérimentation : Shield Update
 Le filtre Autres serveurs fait partie de la **Shield Update**, prévue pour la version 3.6.0. En attendant sa sortie, il est en expérimentation, en bêta publique pour les serveurs [Premium](/premium).
 :::
 
-## ❓ Comment ça marche ? {#working}
+### Comment ça marche ? {#servers-working}
 
 Trois comportements se règlent séparément, chacun sur l'un de ces modes :
 
@@ -27,23 +45,20 @@ Trois comportements se règlent séparément, chacun sur l'un de ces modes :
 
 Votre propre serveur passe toujours, et votre équipe (permissions **Gérer le serveur** ou **Gérer les messages**) n'est jamais visée.
 
-## 🛠️ Configuration {#config}
+### Configuration {#servers-config}
 
-1. Faites la [commande `/settings`](../setup.md#settings).
-2. Ouvrez l'onglet “**Protection**”.
-3. Cliquez sur “**Configurer**” à côté de “**Automod**”.
-4. Cliquez sur “**Configurer**” à côté de “**Autres serveurs**”.
-5. Activez le filtre avec l'interrupteur en haut à droite, puis choisissez un mode pour chaque comportement.
+1. Dans l'Automod, cliquez sur “**Configurer**” à côté de “**Autres serveurs**”.
+2. Activez le filtre avec l'interrupteur en haut à droite, puis choisissez un mode pour chaque comportement.
 
 <Settings start="serverRefs" />
 
-### Sanction {#sanction}
+### Sanction {#servers-sanction}
 
 Chaque message refusé est supprimé. Dans “**Sanction des messages supprimés**”, choisissez en plus une sanction pour son auteur, ou “**Message supprimé seulement**”. Pour un timeout, un mute, un jail ou un bannissement, choisissez aussi sa durée.
 
 La sanction s'applique au plus une fois par minute et par membre : un membre qui colle plusieurs invitations d'affilée n'est sanctionné qu'une fois.
 
-### Listes de serveurs {#lists}
+### Listes de serveurs {#servers-lists}
 
 1. Cliquez sur “**Ajouter un serveur**”.
 2. Collez une invitation du serveur, ou à défaut son [identifiant](../guides/id.mdx). L'invitation est conseillée : elle donne aussi le nom du serveur.
@@ -57,7 +72,7 @@ Un serveur déjà présent change simplement de liste. “**Retirer**” enlève
 Pour n'autoriser que les invitations de vos partenaires, réglez “**Invitation**” sur “**Liste blanche**” et ajoutez vos partenaires à la liste blanche. Une liste blanche vide refuse toutes les invitations vers d'autres serveurs.
 :::
 
-## 📑 Logs {#logs}
+### Logs {#servers-logs}
 
 Chaque sanction et chaque quarantaine sont notées dans vos [logs de modération](./moderation.mdx#logs), avec le serveur et le salon concernés. Les sanctions apparaissent dans l'[historique des sanctions](./sanctions.mdx), avec les motifs « Invitation vers un serveur refusé », « Message transféré ou lien de salon d'un serveur refusé » ou « Tag d'un serveur refusé ».
 
@@ -65,7 +80,7 @@ Chaque sanction et chaque quarantaine sont notées dans vos [logs de modération
 
 ### Mes partenaires peuvent-ils toujours partager leur invitation ?
 
-Oui. Ajoutez-les à la liste blanche, ou laissez-les hors de la liste noire.
+Oui. Ajoutez-les à la liste blanche du filtre Autres serveurs, ou laissez-les hors de la liste noire.
 
 ### Que se passe-t-il quand un membre retire le tag refusé ?
 
@@ -73,4 +88,4 @@ Sa quarantaine est levée automatiquement.
 
 ### Les modérateurs sont-ils filtrés ?
 
-Non. Les membres qui ont la permission Gérer le serveur ou Gérer les messages ne sont jamais visés.
+Non. Les membres qui ont la permission Gérer le serveur ou Gérer les messages ne sont jamais visés par le filtre Autres serveurs.
