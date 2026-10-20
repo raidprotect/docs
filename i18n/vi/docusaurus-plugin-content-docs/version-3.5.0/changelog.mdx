@@ -1,0 +1,369 @@
+---
+title: Có gì mới
+---
+
+import SuggestionLink from '@site/src/components/SuggestionLink';
+
+Khám phá danh sách chi tiết các thay đổi đã được thực hiện trên RaidProtect.
+
+## 3.7.0 Identity Update <span className="badge-experiment">Thử nghiệm</span> {#3-7-0}
+
+:::info Thử nghiệm
+Identity Update đang thử nghiệm: trong khi chờ phát hành ở phiên bản 3.7.0, nó ở dạng bản beta công khai cho các máy chủ [Premium](/vi/premium). Nội dung của nó vẫn có thể thay đổi.
+:::
+
+- Lệnh mới [`/alt`](./features/alt-accounts.md#alt) và [tài khoản phụ](./features/alt-accounts.md): liên kết các tài khoản của cùng một người, chọn tài khoản chính của họ, và các hình phạt của họ (cấm, đuổi, mute, jail, timeout, softban) được mở rộng sang các tài khoản liên kết. Gỡ hình phạt của một tài khoản là gỡ cho tất cả.
+- [Hình phạt cho tài khoản liên kết](./features/alt-accounts.md#modes) có thể chỉnh theo từng loại, với chế độ **Bẫy** và một [hình phạt né tránh](./features/alt-accounts.md#evasion) cho tài khoản liên kết xuất hiện hoặc viết tin nhắn trong lúc có hình phạt.
+- Các tài khoản liên kết vắng mặt trên máy chủ bị xử phạt khi họ xuất hiện.
+- Thiết lập mới [Mỗi người một tài khoản](./features/alt-accounts.md#single-account): các tài khoản phụ bị cách ly.
+- [Captcha](./features/captcha.md#activity-alts) phát hiện tài khoản phụ: nó tự liên kết các tài khoản chắc chắn là cùng một người, và đề xuất cho đội ngũ của bạn các liên kết có khả năng.
+- [Hình phạt cho tài khoản liên kết](./features/alt-accounts.md#modes) dành riêng cho **Premium**. Không có Premium, `/alt` liên kết và xem các tài khoản không giới hạn.
+
+## 3.6.0 Shield Update <span className="badge-experiment">Thử nghiệm</span> {#3-6-0}
+
+:::info Thử nghiệm
+Shield Update đang thử nghiệm: trong khi chờ phát hành ở phiên bản 3.6.0, nó ở dạng bản beta công khai cho các máy chủ [Premium](/vi/premium). Nội dung của nó vẫn có thể thay đổi.
+:::
+
+- **[DISCON](./features/discon.md)** mới: một mức nguy hiểm của máy chủ gồm năm nấc, chỉnh chỉ với một cú nhấp bằng lệnh `/discon` hoặc từ một [bảng dành cho đội ngũ](./features/discon.md#panel). Mỗi cấp tự động siết chặt máy chủ (xác minh, captcha, đóng tin nhắn riêng, chế độ raid, khóa hoàn toàn), và một [kênh thoại](./features/discon.md#voice) hiển thị cấp hiện tại.
+- [Slowmode phòng ngừa](./features/slowmode.md) mới (**Premium**): chế độ chậm của các kênh được chọn tự điều chỉnh để giữ tốc độ tin nhắn mà bạn đặt.
+- [HoneyPot](./features/honeypot.md): [thời gian chờ trước khi xử phạt](./features/honeypot.md#grace) mới, cho một thành viên thiện chí thời gian để nói rằng mình đã nhầm.
+- [Kích hoạt Thông minh](./features/captcha.md#trigger) mới của captcha: ngoài các đợt raid, nó kiểm tra những người vào có tài khoản trông đáng ngờ.
+- Bộ lọc [Máy chủ khác](./features/automod.md#servers) mới trong [Automod](./features/automod.md): lời mời, tin nhắn được chuyển tiếp, liên kết kênh và tag của các máy chủ khác, theo danh sách chặn hoặc danh sách cho phép.
+- Hình phạt **Cách ly** mới, đồng bộ với [cách ly của Discord](./features/sanctions.mdx#discord-quarantine).
+- [ScamLens](./features/scam-images.md): [danh mục hình ảnh](./features/scam-images.md#catalog) (**Premium**) để chặn các hình ảnh lừa đảo của riêng bạn.
+- Mỗi tin nhắn bị AutoMod của Discord chặn tạo một [cảnh cáo](./features/sanctions.mdx) im lặng mang tên “Discord Automod”.
+- [Trình hướng dẫn cài đặt](./setup.md#wizard) mới: một lộ trình có hướng dẫn từng phần một, các biện pháp bảo vệ được đề xuất theo máy chủ của bạn và một bản xem trước của bản kiểm tra để kết thúc.
+- [Chống spam](./features/anti-spam.mdx) V3, đã áp dụng cho tất cả từ phiên bản 3.5.0:
+  - Công cụ phát hiện mới: tin nhắn gần giống nhau, liên kết lặp lại, emoji và tin nhắn vô nghĩa, flood, và spam trải rộng trên nhiều kênh.
+  - [Mẫu có sẵn](./features/anti-spam.mdx#presets) và hình phạt theo nhóm, với [chế độ nâng cao](./features/anti-spam.mdx#advanced) để chỉnh từng trình kích hoạt và [thời lượng](./features/anti-spam.mdx#duration) của nó.
+
+## 3.5.0 Onboarding Update (19/10/2026) {#3-5-0}
+
+- Thiết kế lại **[`/settings`](./setup.md#settings)**: một bảng điều khiển năm thẻ (Chung, Thành viên mới, Bảo vệ, Kiểm duyệt, Tiện ích), với giao diện mới của Discord (Components V2) và các cửa sổ nhập liệu cho những thiết lập cần nhập văn bản. Một huy hiệu **Mới** đánh dấu các thiết lập mới. Các thiết lập [Premium](/vi/premium) vẫn hiển thị: Premium chỉ được yêu cầu khi bạn muốn sửa chúng.
+- Thành viên mới:
+  - [Tin nhắn chào mừng](./features/onboarding.md#welcome-message) mới, với thẻ chào mừng mang tên thành viên, các biến và các nút. Tin nhắn không được gửi khi chế độ raid hoặc Đóng tham gia đang hoạt động, để không chào đón các tài khoản của một đợt raid.
+  - [Vai trò tự động](./features/onboarding.md#autorole) nay có thiết lập riêng, tách khỏi thiết lập của captcha, và chấp nhận nhiều vai trò. Chúng được cấp sau khi xác minh xong.
+  - [Tuổi tối thiểu của tài khoản](./features/onboarding.md#minage) đề xuất [nhiều hành động](./features/onboarding.md#minage-action): đuổi tài khoản quá mới, jail tài khoản đó đến khi đủ tuổi, hoặc chặn nó ở một captcha mà nó chỉ giải được khi đã đủ tuổi.
+  - Bạn chọn cách [Auto RaidMode](./features/raid-mode.md#action) phản ứng trong một đợt raid: chặn lời mời, đuổi những người vào (**Premium**), gửi họ tới captcha, hoặc bắt họ chờ ở captcha đến khi đợt raid kết thúc. Chỉ việc chặn lời mời vẫn cần máy chủ đã bật cộng đồng Discord.
+  - [Captcha](./features/captcha.md) có thêm [chế độ hiển thị](./features/captcha.md#display-mode) Bảng và [kích hoạt](./features/captcha.md#trigger) Tự động hoặc Luôn luôn. Phần cấu hình của nó báo các kênh và vai trò cho phép qua mặt việc xác minh, kèm một nút để sửa chúng.
+  - Ở chế độ Bảng, captcha [mở mà không cần rời Discord](./features/captcha.md#activity): một câu đố khó hơn với robot, mang màu sắc của máy chủ bạn. Nếu một kết quả đáng ngờ, đội ngũ của bạn nhận được báo cáo và quyết định có cho thành viên vào hay không.
+  - [Chế độ thử](./features/captcha.md#test-mode) mới: đội ngũ của bạn có thể làm captcha để thử, mà không có hành động nào được áp dụng.
+- Bảo vệ:
+  - [Authentification Manager](./features/authentication-manager.mdx) nay được cấu hình trong `/settings`, và các trang xác thực của nó đã được dịch.
+  - [Đóng tin nhắn riêng](./features/dm-lock.mdx) được chỉnh trong một cửa sổ nhập liệu.
+- Kiểm duyệt:
+  - Lệnh mới [`/onduty`](./features/moderation.mdx#onduty) và vai trò đang trực để báo những người kiểm duyệt đang sẵn sàng.
+  - Các bảng mới [`/display staff`](./features/display.mdx#staff), để đăng trong các kênh staff của bạn: nhận vai trò, vào ca trực, nhắc lại các lệnh hữu ích.
+  - `/discord-sanctions` hiển thị thống kê chung khi không chỉ định người dùng nào.
+- Tiện ích:
+  - Lệnh mới [`/inviteinfo`](./features/utilities.mdx#inviteinfo). `/userinfo` và `/inviteinfo` cũng cài được vào tài khoản của bạn, để dùng ở mọi nơi.
+  - Lệnh mới [`/privacy`](./features/utilities.mdx#privacy), và thiết lập mới **Lưu đệm tin nhắn**, cần thiết để [`/snipe`](./guides/malfunctions.md#snipe) tìm lại được các tin nhắn đã xóa.
+  - [`/feedback`](./features/utilities.mdx#feedback) đề xuất một chẩn đoán khi bạn báo vấn đề về chống spam.
+- Chung:
+  - RaidProtect nay nói [11 ngôn ngữ](./language.md) với sự xuất hiện của tiếng Ý, Thổ Nhĩ Kỳ, Việt, Nhật và Trung giản thể và phồn thể. Theo mặc định, nó [theo ngôn ngữ của máy chủ](./language.md#follow).
+  - [Múi giờ](./setup.md#timezone) mới của máy chủ, được dùng cho các bản tóm tắt minh bạch.
+  - [Lệnh bằng tin nhắn](./guides/prefix.md) và [quyền](./guides/prefix.md#permissions) của chúng được chỉnh trong hai màn hình riêng. Các quyền lệnh được chỉnh trong Discord (Tích hợp) cũng áp dụng cho các hình phạt của menu “Xử phạt” (nhấp chuột phải vào một thành viên).
+  - [Tùy chỉnh bot](./setup.md#customize) (**Premium**) nay được chỉnh trong `/settings`.
+- Nhiều sửa lỗi và sửa bản dịch.
+
+## 3.4.0 Antispam Update (18/07/2026) {#3-4-0}
+
+- [Chống spam](./features/anti-spam.mdx) V2:
+  - **Spam nhiều kênh**: một hình phạt riêng khi spam lan sang nhiều kênh (mặc định Jail, tối thiểu Timeout).
+  - [Trình kích hoạt](./features/anti-spam.mdx#triggers) mới **spam tệp đính kèm** (tắt theo mặc định).
+  - [Mô phỏng](./features/anti-spam.mdx#simulation) để hiểu vì sao một vụ spam bị xử phạt hay không.
+  - Các tin nhắn spam nay **bị xóa bất kể hình phạt** (cấm, jail, mute, kick hoặc timeout).
+  - **Hình phạt chống lừa đảo có thể cấu hình** từ [menu hình phạt của chống spam](./features/anti-spam.mdx#triggers) và theo mặc định theo [hình phạt của HoneyPot](./features/honeypot.md#sanction); các sự cố lừa đảo bị xử phạt và ghi nhật ký ngay lập tức.
+  - Mỗi trình kích hoạt có thể được tắt riêng với tùy chọn **Tắt** mới, và các mức độ nhạy được thay bằng một công tắc đơn giản.
+  - Các hình phạt **Mute** và **Jail** chuyển sang một timeout có giới hạn khi vai trò tương ứng chưa được cấu hình.
+  - Các selfbot gửi rich embed được phát hiện, và các vụ lừa đảo bị ScamLens chặn được tính vào bộ đếm tài khoản bị báo của [HoneyPot](./features/honeypot.md).
+- Thiết kế lại hoàn toàn hệ thống **[Báo cáo](./features/reports.md)**:
+  - Các báo cáo nay được gộp thành **sự cố**: nhiều báo cáo nhắm vào cùng một thành viên được gập vào một sự cố duy nhất, với một [chế độ gộp nhóm có thể cấu hình](./features/reports.md#group).
+  - Các lệnh báo cáo nay mở một **cửa sổ lý do**, với danh sách “bạn đang báo cáo điều gì” trên các báo cáo hồ sơ (gồm hoạt động trong kênh thoại và tin nhắn riêng).
+  - Mỗi sự cố nay mở một **luồng** bên dưới báo cáo: thẻ hồ sơ của thành viên bị báo cáo, tiêu đề lý do theo từng tin nhắn, tên người kiểm duyệt giải quyết và ghi chú từ chối.
+  - [Thông báo cho người báo cáo](./features/reports.md#notify) mới: người báo cáo có thể được thông báo qua tin nhắn riêng khi báo cáo của họ được xử lý, với mức chi tiết có thể cấu hình (đến tận kết luận chấp nhận/từ chối).
+  - [Vai trò tin cậy](./features/reports.md#trusted-role) mới (**Premium**): các thành viên tin cậy có thể áp dụng một **timeout phòng ngừa 24 giờ** khi báo cáo, và các báo cáo khẩn cấp của họ nhắc lại vai trò kiểm duyệt.
+  - [Biện pháp bảo vệ chống người báo cáo xấu](./features/reports.md#bad-reporters) mới: những người báo cáo sai tái phạm có thể được phát hiện, chặn hoặc xử phạt tự động (ngưỡng, khung thời gian và chế độ có thể cấu hình).
+  - Các sự cố đang mở tự động được đóng khi thành viên bị xử phạt.
+  - Các hình phạt phòng ngừa được viết lại khi một báo cáo được chấp nhận, và bị hủy khi nó bị từ chối.
+- Hệ thống **[Minh bạch](./features/transparency.md)** mới:
+  - [Tóm tắt định kỳ](./features/transparency.md#recaps) về hoạt động kiểm duyệt của máy chủ, được đăng tự động theo một lịch có thể cấu hình.
+  - [Modlog công khai](./features/transparency.md#modlog) mới: các hình phạt có thể được đăng trong một kênh công khai, lọc theo loại và nguồn, với việc tạo chỉ bằng một cú nhấp một kênh #public-modlog chỉ đọc.
+  - [Lệnh `/transparency`](./features/transparency.md#command) mới để hiển thị theo yêu cầu bản tóm tắt của kỳ vừa qua.
+- [Lệnh `/audit`](./features/audit.md) mới: một **bản kiểm tra bảo mật** đầy đủ của máy chủ với điểm tổng, các [mục kiểm tra chi tiết](./features/audit.md#checks) (mức độ xác minh, quyền, kênh) và [cách sửa chỉ với một cú nhấp](./features/audit.md#fix). Các vai trò quản trị có thể được tích hợp vào Authentification Manager trực tiếp từ bản kiểm tra.
+- [Chế độ đuổi](./features/raid-mode.md#kick-mode) mới (**Premium**) cho chế độ raid và Đóng tham gia: những người mới vào bị đuổi kèm một tin nhắn riêng giải thích và một nút lời mời để quay lại, thay cho chế độ tạm dừng lời mời gốc. [Lệnh `/bypass raid`](./features/raid-mode.md#bypass-raid) mới cho phép những người dùng cụ thể vào trong lúc nó đang hoạt động.
+- [Lệnh bằng tin nhắn](./guides/prefix.md#permissions) nay có thể theo **quyền lệnh của Discord** (thẻ Tích hợp) qua một tùy chọn mới của `/settings`.
+- RaidProtect nay trả lời bên dưới các **cảnh báo an ninh của Discord** khi chúng do [Đóng tin nhắn riêng](./features/dm-lock.mdx) gây ra, trích dẫn cảnh báo và giải thích nơi chỉnh thiết lập.
+- Nhật ký đuổi của [tuổi tài khoản tối thiểu](./features/raid-mode.md#minage) nay hiển thị ngưỡng yêu cầu dưới dạng dấu thời gian.
+- Thiết lập và cài đặt:
+  - Menu chính của `/settings` được sắp xếp lại thành các dòng hợp lý.
+  - Tin nhắn cài đặt nay liên kết trực tiếp các lệnh và đề xuất một nút để đổi kênh nhật ký.
+  - Một nút **tắt captcha** được đề xuất khi kênh captcha đã bị xóa.
+- Chuyển nội bộ lớp Discord sang các thư viện dùng chung (`@fca.gg/discord`) để đẩy nhanh các bản cập nhật sắp tới.
+- Sửa lỗi:
+  - Thông báo lỗi rõ ràng hơn, phân biệt **timeout** và **mute**, và các đối tượng quản trị viên với các chặn do thứ bậc vai trò.
+  - Sửa việc chuyển đổi tự động các timeout của AutoMod Discord.
+  - Sửa `/serverinfo`: truy cập URL tùy chỉnh, quy tắc và thống kê.
+  - Sửa bí danh `/discord-sanctions` và cách dùng tiền tố của các lệnh bằng tin nhắn.
+  - Sửa Jail áp dụng cho quản trị viên ở chế độ thay thế vai trò.
+  - Siết chặt việc kiểm tra URL webhook.
+  - Nhiều sửa lỗi: nhật ký hình phạt, captcha, tin nhắn của Đóng tin nhắn riêng, ghi chú kiểm duyệt, phát hiện Premium.
+  - Nhiều sửa bản dịch.
+
+## 3.3.3 (30/04/2026) {#3-3-3}
+
+- [Lệnh `/modview`](./features/moderation.mdx#modview) mới để mở chế độ xem kiểm duyệt tập trung của một thành viên (hình phạt, ghi chú, snipe). <SuggestionLink id="544" />
+- [Lệnh `/note`](./features/moderation.mdx#note) mới để thêm hoặc sửa ghi chú kiểm duyệt của một thành viên. <SuggestionLink id="545" />
+- [Lệnh `/nick`](./features/moderation.mdx#nick) mới để đổi hoặc đặt lại biệt danh của một thành viên trên máy chủ.
+- Tùy chỉnh **ảnh đại diện**, **biểu ngữ** và **kiểu chữ biệt danh** của RaidProtect (**Premium**).
+- Mô-đun **[HoneyPot](./features/honeypot.md)** mới: một kênh bẫy tự động xử phạt các tài khoản bị chiếm và bot spam, và bổ sung vào danh mục ScamLens. <SuggestionLink id="560" />
+- Phân tích cú pháp mới cho các lệnh bằng tin nhắn.
+- Tự động gợi ý trong các tham số `duration` của lệnh slash.
+- Hình phạt:
+  - [Lệnh `/softban`](./features/moderation.mdx#softban) mới để cấm rồi bỏ cấm một thành viên nhằm xóa tin nhắn của họ.
+  - [Tùy chọn `silent`](./features/moderation.mdx) mới trên mọi lệnh xử phạt để không thông báo cho đối tượng qua tin nhắn riêng. <SuggestionLink id="545" />
+  - [Tham số `delete-messages`](./features/moderation.mdx#ban) mới trên các lệnh `/ban` và `/tempban` để xóa lịch sử tin nhắn.
+  - Chế độ mới [Thay thế bằng vai trò jail](./features/sanctions.mdx#jail-roles): hình phạt Jail gỡ mọi vai trò của thành viên trong thời gian bị giam và khôi phục chúng khi họ được thả <SuggestionLink id="552" />
+  - Có thể [tắt hoàn toàn các hình phạt](./features/sanctions.mdx#disable) trên máy chủ.
+  - Có thể thêm một [lý do vào `/sanctions delete`](./features/sanctions.mdx#delete).
+  - Hiển thị **thời lượng cuối cùng** bên cạnh dấu thời gian trong nhật ký của các hình phạt có thời lượng.
+  - Cải thiện việc theo dõi biên nhận tin nhắn riêng của hình phạt: đã nhận, tin nhắn riêng đã đóng, hết hạn, im lặng.
+  - Nút kèm **lời mời vào máy chủ** trong các tin nhắn riêng thông báo sau một kick, một softban hoặc một lệnh cấm tạm thời. <SuggestionLink id="570" />
+- [Lệnh `/serverinfo`](./features/utilities.mdx#serverinfo) mới để xem thông tin máy chủ. <SuggestionLink id="264" />
+- [Lệnh `/snipe`](./features/moderation.mdx#snipe) mới để lấy lại tin nhắn bị xóa gần nhất của một kênh hoặc một người dùng trong giờ vừa qua (giải pháp tạm thời trong khi chờ cập nhật nhật ký).
+- [Lệnh `/feedback`](./features/utilities.mdx#feedback) mới để chia sẻ một ý kiến, một đề xuất hoặc báo lỗi trực tiếp từ Discord.
+- Chọn một **thời lượng** cho các hình phạt do [chống spam](./features/anti-spam.mdx#duration) áp dụng. <SuggestionLink id="559" />
+- Có thể **tự động đóng tin nhắn riêng** khi kích hoạt [auto raid mode](./features/raid-mode.md#close-dm). <SuggestionLink id="521" />
+- Các timeout do AutoMod của Discord áp dụng được tự động [chuyển thành mute theo vai trò](./features/sanctions.mdx#mute-threshold) khi vượt ngưỡng mute đã cấu hình (ở dạng **bản beta công khai cho các máy chủ Premium**).
+- Tham số `[duration]` mới trên các lệnh [`/lock`](./features/channel-lock.md#lock-duration) và [`/slowmode`](./features/moderation.mdx#slowmode) để áp dụng thay đổi tạm thời. <SuggestionLink id="515" />
+- Sửa lỗi:
+  - Sửa lỗi về việc hết hạn của các hình phạt.
+  - Nhiều sửa bản dịch.
+
+## 3.3.2 (20/03/2026) {#3-3-2}
+
+- Hệ thống **[Authentification Manager](./features/authentication-manager.mdx)** (AM) mới để bảo vệ quyền truy cập các vai trò Discord bằng xác thực.
+  - [Lệnh `/auth`](./features/authentication-manager.mdx#auth) mới để xác thực và nhận một vai trò được bảo vệ.
+  - [Lệnh `/auth-profile`](./features/authentication-manager.mdx#auth-profile) mới để quản lý hồ sơ xác thực của bạn (PIN, OTP, passkey).
+  - [Lệnh `/auth-settings`](./features/authentication-manager.mdx#auth-settings) mới để cấu hình các vai trò được bảo vệ và những người dùng được phép.
+  - Hệ thống [cấp bảo mật](./features/authentication-manager.mdx#grades) (S đến E) dựa trên các phương thức đã cấu hình.
+  - Hỗ trợ [passkey (WebAuthn)](./features/authentication-manager.mdx#methods), [mã PIN](./features/authentication-manager.mdx#methods) (đơn giản và tăng cường) và [OTP (2FA)](./features/authentication-manager.mdx#methods).
+  - Các phiên tạm thời với việc hết hạn và thu hồi tự động.
+  - Hệ thống người quản lý với giới hạn quyền.
+- Nhật ký:
+  - Công cụ nhật ký mới để chuẩn bị cho một bản cập nhật riêng.
+  - Nhật ký xóa hàng loạt của `/clear`.
+  - Nhật ký các thay đổi thiết lập Anti-Scam và Auto RaidMode.
+- Hệ thống **Premium** mới.
+  - Tăng giới hạn cho Authentification Manager và các bảng thông tin.
+  - [Tên các hình phạt](./features/sanctions.mdx#custom-names) có thể tùy chỉnh (tên, động từ và cách diễn đạt trong tin nhắn riêng).
+  - Truy cập sớm các tính năng thử nghiệm mới.
+- Phát hiện và ngăn chặn việc mạo danh RaidProtect.
+- Sửa lỗi:
+  - Sửa lỗi unmute và untimeout.
+  - Sửa phần cài đặt Jail.
+  - Sửa lỗi “antispam bị chặn” trên một số máy chủ.
+  - Nhiều sửa bản dịch.
+- Hiệu năng và độ ổn định:
+  - Tối ưu bộ nhớ đệm của thành viên, quyền và tin nhắn.
+  - Việc hết hạn của các hình phạt nay chính xác đến từng giây.
+
+## 3.3.1 (09/02/2026) {#3-3-1}
+
+- [Quốc tế hóa](./language.md) (thêm tiếng Đức, Tây Ban Nha và Bồ Đào Nha).
+- Hệ thống **[Jail](./features/sanctions.mdx#jail)** mới.
+  - [Lệnh `/jail`](./features/moderation.mdx#jail) mới để đưa một thành viên vào jail.
+  - [Lệnh `/tempjail`](./features/moderation.mdx#tempjail) mới để đưa tạm thời một thành viên vào jail.
+  - [Lệnh `/unjail`](./features/moderation.mdx#unjail) mới để thả một thành viên.
+  - Cấu hình vai trò Jail và kênh thông tin qua `/settings`.
+- Hệ thống **[Mute theo vai trò](./features/sanctions.mdx#mute)** mới: vượt quá một [ngưỡng có thể cấu hình](./features/sanctions.mdx#mute-threshold), bot gán một vai trò Mute thay cho timeout của Discord.
+  - Các lệnh `/timeout` và `/untimeout` trở thành [`/mute`](./features/moderation.mdx#timeout) và [`/unmute`](./features/moderation.mdx#untimeout). Timeout của Discord vẫn được dùng mặc định dưới ngưỡng.
+  - Tham số mới `[force_timeout]` để buộc dùng timeout của Discord bất kể thời lượng.
+- [Xử phạt qua menu ngữ cảnh](./features/moderation.mdx#context-menu) (nhấp chuột phải vào một hồ sơ).
+- [Lệnh `/my-sanctions`](./features/utilities.mdx#my-sanctions) mới để cho phép các thành viên xem hình phạt của chính họ.
+- Thiết lập mới [Quyền riêng tư của hình phạt](./features/sanctions.mdx#sanctions-privacy) để kiểm soát quyền truy cập các hình phạt cá nhân.
+- Thiết lập mới [Hiển thị nội dung đa phương tiện](./features/sanctions.mdx#show-medias) trong lý do hình phạt.
+- Thiết kế lại giao diện các bộ lọc trong [`/sanctions search`](./features/sanctions.mdx#search) và thêm bộ lọc [loại người kiểm duyệt](./features/sanctions.mdx#search).
+- [Nhập / Xuất hình phạt](./features/sanctions.mdx#import-export) qua bot hỗ trợ.
+- Hệ thống **[Bảng thông tin](./features/display.mdx)** (`/display public`).
+- Hệ thống **[chặn thành viên](./features/utilities.mdx#block)** mới khỏi một số tính năng của RaidProtect trên một máy chủ.
+  - [Lệnh `/block add`](./features/utilities.mdx#block-add) mới.
+  - [Lệnh `/block remove`](./features/utilities.mdx#block-remove) mới.
+  - [Lệnh `/block list`](./features/utilities.mdx#block-list) mới.
+- [Lệnh `/prune`](./features/utilities.mdx#prune) mới để dọn các thành viên không hoạt động với các điều kiện chính xác hơn. <SuggestionLink id="256" />
+- [Lệnh `/channel clear`](./features/utilities.mdx#channel-clear) mới để xóa và tạo lại một kênh. <SuggestionLink id="543" />
+- Nhật ký cho các lệnh `/bypass`. <SuggestionLink id="546" />
+- Mô-đun **Anti-Scam** mới.
+- Sửa lỗi:
+  - Cải thiện việc xử lý captcha.
+  - Sửa việc kiểm tra tiền tố.
+  - Sửa bản dịch.
+- Hiệu năng và độ ổn định:
+  - Framework dịch thuật mới ([`@fca.gg/hermes` v1.2.1](https://github.com/FCAgreatgoals/hermes)).
+
+## 3.3.0 Moderation Update (19/12/2025) {#3-3-0}
+
+- Tính năng mới **[Lịch sử hình phạt](./features/sanctions.mdx)**.
+  - [Lệnh `/sanctions search`](./features/sanctions.mdx#search) mới.
+  - [Lệnh `/sanctions info`](./features/sanctions.mdx#info) mới.
+  - [Lệnh `/sanctions edit`](./features/sanctions.mdx#edit) mới.
+  - [Lệnh `/sanctions delete`](./features/sanctions.mdx#delete) mới.
+  - Các hình phạt của automod được thêm vào lịch sử hình phạt.
+  - Các lệnh cấm, đuổi và timeout được thêm vào lịch sử và ghi nhật ký. <SuggestionLink id="151" />
+  - Biên nhận của tin nhắn riêng thông báo hình phạt.
+- Nhật ký mới cho các hình phạt.
+- Có thể cấu hình một kênh nhật ký riêng cho các hình phạt.
+- [Lệnh `/warn`](./features/moderation.mdx#warn) mới. <SuggestionLink id="52" />
+- [Lệnh `/untimeout`](./features/moderation.mdx#untimeout) mới. <SuggestionLink id="52" />
+- [Lệnh `/tempban`](./features/moderation.mdx#tempban) mới. <SuggestionLink id="524" />
+- [RaidMode](./features/raid-mode.md#raid-mode) và [Auto RaidMode](./features/raid-mode.md#duration) tự động tắt sau một khoảng thời gian. <SuggestionLink id="37" />
+- Tham số mới [duration] cho [lệnh `/raidmode`](./features/raid-mode.md#raid-mode). <SuggestionLink id="37" />
+- [Lệnh `/joinlock`](./features/join-lock.mdx) mới để đóng lời mời vô thời hạn.
+- [Lệnh `/channel duplicate`](./features/utilities.mdx#channel-duplicate) mới để nhân bản nguyên vẹn một kênh. <SuggestionLink id="225" />
+- Lệnh `/changelog` mới và các nút trong `/settings` và `/about` để xem nhật ký thay đổi.
+- Biên nhận của tin nhắn riêng về [Tuổi tối thiểu](./features/raid-mode.md#minage).
+- Sửa lỗi:
+  - Cải thiện việc xử lý thời gian chờ.
+  - Sửa nhiều lỗi dịch thuật.
+  - Tăng kích thước tối đa của lý do hình phạt (512).
+- Hiệu năng và độ ổn định:
+  - Tối ưu bộ nhớ đệm tin nhắn.
+  - Tối ưu việc lưu trữ trong cơ sở dữ liệu.
+  - Quản lý việc hết hạn của hình phạt (`@fca.gg/midway` v1.3.2).
+  - Thiết kế lại việc quản lý emoji ([`@fca.gg/glyph` v1.1.1](https://github.com/FCAgreatgoals/glyph)).
+
+## 3.2.1 (03/09/2025) {#3-2-1}
+
+- [Lệnh `/ds`](./features/utilities.mdx#discord-sanctions) mới cho phép xem các hình phạt Discord của một người dùng.
+- Chống spam nay có thể chặn spam Lệnh Slash.
+- Trình kích hoạt chống spam mới: [Spam lệnh bên ngoài](./features/anti-spam.mdx#triggers).
+- [Lệnh `/slowmode`](./features/moderation.mdx#slowmode) mới cho phép bật hoặc sửa chế độ chậm của một kênh.
+- [Lệnh `/unban`](./features/moderation.mdx#unban) mới. <SuggestionLink id="296" />
+- [Lệnh `/bypass captcha`](./features/captcha.md#bypass) mới để chấp nhận một người dùng không giải được captcha.
+- Tham số mới [reason] cho các [lệnh `/lock` và `/unlock`](./features/channel-lock.md). <SuggestionLink id="516" />
+- Sửa lỗi:
+  - Nhiều lỗi dịch thuật.
+  - Tính đến **lý do** tốt hơn trong lệnh `/timeout`.
+  - Tối ưu thời gian khởi động của bot và thời gian thực thi lệnh.
+  - Sửa việc diễn giải và kiểm tra các lệnh dùng tiền tố.
+  - Sửa các lỗi liên quan đến **ảnh đại diện mặc định**.
+
+## 3.2.0 Protection Update (10/07/2025) {#3-2-0}
+
+- Tính năng mới [Đóng tin nhắn riêng](./features/dm-lock.mdx).
+- Chọn các [hình phạt](./features/anti-spam.mdx#triggers) mà chống spam áp dụng. <SuggestionLink id="85" />
+- [Nhật ký chống spam](./features/anti-spam.mdx#logs) mới (rõ hơn về các lần phát hiện).
+- Bật [tuổi tài khoản tối thiểu](./features/raid-mode.md#minage) mà không cần captcha. <SuggestionLink id="314" />
+- [Lệnh /bypass minage](./features/raid-mode.md#bypass-minage) mới để chấp nhận một người dùng chưa đủ tuổi tài khoản yêu cầu. <SuggestionLink id="447" />
+- Thiết kế lại hoàn toàn [lệnh `/userinfo`](./features/utilities.mdx#userinfo).
+- Nhật ký mới khi có các thay đổi quan trọng trong cấu hình bot.
+- Sửa lỗi:
+  - Chống spam nay hoạt động trong các luồng.
+  - [Lệnh `/lock`](./features/channel-lock.md) nay hỗ trợ các kênh diễn đàn, media và khóa các luồng cùng với kênh.
+  - [Captcha](./features/captcha.md) không còn chặn các thành viên mới khi bot không có đủ quyền cần thiết.
+  - Sửa lỗi của [lệnh `/clear`](./features/moderation.mdx#clear) khi bot không có đủ quyền cần thiết trong một kênh.
+- Cải thiện UI/UX:
+  - Làm rõ khả năng viết vào các select menu của thành viên, vai trò và kênh.
+  - Kiểm tra sự hiện diện của tính năng `COMMUNITY` khi cấu hình Auto Raid Mode.
+- Hiệu năng và độ ổn định:
+  - Thiết kế lại việc quản lý emoji ([`@fca.gg/glyph` v0.1.0](https://github.com/FCAgreatgoals/glyph)).
+  - Giảm thời gian khởi động và giám sát các cluster (`@fca.gg/midway` v1.3.1).
+  - Quản lý rate limit tốt hơn và giảm độ trễ (`@fca.gg/iris` v1.1.4).
+  - Tích hợp Sentry để quản lý lỗi và cải thiện hỗ trợ phát triển ([`@fca.gg/kino` v1.0.0](https://github.com/FCAgreatgoals/kino)).
+
+## 3.1.1 (21/05/2025) {#3-1-1}
+
+- Tính năng mới [Vai trò Tag](./features/tag-role.md). <SuggestionLink id="512" />
+- Lệnh kiểm duyệt mới [`/timeout`](./features/moderation.mdx#timeout). <SuggestionLink id="52" />
+- Tự động theo dõi các bản cập nhật trong kênh nhật ký chung của mỗi máy chủ.
+- Hiệu năng và độ ổn định:
+  - Dọn dẹp các trạng thái lưu giữ của antispam.
+  - Sửa rò rỉ bộ nhớ.
+  - Tối ưu các lời gọi cơ sở dữ liệu.
+  - Cải thiện tốc độ chung của bot.
+
+## 3.1.0 Interactions Update (12/03/2025) {#3-1-0}
+
+- Thêm **Lệnh Slash**. <SuggestionLink id="463" />
+- [Quốc tế hóa](./language.md) (thêm tiếng Anh). <SuggestionLink id="109" />
+- Tính năng mới [`/report`](./features/reports.md). <SuggestionLink id="164" />
+- Các lệnh cấu hình mới:
+  - [`/settings`](./setup.md#settings) dưới dạng bảng tương tác.
+  - [`/setup`](./setup.md#install) dưới dạng Onboarding.
+- Thiết lập nâng cao:
+  - Bật/tắt từng tính năng riêng lẻ. <SuggestionLink id="356" />
+  - Chọn thời gian chờ và số lần thử trước khi [captcha](./features/captcha.md#config) đuổi. <SuggestionLink id="363" />
+  - Có thể chọn kênh xác minh cho [captcha](./features/captcha.md). <SuggestionLink id="385" />
+  - Bỏ qua người dùng/vai trò/danh mục trong [antispam](./features/anti-spam.mdx#ignore). <SuggestionLink id="362" />
+  - Chọn [tiền tố của các lệnh kết hợp](./guides/prefix.md). <SuggestionLink id="103" />
+  - Tùy chọn để chọn xem [lệnh `/lock`](./features/channel-lock.md) có đổi tên kênh bị khóa kèm `🔒` hay không.
+- Cải thiện UX:
+  - Tiền tố hiển thị khi nhắc đến bot + lượt nhắc đến dùng làm tiền tố chung. <SuggestionLink id="193" />
+  - Tắt [captcha](./features/captcha.md) không còn xóa vai trò và kênh liên quan. <SuggestionLink id="43" />
+  - Tự động phát hiện các vấn đề về quyền liên quan đến kênh và vai trò. <SuggestionLink id="65" />
+  - Tự động kiểm tra khả năng hiển thị của kênh xác minh trong quy trình chào đón của Discord.
+  - Thống nhất các tin nhắn.
+- Cải thiện hiệu năng và độ ổn định của bot.
+
+## 3.0.0 (14/01/2023) {#3-0-0}
+
+- Viết lại hoàn toàn nhằm chuẩn bị cho các bản cập nhật tương lai và ổn định bot.
+- Sửa tất cả các lỗi đã biết đến nay.
+- [Lệnh `?raidmode`](./features/raid-mode.md) nay dùng tính năng “Vô hiệu hóa lời mời”.
+- Tự động gửi một tin nhắn riêng cho thành viên liên quan khi áp dụng một hình phạt. <SuggestionLink id="426" />
+
+## 2.2.0 (13/04/2020) {#2-2-0}
+
+- Cải thiện hiệu năng của bot.
+- Những thay đổi quan trọng trong kiến trúc nội bộ của dự án.
+
+## 2.1.3 (13/10/2019) {#2-1-3}
+
+- Gỡ bỏ danh sách đen và các lệnh liên quan.
+- Có thể cấm bất kỳ người dùng nào bằng ID của họ, ngay cả khi họ không ở trong máy chủ liên quan. <SuggestionLink id="113" /> <SuggestionLink id="148" />
+- Hiển thị lý do cấm trong phản hồi của [lệnh `?ban`](./features/moderation.mdx#ban).
+- [Lệnh `?raidmode`](./features/raid-mode.md) nay yêu cầu quyền đuổi thành viên.
+- Thay đổi thời gian đuổi nếu captcha không được hoàn thành (5 phút). <SuggestionLink id="129" />
+- Nhiều cải tiến nội bộ.
+
+## 2.1.2 (17/04/2019) {#2-1-2}
+
+- Thêm [lệnh `?userinfo`](./features/utilities.mdx#userinfo). <SuggestionLink id="29" />
+- ~~Thêm các lệnh `?lockall` và `?unlockall`~~ (Tính năng đã bị gỡ).
+- Thêm các lệnh [`?kick`](./features/moderation.mdx#kick) và [`?ban`](./features/moderation.mdx#ban).
+- Thêm [min-age trên captcha](./features/raid-mode.md#minage) (có thể đặt tuổi tài khoản tối thiểu để truy cập máy chủ).
+- Có thể cấu hình việc tự động xóa các tin nhắn gọi lệnh. <SuggestionLink id="26" />
+- Kênh nhật ký tự tạo lại nếu bị xóa.
+- Thiết kế lại kết nối cơ sở dữ liệu.
+- Sửa lỗi và nhiều cải tiến.
+
+## 2.1.1 (21/02/2019) {#2-1-1}
+
+- Gỡ bỏ `?settings captcha` (thay bằng `?captcha`).
+- Thêm khả năng đặt một [kênh nhật ký](./features/captcha.md#logs) cho captcha.
+- Thêm [autorole](./features/captcha.md#autorole) tương thích với captcha.
+- Đơn giản hóa [captcha](./features/captcha.md) (cần đúng 5/6 chữ cái).
+- Các thay đổi nhỏ khác.
+
+## 2.1.0 (16/02/2019) {#2-1-0}
+
+- Thêm captcha (`?settings captcha`). <SuggestionLink id="11" />
+- Thêm mức bảo mật của chống spam (`?settings spamlevel`). <SuggestionLink id="25" />
+- Thêm các lệnh `?about` và `?invite`.
+- Thêm [lệnh `?clear`](./features/moderation.mdx#clear).
+- Nhiều thay đổi và sửa lỗi.
+
+## 2.0.1 (04/02/2019) {#2-0-1}
+
+- Viết lại phần trợ giúp (`?help`).
+- Sửa lỗi trong [`?lock`](./features/channel-lock.md#lock) và [`?unlock`](./features/channel-lock.md#unlock).
+
+## 2.0.0 (26/01/2019) {#2-0-0}
+
+- Thêm [chống spam](./features/anti-spam.mdx).
+- Thêm [chế độ raid tự động](./features/raid-mode.md#config).
+- Thêm kênh nhật ký.
+- Thêm phần cấu hình bot.
+- Thêm [khóa kênh](./features/channel-lock.md).
+- Nhiều thay đổi khác.

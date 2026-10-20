@@ -1,0 +1,369 @@
+---
+title: 最新消息
+---
+
+import SuggestionLink from '@site/src/components/SuggestionLink';
+
+查看 RaidProtect 所有更新內容的詳細清單。
+
+## 3.7.0 Identity Update <span className="badge-experiment">實驗</span> {#3-7-0}
+
+:::info 實驗
+Identity Update 處於實驗階段：在 3.7.0 正式推出之前，它為 [Premium](/zh-TW/premium) 伺服器提供公開測試版。其內容仍可能變動。
+:::
+
+- 新增 [`/alt`](./features/alt-accounts.md#alt) 指令與[多帳號](./features/alt-accounts.md)：關聯同一個人的帳號，選擇其主帳號，其處罰（停權、踢出、禁言、監禁、超時、軟停權）會延伸到關聯帳號。解除其中一個的處罰，就會解除所有帳號的處罰。
+- [關聯帳號的處罰](./features/alt-accounts.md#modes)可依類型設定，並提供**陷阱**模式，以及針對在處罰期間加入或發言的關聯帳號的[規避處罰](./features/alt-accounts.md#evasion)。
+- 不在伺服器中的關聯帳號，會在其加入時受到處罰。
+- 新增[每人僅限一個帳號](./features/alt-accounts.md#single-account)設定：次要帳號會被隔離。
+- [驗證碼](./features/captcha.md#activity-alts)能偵測多帳號：它會自行關聯確定是同一個人的帳號，並向您的團隊提議可能的關聯。
+- [關聯帳號的處罰](./features/alt-accounts.md#modes)僅限 **Premium**。沒有 Premium 時，`/alt` 仍可無限制地關聯與查閱帳號。
+
+## 3.6.0 Shield Update <span className="badge-experiment">實驗</span> {#3-6-0}
+
+:::info 實驗
+Shield Update 處於實驗階段：在 3.6.0 正式推出之前，它為 [Premium](/zh-TW/premium) 伺服器提供公開測試版。其內容仍可能變動。
+:::
+
+- 新增 [**DISCON**](./features/discon.md)：分為五級的伺服器危險等級，可透過 `/discon` 指令或[團隊專用面板](./features/discon.md#panel)一鍵調整。每個等級都會自動強化伺服器（驗證、驗證碼、私訊鎖定、突襲模式、鎖定），且[語音頻道](./features/discon.md#voice)會顯示目前的等級。
+- 新增[預防性慢速模式](./features/slowmode.md)（**Premium**）：所選頻道的慢速模式會自動調整，以維持您所設定的訊息流量。
+- [HoneyPot](./features/honeypot.md)：新增[處罰前延遲](./features/honeypot.md#grace)，讓出於善意的成員有時間表示自己搞錯了。
+- 新增驗證碼的[智慧觸發方式](./features/captcha.md#trigger)：除了突襲之外，它也會驗證帳號看起來可疑的新加入者。
+- [Automod](./features/automod.md) 新增[其他伺服器](./features/automod.md#servers)過濾器：其他伺服器的邀請、轉發訊息、頻道連結與標籤，支援黑名單或白名單。
+- 新增**隔離**處罰，與 [Discord 的隔離](./features/sanctions.mdx#discord-quarantine)同步。
+- [ScamLens](./features/scam-images.md)：[圖片目錄](./features/scam-images.md#catalog)（**Premium**），用於封鎖您自己的詐騙圖片。
+- 每則被 Discord AutoMod 攔截的訊息，都會以「Discord Automod」的名義建立一個靜默的[警告](./features/sanctions.mdx)。
+- 新的[安裝精靈](./setup.md#wizard)：逐區段的引導式流程、依您的伺服器提議的防護，並以稽核預覽作結。
+- [Antispam](./features/anti-spam.mdx) V3，自 3.5.0 起已對所有人啟用：
+  - 新的偵測引擎：近似重複、重複連結、表情符號與亂碼、洗版，以及散布在多個頻道的垃圾訊息。
+  - [預設組合](./features/anti-spam.mdx#presets)與依類別設定的處罰，並提供[進階模式](./features/anti-spam.mdx#advanced)來設定每個觸發器及其[時長](./features/anti-spam.mdx#duration)。
+
+## 3.5.0 Onboarding Update (2026/10/19) {#3-5-0}
+
+- [**`/settings`**](./setup.md#settings) 全面改版：五個分頁的儀表板（一般、新成員加入、防護、管理、工具），採用 Discord 的新介面（Components V2），需要輸入文字的設定則使用輸入視窗。**新**標記會標示新增的設定。[Premium](/zh-TW/premium) 設定仍然看得到：只有修改時才需要 Premium。
+- 新成員加入：
+  - 新增[歡迎訊息](./features/onboarding.md#welcome-message)，包含印有成員名稱的歡迎卡片、變數與按鈕。只要突襲模式或加入鎖定處於啟用狀態，就不會發送，以免歡迎突襲的帳號。
+  - [自動身分組](./features/onboarding.md#autorole)現在有獨立的設定，與驗證碼的設定分開，並可接受多個身分組。它們會在驗證通過後授予。
+  - [帳號最短註冊時長](./features/onboarding.md#minage)提供[多種處理方式](./features/onboarding.md#minage-action)：踢出太新的帳號、將其監禁至達到要求的年齡，或將其卡在驗證碼上，直到帳號達到要求的年齡才能解答。
+  - 您可以選擇 [Auto RaidMode](./features/raid-mode.md#action) 在突襲期間的處理方式：封鎖邀請、踢出新加入的成員（**Premium**）、將他們送往驗證碼，或讓他們在驗證碼等候，直到突襲結束。只有封鎖邀請仍需要伺服器啟用 Discord 社群。
+  - [驗證碼](./features/captcha.md)新增面板[顯示模式](./features/captcha.md#display-mode)，以及自動或始終的[觸發方式](./features/captcha.md#trigger)。其設定會提示可繞過驗證的頻道與角色，並附有修正按鈕。
+  - 在面板模式下，驗證碼[不必離開 Discord 即可開啟](./features/captcha.md#activity)：對自動程式更困難的謎題，採用您伺服器的色調。若結果有疑慮，您的團隊會收到報告，並決定是否讓該成員進入。
+  - 新增[測試模式](./features/captcha.md#test-mode)：您的團隊可以親自完成驗證碼來試用，而不會套用任何處置。
+- 防護：
+  - [Authentification Manager](./features/authentication-manager.mdx) 現在於 `/settings` 中設定，其驗證頁面已翻譯。
+  - [私訊鎖定](./features/dm-lock.mdx)可在輸入視窗中設定。
+- 管理：
+  - 新增 [`/onduty`](./features/moderation.mdx#onduty) 指令與在勤角色，用以標示有空的管理人員。
+  - 新增 [`/display staff`](./features/display.mdx#staff) 面板，可發布在您的管理團隊頻道：領取身分組、進入在勤狀態、常用指令提醒。
+  - 未指定使用者時，`/discord-sanctions` 會顯示全球統計。
+- 工具：
+  - 新增 [`/inviteinfo`](./features/utilities.mdx#inviteinfo) 指令。`/userinfo` 與 `/inviteinfo` 也可安裝到您的帳號，讓您隨處使用。
+  - 新增 [`/privacy`](./features/utilities.mdx#privacy) 指令，以及新的**訊息快取**設定，[`/snipe`](./guides/malfunctions.md#snipe) 需要它才能找回已刪除的訊息。
+  - 當您回報 Antispam 問題時，[`/feedback`](./features/utilities.mdx#feedback) 會提供診斷。
+- 一般：
+  - RaidProtect 現在支援 [11 種語言](./language.md)，新增了義大利文、土耳其文、越南文、日文以及簡體與繁體中文。預設會[跟隨伺服器語言](./language.md#follow)。
+  - 新增伺服器的[時區](./setup.md#timezone)，供透明度彙總使用。
+  - [訊息指令](./guides/prefix.md)與其[權限](./guides/prefix.md#permissions)在兩個獨立的畫面中設定。在 Discord 中設定的指令權限（整合）也會套用到「處罰使用者」選單中的處罰（在成員上按右鍵）。
+  - [機器人自訂](./setup.md#customize)（**Premium**）現在於 `/settings` 中設定。
+- 各項修正與翻譯修正。
+
+## 3.4.0 Antispam Update (2026/07/18) {#3-4-0}
+
+- [Antispam](./features/anti-spam.mdx) V2：
+  - **多頻道垃圾訊息**：當垃圾訊息擴散到多個頻道時，會有專屬的處罰（預設為監禁，最低為超時）。
+  - 新增**附件垃圾訊息**[觸發器](./features/anti-spam.mdx#triggers)（預設停用）。
+  - [模擬](./features/anti-spam.mdx#simulation)功能，用以理解垃圾訊息為何被處罰或未被處罰。
+  - 垃圾訊息現在**無論採用何種處罰**（停權、監禁、禁言、踢出或超時）都會被**刪除**。
+  - **反詐騙處罰可以設定**，位於 [Antispam 的處罰選單](./features/anti-spam.mdx#triggers)，預設沿用 [HoneyPot 的處罰](./features/honeypot.md#sanction)；反詐騙事件會被即時處罰並記錄。
+  - 每個觸發器現在都可以透過新的**停用**選項個別停用，且敏感度等級已由簡單的開關取代。
+  - 當未設定對應的角色時，**禁言**與**監禁**處罰會改用有上限的超時。
+  - 能偵測傳送 rich embed 的 selfbot，且被 ScamLens 攔截的詐騙會計入 [HoneyPot](./features/honeypot.md) 的被檢舉帳號計數器。
+- [**檢舉**](./features/reports.md)系統全面改版：
+  - 檢舉現在會歸入**事件**：針對同一成員的多個檢舉會合併為單一事件，並提供[可設定的分組模式](./features/reports.md#group)。
+  - 檢舉指令現在會開啟**原因視窗**，在個人檔案檢舉中有「您檢舉的是什麼」清單（包含語音與私訊活動）。
+  - 每個事件現在都會在檢舉下方開啟一個**討論串**：被檢舉成員的個人檔案卡、各訊息的原因標題、處理的管理人員名稱，以及駁回備註。
+  - 新增[檢舉者通知](./features/reports.md#notify)：檢舉被處理時，可透過私訊通知檢舉者，詳細程度可設定（最詳細可到受理／駁回的結果）。
+  - 新增[信任角色](./features/reports.md#trusted-role)（**Premium**）：受信任的成員在檢舉時可施加**24 小時的預防性超時**，且其緊急檢舉會再次提及管理角色。
+  - 新增[防範惡意檢舉者](./features/reports.md#bad-reporters)的保護：屢次提出虛假檢舉的人可以被發現、封鎖或自動處罰（閾值、時間範圍與模式皆可設定）。
+  - 當成員受到處罰時，進行中的事件會自動關閉。
+  - 當檢舉被受理時，預防性處罰會被改寫；當檢舉被駁回時，則會被取消。
+- 全新的[**透明度**](./features/transparency.md)系統：
+  - 伺服器管理活動的[定期彙總](./features/transparency.md#recaps)，依可設定的排程自動發布。
+  - 新增[公開管理紀錄](./features/transparency.md#modlog)：處罰可以發布在公開頻道中，依類型與來源篩選，並可一鍵建立唯讀的 #public-modlog 頻道。
+  - 新增 [`/transparency` 指令](./features/transparency.md#command)，隨時顯示最近一個結束期間的彙總。
+- 新增 [`/audit` 指令](./features/audit.md)：對伺服器進行完整的**安全稽核**，包含整體評分、[詳細檢查](./features/audit.md#checks)（驗證等級、權限、頻道）與[一鍵修復](./features/audit.md#fix)。管理員角色可以直接從稽核整合到 Authentification Manager。
+- 新增突襲模式與加入鎖定的[踢出模式](./features/raid-mode.md#kick-mode)（**Premium**）：新加入者會被踢出，並收到說明用的私訊與可返回的邀請按鈕，而不是 Discord 原生的邀請暫停。新的 [`/bypass raid` 指令](./features/raid-mode.md#bypass-raid)可在其啟用期間讓特定使用者進入。
+- [訊息指令](./guides/prefix.md#permissions)現在可以透過 `/settings` 的新選項，遵循 **Discord 指令權限**（整合分頁）。
+- 當[私訊鎖定](./features/dm-lock.mdx)引發 **Discord 安全警示**時，RaidProtect 現在會在警示下方回應，引用該警示並說明該在哪裡調整設定。
+- [帳號最短註冊時長](./features/raid-mode.md#minage)的踢出紀錄現在會以時間戳記顯示所需的門檻。
+- 設定與安裝：
+  - `/settings` 主選單重新整理為邏輯分行。
+  - 安裝訊息現在直接連結指令，並提供按鈕以變更紀錄頻道。
+  - 當驗證碼頻道被刪除時，會提供**停用驗證碼**按鈕。
+- 將 Discord 層內部遷移至共用函式庫（`@fca.gg/discord`），以加快後續更新。
+- 修正：
+  - 更清楚的錯誤訊息，區分**超時**與**禁言**，並將管理員對象與角色階層封鎖區分開來。
+  - 修正 Discord AutoMod 超時的自動轉換。
+  - 修正 `/serverinfo`：自訂 URL 的存取、規則與統計。
+  - 修正 `/discord-sanctions` 別名以及訊息指令前綴的使用。
+  - 修正在取代角色模式下，監禁被套用到管理員的問題。
+  - 加強 Webhook URL 的驗證。
+  - 各項修正：處罰紀錄、驗證碼、私訊鎖定訊息、管理備註、Premium 偵測。
+  - 各項翻譯修正。
+
+## 3.3.3 (2026/04/30) {#3-3-3}
+
+- 新增 [`/modview` 指令](./features/moderation.mdx#modview)，用以開啟成員的集中式管理檢視（處罰、備註、snipe）。<SuggestionLink id="544" />
+- 新增 [`/note` 指令](./features/moderation.mdx#note)，用以新增或編輯成員的管理備註。<SuggestionLink id="545" />
+- 新增 [`/nick` 指令](./features/moderation.mdx#nick)，用以變更或重設成員在伺服器上的暱稱。
+- 自訂 RaidProtect 的**頭像**、**橫幅**與**暱稱書寫風格**（**Premium**）。
+- 新增 [**HoneyPot**](./features/honeypot.md) 模組：一個陷阱頻道，會自動處罰被盜帳號與垃圾訊息機器人，並為 ScamLens 目錄提供資料。<SuggestionLink id="560" />
+- 全新的訊息指令解析。
+- 斜線指令的 `duration` 參數支援自動完成。
+- 處罰：
+  - 新增 [`/softban` 指令](./features/moderation.mdx#softban)，先停權再解除停權成員以刪除其訊息。
+  - 所有處罰指令新增 [`silent` 選項](./features/moderation.mdx)，用以不透過私訊通知對象。<SuggestionLink id="545" />
+  - `/ban` 與 `/tempban` 指令新增 [`delete-messages` 參數](./features/moderation.mdx#ban)，用以刪除歷史訊息。
+  - 新增[以監禁角色取代](./features/sanctions.mdx#jail-roles)模式：監禁處罰會在監禁期間移除成員的所有角色，並在其被釋放時恢復。<SuggestionLink id="552" />
+  - 可以在伺服器上[完全停用處罰](./features/sanctions.mdx#disable)。
+  - 可為 [`/sanctions delete` 加上原因](./features/sanctions.mdx#delete)。
+  - 在有時長的處罰紀錄中，除了時間戳記之外，也會顯示**最終時長**。
+  - 改進處罰私訊回執的追蹤：已收到、私訊已關閉、已逾時、靜默。
+  - 在踢出、軟停權或暫時停權後的通知私訊中，新增含有**伺服器邀請**的按鈕。<SuggestionLink id="570" />
+- 新增 [`/serverinfo` 指令](./features/utilities.mdx#serverinfo)，用以查看伺服器資訊。<SuggestionLink id="264" />
+- 新增 [`/snipe` 指令](./features/moderation.mdx#snipe)，用以找回頻道或使用者在最近一小時內最後被刪除的訊息（在紀錄更新之前的臨時解決方案）。
+- 新增 [`/feedback` 指令](./features/utilities.mdx#feedback)，直接在 Discord 中分享意見、建議或回報錯誤。
+- 可為 [Antispam](./features/anti-spam.mdx#duration) 所施加的處罰選擇**時長**。<SuggestionLink id="559" />
+- 啟用 [Auto RaidMode](./features/raid-mode.md#close-dm) 時，可**自動關閉私訊**。<SuggestionLink id="521" />
+- 當 Discord AutoMod 施加的超時超過所設定的禁言閾值時，會自動[轉換為以角色為基礎的禁言](./features/sanctions.mdx#mute-threshold)（Premium 伺服器的**公開測試版**）。
+- [`/lock`](./features/channel-lock.md#lock-duration) 與 [`/slowmode`](./features/moderation.mdx#slowmode) 指令新增 `[duration]` 參數，用以暫時套用變更。<SuggestionLink id="515" />
+- 修正：
+  - 修正處罰到期的錯誤。
+  - 各項翻譯修正。
+
+## 3.3.2 (2026/03/20) {#3-3-2}
+
+- 新的 [**Authentification Manager**](./features/authentication-manager.mdx)（AM）系統，透過驗證來保護對 Discord 角色的存取。
+  - 新增 [`/auth` 指令](./features/authentication-manager.mdx#auth)，用以進行驗證並取得受保護的角色。
+  - 新增 [`/auth-profile` 指令](./features/authentication-manager.mdx#auth-profile)，用以管理驗證設定檔（PIN、OTP、passkey）。
+  - 新增 [`/auth-settings` 指令](./features/authentication-manager.mdx#auth-settings)，用以設定受保護的角色與獲授權的使用者。
+  - 依所設定的驗證方式而定的[安全等級](./features/authentication-manager.mdx#grades)系統（S 到 E）。
+  - 支援 [passkey（WebAuthn）](./features/authentication-manager.mdx#methods)、[PIN 碼](./features/authentication-manager.mdx#methods)（簡易與強化）以及 [OTP（2FA）](./features/authentication-manager.mdx#methods)。
+  - 具有到期與自動撤銷機制的臨時會話。
+  - 具有權限上限的管理者系統。
+- 紀錄：
+  - 為了即將推出的專屬更新而推出的新紀錄引擎。
+  - `/clear` 的大量刪除紀錄。
+  - Anti-Scam 與 Auto RaidMode 設定變更的紀錄。
+- 全新的 **Premium** 系統。
+  - 提高 Authentification Manager 與資訊面板的上限。
+  - 可自訂[處罰名稱](./features/sanctions.mdx#custom-names)（名稱、動詞與私訊措辭）。
+  - 搶先體驗新的實驗性功能。
+- 偵測並防止冒充 RaidProtect。
+- 修正：
+  - 修正 unmute 與 untimeout 的錯誤。
+  - 修正 Jail 的安裝。
+  - 修正部分伺服器上的「Antispam 被封鎖」問題。
+  - 各項翻譯修正。
+- 效能與穩定性：
+  - 最佳化成員、權限與訊息的快取。
+  - 處罰到期現在精確到秒。
+
+## 3.3.1 (2026/02/09) {#3-3-1}
+
+- [國際化](./language.md)（新增德文、西班牙文與葡萄牙文）。
+- 全新的 [**Jail**](./features/sanctions.mdx#jail) 系統。
+  - 新增 [`/jail` 指令](./features/moderation.mdx#jail)，用以監禁成員。
+  - 新增 [`/tempjail` 指令](./features/moderation.mdx#tempjail)，用以暫時監禁成員。
+  - 新增 [`/unjail` 指令](./features/moderation.mdx#unjail)，用以釋放成員。
+  - 透過 `/settings` 設定監禁角色與資訊頻道。
+- 全新的[**以角色為基礎的禁言**](./features/sanctions.mdx#mute)系統：超過[可設定的閾值](./features/sanctions.mdx#mute-threshold)後，機器人會授予禁言角色，而不是 Discord 超時。
+  - `/timeout` 與 `/untimeout` 指令改為 [`/mute`](./features/moderation.mdx#timeout) 與 [`/unmute`](./features/moderation.mdx#untimeout)。低於閾值時，預設仍使用 Discord 超時。
+  - 新增 `[force_timeout]` 參數，無論時長為何都強制使用 Discord 超時。
+- [透過情境選單處罰](./features/moderation.mdx#context-menu)（在個人檔案上按右鍵）。
+- 新增 [`/my-sanctions` 指令](./features/utilities.mdx#my-sanctions)，讓成員查看自己的處罰。
+- 新增[處罰隱私](./features/sanctions.mdx#sanctions-privacy)設定，用以控制對個人處罰的存取。
+- 新增處罰原因中的[顯示媒體](./features/sanctions.mdx#show-medias)設定。
+- [`/sanctions search`](./features/sanctions.mdx#search) 的篩選條件視覺改版，並新增[管理人員類型](./features/sanctions.mdx#search)篩選。
+- 透過支援機器人[匯入／匯出處罰](./features/sanctions.mdx#import-export)。
+- [**資訊面板**](./features/display.mdx)系統（`/display public`）。
+- 全新的[**封鎖成員**](./features/utilities.mdx#block)系統，用以在伺服器上阻止成員使用 RaidProtect 的某些功能。
+  - 新增 [`/block add` 指令](./features/utilities.mdx#block-add)。
+  - 新增 [`/block remove` 指令](./features/utilities.mdx#block-remove)。
+  - 新增 [`/block list` 指令](./features/utilities.mdx#block-list)。
+- 新增 [`/prune` 指令](./features/utilities.mdx#prune)，用以更精確的條件清理不活躍的成員。<SuggestionLink id="256" />
+- 新增 [`/channel clear` 指令](./features/utilities.mdx#channel-clear)，用以刪除並重新建立頻道。<SuggestionLink id="543" />
+- `/bypass` 指令的紀錄。<SuggestionLink id="546" />
+- 全新的 **Anti-Scam** 模組。
+- 修正：
+  - 改進驗證碼的處理。
+  - 修正前綴的驗證。
+  - 翻譯修正。
+- 效能與穩定性：
+  - 全新的翻譯框架（[`@fca.gg/hermes` v1.2.1](https://github.com/FCAgreatgoals/hermes)）。
+
+## 3.3.0 Moderation Update (2025/12/19) {#3-3-0}
+
+- 全新功能[**處罰紀錄**](./features/sanctions.mdx)。
+  - 新增 [`/sanctions search` 指令](./features/sanctions.mdx#search)。
+  - 新增 [`/sanctions info` 指令](./features/sanctions.mdx#info)。
+  - 新增 [`/sanctions edit` 指令](./features/sanctions.mdx#edit)。
+  - 新增 [`/sanctions delete` 指令](./features/sanctions.mdx#delete)。
+  - Automod 的處罰會加入處罰紀錄。
+  - 停權、踢出與超時會加入紀錄並被記錄。<SuggestionLink id="151" />
+  - 處罰通知私訊的回執。
+- 新增處罰的紀錄。
+- 可設定專門用於處罰的紀錄頻道。
+- 新增 [`/warn` 指令](./features/moderation.mdx#warn)。<SuggestionLink id="52" />
+- 新增 [`/untimeout` 指令](./features/moderation.mdx#untimeout)。<SuggestionLink id="52" />
+- 新增 [`/tempban` 指令](./features/moderation.mdx#tempban)。<SuggestionLink id="524" />
+- [突襲模式](./features/raid-mode.md#raid-mode)與 [Auto RaidMode](./features/raid-mode.md#duration) 會在一段時間後自動停用。<SuggestionLink id="37" />
+- [`/raidmode` 指令](./features/raid-mode.md#raid-mode)新增 [duration] 參數。<SuggestionLink id="37" />
+- 新增 [`/joinlock` 指令](./features/join-lock.mdx)，用以無限期關閉邀請。
+- 新增 [`/channel duplicate` 指令](./features/utilities.mdx#channel-duplicate)，用以嚴格複製頻道。<SuggestionLink id="225" />
+- 新增 `/changelog` 指令，並在 `/settings` 與 `/about` 中新增按鈕以查看更新日誌。
+- [最短註冊時長](./features/raid-mode.md#minage)私訊的回執。
+- 修正：
+  - 改進冷卻時間的處理。
+  - 修正各種翻譯錯誤。
+  - 提高處罰原因的最大長度（512）。
+- 效能與穩定性：
+  - 最佳化訊息快取。
+  - 最佳化資料庫儲存。
+  - 處罰到期的管理（`@fca.gg/midway` v1.3.2）。
+  - 表情符號處理改版（[`@fca.gg/glyph` v1.1.1](https://github.com/FCAgreatgoals/glyph)）。
+
+## 3.2.1 (2025/09/03) {#3-2-1}
+
+- 新增 [`/ds` 指令](./features/utilities.mdx#discord-sanctions)，用以查看使用者的 Discord 處罰。
+- Antispam 現在能夠阻止斜線指令的垃圾訊息。
+- 新增 Antispam 觸發器：[外部指令垃圾訊息](./features/anti-spam.mdx#triggers)。
+- 新增 [`/slowmode` 指令](./features/moderation.mdx#slowmode)，用以啟用或修改頻道的慢速模式。
+- 新增 [`/unban` 指令](./features/moderation.mdx#unban)。<SuggestionLink id="296" />
+- 新增 [`/bypass captcha` 指令](./features/captcha.md#bypass)，用以接受無法解答驗證碼的使用者。
+- [`/lock` 與 `/unlock` 指令](./features/channel-lock.md)新增 [reason] 參數。<SuggestionLink id="516" />
+- 修正：
+  - 各種翻譯錯誤。
+  - 在 `/timeout` 指令中更妥善地考慮**原因**。
+  - 最佳化機器人的啟動時間與指令的執行時間。
+  - 修正前綴指令的解讀與驗證。
+  - 修正與**預設頭像**相關的錯誤。
+
+## 3.2.0 Protection Update (2025/07/10) {#3-2-0}
+
+- 新功能[私訊鎖定](./features/dm-lock.mdx)。
+- 選擇 Antispam 所套用的[處罰](./features/anti-spam.mdx#triggers)。<SuggestionLink id="85" />
+- 新的 [Antispam 紀錄](./features/anti-spam.mdx#logs)（更清楚地掌握偵測情況）。
+- 無需驗證碼即可啟用[帳號最短註冊時長](./features/raid-mode.md#minage)。<SuggestionLink id="314" />
+- 新增 [/bypass minage 指令](./features/raid-mode.md#bypass-minage)，用以接受不符合所需帳號年齡的使用者。<SuggestionLink id="447" />
+- [`/userinfo` 指令](./features/utilities.mdx#userinfo)全面改版。
+- 在機器人設定有重大修改時新增紀錄。
+- 修正：
+  - Antispam 現在可在討論串中運作。
+  - [`/lock` 指令](./features/channel-lock.md)現在支援論壇、媒體頻道，並將討論串與頻道一併封鎖。
+  - 當機器人沒有必要權限時，[驗證碼](./features/captcha.md)不再擋住新成員。
+  - 修正當機器人在某個頻道沒有必要權限時，[`/clear` 指令](./features/moderation.mdx#clear)的錯誤。
+- 改進 UI/UX：
+  - 說明成員、角色與頻道選單中可以輸入文字。
+  - 設定 Auto Raid Mode 時，檢查是否具備 `COMMUNITY` 功能。
+- 效能與穩定性：
+  - 表情符號處理改版（[`@fca.gg/glyph` v0.1.0](https://github.com/FCAgreatgoals/glyph)）。
+  - 縮短啟動時間並監控叢集（`@fca.gg/midway` v1.3.1）。
+  - 更妥善地處理速率限制並降低延遲（`@fca.gg/iris` v1.1.4）。
+  - 整合 Sentry 以處理錯誤並改善開發支援（[`@fca.gg/kino` v1.0.0](https://github.com/FCAgreatgoals/kino)）。
+
+## 3.1.1 (2025/05/21) {#3-1-1}
+
+- 新功能[標籤角色](./features/tag-role.md)。<SuggestionLink id="512" />
+- 新的管理指令 [`/timeout`](./features/moderation.mdx#timeout)。<SuggestionLink id="52" />
+- 在每個伺服器的一般紀錄頻道中自動追蹤更新。
+- 效能與穩定性：
+  - 清理 Antispam 的持續狀態。
+  - 修正記憶體洩漏。
+  - 最佳化資料庫呼叫。
+  - 提升機器人整體速度。
+
+## 3.1.0 Interactions Update (2025/03/12) {#3-1-0}
+
+- 新增**斜線指令**。<SuggestionLink id="463" />
+- [國際化](./language.md)（新增英文）。<SuggestionLink id="109" />
+- 新功能 [`/report`](./features/reports.md)。<SuggestionLink id="164" />
+- 新的設定指令：
+  - 以互動式面板呈現的 [`/settings`](./setup.md#settings)。
+  - 以引導流程呈現的 [`/setup`](./setup.md#install)。
+- 進階設定：
+  - 可個別啟用／停用每項功能。<SuggestionLink id="356" />
+  - 可選擇[驗證碼](./features/captcha.md#config)踢出前的延遲與嘗試次數。<SuggestionLink id="363" />
+  - 可選擇[驗證碼](./features/captcha.md)的驗證頻道。<SuggestionLink id="385" />
+  - 在 [Antispam](./features/anti-spam.mdx#ignore) 中忽略使用者／角色／分類。<SuggestionLink id="362" />
+  - 選擇[混合指令的前綴](./guides/prefix.md)。<SuggestionLink id="103" />
+  - 可選擇 [`/lock` 指令](./features/channel-lock.md)是否以 `🔒` 重新命名被鎖定的頻道。
+- 改進 UX：
+  - 提及機器人時會顯示前綴，並將提及作為通用前綴。<SuggestionLink id="193" />
+  - 停用[驗證碼](./features/captcha.md)不再刪除相關的角色與頻道。<SuggestionLink id="43" />
+  - 自動偵測與頻道及角色相關的權限問題。<SuggestionLink id="65" />
+  - 自動檢查驗證頻道在 Discord 新成員引導中的可見性。
+  - 統一訊息。
+- 改進機器人的效能與穩定性。
+
+## 3.0.0 (2023/01/14) {#3-0-0}
+
+- 全面重寫，旨在為未來的更新做好準備並穩定機器人。
+- 修正所有目前已知的錯誤。
+- [`?raidmode` 指令](./features/raid-mode.md)現在使用「停用邀請」功能。
+- 施加處罰時，自動傳送私訊給相關成員。<SuggestionLink id="426" />
+
+## 2.2.0 (2020/04/13) {#2-2-0}
+
+- 改進機器人的效能。
+- 專案內部架構的重大修改。
+
+## 2.1.3 (2019/10/13) {#2-1-3}
+
+- 移除黑名單與相關指令。
+- 可以憑 ID 停權任何使用者，即使他不在相關的伺服器中。<SuggestionLink id="113" /> <SuggestionLink id="148" />
+- 在 [`?ban` 指令](./features/moderation.mdx#ban)的回覆中顯示停權原因。
+- [`?raidmode` 指令](./features/raid-mode.md)現在需要踢出成員的權限。
+- 修改未完成驗證碼時的踢出時間（5 分鐘）。<SuggestionLink id="129" />
+- 各項內部改進。
+
+## 2.1.2 (2019/04/17) {#2-1-2}
+
+- 新增 [`?userinfo` 指令](./features/utilities.mdx#userinfo)。<SuggestionLink id="29" />
+- ~~新增 `?lockall` 與 `?unlockall` 指令~~（功能已移除）。
+- 新增 [`?kick`](./features/moderation.mdx#kick) 與 [`?ban`](./features/moderation.mdx#ban) 指令。
+- 新增[驗證碼的 min-age](./features/raid-mode.md#minage)（可設定存取伺服器所需的最低帳號年齡）。
+- 可設定自動刪除指令呼叫訊息。<SuggestionLink id="26" />
+- 紀錄頻道若被刪除會自動重新建立。
+- 資料庫連線改版。
+- 修正錯誤與各項改進。
+
+## 2.1.1 (2019/02/21) {#2-1-1}
+
+- 移除 `?settings captcha`（改為 `?captcha`）。
+- 新增為驗證碼設定[紀錄頻道](./features/captcha.md#logs)的功能。
+- 新增與驗證碼相容的 [autorole](./features/captcha.md#autorole)。
+- 簡化[驗證碼](./features/captcha.md)（6 個字母中需答對 5 個）。
+- 其他小幅修改。
+
+## 2.1.0 (2019/02/16) {#2-1-0}
+
+- 新增驗證碼（`?settings captcha`）。<SuggestionLink id="11" />
+- 新增 Antispam 的安全等級（`?settings spamlevel`）。<SuggestionLink id="25" />
+- 新增 `?about` 與 `?invite` 指令。
+- 新增 [`?clear` 指令](./features/moderation.mdx#clear)。
+- 各項修改與錯誤修正。
+
+## 2.0.1 (2019/02/04) {#2-0-1}
+
+- 重寫說明（`?help`）。
+- 修正 [`?lock`](./features/channel-lock.md#lock) 與 [`?unlock`](./features/channel-lock.md#unlock) 中的錯誤。
+
+## 2.0.0 (2019/01/26) {#2-0-0}
+
+- 新增 [Antispam](./features/anti-spam.mdx)。
+- 新增[自動突襲模式](./features/raid-mode.md#config)。
+- 新增紀錄頻道。
+- 新增機器人設定。
+- 新增[頻道鎖定](./features/channel-lock.md)。
+- 大量各項修改。

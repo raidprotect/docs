@@ -1,0 +1,106 @@
+---
+title: Pannelli informativi
+description: "Il comando /display di RaidProtect crea e gestisce pannelli informativi pubblici e pannelli riservati allo staff sul tuo server Discord."
+---
+
+import DisplayMockup from '@site/src/components/DiscordMessage/mockups/display';
+
+<DisplayMockup />
+
+Il comando `/display` ti permette di creare e gestire pannelli informativi pubblicati da RaidProtect sul tuo server. Ha due ambiti:
+
+- `/display public`: pannelli per i tuoi membri (chiusura dei MP, sanzioni, segnalazione…).
+- `/display staff`: pannelli riservati al tuo team ([DISCON](./discon.md), presa di ruolo, documentazione, presa di servizio).
+
+Usa il comando: ```/display public``` o ```/display staff```
+
+:::info
+Entrambi i sottocomandi richiedono il permesso “**Gestire il server**”.
+:::
+
+## ❓ Funzionamento {#working}
+
+Ogni pannello informativo viene pubblicato dal bot in un canale a tua scelta. Disponi di più slot per creare pannelli indipendenti, ciascuno con il proprio contenuto e le proprie funzionalità.
+
+:::info
+**Limiti dei pannelli pubblici:** 2 slot nella versione gratuita, 4 nella versione [premium](/it/premium), più 1 slot riservato al contenuto Prigione. Il pannello del [captcha](./captcha.md) non consuma uno slot.
+:::
+
+## 📄 Tipi di contenuto {#content}
+
+Ogni pannello pubblico può contenere uno o più dei seguenti contenuti:
+
+- **Blocco dei MD**: Informa i membri sullo stato della [chiusura dei MP](./dm-lock.mdx). Mostra se i MP sono bloccati o meno, e spiega che solo amici, staff, bot e contatti precedenti possono inviare MP.
+- **Prigione**: Mostra un messaggio destinato ai membri in jail, che indica che il loro accesso al server è stato limitato a seguito del mancato rispetto delle regole.
+- **Sanzioni**: Indica ai membri come consultare la cronologia delle proprie sanzioni personali tramite il comando `/mie-sanzioni`.
+- **Segnalazione**: Spiega ai membri come segnalare un utente o un messaggio tramite il comando `/report` o il menu contestuale (clic destro).
+
+## ⚙️ Funzionalità {#features}
+
+Oltre al contenuto, ogni pannello pubblico può attivare funzionalità interattive:
+
+- **Traduzione**: Aggiunge un pulsante che permette ai membri di tradurre il pannello in tutte le lingue supportate da Discord.
+- **Accesso alle sanzioni**: Aggiunge un pulsante “**Consultare le mie sanzioni**” che permette ai membri di consultare direttamente le proprie sanzioni.
+- **Segnalazione**: Aggiunge un pulsante “**Segnalare un membro**” per segnalare rapidamente un utente.
+
+{/* TODO: Ajouter une capture d'écran de /display public */}
+
+## 📌 Slot riservati {#reserved-slot}
+
+Alcuni pannelli sono gestiti dal loro modulo, non da `/display`:
+
+- **Prigione**: l'ultimo slot pubblico è riservato al contenuto Prigione. Il suo canale si regola solo in `/settings`, scheda “**Moderazione**”, “**Sanzioni**”, poi [Jail](./sanctions.mdx#jail) (“**Modificare il canale**”). Puoi invece aggiungervi contenuti e funzionalità da `/display public`.
+- **Captcha**: il pannello del [captcha](./captcha.md) in modalità Pannello viene posato e rimosso dal captcha stesso (`/settings`, scheda “**Arrivi**”, “**Captcha**”). Non può essere né creato né eliminato da `/display`.
+- **DISCON** (in sperimentazione con la Shield Update): il pannello [DISCON](./discon.md#panel) occupa lo slot riservato di `/display staff`. Il suo canale si regola solo con `/discon`.
+
+## 🛡️ Pannelli staff {#staff}
+
+Il comando `/display staff` gestisce pannelli destinati al tuo team, da pubblicare in canali riservati allo staff.
+
+Usa il comando: ```/display staff```
+
+:::info
+**Limiti dei pannelli staff:** 1 slot nella versione gratuita, 4 nella versione [premium](/it/premium), più 1 slot riservato al pannello [DISCON](./discon.md).
+:::
+
+### Contenuti riservati allo staff {#staff-content}
+
+Ogni contenuto staff aggiunge automaticamente il suo pulsante al pannello:
+
+- **DISCON**: il livello di pericolo del server e i suoi cinque pulsanti. Questo contenuto è riservato allo slot DISCON, gestito dalla [configurazione del DISCON](./discon.md#config). Puoi aggiungere altri contenuti a questo pannello da `/display staff`.
+- **Ottieni un ruolo**: un pulsante che apre la scelta dei ruoli protetti dall'[Authentification Manager](./authentication-manager.mdx#auth), come il comando `/auth`.
+- **Documentazione**: un pulsante verso la documentazione di moderazione, e un promemoria dei comandi utili (`/modview`, `/sanctions`, `/clear`).
+- **In servizio**: un pulsante che aggiunge o rimuove il [ruolo in servizio](./moderation.mdx#onduty), come il comando `/onduty`.
+
+La funzionalità **Traduzione** è disponibile anche sui pannelli staff.
+
+:::warning
+I pulsanti dei pannelli staff non verificano i permessi di chi clicca: **è l'accesso al canale a fare da controllo**. Pubblicali solo in canali riservati al tuo team.
+:::
+
+## 🔄 Aggiornamento dei pannelli {#update}
+
+Quando modifichi la lingua del bot o il contenuto dei pannelli viene aggiornato da RaidProtect, un indicatore segnala i pannelli non aggiornati. Puoi allora cliccare sul pulsante “**Aggiornare**” per aggiornare il pannello.
+
+## ✏️ Modificare o eliminare un pannello {#edit}
+
+Dal menu `/display public` o `/display staff`, ogni slot occupato dispone di pulsanti per:
+
+- **Modificare**: Cambiare il canale, il contenuto o le funzionalità del pannello.
+- **Eliminare**: Rimuovere il pannello dal canale e liberare lo slot.
+
+Il canale degli slot riservati (Prigione, DISCON) si modifica dal loro modulo.
+
+## Domande frequenti {#faq}
+
+### Qual è la differenza tra `/display public` e `/display staff`?
+
+`/display public` pubblica pannelli per i tuoi membri (MP, sanzioni, segnalazione). `/display staff` pubblica pannelli per il tuo team: livello DISCON, presa di ruolo protetto, documentazione e presa di servizio.
+
+### Quanti pannelli posso creare?
+
+In pubblico: 2 pannelli nella versione gratuita, 4 in premium, più lo slot Prigione. In staff: 1 pannello nella versione gratuita, 4 in premium, più lo slot DISCON.
+
+### Perché non posso eliminare il pannello del captcha o del DISCON?
+
+Questi pannelli appartengono al loro modulo: il captcha si gestisce in `/settings` e il DISCON con `/discon`. Eliminarli da `/display` romperebbe la funzionalità senza avvisare.

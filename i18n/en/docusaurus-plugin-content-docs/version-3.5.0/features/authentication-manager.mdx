@@ -1,0 +1,333 @@
+---
+title: Authentification Manager
+description: "RaidProtect's Authentification Manager protects access to your sensitive roles with real identity verification: passkeys, PIN code and OTP."
+---
+
+import AuthenticationManagerMockup from '@site/src/components/DiscordMessage/mockups/authentication-manager';
+import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
+
+<AuthenticationManagerMockup />
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Icon from "@site/src/components/Icon";
+
+RaidProtect's **Authentification Manager** (AM) protects access to your most sensitive Discord roles through real identity verification. Using passkeys (WebAuthn), PIN codes and OTP, a member only obtains a [sensitive role](/en/learn/least-privilege) after authenticating, and only for a limited time. In Discord, the module is displayed under the name "**Authentification Manager**".
+
+## ❓ How does the Authentification Manager work? {#working}
+
+The Authentification Manager is based on **protected roles** and **temporary sessions**. When an administrator protects a role with AM:
+
+1. The Discord role is no longer permanently assigned: you have to authenticate to obtain it.
+2. Authorized members authenticate with the `/auth` command (or the "**Take a role**" button of a [staff panel](./display.mdx#staff)).
+3. A **temporary session** is created for the duration set on the role.
+4. When the session expires, we automatically remove the role.
+
+:::info
+Each member must first create their **authentication profile** with `/auth-profile` before they can authenticate.
+:::
+
+During a session, the member's Discord actions (bans, message deletions, pins, channel changes...) are recorded in the AM log, with their target: you know what was done with each protected role.
+
+## 🔐 Security grades {#grades}
+
+Each authentication method gives a **security grade**. Each protected role requires a minimum grade that the member must reach.
+
+| **Grade**                                                                   | **Condition**                         |
+| --------------------------------------------------------------------------- | ------------------------------------- |
+| <Icon src="/img/icons/RankS.svg" alt="icon RankS" title=":securityRankS:"/> | At least one registered passkey       |
+| <Icon src="/img/icons/RankA.svg" alt="icon RankA" title=":securityRankA:"/> | OTP (2FA) code enabled                |
+| <Icon src="/img/icons/RankB.svg" alt="icon RankB" title=":securityRankB:"/> | Reinforced PIN of 8 digits or more    |
+| <Icon src="/img/icons/RankC.svg" alt="icon RankC" title=":securityRankC:"/> | Reinforced PIN of 6 digits or more    |
+| <Icon src="/img/icons/RankD.svg" alt="icon RankD" title=":securityRankD:"/> | Simple PIN of 6 digits or more        |
+| <Icon src="/img/icons/RankE.svg" alt="icon RankE" title=":securityRankE:"/> | Simple PIN of 4 digits or more        |
+
+:::tip
+The highest grade among your configured methods is automatically retained. For example, if you have a simple PIN (grade D) and a passkey (grade S), your grade will be **S**.
+:::
+
+## 🛡️ Authentication methods {#methods}
+
+<SeparatedBox>
+<Tabs>
+<TabItem value="pin" label="PIN" default>
+
+The PIN code is the simplest method. Two modes are available:
+
+- **Simple PIN**: classic input in a window (4 to 12 digits).
+- **Reinforced PIN**: numeric keypad whose keys change place on every input (6 to 12 digits), to prevent a third party from guessing your code by watching you.
+
+:::warning
+PINs that are too simple are rejected: repeated digits, ascending or descending sequences, and common patterns.
+:::
+
+</TabItem>
+<TabItem value="otp" label="OTP (2FA Code)">
+
+OTP uses the TOTP (Time-based One-Time Password) standard, compatible with authentication apps such as [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2), [Authy](https://authy.com/), [1Password](https://1password.com/), [Dashlane](https://www.dashlane.com/) or [Bitwarden](https://bitwarden.com/).
+
+- 6-digit code renewed every 30 seconds.
+
+</TabItem>
+<TabItem value="passkey" label="Passkey (WebAuthn)">
+
+Passkeys offer the highest level of security (grade S). Authentication is done in the browser using:
+
+- **Fingerprint** or **facial recognition** (Touch ID, Face ID, Windows Hello).
+- **Physical security key** (YubiKey, etc.).
+
+When you use a passkey, an external link opens in your browser, in your Discord's language. Once the verification is validated, the role is assigned to you.
+
+</TabItem>
+</Tabs>
+</SeparatedBox>
+
+## 👤 Authentication profile (`/auth-profile`) {#auth-profile}
+
+The `/auth-profile` command manages your personal authentication profile. It works on any server and in private messages, and your profile is the same everywhere.
+
+<Settings start="authProfile" />
+
+### First use {#onboarding}
+
+On first use, a welcome screen presents the grades, temporary sessions and methods. Click "**Continue**" to configure your first method.
+
+### Managing authentications {#manage-methods}
+
+From your profile, you can:
+
+- Add, change or delete a **PIN code** (simple or reinforced).
+- Enable the **2FA code** (OTP) with a QR code or a secret key, regenerate it or delete it.
+- Add a **passkey** from the registration page, or delete one. Each passkey displays the device name and its date of last use.
+
+If you already have a method, we ask you to authenticate before adding or changing one. The bottom of the profile reminds you of your grade and the method to add to go up a notch.
+
+:::info
+Deleting a method may lower your grade. Your access to roles that require a higher grade is then disabled.
+:::
+
+### Active sessions {#profile-sessions}
+
+Your active sessions, with their expiration, are displayed in the [`/auth`](#sessions) command's panel on each server.
+
+### Audit log {#profile-audit}
+
+Your profile shows the last 3 actions performed on your account. The "**View full logs**" button opens the full, paginated log, with the server concerned.
+
+### Account reset {#reset}
+
+The "**I forgot my auths**" button completely resets your account. This action:
+
+- deletes all your authentication methods (PIN, 2FA, passkeys);
+- disables your access to protected roles on all servers;
+- requires you to reconfigure everything.
+
+:::danger
+This action is irreversible. All your access is revoked immediately.
+:::
+
+## 🔑 Authenticate (`/auth`) {#auth}
+
+The `/auth` command allows you to authenticate to obtain a protected role.
+
+Use the command: ```/auth [role]```
+
+### Authentication process {#auth-flow}
+
+1. Run the `/auth` command on the server, or click "**Take a role**" in a staff panel.
+2. A menu displays the available roles with their required grade and session duration.
+3. Select a role.
+4. Choose an authentication method from those that reach the role's grade.
+5. Complete the verification (PIN, OTP or passkey).
+6. On success, we assign you the Discord role and create a session.
+
+:::info
+Only roles you are assigned to with the **Active** status appear in the menu.
+:::
+
+### Session management {#sessions}
+
+The `/auth` panel lists your active sessions. For each one, you can:
+
+- **Extend session**: authenticate again to start over with a full duration.
+- **Disconnect**: the session is revoked immediately and the Discord role removed.
+
+### Security {#auth-security}
+
+- **Warning**: a warning message appears starting from 3 failed attempts.
+- **Lockout**: after 5 failures, your account is locked for 1 hour.
+- **Reset**: after 10 failures, your account is reset and all your access is revoked.
+
+## ⚙️ Server configuration {#auth-settings}
+
+The Authentification Manager configuration panel opens in two ways:
+
+1. Run the [`/settings` command](../setup.md#settings).
+2. Open the "**Protection**" tab.
+3. Click "**Configure**" next to "**Authentification Manager**".
+
+The panel then replaces the dashboard, with a "**Back**" button to return to the Protection tab. You can also directly use the `/auth-settings` command, which opens the same panel.
+
+<Settings start="auth" />
+
+:::info
+The `/auth-settings` command is reserved for administrators by default. For a non-administrator manager to be able to use it, allow it for them in **Server Settings > Integrations > RaidProtect**.
+:::
+
+### Permissions {#permissions}
+
+| **Role**        | **Access**                                                                 |
+| --------------- | -------------------------------------------------------------------------- |
+| Owner           | Full access                                                                |
+| Administrator   | Full access (unless the Administrator permission comes from a role protected by AM) |
+| Manager         | Limited access: must authenticate, only manages the roles and users below them, cannot change the server configuration |
+
+#### Manager authentication {#manager-auth}
+
+A manager who is neither owner nor administrator must authenticate every time they open the panel. We offer them the methods that reach the **minimum manager grade**: "**Authenticate with PIN**", "**Authenticate with OTP**" or "**Authenticate with Passkey**". The reinforced PIN is entered on the shuffled-key keypad.
+
+The same protections as for `/auth` apply: warning from 3 failures, one-hour lockout at 5 failures, account reset at 10 failures.
+
+### Server settings {#server-settings}
+
+Click "**Edit**" next to "**Server Configuration**" to open the "**Server Authentication Configuration**" window:
+
+- **Default Session Time**: duration offered for new roles, in the format `30m`, `2h` or `1d`. Up to 8 hours in the free version, 24 hours in the [premium](/en/premium) version. Default: 10 minutes.
+- **Default Minimum Grade**: grade offered for new roles. Default: A.
+- **Min Managers Grade**: grade a manager must reach to open the panel. Default: A.
+- **Webhook URL (leave empty to clear)**: Discord webhook that receives the AM logs (optional). Only Discord webhook URLs are accepted.
+
+Managers cannot change these settings.
+
+### Roles tab {#roles-tab}
+
+The Roles tab lists your protected roles with their grade, session duration and number of users. Below the tabs, the "**Last sessions**" block shows the most recent one, and "**View all**" opens the list of all sessions.
+
+:::info
+**Limits:** 3 roles in the free version, 10 roles in the [premium](/en/premium) version. Disabled roles still occupy a slot.
+:::
+
+#### Add a role {#add-role}
+
+1. Open the Authentification Manager panel (see [above](#auth-settings)).
+2. In the "**Roles**" tab, click "**Add**".
+3. Choose the **Discord role** to protect.
+4. Choose the **minimum security grade**.
+5. Enter the **session duration**.
+6. Choose an **integration strategy** (see below).
+7. We detect the members who already have this role: adjust the selection, then click "**Send invitations**" (or "**Skip**").
+
+Each chosen member is attached to the role with the **Active** status if their grade is sufficient, otherwise **Invited**: they then receive a DM inviting them to set up `/auth-profile`.
+
+<SettingsModal name="authAddRole" />
+
+We refuse a role managed by an integration, a role used in Discord's Onboarding Process, a role above RaidProtect's role or above yours, and a role that is already protected.
+
+##### Integration strategies {#strategies}
+
+| **Strategy** | **Effect** |
+|---|---|
+| "**Use this role as-is**" | The chosen role directly becomes the protected role. This is the default choice. |
+| "**Create a separate permissions role**" | We create a `🔑 <role name>` role with the original permissions, just below the chosen role, and empty the original role's permissions. The original role permanently keeps its color and display, the new role is the one that is protected. |
+
+:::tip
+If your role is **displayed separately** in the member list, choose "**Create a separate permissions role**": your members keep their visible role permanently, and the sensitive permissions are only granted during authenticated sessions.
+:::
+
+#### Protect administrator roles from `/audit` {#audit-bulk}
+
+The [audit](./audit.md)'s administrator roles check offers "**Integrate all**": you protect in one go the administrator roles that are not yet protected, 5 roles at most per batch and within your free slots. Only roles below RaidProtect and below your highest role are offered.
+
+#### Edit a role {#edit-role}
+
+Click "**Edit**" on the role's row to open its sheet (minimum grade, session duration, assigned users), then "**Edit**" to change the minimum grade and the session duration.
+
+#### Enable / Disable a role {#toggle-role}
+
+From the role's sheet, "**Disable**" pauses the role without deleting it: no session is created for it anymore. Ongoing sessions are revoked and the Discord role is removed from the members concerned. "**Enable**" puts it back in service, within your slots.
+
+#### Delete a role {#delete-role}
+
+"**Delete**" permanently removes the role from the Authentification Manager, along with all user assignments. You are asked for confirmation.
+
+### Users tab {#users-tab}
+
+The Users tab lists the members attached to at least one protected role, with their grade, number of roles and manager status.
+
+:::info
+**Limits:** 20 users in the free version, 50 in the [premium](/en/premium) version.
+:::
+
+#### Add a user {#add-user}
+
+1. Open the "**Users**" tab.
+2. Click "**Add**".
+3. Choose the **user** and the **Authentication role** to assign to them.
+
+The member receives a DM: they can use the role right away if their grade is sufficient, otherwise they are invited to set up a method of sufficient grade.
+
+:::info
+Invitations are limited to prevent spam. Blocked ones can be resent later from the member's sheet.
+:::
+
+#### User sheet and statuses {#member-status}
+
+Click "**Manage**" to open a member's sheet: their grade, their ID, whether they are a manager, and each of their roles with its status. The role selector lets you add or remove some.
+
+| **Status**  | **Description**                                                   |
+| ----------- | ----------------------------------------------------------------- |
+| Invited     | The member has been added but their grade is not yet sufficient (profile to set up) |
+| Pending     | Awaiting approval: click "**Approve**"                            |
+| Active      | The member can authenticate to obtain the role                    |
+| Disabled    | Access is suspended: click "**Restore**" to reinstate it          |
+
+#### Promote to manager {#promote-manager}
+
+"**Make Manager**" gives the member access to the configuration panel, provided they reach the minimum manager grade. A manager manages the users and roles below them. "**Remove Manager**" removes this access.
+
+#### Delete a user {#delete-user}
+
+"**Delete User**" removes the member from all protected roles on the server. You are asked for confirmation.
+
+### Logs tab {#logs-tab}
+
+The Logs tab shows the Authentification Manager's log, paginated: sessions granted, extended or revoked, configuration changes... The eye-shaped button opens an entry's details (user, action, type, date, role and target). Logs are also sent to the configured webhook.
+
+### Sessions {#sessions-tab}
+
+There is no dedicated tab: the "**Last sessions**" block of the Roles tab shows the most recent session, and "**View all**" opens the list of all the server's sessions with their status (Active, Expired, Revoked). "**View**" shows a session's details and its latest actions.
+
+### Onboarding Process protection {#onboarding-protection}
+
+If a protected role is added to the questions of Discord's Onboarding Process, we automatically remove it from the question and record it in the logs: otherwise, any newcomer could obtain the role without authenticating.
+
+### End of Premium {#premium-end}
+
+When a [Premium](/en/premium) subscription ends, active roles beyond 3 are automatically disabled (the oldest are kept) and session durations over 8 hours are brought down to 8 hours.
+
+## Frequently asked questions {#faq}
+
+### Which authentication methods are available?
+
+There are three methods: the PIN code (simple or reinforced), OTP (a 2FA code following the TOTP standard) and passkeys (WebAuthn). Passkeys offer the highest level of security (grade S).
+
+### Where do I configure the Authentification Manager?
+
+In `/settings`, Protection tab, by clicking "Configure" next to "Authentification Manager", or directly with the `/auth-settings` command.
+
+### What happens when a session expires?
+
+The protected role is automatically removed from the member. They must re-authenticate via `/auth` to obtain it again, or extend their session before it expires.
+
+### What if I forget my credentials?
+
+From your `/auth-profile`, the "I forgot my auths" button fully resets your account: all your methods are deleted and your access is revoked. This action is irreversible and requires a complete reconfiguration.
+
+### How many roles can I protect with the Authentification Manager?
+
+You can protect 3 roles in the free version and 10 roles in the premium version, for 20 and 50 users respectively. Sessions last at most 8 hours in the free version and 24 hours in the premium version.
+
+### Can a manager change everything?
+
+No. A manager must authenticate every time they open the panel, only manages the roles and users below them, and cannot change the server configuration.

@@ -1,0 +1,99 @@
+---
+title: 使用 ID
+description: "了解如何透過開發者模式取得 Discord ID（使用者、頻道、訊息），並在 RaidProtect 指令中使用。"
+---
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Discord ID 是一組組的唯一數字，用來精準識別 Discord 上的每個使用者、頻道、伺服器或訊息。它是在平台上識別各種項目時可靠且永久不變的方式。
+
+:::note 對管理的好處
+使用 Discord ID 對管理操作特別有用，因為它可以：
+- **處罰不在場的使用者**：停權已離開伺服器的人
+- **避免錯誤**：即使暱稱相似，也能精準找到正確的人
+- **保留紀錄**：ID 永遠不會改變，不像暱稱可以更改
+- **解決衝突**：遇到特殊字元時也能清楚識別
+:::
+
+## 啟用開發者模式
+
+必須啟用開發者模式，才能使用 Discord ID。
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="desktop" label="在 Discord 電腦版/網頁版" default>
+
+    1. **開啟使用者設定**
+    - 點擊介面左下角的齒輪圖示 ⚙️
+
+    2. **前往進階設定**
+    - 在側邊欄中，前往「**進階**」分頁
+
+    3. **啟用開發者模式**
+    - 點擊切換按鈕，啟用「**開發者模式**」選項
+    - 啟用後，按鈕會變成藍色
+
+  </TabItem>
+  <TabItem value="mobile" label="在 Discord 手機版">
+
+    1. **開啟使用者設定**
+    - 點按右下角的頭像
+    - 點按介面右上角的齒輪圖示 ⚙️
+
+    2. **前往進階設定**
+    - 向下捲動並點按「**進階**」
+
+    3. **啟用開發者模式**
+    - 啟用「**開發者模式**」選項
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+## 複製 ID
+
+啟用開發者模式後，您就能複製任何項目的 ID：
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="user" label="使用者 ID" default>
+
+    - 在頭像或使用者名稱上按**右鍵**
+    - 選擇「**複製使用者 ID**」
+
+  </TabItem>
+  <TabItem value="channel" label="頻道 ID">
+
+    - 在頻道清單中的頻道名稱上按**右鍵**
+    - 選擇「**複製頻道 ID**」
+
+  </TabItem>
+  <TabItem value="server" label="伺服器 ID">
+
+    - 在左上角的伺服器名稱上按**右鍵**
+    - 選擇「**複製伺服器 ID**」
+
+  </TabItem>
+  <TabItem value="message" label="訊息 ID">
+
+    - 在訊息上按**右鍵**
+    - 選擇「**複製訊息 ID**」
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+## 搭配 RaidProtect 使用
+
+在 RaidProtect 指令中，可以用 ID 取代提及：
+
+- [`/ban user:123456789012345678 reason:違反伺服器規則`](../features/moderation#ban)
+- [`/clear amount:100 user:123456789012345678`](../features/moderation#clear)
+- [`/userinfo user:123456789012345678`](../features/utilities#userinfo)
+- [`/bypass minage user:123456789012345678`](../features/onboarding#bypass-minage)
+
+:::info
+即使使用者不在線上、也不在您的伺服器上，您仍然可以憑他的 Discord ID 將他停權。
+:::

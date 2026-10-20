@@ -1,0 +1,369 @@
+---
+title: Yenilikler
+---
+
+import SuggestionLink from '@site/src/components/SuggestionLink';
+
+RaidProtect'te yapılan değişikliklerin ayrıntılı listesini keşfedin.
+
+## 3.7.0 Identity Update <span className="badge-experiment">Deneme</span> {#3-7-0}
+
+:::info Deneme
+Identity Update deneme aşamasındadır: 3.7.0 sürümüyle çıkışına kadar [Premium](/tr/premium) sunucular için herkese açık betadır. İçeriği hâlâ değişebilir.
+:::
+
+- Yeni [`/alt`](./features/alt-accounts.md#alt) komutu ve [çift hesaplar](./features/alt-accounts.md): aynı kişiye ait hesapları bağlayın, ana hesabını seçin; yaptırımları (yasaklama, atma, mute, jail, timeout, softban) bağlı hesaplara yayılır. Birinin yaptırımını kaldırmak hepsi için kaldırır.
+- [Bağlı hesapların yaptırımları](./features/alt-accounts.md#modes) türe göre ayarlanabilir; **Tuzak** modu ve yaptırım sürerken gelen veya yazan bağlı hesap için bir [atlatma yaptırımı](./features/alt-accounts.md#evasion) ile birlikte.
+- Sunucuda olmayan bağlı hesaplara geldiklerinde yaptırım uygulanır.
+- Yeni [Kişi başına tek hesap](./features/alt-accounts.md#single-account) ayarı: ikincil hesaplar karantinaya alınır.
+- [Captcha](./features/captcha.md#activity-alts) çift hesapları tespit eder: aynı kişi olduğundan emin olduğu hesapları kendisi bağlar ve olası bağlantıları ekibinize önerir.
+- [Bağlı hesapların yaptırımları](./features/alt-accounts.md#modes) **Premium**'a ayrılmıştır. Premium olmadan `/alt` hesapları sınırsız bağlar ve görüntüler.
+
+## 3.6.0 Shield Update <span className="badge-experiment">Deneme</span> {#3-6-0}
+
+:::info Deneme
+Shield Update deneme aşamasındadır: 3.6.0 sürümüyle çıkışına kadar [Premium](/tr/premium) sunucular için herkese açık betadır. İçeriği hâlâ değişebilir.
+:::
+
+- Yeni **[DISCON](./features/discon.md)**: `/discon` komutuyla veya [ekip için bir panelden](./features/discon.md#panel) tek tıkla ayarlanabilen, beş kademeli bir sunucu tehlike seviyesi. Her seviye sunucuyu otomatik olarak sıkılaştırır (doğrulama, captcha, DM kapatma, baskın modu, kilitleme) ve bir [ses kanalı](./features/discon.md#voice) geçerli seviyeyi gösterir.
+- Yeni [önleyici yavaş mod](./features/slowmode.md) (**Premium**): seçilen kanalların yavaş modu, belirlediğiniz mesaj akış hızını tutturmak için kendiliğinden ayarlanır.
+- [HoneyPot](./features/honeypot.md): iyi niyetli bir üyeye yanıldığını söyleme zamanı tanıyan yeni [cezadan önceki gecikme](./features/honeypot.md#grace).
+- Captcha'nın yeni [Akıllı tetiklemesi](./features/captcha.md#trigger): baskınlara ek olarak hesabı şüpheli görünen gelenleri de doğrular.
+- Yeni [Diğer sunucular](./features/automod.md#servers) filtresi, [Automod](./features/automod.md) içinde: diğer sunucuların davetleri, iletilen mesajları, kanal bağlantıları ve etiketleri, kara liste veya beyaz liste ile.
+- [Discord karantinasıyla](./features/sanctions.mdx#discord-quarantine) senkronize yeni **Karantina** yaptırımı.
+- [ScamLens](./features/scam-images.md): kendi dolandırıcılık görsellerinizi engellemek için [görsel kataloğu](./features/scam-images.md#catalog) (**Premium**).
+- Discord AutoMod tarafından engellenen her mesaj, “Discord Automod” adına sessiz bir [uyarı](./features/sanctions.mdx) oluşturur.
+- Yeni [kurulum sihirbazı](./setup.md#wizard): bölüm bölüm yönlendirmeli bir akış, sunucunuza göre önerilen korumalar ve sonunda bir denetim önizlemesi.
+- [Anti-spam](./features/anti-spam.mdx) V3, 3.5.0'dan beri herkes için zaten yerinde:
+  - Yeni algılama motoru: yaklaşık kopyalar, tekrarlanan bağlantılar, emojiler ve anlamsız mesajlar, flood ve birden fazla kanala yayılan spam.
+  - [Hazır ayarlar](./features/anti-spam.mdx#presets) ve ailelere göre ceza; her tetikleyiciyi ayarlamak için bir [gelişmiş mod](./features/anti-spam.mdx#advanced) ve [süresi](./features/anti-spam.mdx#duration) ile birlikte.
+
+## 3.5.0 Onboarding Update (19.10.2026) {#3-5-0}
+
+- **[`/settings`](./setup.md#settings)** yeniden tasarlandı: beş sekmeli bir panel (Genel, Katılımlar, Koruma, Moderasyon, Araçlar), Discord'un yeni arayüzü (Components V2) ve metin gerektiren ayarlar için giriş pencereleri. Bir **Yeni** rozeti yeni ayarları gösterir. [Premium](/tr/premium) ayarlar görünür kalır: Premium yalnızca bunları değiştirmek için istenir.
+- Katılımlar:
+  - Yeni [karşılama mesajı](./features/onboarding.md#welcome-message): üyenin adını taşıyan bir karşılama kartı, değişkenler ve düğmeler. Bir baskının hesaplarını karşılamamak için baskın modu veya Join lock etkin olduğu sürece gönderilmez.
+  - [Otomatik roller](./features/onboarding.md#autorole) artık captcha ayarından ayrı, kendi ayarına sahip ve birden fazla rol kabul ediyor. Doğrulama geçildikten sonra verilirler.
+  - [Minimum hesap yaşı](./features/onboarding.md#minage) [birkaç eylem](./features/onboarding.md#minage-action) sunar: çok yeni hesabı atmak, gerekli yaşa kadar jail'e almak veya ancak gerekli yaşa ulaştığında çözebileceği bir captcha'da tutmak.
+  - [Otomatik RaidMode](./features/raid-mode.md#action)'un baskın sırasındaki tepkisini siz seçersiniz: davetleri engellemek, gelenleri atmak (**Premium**), onları captcha'ya göndermek veya baskın bitene kadar captcha'da bekletmek. Yalnızca davetlerin engellenmesi hâlâ sunucuda Discord topluluğunun etkin olmasını gerektirir.
+  - [Captcha](./features/captcha.md) bir Panel [görüntüleme modu](./features/captcha.md#display-mode) ve Otomatik veya Sürekli bir [tetikleme](./features/captcha.md#trigger) kazanır. Yapılandırması, doğrulamanın atlatılmasına izin veren kanalları ve rolleri, bunları düzeltmek için bir düğmeyle birlikte bildirir.
+  - Panel modunda captcha [Discord'dan çıkmadan açılır](./features/captcha.md#activity): robotlar için daha zor bir bulmaca, sunucunuzun renklerinde. Bir sonuç şüpheliyse ekibiniz bir rapor alır ve üyenin içeri alınıp alınmayacağına karar verir.
+  - Yeni [test modu](./features/captcha.md#test-mode): ekibiniz captcha'yı denemek için çözebilir, hiçbir eylem uygulanmaz.
+- Koruma:
+  - [Authentification Manager](./features/authentication-manager.mdx) artık `/settings` içinden yapılandırılıyor ve kimlik doğrulama sayfaları çevrildi.
+  - [DM Kapatma](./features/dm-lock.mdx) bir giriş penceresinde ayarlanır.
+- Moderasyon:
+  - Müsait moderatörleri belirtmek için yeni [`/onduty`](./features/moderation.mdx#onduty) komutu ve görevde rolü.
+  - Ekip kanallarınızda yayınlanacak yeni [`/display staff`](./features/display.mdx#staff) panelleri: rol alma, göreve başlama, kullanışlı komutların hatırlatması.
+  - `/discord-sanctions`, kullanıcı belirtilmediğinde genel istatistikleri gösterir.
+- Araçlar:
+  - Yeni [`/inviteinfo`](./features/utilities.mdx#inviteinfo) komutu. `/userinfo` ve `/inviteinfo` her yerde kullanabilmeniz için hesabınıza da kurulur.
+  - Yeni [`/privacy`](./features/utilities.mdx#privacy) komutu ve [`/snipe`](./guides/malfunctions.md#snipe) komutunun silinen mesajları bulabilmesi için gereken yeni **Mesaj önbelleği** ayarı.
+  - [`/feedback`](./features/utilities.mdx#feedback), bir anti-spam sorunu bildirdiğinizde bir tanı sunar.
+- Genel:
+  - RaidProtect artık İtalyanca, Türkçe, Vietnamca, Japonca ile Basitleştirilmiş ve Geleneksel Çincenin gelişiyle [11 dil](./language.md) konuşuyor. Varsayılan olarak [sunucunun dilini takip eder](./language.md#follow).
+  - Şeffaflık özetleri tarafından kullanılan yeni sunucu [saat dilimi](./setup.md#timezone).
+  - [Mesaj komutları](./guides/prefix.md) ve [izinleri](./guides/prefix.md#permissions) iki ayrı ekranda ayarlanır. Discord'da (Entegrasyonlar) ayarlanan komut izinleri, “**Yaptırım uygula**” menüsündeki yaptırımlara da uygulanır (bir üyeye sağ tıklama).
+  - [Botun özelleştirilmesi](./setup.md#customize) (**Premium**) artık `/settings` içinden ayarlanır.
+- Çeşitli düzeltmeler ve çeviri düzeltmeleri.
+
+## 3.4.0 Antispam Update (18.07.2026) {#3-4-0}
+
+- [Anti-spam](./features/anti-spam.mdx) V2:
+  - **Çok kanallı spam**: spam birden fazla kanala yayıldığında özel bir yaptırım (varsayılan Jail, en az Timeout).
+  - Yeni **ek dosya spam'i** [tetikleyicisi](./features/anti-spam.mdx#triggers) (varsayılan olarak devre dışı).
+  - Bir spam'in neden cezalandırıldığını veya cezalandırılmadığını anlamak için [simülasyon](./features/anti-spam.mdx#simulation).
+  - Spam mesajları artık yaptırım ne olursa olsun **silinir** (ban, jail, mute, kick veya timeout).
+  - **Anti-scam yaptırımı yapılandırılabilir** hale geldi: [anti-spam'in yaptırım menüsünden](./features/anti-spam.mdx#triggers) ayarlanır ve varsayılan olarak [HoneyPot'un yaptırımını](./features/honeypot.md#sanction) izler; anti-scam olayları anında cezalandırılır ve loglanır.
+  - Her tetikleyici, yeni **Devre dışı bırak** seçeneğiyle tek tek devre dışı bırakılabilir ve hassasiyet seviyelerinin yerini basit bir anahtar alır.
+  - İlgili rol yapılandırılmadığında **Mute** ve **Jail** yaptırımları sınırlandırılmış bir timeout'a döner.
+  - Rich embed gönderen selfbotlar algılanır ve ScamLens tarafından engellenen dolandırıcılıklar [HoneyPot](./features/honeypot.md)'ın bildirilen hesap sayacına sayılır.
+- **[Bildirimler](./features/reports.md)** sisteminin tamamen yeniden tasarlanması:
+  - Bildirimler artık **olaylar** halinde gruplanır: aynı üyeyi hedefleyen birden fazla bildirim tek bir olayda birleşir; [yapılandırılabilir bir gruplama modu](./features/reports.md#group) ile.
+  - Bildirim komutları artık bir **sebep modalı** açar; profil bildirimlerinde (sesli ve DM etkinliği dahil) bir “neyi bildiriyorsunuz” listesi ile.
+  - Her olay artık bildirimin altında bir **thread** açar: bildirilen üyenin profil kartı, mesaj başına sebep başlıkları, çözen moderatörün adı ve ret notları.
+  - Yeni [bildirenin bilgilendirilmesi](./features/reports.md#notify): bildirenler, bildirimleri işlendiğinde DM ile bilgilendirilebilir; yapılandırılabilir bir ayrıntı düzeyiyle (kabul/ret kararına kadar).
+  - Yeni [güven rolü](./features/reports.md#trusted-role) (**Premium**): güvenilir üyeler bildirirken **24 saatlik önleyici bir timeout** uygulayabilir ve acil bildirimleri moderasyon rolünü yeniden etiketler.
+  - Yeni [kötü bildiricilere karşı koruma](./features/reports.md#bad-reporters): tekrar eden sahte bildiriciler otomatik olarak tespit edilebilir, engellenebilir veya cezalandırılabilir (eşik, pencere ve mod yapılandırılabilir).
+  - Üye cezalandırıldığında açık olaylar otomatik olarak kapatılır.
+  - Bir bildirim kabul edildiğinde önleyici yaptırımlar yeniden yazılır, reddedildiğinde iptal edilir.
+- Yeni **[Şeffaflık](./features/transparency.md)** sistemi:
+  - Sunucunun moderasyon etkinliğinin, yapılandırılabilir bir plana göre otomatik yayınlanan [periyodik özetleri](./features/transparency.md#recaps).
+  - Yeni [herkese açık modlog](./features/transparency.md#modlog): yaptırımlar tür ve kaynağa göre filtrelenerek, salt okunur bir #public-modlog kanalının tek tıkla oluşturulmasıyla herkese açık bir kanalda yayınlanabilir.
+  - Kapanmış son dönemin özetini istek üzerine göstermek için yeni [`/transparency` komutu](./features/transparency.md#command).
+- Yeni [`/audit` komutu](./features/audit.md): genel bir puan, [ayrıntılı denetimler](./features/audit.md#checks) (doğrulama düzeyi, izinler, kanallar) ve [tek tıkla düzeltmeler](./features/audit.md#fix) ile sunucunun eksiksiz bir **güvenlik denetimi**. Yönetici rolleri doğrudan denetimden Authentification Manager'a eklenebilir.
+- Baskın modu ve Join lock için yeni [atma modu](./features/raid-mode.md#kick-mode) (**Premium**): yeni gelenler, davetlerin yerel duraklatması yerine, bir açıklama DM'i ve geri dönmek için bir davet düğmesiyle atılır. Yeni [`/bypass raid` komutu](./features/raid-mode.md#bypass-raid), mod etkinken belirli kullanıcıların girmesine izin verir.
+- [Mesaj komutları](./guides/prefix.md#permissions) artık `/settings` içindeki yeni bir seçenekle **Discord komut izinlerini** (Entegrasyonlar sekmesi) izleyebilir.
+- RaidProtect artık [DM Kapatma](./features/dm-lock.mdx) kaynaklı **Discord güvenlik uyarılarının** altında yanıt verir; uyarıyı alıntılar ve ayarın nereden değiştirileceğini açıklar.
+- [Minimum hesap yaşı](./features/raid-mode.md#minage) atma logu artık gereken eşiği bir zaman damgası olarak gösterir.
+- Ayarlar ve kurulum:
+  - `/settings` ana menüsü mantıksal satırlar halinde yeniden düzenlendi.
+  - Kurulum mesajı artık komutlara doğrudan bağlantı verir ve log kanalını değiştirmek için bir düğme sunar.
+  - Captcha kanalı silindiğinde bir **captcha'yı devre dışı bırak** düğmesi sunulur.
+- Sonraki güncellemeleri hızlandırmak için Discord katmanının paylaşılan kütüphanelere (`@fca.gg/discord`) dahili taşınması.
+- Düzeltme:
+  - **timeout** ile **mute** arasında ve yönetici hedefleri ile rol hiyerarşisi engelleri arasında ayrım yapan daha net hata mesajları.
+  - Discord AutoMod timeout'larının otomatik dönüşümünün düzeltilmesi.
+  - `/serverinfo` düzeltmesi: özel URL'ye erişim, kurallar ve istatistikler.
+  - `/discord-sanctions` takma adının ve mesaj komutlarının ön ek kullanımının düzeltilmesi.
+  - Rol değiştirme modunda yöneticilere uygulanan Jail'in düzeltilmesi.
+  - Webhook URL doğrulamasının sıkılaştırılması.
+  - Çeşitli düzeltmeler: yaptırım logları, captcha, DM Kapatma mesajları, moderasyon notları, Premium algılama.
+  - Çeşitli çeviri düzeltmeleri.
+
+## 3.3.3 (30.04.2026) {#3-3-3}
+
+- Bir üyenin merkezi moderasyon görünümünü (yaptırımlar, not, snipe) açmak için yeni [`/modview` komutu](./features/moderation.mdx#modview). <SuggestionLink id="544" />
+- Bir üyenin moderasyon notunu eklemek veya değiştirmek için yeni [`/note` komutu](./features/moderation.mdx#note). <SuggestionLink id="545" />
+- Bir üyenin sunucudaki takma adını değiştirmek veya sıfırlamak için yeni [`/nick` komutu](./features/moderation.mdx#nick).
+- RaidProtect'in **avatarının**, **banner'ının** ve **takma adının yazı stilinin** özelleştirilmesi (**Premium**).
+- Yeni **[HoneyPot](./features/honeypot.md)** modülü: ele geçirilmiş hesapları ve spam botlarını otomatik olarak cezalandıran ve ScamLens kataloğunu besleyen bir tuzak kanal. <SuggestionLink id="560" />
+- Mesaj komutlarının yeni ayrıştırılması.
+- Slash komutlarının `duration` parametrelerinde otomatik tamamlama.
+- Yaptırımlar:
+  - Mesajlarını silmek için bir üyeyi yasaklayıp yasağını kaldıran yeni [`/softban` komutu](./features/moderation.mdx#softban).
+  - Hedefi DM ile bilgilendirmemek için tüm yaptırım komutlarında yeni [`silent` seçeneği](./features/moderation.mdx). <SuggestionLink id="545" />
+  - Mesaj geçmişini silmek için `/ban` ve `/tempban` komutlarında yeni [`delete-messages` parametresi](./features/moderation.mdx#ban).
+  - Yeni [Jail rolüyle değiştir](./features/sanctions.mdx#jail-roles) modu: Jail yaptırımı hapis süresince üyenin tüm rollerini kaldırır ve serbest bırakıldığında geri yükler <SuggestionLink id="552" />
+  - Sunucuda yaptırımları [tamamen devre dışı bırakma](./features/sanctions.mdx#disable) imkânı.
+  - [`/sanctions delete` komutuna bir sebep](./features/sanctions.mdx#delete) ekleme imkânı.
+  - Süreli yaptırımların loglarında zaman damgasına ek olarak **nihai sürenin** gösterilmesi.
+  - Yaptırım DM'lerinin alındı bildiriminin takibinde iyileştirme: alındı, DM kapalı, süresi doldu, sessiz.
+  - Kick, softban veya geçici banın ardından bildirim DM'lerinde **sunucuya bir davet** içeren düğme. <SuggestionLink id="570" />
+- Sunucu bilgilerini görüntülemek için yeni [`/serverinfo` komutu](./features/utilities.mdx#serverinfo). <SuggestionLink id="264" />
+- Bir kanaldan veya bir kullanıcıdan son bir saatte silinen son mesajı geri almak için yeni [`/snipe` komutu](./features/moderation.mdx#snipe) (logların güncellenmesini beklerken geçici çözüm).
+- Doğrudan Discord'dan bir görüş, öneri paylaşmak veya hata bildirmek için yeni [`/feedback` komutu](./features/utilities.mdx#feedback).
+- [Anti-spam](./features/anti-spam.mdx#duration) tarafından uygulanan yaptırımlar için bir **süre** seçimi. <SuggestionLink id="559" />
+- [Otomatik baskın modu](./features/raid-mode.md#close-dm) etkinleştirildiğinde **DM'leri otomatik kapatma** imkânı. <SuggestionLink id="521" />
+- Discord AutoMod'un uyguladığı timeout'lar, yapılandırılan mute eşiğini aştığında otomatik olarak [rol tabanlı mute'a dönüştürülür](./features/sanctions.mdx#mute-threshold) (**Premium sunucular için herkese açık beta**).
+- Değişikliği geçici olarak uygulamak için [`/lock`](./features/channel-lock.md#lock-duration) ve [`/slowmode`](./features/moderation.mdx#slowmode) komutlarında yeni `[duration]` parametresi. <SuggestionLink id="515" />
+- Düzeltme:
+  - Yaptırımların sona ermesindeki hataların düzeltilmesi.
+  - Çeşitli çeviri düzeltmeleri.
+
+## 3.3.2 (20.03.2026) {#3-3-2}
+
+- Discord rollerine erişimi kimlik doğrulamayla korumak için yeni **[Authentification Manager](./features/authentication-manager.mdx)** (AM) sistemi.
+  - Kimlik doğrulayıp korumalı bir rol almak için yeni [`/auth` komutu](./features/authentication-manager.mdx#auth).
+  - Kimlik doğrulama profilini (PIN, OTP, passkey'ler) yönetmek için yeni [`/auth-profile` komutu](./features/authentication-manager.mdx#auth-profile).
+  - Korumalı rolleri ve yetkili kullanıcıları yapılandırmak için yeni [`/auth-settings` komutu](./features/authentication-manager.mdx#auth-settings).
+  - Yapılandırılan yöntemlere dayalı [güvenlik seviyeleri](./features/authentication-manager.mdx#grades) sistemi (S'den E'ye).
+  - [Passkey'ler (WebAuthn)](./features/authentication-manager.mdx#methods), [PIN kodları](./features/authentication-manager.mdx#methods) (basit ve güçlendirilmiş) ve [OTP (2FA)](./features/authentication-manager.mdx#methods) desteği.
+  - Süre sonu ve otomatik iptal içeren geçici oturumlar.
+  - İzin tavanı olan yöneticiler (manager) sistemi.
+- Loglar:
+  - Özel bir güncelleme öncesinde yeni log motoru.
+  - `/clear` komutunun toplu silme logları.
+  - Anti-Scam ve Otomatik RaidMode ayar değişikliklerinin logları.
+- Yeni **Premium** sistemi.
+  - Authentification Manager ve bilgi panelleri için artırılmış sınırlar.
+  - Özelleştirilebilir [yaptırım adları](./features/sanctions.mdx#custom-names) (ad, fiil ve DM'deki ifade).
+  - Yeni deneysel özelliklere erken erişim.
+- RaidProtect'in taklit edilmesinin algılanması ve engellenmesi.
+- Düzeltme:
+  - Unmute ve untimeout hatalarının düzeltilmesi.
+  - Jail kurulumunun düzeltilmesi.
+  - Bazı sunucularda “antispam bloke” sorununun düzeltilmesi.
+  - Çeşitli çeviri düzeltmeleri.
+- Performans ve kararlılık:
+  - Üyelerin, izinlerin ve mesajların önbelleğinin optimizasyonu.
+  - Yaptırımların sona ermesi artık saniyesine kadar kesindir.
+
+## 3.3.1 (09.02.2026) {#3-3-1}
+
+- [Uluslararasılaştırma](./language.md) (Almanca, İspanyolca ve Portekizcenin eklenmesi).
+- Yeni **[Jail](./features/sanctions.mdx#jail)** sistemi.
+  - Bir üyeyi hapsetmek için yeni [`/jail` komutu](./features/moderation.mdx#jail).
+  - Bir üyeyi geçici olarak hapsetmek için yeni [`/tempjail` komutu](./features/moderation.mdx#tempjail).
+  - Bir üyeyi serbest bırakmak için yeni [`/unjail` komutu](./features/moderation.mdx#unjail).
+  - Jail rolünün ve bilgi kanalının `/settings` üzerinden yapılandırılması.
+- Yeni **[rol ile Mute](./features/sanctions.mdx#mute)** sistemi: [yapılandırılabilir bir eşiğin](./features/sanctions.mdx#mute-threshold) ötesinde bot, Discord timeout'u yerine bir Mute rolü verir.
+  - `/timeout` ve `/untimeout` komutları [`/mute`](./features/moderation.mdx#timeout) ve [`/unmute`](./features/moderation.mdx#untimeout) oldu. Eşiğin altında Discord timeout'u varsayılan olarak kullanılmaya devam eder.
+  - Süre ne olursa olsun Discord timeout'unu zorlamak için yeni `[force_timeout]` parametresi.
+- [Bağlam menüsüyle yaptırım uygulama](./features/moderation.mdx#context-menu) (bir profile sağ tık).
+- Üyelerin kendi yaptırımlarını görüntülemesini sağlayan yeni [`/yaptirimlarim` komutu](./features/utilities.mdx#my-sanctions).
+- Kişisel yaptırımlara erişimi denetlemek için yeni [Cezaların Gizliliği](./features/sanctions.mdx#sanctions-privacy) ayarı.
+- Yaptırım sebeplerinde yeni [Medyaları göster](./features/sanctions.mdx#show-medias) ayarı.
+- [`/sanctions search`](./features/sanctions.mdx#search) içindeki filtrelerin görsel yeniden tasarımı ve [moderatör türü](./features/sanctions.mdx#search) filtresinin eklenmesi.
+- Destek botu aracılığıyla [yaptırımların içe / dışa aktarılması](./features/sanctions.mdx#import-export).
+- **[Bilgi panelleri](./features/display.mdx)** sistemi (`/display public`).
+- Üyelerin bir sunucuda RaidProtect'in bazı özelliklerinden **[engellenmesi](./features/utilities.mdx#block)** için yeni sistem.
+  - Yeni [`/block add` komutu](./features/utilities.mdx#block-add).
+  - Yeni [`/block remove` komutu](./features/utilities.mdx#block-remove).
+  - Yeni [`/block list` komutu](./features/utilities.mdx#block-list).
+- Etkin olmayan üyeleri daha kesin koşullarla çıkarmak için yeni [`/prune` komutu](./features/utilities.mdx#prune). <SuggestionLink id="256" />
+- Bir kanalı silip yeniden oluşturmak için yeni [`/channel clear` komutu](./features/utilities.mdx#channel-clear). <SuggestionLink id="543" />
+- `/bypass` komutları için loglar. <SuggestionLink id="546" />
+- Yeni **Anti-Scam** modülü.
+- Düzeltme:
+  - Captcha yönetiminin iyileştirilmesi.
+  - Ön ek doğrulamasının düzeltilmesi.
+  - Çeviri düzeltmeleri.
+- Performans ve kararlılık:
+  - Yeni çeviri çatısı ([`@fca.gg/hermes` v1.2.1](https://github.com/FCAgreatgoals/hermes)).
+
+## 3.3.0 Moderation Update (19.12.2025) {#3-3-0}
+
+- Yeni **[Yaptırım geçmişi](./features/sanctions.mdx)** özelliği.
+  - Yeni [`/sanctions search` komutu](./features/sanctions.mdx#search).
+  - Yeni [`/sanctions info` komutu](./features/sanctions.mdx#info).
+  - Yeni [`/sanctions edit` komutu](./features/sanctions.mdx#edit).
+  - Yeni [`/sanctions delete` komutu](./features/sanctions.mdx#delete).
+  - Automod yaptırımları yaptırım geçmişine eklenir.
+  - Yasaklamalar, atmalar ve timeout'lar geçmişe eklenir ve loglanır. <SuggestionLink id="151" />
+  - Yaptırım bildirimi özel mesajının alındı bildirimi.
+- Yaptırımlar için yeni loglar.
+- Yaptırımlara ayrılmış bir log kanalı yapılandırma imkânı.
+- Yeni [`/warn` komutu](./features/moderation.mdx#warn). <SuggestionLink id="52" />
+- Yeni [`/untimeout` komutu](./features/moderation.mdx#untimeout). <SuggestionLink id="52" />
+- Yeni [`/tempban` komutu](./features/moderation.mdx#tempban). <SuggestionLink id="524" />
+- [RaidMode](./features/raid-mode.md#raid-mode) ve [Otomatik RaidMode](./features/raid-mode.md#duration) belirli bir süreden sonra otomatik olarak devre dışı kalır. <SuggestionLink id="37" />
+- [`/raidmode` komutu](./features/raid-mode.md#raid-mode) için yeni [süre] parametresi. <SuggestionLink id="37" />
+- Davetleri süresiz kapatmak için yeni [`/joinlock` komutu](./features/join-lock.mdx).
+- Bir kanalı birebir çoğaltmak için yeni [`/channel duplicate` komutu](./features/utilities.mdx#channel-duplicate). <SuggestionLink id="225" />
+- Yeni `/changelog` komutu ve değişiklik günlüğüne bakmak için `/settings` ve `/about` içinde düğmeler.
+- [Minimum yaş](./features/raid-mode.md#minage) özel mesajının alındı bildirimi.
+- Düzeltme:
+  - Cooldown yönetiminin iyileştirilmesi.
+  - Çeşitli çeviri hatalarının düzeltilmesi.
+  - Yaptırım sebeplerinin azami boyutunun artırılması (512).
+- Performans ve kararlılık:
+  - Mesaj önbelleğinin optimizasyonu.
+  - Veritabanı depolamasının optimizasyonu.
+  - Yaptırımların sona ermesinin yönetimi (`@fca.gg/midway` v1.3.2).
+  - Emoji yönetiminin yeniden tasarlanması ([`@fca.gg/glyph` v1.1.1](https://github.com/FCAgreatgoals/glyph)).
+
+## 3.2.1 (03.09.2025) {#3-2-1}
+
+- Bir kullanıcının Discord yaptırımlarını görüntülemeyi sağlayan yeni [`/ds` komutu](./features/utilities.mdx#discord-sanctions).
+- Anti-spam artık Slash Komutlarının spam'ini durdurabiliyor.
+- Yeni anti-spam tetikleyicisi: [Harici komut spamı](./features/anti-spam.mdx#triggers).
+- Bir kanalın yavaş modunu etkinleştirmeyi veya değiştirmeyi sağlayan yeni [`/slowmode` komutu](./features/moderation.mdx#slowmode).
+- Yeni [`/unban` komutu](./features/moderation.mdx#unban). <SuggestionLink id="296" />
+- Captcha'yı çözemeyen bir kullanıcıyı kabul etmek için yeni [`/bypass captcha` komutu](./features/captcha.md#bypass).
+- [`/lock` ve `/unlock` komutları](./features/channel-lock.md) için yeni [sebep] parametresi. <SuggestionLink id="516" />
+- Düzeltme:
+  - Çeşitli çeviri hataları.
+  - `/timeout` komutunda **sebebin** daha iyi hesaba katılması.
+  - Botun başlangıç süresinin ve komutların yürütme süresinin optimizasyonları.
+  - Ön ekli komutların yorumlanması ve doğrulanmasındaki düzeltmeler.
+  - **Varsayılan avatarlarla** ilgili hataların düzeltilmesi.
+
+## 3.2.0 Protection Update (10.07.2025) {#3-2-0}
+
+- Yeni [DM Kapatma](./features/dm-lock.mdx) özelliği.
+- Anti-spam'in uyguladığı [yaptırımların](./features/anti-spam.mdx#triggers) seçimi. <SuggestionLink id="85" />
+- Yeni [anti-spam logları](./features/anti-spam.mdx#logs) (algılamalar üzerinde daha fazla görünürlük).
+- Captcha olmadan [minimum hesap yaşı](./features/raid-mode.md#minage) etkinleştirme. <SuggestionLink id="314" />
+- Gerekli hesap yaşına sahip olmayan bir kullanıcıyı kabul etmek için yeni [/bypass minage komutu](./features/raid-mode.md#bypass-minage). <SuggestionLink id="447" />
+- [`/userinfo` komutunun](./features/utilities.mdx#userinfo) tamamen yeniden tasarlanması.
+- Botun yapılandırmasındaki önemli değişikliklerde yeni loglar.
+- Düzeltme:
+  - Anti-spam artık thread'lerde çalışıyor.
+  - [`/lock` komutu](./features/channel-lock.md) artık forum ve medya kanallarını destekliyor ve thread'leri kanallarla birlikte engelliyor.
+  - [Captcha](./features/captcha.md), botun gerekli izinleri olmadığında artık yeni üyeleri engellemiyor.
+  - Botun bir kanalda gerekli izinlere sahip olmadığı durumda [`/clear` komutu](./features/moderation.mdx#clear) hatasının düzeltilmesi.
+- Geliştirilmiş UI/UX:
+  - Üye, rol ve kanal seçim menülerine yazma imkânı hakkında açıklama.
+  - Otomatik Baskın Modu yapılandırması sırasında `COMMUNITY` özelliğinin varlığının kontrolü.
+- Performans ve kararlılık:
+  - Emoji yönetiminin yeniden tasarlanması ([`@fca.gg/glyph` v0.1.0](https://github.com/FCAgreatgoals/glyph)).
+  - Başlangıç süresinin azaltılması ve cluster izleme (`@fca.gg/midway` v1.3.1).
+  - Daha iyi rate limit yönetimi ve gecikmelerin azaltılması (`@fca.gg/iris` v1.1.4).
+  - Hata yönetimi için Sentry entegrasyonu ve geliştirici desteğinin iyileştirilmesi ([`@fca.gg/kino` v1.0.0](https://github.com/FCAgreatgoals/kino)).
+
+## 3.1.1 (21.05.2025) {#3-1-1}
+
+- Yeni [Etiket Rolü](./features/tag-role.md) özelliği. <SuggestionLink id="512" />
+- Yeni moderasyon komutu [`/timeout`](./features/moderation.mdx#timeout). <SuggestionLink id="52" />
+- Her sunucunun genel log kanalında güncellemelerin otomatik takibi.
+- Performans ve kararlılık:
+  - Antispam'in kalıcı durumlarının temizlenmesi.
+  - Bellek sızıntılarının düzeltilmesi.
+  - Veritabanı çağrılarının optimizasyonu.
+  - Botun genel hızının iyileştirilmesi.
+
+## 3.1.0 Interactions Update (12.03.2025) {#3-1-0}
+
+- **Slash Komutlarının** eklenmesi. <SuggestionLink id="463" />
+- [Uluslararasılaştırma](./language.md) (İngilizcenin eklenmesi). <SuggestionLink id="109" />
+- Yeni [`/report`](./features/reports.md) özelliği. <SuggestionLink id="164" />
+- Yeni yapılandırma komutları:
+  - Etkileşimli panel biçiminde [`/settings`](./setup.md#settings).
+  - Onboarding biçiminde [`/setup`](./setup.md#install).
+- Gelişmiş ayarlar:
+  - Her özelliği tek tek etkinleştirme/devre dışı bırakma. <SuggestionLink id="356" />
+  - [Captcha](./features/captcha.md#config) tarafından atılmadan önceki sürenin ve deneme sayısının seçimi. <SuggestionLink id="363" />
+  - [Captcha](./features/captcha.md) için doğrulama kanalı seçimi mümkün. <SuggestionLink id="385" />
+  - [Antispam](./features/anti-spam.mdx#ignore) içinde kullanıcıları/rolleri/kategorileri yok sayma. <SuggestionLink id="362" />
+  - [Hibrit komutların ön ekinin](./guides/prefix.md) seçimi. <SuggestionLink id="103" />
+  - [`/lock` komutunun](./features/channel-lock.md) kilitli kanalı `🔒` ile yeniden adlandırıp adlandırmayacağını seçme seçeneği.
+- Geliştirilmiş UX:
+  - Botun ping'inde görüntülenen ön ek + evrensel ön ek olarak bahsetme. <SuggestionLink id="193" />
+  - [Captcha](./features/captcha.md)'yı devre dışı bırakmak artık ilişkili rolü ve kanalı silmiyor. <SuggestionLink id="43" />
+  - Kanallar ve rollerle ilgili izin sorunlarının otomatik algılanması. <SuggestionLink id="65" />
+  - Doğrulama kanalının Discord karşılama sürecindeki görünürlüğünün otomatik kontrolü.
+  - Mesajların tekdüzeleştirilmesi.
+- Botun performansının ve kararlılığının iyileştirilmesi.
+
+## 3.0.0 (14.01.2023) {#3-0-0}
+
+- Gelecekteki güncellemelere hazırlanmayı ve botu kararlı hale getirmeyi amaçlayan eksiksiz bir yeniden yazım.
+- Bugüne kadar bilinen tüm hataların düzeltilmesi.
+- [`?raidmode` komutu](./features/raid-mode.md) artık “Davetleri devre dışı bırak” özelliğini kullanıyor.
+- Bir yaptırım uygulandığında ilgili üyeye otomatik özel mesaj gönderimi. <SuggestionLink id="426" />
+
+## 2.2.0 (13.04.2020) {#2-2-0}
+
+- Botun performansının iyileştirilmesi.
+- Projenin dahili mimarisinde önemli değişiklikler.
+
+## 2.1.3 (13.10.2019) {#2-1-3}
+
+- Kara listenin ve ilgili komutların kaldırılması.
+- Herhangi bir kullanıcıyı, ilgili sunucuda olmasa bile kimliğiyle yasaklama imkânı. <SuggestionLink id="113" /> <SuggestionLink id="148" />
+- [`?ban` komutunun](./features/moderation.mdx#ban) yanıtında yasaklama sebebinin gösterilmesi.
+- [`?raidmode` komutu](./features/raid-mode.md) artık üyeleri atma iznini gerektiriyor.
+- Captcha tamamlanmazsa atma süresinin değiştirilmesi (5 dk). <SuggestionLink id="129" />
+- Çeşitli dahili iyileştirmeler.
+
+## 2.1.2 (17.04.2019) {#2-1-2}
+
+- [`?userinfo` komutunun](./features/utilities.mdx#userinfo) eklenmesi. <SuggestionLink id="29" />
+- ~~`?lockall` ve `?unlockall` komutlarının eklenmesi~~ (Özellik kaldırıldı).
+- [`?kick`](./features/moderation.mdx#kick) ve [`?ban`](./features/moderation.mdx#ban) komutlarının eklenmesi.
+- [Captcha'da min-age](./features/raid-mode.md#minage) eklenmesi (sunucuya erişmek için minimum hesap yaşı tanımlama imkânı).
+- Komut çağırma mesajlarının otomatik silinmesini yapılandırma imkânı. <SuggestionLink id="26" />
+- Log kanalı silinmişse kendiliğinden yeniden oluşur.
+- Veritabanı bağlantısının yeniden tasarlanması.
+- Hata düzeltmeleri ve çeşitli iyileştirmeler.
+
+## 2.1.1 (21.02.2019) {#2-1-1}
+
+- `?settings captcha` komutunun kaldırılması (yerine `?captcha`).
+- Captcha için bir [log kanalı](./features/captcha.md#logs) tanımlama imkânının eklenmesi.
+- Captcha ile uyumlu bir [otorol](./features/captcha.md#autorole) eklenmesi.
+- [Captcha](./features/captcha.md)'nın basitleştirilmesi (5/6 doğru harf gerekli).
+- Diğer küçük değişiklikler.
+
+## 2.1.0 (16.02.2019) {#2-1-0}
+
+- Captcha'nın eklenmesi (`?settings captcha`). <SuggestionLink id="11" />
+- Anti-spam güvenlik seviyesinin eklenmesi (`?settings spamlevel`). <SuggestionLink id="25" />
+- `?about` ve `?invite` komutlarının eklenmesi.
+- [`?clear` komutunun](./features/moderation.mdx#clear) eklenmesi.
+- Çeşitli değişiklikler ve hata düzeltmeleri.
+
+## 2.0.1 (04.02.2019) {#2-0-1}
+
+- Yardımın (`?help`) yeniden yazılması.
+- [`?lock`](./features/channel-lock.md#lock) ve [`?unlock`](./features/channel-lock.md#unlock) içindeki hataların giderilmesi.
+
+## 2.0.0 (26.01.2019) {#2-0-0}
+
+- [Anti-spam](./features/anti-spam.mdx)'in eklenmesi.
+- [Otomatik baskın modunun](./features/raid-mode.md#config) eklenmesi.
+- Log kanalının eklenmesi.
+- Botun yapılandırmasının eklenmesi.
+- [Kanal kilitlemenin](./features/channel-lock.md) eklenmesi.
+- Çok sayıda çeşitli değişiklik.

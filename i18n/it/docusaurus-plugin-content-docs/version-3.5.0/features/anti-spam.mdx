@@ -1,0 +1,247 @@
+---
+title: Anti-spam
+description: "L'anti-spam di RaidProtect rileva e sanziona automaticamente lo spam sul tuo server Discord: flood, link, menzioni, selfbot e spam multicanale."
+---
+
+import AntiSpamMockup from '@site/src/components/DiscordMessage/mockups/anti-spam';
+import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<AntiSpamMockup />
+
+L'**anti-spam** di RaidProtect rileva e sanziona automaticamente lo [spam](/it/learn/spam-discord) sul tuo server Discord: messaggi a raffica, schermo inondato, copia-incolla, link, menzioni di massa, [selfbot](/it/learn/self-bot) e spam distribuito su più canali. Una volta attivato, si occupa di tutto senza che un moderatore debba intervenire.
+
+## ❓ Come funziona l'anti-spam? {#working}
+
+Analizziamo ogni messaggio confrontandolo con i messaggi recenti del suo autore.
+
+- **Dieci trigger**: ogni tipo di spam ha il proprio trigger (spam, flood, file, duplicati, link, menzioni, selfbot, comandi esterni, messaggi bloccati dall'AutoMod, multicanale). Il dettaglio è nella [tabella dei trigger](#triggers).
+- **Quattro famiglie**: i trigger sono raggruppati per natura (**Eccesso**, **Spam**, **Automatizzato** e **Spam multicanale**), il che permette di regolare le sanzioni in pochi clic.
+- **Vince la sanzione più severa**: quando uno spam supera più trigger contemporaneamente, applichiamo la sanzione più forte.
+- **Motivo chiaro**: il motivo della sanzione indica il tipo di spam rilevato.
+- **Log**: ogni sanzione viene inviata nel tuo canale dei log con i messaggi eliminati (vedi [i log](#logs)).
+
+L'anti-spam è **disattivato per impostazione predefinita**. Si attiva durante il [comando `/setup`](../setup.md) se lo spunti, o in qualsiasi momento da `/settings`.
+
+## 🛡️ Configurazione dell'anti-spam {#config}
+
+L'anti-spam si trova nella scheda “**Protezione**” di `/settings`. La sua schermata raggruppa l'interruttore, le sanzioni, il preset, le esenzioni e la simulazione.
+
+<Settings start="antispam" />
+
+### Attivare o disattivare l'anti-spam {#toggle}
+
+1. Esegui il [comando `/settings`](../setup.md#settings).
+2. Apri la scheda “**Protezione**”.
+3. Clicca su “**Configurare**” accanto a “**Anti-spam**”.
+4. Clicca su “**Attivare**” (o “**Disattivare**”) in alto a destra della schermata.
+
+### Scegliere un preset {#presets}
+
+Il modo più semplice per regolare l'anti-spam è scegliere un **preset**. Fissa in un colpo solo la sanzione di ogni famiglia:
+
+| Preset | Eccesso | Spam | Automatizzato | Spam multicanale |
+|---|---|---|---|---|
+| **Morbido** | Avvertimento | Timeout | Jail | Timeout |
+| **Standard** *(predefinito)* | Timeout | Softban | Bando | Jail |
+| **Rigido** *(sconsigliato)* | Softban | Bando | Bando | Bando |
+
+Il preset **Morbido** non espelle né banna mai: al massimo un timeout o il jail.
+
+1. Esegui il [comando `/settings`](../setup.md#settings).
+2. Apri la scheda “**Protezione**”.
+3. Clicca su “**Configurare**” accanto a “**Anti-spam**”.
+4. Scegli un preset nel selettore “**Scegli un preset**”.
+
+Il selettore mostra “**Personalizzato**” quando le tue impostazioni non corrispondono a nessun preset. In tal caso, applicare un preset sovrascrive le tue impostazioni: ti chiediamo di confermare spuntando “**Ho capito, applica il preset**”. Le durate proprie di alcuni trigger ripartono allora dalla [durata predefinita](#duration).
+
+<SettingsModal name="antispamPreset" />
+
+### Gestire canali, ruoli e membri ignorati {#ignore}
+
+Puoi escludere alcuni canali, ruoli o membri dalla sorveglianza anti-spam.
+
+1. Esegui il [comando `/settings`](../setup.md#settings).
+2. Apri la scheda “**Protezione**”.
+3. Clicca su “**Configurare**” accanto a “**Anti-spam**”.
+4. Scegli le tue esenzioni nei selettori “**Canale/i ignorato/i**”, “**Ruolo/i ignorato/i**” e “**Membro/i ignorato/i**” (25 al massimo ciascuno).
+
+Il selettore dei canali accetta le **categorie** (tutti i loro canali vengono allora ignorati), oltre ai canali vocali, alle stage e ai forum. I thread seguono il loro canale padre.
+
+:::info Chi viene ignorato automaticamente?
+- I canali il cui nome contiene “**spam**” (per un thread, conta il nome del canale padre).
+- I membri che RaidProtect non può moderare (ruolo più alto del suo).
+- Lo **staff** (permesso `Amministratore`, `Gestire il server` o `Gestire i messaggi`), **finché nessun ruolo né membro è ignorato**. Non appena aggiungi un ruolo o un membro all'elenco, conta solo quell'elenco: i membri dello staff che non vi figurano possono allora essere sanzionati.
+:::
+
+### Configurare le sanzioni per trigger {#triggers}
+
+Il dettaglio delle sanzioni si apre dalla schermata dell'anti-spam.
+
+1. Esegui il [comando `/settings`](../setup.md#settings).
+2. Apri la scheda “**Protezione**”.
+3. Clicca su “**Configurare**” accanto a “**Anti-spam**”.
+4. Clicca su “**Vedi i dettagli**” a destra di “**Sanzioni**”.
+5. Clicca su “**Modifica**” accanto alla famiglia da regolare, poi scegli la “**Sanzione**” e, se serve, la “**Durata**”.
+
+<Settings start="antispamSanctions" />
+
+Ogni famiglia raggruppa trigger della stessa natura. Ecco i trigger che rileviamo, con la loro sanzione predefinita (preset **Standard**):
+
+| Famiglia | Trigger | Cosa viene rilevato | Sanzione predefinita |
+|---|---|---|---|
+| **Eccesso** | Spam | Troppi messaggi in poco tempo. Contano anche emoji, sticker e messaggi senza senso (carattere ripetuto, parole in loop). | Timeout |
+| **Eccesso** | Flood (schermo riempito) | Messaggi che riempiono lo schermo: testi lunghi, immagini, anteprime di link, sticker | Timeout |
+| **Eccesso** | Spam di file | Invio massiccio di file o immagini | Timeout |
+| **Spam** | Spam di duplicati | Messaggi copiati e incollati o quasi identici | Softban |
+| **Spam** | Spam di link | Invio massiccio di link (un invito Discord conta come un link, anche senza `https://`; gli altri link Discord e le GIF restano neutri) | Softban |
+| **Spam** | Spam di menzioni | Menzioni di massa | Softban |
+| **Automatizzato** | Spam con selfbot | Uso di [selfbot](/it/learn/self-bot) per fare spam | Bando |
+| **Automatizzato** | Spam di comandi esterni | Uso di [comandi esterni](/it/learn/server-raidable) per fare spam | Bando |
+| **Automatizzato** | Spam di messaggi bloccati (AutoMod) | Messaggi ripetuti bloccati dall'[AutoMod di Discord](#automod) | Bando |
+| *(a parte)* | Spam multicanale | Lo stesso messaggio pubblicato in più canali in poco tempo | Jail |
+
+:::info Spam multicanale
+Lo **Spam multicanale** è particolare: la sua sanzione sostituisce quella del trigger d'origine quando lo spam riguarda più canali, solo se è più severa. Disattivarlo spegne anche tutta la sorveglianza a livello di server.
+:::
+
+Ecco le **[sanzioni disponibili](/it/learn/discord-sanctions)** per ogni famiglia o trigger:
+
+- **Avvertimento (Warn)**: invia un avvertimento al membro.
+- **Timeout**: rende il membro muto per una durata definita (28 giorni al massimo, limite di Discord).
+- **Mute**: assegna il [ruolo Mute](./sanctions.mdx#mute) configurato sul tuo server.
+- **Jail**: assegna il [ruolo Jail](./sanctions.mdx#jail) configurato sul tuo server.
+- **Espulsione (Kick)**: espelle il membro dal server.
+- **Softban**: banna e sbanna immediatamente il membro, il che elimina i suoi messaggi.
+- **Bando (Ban)**: banna il membro.
+- **Disattivare**: spegne completamente il trigger, nessuna sanzione viene applicata.
+
+:::info
+Un **Jail** o un **Mute** senza ruolo configurato diventa un **Timeout**: la schermata lo indica con “**→ Timeout**”. Ricorda di impostare questi ruoli nella scheda “**Moderazione**”, modulo “**Sanzioni**”.
+:::
+
+Per riportare tutte le sanzioni ai valori predefiniti, clicca su “**Reimpostare**” in alto a destra della schermata delle sanzioni.
+
+#### Modalità avanzata: regolare ogni trigger {#advanced}
+
+Se vuoi una sanzione diversa per un solo trigger (per esempio bannare lo spam di link ma mantenere un Softban per le menzioni), passa alla modalità avanzata.
+
+1. Esegui il [comando `/settings`](../setup.md#settings).
+2. Apri la scheda “**Protezione**”.
+3. Clicca su “**Configurare**” accanto a “**Anti-spam**”.
+4. Clicca su “**Vedi i dettagli**”, poi su “**Modalità avanzata**”.
+5. Scegli uno o più trigger in “**Seleziona i trigger da modificare**”, poi regola la loro sanzione e la loro durata.
+
+<SettingsModal name="antispamFamily" />
+
+La modalità avanzata resta mostrata finché una famiglia ha impostazioni diverse a seconda del trigger. Per tornare alla modalità semplice, clicca di nuovo su “**Modalità avanzata**” e spunta “**Ho capito, allinea le famiglie**”.
+
+#### Durata delle sanzioni {#duration}
+
+Le sanzioni che hanno una durata (mute, timeout, jail) usano la **durata predefinita**, fissata a 1 ora. Puoi cambiarla per tutto l'anti-spam, oppure dare una durata propria a una famiglia o a un trigger.
+
+**Durata predefinita:**
+
+1. Esegui il [comando `/settings`](../setup.md#settings).
+2. Apri la scheda “**Protezione**”.
+3. Clicca su “**Configurare**” accanto a “**Anti-spam**”.
+4. Clicca su “**Vedi i dettagli**”.
+5. Scegli una durata nel selettore “**Durata predefinita**” (Permanente, 5 minuti, 1 ora o 1 giorno), oppure “**Valore personalizzato**” per inserire la tua (per esempio `30m`, `2h`, `7d`).
+
+**Durata propria di una famiglia o di un trigger:** nella finestra aperta da “**Modifica**” (o dalla modalità avanzata), scegli una “**Durata**”, oppure inserisci una “**Durata personalizzata**”. L'opzione “**Predefinita (durata globale)**” torna alla durata predefinita.
+
+:::info
+- Una durata personalizzata deve essere di **5 minuti minimo**.
+- “**Permanente**” su un Timeout viene riportato a 28 giorni, il massimo consentito da Discord.
+- La durata viene ignorata per le sanzioni che non ne hanno (avvertimento, espulsione, softban, bando).
+- Quando lo spam multicanale prende il testimone, si applica la sua durata.
+:::
+
+### Messaggio pubblico di sanzione <span className="badge-premium">Premium</span> {#public-message}
+
+Per impostazione predefinita, ogni sanzione dell'anti-spam viene annunciata da un **messaggio pubblico** nel canale (per esempio “membro è stato mutato”). I server [Premium](/it/premium) possono nasconderlo per una moderazione più discreta.
+
+1. Esegui il [comando `/settings`](../setup.md#settings).
+2. Apri la scheda “**Protezione**”.
+3. Clicca su “**Configurare**” accanto a “**Anti-spam**”.
+4. Clicca su “**Vedi i dettagli**”.
+5. Clicca su “**Disattivare**” accanto a “**Messaggio pubblico di sanzione**”.
+
+:::info
+Questa impostazione è condivisa con il [filtro immagini ScamLens](./scam-images.md): disattivarla nasconde anche gli annunci delle immagini di truffa eliminate.
+:::
+
+## 🔎 Simulare uno spam {#simulation}
+
+Un membro ha fatto spam senza essere sanzionato, o al contrario un membro è stato sanzionato a torto? La **simulazione** ti dice se l'anti-spam scatterebbe in una situazione precisa, e perché.
+
+1. Esegui il [comando `/settings`](../setup.md#settings).
+2. Apri la scheda “**Protezione**”.
+3. Clicca su “**Configurare**” accanto a “**Anti-spam**”.
+4. Clicca su “**Simula**”.
+5. Scegli il “**Membro da testare**”, il “**Canale da testare**” e il “**Tipo di spam**”.
+
+<SettingsModal name="antispamSimulate" />
+
+La simulazione verifica i permessi, le esenzioni e la sanzione prevista.
+
+Il risultato indica anche il **picco dell'ultima ora** per questo membro, in percentuale della soglia, poi il verdetto e la sanzione che verrebbe applicata.
+
+:::warning Permessi richiesti
+L'anti-spam non sanziona nessuno se RaidProtect non ha contemporaneamente i permessi `Bannare i membri`, `Espellere i membri` e `Escludere temporaneamente i membri`.
+:::
+
+## 🤖 AutoMod di Discord {#automod}
+
+RaidProtect lavora con l'**AutoMod di Discord**:
+
+- **Spam di messaggi bloccati**: quando un membro accumula messaggi bloccati dalle tue regole AutoMod, il trigger “**Spam di messaggi bloccati (AutoMod)**” lo sanziona (famiglia **Automatizzato**). Per questo, la regola AutoMod deve inviare i suoi **avvisi** in un canale che RaidProtect può vedere: è grazie a questi avvisi che individuiamo i messaggi bloccati.
+- **Avvertimento a ogni messaggio bloccato**: se le sanzioni sono attive sul tuo server, ogni messaggio bloccato da una regola AutoMod viene registrato come avvertimento nella cronologia del membro, tranne se la regola applica già un timeout. Il membro non riceve un messaggio privato per questo avvertimento. Maggiori dettagli nella pagina delle [sanzioni](./sanctions.mdx).
+
+## 🐢 Slowmode preventivo <span className="badge-experiment">Sperimentazione</span> <span className="badge-premium">Premium</span> {#slowmode}
+
+Per calmare un canale molto attivo senza sanzionare nessuno, lo [slowmode preventivo](./slowmode.md) (Premium, in sperimentazione con la Shield Update) regola automaticamente la modalità lenta dei tuoi canali in base al loro flusso di messaggi.
+
+## 📑 Log dell'anti-spam {#logs}
+
+Ogni sanzione viene inviata nel tuo canale dei log, con il tipo di spam come motivo. Per tutte le sanzioni tranne l'avvertimento, viene allegato un file contenente i messaggi eliminati: puoi scaricarlo o espanderlo.
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="animator" label="Ridotto" default>
+
+![Screenshot dei log dell'anti-spam](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-logs-anti-spam.webp)
+
+  </TabItem>
+  <TabItem value="moderator" label="Espansi">
+
+![Screenshot dei log dell'anti-spam espansi](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-logs-anti-spam-expand.webp)
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+## Domande frequenti {#faq}
+
+### L'anti-spam funziona senza configurazione?
+
+Basta attivarlo, durante il comando `/setup` o in `/settings`, scheda Protezione. Usa allora il preset Standard, che va bene per la maggior parte dei server. Puoi poi cambiare preset o regolare ogni famiglia.
+
+### L'anti-spam ha dei livelli di sicurezza (alto, medio, basso)?
+
+Nessun livello di sensibilità: l'anti-spam si attiva o si disattiva. In compenso, sono proposti tre preset di sanzioni (Morbido, Standard e Rigido), e ogni famiglia o trigger può ricevere la propria sanzione.
+
+### Si possono escludere alcuni canali o membri dall'anti-spam?
+
+Sì, puoi ignorare canali, categorie, ruoli o membri precisi. I canali il cui nome contiene “spam” vengono ignorati automaticamente. Lo staff (Amministratore, Gestire il server, Gestire i messaggi) è ignorato finché non hai aggiunto alcun ruolo né membro all'elenco.
+
+### Si può scegliere la sanzione applicata allo spam?
+
+Sì. Scegli un preset, regola la sanzione di ogni famiglia, oppure passa alla modalità avanzata per regolare ogni trigger, dall'avvertimento al bando. Puoi anche disattivare completamente un trigger e dare a ciascuno una durata propria.
+
+### Perché un membro non è stato sanzionato?
+
+Usa la [simulazione](#simulation): verifica i permessi di RaidProtect, la gerarchia dei ruoli, le esenzioni, il canale e la sanzione del tipo di spam, poi indica il picco di attività del membro rispetto alla soglia.
