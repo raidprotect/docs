@@ -1,0 +1,107 @@
+---
+title: 私信锁定
+description: "RaidProtect 的私信锁定可长期阻止来自您 Discord 服务器的私信，是抵御垃圾信息和诈骗的屏障。"
+---
+
+import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
+
+import DmLockMockup from '@site/src/components/DiscordMessage/mockups/dm-lock';
+
+<DmLockMockup />
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+RaidProtect 的**私信锁定**功能可以永久关闭从服务器发出的私信（DM）通道，突破 Discord 原生功能的限制：Discord 只能通过“暂停私信”这一网络安全操作将其阻止 24 小时。
+
+## 🚦 使用场景与建议 {#recommendations}
+
+- **容易遭遇垃圾信息或骚扰的服务器：** 对于私信滥用风险更高的公开社区或大流量社区，尤其推荐使用私信锁定。
+- **临时活动或敏感时期：** 在产品发布、重要公告或访问高峰期（例如：抽奖、促销）启用私信锁定，可以防范[网络钓鱼](/zh-CN/learn/token-grabber)或诈骗企图。
+- **有低龄用户的社区：** 对于未成年人较多的服务器，限制私信可以增强安全性，防止不当行为。
+- **持续保护：** 得益于自动化，不会因为忘记手动续期而出现防护空窗期。
+
+## ❓ 私信锁定的工作原理 {#working}
+
+RaidProtect 会在私信锁定到期之前自动为其续期，不存在防护空窗期。
+
+:::info
+仍然可以与以下对象收发消息：
+- 好友
+- 机器人
+- 工作人员
+:::
+:::warning
+Discord 的社区功能是私信锁定正常工作的必要条件。[请参阅我们的指南，检查您的服务器是否已启用社区。](../guides/community.md)
+:::
+
+## 🚩 配置私信锁定 {#config}
+
+1. 使用 [`/settings` 命令](../setup.md#settings)。
+2. 打开“**防护**”选项卡。
+3. 点击“**私信锁定**”旁边的“**编辑**”。
+4. 在打开的窗口中，勾选或取消勾选“**关闭服务器私信**”，然后确认。
+
+<SettingsModal name="dmlock" />
+
+### /dmlock 命令 {#dmlock}
+
+您也可以使用命令：```/dmlock```
+
+它会打开“**私信锁定配置**”界面，其中有一个用于启用或停用该防护的开关。如果缺少某项前提条件（社区模式或“**管理服务器**”权限），提示框会告知您，修复后可通过“**刷新**”按钮重新检查。该命令仅限拥有“**管理服务器**”权限的成员使用。
+
+<Settings start="dmlockCommand" />
+
+## ℹ️ /dmlock-info 命令 {#info}
+
+`/dmlock-info` 命令用于向成员告知服务器上**私信锁定**的当前状态。它会显示一条清晰的消息，说明该限制是**已启用**还是**已停用**，并附带一段通俗易懂的用途说明。
+
+**目的：**
+- 解释为什么私信受到限制（防范垃圾信息、诈骗、网络钓鱼）。
+- 减少新成员的困惑和反复出现的提问。
+- 提醒继续通过私信交流的条件（好友、工作人员、机器人、已有联系人）。
+
+**显示示例**
+<SeparatedBox>
+<Tabs>
+  <TabItem value="enable" label="已启用" default>
+
+![dmlock-info 命令已启用的截图](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-dm-lock-info-enable.webp)
+
+  </TabItem>
+  <TabItem value="disable" label="已停用">
+
+![dmlock-info 命令已停用的截图](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-dm-lock-info-disable.webp)
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+### ⚙️ 最佳实践
+
+- 邀请活跃成员使用 `/dmlock-info` 来解答新成员的疑问。
+- 定期展示它，或将其置顶在您的欢迎频道中。
+- 将它与您的规则或公告结合使用，以重申服务器的反垃圾信息政策。
+
+## 常见问题 {#faq}
+
+### 在哪里启用私信锁定？
+
+在 `/settings` 的“防护”选项卡中，点击“私信锁定”旁边的“编辑”，然后勾选“关闭服务器私信”。`/dmlock` 命令也会打开一个专用界面。
+
+### 为什么我无法启用私信锁定？
+
+缺少某项前提条件：您的服务器必须已启用 Discord 社区模式，并且 RaidProtect 必须拥有“管理服务器”权限。
+
+### 私信会被关闭多久？
+
+只要该防护处于启用状态就会一直关闭。Discord 将其安全操作限制为 24 小时，而我们会自动为其续期，直到您停用私信锁定。
+
+### 成员之间还能互发私信吗？
+
+可以，只要他们是好友或已经交流过。机器人和工作人员也始终可以发送私信。
+
+### DISCON 会启用私信锁定吗？
+
+会，从 3 级开始，适用于可使用 [DISCON](./discon.md) 的服务器（Shield Update 试验中）。降级时，只有当私信锁定是由 DISCON 启用时，我们才会将其停用。

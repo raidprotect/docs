@@ -3,244 +3,328 @@ title: Sanktionsverlauf
 description: "Der Sanktionsverlauf von RaidProtect bündelt alle Moderationsaktionen in einer durchsuchbaren, bearbeitbaren Datenbank für klare Nachverfolgung."
 ---
 
-import { SanctionLogsSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
+import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
 
 import SanctionsMockup from '@site/src/components/DiscordMessage/mockups/sanctions';
 
-{/* <SanctionsMockup /> masqué temporairement : mockup à améliorer */}
+{/* <SanctionsMockup /> vorübergehend ausgeblendet: Mockup zu verbessern */}
 
 import Icon from "@site/src/components/Icon";
 
-Der Sanktionsverlauf von RaidProtect ermöglicht es Ihnen, alle auf Ihrem Server verhängten [Sanktionen](/de/learn/discord-sanctions) zu verfolgen und zu verwalten. Dieses System zentralisiert alle Moderationsaktionen in einer durchsuchbaren und bearbeitbaren Datenbank und erleichtert so die Arbeit Ihres Moderationsteams.
+Mit dem Sanktionsverlauf von RaidProtect können Sie alle auf Ihrem Server verhängten [Sanktionen](/de/learn/discord-sanctions) nachverfolgen und verwalten. Dieses System bündelt alle Moderationsaktionen in einer durchsuchbaren und bearbeitbaren Datenbank und erleichtert so die Arbeit Ihres Moderationsteams.
 
 ## ❓ Funktionsweise des Verlaufs {#working}
 
-Der Sanktionsverlauf zeichnet automatisch alle auf Ihrem Server durchgeführten Moderationsaktionen auf:
+Der Sanktionsverlauf erfasst automatisch alle auf Ihrem Server durchgeführten Moderationsaktionen:
 
-- **Manuelle Sanktionen**: Alle Moderationsbefehle (`/ban`, `/tempban`, `/kick`, `/timeout`, `/warn`) werden automatisch im Verlauf gespeichert.
-- **Automatische Sanktionen**: Die vom Anti-Spam verhängten Sanktionen werden ebenfalls dem Sanktionsverlauf hinzugefügt.
-- **Verbannungen, Kicks und Timeouts**: Sanktionen, die ohne RaidProtect verhängt wurden, werden dem Verlauf hinzugefügt.
-- **Discord-Automod**: Sanktionen, die vom Automod von Discord verhängt wurden, werden ebenfalls hinzugefügt.
-- **Sanktionsbenachrichtigungen**: Sanktionierte Mitglieder erhalten eine private Nachricht, die sie über die Sanktion und deren Grund informiert. Der Bot sendet außerdem eine detaillierte Empfangsbestätigung, die den Versandstatus bestätigt: **empfangen**, **DMs geschlossen**, **abgelaufen** oder **silent** (wenn die Option `[silent]` verwendet wird). Bei Kicks, Softbans und temporären Bans enthält diese Nachricht zudem eine **Schaltfläche mit einer Server-Einladung**, damit das Mitglied nach Ablauf der Sanktion zurückkehren kann.
+- **Manuelle Sanktionen**: Alle [Moderationsbefehle](./moderation.mdx) (`/ban`, `/tempban`, `/kick`, `/mute`, `/jail`, `/warn` …) werden im Verlauf erfasst.
+- **Automatische Sanktionen**: Die von unseren Schutzmodulen verhängten Sanktionen ([Anti-Spam](./anti-spam.mdx), [HoneyPot](./honeypot.md), [ScamLens](./scam-images.md) …) werden ebenfalls dem Verlauf hinzugefügt.
+- **Banns, Kicks und Timeouts**: Ohne RaidProtect verhängte Sanktionen werden dem Verlauf hinzugefügt.
+- **AutoMod von Discord**: Die vom AutoMod von Discord verhängten Timeouts werden erfasst. Mit der Shield Update (im Experiment) erzeugt außerdem jede von einer AutoMod-Regel blockierte Nachricht eine **Verwarnung** im Namen von „**Discord Automod**“, still (keine DM), außer die Regel verhängt bereits einen Timeout.
+- **Benachrichtigungen über Sanktionen**: Sanktionierte Mitglieder erhalten eine Privatnachricht, die sie über die Sanktion und ihren Grund informiert. Der Bot sendet außerdem eine detaillierte Empfangsbestätigung mit dem Zustellstatus: **empfangen**, **DMs geschlossen**, **abgelaufen** oder **still** (wenn die Option `[--silent]` verwendet wird). Bei Kicks, Softbans und temporären Banns enthält diese Nachricht außerdem eine **Schaltfläche mit einer Server-Einladung**, damit das Mitglied nach Ende der Sanktion zurückkehren kann.
 
 :::info
-Alle aufgezeichneten Sanktionen enthalten: den sanktionierten Benutzer, den verantwortlichen Moderator, den Grund (bis zu 512 Zeichen), Datum und Uhrzeit sowie die Art der Sanktion und ob der Benutzer benachrichtigt wurde.
+Alle erfassten Sanktionen enthalten: den sanktionierten Benutzer, den verantwortlichen Moderator, den Grund (bis zu 512 Zeichen), Datum und Uhrzeit sowie den Sanktionstyp und ob der Benutzer benachrichtigt wurde.
 :::
 
 ## 🔍 Sanktionen suchen {#search}
 
-Der Befehl `/sanctions search` ermöglicht es Ihnen, Sanktionen im Verlauf nach verschiedenen Kriterien zu suchen.
+Mit dem Befehl `/sanctions search` können Sie Sanktionen im Verlauf nach verschiedenen Kriterien suchen.
 
-Verwenden Sie den Befehl: ```/sanctions search [benutzer] [moderator] [typ] [datum] [status] [moderator_typ]```
+Verwenden Sie den Befehl: ```/sanctions search [@user] [@moderator] [type] [reason] [date] [status] [moderator_type]```
 
-- `[benutzer]`: Alle Sanktionen eines bestimmten Benutzers suchen.
-- `[moderator]`: Alle Sanktionen suchen, die von einem bestimmten Moderator verhängt wurden.
-- `[typ]`: Nach Sanktionstyp filtern (Ban, Softban, Unban, Kick, Timeout, Untimeout, Warn, Jail, Unjail, Mute, Unmute).
-- `[datum]`: Nach Sanktionsdatum filtern.
-- `[status]`: Nach Sanktionsstatus filtern (Aktiv, Abgelaufen, Abgebrochen, Fehlgeschlagen).
-- `[moderator_typ]`: Nach Moderator-Typ filtern (Menschliche Aktionen, Automatisierte Aktionen, RaidProtect, Discord, Antispam usw.).
+- `[@user]`: Alle Sanktionen eines bestimmten Benutzers suchen. Gehört dieses Konto zu einer Gruppe von [Zweitkonten](./alt-accounts.md), erscheinen auch die Sanktionen der verknüpften Konten.
+- `[@moderator]`: Alle Sanktionen suchen, die von einem bestimmten Moderator verhängt wurden.
+- `[type]`: Nach Sanktionstyp filtern (Bann, Entbannung, Kick, Jail, Freilassung, Quarantäne, Timeout, Untimeout, Mute, Unmute, Verwarnung).
+- `[reason]`: Nach Grund filtern (Teilübereinstimmung).
+- `[date]`: Nach Datum der Sanktion filtern.
+- `[status]`: Nach Sanktionsstatus filtern (Aktiv, Abgelaufen, Abgebrochen).
+- `[moderator_type]`: Nach Moderator-Typ filtern (Menschliche Aktionen, Automatisierte Aktionen, Aktionen von RaidProtect, Aktionen von Discord, Antispam, Ablauf, Antiscam, HoneyPot, Discord Automod, Discord-Ablauf).
 
 ![Screenshot der Sanktionssuche](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-search.webp)
 
 :::tip
-Sie können mehrere Kriterien kombinieren, um Ihre Suche zu verfeinern. Suchen Sie beispielsweise nach allen Verbannungen, die von einem bestimmten Moderator durchgeführt wurden.
+Sie können mehrere Kriterien kombinieren, um Ihre Suche zu verfeinern. Zum Beispiel alle Banns suchen, die von einem bestimmten Moderator verhängt wurden.
 :::
 
-## ℹ️ Eine Sanktion anzeigen {#info}
+## ℹ️ Eine Sanktion einsehen {#info}
 
-Der Befehl `/sanctions info` ermöglicht es Ihnen, detaillierte Informationen über eine bestimmte Sanktion zu erhalten.
+Mit dem Befehl `/sanctions info` erhalten Sie detaillierte Informationen zu einer bestimmten Sanktion.
 
 Verwenden Sie den Befehl: ```/sanctions info (id)```
 
-Ersetzen Sie `(id)` durch die Kennung der Sanktion, die Sie anzeigen möchten.
+Ersetzen Sie `(id)` durch die Kennung der Sanktion, die Sie einsehen möchten.
 
-![Screenshot der Sanktionsinformationen](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-info.webp)
+![Screenshot der Informationen zu einer Sanktion](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-info.webp)
 
 ## ✏️ Eine Sanktion bearbeiten {#edit}
 
-Der Befehl `/sanctions edit` ermöglicht es Ihnen, den Grund einer bestehenden Sanktion zu ändern, nützlich zur Korrektur eines Fehlers oder zum Hinzufügen von Details.
+Mit dem Befehl `/sanctions edit` können Sie den Grund oder die Dauer einer bestehenden Sanktion ändern, nützlich, um einen Fehler zu korrigieren oder Details hinzuzufügen.
 
-Verwenden Sie den Befehl: ```/sanctions edit (id) (neuer_grund)```
+Verwenden Sie den Befehl: ```/sanctions edit (id) [reason] [duration]```
 
-Ersetzen Sie `(id)` durch die Kennung der zu ändernden Sanktion und `(neuer_grund)` durch den neuen Grund (maximal 512 Zeichen).
+Ersetzen Sie `(id)` durch die Kennung der zu ändernden Sanktion, `[reason]` durch den neuen Grund (höchstens 512 Zeichen) und `[duration]` durch die neue Dauer (z. B. `1d 2h`).
 
-![Screenshot der Sanktionsbearbeitung](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-edit.webp)
+![Screenshot der Bearbeitung einer Sanktion](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-edit.webp)
 
 :::warning
-Das Bearbeiten einer Sanktion aktualisiert den Eintrag im Verlauf, ändert jedoch nicht die auf Discord verhängte Sanktion (zum Beispiel bleibt ein verbannter Benutzer verbannt).
+Das Bearbeiten einer Sanktion aktualisiert den Eintrag im Verlauf, ändert aber nicht die auf Discord verhängte Sanktion (ein gebannter Benutzer bleibt zum Beispiel gebannt).
 :::
 
 ## 🗑️ Eine Sanktion löschen {#delete}
 
-Der Befehl `/sanctions delete` ermöglicht es Ihnen, eine Sanktion aus dem Verlauf zu löschen. Diese Aktion ist unwiderruflich.
+Mit dem Befehl `/sanctions delete` können Sie eine Sanktion aus dem Verlauf löschen. Diese Aktion ist unwiderruflich.
 
-Verwenden Sie den Befehl: ```/sanctions delete (id) [grund]```
+Verwenden Sie den Befehl: ```/sanctions delete (id) [reason]```
 
-Ersetzen Sie `(id)` durch die Kennung der zu löschenden Sanktion. Der Parameter `[grund]` ermöglicht es, **die Löschung zu rechtfertigen**, was in den Logs gespeichert wird.
+Ersetzen Sie `(id)` durch die Kennung der zu löschenden Sanktion. Mit dem Parameter `[reason]` können Sie **das Löschen begründen**, was in den Logs festgehalten wird.
 
-![Screenshot der Sanktionslöschung](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-delete.webp)
+![Screenshot des Löschens einer Sanktion](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-delete.webp)
 
 ## Sanktionsstatus {#status}
 
-Sanktionen können unterschiedliche Status haben:
+Sanktionen können verschiedene Status haben:
 
-| **Status**       | **Emojis**                                                                                                                  | **Bedeutungen**                                              |
+| **Status**       | **Emojis**                                                                                                                  | **Bedeutung**                                                |
 | ---------------- | ----------------------------------------------------------------------------------------------------------------------------| ------------------------------------------------------------ |
 | `Aktiv`          | <Icon src="/img/icons/SanctionStatusACTIVE.svg" alt="icon SanctionStatusACTIVE" title=":iconSanctionStatusACTIVE:"/>        | Die Sanktion ist aktiv.                                      |
 | `Abgelaufen`     | <Icon src="/img/icons/SanctionStatusEXPIRED.svg" alt="icon SanctionStatusEXPIRED" title=":iconSanctionStatusEXPIRED:"/>     | Die Sanktion ist abgelaufen.                                 |
 | `Abgebrochen`    | <Icon src="/img/icons/SanctionStatusCANCELED.svg" alt="icon SanctionStatusCANCELED" title=":iconSanctionStatusCANCELED:"/>  | Die Sanktion wurde von einem Moderator aufgehoben.           |
 | `Fehlgeschlagen` | <Icon src="/img/icons/SanctionStatusFAILED.svg" alt="icon SanctionStatusFAILED" title=":iconSanctionStatusFAILED:"/>        | Die Sanktion ist fehlgeschlagen (fehlende Berechtigungen).   |
 
-### Verwaltung von Duplikaten {#duplicates}
+### Umgang mit Duplikaten {#duplicates}
 
-Wird eine aktive, bereits bestehende Sanktion gefunden, können Sie:
+Wird eine aktive und frühere Sanktion gefunden, können Sie:
 
-- **Zusammenführen** der beiden Sanktionen: Die Dauer wird, sofern möglich, addiert und die Gründe werden zusammengeführt.
-- **Abbrechen** der aktiven Sanktion und Erstellen einer neuen Sanktion.
-- **Überschreiben** der aktiven Sanktion mit den Informationen der neu eingegebenen Sanktion.
+- Die beiden Sanktionen **zusammenführen**: Die Dauern werden nach Möglichkeit addiert und die Gründe aneinandergehängt.
+- Die aktive Sanktion **abbrechen** und eine neue Sanktion erstellen.
+- Die aktive Sanktion mit den Informationen der neu eingegebenen Sanktion **überschreiben**.
 
 ![Screenshot der Verwaltung von Sanktionsstatus](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-active-found.webp)
 
 ## ⚙️ Konfiguration der Sanktionen {#config}
 
-### Sanktionen deaktivieren {#disable}
+Alle Einstellungen der Sanktionen befinden sich auf einem einzigen Bildschirm:
 
-Sie können das **Sanktionssystem auf Ihrem Server vollständig deaktivieren**. Wenn die Sanktionen deaktiviert sind, zeichnet RaidProtect keine Sanktionen mehr im Verlauf auf, und die zugehörigen Befehle sind nicht verfügbar.
+1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
+2. Öffnen Sie den Tab „**Moderation**“.
+3. Klicken Sie neben „**Sanktionen**“ auf „**Konfigurieren**“.
 
-1. Nutzen Sie den [Befehl `/settings`](../setup.md#settings).
-2. Klicken Sie auf die Schaltfläche "**Sanktionen**".
-3. Klicken Sie auf "**Sanktionssystem**", um das gesamte Modul zu aktivieren oder zu deaktivieren.
+<Settings start="sanctions" />
+
+### Die Sanktionen deaktivieren {#disable}
+
+Sie können das **Sanktionssystem auf Ihrem Server vollständig deaktivieren**. Sind die Sanktionen deaktiviert, erfasst RaidProtect keine Sanktion mehr im Verlauf, und die zugehörigen Befehle sind nicht verfügbar.
+
+1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
+2. Öffnen Sie den Tab „**Moderation**“.
+3. Klicken Sie neben „**Sanktionen**“ auf „**Konfigurieren**“.
+4. Klicken Sie rechts vom Titel des Bildschirms auf „**Deaktivieren**“ (oder „**Aktivieren**“, um es wieder einzuschalten).
 
 ### Jail {#jail}
 
-Konfigurieren Sie die **Jail**, um eine rollenbasierte Moderationssanktion zu aktivieren, die restriktiver ist als ein herkömmlicher Mute. Nach der Konfiguration ermöglicht diese Rolle, ein Mitglied mit stark eingeschränkten Berechtigungen zu isolieren, und schaltet die Verwendung der Befehle [`/jail`](./moderation.mdx#jail) und [`/tempjail`](./moderation.mdx#tempjail) frei.
+Konfigurieren Sie das **Jail**, um eine rollenbasierte Moderationssanktion zu aktivieren, die restriktiver ist als ein klassisches Mute. Einmal konfiguriert, ermöglicht diese Rolle, ein Mitglied mit stark eingeschränkten Berechtigungen zu isolieren, und schaltet die Befehle [`/jail`](./moderation.mdx#jail) und [`/tempjail`](./moderation.mdx#tempjail) frei.
 
-1. Nutzen Sie den [Befehl `/settings`](../setup.md#settings).
-2. Klicken Sie auf die Schaltfläche "**Sanktionen**".
-3. Wählen Sie "**Jail**".
-4. Wählen Sie eine bestehende Rolle über das Auswahlmenü oder klicken Sie auf "**Einen für mich erstellen**".
+1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
+2. Öffnen Sie den Tab „**Moderation**“.
+3. Klicken Sie neben „**Sanktionen**“ auf „**Konfigurieren**“.
+4. Klicken Sie neben „**Jail**“ auf „**Bearbeiten**“.
+5. Wählen Sie eine vorhandene Rolle in der Auswahl oder klicken Sie auf „**Für mich erstellen**“.
 
-Bei der Erstellung der Rolle können Sie auch den **Jail-Informationskanal** konfigurieren:
+<Settings start="jail" />
 
-- **Einen bestehenden Kanal auswählen**, um dort Informationen für Mitglieder in der Jail anzuzeigen.
+Die Schaltfläche „**Für mich erstellen**“ öffnet ein Fenster, in dem Sie die Rolle benennen (standardmäßig `Eingesperrt`) und den **Informationskanal** für Mitglieder im Jail konfigurieren:
+
+- **Einen vorhandenen Kanal auswählen**: Er behält seine aktuelle Sichtbarkeit.
 - **Einen neuen Kanal erstellen**, indem Sie einen Namen angeben (Standard: `eingeschränkter-zugang`).
 
-Dieser Kanal entspricht dem reservierten Platz in den [Informationspanels](./display.mdx), der automatisch durch die Jail-Konfiguration verwaltet wird.
+Wir entziehen der Rolle die Berechtigung, die Kanäle des Servers zu sehen. Im Informationskanal können Mitglieder im Jail die Nachricht und den Verlauf lesen, aber weder schreiben, noch reagieren, noch Threads erstellen. Dieser Kanal entspricht dem reservierten Platz in den [Informationspanels](./display.mdx), der automatisch über die Jail-Konfiguration verwaltet wird.
 
 :::info
-Wenn bereits eine Jail-Rolle konfiguriert ist, können Sie den Informationskanal über die entsprechende Schaltfläche im Jail-Untermenü ändern.
+Ist bereits eine Jail-Rolle konfiguriert, können Sie den Informationskanal mit der Schaltfläche „**Kanal bearbeiten**“ auf dem Jail-Bildschirm ändern.
 :::
 
-#### Rollen während der Jail {#jail-roles}
-
-Im Jail-Untermenü steuert die Schaltfläche **Rollenverwaltung beim Jail**, was RaidProtect mit den Rollen des Mitglieds tut, wenn es eingesperrt ist. Zwei Modi:
-
-- **Jail-Rolle hinzufügen** *(Standard)*: Die Jail-Rolle wird einfach zusätzlich zu den vorhandenen Rollen des Mitglieds hinzugefügt.
-- **Durch die Jail-Rolle ersetzen**: RaidProtect **entfernt während der Inhaftierung alle Rollen des Mitglieds** und stellt sie ihm bei der Freilassung wieder her. Strenger; das verhindert, dass eine Rolle mit expliziten Berechtigungen die Einschränkungen der Jail-Rolle umgeht.
-
-Klicken Sie auf die Schaltfläche, um zwischen den beiden Modi zu wechseln.
-
-### Mute-Rolle {#mute}
-
-Konfigurieren Sie die **Mute-Rolle**, um eine rollenbasierte Sanktion anstelle des Discord-Timeouts für längere Zeiträume zu verwenden. Wenn die Mute-Dauer den definierten Schwellenwert überschreitet, weist der Bot dem betroffenen Mitglied automatisch die Mute-Rolle zu, anstatt ein Discord-Timeout anzuwenden.
-
-1. Nutzen Sie den [Befehl `/settings`](../setup.md#settings).
-2. Klicken Sie auf die Schaltfläche "**Sanktionen**".
-3. Wählen Sie "**Mute-Rolle**".
-4. Wählen Sie eine bestehende Rolle über das Auswahlmenü oder klicken Sie auf "**Einen für mich erstellen**".
-
-#### Mute-Schwellenwert {#mute-threshold}
-
-Konfigurieren Sie den **Mute-Rollen-Schwellenwert**, um festzulegen, ab welcher Dauer der Bot einen rollenbasierten Mute anstelle des Discord-Timeouts verwendet. Wenn die Mute-Dauer diesen Schwellenwert überschreitet, wird die Mute-Rolle automatisch angewendet. Ein Wert von 0 deaktiviert die Verwendung des Timeouts vollständig.
-
-1. Nutzen Sie den [Befehl `/settings`](../setup.md#settings).
-2. Klicken Sie auf die Schaltfläche "**Sanktionen**".
-3. Wählen Sie "**Mute-Schwellenwert**".
-4. Wählen Sie einen Wert im Auswahlmenü oder geben Sie einen benutzerdefinierten Wert ein.
+:::warning
+Lässt die Jail-Rolle noch einige Kanäle sichtbar, listet der Jail-Bildschirm sie in einem Kasten auf: Verweigern Sie ihr in diesen Kanälen die Berechtigung `Kanal ansehen` oder erstellen Sie mit „**Für mich erstellen**“ eine neue Rolle. Solange aktive Sanktionen auf der Jail- oder Mute-Rolle beruhen, können Sie sie nicht wechseln: Heben Sie diese Sanktionen auf oder warten Sie, bis sie ablaufen.
+:::
 
 :::info
-Die 28-Tage-Grenze für das Timeout wird von Discord vorgegeben. Über diese Dauer hinaus wird die Mute-Rolle systematisch verwendet, sofern konfiguriert.
+Ohne Jail-Rolle sind die Befehle `/jail` und `/tempjail` nicht verfügbar. Die automatischen Module ([Anti-Spam](./anti-spam.mdx), [HoneyPot](./honeypot.md), [falsche Melder](./reports.md#bad-reporters)) bieten Jail und Mute trotzdem an, mit dem Hinweis „**Nicht konfiguriert, es gilt Timeout**“: Die angewendete Sanktion ist dann ein Timeout.
 :::
+
+#### Rollen beim Jail {#jail-roles}
+
+Auf dem Jail-Bildschirm steuert die Auswahl „**Rollenverwaltung beim Jail**“, was RaidProtect mit den Rollen des Mitglieds tut, wenn es eingesperrt wird. Zwei Modi:
+
+- „**Jail-Rolle hinzufügen**“ *(Standard)*: Das Mitglied behält seine Rollen, die Jail-Rolle wird hinzugefügt.
+- „**Alle Rollen ersetzen**“: Wir **entfernen alle Rollen des Mitglieds** für die Dauer des Einsperrens und stellen sie bei der Freilassung wieder her. Das ist strenger und verhindert, dass eine Rolle mit expliziten Berechtigungen die Einschränkungen der Jail-Rolle umgeht.
+
+### Synchronisierte Discord-Quarantäne <span className="badge-experiment">Experiment</span> {#discord-quarantine}
+
+:::info Experiment: Shield Update
+Die synchronisierte Discord-Quarantäne gehört zur **Shield Update**, die für Version 3.6.0 vorgesehen ist. Bis zu ihrer Veröffentlichung befindet sie sich in der Experimentierphase, als öffentliche Beta für [Premium](/de/premium)-Server.
+:::
+
+Der AutoMod von Discord kann ein Mitglied in Quarantäne setzen, dessen Profil gegen eine Regel verstößt (Spitzname, Server-Tag). Mit dieser Einstellung folgen wir dieser Quarantäne: Das Mitglied erhält die **Jail-Rolle**, und eine Sanktion **Quarantäne** wird im Verlauf erfasst. Es verlässt sie, sobald Discord die Quarantäne aufhebt.
+
+1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
+2. Öffnen Sie den Tab „**Moderation**“.
+3. Klicken Sie neben „**Sanktionen**“ auf „**Konfigurieren**“.
+4. Klicken Sie neben „**Synchronisierte Discord-Quarantäne**“ auf „**Aktivieren**“.
+
 :::info
-Die **von Discords AutoMod verhängten Timeouts** werden automatisch in rollenbasiertes Mute umgewandelt, wenn ihre Dauer den konfigurierten Schwellenwert überschreitet, um Konsistenz mit Ihren manuellen Sanktionen zu gewährleisten. Die Dauer bleibt auf 28 Tage beschränkt (Discord-Limit).
-
-Diese Funktion befindet sich derzeit in **öffentlicher Beta für [Premium](/de/premium)-Server**.
+Diese Einstellung erfordert eine [Jail-Rolle](#jail). Sie zu deaktivieren hebt die von ihr gesetzten Quarantänen auf.
 :::
 
-### Vertraulichkeit der Sanktionen {#sanctions-privacy}
+### Mute {#mute}
 
-Konfigurieren Sie die Vertraulichkeitsstufe der Sanktionen, um zu steuern, auf welche Informationen Mitglieder bezüglich **ihrer eigenen Sanktionen** zugreifen können, über den Befehl [`/meine-sanktionen`](./utilities.mdx#my-sanctions) oder die Schaltfläche **Meine Sanktionen einsehen**.
+Konfigurieren Sie die **Mute-Rolle**, um für längere Dauern eine rollenbasierte Sanktion anstelle des Discord-Timeouts zu verwenden. Überschreitet die Dauer des Mutes den festgelegten Schwellenwert, weist der Bot dem betroffenen Mitglied automatisch die Mute-Rolle zu, anstatt einen Discord-Timeout anzuwenden.
 
-1. Nutzen Sie den [Befehl `/settings`](../setup.md#settings).
-2. Klicken Sie auf die Schaltfläche "**Sanktionen**".
-3. Wählen Sie "**Vertraulichkeit der Sanktionen**".
-4. Wählen Sie die gewünschte Zugangsstufe:
+1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
+2. Öffnen Sie den Tab „**Moderation**“.
+3. Klicken Sie neben „**Sanktionen**“ auf „**Konfigurieren**“.
+4. Klicken Sie neben „**Mute**“ auf „**Bearbeiten**“.
+5. Wählen Sie eine vorhandene Rolle in der Auswahl „**Mute-Rolle**“ oder klicken Sie auf „**Für mich erstellen**“ (wir erstellen die Rolle `Stumm` und entziehen ihr das Schreiben in allen Kanälen).
 
-| **Stufe**                             | **Beschreibung**                                                                                    |
-| ------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| Deaktiviert                           | Mitglieder können ihre persönlichen Sanktionen nicht einsehen.                                      |
-| Nur Sanktionen                        | Mitglieder können nur ihre Sanktionen und die verbleibende Zeit einsehen, falls zutreffend.         |
-| Mit Gründen                           | Mitglieder können ihre Sanktionen mit Gründen einsehen, ohne die Identität des Moderators.          |
-| Mit Gründen und Moderatoren           | Mitglieder können alle Informationen einsehen: Sanktionen, Gründe und Moderatoren.                  |
+#### Mute-Schwelle {#mute-threshold}
+
+Die **Mute-Schwelle** wird auf demselben Bildschirm wie die Rolle eingestellt. Sie legt fest, ab welcher Dauer der Bot die Mute-Rolle anstelle des Discord-Timeouts verwendet.
+
+1. Öffnen Sie auf dem Mute-Bildschirm die Auswahl „**Mute-Schwelle**“.
+2. Wählen Sie „**Immer**“, „**1 Stunde**“ (Standard), „**1 Tag**“, „**Erweitertes Timeout (=28 Tage)**“ oder „**Benutzerdefinierter Wert**“ (von 0 bis 28 Tage, z. B. `3d 1h 15m`).
+
+„**Immer**“ (ein Wert von 0) verwendet nie den Discord-Timeout: Jeder Mute läuft über die Rolle.
+
+:::info
+Das Limit von 28 Tagen für den Timeout wird von Discord vorgegeben. Darüber hinaus wird, falls konfiguriert, immer die Mute-Rolle verwendet. Die Option `[--force-timeout]` des [Befehls `/mute`](./moderation.mdx#timeout) erzwingt den Discord-Timeout trotz des Schwellenwerts.
+:::
+
+:::info
+Die **vom AutoMod von Discord verhängten Timeouts** werden automatisch in einen Mute per Rolle umgewandelt, wenn ihre Dauer den konfigurierten Schwellenwert überschreitet, um Konsistenz mit Ihren manuellen Sanktionen zu gewährleisten.
+:::
+
+### Datenschutz der Sanktionen {#sanctions-privacy}
+
+Konfigurieren Sie die Datenschutzstufe der Sanktionen, um zu steuern, auf welche Informationen zu **ihren eigenen Sanktionen** Mitglieder über den Befehl [`/meine-sanktionen`](./utilities.mdx#my-sanctions) oder die Schaltfläche **Meine Sanktionen einsehen** zugreifen können.
+
+1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
+2. Öffnen Sie den Tab „**Moderation**“.
+3. Klicken Sie neben „**Sanktionen**“ auf „**Konfigurieren**“.
+4. Klicken Sie neben „**Sanktions-Datenschutz**“ auf „**Bearbeiten**“.
+5. Wählen Sie im Fenster die gewünschte „**Zugriffsstufe**“:
+
+| **Stufe**                            | **Beschreibung**                                                                                    |
+| ------------------------------------ | --------------------------------------------------------------------------------------------------- |
+| Deaktiviert *(Standard)*             | Die Benutzer können ihre Sanktionen nicht einsehen.                                                 |
+| Nur Sanktionen                       | Die Benutzer können nur ihre Sanktionen und gegebenenfalls die verbleibende Zeit einsehen.          |
+| Mit Gründen                          | Die Benutzer können ihre Sanktionen und den Grund einsehen, ohne die Identität des Moderators.      |
+| Mit Gründen und Moderatoren          | Die Benutzer können alles zu ihren Sanktionen einsehen.                                             |
+
+<SettingsModal name="sanctionsPrivacy" />
 
 :::note
-Unabhängig von der gewählten Stufe behalten **Moderatoren vollen Zugriff** auf den Sanktionsverlauf über die Moderationswerkzeuge.
+Unabhängig von der gewählten Stufe **behalten die Moderatoren vollen Zugriff** auf den Sanktionsverlauf über die Moderationswerkzeuge.
 :::
 
 ### Medien anzeigen {#show-medias}
 
-Konfigurieren Sie die Anzeige von Medien in Sanktionsgründen. Wenn diese Option deaktiviert ist, werden Links mit den folgenden Endungen automatisch aus den Sanktionsgründen entfernt, wenn sie Mitgliedern angezeigt werden (über [`/meine-sanktionen`](./utilities.mdx#my-sanctions) oder die Sanktionsbenachrichtigungen):
+Konfigurieren Sie die Anzeige von Medien in den Sanktionsgründen. Ist diese Option deaktiviert (Standard), werden Links mit den folgenden Erweiterungen bei der Anzeige für Mitglieder (über [`/meine-sanktionen`](./utilities.mdx#my-sanctions) oder die Sanktionsbenachrichtigungen) automatisch aus den Sanktionsgründen entfernt:
 
 `png`, `jpg`, `jpeg`, `gif`, `webp`, `webm`, `mp4`
 
-1. Nutzen Sie den [Befehl `/settings`](../setup.md#settings).
-2. Klicken Sie auf die Schaltfläche "**Sanktionen**".
-3. Klicken Sie auf die Schaltfläche "**Medien anzeigen**", um die Option zu aktivieren oder zu deaktivieren.
+1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
+2. Öffnen Sie den Tab „**Moderation**“.
+3. Klicken Sie neben „**Sanktionen**“ auf „**Konfigurieren**“.
+4. Klicken Sie neben „**Medien anzeigen**“ auf „**Aktivieren**“ oder „**Deaktivieren**“.
 
-## ✨ Sanktionsnamen (Premium) {#custom-names}
+## ✨ Namen der Sanktionen <span className="badge-premium">Premium</span> {#custom-names}
 
-Mit der Premium-Version können Sie den Namen jedes Sanktionstyps an das Vokabular Ihres Servers anpassen. Für jeden Typ können Sie konfigurieren:
+Mit der [Premium](/de/premium)-Version können Sie den Namen jedes Sanktionstyps an das Vokabular Ihres Servers anpassen. Die benutzerdefinierten Namen ersetzen die Standardnamen in den Logs, Suchen und Menüs. Für jeden Typ können Sie konfigurieren:
 
-- **Name**: Ersetzen Sie den Standardnamen durch einen eigenen, bis zu 32 Zeichen (z. B. "Warn" → "Gelbe Karte").
-- **Verb**: Definieren Sie das in den Nachrichten verwendete Verb, bis zu 32 Zeichen (z. B. "verwarnt"). Wenn leer gelassen, wird der Name verwendet.
-- **DM-Modus**: Wählen Sie die Formulierung der privaten Nachricht an das sanktionierte Mitglied:
-  - "Sie wurden [Verb]" (Standard)
-  - "Sie haben einen [Name] erhalten"
+- **Name**: Ersetzen Sie den Standardnamen durch einen Namen Ihrer Wahl, bis zu 32 Zeichen (z. B. „Verwarnung“ → „Gelbe Karte“).
+- **Verb**: Legen Sie das in den Nachrichten verwendete Verb fest, bis zu 32 Zeichen (z. B. „verkartet“). Bleibt es leer, wird der Name verwendet.
+- **DM-Modus**: Wählen Sie die Formulierung der Privatnachricht an das sanktionierte Mitglied:
+  - „Du wurdest [Verb]“ (Standard)
+  - „Du hast eine [Name] erhalten“
 
-Die anpassbaren Sanktionstypen sind: Ban, Unban, Kick, Jail, Unjail, Timeout, Untimeout, Mute, Unmute und Warn.
+Die anpassbaren Sanktionstypen sind: Bann, Softban, Entbannung, Kick, Jail, Freilassung, Timeout, Untimeout, Mute, Unmute und Verwarnung.
 
-1. Nutzen Sie den [Befehl `/settings`](../setup.md#settings).
-2. Klicken Sie auf die Schaltfläche "**Sanktionen**".
-3. Wählen Sie "**Sanktionsnamen**".
-4. Wählen Sie den anzupassenden Sanktionstyp aus und geben Sie den gewünschten Namen, das Verb und den DM-Modus ein.
+1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
+2. Öffnen Sie den Tab „**Moderation**“.
+3. Klicken Sie neben „**Sanktionen**“ auf „**Konfigurieren**“.
+4. Klicken Sie auf die Schaltfläche „**Sanktionsnamen**“.
+5. Wählen Sie in der Auswahl den anzupassenden Sanktionstyp und geben Sie dann im Fenster Name, Verb und DM-Modus ein.
+
+<Settings start="sanctionNames" />
+
+Mit den Schaltflächen „**Exportieren**“ und „**Importieren**“ des Bildschirms können Sie Ihre Namen in einer JSON-Datei sichern und wieder einfügen (Feld „**JSON-Inhalt einfügen**“), zum Beispiel um sie auf einen anderen Server zu übernehmen.
 
 :::tip
-Lassen Sie die Felder leer, um einen Sanktionstyp auf seinen Standardnamen zurückzusetzen. Sie können auch die Schaltfläche "Alles zurücksetzen" verwenden, um alle Namen zurückzusetzen.
+Lassen Sie die Felder leer, um einen Sanktionstyp auf seinen Standardnamen zurückzusetzen. Die Schaltfläche „**Alles zurücksetzen**“ setzt alle Namen zurück.
 :::
 
-## 📊 Sanktionsprotokolle {#logs}
+## 📨 Einspruchslink <span className="badge-premium">Premium</span> {#appeal}
 
-Für eine bessere Organisation können Sie einen Protokollkanal konfigurieren, der speziell für Sanktionen vorgesehen ist, getrennt von Ihren allgemeinen Protokollen.
+Der **Einspruchslink** ermöglicht sanktionierten Mitgliedern, ihre Sanktion anzufechten: In die DMs aller Sanktionen außer Verwarnungen wird eine Schaltfläche zu Ihrem Link eingefügt.
 
-![Screenshot der Sanktionsprotokolle-Konfiguration](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-logs.webp)
+1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
+2. Öffnen Sie den Tab „**Moderation**“.
+3. Klicken Sie neben „**Sanktionen**“ auf „**Konfigurieren**“.
+4. Klicken Sie auf die Schaltfläche „**Einspruchslink**“.
+5. Fügen Sie Ihren Link im Fenster ein oder leeren Sie das Feld, um ihn zu entfernen.
 
-### Sanktionsprotokoll-Kanal konfigurieren {#config-logs}
+Akzeptierte Plattformen: Discord, Google Forms, appeal.gg, Appy, DraftBot und FlaviBot.
 
-<SanctionLogsSettingsMockup />
+:::info
+Die Schaltfläche „**Einspruchslink**“ erscheint nur auf [Premium](/de/premium)-Servern.
+:::
 
-1. Nutzen Sie den [Befehl `/settings`](../setup.md#settings).
-2. Klicken Sie auf die Schaltfläche "**Logs**".
-3. Wählen Sie "**Moderation**".
-4. Wählen Sie den Kanal aus, in dem die Sanktionsprotokolle gesendet werden sollen, oder verwenden Sie die Schaltfläche "**Einen für mich erstellen**".
+## 🔗 Zweitkonten <span className="badge-experiment">Experiment</span> {#alt}
+
+Im Experiment mit der Identity Update (öffentliche [Premium](/de/premium)-Beta) können die Konten, die ein und dieselbe Person nutzt, mit dem Befehl `/alt` verknüpft werden: Wird eines gebannt, werden die anderen mitgebannt, und jede Sanktion erstreckt sich je nach Ihren Einstellungen auf die Gruppe. Alles wird auf der Seite [Zweitkonten](./alt-accounts.md) erklärt.
+
+## 📊 Sanktions-Logs {#logs}
+
+Für eine bessere Organisation können Sie einen eigenen Log-Kanal speziell für Sanktionen konfigurieren, getrennt von Ihren allgemeinen Logs.
+
+![Screenshot eines Sanktions-Logs](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-logs.webp)
+
+### Den Log-Kanal der Sanktionen konfigurieren {#config-logs}
+
+1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
+2. Öffnen Sie den Tab „**Moderation**“.
+3. Klicken Sie neben „**Sanktionen**“ auf „**Konfigurieren**“.
+4. Klicken Sie neben „**Logs**“ auf „**Bearbeiten**“.
+5. Wählen Sie den Kanal, an den die Sanktions-Logs gesendet werden, oder verwenden Sie die Schaltfläche „**Für mich erstellen**“.
+
+Dieselbe Einstellung finden Sie zusammen mit den anderen Log-Kanälen auf dem Bildschirm „**Logs**“ im Tab „**Moderation**“ (siehe die [Moderationslogs](./moderation.mdx#logs)). Ohne eigenen Kanal gehen die Sanktions-Logs an den allgemeinen Log-Kanal.
 
 :::note
-Sie können auch wählen, ob RaidProtect Aktionen protokolliert, die von Benutzern ohne den Bot durchgeführt werden.
+Der Schalter „**Passive Moderationslogs**“ (standardmäßig aktiviert) legt fest, ob RaidProtect auch Aktionen protokolliert, die nicht über den Bot erfolgen (Bann über Discord, AutoMod von Discord …).
 :::
 
 ### Farblogik {#logs-color}
 
-![Konfiguration der Sanktionen-Logs](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-logs-color.webp)
+![Konfiguration der Sanktions-Logs](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-logs-color.webp)
 
 ## 📦 Sanktionen importieren / exportieren {#import-export}
 
-RaidProtect ermöglicht es Ihnen, den Sanktionsverlauf Ihres Servers zu importieren oder zu exportieren. Besuchen Sie dazu unseren [Support-Server](https://raidprotect.bot/discord) und senden Sie eine private Nachricht an den Support-Bot (ganz oben in der Mitgliederliste), der Sie durch den Vorgang begleiten wird.
+Mit RaidProtect können Sie den Sanktionsverlauf Ihres Servers importieren oder exportieren. Die Schaltflächen „**Exportieren**“ und „**Importieren**“ des Sanktionsbildschirms leiten Sie zu unserem [Support-Server](https://raidprotect.bot/discord): Kontaktieren Sie uns mit der Einladung Ihres Servers und, bei einem Import, dem oder den Moderationsbots, die Sie verwendet haben.
+
+## Häufig gestellte Fragen {#faq}
+
+### Warum ist der Befehl /jail nicht verfügbar?
+
+Er erfordert eine Jail-Rolle. Konfigurieren Sie sie in `/settings`, Tab „**Moderation**“, „**Sanktionen**“, dann „**Bearbeiten**“ neben „**Jail**“, oder lassen Sie RaidProtect eine erstellen.
+
+### Was passiert, wenn ein automatisches Modul ein Mitglied ohne Jail-Rolle einsperren soll?
+
+Die Sanktion fällt auf einen Timeout zurück. Dasselbe gilt für Mute ohne Mute-Rolle.
+
+### Kann ein Mitglied seine eigenen Sanktionen sehen?
+
+Ja, wenn Sie den [Datenschutz der Sanktionen](#sanctions-privacy) auf eine andere Stufe als „**Deaktiviert**“ stellen. Es ruft sie dann mit `/meine-sanktionen` ab.
+
+### Zählen vom AutoMod von Discord blockierte Nachrichten als Sanktionen?
+
+Ja: Jede blockierte Nachricht erzeugt eine stille Verwarnung im Namen von „**Discord Automod**“, außer die Regel verhängt bereits einen Timeout. Diese Verwarnungen werden nur protokolliert, wenn die passiven Moderationslogs aktiviert sind.

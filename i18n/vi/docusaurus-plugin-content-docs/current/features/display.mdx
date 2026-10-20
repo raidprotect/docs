@@ -1,0 +1,106 @@
+---
+title: Bảng thông tin
+description: "Lệnh /display của RaidProtect tạo và quản lý các bảng thông tin công khai và các bảng dành riêng cho đội ngũ trên máy chủ Discord của bạn."
+---
+
+import DisplayMockup from '@site/src/components/DiscordMessage/mockups/display';
+
+<DisplayMockup />
+
+Lệnh `/display` cho phép bạn tạo và quản lý các bảng thông tin do RaidProtect đăng trên máy chủ của bạn. Lệnh có hai phần:
+
+- `/display public`: các bảng dành cho thành viên của bạn (đóng tin nhắn riêng, hình phạt, báo cáo…).
+- `/display staff`: các bảng dành riêng cho đội ngũ của bạn ([DISCON](./discon.md), nhận vai trò, tài liệu, vào ca trực).
+
+Dùng lệnh: ```/display public``` hoặc ```/display staff```
+
+:::info
+Cả hai lệnh con đều yêu cầu quyền “**Quản lý máy chủ**”.
+:::
+
+## ❓ Cách hoạt động {#working}
+
+Mỗi bảng thông tin được bot đăng trong một kênh do bạn chọn. Bạn có nhiều vị trí để tạo các bảng độc lập, mỗi bảng có nội dung và tính năng riêng.
+
+:::info
+**Giới hạn của bảng công khai:** 2 vị trí ở bản miễn phí, 4 ở bản [premium](/vi/premium), cộng thêm 1 vị trí dành riêng cho nội dung Nhà tù. Bảng của [captcha](./captcha.md) không chiếm vị trí nào.
+:::
+
+## 📄 Các loại nội dung {#content}
+
+Mỗi bảng công khai có thể chứa một hoặc nhiều nội dung sau:
+
+- **Khóa tin nhắn riêng**: Thông báo cho thành viên về trạng thái của [đóng tin nhắn riêng](./dm-lock.mdx). Hiển thị tin nhắn riêng có bị khóa hay không, và giải thích rằng chỉ bạn bè, đội ngũ, bot và các liên hệ trước đó mới có thể gửi tin nhắn riêng.
+- **Nhà tù**: Hiển thị một tin nhắn dành cho các thành viên đang ở jail, cho biết quyền truy cập máy chủ của họ bị hạn chế do vi phạm quy tắc.
+- **Hình phạt**: Cho thành viên biết cách xem lịch sử hình phạt cá nhân của họ bằng lệnh `/my-sanctions`.
+- **Báo cáo**: Giải thích cho thành viên cách báo cáo một người dùng hoặc một tin nhắn bằng lệnh `/report` hoặc menu ngữ cảnh (nhấp chuột phải).
+
+## ⚙️ Tính năng {#features}
+
+Ngoài nội dung, mỗi bảng công khai có thể bật các tính năng tương tác:
+
+- **Dịch**: Thêm một nút cho phép thành viên dịch bảng sang tất cả các ngôn ngữ mà Discord hỗ trợ.
+- **Truy cập hình phạt**: Thêm một nút “**Xem hình phạt của tôi**” cho phép thành viên xem trực tiếp các hình phạt của họ.
+- **Báo cáo**: Thêm một nút “**Báo cáo thành viên**” để báo cáo nhanh một người dùng.
+
+{/* TODO: Ajouter une capture d'écran de /display public */}
+
+## 📌 Vị trí dành riêng {#reserved-slot}
+
+Một số bảng do mô-đun của chúng quản lý, không phải bởi `/display`:
+
+- **Nhà tù**: vị trí công khai cuối cùng được dành cho nội dung Nhà tù. Kênh của nó chỉ được chỉnh trong `/settings`, thẻ “**Kiểm duyệt**”, “**Hình phạt**”, rồi [Jail](./sanctions.mdx#jail) (“**Chỉnh sửa kênh**”). Tuy nhiên bạn có thể thêm nội dung và tính năng vào đó từ `/display public`.
+- **Captcha**: bảng của [captcha](./captcha.md) ở chế độ Bảng do chính captcha đặt và gỡ (`/settings`, thẻ “**Thành viên mới**”, “**Captcha**”). Nó không thể được tạo hay xóa từ `/display`.
+- **DISCON** (đang thử nghiệm cùng Shield Update): bảng [DISCON](./discon.md#panel) chiếm vị trí dành riêng của `/display staff`. Kênh của nó chỉ được chỉnh bằng `/discon`.
+
+## 🛡️ Bảng đội ngũ {#staff}
+
+Lệnh `/display staff` quản lý các bảng dành cho đội ngũ của bạn, để đăng trong các kênh dành riêng cho đội ngũ.
+
+Dùng lệnh: ```/display staff```
+
+:::info
+**Giới hạn của bảng đội ngũ:** 1 vị trí ở bản miễn phí, 4 ở bản [premium](/vi/premium), cộng thêm 1 vị trí dành riêng cho bảng [DISCON](./discon.md).
+:::
+
+### Nội dung dành riêng cho đội ngũ {#staff-content}
+
+Mỗi nội dung đội ngũ tự động thêm nút của nó vào bảng:
+
+- **DISCON**: mức nguy hiểm của máy chủ và năm nút của nó. Nội dung này dành riêng cho vị trí DISCON, được quản lý từ [cấu hình DISCON](./discon.md#config). Bạn có thể thêm các nội dung khác vào bảng này từ `/display staff`.
+- **Nhận một vai trò**: một nút mở lựa chọn các vai trò được [Authentification Manager](./authentication-manager.mdx#auth) bảo vệ, giống như lệnh `/auth`.
+- **Tài liệu**: một nút dẫn đến tài liệu kiểm duyệt, và phần nhắc các lệnh hữu ích (`/modview`, `/sanctions`, `/clear`).
+- **Đang trực**: một nút thêm hoặc gỡ [vai trò đang trực](./moderation.mdx#onduty), giống như lệnh `/onduty`.
+
+Tính năng **Dịch** cũng khả dụng trên các bảng đội ngũ.
+
+:::warning
+Các nút của bảng đội ngũ không kiểm tra quyền của người nhấp: **chính quyền truy cập kênh đóng vai trò kiểm soát**. Chỉ đăng chúng trong các kênh dành riêng cho đội ngũ của bạn.
+:::
+
+## 🔄 Cập nhật bảng {#update}
+
+Khi bạn đổi ngôn ngữ của bot hoặc nội dung các bảng được RaidProtect cập nhật, một chỉ báo sẽ cho biết những bảng chưa được cập nhật. Khi đó bạn có thể nhấp vào nút “**Cập nhật**” để làm mới bảng.
+
+## ✏️ Sửa hoặc xóa một bảng {#edit}
+
+Từ menu `/display public` hoặc `/display staff`, mỗi vị trí đang dùng có các nút để:
+
+- **Chỉnh sửa**: Đổi kênh, nội dung hoặc tính năng của bảng.
+- **Xóa**: Gỡ bảng khỏi kênh và giải phóng vị trí.
+
+Kênh của các vị trí dành riêng (Nhà tù, DISCON) được sửa từ mô-đun của chúng.
+
+## Câu hỏi thường gặp {#faq}
+
+### Khác biệt giữa `/display public` và `/display staff` là gì?
+
+`/display public` đăng các bảng cho thành viên của bạn (tin nhắn riêng, hình phạt, báo cáo). `/display staff` đăng các bảng cho đội ngũ của bạn: cấp DISCON, nhận vai trò được bảo vệ, tài liệu và vào ca trực.
+
+### Tôi có thể tạo bao nhiêu bảng?
+
+Công khai: 2 bảng ở bản miễn phí, 4 ở premium, cộng thêm vị trí Nhà tù. Đội ngũ: 1 bảng ở bản miễn phí, 4 ở premium, cộng thêm vị trí DISCON.
+
+### Vì sao tôi không thể xóa bảng của captcha hoặc DISCON?
+
+Các bảng này thuộc về mô-đun của chúng: captcha được quản lý trong `/settings` và DISCON bằng `/discon`. Xóa chúng từ `/display` sẽ làm hỏng tính năng mà không báo trước.

@@ -1,0 +1,102 @@
+---
+title: 封鎖 40,000 個遭駭的 Discord 帳號，並推出全新 HoneyPot
+tags: [threats]
+authors: [zallom]
+slug: threat-weather-april-2026
+date: 2026-05-01
+image: ./assets/rp-scamlens-2-month-recap.webp
+description: 2026 年 4 月 Discord 總結：ScamLens 刪除了 140 萬張詐騙圖片，並識別出 40,000 個遭駭帳號。我們也推出 HoneyPot，一個反垃圾訊息的陷阱頻道，可補足 ScamLens，攔截尚未收錄的詐騙以及其他類型的垃圾訊息（連結、提及、文字突襲）。
+---
+
+import Timestamp from '@site/src/components/Timestamp';
+
+受 RaidProtect 保護的 **355,000 個 Discord 伺服器** 2026 年 4 月總結（2026 年 3 月 21 日至 5 月 1 日）：ScamLens **刪除了 140 萬張詐騙圖片**，並識別出 **40,000 個遭駭的 Discord 帳號**。我們也推出 **HoneyPot**，一個全新的**反垃圾訊息陷阱頻道**，可補足 ScamLens，攔截**尚未收錄的詐騙**以及其他形式的自動化垃圾訊息（連結、提及、文字突襲）。
+
+![RaidProtect：2026 年 4 月威脅氣象](./assets/rp-scamlens-2-month-recap.webp)
+
+{/* truncate */}
+
+## 🛰️ 回顧：ScamLens，RaidProtect 的圖片反詐騙 {#what-is-scamlens}
+
+ScamLens 是 **Discord 防護機器人** RaidProtect 的**圖片反詐騙**模組。它會即時分析每張圖片，並自動刪除被判定為詐騙的圖片：**加密貨幣詐騙**、**假冒名人的贈獎活動**（MrBeast、Elon Musk、Kick、Stake……）、**假的線上賭場促銷**。無需撰寫任何規則，也無需維護任何黑名單：只要[加入 RaidProtect](https://raidprotect.bot/invite)，ScamLens 就會預設啟用。
+
+<div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '280px 280px', gap: '8px'}}>
+  <img src={require('../../../../blog/3.3.1/assets/scam-1.png').default} alt="MrBeast Crypto Casino Scam 1" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-2.png').default} alt="MrBeast Crypto Casino Scam 2" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-3.png').default} alt="MrBeast Crypto Casino Scam 3" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-4.png').default} alt="MrBeast Crypto Casino Scam 4" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+</div>
+
+## 📊 自 2026 年 2 月 14 日以來的 ScamLens 總結 {#stats}
+
+自 <Timestamp value={1771023600} format="D" /> [ScamLens 提前啟用](/zh-TW/blog/scamlens-early-activation)以來，在受 RaidProtect 保護的 **355,000 個 Discord 伺服器**上的累計數據：
+
+| **指標（自 2 月 14 日起累計）** | **2026 年 3 月 21 日** | **2026 年 5 月 1 日** | **變化** |
+|---|---|---|---|
+| 已分析的圖片（不重複） | 162,000 | **890,000** | **+450%** |
+| 偵測到的詐騙圖片（不重複） | 62,000 | **82,000** | +32% |
+| 已刪除的詐騙圖片 | 260,000 | **1,400,000** | **+440%** |
+| 已識別的遭駭 Discord 帳號 | 15,000 | **40,000** | **+167%** |
+
+刪除的圖片數量**增加了五倍以上**：[擴大的涵蓋範圍](/zh-TW/blog/scamlens-1-month-recap#coverage)現在能攔截過去因 Discord CDN 相關技術原因而逃過分析的圖片。不重複圖片的目錄只成長了 32%，因為攻擊者一直在幾個**視覺群組**之間反覆變化（重新裁切、濾鏡、修圖）。
+
+這段期間出現了**「2 張圖片」的變種**（而非 4 張）；ScamLens 能涵蓋它，而且已經攔截了多次**每分鐘約 2,000 次刪除的高峰**。每張圖片的處理時間約為 **400 毫秒**，大多數成員甚至還來不及看到它。
+
+---
+
+## 🆕 新功能 {#updates}
+
+### ⏱️ 自動 24 小時超時 {#scamlens-timeout}
+
+我們現在會對所有被 ScamLens 抓到的帳號施加**自動 24 小時超時**。這讓合法擁有者（幾乎都是駭客攻擊的受害者）有時間重新取得控制權，並切斷攻擊者的存取。
+
+### 🍯 RaidProtect 的 HoneyPot {#honeypot}
+
+**[Discord HoneyPot](https://docs.raidprotect.bot/features/honeypot)**（或稱「陷阱頻道」）是一個不應有任何正當成員發言的頻道。然而，**遭駭的帳號**與**垃圾訊息機器人**會不加篩選地把內容（圖片、連結、提及、ping）傾倒到**所有頻道**，自然也包括陷阱頻道。任何出現在其中的訊息，無論內容為何，都會觸發**自動處罰**。
+
+**RaidProtect 現在內建自己的 HoneyPot。** 透過 [`/settings` → **HoneyPot**](https://docs.raidprotect.bot/features/honeypot)，機器人會建立頻道、將它置於伺服器頂端，並在其中發布翻譯好的警告訊息。
+
+#### 為什麼選擇 RaidProtect 的 HoneyPot，而不是其他的？ {#honeypot-vs-others}
+
+我們的 HoneyPot **直接與 ScamLens 連動**：
+
+- **ScamLens 優先處理。** 如果發布在陷阱中的圖片已是已知圖片，它會被刪除，且 HoneyPot **不會觸發**：它會讓 ScamLens 處理。
+- **HoneyPot 為 ScamLens 提供資料。** 任何在陷阱頻道中被抓到的新圖片都會加入我們的目錄，接著便能**在全部 355,000 個受保護的伺服器上**封鎖這波攻擊。
+
+#### 各自涵蓋的範圍 {#scamlens-honeypot}
+
+- **ScamLens** = 已知的詐騙圖片，予以刪除並施加 24 小時超時。
+- **HoneyPot** = 其他一切：**連結垃圾訊息、文字突襲、大量提及、機器人**，以及尚未識別的**新圖片**。
+
+ScamLens 預設為啟用。**啟用 HoneyPot 不會破壞任何東西**，它只是用來填補盲點。
+
+---
+
+## ❓ FAQ {#faq}
+
+#### 為什麼我的 Discord 帳號會自己發送訊息？ {#compte-discord-envoie-messages-seul}
+您的帳號很可能已**遭駭**。詐騙者會竊取**驗證權杖**（假網站、被植入惡意程式的軟體、惡意擴充功能），並利用它在您所在的所有伺服器上大量發送詐騙圖片。請變更您的 Discord 密碼、啟用**雙重驗證**，並撤銷進行中的工作階段。
+
+#### 如果我的某位成員散布加密貨幣詐騙，該怎麼辦？ {#membre-diffuse-scam-crypto}
+不要停權他：這幾乎都是**遭駭的帳號**，而不是惡意使用者。請私下聯絡他，讓他保護好自己的帳號。ScamLens 已經會即時刪除圖片，而不會懲罰合法擁有者。
+
+#### 如何辨識 Discord 上的假加密貨幣促銷？ {#reconnaitre-fausse-promo-crypto}
+任何加密貨幣**「贈禮」**、帶有名人標誌的**線上賭場**或**奇蹟般的投資**都是詐騙。Discord 從不舉辦加密貨幣發放活動，也沒有任何正派的品牌會在多個伺服器間發送垃圾訊息。
+
+#### Discord 上的 HoneyPot 是什麼？ {#qu-est-ce-qu-un-honeypot}
+**HoneyPot**（或稱陷阱頻道）是一個所有人都看得到、但**不應有任何正當成員發言**的頻道。任何出現在其中的訊息必定是自動化垃圾訊息：RaidProtect 會自動處罰該帳號（停權、軟停權、踢出、超時、監禁或禁言，可自行選擇）。
+
+#### 如何在我的 Discord 伺服器上啟用 HoneyPot？ {#activer-honeypot}
+[加入 RaidProtect](https://raidprotect.bot/invite)，執行 `/settings` → **HoneyPot**，然後點選「**建立頻道**」。機器人會建立陷阱頻道、將它置於伺服器頂端，並發布翻譯好的警告訊息。詳情請參閱[文件](https://docs.raidprotect.bot/features/honeypot)。
+
+#### RaidProtect 會自動防護垃圾訊息嗎？ {#raidprotect-spam-auto}
+會。以建議的權限[加入 RaidProtect](https://raidprotect.bot/invite)：**ScamLens 預設為啟用**，並在約 400 毫秒內刪除詐騙圖片。**HoneyPot** 只需透過 `/settings` 一鍵即可啟用，用以填補盲點（連結垃圾訊息、文字突襲、新的圖片格式）。
+
+---
+
+:::tip 📚 實用資源
+- 🔗 [將 RaidProtect 加入您的伺服器](https://raidprotect.bot/invite)
+- 📘 [HoneyPot 文件](https://docs.raidprotect.bot/features/honeypot)
+- 💡 [提交建議](https://suggestions.raidprotect.bot/)
+- 📣 [加入我們的 Discord 伺服器](https://raidprotect.bot/discord)
+:::

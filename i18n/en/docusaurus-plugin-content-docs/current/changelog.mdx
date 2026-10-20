@@ -7,13 +7,75 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Discover the detailed list of changes made to RaidProtect.
 
-## 3.4.0 (18/07/2026) {#3-4-0}
+## 3.7.0 Identity Update <span className="badge-experiment">Experiment</span> {#3-7-0}
+
+:::info Experiment
+The Identity Update is an experiment: until its release in 3.7.0, it is in public beta for [Premium](/en/premium) servers. Its content may still change.
+:::
+
+- New [`/alt`](./features/alt-accounts.md#alt) command and [alt accounts](./features/alt-accounts.md): link the accounts of a single person, choose their main account, and their sanctions (ban, kick, mute, jail, timeout, softban) extend to the linked accounts. Removing the sanction of one removes it for all.
+- [Linked account sanctions](./features/alt-accounts.md#modes) can be set per type, with a **Trap** mode and an [evasion sanction](./features/alt-accounts.md#evasion) for the linked account that arrives or writes during the sanction.
+- Linked accounts that are absent from the server are sanctioned when they arrive.
+- New [One account per person](./features/alt-accounts.md#single-account) setting: secondary accounts are put in quarantine.
+- The [captcha](./features/captcha.md#activity-alts) spots alt accounts: it links accounts it is sure are the same person by itself, and suggests probable links to your team.
+- [Linked account sanctions](./features/alt-accounts.md#modes) are reserved for **Premium**. Without Premium, `/alt` links and views accounts with no limit.
+
+## 3.6.0 Shield Update <span className="badge-experiment">Experiment</span> {#3-6-0}
+
+:::info Experiment
+The Shield Update is an experiment: until its release in 3.6.0, it is in public beta for [Premium](/en/premium) servers. Its content may still change.
+:::
+
+- New **[DISCON](./features/discon.md)**: a five-notch server danger level, adjustable in one click with the `/discon` command or from a [panel for the team](./features/discon.md#panel). Each level automatically hardens the server (verification, captcha, DM Lock, raid mode, lockdown), and a [voice channel](./features/discon.md#voice) shows the current level.
+- New [preventive slowmode](./features/slowmode.md) (**Premium**): the slowmode of the chosen channels adjusts itself to hold the message rate you set.
+- [HoneyPot](./features/honeypot.md): new [delay before sanction](./features/honeypot.md#grace), which gives a good-faith member time to say they made a mistake.
+- New [Smart trigger](./features/captcha.md#trigger) for the captcha: besides raids, it checks newcomers whose account looks suspicious.
+- New [Other servers](./features/automod.md#servers) filter in [Automod](./features/automod.md): invites, forwarded messages, channel links and tags from other servers, as a blocklist or an allowlist.
+- New **Quarantine** sanction, synchronized with [Discord's quarantine](./features/sanctions.mdx#discord-quarantine).
+- [ScamLens](./features/scam-images.md): [image catalog](./features/scam-images.md#catalog) (**Premium**) to block your own scam images.
+- Each message blocked by Discord's AutoMod creates a silent [warning](./features/sanctions.mdx) in the name of "Discord Automod".
+- New [setup wizard](./setup.md#wizard): a guided path section by section, protections suggested for your server and an audit preview to finish.
+- [Anti-spam](./features/anti-spam.mdx) V3, already in place for everyone since 3.5.0:
+  - New detection engine: near-duplicates, repeated links, emojis and gibberish, flood, and spam spread across several channels.
+  - [Presets](./features/anti-spam.mdx#presets) and sanctions per family, with an [advanced mode](./features/anti-spam.mdx#advanced) to set each trigger and its [duration](./features/anti-spam.mdx#duration).
+
+## 3.5.0 Onboarding Update (10/19/2026) {#3-5-0}
+
+- Rework of **[`/settings`](./setup.md#settings)** into a five-tab dashboard (General, Arrivals, Protection, Moderation, Utilities), with native screens and input windows, and a **New** badge on what has just arrived. [Premium](/en/premium) screens remain viewable, the bot only stops you when you try to change a reserved setting.
+- Arrivals:
+  - New [welcome message](./features/onboarding.md#welcome-message) with a welcome card, variables and buttons, which stays silent during a raid.
+  - [Auto roles](./features/onboarding.md#autorole) leave the captcha and accept several roles, given once verification is passed.
+  - The [minimum account age](./features/onboarding.md#minage) offers [several actions](./features/onboarding.md#minage-action): kick, jail until the required age or hold at entry behind the captcha.
+  - [Auto RaidMode](./features/raid-mode.md#action) chooses its action during the raid: block invites, kick newcomers (**Premium**), send to the captcha or freeze the captcha. Only invite blocking still requires Discord's Community.
+  - The [captcha](./features/captcha.md) gains a Panel [display mode](./features/captcha.md#display-mode) and an Automatic or Always [trigger](./features/captcha.md#trigger). Its configuration flags the channels and roles that let verification be bypassed, with a button to fix them.
+  - In Panel mode, the captcha opens in the [RaidProtect Activity](./features/captcha.md#activity): a harder puzzle for bots, in your server's colors, and a review by your team when in doubt.
+  - New captcha [test mode](./features/captcha.md#test-mode), so your team can redo it without anything being applied.
+- Protection:
+  - The [Authentification Manager](./features/authentication-manager.mdx) is built into `/settings`, its authentication links are translated.
+  - The [DM Lock](./features/dm-lock.mdx) is set in an input window.
+- Moderation:
+  - New [`/onduty`](./features/moderation.mdx#onduty) command and on-duty role to flag available moderators.
+  - New [`/display staff`](./features/display.mdx#staff) panel to inform your team.
+  - `/discord-sanctions` displays global statistics when no user is specified.
+- Utilities:
+  - New [`/inviteinfo`](./features/utilities.mdx#inviteinfo) command. `/userinfo` and `/inviteinfo` also install on your account, to use them everywhere.
+  - New [`/privacy`](./features/utilities.mdx#privacy) command and **Message caching** setting, which conditions [`/snipe`](./guides/malfunctions.md#snipe).
+  - [`/feedback`](./features/utilities.mdx#feedback) offers a diagnosis when you report an anti-spam problem.
+- General:
+  - RaidProtect now speaks [11 languages](./language.md) with the arrival of Italian, Turkish, Vietnamese, Japanese and Simplified and Traditional Chinese. By default, it [follows the server's language](./language.md#follow).
+  - New server [time zone](./setup.md#timezone), used by transparency recaps.
+  - [Message commands](./guides/prefix.md) and [permissions](./guides/prefix.md#permissions) are set separately, and Discord's permissions also apply to the "Sanction User" menu.
+  - [Bot customization](./setup.md#customize) (**Premium**) moves into `/settings`. When Premium ends, the bot's appearance automatically goes back to RaidProtect's.
+- Various fixes and translation fixes.
+
+## 3.4.0 Antispam Update (07/18/2026) {#3-4-0}
 
 - [Anti-spam](./features/anti-spam.mdx) V2:
   - **Multi-channel spam**: a dedicated sanction when the spam spans several channels (Jail by default, Timeout minimum).
   - New **attachment spam** [trigger](./features/anti-spam.mdx#triggers) (disabled by default).
+  - [Simulation](./features/anti-spam.mdx#simulation) to understand why a spam was sanctioned or not.
   - Spam messages are now **deleted whatever the sanction** (ban, jail, mute, kick or timeout).
-  - The **anti-scam sanction is configurable** from the [anti-spam sanctions menu](./features/anti-spam.mdx#sanctions) and follows the [HoneyPot sanction](./features/honeypot.md#sanction) by default; anti-scam incidents are sanctioned and logged instantly.
+  - The **anti-scam sanction is configurable** from the [anti-spam sanctions menu](./features/anti-spam.mdx#triggers) and follows the [HoneyPot sanction](./features/honeypot.md#sanction) by default; anti-scam incidents are sanctioned and logged instantly.
   - Each trigger can be disabled individually with the new **Disable** option, and the sensitivity levels are replaced by a simple toggle.
   - **Mute** and **Jail** fall back to a capped timeout when the corresponding role is not configured.
   - Selfbots sending rich embeds are flagged, and scams blocked by ScamLens are counted in the [HoneyPot](./features/honeypot.md) flagged-accounts counter.
@@ -25,19 +87,19 @@ Discover the detailed list of changes made to RaidProtect.
   - New [trusted role](./features/reports.md#trusted-role) (**Premium**): trusted members can apply a **preventive 24h timeout** when reporting, and their urgent reports ping the moderation role again.
   - New [bad reporters protection](./features/reports.md#bad-reporters): repeat false reporters can be flagged, blocked or sanctioned automatically (configurable threshold, window and mode).
   - Open report incidents are automatically closed when the member is sanctioned.
-  - Preventive sanctions are rewritten when a report is accepted, and cancelled when it is rejected.
+  - Preventive sanctions are rewritten when a report is accepted, and canceled when it is rejected.
 - New **[Transparency](./features/transparency.md)** system:
   - [Periodic recaps](./features/transparency.md#recaps) of the server's moderation activity, posted automatically on a configurable schedule.
   - New [public modlog](./features/transparency.md#modlog): sanctions can be published in a public channel, filtered by type and source, with a one-click creation of a read-only #public-modlog channel.
   - New [`/transparency` command](./features/transparency.md#command) to show the recap of the last closed period on demand.
-- New [`/audit` command](./features/audit.md): a full **security audit** of the server with an overall score, [detailed checks](./features/audit.md#checks) (verification level, permissions, channels) and [one-click fixes](./features/audit.md#fix). Admin roles can be integrated into the Authentication Manager directly from the audit.
-- New [kick mode](./features/raid-mode.md#kick-mode) (**Premium**) for the raid mode and the join lock: newcomers are kicked with an explanation DM and a rejoin invite button, instead of natively pausing invites. The new [`/bypass raid` command](./features/raid-mode.md#bypass-raid) lets specific users in while it is active.
+- New [`/audit` command](./features/audit.md): a full **security audit** of the server with an overall score, [detailed checks](./features/audit.md#checks) (verification level, permissions, channels) and [one-click fixes](./features/audit.md#fix). Admin roles can be integrated into the Authentification Manager directly from the audit.
+- New [kick mode](./features/raid-mode.md#kick-mode) (**Premium**) for raid mode and Join Lock: newcomers are kicked with an explanation DM and a rejoin invite button, instead of natively pausing invites. The new [`/bypass raid` command](./features/raid-mode.md#bypass-raid) lets specific users in while it is active.
 - [Message commands](./guides/prefix.md#permissions) can now follow the **Discord command permissions** (Integrations tab) via a new option in `/settings`.
 - RaidProtect now replies under **Discord's security incident alerts** when they are caused by the [DM Lock](./features/dm-lock.mdx), quoting the alert and explaining where to adjust the setting.
 - The [minimum account age](./features/raid-mode.md#minage) kick log now shows the required threshold as a timestamp.
 - Settings and setup:
   - The `/settings` main menu is reorganized into logical rows.
-  - The setup message now links the commands directly and offers a button to change the log channel.
+  - The setup message now links the commands directly and offers a button to change the logs channel.
   - A **disable captcha** button is offered when the captcha channel was deleted.
 - Internal migration of the Discord layer to shared libraries (`@fca.gg/discord`) to speed up future updates.
 - Fixes:
@@ -50,7 +112,7 @@ Discover the detailed list of changes made to RaidProtect.
   - Various fixes: sanction logs, captcha, DM Lock messages, moderation notes, Premium detection.
   - Various translation fixes.
 
-## 3.3.3 (30/04/2026) {#3-3-3}
+## 3.3.3 (04/30/2026) {#3-3-3}
 
 - New [command `/modview`](./features/moderation.mdx#modview) to open a centralized moderation view of a member (sanctions, note, snipe). <SuggestionLink id="544" />
 - New [command `/note`](./features/moderation.mdx#note) to add or edit a member's moderation note. <SuggestionLink id="545" />
@@ -73,16 +135,16 @@ Discover the detailed list of changes made to RaidProtect.
 - New [command `/snipe`](./features/moderation.mdx#snipe) to retrieve the last deleted message of a channel or user from the past hour (temporary solution while waiting for the logs update).
 - New [command `/feedback`](./features/utilities.mdx#feedback) to share feedback, a suggestion or report a bug directly from Discord.
 - Choice of a **single duration** for sanctions with a duration applied by the [anti-spam](./features/anti-spam.mdx#duration). <SuggestionLink id="559" />
-- Ability to **automatically close DMs** when [auto raid mode](./features/raid-mode.md#close-dm) is activated. <SuggestionLink id="521" />
+- Ability to **automatically close DMs** when [Auto RaidMode](./features/raid-mode.md#close-dm) is activated. <SuggestionLink id="521" />
 - Timeouts applied by Discord's AutoMod are automatically [converted to a role-based mute](./features/sanctions.mdx#mute-threshold) when they exceed the configured mute threshold (in **public beta for Premium servers**).
 - New `[duration]` parameter on the [`/lock`](./features/channel-lock.md#lock-duration) and [`/slowmode`](./features/moderation.mdx#slowmode) commands to apply the change temporarily. <SuggestionLink id="515" />
 - Fixes:
   - Fixed errors on sanction expirations.
   - Various translation fixes.
 
-## 3.3.2 (20/03/2026) {#3-3-2}
+## 3.3.2 (03/20/2026) {#3-3-2}
 
-- New **[Authentication Manager](./features/authentication-manager.mdx)** (AM) system to protect access to Discord roles through authentication.
+- New **[Authentification Manager](./features/authentication-manager.mdx)** (AM) system to protect access to Discord roles through authentication.
   - New [command `/auth`](./features/authentication-manager.mdx#auth) to authenticate and obtain a protected role.
   - New [command `/auth-profile`](./features/authentication-manager.mdx#auth-profile) to manage your authentication profile (PIN, OTP, passkeys).
   - New [command `/auth-settings`](./features/authentication-manager.mdx#auth-settings) to configure protected roles and authorized users.
@@ -95,7 +157,7 @@ Discover the detailed list of changes made to RaidProtect.
   - Mass deletion logs for `/clear`.
   - Logs for Anti-Scam and Auto RaidMode settings changes.
 - New **Premium** system.
-  - Increased limits for Authentication Manager and information panels.
+  - Increased limits for Authentification Manager and information panels.
   - Customizable [sanction names](./features/sanctions.mdx#custom-names) (name, verb and DM wording).
   - Early access to new experimental features.
 - Detection and prevention of RaidProtect impersonation.
@@ -108,9 +170,9 @@ Discover the detailed list of changes made to RaidProtect.
   - Optimized member, permissions and message cache.
   - Sanction expirations are now precise to the second.
 
-## 3.3.1 (09/02/2026) {#3-3-1}
+## 3.3.1 (02/09/2026) {#3-3-1}
 
-- [Internationalization](./language.md) (addition of German, Spanish, and Portuguese).
+- [Internationalization](./language.md) (addition of German, Spanish and Portuguese).
 - New **[Jail](./features/sanctions.mdx#jail)** system.
   - New [`/jail` command](./features/moderation.mdx#jail) to jail a member.
   - New [`/tempjail` command](./features/moderation.mdx#tempjail) to temporarily jail a member.
@@ -141,9 +203,9 @@ Discover the detailed list of changes made to RaidProtect.
 - Performance and stability:
   - New translation framework ([`@fca.gg/hermes` v1.2.1](https://github.com/FCAgreatgoals/hermes)).
 
-## 3.3.0 (19/12/2025) {#3-3-0}
+## 3.3.0 Moderation Update (12/19/2025) {#3-3-0}
 
-- New feature **[Sanctions History](./features/sanctions.mdx)**.
+- New feature **[Sanction History](./features/sanctions.mdx)**.
   - New [command `/sanctions search`](./features/sanctions.mdx#search).
   - New [command `/sanctions info`](./features/sanctions.mdx#info).
   - New [command `/sanctions edit`](./features/sanctions.mdx#edit).
@@ -152,7 +214,7 @@ Discover the detailed list of changes made to RaidProtect.
   - Bans, kicks and timeouts are added to history and logged. <SuggestionLink id="151" />
   - Acknowledgment receipt of the sanction notification private message.
 - New logs for sanctions.
-- Ability to configure a dedicated sanctions log channel.
+- Ability to configure a dedicated sanctions logs channel.
 - New [command `/warn`](./features/moderation.mdx#warn). <SuggestionLink id="52" />
 - New [command `/untimeout`](./features/moderation.mdx#untimeout). <SuggestionLink id="52" />
 - New [command `/tempban`](./features/moderation.mdx#tempban). <SuggestionLink id="524" />
@@ -172,9 +234,9 @@ Discover the detailed list of changes made to RaidProtect.
   - Sanction expiration handling (`@fca.gg/midway` v1.3.2).
   - Revamped emoji management ([`@fca.gg/glyph` v1.1.1](https://github.com/FCAgreatgoals/glyph)).
 
-## 3.2.1 (03/09/2025) {#3-2-1}
+## 3.2.1 (09/03/2025) {#3-2-1}
 
-- New [command `/ds`](./features/utilities.mdx#discord-sanctions) allowing to view a user's Discord sanctions.
+- New [command `/ds`](./features/utilities.mdx#discord-sanctions) to view a user's Discord sanctions.
 - Anti-spam is now able to stop Slash Command spam.
 - New anti-spam trigger: [External command spam](./features/anti-spam.mdx#triggers).
 - New [command `/slowmode`](./features/moderation.mdx#slowmode) to enable or modify the slowmode of a channel.
@@ -188,7 +250,7 @@ Discover the detailed list of changes made to RaidProtect.
   - Fixes for the interpretation and validation of prefix commands.
   - Fix for issues related to **default avatars**.
 
-## 3.2.0 (10/07/2025) {#3-2-0}
+## 3.2.0 Protection Update (07/10/2025) {#3-2-0}
 
 - New feature [DM Lock](./features/dm-lock.mdx).
 - Choice of [sanctions](./features/anti-spam.mdx#triggers) applied by anti-spam. <SuggestionLink id="85" />
@@ -203,36 +265,36 @@ Discover the detailed list of changes made to RaidProtect.
   - The [captcha](./features/captcha.md) no longer blocks new members when the bot does not have the necessary permissions.
   - Fixed the bug with the [command `/clear`](./features/moderation.mdx#clear) when the bot lacked the necessary permissions in a channel.
 - Improved UI/UX:
-  - Clarification on the ability to type in the member, role, and channel select menus.
-  - Check for the presence of the `COMMUNITY` feature when configuring Auto Raid Mode.
+  - Clarification on the ability to type in the member, role and channel select menus.
+  - Check for the presence of the `COMMUNITY` feature when configuring Auto RaidMode.
 - Performance and stability:
   - Revamped emoji management ([`@fca.gg/glyph` v0.1.0](https://github.com/FCAgreatgoals/glyph)).
   - Reduced startup time and cluster monitoring (`@fca.gg/midway` v1.3.1).
   - Better rate limit handling and reduced latency (`@fca.gg/iris` v1.1.4).
   - Integrated Sentry for error tracking and improved dev support ([`@fca.gg/kino` v1.0.0](https://github.com/FCAgreatgoals/kino)).
 
-## 3.1.1 (21/05/2025) {#3-1-1}
+## 3.1.1 (05/21/2025) {#3-1-1}
 
-- New feature [Role Tag](./features/tag-role.md). <SuggestionLink id="512" />
+- New feature [Tag Role](./features/tag-role.md). <SuggestionLink id="512" />
 - New moderation command [`/timeout`](./features/moderation.mdx#timeout). <SuggestionLink id="52" />
-- Automatic tracking of updates in each server's general log channel.
+- Automatic tracking of updates in each server's general logs channel.
 - Performance and stability:
-  - Cleanup of persistent antispam states.
+  - Cleanup of persistent anti-spam states.
   - Fixed memory leaks.
   - Optimized database calls.
   - Improved overall bot speed.
 
-## 3.1.0 (12/03/2025) {#3-1-0}
+## 3.1.0 Interactions Update (03/12/2025) {#3-1-0}
 
 - Added **Slash Commands**. <SuggestionLink id="463" />
 - [Internationalization](./language.md) (added English). <SuggestionLink id="109" />
 - New feature [`/report`](./features/reports.md). <SuggestionLink id="164" />
 - New configuration commands:
   - [`/settings`](./setup.md#settings) as an interactive panel.
-  - [`/setup`](./setup.md#install) as an Onboarding process.
+  - [`/setup`](./setup.md#install) as a guided onboarding.
 - Advanced settings:
   - Enable/disable each feature individually. <SuggestionLink id="356" />
-  - Choose the delay and number of attempts before expulsion by the [captcha](./features/captcha.md#config). <SuggestionLink id="363" />
+  - Choose the delay and number of attempts before kick by the [captcha](./features/captcha.md#config). <SuggestionLink id="363" />
   - Option to select the verification channel for the [captcha](./features/captcha.md). <SuggestionLink id="385" />
   - Ignore users/roles/categories in the [anti-spam](./features/anti-spam.mdx#ignore). <SuggestionLink id="362" />
   - Choose the [prefix for hybrid commands](./guides/prefix.md). <SuggestionLink id="103" />
@@ -241,23 +303,23 @@ Discover the detailed list of changes made to RaidProtect.
   - Prefix displayed when pinging the bot + mention as a universal prefix. <SuggestionLink id="193" />
   - Disabling the [captcha](./features/captcha.md) no longer deletes the associated role and channel. <SuggestionLink id="43" />
   - Automatic detection of permission issues related to channels and roles. <SuggestionLink id="65" />
-  - Automatic visibility check of the verification channel in Discord's onboarding process.
+  - Automatic visibility check of the verification channel in Discord's Onboarding Process.
   - Standardized messages.
 - Improved bot performance and stability.
 
-## 3.0.0 (14/01/2023) {#3-0-0}
+## 3.0.0 (01/14/2023) {#3-0-0}
 
 - Complete rewrite aimed at preparing for future updates and stabilizing the bot.
 - Fixed all known bugs to date.
 - The [`?raidmode` command](./features/raid-mode.md) now uses the "Disable Invites" feature.
 - Automatic sending of a private message to the concerned member when a sanction is applied. <SuggestionLink id="426" />
 
-## 2.2.0 (13/04/2020) {#2-2-0}
+## 2.2.0 (04/13/2020) {#2-2-0}
 
 - Improved bot performance.
 - Significant changes to the project's internal architecture.
 
-## 2.1.3 (13/10/2019) {#2-1-3}
+## 2.1.3 (10/13/2019) {#2-1-3}
 
 - Removed the blacklist and associated commands.
 - Ability to ban any user by their ID, even if they are not in the affected server. <SuggestionLink id="113" /> <SuggestionLink id="148" />
@@ -266,7 +328,7 @@ Discover the detailed list of changes made to RaidProtect.
 - Changed the kick duration if the captcha is not completed (5 min). <SuggestionLink id="129" />
 - Various internal improvements.
 
-## 2.1.2 (17/04/2019) {#2-1-2}
+## 2.1.2 (04/17/2019) {#2-1-2}
 
 - Added the [`?userinfo` command](./features/utilities.mdx#userinfo). <SuggestionLink id="29" />
 - ~~Added the `?lockall` and `?unlockall` commands~~ (Feature removed).
@@ -277,7 +339,7 @@ Discover the detailed list of changes made to RaidProtect.
 - Overhauled database connection.
 - Bug fixes and various improvements.
 
-## 2.1.1 (21/02/2019) {#2-1-1}
+## 2.1.1 (02/21/2019) {#2-1-1}
 
 - Removed `?settings captcha` (replaced by `?captcha`).
 - Added the ability to set a [logs channel](./features/captcha.md#logs) for the captcha.
@@ -285,7 +347,7 @@ Discover the detailed list of changes made to RaidProtect.
 - Simplified the [captcha](./features/captcha.md) (5/6 correct letters required).
 - Other minor changes.
 
-## 2.1.0 (16/02/2019) {#2-1-0}
+## 2.1.0 (02/16/2019) {#2-1-0}
 
 - Added captcha (`?settings captcha`). <SuggestionLink id="11" />
 - Added anti-spam security level (`?settings spamlevel`). <SuggestionLink id="25" />
@@ -293,12 +355,12 @@ Discover the detailed list of changes made to RaidProtect.
 - Added the [`?clear` command](./features/moderation.mdx#clear).
 - Various changes and bug fixes.
 
-## 2.0.1 (04/02/2019) {#2-0-1}
+## 2.0.1 (02/04/2019) {#2-0-1}
 
 - Rewrote the help (`?help`).
 - Fixed bugs in [`?lock`](./features/channel-lock.md#lock) and [`?unlock`](./features/channel-lock.md#unlock).
 
-## 2.0.0 (26/01/2019) {#2-0-0}
+## 2.0.0 (01/26/2019) {#2-0-0}
 
 - Added [anti-spam](./features/anti-spam.mdx).
 - Added [automatic raid mode](./features/raid-mode.md#config).

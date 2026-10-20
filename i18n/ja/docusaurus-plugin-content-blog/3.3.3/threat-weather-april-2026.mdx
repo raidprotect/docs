@@ -1,0 +1,102 @@
+---
+title: 乗っ取られた Discord アカウント 4 万件をブロック＋新しい HoneyPot
+tags: [threats]
+authors: [zallom]
+slug: threat-weather-april-2026
+date: 2026-05-01
+image: ./assets/rp-scamlens-2-month-recap.webp
+description: 2026 年 4 月の Discord のまとめ。ScamLens が 140 万枚の詐欺画像を削除し、乗っ取られたアカウント 4 万件を特定しました。あわせて、まだカタログにない詐欺やその他の種類のスパム（リンク、メンション、テキストによるレイド）を捕まえて ScamLens を補う、スパム対策の罠チャンネル「HoneyPot」の提供を開始します。
+---
+
+import Timestamp from '@site/src/components/Timestamp';
+
+RaidProtect が守る **35 万 5,000 の Discord サーバー** における 2026 年 4 月のまとめ（2026 年 3 月 21 日〜5 月 1 日）です。ScamLens が **140 万枚の詐欺画像を削除** し、**乗っ取られた Discord アカウント 4 万件** を特定しました。あわせて、**まだカタログにない詐欺** や、その他の自動化されたスパム（リンク、メンション、テキストによるレイド）を捕まえて ScamLens を補う、新しい **スパム対策の罠チャンネル**「**HoneyPot**」の提供を開始します。
+
+![RaidProtect：脅威ウェザー 2026 年 4 月](./assets/rp-scamlens-2-month-recap.webp)
+
+{/* truncate */}
+
+## 🛰️ おさらい：RaidProtect の画像詐欺対策 ScamLens {#what-is-scamlens}
+
+ScamLens は、**Discord 向けの保護ボット** RaidProtect の **画像詐欺対策** モジュールです。すべての画像をリアルタイムで分析し、詐欺と判定したものを自動で削除します。対象は、**仮想通貨詐欺**、**有名人を装った偽のプレゼント企画**（MrBeast、Elon Musk、Kick、Stake など）、**オンラインカジノの偽の宣伝** です。ルールを書く必要も、ブラックリストを管理する必要もありません。[RaidProtect を追加](https://raidprotect.bot/invite)するだけで、ScamLens は既定で有効になります。
+
+<div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '280px 280px', gap: '8px'}}>
+  <img src={require('../../../../blog/3.3.1/assets/scam-1.png').default} alt="MrBeast Crypto Casino Scam 1" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-2.png').default} alt="MrBeast Crypto Casino Scam 2" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-3.png').default} alt="MrBeast Crypto Casino Scam 3" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-4.png').default} alt="MrBeast Crypto Casino Scam 4" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+</div>
+
+## 📊 2026 年 2 月 14 日以降の ScamLens の成果 {#stats}
+
+<Timestamp value={1771023600} format="D" />の [ScamLens の前倒しでの有効化](/ja/blog/scamlens-early-activation)以降、RaidProtect が守る **35 万 5,000 の Discord サーバー** で集計した累計データです。
+
+| **指標（2 月 14 日からの累計）** | **2026 年 3 月 21 日** | **2026 年 5 月 1 日** | **増減** |
+|---|---|---|---|
+| 分析した画像（重複なし） | 162,000 | **890,000** | **+450%** |
+| 検出した詐欺画像（重複なし） | 62,000 | **82,000** | +32% |
+| 削除した詐欺画像 | 260,000 | **1,400,000** | **+440%** |
+| 特定した乗っ取りアカウント | 15,000 | **40,000** | **+167%** |
+
+削除した画像の数は **5 倍以上** に増えました。[対象範囲の拡大](/ja/blog/scamlens-1-month-recap#coverage)により、Discord の CDN に関する技術的な理由で分析をすり抜けていた画像も捕捉できるようになったためです。一方、重複のない画像のカタログは 32% しか増えていません。攻撃者は、いくつかの **ビジュアルのクラスター** を少しずつ変えながら（トリミング、フィルター、修正）使い回し続けているからです。
+
+この期間には、（4 枚ではなく）**「2 枚」のバリエーション** が現れました。ScamLens はこれにも対応しており、**1 分あたり約 2,000 件の削除** というピークもすでに何度か阻止しています。各画像は **約 400 ミリ秒** で処理され、ほとんどのメンバーが目にする前に削除されます。
+
+---
+
+## 🆕 新機能 {#updates}
+
+### ⏱️ 24 時間の自動タイムアウト {#scamlens-timeout}
+
+ScamLens が検出したアカウントには、**24 時間の自動タイムアウト** を適用するようになりました。本来の所有者（ほぼ例外なく乗っ取りの被害者）が、アカウントを取り戻し、攻撃者のアクセスを断つ時間を確保できます。
+
+### 🍯 RaidProtect の HoneyPot {#honeypot}
+
+**[Discord の HoneyPot](https://docs.raidprotect.bot/features/honeypot)**（「罠チャンネル」）とは、正規のメンバーが誰も書き込むはずのないチャンネルです。一方、**乗っ取られたアカウント** や **スパムボット** は、見境なく **すべてのチャンネル** に中身（画像、リンク、メンション、ping）をばらまくため、罠にもかかります。そこに届いたメッセージは、内容にかかわらず **自動で処罰** されます。
+
+**RaidProtect は独自の HoneyPot を搭載しました。**[`/settings` →「**ハニーポット**」](https://docs.raidprotect.bot/features/honeypot)から、ボットがチャンネルを作成してサーバーの一番上に配置し、翻訳された警告メッセージを投稿します。
+
+#### ほかの HoneyPot ではなく、RaidProtect の HoneyPot を選ぶ理由は？ {#honeypot-vs-others}
+
+私たちの HoneyPot は **ScamLens と直接連携** しています。
+
+- **ScamLens が先に動きます。** 罠に投稿された画像がすでに知られているものであれば、その画像は削除され、HoneyPot は **作動しません**。ScamLens に対応を任せます。
+- **HoneyPot が ScamLens を強化します。** 罠チャンネルで捕まえた新しい画像はカタログに追加され、その後 **保護されている 35 万 5,000 のサーバー全体** で、その波をブロックします。
+
+#### それぞれの守備範囲 {#scamlens-honeypot}
+
+- **ScamLens**：既知の詐欺画像を削除し、24 時間のタイムアウトを適用。
+- **HoneyPot**：それ以外のすべて。**リンクのスパム、テキストによるレイド、大量のメンション、ボット**、そしてまだ特定されていない **新しい画像**。
+
+ScamLens は既定で有効です。**HoneyPot を有効にしても何も壊れません**。死角をふさぐだけです。
+
+---
+
+## ❓ FAQ {#faq}
+
+#### なぜ自分の Discord アカウントが勝手にメッセージを送っているのですか？ {#compte-discord-envoie-messages-seul}
+あなたのアカウントはおそらく **乗っ取られています**。詐欺師は **認証トークン** を盗み（偽サイト、マルウェア入りのソフトウェア、悪意ある拡張機能）、それを使って、あなたが参加しているすべてのサーバーに詐欺画像をスパム送信します。Discord のパスワードを変更し、**二要素認証** を有効にして、アクティブなセッションを取り消してください。
+
+#### メンバーが仮想通貨詐欺を拡散している場合はどうすればいいですか？ {#membre-diffuse-scam-crypto}
+BAN しないでください。ほぼ例外なく、悪意あるユーザーではなく **乗っ取られたアカウント** です。アカウントを保護してもらえるよう、個別に連絡しましょう。ScamLens はすでにその場で画像を削除しており、本来の所有者を罰することはありません。
+
+#### Discord で偽の仮想通貨の宣伝を見分けるには？ {#reconnaitre-fausse-promo-crypto}
+仮想通貨の **「プレゼント」**、有名人のロゴを使った **オンラインカジノ**、**夢のような投資話** は、すべて詐欺です。Discord が仮想通貨を配布することは決してなく、まともなブランドが複数のサーバーにスパムを送ることもありません。
+
+#### Discord の HoneyPot とは何ですか？ {#qu-est-ce-qu-un-honeypot}
+**HoneyPot**（罠チャンネル）とは、誰でも見られるものの **正規のメンバーは誰も書き込むべきでない** チャンネルです。そこに届くメッセージは必ず自動化されたスパムなので、RaidProtect はそのアカウントを自動で処罰します（BAN、ソフト BAN、キック、タイムアウト、Jail、ミュートから選択）。
+
+#### Discord サーバーで HoneyPot を有効にするには？ {#activer-honeypot}
+[RaidProtect を追加](https://raidprotect.bot/invite)し、`/settings` →「**ハニーポット**」を開いて、「**チャンネルを作成**」をクリックします。ボットが罠チャンネルを作成してサーバーの一番上に配置し、翻訳された警告メッセージを投稿します。詳しくは[ドキュメント](https://docs.raidprotect.bot/features/honeypot)をご覧ください。
+
+#### RaidProtect はスパムから自動で守ってくれますか？ {#raidprotect-spam-auto}
+はい。推奨の権限で [RaidProtect を追加](https://raidprotect.bot/invite)してください。**ScamLens は既定で有効** で、詐欺画像を約 400 ミリ秒で削除します。**HoneyPot** は `/settings` からワンクリックで有効にでき、死角（リンクのスパム、テキストによるレイド、新しい形式の画像）をふさぎます。
+
+---
+
+:::tip 📚 お役立ちリソース
+- 🔗 [RaidProtect をサーバーに追加する](https://raidprotect.bot/invite)
+- 📘 [HoneyPot のドキュメント](https://docs.raidprotect.bot/features/honeypot)
+- 💡 [提案を送る](https://suggestions.raidprotect.bot/)
+- 📣 [Discord サーバーに参加する](https://raidprotect.bot/discord)
+:::

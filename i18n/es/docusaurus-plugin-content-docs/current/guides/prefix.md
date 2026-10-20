@@ -1,50 +1,58 @@
 ---
-title: Uso de un prefijo
-description: "Activa los comandos con prefijo de RaidProtect junto a los comandos Slash y personaliza el prefijo usado en tu servidor de Discord."
+title: Comandos por mensajes
+description: "Activa los comandos por mensajes de RaidProtect junto a los comandos Slash, elige su prefijo y aplícales los permisos de Discord."
 ---
 
-import { PrefixSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
+import { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
 
 ## Prefijo desactivado (por defecto) {#disabled}
 
-Por defecto, RaidProtect solo utiliza los comandos Slash (`/`) para interactuar con el bot. Esto garantiza un uso intuitivo y coherente con los estándares de Discord.
+Por defecto, RaidProtect solo utiliza los comandos Slash (`/`). Esto garantiza un uso intuitivo y coherente con los estándares de Discord.
 
-## Prefijo activado (opcional) {#activated}
+## Comandos por mensajes (opcional) {#activated}
 
-Si prefieres usar ciertos comandos con un prefijo personalizado, puedes activar esta opción. El prefijo por defecto al activarlo es `?`, pero se puede modificar según tus necesidades. Una vez activado, los siguientes comandos se pueden usar con el prefijo configurado:
-- [`?raidmode`](../features/raid-mode.md)
-- [`?ban`](../features/moderation.mdx#ban)
-- [`?tempban`](../features/moderation.mdx#tempban)
-- [`?unban`](../features/moderation.mdx#unban)
+Si prefieres escribir ciertos comandos en un mensaje, elige un prefijo, por ejemplo `?`. Estos comandos se pueden usar entonces con él:
+
+- [`?raidmode`](../features/raid-mode.md) y [`?joinlock`](../features/join-lock.mdx)
+- [`?ban`](../features/moderation.mdx#ban), [`?tempban`](../features/moderation.mdx#tempban), [`?softban`](../features/moderation.mdx#softban) y [`?unban`](../features/moderation.mdx#unban)
 - [`?kick`](../features/moderation.mdx#kick)
-- [`?mute` | `?timeout`](../features/moderation.mdx#timeout)
-- [`?unmute` | `?untimeout`](../features/moderation.mdx#untimeout)
-- [`?jail`](../features/moderation.mdx#jail)
-- [`?tempjail`](../features/moderation.mdx#tempjail)
-- [`?unjail`](../features/moderation.mdx#unjail)
+- [`?mute` | `?timeout` | `?tempmute`](../features/moderation.mdx#timeout) y [`?unmute` | `?untimeout` | `?untempmute`](../features/moderation.mdx#untimeout)
+- [`?jail`](../features/moderation.mdx#jail), [`?tempjail`](../features/moderation.mdx#tempjail) y [`?unjail`](../features/moderation.mdx#unjail)
 - [`?warn`](../features/moderation.mdx#warn)
-- [`?slowmode`](../features/moderation.mdx#slowmode)
-- [`?lock`](../features/channel-lock.md#lock)
-- [`?unlock`](../features/channel-lock.md#unlock)
-- [`?userinfo` | `?ui`](../features/utilities#userinfo)
-- [`?clear`](../features/moderation#clear)
+- [`?slowmode` | `?slow`](../features/moderation.mdx#slowmode)
+- [`?lock`](../features/channel-lock.md#lock) y [`?unlock`](../features/channel-lock.md#unlock)
+- [`?clear` | `?clean`](../features/moderation.mdx#clear)
+- [`?nick` | `?nickname` | `?rename` | `?setnick`](../features/moderation.mdx#nick)
+- [`?userinfo` | `?ui`](../features/utilities.mdx#userinfo), [`?serverinfo` | `?ginfo`](../features/utilities.mdx#serverinfo) y [`?inviteinfo` | `?ii`](../features/utilities.mdx#inviteinfo)
 
-## 💬 Cómo activar o desactivar el prefijo {#config}
+## 💬 Elegir el prefijo {#config}
 
-1. Abre el menú de configuración escribiendo [`/settings`](../setup.md#settings).
-2. Accede a la opción "**Prefijo**" de los comandos.
-3. Activa o desactiva el prefijo según tus preferencias.
-Si está activado, personaliza el prefijo introduciendo el carácter o la cadena deseada.
+1. Ejecuta el [comando `/settings`](../setup.md#settings).
+2. En la pestaña “**General**”, haz clic en “**Editar**” junto a “**Comandos por mensaje**”.
+3. Elige un prefijo en la lista (`?`, `!`, `>` o `$`), o introduce el tuyo en “**Prefijo personalizado**” (tres caracteres como máximo, prioritario sobre la lista). Elige “**Desactivado**” para desactivar los comandos por mensajes.
+4. Marca “**Delinvoke**” si quieres que RaidProtect elimine el mensaje que contiene el comando en cuanto lo haya leído.
 
-<PrefixSettingsMockup />
+<SettingsModal name="prefix" />
 
 :::note
-Los comandos Slash (`/`) siguen disponibles aunque el prefijo esté activado.
-Se recomienda evitar los prefijos que ya usen otros bots para prevenir conflictos de comandos.
+Los comandos Slash (`/`) siguen disponibles incluso con un prefijo.
+Evita los prefijos que ya usen otros bots para prevenir conflictos de comandos.
 :::
 
 ## 🔒 Aplicar los permisos de comandos {#permissions}
 
-Por defecto, los comandos de prefijo solo tienen en cuenta los permisos de Discord propios de cada comando. Las reglas que defines en Discord (**Ajustes del servidor → Integraciones → RaidProtect**, por rol, miembro o canal) se aplican únicamente a los comandos Slash.
+Los permisos de los comandos de RaidProtect se ajustan en Discord: **Ajustes del servidor → Integraciones → RaidProtect**. Puedes permitir o prohibir ahí cada comando por rol, miembro o canal. Discord solo los aplica a los comandos Slash.
 
-Para aplicarlas también a los comandos de prefijo, activa la opción **Aplicar a los comandos de prefijo** en el panel de permisos de [`/settings`](../setup.md#settings). Está desactivada por defecto.
+Para que se apliquen también a los comandos por mensajes y a las sanciones propuestas por el menú “**Sancionar**” (clic derecho sobre un miembro):
+
+1. Ejecuta el [comando `/settings`](../setup.md#settings).
+2. En la pestaña “**General**”, haz clic en “**Editar**” junto a “**Permisos**”.
+3. Marca “**Aplicar los permisos de las integraciones**”.
+
+<SettingsModal name="permissions" />
+
+Un miembro autorizado a usar `/ban` podrá entonces banear desde el menú “**Sancionar**”, y un miembro al que se le prohíba `/ban` ya no podrá usar `?ban`. La opción está desactivada por defecto.
+
+:::warning
+El menú **Integraciones** de Discord solo está disponible en la aplicación de escritorio y en la web, no en móvil.
+:::

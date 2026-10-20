@@ -6,59 +6,57 @@ export default function Cookies(): ReactNode {
     <LegalLayout
       title="Política de cookies"
       lastUpdated="Última atualização: 1 de fevereiro de 2025"
-      description="Descubra como o RaidProtect protege a sua privacidade ao não utilizar cookies, garantindo uma navegação segura e privada. Consulte a nossa política.">
+      description="Descubra como o RaidProtect protege sua privacidade ao não usar cookies, garantindo uma navegação segura e privada. Consulte nossa política.">
       <section>
         <p>
-          Na RaidProtect, comprometemo-nos a proteger a privacidade e os dados dos nossos
-          utilizadores. No âmbito deste compromisso, informamo-lo da nossa política relativa à
-          utilização de cookies no nosso site.
+          No RaidProtect, nos comprometemos a proteger a privacidade e os dados dos nossos
+          usuários. Como parte desse compromisso, informamos você sobre nossa política relativa ao
+          uso de cookies em nosso site.
         </p>
       </section>
       <section>
-        <h2>1. Utilização de cookies</h2>
+        <h2>1. Uso de cookies</h2>
         <p>
-          Pretendemos ser transparentes quanto às tecnologias que utilizamos. Para o efeito,
-          informamo-lo de que o nosso site <strong>não utiliza cookies</strong>. Os cookies são
-          pequenos ficheiros de texto que podem ser utilizados pelos sites para tornar a
-          experiência do utilizador mais eficiente. Contudo, com o objetivo de preservar ao máximo
-          a confidencialidade dos nossos utilizadores, optámos por não os utilizar na nossa
-          plataforma.
+          Queremos ser transparentes quanto às tecnologias que usamos. Por isso, informamos que
+          nosso site <strong>não usa cookies</strong>. Os cookies são pequenos arquivos de texto
+          que podem ser usados pelos sites para tornar a experiência do usuário mais eficiente.
+          No entanto, com o objetivo de preservar ao máximo a confidencialidade dos nossos
+          usuários, optamos por não usá-los em nossa plataforma.
         </p>
       </section>
       <section>
-        <h2>2. O que significa isto para si?</h2>
+        <h2>2. O que isso significa para você?</h2>
         <p>
-          A ausência de cookies significa que pode navegar no nosso site sem que qualquer
-          informação relativa à sua visita seja registada ou analisada. Esta abordagem visa
-          garantir uma experiência de navegação privada e segura para todos os nossos
-          utilizadores.
+          A ausência de cookies significa que você pode navegar em nosso site sem que nenhuma
+          informação relativa à sua visita seja registrada ou analisada. Essa abordagem visa
+          garantir uma experiência de navegação privada e segura para todos os nossos usuários.
         </p>
       </section>
       <section>
-        <h2>3. Como protegemos a sua privacidade?</h2>
+        <h2>3. Como protegemos sua privacidade?</h2>
         <p>
-          Para além da nossa política de não utilização de cookies, tomamos outras medidas para
-          proteger a sua privacidade e os seus dados pessoais. Cumprimos rigorosamente as leis e
-          regulamentos em vigor sobre a proteção dos dados e implementamos práticas de segurança
-          da informação de última geração para prevenir qualquer acesso não autorizado,
-          modificação, divulgação ou destruição das suas informações pessoais.
+          Além da nossa política de não uso de cookies, adotamos outras medidas para proteger sua
+          privacidade e seus dados pessoais. Cumprimos rigorosamente as leis e os regulamentos em
+          vigor sobre a proteção de dados e implementamos práticas de segurança da informação de
+          última geração para prevenir qualquer acesso não autorizado, modificação, divulgação ou
+          destruição das suas informações pessoais.
         </p>
       </section>
       <section>
-        <h2>4. Alterações à política de utilização de cookies</h2>
+        <h2>4. Alterações na política de uso de cookies</h2>
         <p>
-          Reservamo-nos o direito de modificar esta política de cookies a qualquer momento.
-          Qualquer alteração entrará em vigor imediatamente após a sua publicação no nosso site.
-          Recomendamos que consulte esta página regularmente para se manter informado sobre a
-          nossa política em matéria de cookies.
+          Reservamos o direito de modificar esta política de cookies a qualquer momento. Qualquer
+          alteração entrará em vigor imediatamente após sua publicação em nosso site.
+          Recomendamos que você consulte esta página regularmente para se manter informado sobre
+          nossa política de cookies.
         </p>
       </section>
       <section>
-        <h2>5. Contacto</h2>
+        <h2>5. Contato</h2>
         <p>
-          Se tiver questões ou preocupações relativamente à nossa política de cookies ou à forma
-          como protegemos os seus dados pessoais, não hesite em contactar-nos em{' '}
-          <a href="mailto:dpo@raidprotect.bot">dpo@raidprotect.bot</a>.
+          Se você tiver dúvidas ou preocupações sobre nossa política de cookies ou sobre a forma
+          como protegemos seus dados pessoais, não hesite em entrar em contato conosco pelo
+          e-mail <a href="mailto:dpo@raidprotect.bot">dpo@raidprotect.bot</a>.
         </p>
       </section>
     </LegalLayout>

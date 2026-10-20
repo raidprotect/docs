@@ -3,7 +3,7 @@ title: DM-Sperre
 description: "Die DM-Sperre von RaidProtect blockiert dauerhaft Direktnachrichten von Ihrem Discord-Server, ein Schutzschild gegen Spam und Betrug."
 ---
 
-import { DmLockSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
+import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
 
 import DmLockMockup from '@site/src/components/DiscordMessage/mockups/dm-lock';
 
@@ -13,7 +13,7 @@ import SeparatedBox from '@site/src/components/SeparatedBox';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Die Funktion **DM-Sperre** von RaidProtect ermöglicht es, den Zugang zu Direktnachrichten (DMs), die vom Server aus gesendet werden, dauerhaft zu schließen und übertrifft damit die native Einschränkung von Discord, die diese Blockierung nur für 24 Stunden über die Sicherheitsaktion "DMs pausieren" erlaubt.
+Die Funktion **DM-Sperre** von RaidProtect ermöglicht es, den Zugang zu Direktnachrichten (DMs), die vom Server aus gesendet werden, dauerhaft zu schließen und übertrifft damit die native Einschränkung von Discord, die diese Blockierung nur für 24 Stunden über die Sicherheitsaktion „DMs pausieren“ erlaubt.
 
 ## 🚦 Anwendungsfälle und Empfehlungen {#recommendations}
 
@@ -24,7 +24,7 @@ Die Funktion **DM-Sperre** von RaidProtect ermöglicht es, den Zugang zu Direktn
 
 ## ❓ Funktionsweise der DM-Sperre {#working}
 
-Der RaidProtect-Bot überprüft regelmäßig den Status der Server-DM-Blockierungseinstellung und reaktiviert sie bei Bedarf automatisch, um jeden Verwundbarkeitszeitraum zwischen zwei manuellen Verlängerungen zu vermeiden. Diese Aufgabe läuft transparent für die Administratoren und die Mitglieder des Servers ab.
+RaidProtect erneuert die DM-Blockierung automatisch vor ihrem Ablauf, ohne Verwundbarkeitszeitraum.
 
 :::info
 Es bleibt möglich, Nachrichten zu senden und zu empfangen mit:
@@ -38,11 +38,20 @@ Die Community-Funktionen von Discord sind für die ordnungsgemäße Funktion der
 
 ## 🚩 Konfiguration der DM-Sperre {#config}
 
-1. Führen Sie den [`/settings`-Befehl](../setup.md#settings) aus.
-2. Klicken Sie auf die Schaltfläche "**DM-Sperre**".
-3. Aktivieren oder deaktivieren Sie das automatische Schließen von Direktnachrichten.
+1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
+2. Öffnen Sie den Tab „**Schutz**“.
+3. Klicken Sie neben „**DM-Sperre**“ auf „**Bearbeiten**“.
+4. Aktivieren oder deaktivieren Sie im sich öffnenden Fenster „**Privatnachrichten des Servers sperren**“ und bestätigen Sie dann.
 
-<DmLockSettingsMockup />
+<SettingsModal name="dmlock" />
+
+### Der Befehl /dmlock {#dmlock}
+
+Sie können auch den Befehl verwenden: ```/dmlock```
+
+Er öffnet den Bildschirm „**DM-Sperren-Konfiguration**“ mit einem Schalter, um den Schutz zu aktivieren oder zu deaktivieren. Fehlt eine Voraussetzung (Community-Modus oder Berechtigung „**Server verwalten**“), weist ein Kasten darauf hin, und mit der Schaltfläche „**Aktualisieren**“ prüfen Sie nach der Korrektur erneut. Der Befehl ist Mitgliedern mit der Berechtigung „**Server verwalten**“ vorbehalten.
+
+<Settings start="dmlockCommand" />
 
 ## ℹ️ Befehl /dmlock-info {#info}
 
@@ -74,3 +83,25 @@ Der Befehl `/dmlock-info` ermöglicht es, die Mitglieder über den aktuellen Sta
 - Ermutigen Sie aktive Mitglieder, `/dmlock-info` zu verwenden, um Fragen neuer Mitglieder zu beantworten.
 - Zeigen Sie es regelmäßig an oder pinnen Sie es in Ihren Willkommenskanälen an.
 - Kombinieren Sie es mit Ihren Regeln oder Ankündigungen, um an die Anti-Spam-Richtlinie des Servers zu erinnern.
+
+## Häufig gestellte Fragen {#faq}
+
+### Wo aktiviere ich die DM-Sperre?
+
+In `/settings`, Tab Schutz, indem Sie neben „DM-Sperre“ auf „Bearbeiten“ klicken und dann „Privatnachrichten des Servers sperren“ ankreuzen. Auch der Befehl `/dmlock` öffnet einen eigenen Bildschirm.
+
+### Warum kann ich die DM-Sperre nicht aktivieren?
+
+Es fehlt eine Voraussetzung: Der Community-Modus von Discord muss auf Ihrem Server aktiviert sein, und RaidProtect muss die Berechtigung „Server verwalten“ haben.
+
+### Wie lange bleiben die DMs gesperrt?
+
+Solange der Schutz aktiv ist. Discord begrenzt seine Sicherheitsaktion auf 24 Stunden, und wir erneuern sie automatisch, bis Sie die DM-Sperre deaktivieren.
+
+### Können sich die Mitglieder noch per DM schreiben?
+
+Ja, wenn sie befreundet sind oder bereits Nachrichten ausgetauscht haben. Auch Bots und das Staff-Team können weiterhin DMs senden.
+
+### Aktiviert der DISCON die DM-Sperre?
+
+Ja, ab Stufe 3, auf Servern, die Zugang zum [DISCON](./discon.md) haben (im Experiment mit der Shield Update). Beim Herunterstufen deaktivieren wir sie nur, wenn der DISCON sie aktiviert hatte.

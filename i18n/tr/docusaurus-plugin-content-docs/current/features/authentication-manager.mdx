@@ -1,0 +1,333 @@
+---
+title: Authentification Manager
+description: "RaidProtect'in Authentification Manager'ı, hassas rollerinize erişimi gerçek bir kimlik doğrulamasıyla korur: passkey'ler, PIN kodu ve OTP."
+---
+
+import AuthenticationManagerMockup from '@site/src/components/DiscordMessage/mockups/authentication-manager';
+import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
+
+<AuthenticationManagerMockup />
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Icon from "@site/src/components/Icon";
+
+RaidProtect'in **Authentification Manager**'ı (AM), en hassas Discord rollerinize erişimi gerçek bir kimlik doğrulamasıyla korur. Passkey'ler (WebAuthn), PIN kodları ve OTP sayesinde bir üye, [hassas bir rolü](/tr/learn/least-privilege) yalnızca kimliğini doğruladıktan sonra ve yalnızca sınırlı bir süre için alır. Discord'da modül “**Authentification Manager**” adıyla görüntülenir.
+
+## ❓ Authentification Manager nasıl çalışır? {#working}
+
+Authentification Manager, **korumalı roller** ve **geçici oturumlara** dayanır. Bir yönetici bir rolü AM ile koruduğunda:
+
+1. Discord rolü artık kalıcı olarak verilmez: onu almak için kimlik doğrulamak gerekir.
+2. Yetkili üyeler `/auth` komutuyla (veya bir [ekip panelinin](./display.mdx#staff) “**Bir rol al**” düğmesiyle) kimlik doğrular.
+3. Rol için tanımlanan süre boyunca **geçici bir oturum** oluşturulur.
+4. Oturum sona erdiğinde rolü otomatik olarak kaldırırız.
+
+:::info
+Her üye, kimlik doğrulayabilmek için önce `/auth-profile` ile **kimlik doğrulama profilini** oluşturmalıdır.
+:::
+
+Bir oturum sırasında üyenin Discord eylemleri (yasaklamalar, mesaj silmeler, sabitlemeler, kanal değişiklikleri…) hedefleriyle birlikte AM günlüğüne yazılır: her korumalı rolle nelerin yapıldığını bilirsiniz.
+
+## 🔐 Güvenlik seviyeleri {#grades}
+
+Her kimlik doğrulama yöntemi bir **güvenlik seviyesi** verir. Her korumalı rol, üyenin ulaşması gereken bir minimum seviye ister.
+
+| **Seviye**                                                                  | **Koşul**                             |
+| --------------------------------------------------------------------------- | ------------------------------------- |
+| <Icon src="/img/icons/RankS.svg" alt="icon RankS" title=":securityRankS:"/> | En az bir kayıtlı passkey             |
+| <Icon src="/img/icons/RankA.svg" alt="icon RankA" title=":securityRankA:"/> | OTP (2FA) kodu etkin                  |
+| <Icon src="/img/icons/RankB.svg" alt="icon RankB" title=":securityRankB:"/> | 8 veya daha fazla haneli güçlendirilmiş PIN |
+| <Icon src="/img/icons/RankC.svg" alt="icon RankC" title=":securityRankC:"/> | 6 veya daha fazla haneli güçlendirilmiş PIN |
+| <Icon src="/img/icons/RankD.svg" alt="icon RankD" title=":securityRankD:"/> | 6 veya daha fazla haneli basit PIN    |
+| <Icon src="/img/icons/RankE.svg" alt="icon RankE" title=":securityRankE:"/> | 4 veya daha fazla haneli basit PIN    |
+
+:::tip
+Yapılandırdığınız yöntemler arasındaki en yüksek seviye otomatik olarak alınır. Örneğin basit bir PIN'iniz (D seviyesi) ve bir passkey'iniz (S seviyesi) varsa seviyeniz **S** olur.
+:::
+
+## 🛡️ Kimlik doğrulama yöntemleri {#methods}
+
+<SeparatedBox>
+<Tabs>
+<TabItem value="pin" label="PIN" default>
+
+PIN kodu en basit yöntemdir. İki mod mevcuttur:
+
+- **Basit PIN**: bir pencerede klasik giriş (4 ila 12 hane).
+- **Güçlendirilmiş PIN**: tuşları her girişte yer değiştiren bir tuş takımı (6 ila 12 hane); bir üçüncü kişinin size bakarak kodunuzu tahmin etmesini önler.
+
+:::warning
+Çok basit PIN'ler reddedilir: tekrarlanan rakamlar, artan veya azalan diziler ve yaygın desenler.
+:::
+
+</TabItem>
+<TabItem value="otp" label="OTP (2FA kodu)">
+
+OTP, [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2), [Authy](https://authy.com/), [1Password](https://1password.com/), [Dashlane](https://www.dashlane.com/) veya [Bitwarden](https://bitwarden.com/) gibi kimlik doğrulama uygulamalarıyla uyumlu TOTP (Time-based One-Time Password) standardını kullanır.
+
+- Her 30 saniyede yenilenen 6 haneli kod.
+
+</TabItem>
+<TabItem value="passkey" label="Passkey (WebAuthn)">
+
+Passkey'ler en yüksek güvenlik düzeyini sunar (S seviyesi). Kimlik doğrulama tarayıcıda şunlarla yapılır:
+
+- **Parmak izi** veya **yüz tanıma** (Touch ID, Face ID, Windows Hello).
+- **Fiziksel güvenlik anahtarı** (YubiKey vb.).
+
+Bir passkey kullandığınızda, Discord'unuzun dilinde bir harici bağlantı tarayıcınızda açılır. Doğrulama onaylandığında rol size verilir.
+
+</TabItem>
+</Tabs>
+</SeparatedBox>
+
+## 👤 Kimlik doğrulama profili (`/auth-profile`) {#auth-profile}
+
+`/auth-profile` komutu kişisel kimlik doğrulama profilinizi yönetir. Herhangi bir sunucuda ve özel mesajda çalışır; profiliniz her yerde aynıdır.
+
+<Settings start="authProfile" />
+
+### İlk kullanım {#onboarding}
+
+İlk kullanımda bir karşılama ekranı seviyeleri, geçici oturumları ve yöntemleri tanıtır. İlk yönteminizi yapılandırmak için “**Devam**”a tıklayın.
+
+### Kimlik doğrulamaların yönetimi {#manage-methods}
+
+Profilinizden şunları yapabilirsiniz:
+
+- Bir **PIN kodu** (basit veya güçlendirilmiş) eklemek, değiştirmek veya silmek.
+- **2FA kodunu** (OTP) bir QR kodu veya gizli anahtarla etkinleştirmek, yeniden oluşturmak veya silmek.
+- Kayıt sayfasından bir **passkey** eklemek ya da birini silmek. Her passkey cihazın adını ve son kullanım tarihini gösterir.
+
+Zaten bir yönteminiz varsa, yenisini eklemeden veya değiştirmeden önce sizden kimlik doğrulamanızı isteriz. Profilin alt kısmı seviyenizi ve bir üst basamağa çıkmak için eklenecek yöntemi hatırlatır.
+
+:::info
+Bir yöntemi silmek seviyenizi düşürebilir. Daha yüksek bir seviye isteyen rollere erişimleriniz bu durumda devre dışı kalır.
+:::
+
+### Etkin oturumlar {#profile-sessions}
+
+Etkin oturumlarınız, sona erme zamanlarıyla birlikte, her sunucuda [`/auth`](#sessions) komutunun panelinde görüntülenir.
+
+### Denetim günlüğü {#profile-audit}
+
+Profiliniz, hesabınızda yapılan son 3 eylemi gösterir. “**Tüm kayıtları gör**” düğmesi, ilgili sunucuyla birlikte sayfalı tam günlüğü açar.
+
+### Hesabın sıfırlanması {#reset}
+
+“**Kimlik doğrulamalarımı unuttum**” düğmesi hesabınızı tamamen sıfırlar. Bu eylem:
+
+- tüm kimlik doğrulama yöntemlerinizi (PIN, 2FA, passkey'ler) siler;
+- tüm sunuculardaki korumalı rollere erişimlerinizi devre dışı bırakır;
+- her şeyi yeniden yapılandırmanızı zorunlu kılar.
+
+:::danger
+Bu eylem geri alınamaz. Tüm erişimleriniz hemen iptal edilir.
+:::
+
+## 🔑 Kimlik doğrulama (`/auth`) {#auth}
+
+`/auth` komutu, korumalı bir rol almak için kimlik doğrulamayı sağlar.
+
+Şu komutu kullanın: ```/auth [role]```
+
+### Kimlik doğrulama süreci {#auth-flow}
+
+1. Sunucuda `/auth` komutunu çalıştırın ya da bir ekip panelinde “**Bir rol al**”a tıklayın.
+2. Bir menü, kullanılabilir rolleri gerekli seviyeleri ve oturum süreleriyle birlikte gösterir.
+3. Bir rol seçin.
+4. Rolün seviyesine ulaşan yöntemler arasından bir kimlik doğrulama yöntemi seçin.
+5. Doğrulamayı yapın (PIN, OTP veya passkey).
+6. Başarılı olursa size Discord rolünü verir ve bir oturum oluştururuz.
+
+:::info
+Menüde yalnızca **Aktif** durumuyla atandığınız roller görünür.
+:::
+
+### Oturumların yönetimi {#sessions}
+
+`/auth` paneli etkin oturumlarınızı listeler. Her biri için şunları yapabilirsiniz:
+
+- **Oturumu uzat**: tam bir süreyle yeniden başlamak için yeniden kimlik doğrulayın.
+- **Bağlantıyı kes**: oturum hemen iptal edilir ve Discord rolü kaldırılır.
+
+### Güvenlik {#auth-security}
+
+- **Uyarı**: 3 başarısız denemeden itibaren bir uyarı mesajı görünür.
+- **Kilitleme**: 5 başarısızlıktan sonra hesabınız 1 saat boyunca kilitlenir.
+- **Sıfırlama**: 10 başarısızlıktan sonra hesabınız sıfırlanır ve tüm erişimleriniz iptal edilir.
+
+## ⚙️ Sunucu yapılandırması {#auth-settings}
+
+Authentification Manager'ın yapılandırma paneli iki şekilde açılır:
+
+1. [`/settings` komutunu](../setup.md#settings) çalıştırın.
+2. “**Koruma**” sekmesini açın.
+3. “**Authentification Manager**” yanındaki “**Yapılandır**” düğmesine tıklayın.
+
+Panel bu durumda ana ekranın yerini alır; Koruma sekmesine dönmek için bir “**Geri**” düğmesi bulunur. Aynı paneli açan `/auth-settings` komutunu doğrudan da kullanabilirsiniz.
+
+<Settings start="auth" />
+
+:::info
+`/auth-settings` komutu varsayılan olarak yöneticilere ayrılmıştır. Yönetici olmayan bir yönetici (manager) üyenin kullanabilmesi için ona **Sunucu Ayarları > Entegrasyonlar > RaidProtect** içinde izin verin.
+:::
+
+### İzinler {#permissions}
+
+| **Rol**         | **Erişim**                                                                |
+| --------------- | ------------------------------------------------------------------------- |
+| Sahip           | Tam erişim                                                                |
+| Yönetici (Administrator) | Tam erişim (Yönetici izni AM tarafından korunan bir rolden geliyorsa hariç) |
+| Yönetici (manager) | Sınırlı erişim: kimlik doğrulaması gerekir, yalnızca kendi altındaki rolleri ve kullanıcıları yönetir, sunucu yapılandırmasını değiştiremez |
+
+#### Yöneticilerin (manager) kimlik doğrulaması {#manager-auth}
+
+Ne sahip ne de yönetici olan bir yönetici (manager), paneli her açışında kimlik doğrulamalıdır. Ona **yöneticilerin minimum seviyesine** ulaşan yöntemleri sunarız: “**PIN ile kimlik doğrula**”, “**OTP ile kimlik doğrula**” veya “**Passkey ile kimlik doğrula**”. Güçlendirilmiş PIN, tuşları karıştırılmış tuş takımında girilir.
+
+`/auth` için geçerli olan korumaların aynısı uygulanır: 3 başarısızlıktan itibaren uyarı, 5 başarısızlıkta bir saatlik kilitleme, 10 başarısızlıkta hesabın sıfırlanması.
+
+### Sunucu ayarları {#server-settings}
+
+“**Sunucu Kimlik Doğrulama yapılandırması**” penceresini açmak için “**Sunucu yapılandırması**” yanındaki “**Düzenle**”ye tıklayın:
+
+- **Varsayılan oturum süresi**: yeni roller için önerilen süre, `30m`, `2h` veya `1d` biçiminde. Ücretsiz sürümde 8 saate, [premium](/tr/premium) sürümde 24 saate kadar. Varsayılan: 10 dakika.
+- **Varsayılan minimum seviye**: yeni roller için önerilen seviye. Varsayılan: A.
+- **Yöneticilerin minimum seviyesi**: bir yöneticinin (manager) paneli açabilmesi için ulaşması gereken seviye. Varsayılan: A.
+- **Webhook URL'si (silmek için boş bırakın)**: AM loglarını alan Discord webhook'u (isteğe bağlı). Yalnızca Discord webhook URL'leri kabul edilir.
+
+Yöneticiler (manager) bu ayarları değiştiremez.
+
+### Roller sekmesi {#roles-tab}
+
+Roller sekmesi, korumalı rollerinizi seviyeleri, oturum süreleri ve kullanıcı sayılarıyla listeler. Sekmelerin altında “**Son oturumlar**” bloğu en yenisini gösterir ve “**Tümünü gör**” tüm oturumların listesini açar.
+
+:::info
+**Sınırlar:** ücretsiz sürümde 3 rol, [premium](/tr/premium) sürümde 10 rol. Devre dışı roller yine de bir yuva kaplar.
+:::
+
+#### Bir rol ekleme {#add-role}
+
+1. Authentification Manager panelini açın ([yukarıya](#auth-settings) bakın).
+2. “**Roller**” sekmesinde “**Ekle**”ye tıklayın.
+3. Korunacak **Discord rolünü** seçin.
+4. **Minimum güvenlik seviyesini** seçin.
+5. **Oturum süresini** belirtin.
+6. Bir **entegrasyon stratejisi** seçin (aşağıya bakın).
+7. Bu role zaten sahip olan üyeleri algılarız: seçimi ayarlayın, ardından “**Davetleri gönder**”e tıklayın (veya “**Yok say**”).
+
+Seçilen her üye, seviyesi yeterliyse **Aktif** durumuyla, değilse **Davet edildi** durumuyla role bağlanır: bu durumda `/auth-profile` yapılandırmasına davet eden bir DM alır.
+
+<SettingsModal name="authAddRole" />
+
+Bir entegrasyon tarafından yönetilen bir rolü, Discord Karşılama Sürecinde kullanılan bir rolü, RaidProtect'in rolünün veya sizin rolünüzün üstündeki bir rolü ve zaten korunan bir rolü reddederiz.
+
+##### Entegrasyon stratejileri {#strategies}
+
+| **Strateji** | **Etki** |
+|---|---|
+| “**Bu rolü olduğu gibi kullan**” | Seçilen rol doğrudan korumalı rol olur. Varsayılan seçimdir. |
+| “**Ayrı bir izin rolü oluştur**” | Seçilen rolün hemen altında, orijinal izinleri taşıyan `🔑 <rolün adı>` rolünü oluşturur ve orijinal rolün izinlerini boşaltırız. Orijinal rol rengini ve görünümünü kalıcı olarak korur, korunan yeni roldür. |
+
+:::tip
+Rolünüz üye listesinde **ayrı olarak görüntüleniyorsa** “**Ayrı bir izin rolü oluştur**”u seçin: üyeleriniz rollerini kalıcı olarak görünür tutar ve hassas izinler yalnızca kimlik doğrulanmış oturumlar sırasında verilir.
+:::
+
+#### Yönetici rollerini `/audit` üzerinden koruma {#audit-bulk}
+
+[Denetimin](./audit.md) yönetici rolleri kontrolü “**Tümünü ekle**”yi önerir: henüz korunmayan yönetici rollerini toplu olarak, bir partide en fazla 5 rol ve boş yuvalarınız ölçüsünde korursunuz. Yalnızca RaidProtect'in ve en yüksek rolünüzün altındaki roller önerilir.
+
+#### Bir rolü düzenleme {#edit-role}
+
+Rolün kartını (minimum seviye, oturum süresi, atanan kullanıcılar) açmak için rolün satırında “**Düzenle**”ye tıklayın, ardından minimum seviyeyi ve oturum süresini değiştirmek için “**Düzenle**”ye tıklayın.
+
+#### Bir rolü etkinleştirme / devre dışı bırakma {#toggle-role}
+
+Rolün kartından “**Devre dışı bırak**”, rolü silmeden duraklatır: onun için artık hiçbir oturum oluşturulmaz. Süren oturumlar iptal edilir ve Discord rolü ilgili üyelerden kaldırılır. “**Etkinleştir**” onu, yuvalarınız ölçüsünde yeniden hizmete sokar.
+
+#### Bir rolü silme {#delete-role}
+
+“**Sil**”, rolü tüm kullanıcı atamalarıyla birlikte Authentification Manager'dan kalıcı olarak kaldırır. Sizden onay istenir.
+
+### Kullanıcılar sekmesi {#users-tab}
+
+Kullanıcılar sekmesi, en az bir korumalı role bağlı üyeleri seviyeleri, rol sayıları ve yönetici (manager) durumlarıyla listeler.
+
+:::info
+**Sınırlar:** ücretsiz sürümde 20 kullanıcı, [premium](/tr/premium) sürümde 50.
+:::
+
+#### Bir kullanıcı ekleme {#add-user}
+
+1. “**Kullanıcılar**” sekmesini açın.
+2. “**Ekle**”ye tıklayın.
+3. **Kullanıcıyı** ve ona atanacak **Kimlik Doğrulama rolünü** seçin.
+
+Üye bir DM alır: seviyesi yeterliyse rolü hemen kullanabilir, değilse yeterli seviyede bir yöntem yapılandırmaya davet edilir.
+
+:::info
+Davetler spam'i önlemek için sınırlandırılmıştır. Engellenenler daha sonra üyenin kartından yeniden gönderilebilir.
+:::
+
+#### Kullanıcı kartı ve durumlar {#member-status}
+
+Bir üyenin kartını açmak için “**Yönet**”e tıklayın: seviyesi, kimliği, yönetici (manager) olup olmadığı ve her rolü durumuyla birlikte. Rol seçicisi rol eklemeyi veya kaldırmayı sağlar.
+
+| **Durum**   | **Açıklama**                                                      |
+| ----------- | ----------------------------------------------------------------- |
+| Davet edildi | Üye eklendi ama seviyesi henüz yeterli değil (yapılandırılacak profil) |
+| Beklemede   | Onay bekliyor: “**Onayla**”ya tıklayın                            |
+| Aktif       | Üye rolü almak için kimlik doğrulayabilir                         |
+| Devre dışı  | Erişim askıya alındı: yeniden kurmak için “**Geri yükle**”ye tıklayın |
+
+#### Yönetici (manager) yapma {#promote-manager}
+
+“**Yönetici yap**”, üyenin yöneticilerin minimum seviyesine ulaşması koşuluyla yapılandırma paneline erişim verir. Bir yönetici (manager), altındaki kullanıcıları ve rolleri yönetir. “**Yöneticiyi kaldır**” ondan bu erişimi alır.
+
+#### Bir kullanıcıyı silme {#delete-user}
+
+“**Kullanıcıyı sil**”, üyeyi sunucunun tüm korumalı rollerinden çıkarır. Sizden onay istenir.
+
+### Loglar sekmesi {#logs-tab}
+
+Loglar sekmesi, Authentification Manager'ın sayfalı günlüğünü gösterir: verilen, uzatılan veya iptal edilen oturumlar, yapılandırma değişiklikleri… Göz biçimli düğme bir girdinin ayrıntısını açar (kullanıcı, eylem, tür, tarih, rol ve hedef). Loglar ayrıca yapılandırılan webhook'a gönderilir.
+
+### Oturumlar {#sessions-tab}
+
+Ayrılmış bir sekme yoktur: Roller sekmesindeki “**Son oturumlar**” bloğu en son oturumu gösterir ve “**Tümünü gör**” sunucunun tüm oturumlarının listesini durumlarıyla (Aktif, Süresi doldu, İptal edildi) açar. “**Görüntüle**” bir oturumun ayrıntısını ve son eylemlerini gösterir.
+
+### Karşılama Sürecinin koruması {#onboarding-protection}
+
+Korumalı bir rol Discord Karşılama Sürecinin sorularına eklenirse onu sorudan otomatik olarak kaldırır ve loglara yazarız: aksi halde herhangi bir gelen kimlik doğrulamadan rolü edinebilirdi.
+
+### Premium'un sona ermesi {#premium-end}
+
+Bir [Premium](/tr/premium) aboneliğinin sonunda, 3'ün ötesindeki etkin roller otomatik olarak devre dışı bırakılır (en eskiler korunur) ve 8 saati aşan oturum süreleri 8 saate indirilir.
+
+## Sık sorulan sorular {#faq}
+
+### Hangi kimlik doğrulama yöntemleri mevcut?
+
+Üç yöntem vardır: PIN kodu (basit veya güçlendirilmiş), OTP (TOTP standardında 2FA kodu) ve passkey'ler (WebAuthn). Passkey'ler en yüksek güvenlik düzeyini sunar (S seviyesi).
+
+### Authentification Manager nerede yapılandırılır?
+
+`/settings` içinde Koruma sekmesinde “**Authentification Manager**” yanındaki “**Yapılandır**” düğmesine tıklayarak ya da doğrudan `/auth-settings` komutuyla.
+
+### Bir oturum sona erdiğinde ne olur?
+
+Korumalı rolü üyeden otomatik olarak kaldırırız. Onu yeniden almak için `/auth` ile yeniden kimlik doğrulamalı ya da oturumunu sona ermeden önce uzatmalıdır.
+
+### Kimlik doğrulama bilgilerimi unutursam ne yapmalıyım?
+
+`/auth-profile` profilinizden “**Kimlik doğrulamalarımı unuttum**” düğmesi hesabınızı tamamen sıfırlar: tüm yöntemleriniz silinir ve erişimleriniz iptal edilir. Bu eylem geri alınamaz ve eksiksiz bir yeniden yapılandırma gerektirir.
+
+### Authentification Manager ile kaç rol korunabilir?
+
+Ücretsiz sürümde 3, premium sürümde 10 rol koruyabilirsiniz; sırasıyla 20 ve 50 kullanıcı için. Oturumlar ücretsiz sürümde en fazla 8 saat, premium sürümde 24 saat sürer.
+
+### Bir yönetici (manager) her şeyi değiştirebilir mi?
+
+Hayır. Bir yönetici (manager) paneli her açışında kimlik doğrulamalı, yalnızca kendi altındaki rolleri ve kullanıcıları yönetir ve sunucu yapılandırmasını değiştiremez.

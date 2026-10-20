@@ -5,13 +5,9 @@ description: "Die Beitrittssperre von RaidProtect blockiert Neuzugänge auf Ihre
 
 import JoinLockMockup from '@site/src/components/DiscordMessage/mockups/join-lock';
 
-{/* <JoinLockMockup /> : masquée pour le moment */}
+{/* <JoinLockMockup /> : vorerst ausgeblendet */}
 
-import SeparatedBox from '@site/src/components/SeparatedBox';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-Die Funktion **Beitrittssperre** von RaidProtect ermöglicht es, den Zugang für neue Mitglieder auf dem Server dauerhaft zu schließen, und übertrifft damit die native Einschränkung von Discord, die diese Blockierung über die Sicherheitsaktion "Beitritte pausieren" nur für 24 Stunden erlaubt.
+Die Funktion **Beitrittssperre** (oder Join Lock) von RaidProtect schließt den Zugang für neue Mitglieder auf dem Server, bis Sie sie deaktivieren, und übertrifft damit die native Einschränkung von Discord, die diese Blockierung über die Sicherheitsaktion „Beitritte pausieren“ nur für 24 Stunden erlaubt.
 
 ## 🚦 Anwendungsfälle und Empfehlungen {#recommendations}
 
@@ -22,18 +18,50 @@ Die Funktion **Beitrittssperre** von RaidProtect ermöglicht es, den Zugang für
 
 ## ❓ Funktionsweise der Beitrittssperre {#working}
 
-RaidProtect schließt die Beitritte auf Ihrem Server endgültig. Im Gegensatz zur nativen Funktion von Discord, die alle 24 Stunden eine manuelle Erneuerung erfordert, ermöglicht diese Methode eine dauerhafte Blockierung ohne Eingriff.
+Solange die Beitrittssperre aktiv ist, wendet RaidProtect auf die Neuankömmlinge die [Aktion während des Raids](./raid-mode.md#action) an, die Sie für den Auto RaidMode gewählt haben. Im Gegensatz zur nativen Funktion von Discord, die alle 24 Stunden eine manuelle Erneuerung erfordert, hält die Blockierung ohne Eingriff an, bis Sie sie deaktivieren.
 
+| Aktion während des Raids | Wirkung der Beitrittssperre |
+|---|---|
+| „**Einladungen sperren**“ (Standard) | Die Einladungen des Servers werden deaktiviert: Niemand tritt mehr bei. |
+| „**Ankömmlinge kicken**“ ([Premium](/de/premium)) | Jeder Neuankömmling wird gekickt und erhält eine Privatnachricht mit dem Hinweis, dass die Beitritte geschlossen sind. |
+| „**Zum Captcha schicken**“ | Die Neuankömmlinge **können nach dem Lösen des [Captchas](./captcha.md) eintreten**: Der Server ist also nicht geschlossen. |
+| „**Captcha während des Raids eingefroren**“ | Die Neuankömmlinge warten hinter dem Captcha, solange die Beitrittssperre aktiv ist. |
+
+:::warning
+Für einen Server, der wirklich geschlossen bleiben soll, wählen Sie „**Einladungen sperren**“, „**Ankömmlinge kicken**“ oder „**Captcha während des Raids eingefroren**“. Mit „**Zum Captcha schicken**“ beschränkt sich die Beitrittssperre darauf, den Neuankömmlingen das Captcha aufzuerlegen.
+:::
 :::info
-Mitglieder, die bereits auf dem Server sind, bleiben aktiv und können den Server weiterhin normal nutzen.
+Mitglieder, die bereits auf dem Server sind, bleiben aktiv und können den Server weiterhin normal nutzen. Die [Willkommensnachricht](./onboarding.md#welcome-message) schweigt, solange die Beitrittssperre aktiv ist.
 :::
 :::warning
-Die Community-Funktionen von Discord sind für die ordnungsgemäße Funktion der Beitrittssperre unerlässlich. [Folgen Sie unserer Anleitung, um die Aktivierung der Community auf Ihrem Server zu überprüfen.](../guides/community.md)
+Mit der Aktion „**Einladungen sperren**“ sind die Community-Funktionen von Discord für die Beitrittssperre unerlässlich. [Folgen Sie unserer Anleitung, um die Aktivierung der Community auf Ihrem Server zu überprüfen.](../guides/community.md) Die anderen Aktionen funktionieren ohne die Community.
 :::
 
 ## 🚩 Konfiguration der Beitrittssperre {#config}
 
-1. Führen Sie den Befehl `/joinlock` aus.
-2. Klicken Sie auf die Schaltfläche "**Aktivieren**" oder "**Deaktivieren**".
+Verwenden Sie den Befehl: ```/joinlock [status]```
 
-![Screenshot der Beitrittssperre-Einstellung](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-join-lock.webp)
+- Ohne Option zeigt der Befehl den Status der Beitrittssperre mit einer Schaltfläche „**Aktivieren**“ oder „**Deaktivieren**“ an.
+- Ersetzen Sie `[status]` durch **True**, um sie direkt zu aktivieren, oder **False**, um sie direkt zu deaktivieren.
+
+![Screenshot des Befehls /joinlock](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-join-lock.webp)
+
+Der Befehl erfordert die Berechtigung **Server verwalten**, und bei jeder Statusänderung wird eine Nachricht im Log-Kanal gepostet.
+
+:::info
+Der Befehl `joinlock` ist [per Präfix verwendbar](../guides/prefix.md). Solange die Beitrittssperre aktiv ist, ist der [Befehl `/raidmode`](./raid-mode.md#enable) nicht verfügbar: Deaktivieren Sie zuerst die Beitrittssperre.
+:::
+
+## Häufig gestellte Fragen {#faq}
+
+### Was ist der Unterschied zum Raid-Modus?
+
+Der [Raid-Modus](./raid-mode.md) ist temporär (höchstens 24 Stunden) und kann sich während einer Welle von selbst aktivieren. Die Beitrittssperre wird von Hand aktiviert und bleibt bestehen, bis Sie sie deaktivieren.
+
+### Muss man die Discord-Community aktivieren?
+
+Nur wenn die Aktion während des Raids des Auto RaidMode „**Einladungen sperren**“ lautet. Mit den anderen Aktionen funktioniert die Beitrittssperre ohne die Community.
+
+### Können neue Mitglieder noch beitreten?
+
+Nein, mit „**Einladungen sperren**“, „**Ankömmlinge kicken**“ oder „**Captcha während des Raids eingefroren**“. Mit „**Zum Captcha schicken**“ treten sie nach dem Lösen des Captchas bei.

@@ -32,7 +32,7 @@
     "description": "The label of footer link with label=Mentions légales linking to /legal"
   },
   "link.item.label.Statuts des services": {
-    "message": "Estado dos serviços",
+    "message": "Status dos serviços",
     "description": "The label of footer link with label=Statuts des services linking to https://status.raidprotect.bot"
   },
   "link.item.label.Blog": {
@@ -40,7 +40,7 @@
     "description": "The label of footer link with label=Blog linking to /blog"
   },
   "link.item.label.Conditions d'utilisation": {
-    "message": "Condições de utilização",
+    "message": "Condições de uso",
     "description": "The label of footer link with label=Conditions d'utilisation linking to /terms"
   },
   "link.item.label.Politique de confidentialité": {
@@ -50,5 +50,13 @@
   "link.item.label.Politique des cookies": {
     "message": "Política de Cookies",
     "description": "The label of footer link with label=Politique des cookies linking to /cookies"
+  },
+  "link.item.label.Learn": {
+    "message": "Aprender",
+    "description": "The label of footer link with label=Learn linking to /learn"
+  },
+  "link.item.label.Business": {
+    "message": "Business",
+    "description": "The label of footer link with label=Business linking to /business"
   }
 }

@@ -1,0 +1,330 @@
+---
+title: Lịch sử hình phạt
+description: "Lịch sử hình phạt của RaidProtect tập trung mọi hành động kiểm duyệt của bạn trong một cơ sở dữ liệu có thể tra cứu và chỉnh sửa, để theo dõi rõ ràng."
+---
+
+import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
+
+import SanctionsMockup from '@site/src/components/DiscordMessage/mockups/sanctions';
+
+{/* <SanctionsMockup /> masqué temporairement : mockup à améliorer */}
+
+import Icon from "@site/src/components/Icon";
+
+Lịch sử hình phạt của RaidProtect cho phép bạn theo dõi và quản lý mọi [hình phạt](/vi/learn/discord-sanctions) được áp dụng trên máy chủ của bạn. Hệ thống này tập trung mọi hành động kiểm duyệt trong một cơ sở dữ liệu có thể tra cứu và chỉnh sửa, qua đó giúp công việc của đội kiểm duyệt dễ dàng hơn.
+
+## ❓ Cách lịch sử hoạt động {#working}
+
+Lịch sử hình phạt tự động ghi lại mọi hành động kiểm duyệt được thực hiện trên máy chủ của bạn:
+
+- **Hình phạt thủ công**: mọi [lệnh kiểm duyệt](./moderation.mdx) (`/ban`, `/tempban`, `/kick`, `/mute`, `/jail`, `/warn`…) đều được ghi vào lịch sử.
+- **Hình phạt tự động**: các hình phạt do các mô-đun bảo vệ của chúng tôi áp dụng ([chống spam](./anti-spam.mdx), [HoneyPot](./honeypot.md), [ScamLens](./scam-images.md)…) cũng được thêm vào lịch sử.
+- **Cấm, đuổi và timeout**: các hình phạt được áp dụng mà không qua RaidProtect cũng được thêm vào lịch sử.
+- **AutoMod của Discord**: các timeout do AutoMod của Discord áp dụng được ghi lại. Với Shield Update (đang thử nghiệm), mỗi tin nhắn bị một quy tắc AutoMod chặn cũng tạo một **cảnh cáo** mang tên “**Discord Automod**”, im lặng (không có tin nhắn riêng), trừ khi quy tắc đã áp dụng một timeout.
+- **Thông báo hình phạt**: các thành viên bị xử phạt nhận một tin nhắn riêng cho biết hình phạt và lý do. Bot cũng gửi một biên nhận chi tiết xác nhận trạng thái gửi: **đã nhận**, **tin nhắn riêng đã đóng**, **hết hạn** hoặc **im lặng** (khi dùng tùy chọn `[--silent]`). Với kick, softban và cấm tạm thời, tin nhắn này còn chứa một **nút kèm lời mời vào máy chủ** để thành viên có thể quay lại khi hình phạt kết thúc.
+
+:::info
+Mọi hình phạt được ghi lại đều chứa: người dùng bị xử phạt, người kiểm duyệt chịu trách nhiệm, lý do (tối đa 512 ký tự), ngày và giờ, cũng như loại hình phạt và việc người dùng đã được thông báo hay chưa.
+:::
+
+## 🔍 Tìm kiếm hình phạt {#search}
+
+Lệnh `/sanctions search` cho phép bạn tìm các hình phạt trong lịch sử theo nhiều tiêu chí khác nhau.
+
+Dùng lệnh: ```/sanctions search [user] [moderator] [type] [reason] [date] [status] [moderator_type]```
+
+- `[user]`: tìm mọi hình phạt của một người dùng cụ thể. Nếu tài khoản này thuộc một nhóm [tài khoản phụ](./alt-accounts.md), các hình phạt của các tài khoản liên kết cũng xuất hiện.
+- `[moderator]`: tìm mọi hình phạt do một người kiểm duyệt cụ thể áp dụng.
+- `[type]`: lọc theo loại hình phạt (Cấm, Gỡ cấm, Đuổi, Giam giữ, Trả tự do, Cách ly, Timeout, Gỡ timeout, Mute, Gỡ mute, Cảnh cáo).
+- `[reason]`: lọc theo lý do (khớp một phần).
+- `[date]`: lọc theo ngày của hình phạt.
+- `[status]`: lọc theo trạng thái của hình phạt (Đang hoạt động, Đã hết hạn, Đã hủy).
+- `[moderator_type]`: lọc theo loại người kiểm duyệt (Hành động của con người, Hành động tự động, Hành động của RaidProtect, Hành động của Discord, Antispam, Hết hạn, Antiscam, HoneyPot, Discord Automod, Discord Expiration).
+
+![Ảnh chụp màn hình tìm kiếm hình phạt](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-search.webp)
+
+:::tip
+Bạn có thể kết hợp nhiều tiêu chí để thu hẹp kết quả tìm kiếm. Ví dụ, tìm mọi lệnh cấm do một người kiểm duyệt cụ thể thực hiện.
+:::
+
+## ℹ️ Xem một hình phạt {#info}
+
+Lệnh `/sanctions info` cho phép bạn lấy thông tin chi tiết về một hình phạt cụ thể.
+
+Dùng lệnh: ```/sanctions info (id)```
+
+Hãy thay `(id)` bằng ID của hình phạt bạn muốn xem.
+
+![Ảnh chụp màn hình thông tin của một hình phạt](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-info.webp)
+
+## ✏️ Sửa một hình phạt {#edit}
+
+Lệnh `/sanctions edit` cho phép bạn sửa lý do hoặc thời lượng của một hình phạt hiện có, hữu ích để sửa lỗi hoặc thêm chi tiết.
+
+Dùng lệnh: ```/sanctions edit (id) [reason] [duration]```
+
+Hãy thay `(id)` bằng ID của hình phạt cần sửa, `[reason]` bằng lý do mới (tối đa 512 ký tự) và `[duration]` bằng thời lượng mới (ví dụ: `1d 2h`).
+
+![Ảnh chụp màn hình sửa một hình phạt](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-edit.webp)
+
+:::warning
+Việc sửa một hình phạt cập nhật bản ghi trong lịch sử nhưng không thay đổi hình phạt đã áp dụng trên Discord (ví dụ, một người dùng bị cấm sẽ vẫn bị cấm).
+:::
+
+## 🗑️ Xóa một hình phạt {#delete}
+
+Lệnh `/sanctions delete` cho phép bạn xóa một hình phạt khỏi lịch sử. Thao tác này không thể hoàn tác.
+
+Dùng lệnh: ```/sanctions delete (id) [reason]```
+
+Hãy thay `(id)` bằng ID của hình phạt cần xóa. Tham số `[reason]` cho phép **giải thích việc xóa**, được ghi vào nhật ký.
+
+![Ảnh chụp màn hình xóa một hình phạt](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-delete.webp)
+
+## Trạng thái của hình phạt {#status}
+
+Các hình phạt có thể có nhiều trạng thái khác nhau:
+
+| **Trạng thái** | **Emoji**                                                                                                                   | **Ý nghĩa**                                               |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------| --------------------------------------------------------- |
+| `Đang hoạt động` | <Icon src="/img/icons/SanctionStatusACTIVE.svg" alt="icon SanctionStatusACTIVE" title=":iconSanctionStatusACTIVE:"/>     | Hình phạt đang diễn ra.                                   |
+| `Đã hết hạn`  | <Icon src="/img/icons/SanctionStatusEXPIRED.svg" alt="icon SanctionStatusEXPIRED" title=":iconSanctionStatusEXPIRED:"/>     | Hình phạt đã hết hạn.                                     |
+| `Đã hủy`      | <Icon src="/img/icons/SanctionStatusCANCELED.svg" alt="icon SanctionStatusCANCELED" title=":iconSanctionStatusCANCELED:"/>  | Hình phạt đã bị một người kiểm duyệt hủy.                 |
+| `Thất bại`    | <Icon src="/img/icons/SanctionStatusFAILED.svg" alt="icon SanctionStatusFAILED" title=":iconSanctionStatusFAILED:"/>        | Hình phạt thất bại (thiếu quyền).                         |
+
+### Xử lý trùng lặp {#duplicates}
+
+Khi tìm thấy một hình phạt đang hoạt động có trước, bạn có thể:
+
+- **Hợp nhất** hai hình phạt: các thời lượng sẽ được cộng lại nếu có thể và các lý do sẽ được nối với nhau.
+- **Hủy** hình phạt đang hoạt động và tạo một hình phạt mới.
+- **Ghi đè** hình phạt đang hoạt động bằng thông tin của hình phạt vừa nhập.
+
+![Ảnh chụp màn hình xử lý trạng thái của các hình phạt](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-active-found.webp)
+
+## ⚙️ Cấu hình hình phạt {#config}
+
+Mọi thiết lập của hình phạt nằm trên cùng một màn hình:
+
+1. Dùng [lệnh `/settings`](../setup.md#settings).
+2. Mở thẻ “**Kiểm duyệt**”.
+3. Nhấp vào “**Cấu hình**” bên cạnh “**Hình phạt**”.
+
+<Settings start="sanctions" />
+
+### Tắt hình phạt {#disable}
+
+Bạn có thể **tắt hoàn toàn hệ thống hình phạt** trên máy chủ của mình. Khi các hình phạt bị tắt, RaidProtect không còn ghi hình phạt nào vào lịch sử và các lệnh liên quan không khả dụng.
+
+1. Dùng [lệnh `/settings`](../setup.md#settings).
+2. Mở thẻ “**Kiểm duyệt**”.
+3. Nhấp vào “**Cấu hình**” bên cạnh “**Hình phạt**”.
+4. Nhấp vào “**Tắt**” ở bên phải tiêu đề màn hình (hoặc “**Bật**” để bật lại).
+
+### Jail {#jail}
+
+Hãy cấu hình **Jail** để bật một hình phạt kiểm duyệt theo vai trò, hạn chế hơn một mute thông thường. Khi đã cấu hình, vai trò này cho phép cô lập một thành viên với các quyền bị hạn chế nghiêm ngặt và mở khóa việc dùng các lệnh [`/jail`](./moderation.mdx#jail) và [`/tempjail`](./moderation.mdx#tempjail).
+
+1. Dùng [lệnh `/settings`](../setup.md#settings).
+2. Mở thẻ “**Kiểm duyệt**”.
+3. Nhấp vào “**Cấu hình**” bên cạnh “**Hình phạt**”.
+4. Nhấp vào “**Chỉnh sửa**” bên cạnh “**Jail**”.
+5. Chọn một vai trò có sẵn trong bộ chọn, hoặc nhấp vào “**Tạo một cái cho tôi**”.
+
+<Settings start="jail" />
+
+Nút “**Tạo một cái cho tôi**” mở một cửa sổ nơi bạn đặt tên cho vai trò (mặc định `Bị giam`) và cấu hình **kênh thông tin** dành cho các thành viên ở jail:
+
+- **Chọn một kênh có sẵn**: nó giữ nguyên khả năng hiển thị hiện tại.
+- **Tạo một kênh mới** bằng cách nhập một cái tên (mặc định `truy-cập-hạn-chế`).
+
+Chúng tôi gỡ khỏi vai trò quyền xem các kênh của máy chủ. Trong kênh thông tin, các thành viên ở jail có thể đọc tin nhắn và lịch sử, nhưng không thể viết, thả biểu cảm hay tạo luồng. Kênh này tương ứng với vị trí dành riêng trong các [bảng thông tin](./display.mdx), được cấu hình Jail tự động quản lý.
+
+:::info
+Nếu một vai trò Jail đã được cấu hình, bạn có thể đổi kênh thông tin bằng nút “**Chỉnh sửa kênh**” của màn hình Jail.
+:::
+
+:::warning
+Nếu vai trò Jail vẫn còn cho thấy một số kênh, màn hình Jail liệt kê chúng trong một khung: hãy từ chối quyền `Xem kênh` của nó trong các kênh đó, hoặc tạo một vai trò mới bằng “**Tạo một cái cho tôi**”. Chừng nào còn các hình phạt đang hoạt động dựa trên vai trò Jail hoặc Mute, bạn không thể đổi nó: hãy gỡ các hình phạt đó hoặc chờ chúng hết hạn.
+:::
+
+:::info
+Nếu không có vai trò Jail, các lệnh `/jail` và `/tempjail` không khả dụng. Tuy vậy, các mô-đun tự động ([chống spam](./anti-spam.mdx), [HoneyPot](./honeypot.md), [người báo cáo sai](./reports.md#bad-reporters)) vẫn đề xuất Jail và Mute, kèm dòng “**Chưa được cấu hình, dùng tạm Timeout**”: khi đó hình phạt được áp dụng là một timeout.
+:::
+
+#### Vai trò khi jail {#jail-roles}
+
+Trong màn hình Jail, bộ chọn “**Quản lý vai trò khi jail**” điều khiển việc RaidProtect làm gì với các vai trò của thành viên khi họ bị giam. Hai chế độ:
+
+- “**Thêm vai trò jail**” *(mặc định)*: thành viên giữ các vai trò của mình, vai trò jail được thêm vào.
+- “**Thay thế mọi vai trò**”: chúng tôi **gỡ mọi vai trò của thành viên** trong thời gian bị giam và khôi phục chúng khi họ được thả. Nghiêm ngặt hơn, cách này tránh việc một vai trò có quyền tường minh qua mặt các hạn chế của vai trò Jail.
+
+### Đồng bộ cách ly Discord <span className="badge-experiment">Thử nghiệm</span> {#discord-quarantine}
+
+:::info Thử nghiệm: Shield Update
+Đồng bộ cách ly Discord thuộc **Shield Update**, dự kiến trong phiên bản 3.6.0. Trong khi chờ phát hành, nó đang thử nghiệm, ở dạng bản beta công khai cho các máy chủ [Premium](/vi/premium).
+:::
+
+AutoMod của Discord có thể cách ly một thành viên có hồ sơ vi phạm một quy tắc (biệt danh, tag máy chủ). Với thiết lập này, chúng tôi theo dõi việc cách ly đó: thành viên nhận **vai trò jail** và một hình phạt **Cách ly** được ghi vào lịch sử. Họ ra khỏi cách ly ngay khi Discord gỡ nó.
+
+1. Dùng [lệnh `/settings`](../setup.md#settings).
+2. Mở thẻ “**Kiểm duyệt**”.
+3. Nhấp vào “**Cấu hình**” bên cạnh “**Hình phạt**”.
+4. Nhấp vào “**Bật**” bên cạnh “**Đồng bộ cách ly Discord**”.
+
+:::info
+Thiết lập này yêu cầu một [vai trò Jail](#jail). Tắt nó sẽ giải phóng các cách ly mà nó đã đặt.
+:::
+
+### Mute {#mute}
+
+Hãy cấu hình **vai trò Mute** để dùng một hình phạt theo vai trò thay cho timeout của Discord với các thời lượng kéo dài. Khi thời lượng mute vượt ngưỡng đã định, bot sẽ tự động gán vai trò Mute cho thành viên liên quan thay vì áp dụng timeout của Discord.
+
+1. Dùng [lệnh `/settings`](../setup.md#settings).
+2. Mở thẻ “**Kiểm duyệt**”.
+3. Nhấp vào “**Cấu hình**” bên cạnh “**Hình phạt**”.
+4. Nhấp vào “**Chỉnh sửa**” bên cạnh “**Mute**”.
+5. Chọn một vai trò có sẵn trong bộ chọn “**Vai trò Mute**”, hoặc nhấp vào “**Tạo một cái cho tôi**” (chúng tôi tạo vai trò `Bị tắt tiếng` và gỡ quyền viết của nó trong tất cả các kênh).
+
+#### Ngưỡng Mute {#mute-threshold}
+
+**Ngưỡng mute** được chỉnh trên cùng màn hình với vai trò. Nó xác định từ thời lượng nào bot dùng vai trò Mute thay cho timeout của Discord.
+
+1. Trên màn hình Mute, mở bộ chọn “**Ngưỡng Mute**”.
+2. Chọn “**Mọi lúc**”, “**1 giờ**” (mặc định), “**1 ngày**”, “**Timeout mở rộng (=28 ngày)**” hoặc “**Giá trị tùy chỉnh**” (từ 0 đến 28 ngày, ví dụ: `3d 1h 15m`).
+
+“**Mọi lúc**” (giá trị 0) không bao giờ dùng timeout của Discord: mọi mute đều đi qua vai trò.
+
+:::info
+Giới hạn 28 ngày của timeout do Discord áp đặt. Vượt quá thời lượng này, vai trò Mute luôn được dùng nếu đã cấu hình. Tùy chọn `[--force-timeout]` của [lệnh `/mute`](./moderation.mdx#timeout) buộc dùng timeout của Discord bất chấp ngưỡng.
+:::
+
+:::info
+Các **timeout do AutoMod của Discord áp dụng** được tự động chuyển thành mute theo vai trò nếu thời lượng của chúng vượt ngưỡng đã cấu hình, để nhất quán với các hình phạt thủ công của bạn.
+:::
+
+### Quyền riêng tư của Hình phạt {#sanctions-privacy}
+
+Hãy cấu hình mức riêng tư của hình phạt để kiểm soát những thông tin mà các thành viên có thể truy cập về **hình phạt của chính họ**, qua lệnh [`/my-sanctions`](./utilities.mdx#my-sanctions) hoặc nút **Xem hình phạt của tôi**.
+
+1. Dùng [lệnh `/settings`](../setup.md#settings).
+2. Mở thẻ “**Kiểm duyệt**”.
+3. Nhấp vào “**Cấu hình**” bên cạnh “**Hình phạt**”.
+4. Nhấp vào “**Chỉnh sửa**” bên cạnh “**Quyền riêng tư của Hình phạt**”.
+5. Trong cửa sổ, chọn “**Mức truy cập**” mong muốn:
+
+| **Mức**                              | **Mô tả**                                                                                           |
+| ------------------------------------ | --------------------------------------------------------------------------------------------------- |
+| Tắt *(mặc định)*                     | Người dùng không thể xem hình phạt của mình.                                                        |
+| Chỉ hình phạt                        | Người dùng chỉ có thể xem hình phạt của mình và thời gian còn lại, nếu có.                          |
+| Kèm lý do                            | Người dùng có thể xem hình phạt và lý do, không kèm danh tính người kiểm duyệt.                     |
+| Kèm lý do và người kiểm duyệt        | Người dùng có thể xem mọi thứ về hình phạt của mình.                                                |
+
+<SettingsModal name="sanctionsPrivacy" />
+
+:::note
+Bất kể mức nào được chọn, **những người kiểm duyệt vẫn có toàn quyền truy cập** lịch sử hình phạt qua các công cụ kiểm duyệt.
+:::
+
+### Hiển thị nội dung đa phương tiện {#show-medias}
+
+Hãy cấu hình việc hiển thị nội dung đa phương tiện trong lý do hình phạt. Khi tùy chọn này bị tắt (mặc định), các liên kết chứa những phần mở rộng sau tự động bị gỡ khỏi lý do hình phạt khi hiển thị cho thành viên (qua [`/my-sanctions`](./utilities.mdx#my-sanctions) hoặc các thông báo hình phạt):
+
+`png`, `jpg`, `jpeg`, `gif`, `webp`, `webm`, `mp4`
+
+1. Dùng [lệnh `/settings`](../setup.md#settings).
+2. Mở thẻ “**Kiểm duyệt**”.
+3. Nhấp vào “**Cấu hình**” bên cạnh “**Hình phạt**”.
+4. Nhấp vào “**Bật**” hoặc “**Tắt**” bên cạnh “**Hiển thị nội dung đa phương tiện**”.
+
+## ✨ Tên các hình phạt <span className="badge-premium">Premium</span> {#custom-names}
+
+Với phiên bản [Premium](/vi/premium), bạn có thể tùy chỉnh tên của từng loại hình phạt cho phù hợp với từ vựng của máy chủ. Các tên tùy chỉnh thay thế tên mặc định trong nhật ký, tìm kiếm và menu. Với mỗi loại, bạn có thể cấu hình:
+
+- **Tên**: thay tên mặc định bằng tên bạn chọn, tối đa 32 ký tự (ví dụ: “Cảnh cáo” → “Thẻ Vàng”).
+- **Động từ**: xác định động từ dùng trong các tin nhắn, tối đa 32 ký tự (ví dụ: “bị rút thẻ”). Nếu để trống, tên sẽ được dùng.
+- **Chế độ DM**: chọn cách diễn đạt của tin nhắn riêng gửi cho thành viên bị xử phạt:
+  - “Bạn đã [động từ]” (mặc định)
+  - “Bạn đã nhận một [tên]”
+
+Các loại hình phạt có thể tùy chỉnh là: Cấm, Softban, Gỡ cấm, Đuổi, Giam giữ, Trả tự do, Timeout, Gỡ timeout, Mute, Gỡ mute và Cảnh cáo.
+
+1. Dùng [lệnh `/settings`](../setup.md#settings).
+2. Mở thẻ “**Kiểm duyệt**”.
+3. Nhấp vào “**Cấu hình**” bên cạnh “**Hình phạt**”.
+4. Nhấp vào nút “**Tên các hình phạt**”.
+5. Chọn loại hình phạt cần tùy chỉnh trong bộ chọn, rồi nhập tên, động từ và chế độ DM trong cửa sổ.
+
+<Settings start="sanctionNames" />
+
+Các nút “**Xuất**” và “**Nhập**” của màn hình cho phép lưu các tên của bạn vào một tệp JSON rồi dán lại chúng (trường “**Dán nội dung JSON**”), ví dụ để dùng lại trên một máy chủ khác.
+
+:::tip
+Để trống các trường để đặt lại một loại hình phạt về tên mặc định. Nút “**Đặt lại tất cả**” đưa mọi tên về ban đầu.
+:::
+
+## 📨 Liên kết kháng cáo <span className="badge-premium">Premium</span> {#appeal}
+
+**Liên kết kháng cáo** cho phép các thành viên bị xử phạt phản đối hình phạt của mình: một nút dẫn đến liên kết của bạn được thêm vào tin nhắn riêng của mọi hình phạt, trừ cảnh cáo.
+
+1. Dùng [lệnh `/settings`](../setup.md#settings).
+2. Mở thẻ “**Kiểm duyệt**”.
+3. Nhấp vào “**Cấu hình**” bên cạnh “**Hình phạt**”.
+4. Nhấp vào nút “**Liên kết kháng cáo**”.
+5. Dán liên kết của bạn vào cửa sổ, hoặc xóa trống trường để gỡ nó.
+
+Các nền tảng được chấp nhận: Discord, Google Forms, appeal.gg, Appy, DraftBot và FlaviBot.
+
+:::info
+Nút “**Liên kết kháng cáo**” chỉ xuất hiện trên các máy chủ [Premium](/vi/premium).
+:::
+
+## 🔗 Tài khoản phụ <span className="badge-experiment">Thử nghiệm</span> {#alt}
+
+Đang thử nghiệm cùng Identity Update (bản beta công khai [Premium](/vi/premium)), các tài khoản mà cùng một người sử dụng có thể được liên kết bằng lệnh `/alt`: cấm một tài khoản là cấm các tài khoản còn lại, và mỗi hình phạt được mở rộng sang nhóm theo thiết lập của bạn. Mọi thứ được giải thích ở trang [Tài khoản phụ](./alt-accounts.md).
+
+## 📊 Nhật ký hình phạt {#logs}
+
+Để tổ chức tốt hơn, bạn có thể cấu hình một kênh nhật ký dành riêng cho các hình phạt, tách khỏi nhật ký chung của bạn.
+
+![Ảnh chụp màn hình một nhật ký hình phạt](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-logs.webp)
+
+### Cấu hình kênh nhật ký hình phạt {#config-logs}
+
+1. Dùng [lệnh `/settings`](../setup.md#settings).
+2. Mở thẻ “**Kiểm duyệt**”.
+3. Nhấp vào “**Cấu hình**” bên cạnh “**Hình phạt**”.
+4. Nhấp vào “**Chỉnh sửa**” bên cạnh “**Nhật ký**”.
+5. Chọn kênh sẽ nhận nhật ký hình phạt, hoặc dùng nút “**Tạo một cái cho tôi**”.
+
+Bạn cũng thấy thiết lập này, cùng các kênh nhật ký khác, trong màn hình “**Nhật ký**” của thẻ “**Kiểm duyệt**” (xem [nhật ký kiểm duyệt](./moderation.mdx#logs)). Nếu không có kênh riêng, nhật ký hình phạt đi vào kênh nhật ký chung.
+
+:::note
+Công tắc “**Nhật ký kiểm duyệt thụ động**” (bật theo mặc định) chọn xem RaidProtect có ghi cả những hành động thực hiện mà không qua bot hay không (cấm từ Discord, AutoMod của Discord…).
+:::
+
+### Logic màu sắc {#logs-color}
+
+![Cấu hình nhật ký hình phạt](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-logs-color.webp)
+
+## 📦 Nhập / Xuất hình phạt {#import-export}
+
+RaidProtect cho phép bạn nhập hoặc xuất lịch sử hình phạt của máy chủ. Các nút “**Xuất**” và “**Nhập**” của màn hình Hình phạt dẫn bạn đến [máy chủ hỗ trợ](https://raidprotect.bot/discord) của chúng tôi: hãy liên hệ chúng tôi kèm lời mời của máy chủ bạn và, với việc nhập, (các) bot kiểm duyệt mà bạn đã dùng.
+
+## Câu hỏi thường gặp {#faq}
+
+### Vì sao lệnh /jail không khả dụng?
+
+Nó cần một vai trò Jail. Hãy cấu hình trong `/settings`, thẻ “**Kiểm duyệt**”, “**Hình phạt**”, rồi “**Chỉnh sửa**” bên cạnh “**Jail**”, hoặc để RaidProtect tạo một vai trò.
+
+### Điều gì xảy ra nếu một mô-đun tự động phải đưa một thành viên vào jail mà không có vai trò Jail?
+
+Hình phạt quay về một timeout. Mute mà không có vai trò Mute cũng vậy.
+
+### Một thành viên có thể xem hình phạt của chính mình không?
+
+Có, nếu bạn đặt [quyền riêng tư của hình phạt](#sanctions-privacy) ở một mức khác “**Tắt**”. Khi đó họ xem bằng `/my-sanctions`.
+
+### Các tin nhắn bị AutoMod của Discord chặn có được tính là hình phạt không?
+
+Có: mỗi tin nhắn bị chặn tạo một cảnh cáo im lặng mang tên “**Discord Automod**”, trừ khi quy tắc đã áp dụng một timeout. Các cảnh cáo này chỉ được ghi nhật ký nếu nhật ký kiểm duyệt thụ động được bật.

@@ -1,0 +1,106 @@
+---
+title: 資訊面板
+description: "RaidProtect 的 /display 指令可在您的 Discord 伺服器上建立並管理公開資訊面板與工作人員專用面板。"
+---
+
+import DisplayMockup from '@site/src/components/DiscordMessage/mockups/display';
+
+<DisplayMockup />
+
+`/display` 指令讓您建立並管理由 RaidProtect 在您伺服器上發布的資訊面板。它分為兩個部分：
+
+- `/display public`：給成員看的面板（私訊鎖定、處罰、檢舉……）。
+- `/display staff`：僅供您團隊使用的面板（[DISCON](./discon.md)、獲取角色、文件、在勤）。
+
+使用指令：```/display public``` 或 ```/display staff```
+
+:::info
+這兩個子指令都需要「**管理伺服器**」權限。
+:::
+
+## ❓ 運作方式 {#working}
+
+每個資訊面板都由機器人發布在您選擇的頻道中。您有多個欄位可用來建立彼此獨立的面板，每個面板各有自己的內容和功能。
+
+:::info
+**公開面板的限制**：免費版 2 個欄位，[Premium](/zh-TW/premium) 版 4 個，另加 1 個保留給監禁內容的欄位。[驗證碼](./captcha.md)的面板不佔用欄位。
+:::
+
+## 📄 內容類型 {#content}
+
+每個公開面板可以包含以下一種或多種內容：
+
+- **私訊鎖定**：告知成員[私訊鎖定](./dm-lock.mdx)的狀態。顯示私訊是否已鎖定，並說明只有好友、工作人員、機器人以及先前的聯絡人才能傳送私訊。
+- **監禁**：顯示給被監禁成員的訊息，說明因違反規則，他們對伺服器的存取已受到限制。
+- **處罰**：告知成員如何透過 `/my-sanctions` 指令查看個人的處罰紀錄。
+- **檢舉**：說明成員如何透過 `/report` 指令或右鍵的情境選單檢舉使用者或訊息。
+
+## ⚙️ 功能 {#features}
+
+除了內容之外，每個公開面板還可以啟用互動功能：
+
+- **翻譯**：新增一個按鈕，讓成員能將面板翻譯成 Discord 支援的所有語言。
+- **檢視處罰**：新增「**檢視我的處罰**」按鈕，讓成員能直接查看自己的處罰。
+- **檢舉**：新增「**檢舉成員**」按鈕，可快速檢舉某位使用者。
+
+{/* TODO: Ajouter une capture d'écran de /display public */}
+
+## 📌 保留欄位 {#reserved-slot}
+
+部分面板由其所屬模組管理，而不是由 `/display` 管理：
+
+- **監禁**：最後一個公開欄位保留給監禁內容。其頻道只能在 `/settings` 的「**管理**」分頁中，依序進入「**處罰**」，再到 [Jail](./sanctions.mdx#jail)（「**修改頻道**」）進行設定。不過，您仍可從 `/display public` 為它新增內容和功能。
+- **驗證碼**：面板模式下的[驗證碼](./captcha.md)面板，由驗證碼本身張貼與移除（`/settings` 的「**新成員加入**」分頁，「**驗證碼**」）。無法從 `/display` 建立或刪除它。
+- **DISCON**（Shield Update 的實驗階段）：[DISCON](./discon.md#panel) 面板佔用 `/display staff` 的保留欄位。其頻道只能透過 `/discon` 設定。
+
+## 🛡️ 工作人員面板 {#staff}
+
+`/display staff` 指令管理專為您的團隊設計的面板，需發布在工作人員專用的頻道中。
+
+使用指令：```/display staff```
+
+:::info
+**工作人員面板的限制**：免費版 1 個欄位，[Premium](/zh-TW/premium) 版 4 個，另加 1 個保留給 [DISCON](./discon.md) 面板的欄位。
+:::
+
+### 工作人員專屬內容 {#staff-content}
+
+每個工作人員內容都會自動在面板上加入其按鈕：
+
+- **DISCON**：伺服器的危險等級及其五個按鈕。此內容保留給 DISCON 欄位，由 [DISCON 設定](./discon.md#config)管理。您可以從 `/display staff` 為這個面板新增其他內容。
+- **獲取角色**：一個按鈕，可開啟受 [Authentification Manager](./authentication-manager.mdx#auth) 保護的角色選擇，與 `/auth` 指令相同。
+- **文件**：一個通往管理文件的按鈕，以及常用指令的提示（`/modview`、`/sanctions`、`/clear`）。
+- **值班中**：一個按鈕，可新增或移除[在勤角色](./moderation.mdx#onduty)，與 `/onduty` 指令相同。
+
+**翻譯**功能在工作人員面板上同樣可用。
+
+:::warning
+工作人員面板的按鈕不會檢查點擊者的權限：**頻道的存取權限就是控管方式**。請只將它們發布在您團隊專用的頻道中。
+:::
+
+## 🔄 更新面板 {#update}
+
+當您變更機器人語言，或 RaidProtect 更新了面板內容時，會有標示提示哪些面板尚未更新。此時您可以點擊「**更新**」按鈕來更新面板。
+
+## ✏️ 編輯或刪除面板 {#edit}
+
+在 `/display public` 或 `/display staff` 選單中，每個已使用的欄位都有以下按鈕：
+
+- **編輯**：變更面板的頻道、內容或功能。
+- **刪除**：將面板從頻道中移除並釋放欄位。
+
+保留欄位（監禁、DISCON）的頻道，請從其所屬模組中修改。
+
+## 常見問題 {#faq}
+
+### `/display public` 與 `/display staff` 有什麼差別？
+
+`/display public` 發布給成員看的面板（私訊、處罰、檢舉）。`/display staff` 發布給您團隊看的面板：DISCON 等級、獲取受保護角色、文件和在勤。
+
+### 我可以建立多少個面板？
+
+公開面板：免費版 2 個，Premium 版 4 個，另加監禁欄位。工作人員面板：免費版 1 個，Premium 版 4 個，另加 DISCON 欄位。
+
+### 為什麼我無法刪除驗證碼或 DISCON 的面板？
+
+這些面板屬於其所屬模組：驗證碼在 `/settings` 中管理，DISCON 則透過 `/discon` 管理。從 `/display` 刪除它們會在沒有任何提示的情況下破壞該功能。

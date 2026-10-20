@@ -566,7 +566,7 @@
     "description": "Feature row call to action: captcha"
   },
   "landing.features.auth.title": {
-    "message": "Authentication Manager",
+    "message": "Authentification Manager",
     "description": "Feature card title: auth"
   },
   "landing.features.auth.description": {
@@ -914,7 +914,7 @@
     "description": "Discord permission name"
   },
   "premium.feature.authManager.title": {
-    "message": "Extended Authentication Manager"
+    "message": "Extended Authentification Manager"
   },
   "premium.feature.authManager.desc": {
     "message": "More protected roles, more authorized users and sessions twice as long."
@@ -1001,7 +1001,7 @@
     "message": "Full moderation (ban, kick, mute, jail…)"
   },
   "premium.compare.cat.authManager": {
-    "message": "Authentication Manager"
+    "message": "Authentification Manager"
   },
   "premium.compare.row.protectedRoles": {
     "message": "Protected roles"
@@ -1097,7 +1097,7 @@
     "message": "Premium"
   },
   "premium.layout.description": {
-    "message": "Discover RaidProtect Premium: bot customization, extended Authentication Manager, advanced HoneyPot sanctions, access to public beta features."
+    "message": "Discover RaidProtect Premium: bot customization, extended Authentification Manager, advanced HoneyPot sanctions, access to public beta features."
   },
   "premium.hero.title.line1": {
     "message": "Protection in your image,",
@@ -1159,7 +1159,7 @@
     "message": "Activate Premium now"
   },
   "commands.copy.label": {
-    "message": "Copier la commande",
+    "message": "Copy command",
     "description": "Aria-label of the copy button on command cells"
   },
   "theme.docs.sidebar.versionLabel": {
@@ -1259,7 +1259,7 @@
     "message": "No. The free version stays complete and will keep evolving at the same pace. Premium is for servers that need more: extended limits, advanced customization and early access."
   },
   "premium.faq.q.lifetime": {
-    "message": "What does “price locked for life” mean?"
+    "message": "What does \"price locked for life\" mean?"
   },
   "premium.faq.a.lifetime": {
     "message": "The Founder offer locks your price permanently. As long as your subscription stays active, your price never changes, even once new plans are introduced and the Founder offer is removed from the store."
@@ -1268,13 +1268,13 @@
     "message": "How do I activate Premium?"
   },
   "premium.faq.a.activate": {
-    "message": "Type /settings on your Discord server and click “Premium”, or go straight to the RaidProtect store in Discord. Activation takes a few seconds."
+    "message": "Type /settings on your Discord server and click \"Premium\", or go straight to the RaidProtect store in Discord. Activation takes a few seconds."
   },
   "premium.faq.q.cancel": {
     "message": "Can I cancel anytime?"
   },
   "premium.faq.a.cancel": {
-    "message": "Yes. The subscription is managed from Discord and can be cancelled whenever you want, with no commitment."
+    "message": "Yes. The subscription is managed from Discord and can be canceled whenever you want, with no commitment."
   },
   "premium.faq.q.businessDiff": {
     "message": "What's the difference between Founder and Business?"
@@ -2259,7 +2259,7 @@
   },
   "premium.hero.founder.taken": {
     "message": "Founder spots (price locked for life)",
-    "description": "Libellé du compteur Founder (places prises)"
+    "description": "Libellé du compteur Founder (places prises, tarif verrouillé à vie)"
   },
   "premium.hero.founder.remaining": {
     "message": "Only {remaining} left at the lifetime-locked price",
@@ -2267,7 +2267,7 @@
   },
   "landing.features.further.eyebrow": {
     "message": "Want to go further?",
-    "description": "Features section go-further offers"
+    "description": "Eyebrow above the two paid offers at the end of the features section"
   },
   "landing.features.further.founder.name": {
     "message": "Founder",
@@ -2279,7 +2279,7 @@
   },
   "landing.features.further.founder.desc": {
     "message": "Make the bot your own, extend every module's limits and get new features in early access.",
-    "description": "Features section go-further offers"
+    "description": "Founder offer card description"
   },
   "landing.features.further.founder.subscribe": {
     "message": "Subscribe via Discord",
@@ -2287,7 +2287,7 @@
   },
   "landing.features.further.business.name": {
     "message": "Business",
-    "description": "Features section go-further offers"
+    "description": "Business offer card name"
   },
   "landing.features.further.business.price": {
     "message": "On request",
@@ -2295,23 +2295,21 @@
   },
   "landing.features.further.business.desc": {
     "message": "A dedicated, isolated instance, a security audit and hands-on support for high-stakes projects.",
-    "description": "Features section go-further offers"
+    "description": "Business offer card description"
   },
   "landing.features.further.business.call": {
     "message": "Book a call",
-    "description": "Features section go-further offers"
+    "description": "Book a call CTA on the Business card"
   },
   "landing.features.further.discover": {
     "message": "Discover",
-    "description": "Features section go-further offers"
+    "description": "Discover CTA on offer cards"
   },
   "landing.businessBubble.title": {
-    "message": "Are you a business?",
-    "description": "Floating bubble on the landing that guides companies to the Business page"
+    "message": "Are you a business?"
   },
   "landing.businessBubble.sub": {
-    "message": "Discover the Business offer",
-    "description": "Floating bubble on the landing that guides companies to the Business page"
+    "message": "Discover the Business offer"
   },
   "landing.businessBubble.close": {
     "message": "Close",
@@ -2319,55 +2317,55 @@
   },
   "business.cta.call": {
     "message": "Book a call",
-    "description": "Business page (/business)"
+    "description": "Business CTA: book a call"
   },
   "business.meta.description": {
-    "message": "RaidProtect Business: audit with an expert, dedicated and isolated instance, tailor-made protections and custom development for demanding organisations.",
-    "description": "Business page (/business)"
+    "message": "RaidProtect Business: audit with an expert, dedicated and isolated instance, tailor-made protections and custom development for demanding organizations.",
+    "description": "Business page meta description"
   },
   "business.hero.title": {
     "message": "Much more than a bot:",
-    "description": "Business page (/business)"
+    "description": "Business hero title, first line"
   },
   "business.hero.titleAccent": {
     "message": "your Discord partner",
-    "description": "Business page (/business)"
+    "description": "Business hero title, accented second line"
   },
   "business.hero.subtitle": {
-    "message": "The protection and moderation of your Discord server, handled end to end by our experts. A tailor-made offer, adapted to your organisation.",
-    "description": "Business page (/business)"
+    "message": "The protection and moderation of your Discord server, handled end to end by our experts. A tailor-made offer, adapted to your organization.",
+    "description": "Business hero subtitle"
   },
   "business.hero.cta.offer": {
     "message": "See the offer",
-    "description": "Business page (/business)"
+    "description": "Business hero secondary CTA: see the offer"
   },
   "business.trust.label": {
     "message": "They trust us",
-    "description": "Business page (/business)"
+    "description": "Trust band label above brand logos"
   },
   "business.who.eyebrow": {
     "message": "Who is it for?",
-    "description": "Business page (/business)"
+    "description": "Who-is-it-for section eyebrow"
   },
   "business.who.title": {
     "message": "When the standard is no longer enough",
-    "description": "Business page (/business)"
+    "description": "Who-is-it-for section title"
   },
   "business.who.sub": {
     "message": "Large communities, brands, media, creators: at this scale, a security breach or a raid puts your image on the line. You need more than a subscription: a point of contact, guarantees and protection managed by humans.",
-    "description": "Business page (/business)"
+    "description": "Who-is-it-for section paragraph"
   },
   "business.offer.eyebrow": {
     "message": "The Business offer",
-    "description": "Business page (/business)"
+    "description": "Offer section eyebrow"
   },
   "business.offer.title": {
     "message": "Protection and moderation, tailor-made",
-    "description": "Business page (/business)"
+    "description": "Offer section title"
   },
   "business.offer.sub": {
     "message": "Everything is optional: you build your offer à la carte, with only what you need.",
-    "description": "Business page (/business)"
+    "description": "Offer section subtitle"
   },
   "business.offer.audit.title": {
     "message": "Security audit with an expert",
@@ -2419,23 +2417,23 @@
   },
   "business.mods.eyebrow": {
     "message": "Human moderation",
-    "description": "Business page (/business)"
+    "description": "Moderators section eyebrow"
   },
   "business.mods.title": {
     "message": "A team certified by Discord",
-    "description": "Business page (/business)"
+    "description": "Moderators section title"
   },
   "business.mods.sub": {
     "message": "Trained and certified through Discord's official moderation program, in French and English. As occasional reinforcement or taking full charge of your server.",
-    "description": "Business page (/business)"
+    "description": "Moderators section subtitle"
   },
   "business.mods.created": {
     "message": "Account created",
-    "description": "Business page (/business)"
+    "description": "Moderator card: account creation date label"
   },
   "business.mods.since": {
     "message": "Moderating since",
-    "description": "Business page (/business)"
+    "description": "Moderator card: moderating-since label"
   },
   "business.badge.mod": {
     "message": "Certified Moderator",
@@ -2443,11 +2441,11 @@
   },
   "business.security.eyebrow": {
     "message": "Security & compliance",
-    "description": "Business page (/business)"
+    "description": "Security section eyebrow"
   },
   "business.security.title": {
     "message": "Compliant, well-controlled infrastructure",
-    "description": "Business page (/business)"
+    "description": "Security section title"
   },
   "business.security.encrypted.title": {
     "message": "Encrypted data",
@@ -2483,11 +2481,11 @@
   },
   "business.steps.eyebrow": {
     "message": "How it works",
-    "description": "Business page (/business)"
+    "description": "Steps section eyebrow"
   },
   "business.steps.title": {
     "message": "From audit to follow-up",
-    "description": "Business page (/business)"
+    "description": "Steps section title"
   },
   "business.steps.audit.title": {
     "message": "Audit",
@@ -2527,15 +2525,15 @@
   },
   "business.final.title": {
     "message": "Let’s talk about your project",
-    "description": "Business page (/business)"
+    "description": "Final CTA title"
   },
   "business.final.sub": {
     "message": "A 30-minute call to pin down your needs and define the right protection for your server.",
-    "description": "Business page (/business)"
+    "description": "Final CTA subtitle"
   },
   "business.final.fcaNote": {
     "message": "Need to go beyond protection? Events, server redesign, community management: that’s the job of our agency, {link}.",
-    "description": "Business page (/business)"
+    "description": "Final note about the FCA agency; {link} renders the agency link"
   },
   "business.badge.hse": {
     "message": "HypeSquad Events",
@@ -2570,7 +2568,7 @@
     "description": "Business page (/business)"
   },
   "business.badge.buggold.desc": {
-    "message": "Major contribution to bug hunting: recognised Discord expertise.",
+    "message": "Major contribution to bug hunting: recognized Discord expertise.",
     "description": "Business page (/business)"
   },
   "communities.tabs.security": {
@@ -2666,7 +2664,7 @@
     "description": "Timezone tool: hint under the change heading"
   },
   "tools.timezone.searchPlaceholder": {
-    "message": "Search (e.g. Paris, New York, Reunion…)",
+    "message": "Search (e.g., Paris, New York, Reunion…)",
     "description": "Timezone tool: search input placeholder"
   },
   "tools.timezone.searchAria": {
@@ -2682,7 +2680,7 @@
     "description": "Timezone tool: empty search result"
   },
   "tools.timezone.help": {
-    "message": "Copy the value above and paste it into RaidProtect when a time zone is requested (it uses the standard “Continent/City” format, for example {code}).",
+    "message": "Copy the value above and paste it into RaidProtect when a time zone is requested (it uses the standard \"Continent/City\" format, for example {code}).",
     "description": "Timezone tool: closing help paragraph; {code} renders an example zone in a <code> tag"
   },
   "communities.games.meta.title": {
@@ -2734,7 +2732,7 @@
     "description": "Games threat 2 description"
   },
   "communities.games.threat.spam.title": {
-    "message": "“Free robux” scams & cheats",
+    "message": "\"Free robux\" scams & cheats",
     "description": "Games threat 3 title"
   },
   "communities.games.threat.spam.description": {
@@ -2910,7 +2908,7 @@
     "description": "Creators threat 3 title"
   },
   "communities.creators.threat.spam.description": {
-    "message": "Self-promo links, “free nitro” scams and emoji floods drown out your community's real conversations.",
+    "message": "Self-promo links, \"free nitro\" scams and emoji floods drown out your community's real conversations.",
     "description": "Creators threat 3 description"
   },
   "communities.creators.features.title": {
@@ -2938,7 +2936,7 @@
     "description": "Creators feature Anti-spam title"
   },
   "communities.creators.feature.antispam.description": {
-    "message": "Sanctions flooding, self-promo and “free nitro” links without you lifting a finger.",
+    "message": "Sanctions flooding, self-promo and \"free nitro\" links without you lifting a finger.",
     "description": "Creators feature Anti-spam description"
   },
   "communities.creators.feature.antispam.cta": {
@@ -3027,7 +3025,7 @@
   },
   "cta.pro.label": {
     "message": "A professional?",
-    "description": "Prefix of the professional links line under the hero buttons"
+    "description": "Prefix of the professional link under the hero buttons"
   },
   "cta.pro.offer": {
     "message": "Discover our offer",
@@ -3186,7 +3184,7 @@
     "description": "li body with link"
   },
   "learn.discord-nuke.s4.i4b.link": {
-    "message": "Authentication Manager",
+    "message": "Authentification Manager",
     "description": "link label"
   },
   "learn.discord-nuke.s4.i5.t": {
@@ -3246,7 +3244,7 @@
     "description": "related"
   },
   "learn.discord-nuke.rel4b": {
-    "message": "The Authentication Manager",
+    "message": "The Authentification Manager",
     "description": "related"
   },
   "learn.discord-raid.metaTitle": {
@@ -3690,7 +3688,7 @@
     "description": "h"
   },
   "learn.least-privilege.s4.p1": {
-    "message": "Least privilege reduces the number of powerful accounts, but those accounts remain a prime target. That's where RaidProtect's Authentication Manager comes in.",
+    "message": "Least privilege reduces the number of powerful accounts, but those accounts remain a prime target. That's where RaidProtect's Authentification Manager comes in.",
     "description": "p"
   },
   "learn.least-privilege.s4.p2": {
@@ -3698,7 +3696,7 @@
     "description": "p with code and link"
   },
   "learn.least-privilege.s4.link": {
-    "message": "Authentication Manager",
+    "message": "Authentification Manager",
     "description": "link"
   },
   "learn.least-privilege.s4.p3": {
@@ -3730,7 +3728,7 @@
     "description": "faq a"
   },
   "learn.least-privilege.faq.q4": {
-    "message": "What's the connection with the Authentication Manager?",
+    "message": "What's the connection with the Authentification Manager?",
     "description": "faq q"
   },
   "learn.least-privilege.faq.a4": {
@@ -3746,7 +3744,7 @@
     "description": "related"
   },
   "learn.least-privilege.rel3": {
-    "message": "The Authentication Manager",
+    "message": "The Authentification Manager",
     "description": "related"
   },
   "learn.least-privilege.rel4": {
@@ -4643,7 +4641,7 @@
   },
   "learn.discord-sanctions.s2.p2": {
     "message": "The mute, on the other hand, relies on a {role} that the bot assigns. It is only worth as much as your permissions: if a channel forgets to deny that role the right to speak, or if a new channel is created without carrying those permissions over, the member keeps writing. In exchange, a mute can last indefinitely and is set channel by channel.",
-    "description": "p"
+    "description": "p with link"
   },
   "learn.discord-sanctions.s2.role": {
     "message": "Mute role",
@@ -4675,7 +4673,7 @@
   },
   "learn.discord-sanctions.s3.softban.b": {
     "message": "cleans up recent messages, which the kick does not, while leaving the door open. It is the right answer to a {hacked} that spams: the legitimate owner will come back once the account is recovered.",
-    "description": "li body"
+    "description": "li body with link"
   },
   "learn.discord-sanctions.s3.hacked": {
     "message": "hacked account",
@@ -4687,7 +4685,7 @@
   },
   "learn.discord-sanctions.s3.ban.b": {
     "message": "is the only measure that truly prevents a return. Keep it for accounts created to do harm, repeat offenders and {raid}.",
-    "description": "li body"
+    "description": "li body with link"
   },
   "learn.discord-sanctions.s3.raid": {
     "message": "raids",
@@ -4751,7 +4749,7 @@
   },
   "learn.discord-sanctions.s4.intro": {
     "message": "There is no universal scale, but this ladder covers the vast majority of cases.",
-    "description": "li"
+    "description": "p"
   },
   "learn.discord-sanctions.s4.i1": {
     "message": "An isolated slip: a warning, then a short timeout if it happens again.",
@@ -4771,7 +4769,7 @@
   },
   "learn.discord-sanctions.s4.i5": {
     "message": "A {selfbot} or a raid account: a ban, without hesitating.",
-    "description": "li"
+    "description": "li with link"
   },
   "learn.discord-sanctions.s4.selfbot": {
     "message": "self-bot",
@@ -4779,7 +4777,7 @@
   },
   "learn.discord-sanctions.s4.outro": {
     "message": "RaidProtect's {antispam} applies this kind of ladder on its own: you pick the sanction for each type of spam, and the bot handles it.",
-    "description": "p"
+    "description": "p with link"
   },
   "learn.discord-sanctions.s4.antispam": {
     "message": "anti-spam",
@@ -4819,7 +4817,7 @@
   },
   "learn.discord-sanctions.s5.i4.b": {
     "message": "A sanction with no trace is a decision you can neither explain nor review. RaidProtect keeps every action in a {history}.",
-    "description": "li body"
+    "description": "li body with link"
   },
   "learn.discord-sanctions.s5.history": {
     "message": "searchable history",
@@ -4934,7 +4932,7 @@
     "description": "Learn hub card term: least-privilege"
   },
   "learn.least-privilege.cardTeaser": {
-    "message": "Giving everyone only the permissions they need: your best anti-nuke defense, all the way to the Authentication Manager.",
+    "message": "Giving everyone only the permissions they need: your best anti-nuke defense, all the way to the Authentification Manager.",
     "description": "Learn hub card teaser: least-privilege"
   },
   "learn.honeypot-warming.cardTerm": {
@@ -4986,7 +4984,7 @@
     "description": "SoftwareApplication featureList item"
   },
   "home.schema.feature.authmanager": {
-    "message": "Authentication Manager: staff account protection",
+    "message": "Authentification Manager: staff account protection",
     "description": "SoftwareApplication featureList item"
   },
   "home.schema.feature.reports": {
@@ -4996,5 +4994,2774 @@
   "home.schema.feature.moderation": {
     "message": "Moderation and sanctions (kick, timeout, ban, jail)",
     "description": "SoftwareApplication featureList item"
+  },
+  "premium.tier.founder.priceStrike": {
+    "message": "$5.99"
+  },
+  "mockup.modal.file": {
+    "message": "Drop files here"
+  },
+  "mockup.modal.close": {
+    "message": "Close"
+  },
+  "mockup.modal.cancel": {
+    "message": "Cancel"
+  },
+  "mockup.modal.submit": {
+    "message": "Submit"
+  },
+  "sidebar.badge.experiment": {
+    "message": "Experiment"
+  },
+  "sidebar.badge.premium": {
+    "message": "Premium"
+  },
+  "communities.crypto.meta.title": {
+    "message": "RaidProtect for crypto & Web3 servers",
+    "description": "Browser tab title for the crypto community landing page"
+  },
+  "communities.crypto.meta.description": {
+    "message": "Crypto servers are the #1 target for scams, phishing and wallet drainers. RaidProtect locks DMs, filters bots and blocks raids.",
+    "description": "Meta description for the crypto community landing page"
+  },
+  "communities.crypto.eyebrow": {
+    "message": "For crypto & Web3 servers",
+    "description": "Crypto landing: small pill above the title"
+  },
+  "communities.crypto.hero.title": {
+    "message": "Protect your {highlight} community from scams",
+    "description": "Crypto landing: hero H1; {highlight} renders the accented word"
+  },
+  "communities.crypto.hero.title.highlight": {
+    "message": "crypto",
+    "description": "Highlighted word inside the crypto hero title"
+  },
+  "communities.crypto.hero.description": {
+    "message": "Crypto servers are the #1 target for scams, phishing and wallet drainers. RaidProtect locks private messages, filters bots and blocks raids before they reach your members.",
+    "description": "Crypto landing: hero subtitle"
+  },
+  "communities.crypto.hero.secondaryCta": {
+    "message": "Discover ScamLens",
+    "description": "Crypto landing: secondary CTA label"
+  },
+  "communities.crypto.threats.title": {
+    "message": "What you face every day",
+    "description": "Crypto landing: threats section title"
+  },
+  "communities.crypto.threats.subtitle": {
+    "message": "Crypto communities attract targeted attacks that manual moderation cannot keep up with.",
+    "description": "Crypto landing: threats section subtitle"
+  },
+  "communities.crypto.threat.dm.title": {
+    "message": "Scams and drainers in DMs",
+    "description": "Crypto threat 1 title"
+  },
+  "communities.crypto.threat.dm.description": {
+    "message": "Fake support, fake promos, booby-trapped login links: scammers target your members in private messages, where moderation sees nothing.",
+    "description": "Crypto threat 1 description"
+  },
+  "communities.crypto.threat.bots.title": {
+    "message": "Waves of fake accounts",
+    "description": "Crypto threat 2 title"
+  },
+  "communities.crypto.threat.bots.description": {
+    "message": "Bots sign up en masse to spam fake airdrops and artificially inflate your community.",
+    "description": "Crypto threat 2 description"
+  },
+  "communities.crypto.threat.spam.title": {
+    "message": "Link spam and phishing",
+    "description": "Crypto threat 3 title"
+  },
+  "communities.crypto.threat.spam.description": {
+    "message": "A single compromised account is enough to flood your channels with malicious links in seconds.",
+    "description": "Crypto threat 3 description"
+  },
+  "communities.crypto.features.title": {
+    "message": "Your anti-scam arsenal",
+    "description": "Crypto landing: features section title"
+  },
+  "communities.crypto.features.subtitle": {
+    "message": "RaidProtect's protections, tuned for the threats specific to the crypto world.",
+    "description": "Crypto landing: features section subtitle"
+  },
+  "communities.crypto.feature.scamlens.title": {
+    "message": "ScamLens, the image anti-scam",
+    "description": "Crypto feature ScamLens title"
+  },
+  "communities.crypto.feature.scamlens.description": {
+    "message": "Images of fake airdrops, giveaways and casino promos are automatically detected and deleted, before your members click.",
+    "description": "Crypto feature ScamLens description"
+  },
+  "communities.crypto.feature.scamlens.cta": {
+    "message": "Discover ScamLens",
+    "description": "Crypto feature ScamLens CTA"
+  },
+  "communities.crypto.feature.am.title": {
+    "message": "Sensitive roles locked down",
+    "description": "Crypto feature Authentification Manager title"
+  },
+  "communities.crypto.feature.am.description": {
+    "message": "Protect your admin and mod roles with a passkey, PIN code or OTP: even a hacked account cannot take control of your server.",
+    "description": "Crypto feature Authentification Manager description"
+  },
+  "communities.crypto.feature.am.cta": {
+    "message": "Secure my roles",
+    "description": "Crypto feature Authentification Manager CTA"
+  },
+  "communities.crypto.feature.dm.title": {
+    "message": "DM Lock",
+    "description": "Crypto feature DM Lock title"
+  },
+  "communities.crypto.feature.dm.description": {
+    "message": "Block private messages between your members: crypto scammers' favorite attack angle disappears.",
+    "description": "Crypto feature DM Lock description"
+  },
+  "communities.crypto.feature.dm.cta": {
+    "message": "Protect DMs",
+    "description": "Crypto feature DM Lock CTA"
+  },
+  "communities.crypto.feature.honeypot.title": {
+    "message": "Anti-spam HoneyPot",
+    "description": "Crypto feature HoneyPot title"
+  },
+  "communities.crypto.feature.honeypot.description": {
+    "message": "A trap channel where only hacked accounts and bots post: they are spotted and sanctioned from their first message.",
+    "description": "Crypto feature HoneyPot description"
+  },
+  "communities.crypto.feature.honeypot.cta": {
+    "message": "Discover the HoneyPot",
+    "description": "Crypto feature HoneyPot CTA"
+  },
+  "communities.crypto.stat.scamlens": {
+    "message": "scam images blocked",
+    "description": "Crypto stat: scam images blocked by ScamLens across the network"
+  },
+  "communities.crypto.stat.hacked": {
+    "message": "hacked accounts neutralized",
+    "description": "Crypto stat: hacked accounts neutralized"
+  },
+  "communities.crypto.stat.servers": {
+    "message": "Discord servers protected",
+    "description": "Crypto stat: protected servers"
+  },
+  "communities.crypto.stat.members": {
+    "message": "members protected",
+    "description": "Crypto stat: protected members"
+  },
+  "communities.crypto.premium.title": {
+    "message": "Premium for high-stakes servers",
+    "description": "Crypto premium block title"
+  },
+  "communities.crypto.premium.description": {
+    "message": "The free version already protects. Premium adds the layer of defense the most exposed crypto communities ask for.",
+    "description": "Crypto premium block description"
+  },
+  "communities.crypto.premium.perk1": {
+    "message": "More protected admin roles and extended authentication sessions",
+    "description": "Crypto premium perk 1"
+  },
+  "communities.crypto.premium.perk2": {
+    "message": "Discreet moderation: anti-spam sanctions no longer display a public message",
+    "description": "Crypto premium perk 2"
+  },
+  "communities.crypto.premium.perk3": {
+    "message": "Advanced HoneyPot sanctions (kick, timeout, jail) against hacked accounts",
+    "description": "Crypto premium perk 3"
+  },
+  "communities.crypto.premium.cta": {
+    "message": "Discover Premium",
+    "description": "Crypto premium CTA label"
+  },
+  "communities.crypto.cta.title": {
+    "message": "Ready to lock down your {highlight} server?",
+    "description": "Crypto landing: final CTA title; {highlight} renders the accented word"
+  },
+  "communities.crypto.cta.title.highlight": {
+    "message": "crypto",
+    "description": "Highlighted word inside the crypto final CTA title"
+  },
+  "communities.crypto.cta.description": {
+    "message": "Add RaidProtect in a few seconds and protect your community today.",
+    "description": "Crypto landing: final CTA description"
+  },
+  "communities.crypto.cta.addToDiscord": {
+    "message": "Add to Discord",
+    "description": "Crypto landing: primary CTA (add bot to Discord)"
+  },
+  "mockup.antiscam.sanction": {
+    "message": "Timeout:"
+  },
+  "mockup.antiscam.reason": {
+    "message": "Scam image (Crypto Scam)"
+  },
+  "mockup.antiscam.detectedby": {
+    "message": "Detected by"
+  },
+  "mockup.antiscam.time1": {
+    "message": "Today at 7:32 PM"
+  },
+  "mockup.antiscam.ambient": {
+    "message": "wanna play a game tonight?"
+  },
+  "mockup.antiscam.time2": {
+    "message": "Today at 7:33 PM"
+  },
+  "mockup.antiscam.detected": {
+    "message": "Scam detected"
+  },
+  "mockup.antiscam.time3": {
+    "message": "Today at 7:33 PM"
+  },
+  "localSearch.hero.placeholder": {
+    "message": "Search the documentation…",
+    "description": "Placeholder of the large search bar"
+  },
+  "localSearch.suggestions.title": {
+    "message": "Suggestions",
+    "description": "Title of the suggested pages list"
+  },
+  "localSearch.modal.unavailable": {
+    "message": "The search index is generated at build time. Build and serve the site to try the search.",
+    "description": "Shown when the index is missing (dev server)"
+  },
+  "localSearch.modal.error": {
+    "message": "The search index could not be loaded.",
+    "description": "Shown when the index fails to load"
+  },
+  "localSearch.modal.loading": {
+    "message": "Loading…",
+    "description": "Shown while the index loads"
+  },
+  "localSearch.modal.noResults": {
+    "message": "No results for \"{query}\"",
+    "description": "No results message, {query} is the search"
+  },
+  "localSearch.modal.didYouMean": {
+    "message": "Did you mean \"{suggestion}\"?",
+    "description": "Spelling suggestion, {suggestion} is a clickable word"
+  },
+  "localSearch.page.countOne": {
+    "message": "1 result",
+    "description": "Exactly one result"
+  },
+  "localSearch.page.count": {
+    "message": "{count} results",
+    "description": "Number of results, {count} is a number greater than one"
+  },
+  "localSearch.modal.relaxed": {
+    "message": "No page contains all of your words. Here are the closest matches.",
+    "description": "Shown when no result contains every word"
+  },
+  "localSearch.hero.submit": {
+    "message": "Search",
+    "description": "Submit button of the large search bar"
+  },
+  "localSearch.input.placeholder": {
+    "message": "Search",
+    "description": "Placeholder of the mini search bar"
+  },
+  "localSearch.page.title": {
+    "message": "Search",
+    "description": "Title of the search page"
+  },
+  "localSearch.page.heading": {
+    "message": "Search the site",
+    "description": "Heading of the search page"
+  },
+  "localSearch.recent.title": {
+    "message": "Recent",
+    "description": "Title of the recent searches list"
+  },
+  "localSearch.modal.startTyping": {
+    "message": "Type to search pages and sections.",
+    "description": "Hint shown in the empty search modal"
+  },
+  "localSearch.modal.label": {
+    "message": "Search",
+    "description": "Search dialog label"
+  },
+  "localSearch.modal.placeholder": {
+    "message": "Search the documentation",
+    "description": "Placeholder of the search modal input"
+  },
+  "localSearch.modal.clear": {
+    "message": "Clear",
+    "description": "Clear the search"
+  },
+  "localSearch.modal.cancel": {
+    "message": "Cancel",
+    "description": "Close button on small screens"
+  },
+  "localSearch.footer.select": {
+    "message": "to select",
+    "description": "Keyboard hint: Enter"
+  },
+  "localSearch.footer.navigate": {
+    "message": "to navigate",
+    "description": "Keyboard hint: arrows"
+  },
+  "localSearch.footer.close": {
+    "message": "to close",
+    "description": "Keyboard hint: Escape"
+  },
+  "localSearch.footer.seeAll": {
+    "message": "See all results",
+    "description": "Link to the full search page"
+  },
+  "localSearch.recent.remove": {
+    "message": "Remove from recent searches",
+    "description": "Button that removes an entry from the recent searches list"
+  },
+  "mockup.v2.antiraid.title": {
+    "message": "Auto RaidMode configuration",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.antiraid.desc": {
+    "message": "RaidMode kicks in when too many members arrive at once. Set the threshold, how long it stays on, and what RaidProtect does with the people arriving during the wave.",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.antiraid.maxjoin": {
+    "message": "Number of members / 10 seconds",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.antiraid.maxjoinPh": {
+    "message": "Select a number of members",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.antiraid.m10": {
+    "message": "10 members",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.antiraid.m15": {
+    "message": "15 members",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.antiraid.m20": {
+    "message": "20 members",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.antiraid.m30": {
+    "message": "30 members",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.antiraid.duration": {
+    "message": "Duration",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.durationPh": {
+    "message": "Select a duration",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.antiraid.action": {
+    "message": "Action during the raid",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.antiraid.inviteLockDesc": {
+    "message": "Discord closes the server invites, nobody new gets in",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.actionPh": {
+    "message": "Choose the action",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.antiraid.inviteLock": {
+    "message": "Lock invites",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.antiraid.kick": {
+    "message": "Kick everyone arriving",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.antiraid.kickDesc": {
+    "message": "Everyone arriving is kicked with an invite to come back afterwards",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.antiraid.captcha": {
+    "message": "Send to the captcha",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.antiraid.captchaDesc": {
+    "message": "People arriving take the captcha instead of being kicked",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.antiraid.frozen": {
+    "message": "Captcha frozen during the raid",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.antiraid.frozenDesc": {
+    "message": "People arriving wait behind the captcha and take it after the wave (panel mode)",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.antiraid.closedm": {
+    "message": "Close DMs",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.enabled": {
+    "message": "Enabled",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.disabled": {
+    "message": "Disabled",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.title": {
+    "message": "Captcha configuration",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.desc": {
+    "message": "Configure Captcha to prevent selfbots from accessing your Discord server and block raids.",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.display": {
+    "message": "Display Mode",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.displayPh": {
+    "message": "Select a display mode",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.offDesc": {
+    "message": "No verification, joiners access the server directly",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.classic": {
+    "message": "Challenge (Classic)",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.classicDesc": {
+    "message": "An image is posted in the channel on arrival, the code is typed as a message",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.panel": {
+    "message": "Panel (Interactive)",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.panelDesc": {
+    "message": "A permanent panel: the captcha opens privately and the code is entered in a window",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.delete": {
+    "message": "Delete",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.deleteDesc": {
+    "message": "Deletes the configuration and the verification role, after confirmation",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.trigger": {
+    "message": "Trigger",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.triggerPh": {
+    "message": "Choose the trigger",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.auto": {
+    "message": "Automatic",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.autoDesc": {
+    "message": "Only during a raid or a high DISCON level",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.smart": {
+    "message": "Smart",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.smartDesc": {
+    "message": "Same, plus accounts that look suspicious",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.always": {
+    "message": "Always",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.alwaysDesc": {
+    "message": "On every join, no condition",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.channel": {
+    "message": "Verification channel",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.edit": {
+    "message": "Edit",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.role": {
+    "message": "Role for members in verification",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.difficulty": {
+    "message": "Difficulty",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.diffTries": {
+    "message": "Attempts: **3 attempts**",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.diffFail": {
+    "message": "Attempts exhausted: **Kick**",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.diffSolve": {
+    "message": "Resolution Time: **30 seconds**",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.testMode": {
+    "message": "Test mode",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.testModeOn": {
+    "message": "Enabled: your already verified team can retry the captcha",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.testModeHint": {
+    "message": "An already verified team member (Manage Server) clicks \"Verify\" to redo the captcha. Attempts and solving time apply as for a newcomer: the log says what would have been done, nothing is applied.",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.timeout": {
+    "message": "Delay before kick",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.timeoutPh": {
+    "message": "Select an expulsion time",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.minage.title": {
+    "message": "Minimum account age settings",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.minage.desc": {
+    "message": "An account newer than the chosen age does not get through the door. The action decides its fate: kicked, jailed until the right date, or held at entry.",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.minage.hint": {
+    "message": "Kick, jail and hold follow your age changes; bans already applied keep their lift date.",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.minage.name": {
+    "message": "Minimum account age",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.minage.ph": {
+    "message": "Select a minimum age",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.oneDay": {
+    "message": "1 day",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.minage.kickDesc": {
+    "message": "Kicked on every attempt while their account is too new",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.minage.kick": {
+    "message": "Kick",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.minage.jail": {
+    "message": "Jail until the required age",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.minage.jailDesc": {
+    "message": "Comes in seeing nothing of the server, and gets out once old enough",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.minage.hold": {
+    "message": "Hold at the gate",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.minage.holdDesc": {
+    "message": "Stuck on a captcha they can only solve once old enough",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.autorole.name": {
+    "message": "Auto roles",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.autorole.desc": {
+    "message": "Roles given to every new member on arrival, or after the captcha if it's enabled. Avoid roles that carry permissions.",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.autorole.limit": {
+    "message": "3 roles maximum, 10 with premium.",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.autorole.ph": {
+    "message": "Select one or more roles",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.welcome.name": {
+    "message": "Welcome message",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.welcome.desc": {
+    "message": "Set up below the message sent when a new member joins.",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.welcome.descOff": {
+    "message": "No welcome message will be sent when a new member joins.",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.welcome.channel": {
+    "message": "Welcome channel",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.welcome.channelPh": {
+    "message": "Select a welcome channel",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.welcome.content": {
+    "message": "Message content",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.welcome.text": {
+    "message": "Text",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.welcome.color": {
+    "message": "Color",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.welcome.mention": {
+    "message": "Mention member",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.welcome.buttons": {
+    "message": "Manage buttons",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.welcome.buttonsHint": {
+    "message": "Choose a button to edit, or add a new one",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.welcome.rulesBtn": {
+    "message": "Read the rules",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.welcome.addBtn": {
+    "message": "Add a button",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.welcome.preview": {
+    "message": "Welcome @Arthur to **The Explorers**! 🎉",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.diffTitle": {
+    "message": "Captcha difficulty",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.diffDoc": {
+    "message": "The number of attempts and what happens once they run out, the delay before the kick counted from arrival, and the time allowed to solve the puzzle, counted from the first challenge.",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.tries": {
+    "message": "Attempts",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.failAction": {
+    "message": "Action when attempts run out",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.failKick": {
+    "message": "Attempts exhausted: Kick",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.failJail": {
+    "message": "Attempts exhausted: Jail",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.solve": {
+    "message": "Resolution Time",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.welcome.textDoc": {
+    "message": "Available variables: `{user.mention}` · `{user.name}` · `{user.displayname}` · `{user.id}` · `{server.name}` · `{server.member_count}` · `{server.id}`\nLeave the field empty to go back to the default message.",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.minage.jailDoc": {
+    "message": "**No jail role is configured**\n\nJail holds an account that is too new in the server without showing it anything, then releases it by itself on the right date. It needs a jail role to work.\n\nSet one up, or fall back to a ban: the door closes until the same date, but the account leaves the server.",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.whatToDo": {
+    "message": "What to do?",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.minage.configureJail": {
+    "message": "Set up the jail",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.minage.ban": {
+    "message": "Ban until the required age",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.deleteTitle": {
+    "message": "Delete the captcha",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.confirmation": {
+    "message": "Confirmation",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.deleteYes": {
+    "message": "Yes, delete the captcha",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.captcha.deleteNo": {
+    "message": "No, don't delete anything",
+    "description": "/settings V2 mockup: Arrivals tab"
+  },
+  "mockup.v2.back": {
+    "message": "Back",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.emptySlot": {
+    "message": "Empty slot",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.serverConfig": {
+    "message": "Server configuration",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.duration": {
+    "message": "Default Session Time",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.minGrade": {
+    "message": "Default Minimum Grade",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.managerGrade": {
+    "message": "Min Managers Grade",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.undefined": {
+    "message": "not set",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.roles": {
+    "message": "Roles",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.users": {
+    "message": "Users",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.add": {
+    "message": "Add",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.nUsers2": {
+    "message": "2 users",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.nUsers3": {
+    "message": "3 users",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.manager": {
+    "message": "Manager",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.manage": {
+    "message": "Manage",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.ago4": {
+    "message": "4 minutes ago",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.sessionGranted": {
+    "message": "Session granted",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.ago1h": {
+    "message": "1 hour ago",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.sessionExpired": {
+    "message": "Session expired",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.ago2h": {
+    "message": "2 hours ago",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.invited": {
+    "message": "Invitation sent",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.roleGrade": {
+    "message": "Minimum grade",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.roleDuration": {
+    "message": "Session Time",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.assigned": {
+    "message": "Assigned users",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.disable": {
+    "message": "Disable",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.no": {
+    "message": "No",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.statusInvited": {
+    "message": "Invited",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.rolesPh": {
+    "message": "Select roles...",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.invitedDesc": {
+    "message": "Invited •pending auth setup",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.promote": {
+    "message": "Make Manager",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.removeUser": {
+    "message": "Delete User",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.loginTitle": {
+    "message": "Manager authentication required",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.loginDesc": {
+    "message": "Please authenticate to access the Authentication configuration panel.",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.withPin": {
+    "message": "Authenticate with PIN",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.withOtp": {
+    "message": "Authenticate with OTP",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.withPasskey": {
+    "message": "Authenticate with Passkey",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.padTitle": {
+    "message": "Manager authentication",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.padDesc": {
+    "message": "Enter your PIN using the buttons below.",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.profile.forgot": {
+    "message": "I forgot my auths",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.profile.pin": {
+    "message": "PIN code",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.profile.reinforced": {
+    "message": "Reinforced",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.profile.otp": {
+    "message": "2FA code",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.profile.configured": {
+    "message": "Configured",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.profile.addPasskey": {
+    "message": "Add Passkey",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.profile.log1": {
+    "message": "2 days ago 2FA enabled",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.profile.log2": {
+    "message": "2 days ago PIN code added",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.profile.allLogs": {
+    "message": "View full logs",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.profile.gradeIs": {
+    "message": "Your Security Grade is",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.profile.hintA": {
+    "message": "Add a passkey to reach the maximum grade.",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.configTitle": {
+    "message": "Server Authentication Configuration",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.withPremium": {
+    "message": "with Premium",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.webhook": {
+    "message": "Webhook URL (leave empty to clear)",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.addRoleTitle": {
+    "message": "Add Authentication Role",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.discordRole": {
+    "message": "Discord Role",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.securityGrade": {
+    "message": "Minimum Security Grade",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.durationMax": {
+    "message": "Session duration (max. 8h)",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.strategy": {
+    "message": "Choose a strategy",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.useAsIs": {
+    "message": "Use this role as-is",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.useAsIsDesc": {
+    "message": "The role will be used directly as the authentication role.",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.split": {
+    "message": "Create a separate permissions role",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.splitDesc": {
+    "message": "A new role with the permissions is created, this role keeps its display.",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.addUserTitle": {
+    "message": "Add Authentication User",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.user": {
+    "message": "User",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.authRole": {
+    "message": "Authentication Role",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.editRoleTitle": {
+    "message": "Edit Authentication Role",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.otpTitle": {
+    "message": "Manager OTP Authentication",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.auth.otpField": {
+    "message": "Enter the 6-digit code from your app",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.customize.notice": {
+    "message": "Customizing the bot requires premium.",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.customize.bio1": {
+    "message": "Advanced moderation and security features,",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.customize.bio2": {
+    "message": "powered by RaidProtect.",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.customize.edit": {
+    "message": "Edit",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.customize.reset": {
+    "message": "Reset",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.customize.displayName": {
+    "message": "Display name",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.customize.colors": {
+    "message": "Colors",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.customize.default": {
+    "message": "Default",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.color.red": {
+    "message": "Red",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.color.orange": {
+    "message": "Orange",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.color.yellow": {
+    "message": "Yellow",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.color.green": {
+    "message": "Green",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.color.blue": {
+    "message": "Blue",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.color.purple": {
+    "message": "Purple",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.customize.save": {
+    "message": "Save",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.setup.desc": {
+    "message": "Enable or reinstall the desired features using the selection menu. The bot will then send you a summary of the activated features and the changes it will make to the server. (Use `/settings` to disable a feature)",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.setup.ph": {
+    "message": "Choose the modules to install",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.enable": {
+    "message": "Enable",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.setup.recapDesc": {
+    "message": "Summary of selected features and configurations :",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.antiraid.value": {
+    "message": "10 members / 10 seconds",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.reports.name": {
+    "message": "Reports",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.setup.honeypotChannel": {
+    "message": "HoneyPot channel",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.setup.doneTitle": {
+    "message": "RaidProtect has been initialized!",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.setup.doneDesc": {
+    "message": "The `/settings` command lets you manage your settings after installation. You can also click the `Configuration` button to run the command.",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.customize.modalTitle": {
+    "message": "Customize the bot",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.customize.nick": {
+    "message": "Bot nickname",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.customize.avatar": {
+    "message": "Bot avatar",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.customize.banner": {
+    "message": "Bot banner",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.lang.name": {
+    "message": "Language",
+    "description": "/settings V2 mockup: General tab"
+  },
+  "mockup.v2.lang.doc": {
+    "message": "The chosen language applies to RaidProtect's public messages on the server: logs, captcha, reports. Private and ephemeral replies stay in each member's language.\n\n**Follow the server language** uses the primary language set in Discord's Community settings.",
+    "description": "/settings V2 mockup: General tab"
+  },
+  "mockup.v2.lang.field": {
+    "message": "Selected language",
+    "description": "/settings V2 mockup: General tab"
+  },
+  "mockup.v2.lang.follow": {
+    "message": "Follow the server language",
+    "description": "/settings V2 mockup: General tab"
+  },
+  "mockup.v2.lang.current": {
+    "message": "Currently: English",
+    "description": "/settings V2 mockup: General tab"
+  },
+  "mockup.v2.prefix.name": {
+    "message": "Message commands",
+    "description": "/settings V2 mockup: General tab"
+  },
+  "mockup.v2.prefix.doc": {
+    "message": "Message commands are run with a prefix, for example `?ban`. Pick one from the list or enter your own; **Disabled** turns them off.\n\nAvailable commands: `raidmode`, `ban`, `tempban`, `unban`, `kick`, `timeout`, `untimeout`, `warn`, `slowmode`, `lock`, `unlock`, `userinfo`, `clear`.",
+    "description": "/settings V2 mockup: General tab"
+  },
+  "mockup.v2.prefix.field": {
+    "message": "Prefix",
+    "description": "/settings V2 mockup: General tab"
+  },
+  "mockup.v2.prefix.custom": {
+    "message": "Custom prefix",
+    "description": "/settings V2 mockup: General tab"
+  },
+  "mockup.v2.prefix.customHint": {
+    "message": "Takes priority over the list. Three characters at most.",
+    "description": "/settings V2 mockup: General tab"
+  },
+  "mockup.v2.prefix.options": {
+    "message": "Options",
+    "description": "/settings V2 mockup: General tab"
+  },
+  "mockup.v2.prefix.deleteInvoke": {
+    "message": "Delinvoke",
+    "description": "/settings V2 mockup: General tab"
+  },
+  "mockup.v2.prefix.deleteInvokeHint": {
+    "message": "Deletes the message containing the command as soon as it's read.",
+    "description": "/settings V2 mockup: General tab"
+  },
+  "mockup.v2.perms.title": {
+    "message": "Command permissions",
+    "description": "/settings V2 mockup: General tab"
+  },
+  "mockup.v2.perms.doc": {
+    "message": "RaidProtect command permissions are configured directly in Discord: **Server Settings → Integrations → RaidProtect**.\n\nYou can allow or forbid each command there by **role**, **member** or **channel**. Discord applies them to **slash commands**. Check the option below for RaidProtect to also apply them to **message commands** and to the sanctions offered by **Sanction** (right-click on a member): a member allowed to use `/ban` will be able to ban from this menu.",
+    "description": "/settings V2 mockup: General tab"
+  },
+  "mockup.v2.perms.mobile": {
+    "message": "**This menu is only available on Discord's PC / Web app**, it is not accessible from mobile.",
+    "description": "/settings V2 mockup: General tab"
+  },
+  "mockup.v2.perms.option": {
+    "message": "Option",
+    "description": "/settings V2 mockup: General tab"
+  },
+  "mockup.v2.perms.mirrorOption": {
+    "message": "Apply integration permissions",
+    "description": "/settings V2 mockup: General tab"
+  },
+  "mockup.v2.perms.mirrorHint": {
+    "message": "Also apply to message commands and the sanctions offered by Sanction User.",
+    "description": "/settings V2 mockup: General tab"
+  },
+  "mockup.v2.timezone.name": {
+    "message": "Timezone",
+    "description": "/settings V2 mockup: General tab"
+  },
+  "mockup.v2.timezone.doc": {
+    "message": "Pick your UTC offset, or enter a timezone (e.g. Europe/Paris) to handle daylight saving automatically.",
+    "description": "/settings V2 mockup: General tab"
+  },
+  "mockup.v2.timezone.placeholder": {
+    "message": "Pick your UTC offset",
+    "description": "/settings V2 mockup: General tab"
+  },
+  "mockup.v2.timezone.custom": {
+    "message": "Custom timezone (optional)",
+    "description": "/settings V2 mockup: General tab"
+  },
+  "mockup.v2.timezone.customHint": {
+    "message": "Takes priority over the UTC offset, handles daylight saving. E.g. Europe/Paris, America/New_York.",
+    "description": "/settings V2 mockup: General tab"
+  },
+  "mockup.v2.perms.mirror": {
+    "message": "Integrations applied everywhere",
+    "description": "/settings V2 mockup: Dashboard home"
+  },
+  "mockup.v2.discon.value": {
+    "message": "Server danger level, controlled by your team.",
+    "description": "/settings V2 mockup: Dashboard home"
+  },
+  "mockup.v2.automod.value": {
+    "message": "Images",
+    "description": "/settings V2 mockup: Dashboard home"
+  },
+  "mockup.v2.automod.hint": {
+    "message": "Filters content recognized as scams",
+    "description": "/settings V2 mockup: Dashboard home"
+  },
+  "mockup.v2.slowmode.name": {
+    "message": "Preventive slowmode",
+    "description": "/settings V2 mockup: Dashboard home"
+  },
+  "mockup.v2.auth.value": {
+    "message": "Validated temporary roles, sessions and access log.",
+    "description": "/settings V2 mockup: Dashboard home"
+  },
+  "mockup.v2.dmlock.name": {
+    "message": "DM Lock",
+    "description": "/settings V2 mockup: Dashboard home"
+  },
+  "mockup.v2.dmlock.off": {
+    "message": "Disabled",
+    "description": "/settings V2 mockup: Dashboard home"
+  },
+  "mockup.v2.logs.general": {
+    "message": "General",
+    "description": "/settings V2 mockup: Dashboard home"
+  },
+  "mockup.v2.logs.moderation": {
+    "message": "Moderation",
+    "description": "/settings V2 mockup: Dashboard home"
+  },
+  "mockup.v2.transparency.name": {
+    "message": "Transparency",
+    "description": "/settings V2 mockup: Dashboard home"
+  },
+  "mockup.v2.transparency.hint": {
+    "message": "Periodic recaps and public modlog.",
+    "description": "/settings V2 mockup: Dashboard home"
+  },
+  "mockup.v2.tagrole.name": {
+    "message": "Tag Role",
+    "description": "/settings V2 mockup: Dashboard home"
+  },
+  "mockup.v2.lockrenaming.name": {
+    "message": "Channel lock",
+    "description": "/settings V2 mockup: Dashboard home"
+  },
+  "mockup.v2.lockrenaming.on": {
+    "message": "Adds 🔒 to the name of a channel locked with </lock>, and removes it with </unlock>. You can see the channel's state from the list.",
+    "description": "/settings V2 mockup: Dashboard home"
+  },
+  "mockup.v2.lockrenaming.off": {
+    "message": "Does **not** add 🔒 to the name of channels locked with </lock>.",
+    "description": "/settings V2 mockup: Dashboard home"
+  },
+  "mockup.v2.onduty.name": {
+    "message": "On-duty role",
+    "description": "/settings V2 mockup: Dashboard home"
+  },
+  "mockup.v2.messagecache.name": {
+    "message": "Message caching",
+    "description": "/settings V2 mockup: Dashboard home"
+  },
+  "mockup.v2.messagecache.forced": {
+    "message": "Enabled by anti-spam or reports, which read messages. What RaidProtect stores: </privacy>.",
+    "description": "/settings V2 mockup: Dashboard home"
+  },
+  "mockup.v2.home.desc": {
+    "message": "RaidProtect settings for this server. To get started, look at **Arrivals** (captcha, anti-raid) and **Moderation** (logs channel, sanctions). Every change applies immediately.",
+    "description": "/settings V2 mockup: Dashboard home"
+  },
+  "mockup.v2.support": {
+    "message": "Support Server",
+    "description": "/settings V2 mockup: Dashboard home"
+  },
+  "mockup.v2.customize": {
+    "message": "Customize",
+    "description": "/settings V2 mockup: Dashboard home"
+  },
+  "mockup.v2.custom": {
+    "message": "Custom value",
+    "description": "/settings V2 mockup: Shared labels"
+  },
+  "mockup.v2.configure": {
+    "message": "Configure",
+    "description": "/settings V2 mockup: Shared labels"
+  },
+  "mockup.v2.reset": {
+    "message": "Reset",
+    "description": "/settings V2 mockup: Shared labels"
+  },
+  "mockup.v2.createOne": {
+    "message": "Create one for me",
+    "description": "/settings V2 mockup: Shared labels"
+  },
+  "mockup.v2.refresh": {
+    "message": "Refresh",
+    "description": "/settings V2 mockup: Shared labels"
+  },
+  "mockup.v2.tab.general": {
+    "message": "General",
+    "description": "/settings V2 mockup: Shared labels"
+  },
+  "mockup.v2.tab.arrivals": {
+    "message": "Arrivals",
+    "description": "/settings V2 mockup: Shared labels"
+  },
+  "mockup.v2.tab.protection": {
+    "message": "Protection",
+    "description": "/settings V2 mockup: Shared labels"
+  },
+  "mockup.v2.tab.moderation": {
+    "message": "Moderation",
+    "description": "/settings V2 mockup: Shared labels"
+  },
+  "mockup.v2.tab.utilities": {
+    "message": "Utilities",
+    "description": "/settings V2 mockup: Shared labels"
+  },
+  "mockup.v2.perm.title": {
+    "message": "RaidProtect needs the following permissions for this feature:",
+    "description": "/settings V2 mockup: Shared labels"
+  },
+  "mockup.v2.perm.hint": {
+    "message": "Grant them to its role in Server Settings > Roles, or give it the `Administrator` permission.",
+    "description": "/settings V2 mockup: Shared labels"
+  },
+  "mockup.v2.sanctions.title": {
+    "message": "Sanctions configuration",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.sanctions.desc": {
+    "message": "Configure settings related to automatic sanctions and their logging on the server. It provides precise control over applied roles, sanction thresholds, and the visibility of moderation actions.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.sanctions.quarantine": {
+    "message": "Synced Discord quarantine",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.enabledF": {
+    "message": "Enabled",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.disabledF": {
+    "message": "Disabled",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.sanctions.quarantineHint": {
+    "message": "A member whom Discord's AutoMod quarantines (nickname, server tag) is quarantined with the jail role, and released when Discord lifts it. Only new quarantines count.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.sanctions.passive": {
+    "message": "Passive moderation logs",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.sanctions.medias": {
+    "message": "Show medias",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.sanctions.privacy": {
+    "message": "Sanctions Privacy",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.sanctions.privacyValue": {
+    "message": "With reasons",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.export": {
+    "message": "Export",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.import": {
+    "message": "Import",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.sanctions.names": {
+    "message": "Sanction names",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.sanctions.modTitle": {
+    "message": "Moderation configuration",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.jail.desc": {
+    "message": "Configure the **Jail role** to enable a role-based moderation sanction, more restrictive than a standard mute. Once configured, this role lets you isolate a member with heavily limited permissions and unlocks the /jail and /tempjail commands.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.jail.ph": {
+    "message": "Jail Role (write to search)",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.jail.channel": {
+    "message": "Information channel",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.jail.editChannel": {
+    "message": "Edit channel",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.jail.roles": {
+    "message": "Role handling on jail",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.jail.addDesc": {
+    "message": "The member keeps their roles, the jail role is added.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.jail.rolesPh": {
+    "message": "Choose the behavior when jailing",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.jail.add": {
+    "message": "Add the jail role",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.jail.replace": {
+    "message": "Replace all roles",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.jail.replaceDesc": {
+    "message": "Roles are removed, then restored on unjail.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.mute.desc": {
+    "message": "Configure the **Mute Role** to use a role-based sanction instead of Discord timeout for extended durations. When the mute duration exceeds the defined threshold, the bot will automatically assign the Mute Role to the member instead of applying a Discord timeout.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.mute.role": {
+    "message": "Mute Role",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.mute.ph": {
+    "message": "Mute Role (write to search)",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.mute.threshold": {
+    "message": "Mute Threshold",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.mute.thresholdHint": {
+    "message": "Beyond this duration, the Mute Role replaces the Discord timeout. Zero never uses the timeout, and Discord caps it at 28 days.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.mute.thresholdPh": {
+    "message": "Enter threshold",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.mute.always": {
+    "message": "Everytime",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.oneHour": {
+    "message": "1 hour",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.mute.extended": {
+    "message": "Extended Timeout (=28 days)",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.names.title": {
+    "message": "Customize sanction names",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.names.desc": {
+    "message": "Customize the names displayed for each sanction type. Custom names override default translations in logs, searches and menus.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.names.ph": {
+    "message": "Select a sanction to customize",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.names.resetAll": {
+    "message": "Reset all",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.alts.title": {
+    "message": "Duplicate account management",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.alts.desc": {
+    "message": "Accounts declared as the same person with /alt share their restrictive sanctions: the sanction stays in the name of the targeted account, the others receive its status, and removing it, through any one of them, removes it for all. Choose how each sanction extends.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.alts.name": {
+    "message": "Duplicate accounts",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.alts.modes": {
+    "message": "Linked account sanctions",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.alts.now": {
+    "message": "Immediately",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.alts.allPh": {
+    "message": "Set everything to…",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.alts.nowDesc": {
+    "message": "Every sanction extends to the group right away.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.alts.trap": {
+    "message": "Trap",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.alts.trapDesc": {
+    "message": "Every sanction targets only the chosen account; kick, which is not lasting, is unchanged.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.alts.offDesc": {
+    "message": "No sanction extends to linked accounts anymore.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.alts.evasion": {
+    "message": "Evasion sanction",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.alts.rest": {
+    "message": "Rest of the sanction",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.alts.single": {
+    "message": "One account per person",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.alts.singleHint": {
+    "message": "Only the main account of each group moves around the server: the others are quarantined (jail role), and leave on their own if they become the main account or are removed from the group.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.logs.title": {
+    "message": "Bot Logs configuration",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.logs.desc": {
+    "message": "Configure **bot logs** on your Discord server.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.logs.generalPh": {
+    "message": "Channel for General logs (write to search)",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.logs.fallback": {
+    "message": "If left empty, these logs go to the general channel.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.logs.modPh": {
+    "message": "Channel for moderation logs (write to search)",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.logs.captchaPh": {
+    "message": "Channel for Captcha logs (write to search)",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.logs.modDesc": {
+    "message": "By default, moderation logs are sent in the RaidProtect log channel. If you wish, you can select another channel.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.logs.configured": {
+    "message": "Configured channel",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.title": {
+    "message": "Reporting System configuration",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.desc": {
+    "message": "Enable the **Reporting System** to allow members to **easily notify your team** of problematic situations.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.channel": {
+    "message": "Receiving reports",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.role": {
+    "message": "Notification role",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.notify": {
+    "message": "Reporter notification",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.notify1": {
+    "message": "Handled only",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.group": {
+    "message": "Grouping",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.groupOn": {
+    "message": "Reports about the same member are grouped into a single alert.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.groupOff": {
+    "message": "Every report creates its own separate alert.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.trusted": {
+    "message": "Trusted role",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.bad": {
+    "message": "False reporters",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.badValue": {
+    "message": "5 · Notify moderators",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.transparency.desc": {
+    "message": "Publish periodic moderation recaps and a public modlog so your members can see how the server is moderated.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.transparency.recaps": {
+    "message": "Periodic recaps",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.transparency.oneRecap": {
+    "message": "1 recap",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.transparency.modlog": {
+    "message": "Public modlog",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.transparency.command": {
+    "message": "</transparency> command",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.modlog.desc": {
+    "message": "Post each moderation action in a public channel. Choose what is shown and which sources are included.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.modlog.channel": {
+    "message": "Channel",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.modlog.channelPh": {
+    "message": "Select a channel",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.modlog.display": {
+    "message": "Displayed information",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.modlog.displayPh": {
+    "message": "Choose what to display",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.modlog.reason": {
+    "message": "Reason",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.modlog.moderator": {
+    "message": "Moderator",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.modlog.duration": {
+    "message": "Duration",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.modlog.target": {
+    "message": "Sanctioned member",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.modlog.sources": {
+    "message": "Published sanctions",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.modlog.sourcesPh": {
+    "message": "Choose which sanctions appear",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.modlog.human": {
+    "message": "Manual (team)",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.modlog.auto": {
+    "message": "Automated (RaidProtect)",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.slowmode.free": {
+    "message": "Free slot.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.recaps.desc": {
+    "message": "Automatically post an aggregated moderation recap in a channel on a schedule.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.recaps.configured": {
+    "message": "Configured recaps",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.recaps.weekly": {
+    "message": "Weekly",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.recap.title": {
+    "message": "Recap",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.recap.desc": {
+    "message": "Configure this periodic recap.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.recap.name": {
+    "message": "Name",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.recap.rename": {
+    "message": "Rename",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.recap.schedule": {
+    "message": "Schedule",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.recap.at": {
+    "message": "around 08:00",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.recap.tz": {
+    "message": "Server time zone: Europe/Paris (UTC+2)",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.recap.frequency": {
+    "message": "Frequency",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.recap.frequencyPh": {
+    "message": "Choose a frequency",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.recaps.biweekly": {
+    "message": "Every two weeks",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.recaps.monthly": {
+    "message": "Monthly",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.recaps.quarterly": {
+    "message": "Quarterly",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.recaps.yearly": {
+    "message": "Yearly",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.recap.mentionPh": {
+    "message": "Choose a role to ping",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.recap.feed": {
+    "message": "Feed /transparency",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.alts.banNow": {
+    "message": "All linked accounts are banned right away, present or not.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.alts.present": {
+    "message": "Present now, the others on arrival",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.alts.banPresent": {
+    "message": "Absent accounts are banned if they join the server during the ban.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.alts.banTrap": {
+    "message": "Only the targeted account; another one that arrives or writes in the meantime is treated as evasion.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.alts.banOff": {
+    "message": "The sanction targets only the chosen account.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.alts.kickNow": {
+    "message": "Linked accounts on the server are kicked too.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.alts.roleNow": {
+    "message": "Accounts on the server right away, the others when they arrive.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.privacy.doc": {
+    "message": "Configure what a member sees when viewing their own sanctions via the </my-sanctions> command or the **`My Sanctions`** button.\n\n*Whatever the selected level, **moderators keep full access** to the sanctions history through the moderation tools.*",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.privacy.level": {
+    "message": "Access level",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.privacy.l0": {
+    "message": "Members cannot view their sanctions.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.privacy.l1n": {
+    "message": "Sanctions only",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.privacy.l1": {
+    "message": "Members can only view their sanctions and remaining time, if applicable.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.privacy.l2n": {
+    "message": "With reasons",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.privacy.l2": {
+    "message": "Members can view their sanctions and the reason.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.privacy.l3n": {
+    "message": "With reasons and moderators",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.privacy.l3": {
+    "message": "Members can view everything about their sanctions.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.jail.createTitle": {
+    "message": "Create a Jail role",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.jail.createDoc": {
+    "message": "Once created, the permission to view channels will be removed for this role.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.jail.roleName": {
+    "message": "Role name",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.jail.createHint": {
+    "message": "If you select a channel, it will be used as the information channel for the Jail role. Otherwise, a channel will be created automatically unless you completely remove the text from the second field.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.jail.existing": {
+    "message": "Existing information channel",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.jail.existingPh": {
+    "message": "Select a channel (optional)",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.jail.newChannel": {
+    "message": "Or create a new channel",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.channelDoc": {
+    "message": "Configure the **channel** where **report notifications** will be sent.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.autoCreate": {
+    "message": "Automatic creation",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.createChannel": {
+    "message": "Create a channel for me",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.roleDoc": {
+    "message": "Configure the **role that will be notified** when a **new report** is received. Typically, a moderator role.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.roleHint": {
+    "message": "Choose a role, or tick a mention below.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.otherMention": {
+    "message": "Other mention",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.createRole": {
+    "message": "Create a role for me",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.notifyDoc": {
+    "message": "Choose **what reporters receive in DM** once their report has been handled.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.n0": {
+    "message": "Reporters receive no notification.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.n1": {
+    "message": "Tell the reporter their report has been handled.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.notify2": {
+    "message": "With outcome",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.n2": {
+    "message": "Tell whether the report was accepted or rejected.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.notify3": {
+    "message": "With moderator",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.n3": {
+    "message": "Also tell which moderator handled the report.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.notifyPh": {
+    "message": "Notification level",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.badTitle": {
+    "message": "Reporter reputation",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.badDoc": {
+    "message": "Act on members whose reports keep getting refused. Set the refused-report threshold, the time window, and what happens once the threshold is reached.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.threshold": {
+    "message": "Threshold",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.thresholdHint": {
+    "message": "Number of rejected reports that triggers the action.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.window": {
+    "message": "Window",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.windowHint": {
+    "message": "Period over which rejected reports are counted.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.notifyMods": {
+    "message": "Notify moderators",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.block": {
+    "message": "Auto-block",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.sanction": {
+    "message": "Auto-sanction",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.both": {
+    "message": "Block and sanction",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.actionHint": {
+    "message": "What happens to the member once the threshold is reached.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.reports.sanctionHint": {
+    "message": "Sanction applied when the action sanctions the reporter.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.recap.scheduleTitle": {
+    "message": "Publication time",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.recap.scheduleDoc": {
+    "message": "Choose the publication time. The chosen time is local, the time zone is set on the general settings page.\nPublished within a 12-hour window starting from your time. Premium narrows it to within 1 hour.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.recap.hour": {
+    "message": "Publication time",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.recap.hourPh": {
+    "message": "Pick the time (local)",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.alts.evasionDoc": {
+    "message": "What a linked account caught in trap mode receives: it arrives or writes during its group's sanction.\n\n**Rest of the sanction**: it shares the group's sanction until it ends, with no sanction in its own name.\n**A sanction**: it is applied in its own name, with its own duration, and counts for the whole group like any other: lifting it on any account lifts it for all.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.alts.restDesc": {
+    "message": "It shares the group's sanction until it ends.",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.alts.sanctionPh": {
+    "message": "Choose the sanction",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.honeypot.duration": {
+    "message": "Duration",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.alts.durationHint": {
+    "message": "For example 1h, 3d, 2w. Empty: permanent (required for a timeout, 28 days at most).",
+    "description": "/settings V2 mockup: Moderation tab"
+  },
+  "mockup.v2.antispam.soft": {
+    "message": "Soft",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.softDesc": {
+    "message": "Warns first, then times out or jails: never kicks or bans.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.standardDesc": {
+    "message": "RaidProtect's default sanctions.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.strict": {
+    "message": "Strict (not recommended)",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.strictDesc": {
+    "message": "Bans advertising and automated accounts on the first spam.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.trigger.spam": {
+    "message": "Spam",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.trigger.flood": {
+    "message": "Flood (screen filled)",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.trigger.files": {
+    "message": "Attachment spam",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.trigger.duplicates": {
+    "message": "Duplicate spam",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.trigger.links": {
+    "message": "Link spam",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.trigger.mentions": {
+    "message": "Mention spam",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.trigger.selfbot": {
+    "message": "Selfbot spam",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.trigger.commands": {
+    "message": "External command spam",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.trigger.automod": {
+    "message": "Blocked message spam (AutoMod)",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.trigger.multichannel": {
+    "message": "Multi-channel spam",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.discon.l5": {
+    "message": "All clear",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.discon.e5": {
+    "message": "medium verification",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.discon.l4": {
+    "message": "Heightened",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.discon.e4": {
+    "message": "medium verification, captcha on entry",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.discon.l3": {
+    "message": "Alert",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.discon.e3": {
+    "message": "highest verification, captcha on entry, DM blocking",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.discon.l2": {
+    "message": "Critical",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.discon.e2": {
+    "message": "highest verification, captcha frozen, no one gets in, DM blocking",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.discon.l1": {
+    "message": "Catastrophe",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.discon.e1": {
+    "message": "highest verification, captcha frozen, no one gets in, DM blocking, lockdown, no one can write or react anymore",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.discon.current": {
+    "message": "Current level",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.discon.scale": {
+    "message": "Level scale",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.discon.title": {
+    "message": "DISCON configuration",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.discon.desc": {
+    "message": "Choose the channel where the DISCON panel is posted and, optionally, a voice channel whose name mirrors the current level.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.discon.panelChannel": {
+    "message": "Panel channel",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.discon.createPanel": {
+    "message": "Create panel channel",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.discon.panelPh": {
+    "message": "DISCON panel channel (text)",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.discon.voice": {
+    "message": "Status voice channel",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.discon.voicePremium": {
+    "message": "DISCON's status voice channel requires premium.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.discon.createVoice": {
+    "message": "Create status channel",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.discon.voicePh": {
+    "message": "Status voice channel (optional)",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.title": {
+    "message": "Anti-spam configuration",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.desc": {
+    "message": "Set up anti-spam to protect your Discord server from malicious user actions.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.details": {
+    "message": "View details",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.presetPh": {
+    "message": "Choose a preset",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.channels": {
+    "message": "Ignored channel(s)",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.channelsPh": {
+    "message": "Channel(s) to ignore (write to search)",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.roles": {
+    "message": "Ignored role(s)",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.rolesPh": {
+    "message": "Role(s) to ignore (write to search)",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.members": {
+    "message": "Ignored member(s)",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.membersPh": {
+    "message": "Member(s) to ignore (write to search)",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.simulate": {
+    "message": "Simulate",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.simulateHint": {
+    "message": "Simulate a situation to see whether antispam would trigger: pick a member, a channel and a spam type.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.sanctionsDesc": {
+    "message": "You can customize the sanctions applied depending on the type of spam detected. This allows for a response adapted to the severity of the violation.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.advanced": {
+    "message": "Advanced mode",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.familiesHint": {
+    "message": "Each family groups triggers of the same kind. When a spam crosses several of them, the most severe sanction wins.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.defaultDuration": {
+    "message": "Default (1 hour)",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.triggersPh": {
+    "message": "Select the triggers to edit",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.family.excess": {
+    "message": "Excess",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.family.excessHint": {
+    "message": "Message volume, flood and files: someone getting carried away.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.family.spamHint": {
+    "message": "Duplicate messages, links and mentions: advertising or harassment.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.family.automated": {
+    "message": "Automated",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.family.automatedHint": {
+    "message": "Selfbot, external commands and messages blocked by AutoMod: a bot or a compromised account.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.family.multiHint": {
+    "message": "Replaces the trigger's sanction when spam spans several channels, only if it is more severe.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.duration": {
+    "message": "Default duration",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.durationHint": {
+    "message": "Duration applied to triggers without their own duration, for sanctions that support one (mute, timeout, jail). Ignored for other sanctions.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.permanent": {
+    "message": "Permanent",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.publicMsg": {
+    "message": "Public sanction message",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.publicMsgHint": {
+    "message": "Sends a message in the channel to announce the sanction (e.g. 'member has been muted'). Can be disabled with premium.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.automod.desc": {
+    "message": "Filters that recognize content already seen elsewhere and remove it before it spreads. Each one decides the sanction applied to its author.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.automod.default": {
+    "message": "Default",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.automod.imagesHint": {
+    "message": "Known scams, matched by fingerprint",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.servers.name": {
+    "message": "Other servers",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.servers.short": {
+    "message": "Invites, forwards and tags from other servers",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.servers.hint": {
+    "message": "Deletes invites and forwarded messages from other servers, quarantines their tags.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.servers.link": {
+    "message": "Invite",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.servers.forward": {
+    "message": "Forwarded message or channel link",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.servers.tag": {
+    "message": "Displayed server tag",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.servers.blocklist": {
+    "message": "Blocklist",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.servers.allowlist": {
+    "message": "Allowlist",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.servers.title": {
+    "message": "References to other servers",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.servers.desc": {
+    "message": "For each behavior, choose a blocklist (these servers are refused) or an allowlist (only these servers pass). Your own server always passes, and your team (Manage Server, Manage Messages) is never targeted.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.servers.modePh": {
+    "message": "Choose a mode",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.servers.sanction": {
+    "message": "Sanction for deleted messages",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.sanctionPh": {
+    "message": "Select a sanction",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.servers.none": {
+    "message": "Message deleted only",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.sevenDays": {
+    "message": "7 days",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.servers.blockList": {
+    "message": "Blocklist",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.servers.allowList": {
+    "message": "Allowlist",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.servers.add": {
+    "message": "Add a server",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.servers.remove": {
+    "message": "Remove",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.imagefilter.title": {
+    "message": "Image filter",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.imagefilter.desc": {
+    "message": "Compares the fingerprint of posted images to known scams, removes matches and sanctions their author. Nothing is read from the message text.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.sanction.applied": {
+    "message": "Applied sanction",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.imagefilter.duration": {
+    "message": "Sanction duration",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.imagefilter.durationHint": {
+    "message": "Default: follows the HoneyPot duration, active on this server.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.imagefilter.catalog": {
+    "message": "Image catalog",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.imagefilter.catalogHint": {
+    "message": "**One list = a single image registry** (the same type of content). Mixing unrelated images in a list corrupts detection.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.imagefilter.global": {
+    "message": "Managed by RaidProtect, applied on all servers",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.imagefilter.empty": {
+    "message": "No list for this server yet. Create one, choose its verification channel, then add your images.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.imagefilter.create": {
+    "message": "Create a list (0/0)",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.honeypot.title": {
+    "message": "HoneyPot configuration",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.honeypot.desc": {
+    "message": "The **HoneyPot** is a trap channel visible and writable by **all members** (including those holding the Jail role or the captcha verification role). Any member who sends a message in it is **automatically sanctioned** by RaidProtect.\n\nThe channel is created at the very top of your server and a warning message is posted in it on creation (with a translate button).",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.honeypot.channel": {
+    "message": "HoneyPot channel",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.honeypot.regen": {
+    "message": "Regenerate channel",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.honeypot.create": {
+    "message": "Create channel",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.honeypot.delay": {
+    "message": "Delay before sanction",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.honeypot.delayHint": {
+    "message": "With a delay, the message is removed and the member is mentioned with a button to say it was a mistake. If they don't click in time, the sanction is applied. The same message posted in another channel, before or during the delay, is sanctioned immediately.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.honeypot.delayPh": {
+    "message": "Select a delay",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.honeypot.immediate": {
+    "message": "Immediate sanction",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.honeypot.askFirst": {
+    "message": "Ask first, sanction after {duration}",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.honeypot.ignored": {
+    "message": "Ignored members",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.honeypot.ignoredPh": {
+    "message": "Select which members to ignore",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.honeypot.nobody": {
+    "message": "Nobody (except non-moderable members)",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.honeypot.staff": {
+    "message": "Staff (Admin / Manage Server / Manage Channels)",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.honeypot.antispamIgnored": {
+    "message": "Members ignored by Antispam",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.slowmode.desc": {
+    "message": "Adjusts the slowmode of the chosen channels on its own based on messages per minute, without going past each channel's limits.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.slowmode.title": {
+    "message": "Preventive slowmode (Premium)",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.slowmode.notice": {
+    "message": "Premium is required for preventive slowmode.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.slowmode.rate30": {
+    "message": "30 messages / min",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.slowmode.channelTitle": {
+    "message": "Regulated channel:",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.slowmode.channelDesc": {
+    "message": "Choose how many messages per minute this channel can take. Above that, slowmode goes up on its own, and it comes back down when the channel calms down. It always stays between the minimum and maximum you set.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.slowmode.target": {
+    "message": "Message rate",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.slowmode.targetPh": {
+    "message": "Choose the message rate",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.slowmode.min": {
+    "message": "Minimum slowmode",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.slowmode.minPh": {
+    "message": "Choose the minimum slowmode",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.slowmode.max": {
+    "message": "Maximum slowmode",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.slowmode.maxPh": {
+    "message": "Choose the maximum slowmode",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.slowmode.applyAll": {
+    "message": "Apply to all regulated channels",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.dmlock.title": {
+    "message": "DM Lock configuration",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.suggest": {
+    "message": "Make a suggestion",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.familyModal": {
+    "message": "Trigger sanction",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.familyModalHead": {
+    "message": "3 triggers modified",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.keepSanction": {
+    "message": "Leave empty to keep the current sanction.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.globalDuration": {
+    "message": "Default (global duration)",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.keepDuration": {
+    "message": "For mute, timeout and jail. Leave empty to keep the current duration.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.customDuration": {
+    "message": "Custom duration",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.customDurationHint": {
+    "message": "Overrides the duration chosen above (5 minutes minimum).",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.simTitle": {
+    "message": "Anti-spam diagnostic",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.simMember": {
+    "message": "Member to test",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.simMemberPh": {
+    "message": "Select a member",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.simChannel": {
+    "message": "Channel to test",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.simChannelPh": {
+    "message": "Select a channel",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.simType": {
+    "message": "Spam type",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.trigger.messages": {
+    "message": "Message spam",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.simTypePh": {
+    "message": "Select a spam type",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.presetTitle": {
+    "message": "Apply a preset",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.presetWarn": {
+    "message": "Your settings will be overwritten",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.presetBody": {
+    "message": "What you have configured will be replaced by the **Soft** preset:",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.antispam.presetConfirm": {
+    "message": "I understand, apply the preset",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.slowmode.addTitle": {
+    "message": "Add a regulated channel",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.slowmode.channel": {
+    "message": "Channel",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.slowmode.addHint": {
+    "message": "It takes the settings of the last channel added; you can change them afterwards.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.slowmode.customTitle": {
+    "message": "Custom values",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.slowmode.targetField": {
+    "message": "Message rate (messages / min)",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.slowmode.targetHint": {
+    "message": "The slowmode adjusts to hold this average of messages per minute.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.slowmode.minHint": {
+    "message": "Floor: the slowmode never drops below this. 0s for no minimum.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.slowmode.maxHint": {
+    "message": "Cap: runaway guard, the slowmode never rises above this.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.dmlock.state": {
+    "message": "DM Lock state",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.dmlock.option": {
+    "message": "Close the server's direct messages",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.dmlock.desc": {
+    "message": "Configure the closing of private messages to prevent phishing or scam attempts.\nRaidProtect will permanently disable private messages until you disable this protection. We use Discord's \"Cybersecurity actions\" feature (limited to 24h by Discord, extended to permanent by RaidProtect)",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.dmlock.warn": {
+    "message": "Only bots, members who have already talked or are friends, and staff will be able to receive DMs in this mode.",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.onduty.desc": {
+    "message": "Configure the **on-duty role**: moderators mark themselves on or off duty with the `/onduty` command, which adds or removes this role.",
+    "description": "/settings V2 mockup: Utilities tab"
+  },
+  "mockup.v2.onduty.ph": {
+    "message": "On-duty role (write to search)",
+    "description": "/settings V2 mockup: Utilities tab"
+  },
+  "mockup.v2.tagrole.title": {
+    "message": "Tag Role configuration",
+    "description": "/settings V2 mockup: Utilities tab"
+  },
+  "mockup.v2.tagrole.desc": {
+    "message": "Configure the **Server Tag Role** to **automatically assign a role** to members who add **your server's tag to their profile**.\nIf the member removes the tag, the role is automatically removed.\n\nYour members will get the role at their next profile update (Nickname, Avatar, Banner, Roles, Tag...). You can ask support for a full role sync if you have many members who have or have had the Tag.",
+    "description": "/settings V2 mockup: Utilities tab"
+  },
+  "mockup.v2.tagrole.ph": {
+    "message": "Tag Role (write to search)",
+    "description": "/settings V2 mockup: Utilities tab"
+  },
+  "mockup.v2.grade.S": {
+    "message": "Passkey required",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.grade.A": {
+    "message": "OTP required",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.grade.B": {
+    "message": "Reinforced PIN 8+",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.grade.C": {
+    "message": "Reinforced PIN 6+",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.grade.D": {
+    "message": "Simple PIN 6+",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.grade.E": {
+    "message": "Simple PIN 4+",
+    "description": "/settings V2 mockup: Authentification Manager"
+  },
+  "mockup.v2.setup.m.Commandes par messages": {
+    "message": "Message commands",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.setup.d.Commandes par messages": {
+    "message": "Enable the prefix commands.",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.setup.m.Auto RaidMode": {
+    "message": "Auto RaidMode",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.setup.d.Auto RaidMode": {
+    "message": "Maximum number of members joining within 10 seconds.",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.setup.m.Captcha": {
+    "message": "Captcha",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.setup.d.Captcha": {
+    "message": "Block raids with Captcha.",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.setup.m.Âge minimum du compte": {
+    "message": "Minimum account age",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.setup.d.Âge minimum du compte": {
+    "message": "Minimum age of an account to be able to join.",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.setup.m.Anti-spam": {
+    "message": "Anti-spam",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.setup.d.Anti-spam": {
+    "message": "Protection against spam, links, mentions and selfbots.",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.setup.m.Signalements": {
+    "message": "Reports",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.setup.d.Signalements": {
+    "message": "Allow server members to report suspicious activity to your moderation team.",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.setup.m.Rôle de Tag": {
+    "message": "Tag Role",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.setup.d.Rôle de Tag": {
+    "message": "Give a role to members who have your tag",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.setup.m.Fermeture des MP": {
+    "message": "DM Lock",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.setup.d.Fermeture des MP": {
+    "message": "Prevent phishing or scam attempts by closing DMs",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.setup.m.HoneyPot": {
+    "message": "HoneyPot",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.setup.d.HoneyPot": {
+    "message": "Trap channel that sanctions members who write in it",
+    "description": "/settings V2 mockup: Bot customization and /setup"
+  },
+  "mockup.v2.sanction.Bannissement": {
+    "message": "Ban",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.sanction.Softban": {
+    "message": "Softban",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.sanction.Emprisonnement": {
+    "message": "Jail",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.sanction.Expulsion": {
+    "message": "Kick",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.sanction.Mute": {
+    "message": "Mute",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.sanction.Timeout": {
+    "message": "Timeout",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.sanction.Avertissement": {
+    "message": "Warn",
+    "description": "/settings V2 mockup: Protection tab"
+  },
+  "mockup.v2.captcha.failBlock": {
+    "message": "Attempts exhausted: Block 10 min",
+    "description": "Mockup v2 — captcha: failure action option \"Block 10 min\""
   }
 }

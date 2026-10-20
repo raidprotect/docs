@@ -7,19 +7,81 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Entdecken Sie die detaillierte Liste der Änderungen an RaidProtect.
 
-## 3.4.0 (18/07/2026) {#3-4-0}
+## 3.7.0 Identity Update <span className="badge-experiment">Experiment</span> {#3-7-0}
+
+:::info Experiment
+Die Identity Update befindet sich in der Experimentierphase: Bis zu ihrer Veröffentlichung in 3.7.0 ist sie eine öffentliche Beta für [Premium](/de/premium)-Server. Ihr Inhalt kann sich noch ändern.
+:::
+
+- Neuer Befehl [`/alt`](./features/alt-accounts.md#alt) und [Zweitkonten](./features/alt-accounts.md): Verknüpfen Sie die Konten ein und derselben Person, wählen Sie ihr Hauptkonto, und ihre Sanktionen (Bann, Kick, Mute, Jail, Timeout, Softban) erstrecken sich auf die verknüpften Konten. Die Sanktion eines Kontos aufzuheben, hebt sie für alle auf.
+- [Sanktionen der verknüpften Konten](./features/alt-accounts.md#modes) pro Typ einstellbar, mit einem Modus **Falle** und einer [Umgehungssanktion](./features/alt-accounts.md#evasion) für das verknüpfte Konto, das während der Sanktion ankommt oder schreibt.
+- Nicht auf dem Server anwesende verknüpfte Konten werden bei ihrer Ankunft sanktioniert.
+- Neue Einstellung [Nur ein Konto pro Person](./features/alt-accounts.md#single-account): Die Zweitkonten werden in Quarantäne gesetzt.
+- Das [Captcha](./features/captcha.md#activity-alts) erkennt Zweitkonten: Es verknüpft selbst die Konten, bei denen es sicher ist, dass es dieselbe Person ist, und schlägt Ihrem Team die wahrscheinlichen Verknüpfungen vor.
+- Die [Sanktionen der verknüpften Konten](./features/alt-accounts.md#modes) sind **Premium** vorbehalten. Ohne Premium verknüpft und zeigt `/alt` die Konten ohne Limit an.
+
+## 3.6.0 Shield Update <span className="badge-experiment">Experiment</span> {#3-6-0}
+
+:::info Experiment
+Die Shield Update befindet sich in der Experimentierphase: Bis zu ihrer Veröffentlichung in 3.6.0 ist sie eine öffentliche Beta für [Premium](/de/premium)-Server. Ihr Inhalt kann sich noch ändern.
+:::
+
+- Neuer **[DISCON](./features/discon.md)**: eine Gefahrenstufe des Servers in fünf Abstufungen, mit einem Klick einstellbar über den Befehl `/discon` oder ein [Panel für das Team](./features/discon.md#panel). Jede Stufe verschärft den Server automatisch (Verifizierung, Captcha, DM-Sperre, Raid-Modus, Sperrung), und ein [Sprachkanal](./features/discon.md#voice) zeigt die aktuelle Stufe an.
+- Neuer [präventiver Slowmode](./features/slowmode.md) (**Premium**): Der Langsam-Modus der gewählten Kanäle passt sich von selbst an, um die von Ihnen festgelegte Nachrichtenrate zu halten.
+- [HoneyPot](./features/honeypot.md): neue [Frist vor der Sanktion](./features/honeypot.md#grace), die einem gutgläubigen Mitglied Zeit lässt zu sagen, dass es sich geirrt hat.
+- Neuer [intelligenter Auslöser](./features/captcha.md#trigger) des Captchas: Zusätzlich zu Raids prüft es Neuankömmlinge, deren Konto verdächtig erscheint.
+- Neuer Filter [Andere Server](./features/automod.md#servers) im [Automod](./features/automod.md): Einladungen, weitergeleitete Nachrichten, Kanallinks und Tags anderer Server, als Sperrliste oder Zulassungsliste.
+- Neue Sanktion **Quarantäne**, synchronisiert mit der [Quarantäne von Discord](./features/sanctions.mdx#discord-quarantine).
+- [ScamLens](./features/scam-images.md): [Bilderkatalog](./features/scam-images.md#catalog) (**Premium**), um Ihre eigenen Betrugsbilder zu blockieren.
+- Jede vom AutoMod von Discord blockierte Nachricht erzeugt eine stille [Verwarnung](./features/sanctions.mdx) im Namen von „Discord Automod“.
+- Neuer [Installationsassistent](./setup.md#wizard): ein geführter Ablauf Abschnitt für Abschnitt, je nach Server vorgeschlagene Schutzmaßnahmen und zum Abschluss eine Vorschau des Audits.
+- [Anti-Spam](./features/anti-spam.mdx) V3, seit 3.5.0 bereits für alle aktiv:
+  - Neue Erkennungs-Engine: ungefähre Duplikate, wiederholte Links, Emojis und Kauderwelsch, Flood sowie auf mehrere Kanäle verteilter Spam.
+  - [Voreinstellungen](./features/anti-spam.mdx#presets) und Sanktionen pro Familie, mit einem [erweiterten Modus](./features/anti-spam.mdx#advanced), um jeden Auslöser und seine [Dauer](./features/anti-spam.mdx#duration) einzustellen.
+
+## 3.5.0 Onboarding Update (19/10/2026) {#3-5-0}
+
+- Überarbeitung von **[`/settings`](./setup.md#settings)** zu einem Dashboard mit fünf Tabs (Allgemein, Ankünfte, Schutz, Moderation, Werkzeuge), mit nativen Bildschirmen und Eingabefenstern sowie einem Hinweis **Neu** auf allem, was gerade hinzugekommen ist. Die [Premium](/de/premium)-Bildschirme bleiben einsehbar, der Bot hält Sie erst an, wenn Sie eine vorbehaltene Einstellung ändern.
+- Ankünfte:
+  - Neue [Willkommensnachricht](./features/onboarding.md#welcome-message) mit Willkommenskarte, Variablen und Schaltflächen, die während eines Raids schweigt.
+  - Die [automatischen Rollen](./features/onboarding.md#autorole) lösen sich vom Captcha und akzeptieren mehrere Rollen, die nach bestandener Verifizierung vergeben werden.
+  - Das [Mindestalter des Kontos](./features/onboarding.md#minage) bietet [mehrere Aktionen](./features/onboarding.md#minage-action): kicken, Jail bis zum erforderlichen Alter oder am Eingang hinter dem Captcha zurückhalten.
+  - Der [Auto RaidMode](./features/raid-mode.md#action) wählt seine Aktion während des Raids: Einladungen blockieren, Neuankömmlinge kicken (**Premium**), zum Captcha schicken oder das Captcha einfrieren. Nur das Blockieren der Einladungen erfordert noch die Discord-Community.
+  - Das [Captcha](./features/captcha.md) erhält einen [Anzeigemodus](./features/captcha.md#display-mode) Panel und einen [Auslöser](./features/captcha.md#trigger) Automatisch oder Dauerhaft. Seine Konfiguration weist auf Kanäle und Rollen hin, die eine Umgehung der Verifizierung ermöglichen, mit einer Schaltfläche, um sie zu korrigieren.
+  - Im Panel-Modus öffnet sich das Captcha in der [RaidProtect-Activity](./features/captcha.md#activity): ein schwierigeres Puzzle für Automaten, in den Farben Ihres Servers, und eine Prüfung durch Ihr Team im Zweifelsfall.
+  - Neuer [Testmodus](./features/captcha.md#test-mode) des Captchas, damit Ihr Team es erneut durchlaufen kann, ohne etwas anzuwenden.
+- Schutz:
+  - Der [Authentification Manager](./features/authentication-manager.mdx) ist in `/settings` integriert, seine Authentifizierungslinks sind übersetzt.
+  - Die [DM-Sperre](./features/dm-lock.mdx) wird in einem Eingabefenster eingestellt.
+- Moderation:
+  - Neuer Befehl [`/onduty`](./features/moderation.mdx#onduty) und Rolle „im Dienst“, um verfügbare Moderatoren zu kennzeichnen.
+  - Neues Panel [`/display staff`](./features/display.mdx#staff), um Ihr Team zu informieren.
+  - `/discord-sanctions` zeigt globale Statistiken an, wenn kein Nutzer angegeben ist.
+- Werkzeuge:
+  - Neuer Befehl [`/inviteinfo`](./features/utilities.mdx#inviteinfo). `/userinfo` und `/inviteinfo` lassen sich auch auf Ihrem Konto installieren, um sie überall zu nutzen.
+  - Neuer Befehl [`/privacy`](./features/utilities.mdx#privacy) und Einstellung **Zwischenspeicherung von Nachrichten**, die [`/snipe`](./guides/malfunctions.md#snipe) bedingt.
+  - [`/feedback`](./features/utilities.mdx#feedback) bietet eine Diagnose an, wenn Sie ein Anti-Spam-Problem melden.
+- Allgemein:
+  - RaidProtect spricht nun [11 Sprachen](./language.md) mit Italienisch, Türkisch, Vietnamesisch, Japanisch sowie vereinfachtem und traditionellem Chinesisch. Standardmäßig [folgt es der Sprache des Servers](./language.md#follow).
+  - Neue [Zeitzone](./setup.md#timezone) des Servers, die von den Transparenz-Zusammenfassungen verwendet wird.
+  - [Präfixbefehle](./guides/prefix.md) und [Berechtigungen](./guides/prefix.md#permissions) werden getrennt eingestellt, und die Discord-Berechtigungen gelten auch für das Menü „Sanktionieren“.
+  - Die [Anpassung des Bots](./setup.md#customize) (**Premium**) wandert in `/settings`. Nach Ablauf des Premiums kehrt das Aussehen des Bots automatisch zu dem von RaidProtect zurück.
+- Verschiedene Korrekturen und Übersetzungskorrekturen.
+
+## 3.4.0 Antispam Update (18/07/2026) {#3-4-0}
 
 - [Anti-Spam](./features/anti-spam.mdx) V2:
   - **Mehrkanal-Spam**: eine dedizierte Sanktion, wenn sich der Spam über mehrere Kanäle erstreckt (standardmäßig Jail, mindestens Timeout).
   - Neuer [Auslöser](./features/anti-spam.mdx#triggers) **Anhang-Spam** (standardmäßig deaktiviert).
+  - [Simulation](./features/anti-spam.mdx#simulation), um zu verstehen, warum ein Spam sanktioniert wurde oder nicht.
   - Spam-Nachrichten werden nun **unabhängig von der Sanktion gelöscht** (Ban, Jail, Mute, Kick oder Timeout).
-  - Die **Anti-Scam-Sanktion ist konfigurierbar** über das [Sanktionsmenü des Anti-Spam](./features/anti-spam.mdx#sanctions) und folgt standardmäßig der [HoneyPot-Sanktion](./features/honeypot.md#sanction); Anti-Scam-Vorfälle werden sofort sanktioniert und protokolliert.
+  - Die **Anti-Scam-Sanktion ist konfigurierbar** über das [Sanktionsmenü des Anti-Spam](./features/anti-spam.mdx#triggers) und folgt standardmäßig der [HoneyPot-Sanktion](./features/honeypot.md#sanction); Anti-Scam-Vorfälle werden sofort sanktioniert und protokolliert.
   - Jeder Auslöser kann einzeln mit der neuen Option **Deaktivieren** abgeschaltet werden, und die Empfindlichkeitsstufen werden durch einen einfachen Schalter ersetzt.
   - Die Sanktionen **Mute** und **Jail** greifen auf einen begrenzten Timeout zurück, wenn die entsprechende Rolle nicht konfiguriert ist.
   - Selfbots, die Rich Embeds senden, werden erkannt, und von ScamLens blockierte Betrugsversuche werden im Zähler der gemeldeten Konten des [HoneyPot](./features/honeypot.md) mitgezählt.
 - Vollständige Überarbeitung des **[Meldesystems](./features/reports.md)**:
   - Meldungen werden nun in **Vorfällen** zusammengefasst: mehrere Meldungen gegen dasselbe Mitglied werden in einem einzigen Vorfall gebündelt, mit einem [konfigurierbaren Gruppierungsmodus](./features/reports.md#group).
-  - Die Meldebefehle öffnen nun eine **Grund-Modal**, mit einer Liste „Was melden Sie?“ bei Profilmeldungen (einschließlich Sprach- und DM-Aktivität).
+  - Die Meldebefehle öffnen nun ein **Modal für den Grund**, mit einer Liste „Was melden Sie?“ bei Profilmeldungen (einschließlich Sprach- und DM-Aktivität).
   - Jeder Vorfall öffnet nun einen **Thread** unter der Meldung: Profilkarte des gemeldeten Mitglieds, Grund-Überschriften pro Nachricht, Name des bearbeitenden Moderators und Ablehnungsnotizen.
   - Neue [Benachrichtigung des Melders](./features/reports.md#notify): Melder können per DM benachrichtigt werden, wenn ihre Meldung bearbeitet wurde, mit einem konfigurierbaren Detailgrad (bis hin zum Ergebnis akzeptiert/abgelehnt).
   - Neue [Vertrauensrolle](./features/reports.md#trusted-role) (**Premium**): Vertrauensmitglieder können beim Melden einen **präventiven Timeout von 24h** anwenden, und ihre dringenden Meldungen erwähnen die Moderationsrolle erneut.
@@ -30,8 +92,8 @@ Entdecken Sie die detaillierte Liste der Änderungen an RaidProtect.
   - [Periodische Zusammenfassungen](./features/transparency.md#recaps) der Moderationsaktivität des Servers, die automatisch nach einem konfigurierbaren Zeitplan veröffentlicht werden.
   - Neues [öffentliches Modlog](./features/transparency.md#modlog): Sanktionen können in einem öffentlichen Kanal veröffentlicht werden, gefiltert nach Typ und Quelle, mit der Erstellung eines schreibgeschützten Kanals #public-modlog per Klick.
   - Neuer [Befehl `/transparency`](./features/transparency.md#command), um die Zusammenfassung des letzten abgeschlossenen Zeitraums auf Anfrage anzuzeigen.
-- Neuer [Befehl `/audit`](./features/audit.md): ein vollständiges **Sicherheitsaudit** des Servers mit einem Gesamtscore, [detaillierten Prüfungen](./features/audit.md#checks) (Verifizierungsstufe, Berechtigungen, Kanäle) und [Korrekturen per Klick](./features/audit.md#fix). Admin-Rollen können direkt aus dem Audit in den Authentication Manager integriert werden.
-- Neuer [Kick-Modus](./features/raid-mode.md#kick-mode) (**Premium**) für den Raid-Modus und den Join Lock: Neuankömmlinge werden mit einer erklärenden DM und einer Einladungsschaltfläche zum Wiederbeitreten gekickt, anstatt die Einladungen nativ zu pausieren. Der neue [Befehl `/bypass raid`](./features/raid-mode.md#bypass-raid) lässt bestimmte Benutzer eintreten, während er aktiv ist.
+- Neuer [Befehl `/audit`](./features/audit.md): ein vollständiges **Sicherheitsaudit** des Servers mit einem Gesamtscore, [detaillierten Prüfungen](./features/audit.md#checks) (Verifizierungsstufe, Berechtigungen, Kanäle) und [Korrekturen per Klick](./features/audit.md#fix). Admin-Rollen können direkt aus dem Audit in den Authentification Manager integriert werden.
+- Neuer [Kick-Modus](./features/raid-mode.md#kick-mode) (**Premium**) für den Raid-Modus und die Beitrittssperre: Neuankömmlinge werden mit einer erklärenden DM und einer Einladungsschaltfläche zum Wiederbeitreten gekickt, anstatt die Einladungen nativ zu pausieren. Der neue [Befehl `/bypass raid`](./features/raid-mode.md#bypass-raid) lässt bestimmte Benutzer eintreten, während er aktiv ist.
 - [Nachrichtenbefehle](./guides/prefix.md#permissions) können nun über eine neue Option in `/settings` die **Discord-Befehlsberechtigungen** (Integrationen-Tab) übernehmen.
 - RaidProtect antwortet nun unter den **Discord-Sicherheitswarnungen**, wenn diese durch die [DM-Sperre](./features/dm-lock.mdx) verursacht werden, zitiert die Warnung und erklärt, wo die Einstellung angepasst werden kann.
 - Das Kick-Protokoll des [Mindestalters für Konten](./features/raid-mode.md#minage) zeigt nun den erforderlichen Schwellenwert als Zeitstempel an.
@@ -45,7 +107,7 @@ Entdecken Sie die detaillierte Liste der Änderungen an RaidProtect.
   - Korrektur der automatischen Umwandlung von Discord-AutoMod-Timeouts.
   - Korrektur von `/serverinfo`: Zugriff auf die Vanity-URL, Regeln und Statistiken.
   - Korrektur des Alias `/discord-sanctions` und der Präfix-Nutzung der Nachrichtenbefehle.
-  - Korrektur der auf Administratoren angewendeten Jail im Modus Rollen ersetzen.
+  - Korrektur des auf Administratoren angewendeten Jails im Modus „Alle Rollen ersetzen“.
   - Härtung der Validierung von Webhook-URLs.
   - Verschiedene Korrekturen: Sanktionsprotokolle, Captcha, Nachrichten der DM-Sperre, Moderationsnotizen, Premium-Erkennung.
   - Verschiedene Übersetzungskorrekturen.
@@ -54,8 +116,8 @@ Entdecken Sie die detaillierte Liste der Änderungen an RaidProtect.
 
 - Neuer [Befehl `/modview`](./features/moderation.mdx#modview), um eine zentrale Moderationsansicht eines Mitglieds zu öffnen (Sanktionen, Notiz, Snipe). <SuggestionLink id="544" />
 - Neuer [Befehl `/note`](./features/moderation.mdx#note), um die Moderationsnotiz eines Mitglieds hinzuzufügen oder zu ändern. <SuggestionLink id="545" />
-- Neuer [Befehl `/nick`](./features/moderation.mdx#nick), um das Pseudonym eines Mitglieds auf dem Server zu ändern oder zurückzusetzen.
-- Anpassung von **Avatar**, **Banner** und **Schreibstil des Pseudonyms** von RaidProtect (**Premium**).
+- Neuer [Befehl `/nick`](./features/moderation.mdx#nick), um den Spitznamen eines Mitglieds auf dem Server zu ändern oder zurückzusetzen.
+- Anpassung von **Avatar**, **Banner** und **Namensstil** von RaidProtect (**Premium**).
 - Neues Modul **[HoneyPot](./features/honeypot.md)**: ein Fallenkanal, der gehackte Konten und Spam-Bots automatisch sanktioniert und den ScamLens-Katalog speist. <SuggestionLink id="560" />
 - Neues Parsing der Nachrichtenbefehle.
 - Autocomplete in den `duration`-Parametern der Slash-Befehle.
@@ -72,7 +134,7 @@ Entdecken Sie die detaillierte Liste der Änderungen an RaidProtect.
 - Neuer [Befehl `/serverinfo`](./features/utilities.mdx#serverinfo), um die Informationen des Servers einzusehen. <SuggestionLink id="264" />
 - Neuer [Befehl `/snipe`](./features/moderation.mdx#snipe), um die zuletzt gelöschte Nachricht eines Kanals oder eines Benutzers aus der letzten Stunde abzurufen (vorübergehende Lösung bis zum Update der Logs).
 - Neuer [Befehl `/feedback`](./features/utilities.mdx#feedback), um eine Meinung, einen Vorschlag oder eine Bug-Meldung direkt aus Discord zu teilen.
-- Wahl einer **einheitlichen Dauer** für die vom [Anti-Spam](./features/anti-spam.mdx#duration) verhängten Sanktionen mit Dauer. <SuggestionLink id="559" />
+- Wahl einer **Dauer** für die vom [Anti-Spam](./features/anti-spam.mdx#duration) verhängten Sanktionen. <SuggestionLink id="559" />
 - Möglichkeit, **DMs automatisch zu schließen** beim Aktivieren des [Auto-Raid-Modus](./features/raid-mode.md#close-dm). <SuggestionLink id="521" />
 - Die von Discords AutoMod verhängten Timeouts werden automatisch [in rollenbasiertes Mute umgewandelt](./features/sanctions.mdx#mute-threshold), wenn sie den konfigurierten Mute-Schwellenwert überschreiten (in **öffentlicher Beta für Premium-Server**).
 - Neuer Parameter `[duration]` auf den Befehlen [`/lock`](./features/channel-lock.md#lock-duration) und [`/slowmode`](./features/moderation.mdx#slowmode), um die Änderung temporär anzuwenden. <SuggestionLink id="515" />
@@ -82,7 +144,7 @@ Entdecken Sie die detaillierte Liste der Änderungen an RaidProtect.
 
 ## 3.3.2 (20/03/2026) {#3-3-2}
 
-- Neues **[Authentication Manager](./features/authentication-manager.mdx)** (AM)-System zum Schutz des Zugangs zu Discord-Rollen durch Authentifizierung.
+- Neues **[Authentification Manager](./features/authentication-manager.mdx)** (AM)-System zum Schutz des Zugangs zu Discord-Rollen durch Authentifizierung.
   - Neuer [Befehl `/auth`](./features/authentication-manager.mdx#auth), um sich zu authentifizieren und eine geschützte Rolle zu erhalten.
   - Neuer [Befehl `/auth-profile`](./features/authentication-manager.mdx#auth-profile), um das eigene Authentifizierungsprofil zu verwalten (PIN, OTP, Passkeys).
   - Neuer [Befehl `/auth-settings`](./features/authentication-manager.mdx#auth-settings), um geschützte Rollen und autorisierte Benutzer zu konfigurieren.
@@ -95,14 +157,14 @@ Entdecken Sie die detaillierte Liste der Änderungen an RaidProtect.
   - Massenentfernungsprotokolle für `/clear`.
   - Protokolle für Änderungen der Anti-Scam- und Auto-RaidMode-Einstellungen.
 - Neues **Premium**-System.
-  - Erhöhte Limits für Authentication Manager und Informationspanels.
+  - Erhöhte Limits für Authentification Manager und Informationspanels.
   - Anpassbare [Sanktionsnamen](./features/sanctions.mdx#custom-names) (Name, Verb und DM-Formulierung).
   - Frühzeitiger Zugang zu neuen experimentellen Funktionen.
 - Erkennung und Verhinderung der Imitation von RaidProtect.
 - Korrekturen:
   - Korrektur von Unmute- und Untimeout-Fehlern.
   - Korrektur des Jail-Setups.
-  - Korrektur des "gesperrten Antispam" auf einigen Servern.
+  - Korrektur des „gesperrten Antispam“ auf einigen Servern.
   - Verschiedene Übersetzungskorrekturen.
 - Leistung und Stabilität:
   - Optimierung des Mitglieder-, Berechtigungs- und Nachrichten-Caches.
@@ -121,16 +183,16 @@ Entdecken Sie die detaillierte Liste der Änderungen an RaidProtect.
   - Neuer Parameter `[force_timeout]`, um das Discord-Timeout unabhängig von der Dauer zu erzwingen.
 - [Sanktionierung über das Kontextmenü](./features/moderation.mdx#context-menu) (Rechtsklick auf ein Profil).
 - Neuer [`/meine-sanktionen`-Befehl](./features/utilities.mdx#my-sanctions), damit Mitglieder ihre eigenen Sanktionen einsehen können.
-- Neue Einstellung [Sanktionen-Datenschutz](./features/sanctions.mdx#sanctions-privacy) zur Kontrolle des Zugriffs auf persönliche Sanktionen.
+- Neue Einstellung [Sanktions-Datenschutz](./features/sanctions.mdx#sanctions-privacy) zur Kontrolle des Zugriffs auf persönliche Sanktionen.
 - Neue Einstellung [Medien anzeigen](./features/sanctions.mdx#show-medias) in Sanktionsbegründungen.
 - Visuelle Überarbeitung der Filter in [`/sanctions search`](./features/sanctions.mdx#search) und Hinzufügung des Filters [Moderatortyp](./features/sanctions.mdx#search).
 - [Import / Export von Sanktionen](./features/sanctions.mdx#import-export) über den Support-Bot.
-- **[Informationstafeln](./features/display.mdx)**-System (`/display public`).
-- Neues System zur **[Sperrung von Mitgliedern](./features/utilities.mdx#block)** für bestimmte RaidProtect-Funktionen auf einem Server.
+- **[Informationspanel](./features/display.mdx)**-System (`/display public`).
+- Neues System zum **[Blockieren von Mitgliedern](./features/utilities.mdx#block)** für bestimmte RaidProtect-Funktionen auf einem Server.
   - Neuer [`/block add`-Befehl](./features/utilities.mdx#block-add).
   - Neuer [`/block remove`-Befehl](./features/utilities.mdx#block-remove).
   - Neuer [`/block list`-Befehl](./features/utilities.mdx#block-list).
-- Neuer [`/prune`-Befehl](./features/utilities.mdx#prune), um inaktive Mitglieder mit präziseren Bedingungen zu entlassen. <SuggestionLink id="256" />
+- Neuer [`/prune`-Befehl](./features/utilities.mdx#prune), um inaktive Mitglieder mit präziseren Bedingungen zu entfernen. <SuggestionLink id="256" />
 - Neuer [`/channel clear`-Befehl](./features/utilities.mdx#channel-clear), um einen Kanal zu löschen und neu zu erstellen. <SuggestionLink id="543" />
 - Logs für `/bypass`-Befehle. <SuggestionLink id="546" />
 - Neues **Anti-Scam**-Modul.
@@ -141,7 +203,7 @@ Entdecken Sie die detaillierte Liste der Änderungen an RaidProtect.
 - Leistung und Stabilität:
   - Neues Übersetzungs-Framework ([`@fca.gg/hermes` v1.2.1](https://github.com/FCAgreatgoals/hermes)).
 
-## 3.3.0 (19/12/2025) {#3-3-0}
+## 3.3.0 Moderation Update (19/12/2025) {#3-3-0}
 
 - Neue Funktion **[Sanktionsverlauf](./features/sanctions.mdx)**.
   - Neuer [Befehl `/sanctions search`](./features/sanctions.mdx#search).
@@ -149,7 +211,7 @@ Entdecken Sie die detaillierte Liste der Änderungen an RaidProtect.
   - Neuer [Befehl `/sanctions edit`](./features/sanctions.mdx#edit).
   - Neuer [Befehl `/sanctions delete`](./features/sanctions.mdx#delete).
   - Automod-Sanktionen werden dem Sanktionsverlauf hinzugefügt.
-  - Verbannungen, Kicks und Timeouts werden dem Verlauf hinzugefügt und protokolliert. <SuggestionLink id="151" />
+  - Banns, Kicks und Timeouts werden dem Verlauf hinzugefügt und protokolliert. <SuggestionLink id="151" />
   - Empfangsbestätigung der privaten Sanktionsbenachrichtigung.
 - Neue Protokolle für Sanktionen.
 - Möglichkeit, einen dedizierten Sanktionsprotokoll-Kanal zu konfigurieren.
@@ -188,7 +250,7 @@ Entdecken Sie die detaillierte Liste der Änderungen an RaidProtect.
   - Korrekturen bei der Interpretation und Validierung von Präfixbefehlen.
   - Behebung von Fehlern im Zusammenhang mit **Standard-Avataren**.
 
-## 3.2.0 (10/07/2025) {#3-2-0}
+## 3.2.0 Protection Update (10/07/2025) {#3-2-0}
 
 - Neue Funktion [DM-Sperre](./features/dm-lock.mdx).
 - Auswahl der vom [Anti-Spam](./features/anti-spam.mdx#triggers) angewendeten Sanktionen. <SuggestionLink id="85" />
@@ -213,7 +275,7 @@ Entdecken Sie die detaillierte Liste der Änderungen an RaidProtect.
 
 ## 3.1.1 (21/05/2025) {#3-1-1}
 
-- Neue Funktion [Rollen-Tag](./features/tag-role.md). <SuggestionLink id="512" />
+- Neue Funktion [Tag-Rolle](./features/tag-role.md). <SuggestionLink id="512" />
 - Neuer Moderationsbefehl [`/timeout`](./features/moderation.mdx#timeout). <SuggestionLink id="52" />
 - Automatisches Protokollieren von Updates im allgemeinen Log-Kanal jedes Servers.
 - Leistung und Stabilität:
@@ -222,7 +284,7 @@ Entdecken Sie die detaillierte Liste der Änderungen an RaidProtect.
   - Optimierte Datenbankabfragen.
   - Verbesserte Gesamtgeschwindigkeit des Bots.
 
-## 3.1.0 (12/03/2025) {#3-1-0}
+## 3.1.0 Interactions Update (12/03/2025) {#3-1-0}
 
 - **Slash-Befehle** hinzugefügt. <SuggestionLink id="463" />
 - [Internationalisierung](./language.md) (Englisch hinzugefügt). <SuggestionLink id="109" />
@@ -249,7 +311,7 @@ Entdecken Sie die detaillierte Liste der Änderungen an RaidProtect.
 
 - Komplette Neuentwicklung zur Vorbereitung auf zukünftige Updates und zur Stabilisierung des Bots.
 - Alle bekannten Fehler bis dato behoben.
-- Der [`?raidmode`-Befehl](./features/raid-mode.md) nutzt nun die Funktion "Einladungen deaktivieren".
+- Der [`?raidmode`-Befehl](./features/raid-mode.md) nutzt nun die Funktion „Einladungen deaktivieren“.
 - Automatisches Versenden einer privaten Nachricht an betroffene Mitglieder bei verhängten Sanktionen. <SuggestionLink id="426" />
 
 ## 2.2.0 (13/04/2020) {#2-2-0}

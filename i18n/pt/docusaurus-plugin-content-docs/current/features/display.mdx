@@ -1,54 +1,106 @@
 ---
-title: Painéis de Informação
-description: "O comando /display do RaidProtect cria e gere painéis de informação públicos no seu servidor Discord, com diferentes tipos de conteúdo."
+title: Painéis de informação
+description: "O comando /display do RaidProtect cria e gerencia painéis de informação públicos e painéis reservados à equipe no seu servidor Discord."
 ---
 
 import DisplayMockup from '@site/src/components/DiscordMessage/mockups/display';
 
 <DisplayMockup />
 
-O comando `/display public` permite que você crie e gerencie painéis de informação públicos exibidos no seu servidor. Você pode criar vários painéis com diferentes tipos de conteúdo e funcionalidades.
+O comando `/display` permite que você crie e gerencie painéis de informação publicados pelo RaidProtect no seu servidor. Ele tem duas partes:
 
-Use o comando: ```/display public```
+- `/display public`: painéis para os seus membros (bloqueio de DMs, sanções, denúncia…).
+- `/display staff`: painéis reservados à sua equipe ([DISCON](./discon.md), obtenção de cargo, documentação, entrada em serviço).
+
+Use o comando: ```/display public``` ou ```/display staff```
+
+:::info
+Os dois subcomandos exigem a permissão “**Gerenciar servidor**”.
+:::
 
 ## ❓ Como funciona {#working}
 
 Cada painel de informação é publicado pelo bot em um canal à sua escolha. Você dispõe de vários espaços para criar painéis independentes, cada um com seu próprio conteúdo e suas próprias funcionalidades.
 
 :::info
-**Limites:** 2 espaços na versão gratuita, 4 na versão premium (+ 1 espaço reservado para o conteúdo Prisão).
+**Limites dos painéis públicos:** 2 espaços na versão gratuita, 4 na versão [premium](/pt/premium), mais 1 espaço reservado para o conteúdo Prisão. O painel do [captcha](./captcha.md) não consome espaço.
 :::
 
 ## 📄 Tipos de conteúdo {#content}
 
-Cada painel pode conter um ou mais dos seguintes conteúdos:
+Cada painel público pode conter um ou mais dos seguintes conteúdos:
 
-- **Bloqueio de DMs**: Informa os membros sobre o estado do [fechamento das DMs](./dm-lock.mdx). Exibe se as DMs estão bloqueadas ou não e explica que apenas amigos, staff, bots e contatos anteriores podem enviar DMs.
+- **Bloqueio de DMs**: Informa os membros sobre o estado do [fechamento das DMs](./dm-lock.mdx). Exibe se as DMs estão bloqueadas ou não e explica que apenas amigos, a equipe, bots e contatos anteriores podem enviar DMs.
 - **Prisão**: Exibe uma mensagem destinada aos membros presos, indicando que o acesso deles ao servidor foi limitado devido ao descumprimento das regras.
 - **Sanções**: Indica aos membros como consultar o histórico de suas sanções pessoais por meio do comando `/minhas-sancoes`.
 - **Denúncia**: Explica aos membros como denunciar um usuário ou uma mensagem por meio do comando `/report` ou do menu de contexto (clique com o botão direito).
 
 ## ⚙️ Funcionalidades {#features}
 
-Além do conteúdo, cada painel pode ativar funcionalidades interativas:
+Além do conteúdo, cada painel público pode ativar funcionalidades interativas:
 
 - **Tradução**: Adiciona um botão que permite aos membros traduzir o painel para todos os idiomas suportados pelo Discord.
-- **Acesso às sanções**: Adiciona um botão "Consultar minhas sanções" que permite aos membros consultar diretamente suas sanções.
-- **Denúncia**: Adiciona um botão "Denunciar" para denunciar rapidamente um usuário.
+- **Acesso às sanções**: Adiciona um botão “**Consultar minhas sanções**” que permite aos membros consultar diretamente suas sanções.
+- **Denúncia**: Adiciona um botão “**Denunciar um membro**” para denunciar rapidamente um usuário.
 
 {/* TODO: Adicionar uma captura de tela de /display public */}
 
-## 📌 Espaço reservado {#reserved-slot}
+## 📌 Espaços reservados {#reserved-slot}
 
-O último espaço está reservado para o conteúdo **Prisão** e é gerenciado automaticamente via `/settings` > Sanções > [Prisão](./sanctions.mdx#jail). Seu canal só pode ser alterado por meio dessa configuração.
+Alguns painéis são gerenciados pelo seu módulo, não por `/display`:
+
+- **Prisão**: o último espaço público é reservado ao conteúdo Prisão. Seu canal é definido apenas em `/settings`, aba “**Moderação**”, “**Sanções**” e depois [Jail](./sanctions.mdx#jail) (“**Editar canal**”). Em compensação, você pode adicionar a ele conteúdos e funcionalidades a partir de `/display public`.
+- **Captcha**: o painel do [captcha](./captcha.md) no modo Painel é colocado e retirado pelo próprio captcha (`/settings`, aba “**Chegadas**”, “**Captcha**”). Ele não pode ser criado nem excluído a partir de `/display`.
+- **DISCON** (em experimentação com a Shield Update): o painel [DISCON](./discon.md#panel) ocupa o espaço reservado de `/display staff`. Seu canal é definido apenas com `/discon`.
+
+## 🛡️ Painéis da equipe {#staff}
+
+O comando `/display staff` gerencia painéis destinados à sua equipe, a serem publicados em canais reservados à equipe.
+
+Use o comando: ```/display staff```
+
+:::info
+**Limites dos painéis da equipe:** 1 espaço na versão gratuita, 4 na versão [premium](/pt/premium), mais 1 espaço reservado ao painel [DISCON](./discon.md).
+:::
+
+### Conteúdos reservados à equipe {#staff-content}
+
+Cada conteúdo da equipe adiciona automaticamente seu botão ao painel:
+
+- **DISCON**: o nível de perigo do servidor e seus cinco botões. Esse conteúdo é reservado ao espaço DISCON, gerenciado a partir da [configuração do DISCON](./discon.md#config). Você pode adicionar outros conteúdos a esse painel a partir de `/display staff`.
+- **Obter um cargo**: um botão que abre a escolha dos cargos protegidos pelo [Authentification Manager](./authentication-manager.mdx#auth), como o comando `/auth`.
+- **Documentação**: um botão para a documentação de moderação e um lembrete dos comandos úteis (`/modview`, `/sanctions`, `/clear`).
+- **Em serviço**: um botão que adiciona ou retira o [cargo em serviço](./moderation.mdx#onduty), como o comando `/onduty`.
+
+A funcionalidade **Tradução** também está disponível nos painéis da equipe.
+
+:::warning
+Os botões dos painéis da equipe não verificam as permissões de quem clica: **é o acesso ao canal que faz o papel de controle**. Publique-os apenas em canais reservados à sua equipe.
+:::
 
 ## 🔄 Atualização dos painéis {#update}
 
-Quando você altera o idioma do bot ou o conteúdo dos painéis é atualizado pelo RaidProtect, um indicador sinaliza os painéis que estão desatualizados. Você pode então clicar no botão "Atualizar" para atualizar o painel.
+Quando você altera o idioma do bot ou o conteúdo dos painéis é atualizado pelo RaidProtect, um indicador sinaliza os painéis que estão desatualizados. Você pode então clicar no botão “**Atualizar**” para atualizar o painel.
 
 ## ✏️ Editar ou excluir um painel {#edit}
 
-No menu `/display public`, cada espaço ocupado tem botões para:
+No menu `/display public` ou `/display staff`, cada espaço ocupado tem botões para:
 
 - **Editar**: Alterar o canal, o conteúdo ou as funcionalidades do painel.
 - **Excluir**: Remover o painel do canal e liberar o espaço.
+
+O canal dos espaços reservados (Prisão, DISCON) é modificado a partir do módulo deles.
+
+## Perguntas frequentes {#faq}
+
+### Qual a diferença entre `/display public` e `/display staff`?
+
+`/display public` publica painéis para os seus membros (DMs, sanções, denúncia). `/display staff` publica painéis para a sua equipe: nível DISCON, obtenção de cargo protegido, documentação e entrada em serviço.
+
+### Quantos painéis posso criar?
+
+No público: 2 painéis na versão gratuita, 4 no premium, mais o espaço Prisão. Na equipe: 1 painel na versão gratuita, 4 no premium, mais o espaço DISCON.
+
+### Por que não posso excluir o painel do captcha ou do DISCON?
+
+Esses painéis pertencem ao módulo deles: o captcha é gerenciado em `/settings` e o DISCON com `/discon`. Excluí-los a partir de `/display` quebraria a funcionalidade sem aviso.

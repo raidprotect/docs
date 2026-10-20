@@ -1,0 +1,352 @@
+---
+title: ユーティリティ
+description: "RaidProtect のユーティリティコマンドで、Discord サーバーの日々の管理をもっと楽にしましょう。"
+---
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Icon from "@site/src/components/Icon";
+import Settings from '@site/src/components/DiscordMessage/mockups/v2';
+
+サーバー管理をシンプルにする追加機能です。🔧
+
+キャプチャ、スパム対策、アンチレイドといった主要な機能に加えて、RaidProtect にはサーバー管理をさらに円滑にする補助的なツールがいくつか用意されています。
+
+## 📋 チャンネルを複製する {#channel-duplicate}
+
+`/channel duplicate` コマンドで、チャンネルを、設定、権限、構成を含めてまるごと複製できます。Discord 標準の機能では、**カテゴリー**や、フォーラムチャンネルのタグなど**一部の固有設定**は複製できませんが、それを補います。
+
+次のコマンドを使用します：```/channel duplicate (#channel)```
+
+`(#channel)` を、複製したいチャンネルのメンションまたは[ID](../guides/id.mdx)に置き換えます。
+
+### 🎯 機能 {#duplicate-features}
+
+このコマンドは、次の要素をすべて複製します。
+
+- **チャンネル名**
+- **権限**（ロールとユーザー）
+- **チャンネルの種類**（テキスト、ボイス、フォーラムなど）
+- チャンネルの種類に応じた**固有の設定**
+- カテゴリー内の**位置**（該当する場合）
+
+### ⚙️ RaidProtect の設定 {#duplicate-config}
+
+RaidProtect の内部設定を持つチャンネルを複製すると、ボットは自動的に次のどちらかを提案します。
+
+- 既存の設定を**置き換え**て、新しいチャンネルを使う
+- 設定を**複製**して、両方のチャンネルを設定済みのままにする
+
+**例**：ログチャンネルを複製すると、RaidProtect は、新しいチャンネルをログチャンネルにするよう設定を更新するか、好みに応じて両方のチャンネルを設定済みのままにするかを提案します。
+
+## 🗑️ チャンネルを削除して再作成する {#channel-clear}
+
+`/channel clear` コマンドで、チャンネルを削除し、設定、権限、RaidProtect の設定をそのままに、同じ内容で再作成できます。
+
+次のコマンドを使用します：```/channel clear (#channel)```
+
+`(#channel)` を、再作成したいチャンネルのメンションまたは[ID](../guides/id.mdx)に置き換えます。
+
+:::warning
+チャンネルのメッセージとウェブフックは完全に削除されます。実行前に確認が求められます。
+:::
+
+## 🧹 メンバーを整理する {#prune}
+
+`/prune` コマンドで、インタラクティブなメニューから、非アクティブなメンバーをサーバーからキックできます。
+
+次のコマンドを使用します：```/prune [duration]```
+
+`[duration]` を、非アクティブとみなす日数（1〜30）に置き換えます。ボットがインタラクティブなメニューを表示し、次の操作ができます。
+- 非アクティブとみなす期間を選ぶ
+- 特定のロールを含める、または除外する
+- 確定する前に、対象のメンバー数を確認する
+
+確認のテキストには、実際に退出するメンバーが表示されます。
+
+| モード | ロールを選択していない場合 | ロールを選択した場合 |
+|---|---|---|
+| **含める** | **ロールを一切持たない**非アクティブなメンバーのみ | 選択したロール**以外のロールを持たない**非アクティブなメンバー |
+| **除外する** | **ロールに関係なく**、すべての非アクティブなメンバー | 選択したロールを**1 つも持たない**非アクティブなメンバー |
+
+:::info
+`/prune` コマンドは管理者専用です。選べるのは下位 100 件のロールまでで、それより上位のロールを持つメンバーは自動的に除外されます。
+:::
+
+![prune コマンドのスクリーンショット](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-prune.webp)
+
+## 🚫 ユーザーをブロックする {#block}
+
+`/block` コマンドで、ユーザーがサーバー上で RaidProtect の一部の機能を使えないようにできます（例：通報の送信、タグロールの付与）。
+
+ブロックまたはブロック解除の際に、対象とする機能を選べます。
+
+| 種類 | 効果 |
+|---|---|
+| **すべての操作** | ボットとのすべてのやり取りをブロックします |
+| **通報** | そのユーザーは[通報](./reports.md)を行えなくなります |
+| **タグロール** | そのユーザーは[タグロール](./tag-role.md)を受け取れなくなります |
+
+### ユーザーをブロックする {#block-add}
+
+次のコマンドを使用します：```/block add [@user] [reason]```
+
+### ユーザーのブロックを解除する {#block-remove}
+
+次のコマンドを使用します：```/block remove [@user] [reason]```
+
+### ブロックしたユーザーを一覧表示する {#block-list}
+
+次のコマンドを使用します：```/block list```
+
+## 📢 情報パネル {#display}
+
+`/display public` と [`/display staff`](./display.mdx#staff) コマンドについては、[情報パネルの専用ページ](./display.mdx)をご覧ください。
+
+## 📜 自分の処罰 {#my-sanctions}
+
+`/my-sanctions` コマンドで、メンバーはサーバーでの自分自身の処罰を確認できます。管理者が設定した[公開範囲](./sanctions.mdx#sanctions-privacy)に従います。
+
+次のコマンドを使用します：```/my-sanctions```
+
+:::info
+この機能が有効な場合は、[情報パネル](./display.mdx)の**自分の処罰を確認**ボタンからも使えます。
+:::
+
+## 🏠 サーバー情報 {#serverinfo}
+
+`/serverinfo` コマンドは、**現在のサーバーの情報**（名前、オーナー、作成日、メンバー数、ブーストレベル、有効な機能など）を表示します。
+
+次のコマンドを使用します：```/serverinfo```
+
+:::info
+`serverinfo` コマンドは[プレフィックスでも使えます](../guides/prefix.md)（別名 `ginfo`）。RaidProtect が導入されているサーバーでのみ動作します。
+:::
+
+## 🔗 招待の情報 {#inviteinfo}
+
+`/inviteinfo` コマンドは、クリックする前に Discord の招待を分析します。パートナーシップ、宣伝、DM で受け取ったリンクの確認に役立ちます。
+
+次のコマンドを使用します：```/inviteinfo (invite)```
+
+`(invite)` を、招待のコードまたはリンク（例：`discord.gg/raidprotect`）に置き換えます。
+
+サーバーの招待では、主に次の情報を表示します。
+
+- **サーバー**：名前、バッジとタグ、ID、メンバー数とオンラインメンバー数、認証レベル、ティアとブースト。
+- **招待**：参加先のチャンネル（テキスト、ボイス、またはステージ）、作成者、使用回数、有効期限、参加時に付与されるロール。
+- サーバーが掲げている**テーマとゲーム**（ゲームはクリックできます）。
+- **アクティビティのプロフィール**：ピーク時と閑散時の時間帯、活動の規則性。
+- 「**サーバーに参加**」ボタン。
+
+フレンド、プライベートグループ、アクティビティ、ライブの招待も認識されます。
+
+:::info
+サーバーでは、返信はエフェメラルで、コマンドには既定で「**メッセージの管理**」権限が必要です。RaidProtect を Discord アカウントに追加すれば、DM やプライベートグループでも `/inviteinfo` を使えます。その場合、返信は会話の中で見えます。`inviteinfo` コマンドは[プレフィックスでも使えます](../guides/prefix.md)（別名 `ii`）。
+:::
+
+## 🔐 このサーバーでのあなたのデータ {#privacy}
+
+`/privacy` コマンドは、RaidProtect がサーバーについて保持している内容を表示します。すべてのメンバーが使え、返信はあなたにだけ見えます。
+
+次のコマンドを使用します：```/privacy```
+
+- **常に保持**：`/settings` で選んだ設定（RaidProtect がサーバーにいる間は保持）と、モデレーション履歴のための処罰（メンバー、モデレーター、理由、日付）。
+- **設定に応じて保持**：スパム対策、通報、[メッセージのキャッシュ](#message-cache)が有効な場合のメッセージ（チャンネルごとに 1 時間、メモリ上のみで、データベースには書き込まれません）。有効な場合の通報（投稿者、理由、通報されたメッセージのコピー）。
+
+返信には、保持期間、共有、あなたの権利を詳しく説明したプライバシーポリシーへのリンクが含まれます。
+
+## 🗂️ メッセージのキャッシュ {#message-cache}
+
+キャッシュは、**チャンネルごとに 1 時間分のメッセージをメモリ上に**保持します。データベースには書き込まれません。[`/snipe`](./moderation.mdx#snipe) コマンドと、`/modview` の snipe の部分で使われます。これがなければ、これらのコマンドは削除されたメッセージを見つけられません。
+
+1. [`/settings` コマンド](../setup.md#settings)を実行します。
+2. 「**ユーティリティ**」タブを開きます。
+3. 「**メッセージのキャッシュ**」の横にある「**有効化**」をクリックします。
+
+<Settings start="home:utilities" />
+
+:::info
+キャッシュは**既定では無効**です。[スパム対策](./anti-spam.mdx)または[通報](./reports.md)が有効な場合は、メッセージを読み取る必要があるため、自動で有効になり、無効にはできません。その場合、ボタンはグレーアウトされます。
+:::
+
+## 💬 フィードバックを送る {#feedback}
+
+`/feedback` コマンドで、サポートサーバーに参加しなくても、Discord 上から直接**意見、提案、不具合の報告を送る**ことができます。サーバーでは、既定で「**メッセージの管理**」権限が必要です。RaidProtect との DM でも使えます。
+
+次のコマンドを使用します：```/feedback```
+
+フィードバックの種類を選び、開いたウィンドウに入力します。
+
+- **提案**：提案ページに案内します。
+- **不具合の報告**：カテゴリー（スパム対策、アンチレイド、キャプチャ、処罰、Authentification Manager、設定、コマンド、ログ、その他）を選ぶと、報告がチームに送られます。
+- **全般的な評価**：体験を 1〜5 で評価します。
+- **お褒めの言葉**。
+
+## 👤 ユーザー情報 {#userinfo}
+
+`/userinfo` コマンドで、ユーザーの詳細な情報を取得できます。
+
+次のコマンドを使用します：```/userinfo [user]```
+
+`[user]` を、対象のメンションまたは ID に置き換えます。
+
+:::info
+`userinfo` コマンドは[プレフィックスでも使えます](../guides/prefix.md)（別名 `ui`）。RaidProtect を Discord アカウントに追加すれば、DM やプライベートグループでも使えます。
+:::
+
+### 📋 表示される情報 {#displayed-userinfo}
+
+- Discord **アカウントの作成日**
+- ユーザーの**プロフィール画像**
+- **プロフィールバナー**
+- **プロフィールバッジ**
+  - Nitro、ブースター、クエスト、以前のユーザー名のバッジは表示されません。
+
+
+### 🎭 サーバーメンバーの情報 {#displayed-memberinfo}
+
+対象がサーバーのメンバーである場合は、次の追加情報が含まれます。
+
+- **サーバーへの参加日**
+- **サーバーでのニックネーム**
+- **ロールの数**と**最初の 6 つのロールの一覧**
+- **権限カテゴリー**（モデレーターにのみ表示）：
+<SeparatedBox>
+<Tabs>
+  <TabItem value="animator" label="イベント担当" default>
+
+    メンバーが次の権限の**いずれか 1 つ以上**を持っている場合、**イベント担当**カテゴリーが表示されます。
+
+    - `MANAGE_EXPRESSIONS`
+    - `CREATE_GUILD_EXPRESSIONS`
+    - `MANAGE_EVENTS`
+
+  </TabItem>
+  <TabItem value="moderator" label="モデレーター">
+
+    メンバーが次の権限の**いずれか 1 つ以上**を持っている場合、**モデレーター**カテゴリーが表示されます。
+
+    - `KICK_MEMBERS`
+    - `BAN_MEMBERS`
+    - `MODERATE_MEMBERS`
+    - `MANAGE_MESSAGES`
+    - `MUTE_MEMBERS`
+    - `DEAFEN_MEMBERS`
+    - `MOVE_MEMBERS`
+    - `MANAGE_THREADS`
+
+  </TabItem>
+  <TabItem value="manager" label="責任者">
+
+    メンバーが次の権限の**いずれか 1 つ以上**を持っている場合、**責任者**カテゴリーが表示されます。
+
+    - `MANAGE_GUILD`
+    - `MANAGE_ROLES`
+    - `MANAGE_CHANNELS`
+    - `VIEW_AUDIT_LOG`
+    - `MANAGE_WEBHOOKS`
+    - `MANAGE_SERVER_EXPRESSIONS`
+
+  </TabItem>
+  <TabItem value="admin" label="管理者">
+
+    **管理者**カテゴリーは、**次の 2 つのいずれか**の場合に表示されます。
+
+    1️⃣ 次の権限を持っている：
+    - `ADMINISTRATOR`
+
+    2️⃣ 次の**3 つの権限を同時に**持っている：
+    - `MANAGE_GUILD`
+    - `MANAGE_ROLES`
+    - `MANAGE_CHANNELS`
+
+  </TabItem>
+  <TabItem value="owner" label="オーナー">
+
+    **条件**：メンバーが**サーバーのオーナー**であること。
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+- **メンバーフラグ**（モデレーターにのみ表示）：
+
+| **フラグ**                                | **絵文字**                                                                                                             | **意味**                                                |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `DID_REJOIN`                             | <Icon src="/img/icons/MemberDidRejoin.svg" alt="icon MemberDidRejoin" title=":MemberDidRejoin:"/>                      | ユーザーがサーバーを退出して、再び参加した。           |
+| `IS_GUEST`                               | <Icon src="/img/icons/MemberIsGuest.svg" alt="icon MemberIsGuest" title=":MemberIsGuest:"/>                            | ゲストメンバー（一時的な招待またはゲストアクセス）。            |
+| `COMPLETED_ONBOARDING`                   | <Icon src="/img/icons/OnboardingCompleted.svg" alt="icon OnboardingCompleted" title=":OnboardingCompleted:"/>          | サーバーのオンボーディングを完了した。         |
+| `STARTED_ONBOARDING`                     | <Icon src="/img/icons/OnboardingStarted.svg" alt="icon OnboardingStarted" title=":OnboardingStarted:"/>                | オンボーディングを開始した。                                |
+| `COMPLETED_SERVER_GUIDE`                 | <Icon src="/img/icons/ServerGuideCompleted.svg" alt="icon ServerGuideCompleted" title=":ServerGuideCompleted:"/>       | サーバーガイドが有効な場合に、それを完了した。                          |
+| `STARTED_SERVER_GUIDE`                   | <Icon src="/img/icons/ServerGuideStarted.svg" alt="icon ServerGuideStarted" title=":ServerGuideStarted:"/>             | サーバーガイドを開始した。                                   |
+| `AUTOMOD_QUARANTINED_NAME`               | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | ユーザー名が原因で、AutoMod により隔離された。|
+| `AUTOMOD_QUARANTINED_GUILD_TAG`          | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | タグまたはニックネームが原因で、AutoMod により隔離された。    |
+| `BYPASSES_VERIFICATION`                  | <Icon src="/img/icons/BypassVerification.svg" alt="icon BypassVerification" title=":BypassVerification:"/>             | ユーザーはサーバーの認証を回避できる。       |
+| `SPAMMER`                                | <Icon src="/img/icons/UnusualAccountActivity.svg" alt="icon UnusualAccountActivity" title=":UnusualAccountActivity:"/> | スパマーとしてマークされたアカウント、または異常なアクティビティを検出。   |
+
+## ⚖️ Discord の処罰 {#discord-sanctions}
+
+`/discord-sanctions` コマンドで、[欧州の規制](https://transparency.dsa.ec.europa.eu/)に基づいて、ユーザーに対して **Discord が下した処罰**を確認できます。
+
+次のコマンドを使用します：```/discord-sanctions [@user]```
+
+`[@user]` を、対象のメンションまたは ID に置き換えます。このコマンドは、プロフィールを右クリックして **`アプリ`**、続けて **`Discord の処罰`** を選んでも使えます。ユーザーを指定しない場合は、過去 7 日間の Discord 全体のセーフティ統計が表示されます（「**カテゴリー**」「**検出**」「**措置**」タブ）。
+
+### 📋 表示される情報 {#displayed-sanctions}
+
+- **処罰の種類**：
+
+| **処罰**                            | **絵文字**                                                                                                             | **意味**                                                |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `CONTENT_DELETED`                        | <Icon src="/img/icons/ContentDeleted.svg" alt="icon ContentDeleted" title=":iconTrash:"/>                              | ユーザーが投稿したコンテンツが削除された。                |
+| `RESTRICTED`                             | <Icon src="/img/icons/AccountRestricted.svg" alt="icon AccountRestricted" title=":iconRestricted:"/>                   | ユーザーアカウントが制限された。                            |
+| `ACCOUNT_SUSPENDED`                      | <Icon src="/img/icons/AccountSuspended.svg" alt="icon AccountSuspended" title=":iconSuspended:"/>                      | ユーザーアカウントが停止された。                             |
+| `ACCOUNT_TERMINATED`                     | <Icon src="/img/icons/AccountTerminated.svg" alt="icon AccountTerminated" title=":iconTerminated:"/>                   | ユーザーアカウントが削除された。                             |
+
+- **発行日**
+- **コンテンツの種類**
+- **処罰のフラグ**：
+
+| **フラグ**                                | **絵文字**                                                                                                             | **意味**                                                |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ILLEGAL_CONTENT`                        | <Icon src="/img/icons/IllegalContent.svg" alt="icon IllegalContent" title=":iconIllegal:"/>                            | 違法なコンテンツに対して科された処罰。                        |
+| `AUTOMATED_DETECTION`                    | <Icon src="/img/icons/AutomatedDetection.svg" alt="icon AutomatedDetection" title=":iconBots:"/>                       | 自動検出によって科された処罰。                 |
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="reports-found" label="レポートが見つかった場合" default>
+
+![Discord の処罰のスクリーンショット](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-ds-report-found.webp)
+
+  </TabItem>
+  <TabItem value="reports-not-found" label="レポートが見つからなかった場合">
+
+![Discord の処罰が見つからなかった場合のスクリーンショット](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-ds-report-not-found.webp)
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+:::note
+このコマンドで確認できるのは、2024 年 8 月 22 日から 2025 年 8 月 14 日までに発行されたレポートです。これらの情報は Discord から直接提供されたもので、RaidProtect が**変更することはできません**。
+:::
+
+## よくある質問 {#faq}
+
+### `/snipe` でメッセージが見つからないのはなぜですか？
+
+`/snipe` は、1 時間メモリに保持されたメッセージを読み取ります。`/settings` の「ユーティリティ」タブで[メッセージのキャッシュ](#message-cache)を有効にするか、スパム対策または通報を有効にしてください。後者では自動的に有効になります。
+
+### サーバーに参加する前に、Discord の招待を確認するには？
+
+招待のコードまたはリンクを指定して `/inviteinfo` を使います。サーバー、作成者、アクティビティ、参加時に付与されるロールが表示されます。
+
+### RaidProtect は、サーバーについて何を保持していますか？
+
+`/privacy` コマンドで詳細を確認できます。設定と処罰は常に保持され、設定に応じて、1 時間分のメッセージがメモリ上に、通報が保持されます。
+
+### `/prune` を使えるのは誰ですか？
+
+既定では管理者のみです。キックする前に、対象のメンバー数がプレビューで表示されます。

@@ -7,33 +7,61 @@ import JoinLockMockup from '@site/src/components/DiscordMessage/mockups/join-loc
 
 {/* <JoinLockMockup /> : masquée pour le moment */}
 
-import SeparatedBox from '@site/src/components/SeparatedBox';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-A funcionalidade **Bloqueio de Entradas** do RaidProtect permite fechar permanentemente o acesso a novas entradas no servidor, superando assim a limitação nativa do Discord, que só permite esse bloqueio por 24 horas por meio da ação de segurança cibernética "Pausar entradas".
+A funcionalidade **Bloqueio de Entradas** (ou join lock) do RaidProtect fecha o acesso a novas entradas no servidor até que você a desative, superando assim a limitação nativa do Discord, que só permite esse bloqueio por 24 horas por meio da ação de segurança “Pausar entradas”.
 
 ## 🚦 Casos de uso e recomendações {#recommendations}
 
 - **Servidores privados e fechados:** O Bloqueio de Entradas é especialmente recomendado para servidores que precisam permanecer privados e não desejam nenhuma nova entrada (servidores de empresas, equipes restritas, grupos privados).
-- **Servidores de staff:** Para servidores dedicados à equipe de moderação ou administração, onde apenas os membros autorizados devem ter acesso.
+- **Servidores da equipe:** para servidores dedicados à equipe de moderação ou administração, onde apenas os membros autorizados devem ter acesso.
 - **Servidores empresariais ou profissionais:** Para organizações que usam o Discord internamente e querem garantir que apenas os funcionários atuais possam acessar o servidor.
 - **Comunidades de tamanho limitado:** Para servidores que atingiram o tamanho máximo desejado e não querem mais aceitar novos membros de forma permanente.
 
 ## ❓ Como funciona o Bloqueio de Entradas {#working}
 
-O RaidProtect fecha definitivamente as entradas no seu servidor. Ao contrário da funcionalidade nativa do Discord, que exige uma renovação manual a cada 24 horas, esse método permite um bloqueio permanente sem intervenção.
+Enquanto o Bloqueio de Entradas estiver ativo, o RaidProtect aplica aos recém-chegados a [ação durante o raid](./raid-mode.md#action) que você escolheu para o Auto RaidMode. Ao contrário da funcionalidade nativa do Discord, que exige uma renovação manual a cada 24 horas, o bloqueio dura sem intervenção até que você o desative.
 
+| Ação durante o raid | Efeito do Bloqueio de Entradas |
+|---|---|
+| “**Bloquear os convites**” (padrão) | Os convites do servidor são desativados: ninguém novo entra. |
+| “**Expulsar quem chegar**” ([Premium](/pt/premium)) | Cada recém-chegado é expulso e recebe uma mensagem privada informando que as entradas estão fechadas. |
+| “**Enviar ao captcha**” | Os recém-chegados **podem entrar depois de resolver o [captcha](./captcha.md)**: o servidor, portanto, não está fechado. |
+| “**Captcha congelado durante o raid**” | Os recém-chegados esperam atrás do captcha enquanto o Bloqueio de Entradas estiver ativo. |
+
+:::warning
+Para um servidor que deve realmente permanecer fechado, escolha “**Bloquear os convites**”, “**Expulsar quem chegar**” ou “**Captcha congelado durante o raid**”. Com “**Enviar ao captcha**”, o Bloqueio de Entradas se limita a impor o captcha aos recém-chegados.
+:::
 :::info
-Os membros que já estão no servidor permanecem ativos e podem continuar a usar o servidor normalmente.
+Os membros que já estão no servidor permanecem ativos e podem continuar usando o servidor normalmente. A [mensagem de boas-vindas](./onboarding.md#welcome-message) fica em silêncio enquanto o Bloqueio de Entradas estiver ativo.
 :::
 :::warning
-As funções comunitárias do Discord são indispensáveis para o bom funcionamento do Bloqueio de Entradas. [Siga o nosso guia para verificar a ativação da comunidade no seu servidor.](../guides/community.md)
+Com a ação “**Bloquear os convites**”, as funções comunitárias do Discord são indispensáveis para o Bloqueio de Entradas. [Siga o nosso guia para verificar a ativação da comunidade no seu servidor.](../guides/community.md) As outras ações funcionam sem a comunidade.
 :::
 
 ## 🚩 Configuração do Bloqueio de Entradas {#config}
 
-1. Use o comando `/joinlock`.
-2. Clique no botão "**Ativar**" ou "**Desativar**".
+Use o comando: ```/joinlock [status]```
 
-![Captura de tela da configuração do Bloqueio de Entradas](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-join-lock.webp)
+- Sem opção, o comando exibe o estado do Bloqueio de Entradas com um botão “**Ativar**” ou “**Desativar**”.
+- Substitua `[status]` por **True** para ativá-lo ou **False** para desativá-lo diretamente.
+
+![Captura de tela do comando /joinlock](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-join-lock.webp)
+
+O comando exige a permissão **Gerenciar servidor**, e uma mensagem é postada no canal de logs a cada mudança de estado.
+
+:::info
+O comando `joinlock` é [utilizável por prefixo](../guides/prefix.md). Enquanto o Bloqueio de Entradas estiver ativo, o [comando `/raidmode`](./raid-mode.md#enable) fica indisponível: desative primeiro o Bloqueio de Entradas.
+:::
+
+## Perguntas frequentes {#faq}
+
+### Qual a diferença para o modo raid?
+
+O [modo raid](./raid-mode.md) é temporário (24 horas no máximo) e pode se ativar sozinho durante uma onda. O Bloqueio de Entradas é ativado manualmente e permanece no lugar até que você o desative.
+
+### É preciso ativar a comunidade do Discord?
+
+Somente se a ação durante o raid do Auto RaidMode for “**Bloquear os convites**”. Com as outras ações, o Bloqueio de Entradas funciona sem a comunidade.
+
+### Os novos membros ainda podem entrar?
+
+Não com “**Bloquear os convites**”, “**Expulsar quem chegar**” ou “**Captcha congelado durante o raid**”. Com “**Enviar ao captcha**”, eles entram depois de resolver o captcha.

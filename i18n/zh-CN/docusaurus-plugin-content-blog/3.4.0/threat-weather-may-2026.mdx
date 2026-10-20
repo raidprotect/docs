@@ -1,0 +1,128 @@
+---
+title: '加密货币赌场诈骗（MrBeast、Elon Musk、Andrew Tate……）：Discord 上已拦截 230 万张图片'
+tags: [threats]
+authors: [zallom]
+slug: threat-weather-may-2026
+date: 2026-06-01
+image: ./assets/rp-scamlens-3-month-recap.webp
+description: 2026 年 5 月 Discord 总结：ScamLens 删除了 230 万张加密货币诈骗图片（冒充 MrBeast、Elon Musk、Andrew Tate 的虚假抽奖，Stake、Kick 之类的加密货币赌场），并识别出 80,000 个被盗账户。ScamLens 现已覆盖“3 张图片”组合，该组合出现在一次几分钟内拦截超过 2000 张图片的峰值中。
+---
+
+import Timestamp from '@site/src/components/Timestamp';
+import Head from '@docusaurus/Head';
+
+受 RaidProtect 保护的 **365,000 个 Discord 服务器**的 2026 年 5 月总结（2026 年 5 月 1 日至 6 月 1 日）：ScamLens **删除了 230 万张诈骗图片**，并识别出 **80,000 个被盗 Discord 账户**。这些诈骗**盗用了名人的形象**，例如 MrBeast、Elon Musk 或 Andrew Tate，而他们显然与这些消息毫无关系。我们还将覆盖范围扩展到一种新变体——**“3 张图片”组合**，它是在一次几分钟内拦截**超过 2,000 张图片的峰值**中被发现的。
+
+![RaidProtect：2026 年 5 月威胁气象](./assets/rp-scamlens-3-month-recap.webp)
+
+{/* truncate */}
+
+## 🛰️ 回顾：ScamLens，RaidProtect 的图片反诈骗模块 {#what-is-scamlens}
+
+写给初次了解 RaidProtect 的服务器：ScamLens 是专门处理**诈骗图片**的模块。图片一经发布，它就会将其与目录进行比对，并自动删除欺诈图片：**加密货币诈骗**、**冒充名人的虚假抽奖**（MrBeast、Elon Musk、Andrew Tate、Kick、Stake……）、**虚假的网络赌场推广**。您无需进行任何设置或维护：只要[添加 RaidProtect](https://raidprotect.bot/zh-CN/invite)，ScamLens 就会**默认**运行。
+<div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '280px 280px', gap: '8px'}}>
+  <img src={require('../../../../blog/3.4.0/assets/scam-1.png').default} alt="Andrew Tate Crypto Casino Scam 1" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.4.0/assets/scam-2.png').default} alt="Andrew Tate Crypto Casino Scam 2" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.4.0/assets/scam-3.png').default} alt="Andrew Tate Crypto Casino Scam 3" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.4.0/assets/scam-4.png').default} alt="Andrew Tate Crypto Casino Scam 4" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+</div>
+
+## 📊 自 2026 年 2 月 14 日以来的 ScamLens 总结 {#stats}
+
+自 <Timestamp value={1771023600} format="D" /> [ScamLens 提前启用](/zh-CN/blog/scamlens-early-activation)以来的累计数据：
+
+| **指标（自 2 月 14 日起累计）** | **2026 年 5 月 1 日** | **2026 年 6 月 1 日** | **变化** |
+|---|---|---|---|
+| 已分析图片（去重） | 890,000 | **1,800,000** | **+100%** |
+| 检测到的诈骗图片（去重） | 82,000 | **141,000** | **+72%** |
+| 已删除的欺诈图片 | 1,400,000 | **2,300,000** | **+64%** |
+| 已识别的被盗 Discord 账户 | 40,000 | **80,000** | **+100%** |
+
+一个月内，**已识别的被盗账户数量翻了一番**，被删除的图片数量现已超过 **230 万**。去重图片目录同样在扩大（+72%）：这主要说明有**新的视觉集群**出现。一个视觉集群，是指同一张诈骗图片**及其所有细微变体**（裁剪、滤镜、修图）；当去重图片数量增长如此之快时，说明确实有**新的视觉素材**被投放，而不仅仅是旧素材的变体。
+
+---
+
+## 🆕 新内容：覆盖“3 张图片”组合 {#updates}
+
+诈骗者会把他们的视觉素材变换成多种**组合形式**来骗过检测：最初是 4 张图片，上个月变成 2 张图片（参见[“2 张图片”](/zh-CN/blog/threat-weather-april-2026#stats)），现在则是 **3 张图片的组合**。我们是在一次几分钟内拦截**超过 2,000 张图片的峰值**中发现这种新形式的。
+
+这一 3 张图片组合还带来了一个**新的视觉集群**：一种此前从未出现、尚未收录在我们目录中的诈骗视觉素材。我们一次性覆盖了两者，ScamLens 现在能够完整识别这一组合，您无需进行任何操作。每张图片的处理时间仍约为 **400 毫秒**，大多数成员甚至还没来得及看到就已被删除。
+
+---
+
+## ❓ FAQ {#faq}
+
+<Head>
+  <script type="application/ld+json">
+    {JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Discord 上的 ScamLens 是什么？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'ScamLens 是 Discord 防护机器人 RaidProtect 的图片反诈骗模块。它会实时分析每一张发布的图片，并自动删除被识别为欺诈的图片（加密货币诈骗、冒充名人的虚假抽奖、虚假的网络赌场推广），无需任何配置。',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '如何在 Discord 上自动删除加密货币诈骗图片？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: '将 RaidProtect 添加到您的服务器：ScamLens 默认启用，可在约 400 毫秒内删除加密货币诈骗图片，大多数成员还没看到就已被删除。无需编写规则，也无需维护黑名单。',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '为什么我的 Discord 账户会自己发送诈骗消息？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: '您的账户很可能已被盗用。诈骗者会窃取您的身份验证令牌（虚假网站、被植入恶意代码的软件、恶意扩展程序），然后在您不知情的情况下，利用它在您所在的所有服务器上发送诈骗图片。',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '如果我的 Discord 服务器上有成员在传播加密货币诈骗，该怎么办？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: '不要封禁他：这几乎总是被盗账户，而不是恶意用户。请私下联系他，让他保护好自己的账户。ScamLens 已经会即时删除图片，而不会惩罚合法所有者。',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '如何识别 Discord 上的虚假抽奖或虚假加密货币推广？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: '任何加密货币“赠送”、带有名人标志（MrBeast、Elon Musk、Andrew Tate、Kick、Stake）的网络赌场或“稳赚不赔”的投资都是诈骗。这些名人并不是这些消息的幕后推手：诈骗者只是盗用了他们的形象和知名度。Discord 从不组织任何加密货币发放活动，任何正规品牌也不会在多个服务器上发送垃圾信息。',
+          },
+        },
+      ],
+    })}
+  </script>
+</Head>
+
+#### Discord 上的 ScamLens 是什么？ {#quest-ce-que-scamlens}
+ScamLens 是 **Discord 防护机器人** RaidProtect 的**图片反诈骗模块**。它会实时分析每一张发布的图片，并**自动删除**被识别为欺诈的图片（加密货币诈骗、冒充名人的虚假抽奖、虚假的网络赌场推广），**无需任何配置**。
+
+#### 如何在 Discord 上自动删除加密货币诈骗图片？ {#supprimer-images-arnaque-crypto}
+将 [RaidProtect 添加](https://raidprotect.bot/zh-CN/invite)到您的服务器：**ScamLens 默认启用**，可在**约 400 毫秒**内删除加密货币诈骗图片，大多数成员还没看到就已被删除。无需编写规则，也无需维护黑名单。
+
+#### 为什么我的 Discord 账户会自己发送诈骗消息？ {#compte-discord-envoie-messages-seul}
+您的账户很可能已被**盗用**。诈骗者会窃取您的**身份验证令牌**（虚假网站、被植入恶意代码的软件、恶意扩展程序），然后在您不知情的情况下，利用它在**您所在的所有服务器上**发送诈骗图片。
+
+#### 如果我的 Discord 服务器上有成员在传播加密货币诈骗，该怎么办？ {#membre-diffuse-scam-crypto}
+**不要封禁他**：这几乎总是**被盗账户**，而不是恶意用户。请私下联系他，让他保护好自己的账户。ScamLens 已经会即时删除图片，而不会惩罚合法所有者。
+
+#### 如何识别 Discord 上的虚假抽奖或虚假加密货币推广？ {#reconnaitre-fausse-promo-crypto}
+任何加密货币“**赠送**”、带有名人标志（MrBeast、Elon Musk、Andrew Tate、Kick、Stake）的**网络赌场**或“**稳赚不赔**”**的投资**都是诈骗。**这些名人并不是这些消息的幕后推手**：诈骗者只是盗用了他们的形象和知名度。Discord 从不组织任何加密货币发放活动，任何正规品牌也不会在多个服务器上发送垃圾信息。
+
+---
+
+:::tip 📚 实用资源
+- 🔗 [将 RaidProtect 添加到您的服务器](https://raidprotect.bot/zh-CN/invite)
+- 📘 [HoneyPot 文档](https://docs.raidprotect.bot/zh-CN/features/honeypot)
+- 💡 [提交建议](https://suggestions.raidprotect.bot/)
+- 📣 [加入我们的 Discord 服务器](https://raidprotect.bot/discord)
+:::

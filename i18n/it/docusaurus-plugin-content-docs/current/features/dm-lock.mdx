@@ -1,0 +1,107 @@
+---
+title: Chiusura dei MP
+description: "La Chiusura dei MP di RaidProtect blocca in modo duraturo i messaggi privati provenienti dal tuo server Discord, uno scudo contro spam e truffe."
+---
+
+import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
+
+import DmLockMockup from '@site/src/components/DiscordMessage/mockups/dm-lock';
+
+<DmLockMockup />
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+La funzionalità **Chiusura dei MP** di RaidProtect permette di chiudere in modo permanente l'accesso ai messaggi privati (MP) inviati dal server, superando così il limite nativo di Discord che permette questo blocco solo per 24 ore tramite l'azione di cybersicurezza “**Metti in pausa i MP**”.
+
+## 🚦 Casi d'uso e raccomandazioni {#recommendations}
+
+- **Server esposti a spam o molestie:** La Chiusura dei MP è particolarmente consigliata per le community pubbliche o con un grande pubblico, dove i rischi di abusi tramite MP sono maggiori.
+- **Eventi temporanei o periodi sensibili:** In occasione di lanci, annunci importanti o periodi di forte affluenza (es.: concorsi, promozioni), attivare la Chiusura dei MP permette di prevenire i tentativi di [phishing](/it/learn/token-grabber) o di truffa.
+- **Community con un pubblico giovane:** Per i server che contano un gran numero di minorenni, limitare i MP può rafforzare la sicurezza e prevenire comportamenti inappropriati.
+- **Protezione continua:** Grazie all'automazione, non c'è alcuna finestra di vulnerabilità legata alla dimenticanza del rinnovo manuale.
+
+## ❓ Funzionamento della Chiusura dei MP {#working}
+
+RaidProtect rinnova automaticamente il blocco dei MP prima della sua scadenza, senza alcun periodo di vulnerabilità.
+
+:::info
+Resta possibile inviare e ricevere messaggi con:
+- i propri amici
+- i bot
+- lo staff
+:::
+:::warning
+Le funzioni della community di Discord sono indispensabili al buon funzionamento della Chiusura dei MP. [Segui la nostra guida per verificare l'attivazione della community sul tuo server.](../guides/community.md)
+:::
+
+## 🚩 Configurazione della Chiusura dei MP {#config}
+
+1. Esegui il [comando `/settings`](../setup.md#settings).
+2. Apri la scheda “**Protezione**”.
+3. Clicca su “**Modifica**” accanto a “**Chiusura dei MP**”.
+4. Nella finestra che si apre, spunta o deseleziona “**Chiudi i messaggi privati del server**”, poi conferma.
+
+<SettingsModal name="dmlock" />
+
+### Comando /dmlock {#dmlock}
+
+Puoi anche usare il comando: ```/dmlock```
+
+Apre la schermata “**Configurazione dei MP chiusi**”, con un interruttore per attivare o disattivare la protezione. Se manca un prerequisito (modalità Community o permesso “**Gestire il server**”), un riquadro te lo indica e il pulsante “**Aggiornare**” ti permette di verificare di nuovo dopo la correzione. Il comando è riservato ai membri che hanno il permesso “**Gestire il server**”.
+
+<Settings start="dmlockCommand" />
+
+## ℹ️ Comando /dmlock-info {#info}
+
+Il comando `/dmlock-info` permette di informare i membri sullo stato attuale della **Chiusura dei MP** sul server. Mostra un messaggio chiaro che indica se la restrizione è **attivata** o **disattivata**, accompagnato da una spiegazione didattica sulla sua utilità.
+
+**Obiettivo:**
+- Spiegare perché i MP sono limitati (lotta contro spam, truffe, phishing).
+- Ridurre la confusione e le domande ricorrenti dei nuovi membri.
+- Ricordare le condizioni per continuare a scambiarsi MP (amici, staff, bot, contatti precedenti).
+
+**Esempio di visualizzazione**
+<SeparatedBox>
+<Tabs>
+  <TabItem value="enable" label="Attivato" default>
+
+![Screenshot del comando dmlock-info attivato](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-dm-lock-info-enable.webp)
+
+  </TabItem>
+  <TabItem value="disable" label="Disattivato">
+
+![Screenshot del comando dmlock-info disattivato](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-dm-lock-info-disable.webp)
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+### ⚙️ Buone pratiche
+
+- Invita i membri attivi a usare `/dmlock-info` per rispondere alle domande dei nuovi membri.
+- Mostralo regolarmente oppure fissalo nei tuoi canali di benvenuto.
+- Combinalo con le tue regole o i tuoi annunci per ricordare la politica anti-spam del server.
+
+## Domande frequenti {#faq}
+
+### Dove si attiva la Chiusura dei MP?
+
+In `/settings`, scheda Protezione, cliccando su “Modifica” accanto a “Chiusura dei MP”, poi spuntando “Chiudi i messaggi privati del server”. Anche il comando `/dmlock` apre una schermata dedicata.
+
+### Perché non riesco ad attivare la Chiusura dei MP?
+
+Manca un prerequisito: la modalità Community di Discord deve essere attivata sul tuo server, e RaidProtect deve avere il permesso “Gestire il server”.
+
+### Per quanto tempo i MP restano chiusi?
+
+Finché la protezione è attiva. Discord limita la sua azione di sicurezza a 24 ore, e noi la rinnoviamo automaticamente finché non disattivi la Chiusura dei MP.
+
+### I membri possono ancora scriversi nei MP?
+
+Sì, se sono amici o hanno già scambiato messaggi. Anche i bot e lo staff possono sempre inviare MP.
+
+### Il DISCON attiva la Chiusura dei MP?
+
+Sì, a partire dal livello 3, sui server che hanno accesso al [DISCON](./discon.md) (in sperimentazione con la Shield Update). Quando scende, la disattiviamo solo se è stato il DISCON ad averla attivata.

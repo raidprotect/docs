@@ -1,0 +1,68 @@
+---
+title: 'ScamLens: Discord''da kripto görsel spam''inin sonu'
+tags: [threats]
+authors: [zallom]
+image: ./assets/rp-scamlens.webp
+slug: scamlens-early-activation
+date: 2026-02-14
+---
+
+import Timestamp from '@site/src/components/Timestamp';
+
+**“Kripto görselleri” dolandırıcılığıyla** bağlantılı büyük bir spam dalgası, anti-scam görsel analiz modülümüz **RaidProtect ScamLens**'in `Deletion` modunu planlanandan önce etkinleştirmemize yol açtı.
+
+![RaidProtect ScamLens, 14.02.2026 tarihinde önlenen tehdit](./assets/rp-scamlens.webp)
+
+{/* truncate */}
+
+## 🛡️ Spam'in ayrıntıları {#threat}
+
+<Timestamp value={1771023600} format="D" /> tarihinde, <Timestamp value={1771023600} format="T" /> ile <Timestamp value={1771068391} format="T" /> arasında iki büyük spam dalgası yaşandı. Bu tür görseller içeren **10.000'den fazla mesaj** göndermek için **2.500'den fazla ele geçirilmiş hesap** kullanıldı. Bu rakamlar yalnızca RaidProtect tarafından korunan 340.000 sunucuda gözlemlenenleri temsil ediyor. Discord'da milyonlarca aktif sunucu bulunduğundan, bu saldırının gerçek boyutunun platform genelinde **yüz binlerce mesaj** olduğu tahmin edilebilir.
+
+“Kripto görselleri” olarak bilinen dolandırıcılık, kullanıcıları sahte kripto paralar satın almaya teşvik eden **4 görselin** mümkün olduğunca çok kanala toplu olarak gönderilmesinden oluşur.
+
+<div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '280px 280px', gap: '8px'}}>
+  <img src={require('../../../../blog/3.3.1/assets/scam-1.png').default} alt="MrBeast Crypto Casino Scam 1" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-2.png').default} alt="MrBeast Crypto Casino Scam 2" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-3.png').default} alt="MrBeast Crypto Casino Scam 3" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-4.png').default} alt="MrBeast Crypto Casino Scam 4" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+</div>
+
+#### 1. dalga {#wave-1}
+![Dakika başına görülme sayısı — 1. dalga (00:00 - 01:25)](../../../../blog/3.3.1/assets/0000_0125.webp)
+
+#### 2. dalga {#wave-2}
+![Dakika başına görülme sayısı — 2. dalga (10:21 - 11:25)](../../../../blog/3.3.1/assets/1021_1125.webp)
+
+Bu yüksek hacimli sahte mesajlar karşısında, [3.3.1 güncellemesinde](/blog/3.3.1-jail-and-mute#changelog) `Öğrenme` modunda tanıtılan **ScamLens**'in `Deletion` modunu planlanandan önce etkinleştirdik.
+Bu modül sunucularınıza gönderilen görselleri analiz eder ve artık sahte olarak tanımlananları otomatik olarak siler (hiçbir yapılandırma gerekmez).
+
+### Peki sonra? {#next}
+
+`Sanction` modu yakında etkinleştirilecek: ScamLens, sahte görselleri silmenin yanı sıra gönderene otomatik olarak **bir günlük timeout** uygulayacak. Bu hesapları yasaklamamayı tercih ettik, çünkü bunlar neredeyse yalnızca **hacklenmiş hesaplar**; bir yasaklama hesabın gerçek sahibini cezalandırır. Timeout, sahibi hesabının kontrolünü yeniden ele geçirene kadar tehdidi anında etkisiz hale getirmeyi sağlar.
+
+:::info 🔒 Bilerek kapalı tutulan işleyiş
+Güvenlik nedeniyle ScamLens'in kullandığı algılama yöntemleri hakkında bilgi vermiyoruz ve vermeyeceğiz. Bu “kara kutu” yaklaşımı, dolandırıcıların korumalarımızı atlatmak için tekniklerini uyarlamasını önlemeyi amaçlar.
+:::
+
+---
+
+## ❓ SSS {#faq}
+
+#### Discord'da görsel spam'i nasıl engellenir? {#antispam-images}
+[RaidProtect'i](https://raidprotect.bot/invite) sunucunuza ekleyin. ScamLens varsayılan olarak etkindir ve sahte olarak algılanan tüm görselleri siler; ek bir yapılandırma gerekmez.
+
+#### Discord'da kripto görsel dolandırıcılığından nasıl korunulur? {#arnaque-images-crypto}
+[RaidProtect'i eklemeniz](https://raidprotect.bot/invite) yeterli. ScamLens sahte görselleri otomatik olarak algılar ve siler.
+
+#### Discord sunucumda spam botları nasıl önlenir? {#anti-spam-bots}
+ScamLens'e ek olarak, otomatik hesapların sunucunuza katılmasını önlemek için RaidProtect'in [captcha'sını](/docs/features/captcha) etkinleştirin.
+
+---
+
+:::tip 📚 Faydalı kaynaklar
+- 🔗 [RaidProtect'i sunucunuza ekleyin](https://raidprotect.bot/invite)
+- 📘 [Tam dokümantasyona göz atın](https://docs.raidprotect.bot/)
+- 💡 [Bir öneri veya geri bildirim gönderin](https://suggestions.raidprotect.bot/)
+- 📣 [Duyuruları takip edin ve topluluğa katılın](https://raidprotect.bot/discord)
+:::

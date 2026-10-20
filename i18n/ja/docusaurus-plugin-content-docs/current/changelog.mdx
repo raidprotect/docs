@@ -1,0 +1,369 @@
+---
+title: 新着情報
+---
+
+import SuggestionLink from '@site/src/components/SuggestionLink';
+
+RaidProtect に加えられた変更の詳細な一覧です。
+
+## 3.7.0 Identity Update <span className="badge-experiment">実験中</span> {#3-7-0}
+
+:::info 実験中
+Identity Update は実験中です。3.7.0 でのリリースまでは、[Premium](/ja/premium) サーバー向けの公開ベータとして提供されています。内容は今後変更される可能性があります。
+:::
+
+- 新コマンド [`/alt`](./features/alt-accounts.md#alt) と[複数アカウント](./features/alt-accounts.md)：同一人物のアカウントを連携し、主アカウントを選べます。その人物への処罰（BAN、キック、ミュート、Jail、タイムアウト、ソフトBAN）は、連携したアカウントにも及びます。いずれかの処罰を解除すると、全員の処罰が解除されます。
+- [連携アカウントの処罰](./features/alt-accounts.md#modes)を処罰の種類ごとに設定できます。**罠**モードと、処罰中に参加または書き込みをした連携アカウント向けの[回避への処罰](./features/alt-accounts.md#evasion)があります。
+- サーバーにいない連携アカウントは、参加時に処罰されます。
+- 新設定[1人1アカウント](./features/alt-accounts.md#single-account)：副アカウントは隔離されます。
+- [キャプチャ](./features/captcha.md#activity-alts)が複数アカウントを検知します。同一人物と確実に判断できるアカウントは自動で連携し、可能性の高い連携は運営チームに提案します。
+- [連携アカウントの処罰](./features/alt-accounts.md#modes)は **Premium** 限定です。Premium でない場合、`/alt` はアカウントの連携と確認を、制限なく行えます。
+
+## 3.6.0 Shield Update <span className="badge-experiment">実験中</span> {#3-6-0}
+
+:::info 実験中
+Shield Update は実験中です。3.6.0 でのリリースまでは、[Premium](/ja/premium) サーバー向けの公開ベータとして提供されています。内容は今後変更される可能性があります。
+:::
+
+- 新機能 **[DISCON](./features/discon.md)**：サーバーの危険レベルを 5 段階で設定でき、`/discon` コマンドまたは[運営チーム用のパネル](./features/discon.md#panel)からワンクリックで変更できます。各レベルでサーバーが自動的に強化され（認証、キャプチャ、DM の遮断、レイドモード、ロックダウン）、[ボイスチャンネル](./features/discon.md#voice)に現在のレベルが表示されます。
+- 新機能[予防スローモード](./features/slowmode.md)（**Premium**）：選んだチャンネルのスローモードが自動で調整され、設定したメッセージのレートが保たれます。
+- [ハニーポット](./features/honeypot.md)：新しい[処罰までの猶予](./features/honeypot.md#grace)。善意のメンバーが誤りだと伝える時間を確保できます。
+- キャプチャの新しい[スマートの作動条件](./features/captcha.md#trigger)：レイドに加えて、アカウントが不審に見える参加者も認証します。
+- [Automod](./features/automod.md) の新フィルター[他のサーバー](./features/automod.md#servers)：他のサーバーの招待、転送メッセージ、チャンネルリンク、タグを、ブラックリストまたはホワイトリストで管理できます。
+- 新しい処罰**隔離**。[Discord の隔離](./features/sanctions.mdx#discord-quarantine)と同期します。
+- [ScamLens](./features/scam-images.md)：独自の詐欺画像をブロックするための[画像カタログ](./features/scam-images.md#catalog)（**Premium**）。
+- Discord の AutoMod にブロックされたメッセージごとに、「Discord Automod」名義のサイレントな[警告](./features/sanctions.mdx)が作成されます。
+- 新しい[インストールウィザード](./setup.md#wizard)：セクションごとのガイド付きの流れ、サーバーに合わせた保護の提案、最後に監査のプレビューを表示します。
+- [スパム対策](./features/anti-spam.mdx) V3。3.5.0 からすべてのサーバーで利用可能です。
+  - 新しい検出エンジン：近似の重複、繰り返されるリンク、絵文字と意味のない文字列、フラッド、複数のチャンネルにまたがるスパム。
+  - [プリセット](./features/anti-spam.mdx#presets)とファミリーごとの処罰。[詳細モード](./features/anti-spam.mdx#advanced)で、各トリガーとその[期間](./features/anti-spam.mdx#duration)を設定できます。
+
+## 3.5.0 Onboarding Update (2026/10/19) {#3-5-0}
+
+- **[`/settings`](./setup.md#settings)** を 5 つのタブ（全般、参加、保護、モデレーション、ユーティリティ）のダッシュボードに刷新。ネイティブの画面と入力ウィンドウを採用し、追加されたばかりの項目には**新着**バッジが付きます。[Premium](/ja/premium) の画面は引き続き閲覧でき、ボットが止めるのは、Premium 限定の設定を変更しようとしたときだけです。
+- 参加：
+  - ウェルカムカード、変数、ボタン付きの新しい[ようこそメッセージ](./features/onboarding.md#welcome-message)。レイド中は送信されません。
+  - [自動ロール](./features/onboarding.md#autorole)がキャプチャから独立し、複数のロールに対応。認証を通過した後に付与されます。
+  - [アカウントの最低作成日数](./features/onboarding.md#minage)に[複数のアクション](./features/onboarding.md#minage-action)を追加：キック、条件を満たすまで Jail、キャプチャによる入口での足止め。
+  - [オート RaidMode](./features/raid-mode.md#action) でレイド中の対応を選べます：招待のブロック、参加者のキック（**Premium**）、キャプチャへの送致、キャプチャの凍結。Discord のコミュニティが必要なのは、招待のブロックのみになりました。
+  - [キャプチャ](./features/captcha.md)にパネルの[表示モード](./features/captcha.md#display-mode)と、自動または常時の[作動条件](./features/captcha.md#trigger)を追加。設定画面では、認証を回避できてしまうチャンネルとロールが通知され、修正用のボタンが表示されます。
+  - パネルモードでは、キャプチャは [RaidProtect Activity](./features/captcha.md#activity) で開きます。自動化されたプログラムにはより難しいパズルで、サーバーのカラーに合わせて表示され、判断がつかない場合は運営チームが確認します。
+  - キャプチャの新しい[テストモード](./features/captcha.md#test-mode)：何も適用せずに、運営チームがやり直せます。
+- 保護：
+  - [Authentification Manager](./features/authentication-manager.mdx) が `/settings` に統合され、認証リンクが翻訳されました。
+  - [DM の遮断](./features/dm-lock.mdx)を、入力ウィンドウで設定できるようになりました。
+- モデレーション：
+  - 新コマンド [`/onduty`](./features/moderation.mdx#onduty) と勤務中ロール。対応可能なモデレーターを示せます。
+  - 運営チームに情報を伝える新しい [`/display staff`](./features/display.mdx#staff) パネル。
+  - `/discord-sanctions` は、ユーザーを指定しない場合に全体の統計を表示します。
+- ユーティリティ：
+  - 新コマンド [`/inviteinfo`](./features/utilities.mdx#inviteinfo)。`/userinfo` と `/inviteinfo` は、自分のアカウントにもインストールでき、どこでも使えます。
+  - 新コマンド [`/privacy`](./features/utilities.mdx#privacy) と、[`/snipe`](./guides/malfunctions.md#snipe) の条件となる**メッセージのキャッシュ**設定。
+  - スパム対策の問題を報告する際、[`/feedback`](./features/utilities.mdx#feedback) が診断を提案します。
+- 全般：
+  - RaidProtect は、イタリア語、トルコ語、ベトナム語、日本語、簡体字・繁体字中国語の追加により、[11 言語](./language.md)に対応しました。既定では、[サーバーの言語に合わせます](./language.md#follow)。
+  - 新しいサーバーの[タイムゾーン](./setup.md#timezone)。透明性のまとめで使われます。
+  - [メッセージコマンド](./guides/prefix.md)と[権限](./guides/prefix.md#permissions)が個別に設定できるようになり、Discord の権限は「ユーザーを処罰」メニューにも適用されます。
+  - [ボットのカスタマイズ](./setup.md#customize)（**Premium**）が `/settings` に移りました。Premium が終了すると、ボットの外観は自動的に RaidProtect のものに戻ります。
+- 各種修正と翻訳の修正。
+
+## 3.4.0 Antispam Update (2026/07/18) {#3-4-0}
+
+- [スパム対策](./features/anti-spam.mdx) V2：
+  - **複数チャンネルのスパム**：スパムが複数のチャンネルに及んだ場合の専用の処罰（既定は Jail、最低でもタイムアウト）。
+  - 新しい[トリガー](./features/anti-spam.mdx#triggers)：**添付ファイルのスパム**（既定では無効）。
+  - スパムが処罰された、または処罰されなかった理由を理解するための[シミュレーション](./features/anti-spam.mdx#simulation)。
+  - スパムのメッセージは、**どの処罰でも削除される**ようになりました（BAN、Jail、ミュート、キック、タイムアウト）。
+  - **詐欺対策の処罰を設定できる**ようになりました。[スパム対策の処罰メニュー](./features/anti-spam.mdx#triggers)から設定でき、既定では[ハニーポットの処罰](./features/honeypot.md#sanction)に従います。詐欺対策のインシデントは即座に処罰され、ログに記録されます。
+  - 新しい**無効にする**オプションで、各トリガーを個別に無効にできます。感度のレベルは、シンプルなスイッチに置き換わりました。
+  - 対応するロールが未設定の場合、**ミュート**と **Jail** は上限付きのタイムアウトに切り替わります。
+  - リッチエンベッドを送信するセルフボットを検出するようになり、ScamLens がブロックした詐欺が、[ハニーポット](./features/honeypot.md)の報告アカウント数のカウンターに加算されます。
+- **[通報](./features/reports.md)**システムを全面的に刷新：
+  - 通報は**インシデント**にまとめられるようになりました。同じメンバーに対する複数の通報は 1 つのインシデントに集約され、[まとめ方は設定可能](./features/reports.md#group)です。
+  - 通報コマンドが**理由入力のモーダル**を開くようになりました。プロフィールの通報では「何を通報しますか」の一覧（ボイスと DM での活動を含む）があります。
+  - インシデントごとに、通報の下に**スレッド**が作成されます。通報されたメンバーのプロフィールカード、メッセージごとの理由ヘッダー、対応したモデレーター名、却下メモが含まれます。
+  - 新しい[通報者への通知](./features/reports.md#notify)：通報が処理されると、通報者に DM で通知できます。詳細度は設定可能です（承認／却下の判定まで）。
+  - 新しい[信頼ロール](./features/reports.md#trusted-role)（**Premium**）：信頼できるメンバーは、通報の際に **24 時間の予防的なタイムアウト**を適用でき、緊急の通報ではモデレーションのロールが再メンションされます。
+  - 新しい[虚偽の通報者への対策](./features/reports.md#bad-reporters)：繰り返す虚偽の通報者を検知し、自動でブロックまたは処罰できます（しきい値、集計期間、モードは設定可能）。
+  - 開いているインシデントは、メンバーが処罰されると自動で閉じられます。
+  - 予防的な処罰は、通報が承認されると書き換えられ、却下されると取り消されます。
+- 新しい**[透明性](./features/transparency.md)**システム：
+  - サーバーのモデレーション活動の[定期まとめ](./features/transparency.md#recaps)。設定可能なスケジュールで自動投稿されます。
+  - 新しい[公開モデレーションログ](./features/transparency.md#modlog)：処罰を公開チャンネルに投稿でき、種類と発生源で絞り込めます。読み取り専用の #public-modlog チャンネルをワンクリックで作成できます。
+  - 新しい [`/transparency` コマンド](./features/transparency.md#command)：直近に終了した期間のまとめを、必要なときに表示します。
+- 新しい [`/audit` コマンド](./features/audit.md)：総合スコア、[詳細なチェック](./features/audit.md#checks)（認証レベル、権限、チャンネル）、[ワンクリックでの修正](./features/audit.md#fix)を備えた、サーバーの完全な**セキュリティ監査**。管理者ロールは、監査から直接 Authentification Manager に登録できます。
+- レイドモードと参加ロック向けの新しい[キックモード](./features/raid-mode.md#kick-mode)（**Premium**）：Discord 標準の招待の一時停止の代わりに、参加者に説明の DM と戻るための招待ボタンを付けてキックします。新しい [`/bypass raid` コマンド](./features/raid-mode.md#bypass-raid)で、有効な間も特定のユーザーを入室させられます。
+- [メッセージコマンド](./guides/prefix.md#permissions)が、`/settings` の新オプションにより、**Discord のコマンド権限**（連携サービスタブ）に従えるようになりました。
+- RaidProtect は、[DM の遮断](./features/dm-lock.mdx)が原因で表示される **Discord のセキュリティアラート**の下に返信するようになりました。アラートを引用し、設定を調整する場所を説明します。
+- [アカウントの最低作成日数](./features/raid-mode.md#minage)によるキックのログに、必要なしきい値がタイムスタンプで表示されるようになりました。
+- 設定とセットアップ：
+  - `/settings` のメインメニューを、論理的な行に再編成しました。
+  - セットアップのメッセージがコマンドへ直接リンクするようになり、ログチャンネルを変更するボタンも表示されます。
+  - キャプチャのチャンネルが削除されたときに、**キャプチャを無効にする**ボタンが表示されます。
+- 今後のアップデートを加速するため、Discord レイヤーを共有ライブラリ（`@fca.gg/discord`）へ内部移行しました。
+- 修正：
+  - **タイムアウト**と**ミュート**、および管理者対象とロール階層による制限を区別する、分かりやすいエラーメッセージ。
+  - Discord AutoMod のタイムアウトの自動変換を修正。
+  - `/serverinfo` を修正：カスタム URL、ルール、統計へのアクセス。
+  - `/discord-sanctions` の別名と、メッセージコマンドのプレフィックスの使用を修正。
+  - ロール置き換えモードで管理者に Jail が適用される問題を修正。
+  - ウェブフック URL の検証を強化。
+  - 各種修正：処罰のログ、キャプチャ、DM の遮断のメッセージ、モデレーションメモ、Premium の検出。
+  - 各種翻訳の修正。
+
+## 3.3.3 (2026/04/30) {#3-3-3}
+
+- 新しい [`/modview` コマンド](./features/moderation.mdx#modview)：メンバーの一元化されたモデレーションビュー（処罰、メモ、snipe）を開きます。<SuggestionLink id="544" />
+- 新しい [`/note` コマンド](./features/moderation.mdx#note)：メンバーのモデレーションメモを追加または編集します。<SuggestionLink id="545" />
+- 新しい [`/nick` コマンド](./features/moderation.mdx#nick)：サーバーでのメンバーのニックネームを変更またはリセットします。
+- RaidProtect の**アバター**、**バナー**、**ニックネームの書体スタイル**のカスタマイズ（**Premium**）。
+- 新モジュール **[ハニーポット](./features/honeypot.md)**：乗っ取られたアカウントやスパムボットを自動で処罰する罠チャンネル。ScamLens のカタログも強化します。<SuggestionLink id="560" />
+- メッセージコマンドの新しいパース処理。
+- スラッシュコマンドの `duration` パラメーターでオートコンプリートに対応。
+- 処罰：
+  - 新しい [`/softban` コマンド](./features/moderation.mdx#softban)：メンバーを BAN してすぐに解除し、そのメッセージを削除します。
+  - すべての処罰コマンドに、対象へ DM で通知しない新しい [`silent` オプション](./features/moderation.mdx)。<SuggestionLink id="545" />
+  - `/ban` と `/tempban` コマンドに、メッセージ履歴を削除する新しい [`delete-messages` パラメーター](./features/moderation.mdx#ban)。
+  - 新モード[ロールを置き換えて Jail](./features/sanctions.mdx#jail-roles)：Jail の処罰が、監禁の間メンバーのすべてのロールを外し、解放時に復元します。<SuggestionLink id="552" />
+  - サーバーで[処罰を完全に無効にする](./features/sanctions.mdx#disable)ことが可能になりました。
+  - [`/sanctions delete` に理由](./features/sanctions.mdx#delete)を追加できるようになりました。
+  - 期間のある処罰のログに、タイムスタンプに加えて**最終的な期間**を表示。
+  - 処罰の DM の受領確認の追跡を改善：受信済み、DM 遮断、期限切れ、サイレント。
+  - キック、ソフトBAN、一時 BAN の後の通知 DM に、**サーバーへの招待**ボタンを追加。<SuggestionLink id="570" />
+- 新しい [`/serverinfo` コマンド](./features/utilities.mdx#serverinfo)：サーバーの情報を確認できます。<SuggestionLink id="264" />
+- 新しい [`/snipe` コマンド](./features/moderation.mdx#snipe)：直近 1 時間の、チャンネルまたはユーザーの最後に削除されたメッセージを取得します（ログの更新までの暫定的な対応）。
+- 新しい [`/feedback` コマンド](./features/utilities.mdx#feedback)：Discord から直接、意見、提案、不具合の報告を送れます。
+- [スパム対策](./features/anti-spam.mdx#duration)が適用する処罰の**期間**を選べるようになりました。<SuggestionLink id="559" />
+- [オート RaidMode](./features/raid-mode.md#close-dm)の有効化時に、**DM を自動で遮断**できるようになりました。<SuggestionLink id="521" />
+- Discord の AutoMod が適用したタイムアウトは、設定したミュートのしきい値を超える場合、自動で[ロールによるミュートに変換](./features/sanctions.mdx#mute-threshold)されます（**Premium サーバー向けの公開ベータ**）。
+- [`/lock`](./features/channel-lock.md#lock-duration) と [`/slowmode`](./features/moderation.mdx#slowmode) コマンドに、変更を一時的に適用する新しい `[duration]` パラメーター。<SuggestionLink id="515" />
+- 修正：
+  - 処罰の期限切れに関するエラーを修正。
+  - 各種翻訳の修正。
+
+## 3.3.2 (2026/03/20) {#3-3-2}
+
+- Discord ロールへのアクセスを認証で保護する、新しい **[Authentification Manager](./features/authentication-manager.mdx)**（AM）システム。
+  - 新しい [`/auth` コマンド](./features/authentication-manager.mdx#auth)：認証して、保護されたロールを取得します。
+  - 新しい [`/auth-profile` コマンド](./features/authentication-manager.mdx#auth-profile)：自分の認証プロフィール（PIN、OTP、パスキー）を管理します。
+  - 新しい [`/auth-settings` コマンド](./features/authentication-manager.mdx#auth-settings)：保護されたロールと許可されたユーザーを設定します。
+  - 設定した認証方法に基づく[セキュリティグレード](./features/authentication-manager.mdx#grades)（S から E）のシステム。
+  - [パスキー（WebAuthn）](./features/authentication-manager.mdx#methods)、[PIN コード](./features/authentication-manager.mdx#methods)（シンプルと強化）、[OTP（2FA）](./features/authentication-manager.mdx#methods)に対応。
+  - 有効期限と自動取り消しのある一時的なセッション。
+  - 権限の上限を持つマネージャーのシステム。
+- ログ：
+  - 専用アップデートに向けた新しいログエンジン。
+  - `/clear` の一括削除のログ。
+  - 詐欺対策とオート RaidMode の設定変更のログ。
+- 新しい **Premium** システム。
+  - Authentification Manager と情報パネルの上限を引き上げ。
+  - カスタマイズ可能な[処罰の名称](./features/sanctions.mdx#custom-names)（名前、動詞、DM の言い回し）。
+  - 新しい実験的機能への先行アクセス。
+- RaidProtect のなりすましを検出して防止。
+- 修正：
+  - unmute と untimeout のエラーを修正。
+  - Jail のセットアップを修正。
+  - 一部のサーバーでスパム対策が動かなくなる問題を修正。
+  - 各種翻訳の修正。
+- パフォーマンスと安定性：
+  - メンバー、権限、メッセージのキャッシュを最適化。
+  - 処罰の期限切れが秒単位の精度になりました。
+
+## 3.3.1 (2026/02/09) {#3-3-1}
+
+- [多言語対応](./language.md)（ドイツ語、スペイン語、ポルトガル語を追加）。
+- 新しい **[Jail](./features/sanctions.mdx#jail)** システム。
+  - 新しい [`/jail` コマンド](./features/moderation.mdx#jail)：メンバーを監禁します。
+  - 新しい [`/tempjail` コマンド](./features/moderation.mdx#tempjail)：メンバーを一時的に監禁します。
+  - 新しい [`/unjail` コマンド](./features/moderation.mdx#unjail)：メンバーを解放します。
+  - `/settings` で Jail ロールと案内チャンネルを設定。
+- 新しい**[ロールによるミュート](./features/sanctions.mdx#mute)**システム：[設定可能なしきい値](./features/sanctions.mdx#mute-threshold)を超えると、ボットは Discord のタイムアウトの代わりにミュートロールを付与します。
+  - `/timeout` と `/untimeout` コマンドは、[`/mute`](./features/moderation.mdx#timeout) と [`/unmute`](./features/moderation.mdx#untimeout) になりました。しきい値を下回る場合は、既定で Discord のタイムアウトが使われます。
+  - 期間にかかわらず Discord のタイムアウトを強制する、新しい `[force_timeout]` パラメーター。
+- [コンテキストメニューからの処罰](./features/moderation.mdx#context-menu)（プロフィールを右クリック）。
+- 新しい [`/my-sanctions` コマンド](./features/utilities.mdx#my-sanctions)：メンバーが自分自身の処罰を確認できます。
+- 個人の処罰へのアクセスを制御する、新しい[処罰の公開範囲](./features/sanctions.mdx#sanctions-privacy)設定。
+- 処罰の理由内のメディアに関する、新しい[メディアを表示](./features/sanctions.mdx#show-medias)設定。
+- [`/sanctions search`](./features/sanctions.mdx#search) のフィルターを視覚的に刷新し、[モデレーターの種類](./features/sanctions.mdx#search)フィルターを追加。
+- サポートボット経由の[処罰のインポート／エクスポート](./features/sanctions.mdx#import-export)。
+- **[情報パネル](./features/display.mdx)**システム（`/display public`）。
+- サーバー上で RaidProtect の一部の機能をメンバーが使えないようにする、新しい**[メンバーのブロック](./features/utilities.mdx#block)**システム。
+  - 新しい [`/block add` コマンド](./features/utilities.mdx#block-add)。
+  - 新しい [`/block remove` コマンド](./features/utilities.mdx#block-remove)。
+  - 新しい [`/block list` コマンド](./features/utilities.mdx#block-list)。
+- 新しい [`/prune` コマンド](./features/utilities.mdx#prune)：より細かい条件で、非アクティブなメンバーを整理します。<SuggestionLink id="256" />
+- 新しい [`/channel clear` コマンド](./features/utilities.mdx#channel-clear)：チャンネルを削除して再作成します。<SuggestionLink id="543" />
+- `/bypass` コマンドのログ。<SuggestionLink id="546" />
+- 新モジュール**詐欺対策**。
+- 修正：
+  - キャプチャの扱いを改善。
+  - プレフィックスの検証を修正。
+  - 翻訳の修正。
+- パフォーマンスと安定性：
+  - 新しい翻訳フレームワーク（[`@fca.gg/hermes` v1.2.1](https://github.com/FCAgreatgoals/hermes)）。
+
+## 3.3.0 Moderation Update (2025/12/19) {#3-3-0}
+
+- 新機能**[処罰の履歴](./features/sanctions.mdx)**。
+  - 新しい [`/sanctions search` コマンド](./features/sanctions.mdx#search)。
+  - 新しい [`/sanctions info` コマンド](./features/sanctions.mdx#info)。
+  - 新しい [`/sanctions edit` コマンド](./features/sanctions.mdx#edit)。
+  - 新しい [`/sanctions delete` コマンド](./features/sanctions.mdx#delete)。
+  - AutoMod による処罰が処罰の履歴に追加されます。
+  - BAN、キック、タイムアウトが履歴に追加され、ログに記録されます。<SuggestionLink id="151" />
+  - 処罰の通知 DM の受領確認。
+- 処罰の新しいログ。
+- 処罰専用のログチャンネルを設定できるようになりました。
+- 新しい [`/warn` コマンド](./features/moderation.mdx#warn)。<SuggestionLink id="52" />
+- 新しい [`/untimeout` コマンド](./features/moderation.mdx#untimeout)。<SuggestionLink id="52" />
+- 新しい [`/tempban` コマンド](./features/moderation.mdx#tempban)。<SuggestionLink id="524" />
+- [レイドモード](./features/raid-mode.md#raid-mode)と[オート RaidMode](./features/raid-mode.md#duration)が、一定時間後に自動で無効になります。<SuggestionLink id="37" />
+- [`/raidmode` コマンド](./features/raid-mode.md#raid-mode)に新しい [duration] パラメーター。<SuggestionLink id="37" />
+- 新しい [`/joinlock` コマンド](./features/join-lock.mdx)：招待を無期限に閉鎖します。
+- 新しい [`/channel duplicate` コマンド](./features/utilities.mdx#channel-duplicate)：チャンネルをそのまま複製します。<SuggestionLink id="225" />
+- 新しい `/changelog` コマンドと、`/settings` および `/about` に変更履歴を確認するボタン。
+- [アカウントの最低作成日数](./features/raid-mode.md#minage)の DM の受領確認。
+- 修正：
+  - クールダウンの扱いを改善。
+  - 各種翻訳エラーを修正。
+  - 処罰の理由の最大文字数を拡大（512）。
+- パフォーマンスと安定性：
+  - メッセージキャッシュを最適化。
+  - データベースのストレージを最適化。
+  - 処罰の期限切れの管理（`@fca.gg/midway` v1.3.2）。
+  - 絵文字の管理を刷新（[`@fca.gg/glyph` v1.1.1](https://github.com/FCAgreatgoals/glyph)）。
+
+## 3.2.1 (2025/09/03) {#3-2-1}
+
+- 新しい [`/ds` コマンド](./features/utilities.mdx#discord-sanctions)：ユーザーに対する Discord の処罰を確認できます。
+- スパム対策が、スラッシュコマンドのスパムを止められるようになりました。
+- スパム対策の新しいトリガー：[外部コマンドのスパム](./features/anti-spam.mdx#triggers)。
+- 新しい [`/slowmode` コマンド](./features/moderation.mdx#slowmode)：チャンネルのスローモードを有効にする、または変更します。
+- 新しい [`/unban` コマンド](./features/moderation.mdx#unban)。<SuggestionLink id="296" />
+- 新しい [`/bypass captcha` コマンド](./features/captcha.md#bypass)：キャプチャを解けないユーザーを受け入れます。
+- [`/lock` と `/unlock` コマンド](./features/channel-lock.md)に新しい [reason] パラメーター。<SuggestionLink id="516" />
+- 修正：
+  - 各種翻訳エラー。
+  - `/timeout` コマンドでの**理由**の反映を改善。
+  - ボットの起動時間とコマンドの実行時間を最適化。
+  - プレフィックスコマンドの解釈と検証を修正。
+  - **デフォルトアバター**に関するエラーを修正。
+
+## 3.2.0 Protection Update (2025/07/10) {#3-2-0}
+
+- 新機能[DM の遮断](./features/dm-lock.mdx)。
+- スパム対策が適用する[処罰](./features/anti-spam.mdx#triggers)を選べるようになりました。<SuggestionLink id="85" />
+- 新しい[スパム対策のログ](./features/anti-spam.mdx#logs)（検出の可視性が向上）。
+- キャプチャなしで[アカウントの最低作成日数](./features/raid-mode.md#minage)を有効にできるようになりました。<SuggestionLink id="314" />
+- 新しい [/bypass minage コマンド](./features/raid-mode.md#bypass-minage)：アカウントの作成日数が足りないユーザーを受け入れます。<SuggestionLink id="447" />
+- [`/userinfo` コマンド](./features/utilities.mdx#userinfo)を全面的に刷新。
+- ボットの設定の重要な変更時に新しいログ。
+- 修正：
+  - スパム対策がスレッドでも動作するようになりました。
+  - [`/lock` コマンド](./features/channel-lock.md)が、フォーラムとメディアのチャンネルに対応し、チャンネルとともにスレッドもブロックします。
+  - ボットに必要な権限がない場合に、[キャプチャ](./features/captcha.md)が新規メンバーを足止めしなくなりました。
+  - ボットがチャンネルで必要な権限を持たない場合の、[`/clear` コマンド](./features/moderation.mdx#clear)のバグを修正。
+- UI/UX の改善：
+  - メンバー、ロール、チャンネルの選択メニューに入力できることを明示。
+  - オート RaidMode の設定時に、`COMMUNITY` 機能の有無を確認。
+- パフォーマンスと安定性：
+  - 絵文字の管理を刷新（[`@fca.gg/glyph` v0.1.0](https://github.com/FCAgreatgoals/glyph)）。
+  - 起動時間の短縮とクラスターの監視（`@fca.gg/midway` v1.3.1）。
+  - レート制限の扱いを改善し、レイテンシを低減（`@fca.gg/iris` v1.1.4）。
+  - エラー管理のための Sentry を統合し、開発サポートを改善（[`@fca.gg/kino` v1.0.0](https://github.com/FCAgreatgoals/kino)）。
+
+## 3.1.1 (2025/05/21) {#3-1-1}
+
+- 新機能[タグロール](./features/tag-role.md)。<SuggestionLink id="512" />
+- 新しいモデレーションコマンド [`/timeout`](./features/moderation.mdx#timeout)。<SuggestionLink id="52" />
+- 各サーバーの全般のログチャンネルで、アップデートを自動で追跡。
+- パフォーマンスと安定性：
+  - スパム対策の永続的な状態を整理。
+  - メモリリークを修正。
+  - データベース呼び出しを最適化。
+  - ボット全体の速度を改善。
+
+## 3.1.0 Interactions Update (2025/03/12) {#3-1-0}
+
+- **スラッシュコマンド**を追加。<SuggestionLink id="463" />
+- [多言語対応](./language.md)（英語を追加）。<SuggestionLink id="109" />
+- 新機能 [`/report`](./features/reports.md)。<SuggestionLink id="164" />
+- 新しい設定コマンド：
+  - インタラクティブなパネル形式の [`/settings`](./setup.md#settings)。
+  - オンボーディング形式の [`/setup`](./setup.md#install)。
+- 詳細な設定：
+  - 各機能を個別に有効化／無効化。<SuggestionLink id="356" />
+  - [キャプチャ](./features/captcha.md#config)によるキックまでの猶予と試行回数を選択可能。<SuggestionLink id="363" />
+  - [キャプチャ](./features/captcha.md)の認証チャンネルを選択可能。<SuggestionLink id="385" />
+  - [スパム対策](./features/anti-spam.mdx#ignore)でユーザー／ロール／カテゴリーを除外可能。<SuggestionLink id="362" />
+  - [ハイブリッドコマンドのプレフィックス](./guides/prefix.md)を選択可能。<SuggestionLink id="103" />
+  - [`/lock` コマンド](./features/channel-lock.md)が、ロックしたチャンネルの名前を `🔒` 付きに変更するかどうかを選択するオプション。
+- UX の改善：
+  - ボットへのメンション時にプレフィックスを表示。メンションを共通のプレフィックスとして利用可能。<SuggestionLink id="193" />
+  - [キャプチャ](./features/captcha.md)を無効にしても、関連するロールとチャンネルが削除されなくなりました。<SuggestionLink id="43" />
+  - チャンネルとロールに関する権限の問題を自動検出。<SuggestionLink id="65" />
+  - Discord のオンボーディングでの認証チャンネルの表示状況を自動チェック。
+  - メッセージの統一。
+- ボットのパフォーマンスと安定性を改善。
+
+## 3.0.0 (2023/01/14) {#3-0-0}
+
+- 今後のアップデートに備え、ボットを安定させるための全面的な書き直し。
+- 現時点で判明しているすべてのバグを修正。
+- [`?raidmode` コマンド](./features/raid-mode.md)が「招待を無効にする」機能を使うようになりました。
+- 処罰を適用する際に、対象のメンバーへ DM を自動で送信。<SuggestionLink id="426" />
+
+## 2.2.0 (2020/04/13) {#2-2-0}
+
+- ボットのパフォーマンスを改善。
+- プロジェクトの内部アーキテクチャを大幅に変更。
+
+## 2.1.3 (2019/10/13) {#2-1-3}
+
+- ブラックリストと関連コマンドを削除。
+- ID を使えば、対象のサーバーにいなくても、どのユーザーでも BAN できるようになりました。<SuggestionLink id="113" /> <SuggestionLink id="148" />
+- [`?ban` コマンド](./features/moderation.mdx#ban)の返信に、BAN の理由を表示。
+- [`?raidmode` コマンド](./features/raid-mode.md)に、メンバーをキックする権限が必要になりました。
+- キャプチャが完了しない場合のキックまでの時間を変更（5 分）。<SuggestionLink id="129" />
+- 各種内部改善。
+
+## 2.1.2 (2019/04/17) {#2-1-2}
+
+- [`?userinfo` コマンド](./features/utilities.mdx#userinfo)を追加。<SuggestionLink id="29" />
+- ~~`?lockall` と `?unlockall` コマンドを追加~~（機能は削除されました）。
+- [`?kick`](./features/moderation.mdx#kick) と [`?ban`](./features/moderation.mdx#ban) コマンドを追加。
+- [キャプチャの min-age](./features/raid-mode.md#minage) を追加（サーバーにアクセスするためのアカウントの最低作成日数を設定可能）。
+- コマンド実行メッセージを自動で削除する設定が可能に。<SuggestionLink id="26" />
+- ログチャンネルが削除された場合に自動で再作成されるようになりました。
+- データベース接続を刷新。
+- バグ修正と各種改善。
+
+## 2.1.1 (2019/02/21) {#2-1-1}
+
+- `?settings captcha` を削除（`?captcha` に置き換え）。
+- キャプチャの[ログチャンネル](./features/captcha.md#logs)を設定できるようになりました。
+- キャプチャと互換性のある[自動ロール](./features/captcha.md#autorole)を追加。
+- [キャプチャ](./features/captcha.md)を簡素化（5/6 文字の正解が必要）。
+- その他の軽微な変更。
+
+## 2.1.0 (2019/02/16) {#2-1-0}
+
+- キャプチャを追加（`?settings captcha`）。<SuggestionLink id="11" />
+- スパム対策のセキュリティレベルを追加（`?settings spamlevel`）。<SuggestionLink id="25" />
+- `?about` と `?invite` コマンドを追加。
+- [`?clear` コマンド](./features/moderation.mdx#clear)を追加。
+- 各種変更とバグ修正。
+
+## 2.0.1 (2019/02/04) {#2-0-1}
+
+- ヘルプ（`?help`）を書き直し。
+- [`?lock`](./features/channel-lock.md#lock) と [`?unlock`](./features/channel-lock.md#unlock) のバグを修正。
+
+## 2.0.0 (2019/01/26) {#2-0-0}
+
+- [スパム対策](./features/anti-spam.mdx)を追加。
+- [オート RaidMode](./features/raid-mode.md#config)を追加。
+- ログチャンネルを追加。
+- ボットの設定機能を追加。
+- [チャンネルロック](./features/channel-lock.md)を追加。
+- 多数のさまざまな変更。

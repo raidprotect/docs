@@ -7,18 +7,19 @@ import SeparatedBox from '@site/src/components/SeparatedBox';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Icon from "@site/src/components/Icon";
+import Settings from '@site/src/components/DiscordMessage/mockups/v2';
 
 Zusätzliche Funktionen, um die Verwaltung Ihres Servers zu vereinfachen. 🔧
 
-Neben den Hauptfunktionen wie dem Captcha-System und dem Anti-Raid-Schutz bietet RaidProtect mehrere Hilfswerkzeuge, die die Verwaltung Ihres Servers noch reibungsloser machen können.
+Neben den Hauptfunktionen wie dem Captcha, dem Anti-Spam oder dem Anti-Raid bietet RaidProtect mehrere Hilfswerkzeuge, die die Verwaltung Ihres Servers noch reibungsloser machen können.
 
 ## 📋 Einen Kanal duplizieren {#channel-duplicate}
 
 Mit dem Befehl `/channel duplicate` können Sie einen Kanal vollständig duplizieren, einschließlich all seiner Einstellungen, Berechtigungen und Konfigurationen. Damit übertrifft er die native Discord-Funktion, die **Kategorien** und **bestimmte spezifische Einstellungen** wie die Tags von Forum-Kanälen nicht duplizieren kann.
 
-Verwenden Sie den Befehl: ```/channel duplicate [kanal]```
+Verwenden Sie den Befehl: ```/channel duplicate (#channel)```
 
-Ersetzen Sie `[kanal]` durch die Erwähnung oder die [ID](../guides/id.mdx) des zu duplizierenden Kanals.
+Ersetzen Sie `(#channel)` durch die Erwähnung oder die [ID](../guides/id.mdx) des zu duplizierenden Kanals.
 
 ### 🎯 Funktionen {#duplicate-features}
 
@@ -43,7 +44,9 @@ Wenn Sie einen Kanal duplizieren, der interne RaidProtect-Konfigurationen besitz
 
 Mit dem Befehl `/channel clear` können Sie einen Kanal löschen und ihn identisch neu erstellen, wobei seine Einstellungen, Berechtigungen und RaidProtect-Konfigurationen erhalten bleiben.
 
-Verwenden Sie den Befehl: ```/channel clear```
+Verwenden Sie den Befehl: ```/channel clear (#channel)```
+
+Ersetzen Sie `(#channel)` durch die Erwähnung oder die [ID](../guides/id.mdx) des neu zu erstellenden Kanals.
 
 :::warning
 Die Nachrichten und Webhooks des Kanals werden unwiderruflich gelöscht. Vor der Ausführung wird eine Bestätigung angefordert.
@@ -53,12 +56,23 @@ Die Nachrichten und Webhooks des Kanals werden unwiderruflich gelöscht. Vor der
 
 Mit dem Befehl `/prune` können Sie inaktive Mitglieder über ein interaktives Menü von Ihrem Server entfernen.
 
-Verwenden Sie den Befehl: ```/prune [dauer]```
+Verwenden Sie den Befehl: ```/prune [duration]```
 
-Ersetzen Sie `[dauer]` durch die gewünschte Anzahl an Tagen der Inaktivität. Der Bot zeigt ein interaktives Menü an, mit dem Sie:
+Ersetzen Sie `[duration]` durch die gewünschte Anzahl an Tagen der Inaktivität, von 1 bis 30. Der Bot zeigt ein interaktives Menü an, mit dem Sie:
 - Die Inaktivitätsdauer auswählen können
 - Bestimmte Rollen ein- oder ausschließen können
 - Die Anzahl der betroffenen Mitglieder vor der Bestätigung sehen können
+
+Der Bestätigungstext nennt, wer tatsächlich gehen wird:
+
+| Modus | Ohne ausgewählte Rolle | Mit ausgewählten Rollen |
+|---|---|---|
+| **Einschließen** | Nur inaktive Mitglieder **ohne jede Rolle** | Inaktive Mitglieder, die **keine Rolle außer** den ausgewählten haben |
+| **Ausschließen** | Alle inaktiven Mitglieder, **unabhängig von ihren Rollen** | Inaktive Mitglieder, die **keine der** ausgewählten Rollen haben |
+
+:::info
+Der Befehl `/prune` ist Administratoren vorbehalten. Es werden nur die 100 niedrigsten Rollen angeboten; Mitglieder mit einer höheren Rolle sind von vornherein ausgeschlossen.
+:::
 
 ![Screenshot des Prune-Befehls](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-prune.webp)
 
@@ -76,11 +90,11 @@ Beim Blockieren oder Entsperren bietet Ihnen RaidProtect an, die betroffenen Fun
 
 ### Einen Nutzer blockieren {#block-add}
 
-Verwenden Sie den Befehl: ```/block add (benutzer) [grund]```
+Verwenden Sie den Befehl: ```/block add [@user] [reason]```
 
 ### Einen Nutzer entsperren {#block-remove}
 
-Verwenden Sie den Befehl: ```/block remove (benutzer) [grund]```
+Verwenden Sie den Befehl: ```/block remove [@user] [reason]```
 
 ### Blockierte Nutzer auflisten {#block-list}
 
@@ -88,11 +102,11 @@ Verwenden Sie den Befehl: ```/block list```
 
 ## 📢 Informationspanels {#display}
 
-Weitere Informationen über den Befehl `/display public` finden Sie auf der [dedizierten Seite zu den Informationspanels](./display.mdx).
+Weitere Informationen über die Befehle `/display public` und [`/display staff`](./display.mdx#staff) finden Sie auf der [dedizierten Seite zu den Informationspanels](./display.mdx).
 
 ## 📜 Meine Sanktionen {#my-sanctions}
 
-Mit dem Befehl `/meine-sanktionen` können Mitglieder ihre eigenen Sanktionen auf dem Server einsehen, entsprechend der von den Administratoren konfigurierten [Vertraulichkeitsstufe](./sanctions.mdx#sanctions-privacy).
+Mit dem Befehl `/meine-sanktionen` können Mitglieder ihre eigenen Sanktionen auf dem Server einsehen, entsprechend der von den Administratoren konfigurierten [Datenschutzstufe](./sanctions.mdx#sanctions-privacy).
 
 Verwenden Sie den Befehl: ```/meine-sanktionen```
 
@@ -106,24 +120,80 @@ Der Befehl `/serverinfo` zeigt die **Informationen des aktuellen Servers** an: N
 
 Verwenden Sie den Befehl: ```/serverinfo```
 
+:::info
+Der Befehl `serverinfo` ist [per Präfix verwendbar](../guides/prefix.md) (Alias `ginfo`). Er funktioniert nur auf einem Server, auf dem RaidProtect installiert ist.
+:::
+
+## 🔗 Informationen zu einer Einladung {#inviteinfo}
+
+Der Befehl `/inviteinfo` analysiert eine Discord-Einladung, bevor Sie darauf klicken: nützlich, um eine Partnerschaft, Werbung oder einen per DM erhaltenen Link zu prüfen.
+
+Verwenden Sie den Befehl: ```/inviteinfo (invite)```
+
+Ersetzen Sie `(invite)` durch den Code oder den Link der Einladung (z. B. `discord.gg/raidprotect`).
+
+Bei einer Server-Einladung zeigen wir unter anderem an:
+
+- **Der Server**: Name, Abzeichen und Tag, Kennung, Anzahl der Mitglieder und der Online-Mitglieder, Verifizierungsstufe, Stufe und Boosts.
+- **Die Einladung**: Zielkanal (Text-, Sprach- oder Konferenzkanal), Ersteller, Anzahl der Verwendungen, Ablaufdatum, bei der Ankunft vergebene Rollen.
+- **Die Themen und Spiele**, die der Server hervorhebt (die Spiele sind anklickbar).
+- **Ein Aktivitätsprofil**: Stoßzeiten und Flauten, Regelmäßigkeit.
+- Eine Schaltfläche „**Server beitreten**“.
+
+Freundes-, private Gruppen-, Aktivitäts- und Live-Einladungen werden ebenfalls erkannt.
+
+:::info
+Auf einem Server ist die Antwort ephemer, und der Befehl erfordert standardmäßig die Berechtigung „**Nachrichten verwalten**“. Wenn Sie RaidProtect zu Ihrem Discord-Konto hinzufügen, können Sie `/inviteinfo` auch in DMs und privaten Gruppen verwenden: Die Antwort ist dann in der Unterhaltung sichtbar. Der Befehl `inviteinfo` ist [per Präfix verwendbar](../guides/prefix.md) (Alias `ii`).
+:::
+
+## 🔐 Ihre Daten auf diesem Server {#privacy}
+
+Der Befehl `/privacy` zeigt an, was RaidProtect auf Ihrem Server speichert. Er steht allen Mitgliedern offen, und die Antwort ist nur für Sie sichtbar.
+
+Verwenden Sie den Befehl: ```/privacy```
+
+- **Immer**: die in `/settings` gewählte Konfiguration (aufbewahrt, solange RaidProtect auf dem Server ist) und die Sanktionen (Mitglied, Moderator, Grund und Daten) für den Moderationsverlauf.
+- **Je nach Einstellungen**: die Nachrichten (eine Stunde pro Kanal, im Arbeitsspeicher, nie in die Datenbank geschrieben), wenn der Anti-Spam, die Meldungen oder die [Zwischenspeicherung von Nachrichten](#message-cache) aktiv sind; die Meldungen (Autor, Grund und Kopie der gemeldeten Nachricht), wenn sie aktiviert sind.
+
+Die Antwort verweist auf unsere Datenschutzerklärung, die die Aufbewahrungsdauern, die Weitergabe und Ihre Rechte im Detail erläutert.
+
+## 🗂️ Zwischenspeicherung von Nachrichten {#message-cache}
+
+Die Zwischenspeicherung hält **eine Stunde Nachrichten pro Kanal im Arbeitsspeicher**, nie in die Datenbank geschrieben. Sie speist den Befehl [`/snipe`](./moderation.mdx#snipe) und den Snipe-Teil von `/modview`. Ohne sie finden diese Befehle keine gelöschte Nachricht.
+
+1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
+2. Öffnen Sie den Tab „**Werkzeuge**“.
+3. Klicken Sie neben „**Nachrichten-Zwischenspeicher**“ auf „**Aktivieren**“.
+
+<Settings start="home:utilities" />
+
+:::info
+Die Zwischenspeicherung ist **standardmäßig deaktiviert**. Sie wird automatisch aktiviert und kann nicht abgeschaltet werden, wenn der [Anti-Spam](./anti-spam.mdx) oder die [Meldungen](./reports.md) aktiv sind: Diese Funktionen müssen die Nachrichten lesen. Die Schaltfläche erscheint dann ausgegraut.
+:::
+
 ## 💬 Feedback geben {#feedback}
 
-Mit dem Befehl `/feedback` kann jedes Mitglied des Servers **eine Meinung, einen Vorschlag oder eine Bug-Meldung** direkt aus Discord teilen, ohne dem Support-Server beitreten zu müssen.
+Mit dem Befehl `/feedback` können Sie **eine Meinung, einen Vorschlag oder eine Bug-Meldung** direkt aus Discord teilen, ohne dem Support-Server beitreten zu müssen. Auf einem Server erfordert er standardmäßig die Berechtigung „**Nachrichten verwalten**“; er funktioniert auch in DMs mit RaidProtect.
 
 Verwenden Sie den Befehl: ```/feedback```
 
-Der Bot bietet Ihnen an, Ihre Erfahrung zu bewerten, und öffnet dann ein Fenster, um Ihr Feedback einzugeben. Je nach Art der Rückmeldung (Vorschlag, Bug, Erfahrung) leitet RaidProtect Sie zu den passenden Ressourcen weiter (Support-Server, Vorschlagsseite).
+Wählen Sie die Art der Rückmeldung und füllen Sie dann das sich öffnende Fenster aus:
+
+- **Vorschlag**: Wir leiten Sie zur Vorschlagsseite weiter.
+- **Bug melden**: Wählen Sie die Kategorie (Anti-Spam, Anti-Raid, Captcha, Sanktionen, Authentification Manager, Konfiguration, Befehle, Logs, Sonstiges); Ihre Meldung wird an unser Team weitergeleitet.
+- **Allgemeine Meinung**: Bewerten Sie Ihre Erfahrung von 1 bis 5.
+- **Kompliment**.
 
 ## 👤 Nutzerinformationen {#userinfo}
 
 Mit dem Befehl `/userinfo` erhalten Sie detaillierte Informationen über einen Nutzer.
 
-Verwenden Sie den Befehl: ```/userinfo [benutzer]```
+Verwenden Sie den Befehl: ```/userinfo [@user]```
 
-Ersetzen Sie `[benutzer]` durch die gewünschte Erwähnung oder ID.
+Ersetzen Sie `[@user]` durch die gewünschte Erwähnung oder ID.
 
 :::info
-Der Befehl `userinfo` ist [per Präfix verwendbar](../guides/prefix.md).
+Der Befehl `userinfo` ist [per Präfix verwendbar](../guides/prefix.md) (Alias `ui`). Wenn Sie RaidProtect zu Ihrem Discord-Konto hinzufügen, können Sie ihn auch in DMs und privaten Gruppen verwenden.
 :::
 
 ### 📋 Angezeigte Informationen {#displayed-userinfo}
@@ -220,13 +290,13 @@ Ist das Ziel ein Servermitglied, umfassen die zusätzlichen Informationen:
 
 Mit dem Befehl `/discord-sanctions` können Sie die **von Discord verhängten Sanktionen** gegen einen Nutzer einsehen, in Übereinstimmung mit der [europäischen Regelung](https://transparency.dsa.ec.europa.eu/).
 
-Verwenden Sie den Befehl: ```/discord-sanctions (benutzer)```
+Verwenden Sie den Befehl: ```/discord-sanctions [@user]```
 
-Ersetzen Sie `(benutzer)` durch die gewünschte Erwähnung oder ID. Der Befehl ist auch per Rechtsklick auf ein Profil zugänglich, über **`Anwendungen`** und dann **`Discord Sanctions`**.
+Ersetzen Sie `[@user]` durch die gewünschte Erwähnung oder ID. Der Befehl ist auch per Rechtsklick auf ein Profil zugänglich, über **`Apps`** und dann **`Discord-Sanktionen`**. Ohne Benutzer zeigt er die globalen Sicherheitsstatistiken von Discord der letzten 7 Tage an (Tabs „**Kategorien**“, „**Erkennung**“ und „**Durchsetzung**“).
 
 ### 📋 Angezeigte Informationen {#displayed-sanctions}
 
-- **Art der Sanktion**:
+- **Sanktionstyp**:
 
 | **Sanktionen**                           | **Emojis**                                                                                                             | **Bedeutungen**                                                |
 | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
@@ -262,3 +332,21 @@ Ersetzen Sie `(benutzer)` durch die gewünschte Erwähnung oder ID. Der Befehl i
 :::note
 Der Befehl ermöglicht es, die zwischen dem 22. August 2024 und dem 14. August 2025 ausgestellten Berichte einzusehen. Diese Informationen werden direkt von Discord bereitgestellt und **können nicht von RaidProtect geändert werden**.
 :::
+
+## Häufig gestellte Fragen {#faq}
+
+### Warum findet `/snipe` keine Nachricht?
+
+`/snipe` liest die Nachrichten, die eine Stunde lang im Speicher gehalten werden. Aktivieren Sie die [Zwischenspeicherung von Nachrichten](#message-cache) im Tab Werkzeuge von `/settings` oder aktivieren Sie den Anti-Spam oder die Meldungen, die sie automatisch aktivieren.
+
+### Wie prüfe ich eine Discord-Einladung, bevor ich einem Server beitrete?
+
+Verwenden Sie `/inviteinfo` mit dem Code oder dem Link der Einladung: Wir zeigen den Server, seinen Ersteller, seine Aktivität und die bei der Ankunft vergebenen Rollen an.
+
+### Was speichert RaidProtect auf meinem Server?
+
+Der Befehl `/privacy` erläutert es: dauerhaft die Konfiguration und die Sanktionen und je nach Ihren Einstellungen eine Stunde Nachrichten im Speicher sowie die Meldungen.
+
+### Wer kann `/prune` verwenden?
+
+Standardmäßig nur Administratoren. Eine Vorschau nennt vor jedem Kick die Anzahl der betroffenen Mitglieder.

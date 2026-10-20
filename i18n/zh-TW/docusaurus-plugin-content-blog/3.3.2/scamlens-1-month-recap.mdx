@@ -1,0 +1,81 @@
+---
+title: 'ScamLens：在 Discord 上刪除了 260,000 張詐騙圖片'
+tags: [threats]
+authors: [zallom]
+slug: scamlens-1-month-recap
+date: 2026-03-21
+image: ../../../../blog/3.3.2/assets/rp-scamlens-1-month-recap.webp
+description: ScamLens 啟用一個月後，以下是 Discord 上的詐騙偵測統計：攔截的詐騙圖片、擴大的涵蓋範圍以及新的紀錄。
+---
+
+import Timestamp from '@site/src/components/Timestamp';
+
+在 [ScamLens 提前啟用](/zh-TW/blog/scamlens-early-activation)一個月後，以下是 Discord 上詐騙圖片偵測的第一批統計數據，以及幾項新功能。
+
+![RaidProtect ScamLens 1 month recap blog post social card](../../../../blog/3.3.2/assets/rp-scamlens-1-month-recap.webp)
+
+{/* truncate */}
+
+## 🔎 ScamLens 是什麼？ {#what-is-scamlens}
+
+ScamLens 是 **RaidProtect 的反詐騙模組**。它會自動分析傳送到您 Discord 伺服器上的圖片，並**刪除被判定為詐騙的圖片**，完全無需設定。它主要針對透過遭駭的 Discord 帳號大量散布的**加密貨幣**、**加密貨幣賭場**與**假投資**詐騙。
+
+這些圖片看起來是這樣的：
+
+<div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '280px 280px', gap: '8px'}}>
+  <img src={require('../../../../blog/3.3.1/assets/scam-1.png').default} alt="MrBeast Crypto Casino Scam 1" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-2.png').default} alt="MrBeast Crypto Casino Scam 2" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-3.png').default} alt="MrBeast Crypto Casino Scam 3" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-4.png').default} alt="MrBeast Crypto Casino Scam 4" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+</div>
+
+## 📊 一個月成果 {#stats}
+
+自 <Timestamp value={1771023600} format="D" /> 起，ScamLens 持續分析傳送到受 RaidProtect 保護的全部 340,000 個 Discord 伺服器上的圖片。以下是數據：
+
+| **指標** | **數字** |
+|---|---|
+| 已分析的圖片（不重複） | **162,000** |
+| 偵測到的詐騙圖片（不重複） | **62,000** |
+| 已刪除的詐騙圖片 | **260,000** |
+| 已識別的帳號 | **15,000** |
+
+**每分析三張圖片，就有超過一張是詐騙圖片。**
+
+![每分鐘出現次數：ScamLens 1 個月](../../../../blog/3.3.2/assets/1402-1403.webp)
+
+與[最初幾波攻擊](/zh-TW/blog/scamlens-early-activation#threat)在 1 小時內呈現**大規模且集中的高峰**不同，一個月期間的活動在時間上分布得更為分散。偵測次數依然很多，但是持續分布，而不是集中在幾次密集的爆發中。
+
+---
+
+## 🆕 新功能 {#updates}
+
+### 🪵 偵測紀錄 {#logs}
+
+ScamLens 現在擁有**專屬紀錄**：每次偵測到詐騙圖片，都會在您的紀錄頻道中產生一則訊息，包含相關成員以及被鎖定的頻道。您能確切知道機器人攔截了什麼，無需任何額外設定。
+
+### 🔍 擴大涵蓋範圍 {#coverage}
+
+部分圖片過去因為 Discord 的 CDN 提供它們的方式而逃過分析。ScamLens 現在也涵蓋這些情況。
+
+---
+
+## ❓ FAQ {#faq}
+
+#### 為什麼我的 Discord 伺服器上會出現詐騙圖片？ {#pourquoi-scam-images}
+這些圖片是由**遭駭的 Discord 帳號**所發送。詐騙者盜用帳號後，利用它們同時向盡可能多的伺服器發送垃圾訊息。您的伺服器**並非特別被鎖定**，它只是其中之一。單一遭駭帳號就能在**幾秒內波及數十個伺服器**，因此自動刪除非常重要。
+
+#### 如何保護我的 Discord 伺服器免受詐騙？ {#proteger-serveur-scam-discord}
+[將 RaidProtect 加入](https://raidprotect.bot/invite)您的伺服器。ScamLens 預設為啟用，會自動刪除被偵測為詐騙的圖片，無需任何設定。
+
+#### 詐騙圖片會為了繞過偵測而演變嗎？ {#evolution-scam}
+會，手法經常變化。ScamLens 會持續更新以跟上這些變化。
+
+---
+
+:::tip 📚 實用資源
+- 🔗 [將 RaidProtect 加入您的伺服器](https://raidprotect.bot/invite)
+- 📘 [查看完整文件](https://docs.raidprotect.bot/)
+- 💡 [提交建議或回饋](https://suggestions.raidprotect.bot/)
+- 📣 [追蹤公告並加入社群](https://raidprotect.bot/discord)
+:::
