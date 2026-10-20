@@ -124,6 +124,26 @@ const HIGHLIGHTS = {
   },
 };
 
+function injectFallbackImage(outDir, defaultUrl) {
+  let fallback = 0;
+  for (const file of walk(outDir)) {
+    const rel = path.relative(outDir, file).split(path.sep).join('/');
+    if (LOCALES.includes(rel.split('/')[0])) continue;
+    const html = fs.readFileSync(file, 'utf8');
+    if (/<meta[^>]+property="og:image"/i.test(html)) continue;
+    const tags =
+      `<meta property="og:image" content="${defaultUrl}"/>` +
+      `<meta property="og:image:width" content="1200"/>` +
+      `<meta property="og:image:height" content="630"/>` +
+      `<meta property="og:image:alt" content="RaidProtect"/>` +
+      `<meta name="twitter:image" content="${defaultUrl}"/>` +
+      `<meta name="twitter:card" content="summary_large_image"/>`;
+    fs.writeFileSync(file, html.replace('</head>', `${tags}</head>`));
+    fallback++;
+  }
+  return fallback;
+}
+
 function walk(dir) {
   const out = [];
   if (!fs.existsSync(dir)) return out;
@@ -166,7 +186,13 @@ module.exports = function socialPreviewPlugin(context) {
   return {
     name: 'social-preview',
     async postBuild({siteConfig, outDir}) {
-      if (UNSUPPORTED_GLYPH_LOCALES.includes(currentLocale)) return;
+      if (UNSUPPORTED_GLYPH_LOCALES.includes(currentLocale)) {
+        // Sans carte propre à la langue, on reprend la carte générique de la locale par défaut.
+        const siteUrl = (siteConfig.url || 'https://raidprotect.bot').replace(/\/$/, '');
+        const fallback = injectFallbackImage(outDir, `${siteUrl}/img/og/default.png`);
+        console.log(`[social-preview] (${currentLocale}) ${fallback} pages sur la carte générique.`);
+        return;
+      }
       const satori = (await import('satori')).default;
       const {Resvg} = require('@resvg/resvg-js');
       const sharp = require('sharp');
@@ -408,23 +434,7 @@ module.exports = function socialPreviewPlugin(context) {
        * une og:image sont laissées telles quelles : c'est le cas des articles
        * de blog, dont l'image vient de leur frontmatter via react-helmet. Une
        * page, un seul acteur qui écrit la balise. */
-      const defaultUrl = `${base}/img/og/default.png`;
-      let fallback = 0;
-      for (const file of walk(outDir)) {
-        const rel = path.relative(outDir, file).split(path.sep).join('/');
-        if (LOCALES.includes(rel.split('/')[0])) continue;
-        const html = fs.readFileSync(file, 'utf8');
-        if (/<meta[^>]+property="og:image"/i.test(html)) continue;
-        const tags =
-          `<meta property="og:image" content="${defaultUrl}"/>` +
-          `<meta property="og:image:width" content="1200"/>` +
-          `<meta property="og:image:height" content="630"/>` +
-          `<meta property="og:image:alt" content="RaidProtect"/>` +
-          `<meta name="twitter:image" content="${defaultUrl}"/>` +
-          `<meta name="twitter:card" content="summary_large_image"/>`;
-        fs.writeFileSync(file, html.replace('</head>', `${tags}</head>`));
-        fallback++;
-      }
+      const fallback = injectFallbackImage(outDir, `${base}/img/og/default.png`);
 
       console.log(`[social-preview] (${currentLocale}) ${count} images OG + ${fallback} pages sur la carte générique.`);
 
