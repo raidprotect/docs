@@ -1,62 +1,72 @@
 ---
-title: Anomalias
+title: Solução de problemas
 description: "Um problema com o RaidProtect? Encontre aqui as soluções para os problemas mais comuns e deixe o seu bot de volta aos trilhos."
 ---
 
-Tem um problema com o RaidProtect? A solução provavelmente encontra-se aqui.
+Você tem um problema com o RaidProtect? A solução provavelmente está aqui.
 
-Por vezes, as coisas não funcionam como esperado. Eis os **problemas mais comuns** que pode encontrar e como resolvê-los.
+Às vezes, as coisas não funcionam como esperado. Veja os **problemas mais comuns** que você pode encontrar e como resolvê-los. 🤗
 
-Se esta página não fornecer uma resposta para um problema que esteja a ter, [**não hesite em contactar a nossa equipa de suporte**](https://raidprotect.bot/discord) que terá todo o prazer em ajudá-lo!
+Se esta página não fornecer uma resposta para um problema que você esteja tendo, [**não hesite em entrar em contato com o nosso suporte**](https://raidprotect.bot/discord), que terá todo o prazer em ajudar você!
 
-## O bot apresenta um erro quando executo um comando {#commands}
+## O bot exibe um erro quando uso um comando {#commands}
 
-Se o comando não for executado com sucesso, **o RaidProtect pode apresentar um erro** em vez do resultado esperado. Na maioria dos casos, é dada uma indicação na mensagem, mas pode ser uma mensagem mais genérica. Eis como resolver este problema na maioria dos casos.
+Se o comando não for executado com sucesso, **o RaidProtect pode exibir um erro** em vez do resultado esperado. Na maioria dos casos, é dada uma indicação na mensagem, mas pode ser uma mensagem mais genérica. Veja como resolver esse problema na maioria dos casos. 🧐
 
-- **Faça o que é indicado.** Alguns erros explicam claramente o problema. Se o bot lhe pedir para fazer algo, faça-o.
+- **Faça o que é indicado.** Alguns erros explicam claramente o problema. Se o bot pedir que você faça algo, faça.
 
-- **Verifique os parâmetros do comando.** O comando pode simplesmente estar mal escrito; consulte a ajuda para ver como utilizá-lo. Não se esqueça de que os parênteses retos ([]) não devem ser incluídos.
+- **Verifique os parâmetros do comando.** O comando pode simplesmente estar mal escrito; consulte a ajuda para ver como usá-lo. Não se esqueça de que os colchetes ([]) não devem ser incluídos.
 
-- **Verifique as permissões do bot.** Deve ter a permissão de **Administrador** e estar ao nível de administrador na hierarquia de cargos.
+- **Verifique as permissões do bot.** Ele deve ter a permissão de **Administrador** e estar no nível dos administradores na hierarquia de cargos.
 
-- **Tente novamente o comando.** Por vezes, o problema resolve-se por si só sem razão aparente.
+- **Tente novamente o comando.** Às vezes, o problema se resolve sozinho, sem razão aparente.
 
-Se continuar a obter um erro apesar destas dicas, [contacte o nosso suporte](https://raidprotect.bot/discord) para que possamos ajudá-lo.
+Se você continuar recebendo um erro apesar dessas dicas, [entre em contato com o nosso suporte](https://raidprotect.bot/discord) para que possamos ajudar você. 🤝
 
-## O canal de registos do bot não foi criado automaticamente {#logs}
+## O canal de logs do bot não foi criado automaticamente {#logs}
 
-Para o notificar das ações que executa, o RaidProtect precisa de um canal de registos. Este canal é criado automaticamente quando o bot entra pela primeira vez, mas por vezes nenhum canal é criado. Eis como corrigir este problema.
+Para avisar você das ações que executa, o RaidProtect precisa de um canal de logs. Esse canal é criado automaticamente quando o bot entra pela primeira vez, mas às vezes nenhum canal é criado. Veja como corrigir esse problema. ⚙️
 
-- **Certifique-se de que o bot tem permissões de Administrador.** Para que o bot funcione corretamente, precisa de lhe dar a permissão de Administrador. Se isto não estiver feito, vá às definições de cargos e conceda esta permissão ao cargo RaidProtect. Depois, basta inicializar manualmente o bot para que tudo funcione (ver abaixo)!
+- **Certifique-se de que o bot é Administrador.** Para que o bot funcione corretamente, é necessário dar a ele a permissão de Administrador. Se isso não estiver feito, vá até as configurações de cargos e conceda essa permissão ao cargo RaidProtect. Depois, basta inicializar manualmente o bot para que tudo funcione (ver abaixo)!
 
-- **Verifique se o bot está devidamente inicializado.** Isto é normalmente feito automaticamente, mas pode forçar esta inicialização com o [comando `/setup`](../setup.md#install). O canal de registos deverá ser criado automaticamente.
+- **Verifique se o bot está devidamente inicializado.** Isso normalmente é feito automaticamente, mas você pode forçar essa inicialização com o [comando `/setup`](../setup.md#install). O canal de logs deve ser criado automaticamente.
 
-- **Defina manualmente um canal.** Se nada funcionar, não entre em pânico, pode escolher manualmente o canal que o bot utilizará para registos! Assim que um canal dedicado estiver criado, execute o [comando `/settings`](../setup.md#settings) e depois selecione Registos.
+- **Defina manualmente um canal.** Se nada funcionar, não entre em pânico: você mesmo pode escolher o canal de logs! Execute o [comando `/settings`](../setup.md#settings), abra a aba “**Moderação**” e clique em “**Configurar**” ao lado de “**Logs**”. Ali você pode escolher um canal geral e, se quiser, um canal dedicado à moderação e outro ao captcha: se ficarem vazios, esses dois usam o canal geral.
 
-## Um utilizador fez spam, mas o bot não o sancionou {#anti-spam}
+## Um usuário fez spam, mas o bot não o sancionou {#anti-spam}
 
-O [anti-spam](../features/anti-spam.mdx) é uma das principais funcionalidades do RaidProtect, e pode ser frustrante se não funcionar. Mas fique descansado, na maioria das vezes, não é nada de grave.
+O [anti-spam](../features/anti-spam.mdx) é uma das principais funcionalidades do RaidProtect, e pode ser frustrante se não funcionar. Mas fique tranquilo: na maioria das vezes, não é nada grave. 😇
 
-- **Se o anti-spam pede para parar de fazer spam**, mas não sanciona, isto deve-se provavelmente à falta de permissões. Lembre-se, o bot deve ter a permissão de Administrador e estar ao nível de administrador na hierarquia de cargos.
+- **Se o anti-spam pede para parar de fazer spam**, mas não sanciona, isso provavelmente se deve à falta de permissões. Lembre-se: o bot deve ter a permissão de Administrador e estar no nível dos administradores na hierarquia de cargos.
 
-- **Verifique a configuração do anti-spam.** Parece óbvio, mas algumas pessoas esquecem-se de que ignoraram um canal.
+- **Verifique a configuração do anti-spam.** Parece óbvio, mas algumas pessoas se esquecem de que ignoraram um canal. Um canal cujo nome contenha “spam” também é sempre ignorado.
 
-- **Verifique as permissões do spammer.** Os administradores são ignorados, portanto, se estiver a testar o anti-spam no seu próprio servidor, este pode não o detetar.
+- **Faça uma simulação.** Na tela do anti-spam, o botão “**Simular**” diz, para um membro, um canal e um tipo de spam dados, se o anti-spam seria acionado e, se não, por quê (módulo desativado, canal ou cargo ignorado, membro acima do bot…). O [comando `/feedback`](../features/utilities.mdx#feedback) também oferece esse diagnóstico quando você relata um bug do anti-spam.
 
-- **O spam é suficientemente longo?** O bot geralmente só deteta [spam](/pt/learn/spam-discord) a partir de mais de 5 mensagens. Não seja demasiado apressado.
+- **Verifique as permissões do spammer.** Os membros da equipe (Administrador, Gerenciar servidor, Gerenciar mensagens) são ignorados enquanto você mesmo não tiver ignorado nenhum cargo nem membro. Se você estiver testando o anti-spam no seu próprio servidor, ele pode, portanto, não detectar você.
 
-Se apesar de tudo isto, o spam continuar a não ser detetado, [contacte-nos no nosso servidor de suporte](https://raidprotect.bot/discord) com uma **captura de ecrã do problema**.
+- **O spam é suficientemente longo?** O anti-spam reage a um volume de mensagens, não a uma mensagem isolada. Não tenha tanta pressa e verifique se a sanção do [gatilho](../features/anti-spam.mdx#triggers) em questão não está desativada.
 
-## Os utilizadores têm acesso ao servidor sem passar pelo captcha {#captcha}
+Se, apesar de tudo isso, o spam continuar a não ser detectado, [entre em contato conosco no nosso servidor de suporte](https://raidprotect.bot/discord) com uma **captura de tela do problema**.
 
-Este problema é relativamente comum, mas depende da **configuração do seu servidor**. Vejamos como corrigi-lo.
+## Os usuários têm acesso ao servidor sem passar pelo captcha {#captcha}
 
-- **Tem um cargo automático?** Se configurou um bot (que não o RaidProtect) para atribuir um cargo aos novos membros do servidor, isto pode interferir com o captcha. Substitua-o pelo [autorole do RaidProtect](../features/captcha.md#autorole).
+Esse problema é relativamente comum, mas depende da **configuração do seu servidor**. Vamos ver como corrigi-lo. 🏥
 
-- **Ativou o captcha?** Esta é uma funcionalidade totalmente opcional que requer a execução de um comando para ser ativada. Consulte a [página de documentação dedicada ao captcha](../features/captcha.md#config) para mais informações.
+- **Você tem um cargo automático?** Se você configurou um bot (que não seja o RaidProtect) para dar um cargo aos novos membros do servidor, isso pode interferir no captcha. Substitua-o pelos [cargos automáticos do RaidProtect](../features/onboarding.md#autorole), atribuídos depois que o captcha é concluído com sucesso.
 
-## Os utilizadores continuam a poder falar quando bloqueio um canal {#lock}
+- **Você ativou o captcha?** Essa é uma funcionalidade opcional: ative-a na aba “**Chegadas**” de [`/settings`](../setup.md#settings). Consulte a [página dedicada ao captcha](../features/captcha.md#config) para mais informações.
 
-O comando de bloqueio parece mágico, mas também tem as suas fraquezas. Como [indicado nesta documentação](../features/channel-lock.md#lock), o comando **apenas atua sobre o cargo @everyone**. Isto significa que se um cargo no canal que pretende bloquear tiver permissão explícita para falar, continuará a poder fazê-lo. Como uma imagem vale mais do que mil palavras, eis como isto se apresenta na prática.
+- **Qual é o acionamento dele?** Em “**Automático**”, o captcha só se aplica durante um raid ou um nível [DISCON](../features/discon.md) elevado (Shield Update, em experimentação): no resto do tempo, os recém-chegados entram diretamente. Escolha “**Permanente**” para que cada recém-chegado passe pelo captcha.
 
-![Captura de ecrã da configuração de bloqueio de canal](../../../../en/docusaurus-plugin-content-docs/current/assets/lock-channel-messages-raidprotect.png)
+- **Algum cargo ou canal o contorna?** A tela do captcha sinaliza os canais ainda visíveis para o cargo de verificação e os cargos que dão acesso ao servidor sem passar por ele, com um botão para corrigir.
+
+## O comando /snipe não encontra nenhuma mensagem {#snipe}
+
+O [comando `/snipe`](../features/moderation.mdx#snipe) lê as mensagens que o RaidProtect guarda na memória por uma hora. Sem anti-spam nem denúncias ativos, esse cache fica desativado por padrão: ative “**Cache de mensagens**” na aba “**Utilitários**” de [`/settings`](../setup.md#settings). Só as mensagens excluídas depois da ativação podem ser encontradas.
+
+## Os usuários continuam podendo falar quando bloqueio um canal {#lock}
+
+O comando de bloqueio parece mágico, mas também tem suas fraquezas. Como [indicado nesta documentação](../features/channel-lock.md#lock), o comando **atua apenas sobre o cargo @everyone**. Isso significa que, se um cargo tiver permissão explícita para falar no canal que você quer bloquear, ele continuará podendo fazer isso. Como uma imagem vale mais que mil palavras, veja como fica na prática. 🔍
+
+![Captura de tela da configuração de bloqueio de canal](../../../../en/docusaurus-plugin-content-docs/current/assets/lock-channel-messages-raidprotect.png)

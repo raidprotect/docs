@@ -1,37 +1,45 @@
 ---
 title: Idioma
-description: "Cambia el idioma de RaidProtect para adaptarlo a tu comunidad: el bot está disponible en francés, inglés, alemán, español y portugués."
+description: "Cambia el idioma de RaidProtect para adaptarlo a tu comunidad: el bot habla 11 idiomas, del francés al japonés, o sigue el de tu servidor de Discord."
 ---
 
-import { LanguageSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
+import { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
 
 RaidProtect te permite elegir el idioma utilizado por el bot para adaptarse lo mejor posible a tu comunidad de Discord.
 
-:::note
-Si tu servidor está configurado como comunitario (parámetro de Discord), RaidProtect usa por defecto el idioma configurado en los **ajustes de la comunidad** del servidor.
-:::
+**Mensajes públicos:** el idioma configurado se aplica a los mensajes públicos enviados por RaidProtect en tu servidor (logs, captcha, reportes, etc.).
 
-**Mensajes públicos:** El idioma configurado afecta únicamente a los mensajes públicos enviados por RaidProtect en tu servidor (registros, mensajes de captcha, reportes, etc.).
+**Mensajes efímeros:** los mensajes privados o temporales se siguen mostrando en el idioma del usuario que interactúa con el bot.
 
-**Mensajes efímeros:** Estos mensajes privados o temporales se muestran en el idioma del usuario que interactúa con el bot.
-
-## 🌐 Lista de idiomas soportados  {#supported}
+## 🌐 Lista de idiomas soportados {#supported}
 
 - **Francés**
 - **Inglés**
-- **Alemán**
 - **Español**
+- **Alemán**
 - **Portugués brasileño**
+- **Italiano**
+- **Turco**
+- **Vietnamita**
+- **Japonés**
+- **Chino simplificado**
+- **Chino tradicional**
+
+Solo se ofrecen los idiomas traducidos íntegramente. Las respuestas efímeras dirigidas a un miembro que usa Discord en otro idioma se muestran en inglés.
 
 ## ⚙️ Cambiar el idioma del bot {#change}
 
-- Usa el [comando `/settings`](./setup.md#settings).
-- Selecciona el botón "**Idioma**".
-- Selecciona el idioma deseado.
+1. Ejecuta el [comando `/settings`](./setup.md#settings).
+2. En la pestaña “**General**”, haz clic en “**Editar**” junto a “**Idioma**”.
+3. Elige el idioma deseado en la lista y confirma.
 
-<LanguageSettingsMockup />
+<SettingsModal name="lang" />
 
-Una vez seleccionado el idioma, el bot adaptará automáticamente todos sus mensajes, notificaciones y comandos al idioma elegido para tu servidor.
+El cambio es inmediato y aparece en los logs del servidor.
+
+### Seguir el idioma del servidor {#follow}
+
+La primera opción, “**Seguir el idioma del servidor**”, recupera el idioma principal definido en los ajustes de Comunidad de Discord. Es el ajuste por defecto. Si ese idioma no forma parte de los idiomas soportados, RaidProtect habla inglés.
 
 :::info
 El soporte lingüístico de RaidProtect está en constante evolución. [Sugiere](https://suggestions.raidprotect.bot) los idiomas que te gustaría ver en el bot o [vota](https://suggestions.raidprotect.bot) por los idiomas propuestos para que sean añadidos.

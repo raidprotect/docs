@@ -1,0 +1,67 @@
+---
+title: Đóng tham gia
+description: "Đóng tham gia của RaidProtect chặn lâu dài các lượt vào mới trên máy chủ Discord của bạn, vượt qua giới hạn 24 giờ của Discord."
+---
+
+import JoinLockMockup from '@site/src/components/DiscordMessage/mockups/join-lock';
+
+{/* <JoinLockMockup /> : masquée pour le moment */}
+
+Tính năng **Đóng tham gia** (hay join lock) của RaidProtect đóng cửa với những người mới vào máy chủ cho đến khi bạn tắt nó, vượt qua giới hạn gốc của Discord vốn chỉ cho phép chặn này trong 24 giờ thông qua hành động an ninh mạng “Tạm dừng lượt tham gia”.
+
+## 🚦 Trường hợp sử dụng và khuyến nghị {#recommendations}
+
+- **Máy chủ riêng tư và đóng kín:** Đóng tham gia đặc biệt được khuyên dùng cho các máy chủ phải giữ riêng tư và không muốn có thêm người mới (máy chủ doanh nghiệp, đội nhóm nhỏ, nhóm riêng tư).
+- **Máy chủ của đội ngũ:** Cho các máy chủ dành riêng cho đội kiểm duyệt hoặc quản trị, nơi chỉ những thành viên được phép mới có quyền truy cập.
+- **Máy chủ doanh nghiệp hoặc chuyên môn:** Cho các tổ chức dùng Discord nội bộ và muốn đảm bảo chỉ các nhân viên hiện tại mới truy cập được máy chủ.
+- **Cộng đồng có quy mô giới hạn:** Cho các máy chủ đã đạt quy mô tối đa mong muốn và không muốn nhận thêm thành viên mới một cách lâu dài.
+
+## ❓ Cách Đóng tham gia hoạt động {#working}
+
+Chừng nào Đóng tham gia còn bật, RaidProtect áp dụng cho những người vào [hành động trong đợt tấn công](./raid-mode.md#action) mà bạn đã chọn cho Auto RaidMode. Khác với tính năng gốc của Discord vốn cần gia hạn thủ công mỗi 24 giờ, việc chặn kéo dài không cần can thiệp cho đến khi bạn tắt nó.
+
+| Hành động trong đợt tấn công | Hiệu lực của Đóng tham gia |
+|---|---|
+| “**Khoá lời mời**” (mặc định) | Các lời mời của máy chủ bị vô hiệu hóa: không ai vào được nữa. |
+| “**Đuổi những người vào**” ([Premium](/vi/premium)) | Mỗi người vào bị đuổi và nhận một tin nhắn riêng cho biết lượt vào đã đóng. |
+| “**Gửi tới captcha**” | Những người vào **có thể vào sau khi giải [captcha](./captcha.md)**: vì vậy máy chủ không bị đóng. |
+| “**Captcha bị đóng băng trong đợt tấn công**” | Những người vào chờ sau captcha chừng nào Đóng tham gia còn bật. |
+
+:::warning
+Với một máy chủ phải thực sự đóng kín, hãy chọn “**Khoá lời mời**”, “**Đuổi những người vào**” hoặc “**Captcha bị đóng băng trong đợt tấn công**”. Với “**Gửi tới captcha**”, Đóng tham gia chỉ đơn thuần bắt những người vào phải qua captcha.
+:::
+:::info
+Các thành viên đã có mặt trên máy chủ vẫn hoạt động và có thể tiếp tục dùng máy chủ bình thường. [Tin nhắn chào mừng](./onboarding.md#welcome-message) im lặng chừng nào Đóng tham gia còn bật.
+:::
+:::warning
+Với hành động “**Khoá lời mời**”, các chức năng cộng đồng của Discord là không thể thiếu cho Đóng tham gia. [Hãy làm theo hướng dẫn của chúng tôi để kiểm tra việc bật cộng đồng trên máy chủ của bạn.](../guides/community.md) Các hành động khác hoạt động mà không cần cộng đồng.
+:::
+
+## 🚩 Cấu hình Đóng tham gia {#config}
+
+Dùng lệnh: ```/joinlock [status]```
+
+- Không có tùy chọn, lệnh hiển thị trạng thái của Đóng tham gia kèm một nút “**Bật**” hoặc “**Tắt**”.
+- Hãy thay `[status]` bằng **True** để bật hoặc **False** để tắt trực tiếp.
+
+![Ảnh chụp màn hình lệnh /joinlock](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-join-lock.webp)
+
+Lệnh yêu cầu quyền **Quản lý máy chủ**, và một tin nhắn được đăng trong kênh nhật ký mỗi khi trạng thái thay đổi.
+
+:::info
+Lệnh `joinlock` có thể [dùng qua tiền tố](../guides/prefix.md). Chừng nào Đóng tham gia còn bật, [lệnh `/raidmode`](./raid-mode.md#enable) không khả dụng: hãy tắt Đóng tham gia trước.
+:::
+
+## Câu hỏi thường gặp {#faq}
+
+### Khác gì với chế độ raid?
+
+[Chế độ raid](./raid-mode.md) là tạm thời (tối đa 24 giờ) và có thể tự bật trong một đợt người vào ồ ạt. Đóng tham gia được bật thủ công và giữ nguyên cho đến khi bạn tắt nó.
+
+### Có cần bật cộng đồng Discord không?
+
+Chỉ khi hành động trong đợt tấn công của Auto RaidMode là “**Khoá lời mời**”. Với các hành động khác, Đóng tham gia hoạt động mà không cần cộng đồng.
+
+### Thành viên mới có còn vào được không?
+
+Không, với “**Khoá lời mời**”, “**Đuổi những người vào**” hoặc “**Captcha bị đóng băng trong đợt tấn công**”. Với “**Gửi tới captcha**”, họ vào sau khi giải captcha.

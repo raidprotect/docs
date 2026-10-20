@@ -513,3 +513,63 @@ body:not(.editor-page) [class*="expandButton"] {
     font-size: 14px;
   }
 }
+
+/* Badges expérimentation (fiole) et Premium (étoile du bot) : titres, sommaire et sidebar. */
+:root {
+  --badge-experiment-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 2v7.53a2 2 0 0 1-.21.9L4.72 20.55A1 1 0 0 0 5.62 22h12.76a1 1 0 0 0 .9-1.45l-5.07-10.12a2 2 0 0 1-.21-.9V2'/%3E%3Cpath d='M8.5 2h7'/%3E%3Cpath d='M7 16h10'/%3E%3C/svg%3E");
+  --badge-experiment-color: #3ba55c;
+  --badge-premium-image: url('/img/icons/premium.png');
+}
+
+.badge-experiment,
+.badge-premium {
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  min-width: 12px;
+  min-height: 12px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-indent: 200%;
+  white-space: nowrap;
+}
+
+.badge-experiment {
+  -webkit-mask: var(--badge-experiment-mask) center / contain no-repeat;
+  mask: var(--badge-experiment-mask) center / contain no-repeat;
+  background: var(--badge-experiment-color);
+}
+
+.badge-premium {
+  background: var(--badge-premium-image) center / contain no-repeat;
+  cursor: pointer;
+}
+
+.sidebar-badged {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.feature-badge-tooltip {
+  position: fixed;
+  z-index: 1000;
+  padding: 0.25rem 0.55rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  background: #111214;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -100%);
+  transition: opacity 0.1s ease;
+}
+
+.feature-badge-tooltip--visible {
+  opacity: 1;
+}

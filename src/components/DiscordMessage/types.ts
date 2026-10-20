@@ -79,11 +79,13 @@ export interface StringSelect {
   disabled?: boolean;
 }
 
+/* `values` : libellés déjà sélectionnés (rendus en pastilles de mention). */
 export interface UserSelect {
   type: 5;
   custom_id: string;
   placeholder?: string;
   disabled?: boolean;
+  values?: string[];
 }
 
 export interface RoleSelect {
@@ -91,6 +93,7 @@ export interface RoleSelect {
   custom_id: string;
   placeholder?: string;
   disabled?: boolean;
+  values?: string[];
 }
 
 export interface MentionableSelect {
@@ -98,6 +101,7 @@ export interface MentionableSelect {
   custom_id: string;
   placeholder?: string;
   disabled?: boolean;
+  values?: string[];
 }
 
 export interface ChannelSelect {
@@ -105,6 +109,7 @@ export interface ChannelSelect {
   custom_id: string;
   placeholder?: string;
   disabled?: boolean;
+  values?: string[];
 }
 
 export interface TextDisplay {

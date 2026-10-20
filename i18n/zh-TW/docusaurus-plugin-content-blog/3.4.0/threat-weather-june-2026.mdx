@@ -1,0 +1,128 @@
+---
+title: '保護您的 Discord 伺服器免受詐騙圖片垃圾訊息侵擾：第一張圖片就處罰'
+tags: [threats]
+authors: [zallom]
+slug: threat-weather-june-2026
+date: 2026-07-01
+image: ./assets/rp-scamlens-4-month-recap.webp
+description: 2026 年 6 月 Discord 總結：ScamLens 刪除了 400 萬張詐騙圖片，並識別出 160,000 個遭駭帳號。新功能：ScamLens 在偵測到第一張圖片時就處罰帳號，而不是先清理整波攻擊再處罰，從而切斷遭駭帳號的存取，不給它時間發布更多圖片。
+---
+
+import Timestamp from '@site/src/components/Timestamp';
+import Head from '@docusaurus/Head';
+
+受 RaidProtect 保護的 **375,000 個 Discord 伺服器** 2026 年 6 月總結（2026 年 6 月 1 日至 7 月 1 日）：ScamLens **刪除了 400 萬張詐騙圖片**，並識別出 **160,000 個遭駭的 Discord 帳號**。這些詐騙**冒用名人的形象**，例如 MrBeast、Elon Musk 或 Andrew Tate，而他們顯然與這些訊息毫無關係。本月新功能：ScamLens **現在在偵測到第一張圖片時就會處罰**，而不是先清理整波攻擊再處罰，從而切斷遭駭帳號的存取，不給它時間發布更多圖片。
+
+![RaidProtect：2026 年 6 月威脅氣象](./assets/rp-scamlens-4-month-recap.webp)
+
+{/* truncate */}
+
+## 🛰️ 回顧：ScamLens，RaidProtect 的圖片反詐騙 {#what-is-scamlens}
+
+給剛認識 RaidProtect 的伺服器：ScamLens 是處理**詐騙圖片**的模組。每當有圖片被發布，它就會與自身的目錄比對，並自動刪除詐騙圖片：**加密貨幣詐騙**、**假冒名人的贈獎活動**（MrBeast、Elon Musk、Andrew Tate、Kick、Stake……）、**假的線上賭場促銷**。您無需進行任何設定或維護：只要[加入 RaidProtect](https://raidprotect.bot/invite)，ScamLens 就會**預設**運作。
+<div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '280px 280px', gap: '8px'}}>
+  <img src={require('../../../../blog/3.4.0/assets/scam-1.png').default} alt="Andrew Tate Crypto Casino Scam 1" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.4.0/assets/scam-2.png').default} alt="Andrew Tate Crypto Casino Scam 2" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.4.0/assets/scam-3.png').default} alt="Andrew Tate Crypto Casino Scam 3" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.4.0/assets/scam-4.png').default} alt="Andrew Tate Crypto Casino Scam 4" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+</div>
+
+## 📊 自 2026 年 2 月 14 日以來的 ScamLens 總結 {#stats}
+
+自 <Timestamp value={1771023600} format="D" /> [ScamLens 提前啟用](/zh-TW/blog/scamlens-early-activation)以來的累計數據：
+
+| **指標（自 2 月 14 日起累計）** | **2026 年 6 月 1 日** | **2026 年 7 月 1 日** | **變化** |
+|---|---|---|---|
+| 已分析的圖片（不重複） | 1,800,000 | **3,000,000** | **+67%** |
+| 偵測到的詐騙圖片（不重複） | 141,000 | **275,000** | **+95%** |
+| 已刪除的詐騙圖片 | 2,300,000 | **4,000,000** | **+74%** |
+| 已識別的遭駭 Discord 帳號 | 80,000 | **160,000** | **+100%** |
+
+**已識別的遭駭帳號數量**在一個月內**再次翻倍**（80,000 → 160,000），而刪除的圖片數量現已達到 **400 萬張**。不重複圖片的目錄大幅成長（+95%）：**新的視覺群組**持續大量出現。所謂視覺群組，是指同一張詐騙圖片**及其所有細微變體**（重新裁切、濾鏡、修圖）；當不重複圖片的數量增加這麼多時，代表推出的確實是**新的圖像**，而不只是舊圖的變化版本（請參閱 5 月的[「3 張圖片」組合](/zh-TW/blog/threat-weather-may-2026#updates)）。
+
+---
+
+## 🆕 新功能：第一張圖片就處罰 {#updates}
+
+在此之前，當遭駭帳號傾倒其攻擊浪潮時，ScamLens 會**先刪除所有訊息**，然後才處罰。在清理期間，該帳號還能繼續幾秒鐘，而這些攻擊浪潮**有時還包含角色提及**，讓伺服器被通知淹沒。
+
+現在，只要偵測到**第一張詐騙圖片**，RaidProtect 就會**立即刪除並處罰**（處罰可設定），然後再清理其餘內容。遭駭帳號會被立刻切斷，沒有時間發布更多圖片或 ping 整個伺服器。
+
+---
+
+## ❓ FAQ {#faq}
+
+<Head>
+  <script type="application/ld+json">
+    {JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Discord 上的 ScamLens 是什麼？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'ScamLens 是 Discord 防護機器人 RaidProtect 的圖片反詐騙模組。它會即時分析每張被發布的圖片，並自動刪除被判定為詐騙的圖片（加密貨幣詐騙、假冒名人的贈獎活動、假的線上賭場促銷），完全無需設定。',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'ScamLens 是先刪除圖片，還是先處罰帳號？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: '自 2026 年 6 月起，ScamLens 在偵測到第一張詐騙圖片時就會處罰帳號（處罰可設定），然後再清理該波攻擊的其餘內容。過去它會先刪除所有訊息再處罰，讓遭駭帳號得以多發布幾張圖片。',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '為什麼我的 Discord 帳號會自己發送詐騙訊息？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: '您的帳號極有可能已遭駭。詐騙者會竊取您的驗證權杖（假網站、被植入惡意程式的軟體、惡意擴充功能），然後在您不知情的情況下，利用它在您所在的所有伺服器上大量發送詐騙圖片。',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '如果我 Discord 伺服器上的某位成員散布加密貨幣詐騙，該怎麼辦？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: '不要停權他：這幾乎都是遭駭的帳號，而不是惡意使用者。請私下聯絡他，讓他保護好自己的帳號。ScamLens 已經會即時刪除圖片，而不會懲罰合法擁有者。',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: '如何辨識 Discord 上的假贈獎活動或假加密貨幣促銷？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: '任何加密貨幣「贈禮」、帶有名人標誌（MrBeast、Elon Musk、Andrew Tate、Kick、Stake）的線上賭場或「保證獲利」的投資都是詐騙。這些名人並不是這些訊息的幕後主使：詐騙者只是冒用他們的形象與知名度。Discord 從不舉辦加密貨幣發放活動，也沒有任何正派的品牌會在多個伺服器間發送垃圾訊息。',
+          },
+        },
+      ],
+    })}
+  </script>
+</Head>
+
+#### Discord 上的 ScamLens 是什麼？ {#quest-ce-que-scamlens}
+ScamLens 是 **Discord 防護機器人** RaidProtect 的**圖片反詐騙模組**。它會即時分析每張被發布的圖片，並**自動刪除**被判定為詐騙的圖片（加密貨幣詐騙、假冒名人的贈獎活動、假的線上賭場促銷），**完全無需設定**。
+
+#### ScamLens 是先刪除圖片，還是先處罰帳號？ {#suppression-ou-sanction}
+自 2026 年 6 月起，ScamLens **在偵測到第一張詐騙圖片時就會處罰帳號**（處罰可設定），*然後*再清理該波攻擊的其餘內容。過去它會先刪除所有訊息再處罰，讓遭駭帳號得以多發布幾張圖片。
+
+#### 為什麼我的 Discord 帳號會自己發送詐騙訊息？ {#compte-discord-envoie-messages-seul}
+您的帳號極有可能已**遭駭**。詐騙者會竊取您的**驗證權杖**（假網站、被植入惡意程式的軟體、惡意擴充功能），然後在您不知情的情況下，利用它在**您所在的所有伺服器**上大量發送詐騙圖片。
+
+#### 如果我 Discord 伺服器上的某位成員散布加密貨幣詐騙，該怎麼辦？ {#membre-diffuse-scam-crypto}
+**不要停權他**：這幾乎都是**遭駭的帳號**，而不是惡意使用者。請私下聯絡他，讓他保護好自己的帳號。ScamLens 已經會即時刪除圖片，而不會懲罰合法擁有者。
+
+#### 如何辨識 Discord 上的假贈獎活動或假加密貨幣促銷？ {#reconnaitre-fausse-promo-crypto}
+任何加密貨幣**「贈禮」**、帶有名人標誌（MrBeast、Elon Musk、Andrew Tate、Kick、Stake）的**線上賭場**或**「保證獲利」的投資**都是詐騙。**這些名人並不是這些訊息的幕後主使**：詐騙者只是冒用他們的形象與知名度。Discord 從不舉辦加密貨幣發放活動，也沒有任何正派的品牌會在多個伺服器間發送垃圾訊息。
+
+---
+
+:::tip 📚 實用資源
+- 🔗 [將 RaidProtect 加入您的伺服器](https://raidprotect.bot/invite)
+- 📘 [HoneyPot 文件](https://docs.raidprotect.bot/features/honeypot)
+- 💡 [提交建議](https://suggestions.raidprotect.bot/)
+- 📣 [加入我們的 Discord 伺服器](https://raidprotect.bot/discord)
+:::

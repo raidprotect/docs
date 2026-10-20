@@ -27,6 +27,8 @@ Alle RaidProtect-Befehle, gruppiert nach Kategorie. Klicken Sie auf den Namen ei
 | [`/honeypot`](./features/honeypot.md#config) | `/honeypot` | Konfiguriert den HoneyPot-Fallenkanal. |
 | [`/tagrole`](./features/tag-role.md) | `/tagrole` | Konfiguriert die Rolle, die Mitgliedern mit dem Server-Tag zugewiesen wird. |
 | [`/display public`](./features/display.mdx) | `/display public` | Verwaltet die öffentlichen Informationspanels von RaidProtect. |
+| [`/display staff`](./features/display.mdx#staff) | `/display staff` | Verwaltet die dem Staff vorbehaltenen Panels (DISCON, interne Nachrichten). |
+| [`/discon`](./features/discon.md) | `/discon` | Richtet das DISCON-Panel ein, das die Gefahrenstufe des Servers einstellt (Experiment, Shield Update). |
 | [`/audit`](./features/audit.md) | `/audit` | Analysiert die Sicherheit des Servers und schlägt vor, Konfigurationslücken zu beheben. |
 
 ## Moderation {#moderation}
@@ -35,52 +37,54 @@ Alle RaidProtect-Befehle, gruppiert nach Kategorie. Klicken Sie auf den Namen ei
 
 | Befehl | Prototyp | Beschreibung |
 |---|---|---|
-| [`/ban`](./features/moderation.mdx#ban) | `/ban (@benutzer) [dauer] [--delete-messages=dauer] [--silent] [grund]` | Bannt einen Benutzer dauerhaft. |
-| [`/tempban`](./features/moderation.mdx#tempban) | `/tempban (@benutzer) (dauer) [--delete-messages=dauer] [--silent] [grund]` | Bannt einen Benutzer für eine festgelegte Dauer. |
-| [`/softban`](./features/moderation.mdx#softban) | `/softban (@mitglied) [--delete-messages=dauer] [--silent] [grund]` | Bannt und entbannt ein Mitglied, um seine Nachrichten zu löschen. |
-| [`/unban`](./features/moderation.mdx#unban) | `/unban (@benutzer) [--silent] [grund]` | Hebt eine Bannung auf. |
-| [`/kick`](./features/moderation.mdx#kick) | `/kick (@mitglied) [--silent] [grund]` | Kickt ein Mitglied vom Server. |
-| [`/mute`](./features/moderation.mdx#timeout) | `/mute (@mitglied) (dauer) [--force-timeout] [--silent] [grund]` | Schaltet ein Mitglied stumm (Mute-Rolle oder Discord-Timeout). |
-| [`/unmute`](./features/moderation.mdx#untimeout) | `/unmute (@mitglied) [--silent] [grund]` | Hebt das Mute / Timeout eines Mitglieds auf. |
-| [`/jail`](./features/moderation.mdx#jail) | `/jail (@mitglied) [--silent] [grund]` | Sperrt ein Mitglied über die Jail-Rolle ein. |
-| [`/tempjail`](./features/moderation.mdx#tempjail) | `/tempjail (@mitglied) (dauer) [--silent] [grund]` | Sperrt ein Mitglied für eine festgelegte Dauer ein. |
-| [`/unjail`](./features/moderation.mdx#unjail) | `/unjail (@mitglied) [--silent] [grund]` | Lässt ein Mitglied aus der Jail frei. |
-| [`/warn`](./features/moderation.mdx#warn) | `/warn (@mitglied) [--silent] [grund]` | Verwarnt ein Mitglied formell per DM. |
+| [`/ban`](./features/moderation.mdx#ban) | `/ban (@user) [duration] [--delete-messages=dauer] [--silent] [reason]` | Bannt einen Benutzer, dauerhaft oder für die angegebene Dauer. |
+| [`/tempban`](./features/moderation.mdx#tempban) | `/tempban (@user) (duration) [--delete-messages=dauer] [--silent] [reason]` | Bannt einen Benutzer für eine festgelegte Dauer. |
+| [`/softban`](./features/moderation.mdx#softban) | `/softban (@member) [--delete-messages=dauer] [--silent] [reason]` | Bannt und entbannt ein Mitglied, um seine Nachrichten zu löschen. |
+| [`/unban`](./features/moderation.mdx#unban) | `/unban (@user) [--silent] [reason]` | Hebt einen Bann auf. |
+| [`/kick`](./features/moderation.mdx#kick) | `/kick (@member) [--silent] [reason]` | Kickt ein Mitglied vom Server. |
+| [`/mute`](./features/moderation.mdx#timeout) | `/mute (@member) (duration) [--force-timeout] [--silent] [reason]` | Schaltet ein Mitglied stumm (Mute-Rolle oder Discord-Timeout). |
+| [`/unmute`](./features/moderation.mdx#untimeout) | `/unmute (@member) [--silent] [reason]` | Hebt das Mute / Timeout eines Mitglieds auf. |
+| [`/jail`](./features/moderation.mdx#jail) | `/jail (@member) [--silent] [reason]` | Sperrt ein Mitglied über die Jail-Rolle ein. |
+| [`/tempjail`](./features/moderation.mdx#tempjail) | `/tempjail (@member) (duration) [--silent] [reason]` | Sperrt ein Mitglied für eine festgelegte Dauer ein. |
+| [`/unjail`](./features/moderation.mdx#unjail) | `/unjail (@member) [--silent] [reason]` | Lässt ein Mitglied aus dem Jail frei. |
+| [`/warn`](./features/moderation.mdx#warn) | `/warn (@member) [--silent] [reason]` | Verwarnt ein Mitglied formell per DM. |
 
 ### Moderationswerkzeuge
 
 | Befehl | Prototyp | Beschreibung |
 |---|---|---|
-| [`/clear`](./features/moderation.mdx#clear) | `/clear (anzahl) [@benutzer]` | Löscht eine Gruppe von Nachrichten in einem Kanal. |
-| [`/snipe`](./features/moderation.mdx#snipe) | `/snipe [@benutzer] [--channel=#kanal]` | Ruft die zuletzt gelöschte Nachricht eines Kanals oder eines Benutzers ab (1 Stunde). |
-| [`/modview`](./features/moderation.mdx#modview) | `/modview (@benutzer)` | Öffnet eine zentrale Moderationsansicht eines Mitglieds (Sanktionen, Notiz, Snipe). |
-| [`/note`](./features/moderation.mdx#note) | `/note (@benutzer)` | Fügt die interne Moderationsnotiz eines Mitglieds hinzu oder ändert sie. |
-| [`/nick`](./features/moderation.mdx#nick) | `/nick (@mitglied) [pseudonym]` | Ändert das Pseudonym eines Mitglieds auf dem Server (leer zum Zurücksetzen). |
+| [`/clear`](./features/moderation.mdx#clear) | `/clear (amount) [@user]` | Löscht 2 bis 100 Nachrichten in einem Kanal. |
+| [`/snipe`](./features/moderation.mdx#snipe) | `/snipe [@user] [--channel=#channel]` | Ruft die zuletzt gelöschte Nachricht eines Kanals oder eines Benutzers ab (1 Stunde, erfordert die Zwischenspeicherung von Nachrichten). |
+| [`/modview`](./features/moderation.mdx#modview) | `/modview (@user)` | Öffnet eine zentrale Moderationsansicht eines Mitglieds (Sanktionen, Notiz, Snipe). |
+| [`/note`](./features/moderation.mdx#note) | `/note (@user)` | Fügt die interne Moderationsnotiz eines Mitglieds hinzu oder ändert sie. |
+| [`/nick`](./features/moderation.mdx#nick) | `/nick (@user) [pseudo]` | Ändert den Spitznamen eines Mitglieds auf dem Server (leer zum Zurücksetzen). |
+| [`/onduty`](./features/moderation.mdx#onduty) | `/onduty` | Fügt die Rolle „im Dienst“ des Moderators, der ihn verwendet, hinzu oder entfernt sie. |
 
 ### Kanalsperre
 
 | Befehl | Prototyp | Beschreibung |
 |---|---|---|
-| [`/lock`](./features/channel-lock.md#lock) | `/lock [#kanal] [dauer] [grund]` | Sperrt einen Kanal, um das Senden von Nachrichten zu verhindern (optionale Dauer). |
-| [`/unlock`](./features/channel-lock.md#unlock) | `/unlock [#kanal] [grund]` | Entsperrt einen zuvor gesperrten Kanal. |
-| [`/slowmode`](./features/moderation.mdx#slowmode) | `/slowmode (intervall) [dauer] [#kanal] [grund]` | Aktiviert oder ändert den Slowmode eines Kanals (optionale Anwendungsdauer). |
+| [`/lock`](./features/channel-lock.md#lock) | `/lock [#channel] [duration] [reason]` | Sperrt einen Kanal, um das Senden von Nachrichten zu verhindern (optionale Dauer). |
+| [`/unlock`](./features/channel-lock.md#unlock) | `/unlock [#channel] [reason]` | Entsperrt einen zuvor gesperrten Kanal. |
+| [`/slowmode`](./features/moderation.mdx#slowmode) | `/slowmode (delay) [duration] [#channel] [reason]` | Aktiviert oder ändert den Slowmode eines Kanals (optionale Anwendungsdauer). |
 
 ## Sanktionsverlauf {#sanctions}
 
 | Befehl | Prototyp | Beschreibung |
 |---|---|---|
-| [`/sanctions search`](./features/sanctions.mdx#search) | `/sanctions search [@benutzer] [@moderator] [typ] [grund] [datum] [status] [moderator-typ]` | Sucht im Verlauf mit Filtern (Benutzer, Moderator, Typ, Datum, Status …). |
+| [`/sanctions search`](./features/sanctions.mdx#search) | `/sanctions search [@user] [@moderator] [type] [reason] [date] [status] [moderator_type]` | Sucht im Verlauf mit Filtern (Benutzer, Moderator, Typ, Datum, Status …). |
 | [`/sanctions info`](./features/sanctions.mdx#info) | `/sanctions info (id)` | Zeigt die Details einer Sanktion an. |
-| [`/sanctions edit`](./features/sanctions.mdx#edit) | `/sanctions edit (id) [neuer_grund] [neue_dauer]` | Ändert den Grund einer bestehenden Sanktion. |
-| [`/sanctions delete`](./features/sanctions.mdx#delete) | `/sanctions delete (id) [grund]` | Entfernt eine Sanktion aus dem Verlauf. |
+| [`/sanctions edit`](./features/sanctions.mdx#edit) | `/sanctions edit (id) [reason] [duration]` | Ändert den Grund oder die Dauer einer bestehenden Sanktion. |
+| [`/sanctions delete`](./features/sanctions.mdx#delete) | `/sanctions delete (id) [reason]` | Entfernt eine Sanktion aus dem Verlauf. |
 | [`/meine-sanktionen`](./features/utilities.mdx#my-sanctions) | `/meine-sanktionen` | Ermöglicht es einem Mitglied, seine eigenen Sanktionen einzusehen. |
+| [`/alt`](./features/alt-accounts.md) | `/alt [@mitglied] [@anderes]` | Verknüpft die Konten ein und derselben Person, damit sie ihre Sanktionen teilen (Experiment, Identity Update). |
 
 ## Anti-Raid {#antiraid}
 
 | Befehl | Prototyp | Beschreibung |
 |---|---|---|
-| [`/raidmode`](./features/raid-mode.md#raid-mode) | `/raidmode [zustand] [dauer]` | Aktiviert oder deaktiviert den Raid-Modus (Blockierung neuer Beitritte). |
-| [`/joinlock`](./features/join-lock.mdx) | `/joinlock [zustand]` | Schließt den Serverzugang dauerhaft für neue Mitglieder. |
+| [`/raidmode`](./features/raid-mode.md#raid-mode) | `/raidmode [status] [duration]` | Aktiviert oder deaktiviert den Raid-Modus, der neue Beitritte blockiert oder filtert. |
+| [`/joinlock`](./features/join-lock.mdx) | `/joinlock [status]` | Schließt den Serverzugang dauerhaft für neue Mitglieder. |
 | [`/dmlock`](./features/dm-lock.mdx) | `/dmlock` | Aktiviert oder deaktiviert das dauerhafte Schließen der Server-DMs. |
 | [`/dmlock-info`](./features/dm-lock.mdx#info) | `/dmlock-info` | Informiert die Mitglieder über den Status der DM-Schließung. |
 
@@ -88,7 +92,7 @@ Alle RaidProtect-Befehle, gruppiert nach Kategorie. Klicken Sie auf den Namen ei
 
 | Befehl | Prototyp | Beschreibung |
 |---|---|---|
-| [`/auth`](./features/authentication-manager.mdx#auth) | `/auth [rolle]` | Authentifiziert sich, um eine geschützte Rolle zu erhalten. |
+| [`/auth`](./features/authentication-manager.mdx#auth) | `/auth [role]` | Authentifiziert sich, um eine geschützte Rolle zu erhalten. |
 | [`/auth-profile`](./features/authentication-manager.mdx#auth-profile) | `/auth-profile` | Verwaltet das eigene Authentifizierungsprofil (PIN, OTP, Passkeys). |
 | [`/auth-settings`](./features/authentication-manager.mdx#auth-settings) | `/auth-settings` | Konfiguriert geschützte Rollen und autorisierte Benutzer. |
 
@@ -96,24 +100,25 @@ Alle RaidProtect-Befehle, gruppiert nach Kategorie. Klicken Sie auf den Namen ei
 
 | Befehl | Prototyp | Beschreibung |
 |---|---|---|
-| [`/bypass captcha`](./features/captcha.md#bypass) | `/bypass captcha [@benutzer]` | Erlaubt einem Benutzer, ohne Captcha beizutreten. |
-| [`/bypass minage`](./features/raid-mode.md#bypass-minage) | `/bypass minage [@benutzer]` | Erlaubt einem Benutzer, ohne Mindestalter beizutreten. |
-| [`/bypass raid`](./features/raid-mode.md#bypass-raid) | `/bypass raid [@benutzer]` | Erlaubt einem Benutzer, trotz Raid-Modus beizutreten (erfordert den Kick-Modus). |
+| [`/bypass captcha`](./features/captcha.md#bypass) | `/bypass captcha [@user]` | Erlaubt einem Benutzer, ohne Captcha beizutreten. |
+| [`/bypass minage`](./features/onboarding.md#bypass-minage) | `/bypass minage [@user]` | Erlaubt einem Benutzer, ohne Mindestalter beizutreten. |
+| [`/bypass raid`](./features/raid-mode.md#bypass-raid) | `/bypass raid [@user]` | Erlaubt einem Benutzer, trotz Raid-Modus beizutreten (erfordert den Kick-Modus). |
 
 ## Dienstprogramme {#utilities}
 
 | Befehl | Prototyp | Beschreibung |
 |---|---|---|
-| [`/userinfo`](./features/utilities.mdx#userinfo) | `/userinfo [@benutzer]` | Zeigt Informationen über einen Benutzer an. |
+| [`/userinfo`](./features/utilities.mdx#userinfo) | `/userinfo [@user]` | Zeigt Informationen über einen Benutzer an. |
 | [`/serverinfo`](./features/utilities.mdx#serverinfo) | `/serverinfo` | Zeigt Informationen über den Server an. |
-| [`/discord-sanctions`](./features/utilities.mdx#discord-sanctions) | `/discord-sanctions (@benutzer)` | Zeigt die Discord-Sanktionen (DSA) eines Benutzers an. |
-| [`/prune`](./features/utilities.mdx#prune) | `/prune [tage]` | Entfernt inaktive Mitglieder über ein interaktives Menü. |
-| [`/channel duplicate`](./features/utilities.mdx#channel-duplicate) | `/channel duplicate (#kanal)` | Dupliziert einen Kanal mit seinen Einstellungen und Berechtigungen. |
-| [`/channel clear`](./features/utilities.mdx#channel-clear) | `/channel clear (#kanal)` | Löscht und erstellt einen Kanal identisch neu. |
-| [`/block add`](./features/utilities.mdx#block-add) | `/block add [@benutzer] [grund]` | Hindert einen Benutzer daran, bestimmte Funktionen zu nutzen. |
-| [`/block remove`](./features/utilities.mdx#block-remove) | `/block remove [@benutzer] [grund]` | Hebt die Sperre eines Benutzers auf. |
+| [`/discord-sanctions`](./features/utilities.mdx#discord-sanctions) | `/discord-sanctions [@user]` | Zeigt die Discord-Sanktionen (DSA) eines Benutzers an, oder ohne Benutzer die globalen Statistiken. |
+| [`/inviteinfo`](./features/utilities.mdx#inviteinfo) | `/inviteinfo (invite)` | Zeigt die Informationen einer Discord-Einladung an (Code oder Link). |
+| [`/prune`](./features/utilities.mdx#prune) | `/prune [duration]` | Entfernt inaktive Mitglieder über ein interaktives Menü. |
+| [`/channel duplicate`](./features/utilities.mdx#channel-duplicate) | `/channel duplicate (#channel)` | Dupliziert einen Kanal mit seinen Einstellungen und Berechtigungen. |
+| [`/channel clear`](./features/utilities.mdx#channel-clear) | `/channel clear (#channel)` | Löscht und erstellt einen Kanal identisch neu. |
+| [`/block add`](./features/utilities.mdx#block-add) | `/block add [@user] [reason]` | Hindert einen Benutzer daran, bestimmte Funktionen zu nutzen. |
+| [`/block remove`](./features/utilities.mdx#block-remove) | `/block remove [@user] [reason]` | Hebt die Sperre eines Benutzers auf. |
 | [`/block list`](./features/utilities.mdx#block-list) | `/block list` | Listet die blockierten Benutzer auf. |
-| [`/report`](./features/reports.md) | `/report (@mitglied) (grund)` | Ermöglicht Mitgliedern, eine Situation der Moderation zu melden. |
+| [`/report`](./features/reports.md) | `/report (@member)` | Ermöglicht Mitgliedern, ein Mitglied der Moderation zu melden (der Grund wird in einem Fenster eingegeben). |
 
 ## Informationen & Hilfe {#info}
 
@@ -123,26 +128,34 @@ Alle RaidProtect-Befehle, gruppiert nach Kategorie. Klicken Sie auf den Namen ei
 | [`/help`](./readme.mdx) | `/help` | Zeigt die allgemeine Hilfe von RaidProtect an. |
 | [`/invite`](./useful-links/index.mdx) | `/invite` | Zeigt nützliche Links an (Einladung, Support, Bot-Seite). |
 | [`/transparency`](./features/transparency.md#command) | `/transparency` | Zeigt den letzten Moderations-Transparenzbericht des Servers an. |
-| [`/changelog`](./changelog.mdx) | `/changelog` | Konsultiert das Änderungsprotokoll von RaidProtect. |
+| [`/changelog`](./changelog.mdx) | `/changelog` | Zeigt das Änderungsprotokoll von RaidProtect an. |
 | [`/feedback`](./features/utilities.mdx#feedback) | `/feedback` | Teilt eine Meinung, einen Vorschlag oder eine Bug-Meldung. |
+| [`/privacy`](./features/utilities.mdx#privacy) | `/privacy` | Zeigt an, was RaidProtect auf diesem Server speichert. |
+
+## Kontextmenüs {#context-menus}
+
+Einige Aktionen öffnen sich per Rechtsklick im Menü **Apps**:
+
+- Bei einem Mitglied: **Modview öffnen** ([Moderationsansicht](./features/moderation.mdx#modview)), **Sanktionieren** ([Sanktion in einem Fenster](./features/moderation.mdx#context-menu)), **Discord-Sanktionen** ([Discord-Sanktionen](./features/utilities.mdx#discord-sanctions)) und **Benutzer melden** ([Meldung](./features/reports.md)).
+- Bei einer Nachricht: **Nachricht melden** ([Meldung](./features/reports.md)).
 
 ---
 
 ## ⚙️ Zwei Möglichkeiten, einen Befehl zu verwenden {#usage}
 
-Beide Formate bieten **genau die gleichen Möglichkeiten**: Alles, was per Slash machbar ist, ist auch per Nachricht machbar, und umgekehrt. Der Unterschied liegt nur in der Art und Weise, wie der Befehl eingegeben wird.
+Die gängigen Moderationsbefehle gibt es in zwei Formaten: per Slash und als Nachricht mit einem Präfix. Die übrigen, wie `/sanctions`, `/snipe` oder `/audit`, lassen sich nur per Slash verwenden. Die [Liste der Präfixbefehle](./guides/prefix.md#activated) zeigt, welche ein Präfix akzeptieren.
 
 ### Slash-Befehle: am einfachsten {#slash}
 
 Tippen Sie `/` in einen Kanal, wählen Sie den Befehl, und **Discord schlägt Ihnen jeden Parameter über eine spezielle Oberfläche vor** (Benutzer-Auswahl, Kanal-Auswahl, Autocomplete für Dauern usw.). Das ist die standardmäßig empfohlene Methode: Sie müssen sich nichts merken.
 
 ```
-/ban @mitglied grund: scam-spam
+/ban @mitglied reason: scam-spam
 ```
 
 ### Nachrichtenbefehle: am komplexesten {#prefix}
 
-Sobald das [Präfix in `/settings` aktiviert ist](./guides/prefix.md), können Sie die Befehle auch als klassische Nachricht schreiben (`?ban …`, `?kick …` usw.). Keine grafische Oberfläche: Sie müssen **die Syntax kennen** (positionelle Argumente, benannte Flags, freies Argument am Zeilenende). Im Gegenzug ist das schneller über die Tastatur für Moderatoren, die die Befehle beherrschen.
+Sobald die [Präfixbefehle in `/settings` aktiviert sind](./guides/prefix.md), können Sie die Befehle auch als klassische Nachricht schreiben (`?ban …`, `?kick …` usw.). Keine grafische Oberfläche: Sie müssen **die Syntax kennen** (positionelle Argumente, benannte Flags, freies Argument am Zeilenende). Im Gegenzug ist das schneller über die Tastatur für Moderatoren, die die Befehle beherrschen.
 
 #### Positionelle Argumente
 
@@ -165,9 +178,9 @@ Für sekundäre Optionen. Die Flags können **überall** im Befehl platziert wer
 ?tempban @mitglied 1d --silent er hat es wieder getan
 ```
 
-#### „Rest"-Argument (freier Text)
+#### „Rest“-Argument (freier Text)
 
-Das letzte Argument bestimmter Befehle (typischerweise `[grund]`) erfasst **alles, was Sie danach schreiben**, einschließlich Leerzeichen, ohne Anführungszeichen setzen zu müssen.
+Das letzte Argument bestimmter Befehle (typischerweise `[reason]`) erfasst **alles, was Sie danach schreiben**, einschließlich Leerzeichen, ohne Anführungszeichen setzen zu müssen.
 
 ```
 ?warn @mitglied du hast wieder Regel 3 des Servers verletzt

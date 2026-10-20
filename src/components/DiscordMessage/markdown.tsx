@@ -65,8 +65,15 @@ export function formatInlineMarkdown(text: string): ReactNode[] {
       remaining = remaining.slice(mentionMatch[0].length);
       continue;
     }
+    // </commande> ou </commande:id> : mention de commande slash
+    const commandMatch = remaining.match(/^<\/([^:>]+)(?::\d+)?>/);
+    if (commandMatch) {
+      result.push(<span key={key++} className={styles.mention}>/{commandMatch[1]}</span>);
+      remaining = remaining.slice(commandMatch[0].length);
+      continue;
+    }
     // plain char
-    const nextSpecial = remaining.slice(1).search(/[*`#@!]/);
+    const nextSpecial = remaining.slice(1).search(/[*`#@!<]/);
     const chunk = nextSpecial === -1 ? remaining : remaining.slice(0, nextSpecial + 1);
     result.push(chunk);
     remaining = remaining.slice(chunk.length);

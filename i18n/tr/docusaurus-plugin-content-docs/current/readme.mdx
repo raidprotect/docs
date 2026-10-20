@@ -1,0 +1,60 @@
+---
+title: Dokümantasyon
+sidebar_label: Beni oku
+slug: /
+---
+
+import DocCard from '@theme/DocCard';
+import SearchHero from '@theme/SearchHero';
+
+<div className="margin-vert--lg">
+  <SearchHero suggestions={['Captcha', 'Baskın modu', 'Anti-spam', 'Yaptırımlar']} />
+</div>
+
+Bu dokümantasyonun amacı, RaidProtect'in nasıl çalıştığını size açıklamaktır. Geri bildirimlerinizi bize iletmekten çekinmeyin; böylece dokümantasyonu iyileştirebiliriz.
+Projedeki yeniliklerden haberdar olmak için [Discord sunucumuza katılmayı](https://raidprotect.bot/discord) unutmayın. Botun kullanımıyla ilgili sorularınızı yanıtlayacak destek ekibimizle de iletişime geçebilirsiniz. 😄
+
+## 🚀 RaidProtect'e başlangıç {#start}
+
+RaidProtect'i kullanmaya başlamak için aşağıdaki bağlantıyı kullanarak onu sunucunuza davet etmeniz yeterlidir.
+
+<DocCard item={{ type: 'link', href: 'https://raidprotect.bot/invite', label: 'RaidProtect\'i davet et' }} />
+<br />
+
+:::danger
+Dikkat, **RaidProtect adını kullanan** **bot kopyaları** dolaşımda; botu yalnızca resmî sitemizden davet edin.
+:::
+
+### Ön koşullar {#requirement}
+
+RaidProtect'in düzgün çalışmasını sağlamak için:
+1. RaidProtect'e **Yönetici iznini verin**. Bu, tüm kanallarınızı otomatik olarak denetlemesine olanak tanır.
+2. **Rolünü sunucunuzun yöneticilerinin rolü seviyesine yerleştirin**. İzin sistemi, RaidProtect'in kendisinden üstte bir role sahip kullanıcılara yaptırım uygulamasına izin vermez.
+
+### Kurulum {#install}
+
+RaidProtect sunucunuza eklendikten sonra [`/setup`](./setup.md#install) komutunu çalıştırın.
+
+<DocCard item={{ type: 'link', href: '/docs/beta/setup', docId: 'setup', label: 'Yönlendirmeli kurulum' }} />
+<br />
+
+:::note
+Daha az cesur olanlar (veya acelesi olanlar) için, her özelliğin ana bilgilerini özetleyen [`/setup` komutunun](./setup.md#recommended) açıklamalarını okumanız yeterlidir.
+:::
+
+### Kullanım {#use}
+
+RaidProtect'in sunduğu tüm özellikleri keşfetmek için bu dokümantasyonun çeşitli bölümlerine göz atın.
+
+:::info
+Dokümantasyonda komut parametreleri, `(zorunlu)` olduklarında ve `[isteğe bağlı]` olduklarında bu şekilde gösterilir.
+:::
+
+<DocCard item={{ type: 'link', href: '/docs/beta/language', docId: 'language', label: 'Kullanılabilir diller' }} />
+<br />
+<DocCard item={{ type: 'category', href: '/docs/beta/features', label: 'Özellikler', description: 'Özelliklerimizin her birinin dokümantasyonu.' }} />
+<br />
+<DocCard item={{ type: 'category', href: '/docs/beta/guides', label: 'Rehberlerimiz', description: 'Size en iyi şekilde yardımcı olacak rehberler.' }} />
+<br />
+<DocCard item={{ type: 'category', href: '/docs/beta/useful-links', label: 'Faydalı bağlantılar', description: 'RaidProtect\'in çeşitli faydalı bağlantıları.' }} />
+<br />

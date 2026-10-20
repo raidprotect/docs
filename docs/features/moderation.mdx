@@ -3,55 +3,67 @@ title: Modération
 description: "Les commandes de modération de RaidProtect (ban, kick, mute, jail, warn) et la ModView centralisée aident vos modérateurs à gérer votre serveur Discord."
 ---
 
+import Settings from '@site/src/components/DiscordMessage/mockups/v2';
+
 import ModerationMockup from '@site/src/components/DiscordMessage/mockups/moderation';
 
-<ModerationMockup />
+{/* <ModerationMockup /> : obsolète en 3.5.0 (libellés du sélecteur de sanction et du menu « Ouvrir Modview ») */}
 
 import Icon from "@site/src/components/Icon";
 
 Pour faciliter le travail de vos modérateurs, RaidProtect intègre des commandes de modération très pratiques qui vous permettent d’interagir directement avec les fonctionnalités natives de Discord, comme le **[bannissement](/learn/discord-sanctions)** et l’**expulsion** d’utilisateurs.
 
-En plus de ces actions, RaidProtect envoie des messages privés à l’utilisateur sanctionné pour lui expliquer la raison de sa sanction, et cela est également enregistré dans les logs du serveur pour votre suivi.
+En plus de ces actions, RaidProtect envoie des messages privés à l’utilisateur sanctionné pour lui expliquer la raison de sa sanction, et cela est également enregistré dans l'[historique des sanctions](./sanctions.mdx) et les logs du serveur pour votre suivi.
 
 :::info
-Les commandes de modérations sont [utilisables par préfixe](../guides/prefix).
+Les commandes de sanction (`/ban`, `/kick`, `/mute`, `/jail`, `/warn`…), ainsi que `/nick`, `/clear` et `/slowmode`, sont [utilisables par préfixe](../guides/prefix). `/modview`, `/note`, `/snipe` et `/onduty` ne le sont pas.
 :::
 
 :::info
-Toutes les commandes de sanction acceptent l'option `[silent]` pour ne pas notifier la cible en MP. Les MP de notification (kick, softban, ban temporaire) contiennent un bouton avec une invitation au serveur.
+Toutes les commandes de sanction acceptent l'option `[--silent]` pour ne pas notifier la cible en MP. Les MP de notification (kick, softban, ban temporaire) contiennent un bouton avec une invitation au serveur.
 :::
 
 ## 🔍 Vue de modération d’un membre {#modview}
 
-La commande `/modview` ouvre une **vue de modération centralisée** sur un membre : ses sanctions, sa note de modération interne et le dernier message qu’il a supprimé sont regroupés dans une seule réponse, avec des actions rapides (sanctionner, modifier la note, etc.).
+La commande `/modview` ouvre une **vue de modération centralisée** sur un membre, regroupée dans une seule réponse :
 
-Utilisez la commande : ```/modview (utilisateur)```
+- ses **dernières sanctions**, avec le bouton “**Voir toutes les sanctions**” ;
+- sa **note de modération** interne, modifiable avec “**Modifier**” (voir [`/note`](#note)) ;
+- son **dernier message supprimé**, avec le lien “**Voir tous les messages supprimés (1h)**” (voir [`/snipe`](#snipe)) ;
+- ses **comptes liés**, si votre serveur a accès aux [doubles comptes](./alt-accounts.md), avec le bouton “**Gérer**” pour les modérateurs qui peuvent bannir ;
+- le sélecteur “**Sanctionner l'utilisateur**” pour agir aussitôt.
+
+Utilisez la commande : ```/modview (utilisateur)```
 
 Remplacez `(utilisateur)` par la mention ou l’identifiant souhaité.
 
 :::tip
-La commande est aussi accessible via le menu contextuel : clic droit sur un profil → **Applications** → **Ouvrir Modview**.
+La commande est aussi accessible via le menu contextuel : clic droit sur un profil → **Applications** → **Ouvrir Modview**.
 :::
 
 ## 🖱️ Sanctionner via le menu contextuel {#context-menu}
 
-En plus des commandes slash, vous pouvez sanctionner un membre directement depuis son profil via un clic droit : **Applications** → **RaidProtect** → **Sanctionner**.
+En plus des commandes slash, vous pouvez sanctionner un membre directement depuis son profil via un clic droit : **Applications** → **Sanctionner**.
 
-Une fenêtre s'ouvre alors vous permettant de :
-- **Type de sanction** : Sélectionner le type de sanction à appliquer.
-- **Durée** : Renseigner une durée (optionnel, ex. : `1d 2h 30m`).
-- **Raison** : Préciser le motif de la sanction.
+Une fenêtre s'ouvre alors vous permettant de renseigner :
+- **Type de sanction** : le type de sanction à appliquer (obligatoire).
+- **Durée** : une durée, pour un bannissement, un timeout ou un emprisonnement (optionnel, ex. : `1d 2h 30m`).
+- **Raison** : le motif de la sanction.
+- **Silencieux** : n'envoie pas de message privé à la personne sanctionnée.
+
+Les types proposés dépendent de vos permissions sur chaque commande (`/ban`, `/softban`, `/jail`, `/kick`, `/mute`, `/warn`), y compris les réglages des Intégrations Discord. L'emprisonnement n'apparaît que si un [rôle Jail](./sanctions.mdx#jail) est configuré.
 
 ## <Icon src="/img/icons/SanctionsBAN.svg" alt="icon SanctionsBAN" title=":iconSanctionsBAN:"/> Bannir un utilisateur {#ban}
 
-La commande `/ban` vous permet d'interdire définitivement l'accès d'un utilisateur à votre serveur.
+La commande `/ban` vous permet d'interdire l'accès d'un utilisateur à votre serveur, définitivement ou pour une durée donnée.
 
-Utilisez la commande : ```/ban (utilisateur) [delete-messages] [silent] [raison]```
+Utilisez la commande : ```/ban (utilisateur) [durée] [--delete-messages=durée] [--silent] [raison]```
 
 Remplacez `(utilisateur)` par la mention ou l’identifiant souhaité et `[raison]` par le motif de la sanction.
 
-- `[delete-messages]` : durée de l’historique à supprimer (par exemple `1h`, `1d`, `7d`). Discord limite la suppression à 7 jours maximum.
-- `[silent]` : ne pas envoyer de MP à la cible.
+- `[durée]` : si elle est renseignée, le bannissement devient temporaire (comme avec [`/tempban`](#tempban)).
+- `[--delete-messages]` : durée de l’historique à supprimer (par exemple `1h`, `1d`, `7d`). Discord limite la suppression à 7 jours maximum.
+- `[--silent]` : ne pas envoyer de MP à la cible.
 
 :::tip
 Vous pouvez bannir un utilisateur à partir de son [identifiant Discord](../guides/id), même s’il n’est pas connecté ou présent sur votre serveur.
@@ -61,27 +73,27 @@ Vous pouvez bannir un utilisateur à partir de son [identifiant Discord](../guid
 
 La commande `/tempban` vous permet d'interdire temporairement l'accès d'un utilisateur à votre serveur.
 
-Utilisez la commande : ```/tempban (utilisateur) (durée) [delete-messages] [silent] [raison]```
+Utilisez la commande : ```/tempban (utilisateur) (durée) [--delete-messages=durée] [--silent] [raison]```
 
-Remplacez `(utilisateur)` par la mention ou l’identifiant souhaité, `(durée)` par la durée du bannissement et `[raison]` par le motif de la sanction. Le paramètre `[delete-messages]` permet de supprimer l’historique des messages du membre (jusqu’à 7 jours).
+Remplacez `(utilisateur)` par la mention ou l’identifiant souhaité, `(durée)` par la durée du bannissement et `[raison]` par le motif de la sanction. Le paramètre `[--delete-messages]` permet de supprimer l’historique des messages du membre (jusqu’à 7 jours).
 
 ### <Icon src="/img/icons/SanctionsSOFTBAN.svg" alt="icon SanctionsSOFTBAN" title=":iconSanctionsSOFTBAN:"/> Softban un utilisateur {#softban}
 
-La commande `/softban` bannit puis débannit immédiatement un membre. Cela permet de **supprimer l’historique de ses messages** sans l’exclure définitivement du serveur : il peut revenir avec une nouvelle invitation.
+La commande `/softban` bannit puis débannit immédiatement un membre. Cela permet de **supprimer l’historique de ses messages** sans l’exclure définitivement du serveur : il peut revenir avec une nouvelle invitation.
 
-Utilisez la commande : ```/softban (membre) [delete-messages] [silent] [raison]```
+Utilisez la commande : ```/softban (membre) [--delete-messages=durée] [--silent] [raison]```
 
-Remplacez `(membre)` par la mention ou l’identifiant souhaité et `[raison]` par le motif de la sanction. Le paramètre `[delete-messages]` permet de choisir la durée de messages à supprimer (par défaut 1 jour).
+Remplacez `(membre)` par la mention ou l’identifiant souhaité et `[raison]` par le motif de la sanction. Le paramètre `[--delete-messages]` permet de choisir la durée de messages à supprimer.
 
 :::tip
-Le softban est particulièrement adapté aux **comptes piratés** : on nettoie le spam et on libère le compte, sans exclure définitivement le membre une fois qu’il aura sécurisé son compte.
+Le softban est particulièrement adapté aux **comptes piratés** : on nettoie le spam et on libère le compte, sans exclure définitivement le membre une fois qu’il aura sécurisé son compte.
 :::
 
 ### <Icon src="/img/icons/SanctionsUNBAN.svg" alt="icon SanctionsUNBAN" title=":iconSanctionsUNBAN:"/> Débannir un utilisateur {#unban}
 
 La commande `/unban` vous permet de retirer le bannissement d'un utilisateur précédemment banni, lui permettant ainsi de rejoindre à nouveau votre serveur.
 
-Utilisez la commande : ```/unban (utilisateur) [silent] [raison]```
+Utilisez la commande : ```/unban (utilisateur) [--silent] [raison]```
 
 Remplacez `(utilisateur)` par l’identifiant souhaité et `[raison]` par le motif du débannissement.
 
@@ -89,7 +101,7 @@ Remplacez `(utilisateur)` par l’identifiant souhaité et `[raison]` par le mot
 
 La commande `/kick` vous permet d'expulser un membre de votre serveur sans le bannir. L'utilisateur pourra rejoindre le serveur à nouveau s'il possède une invitation valide.
 
-Utilisez la commande : ```/kick (membre) [silent] [raison]```
+Utilisez la commande : ```/kick (membre) [--silent] [raison]```
 
 Remplacez `(membre)` par la mention ou l’identifiant souhaité et `[raison]` par le motif de la sanction.
 
@@ -97,41 +109,41 @@ Remplacez `(membre)` par la mention ou l’identifiant souhaité et `[raison]` p
 
 La commande `/mute` vous permet de restreindre temporairement la capacité d'un membre à interagir sur le serveur. Pendant cette période, le membre ne pourra pas envoyer de messages, réagir, rejoindre des vocaux ou envoyer des messages privés aux autres membres.
 
-Utilisez la commande : ```/mute (membre) (durée) [force_timeout] [silent] [raison]```
+Utilisez la commande : ```/mute (membre) (durée) [--force-timeout] [--silent] [raison]```
 
 Remplacez `(membre)` par la mention ou l’identifiant souhaité, `(durée)` par la durée du mute (ex. : `10m`, `1h`, `1d`) et `[raison]` par le motif de la sanction.
 
 :::tip
-Le paramètre `[force_timeout]` permet d'outrepasser la règle du seuil et de forcer l'utilisation du timeout Discord, même si un rôle Mute est configuré.
+L'option `[--force-timeout]` (alias `ft` en préfixe) permet d'outrepasser la règle du seuil et de forcer l'utilisation du timeout Discord, même si un rôle Mute est configuré. La durée ne peut alors pas dépasser 28 jours.
 
-Vous pouvez configurer un [rôle Mute](./sanctions.mdx#mute) et un [seuil de mute](./sanctions.mdx#mute-threshold) dans `/settings` > Sanctions. Au-delà du seuil défini, le bot appliquera automatiquement le rôle Mute au lieu du timeout Discord, permettant des durées supérieures à 28 jours.
+Vous pouvez configurer un [rôle Mute](./sanctions.mdx#mute) et un [seuil de mute](./sanctions.mdx#mute-threshold) dans `/settings`, onglet “**Modération**”, “**Sanctions**”, ligne “**Mute**”. Au-delà du seuil défini, le bot appliquera automatiquement le rôle Mute au lieu du timeout Discord, permettant des durées supérieures à 28 jours.
 :::
 
 ### <Icon src="/img/icons/SanctionsUNTIMEOUT.svg" alt="icon SanctionsUNTIMEOUT" title=":iconSanctionsUNTIMEOUT:" /> Arrêter d'exclure un utilisateur {#untimeout}
 
 La commande `/unmute` vous permet de retirer immédiatement les restrictions d'un membre en timeout, lui permettant de retrouver toutes ses capacités d'interaction sur le serveur.
 
-Utilisez la commande : ```/unmute (membre) [silent] [raison]```
+Utilisez la commande : ```/unmute (membre) [--silent] [raison]```
 
 Remplacez `(membre)` par la mention ou l'identifiant souhaité et `[raison]` par le motif du retrait du timeout.
 
 ## <Icon src="/img/icons/SanctionsJAIL.svg" alt="icon SanctionsJAIL" title=":iconSanctionsJAIL:" /> Emprisonner un utilisateur {#jail}
 
-La commande `/jail` vous permet d'isoler un membre en lui attribuant un rôle restrictif. Le Jail a pour but de proposer une alternative au ban : le membre conserve un accès très limité au serveur au lieu d'en être totalement exclu.
+La commande `/jail` vous permet d'isoler un membre en lui attribuant un rôle restrictif. Le Jail a pour but de proposer une alternative au ban : le membre conserve un accès très limité au serveur au lieu d'en être totalement exclu.
 
-Utilisez la commande : ```/jail (membre) [silent] [raison]```
+Utilisez la commande : ```/jail (membre) [--silent] [raison]```
 
 Remplacez `(membre)` par la mention ou l'identifiant souhaité et `[raison]` par le motif de la sanction.
 
 :::warning
-Le [rôle Jail](./sanctions.mdx#jail) doit être configuré via `/settings` avant de pouvoir utiliser cette commande.
+Le [rôle Jail](./sanctions.mdx#jail) doit être configuré via `/settings` avant de pouvoir utiliser cette commande. Les modules automatiques, eux, retombent sur un timeout quand aucun rôle Jail n'est configuré.
 :::
 
 ### <Icon src="/img/icons/SanctionsJAILTemp.svg" alt="icon SanctionsJAILTemp" title=":iconSanctionsJAILTemp:" /> Emprisonner temporairement un utilisateur {#tempjail}
 
 La commande `/tempjail` vous permet d'emprisonner temporairement un membre pour une durée définie.
 
-Utilisez la commande : ```/tempjail (membre) (durée) [silent] [raison]```
+Utilisez la commande : ```/tempjail (membre) (durée) [--silent] [raison]```
 
 Remplacez `(membre)` par la mention ou l'identifiant souhaité, `(durée)` par la durée de l'emprisonnement et `[raison]` par le motif de la sanction.
 
@@ -139,7 +151,7 @@ Remplacez `(membre)` par la mention ou l'identifiant souhaité, `(durée)` par l
 
 La commande `/unjail` vous permet de retirer le rôle Jail d'un membre, lui permettant de retrouver ses accès normaux au serveur.
 
-Utilisez la commande : ```/unjail (membre) [silent] [raison]```
+Utilisez la commande : ```/unjail (membre) [--silent] [raison]```
 
 Remplacez `(membre)` par la mention ou l'identifiant souhaité et `[raison]` par le motif de la libération.
 
@@ -147,7 +159,7 @@ Remplacez `(membre)` par la mention ou l'identifiant souhaité et `[raison]` par
 
 La commande `/warn` vous permet d'avertir formellement un membre par un message privé envoyé via le bot.
 
-Utilisez la commande : ```/warn (membre) [silent] [raison]```
+Utilisez la commande : ```/warn (membre) [--silent] [raison]```
 
 Remplacez `(membre)` par la mention ou l'identifiant souhaité et `[raison]` par le motif de l'avertissement.
 
@@ -155,17 +167,17 @@ Remplacez `(membre)` par la mention ou l'identifiant souhaité et `[raison]` par
 
 La commande `/note` permet d’ajouter ou de modifier la **note de modération interne** d’un membre, sans avoir à passer par [`/modview`](#modview). La note est uniquement visible par les modérateurs.
 
-Utilisez la commande : ```/note (utilisateur)```
+Utilisez la commande : ```/note (utilisateur)```
 
-Remplacez `(utilisateur)` par la mention ou l’identifiant souhaité. Une fenêtre s’ouvre pour saisir ou modifier la note.
+Remplacez `(utilisateur)` par la mention ou l’identifiant souhaité. Une fenêtre s’ouvre pour saisir ou modifier la note, jusqu'à 300 caractères. L'ajout, la modification et la suppression d'une note sont enregistrés dans les [logs de modération](#logs).
 
 ## 🏷️ Changer le pseudo d’un membre {#nick}
 
 La commande `/nick` vous permet de modifier le pseudo d’un membre sur le serveur, ou de le réinitialiser.
 
-Utilisez la commande : ```/nick (membre) [pseudo]```
+Utilisez la commande : ```/nick (membre) [pseudo]```
 
-Remplacez `(membre)` par la mention ou l’identifiant souhaité. Le paramètre `[pseudo]` est le nouveau pseudo à appliquer (32 caractères maximum). S’il est omis, le pseudo du membre est réinitialisé.
+Remplacez `(membre)` par la mention ou l’identifiant souhaité. Le paramètre `[pseudo]` est le nouveau pseudo à appliquer (32 caractères maximum). S’il est omis, le pseudo du membre est réinitialisé.
 
 :::info
 La commande nécessite la permission Discord **Gérer les pseudos** et est aussi accessible via les alias `nickname`, `rename` et `setnick` en [commande par préfixe](../guides/prefix). Les changements sont enregistrés dans les logs du serveur.
@@ -177,39 +189,89 @@ La commande `/clear` vous permet de supprimer rapidement un certain nombre de me
 
 Utilisez la commande : ```/clear (nombre) [utilisateur]```
 
-Remplacez `(nombre)` par le nombre de messages que vous souhaitez supprimer (maximum 100). Ajoutez `[utilisateur]` en utilisant la mention ou l’identifiant pour cibler uniquement ses messages dans le salon.
+Remplacez `(nombre)` par le nombre de messages que vous souhaitez supprimer (de 2 à 100). Ajoutez `[utilisateur]` en utilisant la mention ou l’identifiant pour cibler uniquement ses messages dans le salon. En préfixe, la commande répond aussi à l'alias `clean`.
 
 ## 🕒 Activer le slowmode dans un salon {#slowmode}
 
-La commande `/slowmode` vous permet d’activer ou de modifier le mode lent d’un salon texte, afin de limiter la fréquence des messages envoyés par les utilisateurs.
+La commande `/slowmode` vous permet d’activer ou de modifier le mode lent d’un salon, afin de limiter la fréquence des messages envoyés par les utilisateurs.
 
-Utilisez la commande : ```/slowmode (délai) [duration] [salon] [raison]```
+Utilisez la commande : ```/slowmode (délai) [durée] [salon] [raison]```
 
-- Remplacez `(délai)` par la durée souhaitée entre chaque message (par ex. : `5s`, `1m`, `10m`, `1h` ; `0` pour désactiver).
-- Ajoutez `[duration]` pour désactiver automatiquement le slowmode après cette durée (par ex. `30m`, `2h`).
+- Remplacez `(délai)` par la durée souhaitée entre chaque message (par ex. : `5s`, `1m`, `10m`, `1h`, jusqu'à 6 heures ; `0` pour désactiver).
+- Ajoutez `[durée]` pour désactiver automatiquement le slowmode après cette durée (par ex. `30m`, `2h`).
 - Ajoutez `[salon]` si vous souhaitez appliquer le slowmode à un autre salon que celui où vous tapez la commande.
 - Ajoutez `[raison]` pour préciser le motif, qui sera enregistré dans les logs du serveur.
 
 ## 🕵️ Récupérer un message supprimé {#snipe}
 
-La commande `/snipe` permet de récupérer le **dernier message supprimé** dans un salon, ou le dernier message supprimé d’un utilisateur précis, sur la dernière heure.
+La commande `/snipe` affiche les **messages supprimés de la dernière heure** dans un salon, page par page, du plus récent au plus ancien.
 
-Utilisez la commande : ```/snipe [utilisateur]```
+Utilisez la commande : ```/snipe [utilisateur] [--channel=#salon]```
 
-- Sans argument : affiche le dernier message supprimé du salon courant.
-- Avec `[utilisateur]` : affiche le dernier message supprimé par cet utilisateur.
+- Sans argument : affiche les messages supprimés du salon courant.
+- Avec `[utilisateur]` : affiche uniquement les messages supprimés de cet utilisateur.
+- Avec `[--channel]` : cherche dans un autre salon que celui où vous tapez la commande.
 
-Depuis la réponse, vous pouvez **sanctionner l’auteur** ou **supprimer le message** (s’il est encore présent dans le salon).
+Depuis la réponse, vous pouvez **sanctionner l’auteur** d'un message. La réponse n'est visible que par vous.
+
+:::warning
+`/snipe` ne voit que les messages que RaidProtect garde en mémoire, pendant une heure. Ils ne sont conservés que si la “**Mise en cache des messages**” est activée (`/settings`, onglet “**Utilitaires**”, désactivée par défaut), ou si l'[anti-spam](./anti-spam.mdx) ou les [signalements](./reports.md) sont actifs, ce qui l'active d'office. Sinon, la commande répond qu'aucun message supprimé n'a été trouvé.
+:::
+
+Pour activer la mise en cache des messages :
+
+1. Faites la [commande `/settings`](../setup.md#settings).
+2. Ouvrez l'onglet “**Utilitaires**”.
+3. Cliquez sur “**Activer**” à côté de “**Mise en cache des messages**”.
 
 :::info
-`/snipe` est une **solution temporaire** en attendant la mise à jour des logs. Seuls les messages supprimés dans la dernière heure sont disponibles.
+Ces messages restent en mémoire une heure et ne sont jamais écrits en base. La commande `/privacy` affiche ce que RaidProtect conserve sur votre serveur.
+:::
+
+## 🟢 Rôle en service {#onduty}
+
+Le **rôle en service** permet à vos modérateurs de signaler qu'ils sont disponibles : avec la commande `/onduty`, chacun se met en service ou hors service, et nous ajoutons ou retirons le rôle configuré.
+
+Utilisez la commande : ```/onduty```
+
+La réponse n'est visible que par vous. Le même effet est disponible avec le bouton “**En service**” d'un [panneau staff (`/display staff`)](./display.mdx#staff).
+
+### Configurer le rôle en service {#onduty-config}
+
+1. Faites la [commande `/settings`](../setup.md#settings).
+2. Ouvrez l'onglet “**Utilitaires**”.
+3. Cliquez sur “**Configurer**” à côté de “**Rôle en service**”.
+4. Choisissez un rôle existant dans le sélecteur, ou cliquez sur “**En créer un pour moi**” (nous créons un rôle `En service` sans aucune permission).
+
+<Settings start="onduty" />
+
+:::warning
+Le rôle en service est pris en libre-service par vos modérateurs : il ne doit porter aucune permission sensible. Nous refusons un rôle qui a Administrateur, Gérer le serveur, Gérer les rôles, Gérer les salons, Gérer les webhooks, Gérer les messages, Gérer les fils, Gérer les expressions, Gérer les événements, Expulser ou Bannir des membres. RaidProtect doit aussi avoir la permission **Gérer les rôles**, avec un rôle placé au-dessus du rôle en service.
 :::
 
 ## 📋 Logs de modération {#logs}
 
-Par défaut, les logs de modération sont envoyées dans le salon de logs principal de RaidProtect. Vous pouvez configurer un salon de logs dédié pour séparer les actions de modération des autres logs.
+Par défaut, les logs de modération sont envoyés dans le salon de logs général de RaidProtect. Vous pouvez configurer un salon de logs dédié pour séparer les actions de modération des autres logs.
 
 1. Faites la [commande `/settings`](../setup.md#settings).
-2. Cliquez sur le bouton "**Logs**".
-3. Sélectionnez "**Moderation**".
-4. Choisissez le salon dans lequel les logs de modération seront envoyées ou utilisez le bouton "**En créer un pour moi**".
+2. Ouvrez l'onglet “**Modération**”.
+3. Cliquez sur “**Configurer**” à côté de “**Logs**”.
+4. Dans le sélecteur “**Moderation**”, choisissez le salon dans lequel les logs de modération seront envoyés, ou utilisez le bouton “**En créer un pour moi**”.
+
+<Settings start="logs" />
+
+L'écran “**Logs**” regroupe trois salons : “**Général**”, “**Moderation**” et “**Captcha**”. Un salon “**Moderation**” ou “**Captcha**” laissé vide renvoie ses logs vers le salon général. La bascule “**Logs de modération passives**” choisit si RaidProtect journalise aussi les actions faites sans passer par le bot.
+
+## Questions fréquentes {#faq}
+
+### Pourquoi /snipe ne trouve-t-il aucun message ?
+
+RaidProtect ne garde les messages en mémoire que si la mise en cache des messages est activée dans l'onglet “**Utilitaires**” de `/settings`, ou si l'anti-spam ou les signalements sont actifs. Seule la dernière heure est disponible.
+
+### Quelle permission faut-il pour utiliser /onduty ?
+
+Par défaut, la permission **Gérer les messages**. Vous pouvez l'ajuster dans les Intégrations de Discord. Un administrateur doit d'abord configurer le rôle en service dans l'onglet “**Utilitaires**” de `/settings`.
+
+### Puis-je bannir un utilisateur qui n'est pas sur mon serveur ?
+
+Oui, avec `/ban` et son [identifiant Discord](../guides/id).

@@ -1,0 +1,128 @@
+---
+title: 'Discord サーバーを詐欺画像のスパムから守る：最初の 1 枚で即処罰'
+tags: [threats]
+authors: [zallom]
+slug: threat-weather-june-2026
+date: 2026-07-01
+image: ./assets/rp-scamlens-4-month-recap.webp
+description: 2026 年 6 月の Discord のまとめ。ScamLens が 400 万枚の詐欺画像を削除し、乗っ取られたアカウント 16 万件を特定しました。新機能として、ScamLens は波全体を片付けてから処罰するのではなく、最初の 1 枚を検出した時点でアカウントを処罰するようになりました。乗っ取られたアカウントに次の画像を投稿する隙を与えずに、アクセスを断ち切ります。
+---
+
+import Timestamp from '@site/src/components/Timestamp';
+import Head from '@docusaurus/Head';
+
+RaidProtect が守る **37 万 5,000 の Discord サーバー** における 2026 年 6 月のまとめ（2026 年 6 月 1 日〜7 月 1 日）です。ScamLens が **400 万枚の詐欺画像を削除** し、**乗っ取られた Discord アカウント 16 万件** を特定しました。これらの詐欺は、MrBeast、Elon Musk、Andrew Tate などの **有名人になりすましています** が、当然ながら本人たちはこれらのメッセージとは一切関係ありません。今月の新機能：ScamLens は、波全体を片付けてから処罰するのではなく、**最初の 1 枚を検出した時点で処罰する** ようになりました。乗っ取られたアカウントに次の画像を投稿する隙を与えずに、アクセスを断ち切ります。
+
+![RaidProtect：脅威ウェザー 2026 年 6 月](./assets/rp-scamlens-4-month-recap.webp)
+
+{/* truncate */}
+
+## 🛰️ おさらい：RaidProtect の画像詐欺対策 ScamLens {#what-is-scamlens}
+
+RaidProtect を初めて知ったサーバーの方へ。ScamLens は **詐欺画像** を処理するモジュールです。画像が投稿されるとすぐにカタログと照合し、詐欺画像を自動で削除します。対象は、**仮想通貨詐欺**、**有名人を装った偽のプレゼント企画**（MrBeast、Elon Musk、Andrew Tate、Kick、Stake など）、**オンラインカジノの偽の宣伝** です。あなたの側で設定や管理をする必要はありません。[RaidProtect を追加](https://raidprotect.bot/invite)した時点で、ScamLens は **既定で** 動作します。
+<div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '280px 280px', gap: '8px'}}>
+  <img src={require('../../../../blog/3.4.0/assets/scam-1.png').default} alt="Andrew Tate Crypto Casino Scam 1" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.4.0/assets/scam-2.png').default} alt="Andrew Tate Crypto Casino Scam 2" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.4.0/assets/scam-3.png').default} alt="Andrew Tate Crypto Casino Scam 3" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.4.0/assets/scam-4.png').default} alt="Andrew Tate Crypto Casino Scam 4" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+</div>
+
+## 📊 2026 年 2 月 14 日以降の ScamLens の成果 {#stats}
+
+<Timestamp value={1771023600} format="D" />の [ScamLens の前倒しでの有効化](/ja/blog/scamlens-early-activation)以降の累計データです。
+
+| **指標（2 月 14 日からの累計）** | **2026 年 6 月 1 日** | **2026 年 7 月 1 日** | **増減** |
+|---|---|---|---|
+| 分析した画像（重複なし） | 1,800,000 | **3,000,000** | **+67%** |
+| 検出した詐欺画像（重複なし） | 141,000 | **275,000** | **+95%** |
+| 削除した詐欺画像 | 2,300,000 | **4,000,000** | **+74%** |
+| 特定した乗っ取りアカウント | 80,000 | **160,000** | **+100%** |
+
+**特定した乗っ取りアカウントの数は 1 か月で再び倍増** し（80,000 → 160,000）、削除した画像の数は **400 万枚** に達しました。重複のない画像のカタログも大きく増えています（+95%）。**新しいビジュアルのクラスター** が大量に現れ続けているのです。ビジュアルのクラスターとは、ひとつの詐欺画像 **とその細かなバリエーションすべて**（トリミング、フィルター、修正）のことです。重複のない画像の数がここまで増えているということは、古い画像の焼き直しだけでなく、**新しいビジュアル** が投入されているということです（5 月の[「3 枚」の組み合わせ](/ja/blog/threat-weather-may-2026#updates)を参照）。
+
+---
+
+## 🆕 新機能：最初の 1 枚で即処罰 {#updates}
+
+これまでは、乗っ取られたアカウントが波のように投稿を始めると、ScamLens は **まずすべてのメッセージを削除** してから処罰していました。この片付けの間、アカウントは数秒間投稿を続けられ、こうした波には **ロールのメンションが含まれることもあり**、サーバーが通知であふれてしまうことがありました。
+
+これからは、**最初の詐欺画像** を検出した時点で、RaidProtect が **直ちに削除して処罰** し（処罰は設定可能）、その後で残りを片付けます。乗っ取られたアカウントは即座に遮断され、次の画像を投稿したりサーバーにメンションを飛ばしたりする隙はありません。
+
+---
+
+## ❓ FAQ {#faq}
+
+<Head>
+  <script type="application/ld+json">
+    {JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Discord の ScamLens とは何ですか？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'ScamLens は、Discord 向けの保護ボット RaidProtect の画像詐欺対策モジュールです。投稿されたすべての画像をリアルタイムで分析し、詐欺と判定したもの（仮想通貨詐欺、有名人を装った偽のプレゼント企画、オンラインカジノの偽の宣伝）を、設定なしで自動で削除します。',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'ScamLens は、画像の削除とアカウントの処罰のどちらを先に行いますか？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: '2026 年 6 月以降、ScamLens は最初の詐欺画像を検出した時点でアカウントを処罰し（処罰は設定可能）、その後で波の残りを片付けます。以前は、処罰の前にまずすべてのメッセージを削除していたため、乗っ取られたアカウントが数枚多く画像を投稿できてしまっていました。',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'なぜ自分の Discord アカウントが勝手に詐欺メッセージを送っているのですか？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'あなたのアカウントは、ほぼ間違いなく乗っ取られています。詐欺師はあなたの認証トークンを盗み（偽サイト、マルウェア入りのソフトウェア、悪意ある拡張機能）、それを使って、あなたが参加しているすべてのサーバーに、あなたの知らないうちに詐欺画像をスパム送信します。',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Discord サーバーのメンバーが仮想通貨詐欺を拡散している場合はどうすればいいですか？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'BAN しないでください。ほぼ例外なく、悪意あるユーザーではなく乗っ取られたアカウントです。アカウントを保護してもらえるよう、個別に連絡しましょう。ScamLens はすでにその場で画像を削除しており、本来の所有者を罰することはありません。',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Discord で偽のプレゼント企画や偽の仮想通貨の宣伝を見分けるには？',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: '仮想通貨の「プレゼント」、有名人（MrBeast、Elon Musk、Andrew Tate、Kick、Stake）のロゴを使ったオンラインカジノ、「保証付き」の投資は、すべて詐欺です。これらの著名人がメッセージの背後にいるわけではありません。詐欺師が彼らのイメージと知名度を悪用しているだけです。Discord が仮想通貨を配布することは決してなく、まともなブランドが複数のサーバーにスパムを送ることもありません。',
+          },
+        },
+      ],
+    })}
+  </script>
+</Head>
+
+#### Discord の ScamLens とは何ですか？ {#quest-ce-que-scamlens}
+ScamLens は、**Discord 向けの保護ボット** RaidProtect の **画像詐欺対策モジュール** です。投稿されたすべての画像をリアルタイムで分析し、詐欺と判定したもの（仮想通貨詐欺、有名人を装った偽のプレゼント企画、オンラインカジノの偽の宣伝）を **設定なしで** **自動で削除** します。
+
+#### ScamLens は、画像の削除とアカウントの処罰のどちらを先に行いますか？ {#suppression-ou-sanction}
+2026 年 6 月以降、ScamLens は最初の詐欺画像を検出した時点で **アカウントを処罰し**（処罰は設定可能）、*その後で* 波の残りを片付けます。以前は、処罰の前にまずすべてのメッセージを削除していたため、乗っ取られたアカウントが数枚多く画像を投稿できてしまっていました。
+
+#### なぜ自分の Discord アカウントが勝手に詐欺メッセージを送っているのですか？ {#compte-discord-envoie-messages-seul}
+あなたのアカウントは、ほぼ間違いなく **乗っ取られています**。詐欺師はあなたの **認証トークン** を盗み（偽サイト、マルウェア入りのソフトウェア、悪意ある拡張機能）、それを使って、あなたの知らないうちに **参加しているすべてのサーバー** に詐欺画像をスパム送信します。
+
+#### Discord サーバーのメンバーが仮想通貨詐欺を拡散している場合はどうすればいいですか？ {#membre-diffuse-scam-crypto}
+**BAN しないでください**。ほぼ例外なく、悪意あるユーザーではなく **乗っ取られたアカウント** です。アカウントを保護してもらえるよう、個別に連絡しましょう。ScamLens はすでにその場で画像を削除しており、本来の所有者を罰することはありません。
+
+#### Discord で偽のプレゼント企画や偽の仮想通貨の宣伝を見分けるには？ {#reconnaitre-fausse-promo-crypto}
+仮想通貨の **「プレゼント」**、有名人（MrBeast、Elon Musk、Andrew Tate、Kick、Stake）のロゴを使った **オンラインカジノ**、**「保証付き」の投資** は、すべて詐欺です。**これらの著名人がメッセージの背後にいるわけではありません**。詐欺師が彼らのイメージと知名度を悪用しているだけです。Discord が仮想通貨を配布することは決してなく、まともなブランドが複数のサーバーにスパムを送ることもありません。
+
+---
+
+:::tip 📚 お役立ちリソース
+- 🔗 [RaidProtect をサーバーに追加する](https://raidprotect.bot/invite)
+- 📘 [HoneyPot のドキュメント](https://docs.raidprotect.bot/features/honeypot)
+- 💡 [提案を送る](https://suggestions.raidprotect.bot/)
+- 📣 [Discord サーバーに参加する](https://raidprotect.bot/discord)
+:::

@@ -1,0 +1,68 @@
+---
+title: 'ScamLens: dấu chấm hết cho spam hình ảnh crypto trên Discord'
+tags: [threats]
+authors: [zallom]
+image: ./assets/rp-scamlens.webp
+slug: scamlens-early-activation
+date: 2026-02-14
+---
+
+import Timestamp from '@site/src/components/Timestamp';
+
+Một đợt spam lớn liên quan đến **trò lừa đảo “hình ảnh crypto”** đã khiến chúng tôi kích hoạt sớm chế độ `Deletion` của **RaidProtect ScamLens**, mô-đun phân tích hình ảnh chống lừa đảo của chúng tôi.
+
+![RaidProtect ScamLens: mối đe dọa đã được ngăn chặn ngày 14/02/2026](./assets/rp-scamlens.webp)
+
+{/* truncate */}
+
+## 🛡️ Chi tiết về đợt spam {#threat}
+
+Hai đợt spam quy mô lớn đã diễn ra vào ngày <Timestamp value={1771023600} format="D" />, trong khoảng từ <Timestamp value={1771023600} format="T" /> đến <Timestamp value={1771068391} format="T" />. Hơn **2.500 tài khoản bị chiếm** đã được sử dụng để gửi hơn **10.000 tin nhắn** chứa loại hình ảnh này. Những con số này chỉ phản ánh những gì được ghi nhận trên 340.000 máy chủ được RaidProtect bảo vệ — trong khi Discord có hàng triệu máy chủ đang hoạt động, quy mô thực tế của cuộc tấn công này có thể ước tính lên đến **hàng trăm nghìn tin nhắn** trên toàn nền tảng.
+
+Trò lừa đảo được gọi là “hình ảnh crypto” này bao gồm việc gửi hàng loạt **4 hình ảnh** dụ người dùng mua các loại tiền mã hóa gian lận, vào càng nhiều kênh càng tốt.
+
+<div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '280px 280px', gap: '8px'}}>
+  <img src={require('../../../../blog/3.3.1/assets/scam-1.png').default} alt="MrBeast Crypto Casino Scam 1" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-2.png').default} alt="MrBeast Crypto Casino Scam 2" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-3.png').default} alt="MrBeast Crypto Casino Scam 3" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-4.png').default} alt="MrBeast Crypto Casino Scam 4" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+</div>
+
+#### Đợt 1 {#wave-1}
+![Số lần xuất hiện mỗi phút — Đợt 1 (00:00 đến 01:25)](../../../../blog/3.3.1/assets/0000_0125.webp)
+
+#### Đợt 2 {#wave-2}
+![Số lần xuất hiện mỗi phút — Đợt 2 (10:21 đến 11:25)](../../../../blog/3.3.1/assets/1021_1125.webp)
+
+Trước khối lượng lớn tin nhắn lừa đảo này, chúng tôi đã kích hoạt sớm chế độ `Deletion` của **ScamLens** — được giới thiệu ở chế độ `Learning` trong [bản cập nhật 3.3.1](/blog/3.3.1-jail-and-mute#changelog).
+Mô-đun này phân tích các hình ảnh được gửi trên máy chủ của bạn và giờ đây tự động xóa những hình ảnh được xác định là lừa đảo (không cần cấu hình gì).
+
+### Tiếp theo là gì? {#next}
+
+Chế độ `Sanction` sẽ sớm được kích hoạt: ngoài việc xóa các hình ảnh lừa đảo, ScamLens sẽ tự động áp dụng **timeout một ngày** cho người gửi. Chúng tôi đã chọn không cấm các tài khoản này, vì hầu như chúng đều là **tài khoản bị hack** — việc cấm sẽ gây thiệt hại cho chủ sở hữu thật sự của tài khoản. Timeout giúp vô hiệu hóa mối đe dọa ngay lập tức, trong lúc chủ sở hữu lấy lại quyền kiểm soát tài khoản của mình.
+
+:::info 🔒 Cách hoạt động được giữ kín có chủ đích
+Vì lý do bảo mật, chúng tôi không và sẽ không công bố các phương pháp phát hiện mà ScamLens sử dụng. Cách tiếp cận “hộp đen” này nhằm ngăn những kẻ lừa đảo điều chỉnh kỹ thuật của chúng để vượt qua các biện pháp bảo vệ của chúng tôi.
+:::
+
+---
+
+## ❓ FAQ {#faq}
+
+#### Làm thế nào để chặn spam hình ảnh trên Discord? {#antispam-images}
+[Thêm RaidProtect](https://raidprotect.bot/invite) vào máy chủ của bạn. ScamLens được bật mặc định và sẽ xóa mọi hình ảnh bị phát hiện là lừa đảo, không cần cấu hình bổ sung.
+
+#### Làm thế nào để tự bảo vệ trước trò lừa đảo hình ảnh crypto trên Discord? {#arnaque-images-crypto}
+Bạn chỉ cần [thêm RaidProtect](https://raidprotect.bot/invite). ScamLens sẽ tự động phát hiện và xóa các hình ảnh lừa đảo.
+
+#### Làm thế nào để ngăn bot spam trên máy chủ Discord của tôi? {#anti-spam-bots}
+Ngoài ScamLens, hãy bật [captcha](/docs/features/captcha) của RaidProtect để ngăn các tài khoản tự động tham gia máy chủ của bạn.
+
+---
+
+:::tip 📚 Tài nguyên hữu ích
+- 🔗 [Thêm RaidProtect vào máy chủ của bạn](https://raidprotect.bot/invite)
+- 📘 [Xem tài liệu đầy đủ](https://docs.raidprotect.bot/)
+- 💡 [Gửi đề xuất hoặc phản hồi](https://suggestions.raidprotect.bot/)
+- 📣 [Theo dõi thông báo và tham gia cộng đồng](https://raidprotect.bot/discord)
+:::

@@ -120,7 +120,7 @@ function useDefaultCanonicalUrl() {
   // version) pour éviter le contenu dupliqué bêta/stable côté SEO. La langue est
   // préservée. Les chemins listés dans customFields.excludedCanonical (pages
   // exclusives à la bêta) gardent leur propre canonical.
-  const betaPathRegex = /^(\/(?:en|de|es|pt))?\/docs\/beta(\/|$)/;
+  const betaPathRegex = /^(\/(?:en|de|es|pt|it|tr|vi|ja|zh-CN|zh-TW))?\/docs\/beta(\/|$)/;
 
   if (
     betaPathRegex.test(canonicalPathname) &&

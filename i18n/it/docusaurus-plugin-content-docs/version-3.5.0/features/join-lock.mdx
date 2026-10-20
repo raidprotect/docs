@@ -1,0 +1,67 @@
+---
+title: Join Lock
+description: "Il Join Lock di RaidProtect blocca in modo duraturo i nuovi arrivi sul tuo server Discord, oltre il limite di 24 ore di Discord."
+---
+
+import JoinLockMockup from '@site/src/components/DiscordMessage/mockups/join-lock';
+
+{/* <JoinLockMockup /> : masquée pour le moment */}
+
+La funzionalità **Join Lock** di RaidProtect chiude l'accesso ai nuovi arrivi sul server finché non la disattivi, superando così il limite nativo di Discord che permette questo blocco solo per 24 ore tramite l'azione di cybersicurezza “**Metti in pausa gli ingressi**”.
+
+## 🚦 Casi d'uso e raccomandazioni {#recommendations}
+
+- **Server privati e chiusi:** Il Join Lock è particolarmente consigliato per i server che devono restare privati e non vogliono alcun nuovo arrivo (server aziendali, team ristretti, gruppi privati).
+- **Server dello staff:** Per i server dedicati al team di moderazione o di amministrazione, dove solo i membri autorizzati devono avere accesso.
+- **Server aziendali o professionali:** Per le organizzazioni che usano Discord internamente e vogliono garantire che solo i dipendenti attuali possano accedere al server.
+- **Community di dimensioni limitate:** Per i server che hanno raggiunto la dimensione massima desiderata e non vogliono più accettare nuovi membri in modo permanente.
+
+## ❓ Funzionamento del Join Lock {#working}
+
+Finché il Join Lock è attivo, RaidProtect applica a chi arriva l'[azione durante il raid](./raid-mode.md#action) che hai scelto per l'Auto RaidMode. A differenza della funzionalità nativa di Discord che richiede un rinnovo manuale ogni 24 ore, il blocco dura senza intervento finché non lo disattivi.
+
+| Azione durante il raid | Effetto del Join Lock |
+|---|---|
+| “**Bloccare gli inviti**” (predefinita) | Gli inviti del server sono disattivati: nessuno di nuovo entra. |
+| “**Espellere chi arriva**” ([Premium](/it/premium)) | Ogni nuovo arrivato viene espulso e riceve un messaggio privato che gli indica che gli arrivi sono chiusi. |
+| “**Mandare al captcha**” | Chi arriva **può entrare dopo aver risolto il [captcha](./captcha.md)**: il server non è quindi chiuso. |
+| “**Captcha congelato durante il raid**” | Chi arriva aspetta dietro il captcha finché il Join Lock è attivo. |
+
+:::warning
+Per un server che deve restare davvero chiuso, scegli “**Bloccare gli inviti**”, “**Espellere chi arriva**” o “**Captcha congelato durante il raid**”. Con “**Mandare al captcha**”, il Join Lock si limita a imporre il captcha a chi arriva.
+:::
+:::info
+I membri già presenti sul server restano attivi e possono continuare a usare il server normalmente. Il [messaggio di benvenuto](./onboarding.md#welcome-message) tace finché il Join Lock è attivo.
+:::
+:::warning
+Con l'azione “**Bloccare gli inviti**”, le funzioni della community di Discord sono indispensabili al Join Lock. [Segui la nostra guida per verificare l'attivazione della community sul tuo server.](../guides/community.md) Le altre azioni funzionano senza la community.
+:::
+
+## 🚩 Configurazione del Join Lock {#config}
+
+Usa il comando: ```/joinlock [status]```
+
+- Senza opzioni, il comando mostra lo stato del Join Lock con un pulsante “**Attivare**” o “**Disattivare**”.
+- Sostituisci `[status]` con **True** per attivarlo o **False** per disattivarlo direttamente.
+
+![Screenshot del comando /joinlock](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-join-lock.webp)
+
+Il comando richiede il permesso **Gestire il server**, e un messaggio viene pubblicato nel canale dei log a ogni cambio di stato.
+
+:::info
+Il comando `joinlock` è [utilizzabile tramite prefisso](../guides/prefix.md). Finché il Join Lock è attivo, il [comando `/raidmode`](./raid-mode.md#enable) non è disponibile: disattiva prima il Join Lock.
+:::
+
+## Domande frequenti {#faq}
+
+### Qual è la differenza con la modalità raid?
+
+La [modalità raid](./raid-mode.md) è temporanea (24 ore al massimo) e può attivarsi da sola durante un'ondata. Il Join Lock si attiva a mano e resta in vigore finché non lo disattivi.
+
+### Serve attivare la community Discord?
+
+Solo se l'azione durante il raid dell'Auto RaidMode è “**Bloccare gli inviti**”. Con le altre azioni, il Join Lock funziona senza la community.
+
+### I nuovi membri possono ancora entrare?
+
+No con “**Bloccare gli inviti**”, “**Espellere chi arriva**” o “**Captcha congelato durante il raid**”. Con “**Mandare al captcha**”, entrano dopo aver risolto il captcha.

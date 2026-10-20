@@ -1,0 +1,352 @@
+---
+title: Tiện ích
+description: "Khám phá các lệnh tiện ích của RaidProtect để việc quản lý máy chủ Discord của bạn hằng ngày dễ dàng hơn."
+---
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Icon from "@site/src/components/Icon";
+import Settings from '@site/src/components/DiscordMessage/mockups/v2';
+
+Các tính năng bổ sung để đơn giản hóa việc quản lý máy chủ của bạn. 🔧
+
+Ngoài các tính năng chính như captcha, chống spam hay chống raid, RaidProtect cung cấp nhiều công cụ phụ có thể giúp việc quản lý máy chủ của bạn trơn tru hơn nữa.
+
+## 📋 Nhân bản một kênh {#channel-duplicate}
+
+Lệnh `/channel duplicate` cho phép bạn nhân bản hoàn toàn một kênh, bao gồm mọi thiết lập, quyền và cấu hình của nó. Qua đó vượt qua chức năng gốc của Discord vốn không cho nhân bản **các danh mục** và **một số thiết lập đặc thù** như các tag của kênh diễn đàn.
+
+Dùng lệnh: ```/channel duplicate (#channel)```
+
+Hãy thay `(#channel)` bằng lượt nhắc đến hoặc [ID](../guides/id.mdx) của kênh cần nhân bản.
+
+### 🎯 Tính năng {#duplicate-features}
+
+Lệnh này nhân bản toàn bộ các thành phần sau:
+
+- **Tên kênh**
+- **Quyền** (vai trò và người dùng)
+- **Loại kênh** (văn bản, thoại, diễn đàn, v.v.)
+- **Thiết lập đặc thù** tùy theo loại kênh
+- **Vị trí** trong danh mục (nếu có)
+
+### ⚙️ Cấu hình RaidProtect {#duplicate-config}
+
+Khi bạn nhân bản một kênh có các cấu hình nội bộ của RaidProtect, bot tự động đề xuất:
+
+- **Thay thế** cấu hình hiện có để dùng kênh mới
+- **Nhân bản** cấu hình để giữ cả hai kênh đều được cấu hình
+
+**Ví dụ**: Nếu bạn nhân bản kênh nhật ký, RaidProtect sẽ đề xuất cập nhật cấu hình để kênh mới trở thành kênh nhật ký, hoặc giữ cả hai kênh đều được cấu hình tùy sở thích của bạn.
+
+## 🗑️ Xóa và tạo lại một kênh {#channel-clear}
+
+Lệnh `/channel clear` cho phép bạn xóa một kênh và tạo lại giống hệt, giữ nguyên thiết lập, quyền và cấu hình RaidProtect của nó.
+
+Dùng lệnh: ```/channel clear (#channel)```
+
+Hãy thay `(#channel)` bằng lượt nhắc đến hoặc [ID](../guides/id.mdx) của kênh cần tạo lại.
+
+:::warning
+Các tin nhắn và webhook của kênh sẽ bị xóa vĩnh viễn. Bạn sẽ được yêu cầu xác nhận trước khi thực hiện.
+:::
+
+## 🧹 Dọn thành viên {#prune}
+
+Lệnh `/prune` cho phép bạn đuổi các thành viên không hoạt động khỏi máy chủ qua một menu tương tác.
+
+Dùng lệnh: ```/prune [duration]```
+
+Hãy thay `[duration]` bằng số ngày không hoạt động mong muốn, từ 1 đến 30. Bot hiển thị một menu tương tác cho phép bạn:
+- Chọn thời gian không hoạt động
+- Bao gồm hoặc loại trừ các vai trò cụ thể
+- Xem số thành viên bị ảnh hưởng trước khi xác nhận
+
+Văn bản xác nhận cho biết ai sẽ thực sự bị đuổi:
+
+| Chế độ | Khi chưa chọn vai trò | Khi đã chọn vai trò |
+|---|---|---|
+| **Bao gồm** | Chỉ các thành viên không hoạt động **không có vai trò nào** | Các thành viên không hoạt động **không có vai trò nào ngoài** những vai trò đã chọn |
+| **Loại trừ** | Tất cả thành viên không hoạt động, **bất kể vai trò của họ** | Các thành viên không hoạt động **không có vai trò nào** trong số đã chọn |
+
+:::info
+Lệnh `/prune` dành riêng cho quản trị viên. Chỉ 100 vai trò thấp nhất được đề xuất; các thành viên có vai trò cao hơn tự động bị loại.
+:::
+
+![Ảnh chụp màn hình lệnh prune](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-prune.webp)
+
+## 🚫 Chặn người dùng {#block}
+
+Lệnh `/block` cho phép bạn ngăn một người dùng dùng một số tính năng của RaidProtect trên máy chủ của bạn (ví dụ gửi báo cáo hoặc nhận vai trò tag).
+
+Khi chặn hoặc bỏ chặn, RaidProtect đề nghị bạn chọn các tính năng liên quan:
+
+| Loại | Hiệu lực |
+|---|---|
+| **Tất cả tương tác** | Chặn mọi tương tác với bot |
+| **Báo cáo** | Người dùng không thể gửi [báo cáo](./reports.md) nữa |
+| **Vai trò Tag** | Người dùng không thể nhận [vai trò tag](./tag-role.md) nữa |
+
+### Chặn một người dùng {#block-add}
+
+Dùng lệnh: ```/block add [@user] [reason]```
+
+### Bỏ chặn một người dùng {#block-remove}
+
+Dùng lệnh: ```/block remove [@user] [reason]```
+
+### Liệt kê những người dùng bị chặn {#block-list}
+
+Dùng lệnh: ```/block list```
+
+## 📢 Bảng thông tin {#display}
+
+Hãy xem [trang dành riêng cho bảng thông tin](./display.mdx) để biết thêm về các lệnh `/display public` và [`/display staff`](./display.mdx#staff).
+
+## 📜 Hình phạt của tôi {#my-sanctions}
+
+Lệnh `/my-sanctions` cho phép các thành viên xem hình phạt của chính họ trên máy chủ, theo [mức riêng tư](./sanctions.mdx#sanctions-privacy) do các quản trị viên cấu hình.
+
+Dùng lệnh: ```/my-sanctions```
+
+:::info
+Lệnh này cũng có thể dùng qua nút **Xem hình phạt của tôi** trên các [bảng thông tin](./display.mdx) nếu tính năng được bật.
+:::
+
+## 🏠 Thông tin máy chủ {#serverinfo}
+
+Lệnh `/serverinfo` hiển thị **thông tin của máy chủ hiện tại**: tên, chủ sở hữu, ngày tạo, số thành viên, cấp boost, các tính năng đã bật, v.v.
+
+Dùng lệnh: ```/serverinfo```
+
+:::info
+Lệnh `serverinfo` có thể [dùng qua tiền tố](../guides/prefix.md) (bí danh `ginfo`). Nó chỉ hoạt động trên máy chủ đã cài RaidProtect.
+:::
+
+## 🔗 Thông tin của một lời mời {#inviteinfo}
+
+Lệnh `/inviteinfo` phân tích một lời mời Discord trước khi bạn nhấp vào: hữu ích để kiểm tra một quan hệ đối tác, một quảng cáo hoặc một liên kết nhận được qua tin nhắn riêng.
+
+Dùng lệnh: ```/inviteinfo (invite)```
+
+Hãy thay `(invite)` bằng mã hoặc liên kết của lời mời (ví dụ `discord.gg/raidprotect`).
+
+Với lời mời vào máy chủ, chúng tôi hiển thị đặc biệt:
+
+- **Máy chủ**: tên, huy hiệu và tag, ID, số thành viên và số thành viên trực tuyến, mức độ xác minh, cấp và boost.
+- **Lời mời**: kênh đích (văn bản, thoại hoặc sân khấu), người tạo, số lần sử dụng, ngày hết hạn, các vai trò được cấp khi vào.
+- **Các chủ đề và trò chơi** mà máy chủ nêu bật (các trò chơi có thể nhấp vào).
+- **Hồ sơ hoạt động**: giờ cao điểm và thấp điểm, độ đều đặn.
+- Một nút “**Tham gia máy chủ**”.
+
+Các lời mời kết bạn, nhóm riêng tư, hoạt động và livestream cũng được nhận diện.
+
+:::info
+Trên một máy chủ, phản hồi là tạm thời và lệnh mặc định yêu cầu quyền “**Quản lý tin nhắn**”. Nếu bạn thêm RaidProtect vào tài khoản Discord của mình, bạn cũng có thể dùng `/inviteinfo` trong tin nhắn riêng và trong các nhóm riêng tư: khi đó phản hồi hiển thị trong cuộc trò chuyện. Lệnh `inviteinfo` có thể [dùng qua tiền tố](../guides/prefix.md) (bí danh `ii`).
+:::
+
+## 🔐 Dữ liệu của bạn trên máy chủ này {#privacy}
+
+Lệnh `/privacy` hiển thị những gì RaidProtect lưu giữ về máy chủ của bạn. Lệnh mở cho mọi thành viên và phản hồi chỉ hiển thị với riêng bạn.
+
+Dùng lệnh: ```/privacy```
+
+- **Luôn luôn**: cấu hình đã chọn trong `/settings` (được giữ chừng nào RaidProtect còn ở trên máy chủ) và các hình phạt (thành viên, người kiểm duyệt, lý do và ngày) cho lịch sử kiểm duyệt.
+- **Tùy theo thiết lập của bạn**: các tin nhắn (một giờ mỗi kênh, trong bộ nhớ, không bao giờ ghi vào cơ sở dữ liệu) nếu chống spam, báo cáo hoặc [lưu đệm tin nhắn](#message-cache) đang hoạt động; các báo cáo (tác giả, lý do và bản sao tin nhắn bị báo cáo) nếu chúng được bật.
+
+Phản hồi dẫn đến chính sách quyền riêng tư của chúng tôi, nêu chi tiết các thời hạn, việc chia sẻ và quyền của bạn.
+
+## 🗂️ Lưu đệm tin nhắn {#message-cache}
+
+Việc lưu đệm giữ **một giờ tin nhắn mỗi kênh trong bộ nhớ**, không bao giờ ghi vào cơ sở dữ liệu. Nó cung cấp dữ liệu cho lệnh [`/snipe`](./moderation.mdx#snipe) và phần snipe của `/modview`. Nếu không có nó, các lệnh này không tìm thấy tin nhắn bị xóa nào.
+
+1. Dùng [lệnh `/settings`](../setup.md#settings).
+2. Mở thẻ “**Tiện ích**”.
+3. Nhấp vào “**Bật**” bên cạnh “**Lưu đệm tin nhắn**”.
+
+<Settings start="home:utilities" />
+
+:::info
+Việc lưu đệm **bị tắt theo mặc định**. Nó được bật tự động, và không thể tắt, khi [chống spam](./anti-spam.mdx) hoặc [báo cáo](./reports.md) đang hoạt động: các tính năng này cần đọc tin nhắn. Khi đó nút hiển thị màu xám.
+:::
+
+## 💬 Gửi góp ý {#feedback}
+
+Lệnh `/feedback` cho phép **chia sẻ một ý kiến, một đề xuất hoặc một báo cáo lỗi** trực tiếp từ Discord, mà không cần tham gia máy chủ hỗ trợ. Trên một máy chủ, lệnh mặc định yêu cầu quyền “**Quản lý tin nhắn**”; lệnh cũng hoạt động trong tin nhắn riêng với RaidProtect.
+
+Dùng lệnh: ```/feedback```
+
+Chọn loại phản hồi, rồi điền vào cửa sổ mở ra:
+
+- **Góp ý**: chúng tôi chuyển bạn đến trang đề xuất.
+- **Báo cáo lỗi**: chọn danh mục (chống spam, chống raid, captcha, hình phạt, Authentification Manager, cấu hình, lệnh, nhật ký, khác); báo cáo của bạn được chuyển đến đội ngũ của chúng tôi.
+- **Đánh giá chung**: chấm điểm trải nghiệm của bạn từ 1 đến 5.
+- **Lời khen**.
+
+## 👤 Thông tin người dùng {#userinfo}
+
+Lệnh `/userinfo` cho phép bạn lấy thông tin chi tiết về một người dùng.
+
+Dùng lệnh: ```/userinfo [user]```
+
+Hãy thay `[user]` bằng lượt nhắc đến hoặc ID mong muốn.
+
+:::info
+Lệnh `userinfo` có thể [dùng qua tiền tố](../guides/prefix.md) (bí danh `ui`). Nếu bạn thêm RaidProtect vào tài khoản Discord của mình, bạn cũng có thể dùng nó trong tin nhắn riêng và trong các nhóm riêng tư.
+:::
+
+### 📋 Thông tin được hiển thị {#displayed-userinfo}
+
+- **Ngày tạo tài khoản** Discord
+- **Ảnh đại diện** của người dùng
+- **Biểu ngữ hồ sơ**
+- **Huy hiệu hồ sơ**
+  - Các huy hiệu Nitro, Booster, Nhiệm vụ và Tên cũ không được hiển thị.
+
+
+### 🎭 Thông tin về một thành viên của máy chủ {#displayed-memberinfo}
+
+Nếu đối tượng là một thành viên của máy chủ, các thông tin bổ sung gồm:
+
+- **Ngày vào máy chủ**
+- **Biệt danh trên máy chủ**
+- **Số vai trò** và **danh sách 6 vai trò đầu tiên**
+- **Nhóm quyền** (chỉ những người kiểm duyệt thấy):
+<SeparatedBox>
+<Tabs>
+  <TabItem value="animator" label="Người hoạt náo" default>
+
+    Nhóm **Người hoạt náo** được hiển thị nếu thành viên có **ít nhất một** trong các quyền sau:
+
+    - `MANAGE_EXPRESSIONS`
+    - `CREATE_GUILD_EXPRESSIONS`
+    - `MANAGE_EVENTS`
+
+  </TabItem>
+  <TabItem value="moderator" label="Người kiểm duyệt">
+
+    Nhóm **Người kiểm duyệt** được hiển thị nếu thành viên có **ít nhất một** trong các quyền sau:
+
+    - `KICK_MEMBERS`
+    - `BAN_MEMBERS`
+    - `MODERATE_MEMBERS`
+    - `MANAGE_MESSAGES`
+    - `MUTE_MEMBERS`
+    - `DEAFEN_MEMBERS`
+    - `MOVE_MEMBERS`
+    - `MANAGE_THREADS`
+
+  </TabItem>
+  <TabItem value="manager" label="Người phụ trách">
+
+    Nhóm **Người phụ trách** được hiển thị nếu thành viên có **ít nhất một** trong các quyền sau:
+
+    - `MANAGE_GUILD`
+    - `MANAGE_ROLES`
+    - `MANAGE_CHANNELS`
+    - `VIEW_AUDIT_LOG`
+    - `MANAGE_WEBHOOKS`
+    - `MANAGE_SERVER_EXPRESSIONS`
+
+  </TabItem>
+  <TabItem value="admin" label="Quản trị viên">
+
+    Nhóm **Quản trị viên** được hiển thị trong **hai trường hợp có thể xảy ra**:
+
+    1️⃣ Có quyền:
+    - `ADMINISTRATOR`
+
+    2️⃣ Có **cùng lúc ba quyền sau**:
+    - `MANAGE_GUILD`
+    - `MANAGE_ROLES`
+    - `MANAGE_CHANNELS`
+
+  </TabItem>
+  <TabItem value="owner" label="Chủ sở hữu">
+
+    **Điều kiện**: Thành viên là **chủ sở hữu máy chủ**.
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+- **Cờ thành viên** (chỉ những người kiểm duyệt thấy):
+
+| **Cờ**                                   | **Emoji**                                                                                                              | **Ý nghĩa**                                                       |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `DID_REJOIN`                             | <Icon src="/img/icons/MemberDidRejoin.svg" alt="icon MemberDidRejoin" title=":MemberDidRejoin:"/>                      | Người dùng đã rời và tham gia lại máy chủ.                        |
+| `IS_GUEST`                               | <Icon src="/img/icons/MemberIsGuest.svg" alt="icon MemberIsGuest" title=":MemberIsGuest:"/>                            | Thành viên khách (lời mời tạm thời hoặc quyền truy cập khách).    |
+| `COMPLETED_ONBOARDING`                   | <Icon src="/img/icons/OnboardingCompleted.svg" alt="icon OnboardingCompleted" title=":OnboardingCompleted:"/>          | Đã hoàn thành quy trình chào đón (onboarding) của máy chủ.        |
+| `STARTED_ONBOARDING`                     | <Icon src="/img/icons/OnboardingStarted.svg" alt="icon OnboardingStarted" title=":OnboardingStarted:"/>                | Đã bắt đầu quy trình chào đón.                                    |
+| `COMPLETED_SERVER_GUIDE`                 | <Icon src="/img/icons/ServerGuideCompleted.svg" alt="icon ServerGuideCompleted" title=":ServerGuideCompleted:"/>       | Đã hoàn thành hướng dẫn máy chủ nếu được bật.                     |
+| `STARTED_SERVER_GUIDE`                   | <Icon src="/img/icons/ServerGuideStarted.svg" alt="icon ServerGuideStarted" title=":ServerGuideStarted:"/>             | Đã bắt đầu hướng dẫn máy chủ.                                     |
+| `AUTOMOD_QUARANTINED_NAME`               | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | Bị tự động kiểm duyệt cách ly vì tên người dùng.                  |
+| `AUTOMOD_QUARANTINED_GUILD_TAG`          | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | Bị tự động kiểm duyệt cách ly vì tag hoặc biệt danh.              |
+| `BYPASSES_VERIFICATION`                  | <Icon src="/img/icons/BypassVerification.svg" alt="icon BypassVerification" title=":BypassVerification:"/>             | Người dùng có thể bỏ qua bước xác minh của máy chủ.               |
+| `SPAMMER`                                | <Icon src="/img/icons/UnusualAccountActivity.svg" alt="icon UnusualAccountActivity" title=":UnusualAccountActivity:"/> | Tài khoản bị đánh dấu là kẻ spam hoặc phát hiện hoạt động bất thường. |
+
+## ⚖️ Hình phạt Discord {#discord-sanctions}
+
+Lệnh `/discord-sanctions` cho phép bạn xem **các hình phạt do Discord ban hành** đối với một người dùng, theo [quy định của châu Âu](https://transparency.dsa.ec.europa.eu/).
+
+Dùng lệnh: ```/discord-sanctions [@user]```
+
+Hãy thay `[@user]` bằng lượt nhắc đến hoặc ID mong muốn. Lệnh cũng dùng được bằng nhấp chuột phải vào một hồ sơ, qua **`Ứng dụng`** rồi **`Hình phạt Discord`**. Nếu không chỉ định người dùng, lệnh hiển thị thống kê an toàn toàn cầu của Discord trong 7 ngày qua (các thẻ “**Danh mục**”, “**Phát hiện**” và “**Xử lý**”).
+
+### 📋 Thông tin được hiển thị {#displayed-sanctions}
+
+- **Loại hình phạt**:
+
+| **Hình phạt**                            | **Emoji**                                                                                                              | **Ý nghĩa**                                                       |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `CONTENT_DELETED`                        | <Icon src="/img/icons/ContentDeleted.svg" alt="icon ContentDeleted" title=":iconTrash:"/>                              | Nội dung do người dùng đăng đã bị xóa.                            |
+| `RESTRICTED`                             | <Icon src="/img/icons/AccountRestricted.svg" alt="icon AccountRestricted" title=":iconRestricted:"/>                   | Tài khoản người dùng đã bị hạn chế.                               |
+| `ACCOUNT_SUSPENDED`                      | <Icon src="/img/icons/AccountSuspended.svg" alt="icon AccountSuspended" title=":iconSuspended:"/>                      | Tài khoản người dùng đã bị đình chỉ.                              |
+| `ACCOUNT_TERMINATED`                     | <Icon src="/img/icons/AccountTerminated.svg" alt="icon AccountTerminated" title=":iconTerminated:"/>                   | Tài khoản người dùng đã bị xóa.                                   |
+
+- **Ngày ban hành**
+- **Loại nội dung**
+- **Cờ hình phạt**:
+
+| **Cờ**                                   | **Emoji**                                                                                                              | **Ý nghĩa**                                                       |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ILLEGAL_CONTENT`                        | <Icon src="/img/icons/IllegalContent.svg" alt="icon IllegalContent" title=":iconIllegal:"/>                            | Hình phạt áp dụng do nội dung bất hợp pháp.                       |
+| `AUTOMATED_DETECTION`                    | <Icon src="/img/icons/AutomatedDetection.svg" alt="icon AutomatedDetection" title=":iconBots:"/>                       | Hình phạt áp dụng qua phát hiện tự động.                          |
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="reports-found" label="Tìm thấy báo cáo" default>
+
+![Ảnh chụp màn hình Hình phạt Discord](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-ds-report-found.webp)
+
+  </TabItem>
+  <TabItem value="reports-not-found" label="Không tìm thấy báo cáo">
+
+![Ảnh chụp màn hình Hình phạt Discord không tìm thấy](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-ds-report-not-found.webp)
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+:::note
+Lệnh cho phép xem các báo cáo được ban hành từ ngày 22 tháng 8 năm 2024 đến ngày 14 tháng 8 năm 2025. Những thông tin này do chính Discord cung cấp và **không thể bị sửa** bởi RaidProtect.
+:::
+
+## Câu hỏi thường gặp {#faq}
+
+### Vì sao `/snipe` không tìm thấy tin nhắn nào?
+
+`/snipe` đọc các tin nhắn được giữ trong bộ nhớ một giờ. Hãy bật [lưu đệm tin nhắn](#message-cache) trong thẻ Tiện ích của `/settings`, hoặc bật chống spam hay báo cáo, vốn tự động bật nó.
+
+### Làm sao kiểm tra một lời mời Discord trước khi tham gia máy chủ?
+
+Dùng `/inviteinfo` với mã hoặc liên kết của lời mời: chúng tôi hiển thị máy chủ, người tạo, hoạt động của nó và các vai trò được cấp khi vào.
+
+### RaidProtect lưu giữ gì trên máy chủ của tôi?
+
+Lệnh `/privacy` nêu chi tiết: cấu hình và các hình phạt luôn được lưu giữ, còn tùy theo thiết lập của bạn là một giờ tin nhắn trong bộ nhớ và các báo cáo.
+
+### Ai có thể dùng `/prune`?
+
+Chỉ các quản trị viên, theo mặc định. Một bản xem trước cho biết số thành viên bị ảnh hưởng trước mọi lần đuổi.

@@ -7,18 +7,19 @@ import SeparatedBox from '@site/src/components/SeparatedBox';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Icon from "@site/src/components/Icon";
+import Settings from '@site/src/components/DiscordMessage/mockups/v2';
 
 Extra features to simplify the management of your server. 🔧
 
-In addition to core features like the captcha system and anti-raid protection, RaidProtect offers several secondary tools that can make managing your server even smoother.
+In addition to core features like the captcha, anti-spam or anti-raid, RaidProtect offers several secondary tools that can make managing your server even smoother.
 
-## 📋 Duplicate a Channel {#channel-duplicate}
+## 📋 Duplicate a channel {#channel-duplicate}
 
-The `/channel duplicate` command allows you to fully duplicate a channel, including all its settings, permissions, and configurations. It goes beyond Discord's native feature, which cannot duplicate **categories** and **certain specific settings** such as forum channel tags.
+The `/channel duplicate` command allows you to fully duplicate a channel, including all its settings, permissions and configurations. It goes beyond Discord's native feature, which cannot duplicate **categories** and **certain specific settings** such as forum channel tags.
 
-Use the command: ```/channel duplicate [channel]```
+Use the command: ```/channel duplicate (#channel)```
 
-Replace `[channel]` with the mention or the [ID](../guides/id.mdx) of the channel to duplicate.
+Replace `(#channel)` with the mention or the [ID](../guides/id.mdx) of the channel to duplicate.
 
 ### 🎯 Features {#duplicate-features}
 
@@ -30,7 +31,7 @@ This command duplicates all of the following elements:
 - **Specific settings** depending on the channel type
 - **Position** within the category (if applicable)
 
-### ⚙️ RaidProtect Configurations {#duplicate-config}
+### ⚙️ RaidProtect configurations {#duplicate-config}
 
 When you duplicate a channel that has internal RaidProtect configurations, the bot automatically offers you the option to:
 
@@ -39,30 +40,43 @@ When you duplicate a channel that has internal RaidProtect configurations, the b
 
 **Example**: If you duplicate the logs channel, RaidProtect will offer to update its configuration so that the new channel becomes the logs channel, or to keep both channels configured, according to your preference.
 
-## 🗑️ Delete and re-create a Channel {#channel-clear}
+## 🗑️ Delete and re-create a channel {#channel-clear}
 
-The `/channel clear` command allows you to delete a channel and re-create it identically, keeping its settings, permissions, and RaidProtect configurations.
+The `/channel clear` command allows you to delete a channel and re-create it identically, keeping its settings, permissions and RaidProtect configurations.
 
-Use the command: ```/channel clear```
+Use the command: ```/channel clear (#channel)```
+
+Replace `(#channel)` with the mention or the [ID](../guides/id.mdx) of the channel to re-create.
 
 :::warning
 The channel's messages and webhooks will be permanently deleted. A confirmation will be requested before execution.
 :::
 
-## 🧹 Prune Members {#prune}
+## 🧹 Prune members {#prune}
 
 The `/prune` command allows you to kick inactive members from your server via an interactive menu.
 
 Use the command: ```/prune [duration]```
 
-Replace `[duration]` with the desired number of days of inactivity. The bot displays an interactive menu allowing you to:
+Replace `[duration]` with the desired number of days of inactivity, from 1 to 30. The bot displays an interactive menu allowing you to:
 - Select the inactivity duration
 - Include or exclude specific roles
 - See the number of affected members before confirmation
 
+The confirmation text shows who will really leave:
+
+| Mode | No role selected | Roles selected |
+|---|---|---|
+| **Include** | Only inactive members with **no role at all** | Inactive members who have **no role other than** the selected ones |
+| **Exclude** | All inactive members, **whatever their roles** | Inactive members who have **none of the** selected roles |
+
+:::info
+The `/prune` command is reserved for administrators. Only the 100 lowest roles are offered; members who have a higher role are excluded outright.
+:::
+
 ![Screenshot of the prune command](../assets/rp-prune.webp)
 
-## 🚫 Block Users {#block}
+## 🚫 Block users {#block}
 
 The `/block` command allows you to prevent a user from using certain RaidProtect features on your server (for example, sending reports or receiving the tag role).
 
@@ -76,21 +90,21 @@ When blocking or unblocking, RaidProtect lets you choose which features are affe
 
 ### Block a user {#block-add}
 
-Use the command: ```/block add (user) [reason]```
+Use the command: ```/block add [@user] [reason]```
 
 ### Unblock a user {#block-remove}
 
-Use the command: ```/block remove (user) [reason]```
+Use the command: ```/block remove [@user] [reason]```
 
 ### List blocked users {#block-list}
 
 Use the command: ```/block list```
 
-## 📢 Information Panels {#display}
+## 📢 Information panels {#display}
 
-See the [dedicated information panels page](./display.mdx) to learn more about the `/display public` command.
+See the [dedicated information panels page](./display.mdx) to learn more about the `/display public` and [`/display staff`](./display.mdx#staff) commands.
 
-## 📜 My Sanctions {#my-sanctions}
+## 📜 My sanctions {#my-sanctions}
 
 The `/my-sanctions` command allows members to view their own sanctions on the server, according to the [privacy level](./sanctions.mdx#sanctions-privacy) configured by administrators.
 
@@ -106,15 +120,71 @@ The `/serverinfo` command displays the **information of the current server**: na
 
 Use the command: ```/serverinfo```
 
+:::info
+The `serverinfo` command is [usable via prefix](../guides/prefix.md) (alias `ginfo`). It only works on a server where RaidProtect is installed.
+:::
+
+## 🔗 Invite information {#inviteinfo}
+
+The `/inviteinfo` command analyzes a Discord invite before you click on it: useful to check a partnership, an advertisement or a link received in DMs.
+
+Use the command: ```/inviteinfo (invite)```
+
+Replace `(invite)` with the invite's code or link (e.g., `discord.gg/raidprotect`).
+
+For a server invite, we display in particular:
+
+- **The server**: name, badge and tag, ID, number of members and online members, verification level, tier and boosts.
+- **The invite**: destination channel (text, voice or stage), creator, number of uses, expiration date, roles assigned on arrival.
+- **The themes and games** highlighted by the server (games are clickable).
+- **An activity profile**: peak and low hours, regularity.
+- A "**Join the server**" button.
+
+Friend, private group, activity and live invites are also recognized.
+
+:::info
+On a server, the response is ephemeral and the command requires the "**Manage Messages**" permission by default. If you add RaidProtect to your Discord account, you can also use `/inviteinfo` in DMs and private groups: the response is then visible in the conversation. The `inviteinfo` command is [usable via prefix](../guides/prefix.md) (alias `ii`).
+:::
+
+## 🔐 Your data on this server {#privacy}
+
+The `/privacy` command shows what RaidProtect stores about your server. It is open to all members and the response is only visible to you.
+
+Use the command: ```/privacy```
+
+- **Always**: the configuration chosen in `/settings` (kept as long as RaidProtect is on the server) and sanctions (member, moderator, reason and dates) for the moderation history.
+- **Depending on your settings**: messages (one hour per channel, in memory, never written to the database) if the anti-spam, reports or [message caching](#message-cache) are active; reports (author, reason and copy of the reported message) if they are enabled.
+
+The response links to our privacy policy, which details durations, sharing and your rights.
+
+## 🗂️ Message caching {#message-cache}
+
+Caching keeps **one hour of messages per channel in memory**, never written to the database. It feeds the [`/snipe`](./moderation.mdx#snipe) command and the snipe part of `/modview`. Without it, these commands find no deleted message.
+
+1. Run the [`/settings` command](../setup.md#settings).
+2. Open the "**Utilities**" tab.
+3. Click "**Enable**" next to "**Message caching**".
+
+<Settings start="home:utilities" />
+
+:::info
+Caching is **disabled by default**. It is enabled automatically, and cannot be turned off, when the [anti-spam](./anti-spam.mdx) or [reports](./reports.md) are active: these features need to read messages. The button then appears grayed out.
+:::
+
 ## 💬 Share feedback {#feedback}
 
-The `/feedback` command lets any server member **share feedback, a suggestion, or a bug report** directly from Discord, without having to join the support server.
+The `/feedback` command lets you **share feedback, a suggestion or a bug report** directly from Discord, without having to join the support server. On a server, it requires the "**Manage Messages**" permission by default; it also works in DMs with RaidProtect.
 
 Use the command: ```/feedback```
 
-The bot prompts you to rate your experience and then opens a window to type your feedback. Depending on the type of feedback (suggestion, bug, experience), RaidProtect redirects you to the right resources (support server, suggestions page).
+Choose the type of feedback, then fill in the window that opens:
 
-## 👤 User Information {#userinfo}
+- **Suggestion**: we redirect you to the suggestions page.
+- **Report a bug**: choose the category (anti-spam, anti-raid, captcha, sanctions, Authentification Manager, configuration, commands, logs, other); your report is passed on to our team.
+- **General feedback**: rate your experience from 1 to 5.
+- **Compliment**.
+
+## 👤 User information {#userinfo}
 
 The `/userinfo` command lets you get detailed information about a user.
 
@@ -123,16 +193,16 @@ Use the command: ```/userinfo [user]```
 Replace `[user]` with the desired mention or ID.
 
 :::info
-The `userinfo` command is [usable with a prefix](../guides/prefix.md).
+The `userinfo` command is [usable via prefix](../guides/prefix.md) (alias `ui`). If you add RaidProtect to your Discord account, you can also use it in DMs and private groups.
 :::
 
-### 📋 Displayed Information {#displayed-userinfo}
+### 📋 Displayed information {#displayed-userinfo}
 
 - **Discord account creation date**
 - User's **profile picture**
 - **Profile banner**
 - **Profile badges**
-  - The Nitro, Booster, Quest, and Former name badges are not displayed.
+  - The Nitro, Booster, Quest and Former name badges are not displayed.
 
 
 ### 🎭 Information about a server member {#displayed-memberinfo}
@@ -207,8 +277,8 @@ If the target is a server member, additional info includes:
 | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
 | `DID_REJOIN`                             | <Icon src="/img/icons/MemberDidRejoin.svg" alt="icon MemberDidRejoin" title=":MemberDidRejoin:"/>                      | The user left and rejoined the server.                            |
 | `IS_GUEST`                               | <Icon src="/img/icons/MemberIsGuest.svg" alt="icon MemberIsGuest" title=":MemberIsGuest:"/>                            | Guest member (temporary invite or guest access).                  |
-| `COMPLETED_ONBOARDING`                   | <Icon src="/img/icons/OnboardingCompleted.svg" alt="icon OnboardingCompleted" title=":OnboardingCompleted:"/>          | Completed the server onboarding process.                          |
-| `STARTED_ONBOARDING`                     | <Icon src="/img/icons/OnboardingStarted.svg" alt="icon OnboardingStarted" title=":OnboardingStarted:"/>                | Started the onboarding process.                                   |
+| `COMPLETED_ONBOARDING`                   | <Icon src="/img/icons/OnboardingCompleted.svg" alt="icon OnboardingCompleted" title=":OnboardingCompleted:"/>          | Completed the server Onboarding Process.                          |
+| `STARTED_ONBOARDING`                     | <Icon src="/img/icons/OnboardingStarted.svg" alt="icon OnboardingStarted" title=":OnboardingStarted:"/>                | Started the Onboarding Process.                                   |
 | `COMPLETED_SERVER_GUIDE`                 | <Icon src="/img/icons/ServerGuideCompleted.svg" alt="icon ServerGuideCompleted" title=":ServerGuideCompleted:"/>       | Completed the server guide if enabled.                            |
 | `STARTED_SERVER_GUIDE`                   | <Icon src="/img/icons/ServerGuideStarted.svg" alt="icon ServerGuideStarted" title=":ServerGuideStarted:"/>             | Started the server guide.                                         |
 | `AUTOMOD_QUARANTINED_NAME`               | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | Quarantined by automoderation because of the username.            |
@@ -216,17 +286,17 @@ If the target is a server member, additional info includes:
 | `BYPASSES_VERIFICATION`                  | <Icon src="/img/icons/BypassVerification.svg" alt="icon BypassVerification" title=":BypassVerification:"/>             | The user can bypass server verification.                          |
 | `SPAMMER`                                | <Icon src="/img/icons/UnusualAccountActivity.svg" alt="icon UnusualAccountActivity" title=":UnusualAccountActivity:"/> | Account marked as a spammer or unusual activity detected.         |
 
-## ⚖️ Discord Sanctions {#discord-sanctions}
+## ⚖️ Discord sanctions {#discord-sanctions}
 
 The `/discord-sanctions` command allows you to view the **sanctions issued by Discord** against a user, in accordance with [European regulations](https://transparency.dsa.ec.europa.eu/).
 
-Use the command: ```/discord-sanctions (user)```
+Use the command: ```/discord-sanctions [@user]```
 
-Replace `(user)` with the desired mention or ID. The command is also accessible by right-clicking on a profile, via **`Apps`** then **`Discord Sanctions`**.
+Replace `[@user]` with the desired mention or ID. The command is also accessible by right-clicking on a profile, via **`Apps`** then **`Discord Sanctions`**. Without a user, it shows Discord's global safety statistics over the last 7 days ("**Categories**", "**Detection**" and "**Enforcement**" tabs).
 
-### 📋 Displayed Information {#displayed-sanctions}
+### 📋 Displayed information {#displayed-sanctions}
 
-- **Type of sanction**:
+- **Sanction type**:
 
 | **Sanctions**                            | **Emojis**                                                                                                             | **Meanings**                                                      |
 | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
@@ -262,3 +332,21 @@ Replace `(user)` with the desired mention or ID. The command is also accessible 
 :::note
 The command lets you view the reports issued between August 22, 2024 and August 14, 2025. This information is provided directly by Discord and **cannot be modified** by RaidProtect.
 :::
+
+## Frequently asked questions {#faq}
+
+### Why does `/snipe` find no message?
+
+`/snipe` reads the messages kept in memory for one hour. Enable [message caching](#message-cache) in the Utilities tab of `/settings`, or enable the anti-spam or reports, which enable it automatically.
+
+### How do I check a Discord invite before joining a server?
+
+Use `/inviteinfo` with the invite's code or link: we display the server, its creator, its activity and the roles assigned on arrival.
+
+### What does RaidProtect store about my server?
+
+The `/privacy` command details it: the configuration and sanctions permanently, and depending on your settings an hour of messages in memory and reports.
+
+### Who can use `/prune`?
+
+Only administrators, by default. A preview shows the number of members concerned before any kick.

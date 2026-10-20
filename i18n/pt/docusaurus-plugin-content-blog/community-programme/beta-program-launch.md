@@ -6,56 +6,56 @@ slug: beta-program-launch
 date: 2024-11-25
 ---
 
-Temos uma excelente notícia para a comunidade RaidProtect: **o programa BETA está oficialmente disponível!** 🎉
+Temos uma ótima notícia para a comunidade RaidProtect: **o programa BETA está oficialmente disponível!** 🎉
 
-Queremos agora levar a nossa abordagem de qualidade ainda mais longe, envolvendo-te diretamente. Este programa dá-te acesso antecipado às próximas funcionalidades do bot... enquanto nos ajudas a testá-las antes do lançamento público.
+Agora queremos levar nossa abordagem de qualidade ainda mais longe, envolvendo você diretamente. Este programa dá a você acesso antecipado às próximas funcionalidades do bot... enquanto você nos ajuda a testá-las antes do lançamento público.
 
 <!--truncate-->
 
-## Porquê um programa beta? {#why-beta}
+## Por que um programa beta? {#why-beta}
 
 Desenvolver um bot como o RaidProtect envolve muitos testes, ajustes e verificações. Ao abrir este programa beta, temos dois objetivos principais:
 
 - **Testar novas funcionalidades em condições reais**.
-- **Obter feedback direto** da comunidade para melhorar continuamente a experiência do utilizador.
+- **Obter feedback direto** da comunidade para melhorar continuamente a experiência do usuário.
 
 E o melhor? As **funcionalidades premium** estão incluídas gratuitamente nos servidores selecionados durante a fase de testes. 😍
 
 ## O que está incluído atualmente? {#features-beta}
 
-O programa beta dá-te acesso antecipado a várias novas funcionalidades já disponíveis na versão de teste:
+O programa beta dá a você acesso antecipado a várias novas funcionalidades já disponíveis na versão de teste:
 
-- 🧵 **Comandos slash e interações com botões**: para uma experiência de utilizador modernizada.
-- 🌍 **Internacionalização**: o bot agora fala tanto francês *como* inglês.
-- 📢 **Novo comando `/report`**: reporta facilmente comportamentos problemáticos.
-- 🛡️ **Ignorar cargos ou utilizadores no antispam**: para maior flexibilidade.
-- 🔒 **Opção de renomear canais através do `/lock`**: personaliza a tua segurança.
-- 🔧 **Melhorias de estabilidade**: menos erros, mais fiabilidade.
+- 🧵 **Comandos slash e interações com botões**: para uma experiência de usuário modernizada.
+- 🌍 **Internacionalização**: o bot agora fala tanto francês *quanto* inglês.
+- 📢 **Novo comando `/report`**: denuncie facilmente comportamentos problemáticos.
+- 🛡️ **Ignorar cargos ou usuários no antispam**: para mais flexibilidade.
+- 🔒 **Opção de renomear canais pelo `/lock`**: personalize sua segurança.
+- 🔧 **Melhorias de estabilidade**: menos erros, mais confiabilidade.
 
-Estas funcionalidades serão disponibilizadas publicamente após validação pelos beta testers.
+Essas funcionalidades serão disponibilizadas publicamente após a validação pelos beta testers.
 
 ## Quem pode participar? {#who}
 
-Qualquer pessoa pode candidatar-se, desde que gira um servidor Discord ativo e esteja disposta a testar novas funcionalidades. Alguns pré-requisitos:
+Qualquer pessoa pode se candidatar, desde que gerencie um servidor Discord ativo e esteja disposta a testar novas funcionalidades. Alguns pré-requisitos:
 
 - É necessária **atividade regular**.
-- Deves manter as **tuas MDs abertas** para que possamos contactar-te.
-- Em caso de inatividade prolongada, podemos revogar o teu acesso à beta.
+- Você precisa manter **suas DMs abertas** para que possamos entrar em contato.
+- Em caso de inatividade prolongada, podemos revogar seu acesso à beta.
 
-## Como aderir ao programa? {#how}
+## Como participar do programa? {#how}
 
-Não poderia ser mais simples: preenche o nosso formulário de candidatura (demora menos de 5 minutos) neste link:
+Não poderia ser mais simples: preencha nosso formulário de inscrição (leva menos de 5 minutos) neste link:
 
 👉 [https://raidprotect.bot/beta](https://raidprotect.bot/beta)
 
-Analisaremos todas as candidaturas com cuidado. Se fores selecionado, contactar-te-emos através do Discord.
+Vamos analisar todas as inscrições com cuidado. Se você for selecionado, entraremos em contato pelo Discord.
 
 ---
 
-## Obrigado pelo vosso apoio 💙 {#thanks}
+## Obrigado pelo apoio 💙 {#thanks}
 
-O RaidProtect é, acima de tudo, um projeto comunitário. O vosso feedback e envolvimento são essenciais para que o bot continue a evoluir na direção certa. Obrigado a todos os que já fazem parte desta aventura beta, e bem-vindos aos que se juntarão a nós!
+O RaidProtect é, acima de tudo, um projeto comunitário. O feedback e o envolvimento de vocês são essenciais para que o bot continue evoluindo na direção certa. Obrigado a todos que já fazem parte desta aventura beta, e boas-vindas aos que vão se juntar a nós!
 
 :::tip
-Queres acompanhar as últimas novidades ou fazer perguntas? Junta-te ao nosso [servidor oficial Discord](https://raidprotect.bot/discord)!
+Quer acompanhar as últimas novidades ou tirar dúvidas? Entre no nosso [servidor oficial do Discord](https://raidprotect.bot/discord)!
 :::

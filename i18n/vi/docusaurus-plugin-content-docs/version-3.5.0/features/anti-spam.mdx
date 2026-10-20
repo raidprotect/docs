@@ -1,0 +1,247 @@
+---
+title: Chống spam
+description: "Chống spam của RaidProtect tự động phát hiện và xử phạt spam trên máy chủ Discord của bạn: flood, liên kết, lượt nhắc đến, selfbot và spam nhiều kênh."
+---
+
+import AntiSpamMockup from '@site/src/components/DiscordMessage/mockups/anti-spam';
+import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<AntiSpamMockup />
+
+**Chống spam** của RaidProtect tự động phát hiện và xử phạt [spam](/vi/learn/spam-discord) trên máy chủ Discord của bạn: tin nhắn dồn dập, màn hình bị tràn ngập, sao chép dán, liên kết, nhắc đến hàng loạt, [selfbot](/vi/learn/self-bot) và spam trải rộng trên nhiều kênh. Sau khi bật, nó lo mọi thứ mà không cần người kiểm duyệt phải can thiệp.
+
+## ❓ Chống spam hoạt động thế nào? {#working}
+
+Chúng tôi phân tích từng tin nhắn bằng cách so sánh nó với các tin nhắn gần đây của tác giả.
+
+- **Mười trình kích hoạt**: mỗi loại spam có trình kích hoạt riêng (spam, flood, tệp, trùng lặp, liên kết, lượt nhắc đến, selfbot, lệnh bên ngoài, tin nhắn bị AutoMod chặn, nhiều kênh). Chi tiết nằm trong [bảng các trình kích hoạt](#triggers).
+- **Bốn nhóm**: các trình kích hoạt được gom theo bản chất (**Quá mức**, **Spam**, **Tự động** và **Spam nhiều kênh**), giúp chỉnh hình phạt chỉ với vài cú nhấp.
+- **Hình phạt nặng nhất được áp dụng**: khi một vụ spam vượt qua nhiều trình kích hoạt cùng lúc, chúng tôi áp dụng hình phạt mạnh nhất.
+- **Lý do rõ ràng**: lý do của hình phạt cho biết loại spam đã bị phát hiện.
+- **Nhật ký**: mỗi hình phạt được gửi vào kênh nhật ký của bạn kèm các tin nhắn đã xóa (xem [nhật ký](#logs)).
+
+Chống spam **bị tắt theo mặc định**. Nó được bật trong lúc chạy [lệnh `/setup`](../setup.md) nếu bạn đánh dấu chọn, hoặc bất cứ lúc nào từ `/settings`.
+
+## 🛡️ Cấu hình chống spam {#config}
+
+Chống spam nằm trong thẻ “**Bảo vệ**” của `/settings`. Màn hình của nó gom công tắc, các hình phạt, mẫu có sẵn, các trường hợp miễn trừ và phần mô phỏng.
+
+<Settings start="antispam" />
+
+### Bật hoặc tắt chống spam {#toggle}
+
+1. Dùng [lệnh `/settings`](../setup.md#settings).
+2. Mở thẻ “**Bảo vệ**”.
+3. Nhấp vào “**Cấu hình**” bên cạnh “**Chống spam**”.
+4. Nhấp vào “**Bật**” (hoặc “**Tắt**”) ở phía trên bên phải màn hình.
+
+### Chọn một mẫu có sẵn {#presets}
+
+Cách đơn giản nhất để chỉnh chống spam là chọn một **mẫu có sẵn**. Nó đặt một lần hình phạt của từng nhóm:
+
+| Mẫu có sẵn | Quá mức | Spam | Tự động | Spam nhiều kênh |
+|---|---|---|---|---|
+| **Nhẹ** | Cảnh cáo | Timeout | Jail | Timeout |
+| **Tiêu chuẩn** *(mặc định)* | Timeout | Softban | Cấm | Jail |
+| **Nghiêm ngặt** *(không khuyến nghị)* | Softban | Cấm | Cấm | Cấm |
+
+Mẫu **Nhẹ** không bao giờ đuổi hay cấm: tối đa chỉ là một timeout hoặc jail.
+
+1. Dùng [lệnh `/settings`](../setup.md#settings).
+2. Mở thẻ “**Bảo vệ**”.
+3. Nhấp vào “**Cấu hình**” bên cạnh “**Chống spam**”.
+4. Chọn một mẫu trong bộ chọn “**Chọn một mẫu có sẵn**”.
+
+Bộ chọn hiển thị “**Tùy chỉnh**” khi các thiết lập của bạn không khớp với mẫu nào. Trong trường hợp đó, áp dụng một mẫu sẽ ghi đè các thiết lập của bạn: chúng tôi yêu cầu bạn xác nhận bằng cách đánh dấu “**Tôi đã hiểu, áp dụng mẫu**”. Các thời lượng riêng của một số trình kích hoạt khi đó sẽ trở về [thời lượng mặc định](#duration).
+
+<SettingsModal name="antispamPreset" />
+
+### Quản lý các kênh, vai trò và thành viên được bỏ qua {#ignore}
+
+Bạn có thể loại một số kênh, vai trò hoặc thành viên khỏi việc giám sát của chống spam.
+
+1. Dùng [lệnh `/settings`](../setup.md#settings).
+2. Mở thẻ “**Bảo vệ**”.
+3. Nhấp vào “**Cấu hình**” bên cạnh “**Chống spam**”.
+4. Chọn các trường hợp miễn trừ trong các bộ chọn “**Kênh được bỏ qua**”, “**Vai trò được bỏ qua**” và “**Thành viên được bỏ qua**” (tối đa 25 cho mỗi bộ chọn).
+
+Bộ chọn kênh chấp nhận cả **danh mục** (khi đó tất cả kênh của chúng đều được bỏ qua), cũng như kênh thoại, kênh sân khấu và diễn đàn. Các luồng theo kênh cha của chúng.
+
+:::info Ai được bỏ qua tự động?
+- Các kênh có tên chứa “**spam**” (với một luồng, tên của kênh cha mới được tính).
+- Các thành viên mà RaidProtect không thể kiểm duyệt (vai trò cao hơn vai trò của nó).
+- **Đội ngũ** (quyền `Quản trị viên`, `Quản lý máy chủ` hoặc `Quản lý tin nhắn`), **chừng nào chưa có vai trò hay thành viên nào bị bỏ qua**. Ngay khi bạn thêm một vai trò hoặc thành viên vào danh sách, chỉ danh sách đó được tính: các thành viên đội ngũ không có trong đó khi đó có thể bị xử phạt.
+:::
+
+### Cấu hình hình phạt theo trình kích hoạt {#triggers}
+
+Chi tiết các hình phạt được mở từ màn hình chống spam.
+
+1. Dùng [lệnh `/settings`](../setup.md#settings).
+2. Mở thẻ “**Bảo vệ**”.
+3. Nhấp vào “**Cấu hình**” bên cạnh “**Chống spam**”.
+4. Nhấp vào “**Xem chi tiết**” ở bên phải “**Hình phạt**”.
+5. Nhấp vào “**Chỉnh sửa**” bên cạnh nhóm cần chỉnh, rồi chọn “**Hình phạt**” và, nếu cần, “**Thời lượng**”.
+
+<Settings start="antispamSanctions" />
+
+Mỗi nhóm gom các trình kích hoạt cùng bản chất. Dưới đây là các trình kích hoạt mà chúng tôi phát hiện, với hình phạt mặc định (mẫu **Tiêu chuẩn**):
+
+| Nhóm | Trình kích hoạt | Điều được phát hiện | Hình phạt mặc định |
+|---|---|---|---|
+| **Quá mức** | Spam | Quá nhiều tin nhắn trong thời gian ngắn. Emoji, sticker và các tin nhắn vô nghĩa (ký tự lặp lại, từ lặp vòng) cũng được tính. | Timeout |
+| **Quá mức** | Flood (tràn màn hình) | Tin nhắn làm đầy màn hình: văn bản dài, hình ảnh, bản xem trước liên kết, sticker | Timeout |
+| **Quá mức** | Spam tệp đính kèm | Gửi hàng loạt tệp hoặc hình ảnh | Timeout |
+| **Spam** | Spam trùng lặp | Tin nhắn sao chép dán hoặc gần như giống hệt | Softban |
+| **Spam** | Spam liên kết | Gửi hàng loạt liên kết (một lời mời Discord được tính là một liên kết, kể cả khi không có `https://`; các liên kết Discord khác và GIF không được tính) | Softban |
+| **Spam** | Spam nhắc đến | Nhắc đến hàng loạt | Softban |
+| **Tự động** | Spam bằng selfbot | Dùng [selfbot](/vi/learn/self-bot) để spam | Cấm |
+| **Tự động** | Spam lệnh bên ngoài | Dùng [lệnh bên ngoài](/vi/learn/server-raidable) để spam | Cấm |
+| **Tự động** | Spam tin nhắn bị chặn (AutoMod) | Các tin nhắn lặp lại bị [AutoMod của Discord](#automod) chặn | Cấm |
+| *(riêng)* | Spam nhiều kênh | Cùng một tin nhắn được đăng trong nhiều kênh trong thời gian ngắn | Jail |
+
+:::info Spam nhiều kênh
+**Spam nhiều kênh** có điểm đặc biệt: hình phạt của nó thay thế hình phạt của trình kích hoạt ban đầu khi spam lan sang nhiều kênh, chỉ khi nó nghiêm khắc hơn. Tắt nó cũng tắt toàn bộ việc giám sát ở quy mô máy chủ.
+:::
+
+Dưới đây là **[các hình phạt khả dụng](/vi/learn/discord-sanctions)** cho mỗi nhóm hoặc trình kích hoạt:
+
+- **Cảnh cáo (Warn)**: gửi một cảnh cáo cho thành viên.
+- **Timeout**: làm thành viên bị tắt tiếng trong một khoảng thời gian xác định (tối đa 28 ngày, giới hạn của Discord).
+- **Mute**: cấp [vai trò Mute](./sanctions.mdx#mute) đã được cấu hình trên máy chủ của bạn.
+- **Jail**: cấp [vai trò Jail](./sanctions.mdx#jail) đã được cấu hình trên máy chủ của bạn.
+- **Đuổi (Kick)**: đuổi thành viên khỏi máy chủ.
+- **Softban**: cấm rồi bỏ cấm thành viên ngay lập tức, nhờ đó các tin nhắn của họ bị xóa.
+- **Cấm (Ban)**: cấm thành viên.
+- **Tắt**: tắt hoàn toàn trình kích hoạt, không có hình phạt nào được áp dụng.
+
+:::info
+Một **Jail** hoặc **Mute** chưa có vai trò được cấu hình sẽ trở thành **Timeout**: màn hình cho biết điều này bằng “**→ Timeout**”. Hãy nhớ chỉnh các vai trò này trong thẻ “**Kiểm duyệt**”, mô-đun “**Hình phạt**”.
+:::
+
+Để đặt lại mọi hình phạt về mặc định, nhấp vào “**Đặt lại**” ở phía trên bên phải màn hình hình phạt.
+
+#### Chế độ nâng cao: chỉnh từng trình kích hoạt {#advanced}
+
+Nếu bạn muốn một hình phạt khác cho riêng một trình kích hoạt (ví dụ cấm spam liên kết nhưng giữ Softban cho lượt nhắc đến), hãy chuyển sang chế độ nâng cao.
+
+1. Dùng [lệnh `/settings`](../setup.md#settings).
+2. Mở thẻ “**Bảo vệ**”.
+3. Nhấp vào “**Cấu hình**” bên cạnh “**Chống spam**”.
+4. Nhấp vào “**Xem chi tiết**”, rồi vào “**Chế độ nâng cao**”.
+5. Chọn một hoặc nhiều trình kích hoạt trong “**Chọn các trình kích hoạt cần chỉnh sửa**”, rồi chỉnh hình phạt và thời lượng của chúng.
+
+<SettingsModal name="antispamFamily" />
+
+Chế độ nâng cao vẫn được hiển thị chừng nào một nhóm còn có các thiết lập khác nhau tùy theo trình kích hoạt. Để quay lại chế độ đơn giản, nhấp lại vào “**Chế độ nâng cao**” và đánh dấu “**Tôi đã hiểu, đồng bộ các nhóm**”.
+
+#### Thời lượng của hình phạt {#duration}
+
+Các hình phạt có thời lượng (mute, timeout, jail) dùng **thời lượng mặc định**, được đặt là 1 giờ. Bạn có thể đổi nó cho toàn bộ chống spam, hoặc đặt một thời lượng riêng cho một nhóm hay một trình kích hoạt.
+
+**Thời lượng mặc định:**
+
+1. Dùng [lệnh `/settings`](../setup.md#settings).
+2. Mở thẻ “**Bảo vệ**”.
+3. Nhấp vào “**Cấu hình**” bên cạnh “**Chống spam**”.
+4. Nhấp vào “**Xem chi tiết**”.
+5. Chọn một thời lượng trong bộ chọn “**Thời lượng mặc định**” (Vĩnh viễn, 5 phút, 1 giờ hoặc 1 ngày), hoặc “**Giá trị tùy chỉnh**” để nhập thời lượng của riêng bạn (ví dụ `30m`, `2h`, `7d`).
+
+**Thời lượng riêng cho một nhóm hoặc một trình kích hoạt:** trong cửa sổ mở bởi “**Chỉnh sửa**” (hoặc bởi chế độ nâng cao), chọn một “**Thời lượng**”, hoặc nhập một “**Thời lượng tùy chỉnh**”. Tùy chọn “**Mặc định (thời lượng chung)**” quay về thời lượng mặc định.
+
+:::info
+- Một thời lượng tùy chỉnh phải **tối thiểu 5 phút**.
+- “**Vĩnh viễn**” trên một Timeout được đưa về 28 ngày, mức tối đa Discord cho phép.
+- Thời lượng bị bỏ qua với các hình phạt không có thời lượng (cảnh cáo, đuổi, softban, cấm).
+- Khi spam nhiều kênh tiếp quản, thời lượng của nó được áp dụng.
+:::
+
+### Tin nhắn công khai về hình phạt <span className="badge-premium">Premium</span> {#public-message}
+
+Theo mặc định, mỗi hình phạt của chống spam được thông báo bằng một **tin nhắn công khai** trong kênh (ví dụ “thành viên đã bị mute”). Các máy chủ [Premium](/vi/premium) có thể ẩn nó để kiểm duyệt kín đáo hơn.
+
+1. Dùng [lệnh `/settings`](../setup.md#settings).
+2. Mở thẻ “**Bảo vệ**”.
+3. Nhấp vào “**Cấu hình**” bên cạnh “**Chống spam**”.
+4. Nhấp vào “**Xem chi tiết**”.
+5. Nhấp vào “**Tắt**” bên cạnh “**Tin nhắn công khai về hình phạt**”.
+
+:::info
+Thiết lập này được dùng chung với [bộ lọc hình ảnh ScamLens](./scam-images.md): tắt nó cũng ẩn các thông báo về hình ảnh lừa đảo bị xóa.
+:::
+
+## 🔎 Mô phỏng một vụ spam {#simulation}
+
+Một thành viên đã spam mà không bị xử phạt, hoặc ngược lại một thành viên bị xử phạt oan? **Mô phỏng** cho bạn biết chống spam có kích hoạt trong một tình huống cụ thể hay không, và vì sao.
+
+1. Dùng [lệnh `/settings`](../setup.md#settings).
+2. Mở thẻ “**Bảo vệ**”.
+3. Nhấp vào “**Cấu hình**” bên cạnh “**Chống spam**”.
+4. Nhấp vào “**Mô phỏng**”.
+5. Chọn “**Thành viên cần thử**”, “**Kênh cần thử**” và “**Loại spam**”.
+
+<SettingsModal name="antispamSimulate" />
+
+Phần mô phỏng kiểm tra các quyền, các trường hợp miễn trừ và hình phạt dự kiến.
+
+Kết quả cũng cho biết **đỉnh của giờ vừa qua** của thành viên này, tính theo phần trăm của ngưỡng, rồi đến kết luận và hình phạt sẽ được áp dụng.
+
+:::warning Quyền cần thiết
+Chống spam không xử phạt ai nếu RaidProtect không có đồng thời các quyền `Cấm thành viên`, `Đuổi thành viên` và `Loại trừ tạm thời thành viên`.
+:::
+
+## 🤖 AutoMod của Discord {#automod}
+
+RaidProtect làm việc cùng **AutoMod của Discord**:
+
+- **Spam tin nhắn bị chặn**: khi một thành viên liên tục gửi các tin nhắn bị các quy tắc AutoMod của bạn chặn, trình kích hoạt “**Spam tin nhắn bị chặn (AutoMod)**” sẽ xử phạt họ (nhóm **Tự động**). Muốn vậy, quy tắc AutoMod phải gửi các **cảnh báo** của nó vào một kênh mà RaidProtect thấy được: nhờ những cảnh báo này mà chúng tôi nhận ra các tin nhắn bị chặn.
+- **Cảnh cáo cho mỗi tin nhắn bị chặn**: nếu các hình phạt đang bật trên máy chủ của bạn, mỗi tin nhắn bị một quy tắc AutoMod chặn được ghi lại như một cảnh cáo trong lịch sử của thành viên, trừ khi quy tắc đã áp dụng một timeout. Thành viên không nhận tin nhắn riêng cho cảnh cáo này. Xem thêm chi tiết ở trang [hình phạt](./sanctions.mdx).
+
+## 🐢 Slowmode phòng ngừa <span className="badge-experiment">Thử nghiệm</span> <span className="badge-premium">Premium</span> {#slowmode}
+
+Để làm dịu một kênh rất sôi động mà không xử phạt ai, [slowmode phòng ngừa](./slowmode.md) (Premium, đang thử nghiệm cùng Shield Update) tự động điều chỉnh chế độ chậm của các kênh theo tốc độ tin nhắn của chúng.
+
+## 📑 Nhật ký của chống spam {#logs}
+
+Mỗi hình phạt được gửi vào kênh nhật ký của bạn, kèm loại spam làm lý do. Với mọi hình phạt trừ cảnh cáo, một tệp chứa các tin nhắn đã xóa được đính kèm: bạn có thể tải xuống hoặc mở rộng nó.
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="animator" label="Thu gọn" default>
+
+![Ảnh chụp màn hình nhật ký chống spam](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-logs-anti-spam.webp)
+
+  </TabItem>
+  <TabItem value="moderator" label="Mở rộng">
+
+![Ảnh chụp màn hình nhật ký chống spam được mở rộng](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-logs-anti-spam-expand.webp)
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+## Câu hỏi thường gặp {#faq}
+
+### Chống spam có hoạt động mà không cần cấu hình không?
+
+Chỉ cần bật nó, trong lúc chạy lệnh `/setup` hoặc trong `/settings`, thẻ Bảo vệ. Khi đó nó dùng mẫu Tiêu chuẩn, phù hợp với đa số máy chủ. Sau đó bạn có thể đổi mẫu hoặc chỉnh từng nhóm.
+
+### Chống spam có các mức bảo mật (cao, trung bình, thấp) không?
+
+Không có mức độ nhạy: chống spam được bật hoặc tắt. Tuy nhiên có ba mẫu hình phạt (Nhẹ, Tiêu chuẩn và Nghiêm ngặt), và mỗi nhóm hoặc trình kích hoạt có thể nhận hình phạt riêng.
+
+### Có thể loại một số kênh hoặc thành viên khỏi chống spam không?
+
+Có, bạn có thể bỏ qua các kênh, danh mục, vai trò hoặc thành viên cụ thể. Các kênh có tên chứa “spam” được bỏ qua tự động. Đội ngũ (Quản trị viên, Quản lý máy chủ, Quản lý tin nhắn) được bỏ qua chừng nào bạn chưa thêm vai trò hay thành viên nào vào danh sách.
+
+### Có thể chọn hình phạt áp dụng cho spam không?
+
+Có. Hãy chọn một mẫu, chỉnh hình phạt của từng nhóm, hoặc chuyển sang chế độ nâng cao để chỉnh từng trình kích hoạt, từ cảnh cáo đến cấm. Bạn cũng có thể tắt hoàn toàn một trình kích hoạt và đặt thời lượng riêng cho từng cái.
+
+### Vì sao một thành viên không bị xử phạt?
+
+Hãy dùng [mô phỏng](#simulation): nó kiểm tra các quyền của RaidProtect, thứ bậc vai trò, các trường hợp miễn trừ, kênh và hình phạt của loại spam, rồi cho biết đỉnh hoạt động của thành viên so với ngưỡng.

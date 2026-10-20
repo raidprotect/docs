@@ -3,32 +3,43 @@ title: Anti-raid
 description: "Le mode raid de RaidProtect bloque instantanément les arrivées massives sur votre serveur Discord, automatiquement dès qu'une vague suspecte est détectée."
 ---
 
-import { RaidModeSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
+import Settings from '@site/src/components/DiscordMessage/mockups/v2';
 
 import RaidModeMockup from '@site/src/components/DiscordMessage/mockups/raid-mode';
 
-<RaidModeMockup />
+{/* <RaidModeMockup /> : obsolète en 3.5.0 (montre l'expulsion comme seule action du mode raid) */}
 
 ## Mode raid {#raid-mode}
 
-Le mode raid de RaidProtect est une fonctionnalité d'urgence qui bloque instantanément tous les nouveaux utilisateurs tentant de rejoindre votre serveur, pendant une durée maximale de 24 heures. Notre bot de protection l'active seul dès qu'il détecte une [vague d'arrivées suspecte](/learn/discord-raid), et vous pouvez aussi le déclencher à la main. Pour bloquer définitivement les nouveaux membres, utilisez la [commande `/joinlock`](./join-lock.mdx).
+Le **mode raid** de RaidProtect est une fonctionnalité d'urgence qui traite les nouveaux utilisateurs tentant de rejoindre votre serveur pendant une [vague d'arrivées suspecte](/learn/discord-raid), pour une durée de 24 heures au maximum. Notre bot de protection l'active seul dès qu'il détecte une vague, et vous pouvez aussi le déclencher à la main. Vous choisissez ce que nous faisons des arrivants : bloquer les invitations, les expulser ou les envoyer au [captcha](./captcha.md). Pour fermer durablement le serveur aux nouveaux membres, utilisez la [commande `/joinlock`](./join-lock.mdx).
 
-### ❓ Comment fonctionne le mode raid ? {#working}
+### ❓ Comment fonctionne le mode raid ? {#working}
 
-RaidProtect active automatiquement le mode raid si un grand nombre d’utilisateurs rejoint votre serveur en un court laps de temps. Par défaut, le mode raid s'active si plus de 10 utilisateurs rejoignent votre serveur en moins de 10 secondes. Lorsque le mode raid est activé, aucun utilisateur ne peut rejoindre le serveur. Ils sont bloqués au niveau de l’invitation.
+- **Détection :** l'**Auto RaidMode** active le mode raid quand trop d'utilisateurs rejoignent votre serveur en même temps. Par défaut, il se déclenche à 10 arrivées en 10 secondes.
+- **Réaction :** pendant le mode raid, les arrivants sont traités selon l'[action pendant le raid](#action) que vous avez choisie. Les comptes de la vague qui a déclenché le mode sont traités eux aussi : expulsés, ou renvoyés derrière le captcha avec les actions captcha.
+- **Fin :** le mode raid se coupe tout seul après la [durée configurée](#duration), 5 minutes par défaut.
+- **Logs :** un message est posté dans le salon de logs à chaque activation et désactivation.
+- **Accueil :** le [message de bienvenue](./onboarding.md#welcome-message) se tait pendant la vague, pour ne pas inonder le salon d'accueil.
 
 :::warning
-Les fonctions communautaires de Discord sont indispensables au bon fonctionnement du Mode raid. [Suivez notre guide pour vérifier l'activation de la communauté sur votre serveur.](../guides/community.md)
+Avec l'action “**Bloquer les invitations**” (par défaut), les fonctions communautaires de Discord sont indispensables au mode raid. [Suivez notre guide pour vérifier l'activation de la communauté sur votre serveur.](../guides/community.md) Les autres actions fonctionnent sans la communauté.
 :::
 
 #### Activation {#enable}
 
-- Pour activer manuellement ce mode, un utilisateur disposant des permissions d'expulsion doit exécuter la commande `/raidmode`.
-- Un message sera automatiquement posté dans le salon de logs pour signaler l'activation.
+Un utilisateur disposant de la permission d'expulsion peut activer le mode raid à la main.
+
+Utilisez la commande : ```/raidmode [status] [duration]```
+
+- Sans option, la commande affiche l'état du mode raid avec un bouton pour l'activer ou le désactiver.
+- Remplacez `[status]` par **True** pour l'activer, **False** pour le désactiver.
+- Remplacez `[duration]` par la durée souhaitée (par exemple `30m` ou `2h`, 24 heures maximum). Sans durée, nous reprenons celle de l'Auto RaidMode.
+
+Un message est automatiquement posté dans le salon de logs pour signaler l'activation. Le mode raid manuel applique la même [action](#action) que l'Auto RaidMode.
 
 #### Désactivation {#disable}
 
-Le mode raid ne se désactive pas automatiquement. Pensez à l’arrêter avec la même commande lorsque la menace est écartée. 😇
+Le mode raid se désactive tout seul à la fin de sa durée. Vous pouvez aussi l'arrêter plus tôt avec la commande `/raidmode`, une fois la menace écartée. 😇
 
 :::info
 La commande `raidmode` est [utilisable par préfixe](../guides/prefix.md).
@@ -36,98 +47,117 @@ La commande `raidmode` est [utilisable par préfixe](../guides/prefix.md).
 
 ### 🚨 Configuration du mode raid automatique {#config}
 
-Si votre serveur accueille souvent beaucoup de nouveaux membres simultanément, il est judicieux de modifier ce seuil pour éviter les faux-positifs.
+Si votre serveur accueille souvent beaucoup de nouveaux membres simultanément, il est judicieux de modifier le seuil pour éviter les faux positifs. Tous les réglages se trouvent sur le même écran.
 
-<RaidModeSettingsMockup />
+1. Faites la [commande `/settings`](../setup.md#settings).
+2. Ouvrez l'onglet “**Arrivées**”.
+3. Cliquez sur “**Configurer**” à côté de “**Auto RaidMode**”.
+
+L'interrupteur en haut à droite de l'écran active ou désactive l'Auto RaidMode. RaidProtect a besoin de la permission `MANAGE_GUILD`.
+
+<Settings start="antiraid" />
 
 #### Seuil de membres {#threshold}
 
 1. Faites la [commande `/settings`](../setup.md#settings).
-2. Cliquez sur le bouton “**Auto RaidMode**”.
-3. Sélectionnez “**Nombre de membres**”.
-4. Choisissez le nombre de membres pouvant rejoindre sous 10 secondes.
+2. Ouvrez l'onglet “**Arrivées**”.
+3. Cliquez sur “**Configurer**” à côté de “**Auto RaidMode**”.
+4. Dans “**Nombre de membres / 10 secondes**”, choisissez 10, 15, 20 ou 30 membres, ou une “**Valeur personnalisée**”.
 
-Vous pouvez laisser à la valeur par défaut (10) ou ajuster selon la valeur souhaitée en cliquant sur le bouton “**Valeur personnalisée**”.
+Le seuil se compte sur une fenêtre de 10 secondes. La valeur par défaut est de 10 membres.
 
 :::note
-Nous recommandons d’entrer une valeur comprise entre 10 et 20 membres en 10 secondes pour une bonne efficacité du système.
+Nous recommandons une valeur comprise entre 10 et 20 membres en 10 secondes pour une bonne efficacité du système.
 :::
 
 #### Durée du raidmode {#duration}
 
 1. Faites la [commande `/settings`](../setup.md#settings).
-2. Cliquez sur le bouton “**Auto RaidMode**”.
-3. Sélectionnez “**Durée**”.
-4. Choisissez la durée du raidmode (24h maximum).
+2. Ouvrez l'onglet “**Arrivées**”.
+3. Cliquez sur “**Configurer**” à côté de “**Auto RaidMode**”.
+4. Dans “**Durée avant désactivation**”, choisissez 1, 2, 5 ou 10 minutes, ou une “**Valeur personnalisée**” de 10 secondes à 24 heures (par exemple `5m 30s`).
 
-Vous pouvez laisser à la valeur par défaut (5 minutes) ou ajuster selon la valeur souhaitée en cliquant sur le bouton “**Valeur personnalisée**”.
+La durée par défaut est de 5 minutes.
+
+#### Action pendant le raid {#action}
+
+1. Faites la [commande `/settings`](../setup.md#settings).
+2. Ouvrez l'onglet “**Arrivées**”.
+3. Cliquez sur “**Configurer**” à côté de “**Auto RaidMode**”.
+4. Dans “**Action pendant le raid**”, choisissez l'action à appliquer aux arrivants.
+
+| Action | Effet sur les arrivants | Disponibilité |
+|---|---|---|
+| “**Bloquer les invitations**” (par défaut) | Discord ferme les invitations du serveur, personne de nouveau n'entre. | Gratuit, communauté requise |
+| “**Expulser les arrivants**” | Chaque arrivant est expulsé et reçoit un message privé l'invitant à revenir une fois le mode raid désactivé. | [Premium](/premium) |
+| “**Envoyer au captcha**” | Les arrivants passent le captcha au lieu d'être expulsés. | Gratuit, captcha actif requis |
+| “**Captcha gelé pendant le raid**” | Les arrivants attendent derrière le captcha et le passent après la vague. | Gratuit, captcha actif en mode Panneau requis |
+
+:::tip
+Avec les actions captcha, réglez le [déclenchement du captcha](./captcha.md#trigger) sur **Automatique** : le captcha ne s'impose alors que pendant les raids, et vos arrivants entrent directement le reste du temps.
+:::
+
+#### Mode expulsion <span className="badge-premium">Premium</span> {#kick-mode}
+
+L'ancien interrupteur “**Mode expulsion**” est devenu l'action “**Expulser les arrivants**” de l'[action pendant le raid](#action). Elle reste réservée aux serveurs [**Premium**](/premium) et fonctionne sans la communauté Discord.
 
 #### Fermer les MP automatiquement {#close-dm}
 
-Vous pouvez configurer l'**auto raid mode** pour qu'il **ferme automatiquement les MP du serveur** dès qu'il s'active. Cela ajoute une couche de protection supplémentaire pendant un raid : les nouveaux comptes ne peuvent plus contacter vos membres en privé pour les phisher ou les arnaquer.
+Vous pouvez configurer l'**Auto RaidMode** pour qu'il **ferme automatiquement les MP du serveur** dès qu'il s'active. Cela ajoute une couche de protection pendant un raid : les nouveaux comptes ne peuvent plus contacter vos membres en privé pour les [phisher](/learn/token-grabber) ou les arnaquer.
 
 1. Faites la [commande `/settings`](../setup.md#settings).
-2. Cliquez sur le bouton “**Auto RaidMode**”.
-3. Activez l'option “**Fermer les MP**”.
+2. Ouvrez l'onglet “**Arrivées**”.
+3. Cliquez sur “**Configurer**” à côté de “**Auto RaidMode**”.
+4. Cliquez sur “**Activer**” à côté de “**Fermer les MP**”.
 
-Lorsque l'auto raid mode se désactive (manuellement ou automatiquement après la durée configurée), les MP reprennent leur configuration précédente.
-
-:::info
-Cette option est complémentaire de la [Fermeture des MP permanente](./dm-lock.mdx) : si vous l'activez sans avoir la fermeture permanente, les MP ne sont fermés que pendant un raid actif.
-:::
-
-#### Mode expulsion (Premium) {#kick-mode}
-
-Par défaut, le mode raid bloque les nouveaux arrivants au niveau de l'invitation. Avec le **mode expulsion**, les utilisateurs qui rejoignent pendant un raid sont expulsés par RaidProtect au lieu d'être bloqués à l'invitation.
-
-1. Faites la [commande `/settings`](../setup.md#settings).
-2. Cliquez sur le bouton "**Auto RaidMode**".
-3. Activez l'option "**Mode expulsion**".
+Lorsque le mode raid se termine, les MP reprennent leur configuration précédente.
 
 :::info
-Cette option est réservée aux serveurs [**Premium**](/premium). Elle est nécessaire pour utiliser le [bypass du mode raid](#bypass-raid).
+Cette option ne s'applique qu'avec l'action “**Bloquer les invitations**”, qui passe par les actions de sécurité de Discord. Elle est complémentaire de la [Fermeture des MP permanente](./dm-lock.mdx) : sans fermeture permanente, les MP ne sont fermés que pendant un raid actif.
 :::
 
 ### 🎫 Bypass du mode raid {#bypass-raid}
 
-Vous attendez un membre légitime pendant qu'un raid est en cours ? Autorisez-le à rejoindre malgré le mode raid :
+Vous attendez un membre légitime pendant qu'un raid est en cours ? Autorisez-le à rejoindre malgré le mode raid :
 
-Utilisez la commande : ```/bypass raid [utilisateur]```
+Utilisez la commande : ```/bypass raid [utilisateur]```
 
-Remplacez `[utilisateur]` par l'[identifiant](../guides/id.mdx) souhaité, ce dernier disposera de 10 minutes pour rejoindre le serveur sans être expulsé par le mode raid. Vous pouvez aussi utiliser la commande sans spécifier d'utilisateur pour connaître la liste actuelle des utilisateurs bypass (7 utilisateurs maximum simultanément).
+Remplacez `[utilisateur]` par l'[identifiant](../guides/id.mdx) souhaité, ce dernier disposera de 10 minutes pour rejoindre le serveur sans être expulsé par le mode raid. Vous pouvez aussi utiliser la commande sans spécifier d'utilisateur pour connaître la liste actuelle des utilisateurs bypass (7 utilisateurs maximum simultanément).
 
 :::warning
-Le bypass du mode raid nécessite le [mode expulsion](#kick-mode) : un utilisateur bloqué au niveau de l'invitation ne peut pas être bypass.
+Le bypass du mode raid ne s'applique qu'avec l'action “**Expulser les arrivants**” : un utilisateur bloqué au niveau de l'invitation ne peut pas être bypass. Avec les actions captcha, utilisez plutôt le [bypass du captcha](./captcha.md#bypass).
 :::
 
 ## Âge Minimum {#minage}
 
-Pour renforcer la sécurité, vous pouvez exiger un âge minimum pour les comptes Discord des nouveaux membres.
-
-1. Faites la [commande `/settings`](../setup.md#settings).
-2. Cliquez sur le bouton “**Âge Minimum**”.
-3. Sélectionnez la valeur souhaitée dans le menu de sélection ou choisissez une valeur personnalisée exprimée en format date (m/h/d/y).
+L'âge minimum du compte a sa propre section dans la page [Arrivées et accueil](./onboarding.md#minage) : réglage de l'ancienneté, choix de l'action (expulsion, jail jusqu'à l'âge requis, retenue à l'entrée) et bypass.
 
 ### 🎂 Bypass de l'âge de compte minimum {#bypass-minage}
 
-Utilisez la commande : ```/bypass minage [utilisateur]```
-
-Remplacez `[utilisateur]` par l’identifiant souhaité, ce dernier disposera de 10 minutes pour rejoindre le serveur sans être expulsé par l'âge requis. Vous pouvez aussi utiliser la commande sans spécifier d'utilisateur pour connaître la liste actuelle des utilisateurs bypass.
+Utilisez la commande ```/bypass minage [utilisateur]```, détaillée dans le [bypass de l'âge minimum](./onboarding.md#bypass-minage).
 
 ## Questions fréquentes {#faq}
 
-### Le mode raid s'active-t-il automatiquement ?
+### Le mode raid s'active-t-il automatiquement ?
 
-Oui. Par défaut, nous activons le mode raid dès que plus de 10 utilisateurs rejoignent votre serveur en moins de 10 secondes. Ce seuil est configurable dans les paramètres de l'auto raid mode.
+Oui. Par défaut, nous activons le mode raid dès que 10 utilisateurs rejoignent votre serveur en 10 secondes. Ce seuil est configurable dans les réglages de l'Auto RaidMode.
 
-### Comment activer le mode raid manuellement ?
+### Que fait le mode raid aux nouveaux arrivants ?
 
-Un utilisateur disposant de la permission d'expulsion exécute la commande `/raidmode`. Un message est alors publié dans le salon de logs pour signaler l'activation, et plus aucun membre ne peut rejoindre le serveur.
+Cela dépend de l'action choisie : bloquer les invitations (par défaut), expulser les arrivants ([Premium](/premium)), les envoyer au captcha, ou les faire attendre derrière un captcha gelé jusqu'à la fin de la vague.
 
-### Le mode raid se désactive-t-il tout seul ?
+### Comment activer le mode raid manuellement ?
 
-Le mode raid activé manuellement ne s'arrête pas automatiquement : pensez à le désactiver avec la même commande une fois la menace écartée. L'auto raid mode, lui, se coupe après la durée que vous avez configurée (5 minutes par défaut, 24 heures maximum).
+Un utilisateur disposant de la permission d'expulsion exécute la commande `/raidmode`. Un message est alors publié dans le salon de logs pour signaler l'activation, et l'action choisie s'applique aux arrivants.
 
-### Peut-on laisser un membre légitime rejoindre pendant un raid ?
+### Le mode raid se désactive-t-il tout seul ?
 
-Oui, avec la commande `/bypass raid [utilisateur]` : le membre dispose alors de 10 minutes pour rejoindre sans être expulsé (7 utilisateurs bypass maximum en même temps). Le bypass nécessite le mode expulsion, réservé aux serveurs Premium.
+Oui. Il se coupe après la durée choisie dans `/raidmode`, ou à défaut après la durée de l'Auto RaidMode (5 minutes par défaut, 24 heures maximum). Vous pouvez l'arrêter plus tôt avec la même commande.
+
+### Faut-il activer la communauté Discord ?
+
+Seulement pour l'action “**Bloquer les invitations**”, qui utilise la fermeture des invitations de Discord. Les actions “**Expulser les arrivants**”, “**Envoyer au captcha**” et “**Captcha gelé pendant le raid**” fonctionnent sans.
+
+### Peut-on laisser un membre légitime rejoindre pendant un raid ?
+
+Oui, avec la commande `/bypass raid [utilisateur]` quand l'action est “**Expulser les arrivants**” : le membre dispose alors de 10 minutes pour rejoindre sans être expulsé (7 utilisateurs bypass maximum en même temps). Avec les actions captcha, utilisez `/bypass captcha [utilisateur]`.

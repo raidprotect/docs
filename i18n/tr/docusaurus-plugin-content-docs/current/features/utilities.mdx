@@ -1,0 +1,352 @@
+---
+title: Araçlar
+description: "Discord sunucunuzun günlük yönetimini kolaylaştırmak için RaidProtect'in yardımcı komutlarını keşfedin."
+---
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Icon from "@site/src/components/Icon";
+import Settings from '@site/src/components/DiscordMessage/mockups/v2';
+
+Sunucunuzun yönetimini basitleştirmek için ek özellikler. 🔧
+
+Captcha, anti-spam veya anti-raid gibi ana özelliklere ek olarak RaidProtect, sunucunuzun yönetimini daha da akıcı hale getirebilecek birkaç ikincil araç sunar.
+
+## 📋 Bir kanalı çoğaltma {#channel-duplicate}
+
+`/channel duplicate` komutu, bir kanalı tüm ayarları, izinleri ve yapılandırmalarıyla eksiksiz biçimde çoğaltmanızı sağlar. Böylece Discord'un **kategorileri** ve forum kanallarının etiketleri gibi **bazı özel ayarları** çoğaltmaya izin vermeyen yerel işlevini aşar.
+
+Şu komutu kullanın: ```/channel duplicate (#channel)```
+
+`(#channel)` yerine çoğaltılacak kanalın etiketini veya [kimliğini](../guides/id.mdx) yazın.
+
+### 🎯 Özellikler {#duplicate-features}
+
+Bu komut aşağıdaki öğelerin tamamını çoğaltır:
+
+- **Kanalın adı**
+- **İzinler** (roller ve kullanıcılar)
+- **Kanal türü** (metin, ses, forum vb.)
+- Kanal türüne göre **özel ayarlar**
+- Kategorideki **konum** (varsa)
+
+### ⚙️ RaidProtect yapılandırmaları {#duplicate-config}
+
+RaidProtect'in dahili yapılandırmalarına sahip bir kanalı çoğalttığınızda bot size otomatik olarak şunları önerir:
+
+- Yeni kanalı kullanmak için mevcut yapılandırmayı **Değiştir**
+- İki kanalı da yapılandırılmış tutmak için yapılandırmayı **Çoğalt**
+
+**Örnek**: Log kanalını çoğaltırsanız RaidProtect, yeni kanalın log kanalı olması için yapılandırmayı güncellemeyi veya tercihinize göre iki kanalı da yapılandırılmış tutmayı önerir.
+
+## 🗑️ Bir kanalı silip yeniden oluşturma {#channel-clear}
+
+`/channel clear` komutu, bir kanalı silmenizi ve ayarlarını, izinlerini ve RaidProtect yapılandırmalarını koruyarak aynısını yeniden oluşturmanızı sağlar.
+
+Şu komutu kullanın: ```/channel clear (#channel)```
+
+`(#channel)` yerine yeniden oluşturulacak kanalın etiketini veya [kimliğini](../guides/id.mdx) yazın.
+
+:::warning
+Kanalın mesajları ve webhook'ları kalıcı olarak silinecektir. Yürütmeden önce sizden onay istenecektir.
+:::
+
+## 🧹 Üyeleri çıkarma {#prune}
+
+`/prune` komutu, etkileşimli bir menü aracılığıyla sunucunuzdaki etkin olmayan üyeleri atmanızı sağlar.
+
+Şu komutu kullanın: ```/prune [duration]```
+
+`[duration]` yerine istediğiniz etkinsizlik gün sayısını yazın, 1 ile 30 arasında. Bot, şunları yapmanızı sağlayan etkileşimli bir menü gösterir:
+- Etkinsizlik süresini seçmek
+- Belirli rolleri dahil etmek veya hariç tutmak
+- Onaydan önce etkilenen üye sayısını görmek
+
+Onay metni, kimin gerçekten gideceğini belirtir:
+
+| Mod | Seçili rol yokken | Roller seçiliyken |
+|---|---|---|
+| **Dahil et** | Yalnızca **hiçbir rolü olmayan** etkin olmayan üyeler | Seçilenler **dışında hiçbir rolü olmayan** etkin olmayan üyeler |
+| **Hariç tut** | **Rolleri ne olursa olsun** tüm etkin olmayan üyeler | Seçilen rollerin **hiçbirine sahip olmayan** etkin olmayan üyeler |
+
+:::info
+`/prune` komutu yöneticilere ayrılmıştır. Yalnızca en alttaki 100 rol önerilir; daha yüksek bir role sahip üyeler baştan hariç tutulur.
+:::
+
+![prune komutunun ekran görüntüsü](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-prune.webp)
+
+## 🚫 Kullanıcıları engelleme {#block}
+
+`/block` komutu, bir kullanıcının sunucunuzda RaidProtect'in bazı özelliklerini kullanmasını engellemenizi sağlar (örneğin bildirim göndermek veya etiket rolünü almak).
+
+Engelleme veya engel kaldırma sırasında RaidProtect, ilgili özellikleri seçmenizi önerir:
+
+| Tür | Etki |
+|---|---|
+| **Tüm etkileşimler** | Botla tüm etkileşimleri engeller |
+| **Bildirimler** | Kullanıcı artık [bildirim](./reports.md) yapamaz |
+| **Etiket Rolü** | Kullanıcı artık [etiket rolünü](./tag-role.md) alamaz |
+
+### Bir kullanıcıyı engelleme {#block-add}
+
+Şu komutu kullanın: ```/block add [@user] [sebep]```
+
+### Bir kullanıcının engelini kaldırma {#block-remove}
+
+Şu komutu kullanın: ```/block remove [@user] [sebep]```
+
+### Engellenen kullanıcıları listeleme {#block-list}
+
+Şu komutu kullanın: ```/block list```
+
+## 📢 Bilgi panelleri {#display}
+
+Bilgi panelleri hakkında daha fazla bilgi için [bilgi panellerine ayrılmış sayfaya](./display.mdx) bakın; `/display public` ve [`/display staff`](./display.mdx#staff) komutları orada anlatılır.
+
+## 📜 Yaptırımlarım {#my-sanctions}
+
+`/yaptirimlarim` komutu, üyelerin sunucudaki kendi yaptırımlarını, yöneticilerin yapılandırdığı [gizlilik düzeyine](./sanctions.mdx#sanctions-privacy) göre görüntülemesini sağlar.
+
+Şu komutu kullanın: ```/yaptirimlarim```
+
+:::info
+Bu komuta, özellik etkinse [bilgi panellerindeki](./display.mdx) **Yaptırımlarımı görüntüle** düğmesiyle de erişilebilir.
+:::
+
+## 🏠 Sunucu bilgileri {#serverinfo}
+
+`/serverinfo` komutu, **geçerli sunucunun bilgilerini** gösterir: ad, sahibi, oluşturulma tarihi, üye sayısı, boost seviyesi, etkin özellikler vb.
+
+Şu komutu kullanın: ```/serverinfo```
+
+:::info
+`serverinfo` komutu [ön ekle kullanılabilir](../guides/prefix.md) (takma ad `ginfo`). Yalnızca RaidProtect'in kurulu olduğu bir sunucuda çalışır.
+:::
+
+## 🔗 Bir davetin bilgileri {#inviteinfo}
+
+`/inviteinfo` komutu, siz tıklamadan önce bir Discord davetini analiz eder: bir ortaklığı, bir reklamı veya DM ile alınan bir bağlantıyı doğrulamak için yararlıdır.
+
+Şu komutu kullanın: ```/inviteinfo (invite)```
+
+`(invite)` yerine davetin kodunu veya bağlantısını yazın (örn. `discord.gg/raidprotect`).
+
+Bir sunucu daveti için özellikle şunları gösteririz:
+
+- **Sunucu**: ad, rozet ve etiket, kimlik, üye ve çevrimiçi üye sayısı, doğrulama düzeyi, seviye ve boostlar.
+- **Davet**: hedef kanal (metin, ses veya konferans), oluşturan, kullanım sayısı, sona erme tarihi, katılımda verilen roller.
+- Sunucunun öne çıkardığı **temalar ve oyunlar** (oyunlar tıklanabilir).
+- **Bir etkinlik profili**: yoğun ve sakin saatler, düzenlilik.
+- Bir “**Sunucuya katıl**” düğmesi.
+
+Arkadaş, özel grup, etkinlik ve canlı yayın davetleri de tanınır.
+
+:::info
+Bir sunucuda yanıt geçicidir ve komut varsayılan olarak “**Mesajları Yönet**” iznini gerektirir. RaidProtect'i Discord hesabınıza eklerseniz `/inviteinfo` komutunu DM'de ve özel gruplarda da kullanabilirsiniz: yanıt bu durumda konuşmada görünür. `inviteinfo` komutu [ön ekle kullanılabilir](../guides/prefix.md) (takma ad `ii`).
+:::
+
+## 🔐 Bu sunucudaki verileriniz {#privacy}
+
+`/privacy` komutu, RaidProtect'in sunucunuzda neleri sakladığını gösterir. Tüm üyelere açıktır ve yanıt yalnızca sizin tarafınızdan görülebilir.
+
+Şu komutu kullanın: ```/privacy```
+
+- **Her zaman**: `/settings` içinde seçilen yapılandırma (RaidProtect sunucuda olduğu sürece saklanır) ve moderasyon geçmişi için yaptırımlar (üye, moderatör, sebep ve tarihler).
+- **Ayarlarınıza göre**: anti-spam, bildirimler veya [mesaj önbelleği](#message-cache) etkinse mesajlar (kanal başına bir saat, bellekte, asla veritabanına yazılmaz); etkinse bildirimler (yazar, sebep ve bildirilen mesajın kopyası).
+
+Yanıt, süreleri, paylaşımı ve haklarınızı ayrıntılandıran gizlilik politikamıza yönlendirir.
+
+## 🗂️ Mesaj önbelleği {#message-cache}
+
+Önbellek, **kanal başına bir saatlik mesajı bellekte** tutar, asla veritabanına yazılmaz. [`/snipe`](./moderation.mdx#snipe) komutunu ve `/modview`'in snipe bölümünü besler. Onsuz bu komutlar silinmiş hiçbir mesaj bulamaz.
+
+1. [`/settings` komutunu](../setup.md#settings) çalıştırın.
+2. “**Araçlar**” sekmesini açın.
+3. “**Mesaj önbelleği**” yanındaki “**Etkinleştir**”e tıklayın.
+
+<Settings start="home:utilities" />
+
+:::info
+Önbellek **varsayılan olarak devre dışıdır**. [Anti-spam](./anti-spam.mdx) veya [bildirimler](./reports.md) etkin olduğunda kendiliğinden etkinleşir ve kapatılamaz: bu özelliklerin mesajları okuması gerekir. Düğme o zaman gri görünür.
+:::
+
+## 💬 Görüş bildirme {#feedback}
+
+`/feedback` komutu, destek sunucusuna katılmanıza gerek kalmadan doğrudan Discord'dan **bir görüş, öneri veya hata bildirimi paylaşmanızı** sağlar. Bir sunucuda varsayılan olarak “**Mesajları Yönet**” iznini gerektirir; RaidProtect ile DM'de de çalışır.
+
+Şu komutu kullanın: ```/feedback```
+
+Geri bildirim türünü seçin, ardından açılan pencereyi doldurun:
+
+- **Öneri**: sizi öneri sayfasına yönlendiririz.
+- **Hata bildir**: kategoriyi seçin (anti-spam, anti-raid, captcha, yaptırımlar, Authentification Manager, yapılandırma, komutlar, loglar, diğer); bildiriminiz ekibimize iletilir.
+- **Genel görüş**: deneyiminizi 1 ile 5 arasında puanlayın.
+- **Övgü**.
+
+## 👤 Kullanıcı bilgileri {#userinfo}
+
+`/userinfo` komutu, bir kullanıcı hakkında ayrıntılı bilgi almanızı sağlar.
+
+Şu komutu kullanın: ```/userinfo [user]```
+
+`[user]` yerine istediğiniz etiketi veya kimliği yazın.
+
+:::info
+`userinfo` komutu [ön ekle kullanılabilir](../guides/prefix.md) (takma ad `ui`). RaidProtect'i Discord hesabınıza eklerseniz komutu DM'de ve özel gruplarda da kullanabilirsiniz.
+:::
+
+### 📋 Gösterilen bilgiler {#displayed-userinfo}
+
+- Discord **hesabının oluşturulma tarihi**
+- Kullanıcının **profil fotoğrafı**
+- **Profil banner'ı**
+- **Profil rozetleri**
+  - Nitro, Booster, Görev ve Eski ad rozetleri gösterilmez.
+
+
+### 🎭 Sunucu üyesi hakkında bilgiler {#displayed-memberinfo}
+
+Hedef sunucunun bir üyesiyse ek bilgiler şunları içerir:
+
+- **Sunucuya katılma tarihi**
+- **Sunucudaki takma ad**
+- **Rol sayısı** ve **ilk 6 rolün listesi**
+- **İzin kategorisi** (yalnızca moderatörlere görünür):
+<SeparatedBox>
+<Tabs>
+  <TabItem value="animator" label="Animatör" default>
+
+    **Animatör** kategorisi, üye aşağıdaki izinlerden **en az birine** sahipse gösterilir:
+
+    - `MANAGE_EXPRESSIONS`
+    - `CREATE_GUILD_EXPRESSIONS`
+    - `MANAGE_EVENTS`
+
+  </TabItem>
+  <TabItem value="moderator" label="Moderatör">
+
+    **Moderatör** kategorisi, üye aşağıdaki izinlerden **en az birine** sahipse gösterilir:
+
+    - `KICK_MEMBERS`
+    - `BAN_MEMBERS`
+    - `MODERATE_MEMBERS`
+    - `MANAGE_MESSAGES`
+    - `MUTE_MEMBERS`
+    - `DEAFEN_MEMBERS`
+    - `MOVE_MEMBERS`
+    - `MANAGE_THREADS`
+
+  </TabItem>
+  <TabItem value="manager" label="Sorumlu">
+
+    **Sorumlu** kategorisi, üye aşağıdaki izinlerden **en az birine** sahipse gösterilir:
+
+    - `MANAGE_GUILD`
+    - `MANAGE_ROLES`
+    - `MANAGE_CHANNELS`
+    - `VIEW_AUDIT_LOG`
+    - `MANAGE_WEBHOOKS`
+    - `MANAGE_SERVER_EXPRESSIONS`
+
+  </TabItem>
+  <TabItem value="admin" label="Yönetici">
+
+    **Yönetici** kategorisi **iki olası durumda** gösterilir:
+
+    1️⃣ Şu izne sahiptir:
+    - `ADMINISTRATOR`
+
+    2️⃣ **Aşağıdaki üç izne aynı anda** sahiptir:
+    - `MANAGE_GUILD`
+    - `MANAGE_ROLES`
+    - `MANAGE_CHANNELS`
+
+  </TabItem>
+  <TabItem value="owner" label="Sahip">
+
+    **Koşul**: Üye **sunucunun sahibidir**.
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+- **Üye flag'leri** (yalnızca moderatörlere görünür):
+
+| **Flag'ler**                             | **Emojiler**                                                                                                           | **Anlamları**                                                     |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `DID_REJOIN`                             | <Icon src="/img/icons/MemberDidRejoin.svg" alt="icon MemberDidRejoin" title=":MemberDidRejoin:"/>                      | Kullanıcı sunucudan ayrılıp yeniden katıldı.                      |
+| `IS_GUEST`                               | <Icon src="/img/icons/MemberIsGuest.svg" alt="icon MemberIsGuest" title=":MemberIsGuest:"/>                            | Davetli üye (geçici davet veya misafir erişimi).                  |
+| `COMPLETED_ONBOARDING`                   | <Icon src="/img/icons/OnboardingCompleted.svg" alt="icon OnboardingCompleted" title=":OnboardingCompleted:"/>          | Sunucunun karşılama sürecini (onboarding) tamamladı.              |
+| `STARTED_ONBOARDING`                     | <Icon src="/img/icons/OnboardingStarted.svg" alt="icon OnboardingStarted" title=":OnboardingStarted:"/>                | Karşılama sürecine başladı.                                       |
+| `COMPLETED_SERVER_GUIDE`                 | <Icon src="/img/icons/ServerGuideCompleted.svg" alt="icon ServerGuideCompleted" title=":ServerGuideCompleted:"/>       | Etkinse sunucu rehberini tamamladı.                               |
+| `STARTED_SERVER_GUIDE`                   | <Icon src="/img/icons/ServerGuideStarted.svg" alt="icon ServerGuideStarted" title=":ServerGuideStarted:"/>             | Sunucu rehberine başladı.                                         |
+| `AUTOMOD_QUARANTINED_NAME`               | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | Kullanıcı adı nedeniyle otomatik moderasyon tarafından karantinaya alındı. |
+| `AUTOMOD_QUARANTINED_GUILD_TAG`          | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | Etiket veya takma ad nedeniyle otomatik moderasyon tarafından karantinaya alındı. |
+| `BYPASSES_VERIFICATION`                  | <Icon src="/img/icons/BypassVerification.svg" alt="icon BypassVerification" title=":BypassVerification:"/>             | Kullanıcı sunucunun doğrulamasını atlayabilir.                    |
+| `SPAMMER`                                | <Icon src="/img/icons/UnusualAccountActivity.svg" alt="icon UnusualAccountActivity" title=":UnusualAccountActivity:"/> | Hesap spam yapan olarak işaretlendi veya olağandışı etkinlik algılandı. |
+
+## ⚖️ Discord yaptırımları {#discord-sanctions}
+
+`/discord-sanctions` komutu, [Avrupa düzenlemesi](https://transparency.dsa.ec.europa.eu/) uyarınca bir kullanıcıya karşı **Discord tarafından verilen yaptırımları** görüntülemenizi sağlar.
+
+Şu komutu kullanın: ```/discord-sanctions [@user]```
+
+`[@user]` yerine istediğiniz etiketi veya kimliği yazın. Komuta ayrıca bir profile sağ tıklayarak, **`Uygulamalar`** ve ardından **`Discord Yaptırımları`** üzerinden de erişilebilir. Kullanıcı belirtilmezse Discord'un son 7 güne ait genel güvenlik istatistiklerini gösterir (“**Kategoriler**”, “**Tespit**” ve “**Uygulama**” sekmeleri).
+
+### 📋 Gösterilen bilgiler {#displayed-sanctions}
+
+- **Yaptırım türü**:
+
+| **Yaptırımlar**                          | **Emojiler**                                                                                                           | **Anlamları**                                                     |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `CONTENT_DELETED`                        | <Icon src="/img/icons/ContentDeleted.svg" alt="icon ContentDeleted" title=":iconTrash:"/>                              | Kullanıcının paylaştığı bir içerik silindi.                       |
+| `RESTRICTED`                             | <Icon src="/img/icons/AccountRestricted.svg" alt="icon AccountRestricted" title=":iconRestricted:"/>                   | Kullanıcı hesabı kısıtlandı.                                      |
+| `ACCOUNT_SUSPENDED`                      | <Icon src="/img/icons/AccountSuspended.svg" alt="icon AccountSuspended" title=":iconSuspended:"/>                      | Kullanıcı hesabı askıya alındı.                                   |
+| `ACCOUNT_TERMINATED`                     | <Icon src="/img/icons/AccountTerminated.svg" alt="icon AccountTerminated" title=":iconTerminated:"/>                   | Kullanıcı hesabı silindi.                                         |
+
+- **Veriliş tarihi**
+- **İçerik türü**
+- **Yaptırım flag'leri**:
+
+| **Flag'ler**                             | **Emojiler**                                                                                                           | **Anlamları**                                                     |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ILLEGAL_CONTENT`                        | <Icon src="/img/icons/IllegalContent.svg" alt="icon IllegalContent" title=":iconIllegal:"/>                            | Yasa dışı içerik nedeniyle uygulanan yaptırım.                    |
+| `AUTOMATED_DETECTION`                    | <Icon src="/img/icons/AutomatedDetection.svg" alt="icon AutomatedDetection" title=":iconBots:"/>                       | Otomatik algılama yoluyla uygulanan yaptırım.                     |
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="reports-found" label="Bulunan raporlar" default>
+
+![Discord Yaptırımları ekran görüntüsü](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-ds-report-found.webp)
+
+  </TabItem>
+  <TabItem value="reports-not-found" label="Rapor bulunamadı">
+
+![Bulunamayan Discord Yaptırımları ekran görüntüsü](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-ds-report-not-found.webp)
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+:::note
+Komut, 22 Ağustos 2024 ile 14 Ağustos 2025 arasında verilen raporları görüntülemeyi sağlar. Bu bilgiler doğrudan Discord tarafından sağlanır ve RaidProtect tarafından **değiştirilemez**.
+:::
+
+## Sık sorulan sorular {#faq}
+
+### `/snipe` neden hiçbir mesaj bulamıyor?
+
+`/snipe`, bir saat boyunca bellekte tutulan mesajları okur. `/settings` komutunun Araçlar sekmesinde [mesaj önbelleğini](#message-cache) etkinleştirin ya da onu kendiliğinden etkinleştiren anti-spam'i veya bildirimleri etkinleştirin.
+
+### Bir sunucuya katılmadan önce bir Discord daveti nasıl doğrulanır?
+
+Davetin kodu veya bağlantısıyla `/inviteinfo` komutunu kullanın: sunucuyu, oluşturanını, etkinliğini ve katılımda verilen rolleri gösteririz.
+
+### RaidProtect sunucumda neleri saklıyor?
+
+`/privacy` komutu bunu ayrıntılandırır: yapılandırma ve yaptırımlar kalıcı olarak, ayarlarınıza göre de bir saatlik mesaj bellekte ve bildirimler.
+
+### `/prune` komutunu kim kullanabilir?
+
+Varsayılan olarak yalnızca yöneticiler. Bir önizleme, herhangi bir atmadan önce etkilenen üye sayısını gösterir.

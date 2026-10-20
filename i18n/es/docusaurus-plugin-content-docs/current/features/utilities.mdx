@@ -7,18 +7,19 @@ import SeparatedBox from '@site/src/components/SeparatedBox';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Icon from "@site/src/components/Icon";
+import Settings from '@site/src/components/DiscordMessage/mockups/v2';
 
-Funciones adicionales para simplificar la gestion de tu servidor. 🔧
+Funciones adicionales para simplificar la gestión de tu servidor. 🔧
 
-Ademas de las funciones principales como el sistema de captcha y la proteccion anti-raid, RaidProtect ofrece varias herramientas secundarias que pueden hacer la gestion de tu servidor aun mas fluida.
+Además de las funciones principales como el captcha, el anti-spam o el anti-raid, RaidProtect ofrece varias herramientas secundarias que pueden hacer la gestión de tu servidor aún más fluida.
 
 ## 📋 Duplicar un canal {#channel-duplicate}
 
-El comando `/channel duplicate` te permite duplicar por completo un canal, incluidos todos sus ajustes, permisos y configuraciones. Va mas alla de la funcion nativa de Discord, que no permite duplicar **las categorias** ni **ciertos ajustes especificos** como las etiquetas de los canales de foro.
+El comando `/channel duplicate` te permite duplicar por completo un canal, incluidos todos sus ajustes, permisos y configuraciones. Va más allá de la función nativa de Discord, que no permite duplicar **las categorías** ni **ciertos ajustes específicos** como las etiquetas de los canales de foro.
 
-Usa el comando: ```/channel duplicate [canal]```
+Usa el comando: ```/channel duplicate (channel)```
 
-Reemplaza `[canal]` con la mencion o el [identificador](../guides/id.mdx) del canal a duplicar.
+Reemplaza `(channel)` con la mención o el [identificador](../guides/id.mdx) del canal a duplicar.
 
 ### 🎯 Funciones {#duplicate-features}
 
@@ -27,38 +28,51 @@ Este comando duplica el conjunto de los siguientes elementos:
 - **Nombre del canal**
 - **Permisos** (roles y usuarios)
 - **Tipo de canal** (texto, voz, foro, etc.)
-- **Ajustes especificos** segun el tipo de canal
-- **Posicion** dentro de la categoria (si aplica)
+- **Ajustes específicos** según el tipo de canal
+- **Posición** dentro de la categoría (si aplica)
 
 ### ⚙️ Configuraciones de RaidProtect {#duplicate-config}
 
-Cuando duplicas un canal que tiene configuraciones internas de RaidProtect, el bot te ofrece automaticamente la opcion de:
+Cuando duplicas un canal que tiene configuraciones internas de RaidProtect, el bot te ofrece automáticamente la opción de:
 
-- **Reemplazar** la configuracion existente para usar el nuevo canal
-- **Duplicar** la configuracion para conservar ambos canales configurados
+- **Reemplazar** la configuración existente para usar el nuevo canal
+- **Duplicar** la configuración para conservar ambos canales configurados
 
-**Ejemplo**: Si duplicas el canal de registros, RaidProtect te propondra actualizar su configuracion para que el nuevo canal se convierta en el canal de registros, o conservar ambos canales configurados segun tu preferencia.
+**Ejemplo**: Si duplicas el canal de logs, RaidProtect te propondrá actualizar su configuración para que el nuevo canal se convierta en el canal de logs, o conservar ambos canales configurados según tu preferencia.
 
 ## 🗑️ Eliminar y recrear un canal {#channel-clear}
 
-El comando `/channel clear` te permite eliminar un canal y recrearlo de forma identica, conservando sus ajustes, permisos y configuraciones de RaidProtect.
+El comando `/channel clear` te permite eliminar un canal y recrearlo de forma idéntica, conservando sus ajustes, permisos y configuraciones de RaidProtect.
 
-Usa el comando: ```/channel clear```
+Usa el comando: ```/channel clear (channel)```
+
+Reemplaza `(channel)` con la mención o el [identificador](../guides/id.mdx) del canal a recrear.
 
 :::warning
-Los mensajes y los webhooks del canal se eliminaran de forma permanente. Se te pedira una confirmacion antes de la ejecucion.
+Los mensajes y los webhooks del canal se eliminarán de forma permanente. Se te pedirá una confirmación antes de la ejecución.
 :::
 
 ## 🧹 Purgar miembros {#prune}
 
-El comando `/prune` te permite expulsar a los miembros inactivos de tu servidor mediante un menu interactivo.
+El comando `/prune` te permite expulsar a los miembros inactivos de tu servidor mediante un menú interactivo.
 
-Usa el comando: ```/prune [duracion]```
+Usa el comando: ```/prune [duration]```
 
-Reemplaza `[duracion]` con el numero de dias de inactividad deseado. El bot muestra un menu interactivo que te permite:
-- Seleccionar la duracion de inactividad
-- Incluir o excluir roles especificos
-- Ver el numero de miembros afectados antes de confirmar
+Reemplaza `[duration]` con el número de días de inactividad deseado, de 1 a 30. El bot muestra un menú interactivo que te permite:
+- Seleccionar la duración de inactividad
+- Incluir o excluir roles específicos
+- Ver el número de miembros afectados antes de confirmar
+
+El texto de confirmación indica quién se irá realmente:
+
+| Modo | Sin rol seleccionado | Con roles seleccionados |
+|---|---|---|
+| **Incluir** | Solo los miembros inactivos **sin ningún rol** | Los miembros inactivos que no tienen **ningún rol aparte** de los seleccionados |
+| **Excluir** | Todos los miembros inactivos, **sean cuales sean sus roles** | Los miembros inactivos que no tienen **ninguno de los roles** seleccionados |
+
+:::info
+El comando `/prune` está reservado a los administradores. Solo se proponen los 100 roles más bajos; los miembros que tienen un rol más alto quedan excluidos de oficio.
+:::
 
 ![Captura de pantalla del comando prune](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-prune.webp)
 
@@ -71,83 +85,139 @@ Al bloquear o desbloquear, RaidProtect te propone elegir las funciones afectadas
 | Tipo | Efecto |
 |---|---|
 | **Todas las interacciones** | Bloquea todas las interacciones con el bot |
-| **Reportes** | El usuario ya no podra hacer [reportes](./reports.md) |
-| **Rol de etiqueta** | El usuario ya no podra recibir el [rol de etiqueta](./tag-role.md) |
+| **Reportes** | El usuario ya no podrá hacer [reportes](./reports.md) |
+| **Rol de Etiqueta** | El usuario ya no podrá recibir el [rol de etiqueta](./tag-role.md) |
 
 ### Bloquear a un usuario {#block-add}
 
-Usa el comando: ```/block add (usuario) [razon]```
+Usa el comando: ```/block add [user] [reason]```
 
 ### Desbloquear a un usuario {#block-remove}
 
-Usa el comando: ```/block remove (usuario) [razon]```
+Usa el comando: ```/block remove [user] [reason]```
 
 ### Listar los usuarios bloqueados {#block-list}
 
 Usa el comando: ```/block list```
 
-## 📢 Paneles de informacion {#display}
+## 📢 Paneles de información {#display}
 
-Consulta la [pagina dedicada a los paneles de informacion](./display.mdx) para saber mas sobre el comando `/display public`.
+Consulta la [página dedicada a los paneles de información](./display.mdx) para saber más sobre los comandos `/display public` y [`/display staff`](./display.mdx#staff).
 
 ## 📜 Mis sanciones {#my-sanctions}
 
-El comando `/mis-sanciones` permite a los miembros consultar sus propias sanciones en el servidor, segun el [nivel de privacidad](./sanctions.mdx#sanctions-privacy) configurado por los administradores.
+El comando `/mis-sanciones` permite a los miembros consultar sus propias sanciones en el servidor, según el [nivel de privacidad](./sanctions.mdx#sanctions-privacy) configurado por los administradores.
 
 Usa el comando: ```/mis-sanciones```
 
 :::info
-Este comando tambien es accesible mediante el boton **Ver mis sanciones** en los [paneles de informacion](./display.mdx) si la funcion esta activada.
+Este comando también es accesible mediante el botón **Consultar mis sanciones** en los [paneles de información](./display.mdx) si la función está activada.
 :::
 
-## 🏠 Informacion del servidor {#serverinfo}
+## 🏠 Información del servidor {#serverinfo}
 
-El comando `/serverinfo` muestra la **informacion del servidor actual**: nombre, propietario, fecha de creacion, numero de miembros, nivel de boost, funciones activadas, etc.
+El comando `/serverinfo` muestra la **información del servidor actual**: nombre, propietario, fecha de creación, número de miembros, nivel de boost, funciones activadas, etc.
 
 Usa el comando: ```/serverinfo```
 
-## 💬 Dar tu opinion {#feedback}
+:::info
+El comando `serverinfo` es [utilizable mediante prefijo](../guides/prefix.md) (alias `ginfo`). Solo funciona en un servidor donde RaidProtect esté instalado.
+:::
 
-El comando `/feedback` permite a cualquier miembro del servidor **compartir una opinion, una sugerencia o el reporte de un bug** directamente desde Discord, sin tener que unirse al servidor de soporte.
+## 🔗 Información de una invitación {#inviteinfo}
+
+El comando `/inviteinfo` analiza una invitación de Discord antes de que hagas clic en ella: útil para verificar una alianza, una publicidad o un enlace recibido por MD.
+
+Usa el comando: ```/inviteinfo (invite)```
+
+Reemplaza `(invite)` con el código o el enlace de la invitación (p. ej. `discord.gg/raidprotect`).
+
+Para una invitación de servidor, mostramos en particular:
+
+- **El servidor**: nombre, insignia y etiqueta, identificador, número de miembros y de miembros en línea, nivel de verificación, nivel y boosts.
+- **La invitación**: canal de destino (de texto, de voz o de conferencia), creador, número de usos, fecha de caducidad, roles asignados al llegar.
+- **Los temas y juegos** destacados por el servidor (los juegos son clicables).
+- **Un perfil de actividad**: horas punta y horas valle, regularidad.
+- Un botón “**Unirse al servidor**”.
+
+También se reconocen las invitaciones de amigo, de grupo privado, de actividad y de directo.
+
+:::info
+En un servidor, la respuesta es efímera y el comando requiere por defecto el permiso “**Gestionar mensajes**”. Si añades RaidProtect a tu cuenta de Discord, también puedes usar `/inviteinfo` por MD y en los grupos privados: la respuesta es entonces visible en la conversación. El comando `inviteinfo` es [utilizable mediante prefijo](../guides/prefix.md) (alias `ii`).
+:::
+
+## 🔐 Tus datos en este servidor {#privacy}
+
+El comando `/privacy` muestra lo que RaidProtect conserva sobre tu servidor. Está abierto a todos los miembros y la respuesta solo la ves tú.
+
+Usa el comando: ```/privacy```
+
+- **Siempre**: la configuración elegida en `/settings` (guardada mientras RaidProtect esté en el servidor) y las sanciones (miembro, moderador, motivo y fechas) para el historial de moderación.
+- **Según tus ajustes**: los mensajes (una hora por canal, en memoria viva, nunca escritos en base de datos) si el anti-spam, los reportes o la [caché de mensajes](#message-cache) están activos; los reportes (autor, motivo y copia del mensaje reportado) si están activados.
+
+La respuesta remite a nuestra política de privacidad, que detalla los plazos, el uso compartido y tus derechos.
+
+## 🗂️ Caché de mensajes {#message-cache}
+
+La caché guarda **una hora de mensajes por canal en memoria viva**, nunca escritos en base de datos. Alimenta el comando [`/snipe`](./moderation.mdx#snipe) y la parte snipe de `/modview`. Sin ella, estos comandos no encuentran ningún mensaje eliminado.
+
+1. Ejecuta el [comando `/settings`](../setup.md#settings).
+2. Abre la pestaña “**Utilidades**”.
+3. Haz clic en “**Activar**” junto a “**Caché de mensajes**”.
+
+<Settings start="home:utilities" />
+
+:::info
+La caché está **desactivada por defecto**. Se activa de oficio, y no se puede desactivar, cuando el [anti-spam](./anti-spam.mdx) o los [reportes](./reports.md) están activos: estas funciones necesitan leer los mensajes. El botón aparece entonces atenuado.
+:::
+
+## 💬 Dar tu opinión {#feedback}
+
+El comando `/feedback` permite **compartir una opinión, una sugerencia o el reporte de un bug** directamente desde Discord, sin tener que unirse al servidor de soporte. En un servidor, requiere por defecto el permiso “**Gestionar mensajes**”; también funciona por MD con RaidProtect.
 
 Usa el comando: ```/feedback```
 
-El bot te propone valorar tu experiencia y luego abre una ventana para escribir tu comentario. Segun el tipo de comentario (sugerencia, bug, experiencia), RaidProtect te redirige a los recursos adecuados (servidor de soporte, pagina de sugerencias).
+Elige el tipo de comentario y rellena la ventana que se abre:
 
-## 👤 Informacion del usuario {#userinfo}
+- **Sugerencia**: te redirigimos a la página de sugerencias.
+- **Reportar un bug**: elige la categoría (anti-spam, anti-raid, captcha, sanciones, Authentification Manager, configuración, comandos, logs, otra); tu reporte se transmite a nuestro equipo.
+- **Opinión general**: valora tu experiencia de 1 a 5.
+- **Cumplido**.
 
-El comando `/userinfo` te permite obtener informacion detallada sobre un usuario.
+## 👤 Información del usuario {#userinfo}
 
-Usa el comando: ```/userinfo [usuario]```
+El comando `/userinfo` te permite obtener información detallada sobre un usuario.
 
-Reemplaza `[usuario]` con la mencion o el identificador deseado.
+Usa el comando: ```/userinfo [user]```
+
+Reemplaza `[user]` con la mención o el identificador deseado.
 
 :::info
-El comando `userinfo` es [utilizable mediante prefijo](../guides/prefix.md).
+El comando `userinfo` es [utilizable mediante prefijo](../guides/prefix.md) (alias `ui`). Si añades RaidProtect a tu cuenta de Discord, también puedes usarlo por MD y en los grupos privados.
 :::
 
-### 📋 Informacion mostrada {#displayed-userinfo}
+### 📋 Información mostrada {#displayed-userinfo}
 
-- **Fecha de creacion de la cuenta** de Discord
+- **Fecha de creación de la cuenta** de Discord
 - **Foto de perfil** del usuario
 - **Banner de perfil**
 - **Insignias de perfil**
   - Las insignias Nitro, Booster, Quest y Nombre anterior no se muestran.
 
 
-### 🎭 Informacion sobre un miembro del servidor {#displayed-memberinfo}
+### 🎭 Información sobre un miembro del servidor {#displayed-memberinfo}
 
-Si el objetivo es un miembro del servidor, la informacion adicional incluye:
+Si el objetivo es un miembro del servidor, la información adicional incluye:
 
-- **Fecha de union al servidor**
+- **Fecha de unión al servidor**
 - **Apodo en el servidor**
-- **Numero de roles** y **lista de los primeros 6 roles**
-- **Categoria de permisos** (visible solo para los moderadores):
+- **Número de roles** y **lista de los primeros 6 roles**
+- **Categoría de permisos** (visible solo para los moderadores):
 <SeparatedBox>
 <Tabs>
   <TabItem value="animator" label="Animador" default>
 
-    La categoria **Animador** se muestra si el miembro tiene **al menos uno** de los siguientes permisos:
+    La categoría **Animador** se muestra si el miembro tiene **al menos uno** de los siguientes permisos:
 
     - `MANAGE_EXPRESSIONS`
     - `CREATE_GUILD_EXPRESSIONS`
@@ -156,7 +226,7 @@ Si el objetivo es un miembro del servidor, la informacion adicional incluye:
   </TabItem>
   <TabItem value="moderator" label="Moderador">
 
-    La categoria **Moderador** se muestra si el miembro tiene **al menos uno** de los siguientes permisos:
+    La categoría **Moderador** se muestra si el miembro tiene **al menos uno** de los siguientes permisos:
 
     - `KICK_MEMBERS`
     - `BAN_MEMBERS`
@@ -168,9 +238,9 @@ Si el objetivo es un miembro del servidor, la informacion adicional incluye:
     - `MANAGE_THREADS`
 
   </TabItem>
-  <TabItem value="manager" label="Responsable">
+  <TabItem value="manager" label="Gerente">
 
-    La categoria **Responsable** se muestra si el miembro tiene **al menos uno** de los siguientes permisos:
+    La categoría **Gerente** se muestra si el miembro tiene **al menos uno** de los siguientes permisos:
 
     - `MANAGE_GUILD`
     - `MANAGE_ROLES`
@@ -182,7 +252,7 @@ Si el objetivo es un miembro del servidor, la informacion adicional incluye:
   </TabItem>
   <TabItem value="admin" label="Administrador">
 
-    La categoria **Administrador** se muestra en **dos casos posibles**:
+    La categoría **Administrador** se muestra en **dos casos posibles**:
 
     1️⃣ Tiene el permiso:
     - `ADMINISTRATOR`
@@ -195,7 +265,7 @@ Si el objetivo es un miembro del servidor, la informacion adicional incluye:
   </TabItem>
   <TabItem value="owner" label="Propietario">
 
-    **Condicion**: El miembro es el **propietario del servidor**.
+    **Condición**: El miembro es el **propietario del servidor**.
 
   </TabItem>
 </Tabs>
@@ -205,28 +275,28 @@ Si el objetivo es un miembro del servidor, la informacion adicional incluye:
 
 | **Banderas**                             | **Emojis**                                                                                                             | **Significados**                                                  |
 | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `DID_REJOIN`                             | <Icon src="/img/icons/MemberDidRejoin.svg" alt="icon MemberDidRejoin" title=":MemberDidRejoin:"/>                      | El usuario salio y volvio a unirse al servidor.                   |
-| `IS_GUEST`                               | <Icon src="/img/icons/MemberIsGuest.svg" alt="icon MemberIsGuest" title=":MemberIsGuest:"/>                            | Miembro invitado (invitacion temporal o acceso de invitado).      |
-| `COMPLETED_ONBOARDING`                   | <Icon src="/img/icons/OnboardingCompleted.svg" alt="icon OnboardingCompleted" title=":OnboardingCompleted:"/>          | Completo el proceso de incorporacion (onboarding) del servidor.   |
-| `STARTED_ONBOARDING`                     | <Icon src="/img/icons/OnboardingStarted.svg" alt="icon OnboardingStarted" title=":OnboardingStarted:"/>                | Inicio el proceso de incorporacion.                               |
-| `COMPLETED_SERVER_GUIDE`                 | <Icon src="/img/icons/ServerGuideCompleted.svg" alt="icon ServerGuideCompleted" title=":ServerGuideCompleted:"/>       | Completo la guia del servidor si esta activada.                   |
-| `STARTED_SERVER_GUIDE`                   | <Icon src="/img/icons/ServerGuideStarted.svg" alt="icon ServerGuideStarted" title=":ServerGuideStarted:"/>             | Inicio la guia del servidor.                                      |
-| `AUTOMOD_QUARANTINED_NAME`               | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | Puesto en cuarentena por la automoderacion por el nombre de usuario. |
-| `AUTOMOD_QUARANTINED_GUILD_TAG`          | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | Puesto en cuarentena por la automoderacion por la etiqueta o el apodo. |
-| `BYPASSES_VERIFICATION`                  | <Icon src="/img/icons/BypassVerification.svg" alt="icon BypassVerification" title=":BypassVerification:"/>             | El usuario puede omitir la verificacion del servidor.             |
+| `DID_REJOIN`                             | <Icon src="/img/icons/MemberDidRejoin.svg" alt="icon MemberDidRejoin" title=":MemberDidRejoin:"/>                      | El usuario salió y volvió a unirse al servidor.                   |
+| `IS_GUEST`                               | <Icon src="/img/icons/MemberIsGuest.svg" alt="icon MemberIsGuest" title=":MemberIsGuest:"/>                            | Miembro invitado (invitación temporal o acceso de invitado).      |
+| `COMPLETED_ONBOARDING`                   | <Icon src="/img/icons/OnboardingCompleted.svg" alt="icon OnboardingCompleted" title=":OnboardingCompleted:"/>          | Completó el proceso de bienvenida (onboarding) del servidor.      |
+| `STARTED_ONBOARDING`                     | <Icon src="/img/icons/OnboardingStarted.svg" alt="icon OnboardingStarted" title=":OnboardingStarted:"/>                | Inició el proceso de bienvenida.                                  |
+| `COMPLETED_SERVER_GUIDE`                 | <Icon src="/img/icons/ServerGuideCompleted.svg" alt="icon ServerGuideCompleted" title=":ServerGuideCompleted:"/>       | Completó la guía del servidor si está activada.                   |
+| `STARTED_SERVER_GUIDE`                   | <Icon src="/img/icons/ServerGuideStarted.svg" alt="icon ServerGuideStarted" title=":ServerGuideStarted:"/>             | Inició la guía del servidor.                                      |
+| `AUTOMOD_QUARANTINED_NAME`               | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | Puesto en cuarentena por la automoderación por el nombre de usuario. |
+| `AUTOMOD_QUARANTINED_GUILD_TAG`          | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | Puesto en cuarentena por la automoderación por la etiqueta o el apodo. |
+| `BYPASSES_VERIFICATION`                  | <Icon src="/img/icons/BypassVerification.svg" alt="icon BypassVerification" title=":BypassVerification:"/>             | El usuario puede omitir la verificación del servidor.             |
 | `SPAMMER`                                | <Icon src="/img/icons/UnusualAccountActivity.svg" alt="icon UnusualAccountActivity" title=":UnusualAccountActivity:"/> | Cuenta marcada como spammer o actividad inusual detectada.        |
 
 ## ⚖️ Sanciones de Discord {#discord-sanctions}
 
 El comando `/discord-sanctions` te permite ver las **sanciones emitidas por Discord** contra un usuario, conforme a la [normativa europea](https://transparency.dsa.ec.europa.eu/).
 
-Usa el comando: ```/discord-sanctions (usuario)```
+Usa el comando: ```/discord-sanctions [user]```
 
-Reemplaza `(usuario)` con la mencion o el identificador deseado. El comando tambien es accesible con clic derecho sobre un perfil, mediante **`Aplicaciones`** y luego **`Discord Sanctions`**.
+Reemplaza `[user]` con la mención o el identificador deseado. El comando también es accesible con clic derecho sobre un perfil, mediante **`Aplicaciones`** y luego **`Sanciones de Discord`**. Sin usuario, muestra las estadísticas globales de seguridad de Discord de los últimos 7 días (pestañas “**Categorías**”, “**Detección**” y “**Aplicación**”).
 
-### 📋 Informacion mostrada {#displayed-sanctions}
+### 📋 Información mostrada {#displayed-sanctions}
 
-- **Tipo de sancion**:
+- **Tipo de sanción**:
 
 | **Sanciones**                            | **Emojis**                                                                                                             | **Significados**                                                  |
 | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
@@ -235,14 +305,14 @@ Reemplaza `(usuario)` con la mencion o el identificador deseado. El comando tamb
 | `ACCOUNT_SUSPENDED`                      | <Icon src="/img/icons/AccountSuspended.svg" alt="icon AccountSuspended" title=":iconSuspended:"/>                      | La cuenta del usuario ha sido suspendida.                         |
 | `ACCOUNT_TERMINATED`                     | <Icon src="/img/icons/AccountTerminated.svg" alt="icon AccountTerminated" title=":iconTerminated:"/>                   | La cuenta del usuario ha sido eliminada.                          |
 
-- **Fecha de emision**
+- **Fecha de emisión**
 - **Tipo de contenido**
-- **Banderas de sancion**:
+- **Banderas de sanción**:
 
 | **Banderas**                             | **Emojis**                                                                                                             | **Significados**                                                  |
 | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `ILLEGAL_CONTENT`                        | <Icon src="/img/icons/IllegalContent.svg" alt="icon IllegalContent" title=":iconIllegal:"/>                            | Sancion aplicada por un contenido ilegal.                         |
-| `AUTOMATED_DETECTION`                    | <Icon src="/img/icons/AutomatedDetection.svg" alt="icon AutomatedDetection" title=":iconBots:"/>                       | Sancion aplicada mediante una deteccion automatica.               |
+| `ILLEGAL_CONTENT`                        | <Icon src="/img/icons/IllegalContent.svg" alt="icon IllegalContent" title=":iconIllegal:"/>                            | Sanción aplicada por un contenido ilegal.                         |
+| `AUTOMATED_DETECTION`                    | <Icon src="/img/icons/AutomatedDetection.svg" alt="icon AutomatedDetection" title=":iconBots:"/>                       | Sanción aplicada mediante una detección automática.               |
 
 <SeparatedBox>
 <Tabs>
@@ -251,7 +321,7 @@ Reemplaza `(usuario)` con la mencion o el identificador deseado. El comando tamb
 ![Captura de pantalla de las Sanciones de Discord](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-ds-report-found.webp)
 
   </TabItem>
-  <TabItem value="reports-not-found" label="Ningun reporte encontrado">
+  <TabItem value="reports-not-found" label="Ningún reporte encontrado">
 
 ![Captura de pantalla de las Sanciones de Discord no encontradas](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-ds-report-not-found.webp)
 
@@ -260,5 +330,23 @@ Reemplaza `(usuario)` con la mencion o el identificador deseado. El comando tamb
 </SeparatedBox>
 
 :::note
-El comando permite consultar los reportes emitidos entre el 22 de agosto de 2024 y el 14 de agosto de 2025. Esta informacion es proporcionada directamente por Discord y **no puede ser modificada** por RaidProtect.
+El comando permite consultar los reportes emitidos entre el 22 de agosto de 2024 y el 14 de agosto de 2025. Esta información es proporcionada directamente por Discord y **no puede ser modificada** por RaidProtect.
 :::
+
+## Preguntas frecuentes {#faq}
+
+### ¿Por qué `/snipe` no encuentra ningún mensaje?
+
+`/snipe` lee los mensajes guardados en memoria durante una hora. Activa la [caché de mensajes](#message-cache) en la pestaña Utilidades de `/settings`, o activa el anti-spam o los reportes, que la activan de oficio.
+
+### ¿Cómo verificar una invitación de Discord antes de unirse a un servidor?
+
+Usa `/inviteinfo` con el código o el enlace de la invitación: mostramos el servidor, su creador, su actividad y los roles asignados al llegar.
+
+### ¿Qué conserva RaidProtect sobre mi servidor?
+
+El comando `/privacy` lo detalla: la configuración y las sanciones de forma permanente, y según tus ajustes una hora de mensajes en memoria y los reportes.
+
+### ¿Quién puede usar `/prune`?
+
+Solo los administradores, por defecto. Una vista previa indica el número de miembros afectados antes de cualquier expulsión.

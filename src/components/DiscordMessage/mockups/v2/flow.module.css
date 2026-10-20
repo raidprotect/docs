@@ -1,0 +1,25 @@
+.flow {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 24px 8px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.55);
+  overflow-y: auto;
+}
+
+.overlay > div {
+  width: 100%;
+  max-width: 440px;
+}
+
+.withModal {
+  min-height: 640px;
+}

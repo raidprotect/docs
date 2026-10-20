@@ -1,0 +1,333 @@
+---
+title: Authentification Manager
+description: "L'Authentification Manager di RaidProtect protegge l'accesso ai tuoi ruoli sensibili con una vera verifica dell'identità: passkey, codice PIN e OTP."
+---
+
+import AuthenticationManagerMockup from '@site/src/components/DiscordMessage/mockups/authentication-manager';
+import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
+
+<AuthenticationManagerMockup />
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Icon from "@site/src/components/Icon";
+
+L'**Authentification Manager** (AM) di RaidProtect protegge l'accesso ai tuoi ruoli Discord più sensibili con una vera verifica dell'identità. Grazie alle passkey (WebAuthn), ai codici PIN e all'OTP, un membro ottiene un [ruolo sensibile](/it/learn/least-privilege) solo dopo essersi autenticato, e solo per una durata limitata. In Discord, il modulo compare con il nome “**Authentification Manager**”.
+
+## ❓ Come funziona l'Authentification Manager? {#working}
+
+L'Authentification Manager si basa su **ruoli protetti** e **sessioni temporanee**. Quando un amministratore protegge un ruolo con l'AM:
+
+1. Il ruolo Discord non viene più assegnato in modo permanente: bisogna autenticarsi per ottenerlo.
+2. I membri autorizzati si autenticano con il comando `/auth` (o il pulsante “**Ottieni un ruolo**” di un [pannello staff](./display.mdx#staff)).
+3. Viene creata una **sessione temporanea** per la durata definita sul ruolo.
+4. Alla scadenza della sessione, rimuoviamo automaticamente il ruolo.
+
+:::info
+Ogni membro deve prima creare il proprio **profilo di autenticazione** con `/auth-profile` prima di potersi autenticare.
+:::
+
+Durante una sessione, le azioni Discord del membro (bandi, eliminazioni di messaggi, fissaggi, modifiche di canali…) vengono registrate nel registro dell'AM, con il loro bersaglio: sai cosa è stato fatto con ogni ruolo protetto.
+
+## 🔐 Gradi di sicurezza {#grades}
+
+Ogni metodo di autenticazione dà un **grado di sicurezza**. Ogni ruolo protetto richiede un grado minimo che il membro deve raggiungere.
+
+| **Grado**                                                                   | **Condizione**                        |
+| --------------------------------------------------------------------------- | ------------------------------------- |
+| <Icon src="/img/icons/RankS.svg" alt="icon RankS" title=":securityRankS:"/> | Almeno una passkey registrata         |
+| <Icon src="/img/icons/RankA.svg" alt="icon RankA" title=":securityRankA:"/> | Codice OTP (2FA) attivato             |
+| <Icon src="/img/icons/RankB.svg" alt="icon RankB" title=":securityRankB:"/> | PIN rinforzato di 8 cifre o più       |
+| <Icon src="/img/icons/RankC.svg" alt="icon RankC" title=":securityRankC:"/> | PIN rinforzato di 6 cifre o più       |
+| <Icon src="/img/icons/RankD.svg" alt="icon RankD" title=":securityRankD:"/> | PIN semplice di 6 cifre o più         |
+| <Icon src="/img/icons/RankE.svg" alt="icon RankE" title=":securityRankE:"/> | PIN semplice di 4 cifre o più         |
+
+:::tip
+Il grado più alto tra i tuoi metodi configurati viene automaticamente mantenuto. Per esempio, se hai un PIN semplice (grado D) e una passkey (grado S), il tuo grado sarà **S**.
+:::
+
+## 🛡️ Metodi di autenticazione {#methods}
+
+<SeparatedBox>
+<Tabs>
+<TabItem value="pin" label="PIN" default>
+
+Il codice PIN è il metodo più semplice. Sono disponibili due modalità:
+
+- **PIN semplice**: inserimento classico in una finestra (da 4 a 12 cifre).
+- **PIN rinforzato**: tastierino numerico i cui tasti cambiano posto a ogni inserimento (da 6 a 12 cifre), per impedire a un terzo di indovinare il tuo codice guardandoti.
+
+:::warning
+I PIN troppo semplici vengono rifiutati: cifre ripetute, sequenze crescenti o decrescenti, e schemi comuni.
+:::
+
+</TabItem>
+<TabItem value="otp" label="OTP (Codice 2FA)">
+
+L'OTP usa lo standard TOTP (Time-based One-Time Password), compatibile con le applicazioni di autenticazione come [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2), [Authy](https://authy.com/), [1Password](https://1password.com/), [Dashlane](https://www.dashlane.com/) o [Bitwarden](https://bitwarden.com/).
+
+- Codice a 6 cifre rinnovato ogni 30 secondi.
+
+</TabItem>
+<TabItem value="passkey" label="Passkey (WebAuthn)">
+
+Le passkey offrono il più alto livello di sicurezza (grado S). L'autenticazione avviene nel browser con:
+
+- **Impronta digitale** o **riconoscimento facciale** (Touch ID, Face ID, Windows Hello).
+- **Chiave di sicurezza fisica** (YubiKey, ecc.).
+
+Quando usi una passkey, si apre un link esterno nel tuo browser, nella lingua del tuo Discord. Una volta convalidata la verifica, il ruolo ti viene assegnato.
+
+</TabItem>
+</Tabs>
+</SeparatedBox>
+
+## 👤 Profilo di autenticazione (`/auth-profile`) {#auth-profile}
+
+Il comando `/auth-profile` gestisce il tuo profilo di autenticazione personale. Funziona su qualsiasi server e nei messaggi privati, e il tuo profilo è lo stesso ovunque.
+
+<Settings start="authProfile" />
+
+### Primo utilizzo {#onboarding}
+
+Al primo utilizzo, una schermata di benvenuto presenta i gradi, le sessioni temporanee e i metodi. Clicca su “**Continua**” per configurare il tuo primo metodo.
+
+### Gestione delle autenticazioni {#manage-methods}
+
+Dal tuo profilo, puoi:
+
+- Aggiungere, cambiare o eliminare un **codice PIN** (semplice o rinforzato).
+- Attivare il **codice 2FA** (OTP) con un QR code o una chiave segreta, rigenerarlo o eliminarlo.
+- Aggiungere una **passkey** dalla pagina di registrazione, o eliminarne una. Ogni passkey mostra il nome del dispositivo e la data dell'ultimo utilizzo.
+
+Se hai già un metodo, ti chiediamo di autenticarti prima di aggiungerne o modificarne uno. La parte bassa del profilo ricorda il tuo grado e il metodo da aggiungere per salire di un gradino.
+
+:::info
+Eliminare un metodo può far scendere il tuo grado. I tuoi accessi ai ruoli che richiedono un grado più alto vengono allora disattivati.
+:::
+
+### Sessioni attive {#profile-sessions}
+
+Le tue sessioni attive, con la loro scadenza, vengono mostrate nel pannello del comando [`/auth`](#sessions) su ogni server.
+
+### Registro di controllo {#profile-audit}
+
+Il tuo profilo mostra le ultime 3 azioni effettuate sul tuo account. Il pulsante “**Vedi tutti i log**” apre il registro completo, paginato, con il server interessato.
+
+### Reimpostazione dell'account {#reset}
+
+Il pulsante “**Ho dimenticato le mie auth**” reimposta interamente il tuo account. Questa azione:
+
+- elimina tutti i tuoi metodi di autenticazione (PIN, 2FA, passkey);
+- disattiva i tuoi accessi ai ruoli protetti su tutti i server;
+- ti obbliga a riconfigurare tutto.
+
+:::danger
+Questa azione è irreversibile. Tutti i tuoi accessi vengono revocati immediatamente.
+:::
+
+## 🔑 Autenticarsi (`/auth`) {#auth}
+
+Il comando `/auth` permette di autenticarsi per ottenere un ruolo protetto.
+
+Usa il comando: ```/auth [role]```
+
+### Processo di autenticazione {#auth-flow}
+
+1. Esegui il comando `/auth` sul server, oppure clicca su “**Ottieni un ruolo**” in un pannello staff.
+2. Un menu mostra i ruoli disponibili con il loro grado richiesto e la loro durata di sessione.
+3. Seleziona un ruolo.
+4. Scegli un metodo di autenticazione tra quelli che raggiungono il grado del ruolo.
+5. Effettua la verifica (PIN, OTP o passkey).
+6. In caso di successo, ti assegniamo il ruolo Discord e creiamo una sessione.
+
+:::info
+Nel menu compaiono solo i ruoli a cui sei assegnato con lo stato **Attivo**.
+:::
+
+### Gestione delle sessioni {#sessions}
+
+Il pannello `/auth` elenca le tue sessioni attive. Per ciascuna, puoi:
+
+- **Prolunga la sessione**: autenticati di nuovo per ripartire con una durata completa.
+- **Disconnetti**: la sessione viene revocata immediatamente e il ruolo Discord rimosso.
+
+### Sicurezza {#auth-security}
+
+- **Avvertimento**: un messaggio di avvertimento appare a partire da 3 tentativi falliti.
+- **Blocco**: dopo 5 fallimenti, il tuo account viene bloccato per 1 ora.
+- **Reimpostazione**: dopo 10 fallimenti, il tuo account viene reimpostato e tutti i tuoi accessi vengono revocati.
+
+## ⚙️ Configurazione del server {#auth-settings}
+
+Il pannello di configurazione dell'Authentification Manager si apre in due modi:
+
+1. Esegui il [comando `/settings`](../setup.md#settings).
+2. Apri la scheda “**Protezione**”.
+3. Clicca su “**Configurare**” accanto a “**Authentification Manager**”.
+
+Il pannello sostituisce allora la dashboard, con un pulsante “**Indietro**” per tornare alla scheda Protezione. Puoi anche usare direttamente il comando `/auth-settings`, che apre lo stesso pannello.
+
+<Settings start="auth" />
+
+:::info
+Il comando `/auth-settings` è riservato per impostazione predefinita agli amministratori. Perché un gestore non amministratore possa usarlo, autorizzalo per lui in **Impostazioni del server > Integrazioni > RaidProtect**.
+:::
+
+### Permessi {#permissions}
+
+| **Ruolo**       | **Accesso**                                                               |
+| --------------- | ------------------------------------------------------------------------- |
+| Proprietario    | Accesso completo                                                          |
+| Amministratore  | Accesso completo (tranne se il permesso Amministratore proviene da un ruolo protetto dall'AM) |
+| Gestore         | Accesso limitato: deve autenticarsi, gestisce solo i ruoli e gli utenti situati sotto di lui, non può modificare la configurazione del server |
+
+#### Autenticazione dei gestori {#manager-auth}
+
+Un gestore che non è né proprietario né amministratore deve autenticarsi a ogni apertura del pannello. Gli proponiamo i metodi che raggiungono il **grado minimo dei gestori**: “**Autenticati con il PIN**”, “**Autenticati con l'OTP**” o “**Autenticati con la Passkey**”. Il PIN rinforzato si inserisce sul tastierino a tasti mescolati.
+
+Si applicano le stesse protezioni di `/auth`: avvertimento a partire da 3 fallimenti, blocco di un'ora a 5 fallimenti, reimpostazione dell'account a 10 fallimenti.
+
+### Impostazioni del server {#server-settings}
+
+Clicca su “**Modifica**” accanto a “**Configurazione del server**” per aprire la finestra “**Configurazione Autenticazione del server**”:
+
+- **Durata della sessione predefinita**: durata proposta per i nuovi ruoli, nel formato `30m`, `2h` o `1d`. Fino a 8 ore nella versione gratuita, 24 ore nella versione [premium](/it/premium). Predefinito: 10 minuti.
+- **Grado minimo predefinito**: grado proposto per i nuovi ruoli. Predefinito: A.
+- **Grado minimo dei gestori**: grado che un gestore deve raggiungere per aprire il pannello. Predefinito: A.
+- **URL del Webhook (lascia vuoto per rimuovere)**: webhook Discord che riceve i log dell'AM (facoltativo). Sono accettati solo URL di webhook Discord.
+
+I gestori non possono modificare queste impostazioni.
+
+### Scheda Ruoli {#roles-tab}
+
+La scheda Ruoli elenca i tuoi ruoli protetti con il loro grado, la loro durata di sessione e il loro numero di utenti. Sotto le schede, il riquadro “**Ultime sessioni**” mostra la più recente, e “**Vedi tutto**” apre l'elenco di tutte le sessioni.
+
+:::info
+**Limiti:** 3 ruoli nella versione gratuita, 10 ruoli nella versione [premium](/it/premium). I ruoli disattivati occupano sempre uno slot.
+:::
+
+#### Aggiungere un ruolo {#add-role}
+
+1. Apri il pannello dell'Authentification Manager (vedi [sopra](#auth-settings)).
+2. Nella scheda “**Ruoli**”, clicca su “**Aggiungi**”.
+3. Scegli il **ruolo Discord** da proteggere.
+4. Scegli il **grado di sicurezza minimo**.
+5. Indica la **durata della sessione**.
+6. Scegli una **strategia di integrazione** (vedi sotto).
+7. Rileviamo i membri che hanno già questo ruolo: regola la selezione, poi clicca su “**Invia gli inviti**” (o “**Ignora**”).
+
+Ogni membro scelto viene collegato al ruolo con lo stato **Attivo** se il suo grado basta, altrimenti **Invitato**: riceve allora un MP che lo invita a configurare `/auth-profile`.
+
+<SettingsModal name="authAddRole" />
+
+Rifiutiamo un ruolo gestito da un'integrazione, un ruolo usato nel Processo di benvenuto di Discord, un ruolo situato sopra il ruolo di RaidProtect o sopra il tuo, e un ruolo già protetto.
+
+##### Strategie di integrazione {#strategies}
+
+| **Strategia** | **Effetto** |
+|---|---|
+| “**Usa questo ruolo così com'è**” | Il ruolo scelto diventa direttamente il ruolo protetto. È la scelta predefinita. |
+| “**Crea un ruolo di permessi separato**” | Creiamo un ruolo `🔑 <nome del ruolo>` con i permessi originali, subito sotto il ruolo scelto, e svuotiamo i permessi del ruolo originale. Il ruolo originale mantiene permanentemente il suo colore e la sua visualizzazione, è il nuovo ruolo a essere protetto. |
+
+:::tip
+Se il tuo ruolo è **mostrato separatamente** nell'elenco dei membri, scegli “**Crea un ruolo di permessi separato**”: i tuoi membri mantengono il loro ruolo sempre visibile, e i permessi sensibili vengono assegnati solo durante le sessioni autenticate.
+:::
+
+#### Proteggere i ruoli amministratore da `/audit` {#audit-bulk}
+
+Il controllo dei ruoli amministratore dell'[audit](./audit.md) propone “**Integra tutto**”: proteggi in un colpo solo i ruoli amministratore che non lo sono ancora, 5 ruoli al massimo per lotto e nel limite dei tuoi slot liberi. Vengono proposti solo i ruoli situati sotto RaidProtect e sotto il tuo ruolo più alto.
+
+#### Modificare un ruolo {#edit-role}
+
+Clicca su “**Modifica**” sulla riga del ruolo per aprire la sua scheda (grado minimo, durata della sessione, utenti assegnati), poi su “**Modifica**” per cambiare il grado minimo e la durata della sessione.
+
+#### Attivare / Disattivare un ruolo {#toggle-role}
+
+Dalla scheda del ruolo, “**Disattivare**” mette il ruolo in pausa senza eliminarlo: non viene più creata alcuna sessione per esso. Le sessioni in corso vengono revocate e il ruolo Discord viene tolto ai membri interessati. “**Attivare**” lo rimette in servizio, nel limite dei tuoi slot.
+
+#### Eliminare un ruolo {#delete-role}
+
+“**Elimina**” rimuove definitivamente il ruolo dall'Authentification Manager, insieme a tutte le assegnazioni di utenti. Ti viene chiesta una conferma.
+
+### Scheda Utenti {#users-tab}
+
+La scheda Utenti elenca i membri collegati ad almeno un ruolo protetto, con il loro grado, il numero di ruoli e il loro stato di gestore.
+
+:::info
+**Limiti:** 20 utenti nella versione gratuita, 50 nella versione [premium](/it/premium).
+:::
+
+#### Aggiungere un utente {#add-user}
+
+1. Apri la scheda “**Utenti**”.
+2. Clicca su “**Aggiungi**”.
+3. Scegli l'**utente** e il **ruolo Autenticazione** da assegnargli.
+
+Il membro riceve un MP: può usare il ruolo subito se il suo grado basta, altrimenti viene invitato a configurare un metodo di grado sufficiente.
+
+:::info
+Gli inviti sono limitati per evitare lo spam. Quelli bloccati possono essere reinviati più tardi dalla scheda del membro.
+:::
+
+#### Scheda utente e stati {#member-status}
+
+Clicca su “**Gestisci**” per aprire la scheda di un membro: il suo grado, il suo ID, se è un gestore, e ciascuno dei suoi ruoli con il suo stato. Il selettore di ruoli permette di aggiungerne o toglierne.
+
+| **Stato**   | **Descrizione**                                                   |
+| ----------- | ----------------------------------------------------------------- |
+| Invitato    | Il membro è stato aggiunto ma il suo grado non basta ancora (profilo da configurare) |
+| In attesa   | In attesa di approvazione: clicca su “**Approva**”                |
+| Attivo      | Il membro può autenticarsi per ottenere il ruolo                  |
+| Disattivato | L'accesso è sospeso: clicca su “**Ripristina**” per ristabilirlo  |
+
+#### Promuovere a gestore {#promote-manager}
+
+“**Promuovi a gestore**” dà al membro l'accesso al pannello di configurazione, a condizione che raggiunga il grado minimo dei gestori. Un gestore gestisce gli utenti e i ruoli situati sotto di lui. “**Rimuovi gestore**” gli toglie questo accesso.
+
+#### Eliminare un utente {#delete-user}
+
+“**Elimina l'utente**” rimuove il membro da tutti i ruoli protetti del server. Ti viene chiesta una conferma.
+
+### Scheda Log {#logs-tab}
+
+La scheda Log mostra il registro dell'Authentification Manager, paginato: sessioni concesse, prolungate o revocate, cambi di configurazione… Il pulsante a forma di occhio apre il dettaglio di una voce (utente, azione, tipo, data, ruolo e bersaglio). I log vengono inviati anche al webhook configurato.
+
+### Sessioni {#sessions-tab}
+
+Non c'è una scheda dedicata: il riquadro “**Ultime sessioni**” della scheda Ruoli mostra la sessione più recente, e “**Vedi tutto**” apre l'elenco di tutte le sessioni del server con il loro stato (Attiva, Scaduta, Revocata). “**Vedi**” mostra il dettaglio di una sessione e le sue ultime azioni.
+
+### Protezione del Processo di benvenuto {#onboarding-protection}
+
+Se un ruolo protetto viene aggiunto alle domande del Processo di benvenuto di Discord, lo rimuoviamo automaticamente dalla domanda e lo registriamo nei log: altrimenti, qualsiasi nuovo arrivato potrebbe ottenere il ruolo senza autenticarsi.
+
+### Fine del Premium {#premium-end}
+
+Alla fine di un abbonamento [Premium](/it/premium), i ruoli attivi oltre i 3 vengono disattivati automaticamente (i più vecchi vengono conservati) e le durate di sessione superiori a 8 ore vengono riportate a 8 ore.
+
+## Domande frequenti {#faq}
+
+### Quali metodi di autenticazione sono disponibili?
+
+Esistono tre metodi: il codice PIN (semplice o rinforzato), l'OTP (codice 2FA allo standard TOTP) e le passkey (WebAuthn). Le passkey offrono il più alto livello di sicurezza (grado S).
+
+### Dove configurare l'Authentification Manager?
+
+In `/settings`, scheda Protezione, cliccando su “Configurare” accanto a “Authentification Manager”, oppure direttamente con il comando `/auth-settings`.
+
+### Cosa succede alla scadenza di una sessione?
+
+Rimuoviamo automaticamente il ruolo protetto al membro. Deve riautenticarsi con `/auth` per ottenerlo di nuovo, oppure prolungare la sua sessione prima che scada.
+
+### Cosa fare se dimentico le mie credenziali?
+
+Dal tuo profilo `/auth-profile`, il pulsante “Ho dimenticato le mie auth” reimposta interamente il tuo account: tutti i tuoi metodi vengono eliminati e i tuoi accessi revocati. Questa azione è irreversibile e richiede una riconfigurazione completa.
+
+### Quanti ruoli si possono proteggere con l'Authentification Manager?
+
+Puoi proteggere 3 ruoli nella versione gratuita e 10 ruoli nella versione premium, per rispettivamente 20 e 50 utenti. Le sessioni durano al massimo 8 ore nella versione gratuita e 24 ore nella versione premium.
+
+### Un gestore può modificare tutto?
+
+No. Un gestore deve autenticarsi a ogni apertura del pannello, gestisce solo i ruoli e gli utenti situati sotto di lui, e non può modificare la configurazione del server.

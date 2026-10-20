@@ -1,0 +1,68 @@
+---
+title: 'ScamLens：Discord での仮想通貨画像スパムに終止符'
+tags: [threats]
+authors: [zallom]
+image: ./assets/rp-scamlens.webp
+slug: scamlens-early-activation
+date: 2026-02-14
+---
+
+import Timestamp from '@site/src/components/Timestamp';
+
+**「仮想通貨画像」詐欺** に関連する大規模なスパムの波を受け、私たちは画像分析による詐欺対策モジュール **RaidProtect ScamLens** の `Deletion` モードを前倒しで有効にしました。
+
+![RaidProtect ScamLens 2026年2月14日に阻止した脅威](./assets/rp-scamlens.webp)
+
+{/* truncate */}
+
+## 🛡️ スパムの詳細 {#threat}
+
+<Timestamp value={1771023600} format="D" />の <Timestamp value={1771023600} format="T" /> から <Timestamp value={1771068391} format="T" /> にかけて、2 度の大規模なスパムの波が発生しました。**2,500 以上の乗っ取られたアカウント** が使われ、この種の画像を含む **10,000 件以上のメッセージ** が送信されました。これらの数字は、RaidProtect が守る 34 万のサーバーで観測されたものにすぎません。Discord には数百万のアクティブなサーバーがあることを考えると、この攻撃の実際の規模は、プラットフォーム全体で **数十万件のメッセージ** に達すると推定されます。
+
+「仮想通貨画像」と呼ばれるこの詐欺は、詐欺的な仮想通貨の購入をユーザーに促す **4 枚の画像** を、できるだけ多くのチャンネルに大量に送りつけるものです。
+
+<div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '280px 280px', gap: '8px'}}>
+  <img src={require('../../../../blog/3.3.1/assets/scam-1.png').default} alt="MrBeast Crypto Casino Scam 1" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-2.png').default} alt="MrBeast Crypto Casino Scam 2" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-3.png').default} alt="MrBeast Crypto Casino Scam 3" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-4.png').default} alt="MrBeast Crypto Casino Scam 4" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+</div>
+
+#### 第 1 波 {#wave-1}
+![1 分あたりの発生件数：第 1 波（00:00〜01:25）](../../../../blog/3.3.1/assets/0000_0125.webp)
+
+#### 第 2 波 {#wave-2}
+![1 分あたりの発生件数：第 2 波（10:21〜11:25）](../../../../blog/3.3.1/assets/1021_1125.webp)
+
+大量の詐欺メッセージに対処するため、[アップデート 3.3.1](/blog/3.3.1-jail-and-mute#changelog) で `Learning` モードとして導入された **ScamLens** の `Deletion` モードを前倒しで有効にしました。
+このモジュールはサーバーに投稿された画像を分析し、詐欺と判定されたものを自動で削除するようになりました（設定は不要です）。
+
+### この先は？ {#next}
+
+近いうちに `Sanction` モードが有効になります。ScamLens は詐欺画像を削除するだけでなく、送信者に **1 日のタイムアウト** を自動で適用します。これらのアカウントを BAN しないことにしたのは、そのほぼすべてが **乗っ取られたアカウント** だからです。BAN すると、本来のアカウント所有者に不利益を与えてしまいます。タイムアウトなら、所有者がアカウントを取り戻すまでの間、脅威を直ちに無力化できます。
+
+:::info 🔒 あえて非公開にしている仕組み
+セキュリティ上の理由から、ScamLens が使用する検出方法については、現在も今後も公表しません。この「ブラックボックス」方式は、詐欺師が保護を回避するために手口を変えるのを防ぐためのものです。
+:::
+
+---
+
+## ❓ FAQ {#faq}
+
+#### Discord で画像スパムをブロックするには？ {#antispam-images}
+サーバーに [RaidProtect を追加](https://raidprotect.bot/invite)してください。ScamLens は既定で有効になっており、詐欺と判定されたすべての画像を削除します。追加の設定は不要です。
+
+#### Discord での仮想通貨画像詐欺から身を守るには？ {#arnaque-images-crypto}
+[RaidProtect を追加](https://raidprotect.bot/invite)するだけです。ScamLens が詐欺画像を自動で検出して削除します。
+
+#### Discord サーバーでスパムボットを防ぐには？ {#anti-spam-bots}
+ScamLens に加えて、RaidProtect の[キャプチャ](/docs/features/captcha)を有効にすると、自動化されたアカウントがサーバーに参加するのを防げます。
+
+---
+
+:::tip 📚 お役立ちリソース
+- 🔗 [RaidProtect をサーバーに追加する](https://raidprotect.bot/invite)
+- 📘 [ドキュメントの全文を読む](https://docs.raidprotect.bot/)
+- 💡 [提案やフィードバックを送る](https://suggestions.raidprotect.bot/)
+- 📣 [お知らせをフォローしてコミュニティに参加する](https://raidprotect.bot/discord)
+:::

@@ -1,0 +1,187 @@
+---
+title: Danh sách lệnh
+---
+
+import CommandCopy from '@site/src/components/CommandCopy';
+
+<CommandCopy />
+
+Tất cả các lệnh của RaidProtect, được nhóm theo danh mục. Nhấp vào tên một lệnh để xem tài liệu chi tiết của nó.
+
+## Chú giải các mẫu lệnh {#legend}
+
+- `(arg)`: đối số **bắt buộc**.
+- `[arg]`: đối số **tùy chọn**.
+- `[--flag]`: cờ boolean tùy chọn (slash: `flag: true`, tin nhắn: `--flag`).
+- `[--flag=value]`: cờ có giá trị, tùy chọn.
+- `(@user)` / `(#channel)` / `(@&role)`: tiền tố cho biết kiểu dữ liệu mong đợi.
+
+---
+
+## Cấu hình & cài đặt {#config}
+
+| Lệnh | Mẫu lệnh | Mô tả |
+|---|---|---|
+| [`/setup`](./setup.md#install) | `/setup` | Chạy trình cài đặt có hướng dẫn để kích hoạt RaidProtect trên máy chủ. |
+| [`/settings`](./setup.md#settings) | `/settings` | Mở menu tương tác để sửa cấu hình bất cứ lúc nào. |
+| [`/honeypot`](./features/honeypot.md#config) | `/honeypot` | Cấu hình kênh bẫy HoneyPot. |
+| [`/tagrole`](./features/tag-role.md) | `/tagrole` | Cấu hình vai trò được cấp cho các thành viên đeo tag của máy chủ. |
+| [`/display public`](./features/display.mdx) | `/display public` | Quản lý các bảng thông tin công khai của RaidProtect. |
+| [`/display staff`](./features/display.mdx#staff) | `/display staff` | Quản lý các bảng dành riêng cho đội ngũ (DISCON, tin nhắn nội bộ). |
+| [`/discon`](./features/discon.md) | `/discon` | Thiết lập bảng DISCON để chỉnh mức nguy hiểm của máy chủ (thử nghiệm, Shield Update). |
+| [`/audit`](./features/audit.md) | `/audit` | Phân tích bảo mật máy chủ và đề xuất sửa các lỗ hổng cấu hình. |
+
+## Kiểm duyệt {#moderation}
+
+### Hình phạt
+
+| Lệnh | Mẫu lệnh | Mô tả |
+|---|---|---|
+| [`/ban`](./features/moderation.mdx#ban) | `/ban (@user) [duration] [--delete-messages=duration] [--silent] [reason]` | Cấm một người dùng, vĩnh viễn hoặc trong thời lượng đã nêu. |
+| [`/tempban`](./features/moderation.mdx#tempban) | `/tempban (@user) (duration) [--delete-messages=duration] [--silent] [reason]` | Cấm một người dùng trong một thời lượng xác định. |
+| [`/softban`](./features/moderation.mdx#softban) | `/softban (@member) [--delete-messages=duration] [--silent] [reason]` | Cấm rồi bỏ cấm một thành viên để xóa tin nhắn của họ. |
+| [`/unban`](./features/moderation.mdx#unban) | `/unban (@user) [--silent] [reason]` | Gỡ một lệnh cấm. |
+| [`/kick`](./features/moderation.mdx#kick) | `/kick (@member) [--silent] [reason]` | Đuổi một thành viên khỏi máy chủ. |
+| [`/mute`](./features/moderation.mdx#timeout) | `/mute (@member) (duration) [--force-timeout] [--silent] [reason]` | Làm một thành viên im lặng (vai trò Mute hoặc timeout của Discord). |
+| [`/unmute`](./features/moderation.mdx#untimeout) | `/unmute (@member) [--silent] [reason]` | Gỡ mute / timeout của một thành viên. |
+| [`/jail`](./features/moderation.mdx#jail) | `/jail (@member) [--silent] [reason]` | Đưa một thành viên vào jail qua vai trò Jail. |
+| [`/tempjail`](./features/moderation.mdx#tempjail) | `/tempjail (@member) (duration) [--silent] [reason]` | Đưa một thành viên vào jail trong một thời lượng xác định. |
+| [`/unjail`](./features/moderation.mdx#unjail) | `/unjail (@member) [--silent] [reason]` | Thả một thành viên khỏi Jail. |
+| [`/warn`](./features/moderation.mdx#warn) | `/warn (@member) [--silent] [reason]` | Cảnh cáo chính thức một thành viên qua tin nhắn riêng. |
+
+### Công cụ kiểm duyệt
+
+| Lệnh | Mẫu lệnh | Mô tả |
+|---|---|---|
+| [`/clear`](./features/moderation.mdx#clear) | `/clear (amount) [@user]` | Xóa từ 2 đến 100 tin nhắn trong một kênh. |
+| [`/snipe`](./features/moderation.mdx#snipe) | `/snipe [@user] [--channel=#channel]` | Lấy lại tin nhắn bị xóa gần nhất trong kênh hoặc của một người dùng (1 giờ, cần bật lưu đệm tin nhắn). |
+| [`/modview`](./features/moderation.mdx#modview) | `/modview (@user)` | Mở chế độ xem kiểm duyệt tập trung của một thành viên (hình phạt, ghi chú, snipe). |
+| [`/note`](./features/moderation.mdx#note) | `/note (@user)` | Thêm hoặc sửa ghi chú kiểm duyệt nội bộ của một thành viên. |
+| [`/nick`](./features/moderation.mdx#nick) | `/nick (@user) [pseudo]` | Đổi biệt danh của một thành viên trên máy chủ (để trống để đặt lại). |
+| [`/onduty`](./features/moderation.mdx#onduty) | `/onduty` | Thêm hoặc gỡ vai trò “đang trực” của người kiểm duyệt dùng lệnh. |
+
+### Khóa kênh
+
+| Lệnh | Mẫu lệnh | Mô tả |
+|---|---|---|
+| [`/lock`](./features/channel-lock.md#lock) | `/lock [#channel] [duration] [reason]` | Khóa một kênh để ngăn gửi tin nhắn (thời lượng tùy chọn). |
+| [`/unlock`](./features/channel-lock.md#unlock) | `/unlock [#channel] [reason]` | Mở khóa một kênh đã bị khóa trước đó. |
+| [`/slowmode`](./features/moderation.mdx#slowmode) | `/slowmode (delay) [duration] [#channel] [reason]` | Bật hoặc sửa chế độ chậm của một kênh (thời lượng áp dụng tùy chọn). |
+
+## Lịch sử hình phạt {#sanctions}
+
+| Lệnh | Mẫu lệnh | Mô tả |
+|---|---|---|
+| [`/sanctions search`](./features/sanctions.mdx#search) | `/sanctions search [@user] [@moderator] [type] [reason] [date] [status] [moderator_type]` | Tìm trong lịch sử với các bộ lọc (người dùng, người kiểm duyệt, loại, ngày, trạng thái…). |
+| [`/sanctions info`](./features/sanctions.mdx#info) | `/sanctions info (id)` | Hiển thị chi tiết của một hình phạt. |
+| [`/sanctions edit`](./features/sanctions.mdx#edit) | `/sanctions edit (id) [reason] [duration]` | Sửa lý do hoặc thời lượng của một hình phạt hiện có. |
+| [`/sanctions delete`](./features/sanctions.mdx#delete) | `/sanctions delete (id) [reason]` | Xóa một hình phạt khỏi lịch sử. |
+| [`/my-sanctions`](./features/utilities.mdx#my-sanctions) | `/my-sanctions` | Cho phép một thành viên xem hình phạt của chính mình. |
+| [`/alt`](./features/alt-accounts.md) | `/alt [@thanhvien] [@khac]` | Liên kết các tài khoản của cùng một người để họ dùng chung hình phạt (thử nghiệm, Identity Update). |
+
+## Chống raid {#antiraid}
+
+| Lệnh | Mẫu lệnh | Mô tả |
+|---|---|---|
+| [`/raidmode`](./features/raid-mode.md#raid-mode) | `/raidmode [status] [duration]` | Bật hoặc tắt chế độ raid, chặn hoặc lọc những người vào mới. |
+| [`/joinlock`](./features/join-lock.mdx) | `/joinlock [status]` | Đóng vô thời hạn quyền truy cập máy chủ với thành viên mới. |
+| [`/dmlock`](./features/dm-lock.mdx) | `/dmlock` | Bật hoặc tắt việc đóng vĩnh viễn tin nhắn riêng của máy chủ. |
+| [`/dmlock-info`](./features/dm-lock.mdx#info) | `/dmlock-info` | Thông báo cho các thành viên về trạng thái đóng tin nhắn riêng. |
+
+## Xác thực {#auth}
+
+| Lệnh | Mẫu lệnh | Mô tả |
+|---|---|---|
+| [`/auth`](./features/authentication-manager.mdx#auth) | `/auth [role]` | Xác thực để nhận một vai trò được bảo vệ. |
+| [`/auth-profile`](./features/authentication-manager.mdx#auth-profile) | `/auth-profile` | Quản lý hồ sơ xác thực của bạn (PIN, OTP, passkey). |
+| [`/auth-settings`](./features/authentication-manager.mdx#auth-settings) | `/auth-settings` | Cấu hình các vai trò được bảo vệ và những người dùng được phép. |
+
+## Bypass {#bypass}
+
+| Lệnh | Mẫu lệnh | Mô tả |
+|---|---|---|
+| [`/bypass captcha`](./features/captcha.md#bypass) | `/bypass captcha [@user]` | Cho phép một người dùng tham gia mà không qua captcha. |
+| [`/bypass minage`](./features/onboarding.md#bypass-minage) | `/bypass minage [@user]` | Cho phép một người dùng tham gia mà không cần đủ tuổi tối thiểu. |
+| [`/bypass raid`](./features/raid-mode.md#bypass-raid) | `/bypass raid [@user]` | Cho phép một người dùng tham gia bất chấp chế độ raid (cần chế độ đuổi). |
+
+## Tiện ích {#utilities}
+
+| Lệnh | Mẫu lệnh | Mô tả |
+|---|---|---|
+| [`/userinfo`](./features/utilities.mdx#userinfo) | `/userinfo [@user]` | Hiển thị thông tin của một người dùng. |
+| [`/serverinfo`](./features/utilities.mdx#serverinfo) | `/serverinfo` | Hiển thị thông tin của máy chủ. |
+| [`/discord-sanctions`](./features/utilities.mdx#discord-sanctions) | `/discord-sanctions [@user]` | Hiển thị các hình phạt của Discord (DSA) đối với một người dùng, hoặc thống kê chung nếu không chỉ định người dùng. |
+| [`/inviteinfo`](./features/utilities.mdx#inviteinfo) | `/inviteinfo (invite)` | Hiển thị thông tin của một lời mời Discord (mã hoặc liên kết). |
+| [`/prune`](./features/utilities.mdx#prune) | `/prune [duration]` | Dọn các thành viên không hoạt động qua một menu tương tác. |
+| [`/channel duplicate`](./features/utilities.mdx#channel-duplicate) | `/channel duplicate (#channel)` | Nhân bản một kênh cùng thiết lập và quyền của nó. |
+| [`/channel clear`](./features/utilities.mdx#channel-clear) | `/channel clear (#channel)` | Xóa và tạo lại một kênh giống hệt. |
+| [`/block add`](./features/utilities.mdx#block-add) | `/block add [@user] [reason]` | Ngăn một người dùng dùng một số tính năng. |
+| [`/block remove`](./features/utilities.mdx#block-remove) | `/block remove [@user] [reason]` | Gỡ chặn một người dùng. |
+| [`/block list`](./features/utilities.mdx#block-list) | `/block list` | Liệt kê những người dùng bị chặn. |
+| [`/report`](./features/reports.md) | `/report (@member)` | Cho phép các thành viên báo cáo một thành viên cho bộ phận kiểm duyệt (lý do nhập trong một cửa sổ). |
+
+## Thông tin & trợ giúp {#info}
+
+| Lệnh | Mẫu lệnh | Mô tả |
+|---|---|---|
+| [`/about`](./readme.mdx) | `/about` | Hiển thị thông tin chung về RaidProtect. |
+| [`/help`](./readme.mdx) | `/help` | Hiển thị trợ giúp chung của RaidProtect. |
+| [`/invite`](./useful-links/index.mdx) | `/invite` | Hiển thị các liên kết hữu ích (lời mời, hỗ trợ, trang của bot). |
+| [`/transparency`](./features/transparency.md#command) | `/transparency` | Hiển thị báo cáo minh bạch kiểm duyệt gần nhất của máy chủ. |
+| [`/changelog`](./changelog.mdx) | `/changelog` | Xem nhật ký thay đổi của RaidProtect. |
+| [`/feedback`](./features/utilities.mdx#feedback) | `/feedback` | Chia sẻ một ý kiến, một đề xuất hoặc một báo cáo lỗi. |
+| [`/privacy`](./features/utilities.mdx#privacy) | `/privacy` | Hiển thị những gì RaidProtect lưu giữ về máy chủ này. |
+
+## Menu ngữ cảnh {#context-menus}
+
+Một số hành động mở bằng nhấp chuột phải, trong menu **Ứng dụng**:
+
+- Trên một thành viên: **Mở Modview** ([chế độ xem kiểm duyệt](./features/moderation.mdx#modview)), **Xử phạt** ([xử phạt trong một cửa sổ](./features/moderation.mdx#context-menu)), **Hình phạt Discord** ([hình phạt của Discord](./features/utilities.mdx#discord-sanctions)) và **Báo cáo người dùng** ([báo cáo](./features/reports.md)).
+- Trên một tin nhắn: **Báo cáo tin nhắn này** ([báo cáo](./features/reports.md)).
+
+---
+
+## ⚙️ Hai cách dùng một lệnh {#usage}
+
+Các lệnh kiểm duyệt thông dụng có hai định dạng: dạng slash, và dạng tin nhắn kèm tiền tố. Các lệnh khác, như `/sanctions`, `/snipe` hay `/audit`, chỉ dùng được dạng slash. [Danh sách lệnh bằng tin nhắn](./guides/prefix.md#activated) cho biết những lệnh nào chấp nhận tiền tố.
+
+### Lệnh slash: đơn giản nhất {#slash}
+
+Gõ `/` trong một kênh, chọn lệnh, và **Discord đề xuất từng tham số trong một giao diện chuyên dụng** (bộ chọn người dùng, bộ chọn kênh, tự động gợi ý thời lượng, v.v.). Đây là cách được khuyên dùng theo mặc định: bạn không phải nhớ gì cả.
+
+```
+/ban @user reason: spam lừa đảo
+```
+
+### Lệnh bằng tin nhắn: phức tạp nhất {#prefix}
+
+Khi đã [bật lệnh bằng tin nhắn trong `/settings`](./guides/prefix.md), bạn cũng có thể viết lệnh bằng tin nhắn thông thường (`?ban …`, `?kick …`, v.v.). Không có giao diện đồ họa: bạn phải **biết cú pháp** (đối số theo vị trí, cờ có tên, đối số tự do ở cuối dòng). Đổi lại, cách này nhanh hơn trên bàn phím đối với những người kiểm duyệt đã thành thạo lệnh.
+
+#### Đối số theo vị trí
+
+Được nhập theo thứ tự của mẫu lệnh, không có tên. Đây là các đối số chính của lệnh.
+
+```
+?ban 123456789012345678
+?slowmode 10s
+```
+
+#### Cờ có tên (`--name=value`)
+
+Dành cho các tùy chọn phụ. Các cờ có thể đặt **ở bất kỳ đâu** trong lệnh, theo bất kỳ thứ tự nào.
+
+- `--silent` (boolean): chỉ đơn giản là bật tùy chọn.
+- `--delete-messages=7d`: truyền một giá trị cho tùy chọn.
+
+```
+?ban @user --delete-messages=7d --silent lý do cấm
+?tempban @user 1d --silent họ lại tái phạm
+```
+
+#### Đối số “rest” (văn bản tự do)
+
+Đối số cuối cùng của một số lệnh (thường là `[reason]`) thu **toàn bộ những gì bạn viết sau đó**, kể cả khoảng trắng, mà không cần đặt trong dấu ngoặc kép.
+
+```
+?warn @user bạn lại vi phạm quy tắc số 3 của máy chủ
+```

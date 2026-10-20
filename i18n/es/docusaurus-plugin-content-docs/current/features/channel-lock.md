@@ -4,6 +4,7 @@ description: "El comando /lock de RaidProtect bloquea un canal al instante para 
 ---
 
 import ChannelLockMockup from '@site/src/components/DiscordMessage/mockups/channel-lock';
+import Settings from '@site/src/components/DiscordMessage/mockups/v2';
 
 {/* <ChannelLockMockup /> : oculta por el momento */}
 
@@ -11,31 +12,59 @@ A veces es necesario bloquear temporalmente un canal para impedir que los usuari
 
 ## 🔒 Bloquear un canal {#lock}
 
-Usa el comando: ```/lock [duration] [raison]```
+Usa el comando: ```/lock [channel] [duration] [reason]```
 
-Este comando retira los permisos de enviar mensajes al rol **@everyone** en el canal, impidiendo así que todos los usuarios publiquen. Reemplaza **[raison]** para indicar por qué se bloquea el canal (por ejemplo: *limpieza del chat*, *anuncio importante*, etc.).
+Este comando retira al rol **@everyone** los permisos de enviar mensajes y de enviar mensajes en hilos, en el canal indicado, impidiendo así que todos los usuarios publiquen.
+
+- Reemplaza `[channel]` con la mención o el [identificador](../guides/id.mdx) del canal que quieres bloquear. Sin canal, bloqueamos aquel donde ejecutas el comando. Se aceptan los canales de texto, de anuncios, de voz, foros, multimedia, de conferencia y las categorías; los hilos no.
+- Reemplaza `[reason]` para indicar por qué se bloquea el canal (por ejemplo: *limpieza del chat*, *anuncio importante*, etc.).
+
+:::info
+Un mismo canal solo puede bloquearse una vez cada 10 minutos.
+:::
 
 ### Bloqueo temporal {#lock-duration}
 
-El parámetro `[duration]` permite **desbloquear automáticamente el canal** tras la duración indicada (por ejemplo `15m`, `1h`, `2d`). Útil para una pausa rápida sin tener que acordarse de desbloquear el canal manualmente.
+El parámetro `[duration]` permite **desbloquear automáticamente el canal** tras la duración indicada (por ejemplo `15m`, `1h`, `2d`). Útil para una pausa rápida sin tener que acordarse de desbloquear el canal manualmente. La duración está limitada a la duración máxima de una sanción.
 
 ## 🔓 Desbloquear un canal {#unlock}
 
-Usa el comando: ```/unlock [raison]```
+Usa el comando: ```/unlock [channel] [reason]```
 
-Este comando restablece los permisos de enviar mensajes al estado previo al bloqueo para el rol **@everyone** en el canal, permitiendo de nuevo que los usuarios publiquen. Reemplaza **[raison]** para indicar por qué se desbloquea el canal (por ejemplo: *discusión reabierta*, *anuncio finalizado*, etc.).
+Este comando restablece al rol **@everyone** los permisos de enviar mensajes tal como estaban antes del bloqueo, permitiendo de nuevo que los usuarios publiquen. Reemplaza `[reason]` para indicar por qué se desbloquea el canal (por ejemplo: *discusión reabierta*, *anuncio finalizado*, etc.).
 
 :::warning
-Para que el comando de bloqueo funcione correctamente, debes asegurarte de que ningún rol tenga permiso explícito para hablar en ese canal. De lo contrario, los miembros con esos roles podrán seguir chateando.
+Para que el bloqueo funcione correctamente, ningún rol abierto a todos debe tener un permiso explícito para escribir en ese canal. De lo contrario, los miembros con esos roles podrán seguir chateando. Los acuerdos definidos para los roles de tu equipo, en cambio, son útiles: mantienen la palabra al staff durante un `/lock`, y la [auditoría](./audit.md) ya no los señala como redundantes.
 :::
 :::info
-Los comandos `lock` y `unlock` son [utilizables mediante prefijo](../guides/prefix.md).
+Los comandos `lock` y `unlock` son [utilizables mediante prefijo](../guides/prefix.md). Requieren el permiso “**Gestionar mensajes**”. RaidProtect necesita los permisos “**Gestionar canales**” y “**Gestionar roles**” para modificar los permisos del canal.
 :::
 
 ## ✏️ Configuración del candado {#config}
 
-Por defecto, esta función está desactivada. Sin embargo, tienes la posibilidad de elegir si los canales bloqueados deben renombrarse con un emoji de candado (🔒) añadido delante de su nombre.
+Puedes elegir si los canales bloqueados se renombran con un candado: `/lock` renombra entonces el canal como `🔒-nombre-del-canal`, y `/unlock` quita el prefijo. Así se ve el estado del canal directamente en la lista de canales. Esta opción está **desactivada por defecto**.
 
-Para activar/desactivar el candado delante de los nombres de los canales bloqueados:
-1. Usa el [comando `/settings`](../setup.md#settings).
-2. Haz clic en el botón "**Candado en los canales bloqueados**". Este botón funciona como un interruptor; un simple clic basta para activar o desactivar la opción.
+Para activar o desactivar el candado:
+1. Ejecuta el [comando `/settings`](../setup.md#settings).
+2. Abre la pestaña “**Utilidades**”.
+3. Haz clic en “**Activar**” (o “**Desactivar**”) junto a “**Bloqueo de canal**”. El botón funciona como un interruptor, un simple clic basta.
+
+<Settings start="home:utilities" />
+
+:::info
+El cambio de nombre requiere el permiso “**Gestionar canales**”.
+:::
+
+## Preguntas frecuentes {#faq}
+
+### ¿Se puede bloquear un canal distinto de aquel en el que uno se encuentra?
+
+Sí, indica el canal como primer argumento: `/lock #general 30m Raid en curso`.
+
+### ¿Por qué algunos miembros pueden seguir escribiendo en un canal bloqueado?
+
+El bloqueo solo quita la palabra al rol @everyone. Un rol que tenga un permiso explícito para escribir en ese canal lo conserva.
+
+### ¿Cómo añadir un candado al nombre de los canales bloqueados?
+
+En `/settings`, pestaña Utilidades, activa “Bloqueo de canal”. La opción está desactivada por defecto.

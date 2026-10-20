@@ -294,6 +294,12 @@ const LOCALE_TO_BCP47: Record<string, string> = {
   de: 'de-DE',
   es: 'es-ES',
   pt: 'pt-PT',
+  it: 'it-IT',
+  tr: 'tr-TR',
+  vi: 'vi-VN',
+  ja: 'ja-JP',
+  'zh-CN': 'zh-CN',
+  'zh-TW': 'zh-TW',
 };
 
 function BadgeImg({badge}: {badge: Badge}) {

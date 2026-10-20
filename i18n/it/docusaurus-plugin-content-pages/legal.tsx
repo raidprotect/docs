@@ -1,0 +1,80 @@
+import React, {type ReactNode} from 'react';
+import LegalLayout from '@site/src/components/LegalLayout';
+
+const GOOGLE_MAPS_URL =
+  'https://www.google.com/maps/place/16+Esp.+du+Champ+de+Mars,+35000+Rennes/@48.1044838,-1.675702,17z/data=!3m1!4b1!4m6!3m5!1s0x480edfca43c9b53b:0xdea9cc38f95f9839!8m2!3d48.1044838!4d-1.675702!16s%2Fg%2F11csm9r096?sa=X&ved=2ahUKEwiZ0ICZyYSEAxWpUqQEHTq1BdcQ8gF6BAgdEAA&entry=tts';
+
+export default function Legal(): ReactNode {
+  return (
+    <LegalLayout
+      title="Note legali"
+      lastUpdated="Ultimo aggiornamento: 1° febbraio 2025"
+      description="Consulta le note legali del bot Discord RaidProtect (RP), editore del sito raidprotect.bot. Informazioni generali e quadro giuridico di utilizzo.">
+      <section>
+        <p>
+          Il sito RaidProtect accessibile agli indirizzi “raidprotect.bot” e
+          “docs.raidprotect.bot” (di seguito denominato “Sito”) e l’applicazione RaidProtect
+          accessibile da Discord “466578580449525760” (di seguito denominata “Applicazione”) sono
+          editi da SAS French Community Agency. Le informazioni fornite sul Sito sono presentate a
+          titolo indicativo e generale e non hanno alcuna pretesa di esaustività. Nonostante tutta
+          la cura e il rigore impiegati nella realizzazione del Sito e nel suo aggiornamento
+          regolare, nelle informazioni presentate potrebbero essersi insinuati degli errori. Gli
+          utenti del Sito dovranno quindi effettuare tutte le verifiche opportune e sono gli unici
+          responsabili dell’uso che fanno delle informazioni accessibili.
+        </p>
+        <p>Responsabile della pubblicazione: Arthur Battais</p>
+      </section>
+      <hr />
+      <section>
+        <h2>Società</h2>
+        <p>
+          <strong>SAS French Community Agency</strong>
+          <br />
+          <strong>Sigla: FCA</strong>
+          <br />
+          <strong>Capitale sociale di 10.000 €</strong>
+          <br />
+          <a href={GOOGLE_MAPS_URL} target="_blank" rel="noopener noreferrer">
+            16 Esplanade du Champ de Mars, 35000 Rennes
+          </a>
+        </p>
+        <p>
+          +33 (0)9 72 14 95 51
+          <br />
+          <a href="mailto:hello@fca.gg">hello@fca.gg</a>
+        </p>
+        <p>
+          SIRET:{' '}
+          <a
+            href="https://annuaire-entreprises.data.gouv.fr/etablissement/98385625300023"
+            target="_blank"
+            rel="noopener noreferrer">
+            983 856 253 00023
+          </a>
+          <br />
+          Partita IVA:{' '}
+          <a
+            href="https://ec.europa.eu/taxation_customs/vies/#/vat-validation"
+            target="_blank"
+            rel="noopener noreferrer">
+            FR03983856253
+          </a>
+        </p>
+        <p>
+          Marchio commerciale: <strong>RaidProtect</strong>
+          <br />
+          <a href="mailto:contact@raidprotect.bot">contact@raidprotect.bot</a>
+        </p>
+      </section>
+      <hr />
+      <section>
+        <h2>Hosting</h2>
+        <p>
+          Il Sito è ospitato dalla società Hetzner (Hetzner Online GmbH), con sede legale in
+          Industriestr. 25 - 91710 Gunzenhausen - Germania, e-mail: info@hetzner.com e telefono:
+          +49 (0)9831 505-0.
+        </p>
+      </section>
+    </LegalLayout>
+  );
+}

@@ -96,7 +96,7 @@
     "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.docs.tagDocListPageTitle": {
-    "message": "{nDocsTagged} con \"{tagName}\"",
+    "message": "{nDocsTagged} con “{tagName}”",
     "description": "The title of the page for a docs tag"
   },
   "theme.docs.versionBadge.label": {
@@ -275,7 +275,7 @@
     "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.blog.tagTitle": {
-    "message": "{nPosts} etiquetados con \"{tagName}\"",
+    "message": "{nPosts} etiquetados con “{tagName}”",
     "description": "The title of the page for a blog tag"
   },
   "theme.blog.author.pageTitle": {
@@ -384,7 +384,7 @@
     "message": "No se ha especificado ningún archivo"
   },
   "editor.error.noSource.description": {
-    "message": "Usa el enlace \"Editar esta página\" desde una página de documentación."
+    "message": "Usa el enlace “Editar esta página” desde una página de documentación."
   },
   "editor.error.notFound": {
     "message": "Este archivo no se encontró en el repositorio."
@@ -566,7 +566,7 @@
     "description": "Feature row call to action: captcha"
   },
   "landing.features.auth.title": {
-    "message": "Authentication Manager",
+    "message": "Authentification Manager",
     "description": "Feature card title: auth"
   },
   "landing.features.auth.description": {
@@ -914,7 +914,7 @@
     "description": "Discord permission name"
   },
   "premium.feature.authManager.title": {
-    "message": "Authentication Manager ampliado"
+    "message": "Authentification Manager ampliado"
   },
   "premium.feature.authManager.desc": {
     "message": "Más roles protegidos, más usuarios autorizados y sesiones el doble de largas."
@@ -1001,7 +1001,7 @@
     "message": "Moderación completa (ban, kick, mute, jail…)"
   },
   "premium.compare.cat.authManager": {
-    "message": "Authentication Manager"
+    "message": "Authentification Manager"
   },
   "premium.compare.row.protectedRoles": {
     "message": "Roles protegidos"
@@ -1097,7 +1097,7 @@
     "message": "Premium"
   },
   "premium.layout.description": {
-    "message": "Descubre RaidProtect Premium: personalización del bot, Authentication Manager ampliado, sanciones HoneyPot avanzadas, acceso a las funciones en beta pública."
+    "message": "Descubre RaidProtect Premium: personalización del bot, Authentification Manager ampliado, sanciones HoneyPot avanzadas, acceso a las funciones en beta pública."
   },
   "premium.hero.title.line1": {
     "message": "Una protección a tu imagen,",
@@ -1159,11 +1159,11 @@
     "message": "Activar Premium ahora"
   },
   "commands.copy.label": {
-    "message": "Copier la commande",
+    "message": "Copiar el comando",
     "description": "Aria-label of the copy button on command cells"
   },
   "theme.docs.sidebar.versionLabel": {
-    "message": "Version",
+    "message": "Versión",
     "description": "Label of the version selector in the docs sidebar"
   },
   "editor.sidebar.title": {
@@ -1259,7 +1259,7 @@
     "message": "No. La versión gratuita sigue completa y seguirá evolucionando al mismo ritmo. El Premium es para servidores que necesitan más: límites ampliados, personalización avanzada y acceso anticipado."
   },
   "premium.faq.q.lifetime": {
-    "message": "¿Qué significa «precio bloqueado de por vida»?"
+    "message": "¿Qué significa “precio bloqueado de por vida”?"
   },
   "premium.faq.a.lifetime": {
     "message": "La oferta Founder bloquea tu precio para siempre. Mientras tu suscripción siga activa, tu precio no cambia, aunque se introduzcan nuevos planes y la oferta Founder se retire de la tienda."
@@ -1268,7 +1268,7 @@
     "message": "¿Cómo activo el Premium?"
   },
   "premium.faq.a.activate": {
-    "message": "Escribe /settings en tu servidor de Discord y haz clic en «Premium», o ve directamente a la tienda de RaidProtect en Discord. La activación tarda unos segundos."
+    "message": "Escribe /settings en tu servidor de Discord y haz clic en “Premium”, o ve directamente a la tienda de RaidProtect en Discord. La activación tarda unos segundos."
   },
   "premium.faq.q.cancel": {
     "message": "¿Puedo cancelar cuando quiera?"
@@ -1487,7 +1487,7 @@
     "message": "Tu mensaje no se pudo entregar."
   },
   "mockup.dmlockConcept.targets": {
-    "message": "Mass DM · {delivered}/{total} recibidos"
+    "message": "MD masivo · {delivered}/{total} recibidos"
   },
   "mockup.dmlockConcept.friend": {
     "message": "amigo"
@@ -2036,7 +2036,7 @@
     "message": "Configura el cierre de mensajes directos para prevenir intentos de phishing o estafa."
   },
   "mockup.settingsMenus.dmlock.desc2": {
-    "message": "RaidProtect desactivará los mensajes privados de forma permanente hasta que desactives esta protección. Usamos la función \"Acciones de ciberseguridad de Discord\" (limitada a 24h por Discord, extendida a siempre por RaidProtect)."
+    "message": "RaidProtect desactivará los mensajes privados de forma permanente hasta que desactives esta protección. Usamos la función “Acciones de ciberseguridad de Discord” (limitada a 24h por Discord, extendida a siempre por RaidProtect)."
   },
   "mockup.settingsMenus.dmlock.warning": {
     "message": "Solo los bots, los miembros que ya han intercambiado o son amigos y el personal podrán recibir MD con este modo."
@@ -2238,7 +2238,7 @@
   },
   "premium.hero.founder.taken": {
     "message": "plazas Founder (precio bloqueado de por vida)",
-    "description": "Libellé du compteur Founder (places prises)"
+    "description": "Libellé du compteur Founder (places prises, tarif verrouillé à vie)"
   },
   "premium.hero.founder.remaining": {
     "message": "Solo quedan {remaining} al precio bloqueado de por vida",
@@ -2246,7 +2246,7 @@
   },
   "landing.features.further.eyebrow": {
     "message": "¿Quieres ir más lejos?",
-    "description": "Features section go-further offers"
+    "description": "Eyebrow above the two paid offers at the end of the features section"
   },
   "landing.features.further.founder.name": {
     "message": "Founder",
@@ -2258,7 +2258,7 @@
   },
   "landing.features.further.founder.desc": {
     "message": "Personaliza el bot a tu imagen, amplía los límites de cada módulo y recibe las novedades en acceso anticipado.",
-    "description": "Features section go-further offers"
+    "description": "Founder offer card description"
   },
   "landing.features.further.founder.subscribe": {
     "message": "Suscribirse vía Discord",
@@ -2266,7 +2266,7 @@
   },
   "landing.features.further.business.name": {
     "message": "Business",
-    "description": "Features section go-further offers"
+    "description": "Business offer card name"
   },
   "landing.features.further.business.price": {
     "message": "Bajo solicitud",
@@ -2274,23 +2274,21 @@
   },
   "landing.features.further.business.desc": {
     "message": "Instancia dedicada y aislada, auditoría de seguridad y acompañamiento humano para proyectos exigentes.",
-    "description": "Features section go-further offers"
+    "description": "Business offer card description"
   },
   "landing.features.further.business.call": {
     "message": "Reservar una llamada",
-    "description": "Features section go-further offers"
+    "description": "Book a call CTA on the Business card"
   },
   "landing.features.further.discover": {
     "message": "Descubrir",
-    "description": "Features section go-further offers"
+    "description": "Discover CTA on offer cards"
   },
   "landing.businessBubble.title": {
-    "message": "¿Eres una empresa?",
-    "description": "Floating bubble on the landing that guides companies to the Business page"
+    "message": "¿Eres una empresa?"
   },
   "landing.businessBubble.sub": {
-    "message": "Descubre la oferta Business",
-    "description": "Floating bubble on the landing that guides companies to the Business page"
+    "message": "Descubre la oferta Business"
   },
   "landing.businessBubble.close": {
     "message": "Cerrar",
@@ -2298,55 +2296,55 @@
   },
   "business.cta.call": {
     "message": "Reservar una llamada",
-    "description": "Business page (/business)"
+    "description": "Business CTA: book a call"
   },
   "business.meta.description": {
     "message": "RaidProtect Business: auditoría con un experto, instancia dedicada y aislada, protecciones a medida y desarrollo personalizado para organizaciones exigentes.",
-    "description": "Business page (/business)"
+    "description": "Business page meta description"
   },
   "business.hero.title": {
     "message": "Mucho más que un bot:",
-    "description": "Business page (/business)"
+    "description": "Business hero title, first line"
   },
   "business.hero.titleAccent": {
     "message": "tu socio en Discord",
-    "description": "Business page (/business)"
+    "description": "Business hero title, accented second line"
   },
   "business.hero.subtitle": {
     "message": "La protección y la moderación de tu servidor de Discord, gestionadas de principio a fin por nuestros expertos. Una oferta a medida, adaptada a tu organización.",
-    "description": "Business page (/business)"
+    "description": "Business hero subtitle"
   },
   "business.hero.cta.offer": {
     "message": "Ver la oferta",
-    "description": "Business page (/business)"
+    "description": "Business hero secondary CTA: see the offer"
   },
   "business.trust.label": {
     "message": "Confían en nosotros",
-    "description": "Business page (/business)"
+    "description": "Trust band label above brand logos"
   },
   "business.who.eyebrow": {
     "message": "¿Para quién?",
-    "description": "Business page (/business)"
+    "description": "Who-is-it-for section eyebrow"
   },
   "business.who.title": {
     "message": "Cuando lo estándar ya no basta",
-    "description": "Business page (/business)"
+    "description": "Who-is-it-for section title"
   },
   "business.who.sub": {
     "message": "Grandes comunidades, marcas, medios, creadores: a esta escala, una brecha de seguridad o un raid compromete tu imagen. Necesitas más que una suscripción: un interlocutor, garantías y una protección gestionada por humanos.",
-    "description": "Business page (/business)"
+    "description": "Who-is-it-for section paragraph"
   },
   "business.offer.eyebrow": {
     "message": "La oferta Business",
-    "description": "Business page (/business)"
+    "description": "Offer section eyebrow"
   },
   "business.offer.title": {
     "message": "Protección y moderación, a medida",
-    "description": "Business page (/business)"
+    "description": "Offer section title"
   },
   "business.offer.sub": {
     "message": "Todo es opcional: compones tu oferta a la carta, solo con lo que necesitas.",
-    "description": "Business page (/business)"
+    "description": "Offer section subtitle"
   },
   "business.offer.audit.title": {
     "message": "Auditoría de seguridad con un experto",
@@ -2398,23 +2396,23 @@
   },
   "business.mods.eyebrow": {
     "message": "Moderación humana",
-    "description": "Business page (/business)"
+    "description": "Moderators section eyebrow"
   },
   "business.mods.title": {
     "message": "Un equipo certificado por Discord",
-    "description": "Business page (/business)"
+    "description": "Moderators section title"
   },
   "business.mods.sub": {
     "message": "Formados y certificados por el programa oficial de moderación de Discord, en francés e inglés. Como refuerzo puntual o asumiendo por completo tu servidor.",
-    "description": "Business page (/business)"
+    "description": "Moderators section subtitle"
   },
   "business.mods.created": {
     "message": "Cuenta creada",
-    "description": "Business page (/business)"
+    "description": "Moderator card: account creation date label"
   },
   "business.mods.since": {
     "message": "Modera desde",
-    "description": "Business page (/business)"
+    "description": "Moderator card: moderating-since label"
   },
   "business.badge.mod": {
     "message": "Moderador certificado",
@@ -2422,11 +2420,11 @@
   },
   "business.security.eyebrow": {
     "message": "Seguridad y cumplimiento",
-    "description": "Business page (/business)"
+    "description": "Security section eyebrow"
   },
   "business.security.title": {
     "message": "Una infraestructura conforme y controlada",
-    "description": "Business page (/business)"
+    "description": "Security section title"
   },
   "business.security.encrypted.title": {
     "message": "Datos cifrados",
@@ -2462,11 +2460,11 @@
   },
   "business.steps.eyebrow": {
     "message": "Cómo funciona",
-    "description": "Business page (/business)"
+    "description": "Steps section eyebrow"
   },
   "business.steps.title": {
     "message": "De la auditoría al seguimiento",
-    "description": "Business page (/business)"
+    "description": "Steps section title"
   },
   "business.steps.audit.title": {
     "message": "Auditoría",
@@ -2506,15 +2504,15 @@
   },
   "business.final.title": {
     "message": "Hablemos de tu proyecto",
-    "description": "Business page (/business)"
+    "description": "Final CTA title"
   },
   "business.final.sub": {
     "message": "Una llamada de 30 minutos para concretar tus necesidades y definir la protección adecuada para tu servidor.",
-    "description": "Business page (/business)"
+    "description": "Final CTA subtitle"
   },
   "business.final.fcaNote": {
     "message": "¿Necesitas ir más allá de la protección? Dinamización, rediseño de servidor, community management: es el oficio de nuestra agencia, {link}.",
-    "description": "Business page (/business)"
+    "description": "Final note about the FCA agency; {link} renders the agency link"
   },
   "business.badge.hse": {
     "message": "HypeSquad Events",
@@ -2661,7 +2659,7 @@
     "description": "Timezone tool: empty search result"
   },
   "tools.timezone.help": {
-    "message": "Copia el valor de arriba y pégalo en RaidProtect cuando se te pida una zona horaria (usa el formato estándar «Continente/Ciudad», por ejemplo {code}).",
+    "message": "Copia el valor de arriba y pégalo en RaidProtect cuando se te pida una zona horaria (usa el formato estándar “Continente/Ciudad”, por ejemplo {code}).",
     "description": "Timezone tool: closing help paragraph; {code} renders an example zone in a <code> tag"
   },
   "communities.games.meta.title": {
@@ -2713,7 +2711,7 @@
     "description": "Games threat 2 description"
   },
   "communities.games.threat.spam.title": {
-    "message": "Estafas «free robux» y cheats",
+    "message": "Estafas “free robux” y cheats",
     "description": "Games threat 3 title"
   },
   "communities.games.threat.spam.description": {
@@ -2889,7 +2887,7 @@
     "description": "Creators threat 3 title"
   },
   "communities.creators.threat.spam.description": {
-    "message": "Los enlaces de autopromoción, las estafas «free nitro» y las avalanchas de emojis ahogan las conversaciones reales de tu comunidad.",
+    "message": "Los enlaces de autopromoción, las estafas “free nitro” y las avalanchas de emojis ahogan las conversaciones reales de tu comunidad.",
     "description": "Creators threat 3 description"
   },
   "communities.creators.features.title": {
@@ -2917,7 +2915,7 @@
     "description": "Creators feature Anti-spam title"
   },
   "communities.creators.feature.antispam.description": {
-    "message": "Sanciona el flood, la autopromoción y los enlaces «free nitro» sin que muevas un dedo.",
+    "message": "Sanciona el flood, la autopromoción y los enlaces “free nitro” sin que muevas un dedo.",
     "description": "Creators feature Anti-spam description"
   },
   "communities.creators.feature.antispam.cta": {
@@ -3006,7 +3004,7 @@
   },
   "cta.pro.label": {
     "message": "¿Profesional?",
-    "description": "Prefix of the professional links line under the hero buttons"
+    "description": "Prefix of the professional link under the hero buttons"
   },
   "cta.pro.offer": {
     "message": "Descubrir nuestra oferta",
@@ -3133,7 +3131,7 @@
     "description": "li title"
   },
   "learn.discord-nuke.s4.i1.b2": {
-    "message": "Es de lejos la protección más eficaz. Concede «Administrador», «Gestionar canales» o «Gestionar roles» solo a las personas en las que confías de verdad, y da a cada una lo estrictamente necesario: es el principio del {link}.",
+    "message": "Es de lejos la protección más eficaz. Concede “Administrador”, “Gestionar canales” o “Gestionar roles” solo a las personas en las que confías de verdad, y da a cada una lo estrictamente necesario: es el principio del {link}.",
     "description": "li body with link"
   },
   "learn.discord-nuke.s4.i1.link": {
@@ -3165,7 +3163,7 @@
     "description": "li body with link"
   },
   "learn.discord-nuke.s4.i4b.link": {
-    "message": "Authentication Manager",
+    "message": "Authentification Manager",
     "description": "link label"
   },
   "learn.discord-nuke.s4.i5.t": {
@@ -3225,7 +3223,7 @@
     "description": "related"
   },
   "learn.discord-nuke.rel4b": {
-    "message": "El Authentication Manager",
+    "message": "El Authentification Manager",
     "description": "related"
   },
   "learn.discord-raid.metaTitle": {
@@ -3441,7 +3439,7 @@
     "description": "related link"
   },
   "learn.honeypot-warming.metaTitle": {
-    "message": "Canal HoneyPot «activo»: ¿hace falta un bot para animarlo?",
+    "message": "Canal HoneyPot “activo”: ¿hace falta un bot para animarlo?",
     "description": "Learn explainer meta title: honeypot activity"
   },
   "learn.honeypot-warming.metaDescription": {
@@ -3449,11 +3447,11 @@
     "description": "Learn explainer meta description: honeypot activity"
   },
   "learn.honeypot-warming.title": {
-    "message": "¿Hace falta un bot para mantener un canal HoneyPot «activo»?",
+    "message": "¿Hace falta un bot para mantener un canal HoneyPot “activo”?",
     "description": "H1"
   },
   "learn.honeypot-warming.definition": {
-    "message": "No. Un canal HoneyPot no necesita que un bot lo «anime». Para saber si un canal está activo, hay que leer los mensajes… y por tanto ver quién los ha escrito. Una actividad falsa se detecta de inmediato, y de todos modos las cuentas que hacen spam no hacen esa comprobación.",
+    "message": "No. Un canal HoneyPot no necesita que un bot lo “anime”. Para saber si un canal está activo, hay que leer los mensajes… y por tanto ver quién los ha escrito. Una actividad falsa se detecta de inmediato, y de todos modos las cuentas que hacen spam no hacen esa comprobación.",
     "description": "TL;DR answer"
   },
   "learn.honeypot-warming.s1.h": {
@@ -3473,11 +3471,11 @@
     "description": "link"
   },
   "learn.honeypot-warming.s2.h": {
-    "message": "La idea equivocada: «el canal tiene que parecer vivo»",
+    "message": "La idea equivocada: “el canal tiene que parecer vivo”",
     "description": "h"
   },
   "learn.honeypot-warming.s2.p1": {
-    "message": "A veces se lee este consejo: tener un bot que postee mensajes en el HoneyPot para «calentarlo», de modo que los spammers lo crean activo y vayan a postear en él. La intención parece lógica… pero no se sostiene, y encima es contraproducente.",
+    "message": "A veces se lee este consejo: tener un bot que postee mensajes en el HoneyPot para “calentarlo”, de modo que los spammers lo crean activo y vayan a postear en él. La intención parece lógica… pero no se sostiene, y encima es contraproducente.",
     "description": "p"
   },
   "learn.honeypot-warming.s3.h": {
@@ -3485,15 +3483,15 @@
     "description": "h"
   },
   "learn.honeypot-warming.s3.p1": {
-    "message": "Hazte la pregunta: ¿cómo se sabe que un canal está «activo»? Hay que leer sus últimos mensajes. No hay otra manera.",
+    "message": "Hazte la pregunta: ¿cómo se sabe que un canal está “activo”? Hay que leer sus últimos mensajes. No hay otra manera.",
     "description": "p"
   },
   "learn.honeypot-warming.s3.p2": {
-    "message": "Y ahí está el problema: {strong}. Cada mensaje muestra a su autor. Así que si un bot ha «calentado» el canal, cualquiera que mire vería que toda la actividad viene de un solo y mismo bot. El engaño se nota al instante.",
+    "message": "Y ahí está el problema: {strong}. Cada mensaje muestra a su autor. Así que si un bot ha “calentado” el canal, cualquiera que mire vería que toda la actividad viene de un solo y mismo bot. El engaño se nota al instante.",
     "description": "p with emphasis"
   },
   "learn.honeypot-warming.s3.p3": {
-    "message": "Dicho de otro modo: no existe ninguna manera de automatizar «de forma inteligente» un canal falso lleno de vida. El autor de los mensajes siempre delata que la actividad es falsa.",
+    "message": "Dicho de otro modo: no existe ninguna manera de automatizar “de forma inteligente” un canal falso lleno de vida. El autor de los mensajes siempre delata que la actividad es falsa.",
     "description": "p"
   },
   "learn.honeypot-warming.s4.h": {
@@ -3537,7 +3535,7 @@
     "description": "faq a"
   },
   "learn.honeypot-warming.faq.q2": {
-    "message": "Un bot que «calienta» el canal, ¿ayuda?",
+    "message": "Un bot que “calienta” el canal, ¿ayuda?",
     "description": "faq q"
   },
   "learn.honeypot-warming.faq.a2": {
@@ -3617,7 +3615,7 @@
     "description": "h"
   },
   "learn.least-privilege.s1.p1": {
-    "message": "Cada persona y cada bot recibe solo {strong}. En Discord, esto significa evitar repartir el permiso «Administrador» a diestro y siniestro, preferir permisos granulares repartidos por rol (gestionar mensajes, expulsar, gestionar canales…) y mantener una jerarquía de roles clara.",
+    "message": "Cada persona y cada bot recibe solo {strong}. En Discord, esto significa evitar repartir el permiso “Administrador” a diestro y siniestro, preferir permisos granulares repartidos por rol (gestionar mensajes, expulsar, gestionar canales…) y mantener una jerarquía de roles clara.",
     "description": "p with emphasis"
   },
   "learn.least-privilege.s2.h": {
@@ -3641,7 +3639,7 @@
     "description": "h"
   },
   "learn.least-privilege.s3.i1": {
-    "message": "Concede «Administrador» solo a muy pocas personas de confianza.",
+    "message": "Concede “Administrador” solo a muy pocas personas de confianza.",
     "description": "li"
   },
   "learn.least-privilege.s3.i2": {
@@ -3669,7 +3667,7 @@
     "description": "h"
   },
   "learn.least-privilege.s4.p1": {
-    "message": "El mínimo privilegio reduce el número de cuentas poderosas, pero esas cuentas siguen siendo un blanco de primera. Ahí es donde entra el Authentication Manager de RaidProtect.",
+    "message": "El mínimo privilegio reduce el número de cuentas poderosas, pero esas cuentas siguen siendo un blanco de primera. Ahí es donde entra el Authentification Manager de RaidProtect.",
     "description": "p"
   },
   "learn.least-privilege.s4.p2": {
@@ -3677,11 +3675,11 @@
     "description": "p with code and link"
   },
   "learn.least-privilege.s4.link": {
-    "message": "Authentication Manager",
+    "message": "Authentification Manager",
     "description": "link"
   },
   "learn.least-privilege.s4.p3": {
-    "message": "Resultado: aunque la cuenta de un miembro del staff sea comprometida, el atacante no obtiene {strong}. También tendría que superar la autenticación, y la ventana de acceso es corta. Es el mínimo privilegio aplicado no solo al «quién», sino también al «por cuánto tiempo».",
+    "message": "Resultado: aunque la cuenta de un miembro del staff sea comprometida, el atacante no obtiene {strong}. También tendría que superar la autenticación, y la ventana de acceso es corta. Es el mínimo privilegio aplicado no solo al “quién”, sino también al “por cuánto tiempo”.",
     "description": "p with emphasis"
   },
   "learn.least-privilege.faq.q1": {
@@ -3709,7 +3707,7 @@
     "description": "faq a"
   },
   "learn.least-privilege.faq.q4": {
-    "message": "¿Qué relación tiene con el Authentication Manager?",
+    "message": "¿Qué relación tiene con el Authentification Manager?",
     "description": "faq q"
   },
   "learn.least-privilege.faq.a4": {
@@ -3725,7 +3723,7 @@
     "description": "related"
   },
   "learn.least-privilege.rel3": {
-    "message": "El Authentication Manager",
+    "message": "El Authentification Manager",
     "description": "related"
   },
   "learn.least-privilege.rel4": {
@@ -3753,7 +3751,7 @@
     "description": "h"
   },
   "learn.self-bot.s1.p1": {
-    "message": "Un bot oficial está declarado ante Discord, se añade mediante una autorización, muestra una insignia «APP» y solo tiene los permisos que se le conceden. Un self-bot, en cambio, secuestra una cuenta humana normal para actuar por sí solo.",
+    "message": "Un bot oficial está declarado ante Discord, se añade mediante una autorización, muestra una insignia “APP” y solo tiene los permisos que se le conceden. Un self-bot, en cambio, secuestra una cuenta humana normal para actuar por sí solo.",
     "description": "p"
   },
   "learn.self-bot.s1.col1": {
@@ -3781,7 +3779,7 @@
     "description": "row"
   },
   "learn.self-bot.s1.bot.vis": {
-    "message": "Insignia «APP» visible",
+    "message": "Insignia “APP” visible",
     "description": "cell"
   },
   "learn.self-bot.s1.self.vis": {
@@ -3885,7 +3883,7 @@
     "description": "faq q"
   },
   "learn.self-bot.faq.a2": {
-    "message": "No tiene insignia «APP» y se comporta de forma anormal (mensajes muy rápidos, reacciones instantáneas, presencia permanente). A simple vista es difícil: de ahí el interés del captcha y del anti-spam.",
+    "message": "No tiene insignia “APP” y se comporta de forma anormal (mensajes muy rápidos, reacciones instantáneas, presencia permanente). A simple vista es difícil: de ahí el interés del captcha y del anti-spam.",
     "description": "faq a"
   },
   "learn.self-bot.faq.q3": {
@@ -3921,23 +3919,23 @@
     "description": "related"
   },
   "learn.self-bot.rel5": {
-    "message": "¿Hace falta un bot para mantener un canal HoneyPot «activo»?",
+    "message": "¿Hace falta un bot para mantener un canal HoneyPot “activo”?",
     "description": "related"
   },
   "learn.server-raidable.metaTitle": {
-    "message": "«This server is raidable»: qué significa y cómo corregirlo",
+    "message": "“This server is raidable”: qué significa y cómo corregirlo",
     "description": "Learn explainer meta title: this server is raidable"
   },
   "learn.server-raidable.metaDescription": {
-    "message": "¿Un bot como Jalapeno muestra «this server is raidable»? Ese mensaje solo indica que las aplicaciones externas están permitidas. Qué significa de verdad y cómo proteger tu servidor.",
+    "message": "¿Un bot como Jalapeno muestra “this server is raidable”? Ese mensaje solo indica que las aplicaciones externas están permitidas. Qué significa de verdad y cómo proteger tu servidor.",
     "description": "Learn explainer meta description: this server is raidable"
   },
   "learn.server-raidable.title": {
-    "message": "«This server is raidable»: ¿hay que preocuparse?",
+    "message": "“This server is raidable”: ¿hay que preocuparse?",
     "description": "H1"
   },
   "learn.server-raidable.definition": {
-    "message": "El mensaje «this server is raidable» viene de un bot como Jalapeno, instalado como aplicación de usuario. Solo indica que tus miembros pueden usar aplicaciones externas, lo que podría servir para hacer spam mediante mensajes de seguimiento. No es una vulnerabilidad en sí, y dos ajustes bastan para protegerse.",
+    "message": "El mensaje “this server is raidable” viene de un bot como Jalapeno, instalado como aplicación de usuario. Solo indica que tus miembros pueden usar aplicaciones externas, lo que podría servir para hacer spam mediante mensajes de seguimiento. No es una vulnerabilidad en sí, y dos ajustes bastan para protegerse.",
     "description": "TL;DR"
   },
   "learn.server-raidable.s1.h": {
@@ -3945,11 +3943,11 @@
     "description": "h"
   },
   "learn.server-raidable.s1.p1": {
-    "message": "Discord permite instalar aplicaciones directamente en tu cuenta, las «aplicaciones de usuario». Una vez instalada, puedes usar sus comandos en cualquier servidor que permita las aplicaciones externas, aunque la aplicación no esté añadida ahí.",
+    "message": "Discord permite instalar aplicaciones directamente en tu cuenta, las “aplicaciones de usuario”. Una vez instalada, puedes usar sus comandos en cualquier servidor que permita las aplicaciones externas, aunque la aplicación no esté añadida ahí.",
     "description": "p"
   },
   "learn.server-raidable.s1.p2": {
-    "message": "Algunas aplicaciones maliciosas se aprovechan de ello: mediante un comando, envían una ráfaga de mensajes de seguimiento («follow-up») en el canal, lo que permite {spam} un servidor sin siquiera estar invitado en él. El mensaje aparece a nombre de la aplicación, pero es un miembro quien lo ha desencadenado.",
+    "message": "Algunas aplicaciones maliciosas se aprovechan de ello: mediante un comando, envían una ráfaga de mensajes de seguimiento (“follow-up”) en el canal, lo que permite {spam} un servidor sin siquiera estar invitado en él. El mensaje aparece a nombre de la aplicación, pero es un miembro quien lo ha desencadenado.",
     "description": "p with link"
   },
   "learn.server-raidable.s1.spam": {
@@ -3957,11 +3955,11 @@
     "description": "link"
   },
   "learn.server-raidable.s2.h": {
-    "message": "«This server is raidable»: lo que significa de verdad",
+    "message": "“This server is raidable”: lo que significa de verdad",
     "description": "h"
   },
   "learn.server-raidable.s2.p1": {
-    "message": "Bots como Jalapeno ofrecen un comando que muestra «this server is raidable». En realidad, esa prueba se limita a comprobar una sola cosa: ¿tienen los miembros permiso para usar aplicaciones externas? Si es así, muestra «raidable».",
+    "message": "Bots como Jalapeno ofrecen un comando que muestra “this server is raidable”. En realidad, esa prueba se limita a comprobar una sola cosa: ¿tienen los miembros permiso para usar aplicaciones externas? Si es así, muestra “raidable”.",
     "description": "p"
   },
   "learn.server-raidable.s2.p2": {
@@ -3969,7 +3967,7 @@
     "description": "p with emphasis"
   },
   "learn.server-raidable.s3.h": {
-    "message": "Cómo corregir «this server is raidable»",
+    "message": "Cómo corregir “this server is raidable”",
     "description": "h"
   },
   "learn.server-raidable.s3.intro": {
@@ -3981,7 +3979,7 @@
     "description": "li title"
   },
   "learn.server-raidable.s3.i1.b": {
-    "message": "En los permisos del rol @everyone (o por canal), quita «Usar aplicaciones externas» (Use External Apps). Los miembros ya no podrán desencadenar aplicaciones de usuario. Acuérdate de probar con una cuenta no administradora: un admin se salta el permiso y seguirá viendo «raidable».",
+    "message": "En los permisos del rol @everyone (o por canal), quita “Usar aplicaciones externas” (Use External Apps). Los miembros ya no podrán desencadenar aplicaciones de usuario. Acuérdate de probar con una cuenta no administradora: un admin se salta el permiso y seguirá viendo “raidable”.",
     "description": "li body"
   },
   "learn.server-raidable.s3.i2.t": {
@@ -3989,7 +3987,7 @@
     "description": "li title"
   },
   "learn.server-raidable.s3.i2.b": {
-    "message": "Si prefieres conservar las aplicaciones externas (tienen usos legítimos), el {link} de RaidProtect detecta el spam por mensajes de seguimiento, se remonta hasta el miembro que lo ha desencadenado y lo sanciona automáticamente. Quienes intentan «raidearte» de esta forma se quedan fuera de inmediato.",
+    "message": "Si prefieres conservar las aplicaciones externas (tienen usos legítimos), el {link} de RaidProtect detecta el spam por mensajes de seguimiento, se remonta hasta el miembro que lo ha desencadenado y lo sanciona automáticamente. Quienes intentan “raidearte” de esta forma se quedan fuera de inmediato.",
     "description": "li body with link"
   },
   "learn.server-raidable.s3.i2.link": {
@@ -3997,7 +3995,7 @@
     "description": "link"
   },
   "learn.server-raidable.faq.q1": {
-    "message": "¿Qué significa «this server is raidable»?",
+    "message": "¿Qué significa “this server is raidable”?",
     "description": "faq q"
   },
   "learn.server-raidable.faq.a1": {
@@ -4005,19 +4003,19 @@
     "description": "faq a"
   },
   "learn.server-raidable.faq.q2": {
-    "message": "¿Es fiable la prueba «raidable» de Jalapeno?",
+    "message": "¿Es fiable la prueba “raidable” de Jalapeno?",
     "description": "faq q"
   },
   "learn.server-raidable.faq.a2": {
-    "message": "Se limita a comprobar un permiso. Y si haces la prueba con una cuenta administradora, mostrará siempre «raidable», porque los admins se saltan los permisos. Hay que tomárselo con mucha cautela.",
+    "message": "Se limita a comprobar un permiso. Y si haces la prueba con una cuenta administradora, mostrará siempre “raidable”, porque los admins se saltan los permisos. Hay que tomárselo con mucha cautela.",
     "description": "faq a"
   },
   "learn.server-raidable.faq.q3": {
-    "message": "¿Cómo quitar el mensaje «this server is raidable»?",
+    "message": "¿Cómo quitar el mensaje “this server is raidable”?",
     "description": "faq q"
   },
   "learn.server-raidable.faq.a3": {
-    "message": "Desactiva «Usar aplicaciones externas» para los miembros (probando con una cuenta no admin), o añade RaidProtect, cuyo anti-spam detecta y sanciona estos intentos.",
+    "message": "Desactiva “Usar aplicaciones externas” para los miembros (probando con una cuenta no admin), o añade RaidProtect, cuyo anti-spam detecta y sanciona estos intentos.",
     "description": "faq a"
   },
   "learn.server-raidable.faq.q4": {
@@ -4069,7 +4067,7 @@
     "description": "li"
   },
   "learn.spam-discord.s1.i2": {
-    "message": "Enlaces de estafa y phishing: falsos «Nitro gratis», drenadores de wallet, falsas promociones.",
+    "message": "Enlaces de estafa y phishing: falsos “Nitro gratis”, drenadores de wallet, falsas promociones.",
     "description": "li"
   },
   "learn.spam-discord.s1.i3": {
@@ -4213,7 +4211,7 @@
     "description": "related"
   },
   "learn.spam-discord.rel6": {
-    "message": "«This server is raidable»: ¿hay que preocuparse?",
+    "message": "“This server is raidable”: ¿hay que preocuparse?",
     "description": "related"
   },
   "learn.token-grabber.metaTitle": {
@@ -4249,11 +4247,11 @@
     "description": "p"
   },
   "learn.token-grabber.s2.i1": {
-    "message": "Falsos programas, cheats, cracks o «herramientas de Discord» para descargar.",
+    "message": "Falsos programas, cheats, cracks o “herramientas de Discord” para descargar.",
     "description": "li"
   },
   "learn.token-grabber.s2.i2": {
-    "message": "Falsas ofertas de «Nitro gratis» y enlaces de phishing.",
+    "message": "Falsas ofertas de “Nitro gratis” y enlaces de phishing.",
     "description": "li"
   },
   "learn.token-grabber.s2.i3": {
@@ -4285,15 +4283,15 @@
     "description": "li title"
   },
   "learn.token-grabber.s4.i1.b": {
-    "message": "Cheats, cracks, «herramientas» de Discord y archivos recibidos de fuentes desconocidas son el vector número uno.",
+    "message": "Cheats, cracks, “herramientas” de Discord y archivos recibidos de fuentes desconocidas son el vector número uno.",
     "description": "li body"
   },
   "learn.token-grabber.s4.i2.t": {
-    "message": "Desconfía de lo «gratis».",
+    "message": "Desconfía de lo “gratis”.",
     "description": "li title"
   },
   "learn.token-grabber.s4.i2.b": {
-    "message": "Los «Nitro gratis» y los enlaces demasiado buenos para ser verdad son phishing en la práctica totalidad de los casos.",
+    "message": "Los “Nitro gratis” y los enlaces demasiado buenos para ser verdad son phishing en la práctica totalidad de los casos.",
     "description": "li body"
   },
   "learn.token-grabber.s4.i3.t": {
@@ -4341,7 +4339,7 @@
     "description": "faq q"
   },
   "learn.token-grabber.faq.a3": {
-    "message": "Vigila cualquier actividad desconocida: mensajes que no has escrito, servidores a los que te has unido o has abandonado, DM de estafa enviados en tu nombre. Ante la menor duda, cambia tu contraseña.",
+    "message": "Vigila cualquier actividad desconocida: mensajes que no has escrito, servidores a los que te has unido o has abandonado, MD de estafa enviados en tu nombre. Ante la menor duda, cambia tu contraseña.",
     "description": "faq a"
   },
   "learn.token-grabber.faq.q4": {
@@ -4417,7 +4415,7 @@
     "description": "Learn definition plain text for schema.org"
   },
   "learn.honeypot-warming.term": {
-    "message": "HoneyPot «activo»",
+    "message": "HoneyPot “activo”",
     "description": "Learn glossary term name (breadcrumb + schema)"
   },
   "learn.honeypot-warming.definitionText": {
@@ -4441,11 +4439,11 @@
     "description": "Learn definition plain text for schema.org"
   },
   "learn.server-raidable.term": {
-    "message": "«This server is raidable»",
+    "message": "“This server is raidable”",
     "description": "Learn glossary term name (breadcrumb + schema)"
   },
   "learn.server-raidable.definitionText": {
-    "message": "El mensaje «this server is raidable» proviene de un bot como Jalapeno, instalado como aplicación de usuario. Solo indica que tus miembros pueden usar aplicaciones externas, lo que podría servir para spamear mediante mensajes de seguimiento. No es un fallo en sí mismo, y dos ajustes bastan para protegerse.",
+    "message": "El mensaje “this server is raidable” proviene de un bot como Jalapeno, instalado como aplicación de usuario. Solo indica que tus miembros pueden usar aplicaciones externas, lo que podría servir para spamear mediante mensajes de seguimiento. No es un fallo en sí mismo, y dos ajustes bastan para protegerse.",
     "description": "Learn definition plain text for schema.org"
   },
   "learn.spam-discord.term": {
@@ -4489,7 +4487,7 @@
     "description": "bold emphasis: permanent administrator access"
   },
   "learn.server-raidable.s2.strong": {
-    "message": "una cuenta de administrador siempre mostrará «raidable»",
+    "message": "una cuenta de administrador siempre mostrará “raidable”",
     "description": "bold emphasis: an admin account always shows raidable"
   },
   "learn.discord-sanctions.metaTitle": {
@@ -4622,7 +4620,7 @@
   },
   "learn.discord-sanctions.s2.p2": {
     "message": "El mute, en cambio, se apoya en un {role} que asigna el bot. Solo vale lo que valen tus permisos: si un canal olvida denegar la palabra a ese rol, o si se crea un canal nuevo sin heredar esos permisos, el miembro sigue escribiendo. A cambio, un mute puede durar indefinidamente y se ajusta canal por canal.",
-    "description": "p"
+    "description": "p with link"
   },
   "learn.discord-sanctions.s2.role": {
     "message": "rol Mute",
@@ -4654,7 +4652,7 @@
   },
   "learn.discord-sanctions.s3.softban.b": {
     "message": "limpia los mensajes recientes, cosa que el kick no hace, y deja la puerta abierta. Es la respuesta correcta a una {hacked} que spamea: el dueño legítimo volverá cuando recupere su cuenta.",
-    "description": "li body"
+    "description": "li body with link"
   },
   "learn.discord-sanctions.s3.hacked": {
     "message": "cuenta hackeada",
@@ -4666,7 +4664,7 @@
   },
   "learn.discord-sanctions.s3.ban.b": {
     "message": "es la única medida que impide de verdad el regreso. Resérvalo para las cuentas creadas para hacer daño, los reincidentes y los {raid}.",
-    "description": "li body"
+    "description": "li body with link"
   },
   "learn.discord-sanctions.s3.raid": {
     "message": "raids",
@@ -4730,7 +4728,7 @@
   },
   "learn.discord-sanctions.s4.intro": {
     "message": "No existe un baremo universal, pero esta escala cubre la gran mayoría de los casos.",
-    "description": "li"
+    "description": "p"
   },
   "learn.discord-sanctions.s4.i1": {
     "message": "Un desliz aislado: una advertencia y, si se repite, un timeout corto.",
@@ -4750,7 +4748,7 @@
   },
   "learn.discord-sanctions.s4.i5": {
     "message": "Un {selfbot} o una cuenta de raid: un baneo, sin dudarlo.",
-    "description": "li"
+    "description": "li with link"
   },
   "learn.discord-sanctions.s4.selfbot": {
     "message": "self-bot",
@@ -4758,7 +4756,7 @@
   },
   "learn.discord-sanctions.s4.outro": {
     "message": "El {antispam} de RaidProtect aplica este tipo de escala por su cuenta: eliges la sanción para cada tipo de spam y el bot se encarga.",
-    "description": "p"
+    "description": "p with link"
   },
   "learn.discord-sanctions.s4.antispam": {
     "message": "anti-spam",
@@ -4798,7 +4796,7 @@
   },
   "learn.discord-sanctions.s5.i4.b": {
     "message": "Una sanción sin rastro es una decisión que no se puede explicar ni revisar. RaidProtect conserva cada acción en un {history}.",
-    "description": "li body"
+    "description": "li body with link"
   },
   "learn.discord-sanctions.s5.history": {
     "message": "historial consultable",
@@ -4913,7 +4911,7 @@
     "description": "Learn hub card term: least-privilege"
   },
   "learn.least-privilege.cardTeaser": {
-    "message": "Dar a cada uno solo los permisos necesarios: tu mejor defensa anti-nuke, hasta el Authentication Manager.",
+    "message": "Dar a cada uno solo los permisos necesarios: tu mejor defensa anti-nuke, hasta el Authentification Manager.",
     "description": "Learn hub card teaser: least-privilege"
   },
   "learn.honeypot-warming.cardTerm": {
@@ -4921,11 +4919,11 @@
     "description": "Learn hub card term: honeypot-warming"
   },
   "learn.honeypot-warming.cardTeaser": {
-    "message": "El mito del canal «caliente»: por qué un bot que publica para animar un HoneyPot es inútil, incluso contraproducente.",
+    "message": "El mito del canal “caliente”: por qué un bot que publica para animar un HoneyPot es inútil, incluso contraproducente.",
     "description": "Learn hub card teaser: honeypot-warming"
   },
   "learn.server-raidable.cardTerm": {
-    "message": "«This server is raidable»",
+    "message": "“This server is raidable”",
     "description": "Learn hub card term: server-raidable"
   },
   "learn.server-raidable.cardTeaser": {
@@ -4965,7 +4963,7 @@
     "description": "SoftwareApplication featureList item"
   },
   "home.schema.feature.authmanager": {
-    "message": "Authentication Manager: protección de las cuentas del staff",
+    "message": "Authentification Manager: protección de las cuentas del staff",
     "description": "SoftwareApplication featureList item"
   },
   "home.schema.feature.reports": {
@@ -4975,5 +4973,2795 @@
   "home.schema.feature.moderation": {
     "message": "Moderación y sanciones (expulsión, timeout, baneo, jail)",
     "description": "SoftwareApplication featureList item"
+  },
+  "premium.tier.founder.priceStrike": {
+    "message": "5,99 $"
+  },
+  "sidebar.badge.experiment": {
+    "message": "Experimental"
+  },
+  "sidebar.badge.premium": {
+    "message": "Premium"
+  },
+  "mockup.modal.file": {
+    "message": "Arrastra archivos aquí"
+  },
+  "mockup.modal.close": {
+    "message": "Cerrar"
+  },
+  "mockup.modal.cancel": {
+    "message": "Cancelar"
+  },
+  "mockup.modal.submit": {
+    "message": "Enviar"
+  },
+  "communities.crypto.meta.title": {
+    "message": "RaidProtect para servidores cripto y Web3",
+    "description": "Browser tab title for the crypto community landing page"
+  },
+  "communities.crypto.meta.description": {
+    "message": "Los servidores cripto son el objetivo n.º 1 de las estafas, el phishing y los drainers de wallets. RaidProtect bloquea los MD, filtra los bots y frena los raids.",
+    "description": "Meta description for the crypto community landing page"
+  },
+  "communities.crypto.eyebrow": {
+    "message": "Para servidores cripto y Web3",
+    "description": "Crypto landing: small pill above the title"
+  },
+  "communities.crypto.hero.title": {
+    "message": "Protege tu comunidad {highlight} de las estafas",
+    "description": "Crypto landing: hero H1; {highlight} renders the accented word"
+  },
+  "communities.crypto.hero.title.highlight": {
+    "message": "cripto",
+    "description": "Highlighted word inside the crypto hero title"
+  },
+  "communities.crypto.hero.description": {
+    "message": "Los servidores cripto son el objetivo n.º 1 de las estafas, el phishing y los drainers de wallets. RaidProtect bloquea los mensajes privados, filtra los bots y frena los raids antes de que lleguen a tus miembros.",
+    "description": "Crypto landing: hero subtitle"
+  },
+  "communities.crypto.hero.secondaryCta": {
+    "message": "Descubrir ScamLens",
+    "description": "Crypto landing: secondary CTA label"
+  },
+  "communities.crypto.threats.title": {
+    "message": "Lo que afrontas cada día",
+    "description": "Crypto landing: threats section title"
+  },
+  "communities.crypto.threats.subtitle": {
+    "message": "Las comunidades cripto atraen ataques dirigidos que la moderación manual no puede seguir.",
+    "description": "Crypto landing: threats section subtitle"
+  },
+  "communities.crypto.threat.dm.title": {
+    "message": "Estafas y drainers por MD",
+    "description": "Crypto threat 1 title"
+  },
+  "communities.crypto.threat.dm.description": {
+    "message": "Falsos soportes, falsas promociones, enlaces de conexión trampa: los estafadores atacan a tus miembros por mensaje privado, donde la moderación no ve nada.",
+    "description": "Crypto threat 1 description"
+  },
+  "communities.crypto.threat.bots.title": {
+    "message": "Oleadas de cuentas falsas",
+    "description": "Crypto threat 2 title"
+  },
+  "communities.crypto.threat.bots.description": {
+    "message": "Los bots se registran en masa para hacer spam de falsos airdrops e inflar artificialmente tu comunidad.",
+    "description": "Crypto threat 2 description"
+  },
+  "communities.crypto.threat.spam.title": {
+    "message": "Spam de enlaces y phishing",
+    "description": "Crypto threat 3 title"
+  },
+  "communities.crypto.threat.spam.description": {
+    "message": "Basta una sola cuenta comprometida para inundar tus canales de enlaces maliciosos en pocos segundos.",
+    "description": "Crypto threat 3 description"
+  },
+  "communities.crypto.features.title": {
+    "message": "Tu arsenal anti-estafas",
+    "description": "Crypto landing: features section title"
+  },
+  "communities.crypto.features.subtitle": {
+    "message": "Las protecciones de RaidProtect, ajustadas a las amenazas propias del universo cripto.",
+    "description": "Crypto landing: features section subtitle"
+  },
+  "communities.crypto.feature.scamlens.title": {
+    "message": "ScamLens, el anti-estafas de imágenes",
+    "description": "Crypto feature ScamLens title"
+  },
+  "communities.crypto.feature.scamlens.description": {
+    "message": "Las imágenes de falsos airdrops, giveaways y promociones de casinos se detectan y eliminan automáticamente, antes de que tus miembros hagan clic.",
+    "description": "Crypto feature ScamLens description"
+  },
+  "communities.crypto.feature.scamlens.cta": {
+    "message": "Descubrir ScamLens",
+    "description": "Crypto feature ScamLens CTA"
+  },
+  "communities.crypto.feature.am.title": {
+    "message": "Roles sensibles bloqueados",
+    "description": "Crypto feature Authentification Manager title"
+  },
+  "communities.crypto.feature.am.description": {
+    "message": "Protege tus roles de admin y mod con passkey, código PIN u OTP: ni siquiera una cuenta hackeada puede tomar el control de tu servidor.",
+    "description": "Crypto feature Authentification Manager description"
+  },
+  "communities.crypto.feature.am.cta": {
+    "message": "Proteger mis roles",
+    "description": "Crypto feature Authentification Manager CTA"
+  },
+  "communities.crypto.feature.dm.title": {
+    "message": "Bloqueo de MD",
+    "description": "Crypto feature DM Lock title"
+  },
+  "communities.crypto.feature.dm.description": {
+    "message": "Bloquea los mensajes privados entre tus miembros: el ángulo de ataque favorito de los estafadores cripto desaparece.",
+    "description": "Crypto feature DM Lock description"
+  },
+  "communities.crypto.feature.dm.cta": {
+    "message": "Proteger los MD",
+    "description": "Crypto feature DM Lock CTA"
+  },
+  "communities.crypto.feature.honeypot.title": {
+    "message": "HoneyPot antispam",
+    "description": "Crypto feature HoneyPot title"
+  },
+  "communities.crypto.feature.honeypot.description": {
+    "message": "Un canal-trampa donde solo publican las cuentas hackeadas y los robots: se detectan y sancionan desde el primer mensaje.",
+    "description": "Crypto feature HoneyPot description"
+  },
+  "communities.crypto.feature.honeypot.cta": {
+    "message": "Descubrir el HoneyPot",
+    "description": "Crypto feature HoneyPot CTA"
+  },
+  "communities.crypto.stat.scamlens": {
+    "message": "estafas en imagen bloqueadas",
+    "description": "Crypto stat: scam images blocked by ScamLens across the network"
+  },
+  "communities.crypto.stat.hacked": {
+    "message": "cuentas hackeadas neutralizadas",
+    "description": "Crypto stat: hacked accounts neutralized"
+  },
+  "communities.crypto.stat.servers": {
+    "message": "servidores de Discord protegidos",
+    "description": "Crypto stat: protected servers"
+  },
+  "communities.crypto.stat.members": {
+    "message": "miembros protegidos",
+    "description": "Crypto stat: protected members"
+  },
+  "communities.crypto.premium.title": {
+    "message": "El premium para los servidores de alto riesgo",
+    "description": "Crypto premium block title"
+  },
+  "communities.crypto.premium.description": {
+    "message": "La versión gratuita ya protege. El premium añade la capa de defensa que exigen las comunidades cripto más expuestas.",
+    "description": "Crypto premium block description"
+  },
+  "communities.crypto.premium.perk1": {
+    "message": "Más roles de admin protegidos y sesiones de autenticación prolongadas",
+    "description": "Crypto premium perk 1"
+  },
+  "communities.crypto.premium.perk2": {
+    "message": "Moderación discreta: las sanciones anti-spam ya no muestran mensaje público",
+    "description": "Crypto premium perk 2"
+  },
+  "communities.crypto.premium.perk3": {
+    "message": "Sanciones avanzadas del HoneyPot (expulsión, timeout, jail) contra las cuentas hackeadas",
+    "description": "Crypto premium perk 3"
+  },
+  "communities.crypto.premium.cta": {
+    "message": "Descubrir el premium",
+    "description": "Crypto premium CTA label"
+  },
+  "communities.crypto.cta.title": {
+    "message": "¿Listo para blindar tu servidor {highlight}?",
+    "description": "Crypto landing: final CTA title; {highlight} renders the accented word"
+  },
+  "communities.crypto.cta.title.highlight": {
+    "message": "cripto",
+    "description": "Highlighted word inside the crypto final CTA title"
+  },
+  "communities.crypto.cta.description": {
+    "message": "Añade RaidProtect en unos segundos y protege tu comunidad desde hoy.",
+    "description": "Crypto landing: final CTA description"
+  },
+  "communities.crypto.cta.addToDiscord": {
+    "message": "Añadir a Discord",
+    "description": "Crypto landing: primary CTA (add bot to Discord)"
+  },
+  "mockup.antiscam.sanction": {
+    "message": "Timeout:"
+  },
+  "mockup.antiscam.reason": {
+    "message": "Imagen de estafa (Crypto Scam)"
+  },
+  "mockup.antiscam.detectedby": {
+    "message": "Detectado por"
+  },
+  "mockup.antiscam.time1": {
+    "message": "hoy a las 19:32"
+  },
+  "mockup.antiscam.ambient": {
+    "message": "¿echamos una partida esta noche?"
+  },
+  "mockup.antiscam.time2": {
+    "message": "hoy a las 19:33"
+  },
+  "mockup.antiscam.detected": {
+    "message": "Estafa detectada"
+  },
+  "mockup.antiscam.time3": {
+    "message": "hoy a las 19:33"
+  },
+  "localSearch.input.placeholder": {
+    "message": "Buscar",
+    "description": "Placeholder of the mini search bar"
+  },
+  "localSearch.recent.title": {
+    "message": "Recientes",
+    "description": "Title of the recent searches list"
+  },
+  "localSearch.suggestions.title": {
+    "message": "Sugerencias",
+    "description": "Title of the suggested pages list"
+  },
+  "localSearch.modal.startTyping": {
+    "message": "Escribe para buscar en las páginas y secciones.",
+    "description": "Hint shown in the empty search modal"
+  },
+  "localSearch.modal.unavailable": {
+    "message": "El índice de búsqueda se genera en el build. Compila y sirve el sitio para probar la búsqueda.",
+    "description": "Shown when the index is missing (dev server)"
+  },
+  "localSearch.modal.error": {
+    "message": "No se pudo cargar el índice de búsqueda.",
+    "description": "Shown when the index fails to load"
+  },
+  "localSearch.modal.loading": {
+    "message": "Cargando…",
+    "description": "Shown while the index loads"
+  },
+  "localSearch.modal.noResults": {
+    "message": "Sin resultados para “{query}”",
+    "description": "No results message, {query} is the search"
+  },
+  "localSearch.modal.didYouMean": {
+    "message": "¿Quisiste decir “{suggestion}”?",
+    "description": "Spelling suggestion, {suggestion} is a clickable word"
+  },
+  "localSearch.modal.relaxed": {
+    "message": "Ninguna página contiene todas tus palabras. Estos son los resultados más cercanos.",
+    "description": "Shown when no result contains every word"
+  },
+  "localSearch.modal.label": {
+    "message": "Búsqueda",
+    "description": "Search dialog label"
+  },
+  "localSearch.modal.placeholder": {
+    "message": "Buscar en la documentación",
+    "description": "Placeholder of the search modal input"
+  },
+  "localSearch.modal.clear": {
+    "message": "Borrar",
+    "description": "Clear the search"
+  },
+  "localSearch.modal.cancel": {
+    "message": "Cancelar",
+    "description": "Close button on small screens"
+  },
+  "localSearch.footer.select": {
+    "message": "para abrir",
+    "description": "Keyboard hint: Enter"
+  },
+  "localSearch.footer.navigate": {
+    "message": "para navegar",
+    "description": "Keyboard hint: arrows"
+  },
+  "localSearch.footer.close": {
+    "message": "para cerrar",
+    "description": "Keyboard hint: Escape"
+  },
+  "localSearch.footer.seeAll": {
+    "message": "Ver todos los resultados",
+    "description": "Link to the full search page"
+  },
+  "localSearch.hero.placeholder": {
+    "message": "Buscar en la documentación…",
+    "description": "Placeholder of the large search bar"
+  },
+  "localSearch.page.countOne": {
+    "message": "1 resultado",
+    "description": "Exactly one result"
+  },
+  "localSearch.page.count": {
+    "message": "{count} resultados",
+    "description": "Number of results, {count} is a number greater than one"
+  },
+  "localSearch.hero.submit": {
+    "message": "Buscar",
+    "description": "Submit button of the large search bar"
+  },
+  "localSearch.page.title": {
+    "message": "Búsqueda",
+    "description": "Title of the search page"
+  },
+  "localSearch.page.heading": {
+    "message": "Buscar en el sitio",
+    "description": "Heading of the search page"
+  },
+  "localSearch.recent.remove": {
+    "message": "Quitar de las búsquedas recientes",
+    "description": "Button that removes an entry from the recent searches list"
+  },
+  "mockup.v2.antiraid.title": {
+    "message": "Configuración de Auto RaidMode",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Configuration de l'auto RaidMode"
+  },
+  "mockup.v2.antiraid.desc": {
+    "message": "El RaidMode se activa cuando llegan demasiados miembros a la vez. Define el umbral, cuánto tiempo permanece activo y qué hace RaidProtect con quienes llegan durante la oleada.",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Le RaidMode se déclenche quand trop de membres arrivent en m…"
+  },
+  "mockup.v2.antiraid.maxjoin": {
+    "message": "Número de miembros / 10 segundos",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Nombre de membres / 10 secondes"
+  },
+  "mockup.v2.antiraid.maxjoinPh": {
+    "message": "Selecciona un número de miembros",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Sélectionner un nombre de membre"
+  },
+  "mockup.v2.antiraid.m10": {
+    "message": "10 miembros",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: 10 membres"
+  },
+  "mockup.v2.antiraid.m15": {
+    "message": "15 miembros",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: 15 membres"
+  },
+  "mockup.v2.antiraid.m20": {
+    "message": "20 miembros",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: 20 membres"
+  },
+  "mockup.v2.antiraid.m30": {
+    "message": "30 miembros",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: 30 membres"
+  },
+  "mockup.v2.antiraid.duration": {
+    "message": "Duración",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Durée avant désactivation"
+  },
+  "mockup.v2.durationPh": {
+    "message": "Selecciona una duración",
+    "description": "/settings V2 mockup (Protection tab). FR source: Sélectionner une durée"
+  },
+  "mockup.v2.antiraid.action": {
+    "message": "Acción durante el raid",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Action pendant le raid"
+  },
+  "mockup.v2.antiraid.inviteLockDesc": {
+    "message": "Discord cierra las invitaciones del servidor, nadie nuevo entra",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Discord ferme les invitations du serveur, personne de nouvea…"
+  },
+  "mockup.v2.actionPh": {
+    "message": "Elegir la acción",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Choisir l'action"
+  },
+  "mockup.v2.antiraid.inviteLock": {
+    "message": "Bloquear las invitaciones",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Bloquer les invitations"
+  },
+  "mockup.v2.antiraid.kick": {
+    "message": "Expulsar a quienes llegan",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Expulser les arrivants"
+  },
+  "mockup.v2.antiraid.kickDesc": {
+    "message": "Cada persona que llega es expulsada con una invitación para volver luego",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Chaque arrivant est expulsé avec une invitation pour revenir…"
+  },
+  "mockup.v2.antiraid.captcha": {
+    "message": "Enviar al captcha",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Envoyer au captcha"
+  },
+  "mockup.v2.antiraid.captchaDesc": {
+    "message": "Quienes llegan pasan el captcha en lugar de ser expulsados",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Les arrivants passent le captcha au lieu d'être expulsés"
+  },
+  "mockup.v2.antiraid.frozen": {
+    "message": "Captcha congelado durante el raid",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Captcha gelé pendant le raid"
+  },
+  "mockup.v2.antiraid.frozenDesc": {
+    "message": "Quienes llegan esperan tras el captcha y lo pasan tras la oleada (modo panel)",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Les arrivants attendent derrière le captcha et le passent ap…"
+  },
+  "mockup.v2.antiraid.closedm": {
+    "message": "Cerrar los MD",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Fermer les MP"
+  },
+  "mockup.v2.enabled": {
+    "message": "Activado",
+    "description": "/settings V2 mockup (Protection tab). FR source: Activé"
+  },
+  "mockup.v2.disabled": {
+    "message": "Desactivado",
+    "description": "/settings V2 mockup (Protection tab). FR source: Désactivé"
+  },
+  "mockup.v2.captcha.title": {
+    "message": "Configuración del Captcha",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Configuration du Captcha"
+  },
+  "mockup.v2.captcha.desc": {
+    "message": "Configura el Captcha para prevenir que los selfbots accedan a tu servidor de Discord y bloquear raids.",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Configurez le Captcha pour empêcher les selfbots d'accéder à…"
+  },
+  "mockup.v2.captcha.display": {
+    "message": "Modo de visualización",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Mode d'affichage"
+  },
+  "mockup.v2.captcha.displayPh": {
+    "message": "Selecciona un modo de visualización",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Sélectionner un mode"
+  },
+  "mockup.v2.captcha.offDesc": {
+    "message": "Sin verificación, los recién llegados acceden directamente al servidor",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Aucune vérification, les arrivants accèdent directement au s…"
+  },
+  "mockup.v2.captcha.classic": {
+    "message": "Desafío (Clásico)",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Challenge (Classique)"
+  },
+  "mockup.v2.captcha.classicDesc": {
+    "message": "Se publica una imagen en el canal al llegar, el código se escribe en un mensaje",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Une image est postée dans le salon à l'arrivée, le code se t…"
+  },
+  "mockup.v2.captcha.panel": {
+    "message": "Panel (Interactivo)",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Panneau (Interactif)"
+  },
+  "mockup.v2.captcha.panelDesc": {
+    "message": "Un panel permanente: el captcha se abre en privado y el código se introduce en una ventana",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Un panneau permanent : le captcha s'ouvre en privé et le cod…"
+  },
+  "mockup.v2.delete": {
+    "message": "Eliminar",
+    "description": "/settings V2 mockup (Protection tab). FR source: Supprimer"
+  },
+  "mockup.v2.captcha.deleteDesc": {
+    "message": "Borra la configuración y el rol de verificación, tras confirmación",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Efface la configuration et le rôle de vérification, après co…"
+  },
+  "mockup.v2.captcha.trigger": {
+    "message": "Activación",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Déclenchement"
+  },
+  "mockup.v2.captcha.triggerPh": {
+    "message": "Elegir la activación",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Choisir le déclenchement"
+  },
+  "mockup.v2.captcha.auto": {
+    "message": "Automática",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Automatique"
+  },
+  "mockup.v2.captcha.autoDesc": {
+    "message": "Solo durante un raid o un nivel DISCON alto",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Seulement pendant un raid ou un niveau DISCON élevé"
+  },
+  "mockup.v2.captcha.smart": {
+    "message": "Inteligente",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Intelligent"
+  },
+  "mockup.v2.captcha.smartDesc": {
+    "message": "Lo mismo, más las cuentas que parecen sospechosas",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Idem, plus les comptes qui semblent suspects"
+  },
+  "mockup.v2.captcha.always": {
+    "message": "Permanente",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: En permanence"
+  },
+  "mockup.v2.captcha.alwaysDesc": {
+    "message": "En cada entrada, sin condición",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: À chaque arrivée, sans condition"
+  },
+  "mockup.v2.captcha.channel": {
+    "message": "Canal de verificación",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Salon de vérification"
+  },
+  "mockup.v2.edit": {
+    "message": "Editar",
+    "description": "/settings V2 mockup (Protection tab). FR source: Modifier"
+  },
+  "mockup.v2.captcha.role": {
+    "message": "Rol de los miembros en verificación",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Rôle des membres en vérification"
+  },
+  "mockup.v2.captcha.difficulty": {
+    "message": "Dificultad",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Difficulté"
+  },
+  "mockup.v2.captcha.diffTries": {
+    "message": "Intentos: **3 intentos**",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Essais : **2 essais**"
+  },
+  "mockup.v2.captcha.diffFail": {
+    "message": "Intentos agotados: **Expulsar**",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Essais épuisés : **Expulser**"
+  },
+  "mockup.v2.captcha.diffSolve": {
+    "message": "Tiempo de resolución: **30 segundos**",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Temps de résolution : **3 minutes**"
+  },
+  "mockup.v2.captcha.testMode": {
+    "message": "Modo de prueba",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Mode test"
+  },
+  "mockup.v2.captcha.testModeOn": {
+    "message": "Activado: tu equipo ya verificado puede repetir el captcha",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Activé : votre équipe déjà vérifiée peut relancer le captcha"
+  },
+  "mockup.v2.captcha.testModeHint": {
+    "message": "Un miembro del equipo (Gestionar servidor) ya verificado pulsa «Verificar» para repetir el captcha. Los intentos y el tiempo de resolución se aplican como a un recién llegado: el log dice lo que se habría hecho, no se aplica nada.",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Un membre de l'équipe (Gérer le serveur) déjà vérifié clique…"
+  },
+  "mockup.v2.captcha.timeout": {
+    "message": "Plazo antes de la expulsión",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Délai avant expulsion"
+  },
+  "mockup.v2.captcha.timeoutPh": {
+    "message": "Selecciona un tiempo de resolución",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Selectionner un délai"
+  },
+  "mockup.v2.minage.title": {
+    "message": "Configuración de la antigüedad mínima de la cuenta",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Configuration de l'âge minimum du compte"
+  },
+  "mockup.v2.minage.desc": {
+    "message": "Una cuenta más reciente que la antigüedad elegida no pasa la puerta. La acción decide su suerte: expulsada, enviada al jail hasta la fecha correcta o retenida en la entrada.",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Un compte plus récent que l'ancienneté choisie ne passe pas …"
+  },
+  "mockup.v2.minage.hint": {
+    "message": "La expulsión, el jail y la retención siguen tus cambios de antigüedad; los baneos ya aplicados conservan su fecha de levantamiento.",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: L'expulsion, le jail et la retenue suivent vos changements d…"
+  },
+  "mockup.v2.minage.name": {
+    "message": "Antigüedad mínima de la cuenta",
+    "description": "/settings V2 mockup (Home / tabs). FR source: Âge minimum du compte"
+  },
+  "mockup.v2.minage.ph": {
+    "message": "Selecciona una antigüedad mínima",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Selectionner une ancienneté de compte"
+  },
+  "mockup.v2.oneDay": {
+    "message": "1 día",
+    "description": "/settings V2 mockup (Protection tab). FR source: 1 jour"
+  },
+  "mockup.v2.minage.kickDesc": {
+    "message": "Expulsada en cada intento mientras su cuenta sea demasiado reciente",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Expulsé à chaque tentative tant que son compte est trop réce…"
+  },
+  "mockup.v2.minage.kick": {
+    "message": "Expulsar",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Expulser"
+  },
+  "mockup.v2.minage.jail": {
+    "message": "Jail hasta la antigüedad requerida",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Jail jusqu'à l'âge requis"
+  },
+  "mockup.v2.minage.jailDesc": {
+    "message": "Entra sin ver nada del servidor y sale al tener la antigüedad requerida",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Entre sans rien voir du serveur, et en sort dès qu'il a l'âg…"
+  },
+  "mockup.v2.minage.hold": {
+    "message": "Retener en la entrada",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Retenir à l'entrée"
+  },
+  "mockup.v2.minage.holdDesc": {
+    "message": "Bloqueada en un captcha que solo podrá resolver al tener la edad",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Bloqué sur un captcha qu'il ne peut résoudre qu'une fois l'â…"
+  },
+  "mockup.v2.autorole.name": {
+    "message": "Roles automáticos",
+    "description": "/settings V2 mockup (Home / tabs). FR source: Rôles automatiques"
+  },
+  "mockup.v2.autorole.desc": {
+    "message": "Roles otorgados a cada nuevo miembro nada más llegar, o tras el captcha si está activo. Evita los roles con permisos.",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Rôles donnés à chaque nouveau membre dès son arrivée, ou apr…"
+  },
+  "mockup.v2.autorole.limit": {
+    "message": "3 roles como máximo, 10 con el premium.",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: 3 rôles maximum, 10 avec le premium."
+  },
+  "mockup.v2.autorole.ph": {
+    "message": "Selecciona uno o varios roles",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Sélectionner un ou des rôles"
+  },
+  "mockup.v2.welcome.name": {
+    "message": "Mensaje de bienvenida",
+    "description": "/settings V2 mockup (Home / tabs). FR source: Message de bienvenue"
+  },
+  "mockup.v2.welcome.desc": {
+    "message": "Configura abajo el contenido del mensaje enviado cuando llega un nuevo miembro.",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Configurez ci-dessous le contenu du message envoyé à l'arriv…"
+  },
+  "mockup.v2.welcome.descOff": {
+    "message": "No se enviará ningún mensaje de bienvenida cuando se una un nuevo miembro.",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Aucun message de bienvenue ne sera envoyé à l'arrivée d'un n…"
+  },
+  "mockup.v2.welcome.channel": {
+    "message": "Canal de bienvenida",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Salon de bienvenue"
+  },
+  "mockup.v2.welcome.channelPh": {
+    "message": "Selecciona un canal de bienvenida",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Sélectionner un salon de bienvenue"
+  },
+  "mockup.v2.welcome.content": {
+    "message": "Contenido del mensaje",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Contenu du message"
+  },
+  "mockup.v2.welcome.text": {
+    "message": "Texto",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Texte"
+  },
+  "mockup.v2.welcome.color": {
+    "message": "Color",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Couleur"
+  },
+  "mockup.v2.welcome.mention": {
+    "message": "Mencionar al miembro",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Mentionner le membre"
+  },
+  "mockup.v2.welcome.buttons": {
+    "message": "Gestionar los botones",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Gérer les boutons"
+  },
+  "mockup.v2.welcome.buttonsHint": {
+    "message": "Elige un botón para modificar, o añade uno",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Choisissez un bouton à modifier, ou ajoutez-en un"
+  },
+  "mockup.v2.welcome.rulesBtn": {
+    "message": "Leer las normas",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Lire le règlement"
+  },
+  "mockup.v2.welcome.addBtn": {
+    "message": "Añadir un botón",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Ajouter un bouton"
+  },
+  "mockup.v2.welcome.preview": {
+    "message": "¡Bienvenido @Arthur a **Los Exploradores**! 🎉",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Bienvenue @Arthur sur **Les Explorateurs** ! 🎉"
+  },
+  "mockup.v2.captcha.diffTitle": {
+    "message": "Dificultad del captcha",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Difficulté du captcha"
+  },
+  "mockup.v2.captcha.diffDoc": {
+    "message": "El número de intentos y lo que ocurre al agotarlos, el plazo de expulsión desde la llegada y el tiempo para resolver el puzzle, contado desde la primera prueba.",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Le nombre d'essais pour recopier le code et ce qui arrive un…"
+  },
+  "mockup.v2.captcha.tries": {
+    "message": "Intentos",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Essais"
+  },
+  "mockup.v2.captcha.failAction": {
+    "message": "Acción cuando se agotan los intentos",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Action quand les essais sont épuisés"
+  },
+  "mockup.v2.captcha.failKick": {
+    "message": "Intentos agotados: Expulsar",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Essais épuisés : Expulser"
+  },
+  "mockup.v2.captcha.failJail": {
+    "message": "Intentos agotados: Jail",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Essais épuisés : Jail"
+  },
+  "mockup.v2.captcha.solve": {
+    "message": "Tiempo de resolución",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Temps de résolution"
+  },
+  "mockup.v2.welcome.textDoc": {
+    "message": "Variables disponibles: `{user.mention}` · `{user.name}` · `{user.displayname}` · `{user.id}` · `{server.name}` · `{server.member_count}` · `{server.id}`\nDeja el campo vacío para volver al mensaje predeterminado.",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Variables disponibles : `{user.mention}` · `{user.name}` · `…"
+  },
+  "mockup.v2.minage.jailDoc": {
+    "message": "**No hay ningún rol de jail configurado**\n\nEl jail retiene a una cuenta demasiado reciente en el servidor sin mostrarle nada, y luego la libera sola en la fecha adecuada. Necesita un rol de jail para funcionar.\n\nConfigúralo, o recurre al baneo: la puerta se cierra hasta la misma fecha, pero la cuenta sale del servidor.",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: **Aucun rôle de jail n'est configuré**  Le jail retient un c…"
+  },
+  "mockup.v2.whatToDo": {
+    "message": "¿Qué hacer?",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Que faire ?"
+  },
+  "mockup.v2.minage.configureJail": {
+    "message": "Configurar el jail",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Configurer le jail"
+  },
+  "mockup.v2.minage.ban": {
+    "message": "Banear hasta la antigüedad requerida",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Bannir jusqu'à l'âge requis"
+  },
+  "mockup.v2.captcha.deleteTitle": {
+    "message": "Eliminar el captcha",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Supprimer le captcha"
+  },
+  "mockup.v2.confirmation": {
+    "message": "Confirmación",
+    "description": "/settings V2 mockup (Protection tab). FR source: Confirmation"
+  },
+  "mockup.v2.captcha.deleteYes": {
+    "message": "Sí, eliminar el captcha",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Oui, supprimer le captcha"
+  },
+  "mockup.v2.captcha.deleteNo": {
+    "message": "No, no eliminar nada",
+    "description": "/settings V2 mockup (Arrivals tab). FR source: Non, ne rien supprimer"
+  },
+  "mockup.v2.back": {
+    "message": "Volver",
+    "description": "/settings V2 mockup (Customize / setup wizard). FR source: Retour"
+  },
+  "mockup.v2.auth.emptySlot": {
+    "message": "Espacio vacío",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Emplacement vide"
+  },
+  "mockup.v2.auth.serverConfig": {
+    "message": "Configuración del servidor",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Configuration du serveur"
+  },
+  "mockup.v2.auth.duration": {
+    "message": "Duración de sesión predeterminada",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Durée de session par défaut"
+  },
+  "mockup.v2.auth.minGrade": {
+    "message": "Grado mínimo predeterminado",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Grade minimum par défaut"
+  },
+  "mockup.v2.auth.managerGrade": {
+    "message": "Grado mínimo de gestores",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Grade minimum des gestionnaires"
+  },
+  "mockup.v2.auth.undefined": {
+    "message": "sin definir",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: non défini"
+  },
+  "mockup.v2.auth.roles": {
+    "message": "Roles",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Rôles"
+  },
+  "mockup.v2.auth.users": {
+    "message": "Usuarios",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Utilisateurs"
+  },
+  "mockup.v2.add": {
+    "message": "Añadir",
+    "description": "/settings V2 mockup (Protection tab). FR source: Ajouter"
+  },
+  "mockup.v2.auth.nUsers2": {
+    "message": "2 usuarios",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: 2 utilisateurs"
+  },
+  "mockup.v2.auth.nUsers3": {
+    "message": "3 usuarios",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: 3 utilisateurs"
+  },
+  "mockup.v2.auth.manager": {
+    "message": "Gestor",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Gestionnaire"
+  },
+  "mockup.v2.auth.manage": {
+    "message": "Gestionar",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Gérer"
+  },
+  "mockup.v2.auth.ago4": {
+    "message": "hace 4 minutos",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: il y a 4 minutes"
+  },
+  "mockup.v2.auth.sessionGranted": {
+    "message": "Sesión concedida",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Session accordée"
+  },
+  "mockup.v2.auth.ago1h": {
+    "message": "hace 1 hora",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: il y a 1 heure"
+  },
+  "mockup.v2.auth.sessionExpired": {
+    "message": "Sesión expirada",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Session expirée"
+  },
+  "mockup.v2.auth.ago2h": {
+    "message": "hace 2 horas",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: il y a 2 heures"
+  },
+  "mockup.v2.auth.invited": {
+    "message": "Invitación enviada",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Invitation envoyée"
+  },
+  "mockup.v2.auth.roleGrade": {
+    "message": "Grado mínimo",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Grade minimum"
+  },
+  "mockup.v2.auth.roleDuration": {
+    "message": "Duración de sesión",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Durée de session"
+  },
+  "mockup.v2.auth.assigned": {
+    "message": "Usuarios asignados",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Utilisateurs assignés"
+  },
+  "mockup.v2.disable": {
+    "message": "Desactivar",
+    "description": "/settings V2 mockup (Protection tab). FR source: Désactiver"
+  },
+  "mockup.v2.no": {
+    "message": "No",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Non"
+  },
+  "mockup.v2.auth.statusInvited": {
+    "message": "Invitado",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Invité"
+  },
+  "mockup.v2.auth.rolesPh": {
+    "message": "Selecciona roles...",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Sélectionner des rôles..."
+  },
+  "mockup.v2.auth.invitedDesc": {
+    "message": "Invitado •pendiente de configuración de auth",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Invité •en attente de configuration auth"
+  },
+  "mockup.v2.auth.promote": {
+    "message": "Hacer gestor",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Promouvoir gestionnaire"
+  },
+  "mockup.v2.auth.removeUser": {
+    "message": "Eliminar usuario",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Supprimer l'utilisateur"
+  },
+  "mockup.v2.auth.loginTitle": {
+    "message": "Autenticación de gestor requerida",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Authentification gestionnaire requise"
+  },
+  "mockup.v2.auth.loginDesc": {
+    "message": "Por favor, autentícate para acceder al panel de configuración de Autenticación.",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Veuillez vous authentifier pour accéder au panneau de config…"
+  },
+  "mockup.v2.auth.withPin": {
+    "message": "Autenticarse con PIN",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: S'authentifier avec le PIN"
+  },
+  "mockup.v2.auth.withOtp": {
+    "message": "Autenticarse con OTP",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: S'authentifier avec l'OTP"
+  },
+  "mockup.v2.auth.withPasskey": {
+    "message": "Autenticarse con Passkey",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: S'authentifier avec le Passkey"
+  },
+  "mockup.v2.auth.padTitle": {
+    "message": "Autenticación de gestor",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Authentification gestionnaire"
+  },
+  "mockup.v2.auth.padDesc": {
+    "message": "Introduce tu PIN usando los botones de abajo.",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Entrez votre PIN en utilisant les boutons ci-dessous."
+  },
+  "mockup.v2.profile.forgot": {
+    "message": "He olvidado mis auths",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: J'ai oublié mes auths"
+  },
+  "mockup.v2.profile.pin": {
+    "message": "Código PIN",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Code PIN"
+  },
+  "mockup.v2.profile.reinforced": {
+    "message": "Reforzado",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Renforcé"
+  },
+  "mockup.v2.profile.otp": {
+    "message": "Código 2FA",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Code 2FA"
+  },
+  "mockup.v2.profile.configured": {
+    "message": "Configurado",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Configuré"
+  },
+  "mockup.v2.profile.addPasskey": {
+    "message": "Añadir Passkey",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Ajouter un Passkey"
+  },
+  "mockup.v2.profile.log1": {
+    "message": "hace 2 días Activación del 2FA",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: il y a 2 jours Activation de la 2FA"
+  },
+  "mockup.v2.profile.log2": {
+    "message": "hace 2 días Añadido un código PIN",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: il y a 2 jours Ajout d'un code PIN"
+  },
+  "mockup.v2.profile.allLogs": {
+    "message": "Ver registros completos",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Voir tous les logs"
+  },
+  "mockup.v2.profile.gradeIs": {
+    "message": "Tu Grado de Seguridad es",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Votre Grade de Sécurité est"
+  },
+  "mockup.v2.profile.hintA": {
+    "message": "Añade una passkey para alcanzar el grado máximo.",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Ajoutez un Passkey pour atteindre le grade maximum."
+  },
+  "mockup.v2.auth.configTitle": {
+    "message": "Configuración Autenticación del servidor",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Configuration Authentification du serveur"
+  },
+  "mockup.v2.auth.withPremium": {
+    "message": "con Premium",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: avec Premium"
+  },
+  "mockup.v2.auth.webhook": {
+    "message": "URL del webhook (dejar vacío para borrar)",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: URL du Webhook (laisser vide pour supprimer)"
+  },
+  "mockup.v2.auth.addRoleTitle": {
+    "message": "Añadir rol Autenticación",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Ajouter un rôle Authentification"
+  },
+  "mockup.v2.auth.discordRole": {
+    "message": "Rol de Discord",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Rôle Discord"
+  },
+  "mockup.v2.auth.securityGrade": {
+    "message": "Grado de seguridad mínimo",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Grade de sécurité minimum"
+  },
+  "mockup.v2.auth.durationMax": {
+    "message": "Duración de sesión (máx. 8h)",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Durée de session (max. 8h)"
+  },
+  "mockup.v2.auth.strategy": {
+    "message": "Elegir una estrategia",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Choisir une stratégie"
+  },
+  "mockup.v2.auth.useAsIs": {
+    "message": "Usar este rol tal como está",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Utiliser ce rôle tel quel"
+  },
+  "mockup.v2.auth.useAsIsDesc": {
+    "message": "El rol se usará directamente como rol de autenticación.",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Le rôle sera utilisé directement comme rôle d'authentificati…"
+  },
+  "mockup.v2.auth.split": {
+    "message": "Crear un rol de permisos separado",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Créer un rôle de permissions séparé"
+  },
+  "mockup.v2.auth.splitDesc": {
+    "message": "Se crea un nuevo rol con los permisos, este rol mantiene su visualización.",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Un nouveau rôle avec les permissions est créé, ce rôle conse…"
+  },
+  "mockup.v2.auth.addUserTitle": {
+    "message": "Añadir usuario Autenticación",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Ajouter un utilisateur Authentification"
+  },
+  "mockup.v2.auth.user": {
+    "message": "Usuario",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Utilisateur"
+  },
+  "mockup.v2.auth.authRole": {
+    "message": "Rol Autenticación",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Rôle Authentification"
+  },
+  "mockup.v2.auth.editRoleTitle": {
+    "message": "Editar rol Autenticación",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Modifier un rôle Authentification"
+  },
+  "mockup.v2.auth.otpTitle": {
+    "message": "Autenticación OTP de gestor",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Authentification OTP gestionnaire"
+  },
+  "mockup.v2.auth.otpField": {
+    "message": "Código de 6 dígitos de tu app",
+    "description": "/settings V2 mockup (Authentification Manager). FR source: Code à 6 chiffres de votre app"
+  },
+  "mockup.v2.customize.notice": {
+    "message": "La personalización del bot requiere el premium.",
+    "description": "/settings V2 mockup (Customize / setup wizard). FR source: La personnalisation du bot nécessite le premium."
+  },
+  "mockup.v2.customize.bio1": {
+    "message": "Funciones de moderación y seguridad avanzadas,",
+    "description": "/settings V2 mockup (Customize / setup wizard). FR source: Des fonctionnalités de modération et de sécurité avancées,"
+  },
+  "mockup.v2.customize.bio2": {
+    "message": "impulsadas por RaidProtect.",
+    "description": "/settings V2 mockup (Customize / setup wizard). FR source: propulsées par RaidProtect."
+  },
+  "mockup.v2.customize.edit": {
+    "message": "Editar",
+    "description": "/settings V2 mockup (Customize / setup wizard). FR source: Éditer"
+  },
+  "mockup.v2.customize.reset": {
+    "message": "Restablecer",
+    "description": "/settings V2 mockup (Customize / setup wizard). FR source: Remettre à Zéro"
+  },
+  "mockup.v2.customize.displayName": {
+    "message": "Nombre de visualización",
+    "description": "/settings V2 mockup (Customize / setup wizard). FR source: Nom affiché"
+  },
+  "mockup.v2.customize.colors": {
+    "message": "Colores",
+    "description": "/settings V2 mockup (Customize / setup wizard). FR source: Couleurs"
+  },
+  "mockup.v2.customize.default": {
+    "message": "Por defecto",
+    "description": "/settings V2 mockup (Customize / setup wizard). FR source: Défaut"
+  },
+  "mockup.v2.color.red": {
+    "message": "Rojo",
+    "description": "/settings V2 mockup (Customize / setup wizard). FR source: Rouge"
+  },
+  "mockup.v2.color.orange": {
+    "message": "Naranja",
+    "description": "/settings V2 mockup (Customize / setup wizard). FR source: Orange"
+  },
+  "mockup.v2.color.yellow": {
+    "message": "Amarillo",
+    "description": "/settings V2 mockup (Customize / setup wizard). FR source: Jaune"
+  },
+  "mockup.v2.color.green": {
+    "message": "Verde",
+    "description": "/settings V2 mockup (Customize / setup wizard). FR source: Vert"
+  },
+  "mockup.v2.color.blue": {
+    "message": "Azul",
+    "description": "/settings V2 mockup (Customize / setup wizard). FR source: Bleu"
+  },
+  "mockup.v2.color.purple": {
+    "message": "Morado",
+    "description": "/settings V2 mockup (Customize / setup wizard). FR source: Violet"
+  },
+  "mockup.v2.customize.save": {
+    "message": "Guardar",
+    "description": "/settings V2 mockup (Customize / setup wizard). FR source: Sauvegarder"
+  },
+  "mockup.v2.setup.desc": {
+    "message": "Activa o reinstala las funciones deseadas usando el menú de selección. El bot te enviará un resumen de las funciones activadas y los cambios que hará al servidor. (Usa `/settings` para desactivar una función)",
+    "description": "/settings V2 mockup (Customize / setup wizard). FR source: Activez ou réinstallez les fonctionnalités souhaitées en uti…"
+  },
+  "mockup.v2.setup.ph": {
+    "message": "Elige los módulos a instalar",
+    "description": "/settings V2 mockup (Customize / setup wizard). FR source: Choisir les modules à installer"
+  },
+  "mockup.v2.enable": {
+    "message": "Activar",
+    "description": "/settings V2 mockup (kit). FR source: Activer"
+  },
+  "mockup.v2.setup.recapDesc": {
+    "message": "Resumen de las funciones y configuraciones seleccionadas:",
+    "description": "/settings V2 mockup (Customize / setup wizard). FR source: Récapitulatif des fonctionnalités et configurations choisies…"
+  },
+  "mockup.v2.antiraid.value": {
+    "message": "10 miembros / 10 segundos",
+    "description": "/settings V2 mockup (Home / tabs). FR source: 10 membres / 10 secondes"
+  },
+  "mockup.v2.reports.name": {
+    "message": "Reportes",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Signalements"
+  },
+  "mockup.v2.setup.honeypotChannel": {
+    "message": "Canal HoneyPot",
+    "description": "/settings V2 mockup (Customize / setup wizard). FR source: Salon HoneyPot"
+  },
+  "mockup.v2.setup.doneTitle": {
+    "message": "¡RaidProtect ha sido inicializado!",
+    "description": "/settings V2 mockup (Customize / setup wizard). FR source: RaidProtect a été initialisé !"
+  },
+  "mockup.v2.setup.doneDesc": {
+    "message": "Usa el comando `/settings` para configurar tus preferencias después de la instalación. También puedes hacer clic en el botón `Ajustes` para ejecutar el comando.",
+    "description": "/settings V2 mockup (Customize / setup wizard). FR source: La commande `/settings` vous permet de gérer vos paramètres …"
+  },
+  "mockup.v2.customize.modalTitle": {
+    "message": "Personalizar el bot",
+    "description": "/settings V2 mockup (Customize / setup wizard). FR source: Personnaliser le bot"
+  },
+  "mockup.v2.customize.nick": {
+    "message": "Apodo del bot",
+    "description": "/settings V2 mockup (Customize / setup wizard). FR source: Pseudo du bot"
+  },
+  "mockup.v2.customize.avatar": {
+    "message": "Avatar del bot",
+    "description": "/settings V2 mockup (Customize / setup wizard). FR source: Avatar du bot"
+  },
+  "mockup.v2.customize.banner": {
+    "message": "Banner del bot",
+    "description": "/settings V2 mockup (Customize / setup wizard). FR source: Bannière du bot"
+  },
+  "mockup.v2.lang.name": {
+    "message": "Idioma",
+    "description": "/settings V2 mockup (Home / tabs). FR source: Langue"
+  },
+  "mockup.v2.lang.doc": {
+    "message": "El idioma elegido se aplica a los mensajes públicos de RaidProtect en el servidor: logs, captcha, reportes. Las respuestas privadas y temporales se mantienen en el idioma de cada miembro.\n\n**Seguir el idioma del servidor** usa el idioma principal definido en los ajustes de Comunidad de Discord.",
+    "description": "/settings V2 mockup (General tab). FR source: La langue choisie s'applique aux messages publics de RaidPro…"
+  },
+  "mockup.v2.lang.field": {
+    "message": "Idioma seleccionado",
+    "description": "/settings V2 mockup (General tab). FR source: Langue sélectionnée"
+  },
+  "mockup.v2.lang.follow": {
+    "message": "Seguir el idioma del servidor",
+    "description": "/settings V2 mockup (General tab). FR source: Suivre la langue du serveur"
+  },
+  "mockup.v2.lang.current": {
+    "message": "Actualmente: Francés",
+    "description": "/settings V2 mockup (General tab). FR source: Actuellement : Français"
+  },
+  "mockup.v2.prefix.name": {
+    "message": "Comandos por mensaje",
+    "description": "/settings V2 mockup (Home / tabs). FR source: Commandes par messages"
+  },
+  "mockup.v2.prefix.doc": {
+    "message": "Los comandos por mensaje se lanzan con un prefijo, por ejemplo `?ban`. Elígelo en la lista o escribe el tuyo; **Desactivado** los corta.\n\nComandos disponibles: `raidmode`, `ban`, `tempban`, `unban`, `kick`, `timeout`, `untimeout`, `warn`, `slowmode`, `lock`, `unlock`, `userinfo`, `clear`.",
+    "description": "/settings V2 mockup (General tab). FR source: Les commandes par messages se lancent avec un préfixe, par e…"
+  },
+  "mockup.v2.prefix.field": {
+    "message": "Prefijo",
+    "description": "/settings V2 mockup (General tab). FR source: Préfixe"
+  },
+  "mockup.v2.prefix.custom": {
+    "message": "Prefijo personalizado",
+    "description": "/settings V2 mockup (General tab). FR source: Préfixe personnalisé"
+  },
+  "mockup.v2.prefix.customHint": {
+    "message": "Tiene prioridad sobre la lista. Máximo tres caracteres.",
+    "description": "/settings V2 mockup (General tab). FR source: Prioritaire sur la liste. Trois caractères au plus."
+  },
+  "mockup.v2.prefix.options": {
+    "message": "Opciones",
+    "description": "/settings V2 mockup (General tab). FR source: Options"
+  },
+  "mockup.v2.prefix.deleteInvoke": {
+    "message": "Delinvoke",
+    "description": "/settings V2 mockup (Home / tabs). FR source: Suppression à l'invocation"
+  },
+  "mockup.v2.prefix.deleteInvokeHint": {
+    "message": "Elimina el mensaje que contiene el comando en cuanto se lee.",
+    "description": "/settings V2 mockup (General tab). FR source: Supprime le message qui contient la commande dès qu'elle est…"
+  },
+  "mockup.v2.perms.title": {
+    "message": "Permisos de los comandos",
+    "description": "/settings V2 mockup (General tab). FR source: Permissions des commandes"
+  },
+  "mockup.v2.perms.doc": {
+    "message": "Los permisos de los comandos de RaidProtect se configuran directamente en Discord: **Ajustes del servidor → Integraciones → RaidProtect**.\n\nPuedes permitir o prohibir ahí cada comando por **rol**, **miembro** o **canal**. Discord los aplica a los **comandos slash**. Marca la opción de abajo para que RaidProtect también los aplique a los **comandos por mensajes** y a las sanciones propuestas por **Sancionar** (clic derecho sobre un miembro): un miembro autorizado a usar `/ban` podrá banear desde este menú.",
+    "description": "/settings V2 mockup (General tab). FR source: Les permissions des commandes RaidProtect se configurent dir…"
+  },
+  "mockup.v2.perms.mobile": {
+    "message": "**Este menú solo está disponible en la aplicación de escritorio / web de Discord**, no es accesible desde móvil.",
+    "description": "/settings V2 mockup (General tab). FR source: **Ce menu n'est disponible que sur l'application PC / Web de…"
+  },
+  "mockup.v2.perms.option": {
+    "message": "Opción",
+    "description": "/settings V2 mockup (General tab). FR source: Option"
+  },
+  "mockup.v2.perms.mirrorOption": {
+    "message": "Aplicar los permisos de las integraciones",
+    "description": "/settings V2 mockup (General tab). FR source: Appliquer les permissions des intégrations"
+  },
+  "mockup.v2.perms.mirrorHint": {
+    "message": "Valen también para los comandos por mensaje y las sanciones ofrecidas por Sancionar.",
+    "description": "/settings V2 mockup (General tab). FR source: Valent aussi pour les commandes par messages et les sanction…"
+  },
+  "mockup.v2.timezone.name": {
+    "message": "Zona horaria",
+    "description": "/settings V2 mockup (Home / tabs). FR source: Fuseau horaire"
+  },
+  "mockup.v2.timezone.doc": {
+    "message": "Elige tu desfase UTC, o introduce una zona horaria (p. ej. Europe/Paris) para gestionar el horario de verano automáticamente.",
+    "description": "/settings V2 mockup (General tab). FR source: Choisissez votre décalage UTC, ou saisissez une timezone (ex…"
+  },
+  "mockup.v2.timezone.placeholder": {
+    "message": "Elige tu desfase UTC",
+    "description": "/settings V2 mockup (General tab). FR source: Choisissez votre décalage UTC"
+  },
+  "mockup.v2.timezone.custom": {
+    "message": "Zona horaria personalizada (opcional)",
+    "description": "/settings V2 mockup (General tab). FR source: Timezone personnalisée (optionnel)"
+  },
+  "mockup.v2.timezone.customHint": {
+    "message": "Prioridad sobre el desfase UTC, gestiona el horario de verano. Ej. Europe/Paris, America/New_York.",
+    "description": "/settings V2 mockup (General tab). FR source: Prioritaire sur le décalage UTC, gère l'heure d'été. Ex. Eur…"
+  },
+  "mockup.v2.perms.mirror": {
+    "message": "Integraciones aplicadas en todas partes",
+    "description": "/settings V2 mockup (Home / tabs). FR source: Intégrations appliquées partout"
+  },
+  "mockup.v2.discon.value": {
+    "message": "Nivel de peligro del servidor, gestionado por tu equipo.",
+    "description": "/settings V2 mockup (Home / tabs). FR source: Niveau de danger du serveur, piloté par votre équipe."
+  },
+  "mockup.v2.automod.value": {
+    "message": "Imágenes",
+    "description": "/settings V2 mockup (Home / tabs). FR source: Images"
+  },
+  "mockup.v2.automod.hint": {
+    "message": "Filtra contenidos reconocidos como estafas",
+    "description": "/settings V2 mockup (Home / tabs). FR source: Filtre les contenus reconnus comme des arnaques"
+  },
+  "mockup.v2.slowmode.name": {
+    "message": "Slowmode preventivo",
+    "description": "/settings V2 mockup (Protection tab). FR source: Slowmode préventif"
+  },
+  "mockup.v2.auth.value": {
+    "message": "Roles temporales con validación, sesiones y registro de accesos.",
+    "description": "/settings V2 mockup (Home / tabs). FR source: Rôles temporaires à validation, sessions et journal des accè…"
+  },
+  "mockup.v2.dmlock.name": {
+    "message": "Bloqueo de MD",
+    "description": "/settings V2 mockup (Protection tab). FR source: Fermeture des MP"
+  },
+  "mockup.v2.dmlock.off": {
+    "message": "Desactivado",
+    "description": "/settings V2 mockup (Home / tabs). FR source: Désactivée"
+  },
+  "mockup.v2.logs.general": {
+    "message": "General",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Général"
+  },
+  "mockup.v2.logs.moderation": {
+    "message": "Moderación",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Modération"
+  },
+  "mockup.v2.transparency.name": {
+    "message": "Transparencia",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Transparence"
+  },
+  "mockup.v2.transparency.hint": {
+    "message": "Resúmenes periódicos y modlog público.",
+    "description": "/settings V2 mockup (Home / tabs). FR source: Récapitulatifs périodiques et modlog public."
+  },
+  "mockup.v2.tagrole.name": {
+    "message": "Rol de Etiqueta",
+    "description": "/settings V2 mockup (Utilities tab). FR source: Rôle de Tag"
+  },
+  "mockup.v2.lockrenaming.name": {
+    "message": "Bloqueo de canal",
+    "description": "/settings V2 mockup (Home / tabs). FR source: Verrouillage de salon"
+  },
+  "mockup.v2.lockrenaming.on": {
+    "message": "Añade 🔒 al nombre de un canal bloqueado con </lock>, y lo quita con </unlock>. Se ve el estado del canal desde la lista.",
+    "description": "/settings V2 mockup (Home / tabs). FR source: Ajoute 🔒 au nom d'un salon verrouillé avec </lock>, et le r…"
+  },
+  "mockup.v2.lockrenaming.off": {
+    "message": "**No** añade 🔒 al nombre de los canales bloqueados con </lock>.",
+    "description": "/settings V2 mockup (Home / tabs). FR source: N'ajoute **pas** 🔒 au nom des salons verrouillés avec </loc…"
+  },
+  "mockup.v2.onduty.name": {
+    "message": "Rol en servicio",
+    "description": "/settings V2 mockup (Utilities tab). FR source: Rôle en service"
+  },
+  "mockup.v2.messagecache.name": {
+    "message": "Caché de mensajes",
+    "description": "/settings V2 mockup (Home / tabs). FR source: Mise en cache des messages"
+  },
+  "mockup.v2.messagecache.forced": {
+    "message": "Activada por el antispam o los reportes, que leen los mensajes. Lo que RaidProtect conserva: </privacy>.",
+    "description": "/settings V2 mockup (Home / tabs). FR source: Activée par l'antispam ou les signalements, qui lisent les m…"
+  },
+  "mockup.v2.home.desc": {
+    "message": "Los ajustes de RaidProtect para este servidor. Para empezar, echa un vistazo a **Llegadas** (captcha, antirraid) y **Moderación** (canal de logs, sanciones). Todo cambio se aplica al instante.",
+    "description": "/settings V2 mockup (Home / tabs). FR source: Les réglages de RaidProtect pour ce serveur. Pour commencer,…"
+  },
+  "mockup.v2.support": {
+    "message": "Servidor de soporte",
+    "description": "/settings V2 mockup (kit). FR source: Serveur Support"
+  },
+  "mockup.v2.customize": {
+    "message": "Personalizar",
+    "description": "/settings V2 mockup (Protection tab). FR source: Personnaliser"
+  },
+  "mockup.v2.custom": {
+    "message": "Valor personalizado",
+    "description": "/settings V2 mockup (kit). FR source: Valeur personnalisée"
+  },
+  "mockup.v2.configure": {
+    "message": "Configurar",
+    "description": "/settings V2 mockup (kit). FR source: Configurer"
+  },
+  "mockup.v2.reset": {
+    "message": "Restablecer",
+    "description": "/settings V2 mockup (kit). FR source: Réinitialiser"
+  },
+  "mockup.v2.createOne": {
+    "message": "Crear uno para mí",
+    "description": "/settings V2 mockup (kit). FR source: En créer un pour moi"
+  },
+  "mockup.v2.refresh": {
+    "message": "Actualizar",
+    "description": "/settings V2 mockup (kit). FR source: Actualiser"
+  },
+  "mockup.v2.tab.general": {
+    "message": "General",
+    "description": "/settings V2 mockup (kit). FR source: Général"
+  },
+  "mockup.v2.tab.arrivals": {
+    "message": "Llegadas",
+    "description": "/settings V2 mockup (kit). FR source: Arrivées"
+  },
+  "mockup.v2.tab.protection": {
+    "message": "Protección",
+    "description": "/settings V2 mockup (kit). FR source: Protection"
+  },
+  "mockup.v2.tab.moderation": {
+    "message": "Moderación",
+    "description": "/settings V2 mockup (kit). FR source: Modération"
+  },
+  "mockup.v2.tab.utilities": {
+    "message": "Utilidades",
+    "description": "/settings V2 mockup (kit). FR source: Utilitaires"
+  },
+  "mockup.v2.perm.title": {
+    "message": "RaidProtect necesita los siguientes permisos para esta función:",
+    "description": "/settings V2 mockup (kit). FR source: RaidProtect a besoin des permissions suivantes pour cette fo…"
+  },
+  "mockup.v2.perm.hint": {
+    "message": "Concédeselos a su rol en Ajustes del servidor > Roles, o dale el permiso `Administrador`.",
+    "description": "/settings V2 mockup (kit). FR source: Accordez-les à son rôle dans Paramètres du serveur > Rôles, …"
+  },
+  "mockup.v2.sanctions.title": {
+    "message": "Configuración de sanciones",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Configuration des sanctions"
+  },
+  "mockup.v2.sanctions.desc": {
+    "message": "Configura los ajustes relacionados con las sanciones automáticas y su registro en el servidor. Ofrece un control preciso sobre los roles aplicados, los umbrales de sanción y la visibilidad de las acciones de moderación.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Configurez les paramètres liés aux sanctions automatiques et…"
+  },
+  "mockup.v2.sanctions.quarantine": {
+    "message": "Cuarentena de Discord sincronizada",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Quarantaine Discord synchronisée"
+  },
+  "mockup.v2.enabledF": {
+    "message": "Activado",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Activée"
+  },
+  "mockup.v2.disabledF": {
+    "message": "Desactivado",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Désactivée"
+  },
+  "mockup.v2.sanctions.quarantineHint": {
+    "message": "Un miembro que el AutoMod de Discord pone en cuarentena (apodo, etiqueta de servidor) queda en cuarentena con el rol de jail, y sale cuando Discord la levanta. Solo cuentan las cuarentenas nuevas.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Un membre que l'AutoMod de Discord met en quarantaine (pseud…"
+  },
+  "mockup.v2.sanctions.passive": {
+    "message": "Logs de moderación pasivos",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Logs de modération passives"
+  },
+  "mockup.v2.sanctions.medias": {
+    "message": "Mostrar medios",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Afficher les médias"
+  },
+  "mockup.v2.sanctions.privacy": {
+    "message": "Privacidad de Sanciones",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Confidentialité des Sanctions"
+  },
+  "mockup.v2.sanctions.privacyValue": {
+    "message": "Con razones",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Avec les raisons"
+  },
+  "mockup.v2.export": {
+    "message": "Exportar",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Exporter"
+  },
+  "mockup.v2.import": {
+    "message": "Importar",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Importer"
+  },
+  "mockup.v2.sanctions.names": {
+    "message": "Nombres de sanciones",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Noms des sanctions"
+  },
+  "mockup.v2.sanctions.modTitle": {
+    "message": "Configuración de moderación",
+    "description": "/settings V2 mockup (Utilities tab). FR source: Configuration de la modération"
+  },
+  "mockup.v2.jail.desc": {
+    "message": "Configura el **rol Jail** para activar una sanción de moderación por rol, más restrictiva que un silencio clásico. Una vez configurado, este rol permite aislar a un miembro con permisos muy limitados y desbloquea el uso de los comandos /jail y /tempjail.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Configurez le **rôle Jail** afin d'activer une sanction de m…"
+  },
+  "mockup.v2.jail.ph": {
+    "message": "Rol de Cárcel (escribe para buscar)",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Role Jail (écrire pour chercher)"
+  },
+  "mockup.v2.jail.channel": {
+    "message": "Canal de información",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Salon d'informations"
+  },
+  "mockup.v2.jail.editChannel": {
+    "message": "Editar canal",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Modifier le salon"
+  },
+  "mockup.v2.jail.roles": {
+    "message": "Gestión de roles al hacer jail",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Gestion des rôles lors du jail"
+  },
+  "mockup.v2.jail.addDesc": {
+    "message": "El miembro conserva sus roles y se le añade el de jail.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Le membre garde ses rôles, le rôle de jail est ajouté."
+  },
+  "mockup.v2.jail.rolesPh": {
+    "message": "Elegir el comportamiento al hacer jail",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Choisir le comportement lors du jail"
+  },
+  "mockup.v2.jail.add": {
+    "message": "Añadir el rol de jail",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Ajouter le rôle de jail"
+  },
+  "mockup.v2.jail.replace": {
+    "message": "Reemplazar todos los roles",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Remplacer tous les rôles"
+  },
+  "mockup.v2.jail.replaceDesc": {
+    "message": "Los roles se eliminan y se restauran al hacer unjail.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Les rôles sont retirés puis restaurés à l'unjail."
+  },
+  "mockup.v2.mute.desc": {
+    "message": "Configura el **Rol de Silencio** para usar una sanción basada en roles en lugar del timeout de Discord para duraciones prolongadas. Cuando la duración del silencio excede el umbral definido, el bot asignará automáticamente el Rol de Silencio al miembro en lugar de aplicar un timeout de Discord.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Configurez le **rôle Mute** afin d'utiliser une sanction par…"
+  },
+  "mockup.v2.mute.role": {
+    "message": "Rol de Silencio",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Role Mute"
+  },
+  "mockup.v2.mute.ph": {
+    "message": "Rol de Silencio (escribe para buscar)",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Role Mute (écrire pour chercher)"
+  },
+  "mockup.v2.mute.threshold": {
+    "message": "Umbral de Silencio",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Seuil de Mute"
+  },
+  "mockup.v2.mute.thresholdHint": {
+    "message": "Más allá de esta duración, el Rol de Silencio sustituye al timeout de Discord. Cero nunca usa el timeout, y Discord limita este a 28 días.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Au-delà de cette durée, le rôle Mute remplace le timeout Dis…"
+  },
+  "mockup.v2.mute.thresholdPh": {
+    "message": "Ingresa el umbral",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Entrez le seuil"
+  },
+  "mockup.v2.mute.always": {
+    "message": "Siempre",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Tout le temps"
+  },
+  "mockup.v2.oneHour": {
+    "message": "1 hora",
+    "description": "/settings V2 mockup (Protection tab). FR source: 1 heure"
+  },
+  "mockup.v2.mute.extended": {
+    "message": "Timeout extendido (=28 días)",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Timeout étendu (=28 jours)"
+  },
+  "mockup.v2.names.title": {
+    "message": "Personalizar nombres de sanciones",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Personnaliser les noms des sanctions"
+  },
+  "mockup.v2.names.desc": {
+    "message": "Personaliza los nombres mostrados para cada tipo de sanción. Los nombres personalizados reemplazan las traducciones predeterminadas en los logs, búsquedas y menús.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Personnalisez les noms affichés pour chaque type de sanction…"
+  },
+  "mockup.v2.names.ph": {
+    "message": "Seleccionar una sanción a personalizar",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Sélectionner une sanction à personnaliser"
+  },
+  "mockup.v2.names.resetAll": {
+    "message": "Restablecer todo",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Réinitialiser tout"
+  },
+  "mockup.v2.alts.title": {
+    "message": "Gestión de cuentas duplicadas",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Gestion des doubles comptes"
+  },
+  "mockup.v2.alts.desc": {
+    "message": "Las cuentas declaradas como la misma persona con /alt comparten sus sanciones restrictivas: la sanción queda a nombre de la cuenta objetivo, las demás reciben su estado, y levantarla, desde cualquiera de ellas, la levanta para todas. Elige cómo se extiende cada sanción.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Les comptes déclarés comme une même personne avec /alt parta…"
+  },
+  "mockup.v2.alts.name": {
+    "message": "Cuentas duplicadas",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Doubles comptes"
+  },
+  "mockup.v2.alts.modes": {
+    "message": "Sanciones de las cuentas vinculadas",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Sanctions des comptes liés"
+  },
+  "mockup.v2.alts.now": {
+    "message": "De inmediato",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Tout de suite"
+  },
+  "mockup.v2.alts.allPh": {
+    "message": "Ajustar todo en…",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Tout régler sur…"
+  },
+  "mockup.v2.alts.nowDesc": {
+    "message": "Cada sanción se extiende al instante al grupo.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Chaque sanction s'étend aussitôt au groupe."
+  },
+  "mockup.v2.alts.trap": {
+    "message": "Trampa",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Piège"
+  },
+  "mockup.v2.alts.trapDesc": {
+    "message": "Cada sanción solo afecta a la cuenta elegida; el kick, que no dura, no cambia.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Chaque sanction ne vise que le compte choisi ; le kick, qui …"
+  },
+  "mockup.v2.alts.offDesc": {
+    "message": "Ninguna sanción se extiende ya a las cuentas vinculadas.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Plus aucune sanction ne s'étend aux comptes liés."
+  },
+  "mockup.v2.alts.evasion": {
+    "message": "Sanción por elusión",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Sanction de contournement"
+  },
+  "mockup.v2.alts.rest": {
+    "message": "Resto de la sanción",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Reste de la sanction"
+  },
+  "mockup.v2.alts.single": {
+    "message": "Una sola cuenta por persona",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Un seul compte par personne"
+  },
+  "mockup.v2.alts.singleHint": {
+    "message": "Solo la cuenta principal de cada grupo circula por el servidor: las demás quedan en cuarentena (rol de jail) y salen por sí solas si pasan a ser principales o se quitan del grupo.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Seul le compte principal de chaque groupe circule sur le ser…"
+  },
+  "mockup.v2.logs.title": {
+    "message": "Configuración de Logs del Bot",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Configuration des Logs"
+  },
+  "mockup.v2.logs.desc": {
+    "message": "Configura los **logs del bot** en tu servidor de Discord.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Configurez les **logs du bot** sur votre serveur Discord."
+  },
+  "mockup.v2.logs.generalPh": {
+    "message": "Canal para logs generales (escribe para buscar)",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Salon des logs Générales (écrire pour chercher)"
+  },
+  "mockup.v2.logs.fallback": {
+    "message": "Si se deja vacío, estos logs van al canal general.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Laissé vide, ces logs vont dans le salon général."
+  },
+  "mockup.v2.logs.modPh": {
+    "message": "Canal para logs de moderación (escribe para buscar)",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Salon des logs de modération (écrire pour chercher)"
+  },
+  "mockup.v2.logs.captchaPh": {
+    "message": "Canal para logs de Captcha (escribe para buscar)",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Salon des logs Captcha (écrire pour chercher)"
+  },
+  "mockup.v2.logs.modDesc": {
+    "message": "Por defecto, los logs de moderación se envían al canal de logs de RaidProtect. Si lo deseas, puedes seleccionar otro canal.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Par défaut, les logs de modération sont dans le salon de log…"
+  },
+  "mockup.v2.logs.configured": {
+    "message": "Canal configurado",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Salon configuré"
+  },
+  "mockup.v2.reports.title": {
+    "message": "Configuración del Sistema de Reportes",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Configuration du système de signalement"
+  },
+  "mockup.v2.reports.desc": {
+    "message": "Activa el **Sistema de Reportes** para permitir que los miembros **notifiquen fácilmente a tu equipo** sobre situaciones problemáticas.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Activez le **système de signalement** pour permettre aux mem…"
+  },
+  "mockup.v2.reports.channel": {
+    "message": "Recibir reportes",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Réception des signalements"
+  },
+  "mockup.v2.reports.role": {
+    "message": "Rol de notificación",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Rôle de notification"
+  },
+  "mockup.v2.reports.notify": {
+    "message": "Notificación al denunciante",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Notification du signaleur"
+  },
+  "mockup.v2.reports.notify1": {
+    "message": "Solo el tratamiento",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Traitement seul"
+  },
+  "mockup.v2.reports.group": {
+    "message": "Agrupación",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Regroupement"
+  },
+  "mockup.v2.reports.groupOn": {
+    "message": "Las denuncias que apuntan al mismo miembro se agrupan en una sola alerta.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Les signalements visant le même membre sont regroupés dans u…"
+  },
+  "mockup.v2.reports.groupOff": {
+    "message": "Cada denuncia crea su propia alerta separada.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Chaque signalement crée sa propre alerte séparée."
+  },
+  "mockup.v2.reports.trusted": {
+    "message": "Rol de confianza",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Rôle de confiance"
+  },
+  "mockup.v2.reports.bad": {
+    "message": "Falsos denunciantes",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Faux signaleurs"
+  },
+  "mockup.v2.reports.badValue": {
+    "message": "5 · Notificar a los moderadores",
+    "description": "/settings V2 mockup (Moderation tab). FR source: 5 · Notifier les modérateurs"
+  },
+  "mockup.v2.transparency.desc": {
+    "message": "Publica resúmenes de moderación periódicos y un modlog público para que tus miembros vean cómo se modera el servidor.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Publiez des récapitulatifs de modération périodiques et un m…"
+  },
+  "mockup.v2.transparency.recaps": {
+    "message": "Resúmenes periódicos",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Récaps périodiques"
+  },
+  "mockup.v2.transparency.oneRecap": {
+    "message": "1 resumen",
+    "description": "/settings V2 mockup (Moderation tab). FR source: 1 récap"
+  },
+  "mockup.v2.transparency.modlog": {
+    "message": "Modlog público",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Modlog public"
+  },
+  "mockup.v2.transparency.command": {
+    "message": "Comando </transparency>",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Commande </transparency>"
+  },
+  "mockup.v2.modlog.desc": {
+    "message": "Publica cada acción de moderación en un canal público. Elige qué se muestra y qué fuentes se incluyen.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Publie chaque action de modération dans un salon public. Cho…"
+  },
+  "mockup.v2.modlog.channel": {
+    "message": "Canal",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Salon"
+  },
+  "mockup.v2.modlog.channelPh": {
+    "message": "Selecciona un canal",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Sélectionnez un salon"
+  },
+  "mockup.v2.modlog.display": {
+    "message": "Información mostrada",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Informations affichées"
+  },
+  "mockup.v2.modlog.displayPh": {
+    "message": "Elige qué se muestra",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Choisissez ce qui est affiché"
+  },
+  "mockup.v2.modlog.reason": {
+    "message": "Razón",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Raison"
+  },
+  "mockup.v2.modlog.moderator": {
+    "message": "Moderador",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Modérateur"
+  },
+  "mockup.v2.modlog.duration": {
+    "message": "Duración",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Durée"
+  },
+  "mockup.v2.modlog.target": {
+    "message": "Miembro sancionado",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Membre sanctionné"
+  },
+  "mockup.v2.modlog.sources": {
+    "message": "Sanciones publicadas",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Sanctions publiées"
+  },
+  "mockup.v2.modlog.sourcesPh": {
+    "message": "Elige qué sanciones aparecen",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Choisissez quelles sanctions apparaissent"
+  },
+  "mockup.v2.modlog.human": {
+    "message": "Manuales (equipo)",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Manuelles (équipe)"
+  },
+  "mockup.v2.modlog.auto": {
+    "message": "Automáticas (RaidProtect)",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Automatiques (RaidProtect)"
+  },
+  "mockup.v2.slowmode.free": {
+    "message": "Espacio libre.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Emplacement libre."
+  },
+  "mockup.v2.recaps.desc": {
+    "message": "Publica automáticamente un resumen de moderación agregado en un canal, según una frecuencia.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Publie automatiquement un récapitulatif de modération agrégé…"
+  },
+  "mockup.v2.recaps.configured": {
+    "message": "Resúmenes configurados",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Récaps configurés"
+  },
+  "mockup.v2.recaps.weekly": {
+    "message": "Semanal",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Hebdomadaire"
+  },
+  "mockup.v2.recap.title": {
+    "message": "Resumen",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Récap"
+  },
+  "mockup.v2.recap.desc": {
+    "message": "Configura este resumen periódico.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Configurez ce récap périodique."
+  },
+  "mockup.v2.recap.name": {
+    "message": "Nombre",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Nom"
+  },
+  "mockup.v2.recap.rename": {
+    "message": "Renombrar",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Renommer"
+  },
+  "mockup.v2.recap.schedule": {
+    "message": "Horario",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Horaire"
+  },
+  "mockup.v2.recap.at": {
+    "message": "hacia las 08:00",
+    "description": "/settings V2 mockup (Moderation tab). FR source: vers 08:00"
+  },
+  "mockup.v2.recap.tz": {
+    "message": "Zona horaria del servidor: Europe/Paris (UTC+2)",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Fuseau horaire du serveur : Europe/Paris (UTC+2)"
+  },
+  "mockup.v2.recap.frequency": {
+    "message": "Frecuencia",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Fréquence"
+  },
+  "mockup.v2.recap.frequencyPh": {
+    "message": "Elige una frecuencia",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Choisissez une fréquence"
+  },
+  "mockup.v2.recaps.biweekly": {
+    "message": "Cada dos semanas",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Toutes les deux semaines"
+  },
+  "mockup.v2.recaps.monthly": {
+    "message": "Mensual",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Mensuel"
+  },
+  "mockup.v2.recaps.quarterly": {
+    "message": "Trimestral",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Trimestriel"
+  },
+  "mockup.v2.recaps.yearly": {
+    "message": "Anual",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Annuel"
+  },
+  "mockup.v2.recap.mentionPh": {
+    "message": "Elige un rol a mencionar",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Choisissez un rôle à mentionner"
+  },
+  "mockup.v2.recap.feed": {
+    "message": "Alimentar /transparency",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Alimenter /transparency"
+  },
+  "mockup.v2.alts.banNow": {
+    "message": "Todas las cuentas vinculadas son baneadas al instante, estén o no.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Tous les comptes liés sont bannis aussitôt, présents ou non."
+  },
+  "mockup.v2.alts.present": {
+    "message": "Presentes de inmediato, las demás al llegar",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Présents tout de suite, les autres à l'arrivée"
+  },
+  "mockup.v2.alts.banPresent": {
+    "message": "Las cuentas ausentes son baneadas si entran al servidor durante el ban.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Les comptes absents sont bannis s'ils rejoignent le serveur …"
+  },
+  "mockup.v2.alts.banTrap": {
+    "message": "Solo la cuenta objetivo; otra que llegue o escriba mientras tanto se toma por elusión.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Seul le compte visé ; un autre qui arrive ou écrit pendant c…"
+  },
+  "mockup.v2.alts.banOff": {
+    "message": "La sanción solo afecta a la cuenta elegida.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: La sanction ne vise que le compte choisi."
+  },
+  "mockup.v2.alts.kickNow": {
+    "message": "Las cuentas vinculadas presentes en el servidor también son expulsadas.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Les comptes liés présents sur le serveur sont expulsés aussi…"
+  },
+  "mockup.v2.alts.roleNow": {
+    "message": "Las cuentas presentes de inmediato, las demás al llegar.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Les comptes présents tout de suite, les autres à leur arrivé…"
+  },
+  "mockup.v2.privacy.doc": {
+    "message": "Configura lo que ve un miembro al consultar sus propias sanciones con el comando </mis-sanciones> o el botón **`Mis Sanciones`**.\n\n*Sea cual sea el nivel seleccionado, **los moderadores conservan un acceso completo** al historial de sanciones mediante las herramientas de moderación.*",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Configurez ce que voit un membre en consultant ses propres s…"
+  },
+  "mockup.v2.privacy.level": {
+    "message": "Nivel de acceso",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Niveau d'accès"
+  },
+  "mockup.v2.privacy.l0": {
+    "message": "Los usuarios no pueden consultar sus sanciones.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Les utilisateurs ne peuvent pas consulter leurs sanctions."
+  },
+  "mockup.v2.privacy.l1n": {
+    "message": "Solo sanciones",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Sanctions uniquement"
+  },
+  "mockup.v2.privacy.l1": {
+    "message": "Los usuarios solo pueden consultar sus sanciones y el tiempo restante, si aplica.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Les utilisateurs peuvent uniquement consulter leurs sanction…"
+  },
+  "mockup.v2.privacy.l2n": {
+    "message": "Con razones",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Avec les raisons"
+  },
+  "mockup.v2.privacy.l2": {
+    "message": "Los usuarios pueden consultar sus sanciones y la razón.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Les utilisateurs peuvent consulter leurs sanctions et la rai…"
+  },
+  "mockup.v2.privacy.l3n": {
+    "message": "Con razones y moderadores",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Avec les raisons et les modérateurs"
+  },
+  "mockup.v2.privacy.l3": {
+    "message": "Los usuarios pueden consultar todo sobre sus sanciones.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Les utilisateurs peuvent tout consulter sur leurs sanctions."
+  },
+  "mockup.v2.jail.createTitle": {
+    "message": "Crear un rol de Cárcel",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Créer un rôle Jail"
+  },
+  "mockup.v2.jail.createDoc": {
+    "message": "Una vez creado, se eliminará el permiso de ver canales para este rol.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Une fois créé, la permission de voir les salons sera retirée…"
+  },
+  "mockup.v2.jail.roleName": {
+    "message": "Nombre del rol",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Nom du rôle"
+  },
+  "mockup.v2.jail.createHint": {
+    "message": "Si seleccionas un canal, se usará como canal de información para el rol de Cárcel. De lo contrario, se creará un canal automáticamente a menos que elimines completamente el texto del segundo campo.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Si vous sélectionnez un salon, il sera utilisé comme salon d…"
+  },
+  "mockup.v2.jail.existing": {
+    "message": "Canal de información existente",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Salon d'informations existant"
+  },
+  "mockup.v2.jail.existingPh": {
+    "message": "Seleccionar un canal (opcional)",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Sélectionner un salon (optionnel)"
+  },
+  "mockup.v2.jail.newChannel": {
+    "message": "O crear un nuevo canal",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Ou créer un nouveau salon"
+  },
+  "mockup.v2.reports.channelDoc": {
+    "message": "Configura el **canal** donde se enviarán las **notificaciones de reportes**.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Configurez le **salon** dans lequel les **notifications des …"
+  },
+  "mockup.v2.reports.autoCreate": {
+    "message": "Creación automática",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Création automatique"
+  },
+  "mockup.v2.reports.createChannel": {
+    "message": "Crear un canal para mí",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Créer un salon pour moi"
+  },
+  "mockup.v2.reports.roleDoc": {
+    "message": "Configura el **rol que será notificado** cuando se reciba un **nuevo reporte**. Típicamente, un rol de moderador.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Configurez le **rôle qui sera notifié** lorsque d'un **nouve…"
+  },
+  "mockup.v2.reports.roleHint": {
+    "message": "Elige un rol, o marca una mención más abajo.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Choisissez un rôle, ou cochez une mention ci-dessous."
+  },
+  "mockup.v2.reports.otherMention": {
+    "message": "Otra mención",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Autre mention"
+  },
+  "mockup.v2.reports.createRole": {
+    "message": "Crear un rol para mí",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Créer un rôle pour moi"
+  },
+  "mockup.v2.reports.notifyDoc": {
+    "message": "Elige **qué reciben por MP** los miembros que han denunciado, una vez tratada su denuncia.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Choisissez **ce que reçoivent en DM** les membres ayant sign…"
+  },
+  "mockup.v2.reports.n0": {
+    "message": "Los denunciantes no reciben ninguna notificación.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Les signaleurs ne reçoivent aucune notification."
+  },
+  "mockup.v2.reports.n1": {
+    "message": "Se indica al denunciante que su denuncia ha sido tratada.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: On indique au signaleur que son signalement a été traité."
+  },
+  "mockup.v2.reports.notify2": {
+    "message": "Con el resultado",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Avec l'issue"
+  },
+  "mockup.v2.reports.n2": {
+    "message": "Se indica si la denuncia ha sido aceptada o rechazada.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: On indique si le signalement a été accepté ou refusé."
+  },
+  "mockup.v2.reports.notify3": {
+    "message": "Con el moderador",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Avec le modérateur"
+  },
+  "mockup.v2.reports.n3": {
+    "message": "Se indica también qué moderador ha tratado la denuncia.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: On indique aussi quel modérateur a traité le signalement."
+  },
+  "mockup.v2.reports.notifyPh": {
+    "message": "Nivel de notificación",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Niveau de notification"
+  },
+  "mockup.v2.reports.badTitle": {
+    "message": "Reputación de los denunciantes",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Réputation des signaleurs"
+  },
+  "mockup.v2.reports.badDoc": {
+    "message": "Actúa sobre los miembros cuyas denuncias se rechazan con regularidad. Define el umbral de denuncias rechazadas, la ventana de cálculo y qué ocurre al alcanzar el umbral.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Agir sur les membres dont les signalements sont régulièremen…"
+  },
+  "mockup.v2.reports.threshold": {
+    "message": "Umbral",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Seuil"
+  },
+  "mockup.v2.reports.thresholdHint": {
+    "message": "Número de reportes rechazados que activa la acción.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Nombre de signalements refusés qui déclenche l'action."
+  },
+  "mockup.v2.reports.window": {
+    "message": "Ventana",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Fenêtre"
+  },
+  "mockup.v2.reports.windowHint": {
+    "message": "Periodo durante el cual se cuentan los reportes rechazados.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Période sur laquelle les signalements refusés sont comptés."
+  },
+  "mockup.v2.reports.notifyMods": {
+    "message": "Notificar a los moderadores",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Notifier les modérateurs"
+  },
+  "mockup.v2.reports.block": {
+    "message": "Bloquear automáticamente",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Bloquer automatiquement"
+  },
+  "mockup.v2.reports.sanction": {
+    "message": "Sancionar automáticamente",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Sanctionner automatiquement"
+  },
+  "mockup.v2.reports.both": {
+    "message": "Bloquear y sancionar",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Bloquer et sanctionner"
+  },
+  "mockup.v2.reports.actionHint": {
+    "message": "Lo que le ocurre al miembro una vez alcanzado el umbral.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Ce qui arrive au membre une fois le seuil atteint."
+  },
+  "mockup.v2.reports.sanctionHint": {
+    "message": "Sanción aplicada cuando la acción sanciona a quien reporta.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Sanction appliquée quand l'action sanctionne le signaleur."
+  },
+  "mockup.v2.recap.scheduleTitle": {
+    "message": "Hora de publicación",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Horaire de publication"
+  },
+  "mockup.v2.recap.scheduleDoc": {
+    "message": "Elige la hora de publicación. La hora elegida es local, la zona horaria se ajusta en la página general de los ajustes.\nSe publica en un margen de 12h a partir de tu hora. El premium lo reduce a 1h.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Choisissez l'heure de publication. L'heure choisie est local…"
+  },
+  "mockup.v2.recap.hour": {
+    "message": "Hora de publicación",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Heure de publication"
+  },
+  "mockup.v2.recap.hourPh": {
+    "message": "Elija la hora (local)",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Choisissez l'heure (locale)"
+  },
+  "mockup.v2.alts.evasionDoc": {
+    "message": "Lo que recibe una cuenta vinculada detectada en modo trampa: llega o escribe durante la sanción de su grupo.\n\n**Resto de la sanción**: comparte la sanción del grupo hasta su fin, sin sanción a su nombre.\n**Una sanción**: se aplica a su nombre, con su propia duración, y vale para todo el grupo como cualquier otra: levantarla desde cualquier cuenta la levanta para todas.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Ce que reçoit un compte lié pris en mode piège : il arrive o…"
+  },
+  "mockup.v2.alts.restDesc": {
+    "message": "Comparte la sanción del grupo hasta su fin.",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Il partage la sanction du groupe jusqu'à sa fin."
+  },
+  "mockup.v2.alts.sanctionPh": {
+    "message": "Elegir la sanción",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Choisir la sanction"
+  },
+  "mockup.v2.honeypot.duration": {
+    "message": "Duración",
+    "description": "/settings V2 mockup (Protection tab). FR source: Durée"
+  },
+  "mockup.v2.alts.durationHint": {
+    "message": "Por ejemplo 1h, 3d, 2w. Vacío: permanente (obligatoria para un timeout, 28 días como máximo).",
+    "description": "/settings V2 mockup (Moderation tab). FR source: Par exemple 1h, 3j, 2w. Vide : définitif (obligatoire pour u…"
+  },
+  "mockup.v2.antispam.soft": {
+    "message": "Suave",
+    "description": "/settings V2 mockup (Protection tab). FR source: Souple"
+  },
+  "mockup.v2.antispam.softDesc": {
+    "message": "Primero advierte, luego aísla temporalmente o encarcela: nunca expulsa ni banea.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Avertit d'abord, exclut temporairement le spam de contenu."
+  },
+  "mockup.v2.antispam.standardDesc": {
+    "message": "Las sanciones por defecto de RaidProtect.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Les sanctions par défaut de RaidProtect."
+  },
+  "mockup.v2.antispam.strict": {
+    "message": "Estricto (no recomendado)",
+    "description": "/settings V2 mockup (Protection tab). FR source: Strict (non recommandé)"
+  },
+  "mockup.v2.antispam.strictDesc": {
+    "message": "Banea la publicidad y las cuentas automatizadas desde el primer spam.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Bannit la publicité et les comptes automatisés dès le premie…"
+  },
+  "mockup.v2.trigger.spam": {
+    "message": "Spam",
+    "description": "/settings V2 mockup (Protection tab). FR source: Spam"
+  },
+  "mockup.v2.trigger.flood": {
+    "message": "Flood (pantalla llena)",
+    "description": "/settings V2 mockup (Protection tab). FR source: Flood (écran rempli)"
+  },
+  "mockup.v2.trigger.files": {
+    "message": "Spam de archivos",
+    "description": "/settings V2 mockup (Protection tab). FR source: Spam de fichiers"
+  },
+  "mockup.v2.trigger.duplicates": {
+    "message": "Spam de duplicados",
+    "description": "/settings V2 mockup (Protection tab). FR source: Spam de duplicatas"
+  },
+  "mockup.v2.trigger.links": {
+    "message": "Spam de enlaces",
+    "description": "/settings V2 mockup (Protection tab). FR source: Spam de liens"
+  },
+  "mockup.v2.trigger.mentions": {
+    "message": "Spam de menciones",
+    "description": "/settings V2 mockup (Protection tab). FR source: Spam de mentions"
+  },
+  "mockup.v2.trigger.selfbot": {
+    "message": "Spam con selfbot",
+    "description": "/settings V2 mockup (Protection tab). FR source: Spam avec selfbot"
+  },
+  "mockup.v2.trigger.commands": {
+    "message": "Spam de comandos externos",
+    "description": "/settings V2 mockup (Protection tab). FR source: Spam de commandes externes"
+  },
+  "mockup.v2.trigger.automod": {
+    "message": "Spam de mensajes bloqueados (AutoMod)",
+    "description": "/settings V2 mockup (Protection tab). FR source: Spam de messages bloqués (AutoMod)"
+  },
+  "mockup.v2.trigger.multichannel": {
+    "message": "Spam multicanal",
+    "description": "/settings V2 mockup (Protection tab). FR source: Spam multisalon"
+  },
+  "mockup.v2.discon.l5": {
+    "message": "Todo bien",
+    "description": "/settings V2 mockup (Protection tab). FR source: Tout va bien"
+  },
+  "mockup.v2.discon.e5": {
+    "message": "verificación media",
+    "description": "/settings V2 mockup (Protection tab). FR source: vérification moyenne"
+  },
+  "mockup.v2.discon.l4": {
+    "message": "Vigilancia",
+    "description": "/settings V2 mockup (Protection tab). FR source: Vigilance"
+  },
+  "mockup.v2.discon.e4": {
+    "message": "verificación media, captcha a la entrada",
+    "description": "/settings V2 mockup (Protection tab). FR source: vérification moyenne, captcha à l'entrée"
+  },
+  "mockup.v2.discon.l3": {
+    "message": "Alerta",
+    "description": "/settings V2 mockup (Protection tab). FR source: Alerte"
+  },
+  "mockup.v2.discon.e3": {
+    "message": "verificación máxima, captcha a la entrada, bloqueo de los MD",
+    "description": "/settings V2 mockup (Protection tab). FR source: vérification maximale, captcha à l'entrée, blocage des MP"
+  },
+  "mockup.v2.discon.l2": {
+    "message": "Crítico",
+    "description": "/settings V2 mockup (Protection tab). FR source: Critique"
+  },
+  "mockup.v2.discon.e2": {
+    "message": "verificación máxima, captcha congelado, nadie entra, bloqueo de los MD",
+    "description": "/settings V2 mockup (Protection tab). FR source: vérification maximale, captcha gelé, personne n'entre, bloca…"
+  },
+  "mockup.v2.discon.l1": {
+    "message": "Catástrofe",
+    "description": "/settings V2 mockup (Protection tab). FR source: Catastrophe"
+  },
+  "mockup.v2.discon.e1": {
+    "message": "verificación máxima, captcha congelado, nadie entra, bloqueo de los MD, bloqueo total, nadie puede escribir ni reaccionar",
+    "description": "/settings V2 mockup (Protection tab). FR source: vérification maximale, captcha gelé, personne n'entre, bloca…"
+  },
+  "mockup.v2.discon.current": {
+    "message": "Nivel actual",
+    "description": "/settings V2 mockup (Protection tab). FR source: Niveau actuel"
+  },
+  "mockup.v2.discon.scale": {
+    "message": "Escala de niveles",
+    "description": "/settings V2 mockup (Protection tab). FR source: Barème des niveaux"
+  },
+  "mockup.v2.discon.title": {
+    "message": "Configuración DISCON",
+    "description": "/settings V2 mockup (Protection tab). FR source: Configuration DISCON"
+  },
+  "mockup.v2.discon.desc": {
+    "message": "Elige el canal donde se publica el panel DISCON y, opcionalmente, un canal de voz cuyo nombre refleje el nivel actual.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Choisissez le salon où poster le panneau DISCON et, en optio…"
+  },
+  "mockup.v2.discon.panelChannel": {
+    "message": "Canal del panel",
+    "description": "/settings V2 mockup (Protection tab). FR source: Salon du panneau"
+  },
+  "mockup.v2.discon.createPanel": {
+    "message": "Crear el canal del panel",
+    "description": "/settings V2 mockup (Protection tab). FR source: Créer le salon du panneau"
+  },
+  "mockup.v2.discon.panelPh": {
+    "message": "Canal del panel DISCON (texto)",
+    "description": "/settings V2 mockup (Protection tab). FR source: Salon du panneau DISCON (texte)"
+  },
+  "mockup.v2.discon.voice": {
+    "message": "Canal de voz de estado",
+    "description": "/settings V2 mockup (Protection tab). FR source: Salon vocal de statut"
+  },
+  "mockup.v2.discon.voicePremium": {
+    "message": "El canal de voz de estado del DISCON requiere el premium.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Le salon vocal de statut du DISCON nécessite le premium."
+  },
+  "mockup.v2.discon.createVoice": {
+    "message": "Crear el canal de estado",
+    "description": "/settings V2 mockup (Protection tab). FR source: Créer le salon de statut"
+  },
+  "mockup.v2.discon.voicePh": {
+    "message": "Canal de voz de estado (opcional)",
+    "description": "/settings V2 mockup (Protection tab). FR source: Salon vocal de statut (optionnel)"
+  },
+  "mockup.v2.antispam.title": {
+    "message": "Configuración de Anti-spam",
+    "description": "/settings V2 mockup (Protection tab). FR source: Configuration de l'Anti-spam"
+  },
+  "mockup.v2.antispam.desc": {
+    "message": "Configura el anti-spam para proteger tu servidor de Discord de acciones maliciosas de usuarios.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Configurez le système anti-spam pour protéger votre serveur …"
+  },
+  "mockup.v2.antispam.details": {
+    "message": "Ver detalles",
+    "description": "/settings V2 mockup (Protection tab). FR source: Voir les détails"
+  },
+  "mockup.v2.antispam.presetPh": {
+    "message": "Elige un preajuste",
+    "description": "/settings V2 mockup (Protection tab). FR source: Choisir un préréglage"
+  },
+  "mockup.v2.antispam.channels": {
+    "message": "Canal(es) ignorado(s)",
+    "description": "/settings V2 mockup (Protection tab). FR source: Salon(s) ignoré(s)"
+  },
+  "mockup.v2.antispam.channelsPh": {
+    "message": "Canal(es) a ignorar (escribe para buscar)",
+    "description": "/settings V2 mockup (Protection tab). FR source: Salon(s) à ignorer (écrire pour chercher)"
+  },
+  "mockup.v2.antispam.roles": {
+    "message": "Rol(es) ignorado(s)",
+    "description": "/settings V2 mockup (Protection tab). FR source: Rôle(s) ignoré(s)"
+  },
+  "mockup.v2.antispam.rolesPh": {
+    "message": "Rol(es) a ignorar (escribe para buscar)",
+    "description": "/settings V2 mockup (Protection tab). FR source: Rôle(s) à ignorer (écrire pour chercher)"
+  },
+  "mockup.v2.antispam.members": {
+    "message": "Miembro(s) ignorado(s)",
+    "description": "/settings V2 mockup (Protection tab). FR source: Membre(s) ignoré(s)"
+  },
+  "mockup.v2.antispam.membersPh": {
+    "message": "Miembro(s) a ignorar (escribe para buscar)",
+    "description": "/settings V2 mockup (Protection tab). FR source: Membre(s) à ignorer (écrire pour chercher)"
+  },
+  "mockup.v2.antispam.simulate": {
+    "message": "Simular",
+    "description": "/settings V2 mockup (Protection tab). FR source: Simuler"
+  },
+  "mockup.v2.antispam.simulateHint": {
+    "message": "Simula una situación para ver si el anti-spam se activaría: elige un miembro, un canal y un tipo de spam.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Simulez une situation pour comprendre si l'anti-spam se décl…"
+  },
+  "mockup.v2.antispam.sanctionsDesc": {
+    "message": "Puedes personalizar las sanciones aplicadas dependiendo del tipo de spam detectado. Esto permite una respuesta adaptada a la gravedad de la violación.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Vous pouvez personnaliser les sanctions appliquées selon le …"
+  },
+  "mockup.v2.antispam.advanced": {
+    "message": "Modo avanzado",
+    "description": "/settings V2 mockup (Protection tab). FR source: Mode avancé"
+  },
+  "mockup.v2.antispam.familiesHint": {
+    "message": "Cada familia agrupa disparadores de la misma naturaleza. Cuando un spam supera varios, prevalece la sanción más severa.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Chaque famille regroupe des déclencheurs de même nature. Qua…"
+  },
+  "mockup.v2.antispam.defaultDuration": {
+    "message": "Por defecto (1 hora)",
+    "description": "/settings V2 mockup (Protection tab). FR source: Défaut (1 heure)"
+  },
+  "mockup.v2.antispam.triggersPh": {
+    "message": "Selecciona los disparadores que modificar",
+    "description": "/settings V2 mockup (Protection tab). FR source: Sélectionner les déclencheurs à modifier"
+  },
+  "mockup.v2.family.excess": {
+    "message": "Exceso",
+    "description": "/settings V2 mockup (Protection tab). FR source: Excès"
+  },
+  "mockup.v2.family.excessHint": {
+    "message": "Volumen de mensajes, flood y archivos: alguien que se desboca.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Volume de messages, flood et fichiers : quelqu'un qui s'emba…"
+  },
+  "mockup.v2.family.spamHint": {
+    "message": "Mensajes duplicados, enlaces y menciones: publicidad o acoso.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Messages en double, liens et mentions : publicité ou harcèle…"
+  },
+  "mockup.v2.family.automated": {
+    "message": "Automatizado",
+    "description": "/settings V2 mockup (Protection tab). FR source: Automatisé"
+  },
+  "mockup.v2.family.automatedHint": {
+    "message": "Selfbot, comandos externos y mensajes bloqueados por AutoMod: un bot o una cuenta comprometida.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Selfbot, commandes externes et messages bloqués par l'AutoMo…"
+  },
+  "mockup.v2.family.multiHint": {
+    "message": "Reemplaza la sanción del disparador cuando el spam abarca varios canales, solo si es más severa.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Remplace la sanction du déclencheur quand le spam touche plu…"
+  },
+  "mockup.v2.antispam.duration": {
+    "message": "Duración predeterminada",
+    "description": "/settings V2 mockup (Protection tab). FR source: Durée par défaut"
+  },
+  "mockup.v2.antispam.durationHint": {
+    "message": "Duración aplicada a los disparadores sin duración propia, para las sanciones que la admiten (mute, timeout, jail). Se ignora para las demás sanciones.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Durée appliquée aux déclencheurs sans durée propre, pour les…"
+  },
+  "mockup.v2.permanent": {
+    "message": "Permanente",
+    "description": "/settings V2 mockup (Protection tab). FR source: Permanent"
+  },
+  "mockup.v2.antispam.publicMsg": {
+    "message": "Mensaje público de sanción",
+    "description": "/settings V2 mockup (Protection tab). FR source: Message public de sanction"
+  },
+  "mockup.v2.antispam.publicMsgHint": {
+    "message": "Envía un mensaje en el canal para avisar de la sanción (ej. 'miembro ha sido muteado'). Se puede desactivar en premium.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Envoie un message dans le salon pour annoncer la sanction (e…"
+  },
+  "mockup.v2.automod.desc": {
+    "message": "Los filtros que reconocen un contenido ya visto en otro lugar y lo retiran antes de que circule. Cada uno decide la sanción aplicada a su autor.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Les filtres qui reconnaissent un contenu déjà vu ailleurs et…"
+  },
+  "mockup.v2.automod.default": {
+    "message": "Por defecto",
+    "description": "/settings V2 mockup (Protection tab). FR source: Par défaut"
+  },
+  "mockup.v2.automod.imagesHint": {
+    "message": "Estafas conocidas, comparadas por huella",
+    "description": "/settings V2 mockup (Protection tab). FR source: Arnaques connues, comparées par empreinte"
+  },
+  "mockup.v2.servers.name": {
+    "message": "Otros servidores",
+    "description": "/settings V2 mockup (Protection tab). FR source: Autres serveurs"
+  },
+  "mockup.v2.servers.short": {
+    "message": "Invitaciones, reenvíos y etiquetas de otros servidores",
+    "description": "/settings V2 mockup (Protection tab). FR source: Invitations, transferts et tags d'autres serveurs"
+  },
+  "mockup.v2.servers.hint": {
+    "message": "Elimina las invitaciones y los mensajes reenviados de otros servidores y pone en cuarentena sus etiquetas.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Supprime les invitations et messages transférés d'autres ser…"
+  },
+  "mockup.v2.servers.link": {
+    "message": "Invitación",
+    "description": "/settings V2 mockup (Protection tab). FR source: Invitation"
+  },
+  "mockup.v2.servers.forward": {
+    "message": "Mensaje reenviado o enlace de canal",
+    "description": "/settings V2 mockup (Protection tab). FR source: Message transféré ou lien de salon"
+  },
+  "mockup.v2.servers.tag": {
+    "message": "Etiqueta de servidor mostrada",
+    "description": "/settings V2 mockup (Protection tab). FR source: Tag de serveur affiché"
+  },
+  "mockup.v2.servers.blocklist": {
+    "message": "Lista negra",
+    "description": "/settings V2 mockup (Protection tab). FR source: Liste noire"
+  },
+  "mockup.v2.servers.allowlist": {
+    "message": "Lista blanca",
+    "description": "/settings V2 mockup (Protection tab). FR source: Liste blanche"
+  },
+  "mockup.v2.servers.title": {
+    "message": "Referencias a otros servidores",
+    "description": "/settings V2 mockup (Protection tab). FR source: Références à d'autres serveurs"
+  },
+  "mockup.v2.servers.desc": {
+    "message": "Elige, para cada comportamiento, una lista negra (esos servidores se rechazan) o una lista blanca (solo pasan esos servidores). Tu servidor siempre pasa, y tu equipo (Gestionar servidor, Gestionar mensajes) nunca es objetivo.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Choisissez, pour chaque comportement, une liste noire (ces s…"
+  },
+  "mockup.v2.servers.modePh": {
+    "message": "Elegir un modo",
+    "description": "/settings V2 mockup (Protection tab). FR source: Choisir un mode"
+  },
+  "mockup.v2.servers.sanction": {
+    "message": "Sanción de los mensajes eliminados",
+    "description": "/settings V2 mockup (Protection tab). FR source: Sanction des messages supprimés"
+  },
+  "mockup.v2.sanctionPh": {
+    "message": "Selecciona una sanción",
+    "description": "/settings V2 mockup (Protection tab). FR source: Sélectionner une sanction"
+  },
+  "mockup.v2.servers.none": {
+    "message": "Solo se elimina el mensaje",
+    "description": "/settings V2 mockup (Protection tab). FR source: Message supprimé seulement"
+  },
+  "mockup.v2.sevenDays": {
+    "message": "7 días",
+    "description": "/settings V2 mockup (Protection tab). FR source: 7 jours"
+  },
+  "mockup.v2.servers.blockList": {
+    "message": "Lista negra",
+    "description": "/settings V2 mockup (Protection tab). FR source: Liste noire"
+  },
+  "mockup.v2.servers.allowList": {
+    "message": "Lista blanca",
+    "description": "/settings V2 mockup (Protection tab). FR source: Liste blanche"
+  },
+  "mockup.v2.servers.add": {
+    "message": "Añadir un servidor",
+    "description": "/settings V2 mockup (Protection tab). FR source: Ajouter un serveur"
+  },
+  "mockup.v2.servers.remove": {
+    "message": "Retirar",
+    "description": "/settings V2 mockup (Protection tab). FR source: Retirer"
+  },
+  "mockup.v2.imagefilter.title": {
+    "message": "Filtro de imágenes",
+    "description": "/settings V2 mockup (Protection tab). FR source: Filtre d'images"
+  },
+  "mockup.v2.imagefilter.desc": {
+    "message": "Compara la huella de las imágenes publicadas con las de estafas conocidas, elimina las que coinciden y sanciona a su autor. No se lee nada del texto de los mensajes.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Compare l'empreinte des images postées à celles des arnaques…"
+  },
+  "mockup.v2.sanction.applied": {
+    "message": "Sanción aplicada",
+    "description": "/settings V2 mockup (Protection tab). FR source: Sanction appliquée"
+  },
+  "mockup.v2.imagefilter.duration": {
+    "message": "Duración de la sanción",
+    "description": "/settings V2 mockup (Protection tab). FR source: Durée de la sanction"
+  },
+  "mockup.v2.imagefilter.durationHint": {
+    "message": "Por defecto: sigue la duración del HoneyPot, activo en este servidor.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Par défaut : suit la durée du HoneyPot, actif sur ce serveur…"
+  },
+  "mockup.v2.imagefilter.catalog": {
+    "message": "Catálogo de imágenes",
+    "description": "/settings V2 mockup (Protection tab). FR source: Catalogue d'images"
+  },
+  "mockup.v2.imagefilter.catalogHint": {
+    "message": "**Una lista = un solo registro de imágenes** (un mismo tipo de contenido). Mezclar imágenes sin relación en una lista corrompe la detección.",
+    "description": "/settings V2 mockup (Protection tab). FR source: **Une liste = un seul registre d'images** (un même type de c…"
+  },
+  "mockup.v2.imagefilter.global": {
+    "message": "Gestionado por RaidProtect, aplicado en todos los servidores",
+    "description": "/settings V2 mockup (Protection tab). FR source: Géré par RaidProtect, appliqué sur tous les serveurs"
+  },
+  "mockup.v2.imagefilter.empty": {
+    "message": "No hay ninguna lista para este servidor. Crea una, elige su canal de verificación, y añade tus imágenes.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Aucune liste pour ce serveur. Créez-en une, choisissez son s…"
+  },
+  "mockup.v2.imagefilter.create": {
+    "message": "Crear una lista (0/0)",
+    "description": "/settings V2 mockup (Protection tab). FR source: Créer une liste (0/0)"
+  },
+  "mockup.v2.honeypot.title": {
+    "message": "Configuración del HoneyPot",
+    "description": "/settings V2 mockup (Protection tab). FR source: Configuration du HoneyPot"
+  },
+  "mockup.v2.honeypot.desc": {
+    "message": "El **HoneyPot** es un canal trampa visible y con permiso de escritura para **todos los miembros** (incluidos los que tengan el rol de Jail o el rol de verificación del captcha). Cualquier miembro que envíe un mensaje en él será **sancionado automáticamente** por RaidProtect.\n\nEl canal se crea en la parte superior de tu servidor y al crearlo se publica un mensaje de advertencia (con un botón de traducción).",
+    "description": "/settings V2 mockup (Protection tab). FR source: Le **HoneyPot** est un salon piège visible et accessible en …"
+  },
+  "mockup.v2.honeypot.channel": {
+    "message": "Canal HoneyPot",
+    "description": "/settings V2 mockup (Protection tab). FR source: Salon HoneyPot"
+  },
+  "mockup.v2.honeypot.regen": {
+    "message": "Regenerar canal",
+    "description": "/settings V2 mockup (Protection tab). FR source: Régénérer le salon"
+  },
+  "mockup.v2.honeypot.create": {
+    "message": "Crear canal",
+    "description": "/settings V2 mockup (Protection tab). FR source: Créer le salon"
+  },
+  "mockup.v2.honeypot.delay": {
+    "message": "Plazo antes de la sanción",
+    "description": "/settings V2 mockup (Protection tab). FR source: Délai avant sanction"
+  },
+  "mockup.v2.honeypot.delayHint": {
+    "message": "Con un plazo, el mensaje se elimina y se menciona al miembro con un botón para indicar que fue un error. Si no pulsa a tiempo, se aplica la sanción. El mismo mensaje publicado en otro canal, antes o durante el plazo, se sanciona de inmediato.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Avec un délai, le message est retiré et le membre est mentio…"
+  },
+  "mockup.v2.honeypot.delayPh": {
+    "message": "Selecciona un plazo",
+    "description": "/settings V2 mockup (Protection tab). FR source: Sélectionner un délai"
+  },
+  "mockup.v2.honeypot.immediate": {
+    "message": "Sanción inmediata",
+    "description": "/settings V2 mockup (Protection tab). FR source: Sanction immédiate"
+  },
+  "mockup.v2.honeypot.askFirst": {
+    "message": "Preguntar primero, sanción tras {duration}",
+    "description": "/settings V2 mockup (Protection tab). FR source: Demander d'abord, sanction après {duration}"
+  },
+  "mockup.v2.honeypot.ignored": {
+    "message": "Miembros ignorados",
+    "description": "/settings V2 mockup (Protection tab). FR source: Membres ignorés"
+  },
+  "mockup.v2.honeypot.ignoredPh": {
+    "message": "Selecciona qué miembros ignorar",
+    "description": "/settings V2 mockup (Protection tab). FR source: Sélectionner les membres à ignorer"
+  },
+  "mockup.v2.honeypot.nobody": {
+    "message": "Nadie (excepto miembros no moderables)",
+    "description": "/settings V2 mockup (Protection tab). FR source: Personne (sauf membres non modérables)"
+  },
+  "mockup.v2.honeypot.staff": {
+    "message": "Staff (Admin / Gestionar servidor / Gestionar canales)",
+    "description": "/settings V2 mockup (Protection tab). FR source: Staff (Admin / Gérer le serveur / Gérer les salons)"
+  },
+  "mockup.v2.honeypot.antispamIgnored": {
+    "message": "Miembros ignorados por el Antispam",
+    "description": "/settings V2 mockup (Protection tab). FR source: Membres ignorés par l'Antispam"
+  },
+  "mockup.v2.slowmode.desc": {
+    "message": "Ajusta solo el modo lento de los canales elegidos según los mensajes por minuto, sin salirse de los límites de cada canal.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Ajuste automatiquement le slowmode des salons choisis pour t…"
+  },
+  "mockup.v2.slowmode.title": {
+    "message": "Slowmode preventivo (Premium)",
+    "description": "/settings V2 mockup (Protection tab). FR source: Slowmode préventif (Premium)"
+  },
+  "mockup.v2.slowmode.notice": {
+    "message": "Se requiere el premium para el slowmode preventivo.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Le premium est requis pour le slowmode préventif."
+  },
+  "mockup.v2.slowmode.rate30": {
+    "message": "30 mensajes / min",
+    "description": "/settings V2 mockup (Protection tab). FR source: 30 messages / min"
+  },
+  "mockup.v2.slowmode.channelTitle": {
+    "message": "Canal regulado:",
+    "description": "/settings V2 mockup (Protection tab). FR source: Salon régulé :"
+  },
+  "mockup.v2.slowmode.channelDesc": {
+    "message": "Elige cuántos mensajes por minuto puede recibir este canal. Por encima, el modo lento sube solo y baja cuando el canal se calma. Siempre se queda entre el mínimo y el máximo elegidos.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Ajustez le débit cible et les bornes de slowmode de ce salon…"
+  },
+  "mockup.v2.slowmode.target": {
+    "message": "Ritmo de mensajes",
+    "description": "/settings V2 mockup (Protection tab). FR source: Débit cible"
+  },
+  "mockup.v2.slowmode.targetPh": {
+    "message": "Elegir el ritmo de mensajes",
+    "description": "/settings V2 mockup (Protection tab). FR source: Choisir le débit cible"
+  },
+  "mockup.v2.slowmode.min": {
+    "message": "Slowmode mínimo",
+    "description": "/settings V2 mockup (Protection tab). FR source: Slowmode minimum"
+  },
+  "mockup.v2.slowmode.minPh": {
+    "message": "Elegir el slowmode mínimo",
+    "description": "/settings V2 mockup (Protection tab). FR source: Choisir le slowmode minimum"
+  },
+  "mockup.v2.slowmode.max": {
+    "message": "Slowmode máximo",
+    "description": "/settings V2 mockup (Protection tab). FR source: Slowmode maximum"
+  },
+  "mockup.v2.slowmode.maxPh": {
+    "message": "Elegir el slowmode máximo",
+    "description": "/settings V2 mockup (Protection tab). FR source: Choisir le slowmode maximum"
+  },
+  "mockup.v2.slowmode.applyAll": {
+    "message": "Aplicar a todos los canales regulados",
+    "description": "/settings V2 mockup (Protection tab). FR source: Appliquer à tous les salons"
+  },
+  "mockup.v2.dmlock.title": {
+    "message": "Configuración de Bloqueo de MD",
+    "description": "/settings V2 mockup (Protection tab). FR source: Configuration des MP fermés"
+  },
+  "mockup.v2.suggest": {
+    "message": "Hacer una sugerencia",
+    "description": "/settings V2 mockup (Protection tab). FR source: Faire une suggestion"
+  },
+  "mockup.v2.antispam.familyModal": {
+    "message": "Sanción de los disparadores",
+    "description": "/settings V2 mockup (Protection tab). FR source: Sanction des déclencheurs"
+  },
+  "mockup.v2.antispam.familyModalHead": {
+    "message": "3 disparadores modificados",
+    "description": "/settings V2 mockup (Protection tab). FR source: 3 déclencheurs modifiés"
+  },
+  "mockup.v2.antispam.keepSanction": {
+    "message": "Déjalo vacío para mantener la sanción actual.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Laisser vide pour garder la sanction actuelle."
+  },
+  "mockup.v2.antispam.globalDuration": {
+    "message": "Por defecto (duración global)",
+    "description": "/settings V2 mockup (Protection tab). FR source: Par défaut (durée globale)"
+  },
+  "mockup.v2.antispam.keepDuration": {
+    "message": "Para mute, timeout y jail. Déjalo vacío para mantener la duración actual.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Pour le mute, le timeout et le jail. Laisser vide pour garde…"
+  },
+  "mockup.v2.antispam.customDuration": {
+    "message": "Duración personalizada",
+    "description": "/settings V2 mockup (Protection tab). FR source: Durée personnalisée"
+  },
+  "mockup.v2.antispam.customDurationHint": {
+    "message": "Sustituye la duración elegida arriba (mínimo 5 minutos).",
+    "description": "/settings V2 mockup (Protection tab). FR source: Remplace la durée choisie au-dessus (5 minutes minimum)."
+  },
+  "mockup.v2.antispam.simTitle": {
+    "message": "Diagnóstico del anti-spam",
+    "description": "/settings V2 mockup (Protection tab). FR source: Diagnostic de l'anti-spam"
+  },
+  "mockup.v2.antispam.simMember": {
+    "message": "Miembro a probar",
+    "description": "/settings V2 mockup (Protection tab). FR source: Membre à tester"
+  },
+  "mockup.v2.antispam.simMemberPh": {
+    "message": "Selecciona un miembro",
+    "description": "/settings V2 mockup (Protection tab). FR source: Sélectionnez un membre"
+  },
+  "mockup.v2.antispam.simChannel": {
+    "message": "Canal a probar",
+    "description": "/settings V2 mockup (Protection tab). FR source: Salon à tester"
+  },
+  "mockup.v2.antispam.simChannelPh": {
+    "message": "Selecciona un canal",
+    "description": "/settings V2 mockup (Protection tab). FR source: Sélectionnez un salon"
+  },
+  "mockup.v2.antispam.simType": {
+    "message": "Tipo de spam",
+    "description": "/settings V2 mockup (Protection tab). FR source: Type de spam"
+  },
+  "mockup.v2.trigger.messages": {
+    "message": "Spam de mensajes",
+    "description": "/settings V2 mockup (Protection tab). FR source: Spam de messages"
+  },
+  "mockup.v2.antispam.simTypePh": {
+    "message": "Selecciona un tipo de spam",
+    "description": "/settings V2 mockup (Protection tab). FR source: Sélectionnez un type de spam"
+  },
+  "mockup.v2.antispam.presetTitle": {
+    "message": "Aplicar un preajuste",
+    "description": "/settings V2 mockup (Protection tab). FR source: Appliquer un préréglage"
+  },
+  "mockup.v2.antispam.presetWarn": {
+    "message": "Tus ajustes se sobrescribirán",
+    "description": "/settings V2 mockup (Protection tab). FR source: Vos réglages vont être écrasés"
+  },
+  "mockup.v2.antispam.presetBody": {
+    "message": "Lo que has configurado va a ser reemplazado por el preajuste **Suave**:",
+    "description": "/settings V2 mockup (Protection tab). FR source: Ce que vous avez configuré va être remplacé par le préréglag…"
+  },
+  "mockup.v2.antispam.presetConfirm": {
+    "message": "Lo entiendo, aplicar el preajuste",
+    "description": "/settings V2 mockup (Protection tab). FR source: J'ai compris, appliquer le préréglage"
+  },
+  "mockup.v2.slowmode.addTitle": {
+    "message": "Añadir un canal regulado",
+    "description": "/settings V2 mockup (Protection tab). FR source: Ajouter un salon régulé"
+  },
+  "mockup.v2.slowmode.channel": {
+    "message": "Canal",
+    "description": "/settings V2 mockup (Protection tab). FR source: Salon"
+  },
+  "mockup.v2.slowmode.addHint": {
+    "message": "Toma los ajustes del último canal añadido; puedes cambiarlos después.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Il reprend les réglages du dernier salon ajouté, modifiables…"
+  },
+  "mockup.v2.slowmode.customTitle": {
+    "message": "Valores personalizados",
+    "description": "/settings V2 mockup (Protection tab). FR source: Valeurs personnalisées"
+  },
+  "mockup.v2.slowmode.targetField": {
+    "message": "Ritmo de mensajes (mensajes / min)",
+    "description": "/settings V2 mockup (Protection tab). FR source: Débit cible (messages / min)"
+  },
+  "mockup.v2.slowmode.targetHint": {
+    "message": "El slowmode se ajusta para mantener esta media de mensajes por minuto.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Le slowmode s'ajuste pour tenir cette moyenne de messages pa…"
+  },
+  "mockup.v2.slowmode.minHint": {
+    "message": "Suelo: el slowmode nunca baja de este valor. 0s para ningún mínimo.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Plancher : le slowmode ne descend jamais en dessous. 0s pour…"
+  },
+  "mockup.v2.slowmode.maxHint": {
+    "message": "Techo: salvaguarda antidescontrol, el slowmode nunca sube por encima de este valor.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Plafond : garde-fou anti-emballement, le slowmode ne monte j…"
+  },
+  "mockup.v2.dmlock.state": {
+    "message": "Estado del Bloqueo de MD",
+    "description": "/settings V2 mockup (Protection tab). FR source: État des MP fermés"
+  },
+  "mockup.v2.dmlock.option": {
+    "message": "Cerrar los mensajes privados del servidor",
+    "description": "/settings V2 mockup (Protection tab). FR source: Fermer les messages privés du serveur"
+  },
+  "mockup.v2.dmlock.desc": {
+    "message": "Configura el cierre de los mensajes privados para prevenir los intentos de phishing o estafa.\nRaidProtect desactivará los mensajes privados de forma permanente hasta que desactives esta protección. Usamos la función “Acciones de ciberseguridad de Discord” (limitada a 24h por Discord, ampliada a siempre por RaidProtect)",
+    "description": "/settings V2 mockup (Protection tab). FR source: Configurez la fermeture des messages privés pour prévenir le…"
+  },
+  "mockup.v2.dmlock.warn": {
+    "message": "Con este modo, solo los bots, los miembros que ya han intercambiado mensajes o son amigos, y el staff podrán recibir MD.",
+    "description": "/settings V2 mockup (Protection tab). FR source: Seul les bots, les membres qui ont déjà échangé ou qui sont …"
+  },
+  "mockup.v2.onduty.desc": {
+    "message": "Configura el **rol en servicio**: los moderadores se marcan en servicio o fuera de servicio con el comando `/onduty`, lo que añade o retira este rol.",
+    "description": "/settings V2 mockup (Utilities tab). FR source: Configurez le **rôle en service** : les modérateurs se marqu…"
+  },
+  "mockup.v2.onduty.ph": {
+    "message": "Rol en servicio (escribe para buscar)",
+    "description": "/settings V2 mockup (Utilities tab). FR source: Rôle en service (écrire pour chercher)"
+  },
+  "mockup.v2.tagrole.title": {
+    "message": "Configuración del Rol de Etiqueta",
+    "description": "/settings V2 mockup (Utilities tab). FR source: Configuration du Rôle de Tag"
+  },
+  "mockup.v2.tagrole.desc": {
+    "message": "Configura el **Rol de etiqueta de servidor** para **asignar automáticamente un rol** a los miembros que añadan la **etiqueta de tu servidor a su perfil**.\nSi el miembro quita la etiqueta, el rol se le retira automáticamente.\n\nTus miembros tendrán el rol en su próxima modificación de perfil (Apodo, Avatar, Banner, Roles, Etiqueta…). Puedes pedir al soporte una sincronización completa del rol si tienes muchos miembros que tienen o han tenido la etiqueta.",
+    "description": "/settings V2 mockup (Utilities tab). FR source: Configurez le **Rôle de Tag de Serveur** pour **attribuer au…"
+  },
+  "mockup.v2.tagrole.ph": {
+    "message": "Rol de Etiqueta (escribe para buscar)",
+    "description": "/settings V2 mockup (Utilities tab). FR source: Rôle de Tag (écrire pour chercher)"
+  },
+  "mockup.v2.grade.S": {
+    "message": "Passkey requerida",
+    "description": "/settings V2 mockup (dynamic). FR source: Passkey requis"
+  },
+  "mockup.v2.grade.A": {
+    "message": "OTP requerido",
+    "description": "/settings V2 mockup (dynamic). FR source: OTP requis"
+  },
+  "mockup.v2.grade.B": {
+    "message": "PIN reforzado 8+",
+    "description": "/settings V2 mockup (dynamic). FR source: PIN renforcé 8+"
+  },
+  "mockup.v2.grade.C": {
+    "message": "PIN reforzado 6+",
+    "description": "/settings V2 mockup (dynamic). FR source: PIN renforcé 6+"
+  },
+  "mockup.v2.grade.D": {
+    "message": "PIN simple 6+",
+    "description": "/settings V2 mockup (dynamic). FR source: PIN simple 6+"
+  },
+  "mockup.v2.grade.E": {
+    "message": "PIN simple 4+",
+    "description": "/settings V2 mockup (dynamic). FR source: PIN simple 4+"
+  },
+  "mockup.v2.setup.m.Commandes par messages": {
+    "message": "Comandos por mensaje",
+    "description": "/settings V2 mockup (dynamic). FR source: Commandes par messages"
+  },
+  "mockup.v2.setup.d.Commandes par messages": {
+    "message": "Activar los comandos por prefijo.",
+    "description": "/settings V2 mockup (dynamic). FR source: Activer les commandes par préfixe."
+  },
+  "mockup.v2.setup.m.Auto RaidMode": {
+    "message": "Auto RaidMode",
+    "description": "/settings V2 mockup (dynamic). FR source: Auto RaidMode"
+  },
+  "mockup.v2.setup.d.Auto RaidMode": {
+    "message": "Número máximo de miembros que se unen en 10 segundos.",
+    "description": "/settings V2 mockup (dynamic). FR source: Nombre maximal de membres qui rejoignent en 10 secondes."
+  },
+  "mockup.v2.setup.m.Captcha": {
+    "message": "Captcha",
+    "description": "/settings V2 mockup (dynamic). FR source: Captcha"
+  },
+  "mockup.v2.setup.d.Captcha": {
+    "message": "Bloquear raids con Captcha.",
+    "description": "/settings V2 mockup (dynamic). FR source: Bloquer les raids avec le Captcha."
+  },
+  "mockup.v2.setup.m.Âge minimum du compte": {
+    "message": "Antigüedad mínima de la cuenta",
+    "description": "/settings V2 mockup (dynamic). FR source: Âge minimum du compte"
+  },
+  "mockup.v2.setup.d.Âge minimum du compte": {
+    "message": "Antigüedad mínima de cuenta para poder unirse.",
+    "description": "/settings V2 mockup (dynamic). FR source: Ancienneté minimale d'un compte pour qu'il puisse rejoindre."
+  },
+  "mockup.v2.setup.m.Anti-spam": {
+    "message": "Anti-spam",
+    "description": "/settings V2 mockup (dynamic). FR source: Anti-spam"
+  },
+  "mockup.v2.setup.d.Anti-spam": {
+    "message": "Protección contra spam, enlaces, menciones y selfbots.",
+    "description": "/settings V2 mockup (dynamic). FR source: Protection contre les spam, les liens, les mentions et les s…"
+  },
+  "mockup.v2.setup.m.Signalements": {
+    "message": "Reportes",
+    "description": "/settings V2 mockup (dynamic). FR source: Signalements"
+  },
+  "mockup.v2.setup.d.Signalements": {
+    "message": "Permite a los miembros del servidor reportar actividad sospechosa a tu equipo de moderación.",
+    "description": "/settings V2 mockup (dynamic). FR source: Permettre aux membres de signaler les activités suspectes à …"
+  },
+  "mockup.v2.setup.m.Rôle de Tag": {
+    "message": "Rol de etiqueta",
+    "description": "/settings V2 mockup (dynamic). FR source: Rôle de Tag"
+  },
+  "mockup.v2.setup.d.Rôle de Tag": {
+    "message": "Dar un rol a los miembros que tengan tu etiqueta",
+    "description": "/settings V2 mockup (dynamic). FR source: Donner un rôle aux membres qui ont votre tag"
+  },
+  "mockup.v2.setup.m.Fermeture des MP": {
+    "message": "Bloqueo de MD",
+    "description": "/settings V2 mockup (dynamic). FR source: Fermeture des MP"
+  },
+  "mockup.v2.setup.d.Fermeture des MP": {
+    "message": "Prevenir intentos de phishing o estafa cerrando los MD",
+    "description": "/settings V2 mockup (dynamic). FR source: Fermer les MP pour prévenir des arnaques"
+  },
+  "mockup.v2.setup.m.HoneyPot": {
+    "message": "HoneyPot",
+    "description": "/settings V2 mockup (dynamic). FR source: HoneyPot"
+  },
+  "mockup.v2.setup.d.HoneyPot": {
+    "message": "Canal trampa que sanciona a los miembros que escriben en él",
+    "description": "/settings V2 mockup (dynamic). FR source: Salon piège qui sanctionne les membres qui écrivent dedans"
+  },
+  "mockup.v2.sanction.Bannissement": {
+    "message": "Ban",
+    "description": "/settings V2 mockup (dynamic). FR source: Bannissement"
+  },
+  "mockup.v2.sanction.Softban": {
+    "message": "Softban",
+    "description": "/settings V2 mockup (dynamic). FR source: Softban"
+  },
+  "mockup.v2.sanction.Emprisonnement": {
+    "message": "Cárcel",
+    "description": "/settings V2 mockup (dynamic). FR source: Emprisonnement"
+  },
+  "mockup.v2.sanction.Expulsion": {
+    "message": "Expulsión",
+    "description": "/settings V2 mockup (dynamic). FR source: Expulsion"
+  },
+  "mockup.v2.sanction.Mute": {
+    "message": "Silencio",
+    "description": "/settings V2 mockup (dynamic). FR source: Mute"
+  },
+  "mockup.v2.sanction.Timeout": {
+    "message": "Timeout",
+    "description": "/settings V2 mockup (dynamic). FR source: Timeout"
+  },
+  "mockup.v2.sanction.Avertissement": {
+    "message": "Advertencia",
+    "description": "/settings V2 mockup (dynamic). FR source: Avertissement"
+  },
+  "mockup.tagrole.sync": {
+    "message": "Sincronizar"
+  },
+  "mockup.audit.gaugeServer": {
+    "message": "Servidor"
+  },
+  "mockup.audit.gaugeRoles": {
+    "message": "Roles"
+  },
+  "mockup.audit.gaugeChannels": {
+    "message": "Canales"
+  },
+  "mockup.audit.log1": {
+    "message": "Nivel de verificación → Alto"
+  },
+  "mockup.audit.log2": {
+    "message": "Permisos de @everyone reducidos"
+  },
+  "mockup.audit.log3": {
+    "message": "Canales redundantes limpiados"
+  },
+  "mockup.v2.captcha.failBlock": {
+    "message": "Intentos agotados: Bloquear 10 min",
+    "description": "Mockup v2 — captcha: failure action option \"Block 10 min\""
   }
 }

@@ -1,0 +1,277 @@
+---
+title: Kiểm duyệt
+description: "Các lệnh kiểm duyệt của RaidProtect (ban, kick, mute, jail, warn) và ModView tập trung giúp người kiểm duyệt của bạn quản lý máy chủ Discord."
+---
+
+import Settings from '@site/src/components/DiscordMessage/mockups/v2';
+
+import ModerationMockup from '@site/src/components/DiscordMessage/mockups/moderation';
+
+{/* <ModerationMockup /> : obsolète en 3.5.0 (libellés du sélecteur de sanction et du menu « Ouvrir Modview ») */}
+
+import Icon from "@site/src/components/Icon";
+
+Để giúp công việc của người kiểm duyệt dễ dàng hơn, RaidProtect tích hợp các lệnh kiểm duyệt rất tiện lợi, cho phép bạn tương tác trực tiếp với các tính năng gốc của Discord, như **[cấm](/vi/learn/discord-sanctions)** và **đuổi** người dùng.
+
+Ngoài các hành động này, RaidProtect gửi tin nhắn riêng cho người dùng bị xử phạt để giải thích lý do của hình phạt, và điều này cũng được ghi vào [lịch sử hình phạt](./sanctions.mdx) và nhật ký máy chủ để bạn theo dõi.
+
+:::info
+Các lệnh xử phạt (`/ban`, `/kick`, `/mute`, `/jail`, `/warn`…), cũng như `/nick`, `/clear` và `/slowmode`, có thể [dùng qua tiền tố](../guides/prefix). `/modview`, `/note`, `/snipe` và `/onduty` thì không.
+:::
+
+:::info
+Tất cả các lệnh xử phạt đều chấp nhận tùy chọn `[--silent]` để không thông báo cho đối tượng qua tin nhắn riêng. Các tin nhắn riêng thông báo (kick, softban, cấm tạm thời) chứa một nút kèm lời mời vào máy chủ.
+:::
+
+## 🔍 Chế độ xem kiểm duyệt của một thành viên {#modview}
+
+Lệnh `/modview` mở một **chế độ xem kiểm duyệt tập trung** về một thành viên, gom trong một phản hồi duy nhất:
+
+- các **hình phạt gần nhất** của họ, kèm nút “**Xem tất cả hình phạt**”;
+- **ghi chú kiểm duyệt** nội bộ của họ, có thể sửa bằng “**Chỉnh sửa**” (xem [`/note`](#note));
+- **tin nhắn bị xóa gần nhất** của họ, kèm liên kết “**Xem tất cả tin nhắn đã xóa (1 giờ)**” (xem [`/snipe`](#snipe));
+- các **tài khoản liên kết** của họ, nếu máy chủ của bạn có quyền truy cập [tài khoản phụ](./alt-accounts.md), kèm nút “**Quản lý**” cho những người kiểm duyệt có thể cấm;
+- bộ chọn “**Xử phạt người dùng**” để hành động ngay.
+
+Dùng lệnh: ```/modview (user)```
+
+Hãy thay `(user)` bằng lượt nhắc đến hoặc ID mong muốn.
+
+:::tip
+Lệnh cũng có thể dùng qua menu ngữ cảnh: nhấp chuột phải vào một hồ sơ → **Ứng dụng** → **Mở Modview**.
+:::
+
+## 🖱️ Xử phạt qua menu ngữ cảnh {#context-menu}
+
+Ngoài các lệnh slash, bạn có thể xử phạt một thành viên trực tiếp từ hồ sơ của họ bằng nhấp chuột phải: **Ứng dụng** → **Xử phạt**.
+
+Một cửa sổ mở ra cho phép bạn nhập:
+- **Loại hình phạt**: loại hình phạt cần áp dụng (bắt buộc).
+- **Thời lượng**: một thời lượng, cho cấm, timeout hoặc jail (tùy chọn, ví dụ: `1d 2h 30m`).
+- **Lý do**: lý do của hình phạt.
+- **Im lặng**: không gửi tin nhắn riêng cho người bị xử phạt.
+
+Các loại được đề xuất phụ thuộc vào quyền của bạn trên từng lệnh (`/ban`, `/softban`, `/jail`, `/kick`, `/mute`, `/warn`), bao gồm cả các thiết lập Tích hợp của Discord. Jail chỉ xuất hiện nếu một [vai trò Jail](./sanctions.mdx#jail) đã được cấu hình.
+
+## <Icon src="/img/icons/SanctionsBAN.svg" alt="icon SanctionsBAN" title=":iconSanctionsBAN:"/> Cấm một người dùng {#ban}
+
+Lệnh `/ban` cho phép bạn chặn quyền truy cập của một người dùng vào máy chủ, vĩnh viễn hoặc trong một thời gian nhất định.
+
+Dùng lệnh: ```/ban (user) [duration] [--delete-messages=duration] [--silent] [reason]```
+
+Hãy thay `(user)` bằng lượt nhắc đến hoặc ID mong muốn và `[reason]` bằng lý do của hình phạt.
+
+- `[duration]`: nếu được nhập, việc cấm trở thành tạm thời (như với [`/tempban`](#tempban)).
+- `[--delete-messages]`: khoảng lịch sử cần xóa (ví dụ `1h`, `1d`, `7d`). Discord giới hạn việc xóa tối đa 7 ngày.
+- `[--silent]`: không gửi tin nhắn riêng cho đối tượng.
+
+:::tip
+Bạn có thể cấm một người dùng dựa trên [ID Discord](../guides/id) của họ, ngay cả khi họ không trực tuyến hoặc không có mặt trên máy chủ của bạn.
+:::
+
+### <Icon src="/img/icons/SanctionsBANTemp.svg" alt="icon SanctionsBANTemp" title=":iconSanctionsBANTemp:"/> Cấm tạm thời một người dùng {#tempban}
+
+Lệnh `/tempban` cho phép bạn chặn tạm thời quyền truy cập của một người dùng vào máy chủ.
+
+Dùng lệnh: ```/tempban (user) (duration) [--delete-messages=duration] [--silent] [reason]```
+
+Hãy thay `(user)` bằng lượt nhắc đến hoặc ID mong muốn, `(duration)` bằng thời lượng cấm và `[reason]` bằng lý do của hình phạt. Tham số `[--delete-messages]` cho phép xóa lịch sử tin nhắn của thành viên (tối đa 7 ngày).
+
+### <Icon src="/img/icons/SanctionsSOFTBAN.svg" alt="icon SanctionsSOFTBAN" title=":iconSanctionsSOFTBAN:"/> Softban một người dùng {#softban}
+
+Lệnh `/softban` cấm rồi bỏ cấm một thành viên ngay lập tức. Điều này cho phép **xóa lịch sử tin nhắn của họ** mà không loại họ vĩnh viễn khỏi máy chủ: họ có thể quay lại với một lời mời mới.
+
+Dùng lệnh: ```/softban (member) [--delete-messages=duration] [--silent] [reason]```
+
+Hãy thay `(member)` bằng lượt nhắc đến hoặc ID mong muốn và `[reason]` bằng lý do của hình phạt. Tham số `[--delete-messages]` cho phép chọn khoảng thời gian tin nhắn cần xóa.
+
+:::tip
+Softban đặc biệt phù hợp với **các tài khoản bị chiếm**: ta dọn sạch spam và giải phóng tài khoản, mà không loại vĩnh viễn thành viên sau khi họ đã bảo mật tài khoản của mình.
+:::
+
+### <Icon src="/img/icons/SanctionsUNBAN.svg" alt="icon SanctionsUNBAN" title=":iconSanctionsUNBAN:"/> Bỏ cấm một người dùng {#unban}
+
+Lệnh `/unban` cho phép bạn gỡ lệnh cấm của một người dùng đã bị cấm trước đó, để họ có thể tham gia lại máy chủ của bạn.
+
+Dùng lệnh: ```/unban (user) [--silent] [reason]```
+
+Hãy thay `(user)` bằng ID mong muốn và `[reason]` bằng lý do bỏ cấm.
+
+## <Icon src="/img/icons/SanctionsKICK.svg" alt="icon SanctionsKICK" title=":iconSanctionsKICK:" /> Đuổi một người dùng {#kick}
+
+Lệnh `/kick` cho phép bạn đuổi một thành viên khỏi máy chủ mà không cấm họ. Người dùng có thể tham gia lại máy chủ nếu có một lời mời hợp lệ.
+
+Dùng lệnh: ```/kick (member) [--silent] [reason]```
+
+Hãy thay `(member)` bằng lượt nhắc đến hoặc ID mong muốn và `[reason]` bằng lý do của hình phạt.
+
+## <Icon src="/img/icons/SanctionsTIMEOUT.svg" alt="icon SanctionsTIMEOUT" title=":iconSanctionsTIMEOUT:" /> Timeout (hoặc Mute) một người dùng {#timeout}
+
+Lệnh `/mute` cho phép bạn tạm thời hạn chế khả năng tương tác của một thành viên trên máy chủ. Trong thời gian này, thành viên không thể gửi tin nhắn, thả biểu cảm, tham gia kênh thoại hay gửi tin nhắn riêng cho các thành viên khác.
+
+Dùng lệnh: ```/mute (member) (duration) [--force-timeout] [--silent] [reason]```
+
+Hãy thay `(member)` bằng lượt nhắc đến hoặc ID mong muốn, `(duration)` bằng thời lượng mute (ví dụ: `10m`, `1h`, `1d`) và `[reason]` bằng lý do của hình phạt.
+
+:::tip
+Tùy chọn `[--force-timeout]` (bí danh `ft` khi dùng tiền tố) cho phép vượt qua quy tắc ngưỡng và buộc dùng timeout của Discord, ngay cả khi đã cấu hình một vai trò Mute. Khi đó thời lượng không được vượt quá 28 ngày.
+
+Bạn có thể cấu hình một [vai trò Mute](./sanctions.mdx#mute) và một [ngưỡng mute](./sanctions.mdx#mute-threshold) trong `/settings`, thẻ “**Kiểm duyệt**”, “**Hình phạt**”, dòng “**Mute**”. Vượt quá ngưỡng đã định, bot sẽ tự động áp dụng vai trò Mute thay cho timeout của Discord, cho phép các thời lượng dài hơn 28 ngày.
+:::
+
+### <Icon src="/img/icons/SanctionsUNTIMEOUT.svg" alt="icon SanctionsUNTIMEOUT" title=":iconSanctionsUNTIMEOUT:" /> Ngừng timeout một người dùng {#untimeout}
+
+Lệnh `/unmute` cho phép bạn gỡ ngay lập tức các hạn chế của một thành viên đang bị timeout, để họ lấy lại toàn bộ khả năng tương tác trên máy chủ.
+
+Dùng lệnh: ```/unmute (member) [--silent] [reason]```
+
+Hãy thay `(member)` bằng lượt nhắc đến hoặc ID mong muốn và `[reason]` bằng lý do gỡ timeout.
+
+## <Icon src="/img/icons/SanctionsJAIL.svg" alt="icon SanctionsJAIL" title=":iconSanctionsJAIL:" /> Đưa một người dùng vào jail {#jail}
+
+Lệnh `/jail` cho phép bạn cô lập một thành viên bằng cách gán cho họ một vai trò hạn chế. Jail nhằm đề xuất một lựa chọn thay thế cho cấm: thành viên giữ một quyền truy cập rất hạn chế vào máy chủ thay vì bị loại hoàn toàn.
+
+Dùng lệnh: ```/jail (member) [--silent] [reason]```
+
+Hãy thay `(member)` bằng lượt nhắc đến hoặc ID mong muốn và `[reason]` bằng lý do của hình phạt.
+
+:::warning
+[Vai trò Jail](./sanctions.mdx#jail) phải được cấu hình qua `/settings` trước khi dùng được lệnh này. Còn các mô-đun tự động thì quay về timeout khi chưa có vai trò Jail nào được cấu hình.
+:::
+
+### <Icon src="/img/icons/SanctionsJAILTemp.svg" alt="icon SanctionsJAILTemp" title=":iconSanctionsJAILTemp:" /> Đưa tạm thời một người dùng vào jail {#tempjail}
+
+Lệnh `/tempjail` cho phép bạn đưa tạm thời một thành viên vào jail trong một khoảng thời gian xác định.
+
+Dùng lệnh: ```/tempjail (member) (duration) [--silent] [reason]```
+
+Hãy thay `(member)` bằng lượt nhắc đến hoặc ID mong muốn, `(duration)` bằng thời lượng ở jail và `[reason]` bằng lý do của hình phạt.
+
+### <Icon src="/img/icons/SanctionsUNJAIL.svg" alt="icon SanctionsUNJAIL" title=":iconSanctionsUNJAIL:" /> Thả một người dùng {#unjail}
+
+Lệnh `/unjail` cho phép bạn gỡ vai trò Jail của một thành viên, để họ lấy lại quyền truy cập bình thường vào máy chủ.
+
+Dùng lệnh: ```/unjail (member) [--silent] [reason]```
+
+Hãy thay `(member)` bằng lượt nhắc đến hoặc ID mong muốn và `[reason]` bằng lý do thả.
+
+## <Icon src="/img/icons/SanctionsWARN.svg" alt="icon SanctionsWARN" title=":iconSanctionsWARN:" /> Cảnh cáo một người dùng {#warn}
+
+Lệnh `/warn` cho phép bạn cảnh cáo chính thức một thành viên bằng một tin nhắn riêng do bot gửi.
+
+Dùng lệnh: ```/warn (member) [--silent] [reason]```
+
+Hãy thay `(member)` bằng lượt nhắc đến hoặc ID mong muốn và `[reason]` bằng lý do của cảnh cáo.
+
+## 📝 Ghi chú kiểm duyệt {#note}
+
+Lệnh `/note` cho phép thêm hoặc sửa **ghi chú kiểm duyệt nội bộ** của một thành viên, mà không cần qua [`/modview`](#modview). Ghi chú chỉ hiển thị với những người kiểm duyệt.
+
+Dùng lệnh: ```/note (user)```
+
+Hãy thay `(user)` bằng lượt nhắc đến hoặc ID mong muốn. Một cửa sổ mở ra để nhập hoặc sửa ghi chú, tối đa 300 ký tự. Việc thêm, sửa và xóa một ghi chú được ghi vào [nhật ký kiểm duyệt](#logs).
+
+## 🏷️ Đổi biệt danh của một thành viên {#nick}
+
+Lệnh `/nick` cho phép bạn đổi biệt danh của một thành viên trên máy chủ, hoặc đặt lại nó.
+
+Dùng lệnh: ```/nick (user) [pseudo]```
+
+Hãy thay `(user)` bằng lượt nhắc đến hoặc ID mong muốn. Tham số `[pseudo]` là biệt danh mới cần áp dụng (tối đa 32 ký tự). Nếu bỏ trống, biệt danh của thành viên được đặt lại.
+
+:::info
+Lệnh cần quyền Discord **Quản lý biệt danh** và cũng dùng được qua các bí danh `nickname`, `rename` và `setnick` dưới dạng [lệnh bằng tiền tố](../guides/prefix). Các thay đổi được ghi vào nhật ký máy chủ.
+:::
+
+## 🧹 Xóa một nhóm tin nhắn {#clear}
+
+Lệnh `/clear` cho phép bạn nhanh chóng xóa một số lượng tin nhắn trong một kênh văn bản. Bạn có thể chỉ định một người dùng để chỉ xóa tin nhắn của họ.
+
+Dùng lệnh: ```/clear (amount) [user]```
+
+Hãy thay `(amount)` bằng số tin nhắn bạn muốn xóa (từ 2 đến 100). Thêm `[user]` bằng lượt nhắc đến hoặc ID để chỉ nhắm đến tin nhắn của họ trong kênh. Khi dùng tiền tố, lệnh cũng trả lời với bí danh `clean`.
+
+## 🕒 Bật slowmode trong một kênh {#slowmode}
+
+Lệnh `/slowmode` cho phép bạn bật hoặc sửa chế độ chậm của một kênh, nhằm hạn chế tần suất tin nhắn do người dùng gửi.
+
+Dùng lệnh: ```/slowmode (delay) [duration] [channel] [reason]```
+
+- Hãy thay `(delay)` bằng khoảng thời gian mong muốn giữa mỗi tin nhắn (ví dụ: `5s`, `1m`, `10m`, `1h`, tối đa 6 giờ; `0` để tắt).
+- Thêm `[duration]` để tự động tắt slowmode sau khoảng thời gian này (ví dụ `30m`, `2h`).
+- Thêm `[channel]` nếu bạn muốn áp dụng slowmode cho một kênh khác với kênh nơi bạn gõ lệnh.
+- Thêm `[reason]` để nêu lý do, sẽ được ghi vào nhật ký máy chủ.
+
+## 🕵️ Lấy lại một tin nhắn đã xóa {#snipe}
+
+Lệnh `/snipe` hiển thị **các tin nhắn bị xóa trong giờ vừa qua** trong một kênh, từng trang một, từ mới nhất đến cũ nhất.
+
+Dùng lệnh: ```/snipe [user] [--channel=#channel]```
+
+- Không có đối số: hiển thị các tin nhắn bị xóa của kênh hiện tại.
+- Với `[user]`: chỉ hiển thị các tin nhắn bị xóa của người dùng đó.
+- Với `[--channel]`: tìm trong một kênh khác với kênh nơi bạn gõ lệnh.
+
+Từ phản hồi, bạn có thể **xử phạt tác giả** của một tin nhắn. Phản hồi chỉ hiển thị với riêng bạn.
+
+:::warning
+`/snipe` chỉ thấy các tin nhắn mà RaidProtect giữ trong bộ nhớ, trong một giờ. Chúng chỉ được giữ nếu “**Lưu đệm tin nhắn**” được bật (`/settings`, thẻ “**Tiện ích**”, tắt theo mặc định), hoặc nếu [chống spam](./anti-spam.mdx) hay [báo cáo](./reports.md) đang hoạt động, điều này tự động bật nó. Nếu không, lệnh trả lời rằng không tìm thấy tin nhắn bị xóa nào.
+:::
+
+Để bật việc lưu đệm tin nhắn:
+
+1. Dùng [lệnh `/settings`](../setup.md#settings).
+2. Mở thẻ “**Tiện ích**”.
+3. Nhấp vào “**Bật**” bên cạnh “**Lưu đệm tin nhắn**”.
+
+:::info
+Các tin nhắn này ở trong bộ nhớ một giờ và không bao giờ được ghi vào cơ sở dữ liệu. Lệnh `/privacy` hiển thị những gì RaidProtect lưu giữ về máy chủ của bạn.
+:::
+
+## 🟢 Vai trò đang trực {#onduty}
+
+**Vai trò đang trực** cho phép những người kiểm duyệt của bạn báo rằng họ đang sẵn sàng: với lệnh `/onduty`, mỗi người tự vào ca hoặc ra ca, và chúng tôi thêm hoặc gỡ vai trò đã cấu hình.
+
+Dùng lệnh: ```/onduty```
+
+Phản hồi chỉ hiển thị với riêng bạn. Hiệu quả tương tự có ở nút “**Đang trực**” của một [bảng đội ngũ (`/display staff`)](./display.mdx#staff).
+
+### Cấu hình vai trò đang trực {#onduty-config}
+
+1. Dùng [lệnh `/settings`](../setup.md#settings).
+2. Mở thẻ “**Tiện ích**”.
+3. Nhấp vào “**Cấu hình**” bên cạnh “**Vai trò đang trực**”.
+4. Chọn một vai trò có sẵn trong bộ chọn, hoặc nhấp vào “**Tạo một cái cho tôi**” (chúng tôi tạo một vai trò `Đang trực` không có quyền nào).
+
+<Settings start="onduty" />
+
+:::warning
+Vai trò đang trực được những người kiểm duyệt của bạn tự nhận: nó không được mang quyền nhạy cảm nào. Chúng tôi từ chối một vai trò có Quản trị viên, Quản lý máy chủ, Quản lý vai trò, Quản lý kênh, Quản lý webhook, Quản lý tin nhắn, Quản lý luồng, Quản lý biểu cảm, Quản lý sự kiện, Đuổi hoặc Cấm thành viên. RaidProtect cũng phải có quyền **Quản lý vai trò**, với một vai trò nằm trên vai trò đang trực.
+:::
+
+## 📋 Nhật ký kiểm duyệt {#logs}
+
+Theo mặc định, nhật ký kiểm duyệt được gửi vào kênh nhật ký chung của RaidProtect. Bạn có thể cấu hình một kênh nhật ký riêng để tách các hành động kiểm duyệt khỏi các nhật ký khác.
+
+1. Dùng [lệnh `/settings`](../setup.md#settings).
+2. Mở thẻ “**Kiểm duyệt**”.
+3. Nhấp vào “**Cấu hình**” bên cạnh “**Nhật ký**”.
+4. Trong bộ chọn “**Kiểm duyệt**”, chọn kênh sẽ nhận nhật ký kiểm duyệt, hoặc dùng nút “**Tạo một cái cho tôi**”.
+
+<Settings start="logs" />
+
+Màn hình “**Nhật ký**” gồm ba kênh: “**Chung**”, “**Kiểm duyệt**” và “**Captcha**”. Một kênh “**Kiểm duyệt**” hoặc “**Captcha**” để trống sẽ chuyển nhật ký của nó về kênh chung. Công tắc “**Nhật ký kiểm duyệt thụ động**” chọn xem RaidProtect có ghi cả những hành động thực hiện mà không qua bot hay không.
+
+## Câu hỏi thường gặp {#faq}
+
+### Vì sao /snipe không tìm thấy tin nhắn nào?
+
+RaidProtect chỉ giữ tin nhắn trong bộ nhớ nếu việc lưu đệm tin nhắn được bật trong thẻ “**Tiện ích**” của `/settings`, hoặc nếu chống spam hay báo cáo đang hoạt động. Chỉ có giờ vừa qua là khả dụng.
+
+### Cần quyền gì để dùng /onduty?
+
+Mặc định là quyền **Quản lý tin nhắn**. Bạn có thể điều chỉnh trong phần Tích hợp của Discord. Trước hết một quản trị viên phải cấu hình vai trò đang trực trong thẻ “**Tiện ích**” của `/settings`.
+
+### Tôi có thể cấm một người dùng không có trên máy chủ của mình không?
+
+Có, bằng `/ban` và [ID Discord](../guides/id) của họ.

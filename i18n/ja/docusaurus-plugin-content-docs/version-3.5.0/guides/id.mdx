@@ -1,0 +1,99 @@
+---
+title: ID の使い方
+description: "開発者モードを使って Discord の ID（ユーザー、チャンネル、メッセージ）を取得し、RaidProtect のコマンドで使う方法を解説します。"
+---
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Discord の ID は、Discord 上のあらゆるユーザー、チャンネル、サーバー、メッセージを正確に特定できる固有の番号です。プラットフォーム上の要素を確実かつ恒久的に識別する手段になります。
+
+:::note モデレーションでの利点
+Discord の ID は、モデレーション操作で特に役立ちます。次のことができるようになります。
+- **不在のユーザーを処罰する**：サーバーを退出した人を BAN できます
+- **間違いを防ぐ**：似たニックネームでも、正しい相手を正確に特定できます
+- **記録を残す**：ニックネームと違い、ID は決して変わりません
+- **トラブルを解決する**：特殊文字が使われていても、明確に特定できます
+:::
+
+## 開発者モードを有効にする
+
+Discord の ID を使うには、開発者モードを有効にする必要があります。
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="desktop" label="Discord デスクトップ版/Web 版" default>
+
+    1. **ユーザー設定を開く**
+    - 画面左下の歯車アイコン ⚙️ をクリックします
+
+    2. **詳細設定を開く**
+    - サイドバーの**詳細設定**タブを開きます
+
+    3. **開発者モードを有効にする**
+    - 「**開発者モード**」のトグルをクリックしてオンにします
+    - 有効になると、ボタンが青色になります
+
+  </TabItem>
+  <TabItem value="mobile" label="Discord モバイル版">
+
+    1. **ユーザー設定を開く**
+    - 右下の自分のアバターをタップします
+    - 画面右上の歯車アイコン ⚙️ をタップします
+
+    2. **詳細設定を開く**
+    - スクロールして「**詳細設定**」をタップします
+
+    3. **開発者モードを有効にする**
+    - 「**開発者モード**」をオンにします
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+## ID をコピーする
+
+開発者モードを有効にすると、あらゆる要素の ID をコピーできます。
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="user" label="ユーザー ID" default>
+
+    - アバターまたはユーザー名を**右クリック**します
+    - 「**ユーザー ID をコピー**」を選びます
+
+  </TabItem>
+  <TabItem value="channel" label="チャンネル ID">
+
+    - チャンネル一覧でチャンネル名を**右クリック**します
+    - 「**チャンネル ID をコピー**」を選びます
+
+  </TabItem>
+  <TabItem value="server" label="サーバー ID">
+
+    - 左上のサーバー名を**右クリック**します
+    - 「**サーバー ID をコピー**」を選びます
+
+  </TabItem>
+  <TabItem value="message" label="メッセージ ID">
+
+    - メッセージを**右クリック**します
+    - 「**メッセージ ID をコピー**」を選びます
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+## RaidProtect での使い方
+
+RaidProtect のコマンドでは、メンションの代わりに ID を使えます。
+
+- [`/ban user:123456789012345678 reason:サーバールール違反`](../features/moderation#ban)
+- [`/clear amount:100 user:123456789012345678`](../features/moderation#clear)
+- [`/userinfo user:123456789012345678`](../features/utilities#userinfo)
+- [`/bypass minage user:123456789012345678`](../features/onboarding#bypass-minage)
+
+:::info
+ユーザーがオフラインでも、サーバーにいなくても、Discord の ID があれば BAN できます。
+:::

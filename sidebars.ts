@@ -40,7 +40,25 @@ const sidebars: SidebarsConfig = {
                 },
                 {
                     type: 'doc',
+                    id: 'features/onboarding',
+                },
+                {
+                    type: 'doc',
+                    id: 'features/discon',
+                    customProps: {badges: ['experiment']},
+                },
+                {
+                    type: 'doc',
                     id: 'features/anti-spam',
+                },
+                {
+                    type: 'doc',
+                    id: 'features/slowmode',
+                    customProps: {badges: ['experiment', 'premium']},
+                },
+                {
+                    type: 'doc',
+                    id: 'features/automod',
                 },
                 {
                     type: 'doc',
@@ -57,6 +75,11 @@ const sidebars: SidebarsConfig = {
                 {
                     type: 'doc',
                     id: 'features/sanctions',
+                },
+                {
+                    type: 'doc',
+                    id: 'features/alt-accounts',
+                    customProps: {badges: ['experiment']},
                 },
                 {
                     type: 'doc',

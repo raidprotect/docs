@@ -1,0 +1,330 @@
+---
+title: 处罚记录
+description: "RaidProtect 的处罚记录将您所有的管理操作集中到一个可查询、可修改的数据库中，便于清晰地跟进。"
+---
+
+import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
+
+import SanctionsMockup from '@site/src/components/DiscordMessage/mockups/sanctions';
+
+{/* <SanctionsMockup /> masqué temporairement : mockup à améliorer */}
+
+import Icon from "@site/src/components/Icon";
+
+RaidProtect 的处罚记录可让您跟踪和管理服务器上执行的所有[处罚](/zh-CN/learn/discord-sanctions)。该系统将所有管理操作集中到一个可查询、可修改的数据库中，从而方便您的管理团队开展工作。
+
+## ❓ 记录的工作原理 {#working}
+
+处罚记录会自动记录您服务器上执行的所有管理操作：
+
+- **手动处罚**：所有[管理命令](./moderation.mdx)（`/ban`、`/tempban`、`/kick`、`/mute`、`/jail`、`/warn` 等）都会被记录。
+- **自动处罚**：我们的防护模块（[Antispam](./anti-spam.mdx)、[HoneyPot](./honeypot.md)、[ScamLens](./scam-images.md) 等）所执行的处罚同样会被加入记录。
+- **封禁、踢出和超时**：不经过 RaidProtect 而执行的处罚也会被加入记录。
+- **Discord 的 AutoMod**：Discord 的 AutoMod 施加的超时会被记录。借助 Shield Update（试验中），AutoMod 规则每拦截一条消息，还会以“**Discord Automod**”的名义创建一条静默的**警告**（不发私信），除非该规则已经施加了超时。
+- **处罚通知**：被处罚的成员会收到一条私信，告知处罚及其原因。机器人还会发送详细的送达回执，确认发送状态：**已收到**、**私信已关闭**、**已过期**或**静默**（使用 `[--silent]` 选项时）。对于踢出、软封禁和临时封禁，这条消息还包含一个**带有服务器邀请的按钮**，以便成员在处罚结束后可以回来。
+
+:::info
+所有记录的处罚都包含：被处罚的用户、负责的管理员、原因（最多 512 个字符）、日期和时间，以及处罚类型和是否已通知用户。
+:::
+
+## 🔍 搜索处罚 {#search}
+
+`/sanctions search` 命令可让您按不同条件在记录中搜索处罚。
+
+使用命令：```/sanctions search [user] [moderator] [type] [reason] [date] [status] [moderator_type]```
+
+- `[user]`：搜索某位特定用户的所有处罚。如果该账号属于某个[多账号](./alt-accounts.md)分组，则关联账号的处罚也会显示。
+- `[moderator]`：搜索某位特定管理员执行的所有处罚。
+- `[type]`：按处罚类型筛选（封禁、解封、踢出、监禁、解除监禁、隔离、超时、解除超时、禁言、解除禁言、警告）。
+- `[reason]`：按原因筛选（部分匹配）。
+- `[date]`：按处罚日期筛选。
+- `[status]`：按处罚状态筛选（生效中、已过期、已取消）。
+- `[moderator_type]`：按管理员类型筛选（人工操作、自动化操作、RaidProtect 操作、Discord 操作、Antispam、自动过期、Antiscam、HoneyPot、Discord Automod、Discord 自动过期）。
+
+![处罚搜索截图](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-search.webp)
+
+:::tip
+您可以组合多个条件来缩小搜索范围。例如，搜索某位特定管理员执行的所有封禁。
+:::
+
+## ℹ️ 查看处罚 {#info}
+
+`/sanctions info` 命令可让您获取某条特定处罚的详细信息。
+
+使用命令：```/sanctions info (id)```
+
+将 `(id)` 替换为您要查看的处罚的 ID。
+
+![处罚信息截图](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-info.webp)
+
+## ✏️ 修改处罚 {#edit}
+
+`/sanctions edit` 命令可让您修改现有处罚的原因或时长，便于纠正错误或补充细节。
+
+使用命令：```/sanctions edit (id) [reason] [duration]```
+
+将 `(id)` 替换为要修改的处罚的 ID，将 `[reason]` 替换为新的原因（最多 512 个字符），将 `[duration]` 替换为新的时长（例如：`1d 2h`）。
+
+![处罚修改截图](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-edit.webp)
+
+:::warning
+修改处罚会更新记录中的条目，但不会改变在 Discord 上已执行的处罚（例如，被封禁的用户仍将处于封禁状态）。
+:::
+
+## 🗑️ 删除处罚 {#delete}
+
+`/sanctions delete` 命令可让您从记录中删除一条处罚。此操作不可撤销。
+
+使用命令：```/sanctions delete (id) [reason]```
+
+将 `(id)` 替换为要删除的处罚的 ID。`[reason]` 参数用于**说明删除的理由**，该理由会记录在日志中。
+
+![处罚删除截图](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-delete.webp)
+
+## 处罚状态 {#status}
+
+处罚可以有不同的状态：
+
+| **状态**    | **表情符号**                                                                                                                  | **含义**                                        |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------| --------------------------------------------------------- |
+| `生效中`      | <Icon src="/img/icons/SanctionStatusACTIVE.svg" alt="icon SanctionStatusACTIVE" title=":iconSanctionStatusACTIVE:"/>        | 处罚正在进行中。                                 |
+| `已过期`      | <Icon src="/img/icons/SanctionStatusEXPIRED.svg" alt="icon SanctionStatusEXPIRED" title=":iconSanctionStatusEXPIRED:"/>     | 处罚已过期。                                  |
+| `已取消`      | <Icon src="/img/icons/SanctionStatusCANCELED.svg" alt="icon SanctionStatusCANCELED" title=":iconSanctionStatusCANCELED:"/>  | 处罚已被管理员取消。              |
+| `执行失败`      | <Icon src="/img/icons/SanctionStatusFAILED.svg" alt="icon SanctionStatusFAILED" title=":iconSanctionStatusFAILED:"/>        | 处罚执行失败（缺少权限）。             |
+
+### 处理重复处罚 {#duplicates}
+
+当发现一条生效中的、更早的处罚时，您可以：
+
+- **合并**两条处罚：时长会尽可能相加，原因会合并在一起。
+- **取消**生效中的处罚并创建新的处罚。
+- 用所输入处罚的信息**覆盖**生效中的处罚。
+
+![处罚状态处理截图](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-active-found.webp)
+
+## ⚙️ 处罚设置 {#config}
+
+处罚的所有设置都在同一个界面中：
+
+1. 使用 [`/settings` 命令](../setup.md#settings)。
+2. 打开“**管理**”选项卡。
+3. 点击“**处罚**”旁边的“**配置**”。
+
+<Settings start="sanctions" />
+
+### 停用处罚 {#disable}
+
+您可以在服务器上**完全停用处罚系统**。停用处罚后，RaidProtect 不再在记录中保存任何处罚，相关命令也将不可用。
+
+1. 使用 [`/settings` 命令](../setup.md#settings)。
+2. 打开“**管理**”选项卡。
+3. 点击“**处罚**”旁边的“**配置**”。
+4. 点击界面标题右侧的“**停用**”（或点击“**启用**”重新打开）。
+
+### 监禁 {#jail}
+
+配置**监禁**可启用一种基于角色的管理处罚，其限制性比普通禁言更强。配置完成后，该角色可将成员隔离在权限被严格限制的状态，并解锁 [`/jail`](./moderation.mdx#jail) 和 [`/tempjail`](./moderation.mdx#tempjail) 命令的使用。
+
+1. 使用 [`/settings` 命令](../setup.md#settings)。
+2. 打开“**管理**”选项卡。
+3. 点击“**处罚**”旁边的“**配置**”。
+4. 点击“**监禁**”旁边的“**编辑**”。
+5. 在选择器中选择一个现有角色，或点击“**帮我创建一个**”。
+
+<Settings start="jail" />
+
+“**帮我创建一个**”按钮会打开一个窗口，您可以在其中为角色命名（默认为 `被监禁`），并配置面向被监禁成员的**信息频道**：
+
+- **选择现有频道**：它保持当前的可见性。
+- **创建新频道**，并填写名称（默认为 `受限访问`）。
+
+我们会移除该角色查看服务器频道的权限。在信息频道中，被监禁的成员可以阅读消息和历史记录，但不能发言、添加表情回应或创建子区。该频道对应[信息面板](./display.mdx)中的保留位置，由监禁配置自动管理。
+
+:::info
+如果已经配置了监禁角色，您可以通过监禁界面的“**修改频道**”按钮更改信息频道。
+:::
+
+:::warning
+如果监禁角色仍能看到某些频道，监禁界面会在提示框中列出这些频道：请在这些频道中拒绝它的 `查看频道` 权限，或通过“**帮我创建一个**”创建一个新角色。只要仍有生效中的处罚依赖于监禁角色或禁言角色，您就无法更换它们：请先解除这些处罚，或等待它们到期。
+:::
+
+:::info
+没有监禁角色时，`/jail` 和 `/tempjail` 命令不可用。自动模块（[Antispam](./anti-spam.mdx)、[HoneyPot](./honeypot.md)、[虚假举报者](./reports.md#bad-reporters)）仍会提供监禁和禁言，并注明“**未配置，回退为 超时**”：此时执行的处罚是超时。
+:::
+
+#### 监禁时的角色 {#jail-roles}
+
+在监禁界面中，“**监禁时的角色处理**”选择器控制 RaidProtect 在成员被监禁时如何处理其角色。有两种模式：
+
+- “**添加监禁角色**”*（默认）*：成员保留其角色，并添加监禁角色。
+- “**替换所有角色**”：我们会在监禁期间**移除成员的所有角色**，并在其被释放时恢复。更为严格，可避免带有明确权限的角色绕过监禁角色的限制。
+
+### 同步 Discord 隔离 <span className="badge-experiment">试验中</span> {#discord-quarantine}
+
+:::info 试验中：Shield Update
+同步 Discord 隔离属于计划在 3.6.0 版本发布的 **Shield Update**。在正式发布之前，它处于试验阶段，面向 [Premium](/zh-CN/premium) 服务器开放公开测试。
+:::
+
+Discord 的 AutoMod 可以隔离个人资料（昵称、服务器标签）违反规则的成员。启用此设置后，我们会跟踪这一隔离：该成员会获得**监禁角色**，并在记录中添加一条**隔离**处罚。一旦 Discord 解除隔离，他就会随之脱离。
+
+1. 使用 [`/settings` 命令](../setup.md#settings)。
+2. 打开“**管理**”选项卡。
+3. 点击“**处罚**”旁边的“**配置**”。
+4. 点击“**同步 Discord 隔离**”旁边的“**启用**”。
+
+:::info
+此设置要求已有[监禁角色](#jail)。将其停用会释放由它施加的隔离。
+:::
+
+### 禁言 {#mute}
+
+配置**禁言角色**，以便对较长的时长使用基于角色的处罚，取代 Discord 超时。当禁言时长超过所设阈值时，机器人会自动为相关成员授予禁言角色，而不是施加 Discord 超时。
+
+1. 使用 [`/settings` 命令](../setup.md#settings)。
+2. 打开“**管理**”选项卡。
+3. 点击“**处罚**”旁边的“**配置**”。
+4. 点击“**禁言**”旁边的“**编辑**”。
+5. 在“**禁言角色**”选择器中选择一个现有角色，或点击“**帮我创建一个**”（我们会创建 `被禁言` 角色，并移除它在所有频道中的发言权）。
+
+#### 禁言阈值 {#mute-threshold}
+
+**禁言阈值**与角色在同一个界面中设置。它规定了从多长的时长起，机器人使用禁言角色而不是 Discord 超时。
+
+1. 在禁言界面中，打开“**禁言阈值**”选择器。
+2. 选择“**始终**”、“**1 小时**”（默认）、“**1 天**”、“**延长超时（=28 天）**”或“**自定义值**”（0 到 28 天，例如：`3d 1h 15m`）。
+
+“**始终**”（取值为 0）则从不使用 Discord 超时：每一次禁言都通过角色实现。
+
+:::info
+超时的 28 天上限由 Discord 规定。超过这一时长后，如果已配置禁言角色，则一律使用禁言角色。[`/mute` 命令](./moderation.mdx#timeout)的 `[--force-timeout]` 选项可无视阈值，强制使用 Discord 超时。
+:::
+
+:::info
+**Discord AutoMod 施加的超时**，如果时长超过所配置的阈值，会被自动转换为角色禁言，以便与您的手动处罚保持一致。
+:::
+
+### 处罚隐私 {#sanctions-privacy}
+
+配置处罚的隐私级别，以控制成员通过 [`/my-sanctions`](./utilities.mdx#my-sanctions) 命令或**查看我的处罚**按钮可以查看到有关**自己处罚**的哪些信息。
+
+1. 使用 [`/settings` 命令](../setup.md#settings)。
+2. 打开“**管理**”选项卡。
+3. 点击“**处罚**”旁边的“**配置**”。
+4. 点击“**处罚隐私**”旁边的“**编辑**”。
+5. 在窗口中，选择所需的“**访问级别**”：
+
+| **级别**                           | **说明**                                                                                     |
+| ------------------------------------ | --------------------------------------------------------------------------------------------------- |
+| 停用 *（默认）*             | 用户无法查看自己的处罚。                                          |
+| 仅处罚                 | 用户只能查看自己的处罚以及剩余时间（如适用）。   |
+| 含原因                     | 用户可以查看自己的处罚及原因，但看不到管理员的身份。     |
+| 含原因和管理人员  | 用户可以查看自己处罚的全部信息。                                        |
+
+<SettingsModal name="sanctionsPrivacy" />
+
+:::note
+无论选择哪个级别，**管理员始终拥有完整的访问权限**，可通过管理工具查看处罚记录。
+:::
+
+### 显示媒体 {#show-medias}
+
+配置处罚原因中媒体的显示方式。停用此选项时（默认），向成员显示处罚原因时（通过 [`/my-sanctions`](./utilities.mdx#my-sanctions) 或处罚通知），包含以下扩展名的链接会被自动从原因中移除：
+
+`png`、`jpg`、`jpeg`、`gif`、`webp`、`webm`、`mp4`
+
+1. 使用 [`/settings` 命令](../setup.md#settings)。
+2. 打开“**管理**”选项卡。
+3. 点击“**处罚**”旁边的“**配置**”。
+4. 点击“**显示媒体**”旁边的“**启用**”或“**停用**”。
+
+## ✨ 处罚名称 <span className="badge-premium">Premium</span> {#custom-names}
+
+使用 [Premium](/zh-CN/premium) 版，您可以自定义每种处罚类型的名称，使其贴合您服务器的用语。自定义名称会取代日志、搜索和菜单中的默认名称。对于每种类型，您可以配置：
+
+- **名称**：用您选择的名称替换默认名称，最多 32 个字符（例如：“警告” → “黄牌”）。
+- **动词**：设置消息中使用的动词，最多 32 个字符（例如：“被罚黄牌”）。如果留空，则使用名称。
+- **私信模式**：选择发给被处罚成员的私信的措辞：
+  - “您已[动词]”（默认）
+  - “您收到了一次[名称]”
+
+可自定义的处罚类型有：封禁、软封禁、解封、踢出、监禁、解除监禁、超时、解除超时、禁言、解除禁言和警告。
+
+1. 使用 [`/settings` 命令](../setup.md#settings)。
+2. 打开“**管理**”选项卡。
+3. 点击“**处罚**”旁边的“**配置**”。
+4. 点击“**处罚名称**”按钮。
+5. 在选择器中选择要自定义的处罚类型，然后在窗口中填写名称、动词和私信模式。
+
+<Settings start="sanctionNames" />
+
+界面上的“**导出**”和“**导入**”按钮可让您将名称保存为 JSON 文件，之后再粘贴回来（“**粘贴 JSON 内容**”字段），例如用于在另一个服务器上沿用这些名称。
+
+:::tip
+将字段留空即可把某种处罚类型重置为默认名称。“**全部重置**”按钮会将所有名称清零。
+:::
+
+## 📨 申诉链接 <span className="badge-premium">Premium</span> {#appeal}
+
+**申诉链接**让被处罚的成员可以对处罚提出异议：除警告外，所有处罚的私信中都会加入一个指向您链接的按钮。
+
+1. 使用 [`/settings` 命令](../setup.md#settings)。
+2. 打开“**管理**”选项卡。
+3. 点击“**处罚**”旁边的“**配置**”。
+4. 点击“**申诉链接**”按钮。
+5. 在窗口中粘贴您的链接，或清空输入框以移除。
+
+支持的平台：Discord、Google Forms、appeal.gg、Appy、DraftBot 和 FlaviBot。
+
+:::info
+“**申诉链接**”按钮仅出现在 [Premium](/zh-CN/premium) 服务器上。
+:::
+
+## 🔗 多账号 <span className="badge-experiment">试验中</span> {#alt}
+
+借助 Identity Update 的试验（[Premium](/zh-CN/premium) 公开测试版），同一个人使用的账号可以通过 `/alt` 命令关联：封禁其中一个，其余也会被封禁，每种处罚都会按您的设置扩展到整个分组。详细说明请参阅[多账号](./alt-accounts.md)页面。
+
+## 📊 处罚日志 {#logs}
+
+为了更好地管理，您可以配置一个专门用于处罚的日志频道，与通用日志分开。
+
+![处罚日志截图](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-logs.webp)
+
+### 配置处罚日志频道 {#config-logs}
+
+1. 使用 [`/settings` 命令](../setup.md#settings)。
+2. 打开“**管理**”选项卡。
+3. 点击“**处罚**”旁边的“**配置**”。
+4. 点击“**日志**”旁边的“**编辑**”。
+5. 选择用于发送处罚日志的频道，或使用“**帮我创建一个**”按钮。
+
+您也可以在“**管理**”选项卡的“**日志**”界面中，与其他日志频道一起找到同样的设置（参见[管理日志](./moderation.mdx#logs)）。没有专用频道时，处罚日志会发送到通用日志频道。
+
+:::note
+“**被动管理日志**”开关（默认启用）用于选择 RaidProtect 是否也记录不经过机器人而执行的操作（在 Discord 中封禁、Discord 的 AutoMod 等）。
+:::
+
+### 颜色逻辑 {#logs-color}
+
+![处罚日志配置](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-logs-color.webp)
+
+## 📦 导入 / 导出处罚 {#import-export}
+
+RaidProtect 允许您导入或导出服务器的处罚记录。处罚界面中的“**导出**”和“**导入**”按钮会引导您前往我们的[支持服务器](https://raidprotect.bot/discord)：请联系我们，并提供您服务器的邀请链接；如果是导入，还需说明您之前使用的管理机器人。
+
+## 常见问题 {#faq}
+
+### 为什么 /jail 命令不可用？
+
+它需要监禁角色。请在 `/settings` 的“**管理**”选项卡中，进入“**处罚**”，然后点击“**监禁**”旁边的“**编辑**”进行配置，或让 RaidProtect 为您创建一个。
+
+### 如果自动模块需要监禁成员但没有监禁角色，会发生什么？
+
+处罚会回退为超时。没有禁言角色时的禁言同理。
+
+### 成员可以查看自己的处罚吗？
+
+可以，只要您将[处罚隐私](#sanctions-privacy)设为“**停用**”以外的级别。他随后可通过 `/my-sanctions` 查看。
+
+### Discord 的 AutoMod 拦截的消息算作处罚吗？
+
+算：每条被拦截的消息都会以“**Discord Automod**”的名义创建一条静默警告，除非该规则已经施加了超时。只有启用被动管理日志时，这些警告才会被记录到日志中。

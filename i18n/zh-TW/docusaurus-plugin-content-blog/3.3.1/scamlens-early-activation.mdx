@@ -1,0 +1,68 @@
+---
+title: 'ScamLens：終結 Discord 上的加密貨幣圖片垃圾訊息'
+tags: [threats]
+authors: [zallom]
+image: ./assets/rp-scamlens.webp
+slug: scamlens-early-activation
+date: 2026-02-14
+---
+
+import Timestamp from '@site/src/components/Timestamp';
+
+一波與**「加密貨幣圖片」詐騙**相關的大規模垃圾訊息，促使我們提前啟用 **RaidProtect ScamLens** 的 `Deletion` 模式，這是我們的反詐騙圖片分析模組。
+
+![RaidProtect ScamLens 於 2026/02/14 成功阻止的威脅](./assets/rp-scamlens.webp)
+
+{/* truncate */}
+
+## 🛡️ 垃圾訊息詳情 {#threat}
+
+兩波大規模垃圾訊息發生於 <Timestamp value={1771023600} format="D" />，時間介於 <Timestamp value={1771023600} format="T" /> 與 <Timestamp value={1771068391} format="T" /> 之間。超過 **2,500 個遭盜用的帳號**被用來發送超過 **10,000 則**含有此類圖片的訊息。這些數字僅代表在受 RaidProtect 保護的 340,000 個伺服器上所觀察到的情況：由於 Discord 擁有數百萬個活躍伺服器，此次攻擊在整個平台上的實際規模估計可達**數十萬則訊息**。
+
+這種被稱為「加密貨幣圖片」的詐騙，是在盡可能多的頻道中大量發送 **4 張圖片**，誘使使用者購買詐騙的加密貨幣。
+
+<div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '280px 280px', gap: '8px'}}>
+  <img src={require('../../../../blog/3.3.1/assets/scam-1.png').default} alt="MrBeast Crypto Casino Scam 1" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-2.png').default} alt="MrBeast Crypto Casino Scam 2" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-3.png').default} alt="MrBeast Crypto Casino Scam 3" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-4.png').default} alt="MrBeast Crypto Casino Scam 4" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+</div>
+
+#### 第一波 {#wave-1}
+![每分鐘出現次數：第一波（00:00 至 01:25）](../../../../blog/3.3.1/assets/0000_0125.webp)
+
+#### 第二波 {#wave-2}
+![每分鐘出現次數：第二波（10:21 至 11:25）](../../../../blog/3.3.1/assets/1021_1125.webp)
+
+面對如此大量的詐騙訊息，我們提前啟用了 **ScamLens** 的 `Deletion` 模式；ScamLens 是在 [3.3.1 更新](/blog/3.3.1-jail-and-mute#changelog)中以 `Learning` 模式推出的。
+此模組會分析傳送到您伺服器上的圖片，現在會自動刪除被判定為詐騙的圖片（無需任何設定）。
+
+### 接下來呢？ {#next}
+
+`Sanction` 模式即將啟用：除了刪除詐騙圖片之外，ScamLens 還會自動對發送者施加**一天的超時**。我們選擇不停權這些帳號，因為它們幾乎全都是**遭駭的帳號**，停權反而會懲罰到帳號的真正擁有者。超時能立即消除威脅，讓擁有者有時間重新取得帳號的控制權。
+
+:::info 🔒 刻意不公開的運作方式
+基於安全考量，我們不會、也將不會公開 ScamLens 所使用的偵測方法。這種「黑箱」作法旨在防止詐騙者調整其手法以繞過我們的防護。
+:::
+
+---
+
+## ❓ FAQ {#faq}
+
+#### 如何封鎖 Discord 上的圖片垃圾訊息？ {#antispam-images}
+[將 RaidProtect 加入](https://raidprotect.bot/invite)您的伺服器。ScamLens 預設為啟用，會刪除所有被偵測為詐騙的圖片，無需任何額外設定。
+
+#### 如何防範 Discord 上的加密貨幣圖片詐騙？ {#arnaque-images-crypto}
+只要[加入 RaidProtect](https://raidprotect.bot/invite) 即可。ScamLens 會自動偵測並刪除詐騙圖片。
+
+#### 如何防止垃圾訊息機器人進入我的 Discord 伺服器？ {#anti-spam-bots}
+除了 ScamLens 之外，請啟用 RaidProtect 的[驗證碼](/docs/features/captcha)，防止自動化帳號加入您的伺服器。
+
+---
+
+:::tip 📚 實用資源
+- 🔗 [將 RaidProtect 加入您的伺服器](https://raidprotect.bot/invite)
+- 📘 [查看完整文件](https://docs.raidprotect.bot/)
+- 💡 [提交建議或回饋](https://suggestions.raidprotect.bot/)
+- 📣 [追蹤公告並加入社群](https://raidprotect.bot/discord)
+:::

@@ -196,6 +196,12 @@ const LANGUAGES: Array<{locale: string; label: string; href: string}> = [
   {locale: 'de', label: 'Deutsch', href: '/de/thank-you'},
   {locale: 'es', label: 'Español', href: '/es/thank-you'},
   {locale: 'pt', label: 'Português', href: '/pt/thank-you'},
+  {locale: 'it', label: 'Italiano', href: '/it/thank-you'},
+  {locale: 'tr', label: 'Türkçe', href: '/tr/thank-you'},
+  {locale: 'vi', label: 'Tiếng Việt', href: '/vi/thank-you'},
+  {locale: 'ja', label: '日本語', href: '/ja/thank-you'},
+  {locale: 'zh-CN', label: '简体中文', href: '/zh-CN/thank-you'},
+  {locale: 'zh-TW', label: '繁體中文', href: '/zh-TW/thank-you'},
 ];
 
 export default function ThankYou(): ReactNode {

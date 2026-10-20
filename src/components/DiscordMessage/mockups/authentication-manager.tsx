@@ -4,7 +4,7 @@ import DiscordMessage from "../index";
 import type { DiscordMessageData } from "../types";
 import concept from "./concept.module.css";
 
-/* Mockup concept animée de l'Authentication Manager, sur le modèle du Rôle
+/* Mockup concept animée de l'Authentification Manager, sur le modèle du Rôle
  * de Tag : le profil à gauche, et à droite Zallom tape /auth, choisit la
  * Passkey, vérification schématique (paf, vérifié), et le rôle @Admin
  * apparaît sur le profil le temps d'une session. Boucle. Statique (rôle

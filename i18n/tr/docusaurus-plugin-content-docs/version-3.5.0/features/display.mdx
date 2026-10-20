@@ -1,0 +1,106 @@
+---
+title: Bilgi panelleri
+description: "RaidProtect'in /display komutu, Discord sunucunuzda herkese açık bilgi panelleri ve yalnızca ekibe ayrılmış paneller oluşturur ve yönetir."
+---
+
+import DisplayMockup from '@site/src/components/DiscordMessage/mockups/display';
+
+<DisplayMockup />
+
+`/display` komutu, RaidProtect tarafından sunucunuzda yayınlanan bilgi panelleri oluşturmanızı ve yönetmenizi sağlar. İki bölümü vardır:
+
+- `/display public`: üyeleriniz için paneller (DM kapatma, yaptırımlar, bildirim…).
+- `/display staff`: yalnızca ekibinize ayrılmış paneller ([DISCON](./discon.md), rol alma, dokümantasyon, göreve başlama).
+
+Şu komutu kullanın: ```/display public``` veya ```/display staff```
+
+:::info
+Her iki alt komut da “**Sunucuyu Yönet**” iznini gerektirir.
+:::
+
+## ❓ İşleyiş {#working}
+
+Her bilgi paneli, bot tarafından seçtiğiniz bir kanalda yayınlanır. Her biri kendi içeriğine ve özelliklerine sahip bağımsız paneller oluşturmak için birkaç yuvanız vardır.
+
+:::info
+**Herkese açık panellerin sınırları:** ücretsiz sürümde 2 yuva, [premium](/tr/premium) sürümde 4 yuva, ayrıca Hapishane içeriğine ayrılmış 1 yuva. [Captcha](./captcha.md) paneli bir yuva tüketmez.
+:::
+
+## 📄 İçerik türleri {#content}
+
+Her herkese açık panel aşağıdaki içeriklerden birini veya birkaçını içerebilir:
+
+- **DM Kilidi**: Üyeleri [DM kapatma](./dm-lock.mdx) durumu hakkında bilgilendirir. DM'lerin kilitli olup olmadığını gösterir ve yalnızca arkadaşların, ekibin, botların ve önceki kişilerin DM gönderebileceğini açıklar.
+- **Hapishane**: Jail'deki üyelere yönelik, kurallara uyulmaması nedeniyle sunucuya erişimlerinin sınırlandırıldığını belirten bir mesaj gösterir.
+- **Yaptırımlar**: Üyelere kişisel yaptırımlarının geçmişini `/yaptirimlarim` komutuyla nasıl görüntüleyeceklerini belirtir.
+- **Şikayet**: Üyelere bir kullanıcının veya mesajın `/report` komutu ya da bağlam menüsü (sağ tık) ile nasıl bildirileceğini açıklar.
+
+## ⚙️ Özellikler {#features}
+
+İçeriğe ek olarak her herkese açık panel etkileşimli özellikleri etkinleştirebilir:
+
+- **Çeviri**: Üyelerin paneli Discord'un desteklediği tüm dillere çevirmesini sağlayan bir düğme ekler.
+- **Yaptırımlara erişim**: Üyelerin yaptırımlarını doğrudan görüntülemesini sağlayan bir “**Yaptırımlarımı görüntüle**” düğmesi ekler.
+- **Şikayet**: Bir kullanıcıyı hızlıca bildirmek için bir “**Üye şikayet et**” düğmesi ekler.
+
+{/* TODO: /display public ekran görüntüsü ekle */}
+
+## 📌 Ayrılmış yuvalar {#reserved-slot}
+
+Bazı paneller `/display` tarafından değil, kendi modülleri tarafından yönetilir:
+
+- **Hapishane**: son herkese açık yuva Hapishane içeriğine ayrılmıştır. Kanalı yalnızca `/settings` içinde, “**Moderasyon**” sekmesi, “**Cezalar**”, ardından [Jail](./sanctions.mdx#jail) (“**Kanalı düzenle**”) altında ayarlanır. Buna karşılık `/display public` üzerinden içerik ve özellik ekleyebilirsiniz.
+- **Captcha**: Panel modundaki [captcha](./captcha.md) paneli, captcha'nın kendisi tarafından konur ve kaldırılır (`/settings`, “**Katılımlar**” sekmesi, “**Captcha**”). `/display` üzerinden ne oluşturulabilir ne silinebilir.
+- **DISCON** (Shield Update ile deneme aşamasında): [DISCON](./discon.md#panel) paneli `/display staff`'ın ayrılmış yuvasını kaplar. Kanalı yalnızca `/discon` ile ayarlanır.
+
+## 🛡️ Ekip panelleri {#staff}
+
+`/display staff` komutu, ekibinize yönelik, yalnızca ekibe ayrılmış kanallarda yayınlanacak panelleri yönetir.
+
+Şu komutu kullanın: ```/display staff```
+
+:::info
+**Ekip panellerinin sınırları:** ücretsiz sürümde 1 yuva, [premium](/tr/premium) sürümde 4 yuva, ayrıca [DISCON](./discon.md) paneline ayrılmış 1 yuva.
+:::
+
+### Ekibe ayrılmış içerikler {#staff-content}
+
+Her ekip içeriği düğmesini panele otomatik olarak ekler:
+
+- **DISCON**: sunucunun tehlike seviyesi ve beş düğmesi. Bu içerik DISCON yuvasına ayrılmıştır ve [DISCON yapılandırmasından](./discon.md#config) yönetilir. Bu panele `/display staff` üzerinden başka içerikler ekleyebilirsiniz.
+- **Bir rol al**: `/auth` komutu gibi, [Authentification Manager](./authentication-manager.mdx#auth) tarafından korunan rollerin seçimini açan bir düğme.
+- **Dokümantasyon**: moderasyon dokümantasyonuna giden bir düğme ve faydalı komutların (`/modview`, `/sanctions`, `/clear`) bir hatırlatması.
+- **Görevde**: `/onduty` komutu gibi, [görevde rolünü](./moderation.mdx#onduty) ekleyen veya kaldıran bir düğme.
+
+**Çeviri** özelliği ekip panellerinde de kullanılabilir.
+
+:::warning
+Ekip panellerinin düğmeleri, tıklayan kişinin izinlerini denetlemez: **kontrol görevini kanala erişim üstlenir**. Bunları yalnızca ekibinize ayrılmış kanallarda yayınlayın.
+:::
+
+## 🔄 Panellerin güncellenmesi {#update}
+
+Botun dilini değiştirdiğinizde veya panellerin içeriği RaidProtect tarafından güncellendiğinde, bir gösterge güncel olmayan panelleri belirtir. Ardından paneli yenilemek için “**Güncelle**” düğmesine tıklayabilirsiniz.
+
+## ✏️ Bir paneli düzenleme veya silme {#edit}
+
+`/display public` veya `/display staff` menüsünden, dolu her yuvanın şu düğmeleri vardır:
+
+- **Düzenle**: Panelin kanalını, içeriğini veya özelliklerini değiştirir.
+- **Sil**: Paneli kanaldan kaldırır ve yuvayı serbest bırakır.
+
+Ayrılmış yuvaların (Hapishane, DISCON) kanalı kendi modüllerinden değiştirilir.
+
+## Sık sorulan sorular {#faq}
+
+### `/display public` ile `/display staff` arasındaki fark nedir?
+
+`/display public` üyeleriniz için paneller yayınlar (DM, yaptırımlar, bildirim). `/display staff` ekibiniz için paneller yayınlar: DISCON seviyesi, korumalı rol alma, dokümantasyon ve göreve başlama.
+
+### Kaç panel oluşturabilirim?
+
+Herkese açıkta: ücretsiz sürümde 2 panel, premium sürümde 4, ayrıca Hapishane yuvası. Ekipte: ücretsiz sürümde 1 panel, premium sürümde 4, ayrıca DISCON yuvası.
+
+### Captcha veya DISCON panelini neden silemiyorum?
+
+Bu paneller kendi modüllerine aittir: captcha `/settings` içinde, DISCON ise `/discon` ile yönetilir. Bunları `/display` üzerinden silmek, özelliği haber vermeden bozardı.

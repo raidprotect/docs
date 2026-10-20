@@ -3,7 +3,7 @@ title: DM Lock
 description: "RaidProtect's DM Lock durably blocks private messages sent from your Discord server, a shield against spam and scams."
 ---
 
-import { DmLockSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
+import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
 
 import DmLockMockup from '@site/src/components/DiscordMessage/mockups/dm-lock';
 
@@ -18,13 +18,13 @@ RaidProtect's **DM Lock** feature allows you to permanently close access to dire
 ## 🚦 Use cases and recommendations {#recommendations}
 
 - **Servers exposed to spam or harassment:** DM Lock is particularly recommended for public or large-audience communities, where the risk of DM abuse is higher.
-- **Temporary events or sensitive periods:** During launches, important announcements, or periods of high traffic (e.g., contests, promotions), enabling DM Lock helps prevent [phishing](/en/learn/token-grabber) or scam attempts.
+- **Temporary events or sensitive periods:** During launches, important announcements or periods of high traffic (e.g., contests, promotions), enabling DM Lock helps prevent [phishing](/en/learn/token-grabber) or scam attempts.
 - **Communities with a young audience:** For servers with a large number of minors, restricting DMs can strengthen security and prevent inappropriate behavior.
 - **Continuous protection:** Thanks to automation, there is no vulnerability window caused by forgetting the manual renewal.
 
 ## ❓ How DM Lock works {#working}
 
-The RaidProtect bot regularly checks the status of the server DM blocking setting and, if necessary, automatically re-enables it to avoid any vulnerability period between two manual renewals. This task runs transparently for administrators and server members.
+RaidProtect automatically renews the DM blocking before it expires, with no vulnerability window.
 
 :::info
 It remains possible to send and receive messages with:
@@ -39,10 +39,19 @@ Discord's community features are essential for DM Lock to work properly. [Follow
 ## 🚩 DM Lock configuration {#config}
 
 1. Run the [`/settings` command](../setup.md#settings).
-2. Click the "**DM Lock**" button.
-3. Enable or disable the automatic closure of direct messages.
+2. Open the "**Protection**" tab.
+3. Click "**Edit**" next to "**DM Lock**".
+4. In the window that opens, check or uncheck "**Close the server's direct messages**", then confirm.
 
-<DmLockSettingsMockup />
+<SettingsModal name="dmlock" />
+
+### /dmlock command {#dmlock}
+
+You can also use the command: ```/dmlock```
+
+It opens the "**DM Lock configuration**" screen, with a switch to enable or disable the protection. If a prerequisite is missing (Community mode or the "**Manage Server**" permission), a box tells you and the "**Refresh**" button lets you check again after fixing it. The command is reserved for members who have the "**Manage Server**" permission.
+
+<Settings start="dmlockCommand" />
 
 ## ℹ️ /dmlock-info command {#info}
 
@@ -74,3 +83,25 @@ The `/dmlock-info` command lets you inform members about the current status of *
 - Encourage active members to use `/dmlock-info` to answer new members' questions.
 - Post it regularly or pin it in your welcome channels.
 - Combine it with your rules or announcements to remind members of the server's anti-spam policy.
+
+## Frequently asked questions {#faq}
+
+### Where do I enable DM Lock?
+
+In `/settings`, Protection tab, by clicking "Edit" next to "DM Lock", then checking "Close the server's direct messages". The `/dmlock` command also opens a dedicated screen.
+
+### Why can't I enable DM Lock?
+
+A prerequisite is missing: Discord's Community mode must be enabled on your server, and RaidProtect must have the "Manage Server" permission.
+
+### How long do DMs stay closed?
+
+As long as the protection is active. Discord limits its security action to 24 hours, and we renew it automatically until you disable DM Lock.
+
+### Can members still DM each other?
+
+Yes, if they are friends or have already talked. Bots and staff can also always send DMs.
+
+### Does DISCON enable DM Lock?
+
+Yes, from level 3, on servers that have access to [DISCON](./discon.md) (experiment with the Shield Update). When going back down, we only disable it if DISCON was the one that enabled it.

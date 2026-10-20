@@ -172,7 +172,7 @@ export default function MoindrePrivilegePage(): ReactNode {
               <Translate id="learn.least-privilege.s4.p1" description="p">
                 Le moindre privilège réduit le nombre de comptes puissants, mais ces
                 comptes restent une cible de choix. C'est là qu'intervient
-                l'Authentication Manager de RaidProtect.
+                l'Authentification Manager de RaidProtect.
               </Translate>
             </p>
             <p>
@@ -184,7 +184,7 @@ export default function MoindrePrivilegePage(): ReactNode {
                   link: (
                     <Link to="/docs/features/authentication-manager">
                       <Translate id="learn.least-privilege.s4.link" description="link">
-                        Authentication Manager
+                        Authentification Manager
                       </Translate>
                     </Link>
                   ),
@@ -261,7 +261,7 @@ export default function MoindrePrivilegePage(): ReactNode {
       {
         question: translate({
           id: 'learn.least-privilege.faq.q4',
-          message: "Quel est le rapport avec l'Authentication Manager ?",
+          message: "Quel est le rapport avec l'Authentification Manager ?",
           description: 'faq q',
         }),
         answer: translate({
@@ -292,7 +292,7 @@ export default function MoindrePrivilegePage(): ReactNode {
       {
         label: (
           <Translate id="learn.least-privilege.rel3" description="related">
-            L'Authentication Manager
+            L'Authentification Manager
           </Translate>
         ),
         to: '/docs/features/authentication-manager',

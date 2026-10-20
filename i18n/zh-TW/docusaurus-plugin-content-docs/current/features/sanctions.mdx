@@ -1,0 +1,330 @@
+---
+title: 處罰紀錄
+description: "RaidProtect 的處罰紀錄將您所有的管理動作集中在可查詢、可編輯的資料庫中，方便清楚追蹤。"
+---
+
+import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
+
+import SanctionsMockup from '@site/src/components/DiscordMessage/mockups/sanctions';
+
+{/* <SanctionsMockup /> masqué temporairement : mockup à améliorer */}
+
+import Icon from "@site/src/components/Icon";
+
+RaidProtect 的處罰紀錄讓您追蹤並管理伺服器上所有已施加的[處罰](/zh-TW/learn/discord-sanctions)。這套系統將所有管理動作集中在可查詢、可編輯的資料庫中，讓您的管理團隊工作更輕鬆。
+
+## ❓ 處罰紀錄的運作方式 {#working}
+
+處罰紀錄會自動記錄伺服器上執行的所有管理動作：
+
+- **手動處罰**：所有[管理指令](./moderation.mdx)（`/ban`、`/tempban`、`/kick`、`/mute`、`/jail`、`/warn`……）都會記錄在紀錄中。
+- **自動處罰**：由我們的防護模組（[Antispam](./anti-spam.mdx)、[HoneyPot](./honeypot.md)、[ScamLens](./scam-images.md)……）所施加的處罰，同樣會加入紀錄。
+- **停權、踢出與超時**：不經由 RaidProtect 施加的處罰，也會加入紀錄。
+- **Discord 的 AutoMod**：由 Discord AutoMod 施加的超時會被記錄。搭配 Shield Update（實驗階段），每則被 AutoMod 規則攔截的訊息，也會以「**Discord Automod**」的名義建立一個靜默的**警告**（不發送私訊），除非該規則已經施加超時。
+- **處罰通知**：被處罰的成員會收到私訊，告知處罰內容及其原因。機器人也會發送詳細的回執，確認發送狀態：**已收到**、**私訊已關閉**、**已逾時**或**靜默**（使用 `[--silent]` 選項時）。對於踢出、軟停權和暫時停權，此訊息還會附上一個**含有伺服器邀請的按鈕**，讓成員在處罰結束後可以回來。
+
+:::info
+所有已記錄的處罰都包含：被處罰的使用者、負責的管理人員、原因（最多 512 個字元）、日期與時間，以及處罰類型和使用者是否已被通知。
+:::
+
+## 🔍 搜尋處罰 {#search}
+
+`/sanctions search` 指令讓您依不同條件在紀錄中搜尋處罰。
+
+使用指令：```/sanctions search [user] [moderator] [type] [reason] [date] [status] [moderator_type]```
+
+- `[user]`：搜尋特定使用者的所有處罰。如果該帳號屬於[多帳號](./alt-accounts.md)群組，關聯帳號的處罰也會出現。
+- `[moderator]`：搜尋特定管理人員施加的所有處罰。
+- `[type]`：依處罰類型篩選（停權、解除停權、踢出、監禁、解除監禁、隔離、超時、解除超時、禁言、解除禁言、警告）。
+- `[reason]`：依原因篩選（部分相符）。
+- `[date]`：依處罰日期篩選。
+- `[status]`：依處罰狀態篩選（生效中、已過期、已取消）。
+- `[moderator_type]`：依管理人員類型篩選（人工操作、自動化操作、RaidProtect 操作、Discord 操作、Antispam、自動過期、Antiscam、HoneyPot、Discord Automod、Discord 自動過期）。
+
+![搜尋處罰的截圖](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-search.webp)
+
+:::tip
+您可以組合多個條件來縮小搜尋範圍。例如，搜尋特定管理人員執行的所有停權。
+:::
+
+## ℹ️ 檢視處罰 {#info}
+
+`/sanctions info` 指令讓您取得特定處罰的詳細資訊。
+
+使用指令：```/sanctions info (id)```
+
+將 `(id)` 替換為您想檢視的處罰 ID。
+
+![處罰資訊的截圖](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-info.webp)
+
+## ✏️ 編輯處罰 {#edit}
+
+`/sanctions edit` 指令讓您修改現有處罰的原因或時長，適合用來更正錯誤或補充細節。
+
+使用指令：```/sanctions edit (id) [reason] [duration]```
+
+將 `(id)` 替換為要編輯的處罰 ID、`[reason]` 替換為新的原因（最多 512 個字元），並將 `[duration]` 替換為新的時長（例如：`1d 2h`）。
+
+![編輯處罰的截圖](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-edit.webp)
+
+:::warning
+編輯處罰會更新紀錄中的記錄，但不會改變 Discord 上已施加的處罰（例如，被停權的使用者仍會維持停權）。
+:::
+
+## 🗑️ 刪除處罰 {#delete}
+
+`/sanctions delete` 指令讓您從紀錄中刪除處罰。此動作無法復原。
+
+使用指令：```/sanctions delete (id) [reason]```
+
+將 `(id)` 替換為要刪除的處罰 ID。`[reason]` 參數用來**說明刪除的理由**，該理由將記錄在紀錄中。
+
+![刪除處罰的截圖](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-delete.webp)
+
+## 處罰狀態 {#status}
+
+處罰可以有不同的狀態：
+
+| **狀態**      | **表情符號**                                                                                                                | **意義**                                                  |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------| --------------------------------------------------------- |
+| `生效中`      | <Icon src="/img/icons/SanctionStatusACTIVE.svg" alt="icon SanctionStatusACTIVE" title=":iconSanctionStatusACTIVE:"/>        | 處罰正在進行中。                                          |
+| `已過期`      | <Icon src="/img/icons/SanctionStatusEXPIRED.svg" alt="icon SanctionStatusEXPIRED" title=":iconSanctionStatusEXPIRED:"/>     | 處罰已過期。                                              |
+| `已取消`      | <Icon src="/img/icons/SanctionStatusCANCELED.svg" alt="icon SanctionStatusCANCELED" title=":iconSanctionStatusCANCELED:"/>  | 處罰已被管理人員取消。                                    |
+| `執行失敗`    | <Icon src="/img/icons/SanctionStatusFAILED.svg" alt="icon SanctionStatusFAILED" title=":iconSanctionStatusFAILED:"/>        | 處罰執行失敗（缺少權限）。                                |
+
+### 處理重複處罰 {#duplicates}
+
+當發現先前仍生效的處罰時，您可以：
+
+- **合併**兩個處罰：時長會盡可能相加，原因則會串接在一起。
+- **取消**生效中的處罰，並建立新的處罰。
+- 以輸入的處罰資訊**覆寫**生效中的處罰。
+
+![處理處罰狀態的截圖](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-active-found.webp)
+
+## ⚙️ 設定處罰 {#config}
+
+所有處罰設定都在同一個畫面中：
+
+1. 使用 [`/settings` 指令](../setup.md#settings)。
+2. 開啟「**管理**」分頁。
+3. 點擊「**處罰**」旁的「**設定**」。
+
+<Settings start="sanctions" />
+
+### 停用處罰 {#disable}
+
+您可以在伺服器上**完全停用處罰系統**。停用處罰後，RaidProtect 不再於紀錄中記錄任何處罰，且相關指令也無法使用。
+
+1. 使用 [`/settings` 指令](../setup.md#settings)。
+2. 開啟「**管理**」分頁。
+3. 點擊「**處罰**」旁的「**設定**」。
+4. 點擊畫面標題右側的「**停用**」（或點擊「**啟用**」重新開啟）。
+
+### Jail {#jail}
+
+設定 **Jail**（監禁）以啟用以角色為基礎的管理處罰，比一般禁言更為嚴格。設定完成後，這個角色可以隔離成員並大幅限制其權限，同時解鎖 [`/jail`](./moderation.mdx#jail) 和 [`/tempjail`](./moderation.mdx#tempjail) 指令的使用。
+
+1. 使用 [`/settings` 指令](../setup.md#settings)。
+2. 開啟「**管理**」分頁。
+3. 點擊「**處罰**」旁的「**設定**」。
+4. 點擊「**Jail**」旁的「**編輯**」。
+5. 在選單中選擇現有的角色，或點擊「**幫我建立一個**」。
+
+<Settings start="jail" />
+
+「**幫我建立一個**」按鈕會開啟一個視窗，您可以在其中為角色命名（預設為 `被監禁`），並設定給被監禁成員使用的**資訊頻道**：
+
+- **選擇現有的頻道**：它會保持目前的可見性。
+- **建立新頻道**，並填入名稱（預設為 `受限存取`）。
+
+我們會移除該角色檢視伺服器頻道的權限。在資訊頻道中，被監禁的成員可以閱讀訊息與歷史紀錄，但不能發言、加表情或建立討論串。此頻道對應[資訊面板](./display.mdx)中的保留欄位，並由 Jail 設定自動管理。
+
+:::info
+如果已設定監禁角色，您可以使用 Jail 畫面中的「**修改頻道**」按鈕更改資訊頻道。
+:::
+
+:::warning
+如果監禁角色仍能看到某些頻道，Jail 畫面會在提示區塊中列出它們：請在這些頻道中拒絕它的 `檢視頻道` 權限，或使用「**幫我建立一個**」建立新角色。只要仍有依賴監禁角色或禁言角色的生效中處罰，您就無法更換它：請解除這些處罰，或等它們過期。
+:::
+
+:::info
+沒有監禁角色時，`/jail` 和 `/tempjail` 指令無法使用。自動模組（[Antispam](./anti-spam.mdx)、[HoneyPot](./honeypot.md)、[虛假檢舉者](./reports.md#bad-reporters)）仍會提供監禁與禁言，並註明「**尚未設定，改用超時**」：此時施加的處罰就是超時。
+:::
+
+#### 監禁時的角色處理 {#jail-roles}
+
+在 Jail 畫面中，「**監禁時的角色處理**」選單控制 RaidProtect 在成員被監禁時如何處理其角色。有兩種模式：
+
+- 「**新增監禁角色**」*（預設）*：成員保留原有角色，僅新增監禁角色。
+- 「**替換所有角色**」：我們會在監禁期間**移除該成員的所有角色**，並在他被釋放時恢復。這更為嚴格，可避免帶有明確權限的角色繞過監禁角色的限制。
+
+### 同步 Discord 隔離 <span className="badge-experiment">實驗</span> {#discord-quarantine}
+
+:::info 實驗：Shield Update
+同步 Discord 隔離屬於預計於 3.6.0 版推出的 **Shield Update**。在正式推出之前，它處於實驗階段，為 [Premium](/zh-TW/premium) 伺服器提供公開測試版。
+:::
+
+Discord 的 AutoMod 可以隔離個人檔案違反規則的成員（暱稱、伺服器標籤）。啟用此設定後，我們會追蹤該隔離：成員會獲得**監禁角色**，並在紀錄中記錄一筆**隔離**處罰。一旦 Discord 解除隔離，他就會隨之被放出。
+
+1. 使用 [`/settings` 指令](../setup.md#settings)。
+2. 開啟「**管理**」分頁。
+3. 點擊「**處罰**」旁的「**設定**」。
+4. 點擊「**同步 Discord 隔離**」旁的「**啟用**」。
+
+:::info
+此設定要求有[監禁角色](#jail)。停用它會釋放它所施加的隔離。
+:::
+
+### 禁言 {#mute}
+
+設定**禁言角色**，讓較長的時長改用以角色為基礎的處罰，取代 Discord 超時。當禁言時長超過所設定的閾值時，機器人會自動為相關成員授予禁言角色，而不是施加 Discord 超時。
+
+1. 使用 [`/settings` 指令](../setup.md#settings)。
+2. 開啟「**管理**」分頁。
+3. 點擊「**處罰**」旁的「**設定**」。
+4. 點擊「**禁言**」旁的「**編輯**」。
+5. 在「**禁言角色**」選單中選擇現有的角色，或點擊「**幫我建立一個**」（我們會建立 `被禁言` 角色，並移除其在所有頻道中的發言權限）。
+
+#### 禁言閾值 {#mute-threshold}
+
+**禁言閾值**與角色設定在同一個畫面中。它定義機器人從多長的時長開始使用禁言角色，而不是 Discord 超時。
+
+1. 在禁言畫面中，開啟「**禁言閾值**」選單。
+2. 選擇「**始終**」、「**1 小時**」（預設）、「**1 天**」、「**延長超時（=28 天）**」或「**自訂值**」（0 到 28 天，例如：`3d 1h 15m`）。
+
+「**始終**」（值為 0）絕不使用 Discord 超時：每次禁言都透過角色處理。
+
+:::info
+超時 28 天的上限是由 Discord 規定的。超過此時長，若已設定禁言角色，一律會使用禁言角色。[`/mute` 指令](./moderation.mdx#timeout)的 `[--force-timeout]` 選項可無視閾值而強制使用 Discord 超時。
+:::
+
+:::info
+**由 Discord AutoMod 施加的超時**，若其時長超過所設定的閾值，會自動轉換為以角色為基礎的禁言，以確保與您手動施加的處罰一致。
+:::
+
+### 處罰隱私 {#sanctions-privacy}
+
+設定處罰隱私等級，以控制成員透過 [`/my-sanctions`](./utilities.mdx#my-sanctions) 指令或**檢視我的處罰**按鈕，可以存取**自己處罰**的哪些資訊。
+
+1. 使用 [`/settings` 指令](../setup.md#settings)。
+2. 開啟「**管理**」分頁。
+3. 點擊「**處罰**」旁的「**設定**」。
+4. 點擊「**處罰隱私**」旁的「**編輯**」。
+5. 在視窗中，選擇想要的「**存取等級**」：
+
+| **等級**                             | **說明**                                                                                            |
+| ------------------------------------ | --------------------------------------------------------------------------------------------------- |
+| 已停用 *（預設）*                    | 成員無法檢視自己的處罰。                                                                            |
+| 僅處罰                               | 成員只能檢視自己的處罰以及剩餘時間（如適用）。                                                      |
+| 含原因                               | 成員可以檢視自己的處罰及其原因，但看不到管理人員的身分。                                            |
+| 含原因和管理人員                     | 成員可以檢視自己處罰的全部資訊。                                                                    |
+
+<SettingsModal name="sanctionsPrivacy" />
+
+:::note
+無論選擇哪個等級，**管理人員都保有**透過管理工具存取處罰紀錄的**完整權限**。
+:::
+
+### 顯示媒體 {#show-medias}
+
+設定處罰原因中媒體的顯示方式。停用此選項時（預設），在向成員顯示時（透過 [`/my-sanctions`](./utilities.mdx#my-sanctions) 或處罰通知），含有下列副檔名的連結會自動從處罰原因中移除：
+
+`png`、`jpg`、`jpeg`、`gif`、`webp`、`webm`、`mp4`
+
+1. 使用 [`/settings` 指令](../setup.md#settings)。
+2. 開啟「**管理**」分頁。
+3. 點擊「**處罰**」旁的「**設定**」。
+4. 點擊「**顯示媒體**」旁的「**啟用**」或「**停用**」。
+
+## ✨ 處罰名稱 <span className="badge-premium">Premium</span> {#custom-names}
+
+使用 [Premium](/zh-TW/premium) 版，您可以自訂每種處罰類型的名稱，使其符合您伺服器的用語。自訂的名稱會取代紀錄、搜尋和選單中的預設名稱。對每種類型，您可以設定：
+
+- **名稱**：以您選擇的名稱取代預設名稱，最多 32 個字元（例如：「警告」→「黃牌」）。
+- **動詞**：設定訊息中使用的動詞，最多 32 個字元（例如：「被出示黃牌」）。若留空，則使用名稱。
+- **私訊模式**：選擇傳送給被處罰成員的私訊的措辭：
+  - 「您已被[動詞]」（預設）
+  - 「您收到了一個[名稱]」
+
+可自訂的處罰類型有：停權、軟停權、解除停權、踢出、監禁、解除監禁、超時、解除超時、禁言、解除禁言和警告。
+
+1. 使用 [`/settings` 指令](../setup.md#settings)。
+2. 開啟「**管理**」分頁。
+3. 點擊「**處罰**」旁的「**設定**」。
+4. 點擊「**處罰名稱**」按鈕。
+5. 在選單中選擇要自訂的處罰類型，然後在視窗中填入名稱、動詞和私訊模式。
+
+<Settings start="sanctionNames" />
+
+畫面上的「**匯出**」和「**匯入**」按鈕可讓您將名稱儲存為 JSON 檔案，之後再貼回（「**貼上 JSON 內容**」欄位），例如用來在另一個伺服器上沿用。
+
+:::tip
+將欄位留空即可將處罰類型重設為其預設名稱。「**全部重置**」按鈕會將所有名稱歸零。
+:::
+
+## 📨 申訴連結 <span className="badge-premium">Premium</span> {#appeal}
+
+**申訴連結**讓被處罰的成員可以對處罰提出異議：所有處罰（警告除外）的私訊中，都會加上一個指向您連結的按鈕。
+
+1. 使用 [`/settings` 指令](../setup.md#settings)。
+2. 開啟「**管理**」分頁。
+3. 點擊「**處罰**」旁的「**設定**」。
+4. 點擊「**申訴連結**」按鈕。
+5. 在視窗中貼上您的連結，或清空欄位以移除。
+
+接受的平台：Discord、Google Forms、appeal.gg、Appy、DraftBot 和 FlaviBot。
+
+:::info
+「**申訴連結**」按鈕只會出現在 [Premium](/zh-TW/premium) 伺服器上。
+:::
+
+## 🔗 多帳號 <span className="badge-experiment">實驗</span> {#alt}
+
+在 Identity Update 的實驗階段（[Premium](/zh-TW/premium) 公開測試版），同一個人使用的帳號可以透過 `/alt` 指令關聯：停權其中一個，其他的也會被停權，且每項處罰都會依您的設定延伸到整個群組。所有說明都在[多帳號](./alt-accounts.md)頁面。
+
+## 📊 處罰紀錄頻道 {#logs}
+
+為了更好的條理，您可以設定專門用於處罰的紀錄頻道，與一般紀錄分開。
+
+![處罰紀錄的截圖](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-logs.webp)
+
+### 設定處罰紀錄頻道 {#config-logs}
+
+1. 使用 [`/settings` 指令](../setup.md#settings)。
+2. 開啟「**管理**」分頁。
+3. 點擊「**處罰**」旁的「**設定**」。
+4. 點擊「**紀錄**」旁的「**編輯**」。
+5. 選擇要發送處罰紀錄的頻道，或使用「**幫我建立一個**」按鈕。
+
+您也可以在「**管理**」分頁的「**紀錄**」畫面中，與其他紀錄頻道一起找到相同的設定（見[管理紀錄](./moderation.mdx#logs)）。若沒有專用頻道，處罰紀錄會送到一般紀錄頻道。
+
+:::note
+「**被動管理紀錄**」開關（預設啟用）決定 RaidProtect 是否也記錄不經過機器人所執行的動作（從 Discord 直接停權、Discord 的 AutoMod……）。
+:::
+
+### 顏色邏輯 {#logs-color}
+
+![處罰紀錄設定](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-logs-color.webp)
+
+## 📦 匯入／匯出處罰 {#import-export}
+
+RaidProtect 讓您匯入或匯出伺服器的處罰紀錄。處罰畫面中的「**匯出**」和「**匯入**」按鈕會引導您前往我們的[支援伺服器](https://raidprotect.bot/discord)：請聯絡我們，並提供您伺服器的邀請，若是匯入，還需提供您先前使用的管理機器人。
+
+## 常見問題 {#faq}
+
+### 為什麼 /jail 指令無法使用？
+
+它需要監禁角色。請在 `/settings` 的「**管理**」分頁、「**處罰**」中，點擊「**Jail**」旁的「**編輯**」進行設定，或讓 RaidProtect 為您建立一個。
+
+### 如果自動模組需要在沒有監禁角色的情況下監禁成員，會發生什麼事？
+
+處罰會改用超時。沒有禁言角色時的禁言也是如此。
+
+### 成員可以查看自己的處罰嗎？
+
+可以，只要您將[處罰隱私](#sanctions-privacy)設定為「**已停用**」以外的等級。他便可以透過 `/my-sanctions` 查看。
+
+### 被 Discord AutoMod 攔截的訊息會算作處罰嗎？
+
+會：每則被攔截的訊息都會以「**Discord Automod**」的名義建立一個靜默警告，除非該規則已經施加超時。這些警告只有在啟用被動管理紀錄時才會被記錄。

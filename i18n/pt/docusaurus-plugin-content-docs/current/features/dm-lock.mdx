@@ -3,7 +3,7 @@ title: Bloqueio de DMs
 description: "O Bloqueio de DMs do RaidProtect fecha de forma duradoura as mensagens privadas vindas do seu servidor Discord, um escudo contra spam e golpes."
 ---
 
-import { DmLockSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
+import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
 
 import DmLockMockup from '@site/src/components/DiscordMessage/mockups/dm-lock';
 
@@ -13,7 +13,7 @@ import SeparatedBox from '@site/src/components/SeparatedBox';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-A funcionalidade **Bloqueio de DMs** do RaidProtect permite fechar permanentemente o acesso às mensagens diretas (DMs) enviadas a partir do servidor, superando assim a limitação nativa do Discord, que só permite esse bloqueio por 24 horas através da ação de cibersegurança "Pausar as DMs".
+A funcionalidade **Bloqueio de DMs** do RaidProtect permite fechar permanentemente o acesso às mensagens diretas (DMs) enviadas a partir do servidor, superando assim a limitação nativa do Discord, que só permite esse bloqueio por 24 horas por meio da ação de segurança “Pausar DMs”.
 
 ## 🚦 Casos de uso e recomendações {#recommendations}
 
@@ -24,7 +24,7 @@ A funcionalidade **Bloqueio de DMs** do RaidProtect permite fechar permanentemen
 
 ## ❓ Como funciona o Bloqueio de DMs {#working}
 
-O bot RaidProtect verifica regularmente o estado da configuração de bloqueio de DMs do servidor e, se necessário, reativa-o automaticamente para evitar qualquer período de vulnerabilidade entre duas renovações manuais. Essa tarefa é executada de forma transparente para os administradores e os membros do servidor.
+O RaidProtect renova automaticamente o bloqueio das DMs antes de sua expiração, sem período de vulnerabilidade.
 
 :::info
 Continua sendo possível enviar e receber mensagens com:
@@ -39,10 +39,19 @@ As funcionalidades comunitárias do Discord são indispensáveis para o bom func
 ## 🚩 Configuração do Bloqueio de DMs {#config}
 
 1. Execute o [comando `/settings`](../setup.md#settings).
-2. Clique no botão "**Bloqueio de DMs**".
-3. Ative ou desative o fechamento automático das mensagens diretas.
+2. Abra a aba “**Proteção**”.
+3. Clique em “**Editar**” ao lado de “**Bloqueio de DMs**”.
+4. Na janela que se abre, marque ou desmarque “**Fechar as mensagens privadas do servidor**” e depois confirme.
 
-<DmLockSettingsMockup />
+<SettingsModal name="dmlock" />
+
+### Comando /dmlock {#dmlock}
+
+Você também pode usar o comando: ```/dmlock```
+
+Ele abre a tela “**Configuração do Bloqueio de DMs**”, com um interruptor para ativar ou desativar a proteção. Se um pré-requisito estiver faltando (modo Comunidade ou permissão “**Gerenciar servidor**”), um aviso indica isso e o botão “**Atualizar**” permite verificar novamente após a correção. O comando é reservado aos membros que têm a permissão “**Gerenciar servidor**”.
+
+<Settings start="dmlockCommand" />
 
 ## ℹ️ Comando /dmlock-info {#info}
 
@@ -74,3 +83,25 @@ O comando `/dmlock-info` permite informar os membros sobre o estado atual do **B
 - Convide os membros ativos a usar `/dmlock-info` para responder às perguntas dos novos membros.
 - Exiba-o regularmente ou fixe-o nos seus canais de boas-vindas.
 - Combine-o com suas regras ou anúncios para relembrar a política anti-spam do servidor.
+
+## Perguntas frequentes {#faq}
+
+### Onde ativar o Bloqueio de DMs?
+
+Em `/settings`, aba Proteção, clicando em “Editar” ao lado de “Bloqueio de DMs” e depois marcando “Fechar as mensagens privadas do servidor”. O comando `/dmlock` também abre uma tela dedicada.
+
+### Por que não consigo ativar o Bloqueio de DMs?
+
+Falta um pré-requisito: o modo Comunidade do Discord deve estar ativado no seu servidor, e o RaidProtect deve ter a permissão “Gerenciar servidor”.
+
+### Por quanto tempo as DMs ficam fechadas?
+
+Enquanto a proteção estiver ativa. O Discord limita sua ação de segurança a 24 horas, e nós a renovamos automaticamente até que você desative o Bloqueio de DMs.
+
+### Os membros ainda podem se escrever por DM?
+
+Sim, se forem amigos ou já tiverem conversado. Os bots e a equipe também podem sempre enviar DMs.
+
+### O DISCON ativa o Bloqueio de DMs?
+
+Sim, a partir do nível 3, nos servidores que têm acesso ao [DISCON](./discon.md) (em experimentação com a Shield Update). Ao descer, só o desativamos se foi o DISCON que o tinha ativado.

@@ -1,0 +1,81 @@
+---
+title: 'ScamLens: Discord''da 260.000 sahte görsel silindi'
+tags: [threats]
+authors: [zallom]
+slug: scamlens-1-month-recap
+date: 2026-03-21
+image: ../../../../blog/3.3.2/assets/rp-scamlens-1-month-recap.webp
+description: ScamLens'in etkinleştirilmesinden bir ay sonra Discord'daki dolandırıcılık tespit istatistikleri — yakalanan sahte görseller, genişletilmiş kapsam ve yeni loglar.
+---
+
+import Timestamp from '@site/src/components/Timestamp';
+
+[ScamLens'in planlanandan önce etkinleştirilmesinden](/tr/blog/scamlens-early-activation) bir ay sonra, Discord'daki sahte görsel tespitine ilişkin ilk istatistikler ve birkaç yenilik.
+
+![RaidProtect ScamLens 1 month recap blog post social card](../../../../blog/3.3.2/assets/rp-scamlens-1-month-recap.webp)
+
+{/* truncate */}
+
+## 🔎 ScamLens nedir? {#what-is-scamlens}
+
+ScamLens, **RaidProtect'in anti-scam modülüdür**. Discord sunucunuza gönderilen görselleri otomatik olarak analiz eder ve hiçbir yapılandırma gerektirmeden **sahte olarak tanımlananları siler**. Başlıca hedefi, hacklenmiş Discord hesapları aracılığıyla toplu olarak yayılan **kripto para**, **kripto kumarhane** ve **sahte yatırım** dolandırıcılıklarıdır.
+
+Bu görseller şöyle görünüyor:
+
+<div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '280px 280px', gap: '8px'}}>
+  <img src={require('../../../../blog/3.3.1/assets/scam-1.png').default} alt="MrBeast Crypto Casino Scam 1" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-2.png').default} alt="MrBeast Crypto Casino Scam 2" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-3.png').default} alt="MrBeast Crypto Casino Scam 3" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-4.png').default} alt="MrBeast Crypto Casino Scam 4" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+</div>
+
+## 📊 1 ayın ardından bilanço {#stats}
+
+<Timestamp value={1771023600} format="D" /> tarihinden bu yana ScamLens, RaidProtect tarafından korunan 340.000 Discord sunucusunun tamamına gönderilen görselleri sürekli olarak analiz ediyor. İşte rakamlar:
+
+| **Gösterge** | **Rakam** |
+|---|---|
+| Analiz edilen görseller (benzersiz) | **162.000** |
+| Tespit edilen scam görselleri (benzersiz) | **62.000** |
+| Silinen sahte görseller | **260.000** |
+| Tespit edilen hesaplar | **15.000** |
+
+**Analiz edilen her üç görselden biri sahte.**
+
+![Dakika başına görülme sayısı — ScamLens 1 ay](../../../../blog/3.3.2/assets/1402-1403.webp)
+
+1 saatlik dilimlerde **büyük ve yoğun zirvelerle** kendini gösteren [ilk dalgaların](/tr/blog/scamlens-early-activation#threat) aksine, bir aylık etkinlik zamana çok daha yayılmış durumda. Tespitler hâlâ çok sayıda, ancak birkaç yoğun akın halinde toplanmak yerine sürekli olarak dağılıyor.
+
+---
+
+## 🆕 Yenilikler {#updates}
+
+### 🪵 Tespit logları {#logs}
+
+ScamLens artık **kendine ayrılmış bir loga** sahip: her sahte görsel tespiti, log kanalınızda ilgili üyeyi ve hedef alınan kanal veya kanalları belirten bir mesaj oluşturur. Hiçbir ek yapılandırma olmadan botun neyi yakaladığını tam olarak bilirsiniz.
+
+### 🔍 Genişletilmiş kapsam {#coverage}
+
+Bazı görseller, Discord'un CDN'i tarafından sunulma biçimleri nedeniyle şimdiye kadar analizden kaçıyordu. ScamLens artık bu durumları da kapsıyor.
+
+---
+
+## ❓ SSS {#faq}
+
+#### Discord sunucumda neden görsel scam'leri görünüyor? {#pourquoi-scam-images}
+Bu görseller **hacklenmiş Discord hesapları** tarafından gönderiliyor. Dolandırıcılar hesapları ele geçiriyor, ardından bunları aynı anda mümkün olduğunca çok sunucuya spam yapmak için kullanıyor. Sunucunuz **özel olarak hedef alınmıyor**, yalnızca kalabalığın bir parçası. Hacklenmiş tek bir hesap **birkaç saniye içinde onlarca sunucuya** ulaşabilir; otomatik silmenin önemi de buradan geliyor.
+
+#### Discord sunucumu scam'lere karşı nasıl korurum? {#proteger-serveur-scam-discord}
+[RaidProtect'i](https://raidprotect.bot/invite) sunucunuza ekleyin. ScamLens varsayılan olarak etkindir ve sahte olarak algılanan görselleri hiçbir yapılandırma gerektirmeden otomatik olarak siler.
+
+#### Scam görselleri tespiti atlatmak için değişiyor mu? {#evolution-scam}
+Evet, teknikler düzenli olarak değişiyor. ScamLens bu değişiklikleri takip etmek için sürekli güncelleniyor.
+
+---
+
+:::tip 📚 Faydalı kaynaklar
+- 🔗 [RaidProtect'i sunucunuza ekleyin](https://raidprotect.bot/invite)
+- 📘 [Tam dokümantasyona göz atın](https://docs.raidprotect.bot/)
+- 💡 [Bir öneri veya geri bildirim gönderin](https://suggestions.raidprotect.bot/)
+- 📣 [Duyuruları takip edin ve topluluğa katılın](https://raidprotect.bot/discord)
+:::

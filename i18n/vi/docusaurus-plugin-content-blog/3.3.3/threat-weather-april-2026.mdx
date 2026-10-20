@@ -1,0 +1,102 @@
+---
+title: 40.000 tài khoản Discord bị hack đã bị chặn + HoneyPot mới
+tags: [threats]
+authors: [zallom]
+slug: threat-weather-april-2026
+date: 2026-05-01
+image: ./assets/rp-scamlens-2-month-recap.webp
+description: Tổng kết tháng 4/2026 trên Discord, 1,4 triệu hình ảnh lừa đảo bị ScamLens xóa và 40.000 tài khoản bị hack được xác định. Chúng tôi cũng ra mắt HoneyPot, một kênh bẫy chống spam bổ sung cho ScamLens bằng cách bắt các vụ lừa đảo chưa có trong danh mục và các loại spam khác (liên kết, lượt nhắc, raid văn bản).
+---
+
+import Timestamp from '@site/src/components/Timestamp';
+
+Tổng kết tháng 4/2026 trên **355.000 máy chủ Discord** được RaidProtect bảo vệ (từ ngày 21/3 đến ngày 1/5/2026): **1,4 triệu hình ảnh lừa đảo bị ScamLens xóa** và **40.000 tài khoản Discord bị hack** được xác định. Chúng tôi cũng ra mắt **HoneyPot**, một **kênh bẫy chống spam** mới bổ sung cho ScamLens bằng cách bắt các **vụ lừa đảo chưa có trong danh mục** và các hình thức spam tự động khác (liên kết, lượt nhắc, raid văn bản).
+
+![RaidProtect: Bản tin mối đe dọa tháng 4/2026](./assets/rp-scamlens-2-month-recap.webp)
+
+{/* truncate */}
+
+## 🛰️ Nhắc lại: ScamLens, công cụ chống lừa đảo bằng hình ảnh của RaidProtect {#what-is-scamlens}
+
+ScamLens là mô-đun **chống lừa đảo bằng hình ảnh** của RaidProtect, **bot bảo vệ dành cho Discord**. Nó phân tích từng hình ảnh theo thời gian thực và tự động xóa những hình được xác định là lừa đảo: **lừa đảo crypto**, **giveaway giả mạo người nổi tiếng** (MrBeast, Elon Musk, Kick, Stake…), **khuyến mãi sòng bạc trực tuyến giả**. Không cần viết quy tắc, không cần duy trì danh sách đen: chỉ cần [thêm RaidProtect](https://raidprotect.bot/invite), ScamLens được bật mặc định.
+
+<div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '280px 280px', gap: '8px'}}>
+  <img src={require('../../../../blog/3.3.1/assets/scam-1.png').default} alt="MrBeast Crypto Casino Scam 1" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-2.png').default} alt="MrBeast Crypto Casino Scam 2" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-3.png').default} alt="MrBeast Crypto Casino Scam 3" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  <img src={require('../../../../blog/3.3.1/assets/scam-4.png').default} alt="MrBeast Crypto Casino Scam 4" style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+</div>
+
+## 📊 Tổng kết ScamLens kể từ ngày 14/2/2026 {#stats}
+
+Dữ liệu cộng dồn kể từ khi [kích hoạt sớm ScamLens](/vi/blog/scamlens-early-activation) vào ngày <Timestamp value={1771023600} format="D" />, trên **355.000 máy chủ Discord** được RaidProtect bảo vệ:
+
+| **Chỉ số (cộng dồn từ ngày 14/2)** | **21/3/2026** | **1/5/2026** | **Thay đổi** |
+|---|---|---|---|
+| Hình ảnh đã phân tích (duy nhất) | 162.000 | **890.000** | **+450%** |
+| Hình ảnh lừa đảo bị phát hiện (duy nhất) | 62.000 | **82.000** | +32% |
+| Hình ảnh lừa đảo đã bị xóa | 260.000 | **1.400.000** | **+440%** |
+| Tài khoản Discord bị hack đã được xác định | 15.000 | **40.000** | **+167%** |
+
+Khối lượng hình ảnh bị xóa đã **tăng hơn năm lần**: [phạm vi bao phủ mở rộng](/vi/blog/scamlens-1-month-recap#coverage) giờ đây bắt được những hình ảnh trước đây lọt qua khâu phân tích vì các lý do kỹ thuật liên quan đến CDN của Discord. Danh mục hình ảnh duy nhất chỉ tăng 32% vì những kẻ tấn công liên tục biến tấu một vài **cụm hình ảnh** (cắt lại, thêm bộ lọc, chỉnh sửa).
+
+Một **biến thể “2 hình ảnh”** (thay vì 4) đã xuất hiện trong giai đoạn này; ScamLens đã bao phủ nó, và nhiều **đỉnh khoảng 2.000 lượt xóa mỗi phút** đã được chặn. Mỗi hình ảnh được xử lý trong **khoảng 400 ms**, trước cả khi phần lớn thành viên kịp nhìn thấy nó.
+
+---
+
+## 🆕 Điểm mới {#updates}
+
+### ⏱️ Timeout 24 giờ tự động {#scamlens-timeout}
+
+Giờ đây chúng tôi áp dụng **timeout tự động 24 giờ** cho mọi tài khoản bị ScamLens phát hiện. Điều này giúp chủ sở hữu hợp pháp (hầu như luôn là nạn nhân của việc bị hack) có thời gian lấy lại quyền kiểm soát và cắt quyền truy cập của kẻ tấn công.
+
+### 🍯 HoneyPot của RaidProtect {#honeypot}
+
+Một **[HoneyPot Discord](https://docs.raidprotect.bot/features/honeypot)** (hay “kênh bẫy”) là một kênh mà không thành viên hợp lệ nào được phép viết. Còn **các tài khoản bị hack** và **bot spam** thì xả nội dung của chúng (hình ảnh, liên kết, lượt nhắc, ping) vào **mọi kênh** mà không phân biệt, nên cũng rơi vào bẫy. Mọi tin nhắn xuất hiện ở đó đều kích hoạt một **hình phạt tự động**, bất kể nội dung là gì.
+
+**RaidProtect giờ đây tích hợp HoneyPot của riêng mình.** Với [`/settings` → **HoneyPot**](https://docs.raidprotect.bot/features/honeypot), bot sẽ tạo kênh, đặt nó ở trên cùng máy chủ và đăng vào đó một tin nhắn cảnh báo đã được dịch.
+
+#### Vì sao chọn HoneyPot của RaidProtect thay vì một HoneyPot khác? {#honeypot-vs-others}
+
+HoneyPot của chúng tôi được **kết nối trực tiếp với ScamLens**:
+
+- **ScamLens được ưu tiên trước.** Nếu một hình ảnh được đăng trong bẫy đã được biết đến, nó sẽ bị xóa và HoneyPot **không kích hoạt**: nó để ScamLens xử lý.
+- **HoneyPot bổ sung cho ScamLens.** Mọi hình ảnh mới bị bắt trong một kênh bẫy sẽ được đưa vào danh mục của chúng tôi, từ đó chặn đợt tấn công **trên toàn bộ 355.000 máy chủ được bảo vệ**.
+
+#### Mỗi công cụ bao phủ những gì {#scamlens-honeypot}
+
+- **ScamLens** = hình ảnh lừa đảo đã biết, bị xóa và timeout 24 giờ.
+- **HoneyPot** = mọi thứ còn lại: **spam liên kết, raid văn bản, lượt nhắc hàng loạt, bot**, và **hình ảnh mới** chưa được xác định.
+
+ScamLens được bật mặc định. **Bật HoneyPot không làm hỏng gì cả**, nó chỉ khép lại các điểm mù.
+
+---
+
+## ❓ FAQ {#faq}
+
+#### Vì sao tài khoản Discord của tôi tự gửi tin nhắn? {#compte-discord-envoie-messages-seul}
+Tài khoản của bạn nhiều khả năng đã **bị hack**. Những kẻ lừa đảo đánh cắp **token xác thực** (trang web giả, phần mềm nhiễm mã độc, tiện ích mở rộng độc hại) và dùng nó để spam hình ảnh lừa đảo trên mọi máy chủ mà bạn tham gia. Hãy đổi mật khẩu Discord, bật **xác thực hai yếu tố** và thu hồi các phiên đang hoạt động.
+
+#### Phải làm gì nếu một thành viên của tôi phát tán lừa đảo crypto? {#membre-diffuse-scam-crypto}
+Đừng cấm họ: đó hầu như luôn là một **tài khoản bị hack**, không phải người dùng có ý đồ xấu. Hãy liên hệ riêng với họ để họ bảo mật lại tài khoản. ScamLens đã xóa hình ảnh ngay lập tức mà không trừng phạt chủ sở hữu hợp pháp.
+
+#### Làm thế nào để nhận biết một khuyến mãi crypto giả trên Discord? {#reconnaitre-fausse-promo-crypto}
+Mọi **“quà tặng” crypto**, **sòng bạc trực tuyến** mang logo người nổi tiếng hay **khoản đầu tư thần kỳ** đều là lừa đảo. Discord không bao giờ tổ chức phát tiền mã hóa, và không thương hiệu nghiêm túc nào spam trên nhiều máy chủ.
+
+#### HoneyPot trên Discord là gì? {#qu-est-ce-qu-un-honeypot}
+Một **HoneyPot** (hay kênh bẫy) là một kênh mà mọi người đều thấy nhưng **không thành viên hợp lệ nào được phép viết**. Mọi tin nhắn rơi vào đó chắc chắn là spam tự động: RaidProtect tự động xử phạt tài khoản (cấm, softban, đuổi, timeout, jail hoặc mute, tùy chọn).
+
+#### Làm thế nào để bật HoneyPot trên máy chủ Discord của tôi? {#activer-honeypot}
+[Thêm RaidProtect](https://raidprotect.bot/invite), dùng `/settings` → **HoneyPot**, rồi “**Tạo kênh**”. Bot sẽ tạo kênh bẫy, đặt nó ở trên cùng máy chủ và đăng một tin nhắn cảnh báo đã được dịch. Chi tiết trong [tài liệu](https://docs.raidprotect.bot/features/honeypot).
+
+#### RaidProtect có tự động bảo vệ chống spam không? {#raidprotect-spam-auto}
+Có. [Thêm RaidProtect](https://raidprotect.bot/invite) với các quyền được khuyến nghị: **ScamLens được bật mặc định** và xóa các hình ảnh lừa đảo trong khoảng 400 ms. **HoneyPot** được bật chỉ với một cú nhấp qua `/settings` để khép lại các điểm mù (spam liên kết, raid văn bản, định dạng hình ảnh mới).
+
+---
+
+:::tip 📚 Tài nguyên hữu ích
+- 🔗 [Thêm RaidProtect vào máy chủ của bạn](https://raidprotect.bot/invite)
+- 📘 [Tài liệu HoneyPot](https://docs.raidprotect.bot/features/honeypot)
+- 💡 [Gửi đề xuất](https://suggestions.raidprotect.bot/)
+- 📣 [Tham gia máy chủ Discord của chúng tôi](https://raidprotect.bot/discord)
+:::

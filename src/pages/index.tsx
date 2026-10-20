@@ -241,7 +241,7 @@ export default function Home(): ReactNode {
       }),
       translate({
         id: 'home.schema.feature.authmanager',
-        message: 'Authentication Manager : protection des comptes du staff',
+        message: 'Authentification Manager : protection des comptes du staff',
         description: 'SoftwareApplication featureList item',
       }),
       translate({

@@ -1,53 +1,79 @@
 ---
-title: Proceso de incorporacion y Captcha
+title: Proceso de bienvenida y Captcha
 description: "Configura la bienvenida de Discord para que el captcha de RaidProtect funcione: haz visible el canal de verificación para los nuevos miembros."
 ---
 
-Si el canal `#verification` no es visible por defecto para los nuevos miembros, esto puede impedir que el [sistema de Captcha](../features/captcha.md) funcione correctamente. Aqui te explicamos como solucionar este problema paso a paso.
+import Settings from '@site/src/components/DiscordMessage/mockups/v2';
 
-![Captura de pantalla de la alerta del Captcha](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-settings-captcha-alert.webp)
+Si el canal `#verificación` no es visible por defecto para los nuevos miembros, no pueden pasar el [captcha](../features/captcha.md) y se quedan bloqueados. Esta guía se refiere al **Proceso de bienvenida de Discord** (Ajustes del servidor > Proceso de bienvenida). Para el mensaje de bienvenida y los roles automáticos de RaidProtect, consulta la página [Llegadas y bienvenida](../features/onboarding.md).
 
-## 1. Verificar los permisos del canal {#permissions}
+En la mayoría de los casos, RaidProtect corrige el problema por ti: empieza por el paso 1.
 
-1. Abre la configuracion del canal `#verification` (clic derecho > **Editar canal**).
-2. En la pestana **Permisos**:
-   - Asegurate de que `@everyone` **no** tenga permiso para ver el canal.
-   - Verifica que el rol `@Unverified` **tenga** permiso para **ver el canal**, **leer el historial de mensajes** y **enviar mensajes**.
+## 1️⃣ Dejar que RaidProtect lo corrija {#auto-fix}
 
-![Captura de pantalla de la verificacion de permisos del canal](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-verification-channel-permissions.webp)
+1. Ejecuta el [comando `/settings`](../setup.md#settings).
+2. Abre la pestaña “**Llegadas**”.
+3. Haz clic en “**Configurar**” junto a “**Captcha**”.
+4. Si un recuadro señala que el canal de verificación **no es visible por defecto**, haz clic en:
+   - “**Mover a** _categoría_” para colocar el canal en una categoría que ya sea visible para los nuevos miembros;
+   - o “**Crear una nueva categoría**” para que creemos una categoría “Bienvenida” añadida a los canales por defecto.
 
-## 2. Verificar la categoria de incorporacion {#default-category}
+Los permisos del canal se conservan al moverlo.
 
-1. Ve a **Configuracion del servidor** > **Proceso de incorporacion**.
-2. En la seccion **Canales predeterminados**, verifica que la categoria que contiene `#verification` este marcada como visible para los nuevos miembros.
-3. Si es necesario, mueve `#verification` a una categoria marcada.
+<Settings start="captcha" />
+
+:::tip
+La misma pantalla señala las **fugas** del rol `@No verificado`: roles dados por el Proceso de bienvenida de Discord que eluden la verificación, canales aún visibles para los miembros en verificación. El botón “**Corregir**” cierra los canales afectados. Consulta las [alertas de la pantalla Captcha](../features/captcha.md#alerts).
+:::
+
+## 2️⃣ Verificar los permisos del canal {#permissions}
+
+RaidProtect establece por sí mismo los permisos del canal `#verificación` y del rol `@No verificado`. Si los has modificado, verifícalos:
+
+1. Abre los ajustes del canal `#verificación` (clic derecho > **Editar canal**).
+2. En la pestaña **Permisos**:
+   - Asegúrate de que `@everyone` **no** tenga permiso para ver el canal.
+   - Verifica que el rol `@No verificado` **tenga** permiso para **ver el canal** y **leer el historial de mensajes**.
+   - En modo **Panel (Interactivo)**, el modo por defecto, `@No verificado` **no debe** poder enviar mensajes: el código se introduce en una ventana. En modo **Desafío (Clásico)**, debe poder **enviar mensajes** para escribir el código.
+
+{/* ![Captura de pantalla de la verificación de permisos del canal](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-verification-channel-permissions.webp) : muestra “Enviar mensajes” permitido, cierto solo en modo Desafío */}
+
+## 3️⃣ Verificar la categoría de bienvenida {#default-category}
+
+Si prefieres corregirlo a mano:
+
+1. Ve a **Ajustes del servidor** > **Proceso de bienvenida**.
+2. En la sección **Canales predeterminados**, verifica que la categoría que contiene `#verificación` esté marcada como visible para los nuevos miembros.
+3. Si es necesario, mueve `#verificación` a una categoría marcada.
 4. Guarda los cambios.
 
-![Captura de pantalla de la verificacion de la categoria de incorporacion](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-welcome-category.webp)
+![Captura de pantalla de la verificación de la categoría de bienvenida](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-welcome-category.webp)
 
-## 3. Actualizar la configuracion en RaidProtect {#refresh-config}
+## 4️⃣ Actualizar la configuración en RaidProtect {#refresh-config}
 
-1. Usa el [comando `/settings`](../setup.md#settings) y luego ve a la pestana **Captcha**.
-2. Haz clic en **Actualizar** para forzar la actualizacion de la configuracion.
-3. Si el canal ahora es visible, el sistema de Captcha funcionara correctamente.
+1. Ejecuta el [comando `/settings`](../setup.md#settings).
+2. Abre la pestaña “**Llegadas**”.
+3. Haz clic en “**Configurar**” junto a “**Captcha**”.
+4. Si todavía se muestra un recuadro, haz clic en “**Actualizar**” para volver a lanzar la verificación. Cuando el recuadro desaparece, el captcha funciona correctamente.
 
-## 4. Probar con una cuenta de prueba {#test-account}
+## 5️⃣ Probar con una cuenta de prueba {#test-account}
 
-Para confirmar que todo esta configurado correctamente:
+Para confirmar que todo está configurado correctamente:
 
-1. Unete al servidor con otra cuenta de Discord.
-2. Verifica que el canal `#verification` sea visible al llegar.
-3. Ingresa el codigo Captcha enviado por RaidProtect.
-4. Una vez verificada, la cuenta deberia tener acceso a los demas canales.
+1. Únete al servidor con otra cuenta de Discord.
+2. Verifica que el canal `#verificación` sea visible al llegar.
+3. Haz clic en “**Verificar**” e introduce el código (modo Panel), o escribe el código en el canal (modo Desafío).
+4. Una vez verificada, la cuenta debería tener acceso a los demás canales.
 
-## Problemas comunes y soluciones {#common-issues}
+## 🛠️ Problemas comunes y soluciones {#common-issues}
 
-| Problema | Solucion |
+| Problema | Solución |
 |---------|----------|
-| El canal `#verification` sigue invisible | Verifica que este en una **categoria marcada** en la incorporacion de Discord. |
-| El rol `@Unverified` no puede escribir | Otorgale el **permiso de enviar mensajes** en `#verification`. |
-| El Captcha no funciona despues de la modificacion | Haz clic en **"Actualizar"** en `/settings > Captcha`. |
+| 🔴 El canal `#verificación` sigue invisible | Haz clic en “**Mover a** _categoría_” en la pantalla Captcha, o coloca el canal en una **categoría marcada** de la incorporación de Discord. |
+| 🚫 El rol `@No verificado` no puede escribir | Es normal en modo Panel: el miembro hace clic en “**Verificar**”. En modo Desafío, otórgale el **permiso de enviar mensajes** en `#verificación`. |
+| 🔓 Un miembro no verificado ve otros canales | Haz clic en “**Corregir**” en el recuadro de fuga de la pantalla Captcha, y quita los roles que el Proceso de bienvenida de Discord da al llegar. |
+| ❌ El Captcha no funciona después de la modificación | Haz clic en “**Actualizar**” en la pantalla Captcha (pestaña “**Llegadas**” de `/settings`). |
 
 ---
 
-Siguiendo estos pasos, tu sistema de verificacion estara completamente operativo para recibir a los miembros de forma segura y bloquear eficazmente bots o raids.
+✅ Siguiendo estos pasos, tu sistema de verificación estará completamente operativo para recibir a los miembros de forma segura y bloquear eficazmente bots o raids.

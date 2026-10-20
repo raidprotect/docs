@@ -1,0 +1,330 @@
+---
+title: Histórico de sanções
+description: "O histórico de sanções do RaidProtect centraliza todas as ações de moderação em uma base consultável e editável, para um acompanhamento claro."
+---
+
+import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
+
+import SanctionsMockup from '@site/src/components/DiscordMessage/mockups/sanctions';
+
+{/* <SanctionsMockup /> masqué temporairement : mockup à améliorer */}
+
+import Icon from "@site/src/components/Icon";
+
+O histórico de sanções do RaidProtect permite que você acompanhe e gerencie todas as [sanções](/pt/learn/discord-sanctions) aplicadas no seu servidor. Este sistema centraliza todas as ações de moderação em um banco de dados pesquisável e editável, facilitando assim o trabalho da sua equipe de moderação.
+
+## ❓ Como funciona o histórico {#working}
+
+O histórico de sanções registra automaticamente todas as ações de moderação realizadas no seu servidor:
+
+- **Sanções manuais**: todos os [comandos de moderação](./moderation.mdx) (`/ban`, `/tempban`, `/kick`, `/mute`, `/jail`, `/warn`…) são registrados no histórico.
+- **Sanções automáticas**: as sanções aplicadas pelos nossos módulos de proteção ([anti-spam](./anti-spam.mdx), [HoneyPot](./honeypot.md), [ScamLens](./scam-images.md)…) também são adicionadas ao histórico.
+- **Banimentos, expulsões e timeouts**: as sanções aplicadas sem passar pelo RaidProtect são adicionadas ao histórico.
+- **AutoMod do Discord**: os timeouts aplicados pelo AutoMod do Discord são registrados. Com a Shield Update (em experimentação), cada mensagem bloqueada por uma regra do AutoMod também cria um **aviso** em nome de “**Discord Automod**”, silencioso (nenhuma DM), a menos que a regra já aplique um timeout.
+- **Notificações de sanção**: os membros sancionados recebem uma mensagem privada informando-os sobre a sanção e o seu motivo. O bot também envia um aviso de recebimento detalhado confirmando o status do envio: **recebida**, **DM fechadas**, **expirada** ou **silenciosa** (quando a opção `[--silent]` é usada). Para expulsões, softbans e bans temporários, esta mensagem também contém um **botão com um convite para o servidor** para que o membro possa voltar quando a sanção terminar.
+
+:::info
+Todas as sanções registradas contêm: o usuário sancionado, o moderador responsável, o motivo (até 512 caracteres), a data e a hora, bem como o tipo de sanção e se o usuário foi notificado.
+:::
+
+## 🔍 Pesquisar sanções {#search}
+
+O comando `/sanctions search` permite que você pesquise sanções no histórico segundo diferentes critérios.
+
+Use o comando: ```/sanctions search [user] [moderator] [type] [reason] [date] [status] [moderator_type]```
+
+- `[user]`: pesquisar todas as sanções de um usuário específico. Se essa conta fizer parte de um grupo de [contas duplicadas](./alt-accounts.md), as sanções das contas vinculadas também aparecem.
+- `[moderator]`: pesquisar todas as sanções aplicadas por um moderador específico.
+- `[type]`: filtrar por tipo de sanção (Banimento, Desbanimento, Expulsão, Jail, Liberação, Quarentena, Timeout, Untimeout, Mute, Unmute, Aviso).
+- `[reason]`: filtrar por motivo (correspondência parcial).
+- `[date]`: filtrar por data da sanção.
+- `[status]`: filtrar por status da sanção (Ativo, Expirado, Cancelado).
+- `[moderator_type]`: filtrar por tipo de moderador (Ações humanas, Ações automatizadas, Ações do RaidProtect, Ações do Discord, Antispam, Expiração, Antiscam, HoneyPot, Discord Automod, Discord Expiration).
+
+![Captura de tela da pesquisa de sanções](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-search.webp)
+
+:::tip
+Você pode combinar vários critérios para refinar a sua pesquisa. Por exemplo, pesquisar todos os banimentos realizados por um moderador específico.
+:::
+
+## ℹ️ Ver uma sanção {#info}
+
+O comando `/sanctions info` permite que você obtenha informações detalhadas sobre uma sanção específica.
+
+Use o comando: ```/sanctions info (id)```
+
+Substitua `(id)` pelo identificador da sanção que você deseja visualizar.
+
+![Captura de tela das informações de uma sanção](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-info.webp)
+
+## ✏️ Editar uma sanção {#edit}
+
+O comando `/sanctions edit` permite que você modifique o motivo ou a duração de uma sanção existente, útil para corrigir um erro ou adicionar detalhes.
+
+Use o comando: ```/sanctions edit (id) [reason] [duration]```
+
+Substitua `(id)` pelo identificador da sanção a modificar, `[reason]` pelo novo motivo (máximo 512 caracteres) e `[duration]` pela nova duração (ex.: `1d 2h`).
+
+![Captura de tela da edição de uma sanção](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-edit.webp)
+
+:::warning
+Editar uma sanção atualiza o registro no histórico, mas não altera a sanção aplicada no Discord (por exemplo, um usuário banido continuará banido).
+:::
+
+## 🗑️ Excluir uma sanção {#delete}
+
+O comando `/sanctions delete` permite que você exclua uma sanção do histórico. Esta ação é irreversível.
+
+Use o comando: ```/sanctions delete (id) [reason]```
+
+Substitua `(id)` pelo identificador da sanção a excluir. O parâmetro `[reason]` permite **justificar a exclusão**, que será registrada nos logs.
+
+![Captura de tela da exclusão de uma sanção](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-delete.webp)
+
+## Status das sanções {#status}
+
+As sanções podem ter diferentes status:
+
+| **Status**    | **Emojis**                                                                                                                  | **Significados**                                          |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------| --------------------------------------------------------- |
+| `Ativo`       | <Icon src="/img/icons/SanctionStatusACTIVE.svg" alt="icon SanctionStatusACTIVE" title=":iconSanctionStatusACTIVE:"/>        | A sanção está em andamento.                               |
+| `Expirado`    | <Icon src="/img/icons/SanctionStatusEXPIRED.svg" alt="icon SanctionStatusEXPIRED" title=":iconSanctionStatusEXPIRED:"/>     | A sanção expirou.                                         |
+| `Cancelado`   | <Icon src="/img/icons/SanctionStatusCANCELED.svg" alt="icon SanctionStatusCANCELED" title=":iconSanctionStatusCANCELED:"/>  | A sanção foi cancelada por um moderador.                  |
+| `Falhou`      | <Icon src="/img/icons/SanctionStatusFAILED.svg" alt="icon SanctionStatusFAILED" title=":iconSanctionStatusFAILED:"/>        | A sanção falhou (permissões insuficientes).              |
+
+### Gerenciamento de duplicatas {#duplicates}
+
+Quando uma sanção ativa e anterior é encontrada, você pode:
+
+- **Mesclar** as duas sanções: as durações serão somadas, se possível, e os motivos serão concatenados.
+- **Cancelar** a sanção ativa e criar uma nova sanção.
+- **Sobrescrever** a sanção ativa com as informações da sanção digitada.
+
+![Captura de tela do gerenciamento de status das sanções](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-active-found.webp)
+
+## ⚙️ Configuração das sanções {#config}
+
+Todas as configurações das sanções ficam em uma mesma tela:
+
+1. Use o [comando `/settings`](../setup.md#settings).
+2. Abra a aba “**Moderação**”.
+3. Clique em “**Configurar**” ao lado de “**Sanções**”.
+
+<Settings start="sanctions" />
+
+### Desativar as sanções {#disable}
+
+Você pode **desativar completamente o sistema de sanções** no seu servidor. Quando as sanções estão desativadas, o RaidProtect deixa de registrar qualquer sanção no histórico e os comandos relacionados ficam indisponíveis.
+
+1. Use o [comando `/settings`](../setup.md#settings).
+2. Abra a aba “**Moderação**”.
+3. Clique em “**Configurar**” ao lado de “**Sanções**”.
+4. Clique em “**Desativar**” à direita do título da tela (ou “**Ativar**” para religá-lo).
+
+### Jail {#jail}
+
+Configure o **Jail** para ativar uma sanção de moderação baseada em cargo, mais restritiva que um mute comum. Uma vez configurado, esse cargo permite isolar um membro com permissões severamente limitadas e desbloqueia o uso dos comandos [`/jail`](./moderation.mdx#jail) e [`/tempjail`](./moderation.mdx#tempjail).
+
+1. Use o [comando `/settings`](../setup.md#settings).
+2. Abra a aba “**Moderação**”.
+3. Clique em “**Configurar**” ao lado de “**Sanções**”.
+4. Clique em “**Editar**” ao lado de “**Jail**”.
+5. Escolha um cargo existente no seletor, ou clique em “**Criar um para mim**”.
+
+<Settings start="jail" />
+
+O botão “**Criar um para mim**” abre uma janela na qual você dá um nome ao cargo (padrão `Prisão`) e configura o **canal de informações** destinado aos membros em jail:
+
+- **Selecionar um canal existente**: ele mantém sua visibilidade atual.
+- **Criar um novo canal** informando um nome (padrão `acesso-restrito`).
+
+Retiramos do cargo a permissão de ver os canais do servidor. No canal de informações, os membros em jail podem ler a mensagem e o histórico, mas não escrever, reagir nem criar threads. Esse canal corresponde ao espaço reservado nos [painéis de informação](./display.mdx), gerenciado automaticamente pela configuração do Jail.
+
+:::info
+Se um cargo de Jail já estiver configurado, você pode modificar o canal de informações com o botão “**Editar canal**” da tela Jail.
+:::
+
+:::warning
+Se o cargo de Jail ainda permitir ver alguns canais, a tela Jail os lista em um quadro: negue a ele a permissão `Ver canal` nesses canais, ou crie um novo cargo com “**Criar um para mim**”. Enquanto sanções ativas se apoiarem no cargo de Jail ou de Mute, você não pode trocá-lo: remova essas sanções ou espere que elas expirem.
+:::
+
+:::info
+Sem cargo de Jail, os comandos `/jail` e `/tempjail` ficam indisponíveis. Os módulos automáticos ([anti-spam](./anti-spam.mdx), [HoneyPot](./honeypot.md), [falsos denunciantes](./reports.md#bad-reporters)) ainda assim oferecem Jail e Mute, com a menção “**Não configurado, usa Timeout**”: a sanção aplicada é então um timeout.
+:::
+
+#### Cargos durante o jail {#jail-roles}
+
+Na tela Jail, o seletor “**Gestão de cargos ao prender**” controla o que o RaidProtect faz com os cargos do membro quando ele é preso. Dois modos:
+
+- “**Adicionar o cargo de jail**” *(padrão)*: o membro mantém seus cargos, o cargo de jail é adicionado.
+- “**Substituir todos os cargos**”: **removemos todos os cargos do membro** durante o tempo de prisão e os restauramos quando ele é solto. Mais rigoroso, isso evita que um cargo com permissões explícitas contorne as restrições do cargo de Jail.
+
+### Quarentena do Discord sincronizada <span className="badge-experiment">Experimentação</span> {#discord-quarantine}
+
+:::info Experimentação: Shield Update
+A quarentena do Discord sincronizada faz parte da **Shield Update**, prevista para a versão 3.6.0. Até o lançamento, ela está em experimentação, em beta público para os servidores [Premium](/pt/premium).
+:::
+
+O AutoMod do Discord pode colocar em quarentena um membro cujo perfil infrinja uma regra (apelido, tag de servidor). Com esta configuração, acompanhamos essa quarentena: o membro recebe o **cargo de jail** e uma sanção **Quarentena** é registrada no histórico. Ele sai dela assim que o Discord remove a quarentena.
+
+1. Use o [comando `/settings`](../setup.md#settings).
+2. Abra a aba “**Moderação**”.
+3. Clique em “**Configurar**” ao lado de “**Sanções**”.
+4. Clique em “**Ativar**” ao lado de “**Quarentena do Discord sincronizada**”.
+
+:::info
+Esta configuração exige um [cargo Jail](#jail). Desativá-la libera as quarentenas que ela aplicou.
+:::
+
+### Cargo de Mute {#mute}
+
+Configure o **Cargo de Mute** para usar uma sanção baseada em cargo em vez do timeout do Discord para durações prolongadas. Quando a duração do mute excede o limite definido, o bot atribuirá automaticamente o Cargo de Mute ao membro em vez de aplicar um timeout do Discord.
+
+1. Use o [comando `/settings`](../setup.md#settings).
+2. Abra a aba “**Moderação**”.
+3. Clique em “**Configurar**” ao lado de “**Sanções**”.
+4. Clique em “**Editar**” ao lado de “**Mute**”.
+5. Escolha um cargo existente no seletor “**Cargo de Mute**”, ou clique em “**Criar um para mim**” (criamos o cargo `Silenciado` e retiramos dele a escrita em todos os canais).
+
+#### Limite de Mute {#mute-threshold}
+
+O **limite de mute** é configurado na mesma tela que o cargo. Ele define a partir de qual duração o bot usa o Cargo de Mute em vez do timeout do Discord.
+
+1. Na tela Mute, abra o seletor “**Limite de Mute**”.
+2. Escolha “**Sempre**”, “**1 hora**” (padrão), “**1 dia**”, “**Timeout estendido (=28 dias)**” ou “**Valor personalizado**” (de 0 a 28 dias, ex.: `3d 1h 15m`).
+
+“**Sempre**” (um valor de 0) nunca usa o timeout do Discord: cada mute passa pelo cargo.
+
+:::info
+O limite de 28 dias para o timeout é imposto pelo Discord. Além dessa duração, o Cargo de Mute será sempre usado, se estiver configurado. A opção `[--force-timeout]` do [comando `/mute`](./moderation.mdx#timeout) força o timeout do Discord apesar do limite.
+:::
+
+:::info
+Os **timeouts aplicados pelo AutoMod do Discord** são automaticamente convertidos em mute por cargo se a sua duração ultrapassar o limite configurado, para garantir a coerência com as suas sanções manuais.
+:::
+
+### Privacidade das Sanções {#sanctions-privacy}
+
+Configure o nível de privacidade das sanções para controlar quais informações os membros podem acessar sobre as **suas próprias sanções**, através do comando [`/minhas-sancoes`](./utilities.mdx#my-sanctions) ou do botão **Consultar minhas sanções**.
+
+1. Use o [comando `/settings`](../setup.md#settings).
+2. Abra a aba “**Moderação**”.
+3. Clique em “**Configurar**” ao lado de “**Sanções**”.
+4. Clique em “**Editar**” ao lado de “**Privacidade das Sanções**”.
+5. Na janela, escolha o “**Nível de acesso**” desejado:
+
+| **Nível**                            | **Descrição**                                                                                       |
+| ------------------------------------ | --------------------------------------------------------------------------------------------------- |
+| Desativado *(padrão)*                | Os membros não podem consultar as suas sanções.                                                     |
+| Apenas sanções                       | Os membros podem consultar apenas as suas sanções e o tempo restante, se aplicável.                 |
+| Com motivos                          | Os membros podem consultar as suas sanções juntamente com os motivos, sem a identidade do moderador. |
+| Com motivos e moderadores            | Os membros podem consultar tudo sobre as suas sanções.                                              |
+
+<SettingsModal name="sanctionsPrivacy" />
+
+:::note
+Independentemente do nível selecionado, **os moderadores mantêm acesso total** ao histórico de sanções através das ferramentas de moderação.
+:::
+
+### Mostrar mídias {#show-medias}
+
+Configure a exibição de mídias nos motivos das sanções. Quando esta opção está desativada (padrão), os links que contêm as seguintes extensões são automaticamente removidos dos motivos das sanções ao serem exibidos aos membros (via [`/minhas-sancoes`](./utilities.mdx#my-sanctions) ou notificações de sanção):
+
+`png`, `jpg`, `jpeg`, `gif`, `webp`, `webm`, `mp4`
+
+1. Use o [comando `/settings`](../setup.md#settings).
+2. Abra a aba “**Moderação**”.
+3. Clique em “**Configurar**” ao lado de “**Sanções**”.
+4. Clique em “**Ativar**” ou “**Desativar**” ao lado de “**Mostrar mídias**”.
+
+## ✨ Nomes das sanções <span className="badge-premium">Premium</span> {#custom-names}
+
+Com a versão [Premium](/pt/premium), você pode personalizar o nome de cada tipo de sanção para adaptá-lo ao vocabulário do seu servidor. Os nomes personalizados substituem os nomes padrão nos logs, nas pesquisas e nos menus. Para cada tipo, você pode configurar:
+
+- **Nome**: substitua o nome padrão por um de sua escolha, até 32 caracteres (ex.: “Aviso” → “Cartão Amarelo”).
+- **Verbo**: defina o verbo usado nas mensagens, até 32 caracteres (ex.: “advertido”). Se deixado vazio, o nome é usado.
+- **Modo DM**: escolha a formulação da mensagem privada enviada ao membro sancionado:
+  - “Você foi [verbo]” (padrão)
+  - “Você recebeu um [nome]”
+
+Os tipos de sanções personalizáveis são: Banimento, Softban, Desbanimento, Expulsão, Jail, Liberação, Timeout, Untimeout, Mute, Unmute e Aviso.
+
+1. Use o [comando `/settings`](../setup.md#settings).
+2. Abra a aba “**Moderação**”.
+3. Clique em “**Configurar**” ao lado de “**Sanções**”.
+4. Clique no botão “**Nomes das sanções**”.
+5. Escolha o tipo de sanção a personalizar no seletor e depois informe o nome, o verbo e o modo DM na janela.
+
+<Settings start="sanctionNames" />
+
+Os botões “**Exportar**” e “**Importar**” da tela permitem salvar seus nomes em um arquivo JSON e depois colá-los de volta (campo “**Cole o conteúdo JSON**”), por exemplo para retomá-los em outro servidor.
+
+:::tip
+Deixe os campos vazios para redefinir um tipo de sanção ao seu nome padrão. O botão “**Redefinir tudo**” zera todos os nomes.
+:::
+
+## 📨 Link de apelação <span className="badge-premium">Premium</span> {#appeal}
+
+O **link de apelação** permite que os membros sancionados contestem a sanção: um botão para o seu link é adicionado às DMs de todas as sanções, exceto os avisos.
+
+1. Use o [comando `/settings`](../setup.md#settings).
+2. Abra a aba “**Moderação**”.
+3. Clique em “**Configurar**” ao lado de “**Sanções**”.
+4. Clique no botão “**Link de apelação**”.
+5. Cole seu link na janela, ou esvazie o campo para removê-lo.
+
+Plataformas aceitas: Discord, Google Forms, appeal.gg, Appy, DraftBot e FlaviBot.
+
+:::info
+O botão “**Link de apelação**” só aparece nos servidores [Premium](/pt/premium).
+:::
+
+## 🔗 Contas duplicadas <span className="badge-experiment">Experimentação</span> {#alt}
+
+Em experimentação com a Identity Update (beta público [Premium](/pt/premium)), as contas que uma mesma pessoa usa podem ser vinculadas com o comando `/alt`: banir uma bane as outras, e cada sanção se estende ao grupo conforme as suas configurações. Tudo é explicado na página [Contas duplicadas](./alt-accounts.md).
+
+## 📊 Logs das sanções {#logs}
+
+Para uma melhor organização, você pode configurar um canal de logs dedicado especificamente às sanções, separado dos seus logs gerais.
+
+![Captura de tela de um log de sanção](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-logs.webp)
+
+### Configurar o canal de logs das sanções {#config-logs}
+
+1. Use o [comando `/settings`](../setup.md#settings).
+2. Abra a aba “**Moderação**”.
+3. Clique em “**Configurar**” ao lado de “**Sanções**”.
+4. Clique em “**Editar**” ao lado de “**Logs**”.
+5. Escolha o canal para o qual os logs das sanções serão enviados, ou use o botão “**Criar um para mim**”.
+
+Você encontra a mesma configuração, com os outros canais de logs, na tela “**Logs**” da aba “**Moderação**” (veja os [logs de moderação](./moderation.mdx#logs)). Sem canal dedicado, os logs das sanções vão para o canal de logs geral.
+
+:::note
+A alternância “**Logs de moderação passiva**” (ativada por padrão) escolhe se o RaidProtect também registra as ações realizadas sem passar pelo bot (ban pelo Discord, AutoMod do Discord…).
+:::
+
+### Lógica das cores {#logs-color}
+
+![Configuração dos logs das sanções](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-sanctions-logs-color.webp)
+
+## 📦 Importar / Exportar sanções {#import-export}
+
+O RaidProtect permite que você importe ou exporte o histórico de sanções do seu servidor. Os botões “**Exportar**” e “**Importar**” da tela Sanções direcionam você ao nosso [servidor de suporte](https://raidprotect.bot/discord): entre em contato informando o convite do seu servidor e, para uma importação, o(s) bot(s) de moderação que você usava.
+
+## Perguntas frequentes {#faq}
+
+### Por que o comando /jail está indisponível?
+
+Ele exige um cargo de Jail. Configure-o em `/settings`, aba “**Moderação**”, “**Sanções**” e depois “**Editar**” ao lado de “**Jail**”, ou deixe o RaidProtect criar um.
+
+### O que acontece se um módulo automático precisar prender um membro sem cargo de Jail?
+
+A sanção recai sobre um timeout. O mesmo vale para o Mute sem cargo de Mute.
+
+### Um membro pode ver as suas próprias sanções?
+
+Sim, se você definir a [privacidade das sanções](#sanctions-privacy) com um nível diferente de “**Desativado**”. Ele as consulta então com `/minhas-sancoes`.
+
+### As mensagens bloqueadas pelo AutoMod do Discord contam como sanções?
+
+Sim: cada mensagem bloqueada cria um aviso silencioso em nome de “**Discord Automod**”, a menos que a regra já aplique um timeout. Esses avisos só são registrados nos logs se os logs de moderação passiva estiverem ativados.

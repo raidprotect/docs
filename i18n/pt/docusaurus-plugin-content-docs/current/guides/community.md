@@ -1,38 +1,45 @@
 ---
-title: Ativar a Comunidade
-description: "Ative a comunidade Discord do seu servidor para desbloquear as configurações de segurança avançadas do RaidProtect: captcha, modo raid e mais."
+title: Ativar a comunidade
+description: "Ative a comunidade Discord do seu servidor para desbloquear as configurações de segurança de que o RaidProtect precisa: Bloqueio de DMs, modo raid e mais."
 ---
 
-Ativar a funcionalidade de comunidade disponibiliza diversas definições de segurança avançadas que são essenciais para o bom funcionamento de determinadas funcionalidades do RaidProtect, como o **Bloqueio de MPs** ou o **Modo Raid**.
+Ativar a comunidade disponibiliza diversas configurações de segurança avançadas do Discord, das quais algumas funcionalidades do RaidProtect precisam:
+- o [Bloqueio de DMs](../features/dm-lock.mdx) (**DM Lock**);
+- o [modo raid](../features/raid-mode.md) e o [Bloqueio de Entradas](../features/join-lock.mdx), **apenas** com a ação durante o raid “**Bloquear os convites**” (a configuração padrão).
 
-## Pré-requisitos {#requirement}
+O [captcha](../features/captcha.md) e as outras ações do modo raid (“**Expulsar quem chegar**”, “**Enviar ao captcha**”, “**Captcha congelado durante o raid**”) funcionam sem a comunidade.
+
+## 🚦 Pré-requisitos {#requirement}
 
 - Ser administrador do servidor Discord.
 
-## Ativar as funcionalidades de comunidade {#steps}
+## 🚩 Ativar as funcionalidades de comunidade {#steps}
 
-1. **Abra as definições do servidor**
-   - Clique no nome do servidor no canto superior esquerdo > "Definições do Servidor".
+1. **Abra as configurações do servidor**
+   - Clique no nome do servidor no canto superior esquerdo > “Configurações do servidor”.
 
-2. **Vá à secção "Comunidade"**
-   - Na barra lateral, navegue até ao separador **Ativar Comunidade** e clique em **Começar**.
+2. **Vá até a seção “Comunidade”**
+   - Na barra lateral, vá até a aba **Ativar Comunidade** e clique em **Começar**.
 
 :::note
-Se a comunidade já estiver ativada no seu servidor, a secção chamar-se-á **Vista Geral da Comunidade**.
+Se a comunidade já estiver ativada no seu servidor, a seção se chamará **Visão geral da comunidade**.
 :::
 
 3. **Siga o assistente de configuração**
    - Ative a verificação por e-mail para todos os membros.
    - Ative o filtro de conteúdo explícito.
    - Configure um canal de regras e um canal de anúncios.
-   - Aceite as diretrizes de utilização do servidor comunitário.
+   - Aceite as diretrizes de uso do servidor comunitário.
 
 4. **Conclua a configuração**
-   - Clique em "Concluir Configuração". O distintivo "Comunidade" aparecerá no seu servidor assim que a ativação estiver finalizada.
+   - Clique em “Concluir configuração”. O selo “Comunidade” aparecerá no seu servidor assim que a ativação estiver finalizada.
 
-![Captura de ecrã da ativação de comunidade Discord](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-enable-community.webp)
+![Captura de tela da ativação de comunidade Discord](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-enable-community.webp)
 
-## Utilizar os módulos Bloqueio de MPs e Modo Raid após a ativação {#use}
+## 💡 Usar os módulos Bloqueio de DMs e modo raid após a ativação {#use}
 
-- Execute o comando [`/settings`](../setup.md#settings) para abrir o menu de definições do RaidProtect.
-- Ative ou desative os módulos desejados ([Bloqueio de MPs](../features/dm-lock.mdx), [Modo Raid](../features/raid-mode.md)...) a partir do menu interativo.
+1. Execute o [comando `/settings`](../setup.md#settings).
+2. Para o [Bloqueio de DMs](../features/dm-lock.mdx), abra a aba “**Proteção**” e clique em “**Editar**” ao lado de “**Bloqueio de DMs**”.
+3. Para o [modo raid](../features/raid-mode.md#config), abra a aba “**Chegadas**” e clique em “**Configurar**” ao lado de “**Auto RaidMode**”.
+
+Se um aviso pedia para você ativar a comunidade, clique em “**Atualizar**”: ele desaparece assim que a comunidade estiver ativada.

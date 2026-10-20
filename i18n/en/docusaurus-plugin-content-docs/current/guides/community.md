@@ -1,15 +1,19 @@
 ---
 title: Enable Community
-description: "Enable your server's Discord community to unlock the advanced safety settings RaidProtect relies on: captcha, raid mode and more."
+description: "Enable your server's Discord community to unlock the safety settings RaidProtect relies on: DM Lock, raid mode and more."
 ---
 
-Enabling the community feature makes several advanced security settings available that are essential for the proper functioning of certain RaidProtect features such as **DM Lock** or **Raid Mode**.
+Enabling the community feature makes several advanced Discord security settings available, which some RaidProtect features need:
+- the [DM Lock](../features/dm-lock.mdx);
+- [raid mode](../features/raid-mode.md) and the [Join Lock](../features/join-lock.mdx), **only** with the "**Lock invites**" action during the raid (the default setting).
 
-## Prerequisites {#requirement}
+The [captcha](../features/captcha.md) and the other raid mode actions ("**Kick everyone arriving**", "**Send to the captcha**", "**Captcha frozen during the raid**") work without the community.
+
+## 🚦 Prerequisites {#requirement}
 
 - Be an administrator of the Discord server.
 
-## Enable community features {#steps}
+## 🚩 Enable community features {#steps}
 
 1. **Open your server settings**
    - Click on the server name in the top left > "Server Settings".
@@ -32,7 +36,10 @@ If community is already enabled on your server, the section will be called **Com
 
 ![Discord community activation screenshot](../assets/rp-enable-community.webp)
 
-## Using DM Lock & Raid Mode modules after activation {#use}
+## 💡 Using the DM Lock and raid mode modules after activation {#use}
 
-- Run the [`/settings`](../setup.md#settings) command to open the RaidProtect settings menu.
-- Enable or disable the desired modules ([DM Lock](../features/dm-lock.mdx), [Raid Mode](../features/raid-mode.md)...) from the interactive menu.
+1. Run the [`/settings` command](../setup.md#settings).
+2. For the [DM Lock](../features/dm-lock.mdx), open the "**Protection**" tab and click "**Edit**" next to "**DM Lock**".
+3. For [raid mode](../features/raid-mode.md#config), open the "**Arrivals**" tab and click "**Configure**" next to "**Auto RaidMode**".
+
+If a box asked you to enable the community, click "**Refresh**": it disappears once the community is enabled.

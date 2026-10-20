@@ -1,0 +1,99 @@
+---
+title: Utilizzo degli identificatori
+description: "Scopri come recuperare un ID Discord (utente, canale, messaggio) grazie alla modalità sviluppatore, per usarlo nei comandi di RaidProtect."
+---
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Gli identificatori Discord sono numeri univoci che permettono di identificare con precisione ogni utente, canale, server o messaggio su Discord. Costituiscono un modo affidabile e permanente per identificare gli elementi sulla piattaforma.
+
+:::note Utilità per la moderazione
+L'uso degli ID Discord è particolarmente utile per le azioni di moderazione perché permette di:
+- **Sanzionare un utente assente**: bannare qualcuno che ha lasciato il server
+- **Evitare errori**: identificare con precisione la persona giusta anche con soprannomi simili
+- **Tenere traccia**: gli ID non cambiano mai, a differenza dei soprannomi
+- **Risolvere i conflitti**: identificazione chiara in caso di caratteri speciali
+:::
+
+## Attivazione della modalità sviluppatore
+
+È necessario attivare la modalità sviluppatore per usare gli ID Discord.
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="desktop" label="Su Discord Desktop/Web" default>
+
+    1. **Apri le impostazioni utente**
+    - Clicca sull'icona a forma di ingranaggio ⚙️ in basso a sinistra dell'interfaccia
+
+    2. **Accedi alle impostazioni avanzate**
+    - Nella barra laterale, vai alla scheda **Avanzate**
+
+    3. **Attiva la modalità sviluppatore**
+    - Attiva l'opzione “**Modalità sviluppatore**” cliccando sull'interruttore
+    - L'interruttore deve diventare blu una volta attivato
+
+  </TabItem>
+  <TabItem value="mobile" label="Su Discord Mobile">
+
+    1. **Apri le impostazioni utente**
+    - Tocca il tuo avatar in basso a destra
+    - Tocca l'icona a forma di ingranaggio ⚙️ in alto a destra dell'interfaccia
+
+    2. **Accedi alle impostazioni avanzate**
+    - Scorri e tocca “**Avanzate**”
+
+    3. **Attiva la modalità sviluppatore**
+    - Attiva l'opzione “**Modalità sviluppatore**”
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+## Copiare un ID
+
+Una volta attivata la modalità sviluppatore, puoi copiare l'ID di qualsiasi elemento:
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="user" label="ID utente" default>
+
+    - **Clic destro** sull'avatar o sul nome utente
+    - Seleziona “**Copia ID utente**”
+
+  </TabItem>
+  <TabItem value="channel" label="ID canale">
+
+    - **Clic destro** sul nome del canale nell'elenco dei canali
+    - Seleziona “**Copia ID canale**”
+
+  </TabItem>
+  <TabItem value="server" label="ID server">
+
+    - **Clic destro** sul nome del server in alto a sinistra
+    - Seleziona “**Copia ID server**”
+
+  </TabItem>
+  <TabItem value="message" label="ID messaggio">
+
+    - **Clic destro** su un messaggio
+    - Seleziona “**Copia ID messaggio**”
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+## Utilizzo con RaidProtect
+
+Gli ID possono essere usati nei comandi di RaidProtect al posto delle menzioni:
+
+- [`/ban user:123456789012345678 reason:Violazione delle regole del server`](../features/moderation#ban)
+- [`/clear numero:100 utente:123456789012345678`](../features/moderation#clear)
+- [`/userinfo user:123456789012345678`](../features/utilities#userinfo)
+- [`/bypass minage utente:123456789012345678`](../features/onboarding#bypass-minage)
+
+:::info
+Puoi bannare un utente a partire dal suo ID Discord, anche se non è connesso o presente sul tuo server.
+:::

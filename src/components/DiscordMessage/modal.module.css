@@ -1,0 +1,214 @@
+/* Modale Discord, rendue en surimpression du message de configuration. */
+
+.modal {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  border-radius: 12px;
+  background: #393b40;
+  border: 1px solid #4c4f55;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  font-family: "gg sans", "Noto Sans", Helvetica, Arial, sans-serif;
+  color: #dbdee1;
+  font-size: 14px;
+  line-height: 1.375;
+  text-align: left;
+}
+
+html[data-theme="light"] .modal {
+  background: #fff;
+  border-color: #e1e2e4;
+  color: #313338;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 16px 8px;
+}
+
+.appIcon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.title {
+  flex: 1;
+  font-size: 18px;
+  font-weight: 600;
+  color: #f2f3f5;
+}
+
+html[data-theme="light"] .title {
+  color: #060607;
+}
+
+.close {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #b5bac1;
+  cursor: pointer;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 8px 16px 16px;
+  max-height: 520px;
+  overflow-y: auto;
+}
+
+.text {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-weight: 600;
+  color: #f2f3f5;
+}
+
+html[data-theme="light"] .label {
+  color: #060607;
+}
+
+.required {
+  margin-left: 4px;
+  color: #f23f43;
+}
+
+.description {
+  margin-top: -4px;
+  font-size: 12px;
+  color: #949ba4;
+}
+
+.textInput {
+  min-height: 40px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #2b2d31;
+  border: 1px solid #1e1f22;
+  box-sizing: border-box;
+}
+
+html[data-theme="light"] .textInput {
+  background: #ebedef;
+  border-color: #e1e2e4;
+}
+
+.paragraph {
+  min-height: 88px;
+}
+
+.placeholder {
+  color: #87898c;
+}
+
+.value {
+  color: inherit;
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  border-radius: 4px;
+  border: 1px solid #6d6f78;
+  color: #fff;
+}
+
+.box svg {
+  width: 14px;
+  height: 14px;
+}
+
+.boxChecked {
+  background: #5865f2;
+  border-color: #5865f2;
+}
+
+.checkboxBody {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkboxLabel {
+  font-weight: 500;
+}
+
+.checkboxDesc {
+  font-size: 12px;
+  color: #949ba4;
+}
+
+.file {
+  padding: 18px 12px;
+  border-radius: 8px;
+  border: 1px dashed #6d6f78;
+  text-align: center;
+  color: #949ba4;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 0 0 12px 12px;
+  background: #2b2d31;
+}
+
+html[data-theme="light"] .footer {
+  background: #f2f3f5;
+}
+
+.cancel,
+.submit {
+  height: 38px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.cancel {
+  background: none;
+  color: inherit;
+}
+
+.submit {
+  background: #5865f2;
+  color: #fff;
+}

@@ -1,124 +1,213 @@
 ---
 title: Anti-Spam
-description: "Der Anti-Spam von RaidProtect erkennt und ahndet Spam auf Ihrem Discord-Server automatisch, ganz ohne Ihr Zutun."
+description: "Der Anti-Spam von RaidProtect erkennt und ahndet Spam auf Ihrem Discord-Server automatisch: Flood, Links, Erwähnungen, Selfbots und kanalübergreifenden Spam."
 ---
 
-import { AntiSpamSettingsMockup, AntiSpamSanctionsSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
-
 import AntiSpamMockup from '@site/src/components/DiscordMessage/mockups/anti-spam';
-
-<AntiSpamMockup />
+import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
 
 import SeparatedBox from '@site/src/components/SeparatedBox';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Der Anti-Spam von RaidProtect erkennt und ahndet [Spam](/de/learn/spam-discord) auf Ihrem Discord-Server automatisch: wiederholte Nachrichten, Massen-Erwähnungen, Flood und massenhaft gesendete Links, ohne dass ein Moderator eingreifen muss. Dank seiner automatischen Erkennung kümmert er sich ganz von selbst um die Probleme.
+<AntiSpamMockup />
+
+Der **Anti-Spam** von RaidProtect erkennt und ahndet [Spam](/de/learn/spam-discord) auf Ihrem Discord-Server automatisch: Nachrichten in Serie, überflutete Bildschirme, Copy-Paste, Links, Massen-Erwähnungen, [Selfbots](/de/learn/self-bot) und auf mehrere Kanäle verteilter Spam. Einmal aktiviert, kümmert er sich um alles, ohne dass ein Moderator eingreifen muss.
 
 ## ❓ Wie funktioniert der Anti-Spam? {#working}
 
-Der Anti-Spam von RaidProtect erkennt und blockiert automatisch verdächtige Verhaltensweisen. Er unterscheidet zwischen zwei Arten von Spam.
-- **Schwerer Spam:** Nachrichten mit Einladungslinks, Massen-Erwähnungen oder Bildern. Dieser Spam wird häufig bei Raids verwendet.
-- **Leichter Spam:** Häufig gesendete, aber weniger aufdringliche Nachrichten.
+Wir analysieren jede Nachricht, indem wir sie mit den letzten Nachrichten ihres Autors vergleichen.
 
-Der Anti-Spam von RaidProtect handelt auf zwei Arten.
-- **Sanktionen:** Automatisches Kicken oder Bannen der Spammer.
-- **Benachrichtigungen:** Senden von Nachrichten in den Log-Kanal, um blockierten Spam mit einer Vorschau der erkannten Aktionen zu melden.
+- **Zehn Auslöser**: Jede Spam-Art hat ihren eigenen Auslöser (Spam, Flood, Dateien, Duplikate, Links, Erwähnungen, Selfbot, externe Befehle, vom AutoMod blockierte Nachrichten, Mehrkanal). Die Details stehen in der [Tabelle der Auslöser](#triggers).
+- **Vier Familien**: Die Auslöser sind nach ihrer Art gruppiert (**Übermaß**, **Spam**, **Automatisiert** und **Mehrkanal-Spam**), sodass sich die Sanktionen mit wenigen Klicks einstellen lassen.
+- **Die strengste Sanktion gewinnt**: Überschreitet ein Spam mehrere Auslöser gleichzeitig, wenden wir die stärkste Sanktion an.
+- **Klarer Grund**: Der Grund der Sanktion nennt die Art des erkannten Spams.
+- **Logs**: Jede Sanktion wird mit den gelöschten Nachrichten an Ihren Log-Kanal gesendet (siehe [die Logs](#logs)).
 
-## 🛡️ Anti-Spam-Konfiguration {#config}
+Der Anti-Spam ist **standardmäßig deaktiviert**. Er wird während des [Befehls `/setup`](../setup.md) aktiviert, wenn Sie ihn ankreuzen, oder jederzeit über `/settings`.
 
-Der Anti-Spam wird per Schalter ein- oder ausgeschaltet. Sobald er aktiviert ist, überwacht er den gesamten Server (mit Ausnahme der ignorierten Kanäle, Rollen und Mitglieder) und wendet für jede Spam-Art die von Ihnen festgelegte Sanktion an.
+## 🛡️ Den Anti-Spam einrichten {#config}
 
-<AntiSpamSettingsMockup />
+Der Anti-Spam befindet sich im Tab „**Schutz**“ von `/settings`. Sein Bildschirm vereint den Schalter, die Sanktionen, die Voreinstellung, die Ausnahmen und die Simulation.
 
-### Anti-Spam aktivieren oder deaktivieren {#toggle}
+<Settings start="antispam" />
 
-1. Führen Sie den [`/settings`-Befehl](../setup.md#settings) aus.
-2. Klicken Sie auf die Schaltfläche „**Anti-spam**".
-3. Aktivieren oder deaktivieren Sie den Anti-Spam. Die gesamte Feinabstimmung erfolgt anschließend pro Auslöser im Tab „**Sanktionen**".
+### Den Anti-Spam aktivieren oder deaktivieren {#toggle}
 
-### Ignorierte Rollen, Nutzer und Kanäle verwalten {#ignore}
+1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
+2. Öffnen Sie den Tab „**Schutz**“.
+3. Klicken Sie neben „**Anti-Spam**“ auf „**Konfigurieren**“.
+4. Klicken Sie oben rechts auf dem Bildschirm auf „**Aktivieren**“ (oder „**Deaktivieren**“).
 
-Sie können bestimmte Kanäle, Rollen oder sogar Nutzer von der Anti-Spam-Überwachung ausschließen, um mehr Flexibilität zu erhalten. 😉
-1. Führen Sie den [`/settings`-Befehl](../setup.md#settings) aus.
-2. Klicken Sie auf die Schaltfläche „**Anti-spam**".
-3. Wählen Sie die verschiedenen zu ignorierenden Optionen in den jeweiligen Selektoren:
-- Zu ignorierende(r) Kanal/Kanäle
-- Zu ignorierende Rolle(n)
-- Zu ignorierende(s) Mitglied(er)
+### Eine Voreinstellung wählen {#presets}
 
-:::info
-Kanäle, die „**spam**" in ihrem Namen enthalten, werden automatisch ignoriert. Personen mit Administratorberechtigung werden vollständig ignoriert.
+Am einfachsten stellen Sie den Anti-Spam mit einer **Voreinstellung** ein. Sie legt die Sanktion jeder Familie auf einmal fest:
+
+| Voreinstellung | Übermaß | Spam | Automatisiert | Mehrkanal-Spam |
+|---|---|---|---|---|
+| **Mild** | Verwarnung | Timeout | Jail | Timeout |
+| **Standard** *(Standardwert)* | Timeout | Softban | Bann | Jail |
+| **Streng** *(nicht empfohlen)* | Softban | Bann | Bann | Bann |
+
+Die Voreinstellung **Mild** kickt und bannt nie: höchstens ein Timeout oder das Jail.
+
+1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
+2. Öffnen Sie den Tab „**Schutz**“.
+3. Klicken Sie neben „**Anti-Spam**“ auf „**Konfigurieren**“.
+4. Wählen Sie eine Voreinstellung in der Auswahl „**Voreinstellung wählen**“.
+
+Die Auswahl zeigt „**Benutzerdefiniert**“ an, wenn Ihre Einstellungen keiner Voreinstellung entsprechen. In diesem Fall überschreibt das Anwenden einer Voreinstellung Ihre Einstellungen: Wir bitten Sie, zu bestätigen, indem Sie „**Verstanden, Voreinstellung anwenden**“ ankreuzen. Die Dauern, die einzelnen Auslösern eigen sind, kehren dann zur [Standarddauer](#duration) zurück.
+
+<SettingsModal name="antispamPreset" />
+
+### Ignorierte Kanäle, Rollen und Mitglieder verwalten {#ignore}
+
+Sie können bestimmte Kanäle, Rollen oder Mitglieder von der Anti-Spam-Überwachung ausschließen.
+
+1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
+2. Öffnen Sie den Tab „**Schutz**“.
+3. Klicken Sie neben „**Anti-Spam**“ auf „**Konfigurieren**“.
+4. Wählen Sie Ihre Ausnahmen in den Auswahlen „**Ignorierter Kanal/Kanäle**“, „**Ignorierte Rolle(n)**“ und „**Ignoriertes Mitglied/Mitglieder**“ (jeweils höchstens 25).
+
+Die Kanalauswahl akzeptiert **Kategorien** (alle ihre Kanäle werden dann ignoriert) sowie Sprachkanäle, Bühnen und Foren. Threads folgen ihrem übergeordneten Kanal.
+
+:::info Wer wird automatisch ignoriert?
+- Kanäle, deren Name „**spam**“ enthält (bei einem Thread zählt der Name des übergeordneten Kanals).
+- Mitglieder, die RaidProtect nicht moderieren kann (Rolle über seiner eigenen).
+- Das **Staff-Team** (Berechtigung `Administrator`, `Server verwalten` oder `Nachrichten verwalten`), **solange keine Rolle und kein Mitglied ignoriert wird**. Sobald Sie der Liste eine Rolle oder ein Mitglied hinzufügen, zählt nur noch diese Liste: Staff-Mitglieder, die nicht darin stehen, können dann sanktioniert werden.
 :::
 
-### Sanktionen pro Auslöser konfigurieren {#triggers}
+### Die Sanktionen pro Auslöser einstellen {#triggers}
 
-Sie können die angewendeten Sanktionen je nach Art des erkannten Spams anpassen. Das ermöglicht eine der Schwere des Verstoßes angemessene Reaktion.
+Die Details der Sanktionen öffnen sich vom Bildschirm des Anti-Spam aus.
 
-1. Führen Sie den [`/settings`-Befehl](../setup.md#settings) aus.
-2. Klicken Sie auf die Schaltfläche „**Anti-spam**".
-3. Gehen Sie zum Tab „**Sanktionen**".
-4. Wählen Sie für jeden Auslöser eine bestimmte Sanktion. Sie können diese Werte über die Dropdown-Menüs ändern:
-- **Einen Trigger auswählen**: Wählen Sie die Art des zu konfigurierenden Spams.
-- **Eine Sanktion auswählen**: Wählen Sie die entsprechende Sanktion.
+1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
+2. Öffnen Sie den Tab „**Schutz**“.
+3. Klicken Sie neben „**Anti-Spam**“ auf „**Konfigurieren**“.
+4. Klicken Sie rechts von „**Sanktionen**“ auf „**Details anzeigen**“.
+5. Klicken Sie neben der einzustellenden Familie auf „**Bearbeiten**“ und wählen Sie dann die „**Sanktion**“ und gegebenenfalls die „**Dauer**“.
 
-#### Sanktionsarten und Auslöser {#sanctions}
+<Settings start="antispamSanctions" />
 
-Hier sind die verschiedenen **[verfügbaren Sanktionen](/de/learn/discord-sanctions)**:
+Jede Familie vereint Auslöser derselben Art. Hier sind die Auslöser, die wir erkennen, mit ihrer Standardsanktion (Voreinstellung **Standard**):
 
-- **Warn**: Sendet eine Verwarnung an das Mitglied.
-- **Timeout**: Schaltet das Mitglied für eine festgelegte Dauer stumm.
+| Familie | Auslöser | Was erkannt wird | Standardsanktion |
+|---|---|---|---|
+| **Übermaß** | Spam | Zu viele Nachrichten in kurzer Zeit. Emojis, Sticker und Kauderwelsch-Nachrichten (wiederholte Zeichen, Wörter in Endlosschleife) zählen ebenfalls. | Timeout |
+| **Übermaß** | Flood (Bildschirm gefüllt) | Nachrichten, die den Bildschirm füllen: lange Texte, Bilder, Link-Vorschauen, Sticker | Timeout |
+| **Übermaß** | Anhang-Spam | Massenhaftes Senden von Dateien oder Bildern | Timeout |
+| **Spam** | Spam von Duplikaten | Kopierte oder nahezu identische Nachrichten | Softban |
+| **Spam** | Spam von Links | Massenhaftes Senden von Links (eine Discord-Einladung zählt als ein Link, auch ohne `https://`; andere Discord-Links und GIFs bleiben neutral) | Softban |
+| **Spam** | Spam von Erwähnungen | Massen-Erwähnungen | Softban |
+| **Automatisiert** | Spam mit Selfbot | Verwendung von [Selfbots](/de/learn/self-bot) zum Spammen | Bann |
+| **Automatisiert** | Spam von externen Befehlen | Verwendung von [externen Befehlen](/de/learn/server-raidable) zum Spammen | Bann |
+| **Automatisiert** | Spam blockierter Nachrichten (AutoMod) | Wiederholt vom [AutoMod von Discord](#automod) blockierte Nachrichten | Bann |
+| *(gesondert)* | Mehrkanal-Spam | Dieselbe Nachricht, die in kurzer Zeit in mehreren Kanälen gepostet wird | Jail |
+
+:::info Mehrkanal-Spam
+Der **Mehrkanal-Spam** ist besonders: Seine Sanktion ersetzt die des ursprünglichen Auslösers, wenn der Spam mehrere Kanäle betrifft, aber nur, wenn sie strenger ist. Ihn zu deaktivieren schaltet auch die gesamte serverweite Überwachung ab.
+:::
+
+Hier sind die **[verfügbaren Sanktionen](/de/learn/discord-sanctions)** für jede Familie oder jeden Auslöser:
+
+- **Verwarnung (Warn)**: Sendet dem Mitglied eine Verwarnung.
+- **Timeout**: Schaltet das Mitglied für eine festgelegte Dauer stumm (höchstens 28 Tage, Limit von Discord).
 - **Mute**: Weist die auf Ihrem Server konfigurierte [Mute-Rolle](./sanctions.mdx#mute) zu.
 - **Jail**: Weist die auf Ihrem Server konfigurierte [Jail-Rolle](./sanctions.mdx#jail) zu.
-- **Kick**: Kickt das Mitglied vom Server.
-- **Softban**: Bannt und entbannt das Mitglied sofort, wodurch seine Nachrichten gelöscht werden.
-- **Ban**: Bannt das Mitglied dauerhaft.
+- **Kick (Ausschluss)**: Schließt das Mitglied vom Server aus.
+- **Softban**: Bannt und entbannt das Mitglied sofort wieder, wodurch seine Nachrichten gelöscht werden.
+- **Bann (Ban)**: Bannt das Mitglied.
 - **Deaktivieren**: Schaltet den Auslöser vollständig ab, es wird keine Sanktion angewendet.
 
-:::note
-Für die Auslöser „Duplikat-Spam oder schwerer Spam" und „Kanalübergreifender Spam" ist die mildeste wählbare Sanktion das **Timeout** (kein Warn): Es handelt sich um ernsthaften Spam, der eine entschlossene Reaktion rechtfertigt.
-:::
-
-Und die **Auslöser (Triggers)**, die RaidProtect erkennen kann, mit der standardmäßig angewendeten Sanktion:
-
-| Auslöser (Trigger)                     | Beschreibung                                             | Standardsanktion    |
-|----------------------------------------|----------------------------------------------------------|---------------------|
-| Spam                                   | Wiederholtes Senden von Nachrichten                      | Warn                |
-| Selfbot-Spam                           | Verwendung von [Selfbots](/de/learn/self-bot) zum Spammen                      | Softban             |
-| Erwähnungs-Spam                        | Wiederholte Massen-Erwähnungen                           | Softban             |
-| Link-Spam                              | Massenhaftes Senden von Links                            | Ban                 |
-| Externer Befehls-Spam                  | Verwendung [externer Befehle](/de/learn/server-raidable) zum Spammen                  | Ban                 |
-| Anhang-Spam                            | Massenhaftes Senden von Dateien oder Bildern             | Deaktiviert         |
-| Duplikat-Spam oder schwerer Spam       | Kopierte Nachrichten oder übermäßiger Spam               | Softban             |
-| Betrugsbilder (Crypto Scam)            | Von [ScamLens](./scam-images.md) erkannte Betrugsbilder | Timeout             |
-| Kanalübergreifender Spam               | Über mehrere Kanäle verteilter Spam                      | Jail                |
-
 :::info
-Der Auslöser **Kanalübergreifender Spam** ist besonders: Seine Sanktion ersetzt die des ursprünglichen Auslösers, wenn der Spam mehrere Kanäle betrifft, allerdings nur, wenn sie strenger ist.
+Ein **Jail** oder **Mute** ohne konfigurierte Rolle wird zu einem **Timeout**: Der Bildschirm zeigt dies mit „**→ Timeout**“ an. Denken Sie daran, diese Rollen im Tab „**Moderation**“, Modul „**Sanktionen**“, einzustellen.
 :::
 
-<AntiSpamSanctionsSettingsMockup />
+Um alle Sanktionen auf die Standardwerte zurückzusetzen, klicken Sie oben rechts auf dem Sanktionsbildschirm auf „**Zurücksetzen**“.
 
-:::info Premium: diskrete Moderation
-Standardmäßig wird jede Anti-Spam-Sanktion durch eine **öffentliche Nachricht** im Kanal angekündigt. **Premium**-Server können diese Nachricht für eine diskretere Moderation ausblenden.
-:::
+#### Erweiterter Modus: jeden Auslöser einstellen {#advanced}
+
+Wenn Sie für einen einzelnen Auslöser eine andere Sanktion möchten (zum Beispiel Link-Spam bannen, aber für Erwähnungen einen Softban behalten), wechseln Sie in den erweiterten Modus.
+
+1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
+2. Öffnen Sie den Tab „**Schutz**“.
+3. Klicken Sie neben „**Anti-Spam**“ auf „**Konfigurieren**“.
+4. Klicken Sie auf „**Details anzeigen**“ und dann auf „**Erweiterter Modus**“.
+5. Wählen Sie unter „**Auslöser zum Ändern auswählen**“ einen oder mehrere Auslöser aus und stellen Sie dann ihre Sanktion und Dauer ein.
+
+<SettingsModal name="antispamFamily" />
+
+Der erweiterte Modus bleibt angezeigt, solange eine Familie je nach Auslöser unterschiedliche Einstellungen hat. Um zum einfachen Modus zurückzukehren, klicken Sie erneut auf „**Erweiterter Modus**“ und kreuzen Sie „**Verstanden, Familien angleichen**“ an.
 
 #### Dauer der Sanktionen {#duration}
 
-Wenn die vom Anti-Spam angewendeten Sanktionen eine Dauer unterstützen (Mute, Timeout, Jail), können Sie eine **einheitliche Dauer** festlegen, die auf all diese Sanktionen angewendet wird (standardmäßig 1 Stunde).
+Sanktionen mit einer Dauer (Mute, Timeout, Jail) verwenden die **Standarddauer**, die auf 1 Stunde festgelegt ist. Sie können sie für den gesamten Anti-Spam ändern oder einer Familie oder einem Auslöser eine eigene Dauer geben.
 
-1. Führen Sie den [`/settings`-Befehl](../setup.md#settings) aus.
-2. Klicken Sie auf die Schaltfläche „**Anti-spam**".
-3. Gehen Sie zum Tab „**Sanktionen**".
-4. Wählen Sie eine vordefinierte Dauer im Selektor „**Dauer der Sanktionen**" oder klicken Sie auf „**Benutzerdefinierte Dauer**", um den Wert Ihrer Wahl einzugeben (z. B. `30m`, `2h`, `7d`).
+**Standarddauer:**
+
+1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
+2. Öffnen Sie den Tab „**Schutz**“.
+3. Klicken Sie neben „**Anti-Spam**“ auf „**Konfigurieren**“.
+4. Klicken Sie auf „**Details anzeigen**“.
+5. Wählen Sie eine Dauer in der Auswahl „**Standarddauer**“ (Dauerhaft, 5 Minuten, 1 Stunde oder 1 Tag) oder „**Benutzerdefinierter Wert**“, um Ihre eigene einzugeben (zum Beispiel `30m`, `2h`, `7d`).
+
+**Eigene Dauer einer Familie oder eines Auslösers:** Wählen Sie im Fenster, das „**Bearbeiten**“ (oder der erweiterte Modus) öffnet, eine „**Dauer**“ oder geben Sie eine „**Eigene Dauer**“ ein. Die Option „**Standard (globale Dauer)**“ kehrt zur Standarddauer zurück.
 
 :::info
-Die Dauer wird für Sanktionen ignoriert, die keine unterstützen (Kick, Softban, Ban, Warn).
+- Eine benutzerdefinierte Dauer muss **mindestens 5 Minuten** betragen.
+- „**Dauerhaft**“ bei einem Timeout wird auf 28 Tage reduziert, das von Discord erlaubte Maximum.
+- Die Dauer wird bei Sanktionen ohne Dauer ignoriert (Verwarnung, Kick, Softban, Bann).
+- Übernimmt der Mehrkanal-Spam, gilt seine Dauer.
 :::
+
+### Öffentliche Sanktionsnachricht <span className="badge-premium">Premium</span> {#public-message}
+
+Standardmäßig wird jede Sanktion des Anti-Spam durch eine **öffentliche Nachricht** im Kanal angekündigt (zum Beispiel „Mitglied wurde stummgeschaltet“). [Premium](/de/premium)-Server können sie für eine diskretere Moderation ausblenden.
+
+1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
+2. Öffnen Sie den Tab „**Schutz**“.
+3. Klicken Sie neben „**Anti-Spam**“ auf „**Konfigurieren**“.
+4. Klicken Sie auf „**Details anzeigen**“.
+5. Klicken Sie neben „**Öffentliche Sanktionsnachricht**“ auf „**Deaktivieren**“.
+
+:::info
+Diese Einstellung wird mit dem [ScamLens-Bilderfilter](./scam-images.md) geteilt: Sie zu deaktivieren blendet auch die Ankündigungen gelöschter Betrugsbilder aus.
+:::
+
+## 🔎 Einen Spam simulieren {#simulation}
+
+Ein Mitglied hat gespammt, ohne sanktioniert zu werden, oder wurde im Gegenteil zu Unrecht sanktioniert? Die **Simulation** sagt Ihnen, ob der Anti-Spam in einer bestimmten Situation ausgelöst würde, und warum.
+
+1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
+2. Öffnen Sie den Tab „**Schutz**“.
+3. Klicken Sie neben „**Anti-Spam**“ auf „**Konfigurieren**“.
+4. Klicken Sie auf „**Simulieren**“.
+5. Füllen Sie die Felder „**Zu testendes Mitglied**“, „**Zu testender Kanal**“ und „**Spam-Typ**“ aus.
+
+<SettingsModal name="antispamSimulate" />
+
+Die Simulation prüft die Berechtigungen, die Ausnahmen und die vorgesehene Sanktion.
+
+Das Ergebnis nennt außerdem die **Spitze der letzten Stunde** für dieses Mitglied, als Prozentsatz des Schwellenwerts, dann das Urteil und die Sanktion, die angewendet würde.
+
+:::warning Erforderliche Berechtigungen
+Der Anti-Spam sanktioniert niemanden, wenn RaidProtect nicht gleichzeitig die Berechtigungen `Mitglieder bannen`, `Mitglieder kicken` und `Mitglieder timeouten` hat.
+:::
+
+## 🤖 AutoMod von Discord {#automod}
+
+RaidProtect arbeitet mit dem **AutoMod von Discord** zusammen:
+
+- **Spam blockierter Nachrichten**: Reiht ein Mitglied Nachrichten aneinander, die von Ihren AutoMod-Regeln blockiert werden, sanktioniert es der Auslöser „**Spam blockierter Nachrichten (AutoMod)**“ (Familie **Automatisiert**). Dafür muss die AutoMod-Regel ihre **Warnungen** an einen Kanal senden, den RaidProtect sehen kann: Anhand dieser Warnungen erkennen wir die blockierten Nachrichten.
+- **Verwarnung bei jeder blockierten Nachricht**: Sind die Sanktionen auf Ihrem Server aktiv, wird jede von einer AutoMod-Regel blockierte Nachricht als Verwarnung im Verlauf des Mitglieds gespeichert, außer die Regel verhängt bereits einen Timeout. Das Mitglied erhält für diese Verwarnung keine Privatnachricht. Mehr Details auf der Seite der [Sanktionen](./sanctions.mdx).
+
+## 🐢 Präventiver Slowmode <span className="badge-experiment">Experiment</span> <span className="badge-premium">Premium</span> {#slowmode}
+
+Um einen sehr aktiven Kanal zu beruhigen, ohne jemanden zu sanktionieren, passt der [präventive Slowmode](./slowmode.md) (Premium, im Experiment mit der Shield Update) den Langsam-Modus Ihrer Kanäle automatisch an ihre Nachrichtenrate an.
 
 ## 📑 Anti-Spam-Logs {#logs}
 
-Es werden detaillierte Logs mit allen vom Anti-Spam gelöschten Nachrichten generiert. Sie können den Inhalt einfach herunterladen oder ausklappen.
+Jede Sanktion wird mit der Art des Spams als Grund an Ihren Log-Kanal gesendet. Bei allen Sanktionen außer der Verwarnung ist eine Datei mit den gelöschten Nachrichten angehängt: Sie können sie herunterladen oder aufklappen.
 
 <SeparatedBox>
 <Tabs>
@@ -139,16 +228,20 @@ Es werden detaillierte Logs mit allen vom Anti-Spam gelöschten Nachrichten gene
 
 ### Funktioniert der Anti-Spam ohne Konfiguration?
 
-Ja. Er erkennt und blockiert Spam-Verhalten automatisch ab der Installation. Anschließend können Sie die Sanktion für jede Spam-Art nach Ihren Bedürfnissen anpassen.
+Sie müssen ihn nur aktivieren, während des Befehls `/setup` oder in `/settings`, Tab Schutz. Er verwendet dann die Voreinstellung Standard, die für die meisten Server passt. Anschließend können Sie die Voreinstellung wechseln oder jede Familie anpassen.
 
 ### Hat der Anti-Spam Sicherheitsstufen (hoch, mittel, niedrig)?
 
-Nein. Der Anti-Spam wird einfach ein- oder ausgeschaltet. Die Feinabstimmung erfolgt pro Auslöser: Jede Spam-Art hat ihre eigene Sanktion, die Sie anpassen oder vollständig deaktivieren können.
+Keine Empfindlichkeitsstufen: Der Anti-Spam wird ein- oder ausgeschaltet. Dafür werden drei Sanktions-Voreinstellungen angeboten (Mild, Standard und Streng), und jede Familie oder jeder Auslöser kann eine eigene Sanktion erhalten.
 
 ### Kann man bestimmte Kanäle oder Mitglieder vom Anti-Spam ausschließen?
 
-Ja, Sie können bestimmte Kanäle, Rollen oder Mitglieder ignorieren. Kanäle, deren Name „spam" enthält, werden automatisch ignoriert, und Mitglieder mit Administratorberechtigung werden immer ignoriert.
+Ja, Sie können bestimmte Kanäle, Kategorien, Rollen oder Mitglieder ignorieren. Kanäle, deren Name „spam“ enthält, werden automatisch ignoriert. Das Staff-Team (Administrator, Server verwalten, Nachrichten verwalten) wird ignoriert, solange Sie der Liste keine Rolle und kein Mitglied hinzugefügt haben.
 
 ### Kann man die auf Spam angewendete Sanktion wählen?
 
-Ja. Jede Spam-Art (Auslöser) kann eine eigene Sanktion erhalten, vom einfachen Warn bis zum Ban, über Timeout, Mute, Jail, Kick oder Softban. Sie können einen Auslöser auch vollständig deaktivieren.
+Ja. Wählen Sie eine Voreinstellung, stellen Sie die Sanktion jeder Familie ein oder wechseln Sie in den erweiterten Modus, um jeden Auslöser einzustellen, von der Verwarnung bis zum Bann. Sie können einen Auslöser auch vollständig deaktivieren und jedem eine eigene Dauer geben.
+
+### Warum wurde ein Mitglied nicht sanktioniert?
+
+Verwenden Sie die [Simulation](#simulation): Sie prüft die Berechtigungen von RaidProtect, die Rollenhierarchie, die Ausnahmen, den Kanal und die Sanktion der Spam-Art und nennt dann die Aktivitätsspitze des Mitglieds im Verhältnis zum Schwellenwert.

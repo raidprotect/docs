@@ -1,0 +1,187 @@
+---
+title: 命令列表
+---
+
+import CommandCopy from '@site/src/components/CommandCopy';
+
+<CommandCopy />
+
+RaidProtect 的全部命令，按类别分组。点击命令名称即可查看其详细文档。
+
+## 命令格式图例 {#legend}
+
+- `(arg)`：**必填**参数。
+- `[arg]`：**可选**参数。
+- `[--flag]`：可选的布尔标志（斜杠命令：`flag: true`，消息命令：`--flag`）。
+- `[--flag=值]`：可选的带值标志。
+- `(@user)` / `(#channel)` / `(@&role)`：表示所需类型的前缀。
+
+---
+
+## 配置与安装 {#config}
+
+| 命令 | 格式 | 说明 |
+|---|---|---|
+| [`/setup`](./setup.md#install) | `/setup` | 启动引导式安装，在服务器上启用 RaidProtect。 |
+| [`/settings`](./setup.md#settings) | `/settings` | 打开交互式菜单，可随时修改配置。 |
+| [`/honeypot`](./features/honeypot.md#config) | `/honeypot` | 配置 HoneyPot 陷阱频道。 |
+| [`/tagrole`](./features/tag-role.md) | `/tagrole` | 配置授予佩戴服务器标签的成员的角色。 |
+| [`/display public`](./features/display.mdx) | `/display public` | 管理 RaidProtect 的公开信息面板。 |
+| [`/display staff`](./features/display.mdx#staff) | `/display staff` | 管理仅限工作人员的面板（DISCON、内部消息）。 |
+| [`/discon`](./features/discon.md) | `/discon` | 设置 DISCON 面板，用于调节服务器的危险等级（试验中，Shield Update）。 |
+| [`/audit`](./features/audit.md) | `/audit` | 分析服务器的安全性，并建议修复配置漏洞。 |
+
+## 管理 {#moderation}
+
+### 处罚
+
+| 命令 | 格式 | 说明 |
+|---|---|---|
+| [`/ban`](./features/moderation.mdx#ban) | `/ban (@user) [duration] [--delete-messages=duration] [--silent] [reason]` | 封禁用户，永久封禁或按指定时长封禁。 |
+| [`/tempban`](./features/moderation.mdx#tempban) | `/tempban (@user) (duration) [--delete-messages=duration] [--silent] [reason]` | 在指定时长内封禁用户。 |
+| [`/softban`](./features/moderation.mdx#softban) | `/softban (@user) [--delete-messages=duration] [--silent] [reason]` | 先封禁再解封成员，以删除其消息。 |
+| [`/unban`](./features/moderation.mdx#unban) | `/unban (@user) [--silent] [reason]` | 解除封禁。 |
+| [`/kick`](./features/moderation.mdx#kick) | `/kick (@user) [--silent] [reason]` | 将成员踢出服务器。 |
+| [`/mute`](./features/moderation.mdx#timeout) | `/mute (@user) (duration) [--force-timeout] [--silent] [reason]` | 让成员保持沉默（禁言角色或 Discord 超时）。 |
+| [`/unmute`](./features/moderation.mdx#untimeout) | `/unmute (@user) [--silent] [reason]` | 解除成员的禁言/超时。 |
+| [`/jail`](./features/moderation.mdx#jail) | `/jail (@user) [--silent] [reason]` | 通过监禁角色监禁成员。 |
+| [`/tempjail`](./features/moderation.mdx#tempjail) | `/tempjail (@user) (duration) [--silent] [reason]` | 在指定时长内监禁成员。 |
+| [`/unjail`](./features/moderation.mdx#unjail) | `/unjail (@user) [--silent] [reason]` | 将成员从监禁中释放。 |
+| [`/warn`](./features/moderation.mdx#warn) | `/warn (@user) [--silent] [reason]` | 通过私信对成员发出正式警告。 |
+
+### 管理工具
+
+| 命令 | 格式 | 说明 |
+|---|---|---|
+| [`/clear`](./features/moderation.mdx#clear) | `/clear (amount) [@user]` | 删除频道中的 2 至 100 条消息。 |
+| [`/snipe`](./features/moderation.mdx#snipe) | `/snipe [@user] [--channel=#channel]` | 找回频道中或某用户最近被删除的消息（1 小时内，需要启用消息缓存）。 |
+| [`/modview`](./features/moderation.mdx#modview) | `/modview (@user)` | 打开成员的集中式管理视图（处罚、备注、snipe）。 |
+| [`/note`](./features/moderation.mdx#note) | `/note (@user)` | 添加或编辑成员的内部管理备注。 |
+| [`/nick`](./features/moderation.mdx#nick) | `/nick (@user) [pseudo]` | 更改成员在服务器上的昵称（留空则重置）。 |
+| [`/onduty`](./features/moderation.mdx#onduty) | `/onduty` | 为使用该命令的管理员添加或移除“在勤”角色。 |
+
+### 频道锁定
+
+| 命令 | 格式 | 说明 |
+|---|---|---|
+| [`/lock`](./features/channel-lock.md#lock) | `/lock [#channel] [duration] [reason]` | 锁定频道，禁止发送消息（时长可选）。 |
+| [`/unlock`](./features/channel-lock.md#unlock) | `/unlock [#channel] [reason]` | 解锁之前被锁定的频道。 |
+| [`/slowmode`](./features/moderation.mdx#slowmode) | `/slowmode (delay) [duration] [#channel] [reason]` | 启用或修改频道的慢速模式（生效时长可选）。 |
+
+## 处罚记录 {#sanctions}
+
+| 命令 | 格式 | 说明 |
+|---|---|---|
+| [`/sanctions search`](./features/sanctions.mdx#search) | `/sanctions search [@user] [@moderator] [type] [reason] [date] [status] [moderator_type]` | 使用筛选条件（用户、管理员、类型、日期、状态……）搜索处罚记录。 |
+| [`/sanctions info`](./features/sanctions.mdx#info) | `/sanctions info (id)` | 显示某条处罚的详情。 |
+| [`/sanctions edit`](./features/sanctions.mdx#edit) | `/sanctions edit (id) [reason] [duration]` | 修改现有处罚的原因或时长。 |
+| [`/sanctions delete`](./features/sanctions.mdx#delete) | `/sanctions delete (id) [reason]` | 从记录中删除一条处罚。 |
+| [`/my-sanctions`](./features/utilities.mdx#my-sanctions) | `/my-sanctions` | 让成员查看自己的处罚。 |
+| [`/alt`](./features/alt-accounts.md) | `/alt [@user] [@other]` | 关联同一个人的多个账号，使其共享处罚（试验中，Identity Update）。 |
+
+## 反突袭 {#antiraid}
+
+| 命令 | 格式 | 说明 |
+|---|---|---|
+| [`/raidmode`](./features/raid-mode.md#raid-mode) | `/raidmode [status] [duration]` | 启用或停用突袭模式，封锁或过滤新加入的成员。 |
+| [`/joinlock`](./features/join-lock.mdx) | `/joinlock [status]` | 无限期关闭新成员进入服务器的通道。 |
+| [`/dmlock`](./features/dm-lock.mdx) | `/dmlock` | 启用或停用服务器的永久私信锁定。 |
+| [`/dmlock-info`](./features/dm-lock.mdx#info) | `/dmlock-info` | 向成员告知私信锁定的状态。 |
+
+## 身份验证 {#auth}
+
+| 命令 | 格式 | 说明 |
+|---|---|---|
+| [`/auth`](./features/authentication-manager.mdx#auth) | `/auth [role]` | 通过身份验证获取受保护的角色。 |
+| [`/auth-profile`](./features/authentication-manager.mdx#auth-profile) | `/auth-profile` | 管理自己的身份验证档案（PIN、OTP、Passkey）。 |
+| [`/auth-settings`](./features/authentication-manager.mdx#auth-settings) | `/auth-settings` | 配置受保护的角色和授权用户。 |
+
+## 绕过 {#bypass}
+
+| 命令 | 格式 | 说明 |
+|---|---|---|
+| [`/bypass captcha`](./features/captcha.md#bypass) | `/bypass captcha [@user]` | 允许用户无需通过验证码即可加入。 |
+| [`/bypass minage`](./features/onboarding.md#bypass-minage) | `/bypass minage [@user]` | 允许用户无需满足最短年龄要求即可加入。 |
+| [`/bypass raid`](./features/raid-mode.md#bypass-raid) | `/bypass raid [@user]` | 允许用户在突袭模式下仍可加入（需要踢出模式）。 |
+
+## 实用工具 {#utilities}
+
+| 命令 | 格式 | 说明 |
+|---|---|---|
+| [`/userinfo`](./features/utilities.mdx#userinfo) | `/userinfo [@user]` | 显示用户的信息。 |
+| [`/serverinfo`](./features/utilities.mdx#serverinfo) | `/serverinfo` | 显示服务器的信息。 |
+| [`/discord-sanctions`](./features/utilities.mdx#discord-sanctions) | `/discord-sanctions [@user]` | 显示用户的 Discord 处罚（DSA）；不指定用户时显示全局统计。 |
+| [`/inviteinfo`](./features/utilities.mdx#inviteinfo) | `/inviteinfo (invite)` | 显示 Discord 邀请的信息（代码或链接）。 |
+| [`/prune`](./features/utilities.mdx#prune) | `/prune [duration]` | 通过交互式菜单清理不活跃成员。 |
+| [`/channel duplicate`](./features/utilities.mdx#channel-duplicate) | `/channel duplicate (#channel)` | 复制频道及其设置和权限。 |
+| [`/channel clear`](./features/utilities.mdx#channel-clear) | `/channel clear (#channel)` | 删除并按原样重新创建频道。 |
+| [`/block add`](./features/utilities.mdx#block-add) | `/block add [@user] [reason]` | 禁止用户使用某些功能。 |
+| [`/block remove`](./features/utilities.mdx#block-remove) | `/block remove [@user] [reason]` | 解除对用户的屏蔽。 |
+| [`/block list`](./features/utilities.mdx#block-list) | `/block list` | 列出被屏蔽的用户。 |
+| [`/report`](./features/reports.md) | `/report (@member)` | 让成员向管理团队举报某位成员（原因在弹出窗口中填写）。 |
+
+## 信息与帮助 {#info}
+
+| 命令 | 格式 | 说明 |
+|---|---|---|
+| [`/about`](./readme.mdx) | `/about` | 显示 RaidProtect 的概况。 |
+| [`/help`](./readme.mdx) | `/help` | 显示 RaidProtect 的总体帮助。 |
+| [`/invite`](./useful-links/index.mdx) | `/invite` | 显示实用链接（邀请、支持、机器人页面）。 |
+| [`/transparency`](./features/transparency.md#command) | `/transparency` | 显示服务器最新的管理透明度报告。 |
+| [`/changelog`](./changelog.mdx) | `/changelog` | 查看 RaidProtect 的更新日志。 |
+| [`/feedback`](./features/utilities.mdx#feedback) | `/feedback` | 分享意见、建议或错误报告。 |
+| [`/privacy`](./features/utilities.mdx#privacy) | `/privacy` | 显示 RaidProtect 在此服务器上保存的内容。 |
+
+## 上下文菜单 {#context-menus}
+
+部分操作可通过右键点击，在**应用**菜单中打开：
+
+- 在成员上：**打开 Modview**（[管理视图](./features/moderation.mdx#modview)）、**处罚用户**（[在一个窗口内完成处罚](./features/moderation.mdx#context-menu)）、**Discord 处罚**（[Discord 处罚](./features/utilities.mdx#discord-sanctions)）和**举报用户**（[举报](./features/reports.md)）。
+- 在消息上：**举报消息**（[举报](./features/reports.md)）。
+
+---
+
+## ⚙️ 使用命令的两种方式 {#usage}
+
+常用的管理命令有两种形式：斜杠命令，以及带前缀的消息命令。其他命令，如 `/sanctions`、`/snipe` 或 `/audit`，只能以斜杠命令使用。[消息命令列表](./guides/prefix.md#activated)注明了哪些命令支持前缀。
+
+### 斜杠命令：最简单的方式 {#slash}
+
+在频道中输入 `/`，选择命令，**Discord 会在专用界面中为您提供每个参数**（用户选择器、频道选择器、时长自动补全等）。这是默认推荐的方式：您无需记忆任何内容。
+
+```
+/ban @成员 reason: 诈骗刷屏
+```
+
+### 消息命令：较复杂的方式 {#prefix}
+
+在 [`/settings` 中启用消息命令](./guides/prefix.md)后，您也可以用普通消息的形式输入命令（`?ban …`、`?kick …` 等）。没有图形界面：您需要**熟悉语法**（位置参数、命名标志、行尾的自由参数）。作为回报，对于熟练掌握命令的管理员来说，用键盘输入更快。
+
+#### 位置参数
+
+按格式中的顺序给出，不带名称。它们是命令的主要参数。
+
+```
+?ban 123456789012345678
+?slowmode 10s
+```
+
+#### 命名标志（`--名称=值`）
+
+用于次要选项。标志可以放在命令中的**任意位置**，顺序不限。
+
+- `--silent`（布尔）：直接启用该选项。
+- `--delete-messages=7d`：为该选项传入一个值。
+
+```
+?ban @成员 --delete-messages=7d --silent 封禁原因
+?tempban @成员 1d --silent 他又犯了
+```
+
+#### “rest”参数（自由文本）
+
+部分命令的最后一个参数（通常是 `[reason]`）会捕获**其后写下的所有内容**，包括空格，无需加引号。
+
+```
+?warn @成员 你又违反了服务器的第 3 条规则
+```

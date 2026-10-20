@@ -1,9 +1,13 @@
 ---
 title: Activer la communauté
-description: "Activez la communauté Discord de votre serveur pour débloquer les réglages de sécurité avancés dont RaidProtect a besoin : captcha, mode raid et plus."
+description: "Activez la communauté Discord de votre serveur pour débloquer les réglages de sécurité dont RaidProtect a besoin : Fermeture des MP, mode raid et plus."
 ---
 
-L’activation de la communauté rend disponibles plusieurs réglages de sécurité avancés indispensables au bon fonctionnement de certaines fonctionnalités de RaidProtect comme **DM Lock** ou le **Mode raid**.
+L’activation de la communauté rend disponibles plusieurs réglages de sécurité avancés de Discord, dont certaines fonctionnalités de RaidProtect ont besoin :
+- la [Fermeture des MP](../features/dm-lock.mdx) (**DM Lock**) ;
+- le [mode raid](../features/raid-mode.md) et la [Fermeture des Jointures](../features/join-lock.mdx), **seulement** avec l'action pendant le raid “**Bloquer les invitations**” (le réglage par défaut).
+
+Le [captcha](../features/captcha.md) et les autres actions du mode raid (“**Expulser les arrivants**”, “**Envoyer au captcha**”, “**Captcha gelé pendant le raid**”) fonctionnent sans la communauté.
 
 ## 🚦 Prérequis {#requirement}
 
@@ -34,5 +38,8 @@ Si la communauté est déjà activée sur votre serveur, la section s'appellera 
 
 ## 💡 Utiliser les modules DM Lock & Mode raid après activation {#use}
 
-- Lancez la commande [`/settings`](../setup.md#settings) pour ouvrir le menu de configuration RaidProtect.
-- Activez ou désactivez les modules souhaités ([DM Lock](../features/dm-lock.mdx), [Mode raid](../features/raid-mode.md)…) depuis le menu interactif.
+1. Faites la [commande `/settings`](../setup.md#settings).
+2. Pour la [Fermeture des MP](../features/dm-lock.mdx), ouvrez l'onglet “**Protection**” et cliquez sur “**Modifier**” à côté de “**Fermeture des MP**”.
+3. Pour le [mode raid](../features/raid-mode.md#config), ouvrez l'onglet “**Arrivées**” et cliquez sur “**Configurer**” à côté de “**Auto RaidMode**”.
+
+Si un encart vous demandait d'activer la communauté, cliquez sur “**Actualiser**” : il disparaît une fois la communauté activée.

@@ -1,50 +1,58 @@
 ---
-title: Using a Prefix
-description: "Enable RaidProtect's prefix commands alongside Slash commands, and customize the prefix used on your Discord server."
+title: Message Commands
+description: "Enable RaidProtect's message commands alongside Slash commands, choose their prefix and apply Discord's permissions to them."
 ---
 
-import { PrefixSettingsMockup } from '@site/src/components/DiscordMessage/mockups/settings-menus';
+import { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
 
 ## Prefix disabled (default) {#disabled}
 
-By default, RaidProtect only uses Slash commands (`/`) to interact with the bot. This ensures intuitive and consistent usage with Discord standards.
+By default, RaidProtect only uses Slash commands (`/`). This ensures intuitive and consistent usage with Discord standards.
 
-## Prefix enabled (optional) {#activated}
+## Message commands (optional) {#activated}
 
-If you prefer to use certain commands with a custom prefix, you can enable this option. The default prefix when enabled is `?`, but it can be changed to suit your needs. Once enabled, the following commands can be used with the configured prefix:
-- [`?raidmode`](../features/raid-mode.md)
-- [`?ban`](../features/moderation.mdx#ban)
-- [`?tempban`](../features/moderation.mdx#tempban)
-- [`?unban`](../features/moderation.mdx#unban)
+If you prefer to type certain commands in a message, choose a prefix, for example `?`. These commands then become usable with it:
+
+- [`?raidmode`](../features/raid-mode.md) and [`?joinlock`](../features/join-lock.mdx)
+- [`?ban`](../features/moderation.mdx#ban), [`?tempban`](../features/moderation.mdx#tempban), [`?softban`](../features/moderation.mdx#softban) and [`?unban`](../features/moderation.mdx#unban)
 - [`?kick`](../features/moderation.mdx#kick)
-- [`?mute` | `?timeout`](../features/moderation.mdx#timeout)
-- [`?unmute` | `?untimeout`](../features/moderation.mdx#untimeout)
-- [`?jail`](../features/moderation.mdx#jail)
-- [`?tempjail`](../features/moderation.mdx#tempjail)
-- [`?unjail`](../features/moderation.mdx#unjail)
+- [`?mute` | `?timeout` | `?tempmute`](../features/moderation.mdx#timeout) and [`?unmute` | `?untimeout` | `?untempmute`](../features/moderation.mdx#untimeout)
+- [`?jail`](../features/moderation.mdx#jail), [`?tempjail`](../features/moderation.mdx#tempjail) and [`?unjail`](../features/moderation.mdx#unjail)
 - [`?warn`](../features/moderation.mdx#warn)
-- [`?slowmode`](../features/moderation.mdx#slowmode)
-- [`?lock`](../features/channel-lock.md#lock)
-- [`?unlock`](../features/channel-lock.md#unlock)
-- [`?userinfo` | `?ui`](../features/utilities#userinfo)
-- [`?clear`](../features/moderation#clear)
+- [`?slowmode` | `?slow`](../features/moderation.mdx#slowmode)
+- [`?lock`](../features/channel-lock.md#lock) and [`?unlock`](../features/channel-lock.md#unlock)
+- [`?clear` | `?clean`](../features/moderation.mdx#clear)
+- [`?nick` | `?nickname` | `?rename` | `?setnick`](../features/moderation.mdx#nick)
+- [`?userinfo` | `?ui`](../features/utilities.mdx#userinfo), [`?serverinfo` | `?ginfo`](../features/utilities.mdx#serverinfo) and [`?inviteinfo` | `?ii`](../features/utilities.mdx#inviteinfo)
 
-## How to enable or disable the prefix {#config}
+## 💬 Choose the prefix {#config}
 
-1. Open the settings menu by typing [`/settings`](../setup.md#settings).
-2. Navigate to the "**Prefix**" command option.
-3. Enable or disable the prefix according to your preferences.
-If enabled, customize the prefix by entering the desired character or string.
+1. Run the [`/settings` command](../setup.md#settings).
+2. In the "**General**" tab, click "**Edit**" next to "**Message commands**".
+3. Choose a prefix from the list (`?`, `!`, `>` or `$`), or enter your own in "**Custom prefix**" (three characters at most, takes priority over the list). Choose "**Disabled**" to turn off message commands.
+4. Check "**Delinvoke**" if you want RaidProtect to delete the message containing the command as soon as it has read it.
 
-<PrefixSettingsMockup />
+<SettingsModal name="prefix" />
 
 :::note
-Slash commands (`/`) remain available even if the prefix is enabled.
-It is recommended to avoid prefixes already used by other bots to prevent command conflicts.
+Slash commands (`/`) remain available even with a prefix.
+Avoid prefixes already used by other bots to prevent command conflicts.
 :::
 
 ## 🔒 Apply command permissions {#permissions}
 
-By default, prefix commands only account for each command's own Discord permissions. The rules you set in Discord (**Server Settings → Integrations → RaidProtect**, per role, member or channel) apply to slash commands only.
+RaidProtect command permissions are set in Discord: **Server Settings → Integrations → RaidProtect**. You can allow or forbid each command there per role, member or channel. Discord only applies them to slash commands.
 
-To apply them to prefix commands as well, enable the **Apply to prefix commands** option in the permissions panel of [`/settings`](../setup.md#settings). It is off by default.
+For them to also apply to message commands and to the sanctions offered by the "**Sanction User**" menu (right-click on a member):
+
+1. Run the [`/settings` command](../setup.md#settings).
+2. In the "**General**" tab, click "**Edit**" next to "**Permissions**".
+3. Check "**Apply integration permissions**".
+
+<SettingsModal name="permissions" />
+
+A member allowed to use `/ban` will then be able to ban from the "**Sanction User**" menu, and a member who is forbidden `/ban` will no longer be able to use `?ban`. The option is off by default.
+
+:::warning
+Discord's **Integrations** menu is only available on the PC and Web app, not on mobile.
+:::

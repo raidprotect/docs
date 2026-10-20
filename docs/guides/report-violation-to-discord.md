@@ -2,11 +2,11 @@
 title: Signaler une infraction à Discord
 description: "Vous avez croisé un utilisateur malintentionné sur Discord ? Apprenez à le signaler à Discord pour qu'il soit sanctionné à la source."
 ---
-Vous avez rencontré un utilisateur malintentionné sur Discord ? Signalez-le afin que ce dernier soit sanctionné.
+Vous avez rencontré un utilisateur malintentionné sur Discord ? Signalez-le afin que ce dernier soit sanctionné.
 
 Sur Discord, certains utilisateurs n'ont pas forcément de bonnes intentions. Si ces derniers ont un comportement particulièrement néfaste pour la communauté, il est recommandé de **le signaler à l'équipe Confiance & Sécurité de Discord**. Si l'infraction s'avère véridique, l'utilisateur risque des sanctions allant de l'avertissement à la suppression de compte. 😖 
 
-## 🧐 Quels types d'infractions signaler ? {#types-of-violations}
+## 🧐 Quels types d'infractions signaler ? {#types-of-violations}
 
 Bien évidemment, tous les types d'infractions ne sont pas passibles d'une suppression de compte. Les comportements punissables sont décrits dans **la [Charte Communautaire](https://discord.com/guidelines) de Discord** (ainsi que dans les [Conditions d'Utilisation](https://discord.com/terms), mais il s'agit plus d'un charabia juridique de de véritables consignes claires). La liste des types de rapports de la page de signalements est un très bon résumé pour ceux réticents à la lecture.
 
