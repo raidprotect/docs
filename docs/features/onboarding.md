@@ -77,7 +77,7 @@ Avec le [Premium](/premium), cliquez sur “**Couleur**” dans “**Contenu du 
 ### Afflux et raids {#welcome-raid}
 
 - **Regroupement :** quand beaucoup de membres arrivent en même temps, les arrivées sont regroupées pour ne pas inonder le salon.
-- **Silence pendant une vague :** tant que le [mode raid](./raid-mode.md) tenu par RaidProtect ou la [Fermeture des Jointures](./join-lock.mdx) est actif, aucun message de bienvenue n'est envoyé.
+- **Pause pendant un raid :** tant que le [mode raid](./raid-mode.md) de RaidProtect ou la [Fermeture des Jointures](./join-lock.mdx) est actif, aucun message de bienvenue n'est envoyé.
 
 ## 🏷️ Rôles automatiques {#autorole}
 
