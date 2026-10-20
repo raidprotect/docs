@@ -93,7 +93,7 @@ export function homePart(ctx: Ctx): Part {
       sep(),
       row(
         btn({ label: t("support", "Serveur Support"), style: 5, emoji: "iconSupportWhite", url: "https://discord.gg/raidprotect" }),
-        btn({ label: "Documentation", style: 5, emoji: "iconDocsWhite", url: "https://raidprotect.bot/docs/beta" }),
+        btn({ label: "Documentation", style: 5, emoji: "iconDocsWhite", url: "https://raidprotect.bot/docs" }),
         btn({ label: t("customize", "Personnaliser"), style: 1, emoji: "iconPremium", id: "customize" })
       ),
     ]),

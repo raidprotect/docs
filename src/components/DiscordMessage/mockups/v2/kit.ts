@@ -338,7 +338,7 @@ export interface ScreenOpts {
 }
 
 export const SUPPORT_URL = "https://discord.gg/raidprotect";
-export const docsUrl = (suffix: string) => `https://raidprotect.bot/docs/beta/${suffix}`;
+export const docsUrl = (suffix: string) => `https://raidprotect.bot/docs/${suffix}`;
 
 export function navRow(back: string | null, docs?: string | false, extra: Component[] = []) {
   return row(
