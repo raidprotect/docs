@@ -359,7 +359,7 @@ export default function PremiumPage(): React.ReactNode {
     const FEATURES: Feature[] = [
         {
             scene: 'authLimits',
-            title: translate({ id: 'premium.feature.authManager.title', message: 'Authentication Manager étendu' }),
+            title: translate({ id: 'premium.feature.authManager.title', message: 'Authentification Manager étendu' }),
             description: translate({ id: 'premium.feature.authManager.desc', message: 'Plus de rôles protégés, plus d\'utilisateurs autorisés et des sessions deux fois plus longues.' }),
             docsHref: '/docs/features/authentication-manager',
         },
@@ -438,7 +438,7 @@ export default function PremiumPage(): React.ReactNode {
         { type: 'category', label: translate({ id: 'premium.compare.cat.reports', message: 'Signalements' }) },
         { type: 'feature', label: translate({ id: 'premium.compare.row.trustedRole', message: 'Rôle de confiance (timeout préventif)' }), values: [no, yes, yes] },
 
-        { type: 'category', label: translate({ id: 'premium.compare.cat.authManager', message: 'Authentication Manager' }) },
+        { type: 'category', label: translate({ id: 'premium.compare.cat.authManager', message: 'Authentification Manager' }) },
         { type: 'feature', label: translate({ id: 'premium.compare.row.protectedRoles', message: 'Rôles protégés' }), values: ['3', '10', custom] },
         { type: 'feature', label: translate({ id: 'premium.compare.row.authorizedUsers', message: 'Utilisateurs autorisés' }), values: ['20', '50', custom] },
         { type: 'feature', label: translate({ id: 'premium.compare.row.sessionDuration', message: 'Durée de session' }), values: ['8 h', '24 h', custom] },
@@ -506,7 +506,7 @@ export default function PremiumPage(): React.ReactNode {
     const layoutTitle = translate({ id: 'premium.layout.title', message: 'Premium' })
     const layoutDescription = translate({
         id: 'premium.layout.description',
-        message: 'Découvrez RaidProtect Premium : personnalisation du bot, Authentication Manager étendu, sanctions HoneyPot avancées, accès aux fonctionnalités en bêta publique.',
+        message: 'Découvrez RaidProtect Premium : personnalisation du bot, Authentification Manager étendu, sanctions HoneyPot avancées, accès aux fonctionnalités en bêta publique.',
     })
 
     return (

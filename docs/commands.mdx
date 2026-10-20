@@ -10,11 +10,11 @@ Toutes les commandes RaidProtect, regroupées par catégorie. Cliquez sur le nom
 
 ## Légende des prototypes {#legend}
 
-- `(arg)` : argument **obligatoire**.
-- `[arg]` : argument **optionnel**.
-- `[--flag]` : flag booléen optionnel (slash : `flag: true`, message : `--flag`).
-- `[--flag=valeur]` : flag avec valeur optionnel.
-- `(@membre)` / `(#salon)` / `(@&rôle)` : préfixe indiquant le type attendu.
+- `(arg)` : argument **obligatoire**.
+- `[arg]` : argument **optionnel**.
+- `[--flag]` : flag booléen optionnel (slash : `flag: true`, message : `--flag`).
+- `[--flag=valeur]` : flag avec valeur optionnel.
+- `(@membre)` / `(#salon)` / `(@&rôle)` : préfixe indiquant le type attendu.
 
 ---
 
@@ -53,12 +53,12 @@ Toutes les commandes RaidProtect, regroupées par catégorie. Cliquez sur le nom
 
 | Commande | Prototype | Description |
 |---|---|---|
-| [`/clear`](./features/moderation.mdx#clear) | `/clear (nombre) [@utilisateur]` | Supprime de 2 à 100 messages dans un salon. |
-| [`/snipe`](./features/moderation.mdx#snipe) | `/snipe [@utilisateur] [--channel=#salon]` | Récupère le dernier message supprimé dans le salon ou d’un utilisateur (1 h, nécessite la mise en cache des messages). |
+| [`/clear`](./features/moderation.mdx#clear) | `/clear (nombre) [@utilisateur]` | Supprime de 2 à 100 messages dans un salon. |
+| [`/snipe`](./features/moderation.mdx#snipe) | `/snipe [@utilisateur] [--channel=#salon]` | Récupère le dernier message supprimé dans le salon ou d’un utilisateur (1 h, nécessite la mise en cache des messages). |
 | [`/modview`](./features/moderation.mdx#modview) | `/modview (@utilisateur)` | Ouvre une vue de modération centralisée d’un membre (sanctions, note, snipe). |
 | [`/note`](./features/moderation.mdx#note) | `/note (@utilisateur)` | Ajoute ou modifie la note de modération interne d’un membre. |
 | [`/nick`](./features/moderation.mdx#nick) | `/nick (@membre) [pseudo]` | Change le pseudo d’un membre sur le serveur (vide pour réinitialiser). |
-| [`/onduty`](./features/moderation.mdx#onduty) | `/onduty` | Ajoute ou retire le rôle « en service » du modérateur qui l’utilise. |
+| [`/onduty`](./features/moderation.mdx#onduty) | `/onduty` | Ajoute ou retire le rôle « en service » du modérateur qui l’utilise. |
 
 ### Verrouillage de salons
 
@@ -72,7 +72,7 @@ Toutes les commandes RaidProtect, regroupées par catégorie. Cliquez sur le nom
 
 | Commande | Prototype | Description |
 |---|---|---|
-| [`/sanctions search`](./features/sanctions.mdx#search) | `/sanctions search [@utilisateur] [@modérateur] [type] [date] [statut] [type-modérateur]` | Recherche dans l’historique avec des filtres (utilisateur, modérateur, type, date, statut…). |
+| [`/sanctions search`](./features/sanctions.mdx#search) | `/sanctions search [@utilisateur] [@modérateur] [type] [raison] [date] [statut] [type-modérateur]` | Recherche dans l’historique avec des filtres (utilisateur, modérateur, type, date, statut…). |
 | [`/sanctions info`](./features/sanctions.mdx#info) | `/sanctions info (id)` | Affiche les détails d’une sanction. |
 | [`/sanctions edit`](./features/sanctions.mdx#edit) | `/sanctions edit (id) [nouvelle_raison] [nouvelle_durée]` | Modifie la raison ou la durée d’une sanction existante. |
 | [`/sanctions delete`](./features/sanctions.mdx#delete) | `/sanctions delete (id) [raison]` | Supprime une sanction de l’historique. |
@@ -134,28 +134,28 @@ Toutes les commandes RaidProtect, regroupées par catégorie. Cliquez sur le nom
 
 ## Menus contextuels {#context-menus}
 
-Certaines actions s’ouvrent d’un clic droit, dans le menu **Applications** :
+Certaines actions s’ouvrent d’un clic droit, dans le menu **Applications** :
 
-- Sur un membre : **Ouvrir Modview** ([vue de modération](./features/moderation.mdx#modview)), **Sanctionner** ([sanction en une fenêtre](./features/moderation.mdx#context-menu)), **Discord Sanctions** ([sanctions Discord](./features/utilities.mdx#discord-sanctions)) et **Signaler l’utilisateur** ([signalement](./features/reports.md)).
-- Sur un message : **Signaler ce message** ([signalement](./features/reports.md)).
+- Sur un membre : **Ouvrir Modview** ([vue de modération](./features/moderation.mdx#modview)), **Sanctionner** ([sanction en une fenêtre](./features/moderation.mdx#context-menu)), **Discord Sanctions** ([sanctions Discord](./features/utilities.mdx#discord-sanctions)) et **Signaler l’utilisateur** ([signalement](./features/reports.md)).
+- Sur un message : **Signaler ce message** ([signalement](./features/reports.md)).
 
 ---
 
 ## ⚙️ Deux façons d’utiliser une commande {#usage}
 
-Les commandes de modération courantes existent en deux formats : en slash, et en message avec un préfixe. Les autres, comme `/sanctions`, `/snipe` ou `/audit`, ne s’utilisent qu’en slash. La [liste des commandes par messages](./guides/prefix.md#activated) indique celles qui acceptent un préfixe.
+Les commandes de modération courantes existent en deux formats : en slash, et en message avec un préfixe. Les autres, comme `/sanctions`, `/snipe` ou `/audit`, ne s’utilisent qu’en slash. La [liste des commandes par messages](./guides/prefix.md#activated) indique celles qui acceptent un préfixe.
 
-### Slash commands : la plus simple {#slash}
+### Slash commands : la plus simple {#slash}
 
-Tapez `/` dans un salon, choisissez la commande, et **Discord vous propose chaque paramètre dans une interface dédiée** (sélecteur d’utilisateur, sélecteur de salon, autocomplete sur les durées, etc.). C’est la façon recommandée par défaut : vous n’avez rien à mémoriser.
+Tapez `/` dans un salon, choisissez la commande, et **Discord vous propose chaque paramètre dans une interface dédiée** (sélecteur d’utilisateur, sélecteur de salon, autocomplete sur les durées, etc.). C’est la façon recommandée par défaut : vous n’avez rien à mémoriser.
 
 ```
 /ban @membre raison: spam de scam
 ```
 
-### Message commands : la plus complexe {#prefix}
+### Message commands : la plus complexe {#prefix}
 
-Une fois les [commandes par messages activées dans `/settings`](./guides/prefix.md), vous pouvez aussi écrire les commandes en message classique (`?ban …`, `?kick …`, etc.). Pas d’interface graphique : il faut **connaître la syntaxe** (arguments positionnels, flags nommés, argument libre en fin de ligne). En contrepartie, c’est plus rapide au clavier pour les modérateurs qui maîtrisent les commandes.
+Une fois les [commandes par messages activées dans `/settings`](./guides/prefix.md), vous pouvez aussi écrire les commandes en message classique (`?ban …`, `?kick …`, etc.). Pas d’interface graphique : il faut **connaître la syntaxe** (arguments positionnels, flags nommés, argument libre en fin de ligne). En contrepartie, c’est plus rapide au clavier pour les modérateurs qui maîtrisent les commandes.
 
 #### Arguments positionnels
 
@@ -170,15 +170,15 @@ Donnés dans l’ordre du prototype, sans nom. Ce sont les arguments principaux 
 
 Pour les options secondaires. Les flags peuvent être placés **n’importe où** dans la commande, dans n’importe quel ordre.
 
-- `--silent` (booléen) : active simplement l’option.
-- `--delete-messages=7d` : passe une valeur à l’option.
+- `--silent` (booléen) : active simplement l’option.
+- `--delete-messages=7d` : passe une valeur à l’option.
 
 ```
 ?ban @membre --delete-messages=7d --silent raison du ban
 ?tempban @membre 1d --silent il a recommencé
 ```
 
-#### Argument « rest » (texte libre)
+#### Argument « rest » (texte libre)
 
 Le dernier argument de certaines commandes (typiquement `[raison]`) capture **tout ce que vous écrivez après**, espaces compris, sans avoir à mettre de guillemets.
 

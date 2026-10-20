@@ -199,14 +199,14 @@ export default function CryptoCommunity(): ReactNode {
         title: (
           <Translate
             id="communities.crypto.feature.am.title"
-            description="Crypto feature Authentication Manager title">
+            description="Crypto feature Authentification Manager title">
             Rôles sensibles verrouillés
           </Translate>
         ),
         description: (
           <Translate
             id="communities.crypto.feature.am.description"
-            description="Crypto feature Authentication Manager description">
+            description="Crypto feature Authentification Manager description">
             Protégez vos rôles admin et modo par passkey, code PIN ou OTP : même
             un compte piraté ne peut pas prendre le contrôle de votre serveur.
           </Translate>
@@ -214,7 +214,7 @@ export default function CryptoCommunity(): ReactNode {
         cta: (
           <Translate
             id="communities.crypto.feature.am.cta"
-            description="Crypto feature Authentication Manager CTA">
+            description="Crypto feature Authentification Manager CTA">
             Sécuriser mes rôles
           </Translate>
         ),

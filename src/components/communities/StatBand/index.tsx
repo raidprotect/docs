@@ -20,6 +20,12 @@ const BCP47: Record<string, string> = {
   de: 'de-DE',
   es: 'es-ES',
   pt: 'pt-PT',
+  it: 'it-IT',
+  tr: 'tr-TR',
+  vi: 'vi-VN',
+  ja: 'ja-JP',
+  'zh-CN': 'zh-CN',
+  'zh-TW': 'zh-TW',
 };
 
 const COUNT_MS = 1600;

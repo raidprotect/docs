@@ -540,7 +540,7 @@ export function moderationPart({ s, flip }: Ctx): Part {
         docBlock(
           t(
             "alts.evasionDoc",
-            "Ce que reçoit un compte lié pris en mode piège : il arrive ou écrit pendant la sanction de son groupe.\n\n**Reste de la sanction** : il partage la sanction du groupe jusqu'à sa fin, sans sanction à son nom.\n**Une sanction** : elle est posée à son nom, avec sa propre durée, et ne se lève pas avec le groupe."
+            "Ce que reçoit un compte lié pris en mode piège : il arrive ou écrit pendant la sanction de son groupe.\n\n**Reste de la sanction** : il partage la sanction du groupe jusqu'à sa fin, sans sanction à son nom.\n**Une sanction** : elle est posée à son nom, avec sa propre durée, et vaut pour tout le groupe comme une autre : la lever sur n'importe quel compte la lève pour tous."
           )
         ),
         selectField(

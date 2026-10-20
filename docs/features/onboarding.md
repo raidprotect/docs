@@ -5,15 +5,15 @@ description: "L'accueil de RaidProtect souhaite la bienvenue aux nouveaux membre
 
 import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
 
-L'**accueil** de RaidProtect s'occupe des nouveaux membres de votre serveur Discord dès leur arrivée : un **message de bienvenue** avec une carte à leur nom, des **rôles automatiques**, et un **âge minimum du compte** qui tient à distance les comptes créés pour l'occasion, souvent utilisés lors des [raids](/learn/discord-raid). Ces trois réglages se trouvent dans l'onglet “**Arrivées**” de `/settings`, à côté du [captcha](./captcha.md) et de l'[Auto RaidMode](./raid-mode.md).
+L'**accueil** de RaidProtect s'occupe des nouveaux membres de votre serveur Discord dès leur arrivée : un **message de bienvenue** avec une carte à leur nom, des **rôles automatiques**, et un **âge minimum du compte** qui tient à distance les comptes créés pour l'occasion, souvent utilisés lors des [raids](/learn/discord-raid). Ces trois réglages se trouvent dans l'onglet “**Arrivées**” de `/settings`, à côté du [captcha](./captcha.md) et de l'[Auto RaidMode](./raid-mode.md).
 
-## ❓ Comment ça marche ? {#working}
+## ❓ Comment ça marche ? {#working}
 
 Quand un utilisateur rejoint votre serveur, le [mode raid](./raid-mode.md#action), l'[âge minimum du compte](#minage) puis le [captcha](./captcha.md) s'appliquent avant son admission. Une fois admis, il reçoit ses [rôles automatiques](#autorole) et son [message de bienvenue](#welcome-message).
 
 ## 👋 Message de bienvenue {#welcome-message}
 
-Le message de bienvenue est envoyé dans le salon de votre choix quand un membre est admis sur le serveur. Il contient votre texte et une **carte de bienvenue** générée pour chaque membre : son avatar, « Bienvenue sur » suivi du nom du serveur, et son numéro de membre.
+Le message de bienvenue est envoyé dans le salon de votre choix quand un membre est admis sur le serveur. Il contient votre texte et une **carte de bienvenue** générée pour chaque membre : son avatar, « Bienvenue sur » suivi du nom du serveur, et son numéro de membre.
 
 <Settings start="welcome" />
 
@@ -36,11 +36,11 @@ Le salon de bienvenue ne peut pas être celui du captcha, du jail, du HoneyPot o
 2. Ouvrez l'onglet “**Arrivées**”.
 3. Cliquez sur “**Configurer**” à côté de “**Message de bienvenue**”.
 4. Dans “**Contenu du message**”, cliquez sur “**Texte**”.
-5. Écrivez votre message (1 200 caractères maximum), puis validez. Laissez le champ vide pour revenir au message par défaut.
+5. Écrivez votre message (1 200 caractères maximum), puis validez. Laissez le champ vide pour revenir au message par défaut.
 
 <SettingsModal name="welcomeText" />
 
-Le texte par défaut est « Bienvenue `{user.mention}` sur **`{server.name}`** ! 🎉 », dans la langue du serveur. Vous pouvez utiliser ces variables :
+Le texte par défaut est « Bienvenue `{user.mention}` sur **`{server.name}`** ! 🎉 », dans la langue du serveur. Vous pouvez utiliser ces variables :
 
 | Variable | Remplacée par |
 |---|---|
@@ -68,16 +68,16 @@ Vous pouvez ajouter sous le message des boutons qui mènent vers un salon du ser
 
 Pour modifier ou supprimer un bouton, sélectionnez-le dans la même liste.
 
-**Limites :** 2 boutons en version gratuite, 4 boutons en version [premium](/premium). Si le Premium expire, seuls les 2 premiers boutons restent affichés.
+**Limites :** 2 boutons en version gratuite, 4 boutons en version [premium](/premium). Si le Premium expire, seuls les 2 premiers boutons restent affichés.
 
 ### Couleur <span className="badge-premium">Premium</span> {#welcome-color}
 
-Avec le [Premium](/premium), cliquez sur “**Couleur**” dans “**Contenu du message**” pour choisir la couleur de la barre à gauche du message : une couleur RaidProtect de la liste, ou un code hexadécimal (par exemple `#D35F5F`). Sans choix, le message reprend la couleur du pseudo du bot si vous l'avez [personnalisé](/premium), sinon la couleur par défaut. La carte de bienvenue est teintée de la même couleur.
+Avec le [Premium](/premium), cliquez sur “**Couleur**” dans “**Contenu du message**” pour choisir la couleur de la barre à gauche du message : une couleur RaidProtect de la liste, ou un code hexadécimal (par exemple `#D35F5F`). Sans choix, le message reprend la couleur du pseudo du bot si vous l'avez [personnalisé](/premium), sinon la couleur par défaut. La carte de bienvenue est teintée de la même couleur.
 
 ### Afflux et raids {#welcome-raid}
 
-- **Regroupement :** quand beaucoup de membres arrivent en même temps, les arrivées sont regroupées pour ne pas inonder le salon.
-- **Silence pendant une vague :** tant que le [mode raid](./raid-mode.md) tenu par RaidProtect ou la [Fermeture des Jointures](./join-lock.mdx) est actif, aucun message de bienvenue n'est envoyé.
+- **Regroupement :** quand beaucoup de membres arrivent en même temps, les arrivées sont regroupées pour ne pas inonder le salon.
+- **Silence pendant une vague :** tant que le [mode raid](./raid-mode.md) tenu par RaidProtect ou la [Fermeture des Jointures](./join-lock.mdx) est actif, aucun message de bienvenue n'est envoyé.
 
 ## 🏷️ Rôles automatiques {#autorole}
 
@@ -92,10 +92,10 @@ Pour retirer tous les rôles automatiques, cliquez sur “**Réinitialiser**”.
 
 <Settings start="autorole" />
 
-**Limites :** 3 rôles en version gratuite, 10 rôles en version [premium](/premium).
+**Limites :** 3 rôles en version gratuite, 10 rôles en version [premium](/premium).
 
 :::warning
-Évitez les rôles qui portent des permissions : un rôle donné automatiquement ne devrait accorder aucun pouvoir. RaidProtect refuse les rôles gérés par une intégration, les rôles au-dessus du sien ou du vôtre, et ceux qui portent une permission de modération. Il vous alerte si un rôle choisi gagne des permissions plus tard.
+Évitez les rôles qui portent des permissions : un rôle donné automatiquement ne devrait accorder aucun pouvoir. RaidProtect refuse les rôles gérés par une intégration, les rôles au-dessus du sien ou du vôtre, et ceux qui portent une permission de modération : les rôles acceptables de votre sélection sont gardés, et un message à part explique pourquoi les autres sont refusés (si tous le sont, la configuration en place reste inchangée). Il vous alerte si un rôle choisi gagne des permissions plus tard.
 :::
 :::info
 Si votre serveur utilise un autre bot pour son rôle automatique, il risque de donner le rôle avant le captcha. Remplacez-le par les rôles automatiques de RaidProtect.
@@ -108,7 +108,7 @@ Pour renforcer la sécurité, vous pouvez exiger un âge minimum pour les compte
 1. Faites la [commande `/settings`](../setup.md#settings).
 2. Ouvrez l'onglet “**Arrivées**”.
 3. Cliquez sur “**Configurer**” à côté de “**Âge minimum du compte**”.
-4. Dans “**Âge minimum du compte**”, choisissez 2 heures, 12 heures, 1 jour ou 2 jours, ou une “**Valeur personnalisée**” (par exemple `0a 3j 1h`, 10 ans maximum).
+4. Dans “**Âge minimum du compte**”, choisissez 2 heures, 12 heures, 1 jour ou 2 jours, ou une “**Valeur personnalisée**” (par exemple `0a 3j 1h`, 10 ans maximum).
 5. Dans “**Action**”, choisissez ce qui arrive aux comptes trop récents.
 
 Pour désactiver le filtre, cliquez sur “**Réinitialiser**”. RaidProtect a besoin de la permission `KICK_MEMBERS`.
@@ -126,38 +126,38 @@ Pour désactiver le filtre, cliquez sur “**Réinitialiser**”. RaidProtect a 
 Le compte reçoit un message privé avec la date à laquelle il aura accès au serveur. Les expulsions, mises au jail et bannissements sont notés dans le salon de logs.
 
 :::info
-- “**Jail jusqu'à l'âge requis**” demande un Rôle de Jail, configuré dans l'onglet “**Modération**” > “**Sanctions**”. Sans lui, RaidProtect vous propose de le configurer ou de vous replier sur “**Bannir jusqu'à l'âge requis**” : le compte sort du serveur et son bannissement est levé automatiquement à la bonne date.
+- “**Jail jusqu'à l'âge requis**” demande un Rôle de Jail, configuré dans l'onglet “**Modération**” > “**Sanctions**”. Sans lui, RaidProtect vous propose de le configurer ou de vous replier sur “**Bannir jusqu'à l'âge requis**” : le compte sort du serveur et son bannissement est levé automatiquement à la bonne date.
 - “**Retenir à l'entrée**” demande un captcha actif en mode **Panneau (Interactif)**.
 :::
 
 ### 🎫 Bypass de l'âge minimum {#bypass-minage}
 
-Utilisez la commande : ```/bypass minage [utilisateur]```
+Utilisez la commande : ```/bypass minage [utilisateur]```
 
-Remplacez `[utilisateur]` par l'[identifiant](../guides/id.mdx) souhaité, ce dernier disposera de 10 minutes pour rejoindre le serveur sans être bloqué par l'âge requis. Vous pouvez aussi utiliser la commande sans spécifier d'utilisateur pour connaître la liste actuelle des utilisateurs bypass.
+Remplacez `[utilisateur]` par l'[identifiant](../guides/id.mdx) souhaité, ce dernier disposera de 10 minutes pour rejoindre le serveur sans être bloqué par l'âge requis. Vous pouvez aussi utiliser la commande sans spécifier d'utilisateur pour connaître la liste actuelle des utilisateurs bypass.
 
 ## Questions fréquentes {#faq}
 
-### Quand le message de bienvenue est-il envoyé ?
+### Quand le message de bienvenue est-il envoyé ?
 
-Quand le membre est admis : dès son arrivée si le captcha ne s'applique pas, sinon après la réussite du captcha. Il n'est pas envoyé pendant un raid ou une Fermeture des Jointures.
+Quand le membre est admis : dès son arrivée si le captcha ne s'applique pas, sinon après la réussite du captcha. Il n'est pas envoyé pendant un raid ou une Fermeture des Jointures.
 
-### Peut-on retirer la carte de bienvenue ?
+### Peut-on retirer la carte de bienvenue ?
 
 Non, la carte de bienvenue est jointe à chaque message de bienvenue. Avec le Premium, vous pouvez changer sa couleur.
 
-### Combien de rôles automatiques peut-on donner ?
+### Combien de rôles automatiques peut-on donner ?
 
-3 rôles en version gratuite et 10 avec le Premium. Les rôles qui portent une permission de modération sont refusés.
+3 rôles en version gratuite et 10 avec le Premium. Les rôles qui portent une permission de modération sont refusés.
 
-### Les rôles automatiques sont-ils donnés avant le captcha ?
+### Les rôles automatiques sont-ils donnés avant le captcha ?
 
 Non. Quand le captcha s'applique au membre, ses rôles automatiques lui sont donnés après la réussite du captcha.
 
-### Quel âge minimum choisir ?
+### Quel âge minimum choisir ?
 
-Une valeur de quelques heures à 1 jour suffit à écarter la plupart des comptes créés pour un raid, sans gêner les vrais membres. La [commande `/setup`](../setup.md) pose 6 heures par défaut.
+Une valeur de quelques heures à 1 jour suffit à écarter la plupart des comptes créés pour un raid, sans gêner les vrais membres. La [commande `/setup`](../setup.md) pose 6 heures par défaut.
 
-### Un compte trop récent est-il banni ?
+### Un compte trop récent est-il banni ?
 
-Non, pas par défaut : il est expulsé à chaque tentative. Vous pouvez aussi le mettre au jail jusqu'à l'âge requis ou le retenir derrière le captcha. Le bannissement temporaire n'est qu'un repli quand le jail n'est pas configuré.
+Non, pas par défaut : il est expulsé à chaque tentative. Vous pouvez aussi le mettre au jail jusqu'à l'âge requis ou le retenir derrière le captcha. Le bannissement temporaire n'est qu'un repli quand le jail n'est pas configuré.

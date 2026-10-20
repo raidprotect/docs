@@ -204,7 +204,7 @@ function scriptTag(components) {
 module.exports = function injectComponentEmbeds({siteDir, outDir, base, locale, marketing}) {
   const t = T[locale] || T.fr;
   const posts = readBlogPosts(siteDir);
-  const LOCALES = ['en', 'de', 'es', 'pt'];
+  const LOCALES = ['en', 'de', 'es', 'pt', 'it', 'tr', 'vi', 'ja', 'zh-CN', 'zh-TW'];
 
   const read = (rel) => {
     const file = path.join(outDir, rel);

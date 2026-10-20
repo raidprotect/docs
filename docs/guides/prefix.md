@@ -11,7 +11,7 @@ Par défaut, RaidProtect utilise uniquement les commandes Slash (`/`). Cela gara
 
 ## Commandes par messages (optionnel) {#activated}
 
-Si vous préférez taper certaines commandes dans un message, choisissez un préfixe, par exemple `?`. Ces commandes deviennent alors utilisables avec lui :
+Si vous préférez taper certaines commandes dans un message, choisissez un préfixe, par exemple `?`. Ces commandes deviennent alors utilisables avec lui :
 
 - [`?raidmode`](../features/raid-mode.md) et [`?joinlock`](../features/join-lock.mdx)
 - [`?ban`](../features/moderation.mdx#ban), [`?tempban`](../features/moderation.mdx#tempban), [`?softban`](../features/moderation.mdx#softban) et [`?unban`](../features/moderation.mdx#unban)
@@ -41,9 +41,9 @@ Les commandes Slash (`/`) restent disponibles même avec un préfixe.
 
 ## 🔒 Appliquer les permissions de commandes {#permissions}
 
-Les permissions des commandes RaidProtect se règlent dans Discord : **Paramètres du serveur → Intégrations → RaidProtect**. Vous pouvez y autoriser ou interdire chaque commande par rôle, membre ou salon. Discord ne les applique qu'aux commandes Slash.
+Les permissions des commandes RaidProtect se règlent dans Discord : **Paramètres du serveur → Intégrations → RaidProtect**. Vous pouvez y autoriser ou interdire chaque commande par rôle, membre ou salon. Discord ne les applique qu'aux commandes Slash.
 
-Pour qu'elles s'appliquent aussi aux commandes par messages et aux sanctions proposées par le menu “**Sanctionner**” (clic droit sur un membre) :
+Pour qu'elles s'appliquent aussi aux commandes par messages et aux sanctions proposées par le menu “**Sanctionner**” (clic droit sur un membre) :
 
 1. Faites la [commande `/settings`](../setup.md#settings).
 2. Dans l'onglet “**Général**”, cliquez sur “**Modifier**” à côté de “**Permissions**”.

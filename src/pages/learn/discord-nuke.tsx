@@ -294,7 +294,7 @@ export default function DiscordNukePage(): ReactNode {
                     link: (
                       <Link to="/docs/features/authentication-manager">
                         <Translate id="learn.discord-nuke.s4.i4b.link" description="link label">
-                          Authentication Manager
+                          Authentification Manager
                         </Translate>
                       </Link>
                     ),
@@ -414,7 +414,7 @@ export default function DiscordNukePage(): ReactNode {
       {
         label: (
           <Translate id="learn.discord-nuke.rel4b" description="related">
-            L'Authentication Manager
+            L'Authentification Manager
           </Translate>
         ),
         to: '/docs/features/authentication-manager',

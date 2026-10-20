@@ -17,7 +17,12 @@ const crypto = require('crypto');
 const injectComponentEmbeds = require('./component-embed');
 
 const TEMPLATE_VERSION = '3'; // bump pour invalider le cache
-const LOCALES = ['en', 'de', 'es', 'pt'];
+const LOCALES = ['en', 'de', 'es', 'pt', 'it', 'tr', 'vi', 'ja', 'zh-CN', 'zh-TW'];
+
+// Polices du gabarit (Nohemi, Objectivity) : latin étendu seulement. Le vietnamien (diacritiques
+// empilés) et le CJK n'y sont pas couverts, les cartes de partage de ces langues retombent sur
+// l'image par défaut du site plutôt que d'afficher des carrés.
+const UNSUPPORTED_GLYPH_LOCALES = ['vi', 'ja', 'zh-CN', 'zh-TW'];
 
 const FEATURE_ICON = {
   'raid-mode': 'iconAntiraidWhite.svg',
@@ -40,6 +45,8 @@ const CATEGORY = {
   de: {docs: 'Dokumentation', learn: 'Glossar', blog: 'Blog'},
   es: {docs: 'Documentación', learn: 'Glosario', blog: 'Blog'},
   pt: {docs: 'Documentação', learn: 'Glossário', blog: 'Blog'},
+  it: {docs: 'Documentazione', learn: 'Glossario', blog: 'Blog'},
+  tr: {docs: 'Dokümantasyon', learn: 'Sözlük', blog: 'Blog'},
 };
 
 const TAGLINE = {
@@ -48,6 +55,8 @@ const TAGLINE = {
   de: 'Discord-Bot für Moderation und Schutz',
   es: 'Bot de moderación y protección para Discord',
   pt: 'Bot de moderação e proteção para Discord',
+  it: 'Bot Discord di moderazione e protezione',
+  tr: 'Discord moderasyon ve koruma botu',
 };
 
 // Chiffre clé de l'accueil (aligné sur le count par défaut du site).
@@ -57,6 +66,8 @@ const STAT = {
   de: '400.000+ Server · 55M+ geschützte Mitglieder',
   es: '400 000+ servidores · 55M+ miembros protegidos',
   pt: '400.000+ servidores · 55M+ membros protegidos',
+  it: '400.000+ server · 55M+ membri protetti',
+  tr: '400.000+ sunucu · 55M+ korunan üye',
 };
 
 // Pages marketing (chemins relatifs à l'outDir de la locale).
@@ -77,6 +88,8 @@ const HIGHLIGHTS = {
       de: 'Holen Sie mehr aus RaidProtect',
       es: 'Lleva RaidProtect más lejos',
       pt: 'Leve o RaidProtect além',
+      it: 'Porta RaidProtect più in là',
+      tr: 'RaidProtect\'i bir adım öteye taşıyın',
     },
     points: {
       fr: ['Sanctions à votre vocabulaire', 'Anti-raid en mode expulsion', 'Limites étendues sur vos modules', 'Accès anticipé aux nouveautés'],
@@ -84,6 +97,8 @@ const HIGHLIGHTS = {
       de: ['Sanktionen in Ihren Worten', 'Anti-Raid im Kick-Modus', 'Höhere Limits für Ihre Module', 'Früher Zugang zu Neuheiten'],
       es: ['Sanciones a tu medida', 'Anti-raid en modo expulsión', 'Límites ampliados en tus módulos', 'Acceso anticipado a novedades'],
       pt: ['Sanções no seu vocabulário', 'Anti-raid em modo expulsão', 'Limites ampliados nos seus módulos', 'Acesso antecipado às novidades'],
+      it: ['Sanzioni con il tuo lessico', 'Anti-raid in modalità espulsione', 'Limiti estesi sui tuoi moduli', 'Accesso anticipato alle novità'],
+      tr: ['Sizin diliniz ile yaptırımlar', 'Atma modlu anti-raid', 'Modüllerinizde genişletilmiş limitler', 'Yeniliklere erken erişim'],
     },
   },
   'business.html': {
@@ -94,6 +109,8 @@ const HIGHLIGHTS = {
       de: 'RaidProtect für Unternehmen',
       es: 'RaidProtect para empresas',
       pt: 'RaidProtect para empresas',
+      it: 'RaidProtect per le aziende',
+      tr: 'Şirketler için RaidProtect',
     },
     points: {
       fr: ['Modérateurs professionnels', 'Instance dédiée et isolée', 'Conformité RGPD assumée', 'Audit et suivi humain'],
@@ -101,6 +118,8 @@ const HIGHLIGHTS = {
       de: ['Professionelle Moderatoren', 'Dedizierte, isolierte Instanz', 'DSGVO-konform', 'Experten-Audit & menschliche Betreuung'],
       es: ['Moderadores profesionales', 'Instancia dedicada y aislada', 'Cumplimiento del RGPD', 'Auditoría y seguimiento humano'],
       pt: ['Moderadores profissionais', 'Instância dedicada e isolada', 'Conformidade com o RGPD', 'Auditoria e acompanhamento humano'],
+      it: ['Moderatori professionisti', 'Istanza dedicata e isolata', 'Conforme al GDPR', 'Audit e supporto umano'],
+      tr: ['Profesyonel moderatörler', 'Ayrılmış ve yalıtılmış örnek', 'GDPR uyumlu', 'Denetim ve insan desteği'],
     },
   },
 };
@@ -147,6 +166,7 @@ module.exports = function socialPreviewPlugin(context) {
   return {
     name: 'social-preview',
     async postBuild({siteConfig, outDir}) {
+      if (UNSUPPORTED_GLYPH_LOCALES.includes(currentLocale)) return;
       const satori = (await import('satori')).default;
       const {Resvg} = require('@resvg/resvg-js');
       const sharp = require('sharp');

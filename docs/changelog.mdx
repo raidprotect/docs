@@ -9,59 +9,59 @@ Découvrez la liste détaillée des modifications qui ont été apportées à Ra
 ## 3.7.0 Identity Update <span className="badge-experiment">Expérimentation</span> {#3-7-0}
 
 :::info Expérimentation
-L'Identity Update est en expérimentation : en attendant sa sortie en 3.7.0, elle est en bêta publique pour les serveurs [Premium](/premium). Son contenu peut encore évoluer.
+L'Identity Update est en expérimentation : en attendant sa sortie en 3.7.0, elle est en bêta publique pour les serveurs [Premium](/premium). Son contenu peut encore évoluer.
 :::
 
-- Nouvelle commande [`/alt`](./features/alt-accounts.md#alt) et [doubles comptes](./features/alt-accounts.md) : liez les comptes d'une même personne, choisissez son compte principal, et ses sanctions (bannissement, expulsion, mute, jail, timeout, softban) s'étendent aux comptes liés. Lever la sanction de l'un la lève pour tous.
+- Nouvelle commande [`/alt`](./features/alt-accounts.md#alt) et [doubles comptes](./features/alt-accounts.md) : liez les comptes d'une même personne, choisissez son compte principal, et ses sanctions (bannissement, expulsion, mute, jail, timeout, softban) s'étendent aux comptes liés. Lever la sanction de l'un la lève pour tous.
 - [Sanctions des comptes liés](./features/alt-accounts.md#modes) réglables par type, avec un mode **Piège** et une [sanction de contournement](./features/alt-accounts.md#evasion) pour le compte lié qui arrive ou écrit pendant la sanction.
 - Les comptes liés absents du serveur sont sanctionnés à leur arrivée.
-- Nouveau réglage [Un seul compte par personne](./features/alt-accounts.md#single-account) : les comptes secondaires sont mis en quarantaine.
-- Le [captcha](./features/captcha.md#activity-alts) repère les doubles comptes : il lie lui-même les comptes sûrs d'être la même personne, et propose à votre équipe les liens probables.
+- Nouveau réglage [Un seul compte par personne](./features/alt-accounts.md#single-account) : les comptes secondaires sont mis en quarantaine.
+- Le [captcha](./features/captcha.md#activity-alts) repère les doubles comptes : il lie lui-même les comptes sûrs d'être la même personne, et propose à votre équipe les liens probables.
 - Les [sanctions des comptes liés](./features/alt-accounts.md#modes) sont réservées au **Premium**. Sans Premium, `/alt` lie et consulte les comptes sans limite.
 
 ## 3.6.0 Shield Update <span className="badge-experiment">Expérimentation</span> {#3-6-0}
 
 :::info Expérimentation
-La Shield Update est en expérimentation : en attendant sa sortie en 3.6.0, elle est en bêta publique pour les serveurs [Premium](/premium). Son contenu peut encore évoluer.
+La Shield Update est en expérimentation : en attendant sa sortie en 3.6.0, elle est en bêta publique pour les serveurs [Premium](/premium). Son contenu peut encore évoluer.
 :::
 
-- Nouveau **[DISCON](./features/discon.md)** : un niveau de danger du serveur en cinq crans, réglable d'un clic avec la commande `/discon` ou depuis un [panneau pour l'équipe](./features/discon.md#panel). Chaque niveau durcit automatiquement le serveur (vérification, captcha, fermeture des MP, mode raid, verrouillage), et un [salon vocal](./features/discon.md#voice) affiche le niveau en cours.
-- Nouveau [slowmode préventif](./features/slowmode.md) (**Premium**) : le mode lent des salons choisis s'ajuste tout seul pour tenir le débit de messages que vous fixez.
-- [HoneyPot](./features/honeypot.md) : nouveau [délai avant sanction](./features/honeypot.md#grace), qui laisse à un membre de bonne foi le temps de dire qu'il s'est trompé.
-- Nouveau [déclenchement Intelligent](./features/captcha.md#trigger) du captcha : en plus des raids, il vérifie les arrivants dont le compte semble suspect.
-- Nouveau filtre [Autres serveurs](./features/automod.md#servers) dans l'[Automod](./features/automod.md) : invitations, messages transférés, liens de salon et tags d'autres serveurs, en liste noire ou en liste blanche.
+- Nouveau **[DISCON](./features/discon.md)** : un niveau de danger du serveur en cinq crans, réglable d'un clic avec la commande `/discon` ou depuis un [panneau pour l'équipe](./features/discon.md#panel). Chaque niveau durcit automatiquement le serveur (vérification, captcha, fermeture des MP, mode raid, verrouillage), et un [salon vocal](./features/discon.md#voice) affiche le niveau en cours.
+- Nouveau [slowmode préventif](./features/slowmode.md) (**Premium**) : le mode lent des salons choisis s'ajuste tout seul pour tenir le débit de messages que vous fixez.
+- [HoneyPot](./features/honeypot.md) : nouveau [délai avant sanction](./features/honeypot.md#grace), qui laisse à un membre de bonne foi le temps de dire qu'il s'est trompé.
+- Nouveau [déclenchement Intelligent](./features/captcha.md#trigger) du captcha : en plus des raids, il vérifie les arrivants dont le compte semble suspect.
+- Nouveau filtre [Autres serveurs](./features/automod.md#servers) dans l'[Automod](./features/automod.md) : invitations, messages transférés, liens de salon et tags d'autres serveurs, en liste noire ou en liste blanche.
 - Nouvelle sanction **Quarantaine**, synchronisée avec la [quarantaine de Discord](./features/sanctions.mdx#discord-quarantine).
-- [ScamLens](./features/scam-images.md) : [catalogue d'images](./features/scam-images.md#catalog) (**Premium**) pour bloquer vos propres images d'arnaque.
+- [ScamLens](./features/scam-images.md) : [catalogue d'images](./features/scam-images.md#catalog) (**Premium**) pour bloquer vos propres images d'arnaque.
 - Chaque message bloqué par l'AutoMod de Discord crée un [avertissement](./features/sanctions.mdx) silencieux au nom de “Discord Automod”.
-- Nouvel [assistant d'installation](./setup.md#wizard) : un parcours guidé section par section, des protections proposées selon votre serveur et un aperçu de l'audit pour finir.
-- [Anti-spam](./features/anti-spam.mdx) V3, déjà en place pour tous depuis la 3.5.0 :
-  - Nouveau moteur de détection : doublons approchés, liens répétés, emojis et charabia, flood, et le spam réparti sur plusieurs salons.
+- Nouvel [assistant d'installation](./setup.md#wizard) : un parcours guidé section par section, des protections proposées selon votre serveur et un aperçu de l'audit pour finir.
+- [Anti-spam](./features/anti-spam.mdx) V3, déjà en place pour tous depuis la 3.5.0 :
+  - Nouveau moteur de détection : doublons approchés, liens répétés, emojis et charabia, flood, et le spam réparti sur plusieurs salons.
   - [Préréglages](./features/anti-spam.mdx#presets) et sanctions par famille, avec un [mode avancé](./features/anti-spam.mdx#advanced) pour régler chaque déclencheur et sa [durée](./features/anti-spam.mdx#duration).
 
 ## 3.5.0 Onboarding Update (19/10/2026) {#3-5-0}
 
 - Refonte de **[`/settings`](./setup.md#settings)** en tableau de bord à cinq onglets (Général, Arrivées, Protection, Modération, Utilitaires), avec des écrans et des fenêtres de saisie natives, et une pastille **Nouveau** sur ce qui vient d'arriver. Les écrans [Premium](/premium) restent consultables, le bot ne vous arrête qu'au moment de modifier un réglage réservé.
-- Arrivées :
+- Arrivées :
   - Nouveau [message de bienvenue](./features/onboarding.md#welcome-message) avec carte de bienvenue, variables et boutons, qui se tait pendant un raid.
   - Les [rôles automatiques](./features/onboarding.md#autorole) quittent le captcha et acceptent plusieurs rôles, donnés une fois la vérification passée.
-  - L'[âge minimum du compte](./features/onboarding.md#minage) propose [plusieurs actions](./features/onboarding.md#minage-action) : expulser, jail jusqu'à l'âge requis ou retenir à l'entrée derrière le captcha.
-  - L'[Auto RaidMode](./features/raid-mode.md#action) choisit son action pendant le raid : bloquer les invitations, expulser les arrivants (**Premium**), envoyer au captcha ou geler le captcha. Seul le blocage des invitations demande encore la communauté Discord.
+  - L'[âge minimum du compte](./features/onboarding.md#minage) propose [plusieurs actions](./features/onboarding.md#minage-action) : expulser, jail jusqu'à l'âge requis ou retenir à l'entrée derrière le captcha.
+  - L'[Auto RaidMode](./features/raid-mode.md#action) choisit son action pendant le raid : bloquer les invitations, expulser les arrivants (**Premium**), envoyer au captcha ou geler le captcha. Seul le blocage des invitations demande encore la communauté Discord.
   - Le [captcha](./features/captcha.md) gagne un [mode d'affichage](./features/captcha.md#display-mode) Panneau et un [déclenchement](./features/captcha.md#trigger) Automatique ou En permanence. Sa configuration signale les salons et les rôles qui permettent de contourner la vérification, avec un bouton pour les corriger.
-  - En mode Panneau, le captcha s'ouvre dans l'[Activity RaidProtect](./features/captcha.md#activity) : un puzzle plus dur pour les automates, aux couleurs de votre serveur, et une revue par votre équipe en cas de doute.
+  - En mode Panneau, le captcha s'ouvre dans l'[Activity RaidProtect](./features/captcha.md#activity) : un puzzle plus dur pour les automates, aux couleurs de votre serveur, et une revue par votre équipe en cas de doute.
   - Nouveau [mode test](./features/captcha.md#test-mode) du captcha, pour que votre équipe le refasse sans rien appliquer.
-- Protection :
+- Protection :
   - L'[Authentification Manager](./features/authentication-manager.mdx) est intégré à `/settings`, ses liens d'authentification sont traduits.
   - La [Fermeture des MP](./features/dm-lock.mdx) se règle dans une fenêtre de saisie.
-- Modération :
+- Modération :
   - Nouvelle commande [`/onduty`](./features/moderation.mdx#onduty) et rôle en service pour signaler les modérateurs disponibles.
   - Nouveau panneau [`/display staff`](./features/display.mdx#staff) pour informer votre équipe.
   - `/discord-sanctions` affiche des statistiques globales quand aucun utilisateur n'est précisé.
-- Utilitaires :
+- Utilitaires :
   - Nouvelle commande [`/inviteinfo`](./features/utilities.mdx#inviteinfo). `/userinfo` et `/inviteinfo` s'installent aussi sur votre compte, pour les utiliser partout.
   - Nouvelle commande [`/privacy`](./features/utilities.mdx#privacy) et réglage **Mise en cache des messages**, qui conditionne [`/snipe`](./guides/malfunctions.md#snipe).
   - [`/feedback`](./features/utilities.mdx#feedback) propose un diagnostic quand vous signalez un problème d'anti-spam.
-- Général :
-  - RaidProtect parle désormais [11 langues](./language.md) avec l'arrivée de l'italien, du turc, du vietnamien, du japonais et du chinois simplifié et traditionnel. Par défaut, il [suit la langue du serveur](./language.md#follow).
+- Général :
+  - RaidProtect parle désormais [11 langues](./language.md) avec l'arrivée de l'italien, du turc, du vietnamien, du japonais et du chinois simplifié et traditionnel. Par défaut, il [suit la langue du serveur](./language.md#follow).
   - Nouveau [fuseau horaire](./setup.md#timezone) du serveur, utilisé par les récaps de transparence.
   - [Commandes par messages](./guides/prefix.md) et [permissions](./guides/prefix.md#permissions) sont réglées séparément, et les permissions de Discord s'appliquent aussi au menu “Sanctionner”.
   - La [personnalisation du bot](./setup.md#customize) (**Premium**) passe dans `/settings`. À la fin du Premium, l'apparence du bot revient automatiquement à celle de RaidProtect.
@@ -69,46 +69,46 @@ La Shield Update est en expérimentation : en attendant sa sortie en 3.6.0, elle
 
 ## 3.4.0 Antispam Update (18/07/2026) {#3-4-0}
 
-- [Anti-spam](./features/anti-spam.mdx) V2 :
-  - **Spam multi-salons** : une sanction dédiée lorsque le spam s’étend sur plusieurs salons (Jail par défaut, Timeout minimum).
+- [Anti-spam](./features/anti-spam.mdx) V2 :
+  - **Spam multi-salons** : une sanction dédiée lorsque le spam s’étend sur plusieurs salons (Jail par défaut, Timeout minimum).
   - Nouveau [déclencheur](./features/anti-spam.mdx#triggers) **spam de pièces jointes** (désactivé par défaut).
   - [Simulation](./features/anti-spam.mdx#simulation) pour comprendre pourquoi un spam a été sanctionné ou non.
   - Les messages de spam sont désormais **supprimés quelle que soit la sanction** (ban, jail, mute, kick ou timeout).
-  - La **sanction anti-scam est configurable** depuis le [menu des sanctions de l’anti-spam](./features/anti-spam.mdx#triggers) et suit par défaut la [sanction du HoneyPot](./features/honeypot.md#sanction) ; les incidents anti-scam sont sanctionnés et loggés instantanément.
+  - La **sanction anti-scam est configurable** depuis le [menu des sanctions de l’anti-spam](./features/anti-spam.mdx#triggers) et suit par défaut la [sanction du HoneyPot](./features/honeypot.md#sanction) ; les incidents anti-scam sont sanctionnés et loggés instantanément.
   - Chaque déclencheur peut être désactivé individuellement avec la nouvelle option **Désactiver**, et les niveaux de sensibilité sont remplacés par un simple interrupteur.
   - Les sanctions **Mute** et **Jail** basculent sur un timeout plafonné lorsque le rôle correspondant n’est pas configuré.
   - Les selfbots envoyant des rich embeds sont détectés, et les arnaques bloquées par ScamLens sont comptées dans le compteur de comptes signalés du [HoneyPot](./features/honeypot.md).
-- Refonte complète du système de **[Signalements](./features/reports.md)** :
-  - Les signalements sont désormais regroupés en **incidents** : plusieurs signalements visant le même membre se replient dans un seul incident, avec un [mode de regroupement configurable](./features/reports.md#group).
-  - Les commandes de signalement ouvrent désormais une **modale de raison**, avec une liste « que signalez-vous » sur les signalements de profil (dont l’activité vocale et en MP).
-  - Chaque incident ouvre désormais un **thread** sous le signalement : carte de profil du membre signalé, en-têtes de raison par message, nom du modérateur résolvant et notes de rejet.
-  - Nouvelle [notification du signaleur](./features/reports.md#notify) : les signaleurs peuvent être notifiés en MP quand leur signalement est traité, avec un niveau de détail configurable (jusqu’au verdict accepté/rejeté).
-  - Nouveau [rôle de confiance](./features/reports.md#trusted-role) (**Premium**) : les membres de confiance peuvent appliquer un **timeout préventif de 24h** en signalant, et leurs signalements urgents re-mentionnent le rôle de modération.
-  - Nouvelle [protection contre les mauvais signaleurs](./features/reports.md#bad-reporters) : les faux signaleurs récidivistes peuvent être repérés, bloqués ou sanctionnés automatiquement (seuil, fenêtre et mode configurables).
+- Refonte complète du système de **[Signalements](./features/reports.md)** :
+  - Les signalements sont désormais regroupés en **incidents** : plusieurs signalements visant le même membre se replient dans un seul incident, avec un [mode de regroupement configurable](./features/reports.md#group).
+  - Les commandes de signalement ouvrent désormais une **modale de raison**, avec une liste « que signalez-vous » sur les signalements de profil (dont l’activité vocale et en MP).
+  - Chaque incident ouvre désormais un **thread** sous le signalement : carte de profil du membre signalé, en-têtes de raison par message, nom du modérateur résolvant et notes de rejet.
+  - Nouvelle [notification du signaleur](./features/reports.md#notify) : les signaleurs peuvent être notifiés en MP quand leur signalement est traité, avec un niveau de détail configurable (jusqu’au verdict accepté/rejeté).
+  - Nouveau [rôle de confiance](./features/reports.md#trusted-role) (**Premium**) : les membres de confiance peuvent appliquer un **timeout préventif de 24h** en signalant, et leurs signalements urgents re-mentionnent le rôle de modération.
+  - Nouvelle [protection contre les mauvais signaleurs](./features/reports.md#bad-reporters) : les faux signaleurs récidivistes peuvent être repérés, bloqués ou sanctionnés automatiquement (seuil, fenêtre et mode configurables).
   - Les incidents ouverts sont automatiquement clos lorsque le membre est sanctionné.
   - Les sanctions préventives sont réécrites quand un signalement est accepté, et annulées quand il est rejeté.
-- Nouveau système de **[Transparence](./features/transparency.md)** :
+- Nouveau système de **[Transparence](./features/transparency.md)** :
   - [Récaps périodiques](./features/transparency.md#recaps) de l’activité de modération du serveur, publiés automatiquement selon une planification configurable.
-  - Nouveau [modlog public](./features/transparency.md#modlog) : les sanctions peuvent être publiées dans un salon public, filtrées par type et par source, avec la création en un clic d’un salon #public-modlog en lecture seule.
+  - Nouveau [modlog public](./features/transparency.md#modlog) : les sanctions peuvent être publiées dans un salon public, filtrées par type et par source, avec la création en un clic d’un salon #public-modlog en lecture seule.
   - Nouvelle [commande `/transparency`](./features/transparency.md#command) pour afficher à la demande le récap de la dernière période écoulée.
-- Nouvelle [commande `/audit`](./features/audit.md) : un **audit de sécurité** complet du serveur avec un score global, des [vérifications détaillées](./features/audit.md#checks) (niveau de vérification, permissions, salons) et des [corrections en un clic](./features/audit.md#fix). Les rôles admin peuvent être intégrés à l’Authentication Manager directement depuis l’audit.
-- Nouveau [mode expulsion](./features/raid-mode.md#kick-mode) (**Premium**) pour le mode raid et la Fermeture des Jointures : les nouveaux arrivants sont expulsés avec un MP d’explication et un bouton d’invitation pour revenir, au lieu de la pause native des invitations. La nouvelle [commande `/bypass raid`](./features/raid-mode.md#bypass-raid) laisse entrer des utilisateurs spécifiques pendant qu’il est actif.
+- Nouvelle [commande `/audit`](./features/audit.md) : un **audit de sécurité** complet du serveur avec un score global, des [vérifications détaillées](./features/audit.md#checks) (niveau de vérification, permissions, salons) et des [corrections en un clic](./features/audit.md#fix). Les rôles admin peuvent être intégrés à l’Authentication Manager directement depuis l’audit.
+- Nouveau [mode expulsion](./features/raid-mode.md#kick-mode) (**Premium**) pour le mode raid et la Fermeture des Jointures : les nouveaux arrivants sont expulsés avec un MP d’explication et un bouton d’invitation pour revenir, au lieu de la pause native des invitations. La nouvelle [commande `/bypass raid`](./features/raid-mode.md#bypass-raid) laisse entrer des utilisateurs spécifiques pendant qu’il est actif.
 - Les [commandes par message](./guides/prefix.md#permissions) peuvent désormais suivre les **permissions de commandes Discord** (onglet Intégrations) via une nouvelle option de `/settings`.
 - RaidProtect répond désormais sous les **alertes de sécurité Discord** lorsqu’elles sont causées par la [Fermeture des MP](./features/dm-lock.mdx), en citant l’alerte et en expliquant où ajuster le paramètre.
 - Le log d’expulsion de l’[âge de compte minimum](./features/raid-mode.md#minage) affiche désormais le seuil requis sous forme de timestamp.
-- Paramètres et setup :
+- Paramètres et setup :
   - Le menu principal de `/settings` est réorganisé en lignes logiques.
   - Le message de setup lie désormais directement les commandes et propose un bouton pour changer le salon de logs.
   - Un bouton **désactiver le captcha** est proposé lorsque le salon du captcha a été supprimé.
 - Migration interne de la couche Discord vers des librairies partagées (`@fca.gg/discord`) pour accélérer les prochaines mises à jour.
-- Correction :
+- Correction :
   - Messages d’erreur plus clairs distinguant **timeout** et **mute**, et les cibles administrateur des blocages de hiérarchie de rôles.
   - Correction de la conversion automatique des timeouts de l’AutoMod Discord.
-  - Correction de `/serverinfo` : accès à l’URL personnalisée, règles et statistiques.
+  - Correction de `/serverinfo` : accès à l’URL personnalisée, règles et statistiques.
   - Correction de l’alias `/discord-sanctions` et de l’usage du préfixe des commandes par message.
   - Correction du Jail appliqué aux administrateurs avec le mode remplacement des rôles.
   - Durcissement de la validation des URL de webhook.
-  - Corrections diverses : logs de sanction, captcha, messages de la Fermeture des MP, notes de modération, détection du Premium.
+  - Corrections diverses : logs de sanction, captcha, messages de la Fermeture des MP, notes de modération, détection du Premium.
   - Corrections de traductions diverses.
 
 ## 3.3.3 (30/04/2026) {#3-3-3}
@@ -117,18 +117,18 @@ La Shield Update est en expérimentation : en attendant sa sortie en 3.6.0, elle
 - Nouvelle [commande `/note`](./features/moderation.mdx#note) pour ajouter ou modifier la note de modération d’un membre. <SuggestionLink id="545" />
 - Nouvelle [commande `/nick`](./features/moderation.mdx#nick) pour changer ou réinitialiser le pseudo d’un membre sur le serveur.
 - Personnalisation de l’**avatar**, de la **bannière** et du **style d’écriture du pseudo** de RaidProtect (**Premium**).
-- Nouveau module **[HoneyPot](./features/honeypot.md)** : un salon-piège qui sanctionne automatiquement les comptes piratés et les robots de spam, et qui alimente le catalogue ScamLens. <SuggestionLink id="560" />
+- Nouveau module **[HoneyPot](./features/honeypot.md)** : un salon-piège qui sanctionne automatiquement les comptes piratés et les robots de spam, et qui alimente le catalogue ScamLens. <SuggestionLink id="560" />
 - Nouveau parsing des commandes par messages.
 - Autocomplete dans les paramètres `duration` des slash commands.
-- Sanctions :
+- Sanctions :
   - Nouvelle [commande `/softban`](./features/moderation.mdx#softban) pour bannir puis débannir un membre afin de supprimer ses messages.
   - Nouvelle [option `silent`](./features/moderation.mdx) sur toutes les commandes de sanction pour ne pas notifier la cible en MP. <SuggestionLink id="545" />
   - Nouveau [paramètre `delete-messages`](./features/moderation.mdx#ban) sur les commandes `/ban` et `/tempban` pour supprimer l’historique des messages.
-  - Nouveau mode [Remplacer par le rôle jail](./features/sanctions.mdx#jail-roles) : la sanction Jail retire tous les rôles du membre le temps de l’emprisonnement et les restaure à sa libération <SuggestionLink id="552" />
+  - Nouveau mode [Remplacer par le rôle jail](./features/sanctions.mdx#jail-roles) : la sanction Jail retire tous les rôles du membre le temps de l’emprisonnement et les restaure à sa libération <SuggestionLink id="552" />
   - Possibilité de [désactiver complètement les sanctions](./features/sanctions.mdx#disable) sur le serveur.
   - Possibilité d’ajouter une [raison à `/sanctions delete`](./features/sanctions.mdx#delete).
   - Affichage de la **durée finale** en plus du timestamp dans les logs de sanction à durée.
-  - Amélioration du suivi de l’accusé de réception des MP de sanction : reçu, MP fermés, expiré, silent.
+  - Amélioration du suivi de l’accusé de réception des MP de sanction : reçu, MP fermés, expiré, silent.
   - Bouton avec une **invitation au serveur** dans les MP de notification après un kick, un softban ou un ban temporaire. <SuggestionLink id="570" />
 - Nouvelle [commande `/serverinfo`](./features/utilities.mdx#serverinfo) pour consulter les informations du serveur. <SuggestionLink id="264" />
 - Nouvelle [commande `/snipe`](./features/moderation.mdx#snipe) pour récupérer le dernier message supprimé d’un salon ou d’un utilisateur sur la dernière heure (solution temporaire en attendant la mise à jour des logs).
@@ -137,7 +137,7 @@ La Shield Update est en expérimentation : en attendant sa sortie en 3.6.0, elle
 - Possibilité de **fermer automatiquement les MP** lors de l’activation de l’[auto raid mode](./features/raid-mode.md#close-dm). <SuggestionLink id="521" />
 - Les timeouts appliqués par l’AutoMod de Discord sont automatiquement [convertis en mute par rôle](./features/sanctions.mdx#mute-threshold) lorsqu’ils dépassent le seuil de mute configuré (en **beta publique pour les serveurs Premium**).
 - Nouveau paramètre `[duration]` sur les commandes [`/lock`](./features/channel-lock.md#lock-duration) et [`/slowmode`](./features/moderation.mdx#slowmode) pour appliquer la modification temporairement. <SuggestionLink id="515" />
-- Correction :
+- Correction :
   - Correction d’erreurs sur les expirations des sanctions.
   - Corrections de traductions diverses.
 
@@ -151,7 +151,7 @@ La Shield Update est en expérimentation : en attendant sa sortie en 3.6.0, elle
   - Support des [passkeys (WebAuthn)](./features/authentication-manager.mdx#methods), [codes PIN](./features/authentication-manager.mdx#methods) (simple et renforcé) et [OTP (2FA)](./features/authentication-manager.mdx#methods).
   - Sessions temporaires avec expiration et révocation automatique.
   - Système de managers avec plafond de permissions.
-- Logs :
+- Logs :
   - Nouveau moteur de logs en prévision d'une mise à jour dédiée.
   - Logs de suppression en masse du `/clear`.
   - Logs des modifications des paramètres Anti-Scam et Auto RaidMode.
@@ -160,12 +160,12 @@ La Shield Update est en expérimentation : en attendant sa sortie en 3.6.0, elle
   - [Noms des sanctions](./features/sanctions.mdx#custom-names) personnalisables (nom, verbe et formulation en MP).
   - Accès en avant-première aux nouvelles fonctionnalités expérimentales.
 - Détection et empêchement de l'usurpation de RaidProtect.
-- Correction :
+- Correction :
   - Correction des erreurs de unmute et untimeout.
   - Correction du setup du Jail.
   - Correction de l'"antispam bloqué" sur certains serveurs.
   - Corrections de traductions diverses.
-- Performances et stabilité :
+- Performances et stabilité :
   - Optimisation du cache des membres, des permissions et des messages.
   - Les expirations des sanctions sont désormais précises à la seconde.
 
@@ -177,7 +177,7 @@ La Shield Update est en expérimentation : en attendant sa sortie en 3.6.0, elle
   - Nouvelle [commande `/tempjail`](./features/moderation.mdx#tempjail) pour emprisonner temporairement un membre.
   - Nouvelle [commande `/unjail`](./features/moderation.mdx#unjail) pour libérer un membre.
   - Configuration du rôle Jail et du salon d'information via `/settings`.
-- Nouveau système de **[Mute par rôle](./features/sanctions.mdx#mute)** : au-delà d'un [seuil configurable](./features/sanctions.mdx#mute-threshold), le bot attribue un rôle Mute au lieu du timeout Discord.
+- Nouveau système de **[Mute par rôle](./features/sanctions.mdx#mute)** : au-delà d'un [seuil configurable](./features/sanctions.mdx#mute-threshold), le bot attribue un rôle Mute au lieu du timeout Discord.
   - Les commandes `/timeout` et `/untimeout` deviennent [`/mute`](./features/moderation.mdx#timeout) et [`/unmute`](./features/moderation.mdx#untimeout). Le timeout Discord reste utilisé par défaut en dessous du seuil.
   - Nouveau paramètre `[force_timeout]` pour forcer le timeout Discord quelle que soit la durée.
 - [Sanctionner via le menu contextuel](./features/moderation.mdx#context-menu) (clic droit sur un profil).
@@ -195,11 +195,11 @@ La Shield Update est en expérimentation : en attendant sa sortie en 3.6.0, elle
 - Nouvelle [commande `/channel clear`](./features/utilities.mdx#channel-clear) pour supprimer et re-créer un salon. <SuggestionLink id="543" />
 - Logs pour les commandes `/bypass`. <SuggestionLink id="546" />
 - Nouveau module **Anti-Scam**.
-- Correction :
+- Correction :
   - Amélioration de la gestion du captcha.
   - Correction de la validation des préfixes.
   - Corrections de traductions.
-- Performances et stabilité :
+- Performances et stabilité :
   - Nouveau framework de traduction ([`@fca.gg/hermes` v1.2.1](https://github.com/FCAgreatgoals/hermes)).
 
 ## 3.3.0 Moderation Update (19/12/2025) {#3-3-0}
@@ -223,11 +223,11 @@ La Shield Update est en expérimentation : en attendant sa sortie en 3.6.0, elle
 - Nouvelle [commande `/channel duplicate`](./features/utilities.mdx#channel-duplicate) pour dupliquer strictement un salon. <SuggestionLink id="225" />
 - Nouvelle commande `/changelog` et boutons dans le `/settings` et le `/about` pour consulter le changelog.
 - Accusé de réception du message privé de l’[Âge minimum](./features/raid-mode.md#minage).
-- Correction :
+- Correction :
   - Amélioration de la gestion des cooldowns.
   - Correction de diverses erreurs de traduction.
   - Augmentation de la taille maximale des raisons de sanctions (512).
-- Performances et stabilité :
+- Performances et stabilité :
   - Optimisation du cache des messages.
   - Optimisation du stockage en base de données.
   - Gestion des expirations de sanctions (`@fca.gg/midway` v1.3.2).
@@ -237,7 +237,7 @@ La Shield Update est en expérimentation : en attendant sa sortie en 3.6.0, elle
 
 - Nouvelle [commande `/ds`](./features/utilities.mdx#discord-sanctions) permettant de consulter les sanctions Discord d'un utilisateur.
 - L'anti-spam est désormais capable de stopper le spam de Commandes Slash.
-- Nouveau déclencheur d'anti-spam : [Spam de commandes externes](./features/anti-spam.mdx#triggers).
+- Nouveau déclencheur d'anti-spam : [Spam de commandes externes](./features/anti-spam.mdx#triggers).
 - Nouvelle [commande `/slowmode`](./features/moderation.mdx#slowmode) permettant d’activer ou de modifier le mode lent d’un salon.
 - Nouvelle [commande `/unban`](./features/moderation.mdx#unban). <SuggestionLink id="296" />
 - Nouvelle [commande `/bypass captcha`](./features/captcha.md#bypass) pour accepter un utilisateur qui ne parvient pas à résoudre le captcha.
@@ -324,7 +324,7 @@ La Shield Update est en expérimentation : en attendant sa sortie en 3.6.0, elle
 - Possibilité de bannir n'importe quel utilisateur avec son identifiant, même s'il n'est pas dans le serveur concerné. <SuggestionLink id="113" /> <SuggestionLink id="148" />
 - Affichage de la raison du bannissement dans la réponse de la [commande `?ban`](./features/moderation.mdx#ban).
 - La [commande `?raidmode`](./features/raid-mode.md) nécessite désormais la permission d'expulser des membres.
-- Modification du temps d'expulsion si le captcha n'est pas complété (5 min). <SuggestionLink id="129" />
+- Modification du temps d'expulsion si le captcha n'est pas complété (5 min). <SuggestionLink id="129" />
 - Améliorations internes diverses.
 
 ## 2.1.2 (17/04/2019) {#2-1-2}

@@ -11,8 +11,8 @@ import ReportsMockup from '@site/src/components/DiscordMessage/mockups/reports';
 
 Le système de signalement de RaidProtect permet à votre communauté de remonter en quelques clics tout message ou membre suspect à vos modérateurs, via un clic droit, un bouton dédié ou la commande `/report`. Il se configure pour optimiser le traitement des signalements par votre équipe.
 
-## ❓ Comment fonctionnent les signalements ? {#working}
-Les membres peuvent signaler un contenu via 4 méthodes principales.
+## ❓ Comment fonctionnent les signalements ? {#working}
+Les membres peuvent signaler un contenu via 4 méthodes principales.
 
 1. **Clic droit sur un message**
 Un membre peut faire un clic droit sur un message qu'il estime enfreindre le règlement, sélectionner **`Applications`**, puis cliquer sur **`Signaler ce message`**. Une fenêtre s'ouvre, dans laquelle il précise la raison du signalement.
@@ -26,17 +26,17 @@ Si la fonctionnalité "Signalement" est activée sur un [panneau d'information (
 4. **Commande Slash**
 Les membres peuvent également signaler un utilisateur via la commande **`/report`** dans n'importe quel salon du serveur.
 
-Utilisez la commande : ```/report (membre)```
+Utilisez la commande : ```/report (membre)```
 
 Remplacez `(membre)` par l'utilisateur souhaité. La raison se saisit ensuite dans une fenêtre, comme pour le clic droit sur un profil.
 
 :::info
-Activer les signalements active aussi la [mise en cache des messages](./moderation.mdx#snipe) : RaidProtect garde une heure de messages en mémoire pour joindre le contenu signalé à l'alerte.
+Activer les signalements active aussi la [mise en cache des messages](./moderation.mdx#snipe) : RaidProtect garde une heure de messages en mémoire pour joindre le contenu signalé à l'alerte.
 :::
 
 ## 🚩 Configuration des signalements {#config}
 
-Les signalements arrivent dans un **salon de signalement**. Si vous n'en choisissez pas, ils sont envoyés dans votre salon de logs général. Tous les réglages se trouvent sur un même écran :
+Les signalements arrivent dans un **salon de signalement**. Si vous n'en choisissez pas, ils sont envoyés dans votre salon de logs général. Tous les réglages se trouvent sur un même écran :
 
 1. Faites la [commande `/settings`](../setup.md#settings).
 2. Ouvrez l'onglet “**Modération**”.
@@ -51,7 +51,7 @@ Les signalements arrivent dans un **salon de signalement**. Si vous n'en choisis
 2. Ouvrez l'onglet “**Modération**”.
 3. Cliquez sur “**Configurer**” à côté de “**Signalements**”.
 4. Cliquez sur “**Modifier**” à côté de “**Réception des signalements**”.
-5. Dans la fenêtre, sélectionnez le salon souhaité (_ex : #signalements ou #reports_), ou cochez “**Créer un salon pour moi**” pour que RaidProtect crée un salon privé `signalements`.
+5. Dans la fenêtre, sélectionnez le salon souhaité (_ex : #signalements ou #reports_), ou cochez “**Créer un salon pour moi**” pour que RaidProtect crée un salon privé `signalements`.
 
 Si vous ne sélectionnez aucun salon, ou le salon de logs, les signalements suivent votre salon de logs général.
 
@@ -63,7 +63,7 @@ Si vous ne sélectionnez aucun salon, ou le salon de logs, les signalements suiv
 2. Ouvrez l'onglet “**Modération**”.
 3. Cliquez sur “**Configurer**” à côté de “**Signalements**”.
 4. Cliquez sur “**Modifier**” à côté de “**Rôle de notification**”.
-5. Dans la fenêtre, sélectionnez le rôle souhaité (_ex : @Modérateur ou @Notifs reports_), ou cochez une “**Autre mention**” : `@everyone`, `@here` ou “**Créer un rôle pour moi**” (RaidProtect crée le rôle `Nouveau signalement`).
+5. Dans la fenêtre, sélectionnez le rôle souhaité (_ex : @Modérateur ou @Notifs reports_), ou cochez une “**Autre mention**” : `@everyone`, `@here` ou “**Créer un rôle pour moi**” (RaidProtect crée le rôle `Nouveau signalement`).
 
 Sans rôle configuré, c'est `@here` qui est mentionné.
 
@@ -75,10 +75,10 @@ Le salon doit être réservé aux modérateurs et administrateurs afin d'assurer
 
 ### Regroupement des signalements {#group}
 
-La bascule “**Regroupement**” détermine comment sont présentés plusieurs signalements visant le même membre :
+La bascule “**Regroupement**” détermine comment sont présentés plusieurs signalements visant le même membre :
 
-- **Activé** *(par défaut)* : les signalements visant le même membre sont regroupés dans une seule alerte.
-- **Désactivé** : chaque signalement crée sa propre alerte séparée.
+- **Activé** *(par défaut)* : les signalements visant le même membre sont regroupés dans une seule alerte.
+- **Désactivé** : chaque signalement crée sa propre alerte séparée.
 
 Cliquez sur “**Activer**” ou “**Désactiver**” à côté de “**Regroupement**” dans l'écran Signalements.
 
@@ -86,7 +86,7 @@ Cliquez sur “**Activer**” ou “**Désactiver**” à côté de “**Regroup
 
 ### Notification du signaleur {#notify}
 
-Le bouton “**Modifier**” à côté de “**Notification du signaleur**” ouvre une fenêtre dans laquelle vous choisissez ce que le membre à l'origine du signalement reçoit en MP une fois son signalement traité :
+Le bouton “**Modifier**” à côté de “**Notification du signaleur**” ouvre une fenêtre dans laquelle vous choisissez ce que le membre à l'origine du signalement reçoit en MP une fois son signalement traité :
 
 | Niveau | Effet |
 |---|---|
@@ -103,7 +103,7 @@ Le signaleur ne reçoit qu'un seul message par signalement, même s'il a été r
 
 ### Rôle de confiance <span className="badge-premium">Premium</span> {#trusted-role}
 
-Le “**Rôle de confiance**” permet à vos membres les plus fiables d'agir immédiatement en cas d'urgence : lorsqu'un membre disposant de ce rôle effectue un signalement, il peut cocher l'option “**Action préventive**” pour appliquer un **timeout préventif de 24 heures** à l'utilisateur signalé, en attendant qu'un modérateur traite le signalement.
+Le “**Rôle de confiance**” permet à vos membres les plus fiables d'agir immédiatement en cas d'urgence : lorsqu'un membre disposant de ce rôle effectue un signalement, il peut cocher l'option “**Action préventive**” pour appliquer un **timeout préventif de 24 heures** à l'utilisateur signalé, en attendant qu'un modérateur traite le signalement.
 
 1. Faites la [commande `/settings`](../setup.md#settings).
 2. Ouvrez l'onglet “**Modération**”.
@@ -111,13 +111,13 @@ Le “**Rôle de confiance**” permet à vos membres les plus fiables d'agir im
 4. Cliquez sur “**Modifier**” à côté de “**Rôle de confiance**”.
 5. Dans la fenêtre, sélectionnez le rôle, ou cochez “**Créer un rôle pour moi**” (RaidProtect crée le rôle `Signaleur de confiance`). Laissez le champ vide pour désactiver le rôle de confiance.
 
-Fonctionnement du timeout préventif :
+Fonctionnement du timeout préventif :
 
-- Le timeout préventif est **silencieux** : l'utilisateur signalé ne reçoit pas de MP tant qu'un modérateur n'a pas confirmé la sanction.
-- Sa raison est “**Sanction préventive :**” suivie de la raison du signalement.
+- Le timeout préventif est **silencieux** : l'utilisateur signalé ne reçoit pas de MP tant qu'un modérateur n'a pas confirmé la sanction.
+- Sa raison est “**Sanction préventive :**” suivie de la raison du signalement.
 - Si le signalement porte sur un message, celui-ci est supprimé.
-- L'alerte est marquée comme urgente : la mention est précédée de “**🛑 Signalement urgent**”.
-- La sanction est liée au signalement : le modérateur qui le traite peut la confirmer ou l'annuler.
+- L'alerte est marquée comme urgente : la mention est précédée de “**🛑 Signalement urgent**”.
+- La sanction est liée au signalement : le modérateur qui le traite peut la confirmer ou l'annuler.
 
 :::info
 Cette fonctionnalité est réservée aux serveurs [**Premium**](/premium).
@@ -125,16 +125,16 @@ Cette fonctionnalité est réservée aux serveurs [**Premium**](/premium).
 
 ### Réputation des signaleurs {#bad-reporters}
 
-Le bouton “**Modifier**” à côté de “**Faux signaleurs**” ouvre la fenêtre “**Réputation des signaleurs**”, qui permet d'agir sur les membres dont les signalements sont régulièrement refusés :
+Le bouton “**Modifier**” à côté de “**Faux signaleurs**” ouvre la fenêtre “**Réputation des signaleurs**”, qui permet d'agir sur les membres dont les signalements sont régulièrement refusés :
 
-- **Seuil** : nombre de signalements refusés avant action (3, 5, 6, 10 ou 15 ; “**Désactivé**” par défaut).
-- **Fenêtre** : période de calcul (7, 14, 30, 60 ou 90 jours ; 30 jours par défaut).
-- **Action** une fois le seuil atteint :
-  - “**Notifier les modérateurs**” *(par défaut)* : une alerte est envoyée avec le bouton “**Bloquer les signalements**” et un bouton de sanction (ex. : “**Avertir le signaleur**”).
-  - “**Bloquer automatiquement**” : le membre ne peut plus envoyer de signalements.
-  - “**Sanctionner automatiquement**” : la sanction configurée est appliquée.
-  - “**Bloquer et sanctionner**” : combine les deux actions précédentes.
-- **Sanction** : la sanction appliquée au faux signaleur (Avertissement par défaut, Timeout, Mute, Expulsion ou Bannissement).
+- **Seuil** : nombre de signalements refusés avant action (3, 5, 6, 10 ou 15 ; “**Désactivé**” par défaut).
+- **Fenêtre** : période de calcul (7, 14, 30, 60 ou 90 jours ; 30 jours par défaut).
+- **Action** une fois le seuil atteint :
+  - “**Notifier les modérateurs**” *(par défaut)* : une alerte est envoyée avec le bouton “**Bloquer les signalements**” et un bouton de sanction (ex. : “**Avertir le signaleur**”).
+  - “**Bloquer automatiquement**” : le membre ne peut plus envoyer de signalements.
+  - “**Sanctionner automatiquement**” : la sanction configurée est appliquée.
+  - “**Bloquer et sanctionner**” : combine les deux actions précédentes.
+- **Sanction** : la sanction appliquée au faux signaleur (Avertissement par défaut, Timeout, Mute, Expulsion ou Bannissement).
 
 <SettingsModal name="reportBad" />
 
@@ -148,36 +148,36 @@ Vous pouvez aussi bloquer manuellement un membre des signalements à tout moment
 
 ## Gérer les signalements {#manage}
 
-Chaque signalement arrive dans le salon configuré sous forme d'une alerte avec plusieurs actions :
+Chaque signalement arrive dans le salon configuré sous forme d'une alerte avec plusieurs actions :
 
-- **🙋 Prendre en charge :** Cliquez sur “**Prendre en charge**” pour indiquer aux autres modérateurs que vous vous occupez de ce signalement. Le bouton devient alors “**Pris en charge**”.
+- **🙋 Prendre en charge :** Cliquez sur “**Prendre en charge**” pour indiquer aux autres modérateurs que vous vous occupez de ce signalement. Le bouton devient alors “**Pris en charge**”.
 
-- **✅ Résolu :** Si le signalement est valide mais qu'aucune sanction n'est nécessaire (situation réglée autrement : rappel à l'ordre, message supprimé par son auteur...), cliquez sur “**Résolu**”. Le signalement est marqué comme accepté, sans sanctionner l'utilisateur signalé. Pour sanctionner, utilisez plutôt le menu “**Sanctionner ce membre…**” ci-dessous.
+- **✅ Résolu :** Si le signalement est valide mais qu'aucune sanction n'est nécessaire (situation réglée autrement : rappel à l'ordre, message supprimé par son auteur...), cliquez sur “**Résolu**”. Le signalement est marqué comme accepté, sans sanctionner l'utilisateur signalé. Pour sanctionner, utilisez plutôt le menu “**Sanctionner ce membre…**” ci-dessous.
 
-- **❌ Refuser :** Si le signalement n'est pas légitime, cliquez sur “**Refuser**”. Les refus sont comptabilisés pour la [réputation des signaleurs](#bad-reporters).
+- **❌ Refuser :** Si le signalement n'est pas légitime, cliquez sur “**Refuser**”. Les refus sont comptabilisés pour la [réputation des signaleurs](#bad-reporters).
 
-- **⚖️ Sanctionner :** Le menu “**Sanctionner ce membre…**”, disponible une fois le signalement pris en charge, permet d'appliquer directement une sanction à l'utilisateur signalé, sans quitter le salon de signalements.
+- **⚖️ Sanctionner :** Le menu “**Sanctionner ce membre…**”, disponible une fois le signalement pris en charge, permet d'appliquer directement une sanction à l'utilisateur signalé, sans quitter le salon de signalements.
 
-Lorsque le [regroupement](#group) est activé, les signalements suivants visant le même membre s'ajoutent à l'alerte existante (par exemple “**3 messages & 1 profil signalé par 2 utilisateurs**”) au lieu d'en créer une nouvelle.
+Lorsque le [regroupement](#group) est activé, les signalements suivants visant le même membre s'ajoutent à l'alerte existante (par exemple “**3 messages & 1 profil signalé par 2 utilisateurs**”) au lieu d'en créer une nouvelle.
 
 :::note
-Assurez-vous que vos modérateurs sont bien formés à l'utilisation de cette fonctionnalité et encouragez vos membres actifs à l'utiliser de manière responsable !
+Assurez-vous que vos modérateurs sont bien formés à l'utilisation de cette fonctionnalité et encouragez vos membres actifs à l'utiliser de manière responsable !
 :::
 
 ## Questions fréquentes {#faq}
 
-### Comment signaler un membre ou un message ?
+### Comment signaler un membre ou un message ?
 
-Un membre peut faire un clic droit sur un message ou un profil, choisir « Applications » puis « Signaler ce message » ou « Signaler l'utilisateur ». Il peut aussi passer par le bouton d'un panneau d'information, ou par la commande `/report (membre)` dans n'importe quel salon : la raison se saisit ensuite dans une fenêtre.
+Un membre peut faire un clic droit sur un message ou un profil, choisir « Applications » puis « Signaler ce message » ou « Signaler l'utilisateur ». Il peut aussi passer par le bouton d'un panneau d'information, ou par la commande `/report (membre)` dans n'importe quel salon : la raison se saisit ensuite dans une fenêtre.
 
-### Où arrivent les signalements ?
+### Où arrivent les signalements ?
 
 Ils sont envoyés dans le salon de signalement que vous configurez, ou à défaut dans votre salon de logs général. Ce salon doit être réservé aux modérateurs et administrateurs pour assurer un traitement correct des signalements.
 
-### Quel rôle est mentionné à chaque signalement ?
+### Quel rôle est mentionné à chaque signalement ?
 
 Le rôle de notification que vous configurez, ou `@everyone`. Sans réglage, RaidProtect mentionne `@here`.
 
-### Comment limiter les faux signalements ?
+### Comment limiter les faux signalements ?
 
-Le réglage « Faux signaleurs » agit sur les membres dont les signalements sont régulièrement refusés. Vous définissez un seuil et une fenêtre de calcul, puis une action : notifier les modérateurs, bloquer les signalements, sanctionner, ou les deux. Vous pouvez aussi bloquer un membre manuellement avec la [commande `/block`](./utilities.mdx#block).
+Le réglage « Faux signaleurs » agit sur les membres dont les signalements sont régulièrement refusés. Vous définissez un seuil et une fenêtre de calcul, puis une action : notifier les modérateurs, bloquer les signalements, sanctionner, ou les deux. Vous pouvez aussi bloquer un membre manuellement avec la [commande `/block`](./utilities.mdx#block).

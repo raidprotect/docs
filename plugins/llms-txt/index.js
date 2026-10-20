@@ -13,7 +13,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const LOCALES = ['en', 'de', 'es', 'pt'];
+const LOCALES = ['en', 'de', 'es', 'pt', 'it', 'tr', 'vi', 'ja', 'zh-CN', 'zh-TW'];
 
 function walk(dir) {
   const out = [];

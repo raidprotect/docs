@@ -23,7 +23,7 @@ const SANCTIONS: Array<[string, IconName]> = [
 const sanctionLabel = (fr: string) => t(`sanction.${fr}`, fr);
 
 export const PRESETS = (): Opt[] => [
-  { label: t("antispam.soft", "Souple"), description: t("antispam.softDesc", "Avertit d'abord, exclut temporairement le spam de contenu."), emoji: "iconSanctionsWARN" },
+  { label: t("antispam.soft", "Souple"), description: t("antispam.softDesc", "Avertit d'abord, puis exclut temporairement ou isole : ni expulsion ni bannissement."), emoji: "iconSanctionsWARN" },
   { label: "Standard", description: t("antispam.standardDesc", "Les sanctions par défaut de RaidProtect."), emoji: "iconSanctionsTIMEOUT", default: true },
   { label: t("antispam.strict", "Strict (non recommandé)"), description: t("antispam.strictDesc", "Bannit la publicité et les comptes automatisés dès le premier spam."), emoji: "iconSanctionsBAN" },
 ];
@@ -392,7 +392,7 @@ export function protectionPart({ s, flip }: Ctx, disconState: { level: number; s
 
   const slowmodeDesc = t(
     "slowmode.desc",
-    "Ajuste automatiquement le slowmode des salons choisis pour tenir un débit cible de messages par minute, sans jamais sortir des bornes définies pour chaque salon."
+    "Ajuste tout seul le slowmode des salons choisis selon le nombre de messages par minute, sans sortir des limites de chaque salon."
   );
   const free = t("slowmode.free", "Emplacement libre.");
 
@@ -420,16 +420,16 @@ export function protectionPart({ s, flip }: Ctx, disconState: { level: number; s
       title: `${t("slowmode.channelTitle", "Salon régulé :")} #général`,
       desc: t(
         "slowmode.channelDesc",
-        "Ajustez le débit cible et les bornes de slowmode de ce salon. Le régulateur monte le slowmode quand le débit dépasse la cible et le redescend quand le salon se calme, entre le minimum et le maximum."
+        "Choisissez combien de messages par minute ce salon peut recevoir. Au-delà, le slowmode monte tout seul, et il redescend quand le salon se calme. Il reste toujours entre le minimum et le maximum choisis."
       ),
       accessory: toggle(false),
       crumbs: [{ label: t("slowmode.name", "Slowmode préventif"), id: "slowmode" }, { label: `${t("slowmode.channelTitle", "Salon régulé :")} #général` }],
       docs: "features/slowmode",
       notices: [premiumNotice(t("slowmode.notice", "Le premium est requis pour le slowmode préventif."))],
       body: [
-        heading("iconSlowmode", t("slowmode.target", "Débit cible")),
+        heading("iconSlowmode", t("slowmode.target", "Débit de messages")),
         select(
-          t("slowmode.targetPh", "Choisir le débit cible"),
+          t("slowmode.targetPh", "Choisir le débit de messages"),
           [5, 10, 15, 20, 30, 45, 60, 90, 120].map((n) => ({ label: `${n} messages / min`, emoji: "iconSlowmode" as IconName, default: n === 30 }))
         ),
         heading("iconTime", t("slowmode.min", "Slowmode minimum")),
@@ -446,7 +446,7 @@ export function protectionPart({ s, flip }: Ctx, disconState: { level: number; s
       rows: [
         row(
           btn({ label: t("customize", "Personnaliser"), style: 1, emoji: "iconCustomWhite", id: "modal:slowmodeCustom" }),
-          btn({ label: t("slowmode.applyAll", "Appliquer à tous les salons"), emoji: "iconRefreshWhite" }),
+          btn({ label: t("slowmode.applyAll", "Appliquer à tous les salons régulés"), emoji: "iconRefreshWhite" }),
           btn({ label: t("delete", "Supprimer"), style: 4, emoji: "iconResetWhite" })
         ),
       ],
@@ -536,7 +536,7 @@ export function protectionPart({ s, flip }: Ctx, disconState: { level: number; s
     slowmodeCustom: () => ({
       title: t("slowmode.customTitle", "Valeurs personnalisées"),
       items: [
-        textField(t("slowmode.targetField", "Débit cible (messages / min)"), "ex. 40", "30", t("slowmode.targetHint", "Le slowmode s'ajuste pour tenir cette moyenne de messages par minute.")),
+        textField(t("slowmode.targetField", "Débit de messages (messages / min)"), "ex. 40", "30", t("slowmode.targetHint", "Le slowmode s'ajuste pour tenir cette moyenne de messages par minute.")),
         textField(t("slowmode.min", "Slowmode minimum"), "ex. 0s", "0s", t("slowmode.minHint", "Plancher : le slowmode ne descend jamais en dessous. 0s pour aucun minimum.")),
         textField(t("slowmode.max", "Slowmode maximum"), "ex. 2m 30s", "2m", t("slowmode.maxHint", "Plafond : garde-fou anti-emballement, le slowmode ne monte jamais au-delà.")),
       ],

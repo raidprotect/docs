@@ -93,7 +93,7 @@ export const LEARN_ARTICLES: LearnEntry[] = [
     teaser: translate({
       id: 'learn.least-privilege.cardTeaser',
       message:
-        "Ne donner à chacun que les permissions nécessaires : votre meilleure défense anti-nuke, jusqu'à l'Authentication Manager.",
+        "Ne donner à chacun que les permissions nécessaires : votre meilleure défense anti-nuke, jusqu'à l'Authentification Manager.",
       description: 'Learn hub card teaser: least-privilege',
     }),
   },

@@ -97,7 +97,7 @@ const ROWS: FeatureRow[] = [
     to: '/docs/features/authentication-manager',
     Mockup: AuthenticationManagerMockup,
     slotHeight: 350,
-    defaultTitle: 'Authentication Manager',
+    defaultTitle: 'Authentification Manager',
     defaultDescription:
       "Protégez l'accès à vos rôles sensibles par une vraie vérification d'identité : passkeys, code PIN ou OTP.",
     defaultAddBot: 'Verrouiller mes rôles',

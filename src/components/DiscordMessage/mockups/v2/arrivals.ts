@@ -85,9 +85,9 @@ export function arrivalsPart({ s, flip }: Ctx): Part {
           "iconFail",
           t("captcha.difficulty", "Difficulté"),
           [
-            t("captcha.diffTries", "Essais : **2 essais**"),
+            t("captcha.diffTries", "Essais : **3 essais**"),
             t("captcha.diffFail", "Essais épuisés : **Expulser**"),
-            t("captcha.diffSolve", "Temps de résolution : **3 minutes**"),
+            t("captcha.diffSolve", "Temps de résolution : **30 secondes**"),
           ],
           edit("modal:captchaDifficulty")
         ),
@@ -100,7 +100,7 @@ export function arrivalsPart({ s, flip }: Ctx): Part {
           toggle(s.captchaTestMode, "toggle:captchaTestMode"),
           t(
             "captcha.testModeHint",
-            "Un membre de l'équipe (Gérer le serveur) déjà vérifié clique sur « Vérifier » pour refaire le captcha autant qu'il veut. Le résultat part dans les logs du captcha, rien n'est appliqué."
+            "Un membre de l'équipe (Gérer le serveur) déjà vérifié clique sur « Vérifier » pour refaire le captcha. Les essais et le temps de résolution s'appliquent comme pour un arrivant : le log dit ce qui aurait été fait, rien n'est appliqué."
           )
         ),
         heading("iconTime", t("captcha.timeout", "Délai avant expulsion")),
@@ -228,22 +228,24 @@ export function arrivalsPart({ s, flip }: Ctx): Part {
         docBlock(
           t(
             "captcha.diffDoc",
-            "Le nombre d'essais pour recopier le code et ce qui arrive une fois épuisés, le délai avant l'expulsion depuis l'arrivée, et le temps laissé pour taper le code après le clic."
+            "Le nombre d'essais et ce qui arrive une fois épuisés, le délai avant l'expulsion depuis l'arrivée, et le temps laissé pour résoudre le puzzle, compté dès la première épreuve."
           )
         ),
         selectField(t("captcha.tries", "Essais"), [
           { label: "1 essai", emoji: "iconFail" },
-          { label: "2 essais", emoji: "iconFail", default: true },
-          { label: "3 essais", emoji: "iconFail" },
+          { label: "2 essais", emoji: "iconFail" },
+          { label: "3 essais", emoji: "iconFail", default: true },
         ]),
         selectField(t("captcha.failAction", "Action quand les essais sont épuisés"), [
           { label: t("captcha.failKick", "Essais épuisés : Expulser"), emoji: "iconSanctionsKICK", default: true },
           { label: t("captcha.failJail", "Essais épuisés : Jail"), emoji: "iconSanctionsJAIL" },
+          { label: t("captcha.failBlock", "Essais épuisés : Bloquer 10 min"), emoji: "iconSanctionsMUTE" },
         ]),
         selectField(t("captcha.solve", "Temps de résolution"), [
           { label: t("disabled", "Désactivé") },
+          { label: "30 secondes", default: true },
           { label: "2 minutes" },
-          { label: "3 minutes", default: true },
+          { label: "3 minutes" },
           { label: "5 minutes" },
         ]),
       ],
