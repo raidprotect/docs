@@ -77,7 +77,7 @@ Con el [Premium](/es/premium), haz clic en “**Color**” en “**Contenido del
 ### Afluencia y raids {#welcome-raid}
 
 - **Agrupación:** cuando muchos miembros llegan a la vez, las llegadas se agrupan para no inundar el canal.
-- **Silencio durante una oleada:** mientras el [modo raid](./raid-mode.md) gestionado por RaidProtect o el [Bloqueo de acceso](./join-lock.mdx) estén activos, no se envía ningún mensaje de bienvenida.
+- **Pausa durante un raid:** mientras el [modo raid](./raid-mode.md) de RaidProtect o el [Bloqueo de acceso](./join-lock.mdx) estén activos, no se envía ningún mensaje de bienvenida.
 
 ## 🏷️ Roles automáticos {#autorole}
 

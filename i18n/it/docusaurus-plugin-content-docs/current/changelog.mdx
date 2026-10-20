@@ -40,31 +40,31 @@ La Shield Update è in fase di sperimentazione: in attesa della sua uscita nella
 
 ## 3.5.0 Onboarding Update (19/10/2026) {#3-5-0}
 
-- Rifacimento di **[`/settings`](./setup.md#settings)** in una dashboard a cinque schede (Generale, Arrivi, Protezione, Moderazione, Utilità), con schermate e finestre di inserimento native, e un badge **Nuovo** su ciò che è appena arrivato. Le schermate [Premium](/it/premium) restano consultabili: il bot ti ferma solo nel momento in cui modifichi un'impostazione riservata.
+- Rifacimento di **[`/settings`](./setup.md#settings)**: una dashboard a cinque schede (Generale, Arrivi, Protezione, Moderazione, Utilità), con la nuova interfaccia di Discord (Components V2) e finestre di inserimento per le impostazioni che richiedono del testo. Un badge **Nuovo** segnala le nuove impostazioni. Le impostazioni [Premium](/it/premium) restano visibili: il Premium è richiesto solo per modificarle.
 - Arrivi:
-  - Nuovo [messaggio di benvenuto](./features/onboarding.md#welcome-message) con scheda di benvenuto, variabili e pulsanti, che tace durante un raid.
-  - I [ruoli automatici](./features/onboarding.md#autorole) escono dal captcha e accettano più ruoli, assegnati una volta superata la verifica.
-  - L'[età minima dell'account](./features/onboarding.md#minage) propone [più azioni](./features/onboarding.md#minage-action): espellere, jail fino all'età richiesta o trattenere all'ingresso dietro il captcha.
-  - L'[Auto RaidMode](./features/raid-mode.md#action) sceglie la sua azione durante il raid: bloccare gli inviti, espellere chi arriva (**Premium**), mandare al captcha o congelare il captcha. Solo il blocco degli inviti richiede ancora la community di Discord.
+  - Nuovo [messaggio di benvenuto](./features/onboarding.md#welcome-message), con una scheda di benvenuto a nome del membro, variabili e pulsanti. Non viene inviato finché la modalità raid o il Join Lock è attivo, per non dare il benvenuto agli account di un raid.
+  - I [ruoli automatici](./features/onboarding.md#autorole) hanno ora una propria impostazione, separata da quella del captcha, e accettano più ruoli. Vengono assegnati una volta superata la verifica.
+  - L'[età minima dell'account](./features/onboarding.md#minage) propone [più azioni](./features/onboarding.md#minage-action): espellere l'account troppo recente, metterlo in jail fino all'età richiesta, oppure bloccarlo su un captcha che potrà risolvere solo una volta raggiunta l'età.
+  - Scegli tu la reazione dell'[Auto RaidMode](./features/raid-mode.md#action) durante un raid: bloccare gli inviti, espellere chi arriva (**Premium**), mandarli al captcha, oppure farli attendere al captcha fino alla fine del raid. Solo il blocco degli inviti richiede ancora che la community di Discord sia attivata sul server.
   - Il [captcha](./features/captcha.md) guadagna una [modalità di visualizzazione](./features/captcha.md#display-mode) Pannello e un'[attivazione](./features/captcha.md#trigger) Automatica o Permanente. La sua configurazione segnala i canali e i ruoli che permettono di aggirare la verifica, con un pulsante per correggerli.
-  - In modalità Pannello, il captcha si apre nell'[Activity RaidProtect](./features/captcha.md#activity): un puzzle più difficile per gli automi, nei colori del tuo server, e una revisione da parte del tuo team in caso di dubbio.
-  - Nuova [modalità test](./features/captcha.md#test-mode) del captcha, perché il tuo team possa rifarlo senza applicare nulla.
+  - In modalità Pannello, il captcha [si apre senza lasciare Discord](./features/captcha.md#activity): un puzzle più difficile per i robot, nei colori del tuo server. Se un risultato è dubbio, il tuo team riceve un rapporto e decide se far entrare il membro o no.
+  - Nuova [modalità test](./features/captcha.md#test-mode): il tuo team può fare il captcha per provarlo, senza che venga applicata alcuna azione.
 - Protezione:
-  - L'[Authentification Manager](./features/authentication-manager.mdx) è integrato in `/settings`, i suoi link di autenticazione sono tradotti.
+  - L'[Authentification Manager](./features/authentication-manager.mdx) si configura ora in `/settings`, e le sue pagine di autenticazione sono tradotte.
   - La [Chiusura dei MP](./features/dm-lock.mdx) si regola in una finestra di inserimento.
 - Moderazione:
   - Nuovo comando [`/onduty`](./features/moderation.mdx#onduty) e ruolo in servizio per segnalare i moderatori disponibili.
-  - Nuovo pannello [`/display staff`](./features/display.mdx#staff) per informare il tuo team.
+  - Nuovi pannelli [`/display staff`](./features/display.mdx#staff), da pubblicare nei canali del tuo staff: presa di ruolo, presa di servizio, promemoria dei comandi utili.
   - `/discord-sanctions` mostra statistiche globali quando non viene indicato alcun utente.
 - Utilità:
   - Nuovo comando [`/inviteinfo`](./features/utilities.mdx#inviteinfo). `/userinfo` e `/inviteinfo` si installano anche sul tuo account, per usarli ovunque.
-  - Nuovo comando [`/privacy`](./features/utilities.mdx#privacy) e impostazione **Memorizzazione dei messaggi**, da cui dipende [`/snipe`](./guides/malfunctions.md#snipe).
+  - Nuovo comando [`/privacy`](./features/utilities.mdx#privacy), e nuova impostazione **Memorizzazione dei messaggi**, necessaria perché [`/snipe`](./guides/malfunctions.md#snipe) ritrovi i messaggi eliminati.
   - [`/feedback`](./features/utilities.mdx#feedback) propone una diagnosi quando segnali un problema di anti-spam.
 - Generale:
   - RaidProtect parla ora [11 lingue](./language.md) con l'arrivo di italiano, turco, vietnamita, giapponese e cinese semplificato e tradizionale. Per impostazione predefinita, [segue la lingua del server](./language.md#follow).
   - Nuovo [fuso orario](./setup.md#timezone) del server, usato dai riepiloghi di trasparenza.
-  - I [comandi tramite messaggio](./guides/prefix.md) e i [permessi](./guides/prefix.md#permissions) si regolano separatamente, e i permessi di Discord si applicano anche al menu “Sanzionare”.
-  - La [personalizzazione del bot](./setup.md#customize) (**Premium**) passa in `/settings`. Alla fine del Premium, l'aspetto del bot torna automaticamente a quello di RaidProtect.
+  - I [comandi tramite messaggio](./guides/prefix.md) e i loro [permessi](./guides/prefix.md#permissions) si regolano in due schermate separate. I permessi dei comandi impostati in Discord (Integrazioni) si applicano anche alle sanzioni del menu “Sanzionare” (clic destro su un membro).
+  - La [personalizzazione del bot](./setup.md#customize) (**Premium**) si regola ora in `/settings`.
 - Correzioni varie e correzioni di traduzioni.
 
 ## 3.4.0 Antispam Update (18/07/2026) {#3-4-0}

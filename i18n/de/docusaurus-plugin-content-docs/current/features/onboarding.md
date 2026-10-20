@@ -77,7 +77,7 @@ Mit [Premium](/de/premium) klicken Sie unter „**Nachrichteninhalt**“ auf „
 ### Ansturm und Raids {#welcome-raid}
 
 - **Bündelung:** Wenn viele Mitglieder gleichzeitig ankommen, werden die Beitritte gebündelt, um den Kanal nicht zu überfluten.
-- **Stille während einer Welle:** Solange der von RaidProtect gehaltene [Raid-Modus](./raid-mode.md) oder die [Beitrittssperre](./join-lock.mdx) aktiv ist, wird keine Willkommensnachricht gesendet.
+- **Pause während eines Raids:** Solange der [Raid-Modus](./raid-mode.md) von RaidProtect oder die [Beitrittssperre](./join-lock.mdx) aktiv ist, wird keine Willkommensnachricht gesendet.
 
 ## 🏷️ Automatische Rollen {#autorole}
 

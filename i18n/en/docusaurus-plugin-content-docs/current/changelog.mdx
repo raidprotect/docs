@@ -41,31 +41,31 @@ The Shield Update is an experiment: until its release in 3.6.0, it is in public 
 
 ## 3.5.0 Onboarding Update (10/19/2026) {#3-5-0}
 
-- Rework of **[`/settings`](./setup.md#settings)** into a five-tab dashboard (General, Arrivals, Protection, Moderation, Utilities), with native screens and input windows, and a **New** badge on what has just arrived. [Premium](/en/premium) screens remain viewable, the bot only stops you when you try to change a reserved setting.
+- Rework of **[`/settings`](./setup.md#settings)**: a five-tab dashboard (General, Arrivals, Protection, Moderation, Utilities), with Discord's new interface (Components V2) and input windows for settings that need text. A **New** badge marks new settings. [Premium](/en/premium) settings stay visible: Premium is only required to change them.
 - Arrivals:
-  - New [welcome message](./features/onboarding.md#welcome-message) with a welcome card, variables and buttons, which stays silent during a raid.
-  - [Auto roles](./features/onboarding.md#autorole) leave the captcha and accept several roles, given once verification is passed.
-  - The [minimum account age](./features/onboarding.md#minage) offers [several actions](./features/onboarding.md#minage-action): kick, jail until the required age or hold at entry behind the captcha.
-  - [Auto RaidMode](./features/raid-mode.md#action) chooses its action during the raid: block invites, kick newcomers (**Premium**), send to the captcha or freeze the captcha. Only invite blocking still requires Discord's Community.
+  - New [welcome message](./features/onboarding.md#welcome-message), with a welcome card in the member's name, variables and buttons. It is not sent while raid mode or the Join Lock is active, so the accounts of a raid are not welcomed.
+  - [Auto roles](./features/onboarding.md#autorole) now have their own setting, separate from the captcha one, and accept several roles. They are given once verification is passed.
+  - The [minimum account age](./features/onboarding.md#minage) offers [several actions](./features/onboarding.md#minage-action): kick the account that is too new, put it in jail until it reaches the required age, or hold it on a captcha it can only solve once it reaches that age.
+  - You choose how [Auto RaidMode](./features/raid-mode.md#action) reacts during a raid: block invites, kick newcomers (**Premium**), send them to the captcha, or make them wait at the captcha until the raid is over. Only invite blocking still requires Community to be enabled on the server.
   - The [captcha](./features/captcha.md) gains a Panel [display mode](./features/captcha.md#display-mode) and an Automatic or Always [trigger](./features/captcha.md#trigger). Its configuration flags the channels and roles that let verification be bypassed, with a button to fix them.
-  - In Panel mode, the captcha opens in the [RaidProtect Activity](./features/captcha.md#activity): a harder puzzle for bots, in your server's colors, and a review by your team when in doubt.
-  - New captcha [test mode](./features/captcha.md#test-mode), so your team can redo it without anything being applied.
+  - In Panel mode, the captcha [opens without leaving Discord](./features/captcha.md#activity): a harder puzzle for bots, in your server's colors. If a result is doubtful, your team receives a report and decides whether to let the member in.
+  - New [test mode](./features/captcha.md#test-mode): your team can take the captcha to try it out, without any action being applied.
 - Protection:
-  - The [Authentification Manager](./features/authentication-manager.mdx) is built into `/settings`, its authentication links are translated.
+  - The [Authentification Manager](./features/authentication-manager.mdx) is now set up in `/settings`, and its authentication pages are translated.
   - The [DM Lock](./features/dm-lock.mdx) is set in an input window.
 - Moderation:
   - New [`/onduty`](./features/moderation.mdx#onduty) command and on-duty role to flag available moderators.
-  - New [`/display staff`](./features/display.mdx#staff) panel to inform your team.
+  - New [`/display staff`](./features/display.mdx#staff) panels to post in your staff channels: role pickup, going on duty, reminder of useful commands.
   - `/discord-sanctions` displays global statistics when no user is specified.
 - Utilities:
   - New [`/inviteinfo`](./features/utilities.mdx#inviteinfo) command. `/userinfo` and `/inviteinfo` also install on your account, to use them everywhere.
-  - New [`/privacy`](./features/utilities.mdx#privacy) command and **Message caching** setting, which conditions [`/snipe`](./guides/malfunctions.md#snipe).
+  - New [`/privacy`](./features/utilities.mdx#privacy) command, and new **Message caching** setting, required for [`/snipe`](./guides/malfunctions.md#snipe) to find deleted messages.
   - [`/feedback`](./features/utilities.mdx#feedback) offers a diagnosis when you report an anti-spam problem.
 - General:
   - RaidProtect now speaks [11 languages](./language.md) with the arrival of Italian, Turkish, Vietnamese, Japanese and Simplified and Traditional Chinese. By default, it [follows the server's language](./language.md#follow).
   - New server [time zone](./setup.md#timezone), used by transparency recaps.
-  - [Message commands](./guides/prefix.md) and [permissions](./guides/prefix.md#permissions) are set separately, and Discord's permissions also apply to the "Sanction User" menu.
-  - [Bot customization](./setup.md#customize) (**Premium**) moves into `/settings`. When Premium ends, the bot's appearance automatically goes back to RaidProtect's.
+  - [Message commands](./guides/prefix.md) and their [permissions](./guides/prefix.md#permissions) are set in two separate screens. Command permissions set in Discord (Integrations) also apply to sanctions from the "Sanction User" menu (right-click on a member).
+  - [Bot customization](./setup.md#customize) (**Premium**) is now set in `/settings`.
 - Various fixes and translation fixes.
 
 ## 3.4.0 Antispam Update (07/18/2026) {#3-4-0}

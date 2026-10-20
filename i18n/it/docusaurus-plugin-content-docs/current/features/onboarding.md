@@ -77,7 +77,7 @@ Con il [Premium](/it/premium), clicca su “**Colore**” in “**Contenuto del 
 ### Afflussi e raid {#welcome-raid}
 
 - **Raggruppamento:** quando molti membri arrivano contemporaneamente, gli arrivi vengono raggruppati per non inondare il canale.
-- **Silenzio durante un'ondata:** finché la [modalità raid](./raid-mode.md) gestita da RaidProtect o il [Join Lock](./join-lock.mdx) è attivo, nessun messaggio di benvenuto viene inviato.
+- **Pausa durante un raid:** finché la [modalità raid](./raid-mode.md) di RaidProtect o il [Join Lock](./join-lock.mdx) è attivo, nessun messaggio di benvenuto viene inviato.
 
 ## 🏷️ Ruoli automatici {#autorole}
 

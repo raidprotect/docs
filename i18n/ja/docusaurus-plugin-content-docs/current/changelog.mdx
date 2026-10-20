@@ -40,31 +40,31 @@ Shield Update は実験中です。3.6.0 でのリリースまでは、[Premium]
 
 ## 3.5.0 Onboarding Update (2026/10/19) {#3-5-0}
 
-- **[`/settings`](./setup.md#settings)** を 5 つのタブ（全般、参加、保護、モデレーション、ユーティリティ）のダッシュボードに刷新。ネイティブの画面と入力ウィンドウを採用し、追加されたばかりの項目には**新着**バッジが付きます。[Premium](/ja/premium) の画面は引き続き閲覧でき、ボットが止めるのは、Premium 限定の設定を変更しようとしたときだけです。
+- **[`/settings`](./setup.md#settings)** を刷新：5 つのタブ（全般、参加、保護、モデレーション、ユーティリティ）のダッシュボードになり、Discord の新しいインターフェース（Components V2）と、テキスト入力が必要な設定のための入力ウィンドウを採用しました。新しい設定には**新着**バッジが付きます。[Premium](/ja/premium) の設定も引き続き表示され、Premium が必要になるのは変更するときだけです。
 - 参加：
-  - ウェルカムカード、変数、ボタン付きの新しい[ようこそメッセージ](./features/onboarding.md#welcome-message)。レイド中は送信されません。
-  - [自動ロール](./features/onboarding.md#autorole)がキャプチャから独立し、複数のロールに対応。認証を通過した後に付与されます。
-  - [アカウントの最低作成日数](./features/onboarding.md#minage)に[複数のアクション](./features/onboarding.md#minage-action)を追加：キック、条件を満たすまで Jail、キャプチャによる入口での足止め。
-  - [オート RaidMode](./features/raid-mode.md#action) でレイド中の対応を選べます：招待のブロック、参加者のキック（**Premium**）、キャプチャへの送致、キャプチャの凍結。Discord のコミュニティが必要なのは、招待のブロックのみになりました。
+  - 新しい[ようこそメッセージ](./features/onboarding.md#welcome-message)。メンバーの名前入りのウェルカムカード、変数、ボタンに対応します。レイドモードまたは参加ロックが有効な間は送信されず、レイドのアカウントを歓迎してしまうことはありません。
+  - [自動ロール](./features/onboarding.md#autorole)がキャプチャとは別の専用の設定になり、複数のロールに対応しました。認証を通過した後に付与されます。
+  - [アカウントの最低作成日数](./features/onboarding.md#minage)に[複数のアクション](./features/onboarding.md#minage-action)を追加：作成されたばかりのアカウントをキックする、条件の日数に達するまで Jail する、または日数に達するまで解けないキャプチャで足止めする。
+  - レイド中の[オート RaidMode](./features/raid-mode.md#action) の対応を選べます：招待のブロック、参加者のキック（**Premium**）、参加者をキャプチャへ送る、またはレイドが終わるまでキャプチャで待機させる。招待のブロックだけは、引き続きサーバーで Discord のコミュニティを有効にする必要があります。
   - [キャプチャ](./features/captcha.md)にパネルの[表示モード](./features/captcha.md#display-mode)と、自動または常時の[作動条件](./features/captcha.md#trigger)を追加。設定画面では、認証を回避できてしまうチャンネルとロールが通知され、修正用のボタンが表示されます。
-  - パネルモードでは、キャプチャは [RaidProtect Activity](./features/captcha.md#activity) で開きます。自動化されたプログラムにはより難しいパズルで、サーバーのカラーに合わせて表示され、判断がつかない場合は運営チームが確認します。
-  - キャプチャの新しい[テストモード](./features/captcha.md#test-mode)：何も適用せずに、運営チームがやり直せます。
+  - パネルモードでは、キャプチャは [Discord から離れずに開きます](./features/captcha.md#activity)。自動プログラムには解きにくいパズルで、サーバーのカラーに合わせて表示されます。結果が疑わしい場合は運営チームにレポートが届き、メンバーを入れるかどうかを判断できます。
+  - 新しい[テストモード](./features/captcha.md#test-mode)：運営チームがキャプチャを試しに受けられ、アクションは何も適用されません。
 - 保護：
-  - [Authentification Manager](./features/authentication-manager.mdx) が `/settings` に統合され、認証リンクが翻訳されました。
+  - [Authentification Manager](./features/authentication-manager.mdx) を `/settings` で設定できるようになり、認証ページも翻訳されました。
   - [DM の遮断](./features/dm-lock.mdx)を、入力ウィンドウで設定できるようになりました。
 - モデレーション：
   - 新コマンド [`/onduty`](./features/moderation.mdx#onduty) と勤務中ロール。対応可能なモデレーターを示せます。
-  - 運営チームに情報を伝える新しい [`/display staff`](./features/display.mdx#staff) パネル。
+  - 新しい [`/display staff`](./features/display.mdx#staff) パネル。スタッフ用チャンネルに設置できます：ロールの取得、当番の開始、便利なコマンドの案内。
   - `/discord-sanctions` は、ユーザーを指定しない場合に全体の統計を表示します。
 - ユーティリティ：
   - 新コマンド [`/inviteinfo`](./features/utilities.mdx#inviteinfo)。`/userinfo` と `/inviteinfo` は、自分のアカウントにもインストールでき、どこでも使えます。
-  - 新コマンド [`/privacy`](./features/utilities.mdx#privacy) と、[`/snipe`](./guides/malfunctions.md#snipe) の条件となる**メッセージのキャッシュ**設定。
+  - 新コマンド [`/privacy`](./features/utilities.mdx#privacy) と、新しい**メッセージのキャッシュ**設定。[`/snipe`](./guides/malfunctions.md#snipe) で削除されたメッセージを確認するには、この設定が必要です。
   - スパム対策の問題を報告する際、[`/feedback`](./features/utilities.mdx#feedback) が診断を提案します。
 - 全般：
   - RaidProtect は、イタリア語、トルコ語、ベトナム語、日本語、簡体字・繁体字中国語の追加により、[11 言語](./language.md)に対応しました。既定では、[サーバーの言語に合わせます](./language.md#follow)。
   - 新しいサーバーの[タイムゾーン](./setup.md#timezone)。透明性のまとめで使われます。
-  - [メッセージコマンド](./guides/prefix.md)と[権限](./guides/prefix.md#permissions)が個別に設定できるようになり、Discord の権限は「ユーザーを処罰」メニューにも適用されます。
-  - [ボットのカスタマイズ](./setup.md#customize)（**Premium**）が `/settings` に移りました。Premium が終了すると、ボットの外観は自動的に RaidProtect のものに戻ります。
+  - [メッセージコマンド](./guides/prefix.md)とその[権限](./guides/prefix.md#permissions)は、別々の 2 つの画面で設定します。Discord（連携サービス）で設定したコマンドの権限は、「ユーザーを処罰」メニュー（メンバーを右クリック）の処罰にも適用されます。
+  - [ボットのカスタマイズ](./setup.md#customize)（**Premium**）は `/settings` で設定するようになりました。
 - 各種修正と翻訳の修正。
 
 ## 3.4.0 Antispam Update (2026/07/18) {#3-4-0}

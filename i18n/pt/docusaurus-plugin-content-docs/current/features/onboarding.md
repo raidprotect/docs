@@ -77,7 +77,7 @@ Com o [Premium](/pt/premium), clique em “**Cor**” em “**Conteúdo da mensa
 ### Afluxo e raids {#welcome-raid}
 
 - **Agrupamento:** quando muitos membros chegam ao mesmo tempo, as chegadas são agrupadas para não inundar o canal.
-- **Silêncio durante uma onda:** enquanto o [modo raid](./raid-mode.md) mantido pelo RaidProtect ou o [Bloqueio de Entradas](./join-lock.mdx) estiver ativo, nenhuma mensagem de boas-vindas é enviada.
+- **Pausa durante um raid:** enquanto o [modo raid](./raid-mode.md) do RaidProtect ou o [Bloqueio de Entradas](./join-lock.mdx) estiver ativo, nenhuma mensagem de boas-vindas é enviada.
 
 ## 🏷️ Cargos automáticos {#autorole}
 

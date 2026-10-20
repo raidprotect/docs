@@ -40,31 +40,31 @@ Shield Update 处于试验阶段：在 3.6.0 正式发布之前，它面向 [Pre
 
 ## 3.5.0 Onboarding Update (2026/10/19) {#3-5-0}
 
-- **[`/settings`](./setup.md#settings)** 重构为五个选项卡的控制面板（常规、新成员、防护、管理、实用工具），采用原生界面和输入窗口，并在新加入的内容上显示**新**标记。[Premium](/zh-CN/premium) 界面仍可查看，只有在您修改仅限 Premium 的设置时，机器人才会拦下您。
+- **[`/settings`](./setup.md#settings)** 重构：五个选项卡的控制面板（常规、新成员、防护、管理、实用工具），采用 Discord 的新界面（Components V2），需要填写文字的设置则使用输入窗口。**新**标记会标出新增的设置。[Premium](/zh-CN/premium) 设置仍然可见：只有修改它们时才需要 Premium。
 - 新成员：
-  - 新增[欢迎消息](./features/onboarding.md#welcome-message)，包含欢迎卡片、变量和按钮，在突袭期间不会发送。
-  - [自动角色](./features/onboarding.md#autorole)不再与验证码绑定，并支持多个角色，在验证通过后授予。
-  - [账号最短注册时长](./features/onboarding.md#minage)提供[多种处理方式](./features/onboarding.md#minage-action)：踢出、监禁至达到要求的年龄，或在验证码之后拦在入口。
-  - [Auto RaidMode](./features/raid-mode.md#action) 可选择突袭期间的处理方式：封锁邀请、踢出新加入的成员（**Premium**）、发送验证码或冻结验证码。现在只有封锁邀请仍需要 Discord 社区。
+  - 新增[欢迎消息](./features/onboarding.md#welcome-message)，包含带有成员名字的欢迎卡片、变量和按钮。只要突袭模式或加入锁定处于启用状态，就不会发送，以免欢迎突袭的账号。
+  - [自动角色](./features/onboarding.md#autorole)现在有独立的设置，与验证码的设置分开，并支持多个角色。它们会在验证通过后授予。
+  - [账号最短注册时长](./features/onboarding.md#minage)提供[多种处理方式](./features/onboarding.md#minage-action)：踢出注册时间过短的账号，将其监禁至达到要求的年龄，或将其拦在验证码处，直到账号达到要求的年龄才能解答。
+  - 您可以选择 [Auto RaidMode](./features/raid-mode.md#action) 在突袭期间的应对方式：封锁邀请、踢出新加入的成员（**Premium**）、将他们发送到验证码，或让他们在验证码处等待，直到突袭结束。现在只有封锁邀请仍需要服务器启用 Discord 社区。
   - [验证码](./features/captcha.md)新增面板[显示模式](./features/captcha.md#display-mode)，以及自动或始终的[触发方式](./features/captcha.md#trigger)。其配置界面会提示可绕过验证的频道和角色，并提供修复按钮。
-  - 在面板模式下，验证码会在 [RaidProtect Activity](./features/captcha.md#activity) 中打开：对自动程序而言难度更高的拼图，采用您服务器的配色，存疑时由您的团队复核。
-  - 验证码新增[测试模式](./features/captcha.md#test-mode)，让您的团队可以重新体验验证流程而不产生任何实际影响。
+  - 在面板模式下，验证码[无需离开 Discord 即可打开](./features/captcha.md#activity)：对自动程序而言难度更高的拼图，采用您服务器的配色。如果某个结果存疑，您的团队会收到一份报告，并决定是否放行该成员。
+  - 新增[测试模式](./features/captcha.md#test-mode)：您的团队可以亲自完成验证码来试用，而不会执行任何处置。
 - 防护：
-  - [Authentification Manager](./features/authentication-manager.mdx) 已整合进 `/settings`，其身份验证链接已翻译。
+  - [Authentification Manager](./features/authentication-manager.mdx) 现在在 `/settings` 中设置，其身份验证页面已翻译。
   - [私信锁定](./features/dm-lock.mdx)改为在输入窗口中设置。
 - 管理：
   - 新增 [`/onduty`](./features/moderation.mdx#onduty) 命令和在勤角色，用于标示当前可用的管理员。
-  - 新增 [`/display staff`](./features/display.mdx#staff) 面板，用于向您的团队通报信息。
+  - 新增 [`/display staff`](./features/display.mdx#staff) 面板，可发布在您的管理团队频道中：领取角色、进入在勤状态、常用命令提示。
   - 未指定用户时，`/discord-sanctions` 会显示全局统计。
 - 实用工具：
   - 新增 [`/inviteinfo`](./features/utilities.mdx#inviteinfo) 命令。`/userinfo` 和 `/inviteinfo` 也可安装到您的账号上，以便在任何地方使用。
-  - 新增 [`/privacy`](./features/utilities.mdx#privacy) 命令和**消息缓存**设置，[`/snipe`](./guides/malfunctions.md#snipe) 的可用性取决于该设置。
+  - 新增 [`/privacy`](./features/utilities.mdx#privacy) 命令，以及新的**消息缓存**设置，[`/snipe`](./guides/malfunctions.md#snipe) 需要它才能找回已删除的消息。
   - 当您反馈 Antispam 问题时，[`/feedback`](./features/utilities.mdx#feedback) 会提供诊断。
 - 常规：
   - RaidProtect 现已支持 [11 种语言](./language.md)，新增意大利语、土耳其语、越南语、日语以及简体和繁体中文。默认情况下，它会[跟随服务器语言](./language.md#follow)。
   - 新增服务器[时区](./setup.md#timezone)设置，供透明度汇总使用。
-  - [消息命令](./guides/prefix.md)和[权限](./guides/prefix.md#permissions)分开设置，Discord 的权限设置也适用于“处罚用户”菜单。
-  - 机器人的[自定义](./setup.md#customize)（**Premium**）移入 `/settings`。Premium 结束后，机器人的外观会自动恢复为 RaidProtect 的默认样式。
+  - [消息命令](./guides/prefix.md)及其[权限](./guides/prefix.md#permissions)在两个独立的界面中设置。在 Discord 中设置的命令权限（集成）也适用于“处罚用户”菜单中的处罚（右键点击成员）。
+  - 机器人的[自定义](./setup.md#customize)（**Premium**）现在在 `/settings` 中设置。
 - 各类修复及翻译修正。
 
 ## 3.4.0 Antispam Update (2026/07/18) {#3-4-0}

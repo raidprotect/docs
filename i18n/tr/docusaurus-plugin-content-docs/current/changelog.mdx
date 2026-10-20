@@ -40,31 +40,31 @@ Shield Update deneme aşamasındadır: 3.6.0 sürümüyle çıkışına kadar [P
 
 ## 3.5.0 Onboarding Update (19.10.2026) {#3-5-0}
 
-- **[`/settings`](./setup.md#settings)** yeniden tasarlanarak beş sekmeli bir panele dönüştü (Genel, Katılımlar, Koruma, Moderasyon, Araçlar); yerel ekranlar ve giriş pencereleri ile yeni gelenlerde bir **Yeni** rozeti var. [Premium](/tr/premium) ekranlar görüntülenebilir kalır, bot sizi yalnızca ayrılmış bir ayarı değiştirdiğiniz anda durdurur.
+- **[`/settings`](./setup.md#settings)** yeniden tasarlandı: beş sekmeli bir panel (Genel, Katılımlar, Koruma, Moderasyon, Araçlar), Discord'un yeni arayüzü (Components V2) ve metin gerektiren ayarlar için giriş pencereleri. Bir **Yeni** rozeti yeni ayarları gösterir. [Premium](/tr/premium) ayarlar görünür kalır: Premium yalnızca bunları değiştirmek için istenir.
 - Katılımlar:
-  - Karşılama kartı, değişkenler ve düğmelerle yeni [karşılama mesajı](./features/onboarding.md#welcome-message); baskın sırasında susar.
-  - [Otomatik roller](./features/onboarding.md#autorole) captcha'dan ayrılır ve birden fazla rol kabul eder, doğrulama geçildikten sonra verilir.
-  - [Minimum hesap yaşı](./features/onboarding.md#minage) [birkaç eylem](./features/onboarding.md#minage-action) sunar: atmak, gerekli yaşa kadar jail veya girişte captcha'nın arkasında tutmak.
-  - [Otomatik RaidMode](./features/raid-mode.md#action) baskın sırasındaki eylemini seçer: davetleri engellemek, gelenleri atmak (**Premium**), captcha'ya göndermek veya captcha'yı dondurmak. Yalnızca davetlerin engellenmesi hâlâ Discord topluluğunu gerektirir.
+  - Yeni [karşılama mesajı](./features/onboarding.md#welcome-message): üyenin adını taşıyan bir karşılama kartı, değişkenler ve düğmeler. Bir baskının hesaplarını karşılamamak için baskın modu veya Join lock etkin olduğu sürece gönderilmez.
+  - [Otomatik roller](./features/onboarding.md#autorole) artık captcha ayarından ayrı, kendi ayarına sahip ve birden fazla rol kabul ediyor. Doğrulama geçildikten sonra verilirler.
+  - [Minimum hesap yaşı](./features/onboarding.md#minage) [birkaç eylem](./features/onboarding.md#minage-action) sunar: çok yeni hesabı atmak, gerekli yaşa kadar jail'e almak veya ancak gerekli yaşa ulaştığında çözebileceği bir captcha'da tutmak.
+  - [Otomatik RaidMode](./features/raid-mode.md#action)'un baskın sırasındaki tepkisini siz seçersiniz: davetleri engellemek, gelenleri atmak (**Premium**), onları captcha'ya göndermek veya baskın bitene kadar captcha'da bekletmek. Yalnızca davetlerin engellenmesi hâlâ sunucuda Discord topluluğunun etkin olmasını gerektirir.
   - [Captcha](./features/captcha.md) bir Panel [görüntüleme modu](./features/captcha.md#display-mode) ve Otomatik veya Sürekli bir [tetikleme](./features/captcha.md#trigger) kazanır. Yapılandırması, doğrulamanın atlatılmasına izin veren kanalları ve rolleri, bunları düzeltmek için bir düğmeyle birlikte bildirir.
-  - Panel modunda captcha, [RaidProtect Activity](./features/captcha.md#activity) içinde açılır: otomatlar için daha zor bir bulmaca, sunucunuzun renklerinde ve şüphe durumunda ekibiniz tarafından inceleme.
-  - Ekibinizin hiçbir şey uygulamadan captcha'yı yeniden yapabilmesi için yeni [test modu](./features/captcha.md#test-mode).
+  - Panel modunda captcha [Discord'dan çıkmadan açılır](./features/captcha.md#activity): robotlar için daha zor bir bulmaca, sunucunuzun renklerinde. Bir sonuç şüpheliyse ekibiniz bir rapor alır ve üyenin içeri alınıp alınmayacağına karar verir.
+  - Yeni [test modu](./features/captcha.md#test-mode): ekibiniz captcha'yı denemek için çözebilir, hiçbir eylem uygulanmaz.
 - Koruma:
-  - [Authentification Manager](./features/authentication-manager.mdx) `/settings` içine entegre edildi, kimlik doğrulama bağlantıları çevrildi.
+  - [Authentification Manager](./features/authentication-manager.mdx) artık `/settings` içinden yapılandırılıyor ve kimlik doğrulama sayfaları çevrildi.
   - [DM Kapatma](./features/dm-lock.mdx) bir giriş penceresinde ayarlanır.
 - Moderasyon:
   - Müsait moderatörleri belirtmek için yeni [`/onduty`](./features/moderation.mdx#onduty) komutu ve görevde rolü.
-  - Ekibinizi bilgilendirmek için yeni [`/display staff`](./features/display.mdx#staff) paneli.
+  - Ekip kanallarınızda yayınlanacak yeni [`/display staff`](./features/display.mdx#staff) panelleri: rol alma, göreve başlama, kullanışlı komutların hatırlatması.
   - `/discord-sanctions`, kullanıcı belirtilmediğinde genel istatistikleri gösterir.
 - Araçlar:
   - Yeni [`/inviteinfo`](./features/utilities.mdx#inviteinfo) komutu. `/userinfo` ve `/inviteinfo` her yerde kullanabilmeniz için hesabınıza da kurulur.
-  - Yeni [`/privacy`](./features/utilities.mdx#privacy) komutu ve [`/snipe`](./guides/malfunctions.md#snipe) komutunun koşulu olan **Mesaj önbelleği** ayarı.
+  - Yeni [`/privacy`](./features/utilities.mdx#privacy) komutu ve [`/snipe`](./guides/malfunctions.md#snipe) komutunun silinen mesajları bulabilmesi için gereken yeni **Mesaj önbelleği** ayarı.
   - [`/feedback`](./features/utilities.mdx#feedback), bir anti-spam sorunu bildirdiğinizde bir tanı sunar.
 - Genel:
   - RaidProtect artık İtalyanca, Türkçe, Vietnamca, Japonca ile Basitleştirilmiş ve Geleneksel Çincenin gelişiyle [11 dil](./language.md) konuşuyor. Varsayılan olarak [sunucunun dilini takip eder](./language.md#follow).
   - Şeffaflık özetleri tarafından kullanılan yeni sunucu [saat dilimi](./setup.md#timezone).
-  - [Mesaj komutları](./guides/prefix.md) ve [izinler](./guides/prefix.md#permissions) ayrı ayrı ayarlanır ve Discord'un izinleri “**Yaptırım uygula**” menüsüne de uygulanır.
-  - [Botun özelleştirilmesi](./setup.md#customize) (**Premium**) `/settings` içine taşındı. Premium bittiğinde botun görünümü otomatik olarak RaidProtect'inkine döner.
+  - [Mesaj komutları](./guides/prefix.md) ve [izinleri](./guides/prefix.md#permissions) iki ayrı ekranda ayarlanır. Discord'da (Entegrasyonlar) ayarlanan komut izinleri, “**Yaptırım uygula**” menüsündeki yaptırımlara da uygulanır (bir üyeye sağ tıklama).
+  - [Botun özelleştirilmesi](./setup.md#customize) (**Premium**) artık `/settings` içinden ayarlanır.
 - Çeşitli düzeltmeler ve çeviri düzeltmeleri.
 
 ## 3.4.0 Antispam Update (18.07.2026) {#3-4-0}

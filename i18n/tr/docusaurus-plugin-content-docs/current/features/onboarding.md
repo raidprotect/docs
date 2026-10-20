@@ -77,7 +77,7 @@ Bir düğmeyi düzenlemek veya silmek için aynı listeden seçin.
 ### Yoğun katılım ve baskınlar {#welcome-raid}
 
 - **Gruplama:** çok sayıda üye aynı anda geldiğinde, kanalı doldurmamak için katılımlar gruplanır.
-- **Dalga sırasında sessizlik:** RaidProtect tarafından etkinleştirilen [baskın modu](./raid-mode.md) veya [Join lock](./join-lock.mdx) etkin olduğu sürece hiçbir karşılama mesajı gönderilmez.
+- **Baskın sırasında duraklatma:** RaidProtect'in [baskın modu](./raid-mode.md) veya [Join lock](./join-lock.mdx) etkin olduğu sürece hiçbir karşılama mesajı gönderilmez.
 
 ## 🏷️ Otomatik roller {#autorole}
 

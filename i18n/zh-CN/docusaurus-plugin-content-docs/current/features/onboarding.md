@@ -77,7 +77,7 @@ RaidProtect 的**欢迎**功能会在新成员加入您的 Discord 服务器时�
 ### 涌入与突袭 {#welcome-raid}
 
 - **合并发送：** 当大量成员同时加入时，加入的成员会被合并处理，以免刷屏频道。
-- **涌入期间静默：** 只要由 RaidProtect 维持的[突袭模式](./raid-mode.md)或[加入锁定](./join-lock.mdx)处于启用状态，就不会发送任何欢迎消息。
+- **突袭期间暂停：** 只要 RaidProtect 的[突袭模式](./raid-mode.md)或[加入锁定](./join-lock.mdx)处于启用状态，就不会发送任何欢迎消息。
 
 ## 🏷️ 自动角色 {#autorole}
 

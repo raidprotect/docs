@@ -40,31 +40,31 @@ Shield Update đang thử nghiệm: trong khi chờ phát hành ở phiên bản
 
 ## 3.5.0 Onboarding Update (19/10/2026) {#3-5-0}
 
-- Thiết kế lại **[`/settings`](./setup.md#settings)** thành bảng điều khiển năm thẻ (Chung, Thành viên mới, Bảo vệ, Kiểm duyệt, Tiện ích), với các màn hình và cửa sổ nhập liệu gốc, và một huy hiệu **Mới** trên những gì vừa xuất hiện. Các màn hình [Premium](/vi/premium) vẫn xem được, bot chỉ chặn bạn vào lúc sửa một thiết lập dành riêng.
+- Thiết kế lại **[`/settings`](./setup.md#settings)**: một bảng điều khiển năm thẻ (Chung, Thành viên mới, Bảo vệ, Kiểm duyệt, Tiện ích), với giao diện mới của Discord (Components V2) và các cửa sổ nhập liệu cho những thiết lập cần nhập văn bản. Một huy hiệu **Mới** đánh dấu các thiết lập mới. Các thiết lập [Premium](/vi/premium) vẫn hiển thị: Premium chỉ được yêu cầu khi bạn muốn sửa chúng.
 - Thành viên mới:
-  - [Tin nhắn chào mừng](./features/onboarding.md#welcome-message) mới với thẻ chào mừng, biến và nút, im lặng trong một đợt raid.
-  - [Vai trò tự động](./features/onboarding.md#autorole) tách khỏi captcha và chấp nhận nhiều vai trò, được cấp sau khi xác minh xong.
-  - [Tuổi tối thiểu của tài khoản](./features/onboarding.md#minage) đề xuất [nhiều hành động](./features/onboarding.md#minage-action): đuổi, jail đến khi đủ tuổi hoặc giữ lại ở cửa sau captcha.
-  - [Auto RaidMode](./features/raid-mode.md#action) chọn hành động của nó trong đợt raid: chặn lời mời, đuổi những người vào (**Premium**), gửi tới captcha hoặc đóng băng captcha. Chỉ việc chặn lời mời còn cần cộng đồng Discord.
+  - [Tin nhắn chào mừng](./features/onboarding.md#welcome-message) mới, với thẻ chào mừng mang tên thành viên, các biến và các nút. Tin nhắn không được gửi khi chế độ raid hoặc Đóng tham gia đang hoạt động, để không chào đón các tài khoản của một đợt raid.
+  - [Vai trò tự động](./features/onboarding.md#autorole) nay có thiết lập riêng, tách khỏi thiết lập của captcha, và chấp nhận nhiều vai trò. Chúng được cấp sau khi xác minh xong.
+  - [Tuổi tối thiểu của tài khoản](./features/onboarding.md#minage) đề xuất [nhiều hành động](./features/onboarding.md#minage-action): đuổi tài khoản quá mới, jail tài khoản đó đến khi đủ tuổi, hoặc chặn nó ở một captcha mà nó chỉ giải được khi đã đủ tuổi.
+  - Bạn chọn cách [Auto RaidMode](./features/raid-mode.md#action) phản ứng trong một đợt raid: chặn lời mời, đuổi những người vào (**Premium**), gửi họ tới captcha, hoặc bắt họ chờ ở captcha đến khi đợt raid kết thúc. Chỉ việc chặn lời mời vẫn cần máy chủ đã bật cộng đồng Discord.
   - [Captcha](./features/captcha.md) có thêm [chế độ hiển thị](./features/captcha.md#display-mode) Bảng và [kích hoạt](./features/captcha.md#trigger) Tự động hoặc Luôn luôn. Phần cấu hình của nó báo các kênh và vai trò cho phép qua mặt việc xác minh, kèm một nút để sửa chúng.
-  - Ở chế độ Bảng, captcha mở trong [Activity RaidProtect](./features/captcha.md#activity): một câu đố khó hơn với chương trình tự động, mang màu sắc của máy chủ bạn, và đội ngũ của bạn xem xét khi có nghi ngờ.
-  - [Chế độ thử](./features/captcha.md#test-mode) mới của captcha, để đội ngũ của bạn làm lại mà không áp dụng gì.
+  - Ở chế độ Bảng, captcha [mở mà không cần rời Discord](./features/captcha.md#activity): một câu đố khó hơn với robot, mang màu sắc của máy chủ bạn. Nếu một kết quả đáng ngờ, đội ngũ của bạn nhận được báo cáo và quyết định có cho thành viên vào hay không.
+  - [Chế độ thử](./features/captcha.md#test-mode) mới: đội ngũ của bạn có thể làm captcha để thử, mà không có hành động nào được áp dụng.
 - Bảo vệ:
-  - [Authentification Manager](./features/authentication-manager.mdx) được tích hợp vào `/settings`, các liên kết xác thực của nó đã được dịch.
+  - [Authentification Manager](./features/authentication-manager.mdx) nay được cấu hình trong `/settings`, và các trang xác thực của nó đã được dịch.
   - [Đóng tin nhắn riêng](./features/dm-lock.mdx) được chỉnh trong một cửa sổ nhập liệu.
 - Kiểm duyệt:
   - Lệnh mới [`/onduty`](./features/moderation.mdx#onduty) và vai trò đang trực để báo những người kiểm duyệt đang sẵn sàng.
-  - Bảng mới [`/display staff`](./features/display.mdx#staff) để thông tin cho đội ngũ của bạn.
+  - Các bảng mới [`/display staff`](./features/display.mdx#staff), để đăng trong các kênh staff của bạn: nhận vai trò, vào ca trực, nhắc lại các lệnh hữu ích.
   - `/discord-sanctions` hiển thị thống kê chung khi không chỉ định người dùng nào.
 - Tiện ích:
   - Lệnh mới [`/inviteinfo`](./features/utilities.mdx#inviteinfo). `/userinfo` và `/inviteinfo` cũng cài được vào tài khoản của bạn, để dùng ở mọi nơi.
-  - Lệnh mới [`/privacy`](./features/utilities.mdx#privacy) và thiết lập **Lưu đệm tin nhắn**, là điều kiện của [`/snipe`](./guides/malfunctions.md#snipe).
+  - Lệnh mới [`/privacy`](./features/utilities.mdx#privacy), và thiết lập mới **Lưu đệm tin nhắn**, cần thiết để [`/snipe`](./guides/malfunctions.md#snipe) tìm lại được các tin nhắn đã xóa.
   - [`/feedback`](./features/utilities.mdx#feedback) đề xuất một chẩn đoán khi bạn báo vấn đề về chống spam.
 - Chung:
   - RaidProtect nay nói [11 ngôn ngữ](./language.md) với sự xuất hiện của tiếng Ý, Thổ Nhĩ Kỳ, Việt, Nhật và Trung giản thể và phồn thể. Theo mặc định, nó [theo ngôn ngữ của máy chủ](./language.md#follow).
   - [Múi giờ](./setup.md#timezone) mới của máy chủ, được dùng cho các bản tóm tắt minh bạch.
-  - [Lệnh bằng tin nhắn](./guides/prefix.md) và [quyền](./guides/prefix.md#permissions) được chỉnh riêng, và các quyền của Discord cũng áp dụng cho menu “Xử phạt”.
-  - [Tùy chỉnh bot](./setup.md#customize) (**Premium**) chuyển vào `/settings`. Khi Premium kết thúc, diện mạo của bot tự động trở về diện mạo của RaidProtect.
+  - [Lệnh bằng tin nhắn](./guides/prefix.md) và [quyền](./guides/prefix.md#permissions) của chúng được chỉnh trong hai màn hình riêng. Các quyền lệnh được chỉnh trong Discord (Tích hợp) cũng áp dụng cho các hình phạt của menu “Xử phạt” (nhấp chuột phải vào một thành viên).
+  - [Tùy chỉnh bot](./setup.md#customize) (**Premium**) nay được chỉnh trong `/settings`.
 - Nhiều sửa lỗi và sửa bản dịch.
 
 ## 3.4.0 Antispam Update (18/07/2026) {#3-4-0}

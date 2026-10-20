@@ -77,7 +77,7 @@ With [Premium](/en/premium), click "**Color**" in "**Message content**" to choos
 ### Influxes and raids {#welcome-raid}
 
 - **Grouping:** when many members arrive at the same time, arrivals are grouped so as not to flood the channel.
-- **Silence during a wave:** as long as [raid mode](./raid-mode.md) held by RaidProtect or the [Join Lock](./join-lock.mdx) is active, no welcome message is sent.
+- **Paused during a raid:** as long as RaidProtect's [raid mode](./raid-mode.md) or the [Join Lock](./join-lock.mdx) is active, no welcome message is sent.
 
 ## 🏷️ Auto roles {#autorole}
 

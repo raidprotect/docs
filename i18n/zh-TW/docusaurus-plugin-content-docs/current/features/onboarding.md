@@ -77,7 +77,7 @@ RaidProtect 的**歡迎功能**會在新成員加入您的 Discord 伺服器時�
 ### 人潮湧入與突襲 {#welcome-raid}
 
 - **分組**：當大量成員同時加入時，加入通知會被合併，避免洗版頻道。
-- **突襲期間靜默**：只要由 RaidProtect 啟動的[突襲模式](./raid-mode.md)或[加入鎖定](./join-lock.mdx)處於啟用狀態，就不會發送任何歡迎訊息。
+- **突襲期間暫停**：只要 RaidProtect 的[突襲模式](./raid-mode.md)或[加入鎖定](./join-lock.mdx)處於啟用狀態，就不會發送任何歡迎訊息。
 
 ## 🏷️ 自動身分組 {#autorole}
 

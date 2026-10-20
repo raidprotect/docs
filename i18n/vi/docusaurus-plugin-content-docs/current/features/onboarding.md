@@ -77,7 +77,7 @@ Với [Premium](/vi/premium), nhấp vào “**Màu**” trong “**Nội dung t
 ### Dòng người đổ vào và raid {#welcome-raid}
 
 - **Gộp nhóm:** khi nhiều thành viên vào cùng lúc, các lượt vào được gộp lại để không làm ngập kênh.
-- **Im lặng trong một đợt sóng:** chừng nào [chế độ raid](./raid-mode.md) do RaidProtect giữ hoặc [Đóng tham gia](./join-lock.mdx) còn hoạt động, không có tin nhắn chào mừng nào được gửi.
+- **Tạm dừng trong một đợt raid:** chừng nào [chế độ raid](./raid-mode.md) của RaidProtect hoặc [Đóng tham gia](./join-lock.mdx) còn hoạt động, không có tin nhắn chào mừng nào được gửi.
 
 ## 🏷️ Vai trò tự động {#autorole}
 
