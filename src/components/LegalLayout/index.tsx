@@ -4,6 +4,7 @@ import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
 import {useLocation} from '@docusaurus/router';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './styles.module.css';
 
 type LegalLayoutProps = {
@@ -32,9 +33,9 @@ const MENU: readonly MenuItem[] = [
   {to: '/cookies', id: 'legal.menu.cookies', defaultMessage: 'Politique des cookies'},
 ];
 
-function stripLocale(pathname: string): string {
-  // Remove any locale prefix like /en, /de, /es, /pt (default fr has no prefix).
-  return pathname.replace(/^\/(en|de|es|pt)(?=\/|$)/, '') || '/';
+function stripLocale(pathname: string, locales: string[]): string {
+  // Retire le préfixe de langue (/en, /ja…) ; la langue par défaut n'en a pas.
+  return pathname.replace(new RegExp(`^/(${locales.join('|')})(?=/|$)`), '') || '/';
 }
 
 export default function LegalLayout({
@@ -44,7 +45,8 @@ export default function LegalLayout({
   children,
 }: LegalLayoutProps): ReactNode {
   const {pathname} = useLocation();
-  const currentPath = stripLocale(pathname).replace(/\/$/, '') || '/';
+  const {i18n} = useDocusaurusContext();
+  const currentPath = stripLocale(pathname, i18n.locales.filter((l) => l !== i18n.defaultLocale)).replace(/\/$/, '') || '/';
 
   return (
     <Layout title={title} description={description}>

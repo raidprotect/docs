@@ -8,6 +8,8 @@ import versions from './versions.json';
 const lastStableVersion = versions.find((version) => version !== 'beta')
 
 const defaultLocale = 'fr'
+const locales = ['fr', 'en', 'de', 'es', 'pt', 'it', 'tr', 'vi', 'ja', 'zh-CN', 'zh-TW']
+const localePrefixes = locales.filter((locale) => locale !== defaultLocale).join('|')
 
 const quickLinks = {fr: 'Liens rapides', en: 'Quick links', de: 'Schnellzugriff', es: 'Accesos rápidos', pt: 'Acesso rápido', it: 'Link rapidi', tr: 'Hızlı bağlantılar', vi: 'Liên kết nhanh', ja: 'クイックリンク', 'zh-CN': '快速链接', 'zh-TW': '快速連結'}
 
@@ -43,7 +45,7 @@ export default async function createConfigAsync() {
         },
         i18n: {
             defaultLocale: defaultLocale,
-            locales: ['fr', 'en', 'de', 'es', 'pt', 'it', 'tr', 'vi', 'ja', 'zh-CN', 'zh-TW'],
+            locales,
             localeConfigs: {
                     fr: {
                         label: 'Français',
@@ -409,12 +411,12 @@ export default async function createConfigAsync() {
                         changefreq: null,
                         async createSitemapItems(params) {
                             const items = await params.defaultCreateSitemapItems(params)
-                            const isHome = (url: string) => /^https:\/\/raidprotect\.bot\/(en|de|es|pt)?\/?$/.test(url)
+                            const isHome = (url: string) => new RegExp(`^https://raidprotect\\.bot/(${localePrefixes})?/?$`).test(url)
                             return items.map(i => ({
                                 ...i,
                                 priority: isHome(i.url)
                                     ? 1.0
-                                    : urlPriorities[i.url.replace(new RegExp('https://raidprotect.bot/(en/|de/|es/|pt/)?docs/'), '')] ?? 0.5
+                                    : urlPriorities[i.url.replace(new RegExp(`https://raidprotect\\.bot/((${localePrefixes})/)?docs/`), '')] ?? 0.5
                             }))
                         },
                     },
@@ -458,7 +460,7 @@ export default async function createConfigAsync() {
                             "name": "RaidProtect",
                             "description": "Official site of RaidProtect, the Discord protection bot.",
                             "publisher": { "@id": "https://raidprotect.bot/#organization" },
-                            "inLanguage": ["fr", "en", "de", "es", "pt"],
+                            "inLanguage": locales,
                             "potentialAction": {
                                 "@type": "SearchAction",
                                 "target": {
