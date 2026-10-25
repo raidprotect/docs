@@ -12,7 +12,7 @@ Khám phá danh sách chi tiết các thay đổi đã được thực hiện tr
 Identity Update đang thử nghiệm: trong khi chờ phát hành ở phiên bản 3.7.0, nó ở dạng bản beta công khai cho các máy chủ [Premium](/vi/premium). Nội dung của nó vẫn có thể thay đổi.
 :::
 
-- Lệnh mới [`/alt`](./features/alt-accounts.md#alt) và [tài khoản phụ](./features/alt-accounts.md): liên kết các tài khoản của cùng một người, chọn tài khoản chính của họ, và các hình phạt của họ (cấm, đuổi, mute, jail, timeout, softban) được mở rộng sang các tài khoản liên kết. Gỡ hình phạt của một tài khoản là gỡ cho tất cả.
+- Lệnh mới [`/alt`](./features/alt-accounts.md#alt) và [tài khoản phụ](./features/alt-accounts.md): liên kết các tài khoản của cùng một người, chọn tài khoản chính của họ, và các hình phạt của họ (cấm, đuổi, mute, jail, timeout, softban) được mở rộng sang các tài khoản liên kết. Gỡ hình phạt của một tài khoản là gỡ cho tất cả. <SuggestionLink id="404" /> <SuggestionLink id="263" />
 - [Hình phạt cho tài khoản liên kết](./features/alt-accounts.md#modes) có thể chỉnh theo từng loại, với chế độ **Bẫy** và một [hình phạt né tránh](./features/alt-accounts.md#evasion) cho tài khoản liên kết xuất hiện hoặc viết tin nhắn trong lúc có hình phạt.
 - Các tài khoản liên kết vắng mặt trên máy chủ bị xử phạt khi họ xuất hiện.
 - Thiết lập mới [Mỗi người một tài khoản](./features/alt-accounts.md#single-account): các tài khoản phụ bị cách ly.
@@ -40,11 +40,11 @@ Shield Update đang thử nghiệm: trong khi chờ phát hành ở phiên bản
 
 ## 3.5.0 Onboarding Update (19/10/2026) {#3-5-0}
 
-- Thiết kế lại **[`/settings`](./setup.md#settings)**: một bảng điều khiển năm thẻ (Chung, Thành viên mới, Bảo vệ, Kiểm duyệt, Tiện ích), với giao diện mới của Discord (Components V2) và các cửa sổ nhập liệu cho những thiết lập cần nhập văn bản. Một huy hiệu **Mới** đánh dấu các thiết lập mới. Các thiết lập [Premium](/vi/premium) vẫn hiển thị: Premium chỉ được yêu cầu khi bạn muốn sửa chúng.
+- Thiết kế lại **[`/settings`](./setup.md#settings)**: một bảng điều khiển năm thẻ (Chung, Thành viên mới, Bảo vệ, Kiểm duyệt, Tiện ích), với giao diện mới của Discord (Components V2) và các cửa sổ nhập liệu cho những thiết lập cần nhập văn bản. Một huy hiệu **Mới** đánh dấu các thiết lập mới. Các thiết lập [Premium](/vi/premium) vẫn hiển thị: Premium chỉ được yêu cầu khi bạn muốn sửa chúng. <SuggestionLink id="583" />
 - Thành viên mới:
-  - [Tin nhắn chào mừng](./features/onboarding.md#welcome-message) mới, với thẻ chào mừng mang tên thành viên, các biến và các nút. Tin nhắn không được gửi khi chế độ raid hoặc Đóng tham gia đang hoạt động, để không chào đón các tài khoản của một đợt raid.
-  - [Vai trò tự động](./features/onboarding.md#autorole) nay có thiết lập riêng, tách khỏi thiết lập của captcha, và chấp nhận nhiều vai trò. Chúng được cấp sau khi xác minh xong.
-  - [Tuổi tối thiểu của tài khoản](./features/onboarding.md#minage) đề xuất [nhiều hành động](./features/onboarding.md#minage-action): đuổi tài khoản quá mới, jail tài khoản đó đến khi đủ tuổi, hoặc chặn nó ở một captcha mà nó chỉ giải được khi đã đủ tuổi.
+  - [Tin nhắn chào mừng](./features/onboarding.md#welcome-message) mới, với thẻ chào mừng mang tên thành viên, các biến và các nút. Tin nhắn không được gửi khi chế độ raid hoặc Đóng tham gia đang hoạt động, để không chào đón các tài khoản của một đợt raid. <SuggestionLink id="110" />
+  - [Vai trò tự động](./features/onboarding.md#autorole) nay có thiết lập riêng, tách khỏi thiết lập của captcha, và chấp nhận nhiều vai trò. Chúng được cấp sau khi xác minh xong. <SuggestionLink id="586" /> <SuggestionLink id="166" />
+  - [Tuổi tối thiểu của tài khoản](./features/onboarding.md#minage) đề xuất [nhiều hành động](./features/onboarding.md#minage-action): đuổi tài khoản quá mới, jail tài khoản đó đến khi đủ tuổi, hoặc chặn nó ở một captcha mà nó chỉ giải được khi đã đủ tuổi. <SuggestionLink id="555" />
   - Bạn chọn cách [Auto RaidMode](./features/raid-mode.md#action) phản ứng trong một đợt raid: chặn lời mời, đuổi những người vào (**Premium**), gửi họ tới captcha, hoặc bắt họ chờ ở captcha đến khi đợt raid kết thúc. Chỉ việc chặn lời mời vẫn cần máy chủ đã bật cộng đồng Discord.
   - [Captcha](./features/captcha.md) có thêm [chế độ hiển thị](./features/captcha.md#display-mode) Bảng và [kích hoạt](./features/captcha.md#trigger) Tự động hoặc Luôn luôn. Phần cấu hình của nó báo các kênh và vai trò cho phép qua mặt việc xác minh, kèm một nút để sửa chúng.
   - Ở chế độ Bảng, captcha [mở mà không cần rời Discord](./features/captcha.md#activity): một câu đố khó hơn với robot, mang màu sắc của máy chủ bạn. Nếu một kết quả đáng ngờ, đội ngũ của bạn nhận được báo cáo và quyết định có cho thành viên vào hay không.
@@ -61,7 +61,7 @@ Shield Update đang thử nghiệm: trong khi chờ phát hành ở phiên bản
   - Lệnh mới [`/privacy`](./features/utilities.mdx#privacy), và thiết lập mới **Lưu đệm tin nhắn**, cần thiết để [`/snipe`](./guides/malfunctions.md#snipe) tìm lại được các tin nhắn đã xóa.
   - [`/feedback`](./features/utilities.mdx#feedback) đề xuất một chẩn đoán khi bạn báo vấn đề về chống spam.
 - Chung:
-  - RaidProtect nay nói [11 ngôn ngữ](./language.md) với sự xuất hiện của tiếng Ý, Thổ Nhĩ Kỳ, Việt, Nhật và Trung giản thể và phồn thể. Theo mặc định, nó [theo ngôn ngữ của máy chủ](./language.md#follow).
+  - RaidProtect nay nói [11 ngôn ngữ](./language.md) với sự xuất hiện của tiếng Ý, Thổ Nhĩ Kỳ, Việt, Nhật và Trung giản thể và phồn thể. Theo mặc định, nó [theo ngôn ngữ của máy chủ](./language.md#follow). <SuggestionLink id="575" /> <SuggestionLink id="585" />
   - [Múi giờ](./setup.md#timezone) mới của máy chủ, được dùng cho các bản tóm tắt minh bạch.
   - [Lệnh bằng tin nhắn](./guides/prefix.md) và [quyền](./guides/prefix.md#permissions) của chúng được chỉnh trong hai màn hình riêng. Các quyền lệnh được chỉnh trong Discord (Tích hợp) cũng áp dụng cho các hình phạt của menu “Xử phạt” (nhấp chuột phải vào một thành viên).
   - [Tùy chỉnh bot](./setup.md#customize) (**Premium**) nay được chỉnh trong `/settings`.
@@ -74,15 +74,15 @@ Shield Update đang thử nghiệm: trong khi chờ phát hành ở phiên bản
   - [Trình kích hoạt](./features/anti-spam.mdx#triggers) mới **spam tệp đính kèm** (tắt theo mặc định).
   - [Mô phỏng](./features/anti-spam.mdx#simulation) để hiểu vì sao một vụ spam bị xử phạt hay không.
   - Các tin nhắn spam nay **bị xóa bất kể hình phạt** (cấm, jail, mute, kick hoặc timeout).
-  - **Hình phạt chống lừa đảo có thể cấu hình** từ [menu hình phạt của chống spam](./features/anti-spam.mdx#triggers) và theo mặc định theo [hình phạt của HoneyPot](./features/honeypot.md#sanction); các sự cố lừa đảo bị xử phạt và ghi nhật ký ngay lập tức.
+  - **Hình phạt chống lừa đảo có thể cấu hình** từ [menu hình phạt của chống spam](./features/anti-spam.mdx#triggers) và theo mặc định theo [hình phạt của HoneyPot](./features/honeypot.md#sanction); các sự cố lừa đảo bị xử phạt và ghi nhật ký ngay lập tức. <SuggestionLink id="573" />
   - Mỗi trình kích hoạt có thể được tắt riêng với tùy chọn **Tắt** mới, và các mức độ nhạy được thay bằng một công tắc đơn giản.
   - Các hình phạt **Mute** và **Jail** chuyển sang một timeout có giới hạn khi vai trò tương ứng chưa được cấu hình.
   - Các selfbot gửi rich embed được phát hiện, và các vụ lừa đảo bị ScamLens chặn được tính vào bộ đếm tài khoản bị báo của [HoneyPot](./features/honeypot.md).
-- Thiết kế lại hoàn toàn hệ thống **[Báo cáo](./features/reports.md)**:
+- Thiết kế lại hoàn toàn hệ thống **[Báo cáo](./features/reports.md)**: <SuggestionLink id="503" />
   - Các báo cáo nay được gộp thành **sự cố**: nhiều báo cáo nhắm vào cùng một thành viên được gập vào một sự cố duy nhất, với một [chế độ gộp nhóm có thể cấu hình](./features/reports.md#group).
   - Các lệnh báo cáo nay mở một **cửa sổ lý do**, với danh sách “bạn đang báo cáo điều gì” trên các báo cáo hồ sơ (gồm hoạt động trong kênh thoại và tin nhắn riêng).
   - Mỗi sự cố nay mở một **luồng** bên dưới báo cáo: thẻ hồ sơ của thành viên bị báo cáo, tiêu đề lý do theo từng tin nhắn, tên người kiểm duyệt giải quyết và ghi chú từ chối.
-  - [Thông báo cho người báo cáo](./features/reports.md#notify) mới: người báo cáo có thể được thông báo qua tin nhắn riêng khi báo cáo của họ được xử lý, với mức chi tiết có thể cấu hình (đến tận kết luận chấp nhận/từ chối).
+  - [Thông báo cho người báo cáo](./features/reports.md#notify) mới: người báo cáo có thể được thông báo qua tin nhắn riêng khi báo cáo của họ được xử lý, với mức chi tiết có thể cấu hình (đến tận kết luận chấp nhận/từ chối). <SuggestionLink id="550" />
   - [Vai trò tin cậy](./features/reports.md#trusted-role) mới (**Premium**): các thành viên tin cậy có thể áp dụng một **timeout phòng ngừa 24 giờ** khi báo cáo, và các báo cáo khẩn cấp của họ nhắc lại vai trò kiểm duyệt.
   - [Biện pháp bảo vệ chống người báo cáo xấu](./features/reports.md#bad-reporters) mới: những người báo cáo sai tái phạm có thể được phát hiện, chặn hoặc xử phạt tự động (ngưỡng, khung thời gian và chế độ có thể cấu hình).
   - Các sự cố đang mở tự động được đóng khi thành viên bị xử phạt.
@@ -92,8 +92,8 @@ Shield Update đang thử nghiệm: trong khi chờ phát hành ở phiên bản
   - [Modlog công khai](./features/transparency.md#modlog) mới: các hình phạt có thể được đăng trong một kênh công khai, lọc theo loại và nguồn, với việc tạo chỉ bằng một cú nhấp một kênh #public-modlog chỉ đọc.
   - [Lệnh `/transparency`](./features/transparency.md#command) mới để hiển thị theo yêu cầu bản tóm tắt của kỳ vừa qua.
 - [Lệnh `/audit`](./features/audit.md) mới: một **bản kiểm tra bảo mật** đầy đủ của máy chủ với điểm tổng, các [mục kiểm tra chi tiết](./features/audit.md#checks) (mức độ xác minh, quyền, kênh) và [cách sửa chỉ với một cú nhấp](./features/audit.md#fix). Các vai trò quản trị có thể được tích hợp vào Authentification Manager trực tiếp từ bản kiểm tra.
-- [Chế độ đuổi](./features/raid-mode.md#kick-mode) mới (**Premium**) cho chế độ raid và Đóng tham gia: những người mới vào bị đuổi kèm một tin nhắn riêng giải thích và một nút lời mời để quay lại, thay cho chế độ tạm dừng lời mời gốc. [Lệnh `/bypass raid`](./features/raid-mode.md#bypass-raid) mới cho phép những người dùng cụ thể vào trong lúc nó đang hoạt động.
-- [Lệnh bằng tin nhắn](./guides/prefix.md#permissions) nay có thể theo **quyền lệnh của Discord** (thẻ Tích hợp) qua một tùy chọn mới của `/settings`.
+- [Chế độ đuổi](./features/raid-mode.md#kick-mode) mới (**Premium**) cho chế độ raid và Đóng tham gia: những người mới vào bị đuổi kèm một tin nhắn riêng giải thích và một nút lời mời để quay lại, thay cho chế độ tạm dừng lời mời gốc. [Lệnh `/bypass raid`](./features/raid-mode.md#bypass-raid) mới cho phép những người dùng cụ thể vào trong lúc nó đang hoạt động. <SuggestionLink id="144" />
+- [Lệnh bằng tin nhắn](./guides/prefix.md#permissions) nay có thể theo **quyền lệnh của Discord** (thẻ Tích hợp) qua một tùy chọn mới của `/settings`. <SuggestionLink id="369" />
 - RaidProtect nay trả lời bên dưới các **cảnh báo an ninh của Discord** khi chúng do [Đóng tin nhắn riêng](./features/dm-lock.mdx) gây ra, trích dẫn cảnh báo và giải thích nơi chỉnh thiết lập.
 - Nhật ký đuổi của [tuổi tài khoản tối thiểu](./features/raid-mode.md#minage) nay hiển thị ngưỡng yêu cầu dưới dạng dấu thời gian.
 - Thiết lập và cài đặt:
@@ -213,7 +213,7 @@ Shield Update đang thử nghiệm: trong khi chờ phát hành ở phiên bản
   - Các lệnh cấm, đuổi và timeout được thêm vào lịch sử và ghi nhật ký. <SuggestionLink id="151" />
   - Biên nhận của tin nhắn riêng thông báo hình phạt.
 - Nhật ký mới cho các hình phạt.
-- Có thể cấu hình một kênh nhật ký riêng cho các hình phạt.
+- Có thể cấu hình một kênh nhật ký riêng cho các hình phạt. <SuggestionLink id="466" />
 - [Lệnh `/warn`](./features/moderation.mdx#warn) mới. <SuggestionLink id="52" />
 - [Lệnh `/untimeout`](./features/moderation.mdx#untimeout) mới. <SuggestionLink id="52" />
 - [Lệnh `/tempban`](./features/moderation.mdx#tempban) mới. <SuggestionLink id="524" />
@@ -321,7 +321,7 @@ Shield Update đang thử nghiệm: trong khi chờ phát hành ở phiên bản
 ## 2.1.3 (13/10/2019) {#2-1-3}
 
 - Gỡ bỏ danh sách đen và các lệnh liên quan.
-- Có thể cấm bất kỳ người dùng nào bằng ID của họ, ngay cả khi họ không ở trong máy chủ liên quan. <SuggestionLink id="113" /> <SuggestionLink id="148" />
+- Có thể cấm bất kỳ người dùng nào bằng ID của họ, ngay cả khi họ không ở trong máy chủ liên quan. <SuggestionLink id="113" /> <SuggestionLink id="148" /> <SuggestionLink id="398" />
 - Hiển thị lý do cấm trong phản hồi của [lệnh `?ban`](./features/moderation.mdx#ban).
 - [Lệnh `?raidmode`](./features/raid-mode.md) nay yêu cầu quyền đuổi thành viên.
 - Thay đổi thời gian đuổi nếu captcha không được hoàn thành (5 phút). <SuggestionLink id="129" />
@@ -342,7 +342,7 @@ Shield Update đang thử nghiệm: trong khi chờ phát hành ở phiên bản
 
 - Gỡ bỏ `?settings captcha` (thay bằng `?captcha`).
 - Thêm khả năng đặt một [kênh nhật ký](./features/captcha.md#logs) cho captcha.
-- Thêm [autorole](./features/captcha.md#autorole) tương thích với captcha.
+- Thêm [autorole](./features/captcha.md#autorole) tương thích với captcha. <SuggestionLink id="508" />
 - Đơn giản hóa [captcha](./features/captcha.md) (cần đúng 5/6 chữ cái).
 - Các thay đổi nhỏ khác.
 

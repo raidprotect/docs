@@ -13,7 +13,7 @@ Discover the detailed list of changes made to RaidProtect.
 The Identity Update is an experiment: until its release in 3.7.0, it is in public beta for [Premium](/en/premium) servers. Its content may still change.
 :::
 
-- New [`/alt`](./features/alt-accounts.md#alt) command and [alt accounts](./features/alt-accounts.md): link the accounts of a single person, choose their main account, and their sanctions (ban, kick, mute, jail, timeout, softban) extend to the linked accounts. Removing the sanction of one removes it for all.
+- New [`/alt`](./features/alt-accounts.md#alt) command and [alt accounts](./features/alt-accounts.md): link the accounts of a single person, choose their main account, and their sanctions (ban, kick, mute, jail, timeout, softban) extend to the linked accounts. Removing the sanction of one removes it for all. <SuggestionLink id="404" /> <SuggestionLink id="263" />
 - [Linked account sanctions](./features/alt-accounts.md#modes) can be set per type, with a **Trap** mode and an [evasion sanction](./features/alt-accounts.md#evasion) for the linked account that arrives or writes during the sanction.
 - Linked accounts that are absent from the server are sanctioned when they arrive.
 - New [One account per person](./features/alt-accounts.md#single-account) setting: secondary accounts are put in quarantine.
@@ -41,11 +41,11 @@ The Shield Update is an experiment: until its release in 3.6.0, it is in public 
 
 ## 3.5.0 Onboarding Update (10/19/2026) {#3-5-0}
 
-- Rework of **[`/settings`](./setup.md#settings)**: a five-tab dashboard (General, Arrivals, Protection, Moderation, Utilities), with Discord's new interface (Components V2) and input windows for settings that need text. A **New** badge marks new settings. [Premium](/en/premium) settings stay visible: Premium is only required to change them.
+- Rework of **[`/settings`](./setup.md#settings)**: a five-tab dashboard (General, Arrivals, Protection, Moderation, Utilities), with Discord's new interface (Components V2) and input windows for settings that need text. A **New** badge marks new settings. [Premium](/en/premium) settings stay visible: Premium is only required to change them. <SuggestionLink id="583" />
 - Arrivals:
-  - New [welcome message](./features/onboarding.md#welcome-message), with a welcome card in the member's name, variables and buttons. It is not sent while raid mode or the Join Lock is active, so the accounts of a raid are not welcomed.
-  - [Auto roles](./features/onboarding.md#autorole) now have their own setting, separate from the captcha one, and accept several roles. They are given once verification is passed.
-  - The [minimum account age](./features/onboarding.md#minage) offers [several actions](./features/onboarding.md#minage-action): kick the account that is too new, put it in jail until it reaches the required age, or hold it on a captcha it can only solve once it reaches that age.
+  - New [welcome message](./features/onboarding.md#welcome-message), with a welcome card in the member's name, variables and buttons. It is not sent while raid mode or the Join Lock is active, so the accounts of a raid are not welcomed. <SuggestionLink id="110" />
+  - [Auto roles](./features/onboarding.md#autorole) now have their own setting, separate from the captcha one, and accept several roles. They are given once verification is passed. <SuggestionLink id="586" /> <SuggestionLink id="166" />
+  - The [minimum account age](./features/onboarding.md#minage) offers [several actions](./features/onboarding.md#minage-action): kick the account that is too new, put it in jail until it reaches the required age, or hold it on a captcha it can only solve once it reaches that age. <SuggestionLink id="555" />
   - You choose how [Auto RaidMode](./features/raid-mode.md#action) reacts during a raid: block invites, kick newcomers (**Premium**), send them to the captcha, or make them wait at the captcha until the raid is over. Only invite blocking still requires Community to be enabled on the server.
   - The [captcha](./features/captcha.md) gains a Panel [display mode](./features/captcha.md#display-mode) and an Automatic or Always [trigger](./features/captcha.md#trigger). Its configuration flags the channels and roles that let verification be bypassed, with a button to fix them.
   - In Panel mode, the captcha [opens without leaving Discord](./features/captcha.md#activity): a harder puzzle for bots, in your server's colors. If a result is doubtful, your team receives a report and decides whether to let the member in.
@@ -62,7 +62,7 @@ The Shield Update is an experiment: until its release in 3.6.0, it is in public 
   - New [`/privacy`](./features/utilities.mdx#privacy) command, and new **Message caching** setting, required for [`/snipe`](./guides/malfunctions.md#snipe) to find deleted messages.
   - [`/feedback`](./features/utilities.mdx#feedback) offers a diagnosis when you report an anti-spam problem.
 - General:
-  - RaidProtect now speaks [11 languages](./language.md) with the arrival of Italian, Turkish, Vietnamese, Japanese and Simplified and Traditional Chinese. By default, it [follows the server's language](./language.md#follow).
+  - RaidProtect now speaks [11 languages](./language.md) with the arrival of Italian, Turkish, Vietnamese, Japanese and Simplified and Traditional Chinese. By default, it [follows the server's language](./language.md#follow). <SuggestionLink id="575" /> <SuggestionLink id="585" />
   - New server [time zone](./setup.md#timezone), used by transparency recaps.
   - [Message commands](./guides/prefix.md) and their [permissions](./guides/prefix.md#permissions) are set in two separate screens. Command permissions set in Discord (Integrations) also apply to sanctions from the "Sanction User" menu (right-click on a member).
   - [Bot customization](./setup.md#customize) (**Premium**) is now set in `/settings`.
@@ -75,15 +75,15 @@ The Shield Update is an experiment: until its release in 3.6.0, it is in public 
   - New **attachment spam** [trigger](./features/anti-spam.mdx#triggers) (disabled by default).
   - [Simulation](./features/anti-spam.mdx#simulation) to understand why a spam was sanctioned or not.
   - Spam messages are now **deleted whatever the sanction** (ban, jail, mute, kick or timeout).
-  - The **anti-scam sanction is configurable** from the [anti-spam sanctions menu](./features/anti-spam.mdx#triggers) and follows the [HoneyPot sanction](./features/honeypot.md#sanction) by default; anti-scam incidents are sanctioned and logged instantly.
+  - The **anti-scam sanction is configurable** from the [anti-spam sanctions menu](./features/anti-spam.mdx#triggers) and follows the [HoneyPot sanction](./features/honeypot.md#sanction) by default; anti-scam incidents are sanctioned and logged instantly. <SuggestionLink id="573" />
   - Each trigger can be disabled individually with the new **Disable** option, and the sensitivity levels are replaced by a simple toggle.
   - **Mute** and **Jail** fall back to a capped timeout when the corresponding role is not configured.
   - Selfbots sending rich embeds are flagged, and scams blocked by ScamLens are counted in the [HoneyPot](./features/honeypot.md) flagged-accounts counter.
-- Complete rework of the **[Reports](./features/reports.md)** system:
+- Complete rework of the **[Reports](./features/reports.md)** system: <SuggestionLink id="503" />
   - Reports are now grouped into **incidents**: several reports about the same member fold into a single incident, with a [configurable grouping mode](./features/reports.md#group).
   - The report commands now open a **reason modal**, with a "what are you reporting" checklist on profile reports (including voice and DM activity).
   - Each incident now opens a **thread** under the report: profile card of the reported member, per-message reason headers, name of the resolving moderator and rejection notes.
-  - New [reporter notification](./features/reports.md#notify): reporters can be notified in DM when their report is handled, with a configurable detail level (up to the accepted/rejected outcome).
+  - New [reporter notification](./features/reports.md#notify): reporters can be notified in DM when their report is handled, with a configurable detail level (up to the accepted/rejected outcome). <SuggestionLink id="550" />
   - New [trusted role](./features/reports.md#trusted-role) (**Premium**): trusted members can apply a **preventive 24h timeout** when reporting, and their urgent reports ping the moderation role again.
   - New [bad reporters protection](./features/reports.md#bad-reporters): repeat false reporters can be flagged, blocked or sanctioned automatically (configurable threshold, window and mode).
   - Open report incidents are automatically closed when the member is sanctioned.
@@ -93,8 +93,8 @@ The Shield Update is an experiment: until its release in 3.6.0, it is in public 
   - New [public modlog](./features/transparency.md#modlog): sanctions can be published in a public channel, filtered by type and source, with a one-click creation of a read-only #public-modlog channel.
   - New [`/transparency` command](./features/transparency.md#command) to show the recap of the last closed period on demand.
 - New [`/audit` command](./features/audit.md): a full **security audit** of the server with an overall score, [detailed checks](./features/audit.md#checks) (verification level, permissions, channels) and [one-click fixes](./features/audit.md#fix). Admin roles can be integrated into the Authentification Manager directly from the audit.
-- New [kick mode](./features/raid-mode.md#kick-mode) (**Premium**) for raid mode and Join Lock: newcomers are kicked with an explanation DM and a rejoin invite button, instead of natively pausing invites. The new [`/bypass raid` command](./features/raid-mode.md#bypass-raid) lets specific users in while it is active.
-- [Message commands](./guides/prefix.md#permissions) can now follow the **Discord command permissions** (Integrations tab) via a new option in `/settings`.
+- New [kick mode](./features/raid-mode.md#kick-mode) (**Premium**) for raid mode and Join Lock: newcomers are kicked with an explanation DM and a rejoin invite button, instead of natively pausing invites. The new [`/bypass raid` command](./features/raid-mode.md#bypass-raid) lets specific users in while it is active. <SuggestionLink id="144" />
+- [Message commands](./guides/prefix.md#permissions) can now follow the **Discord command permissions** (Integrations tab) via a new option in `/settings`. <SuggestionLink id="369" />
 - RaidProtect now replies under **Discord's security incident alerts** when they are caused by the [DM Lock](./features/dm-lock.mdx), quoting the alert and explaining where to adjust the setting.
 - The [minimum account age](./features/raid-mode.md#minage) kick log now shows the required threshold as a timestamp.
 - Settings and setup:
@@ -214,7 +214,7 @@ The Shield Update is an experiment: until its release in 3.6.0, it is in public 
   - Bans, kicks and timeouts are added to history and logged. <SuggestionLink id="151" />
   - Acknowledgment receipt of the sanction notification private message.
 - New logs for sanctions.
-- Ability to configure a dedicated sanctions logs channel.
+- Ability to configure a dedicated sanctions logs channel. <SuggestionLink id="466" />
 - New [command `/warn`](./features/moderation.mdx#warn). <SuggestionLink id="52" />
 - New [command `/untimeout`](./features/moderation.mdx#untimeout). <SuggestionLink id="52" />
 - New [command `/tempban`](./features/moderation.mdx#tempban). <SuggestionLink id="524" />
@@ -322,7 +322,7 @@ The Shield Update is an experiment: until its release in 3.6.0, it is in public 
 ## 2.1.3 (10/13/2019) {#2-1-3}
 
 - Removed the blacklist and associated commands.
-- Ability to ban any user by their ID, even if they are not in the affected server. <SuggestionLink id="113" /> <SuggestionLink id="148" />
+- Ability to ban any user by their ID, even if they are not in the affected server. <SuggestionLink id="113" /> <SuggestionLink id="148" /> <SuggestionLink id="398" />
 - Display of the ban reason in the response of the [`?ban` command](./features/moderation.mdx#ban).
 - The [`?raidmode` command](./features/raid-mode.md) now requires the permission to kick members.
 - Changed the kick duration if the captcha is not completed (5 min). <SuggestionLink id="129" />
@@ -343,7 +343,7 @@ The Shield Update is an experiment: until its release in 3.6.0, it is in public 
 
 - Removed `?settings captcha` (replaced by `?captcha`).
 - Added the ability to set a [logs channel](./features/captcha.md#logs) for the captcha.
-- Added an [autorole](./features/captcha.md#autorole) compatible with the captcha.
+- Added an [autorole](./features/captcha.md#autorole) compatible with the captcha. <SuggestionLink id="508" />
 - Simplified the [captcha](./features/captcha.md) (5/6 correct letters required).
 - Other minor changes.
 

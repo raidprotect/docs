@@ -12,7 +12,7 @@ RaidProtect に加えられた変更の詳細な一覧です。
 Identity Update は実験中です。3.7.0 でのリリースまでは、[Premium](/ja/premium) サーバー向けの公開ベータとして提供されています。内容は今後変更される可能性があります。
 :::
 
-- 新コマンド [`/alt`](./features/alt-accounts.md#alt) と[複数アカウント](./features/alt-accounts.md)：同一人物のアカウントを連携し、主アカウントを選べます。その人物への処罰（BAN、キック、ミュート、Jail、タイムアウト、ソフトBAN）は、連携したアカウントにも及びます。いずれかの処罰を解除すると、全員の処罰が解除されます。
+- 新コマンド [`/alt`](./features/alt-accounts.md#alt) と[複数アカウント](./features/alt-accounts.md)：同一人物のアカウントを連携し、主アカウントを選べます。その人物への処罰（BAN、キック、ミュート、Jail、タイムアウト、ソフトBAN）は、連携したアカウントにも及びます。いずれかの処罰を解除すると、全員の処罰が解除されます。 <SuggestionLink id="404" /> <SuggestionLink id="263" />
 - [連携アカウントの処罰](./features/alt-accounts.md#modes)を処罰の種類ごとに設定できます。**罠**モードと、処罰中に参加または書き込みをした連携アカウント向けの[回避への処罰](./features/alt-accounts.md#evasion)があります。
 - サーバーにいない連携アカウントは、参加時に処罰されます。
 - 新設定[1人1アカウント](./features/alt-accounts.md#single-account)：副アカウントは隔離されます。
@@ -40,11 +40,11 @@ Shield Update は実験中です。3.6.0 でのリリースまでは、[Premium]
 
 ## 3.5.0 Onboarding Update (2026/10/19) {#3-5-0}
 
-- **[`/settings`](./setup.md#settings)** を刷新：5 つのタブ（全般、参加、保護、モデレーション、ユーティリティ）のダッシュボードになり、Discord の新しいインターフェース（Components V2）と、テキスト入力が必要な設定のための入力ウィンドウを採用しました。新しい設定には**新着**バッジが付きます。[Premium](/ja/premium) の設定も引き続き表示され、Premium が必要になるのは変更するときだけです。
+- **[`/settings`](./setup.md#settings)** を刷新：5 つのタブ（全般、参加、保護、モデレーション、ユーティリティ）のダッシュボードになり、Discord の新しいインターフェース（Components V2）と、テキスト入力が必要な設定のための入力ウィンドウを採用しました。新しい設定には**新着**バッジが付きます。[Premium](/ja/premium) の設定も引き続き表示され、Premium が必要になるのは変更するときだけです。 <SuggestionLink id="583" />
 - 参加：
-  - 新しい[ようこそメッセージ](./features/onboarding.md#welcome-message)。メンバーの名前入りのウェルカムカード、変数、ボタンに対応します。レイドモードまたは参加ロックが有効な間は送信されず、レイドのアカウントを歓迎してしまうことはありません。
-  - [自動ロール](./features/onboarding.md#autorole)がキャプチャとは別の専用の設定になり、複数のロールに対応しました。認証を通過した後に付与されます。
-  - [アカウントの最低作成日数](./features/onboarding.md#minage)に[複数のアクション](./features/onboarding.md#minage-action)を追加：作成されたばかりのアカウントをキックする、条件の日数に達するまで Jail する、または日数に達するまで解けないキャプチャで足止めする。
+  - 新しい[ようこそメッセージ](./features/onboarding.md#welcome-message)。メンバーの名前入りのウェルカムカード、変数、ボタンに対応します。レイドモードまたは参加ロックが有効な間は送信されず、レイドのアカウントを歓迎してしまうことはありません。 <SuggestionLink id="110" />
+  - [自動ロール](./features/onboarding.md#autorole)がキャプチャとは別の専用の設定になり、複数のロールに対応しました。認証を通過した後に付与されます。 <SuggestionLink id="586" /> <SuggestionLink id="166" />
+  - [アカウントの最低作成日数](./features/onboarding.md#minage)に[複数のアクション](./features/onboarding.md#minage-action)を追加：作成されたばかりのアカウントをキックする、条件の日数に達するまで Jail する、または日数に達するまで解けないキャプチャで足止めする。 <SuggestionLink id="555" />
   - レイド中の[オート RaidMode](./features/raid-mode.md#action) の対応を選べます：招待のブロック、参加者のキック（**Premium**）、参加者をキャプチャへ送る、またはレイドが終わるまでキャプチャで待機させる。招待のブロックだけは、引き続きサーバーで Discord のコミュニティを有効にする必要があります。
   - [キャプチャ](./features/captcha.md)にパネルの[表示モード](./features/captcha.md#display-mode)と、自動または常時の[作動条件](./features/captcha.md#trigger)を追加。設定画面では、認証を回避できてしまうチャンネルとロールが通知され、修正用のボタンが表示されます。
   - パネルモードでは、キャプチャは [Discord から離れずに開きます](./features/captcha.md#activity)。自動プログラムには解きにくいパズルで、サーバーのカラーに合わせて表示されます。結果が疑わしい場合は運営チームにレポートが届き、メンバーを入れるかどうかを判断できます。
@@ -61,7 +61,7 @@ Shield Update は実験中です。3.6.0 でのリリースまでは、[Premium]
   - 新コマンド [`/privacy`](./features/utilities.mdx#privacy) と、新しい**メッセージのキャッシュ**設定。[`/snipe`](./guides/malfunctions.md#snipe) で削除されたメッセージを確認するには、この設定が必要です。
   - スパム対策の問題を報告する際、[`/feedback`](./features/utilities.mdx#feedback) が診断を提案します。
 - 全般：
-  - RaidProtect は、イタリア語、トルコ語、ベトナム語、日本語、簡体字・繁体字中国語の追加により、[11 言語](./language.md)に対応しました。既定では、[サーバーの言語に合わせます](./language.md#follow)。
+  - RaidProtect は、イタリア語、トルコ語、ベトナム語、日本語、簡体字・繁体字中国語の追加により、[11 言語](./language.md)に対応しました。既定では、[サーバーの言語に合わせます](./language.md#follow)。 <SuggestionLink id="575" /> <SuggestionLink id="585" />
   - 新しいサーバーの[タイムゾーン](./setup.md#timezone)。透明性のまとめで使われます。
   - [メッセージコマンド](./guides/prefix.md)とその[権限](./guides/prefix.md#permissions)は、別々の 2 つの画面で設定します。Discord（連携サービス）で設定したコマンドの権限は、「ユーザーを処罰」メニュー（メンバーを右クリック）の処罰にも適用されます。
   - [ボットのカスタマイズ](./setup.md#customize)（**Premium**）は `/settings` で設定するようになりました。
@@ -74,15 +74,15 @@ Shield Update は実験中です。3.6.0 でのリリースまでは、[Premium]
   - 新しい[トリガー](./features/anti-spam.mdx#triggers)：**添付ファイルのスパム**（既定では無効）。
   - スパムが処罰された、または処罰されなかった理由を理解するための[シミュレーション](./features/anti-spam.mdx#simulation)。
   - スパムのメッセージは、**どの処罰でも削除される**ようになりました（BAN、Jail、ミュート、キック、タイムアウト）。
-  - **詐欺対策の処罰を設定できる**ようになりました。[スパム対策の処罰メニュー](./features/anti-spam.mdx#triggers)から設定でき、既定では[ハニーポットの処罰](./features/honeypot.md#sanction)に従います。詐欺対策のインシデントは即座に処罰され、ログに記録されます。
+  - **詐欺対策の処罰を設定できる**ようになりました。[スパム対策の処罰メニュー](./features/anti-spam.mdx#triggers)から設定でき、既定では[ハニーポットの処罰](./features/honeypot.md#sanction)に従います。詐欺対策のインシデントは即座に処罰され、ログに記録されます。 <SuggestionLink id="573" />
   - 新しい**無効にする**オプションで、各トリガーを個別に無効にできます。感度のレベルは、シンプルなスイッチに置き換わりました。
   - 対応するロールが未設定の場合、**ミュート**と **Jail** は上限付きのタイムアウトに切り替わります。
   - リッチエンベッドを送信するセルフボットを検出するようになり、ScamLens がブロックした詐欺が、[ハニーポット](./features/honeypot.md)の報告アカウント数のカウンターに加算されます。
-- **[通報](./features/reports.md)**システムを全面的に刷新：
+- **[通報](./features/reports.md)**システムを全面的に刷新： <SuggestionLink id="503" />
   - 通報は**インシデント**にまとめられるようになりました。同じメンバーに対する複数の通報は 1 つのインシデントに集約され、[まとめ方は設定可能](./features/reports.md#group)です。
   - 通報コマンドが**理由入力のモーダル**を開くようになりました。プロフィールの通報では「何を通報しますか」の一覧（ボイスと DM での活動を含む）があります。
   - インシデントごとに、通報の下に**スレッド**が作成されます。通報されたメンバーのプロフィールカード、メッセージごとの理由ヘッダー、対応したモデレーター名、却下メモが含まれます。
-  - 新しい[通報者への通知](./features/reports.md#notify)：通報が処理されると、通報者に DM で通知できます。詳細度は設定可能です（承認／却下の判定まで）。
+  - 新しい[通報者への通知](./features/reports.md#notify)：通報が処理されると、通報者に DM で通知できます。詳細度は設定可能です（承認／却下の判定まで）。 <SuggestionLink id="550" />
   - 新しい[信頼ロール](./features/reports.md#trusted-role)（**Premium**）：信頼できるメンバーは、通報の際に **24 時間の予防的なタイムアウト**を適用でき、緊急の通報ではモデレーションのロールが再メンションされます。
   - 新しい[虚偽の通報者への対策](./features/reports.md#bad-reporters)：繰り返す虚偽の通報者を検知し、自動でブロックまたは処罰できます（しきい値、集計期間、モードは設定可能）。
   - 開いているインシデントは、メンバーが処罰されると自動で閉じられます。
@@ -92,8 +92,8 @@ Shield Update は実験中です。3.6.0 でのリリースまでは、[Premium]
   - 新しい[公開モデレーションログ](./features/transparency.md#modlog)：処罰を公開チャンネルに投稿でき、種類と発生源で絞り込めます。読み取り専用の #public-modlog チャンネルをワンクリックで作成できます。
   - 新しい [`/transparency` コマンド](./features/transparency.md#command)：直近に終了した期間のまとめを、必要なときに表示します。
 - 新しい [`/audit` コマンド](./features/audit.md)：総合スコア、[詳細なチェック](./features/audit.md#checks)（認証レベル、権限、チャンネル）、[ワンクリックでの修正](./features/audit.md#fix)を備えた、サーバーの完全な**セキュリティ監査**。管理者ロールは、監査から直接 Authentification Manager に登録できます。
-- レイドモードと参加ロック向けの新しい[キックモード](./features/raid-mode.md#kick-mode)（**Premium**）：Discord 標準の招待の一時停止の代わりに、参加者に説明の DM と戻るための招待ボタンを付けてキックします。新しい [`/bypass raid` コマンド](./features/raid-mode.md#bypass-raid)で、有効な間も特定のユーザーを入室させられます。
-- [メッセージコマンド](./guides/prefix.md#permissions)が、`/settings` の新オプションにより、**Discord のコマンド権限**（連携サービスタブ）に従えるようになりました。
+- レイドモードと参加ロック向けの新しい[キックモード](./features/raid-mode.md#kick-mode)（**Premium**）：Discord 標準の招待の一時停止の代わりに、参加者に説明の DM と戻るための招待ボタンを付けてキックします。新しい [`/bypass raid` コマンド](./features/raid-mode.md#bypass-raid)で、有効な間も特定のユーザーを入室させられます。 <SuggestionLink id="144" />
+- [メッセージコマンド](./guides/prefix.md#permissions)が、`/settings` の新オプションにより、**Discord のコマンド権限**（連携サービスタブ）に従えるようになりました。 <SuggestionLink id="369" />
 - RaidProtect は、[DM の遮断](./features/dm-lock.mdx)が原因で表示される **Discord のセキュリティアラート**の下に返信するようになりました。アラートを引用し、設定を調整する場所を説明します。
 - [アカウントの最低作成日数](./features/raid-mode.md#minage)によるキックのログに、必要なしきい値がタイムスタンプで表示されるようになりました。
 - 設定とセットアップ：
@@ -213,7 +213,7 @@ Shield Update は実験中です。3.6.0 でのリリースまでは、[Premium]
   - BAN、キック、タイムアウトが履歴に追加され、ログに記録されます。<SuggestionLink id="151" />
   - 処罰の通知 DM の受領確認。
 - 処罰の新しいログ。
-- 処罰専用のログチャンネルを設定できるようになりました。
+- 処罰専用のログチャンネルを設定できるようになりました。 <SuggestionLink id="466" />
 - 新しい [`/warn` コマンド](./features/moderation.mdx#warn)。<SuggestionLink id="52" />
 - 新しい [`/untimeout` コマンド](./features/moderation.mdx#untimeout)。<SuggestionLink id="52" />
 - 新しい [`/tempban` コマンド](./features/moderation.mdx#tempban)。<SuggestionLink id="524" />
@@ -321,7 +321,7 @@ Shield Update は実験中です。3.6.0 でのリリースまでは、[Premium]
 ## 2.1.3 (2019/10/13) {#2-1-3}
 
 - ブラックリストと関連コマンドを削除。
-- ID を使えば、対象のサーバーにいなくても、どのユーザーでも BAN できるようになりました。<SuggestionLink id="113" /> <SuggestionLink id="148" />
+- ID を使えば、対象のサーバーにいなくても、どのユーザーでも BAN できるようになりました。<SuggestionLink id="113" /> <SuggestionLink id="148" /> <SuggestionLink id="398" />
 - [`?ban` コマンド](./features/moderation.mdx#ban)の返信に、BAN の理由を表示。
 - [`?raidmode` コマンド](./features/raid-mode.md)に、メンバーをキックする権限が必要になりました。
 - キャプチャが完了しない場合のキックまでの時間を変更（5 分）。<SuggestionLink id="129" />
@@ -342,7 +342,7 @@ Shield Update は実験中です。3.6.0 でのリリースまでは、[Premium]
 
 - `?settings captcha` を削除（`?captcha` に置き換え）。
 - キャプチャの[ログチャンネル](./features/captcha.md#logs)を設定できるようになりました。
-- キャプチャと互換性のある[自動ロール](./features/captcha.md#autorole)を追加。
+- キャプチャと互換性のある[自動ロール](./features/captcha.md#autorole)を追加。 <SuggestionLink id="508" />
 - [キャプチャ](./features/captcha.md)を簡素化（5/6 文字の正解が必要）。
 - その他の軽微な変更。
 

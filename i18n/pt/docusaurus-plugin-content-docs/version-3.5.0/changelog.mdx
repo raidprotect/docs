@@ -13,7 +13,7 @@ Descubra a lista detalhada das alterações feitas no RaidProtect.
 A Identity Update está em experimentação: até o lançamento na 3.7.0, ela está em beta público para os servidores [Premium](/pt/premium). Seu conteúdo ainda pode evoluir.
 :::
 
-- Novo comando [`/alt`](./features/alt-accounts.md#alt) e [contas duplicadas](./features/alt-accounts.md): vincule as contas de uma mesma pessoa, escolha a conta principal dela, e as sanções dela (banimento, expulsão, mute, jail, timeout, softban) se estendem às contas vinculadas. Remover a sanção de uma a remove para todas.
+- Novo comando [`/alt`](./features/alt-accounts.md#alt) e [contas duplicadas](./features/alt-accounts.md): vincule as contas de uma mesma pessoa, escolha a conta principal dela, e as sanções dela (banimento, expulsão, mute, jail, timeout, softban) se estendem às contas vinculadas. Remover a sanção de uma a remove para todas. <SuggestionLink id="404" /> <SuggestionLink id="263" />
 - [Sanções das contas vinculadas](./features/alt-accounts.md#modes) configuráveis por tipo, com um modo **Armadilha** e uma [sanção de evasão](./features/alt-accounts.md#evasion) para a conta vinculada que chega ou escreve durante a sanção.
 - As contas vinculadas ausentes do servidor são sancionadas na chegada.
 - Nova configuração [Uma conta por pessoa](./features/alt-accounts.md#single-account): as contas secundárias são colocadas em quarentena.
@@ -41,11 +41,11 @@ A Shield Update está em experimentação: até o lançamento na 3.6.0, ela est�
 
 ## 3.5.0 Onboarding Update (19/10/2026) {#3-5-0}
 
-- Reformulação do **[`/settings`](./setup.md#settings)**: um painel de controle de cinco abas (Geral, Chegadas, Proteção, Moderação, Utilitários), com a nova interface do Discord (Components V2) e janelas de entrada para as configurações que pedem texto. Um selo **Novo** sinaliza as novas configurações. As configurações [Premium](/pt/premium) continuam visíveis: o Premium só é pedido para modificá-las.
+- Reformulação do **[`/settings`](./setup.md#settings)**: um painel de controle de cinco abas (Geral, Chegadas, Proteção, Moderação, Utilitários), com a nova interface do Discord (Components V2) e janelas de entrada para as configurações que pedem texto. Um selo **Novo** sinaliza as novas configurações. As configurações [Premium](/pt/premium) continuam visíveis: o Premium só é pedido para modificá-las. <SuggestionLink id="583" />
 - Chegadas:
-  - Nova [mensagem de boas-vindas](./features/onboarding.md#welcome-message), com um cartão de boas-vindas com o nome do membro, variáveis e botões. Ela não é enviada enquanto o modo raid ou o Bloqueio de Entradas estiver ativo, para não dar boas-vindas às contas de um raid.
-  - Os [cargos automáticos](./features/onboarding.md#autorole) agora têm sua própria configuração, separada da do captcha, e aceitam vários cargos. Eles são atribuídos depois que a verificação é concluída.
-  - A [idade mínima da conta](./features/onboarding.md#minage) oferece [várias ações](./features/onboarding.md#minage-action): expulsar a conta recente demais, colocá-la em jail até a idade exigida, ou bloqueá-la em um captcha que ela só poderá resolver quando atingir essa idade.
+  - Nova [mensagem de boas-vindas](./features/onboarding.md#welcome-message), com um cartão de boas-vindas com o nome do membro, variáveis e botões. Ela não é enviada enquanto o modo raid ou o Bloqueio de Entradas estiver ativo, para não dar boas-vindas às contas de um raid. <SuggestionLink id="110" />
+  - Os [cargos automáticos](./features/onboarding.md#autorole) agora têm sua própria configuração, separada da do captcha, e aceitam vários cargos. Eles são atribuídos depois que a verificação é concluída. <SuggestionLink id="586" /> <SuggestionLink id="166" />
+  - A [idade mínima da conta](./features/onboarding.md#minage) oferece [várias ações](./features/onboarding.md#minage-action): expulsar a conta recente demais, colocá-la em jail até a idade exigida, ou bloqueá-la em um captcha que ela só poderá resolver quando atingir essa idade. <SuggestionLink id="555" />
   - Você escolhe a reação do [Auto RaidMode](./features/raid-mode.md#action) durante um raid: bloquear os convites, expulsar os recém-chegados (**Premium**), enviá-los para o captcha, ou fazê-los esperar no captcha até o fim do raid. Somente o bloqueio dos convites ainda exige que a comunidade do Discord esteja ativada no servidor.
   - O [captcha](./features/captcha.md) ganha um [modo de exibição](./features/captcha.md#display-mode) Painel e um [acionamento](./features/captcha.md#trigger) Automático ou Permanente. Sua configuração sinaliza os canais e os cargos que permitem contornar a verificação, com um botão para corrigi-los.
   - No modo Painel, o captcha [se abre sem sair do Discord](./features/captcha.md#activity): um quebra-cabeça mais difícil para os robôs, com as cores do seu servidor. Se um resultado for duvidoso, sua equipe recebe um relatório e decide se deixa o membro entrar ou não.
@@ -62,7 +62,7 @@ A Shield Update está em experimentação: até o lançamento na 3.6.0, ela est�
   - Novo comando [`/privacy`](./features/utilities.mdx#privacy), e nova configuração **Cache de mensagens**, necessária para que o [`/snipe`](./guides/malfunctions.md#snipe) recupere as mensagens apagadas.
   - [`/feedback`](./features/utilities.mdx#feedback) propõe um diagnóstico quando você relata um problema de anti-spam.
 - Geral:
-  - O RaidProtect agora fala [11 idiomas](./language.md) com a chegada do italiano, do turco, do vietnamita, do japonês e do chinês simplificado e tradicional. Por padrão, ele [segue o idioma do servidor](./language.md#follow).
+  - O RaidProtect agora fala [11 idiomas](./language.md) com a chegada do italiano, do turco, do vietnamita, do japonês e do chinês simplificado e tradicional. Por padrão, ele [segue o idioma do servidor](./language.md#follow). <SuggestionLink id="575" /> <SuggestionLink id="585" />
   - Novo [fuso horário](./setup.md#timezone) do servidor, usado pelos resumos de transparência.
   - Os [comandos por mensagem](./guides/prefix.md) e suas [permissões](./guides/prefix.md#permissions) são configurados em duas telas separadas. As permissões de comandos configuradas no Discord (Integrações) também se aplicam às sanções do menu “Sancionar” (clique direito em um membro).
   - A [personalização do bot](./setup.md#customize) (**Premium**) agora é configurada no `/settings`.
@@ -75,15 +75,15 @@ A Shield Update está em experimentação: até o lançamento na 3.6.0, ela est�
   - Novo [gatilho](./features/anti-spam.mdx#triggers) **spam de anexos** (desativado por padrão).
   - [Simulação](./features/anti-spam.mdx#simulation) para entender por que um spam foi sancionado ou não.
   - As mensagens de spam agora são **excluídas independentemente da sanção** (ban, jail, mute, kick ou timeout).
-  - A **sanção anti-scam é configurável** no [menu de sanções do anti-spam](./features/anti-spam.mdx#triggers) e segue por padrão a [sanção do HoneyPot](./features/honeypot.md#sanction); os incidentes anti-scam são sancionados e registrados instantaneamente.
+  - A **sanção anti-scam é configurável** no [menu de sanções do anti-spam](./features/anti-spam.mdx#triggers) e segue por padrão a [sanção do HoneyPot](./features/honeypot.md#sanction); os incidentes anti-scam são sancionados e registrados instantaneamente. <SuggestionLink id="573" />
   - Cada gatilho pode ser desativado individualmente com a nova opção **Desativar**, e os níveis de sensibilidade são substituídos por um simples interruptor.
   - As sanções **Mute** e **Jail** passam para um timeout limitado quando o cargo correspondente não está configurado.
   - Os selfbots que enviam rich embeds são detectados, e os golpes bloqueados pelo ScamLens são contabilizados no contador de contas sinalizadas do [HoneyPot](./features/honeypot.md).
-- Reformulação completa do sistema de **[Denúncias](./features/reports.md)**:
+- Reformulação completa do sistema de **[Denúncias](./features/reports.md)**: <SuggestionLink id="503" />
   - As denúncias agora são agrupadas em **incidentes**: várias denúncias contra o mesmo membro são reunidas em um único incidente, com um [modo de agrupamento configurável](./features/reports.md#group).
   - Os comandos de denúncia agora abrem uma **modal de motivo**, com uma lista “o que você está denunciando” nas denúncias de perfil (incluindo a atividade em voz e em DM).
   - Cada incidente agora abre um **thread** abaixo da denúncia: cartão de perfil do membro denunciado, cabeçalhos de motivo por mensagem, nome do moderador que resolveu e notas de recusa.
-  - Nova [notificação do denunciante](./features/reports.md#notify): os denunciantes podem ser notificados em DM quando sua denúncia é tratada, com um nível de detalhe configurável (até o veredito aceito/recusado).
+  - Nova [notificação do denunciante](./features/reports.md#notify): os denunciantes podem ser notificados em DM quando sua denúncia é tratada, com um nível de detalhe configurável (até o veredito aceito/recusado). <SuggestionLink id="550" />
   - Novo [cargo de confiança](./features/reports.md#trusted-role) (**Premium**): os membros de confiança podem aplicar um **timeout preventivo de 24h** ao denunciar, e suas denúncias urgentes voltam a mencionar o cargo de moderação.
   - Nova [proteção contra denunciantes falsos](./features/reports.md#bad-reporters): os denunciantes falsos reincidentes podem ser identificados, bloqueados ou sancionados automaticamente (limite, janela e modo configuráveis).
   - Os incidentes abertos são automaticamente encerrados quando o membro é sancionado.
@@ -93,8 +93,8 @@ A Shield Update está em experimentação: até o lançamento na 3.6.0, ela est�
   - Novo [modlog público](./features/transparency.md#modlog): as sanções podem ser publicadas em um canal público, filtradas por tipo e por origem, com a criação em um clique de um canal #public-modlog somente leitura.
   - Novo [comando `/transparency`](./features/transparency.md#command) para exibir sob demanda o resumo do último período decorrido.
 - Novo [comando `/audit`](./features/audit.md): uma **auditoria de segurança** completa do servidor com uma pontuação geral, [verificações detalhadas](./features/audit.md#checks) (nível de verificação, permissões, canais) e [correções em um clique](./features/audit.md#fix). Os cargos admin podem ser integrados ao Authentification Manager diretamente a partir da auditoria.
-- Novo [modo de expulsão](./features/raid-mode.md#kick-mode) (**Premium**) para o modo raid e o Bloqueio de Entradas: os novos membros são expulsos com uma DM de explicação e um botão de convite para voltar, em vez da pausa nativa dos convites. O novo [comando `/bypass raid`](./features/raid-mode.md#bypass-raid) permite a entrada de usuários específicos enquanto ele está ativo.
-- Os [comandos por mensagem](./guides/prefix.md#permissions) agora podem seguir as **permissões de comandos do Discord** (aba Integrações) através de uma nova opção em `/settings`.
+- Novo [modo de expulsão](./features/raid-mode.md#kick-mode) (**Premium**) para o modo raid e o Bloqueio de Entradas: os novos membros são expulsos com uma DM de explicação e um botão de convite para voltar, em vez da pausa nativa dos convites. O novo [comando `/bypass raid`](./features/raid-mode.md#bypass-raid) permite a entrada de usuários específicos enquanto ele está ativo. <SuggestionLink id="144" />
+- Os [comandos por mensagem](./guides/prefix.md#permissions) agora podem seguir as **permissões de comandos do Discord** (aba Integrações) através de uma nova opção em `/settings`. <SuggestionLink id="369" />
 - O RaidProtect agora responde sob os **alertas de segurança do Discord** quando são causados pelo [Bloqueio de DMs](./features/dm-lock.mdx), citando o alerta e explicando onde ajustar a configuração.
 - O log de expulsão da [idade mínima de conta](./features/raid-mode.md#minage) agora exibe o limite exigido em forma de timestamp.
 - Configurações e setup:
@@ -214,7 +214,7 @@ A Shield Update está em experimentação: até o lançamento na 3.6.0, ela est�
   - Banimentos, expulsões e timeouts são adicionados ao histórico e registrados. <SuggestionLink id="151" />
   - Aviso de recebimento da mensagem privada de notificação de sanção.
 - Novos logs para as sanções.
-- Possibilidade de configurar um canal de logs dedicado às sanções.
+- Possibilidade de configurar um canal de logs dedicado às sanções. <SuggestionLink id="466" />
 - Novo [comando `/warn`](./features/moderation.mdx#warn). <SuggestionLink id="52" />
 - Novo [comando `/untimeout`](./features/moderation.mdx#untimeout). <SuggestionLink id="52" />
 - Novo [comando `/tempban`](./features/moderation.mdx#tempban). <SuggestionLink id="524" />
@@ -322,7 +322,7 @@ A Shield Update está em experimentação: até o lançamento na 3.6.0, ela est�
 ## 2.1.3 (13/10/2019) {#2-1-3}
 
 - Remoção da lista negra e dos comandos associados.
-- Possibilidade de banir qualquer usuário pelo seu ID, mesmo que não esteja no servidor afetado. <SuggestionLink id="113" /> <SuggestionLink id="148" />
+- Possibilidade de banir qualquer usuário pelo seu ID, mesmo que não esteja no servidor afetado. <SuggestionLink id="113" /> <SuggestionLink id="148" /> <SuggestionLink id="398" />
 - Exibição do motivo do banimento na resposta do [comando `?ban`](./features/moderation.mdx#ban).
 - O [comando `?raidmode`](./features/raid-mode.md) agora requer a permissão para expulsar membros.
 - Alteração da duração da expulsão se o captcha não for concluído (5 min). <SuggestionLink id="129" />
@@ -343,7 +343,7 @@ A Shield Update está em experimentação: até o lançamento na 3.6.0, ela est�
 
 - Remoção de `?settings captcha` (substituído por `?captcha`).
 - Adição da possibilidade de definir um [canal de logs](./features/captcha.md#logs) para o captcha.
-- Adição de um [cargo automático](./features/captcha.md#autorole) compatível com o captcha.
+- Adição de um [cargo automático](./features/captcha.md#autorole) compatível com o captcha. <SuggestionLink id="508" />
 - Simplificação do [captcha](./features/captcha.md) (5/6 letras corretas exigidas).
 - Outras alterações menores.
 

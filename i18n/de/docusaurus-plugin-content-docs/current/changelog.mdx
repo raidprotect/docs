@@ -13,7 +13,7 @@ Entdecken Sie die detaillierte Liste der Änderungen an RaidProtect.
 Die Identity Update befindet sich in der Experimentierphase: Bis zu ihrer Veröffentlichung in 3.7.0 ist sie eine öffentliche Beta für [Premium](/de/premium)-Server. Ihr Inhalt kann sich noch ändern.
 :::
 
-- Neuer Befehl [`/alt`](./features/alt-accounts.md#alt) und [Zweitkonten](./features/alt-accounts.md): Verknüpfen Sie die Konten ein und derselben Person, wählen Sie ihr Hauptkonto, und ihre Sanktionen (Bann, Kick, Mute, Jail, Timeout, Softban) erstrecken sich auf die verknüpften Konten. Die Sanktion eines Kontos aufzuheben, hebt sie für alle auf.
+- Neuer Befehl [`/alt`](./features/alt-accounts.md#alt) und [Zweitkonten](./features/alt-accounts.md): Verknüpfen Sie die Konten ein und derselben Person, wählen Sie ihr Hauptkonto, und ihre Sanktionen (Bann, Kick, Mute, Jail, Timeout, Softban) erstrecken sich auf die verknüpften Konten. Die Sanktion eines Kontos aufzuheben, hebt sie für alle auf. <SuggestionLink id="404" /> <SuggestionLink id="263" />
 - [Sanktionen der verknüpften Konten](./features/alt-accounts.md#modes) pro Typ einstellbar, mit einem Modus **Falle** und einer [Umgehungssanktion](./features/alt-accounts.md#evasion) für das verknüpfte Konto, das während der Sanktion ankommt oder schreibt.
 - Nicht auf dem Server anwesende verknüpfte Konten werden bei ihrer Ankunft sanktioniert.
 - Neue Einstellung [Nur ein Konto pro Person](./features/alt-accounts.md#single-account): Die Zweitkonten werden in Quarantäne gesetzt.
@@ -41,11 +41,11 @@ Die Shield Update befindet sich in der Experimentierphase: Bis zu ihrer Veröffe
 
 ## 3.5.0 Onboarding Update (19/10/2026) {#3-5-0}
 
-- Überarbeitung von **[`/settings`](./setup.md#settings)**: ein Dashboard mit fünf Tabs (Allgemein, Ankünfte, Schutz, Moderation, Werkzeuge), mit der neuen Discord-Oberfläche (Components V2) und Eingabefenstern für Einstellungen, die Text erfordern. Ein Hinweis **Neu** kennzeichnet neue Einstellungen. Die [Premium](/de/premium)-Einstellungen bleiben sichtbar: Premium wird nur verlangt, um sie zu ändern.
+- Überarbeitung von **[`/settings`](./setup.md#settings)**: ein Dashboard mit fünf Tabs (Allgemein, Ankünfte, Schutz, Moderation, Werkzeuge), mit der neuen Discord-Oberfläche (Components V2) und Eingabefenstern für Einstellungen, die Text erfordern. Ein Hinweis **Neu** kennzeichnet neue Einstellungen. Die [Premium](/de/premium)-Einstellungen bleiben sichtbar: Premium wird nur verlangt, um sie zu ändern. <SuggestionLink id="583" />
 - Ankünfte:
-  - Neue [Willkommensnachricht](./features/onboarding.md#welcome-message) mit einer Willkommenskarte mit dem Namen des Mitglieds, Variablen und Schaltflächen. Sie wird nicht gesendet, solange der Raid-Modus oder die Beitrittssperre aktiv ist, damit die Konten eines Raids nicht begrüßt werden.
-  - Die [automatischen Rollen](./features/onboarding.md#autorole) haben jetzt eine eigene Einstellung, getrennt von der des Captchas, und akzeptieren mehrere Rollen. Sie werden nach bestandener Verifizierung vergeben.
-  - Das [Mindestalter des Kontos](./features/onboarding.md#minage) bietet [mehrere Aktionen](./features/onboarding.md#minage-action): das zu neue Konto kicken, es bis zum erforderlichen Alter ins Jail setzen oder es an einem Captcha festhalten, das es erst lösen kann, wenn das Alter erreicht ist.
+  - Neue [Willkommensnachricht](./features/onboarding.md#welcome-message) mit einer Willkommenskarte mit dem Namen des Mitglieds, Variablen und Schaltflächen. Sie wird nicht gesendet, solange der Raid-Modus oder die Beitrittssperre aktiv ist, damit die Konten eines Raids nicht begrüßt werden. <SuggestionLink id="110" />
+  - Die [automatischen Rollen](./features/onboarding.md#autorole) haben jetzt eine eigene Einstellung, getrennt von der des Captchas, und akzeptieren mehrere Rollen. Sie werden nach bestandener Verifizierung vergeben. <SuggestionLink id="586" /> <SuggestionLink id="166" />
+  - Das [Mindestalter des Kontos](./features/onboarding.md#minage) bietet [mehrere Aktionen](./features/onboarding.md#minage-action): das zu neue Konto kicken, es bis zum erforderlichen Alter ins Jail setzen oder es an einem Captcha festhalten, das es erst lösen kann, wenn das Alter erreicht ist. <SuggestionLink id="555" />
   - Sie wählen, wie der [Auto RaidMode](./features/raid-mode.md#action) während eines Raids reagiert: Einladungen blockieren, Neuankömmlinge kicken (**Premium**), sie zum Captcha schicken oder sie am Captcha warten lassen, bis der Raid vorbei ist. Nur das Blockieren der Einladungen erfordert noch, dass die Discord-Community auf dem Server aktiviert ist.
   - Das [Captcha](./features/captcha.md) erhält einen [Anzeigemodus](./features/captcha.md#display-mode) Panel und einen [Auslöser](./features/captcha.md#trigger) Automatisch oder Dauerhaft. Seine Konfiguration weist auf Kanäle und Rollen hin, die eine Umgehung der Verifizierung ermöglichen, mit einer Schaltfläche, um sie zu korrigieren.
   - Im Panel-Modus [öffnet sich das Captcha, ohne Discord zu verlassen](./features/captcha.md#activity): ein schwierigeres Puzzle für Bots, in den Farben Ihres Servers. Ist ein Ergebnis zweifelhaft, erhält Ihr Team einen Bericht und entscheidet, ob das Mitglied hereingelassen wird.
@@ -62,7 +62,7 @@ Die Shield Update befindet sich in der Experimentierphase: Bis zu ihrer Veröffe
   - Neuer Befehl [`/privacy`](./features/utilities.mdx#privacy) und neue Einstellung **Nachrichten-Zwischenspeicher**, die nötig ist, damit [`/snipe`](./guides/malfunctions.md#snipe) gelöschte Nachrichten wiederfindet.
   - [`/feedback`](./features/utilities.mdx#feedback) bietet eine Diagnose an, wenn Sie ein Anti-Spam-Problem melden.
 - Allgemein:
-  - RaidProtect spricht nun [11 Sprachen](./language.md) mit Italienisch, Türkisch, Vietnamesisch, Japanisch sowie vereinfachtem und traditionellem Chinesisch. Standardmäßig [folgt es der Sprache des Servers](./language.md#follow).
+  - RaidProtect spricht nun [11 Sprachen](./language.md) mit Italienisch, Türkisch, Vietnamesisch, Japanisch sowie vereinfachtem und traditionellem Chinesisch. Standardmäßig [folgt es der Sprache des Servers](./language.md#follow). <SuggestionLink id="575" /> <SuggestionLink id="585" />
   - Neue [Zeitzone](./setup.md#timezone) des Servers, die von den Transparenz-Zusammenfassungen verwendet wird.
   - [Präfixbefehle](./guides/prefix.md) und ihre [Berechtigungen](./guides/prefix.md#permissions) werden in zwei getrennten Bildschirmen eingestellt. Die in Discord (Integrationen) eingestellten Befehlsberechtigungen gelten auch für die Sanktionen im Menü „Sanktionieren“ (Rechtsklick auf ein Mitglied).
   - Die [Anpassung des Bots](./setup.md#customize) (**Premium**) wird jetzt in `/settings` eingestellt.
@@ -75,15 +75,15 @@ Die Shield Update befindet sich in der Experimentierphase: Bis zu ihrer Veröffe
   - Neuer [Auslöser](./features/anti-spam.mdx#triggers) **Anhang-Spam** (standardmäßig deaktiviert).
   - [Simulation](./features/anti-spam.mdx#simulation), um zu verstehen, warum ein Spam sanktioniert wurde oder nicht.
   - Spam-Nachrichten werden nun **unabhängig von der Sanktion gelöscht** (Ban, Jail, Mute, Kick oder Timeout).
-  - Die **Anti-Scam-Sanktion ist konfigurierbar** über das [Sanktionsmenü des Anti-Spam](./features/anti-spam.mdx#triggers) und folgt standardmäßig der [HoneyPot-Sanktion](./features/honeypot.md#sanction); Anti-Scam-Vorfälle werden sofort sanktioniert und protokolliert.
+  - Die **Anti-Scam-Sanktion ist konfigurierbar** über das [Sanktionsmenü des Anti-Spam](./features/anti-spam.mdx#triggers) und folgt standardmäßig der [HoneyPot-Sanktion](./features/honeypot.md#sanction); Anti-Scam-Vorfälle werden sofort sanktioniert und protokolliert. <SuggestionLink id="573" />
   - Jeder Auslöser kann einzeln mit der neuen Option **Deaktivieren** abgeschaltet werden, und die Empfindlichkeitsstufen werden durch einen einfachen Schalter ersetzt.
   - Die Sanktionen **Mute** und **Jail** greifen auf einen begrenzten Timeout zurück, wenn die entsprechende Rolle nicht konfiguriert ist.
   - Selfbots, die Rich Embeds senden, werden erkannt, und von ScamLens blockierte Betrugsversuche werden im Zähler der gemeldeten Konten des [HoneyPot](./features/honeypot.md) mitgezählt.
-- Vollständige Überarbeitung des **[Meldesystems](./features/reports.md)**:
+- Vollständige Überarbeitung des **[Meldesystems](./features/reports.md)**: <SuggestionLink id="503" />
   - Meldungen werden nun in **Vorfällen** zusammengefasst: mehrere Meldungen gegen dasselbe Mitglied werden in einem einzigen Vorfall gebündelt, mit einem [konfigurierbaren Gruppierungsmodus](./features/reports.md#group).
   - Die Meldebefehle öffnen nun ein **Modal für den Grund**, mit einer Liste „Was melden Sie?“ bei Profilmeldungen (einschließlich Sprach- und DM-Aktivität).
   - Jeder Vorfall öffnet nun einen **Thread** unter der Meldung: Profilkarte des gemeldeten Mitglieds, Grund-Überschriften pro Nachricht, Name des bearbeitenden Moderators und Ablehnungsnotizen.
-  - Neue [Benachrichtigung des Melders](./features/reports.md#notify): Melder können per DM benachrichtigt werden, wenn ihre Meldung bearbeitet wurde, mit einem konfigurierbaren Detailgrad (bis hin zum Ergebnis akzeptiert/abgelehnt).
+  - Neue [Benachrichtigung des Melders](./features/reports.md#notify): Melder können per DM benachrichtigt werden, wenn ihre Meldung bearbeitet wurde, mit einem konfigurierbaren Detailgrad (bis hin zum Ergebnis akzeptiert/abgelehnt). <SuggestionLink id="550" />
   - Neue [Vertrauensrolle](./features/reports.md#trusted-role) (**Premium**): Vertrauensmitglieder können beim Melden einen **präventiven Timeout von 24h** anwenden, und ihre dringenden Meldungen erwähnen die Moderationsrolle erneut.
   - Neuer [Schutz vor schlechten Meldern](./features/reports.md#bad-reporters): wiederholte Falschmelder können automatisch erkannt, blockiert oder sanktioniert werden (konfigurierbarer Schwellenwert, Fenster und Modus).
   - Offene Meldungsvorfälle werden automatisch geschlossen, wenn das Mitglied sanktioniert wird.
@@ -93,8 +93,8 @@ Die Shield Update befindet sich in der Experimentierphase: Bis zu ihrer Veröffe
   - Neues [öffentliches Modlog](./features/transparency.md#modlog): Sanktionen können in einem öffentlichen Kanal veröffentlicht werden, gefiltert nach Typ und Quelle, mit der Erstellung eines schreibgeschützten Kanals #public-modlog per Klick.
   - Neuer [Befehl `/transparency`](./features/transparency.md#command), um die Zusammenfassung des letzten abgeschlossenen Zeitraums auf Anfrage anzuzeigen.
 - Neuer [Befehl `/audit`](./features/audit.md): ein vollständiges **Sicherheitsaudit** des Servers mit einem Gesamtscore, [detaillierten Prüfungen](./features/audit.md#checks) (Verifizierungsstufe, Berechtigungen, Kanäle) und [Korrekturen per Klick](./features/audit.md#fix). Admin-Rollen können direkt aus dem Audit in den Authentification Manager integriert werden.
-- Neuer [Kick-Modus](./features/raid-mode.md#kick-mode) (**Premium**) für den Raid-Modus und die Beitrittssperre: Neuankömmlinge werden mit einer erklärenden DM und einer Einladungsschaltfläche zum Wiederbeitreten gekickt, anstatt die Einladungen nativ zu pausieren. Der neue [Befehl `/bypass raid`](./features/raid-mode.md#bypass-raid) lässt bestimmte Benutzer eintreten, während er aktiv ist.
-- [Nachrichtenbefehle](./guides/prefix.md#permissions) können nun über eine neue Option in `/settings` die **Discord-Befehlsberechtigungen** (Integrationen-Tab) übernehmen.
+- Neuer [Kick-Modus](./features/raid-mode.md#kick-mode) (**Premium**) für den Raid-Modus und die Beitrittssperre: Neuankömmlinge werden mit einer erklärenden DM und einer Einladungsschaltfläche zum Wiederbeitreten gekickt, anstatt die Einladungen nativ zu pausieren. Der neue [Befehl `/bypass raid`](./features/raid-mode.md#bypass-raid) lässt bestimmte Benutzer eintreten, während er aktiv ist. <SuggestionLink id="144" />
+- [Nachrichtenbefehle](./guides/prefix.md#permissions) können nun über eine neue Option in `/settings` die **Discord-Befehlsberechtigungen** (Integrationen-Tab) übernehmen. <SuggestionLink id="369" />
 - RaidProtect antwortet nun unter den **Discord-Sicherheitswarnungen**, wenn diese durch die [DM-Sperre](./features/dm-lock.mdx) verursacht werden, zitiert die Warnung und erklärt, wo die Einstellung angepasst werden kann.
 - Das Kick-Protokoll des [Mindestalters für Konten](./features/raid-mode.md#minage) zeigt nun den erforderlichen Schwellenwert als Zeitstempel an.
 - Einstellungen und Einrichtung:
@@ -214,7 +214,7 @@ Die Shield Update befindet sich in der Experimentierphase: Bis zu ihrer Veröffe
   - Banns, Kicks und Timeouts werden dem Verlauf hinzugefügt und protokolliert. <SuggestionLink id="151" />
   - Empfangsbestätigung der privaten Sanktionsbenachrichtigung.
 - Neue Protokolle für Sanktionen.
-- Möglichkeit, einen dedizierten Sanktionsprotokoll-Kanal zu konfigurieren.
+- Möglichkeit, einen dedizierten Sanktionsprotokoll-Kanal zu konfigurieren. <SuggestionLink id="466" />
 - Neuer [Befehl `/warn`](./features/moderation.mdx#warn). <SuggestionLink id="52" />
 - Neuer [Befehl `/untimeout`](./features/moderation.mdx#untimeout). <SuggestionLink id="52" />
 - Neuer [Befehl `/tempban`](./features/moderation.mdx#tempban). <SuggestionLink id="524" />
@@ -322,7 +322,7 @@ Die Shield Update befindet sich in der Experimentierphase: Bis zu ihrer Veröffe
 ## 2.1.3 (13/10/2019) {#2-1-3}
 
 - Sperrliste und zugehörige Befehle entfernt.
-- Möglichkeit, jeden Benutzer per ID zu bannen, auch wenn er sich nicht auf dem Server befindet. <SuggestionLink id="113" /> <SuggestionLink id="148" />
+- Möglichkeit, jeden Benutzer per ID zu bannen, auch wenn er sich nicht auf dem Server befindet. <SuggestionLink id="113" /> <SuggestionLink id="148" /> <SuggestionLink id="398" />
 - Anzeige des Banngrundes in der Antwort des [`?ban`-Befehls](./features/moderation.mdx#ban).
 - Der [`?raidmode`-Befehl](./features/raid-mode.md) erfordert nun die Berechtigung, Mitglieder zu kicken.
 - Geänderte Kick-Dauer bei nicht bestandenem Captcha (5 Minuten). <SuggestionLink id="129" />
@@ -343,7 +343,7 @@ Die Shield Update befindet sich in der Experimentierphase: Bis zu ihrer Veröffe
 
 - `?settings captcha` entfernt (durch `?captcha` ersetzt).
 - Möglichkeit zum Festlegen eines [Log-Kanals](./features/captcha.md#logs) für das Captcha hinzugefügt.
-- [Autorolle](./features/captcha.md#autorole) kompatibel mit dem Captcha hinzugefügt.
+- [Autorolle](./features/captcha.md#autorole) kompatibel mit dem Captcha hinzugefügt. <SuggestionLink id="508" />
 - [Captcha](./features/captcha.md) vereinfacht (5/6 Buchstaben korrekt).
 - Weitere kleinere Änderungen.
 

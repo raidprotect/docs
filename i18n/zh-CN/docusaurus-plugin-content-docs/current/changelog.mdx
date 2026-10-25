@@ -12,7 +12,7 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 Identity Update 处于试验阶段：在 3.7.0 正式发布之前，它面向 [Premium](/zh-CN/premium) 服务器开放公开测试。其内容仍可能变动。
 :::
 
-- 新增 [`/alt`](./features/alt-accounts.md#alt) 命令和[多账号](./features/alt-accounts.md)功能：关联同一个人的多个账号，指定其主账号，该成员的处罚（封禁、踢出、禁言、监禁、超时、软封禁）会扩展到所有关联账号。解除其中一个账号的处罚，所有账号的处罚都会随之解除。
+- 新增 [`/alt`](./features/alt-accounts.md#alt) 命令和[多账号](./features/alt-accounts.md)功能：关联同一个人的多个账号，指定其主账号，该成员的处罚（封禁、踢出、禁言、监禁、超时、软封禁）会扩展到所有关联账号。解除其中一个账号的处罚，所有账号的处罚都会随之解除。 <SuggestionLink id="404" /> <SuggestionLink id="263" />
 - [关联账号的处罚](./features/alt-accounts.md#modes)可按类型设置，提供**陷阱**模式，以及针对在处罚期间加入或发言的关联账号的[规避处罚](./features/alt-accounts.md#evasion)。
 - 不在服务器中的关联账号会在加入时受到处罚。
 - 新增设置[每人仅限一个账号](./features/alt-accounts.md#single-account)：次要账号会被隔离。
@@ -40,11 +40,11 @@ Shield Update 处于试验阶段：在 3.6.0 正式发布之前，它面向 [Pre
 
 ## 3.5.0 Onboarding Update (2026/10/19) {#3-5-0}
 
-- **[`/settings`](./setup.md#settings)** 重构：五个选项卡的控制面板（常规、新成员、防护、管理、实用工具），采用 Discord 的新界面（Components V2），需要填写文字的设置则使用输入窗口。**新**标记会标出新增的设置。[Premium](/zh-CN/premium) 设置仍然可见：只有修改它们时才需要 Premium。
+- **[`/settings`](./setup.md#settings)** 重构：五个选项卡的控制面板（常规、新成员、防护、管理、实用工具），采用 Discord 的新界面（Components V2），需要填写文字的设置则使用输入窗口。**新**标记会标出新增的设置。[Premium](/zh-CN/premium) 设置仍然可见：只有修改它们时才需要 Premium。 <SuggestionLink id="583" />
 - 新成员：
-  - 新增[欢迎消息](./features/onboarding.md#welcome-message)，包含带有成员名字的欢迎卡片、变量和按钮。只要突袭模式或加入锁定处于启用状态，就不会发送，以免欢迎突袭的账号。
-  - [自动角色](./features/onboarding.md#autorole)现在有独立的设置，与验证码的设置分开，并支持多个角色。它们会在验证通过后授予。
-  - [账号最短注册时长](./features/onboarding.md#minage)提供[多种处理方式](./features/onboarding.md#minage-action)：踢出注册时间过短的账号，将其监禁至达到要求的年龄，或将其拦在验证码处，直到账号达到要求的年龄才能解答。
+  - 新增[欢迎消息](./features/onboarding.md#welcome-message)，包含带有成员名字的欢迎卡片、变量和按钮。只要突袭模式或加入锁定处于启用状态，就不会发送，以免欢迎突袭的账号。 <SuggestionLink id="110" />
+  - [自动角色](./features/onboarding.md#autorole)现在有独立的设置，与验证码的设置分开，并支持多个角色。它们会在验证通过后授予。 <SuggestionLink id="586" /> <SuggestionLink id="166" />
+  - [账号最短注册时长](./features/onboarding.md#minage)提供[多种处理方式](./features/onboarding.md#minage-action)：踢出注册时间过短的账号，将其监禁至达到要求的年龄，或将其拦在验证码处，直到账号达到要求的年龄才能解答。 <SuggestionLink id="555" />
   - 您可以选择 [Auto RaidMode](./features/raid-mode.md#action) 在突袭期间的应对方式：封锁邀请、踢出新加入的成员（**Premium**）、将他们发送到验证码，或让他们在验证码处等待，直到突袭结束。现在只有封锁邀请仍需要服务器启用 Discord 社区。
   - [验证码](./features/captcha.md)新增面板[显示模式](./features/captcha.md#display-mode)，以及自动或始终的[触发方式](./features/captcha.md#trigger)。其配置界面会提示可绕过验证的频道和角色，并提供修复按钮。
   - 在面板模式下，验证码[无需离开 Discord 即可打开](./features/captcha.md#activity)：对自动程序而言难度更高的拼图，采用您服务器的配色。如果某个结果存疑，您的团队会收到一份报告，并决定是否放行该成员。
@@ -61,7 +61,7 @@ Shield Update 处于试验阶段：在 3.6.0 正式发布之前，它面向 [Pre
   - 新增 [`/privacy`](./features/utilities.mdx#privacy) 命令，以及新的**消息缓存**设置，[`/snipe`](./guides/malfunctions.md#snipe) 需要它才能找回已删除的消息。
   - 当您反馈 Antispam 问题时，[`/feedback`](./features/utilities.mdx#feedback) 会提供诊断。
 - 常规：
-  - RaidProtect 现已支持 [11 种语言](./language.md)，新增意大利语、土耳其语、越南语、日语以及简体和繁体中文。默认情况下，它会[跟随服务器语言](./language.md#follow)。
+  - RaidProtect 现已支持 [11 种语言](./language.md)，新增意大利语、土耳其语、越南语、日语以及简体和繁体中文。默认情况下，它会[跟随服务器语言](./language.md#follow)。 <SuggestionLink id="575" /> <SuggestionLink id="585" />
   - 新增服务器[时区](./setup.md#timezone)设置，供透明度汇总使用。
   - [消息命令](./guides/prefix.md)及其[权限](./guides/prefix.md#permissions)在两个独立的界面中设置。在 Discord 中设置的命令权限（集成）也适用于“处罚用户”菜单中的处罚（右键点击成员）。
   - 机器人的[自定义](./setup.md#customize)（**Premium**）现在在 `/settings` 中设置。
@@ -74,15 +74,15 @@ Shield Update 处于试验阶段：在 3.6.0 正式发布之前，它面向 [Pre
   - 新增**附件刷屏**[触发器](./features/anti-spam.mdx#triggers)（默认关闭）。
   - 新增[模拟](./features/anti-spam.mdx#simulation)功能，用于了解某条垃圾信息为何被处罚或未被处罚。
   - 现在无论采用哪种处罚（封禁、监禁、禁言、踢出或超时），垃圾信息都会被**删除**。
-  - **反诈骗处罚可配置**：可在 [Antispam 的处罚菜单](./features/anti-spam.mdx#triggers)中设置，默认沿用 [HoneyPot 的处罚](./features/honeypot.md#sanction)；反诈骗事件会被即时处罚并记录日志。
+  - **反诈骗处罚可配置**：可在 [Antispam 的处罚菜单](./features/anti-spam.mdx#triggers)中设置，默认沿用 [HoneyPot 的处罚](./features/honeypot.md#sanction)；反诈骗事件会被即时处罚并记录日志。 <SuggestionLink id="573" />
   - 每个触发器都可通过新增的**停用**选项单独关闭，灵敏度等级改为简单的开关。
   - 当未设置对应角色时，**禁言**和**监禁**处罚会改用有上限的超时。
   - 可检测发送富嵌入内容的自助机器人，被 ScamLens 拦截的诈骗信息也会计入 [HoneyPot](./features/honeypot.md) 的被举报账号计数。
-- **[举报](./features/reports.md)** 系统全面重构：
+- **[举报](./features/reports.md)** 系统全面重构： <SuggestionLink id="503" />
   - 举报现在按**事件**归类：针对同一成员的多个举报会合并为一个事件，并提供可配置的[分组模式](./features/reports.md#group)。
   - 举报命令现在会打开**原因窗口**，在用户资料举报中提供“您要举报什么”列表（包括语音活动和私信）。
   - 每个事件现在都会在举报下开启一个**子区**：包含被举报成员的资料卡、按消息区分的原因标题、处理人的名字以及驳回备注。
-  - 新增[举报者通知](./features/reports.md#notify)：举报被处理时，可通过私信通知举报者，通知的详细程度可配置（最详细可到“已接受/已驳回”的结论）。
+  - 新增[举报者通知](./features/reports.md#notify)：举报被处理时，可通过私信通知举报者，通知的详细程度可配置（最详细可到“已接受/已驳回”的结论）。 <SuggestionLink id="550" />
   - 新增[信任角色](./features/reports.md#trusted-role)（**Premium**）：受信任的成员在举报时可以施加 **24 小时的预防性超时**，其紧急举报会再次提及管理角色。
   - 新增[防范恶意举报者](./features/reports.md#bad-reporters)功能：屡次虚假举报者可被识别，并被自动屏蔽或处罚（阈值、时间窗口和模式均可配置）。
   - 成员受到处罚时，未结的事件会自动关闭。
@@ -92,8 +92,8 @@ Shield Update 处于试验阶段：在 3.6.0 正式发布之前，它面向 [Pre
   - 新增[公开管理日志](./features/transparency.md#modlog)：处罚可发布到公开频道，可按类型和来源筛选，并可一键创建只读的 #public-modlog 频道。
   - 新增 [`/transparency` 命令](./features/transparency.md#command)，可按需显示上一个已结束周期的汇总。
 - 新增 [`/audit` 命令](./features/audit.md)：对服务器进行完整的**安全审计**，给出总体评分、[详细检查](./features/audit.md#checks)（验证级别、权限、频道）和[一键修复](./features/audit.md#fix)。管理员角色可直接在审计界面中接入 Authentification Manager。
-- 突袭模式和加入锁定新增[踢出模式](./features/raid-mode.md#kick-mode)（**Premium**）：新成员会被踢出，并收到附带说明的私信和用于重新加入的邀请按钮，取代原生的邀请暂停。新增的 [`/bypass raid` 命令](./features/raid-mode.md#bypass-raid)可在该模式生效期间放行特定用户。
-- [消息命令](./guides/prefix.md#permissions)现在可以通过 `/settings` 的新选项遵循 **Discord 命令权限**（整合选项卡）。
+- 突袭模式和加入锁定新增[踢出模式](./features/raid-mode.md#kick-mode)（**Premium**）：新成员会被踢出，并收到附带说明的私信和用于重新加入的邀请按钮，取代原生的邀请暂停。新增的 [`/bypass raid` 命令](./features/raid-mode.md#bypass-raid)可在该模式生效期间放行特定用户。 <SuggestionLink id="144" />
+- [消息命令](./guides/prefix.md#permissions)现在可以通过 `/settings` 的新选项遵循 **Discord 命令权限**（整合选项卡）。 <SuggestionLink id="369" />
 - 当 Discord 的**安全警示**由[私信锁定](./features/dm-lock.mdx)引起时，RaidProtect 现在会在警示下方回复，引用该警示并说明在哪里调整该设置。
 - [账号最短年龄](./features/raid-mode.md#minage)的踢出日志现在会以时间戳形式显示所需的阈值。
 - 设置与安装：
@@ -213,7 +213,7 @@ Shield Update 处于试验阶段：在 3.6.0 正式发布之前，它面向 [Pre
   - 封禁、踢出和超时会被加入记录并生成日志。<SuggestionLink id="151" />
   - 处罚通知私信的送达回执。
 - 新的处罚日志。
-- 可配置处罚专用的日志频道。
+- 可配置处罚专用的日志频道。 <SuggestionLink id="466" />
 - 新增 [`/warn` 命令](./features/moderation.mdx#warn)。<SuggestionLink id="52" />
 - 新增 [`/untimeout` 命令](./features/moderation.mdx#untimeout)。<SuggestionLink id="52" />
 - 新增 [`/tempban` 命令](./features/moderation.mdx#tempban)。<SuggestionLink id="524" />
@@ -321,7 +321,7 @@ Shield Update 处于试验阶段：在 3.6.0 正式发布之前，它面向 [Pre
 ## 2.1.3 (2019/10/13) {#2-1-3}
 
 - 移除黑名单及相关命令。
-- 可以通过 ID 封禁任何用户，即使其不在相关服务器中。<SuggestionLink id="113" /> <SuggestionLink id="148" />
+- 可以通过 ID 封禁任何用户，即使其不在相关服务器中。<SuggestionLink id="113" /> <SuggestionLink id="148" /> <SuggestionLink id="398" />
 - [`?ban` 命令](./features/moderation.mdx#ban)的回复中显示封禁原因。
 - [`?raidmode` 命令](./features/raid-mode.md)现在需要踢出成员的权限。
 - 修改验证码未完成时的踢出时间（5 分钟）。<SuggestionLink id="129" />
@@ -342,7 +342,7 @@ Shield Update 处于试验阶段：在 3.6.0 正式发布之前，它面向 [Pre
 
 - 移除 `?settings captcha`（由 `?captcha` 取代）。
 - 新增为验证码设置[日志频道](./features/captcha.md#logs)的功能。
-- 新增与验证码兼容的[自动角色](./features/captcha.md#autorole)。
+- 新增与验证码兼容的[自动角色](./features/captcha.md#autorole)。 <SuggestionLink id="508" />
 - 简化[验证码](./features/captcha.md)（需答对 5/6 个字母）。
 - 其他细微修改。
 
