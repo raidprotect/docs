@@ -15,9 +15,11 @@ Identity Update 处于试验阶段：在 3.7.0 正式发布之前，它面向 [P
 - 新增 [`/alt`](./features/alt-accounts.md#alt) 命令和[多账号](./features/alt-accounts.md)功能：关联同一个人的多个账号，指定其主账号，该成员的处罚（封禁、踢出、禁言、监禁、超时、软封禁）会扩展到所有关联账号。解除其中一个账号的处罚，所有账号的处罚都会随之解除。 <SuggestionLink id="404" /> <SuggestionLink id="263" />
 - [关联账号的处罚](./features/alt-accounts.md#modes)可按类型设置，提供**陷阱**模式，以及针对在处罚期间加入或发言的关联账号的[规避处罚](./features/alt-accounts.md#evasion)。
 - 不在服务器中的关联账号会在加入时受到处罚。
+- 扩展到分组的处罚会在 `/sanctions` 和 `/modview` 中成为[群体处罚](./features/alt-accounts.md#group-sanction)：可一次性为所有账号撤销、删除或修改。
+- 处罚日志会列出关联账号，嵌入格式下还附带打开 `/alt` 面板的“**关联账号**”按钮。
 - 新增设置[每人仅限一个账号](./features/alt-accounts.md#single-account)：次要账号会被隔离。
 - [验证码](./features/captcha.md#activity-alts)可识别多账号：它会自动关联确定属于同一个人的账号，并向您的团队提示可能存在的关联。
-- [关联账号的处罚](./features/alt-accounts.md#modes)为 **Premium** 专属。没有 Premium 时，`/alt` 仍可不限数量地关联和查看账号。
+- [关联账号的处罚](./features/alt-accounts.md#modes)为 **Premium** 专属。没有 Premium 时，`/alt` 仍可不限数量地关联和查看账号，每人仅限一个账号也仍然可用。
 
 ## 3.6.0 Shield Update {#3-6-0}
 
