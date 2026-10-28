@@ -1,0 +1,107 @@
+---
+title: DM Kapatma
+description: "RaidProtect'in DM Kapatma özelliği, Discord sunucunuzdan gelen özel mesajları kalıcı olarak engeller: spam ve dolandırıcılığa karşı bir kalkan."
+---
+
+import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
+
+import DmLockMockup from '@site/src/components/DiscordMessage/mockups/dm-lock';
+
+<DmLockMockup />
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+RaidProtect'in **DM Kapatma** özelliği, sunucudan gönderilen özel mesajlara (DM) erişimi kalıcı olarak kapatmayı sağlar; böylece Discord'un bu engellemeye yalnızca “**DM'leri duraklat**” siber güvenlik eylemiyle 24 saat için izin veren yerel sınırlamasını aşar.
+
+## 🚦 Kullanım durumları ve öneriler {#recommendations}
+
+- **Spam veya tacize maruz kalan sunucular:** DM Kapatma, DM yoluyla kötüye kullanım risklerinin arttığı herkese açık veya geniş kitleli topluluklar için özellikle önerilir.
+- **Geçici etkinlikler veya hassas dönemler:** Lansmanlar, önemli duyurular veya yoğunluk dönemleri (örn.: yarışmalar, promosyonlar) sırasında DM Kapatma'yı etkinleştirmek, [phishing](/tr/learn/token-grabber) veya dolandırıcılık girişimlerini önlemeyi sağlar.
+- **Genç kitleli topluluklar:** Çok sayıda reşit olmayan üyesi olan sunucularda DM'leri sınırlamak güvenliği güçlendirebilir ve uygunsuz davranışları önleyebilir.
+- **Sürekli koruma:** Otomasyon sayesinde, elle yenilemenin unutulmasından kaynaklanan bir savunmasızlık penceresi yoktur.
+
+## ❓ DM Kapatma nasıl çalışır {#working}
+
+RaidProtect, DM engellemesini süresi dolmadan otomatik olarak yeniler; savunmasızlık dönemi olmaz.
+
+:::info
+Şunlarla mesaj göndermek ve almak mümkün kalmaya devam eder:
+- arkadaşlar
+- botlar
+- ekip
+:::
+:::warning
+Discord'un topluluk özellikleri DM Kapatma'nın düzgün çalışması için vazgeçilmezdir. [Sunucunuzda topluluğun etkinleştirildiğini kontrol etmek için rehberimizi izleyin.](../guides/community.md)
+:::
+
+## 🚩 DM Kapatma yapılandırması {#config}
+
+1. [`/settings` komutunu](../setup.md#settings) çalıştırın.
+2. “**Koruma**” sekmesini açın.
+3. “**DM Kapatma**” yanındaki “**Düzenle**” düğmesine tıklayın.
+4. Açılan pencerede “**Sunucunun özel mesajlarını kapat**” seçeneğini işaretleyin veya işaretini kaldırın, ardından onaylayın.
+
+<SettingsModal name="dmlock" />
+
+### /dmlock komutu {#dmlock}
+
+Şu komutu da kullanabilirsiniz: ```/dmlock```
+
+Korumayı etkinleştirmek veya devre dışı bırakmak için bir anahtarla birlikte “**Kapalı DM yapılandırması**” ekranını açar. Bir ön koşul eksikse (Topluluk modu veya “**Sunucuyu Yönet**” izni) bir kutu bunu size belirtir ve “**Yenile**” düğmesi, düzeltmeden sonra yeniden kontrol etmenizi sağlar. Komut, “**Sunucuyu Yönet**” iznine sahip üyelere ayrılmıştır.
+
+<Settings start="dmlockCommand" />
+
+## ℹ️ /dmlock-info komutu {#info}
+
+`/dmlock-info` komutu, üyeleri sunucudaki **DM Kapatma**'nın mevcut durumu hakkında bilgilendirmeyi sağlar. Kısıtlamanın **etkin** mi **devre dışı** mı olduğunu belirten, yararına dair öğretici bir açıklamayla birlikte net bir mesaj gösterir.
+
+**Amaç:**
+- DM'lerin neden sınırlandığını açıklamak (spam, dolandırıcılık, phishing ile mücadele).
+- Yeni üyelerin kafa karışıklığını ve tekrarlayan sorularını azaltmak.
+- DM ile yazışmaya devam etmenin koşullarını hatırlatmak (arkadaşlar, ekip, botlar, eski kişiler).
+
+**Görünüm örneği**
+<SeparatedBox>
+<Tabs>
+  <TabItem value="enable" label="Etkin" default>
+
+![dmlock-info komutunun etkin ekran görüntüsü](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-dm-lock-info-enable.webp)
+
+  </TabItem>
+  <TabItem value="disable" label="Devre dışı">
+
+![dmlock-info komutunun devre dışı ekran görüntüsü](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-dm-lock-info-disable.webp)
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+### ⚙️ İyi uygulamalar
+
+- Aktif üyeleri, yeni üyelerin sorularını yanıtlamak için `/dmlock-info` komutunu kullanmaya davet edin.
+- Komutu düzenli olarak gösterin ya da karşılama kanallarınıza sabitleyin.
+- Sunucunun anti-spam politikasını hatırlatmak için kurallarınızla veya duyurularınızla birleştirin.
+
+## Sık sorulan sorular {#faq}
+
+### DM Kapatma nerede etkinleştirilir?
+
+`/settings` içinde Koruma sekmesinde, “**DM Kapatma**” yanındaki “**Düzenle**” düğmesine tıklayıp “**Sunucunun özel mesajlarını kapat**” seçeneğini işaretleyerek. `/dmlock` komutu da özel bir ekran açar.
+
+### DM Kapatma'yı neden etkinleştiremiyorum?
+
+Bir ön koşul eksik: sunucunuzda Discord'un Topluluk modu etkin olmalı ve RaidProtect'in “Sunucuyu Yönet” izni olmalıdır.
+
+### DM'ler ne kadar süre kapalı kalır?
+
+Koruma etkin olduğu sürece. Discord güvenlik eylemini 24 saatle sınırlar ve biz DM Kapatma'yı devre dışı bırakana kadar onu otomatik olarak yenileriz.
+
+### Üyeler hâlâ birbirlerine DM atabilir mi?
+
+Evet, arkadaşlarsa veya daha önce yazışmışlarsa. Botlar ve ekip de her zaman DM gönderebilir.
+
+### DISCON, DM Kapatma'yı etkinleştirir mi?
+
+Evet, [DISCON](./discon.md)'un 3. seviyesinden itibaren. Seviye düştüğünde, onu yalnızca DISCON etkinleştirmişse devre dışı bırakırız.

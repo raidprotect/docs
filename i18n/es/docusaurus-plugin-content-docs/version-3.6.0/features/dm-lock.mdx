@@ -1,0 +1,107 @@
+---
+title: Bloqueo de MD
+description: "El Bloqueo de MD de RaidProtect cierra de forma duradera los mensajes privados originados en tu servidor de Discord, un escudo contra el spam y las estafas."
+---
+
+import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
+
+import DmLockMockup from '@site/src/components/DiscordMessage/mockups/dm-lock';
+
+<DmLockMockup />
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+La función **Bloqueo de MD** de RaidProtect permite cerrar de forma permanente el acceso a los mensajes directos (MD) enviados desde el servidor, superando así la limitación nativa de Discord que solo permite este bloqueo durante 24 horas mediante la acción de ciberseguridad “Pausar los MD”.
+
+## 🚦 Casos de uso y recomendaciones {#recommendations}
+
+- **Servidores expuestos al spam o al acoso:** El Bloqueo de MD es especialmente recomendable para las comunidades públicas o con gran audiencia, donde los riesgos de abuso por MD son mayores.
+- **Eventos temporales o periodos sensibles:** Durante lanzamientos, anuncios importantes o periodos de mucha afluencia (por ejemplo: concursos, promociones), activar el Bloqueo de MD ayuda a prevenir los intentos de [phishing](/es/learn/token-grabber) o de estafa.
+- **Comunidades con público joven:** Para los servidores con un gran número de menores, limitar los MD puede reforzar la seguridad y prevenir comportamientos inapropiados.
+- **Protección continua:** Gracias a la automatización, no hay ventana de vulnerabilidad ligada al olvido de la renovación manual.
+
+## ❓ Funcionamiento del Bloqueo de MD {#working}
+
+RaidProtect renueva automáticamente el bloqueo de los MD antes de que expire, sin ningún periodo de vulnerabilidad.
+
+:::info
+Sigue siendo posible enviar y recibir mensajes con:
+- tus amigos
+- los bots
+- el staff
+:::
+:::warning
+Las funciones de comunidad de Discord son indispensables para el buen funcionamiento del Bloqueo de MD. [Sigue nuestra guía para verificar la activación de la comunidad en tu servidor.](../guides/community.md)
+:::
+
+## 🚩 Configuración del Bloqueo de MD {#config}
+
+1. Ejecuta el [comando `/settings`](../setup.md#settings).
+2. Abre la pestaña “**Protección**”.
+3. Haz clic en “**Editar**” junto a “**Bloqueo de MD**”.
+4. En la ventana que se abre, marca o desmarca “**Cerrar los mensajes privados del servidor**” y confirma.
+
+<SettingsModal name="dmlock" />
+
+### Comando /dmlock {#dmlock}
+
+También puedes usar el comando: ```/dmlock```
+
+Abre la pantalla “**Configuración de Bloqueo de MD**”, con un interruptor para activar o desactivar la protección. Si falta un requisito previo (modo Comunidad o permiso “**Gestionar servidor**”), un recuadro te lo indica y el botón “**Actualizar**” te permite volver a comprobar tras la corrección. El comando está reservado a los miembros que tienen el permiso “**Gestionar servidor**”.
+
+<Settings start="dmlockCommand" />
+
+## ℹ️ Comando /dmlock-info {#info}
+
+El comando `/dmlock-info` permite informar a los miembros sobre el estado actual del **Bloqueo de MD** en el servidor. Muestra un mensaje claro que indica si la restricción está **activada** o **desactivada**, acompañado de una explicación pedagógica sobre su utilidad.
+
+**Objetivo:**
+- Explicar por qué los MD están limitados (lucha contra el spam, las estafas, el phishing).
+- Reducir la confusión y las preguntas recurrentes de los nuevos miembros.
+- Recordar las condiciones para seguir comunicándose por MD (amigos, staff, bots, contactos previos).
+
+**Ejemplo de visualización**
+<SeparatedBox>
+<Tabs>
+  <TabItem value="enable" label="Activado" default>
+
+![Captura de pantalla del comando dmlock-info activado](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-dm-lock-info-enable.webp)
+
+  </TabItem>
+  <TabItem value="disable" label="Desactivado">
+
+![Captura de pantalla del comando dmlock-info desactivado](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-dm-lock-info-disable.webp)
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+### ⚙️ Buenas prácticas
+
+- Invita a los miembros activos a usar `/dmlock-info` para responder a las preguntas de los nuevos miembros.
+- Muéstralo regularmente o fíjalo en tus canales de bienvenida.
+- Combínalo con tus reglas o anuncios para recordar la política anti-spam del servidor.
+
+## Preguntas frecuentes {#faq}
+
+### ¿Dónde activar el Bloqueo de MD?
+
+En `/settings`, pestaña Protección, haciendo clic en “Editar” junto a “Bloqueo de MD” y marcando “Cerrar los mensajes privados del servidor”. El comando `/dmlock` también abre una pantalla dedicada.
+
+### ¿Por qué no puedo activar el Bloqueo de MD?
+
+Falta un requisito previo: el modo Comunidad de Discord debe estar activado en tu servidor, y RaidProtect debe tener el permiso “Gestionar servidor”.
+
+### ¿Cuánto tiempo permanecen cerrados los MD?
+
+Mientras la protección esté activa. Discord limita su acción de seguridad a 24 horas, y la renovamos automáticamente hasta que desactives el Bloqueo de MD.
+
+### ¿Los miembros pueden seguir escribiéndose por MD?
+
+Sí, si son amigos o ya han intercambiado mensajes. Los bots y el staff también pueden seguir enviando MD.
+
+### ¿El DISCON activa el Bloqueo de MD?
+
+Sí, a partir del nivel 3 del [DISCON](./discon.md). Al bajar de nivel, solo lo desactivamos si fue el DISCON quien lo había activado.

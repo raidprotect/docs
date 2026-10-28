@@ -1,0 +1,352 @@
+---
+title: 工具
+description: "探索 RaidProtect 的工具指令，讓您日常管理 Discord 伺服器更輕鬆。"
+---
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Icon from "@site/src/components/Icon";
+import Settings from '@site/src/components/DiscordMessage/mockups/v2';
+
+額外的功能，讓伺服器管理更簡單。🔧
+
+除了驗證碼、Antispam 或防突襲等主要功能之外，RaidProtect 還提供多項次要工具，讓您的伺服器管理更加順暢。
+
+## 📋 複製頻道 {#channel-duplicate}
+
+`/channel duplicate` 指令讓您完整複製一個頻道，包括其所有設定、權限與組態。這超越了 Discord 原生功能的限制：原生功能無法複製**分類**以及**某些特定設定**，例如論壇頻道的標籤。
+
+使用指令：```/channel duplicate (#channel)```
+
+將 `(#channel)` 替換為要複製的頻道的提及或 [ID](../guides/id.mdx)。
+
+### 🎯 功能 {#duplicate-features}
+
+此指令會複製以下所有項目：
+
+- **頻道名稱**
+- **權限**（角色與使用者）
+- **頻道類型**（文字、語音、論壇等）
+- 依頻道類型而定的**特定設定**
+- 在分類中的**位置**（如適用）
+
+### ⚙️ RaidProtect 設定 {#duplicate-config}
+
+當您複製的頻道帶有 RaidProtect 的內部設定時，機器人會自動提議：
+
+- **替換**現有設定，改用新的頻道
+- **複製**設定，讓兩個頻道都保留設定
+
+**範例**：如果您複製紀錄頻道，RaidProtect 會提議更新其設定，讓新頻道成為紀錄頻道，或依您的偏好讓兩個頻道都保留設定。
+
+## 🗑️ 刪除並重新建立頻道 {#channel-clear}
+
+`/channel clear` 指令讓您刪除頻道並原樣重新建立，同時保留其設定、權限與 RaidProtect 的組態。
+
+使用指令：```/channel clear (#channel)```
+
+將 `(#channel)` 替換為要重新建立的頻道的提及或 [ID](../guides/id.mdx)。
+
+:::warning
+頻道中的訊息與 Webhook 將被永久刪除。執行前會要求您確認。
+:::
+
+## 🧹 清理成員 {#prune}
+
+`/prune` 指令讓您透過互動式選單踢出伺服器中的不活躍成員。
+
+使用指令：```/prune [duration]```
+
+將 `[duration]` 替換為想要的不活躍天數，從 1 到 30。機器人會顯示互動式選單，讓您可以：
+- 選擇不活躍的時長
+- 納入或排除特定角色
+- 在確認前查看受影響的成員數量
+
+確認文字會說明實際會被清理的對象：
+
+| 模式 | 未選擇角色時 | 選擇了角色時 |
+|---|---|---|
+| **包含** | 僅**沒有任何角色**的不活躍成員 | **除了所選角色之外沒有其他角色**的不活躍成員 |
+| **排除** | 所有不活躍成員，**不論其角色為何** | **沒有任何所選角色**的不活躍成員 |
+
+:::info
+`/prune` 指令僅限管理員使用。只會提供位階最低的 100 個角色；擁有更高位階角色的成員會被直接排除。
+:::
+
+![prune 指令的截圖](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-prune.webp)
+
+## 🚫 封鎖使用者 {#block}
+
+`/block` 指令讓您阻止某位使用者在您的伺服器上使用 RaidProtect 的某些功能（例如：提出檢舉或獲得標籤角色）。
+
+在封鎖或解除封鎖時，RaidProtect 會讓您選擇相關的功能：
+
+| 類型 | 效果 |
+|---|---|
+| **所有互動** | 封鎖與機器人的所有互動 |
+| **檢舉** | 使用者將無法再提出[檢舉](./reports.md) |
+| **標籤角色** | 使用者將無法再獲得[標籤角色](./tag-role.md) |
+
+### 封鎖使用者 {#block-add}
+
+使用指令：```/block add [@user] [reason]```
+
+### 解除封鎖使用者 {#block-remove}
+
+使用指令：```/block remove [@user] [reason]```
+
+### 列出被封鎖的使用者 {#block-list}
+
+使用指令：```/block list```
+
+## 📢 資訊面板 {#display}
+
+請參閱[資訊面板專頁](./display.mdx)，進一步了解 `/display public` 與 [`/display staff`](./display.mdx#staff) 指令。
+
+## 📜 我的處罰 {#my-sanctions}
+
+`/my-sanctions` 指令讓成員查看自己在伺服器上的處罰，依管理員所設定的[隱私等級](./sanctions.mdx#sanctions-privacy)而定。
+
+使用指令：```/my-sanctions```
+
+:::info
+若已啟用該功能，也可以透過[資訊面板](./display.mdx)上的**檢視我的處罰**按鈕使用此指令。
+:::
+
+## 🏠 伺服器資訊 {#serverinfo}
+
+`/serverinfo` 指令會顯示**目前伺服器的資訊**：名稱、擁有者、建立日期、成員數、加成等級、已啟用的功能等。
+
+使用指令：```/serverinfo```
+
+:::info
+`serverinfo` 指令[可使用前綴執行](../guides/prefix.md)（別名 `ginfo`）。它只能在安裝了 RaidProtect 的伺服器上運作。
+:::
+
+## 🔗 邀請資訊 {#inviteinfo}
+
+`/inviteinfo` 指令讓您在點擊前先分析 Discord 邀請：適合用來確認合作夥伴關係、廣告，或透過私訊收到的連結。
+
+使用指令：```/inviteinfo (invite)```
+
+將 `(invite)` 替換為邀請的代碼或連結（例如 `discord.gg/raidprotect`）。
+
+對於伺服器邀請，我們會顯示：
+
+- **伺服器**：名稱、徽章與標籤、ID、成員數與線上成員數、驗證等級、加成等級與加成次數。
+- **邀請**：目的地頻道（文字、語音或會議）、建立者、使用次數、到期日期、加入時授予的角色。
+- 伺服器所強調的**主題與遊戲**（遊戲可點擊）。
+- **活躍度概況**：高峰與低谷時段、規律性。
+- 一個「**加入伺服器**」按鈕。
+
+好友邀請、私人群組邀請、活動邀請與直播邀請也能被辨識。
+
+:::info
+在伺服器中，回覆為臨時訊息，且此指令預設需要「**管理訊息**」權限。如果您將 RaidProtect 新增到您的 Discord 帳號，也可以在私訊和私人群組中使用 `/inviteinfo`：此時回覆會顯示在對話中。`inviteinfo` 指令[可使用前綴執行](../guides/prefix.md)（別名 `ii`）。
+:::
+
+## 🔐 您在此伺服器上的資料 {#privacy}
+
+`/privacy` 指令會顯示 RaidProtect 在您的伺服器上保留的資料。它對所有成員開放，且回覆僅您自己看得到。
+
+使用指令：```/privacy```
+
+- **一律保留**：在 `/settings` 中選擇的設定（只要 RaidProtect 在伺服器上就會保留），以及用於管理紀錄的處罰（成員、管理人員、原因與日期）。
+- **依您的設定而定**：若 Antispam、檢舉或[訊息快取](#message-cache)處於啟用狀態，則會保留訊息（每個頻道一小時，存於記憶體中，絕不寫入資料庫）；若啟用了檢舉，則會保留檢舉（作者、原因與被檢舉訊息的副本）。
+
+回覆會連結到我們的隱私權政策，其中詳列了保留期限、共享方式與您的權利。
+
+## 🗂️ 訊息快取 {#message-cache}
+
+快取會**在記憶體中保留每個頻道一小時的訊息**，絕不寫入資料庫。它為 [`/snipe`](./moderation.mdx#snipe) 指令以及 `/modview` 的 snipe 部分提供資料。沒有它，這些指令就找不到任何已刪除的訊息。
+
+1. 使用 [`/settings` 指令](../setup.md#settings)。
+2. 開啟「**工具**」分頁。
+3. 點擊「**訊息快取**」旁的「**啟用**」。
+
+<Settings start="home:utilities" />
+
+:::info
+快取**預設為停用**。當 [Antispam](./anti-spam.mdx) 或[檢舉](./reports.md)處於啟用狀態時，它會自動啟用且無法關閉：這些功能需要讀取訊息。此時按鈕會呈現灰色。
+:::
+
+## 💬 提供意見回饋 {#feedback}
+
+`/feedback` 指令讓您直接在 Discord 中**分享意見、建議或回報錯誤**，無需加入支援伺服器。在伺服器中，它預設需要「**管理訊息**」權限；它也能在與 RaidProtect 的私訊中使用。
+
+使用指令：```/feedback```
+
+選擇回饋的類型，然後填寫開啟的視窗：
+
+- **建議**：我們會將您導向建議頁面。
+- **錯誤回報**：選擇類別（Antispam、防突襲、驗證碼、處罰、Authentification Manager、設定、指令、紀錄、其他）；您的回報會轉交給我們的團隊。
+- **綜合意見回饋**：以 1 到 5 分為您的體驗評分。
+- **好評**。
+
+## 👤 使用者資訊 {#userinfo}
+
+`/userinfo` 指令讓您取得使用者的詳細資訊。
+
+使用指令：```/userinfo [user]```
+
+將 `[user]` 替換為想要的提及或 ID。
+
+:::info
+`userinfo` 指令[可使用前綴執行](../guides/prefix.md)（別名 `ui`）。如果您將 RaidProtect 新增到您的 Discord 帳號，也可以在私訊和私人群組中使用。
+:::
+
+### 📋 顯示的資訊 {#displayed-userinfo}
+
+- Discord **帳號建立日期**
+- 使用者的**頭像**
+- **個人檔案橫幅**
+- **個人檔案徽章**
+  - Nitro、Booster、任務和舊名稱徽章不會顯示。
+
+
+### 🎭 伺服器成員的資訊 {#displayed-memberinfo}
+
+如果對象是伺服器成員，額外的資訊包括：
+
+- **加入伺服器的日期**
+- **在伺服器上的暱稱**
+- **角色數量**與**前 6 個角色的清單**
+- **權限類別**（僅管理人員可見）：
+<SeparatedBox>
+<Tabs>
+  <TabItem value="animator" label="活動主持" default>
+
+    若成員擁有以下權限中的**至少一項**，就會顯示**活動主持**類別：
+
+    - `MANAGE_EXPRESSIONS`
+    - `CREATE_GUILD_EXPRESSIONS`
+    - `MANAGE_EVENTS`
+
+  </TabItem>
+  <TabItem value="moderator" label="管理人員">
+
+    若成員擁有以下權限中的**至少一項**，就會顯示**管理人員**類別：
+
+    - `KICK_MEMBERS`
+    - `BAN_MEMBERS`
+    - `MODERATE_MEMBERS`
+    - `MANAGE_MESSAGES`
+    - `MUTE_MEMBERS`
+    - `DEAFEN_MEMBERS`
+    - `MOVE_MEMBERS`
+    - `MANAGE_THREADS`
+
+  </TabItem>
+  <TabItem value="manager" label="管理者">
+
+    若成員擁有以下權限中的**至少一項**，就會顯示**管理者**類別：
+
+    - `MANAGE_GUILD`
+    - `MANAGE_ROLES`
+    - `MANAGE_CHANNELS`
+    - `VIEW_AUDIT_LOG`
+    - `MANAGE_WEBHOOKS`
+    - `MANAGE_SERVER_EXPRESSIONS`
+
+  </TabItem>
+  <TabItem value="admin" label="管理員">
+
+    在**以下兩種情況**下會顯示**管理員**類別：
+
+    1️⃣ 擁有權限：
+    - `ADMINISTRATOR`
+
+    2️⃣ **同時**擁有**以下三項權限**：
+    - `MANAGE_GUILD`
+    - `MANAGE_ROLES`
+    - `MANAGE_CHANNELS`
+
+  </TabItem>
+  <TabItem value="owner" label="擁有者">
+
+    **條件**：該成員是**伺服器擁有者**。
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+- **成員旗標**（僅管理人員可見）：
+
+| **旗標**                                 | **表情符號**                                                                                                           | **意義**                                                          |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `DID_REJOIN`                             | <Icon src="/img/icons/MemberDidRejoin.svg" alt="icon MemberDidRejoin" title=":MemberDidRejoin:"/>                      | 使用者曾離開伺服器後再次加入。                                    |
+| `IS_GUEST`                               | <Icon src="/img/icons/MemberIsGuest.svg" alt="icon MemberIsGuest" title=":MemberIsGuest:"/>                            | 訪客成員（臨時邀請或訪客存取）。                                  |
+| `COMPLETED_ONBOARDING`                   | <Icon src="/img/icons/OnboardingCompleted.svg" alt="icon OnboardingCompleted" title=":OnboardingCompleted:"/>          | 已完成伺服器的新成員引導（onboarding）。                          |
+| `STARTED_ONBOARDING`                     | <Icon src="/img/icons/OnboardingStarted.svg" alt="icon OnboardingStarted" title=":OnboardingStarted:"/>                | 已開始新成員引導。                                                |
+| `COMPLETED_SERVER_GUIDE`                 | <Icon src="/img/icons/ServerGuideCompleted.svg" alt="icon ServerGuideCompleted" title=":ServerGuideCompleted:"/>       | 已完成伺服器指南（如已啟用）。                                    |
+| `STARTED_SERVER_GUIDE`                   | <Icon src="/img/icons/ServerGuideStarted.svg" alt="icon ServerGuideStarted" title=":ServerGuideStarted:"/>             | 已開始伺服器指南。                                                |
+| `AUTOMOD_QUARANTINED_NAME`               | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | 因使用者名稱被自動管理隔離。                                      |
+| `AUTOMOD_QUARANTINED_GUILD_TAG`          | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | 因標籤或暱稱被自動管理隔離。                                      |
+| `BYPASSES_VERIFICATION`                  | <Icon src="/img/icons/BypassVerification.svg" alt="icon BypassVerification" title=":BypassVerification:"/>             | 使用者可以略過伺服器的驗證。                                      |
+| `SPAMMER`                                | <Icon src="/img/icons/UnusualAccountActivity.svg" alt="icon UnusualAccountActivity" title=":UnusualAccountActivity:"/> | 帳號被標記為垃圾訊息發送者，或偵測到異常活動。                    |
+
+## ⚖️ Discord 處罰 {#discord-sanctions}
+
+`/discord-sanctions` 指令讓您依據[歐盟法規](https://transparency.dsa.ec.europa.eu/)，查看 **Discord 對某位使用者發出的處罰**。
+
+使用指令：```/discord-sanctions [@user]```
+
+將 `[@user]` 替換為想要的提及或 ID。也可以在個人檔案上按右鍵，透過 **`應用程式`** 再選擇 **`Discord 處罰`** 來使用此指令。若未指定使用者，則會顯示 Discord 最近 7 天的全球安全統計（「**類別**」、「**偵測**」與「**處置**」分頁）。
+
+### 📋 顯示的資訊 {#displayed-sanctions}
+
+- **處罰類型**：
+
+| **處罰**                                 | **表情符號**                                                                                                           | **意義**                                                          |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `CONTENT_DELETED`                        | <Icon src="/img/icons/ContentDeleted.svg" alt="icon ContentDeleted" title=":iconTrash:"/>                              | 使用者發布的內容已被刪除。                                        |
+| `RESTRICTED`                             | <Icon src="/img/icons/AccountRestricted.svg" alt="icon AccountRestricted" title=":iconRestricted:"/>                   | 使用者帳號已被限制。                                              |
+| `ACCOUNT_SUSPENDED`                      | <Icon src="/img/icons/AccountSuspended.svg" alt="icon AccountSuspended" title=":iconSuspended:"/>                      | 使用者帳號已被暫停。                                              |
+| `ACCOUNT_TERMINATED`                     | <Icon src="/img/icons/AccountTerminated.svg" alt="icon AccountTerminated" title=":iconTerminated:"/>                   | 使用者帳號已被刪除。                                              |
+
+- **發出日期**
+- **內容類型**
+- **處罰旗標**：
+
+| **旗標**                                 | **表情符號**                                                                                                           | **意義**                                                          |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `ILLEGAL_CONTENT`                        | <Icon src="/img/icons/IllegalContent.svg" alt="icon IllegalContent" title=":iconIllegal:"/>                            | 因非法內容而施加的處罰。                                          |
+| `AUTOMATED_DETECTION`                    | <Icon src="/img/icons/AutomatedDetection.svg" alt="icon AutomatedDetection" title=":iconBots:"/>                       | 透過自動偵測而施加的處罰。                                        |
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="reports-found" label="找到報告" default>
+
+![Discord 處罰的截圖](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-ds-report-found.webp)
+
+  </TabItem>
+  <TabItem value="reports-not-found" label="找不到報告">
+
+![找不到 Discord 處罰的截圖](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-ds-report-not-found.webp)
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+:::note
+此指令可查看 2024 年 8 月 22 日至 2025 年 8 月 14 日之間發出的報告。這些資訊直接由 Discord 提供，RaidProtect **無法修改**。
+:::
+
+## 常見問題 {#faq}
+
+### 為什麼 `/snipe` 找不到任何訊息？
+
+`/snipe` 會讀取在記憶體中保留一小時的訊息。請在 `/settings` 的「工具」分頁中啟用[訊息快取](#message-cache)，或啟用 Antispam 或檢舉，它們會自動啟用快取。
+
+### 如何在加入伺服器前確認 Discord 邀請？
+
+使用 `/inviteinfo` 並帶上邀請的代碼或連結：我們會顯示伺服器、其建立者、活躍度，以及加入時授予的角色。
+
+### RaidProtect 在我的伺服器上保留了什麼？
+
+`/privacy` 指令有詳細說明：設定與處罰會永久保留，並依您的設定保留一小時的記憶體訊息與檢舉。
+
+### 誰可以使用 `/prune`？
+
+預設僅限管理員。在任何踢出動作之前，預覽會顯示受影響的成員數量。

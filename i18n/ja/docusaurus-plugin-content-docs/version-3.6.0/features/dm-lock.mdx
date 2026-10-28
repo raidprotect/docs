@@ -1,0 +1,107 @@
+---
+title: DM の遮断
+description: "RaidProtect の DM の遮断は、Discord サーバー発のダイレクトメッセージを継続的にブロックし、スパムや詐欺から守る盾になります。"
+---
+
+import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
+
+import DmLockMockup from '@site/src/components/DiscordMessage/mockups/dm-lock';
+
+<DmLockMockup />
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+RaidProtect の**DM の遮断**機能は、サーバーから送られるダイレクトメッセージ（DM）を恒久的に遮断します。Discord 標準のセキュリティ操作「DM を一時停止」は 24 時間しかブロックできませんが、その制限を超えることができます。
+
+## 🚦 利用シーンとおすすめ {#recommendations}
+
+- **スパムやハラスメントにさらされるサーバー：** DM による悪用のリスクが高い、公開コミュニティや大勢が集まるコミュニティに特におすすめです。
+- **一時的なイベントや注意が必要な時期：** ローンチ、重要なお知らせ、人が集まる時期（例：コンテスト、プロモーション）に DM の遮断を有効にすると、[フィッシング](/ja/learn/token-grabber)や詐欺の試みを防げます。
+- **若い層のコミュニティ：** 未成年が多いサーバーでは、DM を制限することで安全性を高め、不適切な行為を防げます。
+- **継続的な保護：** 自動化されているため、手動の更新を忘れることによる無防備な時間がありません。
+
+## ❓ DM の遮断の仕組み {#working}
+
+RaidProtect は、DM のブロックが期限切れになる前に自動で更新するため、無防備な期間は生じません。
+
+:::info
+次の相手とは、引き続きメッセージを送受信できます。
+- フレンド
+- ボット
+- 運営メンバー
+:::
+:::warning
+DM の遮断が正しく動作するには、Discord のコミュニティ機能が不可欠です。[ガイドに従って、サーバーでコミュニティが有効になっているか確認してください。](../guides/community.md)
+:::
+
+## 🚩 DM の遮断の設定 {#config}
+
+1. [`/settings` コマンド](../setup.md#settings)を実行します。
+2. 「**保護**」タブを開きます。
+3. 「**DM の遮断**」の横にある「**編集**」をクリックします。
+4. 表示されたウィンドウで「**サーバーのダイレクトメッセージを閉じる**」のチェックを入れるか外して、確定します。
+
+<SettingsModal name="dmlock" />
+
+### /dmlock コマンド {#dmlock}
+
+次のコマンドも使えます：```/dmlock```
+
+「**DM 遮断の設定**」画面が開き、保護を有効または無効にするスイッチが表示されます。前提条件（コミュニティモードまたは「**サーバー管理**」権限）が満たされていない場合は、その旨が案内され、修正後に「**再読み込み**」ボタンで再確認できます。このコマンドは、「**サーバー管理**」権限を持つメンバー専用です。
+
+<Settings start="dmlockCommand" />
+
+## ℹ️ /dmlock-info コマンド {#info}
+
+`/dmlock-info` コマンドは、サーバーでの**DM の遮断**の現在の状態をメンバーに知らせます。制限が**有効**か**無効**かを分かりやすく表示し、その目的についての説明も添えます。
+
+**目的：**
+- DM が制限されている理由（スパム、詐欺、フィッシングへの対策）を説明する。
+- 新規メンバーの混乱や繰り返しの質問を減らす。
+- DM でのやり取りを続けられる条件（フレンド、運営メンバー、ボット、以前の連絡先）を案内する。
+
+**表示例**
+<SeparatedBox>
+<Tabs>
+  <TabItem value="enable" label="有効" default>
+
+![dmlock-info コマンド（有効）のスクリーンショット](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-dm-lock-info-enable.webp)
+
+  </TabItem>
+  <TabItem value="disable" label="無効">
+
+![dmlock-info コマンド（無効）のスクリーンショット](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-dm-lock-info-disable.webp)
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+### ⚙️ ベストプラクティス
+
+- 新規メンバーの質問に答えるため、アクティブなメンバーに `/dmlock-info` を使ってもらいましょう。
+- 定期的に表示するか、ウェルカム用のチャンネルにピン留めしましょう。
+- ルールやお知らせと組み合わせて、サーバーのスパム対策方針を伝えましょう。
+
+## よくある質問 {#faq}
+
+### DM の遮断はどこで有効にしますか？
+
+`/settings` の「保護」タブで、「DM の遮断」の横にある「編集」をクリックし、「サーバーのダイレクトメッセージを閉じる」にチェックを入れます。`/dmlock` コマンドでも専用画面を開けます。
+
+### DM の遮断を有効にできないのはなぜですか？
+
+前提条件が足りていません。サーバーで Discord のコミュニティモードが有効になっていて、RaidProtect に「サーバー管理」権限が必要です。
+
+### DM はどのくらいの間、閉じられますか？
+
+保護が有効な間ずっとです。Discord のセキュリティ操作は 24 時間に制限されていますが、DM の遮断を無効にするまで、こちらで自動的に更新し続けます。
+
+### メンバー同士は引き続き DM を送れますか？
+
+フレンドである場合や、すでにやり取りしたことがある場合は送れます。ボットや運営メンバーも、常に DM を送れます。
+
+### DISCON は DM の遮断を有効にしますか？
+
+はい、[DISCON](./discon.md) のレベル 3 以上で有効にします。レベルが下がったときは、DISCON が有効にした場合に限って無効にします。

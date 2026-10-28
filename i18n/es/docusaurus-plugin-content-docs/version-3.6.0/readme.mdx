@@ -1,0 +1,60 @@
+---
+title: Documentación
+sidebar_label: Léeme
+slug: /
+---
+
+import DocCard from '@theme/DocCard';
+import SearchHero from '@theme/SearchHero';
+
+<div className="margin-vert--lg">
+  <SearchHero suggestions={['Captcha', 'Modo raid', 'Anti-spam', 'Sanciones']} />
+</div>
+
+Esta documentación tiene como objetivo explicar cómo funciona RaidProtect. No dudes en enviarnos tus comentarios para que podamos mejorarla.
+No olvides [unirte a nuestro servidor de Discord](https://raidprotect.bot/discord) para mantenerte informado sobre las últimas novedades del proyecto. También puedes contactar a nuestro equipo de soporte, que responderá a tus preguntas sobre el uso del bot. 😄
+
+## 🚀 Primeros pasos con RaidProtect {#start}
+
+Para empezar a usar RaidProtect, simplemente invítalo a tu servidor usando el siguiente enlace.
+
+<DocCard item={{ type: 'link', href: 'https://raidprotect.bot/invite', label: 'Invitar a RaidProtect' }} />
+<br />
+
+:::danger
+Atención: circulan **copias del bot** que **usan el nombre de RaidProtect**; invítalo solo desde nuestro sitio web oficial.
+:::
+
+### Requisitos previos {#requirement}
+
+Para asegurar el correcto funcionamiento de RaidProtect:
+1. **Otorga el permiso de Administrador** a RaidProtect. Esto le permite moderar automáticamente todos tus canales.
+2. **Coloca su rol al mismo nivel que los administradores de tu servidor**. El sistema de permisos no permite que RaidProtect sancione a usuarios con un rol superior al suyo.
+
+### Instalación {#install}
+
+Una vez añadido RaidProtect a tu servidor, ejecuta el comando [`/setup`](./setup.md#install).
+
+<DocCard item={{ type: 'link', href: '/docs/beta/setup', docId: 'setup', label: 'Instalación guiada' }} />
+<br />
+
+:::note
+Si eres de los menos aventureros (o de los más impacientes), simplemente puedes leer las instrucciones del [comando `/setup`](./setup.md#recommended) que resume la información principal de cada función.
+:::
+
+### Uso {#use}
+
+Consulta las diferentes secciones de esta documentación para descubrir todas las funciones que ofrece RaidProtect.
+
+:::info
+En la documentación, los parámetros de los comandos se muestran de esta manera cuando son `(obligatorios)` y cuando son `[opcionales]`.
+:::
+
+<DocCard item={{ type: 'link', href: '/docs/beta/language', docId: 'language', label: 'Idiomas disponibles' }} />
+<br />
+<DocCard item={{ type: 'category', href: '/docs/beta/features', label: 'Funciones', description: 'Documentación de cada una de nuestras funciones.' }} />
+<br />
+<DocCard item={{ type: 'category', href: '/docs/beta/guides', label: 'Nuestras guías', description: 'Guías para ayudarte de la mejor manera posible.' }} />
+<br />
+<DocCard item={{ type: 'category', href: '/docs/beta/useful-links', label: 'Enlaces útiles', description: 'Diversos enlaces útiles para RaidProtect.' }} />
+<br />

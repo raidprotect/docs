@@ -1,0 +1,188 @@
+---
+title: コマンド一覧
+---
+
+import CommandCopy from '@site/src/components/CommandCopy';
+
+<CommandCopy />
+
+RaidProtect のすべてのコマンドを、カテゴリー別にまとめています。コマンド名をクリックすると、詳しいドキュメントに移動します。
+
+## プロトタイプの凡例 {#legend}
+
+- `(arg)`：**必須**の引数。
+- `[arg]`：**任意**の引数。
+- `[--flag]`：任意の真偽値フラグ（スラッシュ：`flag: true`、メッセージ：`--flag`）。
+- `[--flag=value]`：値を取る任意のフラグ。
+- `(@member)` / `(#channel)` / `(@&role)`：想定される型を示す接頭辞。
+
+---
+
+## 設定とインストール {#config}
+
+| コマンド | プロトタイプ | 説明 |
+|---|---|---|
+| [`/setup`](./setup.md#install) | `/setup` | ガイド付きインストールを開始し、サーバーで RaidProtect を有効にします。 |
+| [`/settings`](./setup.md#settings) | `/settings` | インタラクティブなメニューを開き、いつでも設定を変更できます。 |
+| [`/honeypot`](./features/honeypot.md#config) | `/honeypot` | ハニーポットの罠チャンネルを設定します。 |
+| [`/tagrole`](./features/tag-role.md) | `/tagrole` | サーバーのタグを掲げているメンバーに付与するロールを設定します。 |
+| [`/display public`](./features/display.mdx) | `/display public` | RaidProtect の公開用の情報パネルを管理します。 |
+| [`/display staff`](./features/display.mdx#staff) | `/display staff` | 運営専用のパネル（DISCON、内部メッセージ）を管理します。 |
+| [`/discon`](./features/discon.md) | `/discon` | サーバーの危険レベルを設定する DISCON パネルを設置します。 |
+| [`/audit`](./features/audit.md) | `/audit` | サーバーのセキュリティを分析し、設定の弱点の修正を提案します。 |
+
+## モデレーション {#moderation}
+
+### 処罰
+
+| コマンド | プロトタイプ | 説明 |
+|---|---|---|
+| [`/ban`](./features/moderation.mdx#ban) | `/ban (@user) [duration] [--delete-messages=duration] [--silent] [reason]` | ユーザーを、永久に、または指定した期間だけ BAN します。 |
+| [`/tempban`](./features/moderation.mdx#tempban) | `/tempban (@user) (duration) [--delete-messages=duration] [--silent] [reason]` | ユーザーを、指定した期間だけ BAN します。 |
+| [`/softban`](./features/moderation.mdx#softban) | `/softban (@user) [--delete-messages=duration] [--silent] [reason]` | メンバーを BAN してすぐに解除し、そのメッセージを削除します。 |
+| [`/unban`](./features/moderation.mdx#unban) | `/unban (@user) [--silent] [reason]` | BAN を解除します。 |
+| [`/kick`](./features/moderation.mdx#kick) | `/kick (@user) [--silent] [reason]` | メンバーをサーバーからキックします。 |
+| [`/mute`](./features/moderation.mdx#timeout) | `/mute (@user) (duration) [--force-timeout] [--silent] [reason]` | メンバーを黙らせます（ミュートロールまたは Discord のタイムアウト）。 |
+| [`/unmute`](./features/moderation.mdx#untimeout) | `/unmute (@user) [--silent] [reason]` | メンバーのミュート／タイムアウトを解除します。 |
+| [`/jail`](./features/moderation.mdx#jail) | `/jail (@user) [--silent] [reason]` | Jail ロールでメンバーを監禁します。 |
+| [`/tempjail`](./features/moderation.mdx#tempjail) | `/tempjail (@user) (duration) [--silent] [reason]` | メンバーを、指定した期間だけ監禁します。 |
+| [`/unjail`](./features/moderation.mdx#unjail) | `/unjail (@user) [--silent] [reason]` | メンバーを Jail から解放します。 |
+| [`/warn`](./features/moderation.mdx#warn) | `/warn (@user) [--silent] [reason]` | DM でメンバーに正式に警告します。 |
+
+### モデレーションツール
+
+| コマンド | プロトタイプ | 説明 |
+|---|---|---|
+| [`/clear`](./features/moderation.mdx#clear) | `/clear (amount) [@user]` | チャンネル内のメッセージを 2〜100 件削除します。 |
+| [`/snipe`](./features/moderation.mdx#snipe) | `/snipe [@user] [--channel=#channel]` | チャンネル内、またはユーザーの最後に削除されたメッセージを取得します（1 時間以内。メッセージのキャッシュが必要）。 |
+| [`/modview`](./features/moderation.mdx#modview) | `/modview (@user)` | メンバーの一元化されたモデレーションビュー（処罰、メモ、snipe）を開きます。 |
+| [`/note`](./features/moderation.mdx#note) | `/note (@user)` | メンバーの内部モデレーションメモを追加または編集します。 |
+| [`/nick`](./features/moderation.mdx#nick) | `/nick (@user) [pseudo]` | サーバーでのメンバーのニックネームを変更します（空欄でリセット）。 |
+| [`/onduty`](./features/moderation.mdx#onduty) | `/onduty` | 使用したモデレーターに「勤務中」ロールを付与または外します。 |
+
+### チャンネルロック
+
+| コマンド | プロトタイプ | 説明 |
+|---|---|---|
+| [`/lock`](./features/channel-lock.md#lock) | `/lock [#channel] [duration] [reason] [--silent]` | チャンネルをロックして、メッセージの送信を防ぎます（期間は任意）。 |
+| [`/unlock`](./features/channel-lock.md#unlock) | `/unlock [#channel] [reason] [--silent]` | ロックしたチャンネルのロックを解除します。 |
+| [`/slowmode`](./features/moderation.mdx#slowmode) | `/slowmode (delay) [duration] [#channel] [reason] [--silent]` | チャンネルのスローモードを有効にする、または変更します（適用期間は任意）。 |
+
+## 処罰の履歴 {#sanctions}
+
+| コマンド | プロトタイプ | 説明 |
+|---|---|---|
+| [`/sanctions search`](./features/sanctions.mdx#search) | `/sanctions search [@user] [@moderator] [type] [reason] [date] [status] [moderator_type]` | フィルター（ユーザー、モデレーター、種類、理由、日付、状態など）で履歴を検索します。 |
+| [`/sanctions info`](./features/sanctions.mdx#info) | `/sanctions info (id)` | 処罰の詳細を表示します。 |
+| [`/sanctions edit`](./features/sanctions.mdx#edit) | `/sanctions edit (id) [reason] [duration]` | 既存の処罰の理由または期間を変更します。 |
+| [`/sanctions delete`](./features/sanctions.mdx#delete) | `/sanctions delete (id) [reason]` | 履歴から処罰を削除します。 |
+| [`/my-sanctions`](./features/utilities.mdx#my-sanctions) | `/my-sanctions` | メンバーが自分自身の処罰を確認できます。 |
+| [`/alt`](./features/alt-accounts.md) | `/alt [@user] [@other]` | 同一人物のアカウントを連携し、処罰を共有させます（実験中、Identity Update）。 |
+
+## アンチレイド {#antiraid}
+
+| コマンド | プロトタイプ | 説明 |
+|---|---|---|
+| [`/raidmode`](./features/raid-mode.md#raid-mode) | `/raidmode [status] [duration]` | レイドモードを有効または無効にします。新規参加をブロックまたはフィルターします。 |
+| [`/joinlock`](./features/join-lock.mdx) | `/joinlock [status]` | 新規メンバーに対して、サーバーへのアクセスを無期限に閉鎖します。 |
+| [`/dmlock`](./features/dm-lock.mdx) | `/dmlock` | サーバーの DM の恒久的な遮断を有効または無効にします。 |
+| [`/dmlock-info`](./features/dm-lock.mdx#info) | `/dmlock-info` | DM の遮断の状態をメンバーに知らせます。 |
+
+## 認証 {#auth}
+
+| コマンド | プロトタイプ | 説明 |
+|---|---|---|
+| [`/auth`](./features/authentication-manager.mdx#auth) | `/auth [role]` | 認証して、保護されたロールを取得します。 |
+| [`/auth-profile`](./features/authentication-manager.mdx#auth-profile) | `/auth-profile` | 自分の認証プロフィール（PIN、OTP、パスキー）を管理します。 |
+| [`/auth-settings`](./features/authentication-manager.mdx#auth-settings) | `/auth-settings` | 保護されたロールと許可されたユーザーを設定します。 |
+
+## バイパス {#bypass}
+
+| コマンド | プロトタイプ | 説明 |
+|---|---|---|
+| [`/bypass captcha`](./features/captcha.md#bypass) | `/bypass captcha [@user]` | ユーザーがキャプチャを通過せずに参加できるようにします。 |
+| [`/bypass minage`](./features/onboarding.md#bypass-minage) | `/bypass minage [@user]` | ユーザーが最低作成日数を満たさずに参加できるようにします。 |
+| [`/bypass raid`](./features/raid-mode.md#bypass-raid) | `/bypass raid [@user]` | レイドモード中でも、ユーザーが参加できるようにします（キックモードが必要）。 |
+| [`/bypass bot`](./features/onboarding.md#bypass-bot) | `/bypass bot [bot]` | ボットのキック中でも、ボットが参加できるようにします（サーバーのオーナー）。 |
+
+## ユーティリティ {#utilities}
+
+| コマンド | プロトタイプ | 説明 |
+|---|---|---|
+| [`/userinfo`](./features/utilities.mdx#userinfo) | `/userinfo [@user]` | ユーザーの情報を表示します。 |
+| [`/serverinfo`](./features/utilities.mdx#serverinfo) | `/serverinfo` | サーバーの情報を表示します。 |
+| [`/discord-sanctions`](./features/utilities.mdx#discord-sanctions) | `/discord-sanctions [@user]` | ユーザーに対する Discord の処罰（DSA）を表示します。ユーザーを指定しない場合は全体の統計を表示します。 |
+| [`/inviteinfo`](./features/utilities.mdx#inviteinfo) | `/inviteinfo (invite)` | Discord の招待（コードまたはリンク）の情報を表示します。 |
+| [`/prune`](./features/utilities.mdx#prune) | `/prune [duration]` | インタラクティブなメニューで、非アクティブなメンバーを整理します。 |
+| [`/channel duplicate`](./features/utilities.mdx#channel-duplicate) | `/channel duplicate (#channel)` | 設定と権限を含めてチャンネルを複製します。 |
+| [`/channel clear`](./features/utilities.mdx#channel-clear) | `/channel clear (#channel)` | チャンネルを削除し、同じ内容で再作成します。 |
+| [`/block add`](./features/utilities.mdx#block-add) | `/block add [@user] [reason]` | ユーザーが一部の機能を使えないようにします。 |
+| [`/block remove`](./features/utilities.mdx#block-remove) | `/block remove [@user] [reason]` | ユーザーのブロックを解除します。 |
+| [`/block list`](./features/utilities.mdx#block-list) | `/block list` | ブロックしたユーザーを一覧表示します。 |
+| [`/report`](./features/reports.md) | `/report (@member)` | メンバーがモデレーションにメンバーを通報できます（理由はウィンドウで入力）。 |
+
+## 情報とヘルプ {#info}
+
+| コマンド | プロトタイプ | 説明 |
+|---|---|---|
+| [`/about`](./readme.mdx) | `/about` | RaidProtect の概要を表示します。 |
+| [`/help`](./readme.mdx) | `/help` | RaidProtect の全般的なヘルプを表示します。 |
+| [`/invite`](./useful-links/index.mdx) | `/invite` | お役立ちリンク（招待、サポート、ボットのページ）を表示します。 |
+| [`/transparency`](./features/transparency.md#command) | `/transparency` | サーバーの最新のモデレーション透明性レポートを表示します。 |
+| [`/changelog`](./changelog.mdx) | `/changelog` | RaidProtect の変更履歴を確認します。 |
+| [`/feedback`](./features/utilities.mdx#feedback) | `/feedback` | 意見、提案、不具合の報告を送ります。 |
+| [`/privacy`](./features/utilities.mdx#privacy) | `/privacy` | RaidProtect がこのサーバーについて保持している内容を表示します。 |
+
+## コンテキストメニュー {#context-menus}
+
+一部の操作は、右クリックの**アプリ**メニューから開けます。
+
+- メンバーに対して：**Modview を開く**（[モデレーションビュー](./features/moderation.mdx#modview)）、**ユーザーを処罰**（[1 つのウィンドウでの処罰](./features/moderation.mdx#context-menu)）、**Discord の処罰**（[Discord の処罰](./features/utilities.mdx#discord-sanctions)）、**ユーザーを通報**（[通報](./features/reports.md)）。
+- メッセージに対して：**このメッセージを通報**（[通報](./features/reports.md)）。
+
+---
+
+## ⚙️ コマンドの 2 つの使い方 {#usage}
+
+よく使うモデレーションコマンドには、2 つの形式があります。スラッシュと、プレフィックス付きのメッセージです。`/sanctions`、`/snipe`、`/audit` など、その他のコマンドはスラッシュでのみ使えます。プレフィックスに対応するコマンドは、[メッセージコマンドの一覧](./guides/prefix.md#activated)で確認できます。
+
+### スラッシュコマンド：いちばん簡単 {#slash}
+
+チャンネルで `/` を入力してコマンドを選ぶと、**Discord が各パラメーターを専用のインターフェースで提示します**（ユーザーセレクター、チャンネルセレクター、期間のオートコンプリートなど）。既定ではこの方法をおすすめします。何も覚える必要がありません。
+
+```
+/ban @member reason: 詐欺スパム
+```
+
+### メッセージコマンド：いちばん複雑 {#prefix}
+
+[`/settings` でメッセージコマンドを有効](./guides/prefix.md)にすると、通常のメッセージとしてコマンドを書くこともできます（`?ban …`、`?kick …` など）。グラフィカルなインターフェースはなく、**構文を知っている**必要があります（位置引数、名前付きフラグ、行末の自由引数）。その代わり、コマンドに慣れたモデレーターにとっては、キーボードで素早く操作できます。
+
+#### 位置引数
+
+プロトタイプの順に、名前なしで指定します。コマンドの主な引数です。
+
+```
+?ban 123456789012345678
+?slowmode 10s
+```
+
+#### 名前付きフラグ（`--name=value`）
+
+補助的なオプション用です。フラグは、コマンドの**どこにでも**、どんな順序でも置けます。
+
+- `--silent`（真偽値）：オプションを有効にするだけです。
+- `--delete-messages=7d`：オプションに値を渡します。
+
+```
+?ban @member --delete-messages=7d --silent BANの理由
+?tempban @member 1d --silent また同じことをした
+```
+
+#### 「rest」引数（自由テキスト）
+
+一部のコマンドの最後の引数（通常は `[reason]`）は、**その後に書いたすべて**を、スペースも含めて、引用符なしで取り込みます。
+
+```
+?warn @member またサーバーのルール3に違反しました
+```

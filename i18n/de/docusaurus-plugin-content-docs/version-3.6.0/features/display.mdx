@@ -1,0 +1,106 @@
+---
+title: Informationspanels
+description: "Der Befehl /display von RaidProtect erstellt und verwaltet öffentliche Info-Panels und dem Staff vorbehaltene Panels auf Ihrem Discord-Server."
+---
+
+import DisplayMockup from '@site/src/components/DiscordMessage/mockups/display';
+
+<DisplayMockup />
+
+Mit dem Befehl `/display` können Sie Informationspanels erstellen und verwalten, die von RaidProtect auf Ihrem Server veröffentlicht werden. Er hat zwei Teile:
+
+- `/display public`: Panels für Ihre Mitglieder (DM-Sperre, Sanktionen, Meldung …).
+- `/display staff`: Panels, die Ihrem Team vorbehalten sind ([DISCON](./discon.md), Rollenübernahme, Dokumentation, Dienstantritt).
+
+Verwenden Sie den Befehl: ```/display public``` oder ```/display staff```
+
+:::info
+Beide Unterbefehle erfordern die Berechtigung „**Server verwalten**“.
+:::
+
+## ❓ Funktionsweise {#working}
+
+Jedes Informationspanel wird vom Bot in einem Kanal Ihrer Wahl veröffentlicht. Sie verfügen über mehrere Plätze, um unabhängige Panels zu erstellen, jedes mit eigenem Inhalt und eigenen Funktionen.
+
+:::info
+**Grenzen der öffentlichen Panels:** 2 Plätze in der kostenlosen Version, 4 in der [Premium](/de/premium)-Version, plus 1 Platz, der dem Jail-Inhalt vorbehalten ist. Das Panel des [Captchas](./captcha.md) belegt keinen Platz.
+:::
+
+## 📄 Inhaltstypen {#content}
+
+Jedes öffentliche Panel kann einen oder mehrere der folgenden Inhalte enthalten:
+
+- **DM-Sperre**: Informiert die Mitglieder über den Status der [DM-Sperre](./dm-lock.mdx). Zeigt an, ob die DMs gesperrt sind oder nicht, und erklärt, dass nur Freunde, das Staff-Team, Bots und frühere Kontakte DMs senden können.
+- **Gefängnis**: Zeigt eine Nachricht für Mitglieder im Jail an, die darauf hinweist, dass ihr Zugang zum Server aufgrund eines Regelverstoßes eingeschränkt wurde.
+- **Sanktionen**: Zeigt den Mitgliedern, wie sie ihren persönlichen Sanktionsverlauf über den Befehl `/meine-sanktionen` einsehen können.
+- **Meldung**: Erklärt den Mitgliedern, wie sie einen Nutzer oder eine Nachricht über den Befehl `/report` oder das Kontextmenü (Rechtsklick) melden können.
+
+## ⚙️ Funktionen {#features}
+
+Neben dem Inhalt kann jedes öffentliche Panel interaktive Funktionen aktivieren:
+
+- **Übersetzung**: Fügt eine Schaltfläche hinzu, mit der Mitglieder das Panel in alle von Discord unterstützten Sprachen übersetzen können.
+- **Sanktionen-Zugang**: Fügt eine Schaltfläche „**Meine Sanktionen einsehen**“ hinzu, mit der Mitglieder ihre Sanktionen direkt einsehen können.
+- **Meldung**: Fügt eine Schaltfläche „**Mitglied melden**“ hinzu, um schnell einen Nutzer zu melden.
+
+{/* TODO: Screenshot von /display public hinzufügen */}
+
+## 📌 Reservierte Plätze {#reserved-slot}
+
+Manche Panels werden von ihrem Modul verwaltet, nicht von `/display`:
+
+- **Gefängnis**: Der letzte öffentliche Platz ist dem Jail-Inhalt vorbehalten. Sein Kanal wird ausschließlich in `/settings`, Tab „**Moderation**“, „**Sanktionen**“, dann [Jail](./sanctions.mdx#jail) („**Kanal bearbeiten**“) eingestellt. Sie können dort aber über `/display public` Inhalte und Funktionen hinzufügen.
+- **Captcha**: Das Panel des [Captchas](./captcha.md) im Panel-Modus wird vom Captcha selbst angelegt und entfernt (`/settings`, Tab „**Ankünfte**“, „**Captcha**“). Es kann über `/display` weder erstellt noch gelöscht werden.
+- **DISCON**: Das [DISCON](./discon.md#panel)-Panel belegt den reservierten Platz von `/display staff`. Sein Kanal wird ausschließlich mit `/discon` eingestellt.
+
+## 🛡️ Staff-Panels {#staff}
+
+Der Befehl `/display staff` verwaltet Panels für Ihr Team, die in dem Staff vorbehaltenen Kanälen veröffentlicht werden.
+
+Verwenden Sie den Befehl: ```/display staff```
+
+:::info
+**Grenzen der Staff-Panels:** 1 Platz in der kostenlosen Version, 4 in der [Premium](/de/premium)-Version, plus 1 Platz, der dem [DISCON](./discon.md)-Panel vorbehalten ist.
+:::
+
+### Dem Staff vorbehaltene Inhalte {#staff-content}
+
+Jeder Staff-Inhalt fügt dem Panel automatisch seine Schaltfläche hinzu:
+
+- **DISCON**: die Gefahrenstufe des Servers und ihre fünf Schaltflächen. Dieser Inhalt ist dem DISCON-Platz vorbehalten, der über die [DISCON-Konfiguration](./discon.md#config) verwaltet wird. Sie können diesem Panel über `/display staff` weitere Inhalte hinzufügen.
+- **Rolle erhalten**: eine Schaltfläche, die die Auswahl der vom [Authentification Manager](./authentication-manager.mdx#auth) geschützten Rollen öffnet, wie der Befehl `/auth`.
+- **Dokumentation**: eine Schaltfläche zur Moderationsdokumentation und eine Erinnerung an die nützlichen Befehle (`/modview`, `/sanctions`, `/clear`).
+- **Im Dienst**: eine Schaltfläche, die die [Rolle „im Dienst“](./moderation.mdx#onduty) hinzufügt oder entfernt, wie der Befehl `/onduty`.
+
+Die Funktion **Übersetzung** ist auch bei den Staff-Panels verfügbar.
+
+:::warning
+Die Schaltflächen der Staff-Panels prüfen nicht die Berechtigungen der klickenden Person: **Der Zugang zum Kanal dient als Kontrolle**. Veröffentlichen Sie sie nur in Kanälen, die Ihrem Team vorbehalten sind.
+:::
+
+## 🔄 Panels aktualisieren {#update}
+
+Wenn Sie die Sprache des Bots ändern oder der Inhalt der Panels von RaidProtect aktualisiert wird, zeigt ein Indikator an, welche Panels nicht auf dem neuesten Stand sind. Sie können dann auf die Schaltfläche „**Aktualisieren**“ klicken, um das Panel zu aktualisieren.
+
+## ✏️ Ein Panel bearbeiten oder löschen {#edit}
+
+Über das Menü `/display public` oder `/display staff` verfügt jeder belegte Platz über Schaltflächen zum:
+
+- **Bearbeiten**: Den Kanal, den Inhalt oder die Funktionen des Panels ändern.
+- **Löschen**: Das Panel aus dem Kanal entfernen und den Platz freigeben.
+
+Der Kanal der reservierten Plätze (Jail, DISCON) wird über ihr Modul geändert.
+
+## Häufig gestellte Fragen {#faq}
+
+### Was ist der Unterschied zwischen `/display public` und `/display staff`?
+
+`/display public` veröffentlicht Panels für Ihre Mitglieder (DMs, Sanktionen, Meldung). `/display staff` veröffentlicht Panels für Ihr Team: DISCON-Stufe, Übernahme einer geschützten Rolle, Dokumentation und Dienstantritt.
+
+### Wie viele Panels kann ich erstellen?
+
+Öffentlich: 2 Panels in der kostenlosen Version, 4 mit Premium, plus den Jail-Platz. Staff: 1 Panel in der kostenlosen Version, 4 mit Premium, plus den DISCON-Platz.
+
+### Warum kann ich das Panel des Captchas oder des DISCON nicht löschen?
+
+Diese Panels gehören zu ihrem Modul: Das Captcha wird in `/settings` verwaltet und der DISCON mit `/discon`. Sie über `/display` zu löschen, würde die Funktion ohne Vorwarnung beschädigen.

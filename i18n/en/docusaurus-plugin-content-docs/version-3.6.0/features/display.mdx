@@ -1,0 +1,106 @@
+---
+title: Information Panels
+description: "RaidProtect's /display command creates and manages public information panels and staff-only panels on your Discord server."
+---
+
+import DisplayMockup from '@site/src/components/DiscordMessage/mockups/display';
+
+<DisplayMockup />
+
+The `/display` command allows you to create and manage information panels published by RaidProtect on your server. It has two parts:
+
+- `/display public`: panels for your members (DM Lock, sanctions, reports...).
+- `/display staff`: panels reserved for your team ([DISCON](./discon.md), role taking, documentation, going on duty).
+
+Use the command: ```/display public``` or ```/display staff```
+
+:::info
+Both subcommands require the "**Manage Server**" permission.
+:::
+
+## ❓ How it works {#working}
+
+Each information panel is published by the bot in a channel of your choice. You have multiple slots available to create independent panels, each with its own content and features.
+
+:::info
+**Public panel limits:** 2 slots in the free version, 4 in the [premium](/en/premium) version, plus 1 slot reserved for Jail content. The [captcha](./captcha.md) panel does not use up a slot.
+:::
+
+## 📄 Content types {#content}
+
+Each public panel can contain one or more of the following content types:
+
+- **DM Lock**: Informs members about the [DM Lock](./dm-lock.mdx) status. Displays whether DMs are locked or not, and explains that only friends, staff, bots and previous contacts can send DMs.
+- **Jail**: Displays a message intended for jailed members, indicating that their access to the server has been restricted due to a rule violation.
+- **Sanctions**: Tells members how to view their personal sanctions history via the `/my-sanctions` command.
+- **Report**: Explains to members how to report a user or a message via the `/report` command or the context menu (right-click).
+
+## ⚙️ Features {#features}
+
+In addition to content, each public panel can enable interactive features:
+
+- **Translation**: Adds a button allowing members to translate the panel into any language supported by Discord.
+- **Sanctions access**: Adds a "**View my sanctions**" button allowing members to directly view their sanctions.
+- **Report**: Adds a "**Report a member**" button to quickly report a user.
+
+{/* TODO: Add a screenshot of /display public */}
+
+## 📌 Reserved slots {#reserved-slot}
+
+Some panels are managed by their module, not by `/display`:
+
+- **Jail**: the last public slot is reserved for Jail content. Its channel is only set in `/settings`, "**Moderation**" tab, "**Sanctions**", then [Jail](./sanctions.mdx#jail) ("**Edit channel**"). You can, however, add content and features to it from `/display public`.
+- **Captcha**: the [captcha](./captcha.md) panel in Panel mode is posted and removed by the captcha itself (`/settings`, "**Arrivals**" tab, "**Captcha**"). It can neither be created nor deleted from `/display`.
+- **DISCON**: the [DISCON](./discon.md#panel) panel occupies the reserved slot of `/display staff`. Its channel is only set with `/discon`.
+
+## 🛡️ Staff panels {#staff}
+
+The `/display staff` command manages panels intended for your team, to be published in staff-only channels.
+
+Use the command: ```/display staff```
+
+:::info
+**Staff panel limits:** 1 slot in the free version, 4 in the [premium](/en/premium) version, plus 1 slot reserved for the [DISCON](./discon.md) panel.
+:::
+
+### Staff-only content {#staff-content}
+
+Each staff content automatically adds its button to the panel:
+
+- **DISCON**: the server's danger level and its five buttons. This content is reserved for the DISCON slot, managed from the [DISCON configuration](./discon.md#config). You can add other content to this panel from `/display staff`.
+- **Take a role**: a button that opens the choice of roles protected by the [Authentification Manager](./authentication-manager.mdx#auth), like the `/auth` command.
+- **Documentation**: a button to the moderation documentation, and a reminder of useful commands (`/modview`, `/sanctions`, `/clear`).
+- **On duty**: a button that adds or removes the [on-duty role](./moderation.mdx#onduty), like the `/onduty` command.
+
+The **Translation** feature is also available on staff panels.
+
+:::warning
+Staff panel buttons do not check the permissions of whoever clicks: **access to the channel acts as the control**. Publish them only in channels reserved for your team.
+:::
+
+## 🔄 Updating panels {#update}
+
+When you change the bot's language or the panel content is updated by RaidProtect, an indicator flags the panels that are out of date. You can then click the "**Update**" button to refresh the panel.
+
+## ✏️ Edit or delete a panel {#edit}
+
+From the `/display public` or `/display staff` menu, each occupied slot has buttons to:
+
+- **Edit**: Change the channel, content or features of the panel.
+- **Delete**: Remove the panel from the channel and free up the slot.
+
+The channel of reserved slots (Jail, DISCON) is changed from their module.
+
+## Frequently asked questions {#faq}
+
+### What is the difference between `/display public` and `/display staff`?
+
+`/display public` publishes panels for your members (DMs, sanctions, reports). `/display staff` publishes panels for your team: DISCON level, taking a protected role, documentation and going on duty.
+
+### How many panels can I create?
+
+Public: 2 panels in the free version, 4 in premium, plus the Jail slot. Staff: 1 panel in the free version, 4 in premium, plus the DISCON slot.
+
+### Why can't I delete the captcha or DISCON panel?
+
+These panels belong to their module: the captcha is managed in `/settings` and DISCON with `/discon`. Deleting them from `/display` would break the feature without warning.

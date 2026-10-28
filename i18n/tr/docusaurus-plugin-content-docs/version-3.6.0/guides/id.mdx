@@ -1,0 +1,99 @@
+---
+title: Kimliklerin kullanımı
+description: "Geliştirici modu sayesinde bir Discord kimliğini (kullanıcı, kanal, mesaj) nasıl alacağınızı ve RaidProtect komutlarında nasıl kullanacağınızı öğrenin."
+---
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Discord kimlikleri, Discord'daki her kullanıcıyı, kanalı, sunucuyu veya mesajı tam olarak tanımlamayı sağlayan benzersiz numaralardır. Platformdaki öğeleri tanımlamanın güvenilir ve kalıcı bir yoludur.
+
+:::note Moderasyon açısından önemi
+Discord kimliklerini kullanmak, moderasyon eylemleri için özellikle yararlıdır, çünkü şunları sağlar:
+- **Sunucuda bulunmayan bir kullanıcıya yaptırım uygulamak**: Sunucudan ayrılmış birini yasaklamak
+- **Hataları önlemek**: Birbirine benzeyen takma adlara rağmen doğru kişiyi tam olarak belirlemek
+- **İz tutmak**: Kimlikler, takma adların aksine asla değişmez
+- **Anlaşmazlıkları çözmek**: Özel karakterler durumunda net bir tanımlama
+:::
+
+## Geliştirici modunu etkinleştirme
+
+Discord kimliklerini kullanmak için geliştirici modunu etkinleştirmek gerekir.
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="desktop" label="Discord Masaüstü/Web'de" default>
+
+    1. **Kullanıcı ayarlarını açın**
+    - Arayüzün sol altındaki dişli simgesine ⚙️ tıklayın
+
+    2. **Gelişmiş ayarlara gidin**
+    - Kenar çubuğunda **Gelişmiş** sekmesine gidin
+
+    3. **Geliştirici modunu etkinleştirin**
+    - Anahtar düğmeye tıklayarak “**Geliştirici Modu**” seçeneğini etkinleştirin
+    - Düğme etkinleştirildiğinde maviye dönmelidir
+
+  </TabItem>
+  <TabItem value="mobile" label="Discord Mobil'de">
+
+    1. **Kullanıcı ayarlarını açın**
+    - Sağ alttaki avatarınıza dokunun
+    - Arayüzün sağ üstündeki dişli simgesine ⚙️ dokunun
+
+    2. **Gelişmiş ayarlara gidin**
+    - Aşağı kaydırın ve “**Gelişmiş**”e dokunun
+
+    3. **Geliştirici modunu etkinleştirin**
+    - “**Geliştirici Modu**” seçeneğini etkinleştirin
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+## Bir kimliği kopyalama
+
+Geliştirici modu etkinleştirildikten sonra herhangi bir öğenin kimliğini kopyalayabilirsiniz:
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="user" label="Kullanıcı kimliği" default>
+
+    - Avatara veya kullanıcı adına **sağ tıklayın**
+    - “**Kullanıcı Kimliğini Kopyala**”yı seçin
+
+  </TabItem>
+  <TabItem value="channel" label="Kanal kimliği">
+
+    - Kanal listesinde kanalın adına **sağ tıklayın**
+    - “**Kanal Kimliğini Kopyala**”yı seçin
+
+  </TabItem>
+  <TabItem value="server" label="Sunucu kimliği">
+
+    - Sol üstteki sunucu adına **sağ tıklayın**
+    - “**Sunucu Kimliğini Kopyala**”yı seçin
+
+  </TabItem>
+  <TabItem value="message" label="Mesaj kimliği">
+
+    - Bir mesaja **sağ tıklayın**
+    - “**Mesaj Kimliğini Kopyala**”yı seçin
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+## RaidProtect ile kullanım
+
+Kimlikler, RaidProtect komutlarında etiketlerin yerine kullanılabilir:
+
+- [`/ban user:123456789012345678 reason:Sunucu kurallarının ihlali`](../features/moderation#ban)
+- [`/clear sayı:100 kullanıcı:123456789012345678`](../features/moderation#clear)
+- [`/userinfo user:123456789012345678`](../features/utilities#userinfo)
+- [`/bypass minage kullanıcı:123456789012345678`](../features/onboarding#bypass-minage)
+
+:::info
+Bir kullanıcıyı, çevrimiçi olmasa veya sunucunuzda bulunmasa bile Discord kimliğinden yasaklayabilirsiniz.
+:::

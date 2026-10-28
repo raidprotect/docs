@@ -1,0 +1,107 @@
+---
+title: Đóng tin nhắn riêng
+description: "Đóng tin nhắn riêng của RaidProtect chặn lâu dài các tin nhắn riêng đến từ máy chủ Discord của bạn, một tấm khiên chống spam và lừa đảo."
+---
+
+import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
+
+import DmLockMockup from '@site/src/components/DiscordMessage/mockups/dm-lock';
+
+<DmLockMockup />
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+Tính năng **Đóng tin nhắn riêng** của RaidProtect cho phép đóng vĩnh viễn quyền gửi tin nhắn riêng (DM) từ máy chủ, vượt qua giới hạn gốc của Discord vốn chỉ cho phép chặn này trong 24 giờ thông qua hành động an ninh mạng “Tạm dừng tin nhắn riêng”.
+
+## 🚦 Trường hợp sử dụng và khuyến nghị {#recommendations}
+
+- **Máy chủ dễ bị spam hoặc quấy rối:** Đóng tin nhắn riêng đặc biệt được khuyên dùng cho các cộng đồng công khai hoặc có lượng người xem lớn, nơi nguy cơ lạm dụng qua tin nhắn riêng cao hơn.
+- **Sự kiện tạm thời hoặc giai đoạn nhạy cảm:** Khi ra mắt, thông báo quan trọng, hoặc những giai đoạn đông người (ví dụ: cuộc thi, khuyến mãi), bật Đóng tin nhắn riêng giúp ngăn chặn các nỗ lực [phishing](/vi/learn/token-grabber) hoặc lừa đảo.
+- **Cộng đồng có độ tuổi trẻ:** Với các máy chủ có nhiều trẻ vị thành niên, hạn chế tin nhắn riêng có thể tăng cường an toàn và ngăn các hành vi không phù hợp.
+- **Bảo vệ liên tục:** Nhờ tự động hóa, không có khoảng hở dễ bị tấn công do quên gia hạn thủ công.
+
+## ❓ Cách Đóng tin nhắn riêng hoạt động {#working}
+
+RaidProtect tự động gia hạn việc chặn tin nhắn riêng trước khi nó hết hạn, không có khoảng hở dễ bị tấn công.
+
+:::info
+Vẫn có thể gửi và nhận tin nhắn với:
+- bạn bè của mình
+- các bot
+- đội ngũ
+:::
+:::warning
+Các chức năng cộng đồng của Discord là không thể thiếu để Đóng tin nhắn riêng hoạt động tốt. [Hãy làm theo hướng dẫn của chúng tôi để kiểm tra việc bật cộng đồng trên máy chủ của bạn.](../guides/community.md)
+:::
+
+## 🚩 Cấu hình Đóng tin nhắn riêng {#config}
+
+1. Dùng [lệnh `/settings`](../setup.md#settings).
+2. Mở thẻ “**Bảo vệ**”.
+3. Nhấp vào “**Chỉnh sửa**” bên cạnh “**Đóng tin nhắn riêng**”.
+4. Trong cửa sổ mở ra, đánh dấu hoặc bỏ đánh dấu “**Đóng tin nhắn riêng của máy chủ**”, rồi xác nhận.
+
+<SettingsModal name="dmlock" />
+
+### Lệnh /dmlock {#dmlock}
+
+Bạn cũng có thể dùng lệnh: ```/dmlock```
+
+Lệnh mở màn hình “**Cấu hình đóng tin nhắn riêng**”, với một công tắc để bật hoặc tắt sự bảo vệ. Nếu thiếu một điều kiện tiên quyết (chế độ Cộng đồng hoặc quyền “**Quản lý máy chủ**”), một khung thông báo sẽ cho bạn biết và nút “**Làm mới**” cho phép bạn kiểm tra lại sau khi sửa. Lệnh này dành riêng cho các thành viên có quyền “**Quản lý máy chủ**”.
+
+<Settings start="dmlockCommand" />
+
+## ℹ️ Lệnh /dmlock-info {#info}
+
+Lệnh `/dmlock-info` cho phép thông báo cho các thành viên về trạng thái hiện tại của **Đóng tin nhắn riêng** trên máy chủ. Nó hiển thị một tin nhắn rõ ràng cho biết hạn chế này đang **bật** hay **tắt**, kèm theo lời giải thích dễ hiểu về tác dụng của nó.
+
+**Mục tiêu:**
+- Giải thích vì sao tin nhắn riêng bị hạn chế (chống spam, lừa đảo, phishing).
+- Giảm sự bối rối và các câu hỏi lặp lại của thành viên mới.
+- Nhắc lại các điều kiện để tiếp tục trò chuyện qua tin nhắn riêng (bạn bè, đội ngũ, bot, các liên hệ cũ).
+
+**Ví dụ hiển thị**
+<SeparatedBox>
+<Tabs>
+  <TabItem value="enable" label="Đã bật" default>
+
+![Ảnh chụp màn hình lệnh dmlock-info khi đã bật](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-dm-lock-info-enable.webp)
+
+  </TabItem>
+  <TabItem value="disable" label="Đã tắt">
+
+![Ảnh chụp màn hình lệnh dmlock-info khi đã tắt](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-dm-lock-info-disable.webp)
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+### ⚙️ Thực hành tốt
+
+- Mời các thành viên tích cực dùng `/dmlock-info` để trả lời các câu hỏi của thành viên mới.
+- Hiển thị nó thường xuyên hoặc ghim nó trong các kênh chào mừng của bạn.
+- Kết hợp nó với quy tắc hoặc thông báo của bạn để nhắc lại chính sách chống spam của máy chủ.
+
+## Câu hỏi thường gặp {#faq}
+
+### Bật Đóng tin nhắn riêng ở đâu?
+
+Trong `/settings`, thẻ Bảo vệ, nhấp vào “Chỉnh sửa” bên cạnh “Đóng tin nhắn riêng”, rồi đánh dấu “Đóng tin nhắn riêng của máy chủ”. Lệnh `/dmlock` cũng mở một màn hình riêng.
+
+### Vì sao tôi không thể bật Đóng tin nhắn riêng?
+
+Đang thiếu một điều kiện tiên quyết: chế độ Cộng đồng của Discord phải được bật trên máy chủ của bạn, và RaidProtect phải có quyền “Quản lý máy chủ”.
+
+### Tin nhắn riêng bị đóng trong bao lâu?
+
+Chừng nào sự bảo vệ còn bật. Discord giới hạn hành động an ninh của mình ở 24 giờ, và chúng tôi tự động gia hạn nó cho đến khi bạn tắt Đóng tin nhắn riêng.
+
+### Các thành viên có còn nhắn riêng cho nhau được không?
+
+Có, nếu họ là bạn bè hoặc đã từng trò chuyện. Các bot và đội ngũ cũng luôn có thể gửi tin nhắn riêng.
+
+### DISCON có bật Đóng tin nhắn riêng không?
+
+Có, từ cấp 3 của [DISCON](./discon.md). Khi hạ cấp, chúng tôi chỉ tắt nó nếu chính DISCON đã bật nó.

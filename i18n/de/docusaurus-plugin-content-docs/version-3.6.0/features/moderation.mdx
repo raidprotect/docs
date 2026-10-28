@@ -1,0 +1,280 @@
+---
+title: Moderation
+description: "Die Moderationsbefehle von RaidProtect (Ban, Kick, Mute, Jail, Warn) und die zentrale ModView helfen Ihren Moderatoren, Ihren Discord-Server zu verwalten."
+---
+
+import Settings from '@site/src/components/DiscordMessage/mockups/v2';
+
+import ModerationMockup from '@site/src/components/DiscordMessage/mockups/moderation';
+
+{/* <ModerationMockup /> : veraltet seit 3.5.0 (Beschriftungen der Sanktionsauswahl und des Menüs „Modview öffnen“) */}
+
+import Icon from "@site/src/components/Icon";
+
+Um die Arbeit Ihrer Moderatoren zu erleichtern, integriert RaidProtect sehr praktische Moderationsbefehle, mit denen Sie direkt auf die nativen Funktionen von Discord zugreifen können, wie etwa das **[Bannen](/de/learn/discord-sanctions)** und **Kicken** von Benutzern.
+
+Zusätzlich zu diesen Aktionen sendet RaidProtect dem sanktionierten Benutzer private Nachrichten, um ihm den Grund seiner Sanktion zu erläutern. Dies wird zudem im [Sanktionsverlauf](./sanctions.mdx) und in den Server-Logs vermerkt, damit Sie den Überblick behalten.
+
+:::info
+Die Sanktionsbefehle (`/ban`, `/kick`, `/mute`, `/jail`, `/warn` …) sowie `/nick`, `/clear` und `/slowmode` sind [per Präfix nutzbar](../guides/prefix). `/modview`, `/note`, `/snipe` und `/onduty` nicht.
+:::
+
+:::info
+Alle Sanktionsbefehle akzeptieren die Option `[--silent]`, um die Zielperson nicht per DM zu benachrichtigen. Die Benachrichtigungs-DMs (Kick, Softban, temporärer Ban) enthalten eine Schaltfläche mit einer Server-Einladung.
+:::
+
+## 🔍 Moderationsansicht eines Mitglieds {#modview}
+
+Der Befehl `/modview` öffnet eine **zentrale Moderationsansicht** eines Mitglieds, in einer einzigen Antwort zusammengefasst:
+
+- seine **letzten Sanktionen**, mit der Schaltfläche „**Alle Sanktionen anzeigen**“;
+- seine interne **Moderationsnotiz**, änderbar mit „**Bearbeiten**“ (siehe [`/note`](#note));
+- seine **zuletzt gelöschte Nachricht**, mit dem Link „**Alle gelöschten Nachrichten anzeigen (1 Std.)**“ (siehe [`/snipe`](#snipe));
+- seine **verknüpften Konten**, wenn Ihr Server Zugang zu den [Zweitkonten](./alt-accounts.md) hat, mit der Schaltfläche „**Verwalten**“ für Moderatoren, die bannen dürfen;
+- die Auswahl „**Benutzer sanktionieren**“, um sofort zu handeln.
+
+Verwenden Sie den Befehl: ```/modview (@user)```
+
+Ersetzen Sie `(@user)` durch die gewünschte Erwähnung oder ID.
+
+:::tip
+Der Befehl ist auch über das Kontextmenü erreichbar: Rechtsklick auf ein Profil → **Apps** → **Modview öffnen**.
+:::
+
+## 🖱️ Über das Kontextmenü sanktionieren {#context-menu}
+
+Neben den Slash-Befehlen können Sie ein Mitglied auch direkt über sein Profil per Rechtsklick sanktionieren: **Apps** → **Sanktionieren**.
+
+Es öffnet sich dann ein Fenster, in dem Sie Folgendes angeben können:
+- **Sanktionstyp**: Den Typ der zu verhängenden Sanktion (erforderlich).
+- **Dauer**: Eine Dauer für einen Bann, einen Timeout oder ein Jail (optional, z. B. `1d 2h 30m`).
+- **Grund**: Den Grund der Sanktion.
+- **Stumm**: Sendet der sanktionierten Person keine Privatnachricht.
+
+Die angebotenen Typen hängen von Ihren Berechtigungen für jeden Befehl ab (`/ban`, `/softban`, `/jail`, `/kick`, `/mute`, `/warn`), einschließlich der Einstellungen der Discord-Integrationen. Das Einsperren erscheint nur, wenn eine [Jail-Rolle](./sanctions.mdx#jail) konfiguriert ist.
+
+## <Icon src="/img/icons/SanctionsBAN.svg" alt="icon SanctionsBAN" title=":iconSanctionsBAN:"/> Einen Benutzer bannen {#ban}
+
+Der Befehl `/ban` ermöglicht es Ihnen, einem Benutzer den Zugang zu Ihrem Server dauerhaft oder für eine bestimmte Dauer zu verwehren.
+
+Verwenden Sie den Befehl: ```/ban (@user) [duration] [--delete-messages=dauer] [--silent] [reason]```
+
+Ersetzen Sie `(@user)` durch die gewünschte Erwähnung oder ID und `[reason]` durch den Grund der Sanktion.
+
+- `[duration]`: Wird sie angegeben, wird der Bann temporär (wie bei [`/tempban`](#tempban)).
+- `[--delete-messages]`: Dauer des zu löschenden Nachrichtenverlaufs (zum Beispiel `1h`, `1d`, `7d`). Discord begrenzt die Löschung auf maximal 7 Tage. Ohne diese Option gilt der Wert der [Nachrichtenlöschung beim Bann](./sanctions.mdx#ban-delete).
+- `[--silent]`: keine DM an die Zielperson senden.
+
+:::tip
+Sie können einen Benutzer über seine [Discord-ID](../guides/id) bannen, selbst wenn er nicht online oder nicht auf Ihrem Server anwesend ist.
+:::
+
+### <Icon src="/img/icons/SanctionsBANTemp.svg" alt="icon SanctionsBANTemp" title=":iconSanctionsBANTemp:"/>  Einen Benutzer temporär bannen {#tempban}
+
+Der Befehl `/tempban` ermöglicht es Ihnen, einem Benutzer den Zugang zu Ihrem Server vorübergehend zu verwehren.
+
+Verwenden Sie den Befehl: ```/tempban (@user) (duration) [--delete-messages=dauer] [--silent] [reason]```
+
+Ersetzen Sie `(@user)` durch die gewünschte Erwähnung oder ID, `(duration)` durch die Dauer der Sperre und `[reason]` durch den Grund der Sanktion. Der Parameter `[--delete-messages]` ermöglicht es, den Nachrichtenverlauf des Mitglieds zu löschen (bis zu 7 Tage).
+
+### <Icon src="/img/icons/SanctionsSOFTBAN.svg" alt="icon SanctionsSOFTBAN" title=":iconSanctionsSOFTBAN:"/> Einen Benutzer softbannen {#softban}
+
+Der Befehl `/softban` bannt ein Mitglied und entbannt es sofort wieder. Damit können Sie **seinen Nachrichtenverlauf löschen**, ohne es dauerhaft vom Server auszuschließen: Es kann mit einer neuen Einladung zurückkehren.
+
+Verwenden Sie den Befehl: ```/softban (@member) [--delete-messages=dauer] [--silent] [reason]```
+
+Ersetzen Sie `(@member)` durch die gewünschte Erwähnung oder ID und `[reason]` durch den Grund der Sanktion. Der Parameter `[--delete-messages]` ermöglicht es, die Dauer der zu löschenden Nachrichten zu wählen.
+
+:::tip
+Der Softban eignet sich besonders für **gehackte Konten**: Der Spam wird bereinigt und das Konto freigegeben, ohne das Mitglied dauerhaft auszuschließen, sobald es sein Konto gesichert hat.
+:::
+
+### <Icon src="/img/icons/SanctionsUNBAN.svg" alt="icon SanctionsUNBAN" title=":iconSanctionsUNBAN:"/> Einen Benutzer entbannen {#unban}
+
+Der Befehl `/unban` ermöglicht es Ihnen, die Sperre eines zuvor gesperrten Benutzers aufzuheben, sodass dieser Ihrem Server erneut beitreten kann.
+
+Verwenden Sie den Befehl: ```/unban (@user) [--silent] [reason]```
+
+Ersetzen Sie `(@user)` durch die gewünschte Kennung und `[reason]` durch den Grund der Entbannung.
+
+## <Icon src="/img/icons/SanctionsKICK.svg" alt="icon SanctionsKICK" title=":iconSanctionsKICK:" /> Einen Benutzer kicken {#kick}
+
+Der Befehl `/kick` ermöglicht es Ihnen, ein Mitglied von Ihrem Server zu entfernen, ohne es zu bannen. Der Benutzer kann dem Server erneut beitreten, wenn er über eine gültige Einladung verfügt.
+
+Verwenden Sie den Befehl: ```/kick (@member) [--silent] [reason]```
+
+Ersetzen Sie `(@member)` durch die gewünschte Erwähnung oder ID und `[reason]` durch den Grund der Sanktion.
+
+## <Icon src="/img/icons/SanctionsTIMEOUT.svg" alt="icon SanctionsTIMEOUT" title=":iconSanctionsTIMEOUT:" /> Einen Benutzer stummschalten (oder Mute) {#timeout}
+
+Der Befehl `/mute` ermöglicht es Ihnen, die Interaktionsmöglichkeiten eines Mitglieds auf dem Server vorübergehend einzuschränken. Während dieser Zeit kann das Mitglied keine Nachrichten senden, nicht reagieren, keinen Sprachkanälen beitreten und keine Direktnachrichten an andere Mitglieder senden.
+
+Verwenden Sie den Befehl: ```/mute (@member) (duration) [--force-timeout] [--silent] [reason]```
+
+Ersetzen Sie `(@member)` durch die gewünschte Erwähnung oder ID, `(duration)` durch die Mute-Dauer (z. B. `10m`, `1h`, `1d`) und `[reason]` durch den Grund der Sanktion.
+
+:::tip
+Die Option `[--force-timeout]` (Alias `ft` per Präfix) ermöglicht es, die Schwellenwertregel zu umgehen und die Verwendung des Discord-Timeouts zu erzwingen, auch wenn eine Mute-Rolle konfiguriert ist. Die Dauer darf dann 28 Tage nicht überschreiten.
+
+Sie können eine [Mute-Rolle](./sanctions.mdx#mute) und einen [Mute-Schwelle](./sanctions.mdx#mute-threshold) in `/settings`, Tab „**Moderation**“, „**Sanktionen**“, Zeile „**Mute**“ konfigurieren. Oberhalb der festgelegten Schwelle wendet der Bot automatisch die Mute-Rolle anstelle des Discord-Timeouts an, was Dauern von mehr als 28 Tagen ermöglicht.
+:::
+
+### <Icon src="/img/icons/SanctionsUNTIMEOUT.svg" alt="icon SanctionsUNTIMEOUT" title=":iconSanctionsUNTIMEOUT:" /> Stummschaltung eines Benutzers aufheben {#untimeout}
+
+Der Befehl `/unmute` ermöglicht es Ihnen, die Einschränkungen eines stummgeschalteten Mitglieds sofort aufzuheben, sodass es alle Interaktionsmöglichkeiten auf dem Server wiedererlangt.
+
+Verwenden Sie den Befehl: ```/unmute (@member) [--silent] [reason]```
+
+Ersetzen Sie `(@member)` durch die gewünschte Erwähnung oder ID und `[reason]` durch den Grund für das Aufheben des Timeouts.
+
+## <Icon src="/img/icons/SanctionsJAIL.svg" alt="icon SanctionsJAIL" title=":iconSanctionsJAIL:" /> Einen Benutzer einsperren {#jail}
+
+Der Befehl `/jail` ermöglicht es Ihnen, ein Mitglied zu isolieren, indem ihm eine restriktive Rolle zugewiesen wird. Das Jail soll eine Alternative zum Ban bieten: Das Mitglied behält einen sehr eingeschränkten Zugang zum Server, anstatt vollständig ausgeschlossen zu werden.
+
+Verwenden Sie den Befehl: ```/jail (@member) [--silent] [reason]```
+
+Ersetzen Sie `(@member)` durch die gewünschte Erwähnung oder ID und `[reason]` durch den Grund der Sanktion.
+
+:::warning
+Die [Jail-Rolle](./sanctions.mdx#jail) muss über `/settings` konfiguriert werden, bevor dieser Befehl verwendet werden kann. Die automatischen Module fallen dagegen auf einen Timeout zurück, wenn keine Jail-Rolle konfiguriert ist. Ein eingesperrtes Mitglied wird außerdem aus seinem Sprachkanal getrennt.
+:::
+
+### <Icon src="/img/icons/SanctionsJAILTemp.svg" alt="icon SanctionsJAILTemp" title=":iconSanctionsJAILTemp:" /> Einen Benutzer temporär einsperren {#tempjail}
+
+Der Befehl `/tempjail` ermöglicht es Ihnen, ein Mitglied für eine festgelegte Dauer vorübergehend einzusperren.
+
+Verwenden Sie den Befehl: ```/tempjail (@member) (duration) [--silent] [reason]```
+
+Ersetzen Sie `(@member)` durch die gewünschte Erwähnung oder ID, `(duration)` durch die Dauer des Einsperrens und `[reason]` durch den Grund der Sanktion.
+
+### <Icon src="/img/icons/SanctionsUNJAIL.svg" alt="icon SanctionsUNJAIL" title=":iconSanctionsUNJAIL:" /> Einen Benutzer freilassen {#unjail}
+
+Der Befehl `/unjail` ermöglicht es Ihnen, einem Mitglied die Jail-Rolle zu entziehen, sodass es seine normalen Zugänge zum Server wiedererlangt.
+
+Verwenden Sie den Befehl: ```/unjail (@member) [--silent] [reason]```
+
+Ersetzen Sie `(@member)` durch die gewünschte Erwähnung oder ID und `[reason]` durch den Grund der Freilassung.
+
+Ein Mitglied in Quarantäne (Mindestalter des Kontos, Discord-Quarantäne) ist nicht im Jail: `/unjail` lehnt es ab und gibt an, wie seine Quarantäne aufgehoben wird.
+
+## <Icon src="/img/icons/SanctionsWARN.svg" alt="icon SanctionsWARN" title=":iconSanctionsWARN:" /> Einen Benutzer verwarnen {#warn}
+
+Der Befehl `/warn` ermöglicht es Ihnen, ein Mitglied formell über eine vom Bot gesendete Privatnachricht zu verwarnen.
+
+Verwenden Sie den Befehl: ```/warn (@member) [--silent] [reason]```
+
+Ersetzen Sie `(@member)` durch die gewünschte Erwähnung oder ID und `[reason]` durch den Grund der Verwarnung.
+
+## 📝 Moderationsnotiz {#note}
+
+Der Befehl `/note` ermöglicht es, die **interne Moderationsnotiz** eines Mitglieds hinzuzufügen oder zu ändern, ohne den Umweg über [`/modview`](#modview). Die Notiz ist nur für Moderatoren sichtbar.
+
+Verwenden Sie den Befehl: ```/note (@user)```
+
+Ersetzen Sie `(@user)` durch die gewünschte Erwähnung oder ID. Ein Fenster öffnet sich, um die Notiz einzugeben oder zu ändern, bis zu 300 Zeichen. Das Hinzufügen, Ändern und Löschen einer Notiz wird in den [Moderationslogs](#logs) festgehalten.
+
+## 🏷️ Den Spitznamen eines Mitglieds ändern {#nick}
+
+Der Befehl `/nick` ermöglicht es Ihnen, den Spitznamen eines Mitglieds auf dem Server zu ändern oder zurückzusetzen.
+
+Verwenden Sie den Befehl: ```/nick (@user) [pseudo]```
+
+Ersetzen Sie `(@user)` durch die gewünschte Erwähnung oder ID. Der Parameter `[pseudo]` ist der neue Spitzname (höchstens 32 Zeichen). Wird er weggelassen, wird der Spitzname des Mitglieds zurückgesetzt.
+
+:::info
+Der Befehl erfordert die Discord-Berechtigung **Spitznamen verwalten** und ist als [Präfixbefehl](../guides/prefix) auch über die Aliase `nickname`, `rename` und `setnick` erreichbar. Die Änderungen werden in den Server-Logs festgehalten.
+:::
+
+## 🧹 Eine Gruppe von Nachrichten löschen {#clear}
+
+Der Befehl `/clear` ermöglicht es Ihnen, schnell eine bestimmte Anzahl von Nachrichten in einem Textkanal zu löschen. Sie können einen Benutzer angeben, um nur seine Nachrichten zu löschen.
+
+Verwenden Sie den Befehl: ```/clear (amount) [@user]```
+
+Ersetzen Sie `(amount)` durch die Anzahl der Nachrichten, die Sie löschen möchten (von 2 bis 100). Fügen Sie `[@user]` per Erwähnung oder ID hinzu, um nur seine Nachrichten im Kanal zu erfassen. Als Präfixbefehl reagiert der Befehl auch auf den Alias `clean`.
+
+## 🕒 Slowmode in einem Kanal aktivieren {#slowmode}
+
+Der Befehl `/slowmode` ermöglicht es Ihnen, den Langsam-Modus eines Kanals zu aktivieren oder anzupassen, um die Häufigkeit der von den Benutzern gesendeten Nachrichten zu begrenzen.
+
+Verwenden Sie den Befehl: ```/slowmode (delay) [duration] [#channel] [reason] [--silent]```
+
+- Ersetzen Sie `(delay)` durch die gewünschte Zeit zwischen zwei Nachrichten (z. B. `5s`, `1m`, `10m`, `1h`, bis zu 6 Stunden; `0` zum Deaktivieren).
+- Fügen Sie `[duration]` hinzu, um den Slowmode nach dieser Dauer automatisch zu deaktivieren (z. B. `30m`, `2h`).
+- Fügen Sie `[#channel]` hinzu, wenn Sie den Slowmode in einem anderen Kanal anwenden möchten als in dem, in dem Sie den Befehl eingeben.
+- Fügen Sie `--silent` hinzu, um im Kanal nichts anzukündigen.
+- Fügen Sie `[reason]` hinzu, um den Grund anzugeben, der in den Server-Logs festgehalten wird.
+
+## 🕵️ Eine gelöschte Nachricht abrufen {#snipe}
+
+Der Befehl `/snipe` zeigt die **in der letzten Stunde gelöschten Nachrichten** eines Kanals an, Seite für Seite, von der neuesten zur ältesten.
+
+Verwenden Sie den Befehl: ```/snipe [@user] [--channel=#channel]```
+
+- Ohne Argument: zeigt die gelöschten Nachrichten des aktuellen Kanals an.
+- Mit `[@user]`: zeigt nur die gelöschten Nachrichten dieses Benutzers an.
+- Mit `[--channel]`: sucht in einem anderen Kanal als dem, in dem Sie den Befehl eingeben.
+
+Von der Antwort aus können Sie den **Autor** einer Nachricht **sanktionieren**. Die Antwort ist nur für Sie sichtbar.
+
+:::warning
+`/snipe` sieht nur die Nachrichten, die RaidProtect eine Stunde lang im Speicher hält. Sie werden nur aufbewahrt, wenn der „**Nachrichten-Zwischenspeicher**“ aktiviert ist (`/settings`, Tab „**Werkzeuge**“, standardmäßig deaktiviert) oder wenn der [Anti-Spam](./anti-spam.mdx) oder die [Meldungen](./reports.md) aktiv sind, was sie automatisch aktiviert: Wird `/snipe` in diesem Moment verwendet, wird die Einstellung gespeichert und bleibt aktiv, auch wenn der Anti-Spam und die Meldungen später abgeschaltet werden. Andernfalls gibt der Befehl an, dass der Nachrichten-Zwischenspeicher deaktiviert ist, und schlägt einem Administrator vor, ihn zu aktivieren (oder einem Mitglied, das `/settings` verwenden darf, wenn die Berechtigungen der Integrationen angewendet werden).
+:::
+
+So aktivieren Sie die Zwischenspeicherung von Nachrichten:
+
+1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
+2. Öffnen Sie den Tab „**Werkzeuge**“.
+3. Klicken Sie neben „**Nachrichten-Zwischenspeicher**“ auf „**Aktivieren**“.
+
+:::info
+Diese Nachrichten bleiben eine Stunde im Speicher und werden nie in die Datenbank geschrieben. Der Befehl `/privacy` zeigt an, was RaidProtect auf Ihrem Server speichert.
+:::
+
+## 🟢 Rolle „im Dienst“ {#onduty}
+
+Die **Rolle „im Dienst“** ermöglicht es Ihren Moderatoren, zu signalisieren, dass sie verfügbar sind: Mit dem Befehl `/onduty` setzt sich jeder in den Dienst oder außer Dienst, und wir fügen die konfigurierte Rolle hinzu oder entfernen sie.
+
+Verwenden Sie den Befehl: ```/onduty```
+
+Die Antwort ist nur für Sie sichtbar. Derselbe Effekt ist mit der Schaltfläche „**Im Dienst**“ eines [Staff-Panels (`/display staff`)](./display.mdx#staff) verfügbar.
+
+### Die Rolle „im Dienst“ konfigurieren {#onduty-config}
+
+1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
+2. Öffnen Sie den Tab „**Werkzeuge**“.
+3. Klicken Sie neben „**Dienst-Rolle**“ auf „**Konfigurieren**“.
+4. Wählen Sie eine vorhandene Rolle in der Auswahl oder klicken Sie auf „**Für mich erstellen**“ (wir erstellen eine Rolle `Im Dienst` ohne jede Berechtigung).
+
+<Settings start="onduty" />
+
+:::warning
+Die Rolle „im Dienst“ wird von Ihren Moderatoren in Selbstbedienung übernommen: Sie darf keine sensible Berechtigung tragen. Wir lehnen eine Rolle ab, die Administrator, Server verwalten, Rollen verwalten, Kanäle verwalten, Webhooks verwalten, Nachrichten verwalten, Threads verwalten, Ausdrücke verwalten, Events verwalten, Mitglieder kicken oder bannen hat. RaidProtect muss außerdem die Berechtigung **Rollen verwalten** haben, mit einer Rolle über der Rolle „im Dienst“.
+:::
+
+## 📋 Moderationslogs {#logs}
+
+Standardmäßig werden die Moderationslogs an den allgemeinen Log-Kanal von RaidProtect gesendet. Sie können einen eigenen Log-Kanal konfigurieren, um die Moderationsaktionen von den übrigen Logs zu trennen.
+
+1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
+2. Öffnen Sie den Tab „**Moderation**“.
+3. Klicken Sie neben „**Logs**“ auf „**Konfigurieren**“.
+4. Wählen Sie in der Auswahl „**Moderation**“ den Kanal, an den die Moderationslogs gesendet werden, oder verwenden Sie die Schaltfläche „**Für mich erstellen**“.
+
+<Settings start="logs" />
+
+Der Bildschirm „**Logs**“ vereint drei Kanäle: „**Allgemein**“, „**Moderation**“ und „**Captcha**“. Ein leer gelassener Kanal „**Moderation**“ oder „**Captcha**“ leitet seine Logs an den allgemeinen Kanal weiter. Der Schalter „**Passive Moderationslogs**“ legt fest, ob RaidProtect auch Aktionen protokolliert, die nicht über den Bot erfolgen. Kanäle, Rollen, Mitglieder, Nachrichten und Sprachkanäle haben ihre eigenen [Server-Logs](./logs.md).
+
+## Häufig gestellte Fragen {#faq}
+
+### Warum findet /snipe keine Nachricht?
+
+RaidProtect hält die Nachrichten nur dann im Speicher, wenn die Zwischenspeicherung von Nachrichten im Tab „**Werkzeuge**“ von `/settings` aktiviert ist oder wenn der Anti-Spam oder die Meldungen aktiv sind. Nur die letzte Stunde ist verfügbar.
+
+### Welche Berechtigung braucht man für /onduty?
+
+Standardmäßig die Berechtigung **Nachrichten verwalten**. Sie können sie in den Discord-Integrationen anpassen. Ein Administrator muss zuvor die Rolle „im Dienst“ im Tab „**Werkzeuge**“ von `/settings` konfigurieren.
+
+### Kann ich einen Benutzer bannen, der nicht auf meinem Server ist?
+
+Ja, mit `/ban` und seiner [Discord-ID](../guides/id).

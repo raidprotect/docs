@@ -1,0 +1,247 @@
+---
+title: Anti-spam
+description: "RaidProtect's anti-spam automatically detects and sanctions spam on your Discord server: flood, links, mentions, selfbots and multi-channel spam."
+---
+
+import AntiSpamMockup from '@site/src/components/DiscordMessage/mockups/anti-spam';
+import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<AntiSpamMockup />
+
+RaidProtect's **anti-spam** automatically detects and sanctions [spam](/en/learn/spam-discord) on your Discord server: bursts of messages, flooded screens, copy-pasting, links, mass mentions, [selfbots](/en/learn/self-bot) and spam spread across several channels. Once enabled, it handles everything without a moderator having to step in.
+
+## ❓ How does anti-spam work? {#working}
+
+We analyze each message by comparing it with its author's recent messages.
+
+- **Ten triggers**: each type of spam has its own trigger (spam, flood, files, duplicates, links, mentions, selfbot, external commands, messages blocked by AutoMod, multi-channel). The details are in the [triggers table](#triggers).
+- **Four families**: triggers are grouped by nature (**Excess**, **Spam**, **Automated** and **Multi-channel spam**), which lets you set sanctions in a few clicks.
+- **The most severe sanction wins**: when spam crosses several triggers at once, we apply the strongest sanction.
+- **Clear reason**: the sanction's reason states the type of spam detected.
+- **Logs**: each sanction is sent to your logs channel with the deleted messages (see [the logs](#logs)).
+
+The anti-spam is **disabled by default**. It is enabled during the [`/setup` command](../setup.md) if you check it, or at any time from `/settings`.
+
+## 🛡️ Anti-spam configuration {#config}
+
+The anti-spam is in the "**Protection**" tab of `/settings`. Its screen brings together the switch, the sanctions, the preset, the exemptions and the simulation.
+
+<Settings start="antispam" />
+
+### Enable or disable the anti-spam {#toggle}
+
+1. Run the [`/settings` command](../setup.md#settings).
+2. Open the "**Protection**" tab.
+3. Click "**Configure**" next to "**Anti-spam**".
+4. Click "**Enable**" (or "**Disable**") at the top right of the screen.
+
+### Choose a preset {#presets}
+
+The simplest way to set up the anti-spam is to choose a **preset**. It sets the sanction of each family in one go:
+
+| Preset | Excess | Spam | Automated | Multi-channel spam |
+|---|---|---|---|---|
+| **Soft** | Warn | Timeout | Jail | Timeout |
+| **Standard** *(default)* | Timeout | Softban | Ban | Jail |
+| **Strict** *(not recommended)* | Softban | Ban | Ban | Ban |
+
+The **Soft** preset never kicks or bans: at most a timeout or the jail.
+
+1. Run the [`/settings` command](../setup.md#settings).
+2. Open the "**Protection**" tab.
+3. Click "**Configure**" next to "**Anti-spam**".
+4. Choose a preset in the "**Choose a preset**" selector.
+
+The selector shows "**Custom**" when your settings match no preset. In that case, applying a preset overwrites your settings: we ask you to confirm by checking "**I understand, apply the preset**". The durations specific to some triggers then go back to the [default duration](#duration).
+
+<SettingsModal name="antispamPreset" />
+
+### Manage ignored channels, roles and members {#ignore}
+
+You can exclude certain channels, roles or members from anti-spam monitoring.
+
+1. Run the [`/settings` command](../setup.md#settings).
+2. Open the "**Protection**" tab.
+3. Click "**Configure**" next to "**Anti-spam**".
+4. Choose your exemptions in the "**Ignored channel(s)**", "**Ignored role(s)**" and "**Ignored member(s)**" selectors (25 maximum each).
+
+The channel selector accepts **categories** (all their channels are then ignored), as well as voice channels, stages and forums. Threads follow their parent channel.
+
+:::info Who is ignored automatically?
+- Channels whose name contains "**spam**" (for a thread, the parent channel's name counts). An "**Ignore 'spam' channels**" switch, in the anti-spam screen, lets you monitor them too.
+- Members that RaidProtect cannot moderate (role higher than its own).
+- **Staff** (`Administrator`, `Manage Server` or `Manage Messages` permission), **as long as no role or member is ignored**. As soon as you add a role or a member to the list, only this list counts: staff members who are not on it can then be sanctioned.
+:::
+
+### Configure sanctions by trigger {#triggers}
+
+The sanction details open from the anti-spam screen.
+
+1. Run the [`/settings` command](../setup.md#settings).
+2. Open the "**Protection**" tab.
+3. Click "**Configure**" next to "**Anti-spam**".
+4. Click "**View details**" to the right of "**Sanctions**".
+5. Click "**Edit**" next to the family to set, then choose the "**Sanction**" and, if needed, the "**Duration**".
+
+<Settings start="antispamSanctions" />
+
+Each family groups triggers of the same nature. Here are the triggers we detect, with their default sanction (**Standard** preset):
+
+| Family | Trigger | What is detected | Default sanction |
+|---|---|---|---|
+| **Excess** | Spam | Too many messages in a short time. Emojis, stickers and gibberish messages (repeated character, looping words) count too. | Timeout |
+| **Excess** | Flood (screen filled) | Messages that fill the screen: long texts, images, link previews, stickers | Timeout |
+| **Excess** | Attachment spam | Mass sending of files or images | Timeout |
+| **Spam** | Duplicate spam | Copy-pasted or nearly identical messages | Softban |
+| **Spam** | Link spam | Mass link sending (a Discord invite counts as a link, even without `https://`; other Discord links and GIFs stay neutral) | Softban |
+| **Spam** | Mention spam | Mass mentions | Softban |
+| **Automated** | Selfbot spam | Using [selfbots](/en/learn/self-bot) to spam | Ban |
+| **Automated** | External command spam | Using [external commands](/en/learn/server-raidable) to spam | Ban |
+| **Automated** | Blocked message spam (AutoMod) | Repeated messages blocked by [Discord's AutoMod](#automod) | Ban |
+| *(separate)* | Multi-channel spam | The same message posted in several channels in a short time | Jail |
+
+:::info Multi-channel spam
+**Multi-channel spam** is special: its sanction replaces the one from the original trigger when the spam hits several channels, but only if it is more severe. Disabling it also turns off all server-wide monitoring.
+:::
+
+Here are the **[available sanctions](/en/learn/discord-sanctions)** for each family or trigger:
+
+- **Warn**: sends a warning to the member.
+- **Timeout**: mutes the member for a defined duration (28 days at most, Discord's limit).
+- **Mute**: assigns the [Mute role](./sanctions.mdx#mute) configured on your server.
+- **Jail**: assigns the [Jail role](./sanctions.mdx#jail) configured on your server.
+- **Kick**: kicks the member from the server.
+- **Softban**: bans then immediately unbans the member, thereby deleting their messages.
+- **Ban**: bans the member.
+- **Disable**: turns the trigger off completely, no sanction is applied.
+
+:::info
+A **Jail** or a **Mute** without a configured role becomes a **Timeout**: the screen shows it with "**→ Timeout**". Remember to set these roles in the "**Moderation**" tab, "**Sanctions**" module.
+:::
+
+To put all sanctions back to default, click "**Reset**" at the top right of the sanctions screen.
+
+#### Advanced mode: set each trigger {#advanced}
+
+If you want a different sanction for a single trigger (for example banning link spam but keeping a Softban for mentions), switch to advanced mode.
+
+1. Run the [`/settings` command](../setup.md#settings).
+2. Open the "**Protection**" tab.
+3. Click "**Configure**" next to "**Anti-spam**".
+4. Click "**View details**", then "**Advanced mode**".
+5. Choose one or more triggers in "**Select the triggers to edit**", then set their sanction and duration.
+
+<SettingsModal name="antispamFamily" />
+
+Advanced mode stays displayed as long as a family has different settings depending on the trigger. To go back to simple mode, click "**Advanced mode**" again and check "**I understand, align the families**".
+
+#### Sanction duration {#duration}
+
+Sanctions that have a duration (mute, timeout, jail) use the **default duration**, set to 1 hour. You can change it for the whole anti-spam, or give a specific duration to a family or a trigger.
+
+**Default duration:**
+
+1. Run the [`/settings` command](../setup.md#settings).
+2. Open the "**Protection**" tab.
+3. Click "**Configure**" next to "**Anti-spam**".
+4. Click "**View details**".
+5. Choose a duration in the "**Default duration**" selector (Permanent, 5 minutes, 1 hour or 1 day), or "**Custom value**" to enter your own (for example `30m`, `2h`, `7d`).
+
+**Duration specific to a family or a trigger:** in the window opened by "**Edit**" (or by advanced mode), choose a "**Duration**", or enter a "**Custom duration**". The "**Default (global duration)**" option goes back to the default duration.
+
+:::info
+- A custom duration must be **5 minutes minimum**.
+- "**Permanent**" on a Timeout is brought down to 28 days, the maximum allowed by Discord.
+- The duration is ignored for sanctions that do not have one (warn, kick, softban, ban).
+- When multi-channel spam takes over, its duration applies.
+:::
+
+### Public sanction message <span className="badge-premium">Premium</span> {#public-message}
+
+By default, each anti-spam sanction is announced by a **public message** in the channel (for example "member was muted"). [Premium](/en/premium) servers can hide it for more discreet moderation.
+
+1. Run the [`/settings` command](../setup.md#settings).
+2. Open the "**Protection**" tab.
+3. Click "**Configure**" next to "**Anti-spam**".
+4. Click "**View details**".
+5. Click "**Disable**" next to "**Public sanction message**".
+
+:::info
+This setting is shared with the [ScamLens image filter](./scam-images.md): disabling it also hides the announcements for deleted scam images.
+:::
+
+## 🔎 Simulate spam {#simulation}
+
+A member spammed without being sanctioned, or, on the contrary, a member was wrongly sanctioned? The **simulation** tells you whether the anti-spam would trigger in a specific situation, and why.
+
+1. Run the [`/settings` command](../setup.md#settings).
+2. Open the "**Protection**" tab.
+3. Click "**Configure**" next to "**Anti-spam**".
+4. Click "**Simulate**".
+5. Choose the "**Member to test**", the "**Channel to test**" and the "**Spam type**".
+
+<SettingsModal name="antispamSimulate" />
+
+The simulation checks the permissions, the exemptions and the planned sanction.
+
+The result also shows the member's **peak over the last hour**, as a percentage of the threshold, then the verdict and the sanction that would be applied.
+
+:::warning Required permissions
+The anti-spam sanctions no one unless RaidProtect has the `Ban Members`, `Kick Members` and `Timeout Members` permissions all at once.
+:::
+
+## 🤖 Discord's AutoMod {#automod}
+
+RaidProtect works with **Discord's AutoMod**:
+
+- **Blocked message spam**: when a member chains messages blocked by your AutoMod rules, the "**Blocked message spam (AutoMod)**" trigger sanctions them (**Automated** family). For this, the AutoMod rule must send its **alerts** to a channel RaidProtect can see: it is thanks to these alerts that we spot blocked messages.
+- **Warning for each blocked message**: if sanctions are active on your server, each message blocked by an AutoMod rule is recorded as a warning in the member's history, unless the rule already applies a timeout. The member does not receive a private message for this warning. More details on the [sanctions](./sanctions.mdx) page.
+
+## 🐢 Preventive slowmode <span className="badge-premium">Premium</span> {#slowmode}
+
+To calm a very active channel without sanctioning anyone, [preventive slowmode](./slowmode.md) (Premium) automatically adjusts your channels' slowmode according to their message rate.
+
+## 📑 Anti-spam logs {#logs}
+
+Each sanction is sent to your logs channel, with the type of spam as the reason. For all sanctions except the warning, a file containing the deleted messages is attached: you can download or expand it.
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="animator" label="Collapsed" default>
+
+![Anti-spam logs screenshot](../assets/rp-logs-anti-spam.webp)
+
+  </TabItem>
+  <TabItem value="moderator" label="Expanded">
+
+![Expanded anti-spam logs screenshot](../assets/rp-logs-anti-spam-expand.webp)
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+## Frequently asked questions {#faq}
+
+### Does anti-spam work without any configuration?
+
+You just need to enable it, during the `/setup` command or in `/settings`, Protection tab. It then uses the Standard preset, which suits most servers. You can then change preset or adjust each family.
+
+### Does the anti-spam have security levels (high, medium, low)?
+
+No sensitivity level: the anti-spam is simply enabled or disabled. However, three sanction presets are offered (Soft, Standard and Strict), and each family or trigger can get its own sanction.
+
+### Can I exclude certain channels or members from anti-spam?
+
+Yes, you can ignore specific channels, categories, roles or members. Channels whose name contains "spam" are ignored automatically. Staff (Administrator, Manage Server, Manage Messages) is ignored as long as you have not added any role or member to the list.
+
+### Can I choose the sanction applied to spam?
+
+Yes. Choose a preset, set each family's sanction, or switch to advanced mode to set each trigger, from a warning to a ban. You can also completely disable a trigger and give each one its own duration.
+
+### Why was a member not sanctioned?
+
+Use the [simulation](#simulation): it checks RaidProtect's permissions, the role hierarchy, the exemptions, the channel and the sanction for the spam type, then shows the member's activity peak relative to the threshold.
