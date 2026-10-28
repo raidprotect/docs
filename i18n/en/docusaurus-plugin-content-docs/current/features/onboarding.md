@@ -95,7 +95,7 @@ To remove all auto roles, click "**Reset**".
 **Limits:** 3 roles in the free version, 10 roles in the [premium](/en/premium) version.
 
 :::warning
-Avoid roles that carry permissions: a role given automatically should grant no power. RaidProtect refuses roles managed by an integration, roles above its own or yours, those that carry a moderation permission and the captcha's unverified role (given right after the captcha, it would block the member again): the acceptable roles in your selection are kept, and a separate message explains why the others are refused (if all of them are, the current configuration stays unchanged). It alerts you if a chosen role later gains permissions.
+Choose roles without permissions: a role given on arrival should grant no power. RaidProtect refuses roles managed by an integration, those placed above its own or yours, those that grant a moderation permission and the captcha's unverified role. It warns you if a chosen role later gains permissions.
 :::
 :::info
 If your server uses another bot for its auto role, it may give the role before the captcha. Replace it with RaidProtect's auto roles.
@@ -103,14 +103,16 @@ If your server uses another bot for its auto role, it may give the role before t
 
 ## 🤖 Bot arrival {#bots}
 
-This is RaidProtect's **antibot**: it controls the bots that join your server. By default, a bot added to the server receives the [auto roles](#autorole) like a member. The "**Bots**" section of the "**Arrivals**" tab changes this.
+This is RaidProtect's **antibot**: it controls the bots that join your server.
 
 1. Run the [`/settings` command](../setup.md#settings).
 2. Open the "**Arrivals**" tab.
 3. Click "**Configure**" next to "**Bots**".
 
-- **Bot roles**: given to each bot that arrives, **instead of** the auto roles. With no role chosen, bots receive the auto roles. **Limits:** 1 role in the free version, 15 roles with [Premium](/en/premium). RaidProtect refuses roles managed by an integration, those above yours or its own, and those that grant the **Administrator** permission. A role that grants a moderation permission is accepted, with a warning: keep it for trusted bots. Bots don't go through the captcha and receive their roles as soon as they arrive.
-- **Kick unauthorized bots**: any added bot is kicked immediately, unless the owner allowed it beforehand with the `/bypass bot` command. Disabled by default. **Only the server owner** can enable or disable this option and allow a bot.
+- **Bot roles**: given to each bot as soon as it arrives, **instead of** the [auto roles](#autorole). With no role chosen, bots receive the auto roles. **Limits:** 1 role in the free version, 15 with [Premium](/en/premium).
+- **Kick unauthorized bots**: any added bot is kicked, unless the owner [allowed](#bypass-bot) it beforehand. Disabled by default, **only the server owner** can enable it.
+
+RaidProtect refuses roles managed by an integration, those placed above its own or yours and those that grant the **Administrator** permission. A role with a moderation permission is accepted, with a warning: keep it for trusted bots.
 
 ### Allow a bot {#bypass-bot}
 

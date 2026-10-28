@@ -95,7 +95,7 @@ Tüm otomatik rolleri kaldırmak için “**Sıfırla**”ya tıklayın.
 **Sınırlar:** ücretsiz sürümde 3 rol, [premium](/tr/premium) sürümde 10 rol.
 
 :::warning
-İzin taşıyan rollerden kaçının: otomatik olarak verilen bir rol hiçbir yetki vermemelidir. RaidProtect, bir entegrasyon tarafından yönetilen rolleri, kendi rolünün veya sizin rolünüzün üstündeki rolleri, moderasyon izni taşıyan rolleri ve captcha'nın doğrulanmamış rolünü (captcha'dan hemen sonra verildiğinde üyeyi yeniden engellerdi) reddeder: seçiminizdeki kabul edilebilir roller korunur ve diğerlerinin neden reddedildiğini açıklayan ayrı bir mesaj gösterilir (hepsi reddedilirse mevcut yapılandırma değişmez). Seçilen bir rol sonradan izin kazanırsa sizi uyarır.
+İzinsiz roller seçin: katılımda verilen bir rol hiçbir yetki vermemelidir. RaidProtect, bir entegrasyon tarafından yönetilen rolleri, kendi rolünün veya sizin rolünüzün üstündeki rolleri, moderasyon izni veren rolleri ve captcha'nın doğrulanmamış rolünü reddeder. Seçilen bir rol sonradan izin kazanırsa sizi uyarır.
 :::
 :::info
 Sunucunuz otomatik rolü için başka bir bot kullanıyorsa rolü captcha'dan önce verebilir. Onu RaidProtect'in otomatik rolleriyle değiştirin.
@@ -103,14 +103,16 @@ Sunucunuz otomatik rolü için başka bir bot kullanıyorsa rolü captcha'dan ö
 
 ## 🤖 Botların gelişi {#bots}
 
-Bu, RaidProtect'in **antibot** özelliğidir: sunucunuza katılan botları denetler. Varsayılan olarak sunucuya eklenen bir bot, bir üye gibi [otomatik rolleri](#autorole) alır. “**Katılımlar**” sekmesinin “**Botlar**” bölümü bunu değiştirir.
+Bu, RaidProtect'in **antibot** özelliğidir: sunucunuza katılan botları denetler.
 
 1. [`/settings` komutunu](../setup.md#settings) çalıştırın.
 2. “**Katılımlar**” sekmesini açın.
 3. “**Botlar**” yanındaki “**Yapılandır**” düğmesine tıklayın.
 
-- **Botların rolleri**: gelen her bota otomatik rollerin **yerine** verilir. Rol seçilmezse botlar otomatik rolleri alır. **Sınırlar:** ücretsiz sürümde 1 rol, [Premium](/tr/premium) ile 15 rol. RaidProtect, bir entegrasyon tarafından yönetilen rolleri, sizin rolünüzün veya kendi rolünün üstündeki rolleri ve **Yönetici** iznini veren rolleri reddeder. Moderasyon izni veren bir rol bir uyarıyla kabul edilir: onu güvendiğiniz botlara ayırın. Botlar captcha'dan geçmez ve rollerini gelir gelmez alır.
-- **İzin verilmeyen botları at**: eklenen her bot, sahibi daha önce `/bypass bot` komutuyla izin vermediyse hemen atılır. Varsayılan olarak devre dışıdır. Bu seçeneği etkinleştirebilen veya devre dışı bırakabilen ve bir bota izin verebilen **yalnızca sunucu sahibidir**.
+- **Botların rolleri**: her bota geldiği anda [otomatik rollerin](#autorole) **yerine** verilir. Rol seçilmezse botlar otomatik rolleri alır. **Sınırlar:** ücretsiz sürümde 1 rol, [Premium](/tr/premium) ile 15 rol.
+- **İzin verilmeyen botları at**: sahibi daha önce [izin vermediyse](#bypass-bot) eklenen her bot atılır. Varsayılan olarak devre dışıdır, **yalnızca sunucu sahibi** etkinleştirebilir.
+
+RaidProtect, bir entegrasyon tarafından yönetilen rolleri, kendi rolünün veya sizin rolünüzün üstündeki rolleri ve **Yönetici** iznini veren rolleri reddeder. Moderasyon izni olan bir rol bir uyarıyla kabul edilir: onu güvendiğiniz botlara ayırın.
 
 ### Bir bota izin verme {#bypass-bot}
 

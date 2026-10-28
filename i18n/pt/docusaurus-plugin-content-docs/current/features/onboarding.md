@@ -95,7 +95,7 @@ Para remover todos os cargos automáticos, clique em “**Redefinir**”.
 **Limites:** 3 cargos na versão gratuita, 10 cargos na versão [premium](/pt/premium).
 
 :::warning
-Evite os cargos que carregam permissões: um cargo dado automaticamente não deveria conceder nenhum poder. O RaidProtect recusa os cargos gerenciados por uma integração, os cargos acima do dele ou do seu, aqueles que carregam uma permissão de moderação e o cargo não verificado do captcha (dado logo após o captcha, ele bloquearia o membro de novo): os cargos aceitáveis da sua seleção são mantidos, e uma mensagem à parte explica por que os outros são recusados (se todos forem recusados, a configuração atual permanece inalterada). Ele alerta você se um cargo escolhido ganhar permissões mais tarde.
+Escolha cargos sem permissões: um cargo dado na chegada não deveria conceder nenhum poder. O RaidProtect recusa os cargos gerenciados por uma integração, os que estão acima do dele ou do seu, os que dão uma permissão de moderação e o cargo não verificado do captcha. Ele avisa você se um cargo escolhido ganhar permissões mais tarde.
 :::
 :::info
 Se o seu servidor usa outro bot para o cargo automático, ele corre o risco de dar o cargo antes do captcha. Substitua-o pelos cargos automáticos do RaidProtect.
@@ -103,14 +103,16 @@ Se o seu servidor usa outro bot para o cargo automático, ele corre o risco de d
 
 ## 🤖 Chegada dos bots {#bots}
 
-É o **antibot** do RaidProtect: ele controla os bots que entram no seu servidor. Por padrão, um bot adicionado ao servidor recebe os [cargos automáticos](#autorole) como um membro. A seção “**Bots**” da aba “**Chegadas**” muda isso.
+É o **antibot** do RaidProtect: ele controla os bots que entram no seu servidor.
 
 1. Use o [comando `/settings`](../setup.md#settings).
 2. Abra a aba “**Chegadas**”.
 3. Clique em “**Configurar**” ao lado de “**Bots**”.
 
-- **Cargos dos bots**: dados a cada bot que chega, **no lugar** dos cargos automáticos. Sem cargo escolhido, os bots recebem os cargos automáticos. **Limites:** 1 cargo na versão gratuita, 15 cargos com o [Premium](/pt/premium). O RaidProtect recusa os cargos gerenciados por uma integração, os que estão acima do seu ou do dele e os que dão a permissão **Administrador**. Um cargo que dá uma permissão de moderação é aceito, com um aviso: reserve-o para bots de confiança. Os bots não passam pelo captcha e recebem seus cargos assim que chegam.
-- **Expulsar os bots não autorizados**: todo bot adicionado é expulso imediatamente, a menos que o proprietário o tenha autorizado antes com o comando `/bypass bot`. Desativado por padrão. **Somente o proprietário do servidor** pode ativar ou desativar essa opção e autorizar um bot.
+- **Cargos dos bots**: dados a cada bot assim que ele chega, **no lugar** dos [cargos automáticos](#autorole). Sem cargo escolhido, os bots recebem os cargos automáticos. **Limites:** 1 cargo na versão gratuita, 15 com o [Premium](/pt/premium).
+- **Expulsar os bots não autorizados**: todo bot adicionado é expulso, a menos que o proprietário o tenha [autorizado](#bypass-bot) antes. Desativado por padrão, **somente o proprietário do servidor** pode ativá-lo.
+
+O RaidProtect recusa os cargos gerenciados por uma integração, os que estão acima do dele ou do seu e os que dão a permissão **Administrador**. Um cargo com uma permissão de moderação é aceito, com um aviso: reserve-o para bots de confiança.
 
 ### Autorizar um bot {#bypass-bot}
 

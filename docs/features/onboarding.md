@@ -95,7 +95,7 @@ Pour retirer tous les rôles automatiques, cliquez sur “**Réinitialiser**”.
 **Limites :** 3 rôles en version gratuite, 10 rôles en version [premium](/premium).
 
 :::warning
-Évitez les rôles qui portent des permissions : un rôle donné automatiquement ne devrait accorder aucun pouvoir. RaidProtect refuse les rôles gérés par une intégration, les rôles au-dessus du sien ou du vôtre, ceux qui portent une permission de modération et le rôle non vérifié du captcha (donné juste après le captcha, il bloquerait de nouveau le membre) : les rôles acceptables de votre sélection sont gardés, et un message à part explique pourquoi les autres sont refusés (si tous le sont, la configuration en place reste inchangée). Il vous alerte si un rôle choisi gagne des permissions plus tard.
+Choisissez des rôles sans permission : un rôle donné à l'arrivée ne devrait accorder aucun pouvoir. RaidProtect refuse les rôles gérés par une intégration, ceux placés au-dessus du sien ou du vôtre, ceux qui donnent une permission de modération et le rôle non vérifié du captcha. Il vous prévient si un rôle choisi gagne des permissions plus tard.
 :::
 :::info
 Si votre serveur utilise un autre bot pour son rôle automatique, il risque de donner le rôle avant le captcha. Remplacez-le par les rôles automatiques de RaidProtect.
@@ -103,14 +103,16 @@ Si votre serveur utilise un autre bot pour son rôle automatique, il risque de d
 
 ## 🤖 Arrivée des bots {#bots}
 
-C'est l'**antibot** de RaidProtect : il contrôle les bots qui rejoignent votre serveur. Par défaut, un bot ajouté au serveur reçoit les [rôles automatiques](#autorole) comme un membre. La section “**Bots**” de l'onglet “**Arrivées**” change cela.
+C'est l'**antibot** de RaidProtect : il contrôle les bots qui rejoignent votre serveur.
 
 1. Faites la [commande `/settings`](../setup.md#settings).
 2. Ouvrez l'onglet “**Arrivées**”.
 3. Cliquez sur “**Configurer**” à côté de “**Bots**”.
 
-- **Rôles des bots** : donnés à chaque bot qui arrive, **à la place** des rôles automatiques. Sans rôle choisi, les bots reçoivent les rôles automatiques. **Limites :** 1 rôle en version gratuite, 15 rôles avec le [Premium](/premium). RaidProtect refuse les rôles gérés par une intégration, ceux au-dessus du vôtre ou du sien et ceux qui donnent la permission **Administrateur**. Un rôle qui donne une permission de modération est accepté, avec un avertissement : gardez-le pour des bots de confiance. Les bots ne passent pas le captcha et reçoivent leurs rôles dès leur arrivée.
-- **Expulser les bots non autorisés** : tout bot ajouté est expulsé aussitôt, sauf si le propriétaire l'a autorisé avant avec la commande `/bypass bot`. Désactivé par défaut. **Seul le propriétaire du serveur** peut activer ou désactiver cette option et autoriser un bot.
+- **Rôles des bots** : donnés à chaque bot dès son arrivée, **à la place** des [rôles automatiques](#autorole). Sans rôle choisi, les bots reçoivent les rôles automatiques. **Limites :** 1 rôle en version gratuite, 15 avec le [Premium](/premium).
+- **Expulser les bots non autorisés** : tout bot ajouté est expulsé, sauf si le propriétaire l'a [autorisé](#bypass-bot) avant. Désactivé par défaut, **seul le propriétaire du serveur** peut l'activer.
+
+RaidProtect refuse les rôles gérés par une intégration, ceux placés au-dessus du sien ou du vôtre et ceux qui donnent la permission **Administrateur**. Un rôle avec une permission de modération est accepté, avec un avertissement : réservez-le aux bots de confiance.
 
 ### Autoriser un bot {#bypass-bot}
 

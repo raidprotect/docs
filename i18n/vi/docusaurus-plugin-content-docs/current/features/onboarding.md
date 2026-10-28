@@ -95,7 +95,7 @@ Vai trò tự động được cấp cho mỗi thành viên mới ngay khi họ 
 **Giới hạn:** 3 vai trò ở bản miễn phí, 10 vai trò ở bản [premium](/vi/premium).
 
 :::warning
-Hãy tránh các vai trò mang quyền: một vai trò được cấp tự động không nên trao bất kỳ quyền lực nào. RaidProtect từ chối các vai trò do tích hợp quản lý, các vai trò cao hơn vai trò của nó hoặc của bạn, những vai trò mang quyền kiểm duyệt và vai trò chưa xác minh của captcha (được cấp ngay sau captcha, nó sẽ chặn thành viên lại lần nữa): các vai trò chấp nhận được trong lựa chọn của bạn vẫn được giữ lại, và một tin nhắn khác giải thích vì sao các vai trò khác bị từ chối (nếu tất cả đều bị từ chối, cấu hình hiện có được giữ nguyên). Nó cảnh báo bạn nếu một vai trò đã chọn sau này có thêm quyền.
+Hãy chọn các vai trò không có quyền: một vai trò được cấp khi vào máy chủ không nên trao bất kỳ quyền lực nào. RaidProtect từ chối các vai trò do tích hợp quản lý, các vai trò cao hơn vai trò của nó hoặc của bạn, những vai trò cấp quyền kiểm duyệt và vai trò chưa xác minh của captcha. Nó cảnh báo bạn nếu một vai trò đã chọn sau này có thêm quyền.
 :::
 :::info
 Nếu máy chủ của bạn dùng một bot khác cho vai trò tự động, nó có thể cấp vai trò trước captcha. Hãy thay nó bằng các vai trò tự động của RaidProtect.
@@ -103,14 +103,16 @@ Nếu máy chủ của bạn dùng một bot khác cho vai trò tự động, n�
 
 ## 🤖 Bot tham gia {#bots}
 
-Đây là tính năng **antibot** của RaidProtect: kiểm soát các bot tham gia máy chủ của bạn. Theo mặc định, một bot được thêm vào máy chủ nhận [vai trò tự động](#autorole) như một thành viên. Mục “**Bot**” của thẻ “**Thành viên mới**” thay đổi điều đó.
+Đây là tính năng **antibot** của RaidProtect: kiểm soát các bot tham gia máy chủ của bạn.
 
 1. Dùng [lệnh `/settings`](../setup.md#settings).
 2. Mở thẻ “**Thành viên mới**”.
 3. Nhấp vào “**Cấu hình**” bên cạnh “**Bot**”.
 
-- **Vai trò của bot**: được cấp cho mỗi bot vào máy chủ, **thay cho** vai trò tự động. Nếu không chọn vai trò nào, các bot nhận vai trò tự động. **Giới hạn:** 1 vai trò ở bản miễn phí, 15 vai trò với [Premium](/vi/premium). RaidProtect từ chối các vai trò do tích hợp quản lý, các vai trò cao hơn vai trò của bạn hoặc của nó và những vai trò cấp quyền **Quản trị viên**. Một vai trò cấp quyền kiểm duyệt vẫn được chấp nhận, kèm một cảnh báo: chỉ dùng nó cho các bot đáng tin cậy. Bot không phải qua captcha và nhận vai trò ngay khi vào máy chủ.
-- **Đuổi các bot không được phép**: mọi bot được thêm vào đều bị đuổi ngay lập tức, trừ khi chủ sở hữu đã cho phép trước bằng lệnh `/bypass bot`. Tắt theo mặc định. **Chỉ chủ sở hữu máy chủ** mới có thể bật hoặc tắt tùy chọn này và cho phép một bot.
+- **Vai trò của bot**: được cấp cho mỗi bot ngay khi vào máy chủ, **thay cho** [vai trò tự động](#autorole). Nếu không chọn vai trò nào, các bot nhận vai trò tự động. **Giới hạn:** 1 vai trò ở bản miễn phí, 15 với [Premium](/vi/premium).
+- **Đuổi các bot không được phép**: mọi bot được thêm vào đều bị đuổi, trừ khi chủ sở hữu đã [cho phép](#bypass-bot) trước. Tắt theo mặc định, **chỉ chủ sở hữu máy chủ** mới có thể bật.
+
+RaidProtect từ chối các vai trò do tích hợp quản lý, các vai trò cao hơn vai trò của nó hoặc của bạn và những vai trò cấp quyền **Quản trị viên**. Một vai trò có quyền kiểm duyệt vẫn được chấp nhận, kèm một cảnh báo: chỉ dùng nó cho các bot đáng tin cậy.
 
 ### Cho phép một bot {#bypass-bot}
 
