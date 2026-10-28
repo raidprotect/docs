@@ -482,17 +482,6 @@ export default function PremiumPage(): React.ReactNode {
             translate({ id: 'premium.compare.row.recapWindow.business', message: '≈ 1 min' }),
         ] },
 
-        { type: 'category', label: translate({ id: 'premium.compare.cat.beta', message: 'En bêta publique' }) },
-        { type: 'feature', label: translate({ id: 'premium.compare.row.altSanctions', message: 'Sanctions étendues aux comptes liés (/alt)' }), values: [no, yes, yes] },
-        { type: 'feature', label: translate({ id: 'premium.compare.row.logChannels', message: 'Salons de logs différents' }), values: ['3', '15', custom] },
-        { type: 'feature', label: translate({ id: 'premium.compare.row.messageCache', message: 'Messages gardés en mémoire (/snipe, logs)' }), values: [
-            translate({ id: 'premium.compare.row.messageCache.free', message: '15 min' }),
-            translate({ id: 'premium.compare.row.messageCache.premium', message: '6 h' }),
-            custom,
-        ] },
-        { type: 'feature', label: translate({ id: 'premium.compare.row.compactLogs', message: 'Format de logs compact' }), values: [no, yes, yes] },
-        { type: 'feature', label: translate({ id: 'premium.compare.row.voiceReactionLogs', message: 'Logs vocales et de réactions' }), values: [no, yes, yes] },
-
         { type: 'category', label: translate({ id: 'premium.compare.cat.customization', message: 'Personnalisation' }) },
         { type: 'feature', label: translate({ id: 'premium.compare.row.botIdentity', message: 'Pseudo, avatar et bannière du bot' }), values: [no, yes, yes] },
         { type: 'feature', label: translate({ id: 'premium.compare.row.publicMessage', message: 'Message public de sanction masquable' }), values: [no, yes, yes] },
