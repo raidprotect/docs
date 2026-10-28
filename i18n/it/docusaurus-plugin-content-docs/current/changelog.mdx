@@ -6,6 +6,21 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Scopri l'elenco dettagliato delle modifiche apportate a RaidProtect.
 
+## 3.8.0 Logging Update <span className="badge-experiment">Sperimentazione</span> {#3-8-0}
+
+:::info Sperimentazione
+La Logging Update è in fase di sperimentazione: in attesa della sua uscita nella 3.8.0, è in beta pubblica per i server [Premium](/it/premium). Il suo contenuto può ancora cambiare.
+:::
+
+- Nuovi [log del server](./features/logs.md) in cinque famiglie: canali, ruoli e inviti, membri, messaggi, vocale, emoji e reazioni. Ogni famiglia ha il suo canale, e ogni tipo può essere disattivato o [inviato altrove](./features/logs.md#config).
+- Ogni log inizia con il suo autore (“@moderatore ha creato il canale #generale.”) e mostra il prima e il dopo di una modifica, permessi compresi.
+- Nuovi tipi di log: webhook, integrazioni, bot aggiunti o rimossi con il loro ruolo, messaggi fissati, membri inattivi rimossi, boost, nickname, emoji, sticker, suoni della soundboard e reazioni.
+- Il log di un messaggio eliminato dice chi l'ha eliminato. Un messaggio modificato mostra il prima e il dopo, con solo le righe cambiate per un messaggio lungo.
+- Log vocali: durata della sessione all'uscita, e azioni del team (silenziare, disattivare l'audio, spostare, disconnettere) con il loro autore.
+- Tre [formati di log](./features/logs.md#format): Predefinito, Riquadro e Compatto.
+- Nuova casella “**Messaggi sul server**” nelle [segnalazioni](./features/reports.md): il thread della segnalazione riprende gli ultimi messaggi del canale, messaggi eliminati compresi.
+- Riservato al **Premium**: il formato Compatto, i log vocali e delle reazioni, la copia degli allegati dei messaggi eliminati, [6 ore di messaggi in memoria](./features/logs.md#cache) invece di 15 minuti e fino a 15 canali di log invece di 3.
+
 ## 3.7.0 Identity Update <span className="badge-experiment">Sperimentazione</span> {#3-7-0}
 
 :::info Sperimentazione

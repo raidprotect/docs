@@ -6,6 +6,21 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 查看 RaidProtect 所有更新的详细列表。
 
+## 3.8.0 Logging Update <span className="badge-experiment">试验中</span> {#3-8-0}
+
+:::info 试验中
+Logging Update 处于试验阶段：在 3.8.0 正式发布之前，它面向 [Premium](/zh-CN/premium) 服务器开放公开测试。其内容仍可能变动。
+:::
+
+- 全新的[服务器日志](./features/logs.md)，分为五个类别：频道、角色和邀请，成员，消息，语音，表情符号和反应。每个类别都有自己的频道，每个类型都可以关闭或[发送到其他频道](./features/logs.md#config)。
+- 每条日志都以执行者开头（“@modo 创建了频道 #常规。”），并显示修改前后的内容，包括权限。
+- 新增日志类型：Webhook、集成、机器人的添加或移除及其角色、置顶消息、被清理的不活跃成员、助力、昵称、表情符号、贴纸、音效板声音和反应。
+- 被删除消息的日志会注明删除者。被编辑的消息会显示编辑前后的内容，较长的消息只显示改动的行。
+- 语音日志：离开时显示会话时长，并记录团队的操作（禁言、禁听、移动、断开连接）及其执行者。
+- 三种[日志格式](./features/logs.md#format)：默认、卡片和紧凑。
+- [举报](./features/reports.md)中新增“**服务器上的消息**”选项：举报的子区会附上该频道最近的消息，包括被删除的消息。
+- **Premium** 专属：紧凑格式、语音和反应日志、复制被删除消息的附件、[在内存中保留 6 小时的消息](./features/logs.md#cache)（而非 15 分钟），以及最多 15 个日志频道（而非 3 个）。
+
 ## 3.7.0 Identity Update <span className="badge-experiment">试验中</span> {#3-7-0}
 
 :::info 试验中

@@ -6,6 +6,21 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 RaidProtect'te yapılan değişikliklerin ayrıntılı listesini keşfedin.
 
+## 3.8.0 Logging Update <span className="badge-experiment">Deneme</span> {#3-8-0}
+
+:::info Deneme
+Logging Update deneme aşamasındadır: 3.8.0 sürümüyle çıkışına kadar [Premium](/tr/premium) sunucular için herkese açık betadır. İçeriği hâlâ değişebilir.
+:::
+
+- Beş ailede yeni [sunucu logları](./features/logs.md): kanallar, roller ve davetler, üyeler, mesajlar, ses, emojiler ve tepkiler. Her ailenin kendi kanalı vardır ve her tür kapatılabilir veya [başka bir yere gönderilebilir](./features/logs.md#config).
+- Her log, yapanıyla başlar (“@modo #genel kanalını oluşturdu.”) ve izinler dahil bir değişikliğin öncesini ve sonrasını gösterir.
+- Yeni log türleri: webhook'lar, entegrasyonlar, rolleriyle birlikte eklenen veya çıkarılan botlar, sabitlenen mesajlar, çıkarılan etkin olmayan üyeler, takviyeler, takma adlar, emojiler, çıkartmalar, soundboard sesleri ve tepkiler.
+- Silinen bir mesajın logu, onu kimin sildiğini söyler. Düzenlenen bir mesaj öncesini ve sonrasını gösterir, uzun bir mesajda yalnızca değişen satırlarla.
+- Ses logları: ayrılışta oturum süresi ve ekibin eylemleri (susturma, sağırlaştırma, taşıma, bağlantıyı kesme) yapanıyla birlikte.
+- Üç [log biçimi](./features/logs.md#format): Varsayılan, Çerçeveli ve Kompakt.
+- [Bildirimlerde](./features/reports.md) yeni “**Sunucudaki mesajlar**” kutusu: bildirimin alt başlığı, silinen mesajlar dahil kanalın son mesajlarını içerir.
+- **Premium**'a ayrılanlar: Kompakt biçim, ses ve tepki logları, silinen mesajların eklerinin kopyalanması, 15 dakika yerine [6 saat bellekte mesaj](./features/logs.md#cache) ve 3 yerine 15 log kanalına kadar.
+
 ## 3.7.0 Identity Update <span className="badge-experiment">Deneme</span> {#3-7-0}
 
 :::info Deneme

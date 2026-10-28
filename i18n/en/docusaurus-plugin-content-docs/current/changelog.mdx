@@ -7,6 +7,21 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Discover the detailed list of changes made to RaidProtect.
 
+## 3.8.0 Logging Update <span className="badge-experiment">Experiment</span> {#3-8-0}
+
+:::info Experiment
+The Logging Update is an experiment: until its release in 3.8.0, it is in public beta for [Premium](/en/premium) servers. Its content may still change.
+:::
+
+- New [server logs](./features/logs.md) in five families: channels, roles and invites, members, messages, voice, emojis and reactions. Each family has its own channel, and each type can be turned off or [sent elsewhere](./features/logs.md#config).
+- Each log starts with its author ("@mod created the channel #general.") and shows the before and after of a change, permissions included.
+- New log types: webhooks, integrations, bots added or removed with their role, pinned messages, inactive members pruned, boosts, nicknames, emojis, stickers, soundboard sounds and reactions.
+- The log of a deleted message says who deleted it. An edited message shows the before and after, with only the changed lines for a long message.
+- Voice logs: session duration on departure, and staff actions (mute, deafen, move, disconnect) with their author.
+- Three [log formats](./features/logs.md#format): Default, Boxed and Compact.
+- New "**Server messages**" checkbox in [reports](./features/reports.md): the report thread includes the latest messages of the channel, deleted messages included.
+- Reserved for **Premium**: the Compact format, voice and reaction logs, copying attachments of deleted messages, [6 hours of messages in memory](./features/logs.md#cache) instead of 15 minutes and up to 15 logs channels instead of 3.
+
 ## 3.7.0 Identity Update <span className="badge-experiment">Experiment</span> {#3-7-0}
 
 :::info Experiment

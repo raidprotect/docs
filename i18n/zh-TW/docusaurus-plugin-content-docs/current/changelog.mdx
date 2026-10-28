@@ -6,6 +6,21 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 查看 RaidProtect 所有更新內容的詳細清單。
 
+## 3.8.0 Logging Update <span className="badge-experiment">實驗</span> {#3-8-0}
+
+:::info 實驗
+Logging Update 處於實驗階段：在 3.8.0 正式推出之前，它為 [Premium](/zh-TW/premium) 伺服器提供公開測試版。其內容仍可能變動。
+:::
+
+- 新的[伺服器紀錄](./features/logs.md)分為五個類別：頻道、身分組與邀請，成員，訊息，語音，表情符號與反應。每個類別都有自己的頻道，每個類型都可以停用或[發送到其他地方](./features/logs.md#config)。
+- 每則紀錄都以執行者開頭（「@管理員 建立了頻道 #一般。」），並顯示修改前後的內容，包含權限。
+- 新的紀錄類型：Webhook、整合、新增或移除的機器人與其身分組、釘選的訊息、被移除的不活躍成員、加成、暱稱、表情符號、貼圖、音效板音效與反應。
+- 已刪除訊息的紀錄會註明刪除者。修改的訊息會顯示修改前後的內容，長訊息則只顯示有變更的行。
+- 語音紀錄：離開時顯示工作階段時長，並記錄工作人員的動作（靜音、拒聽、移動、中斷連線）與其執行者。
+- 三種[紀錄格式](./features/logs.md#format)：預設、嵌入與精簡。
+- [檢舉](./features/reports.md)新增「**伺服器上的訊息**」選項：檢舉的討論串會附上頻道的最新訊息，包含已刪除的訊息。
+- 僅限 **Premium**：精簡格式、語音與反應紀錄、複製已刪除訊息的附件、[記憶體中保留 6 小時的訊息](./features/logs.md#cache)（而非 15 分鐘），以及最多 15 個紀錄頻道（而非 3 個）。
+
 ## 3.7.0 Identity Update <span className="badge-experiment">實驗</span> {#3-7-0}
 
 :::info 實驗

@@ -7,6 +7,21 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Entdecken Sie die detaillierte Liste der Änderungen an RaidProtect.
 
+## 3.8.0 Logging Update <span className="badge-experiment">Experiment</span> {#3-8-0}
+
+:::info Experiment
+Die Logging Update befindet sich in der Experimentierphase: Bis zu ihrer Veröffentlichung in 3.8.0 ist sie eine öffentliche Beta für [Premium](/de/premium)-Server. Ihr Inhalt kann sich noch ändern.
+:::
+
+- Neue [Server-Logs](./features/logs.md) in fünf Familien: Kanäle, Rollen und Einladungen, Mitglieder, Nachrichten, Sprachkanäle, Emojis und Reaktionen. Jede Familie hat ihren Kanal, und jeder Typ kann deaktiviert oder [an einen anderen Ort gesendet](./features/logs.md#config) werden.
+- Jeder Log beginnt mit seinem Urheber („@modo hat den Kanal #allgemein erstellt.“) und zeigt bei einer Änderung den Zustand davor und danach, einschließlich Berechtigungen.
+- Neue Log-Typen: Webhooks, Integrationen, hinzugefügte oder entfernte Bots mit ihrer Rolle, angeheftete Nachrichten, entfernte inaktive Mitglieder, Boosts, Spitznamen, Emojis, Sticker, Soundboard-Sounds und Reaktionen.
+- Der Log einer gelöschten Nachricht nennt, wer sie gelöscht hat. Eine bearbeitete Nachricht zeigt den Zustand davor und danach, bei einer langen Nachricht nur mit den geänderten Zeilen.
+- Sprachkanal-Logs: Dauer der Sitzung beim Verlassen sowie Aktionen des Teams (stummschalten, Ton deaktivieren, verschieben, trennen) mit ihrem Urheber.
+- Drei [Log-Formate](./features/logs.md#format): Standard, Eingerahmt und Kompakt.
+- Neues Kästchen „**Nachrichten auf dem Server**“ in den [Meldungen](./features/reports.md): Der Thread der Meldung übernimmt die letzten Nachrichten des Kanals, einschließlich gelöschter Nachrichten.
+- **Premium** vorbehalten: das Format Kompakt, die Sprachkanal- und Reaktions-Logs, das Kopieren der Anhänge gelöschter Nachrichten, [6 Stunden gespeicherte Nachrichten](./features/logs.md#cache) statt 15 Minuten und bis zu 15 Log-Kanäle statt 3.
+
 ## 3.7.0 Identity Update <span className="badge-experiment">Experiment</span> {#3-7-0}
 
 :::info Experiment

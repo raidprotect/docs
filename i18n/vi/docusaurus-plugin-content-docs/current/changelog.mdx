@@ -6,6 +6,21 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Khám phá danh sách chi tiết các thay đổi đã được thực hiện trên RaidProtect.
 
+## 3.8.0 Logging Update <span className="badge-experiment">Thử nghiệm</span> {#3-8-0}
+
+:::info Thử nghiệm
+Logging Update đang thử nghiệm: trong khi chờ phát hành ở phiên bản 3.8.0, nó ở dạng bản beta công khai cho các máy chủ [Premium](/vi/premium). Nội dung của nó vẫn có thể thay đổi.
+:::
+
+- [Nhật ký máy chủ](./features/logs.md) mới chia thành năm nhóm: kênh, vai trò và lời mời, thành viên, tin nhắn, thoại, emoji và biểu cảm. Mỗi nhóm có kênh riêng, và mỗi loại có thể tắt hoặc [gửi sang nơi khác](./features/logs.md#config).
+- Mỗi nhật ký bắt đầu bằng người thực hiện (“@modo đã tạo kênh #chung.”) và hiển thị trạng thái trước và sau của một thay đổi, kể cả quyền.
+- Các loại nhật ký mới: webhook, tích hợp, bot được thêm hoặc gỡ cùng vai trò của chúng, tin nhắn được ghim, thành viên không hoạt động bị loại, lượt boost, biệt danh, emoji, sticker, âm thanh soundboard và biểu cảm.
+- Nhật ký của một tin nhắn bị xóa cho biết ai đã xóa nó. Một tin nhắn được sửa hiển thị trạng thái trước và sau, chỉ với những dòng thay đổi nếu là tin nhắn dài.
+- Nhật ký thoại: thời lượng phiên khi rời đi, và các hành động của đội ngũ (tắt tiếng, tắt nghe, di chuyển, ngắt kết nối) kèm người thực hiện.
+- Ba [định dạng nhật ký](./features/logs.md#format): Mặc định, Khung và Gọn.
+- Ô mới “**Tin nhắn trên máy chủ**” trong [báo cáo](./features/reports.md): luồng của báo cáo hiển thị lại các tin nhắn gần nhất của kênh, kể cả tin nhắn đã bị xóa.
+- Dành riêng cho **Premium**: định dạng Gọn, nhật ký thoại và biểu cảm, sao chép tệp đính kèm của tin nhắn bị xóa, [6 giờ tin nhắn trong bộ nhớ](./features/logs.md#cache) thay vì 15 phút và tối đa 15 kênh nhật ký thay vì 3.
+
 ## 3.7.0 Identity Update <span className="badge-experiment">Thử nghiệm</span> {#3-7-0}
 
 :::info Thử nghiệm
