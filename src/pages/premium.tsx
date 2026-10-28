@@ -844,9 +844,15 @@ export default function PremiumPage(): React.ReactNode {
                                     <p className={styles.featureDesc}>{feature.description}</p>
                                     {feature.docsHref && (
                                         <div className={styles.featureMeta}>
-                                            <Link to={feature.docsHref}>
-                                                <Translate id="premium.feature.learnMore">En savoir plus</Translate>
-                                            </Link>
+                                            {feature.docsHref.startsWith('#') ? (
+                                                <a href={feature.docsHref}>
+                                                    <Translate id="premium.feature.learnMore">En savoir plus</Translate>
+                                                </a>
+                                            ) : (
+                                                <Link to={feature.docsHref}>
+                                                    <Translate id="premium.feature.learnMore">En savoir plus</Translate>
+                                                </Link>
+                                            )}
                                         </div>
                                     )}
                                 </article>
