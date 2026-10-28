@@ -16,9 +16,11 @@ The Identity Update is an experiment: until its release in 3.7.0, it is in publi
 - New [`/alt`](./features/alt-accounts.md#alt) command and [alt accounts](./features/alt-accounts.md): link the accounts of a single person, choose their main account, and their sanctions (ban, kick, mute, jail, timeout, softban) extend to the linked accounts. Removing the sanction of one removes it for all. <SuggestionLink id="404" /> <SuggestionLink id="263" />
 - [Linked account sanctions](./features/alt-accounts.md#modes) can be set per type, with a **Trap** mode and an [evasion sanction](./features/alt-accounts.md#evasion) for the linked account that arrives or writes during the sanction.
 - Linked accounts that are absent from the server are sanctioned when they arrive.
+- A sanction extended to the group becomes a [group sanction](./features/alt-accounts.md#group-sanction) in `/sanctions` and `/modview`: you cancel, delete or edit it at once for all the accounts.
+- Sanction logs mention the linked accounts, with a "**Linked accounts**" button to the `/alt` panel in embed format.
 - New [One account per person](./features/alt-accounts.md#single-account) setting: secondary accounts are put in quarantine.
 - The [captcha](./features/captcha.md#activity-alts) spots alt accounts: it links accounts it is sure are the same person by itself, and suggests probable links to your team.
-- [Linked account sanctions](./features/alt-accounts.md#modes) are reserved for **Premium**. Without Premium, `/alt` links and views accounts with no limit.
+- [Linked account sanctions](./features/alt-accounts.md#modes) are reserved for **Premium**. Without Premium, `/alt` links and views accounts with no limit, and One account per person remains available.
 
 ## 3.6.0 Shield Update {#3-6-0}
 

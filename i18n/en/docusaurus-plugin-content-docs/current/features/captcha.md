@@ -92,8 +92,8 @@ In **Panel** mode, the "**Verify**" button opens the **RaidProtect Activity**: t
 
 With the [Identity Update](./alt-accounts.md), the Activity also spots newcomers who are probably run by the same person as a member of your server:
 
-- **Certain link:** the accounts are linked automatically in [`/alt`](./alt-accounts.md#alt). The captcha logs flag it, with an "**Unlink**" button.
-- **Probable link:** if [One account per person](./alt-accounts.md#single-account) is on, the member goes to review. "**Link to another member**" links them in `/alt` and lets them in; if no account was spotted, a window asks you to choose the member ("**Account already on the server**"). Otherwise, the member gets in, and the captcha logs flag the probable link with a "**Link accounts**" button.
+- **Certain link:** the accounts are linked automatically in [`/alt`](./alt-accounts.md#alt). The captcha logs flag it, with an "**Unlink**" button. If the group is sanctioned, or if [One account per person](./alt-accounts.md#single-account) holds back its secondary accounts, the newcomer receives the group's sanction or goes into quarantine.
+- **Probable link:** if [One account per person](./alt-accounts.md#single-account) is on, the member goes to review. "**Link to another member**" links them in `/alt` and lets them in; if no account was spotted, a window asks you to choose the member ("**Account already on the server**"). Otherwise, the member gets in, and the captcha logs flag the probable link with a "**Link**" button.
 - **Certain link not applied:** nothing is linked automatically if an account in the group is on the server team, if the newcomer is linked to several `/alt` groups, or if both accounts already have their own group (two groups are never merged automatically). The link is then suggested to you in the same way.
 
 Only accounts from your server are shown to you: nothing is said about other servers.
