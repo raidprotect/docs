@@ -15,10 +15,6 @@ Il **DISCON** è il livello di pericolo del tuo server, sul modello del DEFCON. 
 - **Un ritorno pulito**: quando scende, disattiviamo solo ciò che il DISCON stesso ha attivato. Un captcha, una Chiusura dei MP o una modalità raid che avevi attivato a mano restano al loro posto.
 - **Un cambio manuale**: il livello non cambia mai da solo, è il tuo team a decidere.
 
-:::info Sperimentazione: Shield Update
-Il DISCON fa parte della **Shield Update**, prevista per la versione 3.6.0. In attesa della sua uscita, è in sperimentazione, in beta pubblica per i server [Premium](/it/premium). Il [canale vocale di stato](#voice) richiede il Premium.
-:::
-
 ## 🚦 I cinque livelli {#levels}
 
 | Livello | Nome | Cosa applichiamo |
@@ -81,7 +77,7 @@ Per questo, il captcha deve essere [configurato](./captcha.md#config), con il su
 1. Esegui il [comando `/settings`](../setup.md#settings).
 2. Apri la scheda “**Protezione**”.
 3. Clicca su “**Configurare**” accanto a “**DISCON**”.
-4. Scegli il canale del pannello nel selettore, oppure clicca su “**Creare il canale del pannello**”.
+4. Scegli il canale del pannello (testuale o vocale) nel selettore, oppure clicca su “**Creare il canale del pannello**”.
 5. Facoltativamente ([Premium](/it/premium)), scegli un canale vocale di stato, oppure clicca su “**Creare il canale di stato**”.
 
 Sotto la configurazione, ritrovi il livello attuale, i cinque pulsanti di livello e la **scala dei livelli**, che descrive cosa farà ogni livello sul tuo server.
@@ -93,6 +89,7 @@ Sotto la configurazione, ritrovi il livello attuale, i cinque pulsanti di livell
 I pulsanti del pannello non richiedono alcun permesso: **è l'accesso al canale a fare da controllo**. Scegli quindi un canale riservato al tuo team.
 
 - Un canale visibile a tutto il server viene rifiutato: qualsiasi membro potrebbe cambiarvi il livello.
+- Va bene anche un canale vocale: il pannello viene allora pubblicato nel suo canale testuale integrato.
 - “**Creare il canale del pannello**” crea un canale `#discon` invisibile a @everyone. Aprilo poi ai ruoli del tuo team.
 
 ### Canale vocale di stato <span className="badge-premium">Premium</span> {#voice}

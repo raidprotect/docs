@@ -28,7 +28,7 @@ Tutti i comandi di RaidProtect, raggruppati per categoria. Clicca sul nome di un
 | [`/tagrole`](./features/tag-role.md) | `/tagrole` | Configura il ruolo assegnato ai membri che portano il tag del server. |
 | [`/display public`](./features/display.mdx) | `/display public` | Gestisce i pannelli informativi pubblici di RaidProtect. |
 | [`/display staff`](./features/display.mdx#staff) | `/display staff` | Gestisce i pannelli riservati allo staff (DISCON, messaggi interni). |
-| [`/discon`](./features/discon.md) | `/discon` | Imposta il pannello DISCON che regola il livello di pericolo del server (sperimentazione, Shield Update). |
+| [`/discon`](./features/discon.md) | `/discon` | Imposta il pannello DISCON che regola il livello di pericolo del server. |
 | [`/audit`](./features/audit.md) | `/audit` | Analizza la sicurezza del server e propone di correggere le falle di configurazione. |
 
 ## Moderazione {#moderation}
@@ -64,9 +64,9 @@ Tutti i comandi di RaidProtect, raggruppati per categoria. Clicca sul nome di un
 
 | Comando | Prototipo | Descrizione |
 |---|---|---|
-| [`/lock`](./features/channel-lock.md#lock) | `/lock [#channel] [duration] [reason]` | Blocca un canale per impedire l'invio di messaggi (durata facoltativa). |
-| [`/unlock`](./features/channel-lock.md#unlock) | `/unlock [#channel] [reason]` | Sblocca un canale precedentemente bloccato. |
-| [`/slowmode`](./features/moderation.mdx#slowmode) | `/slowmode (delay) [duration] [#channel] [reason]` | Attiva o modifica la modalità lenta di un canale (durata di applicazione facoltativa). |
+| [`/lock`](./features/channel-lock.md#lock) | `/lock [#channel] [duration] [reason] [--silent]` | Blocca un canale per impedire l'invio di messaggi (durata facoltativa). |
+| [`/unlock`](./features/channel-lock.md#unlock) | `/unlock [#channel] [reason] [--silent]` | Sblocca un canale precedentemente bloccato. |
+| [`/slowmode`](./features/moderation.mdx#slowmode) | `/slowmode (delay) [duration] [#channel] [reason] [--silent]` | Attiva o modifica la modalità lenta di un canale (durata di applicazione facoltativa). |
 
 ## Cronologia delle sanzioni {#sanctions}
 
@@ -103,6 +103,7 @@ Tutti i comandi di RaidProtect, raggruppati per categoria. Clicca sul nome di un
 | [`/bypass captcha`](./features/captcha.md#bypass) | `/bypass captcha [@utente]` | Autorizza un utente a entrare senza superare il captcha. |
 | [`/bypass minage`](./features/onboarding.md#bypass-minage) | `/bypass minage [@utente]` | Autorizza un utente a entrare senza rispettare l'età minima. |
 | [`/bypass raid`](./features/raid-mode.md#bypass-raid) | `/bypass raid [@utente]` | Autorizza un utente a entrare nonostante la modalità raid (richiede la modalità espulsione). |
+| [`/bypass bot`](./features/onboarding.md#bypass-bot) | `/bypass bot [bot]` | Autorizza un bot a entrare nonostante l'espulsione dei bot (proprietario del server). |
 
 ## Utilità {#utilities}
 

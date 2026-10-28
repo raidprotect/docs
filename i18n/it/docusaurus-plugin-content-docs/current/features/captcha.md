@@ -37,6 +37,8 @@ Il captcha si basa su un ruolo **@Non verificato** e un canale **#verifica**. Qu
 | **Pannello (Interattivo)**, predefinita | Un messaggio permanente “**Sistema di verifica**” con un pulsante “**Verifica**”, che apre l'[Activity RaidProtect](#activity). Il membro non può scrivere in **#verifica**. |
 | **Sfida (Classica)** | Un'immagine viene pubblicata in **#verifica** al suo arrivo, e lui digita il codice in un messaggio nel canale. |
 
+Il pannello porta un pulsante “**Translate**” per leggerlo nella propria lingua, e ogni nuovo arrivato vi viene menzionato nel canale di verifica, poi il messaggio viene eliminato: così ritrova il canale.
+
 La modalità Pannello mantiene il canale pulito e permette impostazioni aggiuntive: scelta della sanzione quando i tentativi sono esauriti, [captcha congelato durante un raid](./raid-mode.md#action), [trattenere all'ingresso gli account troppo recenti](./onboarding.md#minage). La modalità Sfida espelle sempre il membro allo scadere del tempo concesso o quando i suoi tentativi sono esauriti.
 
 ### Attivazione {#trigger}
@@ -45,15 +47,11 @@ La modalità Pannello mantiene il canale pulito e permette impostazioni aggiunti
 |---|---|
 | **Permanente**, predefinita | A ogni arrivo, senza condizioni. |
 | **Automatica** | Solo durante un raid o un livello DISCON elevato. Gli altri nuovi arrivati entrano direttamente. |
-| **Intelligente** <span className="badge-experiment">Sperimentazione</span> | Come Automatica, più gli account che sembrano sospetti. |
+| **Intelligente** | Come Automatica, più gli account che sembrano sospetti. |
 
-Con **Automatica**, il captcha si impone durante un raid solo se l'[Auto RaidMode](./raid-mode.md#action) è impostato su “**Mandare al captcha**” o “**Captcha congelato durante il raid**”, e durante un'allerta [DISCON](./discon.md) a partire dal livello 3 (in sperimentazione con la Shield Update).
+Con **Automatica**, il captcha si impone durante un raid solo se l'[Auto RaidMode](./raid-mode.md#action) è impostato su “**Mandare al captcha**” o “**Captcha congelato durante il raid**”, e durante un'allerta [DISCON](./discon.md) a partire dal livello 3.
 
 L'attivazione **Intelligente** valuta il profilo di ogni nuovo arrivato. Un membro approvato a mano dal tuo team non è mai considerato sospetto.
-
-:::info Sperimentazione: Shield Update
-L'attivazione Intelligente fa parte della **Shield Update**, prevista per la versione 3.6.0. In attesa della sua uscita, è in sperimentazione, in beta pubblica per i server [Premium](/it/premium). Senza la sperimentazione, non viene proposta.
-:::
 
 ## 🚪 Come configurare il captcha? {#config}
 
@@ -75,7 +73,7 @@ Il captcha parte in modalità **Pannello (Interattivo)**, con attivazione **Perm
 2. Apri la scheda “**Arrivi**”.
 3. Clicca su “**Configurare**” accanto a “**Captcha**”.
 4. In “**Modalità di visualizzazione**”, scegli “**Pannello (Interattivo)**” o “**Sfida (Classica)**”.
-5. In “**Attivazione**”, scegli “**Permanente**”, “**Automatica**” o “**Intelligente**” (Shield Update).
+5. In “**Attivazione**”, scegli “**Permanente**”, “**Automatica**” o “**Intelligente**”.
 
 ### Verifica nell'Activity {#activity}
 
@@ -199,7 +197,7 @@ Sostituisci `[utente]` con l'[ID](../guides/id.mdx) desiderato: avrà 10 minuti 
 Il captcha lavora con le altre protezioni degli arrivi:
 - **[Auto RaidMode](./raid-mode.md#action):** con l'azione “**Mandare al captcha**”, i nuovi arrivati di un'ondata passano il captcha invece di essere espulsi. Con “**Captcha congelato durante il raid**”, aspettano dietro il captcha e lo superano dopo l'ondata.
 - **[Età minima dell'account](./onboarding.md#minage):** l'azione “**Trattenere all'ingresso**” blocca un account troppo recente su un captcha che potrà risolvere solo una volta raggiunta l'età.
-- **[DISCON](./discon.md#captcha):** dal livello 4, il captcha viene attivato se è configurato, anche se lo avevi disattivato. A partire dal livello 3, si impone a tutti i nuovi arrivati, qualunque sia la sua attivazione (in sperimentazione con la Shield Update).
+- **[DISCON](./discon.md#captcha):** dal livello 4, il captcha viene attivato se è configurato, anche se lo avevi disattivato. A partire dal livello 3, si impone a tutti i nuovi arrivati, qualunque sia la sua attivazione.
 
 ## Domande frequenti {#faq}
 

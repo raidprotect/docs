@@ -19,11 +19,7 @@ L'Identity Update è in fase di sperimentazione: in attesa della sua uscita nell
 - Il [captcha](./features/captcha.md#activity-alts) individua i doppi account: collega da solo gli account certamente appartenenti alla stessa persona e propone al tuo team i collegamenti probabili.
 - Le [sanzioni degli account collegati](./features/alt-accounts.md#modes) sono riservate al **Premium**. Senza Premium, `/alt` collega e consulta gli account senza limiti.
 
-## 3.6.0 Shield Update <span className="badge-experiment">Sperimentazione</span> {#3-6-0}
-
-:::info Sperimentazione
-La Shield Update è in fase di sperimentazione: in attesa della sua uscita nella 3.6.0, è in beta pubblica per i server [Premium](/it/premium). Il suo contenuto può ancora cambiare.
-:::
+## 3.6.0 Shield Update {#3-6-0}
 
 - Nuovo **[DISCON](./features/discon.md)**: un livello di pericolo del server su cinque gradini, regolabile con un clic tramite il comando `/discon` o da un [pannello per il team](./features/discon.md#panel). Ogni livello irrigidisce automaticamente il server (verifica, captcha, chiusura dei MP, modalità raid, blocco), e un [canale vocale](./features/discon.md#voice) mostra il livello in corso.
 - Nuovo [slowmode preventivo](./features/slowmode.md) (**Premium**): la modalità lenta dei canali scelti si regola da sola per mantenere il flusso di messaggi che hai fissato.
@@ -33,6 +29,14 @@ La Shield Update è in fase di sperimentazione: in attesa della sua uscita nella
 - Nuova sanzione **Quarantena**, sincronizzata con la [quarantena di Discord](./features/sanctions.mdx#discord-quarantine).
 - [ScamLens](./features/scam-images.md): [catalogo di immagini](./features/scam-images.md#catalog) (**Premium**) per bloccare le tue immagini di truffa.
 - Ogni messaggio bloccato dall'AutoMod di Discord crea un [avvertimento](./features/sanctions.mdx) silenzioso a nome di “Discord Automod”.
+- Nuovo filtro [Estensioni dei file](./features/automod.md#files) nell'[Automod](./features/automod.md): blocklist o allowlist di estensioni, su tutto il server o per canale, con rilevamento dei file rinominati. Una regola di canale gratuita, 20 con il Premium.
+- Il filtro Altri server legge anche i link di eventi di un altro server.
+- Età minima dell'account: il jail diventa una [quarantena](./features/onboarding.md#minage-action) revocata alla data giusta.
+- [Arrivo dei bot](./features/onboarding.md#bots): ruoli propri dei bot (1 gratuito, 15 Premium) ed espulsione dei bot non autorizzati, con `/bypass bot` riservato al proprietario.
+- `/lock`, `/unlock` e `/slowmode`: opzione `--silent`, e [blocco di una categoria](./features/channel-lock.md#lock-category) con tutti i suoi canali.
+- [Eliminazione dei messaggi al bando](./features/sanctions.mdx#ban-delete) regolabile come predefinita per `/ban` e `/tempban`.
+- [Authentication Manager](./features/authentication-manager.mdx): rinominare una passkey, autenticarsi per più ruoli alla volta.
+- [HoneyPot](./features/honeypot.md#sanction): bando o jail permanente.
 - Nuovo [assistente di installazione](./setup.md#wizard): un percorso guidato sezione per sezione, protezioni proposte in base al tuo server e un'anteprima dell'audit per concludere.
 - [Anti-spam](./features/anti-spam.mdx) V3, già attivo per tutti dalla 3.5.0:
   - Nuovo motore di rilevamento: duplicati approssimativi, link ripetuti, emoji e testo senza senso, flood e spam distribuito su più canali.

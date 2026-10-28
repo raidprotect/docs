@@ -100,6 +100,7 @@ Dal tuo profilo, puoi:
 - Aggiungere, cambiare o eliminare un **codice PIN** (semplice o rinforzato).
 - Attivare il **codice 2FA** (OTP) con un QR code o una chiave segreta, rigenerarlo o eliminarlo.
 - Aggiungere una **passkey** dalla pagina di registrazione, o eliminarne una. Ogni passkey mostra il nome del dispositivo e la data dell'ultimo utilizzo.
+- **Rinominare** una passkey: il pulsante “**Modifica una Passkey**”, accanto a “**Aggiungi**”, apre una finestra con le tue passkey e il nuovo nome da dare (per esempio `MacBook`, `iPhone`, `YubiKey`). La ridenominazione viene registrata nel tuo registro di audit.
 
 Se hai già un metodo, ti chiediamo di autenticarti prima di aggiungerne o modificarne uno. La parte bassa del profilo ricorda il tuo grado e il metodo da aggiungere per salire di un gradino.
 
@@ -137,10 +138,10 @@ Usa il comando: ```/auth [role]```
 
 1. Esegui il comando `/auth` sul server, oppure clicca su “**Ottieni un ruolo**” in un pannello staff.
 2. Un menu mostra i ruoli disponibili con il loro grado richiesto e la loro durata di sessione.
-3. Seleziona un ruolo.
+3. Seleziona uno o più ruoli (fino a 10). Una sola autenticazione, al livello del più esigente, li apre tutti.
 4. Scegli un metodo di autenticazione tra quelli che raggiungono il grado del ruolo.
 5. Effettua la verifica (PIN, OTP o passkey).
-6. In caso di successo, ti assegniamo il ruolo Discord e creiamo una sessione.
+6. In caso di successo, ti assegniamo il ruolo o i ruoli Discord e creiamo una sessione per ciascuno. Le sessioni vengono registrate nei log dell'Authentication Manager.
 
 :::info
 Nel menu compaiono solo i ruoli a cui sei assegnato con lo stato **Attivo**.
@@ -233,6 +234,8 @@ Rifiutiamo un ruolo gestito da un'integrazione, un ruolo usato nel Processo di b
 
 :::tip
 Se il tuo ruolo è **mostrato separatamente** nell'elenco dei membri, scegli “**Crea un ruolo di permessi separato**”: i tuoi membri mantengono il loro ruolo sempre visibile, e i permessi sensibili vengono assegnati solo durante le sessioni autenticate.
+
+Con un ruolo separato, anche i permessi di moderazione dei canali del ruolo di visualizzazione passano al ruolo `🔑`. Per un ruolo amministratore, l'opzione “**Mantieni la vista su tutti i canali fuori sessione**” lascia al ruolo di visualizzazione la vista di tutti i canali al di fuori delle sessioni; senza di essa, non vede più nulla senza l'amministratore.
 :::
 
 #### Proteggere i ruoli amministratore da `/audit` {#audit-bulk}

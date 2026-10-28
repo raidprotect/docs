@@ -50,7 +50,7 @@ Deselezionare un modulo in `/setup` non lo disattiva. Per spegnere una funzional
 
 I [ruoli automatici e il messaggio di benvenuto](./features/onboarding.md) non fanno parte dell'assistente: regolali nella scheda “**Arrivi**” di `/settings`.
 
-### 🧭 Nuovo assistente di installazione <span className="badge-experiment">Sperimentazione</span> {#wizard}
+### 🧭 Nuovo assistente di installazione {#wizard}
 
 Un nuovo assistente `/setup` sostituisce l'elenco di moduli con un percorso guidato:
 
@@ -62,10 +62,6 @@ Un nuovo assistente `/setup` sostituisce l'elenco di moduli con un percorso guid
 - **Un server già configurato viene verificato, non rifatto**: il pannello del captcha già presente e la chiusura dei MP già attiva vengono conservati.
 - **E poi**: un'anteprima dell'[audit di sicurezza](./features/audit.md) conclude l'installazione, con scorciatoie per provare il captcha, personalizzare il messaggio di benvenuto o aprire tutte le impostazioni. Un passaggio fallito si riprende rilanciando `/setup`.
 
-:::info Sperimentazione: Shield Update
-Il nuovo assistente di installazione arriva con la **Shield Update**, prevista per la versione 3.6.0. Per ora è proposto solo a un piccolo numero di server.
-:::
-
 ## Modificare la configurazione {#settings}
 
 Il comando `/settings` apre la dashboard di RaidProtect. È riservato agli amministratori e viene mostrato in un messaggio privato temporaneo, visibile solo a te.
@@ -76,11 +72,11 @@ Le impostazioni sono organizzate in cinque schede:
 
 - **Generale**: [lingua](./language.md), [comandi tramite messaggio](./guides/prefix.md), [permessi](./guides/prefix.md#permissions) e fuso orario del server.
 - **Arrivi**: [Auto RaidMode](./features/raid-mode.md), [captcha](./features/captcha.md), [età minima dell'account](./features/onboarding.md#minage), [ruoli automatici](./features/onboarding.md#autorole) e [messaggio di benvenuto](./features/onboarding.md#welcome-message).
-- **Protezione**: [DISCON](./features/discon.md)\*, [anti-spam](./features/anti-spam.mdx), [Automod](./features/automod.md) ([filtro immagini](./features/scam-images.md) e [altri server](./features/automod.md#servers)\*), [HoneyPot](./features/honeypot.md), [slowmode preventivo](./features/slowmode.md)\*, [Authentification Manager](./features/authentication-manager.mdx) e [chiusura dei MP](./features/dm-lock.mdx).
+- **Protezione**: [DISCON](./features/discon.md), [anti-spam](./features/anti-spam.mdx), [Automod](./features/automod.md) ([filtro immagini](./features/scam-images.md), [altri server](./features/automod.md#servers) ed [estensioni dei file](./features/automod.md#files)), [HoneyPot](./features/honeypot.md), [slowmode preventivo](./features/slowmode.md), [Authentification Manager](./features/authentication-manager.mdx) e [chiusura dei MP](./features/dm-lock.mdx).
 - **Moderazione**: [sanzioni](./features/sanctions.mdx), [doppi account](./features/alt-accounts.md)\*, log, [segnalazioni](./features/reports.md) e [trasparenza](./features/transparency.md).
 - **Utilità**: [ruolo del tag](./features/tag-role.md), [blocco canale](./features/channel-lock.md), [ruolo in servizio](./features/moderation.mdx#onduty) e memorizzazione dei messaggi.
 
-\* In sperimentazione: queste righe compaiono solo sui server che hanno accesso alla Shield Update (DISCON, altri server, slowmode preventivo) o all'Identity Update (doppi account), in beta pubblica [Premium](/it/premium).
+\* In sperimentazione: questa riga compare solo sui server che hanno accesso all'Identity Update (doppi account), in beta pubblica [Premium](/it/premium).
 
 Ogni riga mostra il valore attuale dell'impostazione e un pulsante: “**Configurare**” apre una schermata dedicata, “**Modifica**” apre una finestra di inserimento. Ogni modifica si applica immediatamente.
 

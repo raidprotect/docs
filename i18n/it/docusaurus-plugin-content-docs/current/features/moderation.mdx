@@ -62,7 +62,7 @@ Usa il comando: ```/ban (user) [duration] [--delete-messages=durata] [--silent] 
 Sostituisci `(user)` con la menzione o l'ID desiderato e `[reason]` con il motivo della sanzione.
 
 - `[duration]`: se indicata, il bando diventa temporaneo (come con [`/tempban`](#tempban)).
-- `[--delete-messages]`: durata della cronologia da eliminare (per esempio `1h`, `1d`, `7d`). Discord limita l'eliminazione a 7 giorni al massimo.
+- `[--delete-messages]`: durata della cronologia da eliminare (per esempio `1h`, `1d`, `7d`). Discord limita l'eliminazione a 7 giorni al massimo. Senza questa opzione, si applica il valore dell'[eliminazione dei messaggi al bando](./sanctions.mdx#ban-delete).
 - `[--silent]`: non inviare un MP al bersaglio.
 
 :::tip
@@ -136,7 +136,7 @@ Usa il comando: ```/jail (member) [--silent] [reason]```
 Sostituisci `(member)` con la menzione o l'ID desiderato e `[reason]` con il motivo della sanzione.
 
 :::warning
-Il [ruolo Jail](./sanctions.mdx#jail) deve essere configurato tramite `/settings` prima di poter usare questo comando. I moduli automatici, invece, ricadono su un timeout quando non è configurato alcun ruolo Jail.
+Il [ruolo Jail](./sanctions.mdx#jail) deve essere configurato tramite `/settings` prima di poter usare questo comando. I moduli automatici, invece, ricadono su un timeout quando non è configurato alcun ruolo Jail. Un membro imprigionato viene anche disconnesso dal suo canale vocale.
 :::
 
 ### <Icon src="/img/icons/SanctionsJAILTemp.svg" alt="icon SanctionsJAILTemp" title=":iconSanctionsJAILTemp:" /> Imprigionare temporaneamente un utente {#tempjail}
@@ -154,6 +154,8 @@ Il comando `/unjail` ti permette di togliere il ruolo Jail a un membro, permette
 Usa il comando: ```/unjail (member) [--silent] [reason]```
 
 Sostituisci `(member)` con la menzione o l'ID desiderato e `[reason]` con il motivo della liberazione.
+
+Un membro in quarantena (età minima dell'account, quarantena Discord) non è in jail: `/unjail` lo rifiuta e indica come revocare la sua quarantena.
 
 ## <Icon src="/img/icons/SanctionsWARN.svg" alt="icon SanctionsWARN" title=":iconSanctionsWARN:" /> Avvertire un utente {#warn}
 
@@ -195,11 +197,12 @@ Sostituisci `(numero)` con il numero di messaggi che vuoi eliminare (da 2 a 100)
 
 Il comando `/slowmode` ti permette di attivare o modificare la modalità lenta di un canale, per limitare la frequenza dei messaggi inviati dagli utenti.
 
-Usa il comando: ```/slowmode (delay) [duration] [channel] [reason]```
+Usa il comando: ```/slowmode (delay) [duration] [channel] [reason] [--silent]```
 
 - Sostituisci `(delay)` con il tempo desiderato tra ogni messaggio (per es.: `5s`, `1m`, `10m`, `1h`, fino a 6 ore; `0` per disattivare).
 - Aggiungi `[duration]` per disattivare automaticamente lo slowmode dopo questa durata (per es. `30m`, `2h`).
 - Aggiungi `[channel]` se vuoi applicare lo slowmode a un canale diverso da quello in cui digiti il comando.
+- Aggiungi `--silent` per non annunciare nulla nel canale.
 - Aggiungi `[reason]` per precisare il motivo, che verrà registrato nei log del server.
 
 ## 🕵️ Recuperare un messaggio eliminato {#snipe}
@@ -215,7 +218,7 @@ Usa il comando: ```/snipe [utente] [--channel=#canale]```
 Dalla risposta, puoi **sanzionare l'autore** di un messaggio. La risposta è visibile solo a te.
 
 :::warning
-`/snipe` vede solo i messaggi che RaidProtect tiene in memoria, per un'ora. Vengono conservati solo se la “**Memorizzazione dei messaggi**” è attivata (`/settings`, scheda “**Utilità**”, disattivata per impostazione predefinita), oppure se l'[anti-spam](./anti-spam.mdx) o le [segnalazioni](./reports.md) sono attivi, il che la attiva d'ufficio. Altrimenti, il comando risponde che non è stato trovato alcun messaggio eliminato.
+`/snipe` vede solo i messaggi che RaidProtect tiene in memoria, per un'ora. Vengono conservati solo se la “**Memorizzazione dei messaggi**” è attivata (`/settings`, scheda “**Utilità**”, disattivata per impostazione predefinita), oppure se l'[anti-spam](./anti-spam.mdx) o le [segnalazioni](./reports.md) sono attivi, il che la attiva d'ufficio: usare `/snipe` in quel momento registra l'impostazione, che resta attiva anche se l'anti-spam e le segnalazioni vengono disattivati in seguito. Altrimenti, il comando indica che la cache dei messaggi è disattivata e propone di attivarla a un amministratore (o a un membro autorizzato a usare `/settings` quando vengono applicati i permessi delle Integrazioni).
 :::
 
 Per attivare la memorizzazione dei messaggi:

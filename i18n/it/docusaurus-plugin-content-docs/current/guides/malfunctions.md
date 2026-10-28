@@ -57,7 +57,7 @@ Questo problema è relativamente comune, ma dipende dalla **configurazione del t
 
 - **Hai attivato il captcha?** È una funzionalità facoltativa: attivala nella scheda “**Arrivi**” di [`/settings`](../setup.md#settings). Consulta la [pagina dedicata al captcha](../features/captcha.md#config) per saperne di più.
 
-- **Qual è la sua attivazione?** In “**Automatica**”, il captcha si applica solo durante un raid o un livello [DISCON](../features/discon.md) elevato (Shield Update, in sperimentazione): il resto del tempo, chi arriva entra direttamente. Scegli “**Permanente**” perché ogni nuovo arrivato superi il captcha.
+- **Qual è la sua attivazione?** In “**Automatica**”, il captcha si applica solo durante un raid o un livello [DISCON](../features/discon.md) elevato: il resto del tempo, chi arriva entra direttamente. Scegli “**Permanente**” perché ogni nuovo arrivato superi il captcha.
 
 - **Un ruolo o un canale lo aggira?** La schermata del captcha segnala i canali ancora visibili al ruolo di verifica e i ruoli che danno accesso al server senza superarlo, con un pulsante per correggere.
 

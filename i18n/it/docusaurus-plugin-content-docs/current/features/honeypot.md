@@ -58,7 +58,18 @@ Per impostazione predefinita, l'HoneyPot applica un **Softban**. Sono disponibil
 | **Jail** | Assegna il [ruolo Jail](./sanctions.mdx#jail) configurato sul tuo server | Premium |
 | **Mute** | Assegna il [ruolo Mute](./sanctions.mdx#mute) configurato sul tuo server | Premium |
 
-Per le sanzioni a durata (Bando, Timeout, Jail, Mute), scegli una durata nel selettore “**Durata**”: 5 minuti, 1 ora, **1 giorno** (predefinita) o 28 giorni, oppure “**Valore personalizzato**” per inserire la tua (per esempio `5m`, `1h`, `2d`; minimo 1 minuto). Il selettore è disattivato per il Softban e l'Espulsione, che non hanno una durata.
+Per le sanzioni a durata (Bando, Timeout, Jail, Mute), scegli una durata nel selettore “**Durata**” (1 giorno per impostazione predefinita), oppure “**Valore personalizzato**” per inserire la tua (per esempio `5m`, `1h`, `2d`; minimo 1 minuto). Il selettore è disattivato per il Softban e l'Espulsione, che non hanno una durata.
+
+I riferimenti del selettore seguono la sanzione:
+
+| Sanzione | Riferimenti proposti |
+|---|---|
+| **Bando** | Permanente, 1 giorno, 7 giorni, 30 giorni |
+| **Jail** | Permanente, 1 ora, 1 giorno, 7 giorni |
+| **Mute** | 5 minuti, 1 ora, 1 giorno, 7 giorni |
+| **Timeout** | 5 minuti, 1 ora, 1 giorno, 28 giorni |
+
+Il Bando e il Jail possono essere **permanenti**: la sanzione non si revoca da sola. Cambiando sanzione, la durata scelta viene mantenuta se resta possibile (un permanente non passa a un Timeout o a un Mute, e un Timeout resta sotto i 28 giorni).
 
 :::tip
 Il **Softban** è un buon compromesso: ripulisce i messaggi ed espelle l'account hackerato, ma il legittimo proprietario può tornare una volta messo in sicurezza il suo account.
@@ -74,13 +85,9 @@ Per le altre sanzioni (Kick, Timeout, Jail, Mute), RaidProtect elimina da sé i 
 - Se il tuo server perde il Premium, una sanzione Premium torna automaticamente a **Softban** al prossimo scatto.
 :::
 
-### Ritardo prima della sanzione <span className="badge-experiment">Sperimentazione</span> {#grace}
+### Ritardo prima della sanzione {#grace}
 
 Un membro in buona fede può scrivere per errore nell'HoneyPot. Il **ritardo prima della sanzione** gli lascia il tempo di segnalarlo prima di essere sanzionato.
-
-:::info Sperimentazione: Shield Update
-Il ritardo prima della sanzione fa parte della **Shield Update**, prevista per la versione 3.6.0. In attesa della sua uscita, è in sperimentazione, in beta pubblica per i server [Premium](/it/premium).
-:::
 
 1. Esegui il [comando `/settings`](../setup.md#settings).
 2. Apri la scheda “**Protezione**”.

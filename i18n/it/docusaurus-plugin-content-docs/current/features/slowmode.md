@@ -5,11 +5,7 @@ description: "Lo slowmode preventivo di RaidProtect regola automaticamente la mo
 
 import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
 
-Lo **slowmode preventivo** di RaidProtect regola automaticamente la [modalità lenta](./moderation.mdx#slowmode) dei tuoi canali per mantenere un **ritmo dei messaggi** al minuto. Quando un canale si surriscalda (annuncio, live, afflusso di nuovi membri, inizio di un [raid](/it/learn/discord-raid)), alziamo la modalità lenta; quando si calma, la riabbassiamo. I tuoi moderatori non devono più sorvegliare la chat per regolarla a mano.
-
-:::info Sperimentazione: Shield Update
-Lo slowmode preventivo è riservato ai server [Premium](/it/premium). Fa parte della **Shield Update**, prevista per la versione 3.6.0, in sperimentazione fino alla sua uscita.
-:::
+Lo **slowmode preventivo** di RaidProtect, riservato ai server [Premium](/it/premium), regola automaticamente la [modalità lenta](./moderation.mdx#slowmode) dei tuoi canali per mantenere un **ritmo dei messaggi** al minuto. Quando un canale si surriscalda (annuncio, live, afflusso di nuovi membri, inizio di un [raid](/it/learn/discord-raid)), alziamo la modalità lenta; quando si calma, la riabbassiamo. I tuoi moderatori non devono più sorvegliare la chat per regolarla a mano.
 
 ## ❓ Come funziona? {#working}
 
@@ -27,7 +23,7 @@ Lo slowmode preventivo è riservato ai server [Premium](/it/premium). Fa parte d
 2. Apri la scheda “**Protezione**”.
 3. Clicca su “**Configurare**” accanto a “**Slowmode preventivo**”.
 4. Clicca su “**Aggiungi**” accanto a uno slot libero.
-5. Scegli il canale (canale testuale o canale di annunci).
+5. Scegli il canale (canale testuale, di annunci, vocale o di conferenza: la modalità lenta di un canale vocale regola il suo canale testuale integrato).
 
 <Settings start="slowmode" />
 
@@ -78,7 +74,7 @@ Fino a 6 canali per server, ciascuno con il proprio ritmo dei messaggi e i propr
 
 ### Lo slowmode preventivo è gratuito?
 
-No, è riservato ai server Premium. Fa anche parte della Shield Update, ancora in sperimentazione.
+No, è riservato ai server Premium.
 
 ### Cosa succede se regolo la modalità lenta a mano?
 
