@@ -22,25 +22,40 @@ L'Identity Update est en expérimentation : en attendant sa sortie en 3.7.0, el
 ## 3.6.0 Shield Update {#3-6-0}
 
 - Nouveau **[DISCON](./features/discon.md)** : un niveau de danger du serveur en cinq crans, réglable d'un clic avec la commande `/discon` ou depuis un [panneau pour l'équipe](./features/discon.md#panel). Chaque niveau durcit automatiquement le serveur (vérification, captcha, fermeture des MP, mode raid, verrouillage), et un [salon vocal](./features/discon.md#voice) affiche le niveau en cours.
-- Nouveau [slowmode préventif](./features/slowmode.md) (**Premium**) : le mode lent des salons choisis s'ajuste tout seul pour tenir le débit de messages que vous fixez.
-- [HoneyPot](./features/honeypot.md) : nouveau [délai avant sanction](./features/honeypot.md#grace), qui laisse à un membre de bonne foi le temps de dire qu'il s'est trompé.
-- Nouveau [déclenchement Intelligent](./features/captcha.md#trigger) du captcha : en plus des raids, il vérifie les arrivants dont le compte semble suspect.
-- Nouveau filtre [Autres serveurs](./features/automod.md#servers) dans l'[Automod](./features/automod.md) : invitations, messages transférés, liens de salon et tags d'autres serveurs, en liste noire ou en liste blanche.
-- Nouvelle sanction **Quarantaine**, synchronisée avec la [quarantaine de Discord](./features/sanctions.mdx#discord-quarantine).
-- [ScamLens](./features/scam-images.md) : [catalogue d'images](./features/scam-images.md#catalog) (**Premium**) pour bloquer vos propres images d'arnaque.
-- Chaque message bloqué par l'AutoMod de Discord crée un [avertissement](./features/sanctions.mdx) silencieux au nom de “Discord Automod”.
-- Nouveau filtre [Extensions de fichiers](./features/automod.md#files) dans l'[Automod](./features/automod.md) : listes noires ou blanches d'extensions, sur tout le serveur ou par salon, avec détection des fichiers renommés. Une règle de salon gratuite, 20 avec le Premium.
-- Le filtre Autres serveurs lit aussi les liens d'événement d'un autre serveur.
-- Âge minimum du compte : le jail devient une [quarantaine](./features/onboarding.md#minage-action) levée à la bonne date.
-- [Arrivée des bots](./features/onboarding.md#bots) : rôles propres aux bots (1 gratuit, 15 Premium) et expulsion des bots non autorisés, avec `/bypass bot` réservé au propriétaire.
-- `/lock`, `/unlock` et `/slowmode` : option `--silent`, et [verrouillage d'une catégorie](./features/channel-lock.md#lock-category) avec tous ses salons.
-- [Suppression des messages au bannissement](./features/sanctions.mdx#ban-delete) réglable par défaut pour `/ban` et `/tempban`.
-- [Authentication Manager](./features/authentication-manager.mdx) : renommer une passkey, s'authentifier pour plusieurs rôles à la fois.
-- [HoneyPot](./features/honeypot.md#sanction) : bannissement ou jail permanent.
-- Nouvel [assistant d'installation](./setup.md#wizard) : un parcours guidé section par section, des protections proposées selon votre serveur et un aperçu de l'audit pour finir.
 - [Anti-spam](./features/anti-spam.mdx) V3, déjà en place pour tous depuis la 3.5.0 :
   - Nouveau moteur de détection : doublons approchés, liens répétés, emojis et charabia, flood, et le spam réparti sur plusieurs salons.
   - [Préréglages](./features/anti-spam.mdx#presets) et sanctions par famille, avec un [mode avancé](./features/anti-spam.mdx#advanced) pour régler chaque déclencheur et sa [durée](./features/anti-spam.mdx#duration).
+- [Anti-spam](./features/anti-spam.mdx#ignore) : nouvelle option pour surveiller les salons dont le nom contient « spam », jusque-là toujours ignorés. <SuggestionLink id="600" />
+- Nouveau [slowmode préventif](./features/slowmode.md) (**Premium**) : le mode lent des salons choisis s'ajuste tout seul pour tenir le débit de messages que vous fixez.
+- Nouveau filtre [Autres serveurs](./features/automod.md#servers) dans l'[Automod](./features/automod.md) : invitations, messages transférés, liens de salon ou d'événement et tags d'autres serveurs, en liste noire ou en liste blanche.
+- Nouveau filtre [Extensions de fichiers](./features/automod.md#files) dans l'Automod : bloquez des groupes d'extensions ou n'autorisez que certaines, sur tout le serveur ou salon par salon, même quand un fichier est déguisé sous une autre extension. Les règles par salon sont plus nombreuses sur les serveurs **Premium**.
+- [HoneyPot](./features/honeypot.md) : nouveau [délai avant sanction](./features/honeypot.md#grace), qui laisse à un membre de bonne foi le temps de dire qu'il s'est trompé.
+- [HoneyPot](./features/honeypot.md#sanction) : le bannissement et le jail peuvent être permanents.
+- Nouveau [déclenchement Intelligent](./features/captcha.md#trigger) du captcha : en plus des raids, il vérifie les arrivants dont le compte semble suspect.
+- Nouvelle sanction **Quarantaine**, synchronisée avec la [quarantaine de Discord](./features/sanctions.mdx#discord-quarantine).
+- [ScamLens](./features/scam-images.md) : [catalogue d'images](./features/scam-images.md#catalog) (**Premium**) pour bloquer vos propres images d'arnaque.
+- Chaque message bloqué par l'AutoMod de Discord crée un [avertissement](./features/sanctions.mdx) silencieux au nom de “Discord Automod”.
+- Nouvel [assistant d'installation](./setup.md#wizard) : un parcours guidé section par section, des protections proposées selon votre serveur et un aperçu de l'audit pour finir.
+- [`/auth`](./features/authentication-manager.mdx#auth) attribue plusieurs rôles protégés d'un coup, en une seule commande. <SuggestionLink id="601" />
+- [Rôle de permissions séparé](./features/authentication-manager.mdx#strategies) de l'Authentication Manager : les permissions de salon du rôle d'origine sont déplacées sur le rôle 🔑, et une case permet de donner aux administrateurs la vue sur tous les salons.
+- [`/auth`](./features/authentication-manager.mdx#logs-tab) : les sessions sont journalisées dans le salon de logs de l'Authentication Manager.
+- [`/lock` et `/unlock`](./features/channel-lock.md#lock) verrouillent et déverrouillent une catégorie entière, et ses salons restent synchronisés. <SuggestionLink id="595" />
+- Nouveau réglage de [suppression des messages au bannissement](./features/sanctions.mdx#ban-delete) : l'historique supprimé par défaut avec `/ban`, `?ban` et `/tempban`. <SuggestionLink id="592" />
+- [`/snipe`](./features/moderation.mdx#snipe) prévient quand la mise en cache des messages est désactivée et propose de l'activer. L'utiliser active la mise en cache d'office.
+- [`/lock`, `/unlock`](./features/channel-lock.md#lock) et [`/slowmode`](./features/moderation.mdx#slowmode) : nouvelle option `silent` pour agir sans annonce dans le salon.
+- [DISCON](./features/discon.md#panel-channel) : le panneau peut être publié dans le chat d'un salon vocal.
+- [Activity du captcha](./features/captcha.md#activity) : sur un serveur **Premium**, l'icône du serveur remplace le logo RaidProtect.
+- [Authentication Manager](./features/authentication-manager.mdx#manage-methods) : vous pouvez renommer une passkey.
+- Nouvelle section [Arrivée des bots](./features/onboarding.md#bots) : des rôles donnés automatiquement aux bots qui rejoignent le serveur, et l'expulsion des bots non autorisés, avec [`/bypass bot`](./features/onboarding.md#bypass-bot) pour en laisser entrer un.
+- [Message de bienvenue](./features/onboarding.md#welcome-buttons) : chaque bouton peut avoir son emoji.
+- [Âge minimum du compte](./features/onboarding.md#minage-action) : la jail devient une quarantaine, levée automatiquement quand le compte atteint l'âge requis. Les quarantaines en cours s'ajustent quand vous changez l'âge minimum : levées s'il baisse ou est désactivé, prolongées s'il augmente.
+- [`/unjail`](./features/moderation.mdx#unjail) refuse de lever une quarantaine (âge minimum du compte, Discord) et indique comment le faire. La fin d'une jail laisse en place le rôle d'un membre en quarantaine.
+- Ajout de plusieurs logs.
+- Correction :
+  - `/unlock` remet exactement les permissions d'avant le verrouillage, et RaidProtect ne perd plus ses propres accès.
+  - `/auth` signale un rôle désactivé au lieu d'ouvrir une session factice.
+  - Un membre envoyé en [jail](./features/moderation.mdx#jail) est déconnecté du vocal.
+  - Le rôle non vérifié du [captcha](./features/captcha.md) ne peut plus être choisi comme rôle automatique.
 
 ## 3.5.0 Onboarding Update (19/10/2026) {#3-5-0}
 
