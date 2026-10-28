@@ -62,7 +62,7 @@ import Icon from "@site/src/components/Icon";
 `(user)` を対象のメンションまたは ID に、`[reason]` を処罰の理由に置き換えます。
 
 - `[duration]`：指定した場合、BAN は一時的になります（[`/tempban`](#tempban)と同じ）。
-- `[--delete-messages]`：削除する履歴の範囲（例：`1h`、`1d`、`7d`）。Discord の制限により、削除は最大 7 日までです。
+- `[--delete-messages]`：削除する履歴の範囲（例：`1h`、`1d`、`7d`）。Discord の制限により、削除は最大 7 日までです。このオプションがない場合は、[BAN 時のメッセージ削除](./sanctions.mdx#ban-delete)の値が適用されます。
 - `[--silent]`：対象に DM を送りません。
 
 :::tip
@@ -136,7 +136,7 @@ import Icon from "@site/src/components/Icon";
 `(user)` を対象のメンションまたは ID に、`[reason]` を処罰の理由に置き換えます。
 
 :::warning
-このコマンドを使う前に、`/settings` で [Jail ロール](./sanctions.mdx#jail)を設定する必要があります。自動のモジュールは、Jail ロールが未設定の場合、タイムアウトに切り替わります。
+このコマンドを使う前に、`/settings` で [Jail ロール](./sanctions.mdx#jail)を設定する必要があります。自動のモジュールは、Jail ロールが未設定の場合、タイムアウトに切り替わります。監禁されたメンバーは、ボイスチャンネルからも切断されます。
 :::
 
 ### <Icon src="/img/icons/SanctionsJAILTemp.svg" alt="icon SanctionsJAILTemp" title=":iconSanctionsJAILTemp:" /> ユーザーを一時的に監禁する {#tempjail}
@@ -154,6 +154,8 @@ import Icon from "@site/src/components/Icon";
 次のコマンドを使用します：```/unjail (user) [--silent] [reason]```
 
 `(user)` を対象のメンションまたは ID に、`[reason]` を解放の理由に置き換えます。
+
+隔離中のメンバー（アカウントの最低作成日数、Discord の隔離）は Jail には入っていません。`/unjail` は拒否し、隔離を解除する方法を示します。
 
 ## <Icon src="/img/icons/SanctionsWARN.svg" alt="icon SanctionsWARN" title=":iconSanctionsWARN:" /> ユーザーに警告する {#warn}
 
@@ -195,11 +197,12 @@ import Icon from "@site/src/components/Icon";
 
 `/slowmode` コマンドで、チャンネルのスローモードを有効にしたり変更したりして、ユーザーが送信するメッセージの頻度を制限できます。
 
-次のコマンドを使用します：```/slowmode (delay) [duration] [channel] [reason]```
+次のコマンドを使用します：```/slowmode (delay) [duration] [channel] [reason] [--silent]```
 
 - `(delay)` を、メッセージ間の希望する間隔に置き換えます（例：`5s`、`1m`、`10m`、`1h`、最大 6 時間。`0` で無効）。
 - `[duration]` を追加すると、その時間が過ぎた後にスローモードが自動で無効になります（例：`30m`、`2h`）。
 - コマンドを入力したチャンネル以外にスローモードを適用したい場合は、`[channel]` を追加します。
+- `--silent` を追加すると、チャンネルには何も告知されません。
 - `[reason]` を追加すると理由を指定でき、サーバーのログに記録されます。
 
 ## 🕵️ 削除されたメッセージを取得する {#snipe}
@@ -215,7 +218,7 @@ import Icon from "@site/src/components/Icon";
 返信から、メッセージの**投稿者を処罰**できます。返信はあなたにだけ見えます。
 
 :::warning
-`/snipe` で確認できるのは、RaidProtect が 1 時間メモリに保持しているメッセージだけです。メッセージが保持されるのは、「**メッセージのキャッシュ**」が有効な場合（`/settings`、「**ユーティリティ**」タブ、既定では無効）、または[スパム対策](./anti-spam.mdx)や[通報](./reports.md)が有効な場合で、その場合は自動的に有効になります。それ以外の場合、コマンドは削除されたメッセージが見つからないと返信します。
+`/snipe` で確認できるのは、RaidProtect が 1 時間メモリに保持しているメッセージだけです。メッセージが保持されるのは、「**メッセージのキャッシュ**」が有効な場合（`/settings`、「**ユーティリティ**」タブ、既定では無効）、または[スパム対策](./anti-spam.mdx)や[通報](./reports.md)が有効な場合で、その場合は自動的に有効になります。このとき `/snipe` を使うと設定が記録され、後でスパム対策と通報を無効にしても有効なままになります。それ以外の場合、コマンドはメッセージのキャッシュが無効であることを伝え、管理者（連携サービスの権限が適用されている場合は、`/settings` の使用を許可されたメンバー）に有効化を提案します。
 :::
 
 メッセージのキャッシュを有効にするには：

@@ -19,11 +19,7 @@ Identity Update は実験中です。3.7.0 でのリリースまでは、[Premiu
 - [キャプチャ](./features/captcha.md#activity-alts)が複数アカウントを検知します。同一人物と確実に判断できるアカウントは自動で連携し、可能性の高い連携は運営チームに提案します。
 - [連携アカウントの処罰](./features/alt-accounts.md#modes)は **Premium** 限定です。Premium でない場合、`/alt` はアカウントの連携と確認を、制限なく行えます。
 
-## 3.6.0 Shield Update <span className="badge-experiment">実験中</span> {#3-6-0}
-
-:::info 実験中
-Shield Update は実験中です。3.6.0 でのリリースまでは、[Premium](/ja/premium) サーバー向けの公開ベータとして提供されています。内容は今後変更される可能性があります。
-:::
+## 3.6.0 Shield Update {#3-6-0}
 
 - 新機能 **[DISCON](./features/discon.md)**：サーバーの危険レベルを 5 段階で設定でき、`/discon` コマンドまたは[運営チーム用のパネル](./features/discon.md#panel)からワンクリックで変更できます。各レベルでサーバーが自動的に強化され（認証、キャプチャ、DM の遮断、レイドモード、ロックダウン）、[ボイスチャンネル](./features/discon.md#voice)に現在のレベルが表示されます。
 - 新機能[予防スローモード](./features/slowmode.md)（**Premium**）：選んだチャンネルのスローモードが自動で調整され、設定したメッセージのレートが保たれます。
@@ -33,6 +29,14 @@ Shield Update は実験中です。3.6.0 でのリリースまでは、[Premium]
 - 新しい処罰**隔離**。[Discord の隔離](./features/sanctions.mdx#discord-quarantine)と同期します。
 - [ScamLens](./features/scam-images.md)：独自の詐欺画像をブロックするための[画像カタログ](./features/scam-images.md#catalog)（**Premium**）。
 - Discord の AutoMod にブロックされたメッセージごとに、「Discord Automod」名義のサイレントな[警告](./features/sanctions.mdx)が作成されます。
+- [Automod](./features/automod.md) の新フィルター[ファイルの拡張子](./features/automod.md#files)：拡張子のブラックリストまたはホワイトリストを、サーバー全体またはチャンネルごとに設定でき、名前を変えたファイルも検出します。チャンネルのルールは無料で 1 つ、Premium で 20 まで。
+- 「他のサーバー」フィルターは、他のサーバーのイベントリンクも読み取ります。
+- アカウントの最低作成日数：Jail は、適切な日付に解除される[隔離](./features/onboarding.md#minage-action)になりました。
+- [ボットの参加](./features/onboarding.md#bots)：ボット専用のロール（無料で 1 つ、Premium で 15）と、許可されていないボットのキック。`/bypass bot` はオーナー専用です。
+- `/lock`、`/unlock`、`/slowmode`：`--silent` オプションと、すべてのチャンネルを含む[カテゴリーのロック](./features/channel-lock.md#lock-category)。
+- `/ban` と `/tempban` の[BAN 時のメッセージ削除](./features/sanctions.mdx#ban-delete)の既定値を設定できます。
+- [Authentification Manager](./features/authentication-manager.mdx)：パスキーの名前の変更、複数のロールへのまとめての認証。
+- [ハニーポット](./features/honeypot.md#sanction)：無期限の BAN または Jail。
 - 新しい[インストールウィザード](./setup.md#wizard)：セクションごとのガイド付きの流れ、サーバーに合わせた保護の提案、最後に監査のプレビューを表示します。
 - [スパム対策](./features/anti-spam.mdx) V3。3.5.0 からすべてのサーバーで利用可能です。
   - 新しい検出エンジン：近似の重複、繰り返されるリンク、絵文字と意味のない文字列、フラッド、複数のチャンネルにまたがるスパム。
