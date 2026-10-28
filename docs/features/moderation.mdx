@@ -62,7 +62,7 @@ Utilisez la commande : ```/ban (utilisateur) [durée] [--delete-messages=durée
 Remplacez `(utilisateur)` par la mention ou l’identifiant souhaité et `[raison]` par le motif de la sanction.
 
 - `[durée]` : si elle est renseignée, le bannissement devient temporaire (comme avec [`/tempban`](#tempban)).
-- `[--delete-messages]` : durée de l’historique à supprimer (par exemple `1h`, `1d`, `7d`). Discord limite la suppression à 7 jours maximum.
+- `[--delete-messages]` : durée de l’historique à supprimer (par exemple `1h`, `1d`, `7d`). Discord limite la suppression à 7 jours maximum. Sans cette option, la valeur de la [suppression des messages au bannissement](./sanctions.mdx#ban-delete) s’applique.
 - `[--silent]` : ne pas envoyer de MP à la cible.
 
 :::tip
