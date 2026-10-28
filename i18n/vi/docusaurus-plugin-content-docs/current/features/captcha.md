@@ -77,7 +77,7 @@ Captcha khởi động ở chế độ **Bảng (Tương tác)**, kích hoạt *
 
 ### Xác minh trong Activity {#activity}
 
-Ở chế độ **Bảng**, nút “**Xác minh**” mở **Activity RaidProtect**: thành viên giải một câu đố nhỏ ngay trong Discord, mang màu sắc của máy chủ bạn và kèm các liên kết kênh từ [Quy trình chào đón](../guides/onboarding.md) của bạn. Sau khi xác minh, họ khám phá ở đó [thẻ chào mừng](./onboarding.md#welcome-message) của mình.
+Ở chế độ **Bảng**, nút “**Xác minh**” mở **Activity RaidProtect**: thành viên giải một câu đố nhỏ ngay trong Discord, mang màu sắc của máy chủ bạn và kèm các liên kết kênh từ [Quy trình chào đón](../guides/onboarding.md) của bạn. Trên một máy chủ [Premium](/vi/premium) có biểu tượng, biểu tượng đó hiển thị thay cho logo RaidProtect. Sau khi xác minh, họ khám phá ở đó [thẻ chào mừng](./onboarding.md#welcome-message) của mình.
 
 - **Giải câu đố sai:** giống như một mã sai, nó tiêu tốn một lượt thử, và hình phạt dự kiến được áp dụng khi hết lượt thử. Activity thông báo kết quả cho thành viên trước, rồi hình phạt mới được áp dụng.
 - **Thành công:** thành viên được xác minh khi họ rời màn hình thành công. Nếu họ nhấp vào “**Xác minh**” trong lúc đó, việc xác nhận của họ được áp dụng ngay thay vì mở lại Activity.

@@ -1229,7 +1229,7 @@
     "message": "Truy cập sớm các tính năng mới"
   },
   "premium.feature.beta.desc": {
-    "message": "Người đăng ký nhận trước các tính năng đang ở bản beta, như việc chuyển các timeout của AutoMod thành mute theo vai trò."
+    "message": "Người đăng ký được dùng trước các tính năng đang ở bản beta, hiện tại là tài khoản phụ: liên kết các tài khoản của cùng một người bằng /alt, và các hình phạt của người đó sẽ áp dụng theo."
   },
   "premium.feature.learnMore": {
     "message": "Tìm hiểu thêm"
@@ -7763,5 +7763,77 @@
   "mockup.v2.captcha.failBlock": {
     "message": "Hết lượt thử: Chặn 10 phút",
     "description": "Mockup v2 — captcha: failure action option \"Block 10 min\""
+  },
+  "premium.compare.row.preventiveSlowmode": {
+    "message": "Slowmode phòng ngừa (tối đa 6 kênh)"
+  },
+  "premium.compare.row.disconVoice": {
+    "message": "Kênh thoại trạng thái DISCON"
+  },
+  "premium.compare.cat.automod": {
+    "message": "Automod"
+  },
+  "premium.compare.row.imageCatalog": {
+    "message": "Danh mục hình ảnh ScamLens (danh sách)"
+  },
+  "premium.compare.row.fileRules": {
+    "message": "Quy tắc phần mở rộng tệp theo kênh"
+  },
+  "premium.compare.row.fileCategories": {
+    "message": "Quy tắc phần mở rộng theo danh mục"
+  },
+  "premium.compare.row.privateInvites": {
+    "message": "Lời mời kết bạn và nhóm được cài đặt riêng"
+  },
+  "premium.compare.cat.arrivals": {
+    "message": "Thành viên mới"
+  },
+  "premium.compare.row.autoroles": {
+    "message": "Vai trò tự động"
+  },
+  "premium.compare.row.botRoles": {
+    "message": "Vai trò của bot"
+  },
+  "premium.compare.row.welcomeButtons": {
+    "message": "Nút của tin nhắn chào mừng"
+  },
+  "premium.compare.row.welcomeColor": {
+    "message": "Màu của tin nhắn chào mừng"
+  },
+  "premium.compare.row.captchaIcon": {
+    "message": "Biểu tượng máy chủ trong captcha"
+  },
+  "premium.compare.row.staffPanels": {
+    "message": "Bảng /display staff"
+  },
+  "premium.compare.row.staffPanels.free": {
+    "message": "1 + DISCON"
+  },
+  "premium.compare.row.staffPanels.founder": {
+    "message": "4 + DISCON"
+  },
+  "premium.compare.cat.beta": {
+    "message": "Bản beta công khai"
+  },
+  "premium.compare.row.altSanctions": {
+    "message": "Hình phạt mở rộng sang các tài khoản liên kết (/alt)"
+  },
+  "premium.compare.row.logChannels": {
+    "message": "Các kênh log riêng biệt"
+  },
+  "premium.compare.row.messageCache": {
+    "message": "Tin nhắn được lưu trong bộ nhớ (/snipe, log)"
+  },
+  "premium.compare.row.messageCache.free": {
+    "message": "15 phút"
+  },
+  "premium.compare.row.messageCache.premium": {
+    "message": "6 giờ"
+  },
+  "premium.compare.row.compactLogs": {
+    "message": "Định dạng log gọn"
+  },
+  "premium.compare.row.voiceReactionLogs": {
+    "message": "Log thoại và biểu cảm"
   }
 }

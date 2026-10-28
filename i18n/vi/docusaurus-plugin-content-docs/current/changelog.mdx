@@ -22,25 +22,40 @@ Identity Update đang thử nghiệm: trong khi chờ phát hành ở phiên b�
 ## 3.6.0 Shield Update {#3-6-0}
 
 - **[DISCON](./features/discon.md)** mới: một mức nguy hiểm của máy chủ gồm năm nấc, chỉnh chỉ với một cú nhấp bằng lệnh `/discon` hoặc từ một [bảng dành cho đội ngũ](./features/discon.md#panel). Mỗi cấp tự động siết chặt máy chủ (xác minh, captcha, đóng tin nhắn riêng, chế độ raid, khóa hoàn toàn), và một [kênh thoại](./features/discon.md#voice) hiển thị cấp hiện tại.
-- [Slowmode phòng ngừa](./features/slowmode.md) mới (**Premium**): chế độ chậm của các kênh được chọn tự điều chỉnh để giữ tốc độ tin nhắn mà bạn đặt.
-- [HoneyPot](./features/honeypot.md): [thời gian chờ trước khi xử phạt](./features/honeypot.md#grace) mới, cho một thành viên thiện chí thời gian để nói rằng mình đã nhầm.
-- [Kích hoạt Thông minh](./features/captcha.md#trigger) mới của captcha: ngoài các đợt raid, nó kiểm tra những người vào có tài khoản trông đáng ngờ.
-- Bộ lọc [Máy chủ khác](./features/automod.md#servers) mới trong [Automod](./features/automod.md): lời mời, tin nhắn được chuyển tiếp, liên kết kênh và tag của các máy chủ khác, theo danh sách chặn hoặc danh sách cho phép.
-- Hình phạt **Cách ly** mới, đồng bộ với [cách ly của Discord](./features/sanctions.mdx#discord-quarantine).
-- [ScamLens](./features/scam-images.md): [danh mục hình ảnh](./features/scam-images.md#catalog) (**Premium**) để chặn các hình ảnh lừa đảo của riêng bạn.
-- Mỗi tin nhắn bị AutoMod của Discord chặn tạo một [cảnh cáo](./features/sanctions.mdx) im lặng mang tên “Discord Automod”.
-- Bộ lọc [Phần mở rộng tệp](./features/automod.md#files) mới trong [Automod](./features/automod.md): danh sách chặn hoặc danh sách cho phép các phần mở rộng, trên toàn máy chủ hoặc theo từng kênh, có phát hiện các tệp bị đổi tên. Một quy tắc kênh miễn phí, 20 với Premium.
-- Bộ lọc Máy chủ khác cũng đọc các liên kết sự kiện của một máy chủ khác.
-- Tuổi tài khoản tối thiểu: jail trở thành một [cách ly](./features/onboarding.md#minage-action) được gỡ vào đúng ngày.
-- [Bot tham gia](./features/onboarding.md#bots): vai trò riêng cho bot (1 miễn phí, 15 Premium) và đuổi các bot không được phép, với `/bypass bot` dành riêng cho chủ sở hữu.
-- `/lock`, `/unlock` và `/slowmode`: tùy chọn `--silent`, và [khóa một danh mục](./features/channel-lock.md#lock-category) cùng tất cả các kênh của nó.
-- [Xóa tin nhắn khi cấm](./features/sanctions.mdx#ban-delete) có thể chỉnh mặc định cho `/ban` và `/tempban`.
-- [Authentication Manager](./features/authentication-manager.mdx): đổi tên một passkey, xác thực cho nhiều vai trò cùng lúc.
-- [HoneyPot](./features/honeypot.md#sanction): cấm hoặc jail vĩnh viễn.
-- [Trình hướng dẫn cài đặt](./setup.md#wizard) mới: một lộ trình có hướng dẫn từng phần một, các biện pháp bảo vệ được đề xuất theo máy chủ của bạn và một bản xem trước của bản kiểm tra để kết thúc.
 - [Chống spam](./features/anti-spam.mdx) V3, đã áp dụng cho tất cả từ phiên bản 3.5.0:
   - Công cụ phát hiện mới: tin nhắn gần giống nhau, liên kết lặp lại, emoji và tin nhắn vô nghĩa, flood, và spam trải rộng trên nhiều kênh.
   - [Mẫu có sẵn](./features/anti-spam.mdx#presets) và hình phạt theo nhóm, với [chế độ nâng cao](./features/anti-spam.mdx#advanced) để chỉnh từng trình kích hoạt và [thời lượng](./features/anti-spam.mdx#duration) của nó.
+- [Chống spam](./features/anti-spam.mdx#ignore): tùy chọn mới để giám sát các kênh có tên chứa “spam”, trước đây luôn bị bỏ qua. <SuggestionLink id="600" />
+- [Slowmode phòng ngừa](./features/slowmode.md) mới (**Premium**): chế độ chậm của các kênh được chọn tự điều chỉnh để giữ tốc độ tin nhắn mà bạn đặt.
+- Bộ lọc [Máy chủ khác](./features/automod.md#servers) mới trong [Automod](./features/automod.md): lời mời, tin nhắn được chuyển tiếp, liên kết kênh hoặc sự kiện và tag của các máy chủ khác, theo danh sách chặn hoặc danh sách cho phép.
+- Bộ lọc [Phần mở rộng tệp](./features/automod.md#files) mới trong Automod: chặn các nhóm phần mở rộng hoặc chỉ cho phép một số phần mở rộng, trên toàn máy chủ hoặc theo từng kênh, kể cả khi một tệp được ngụy trang dưới một phần mở rộng khác. Các máy chủ **Premium** có nhiều quy tắc theo kênh hơn.
+- [HoneyPot](./features/honeypot.md): [thời gian chờ trước khi xử phạt](./features/honeypot.md#grace) mới, cho một thành viên thiện chí thời gian để nói rằng mình đã nhầm.
+- [HoneyPot](./features/honeypot.md#sanction): cấm và jail có thể là vĩnh viễn.
+- [Kích hoạt Thông minh](./features/captcha.md#trigger) mới của captcha: ngoài các đợt raid, nó kiểm tra những người vào có tài khoản trông đáng ngờ.
+- Hình phạt **Cách ly** mới, đồng bộ với [cách ly của Discord](./features/sanctions.mdx#discord-quarantine).
+- [ScamLens](./features/scam-images.md): [danh mục hình ảnh](./features/scam-images.md#catalog) (**Premium**) để chặn các hình ảnh lừa đảo của riêng bạn.
+- Mỗi tin nhắn bị AutoMod của Discord chặn tạo một [cảnh cáo](./features/sanctions.mdx) im lặng mang tên “Discord Automod”.
+- [Trình hướng dẫn cài đặt](./setup.md#wizard) mới: một lộ trình có hướng dẫn từng phần một, các biện pháp bảo vệ được đề xuất theo máy chủ của bạn và một bản xem trước của bản kiểm tra để kết thúc.
+- [`/auth`](./features/authentication-manager.mdx#auth) cấp nhiều vai trò được bảo vệ cùng lúc, chỉ bằng một lệnh. <SuggestionLink id="601" />
+- [Vai trò quyền riêng biệt](./features/authentication-manager.mdx#strategies) của Authentication Manager: quyền kênh của vai trò gốc được chuyển sang vai trò 🔑, và một ô chọn cho phép quản trị viên xem tất cả các kênh.
+- [`/auth`](./features/authentication-manager.mdx#logs-tab): các phiên được ghi vào kênh log của Authentication Manager.
+- [`/lock` và `/unlock`](./features/channel-lock.md#lock) khóa và mở khóa cả một danh mục, các kênh của danh mục vẫn được đồng bộ. <SuggestionLink id="595" />
+- Cài đặt mới để [xóa tin nhắn khi cấm](./features/sanctions.mdx#ban-delete): lịch sử tin nhắn được xóa theo mặc định với `/ban`, `?ban` và `/tempban`. <SuggestionLink id="592" />
+- [`/snipe`](./features/moderation.mdx#snipe) cảnh báo khi bộ nhớ đệm tin nhắn bị tắt và đề xuất bật lên. Dùng lệnh này sẽ tự động bật bộ nhớ đệm.
+- [`/lock`, `/unlock`](./features/channel-lock.md#lock) và [`/slowmode`](./features/moderation.mdx#slowmode): tùy chọn `silent` mới để thực hiện mà không thông báo trong kênh.
+- [DISCON](./features/discon.md#panel-channel): bảng có thể được đăng trong khung chat của một kênh thoại.
+- [Activity của captcha](./features/captcha.md#activity): trên một máy chủ **Premium**, biểu tượng của máy chủ thay cho logo RaidProtect.
+- [Authentication Manager](./features/authentication-manager.mdx#manage-methods): bạn có thể đổi tên một passkey.
+- Phần mới [Bot tham gia](./features/onboarding.md#bots): các vai trò được tự động cấp cho bot vào máy chủ, và đuổi các bot không được phép, với [`/bypass bot`](./features/onboarding.md#bypass-bot) để cho một bot vào.
+- [Tin nhắn chào mừng](./features/onboarding.md#welcome-buttons): mỗi nút có thể có emoji riêng.
+- [Tuổi tối thiểu của tài khoản](./features/onboarding.md#minage-action): jail trở thành cách ly, tự động được gỡ khi tài khoản đạt đủ tuổi yêu cầu. Các lượt cách ly đang diễn ra sẽ được điều chỉnh khi bạn thay đổi tuổi tối thiểu: được gỡ nếu giảm hoặc tắt, được kéo dài nếu tăng.
+- [`/unjail`](./features/moderation.mdx#unjail) từ chối gỡ cách ly (tuổi tối thiểu của tài khoản, Discord) và hướng dẫn cách gỡ. Khi jail kết thúc, thành viên đang bị cách ly vẫn giữ vai trò cách ly của mình.
+- Thêm nhiều log mới.
+- Sửa lỗi:
+  - `/unlock` khôi phục chính xác các quyền trước khi khóa, và RaidProtect không còn mất quyền truy cập của chính mình.
+  - `/auth` báo một vai trò đã bị tắt thay vì mở một phiên giả.
+  - Một thành viên bị đưa vào [jail](./features/moderation.mdx#jail) sẽ bị ngắt kết nối khỏi kênh thoại.
+  - Vai trò chưa xác minh của [captcha](./features/captcha.md) không còn có thể được chọn làm vai trò tự động.
 
 ## 3.5.0 Onboarding Update (19/10/2026) {#3-5-0}
 
