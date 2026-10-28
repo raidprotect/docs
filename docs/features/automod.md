@@ -25,10 +25,6 @@ Tout le détail, la sanction et le catalogue d'images sont sur la page [Images d
 
 Le filtre **Autres serveurs** contrôle ce qui renvoie vers d'autres serveurs Discord : les **invitations**, les **messages transférés**, les **liens de salon** et les **liens d'événement**, ainsi que les **tags de serveur** affichés par vos membres. Il bloque la publicité sauvage et les serveurs concurrents ou malveillants, sans toucher à vos partenaires.
 
-:::info Expérimentation : Shield Update
-Le filtre Autres serveurs fait partie de la **Shield Update**, prévue pour la version 3.6.0. En attendant sa sortie, il est en expérimentation, en bêta publique pour les serveurs [Premium](/premium).
-:::
-
 ### Comment ça marche ? {#servers-working}
 
 Trois comportements se règlent séparément, chacun sur l'un de ces modes :
