@@ -87,6 +87,11 @@ const sidebars: SidebarsConfig = {
                 },
                 {
                     type: 'doc',
+                    id: 'features/logs',
+                    customProps: {badges: ['experiment']},
+                },
+                {
+                    type: 'doc',
                     id: 'features/reports',
                 },
                 {

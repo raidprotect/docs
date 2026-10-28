@@ -6,6 +6,21 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Découvrez la liste détaillée des modifications qui ont été apportées à RaidProtect.
 
+## 3.8.0 Logging Update <span className="badge-experiment">Expérimentation</span> {#3-8-0}
+
+:::info Expérimentation
+La Logging Update est en expérimentation : en attendant sa sortie en 3.8.0, elle est en bêta publique pour les serveurs [Premium](/premium). Son contenu peut encore évoluer.
+:::
+
+- Nouvelles [logs du serveur](./features/logs.md) en cinq familles : salons, rôles et invitations, membres, messages, vocal, emojis et réactions. Chaque famille a son salon, et chaque type peut être coupé ou [envoyé ailleurs](./features/logs.md#config).
+- Chaque log commence par son auteur (« @modo a créé le salon #général. ») et montre l'avant et l'après d'une modification, permissions comprises.
+- Nouveaux types de logs : webhooks, intégrations, bots ajoutés ou retirés avec leur rôle, messages épinglés, membres inactifs retirés, boosts, pseudos, emojis, stickers, sons du soundboard et réactions.
+- Le log d'un message supprimé dit qui l'a supprimé. Un message modifié montre l'avant et l'après, avec seulement les lignes changées pour un long message.
+- Logs vocales : durée de la session au départ, et actions du staff (rendre muet, mettre en sourdine, déplacer, déconnecter) avec leur auteur.
+- Trois [formats de logs](./features/logs.md#format) : Défaut, Encadré et Compact.
+- Nouvelle case “**Messages sur le serveur**” dans les [signalements](./features/reports.md) : le fil du signalement reprend les derniers messages du salon, messages supprimés compris.
+- Réservé au **Premium** : le format Compact, les logs vocales et de réactions, la copie des pièces jointes des messages supprimés, [6 heures de messages en mémoire](./features/logs.md#cache) au lieu de 15 minutes et jusqu'à 15 salons de logs au lieu de 3.
+
 ## 3.7.0 Identity Update <span className="badge-experiment">Expérimentation</span> {#3-7-0}
 
 :::info Expérimentation

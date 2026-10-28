@@ -559,8 +559,8 @@ export default function PremiumPage(): React.ReactNode {
             badge: translate({ id: 'premium.feature.beta.badge', message: 'Bêta publique' }),
             area: 'beta',
             title: translate({ id: 'premium.feature.beta.title', message: 'Accès anticipé aux nouveautés' }),
-            description: translate({ id: 'premium.feature.beta.desc', message: 'Les abonnés reçoivent en avant-première les fonctionnalités en bêta, en ce moment les doubles comptes : liez les comptes d\'une même personne avec /alt, et ses sanctions les suivent.' }),
-            docsHref: '/docs/beta/features/alt-accounts',
+            description: translate({ id: 'premium.feature.beta.desc', message: 'Les abonnés reçoivent en avant-première les fonctionnalités en bêta, en ce moment les doubles comptes et les nouvelles logs du serveur : salons, membres, messages, vocal et réactions, avec l\'auteur de chaque action.' }),
+            docsHref: '/docs/beta/features/logs',
         },
     ]
 
