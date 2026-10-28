@@ -15,8 +15,9 @@ const sidebars: SidebarsConfig = {
             id: 'commands',
         },
         {
-             type: 'doc',
-             id: 'changelog'
+            type: 'doc',
+            id: 'changelog',
+            customProps: {anchor: '3-6-0'},
         },
         {
             type: 'doc',
