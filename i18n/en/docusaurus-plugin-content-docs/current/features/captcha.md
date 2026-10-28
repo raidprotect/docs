@@ -77,7 +77,7 @@ The captcha starts in **Panel (Interactive)** mode, triggered **Always**, with 3
 
 ### Verification in the Activity {#activity}
 
-In **Panel** mode, the "**Verify**" button opens the **RaidProtect Activity**: the member solves a small puzzle right in Discord, in your server's colors and with the channel links from your [Onboarding Process](../guides/onboarding.md). Once verified, they discover their [welcome card](./onboarding.md#welcome-message) there.
+In **Panel** mode, the "**Verify**" button opens the **RaidProtect Activity**: the member solves a small puzzle right in Discord, in your server's colors and with the channel links from your [Onboarding Process](../guides/onboarding.md). On a [Premium](/en/premium) server that has an icon, the server icon is shown in place of the RaidProtect logo. Once verified, they discover their [welcome card](./onboarding.md#welcome-message) there.
 
 - **Failed puzzle:** like a wrong code, it uses up an attempt, and the planned sanction applies when attempts run out. The Activity first announces the outcome to the member, then the sanction is applied.
 - **Success:** the member is verified when they leave the success screen. If they click "**Verify**" in the meantime, their validation applies right away instead of relaunching the Activity.
