@@ -1229,7 +1229,7 @@
     "message": "Yeniliklere erken erişim"
   },
   "premium.feature.beta.desc": {
-    "message": "Aboneler, AutoMod timeout'larının rol tabanlı mute'a dönüştürülmesi gibi beta özellikleri ilk onlar alır."
+    "message": "Aboneler beta özelliklerini herkesten önce alır, şu anda çift hesaplar: aynı kişinin hesaplarını /alt ile bağlayın, yaptırımları da bu hesapları takip etsin."
   },
   "premium.feature.learnMore": {
     "message": "Daha fazla bilgi"
@@ -7763,5 +7763,77 @@
   "mockup.v2.captcha.failBlock": {
     "message": "Denemeler tükendi: 10 dk engelle",
     "description": "Mockup v2 — captcha: failure action option \"Block 10 min\""
+  },
+  "premium.compare.row.preventiveSlowmode": {
+    "message": "Önleyici yavaş mod (6 kanala kadar)"
+  },
+  "premium.compare.row.disconVoice": {
+    "message": "DISCON durum ses kanalı"
+  },
+  "premium.compare.cat.automod": {
+    "message": "Automod"
+  },
+  "premium.compare.row.imageCatalog": {
+    "message": "ScamLens görsel kataloğu (listeler)"
+  },
+  "premium.compare.row.fileRules": {
+    "message": "Kanal bazında dosya uzantısı kuralları"
+  },
+  "premium.compare.row.fileCategories": {
+    "message": "Kategori bazında uzantı kuralları"
+  },
+  "premium.compare.row.privateInvites": {
+    "message": "Ayrı ayarlanan arkadaş ve grup davetleri"
+  },
+  "premium.compare.cat.arrivals": {
+    "message": "Katılımlar"
+  },
+  "premium.compare.row.autoroles": {
+    "message": "Otomatik roller"
+  },
+  "premium.compare.row.botRoles": {
+    "message": "Botların rolleri"
+  },
+  "premium.compare.row.welcomeButtons": {
+    "message": "Karşılama mesajı düğmeleri"
+  },
+  "premium.compare.row.welcomeColor": {
+    "message": "Karşılama mesajı rengi"
+  },
+  "premium.compare.row.captchaIcon": {
+    "message": "Captcha'da sunucu simgesi"
+  },
+  "premium.compare.row.staffPanels": {
+    "message": "/display staff panelleri"
+  },
+  "premium.compare.row.staffPanels.free": {
+    "message": "1 + DISCON"
+  },
+  "premium.compare.row.staffPanels.founder": {
+    "message": "4 + DISCON"
+  },
+  "premium.compare.cat.beta": {
+    "message": "Herkese açık betada"
+  },
+  "premium.compare.row.altSanctions": {
+    "message": "Bağlı hesaplara genişletilen yaptırımlar (/alt)"
+  },
+  "premium.compare.row.logChannels": {
+    "message": "Farklı log kanalları"
+  },
+  "premium.compare.row.messageCache": {
+    "message": "Bellekte tutulan mesajlar (/snipe, loglar)"
+  },
+  "premium.compare.row.messageCache.free": {
+    "message": "15 dk"
+  },
+  "premium.compare.row.messageCache.premium": {
+    "message": "6 sa"
+  },
+  "premium.compare.row.compactLogs": {
+    "message": "Kompakt log biçimi"
+  },
+  "premium.compare.row.voiceReactionLogs": {
+    "message": "Ses ve tepki logları"
   }
 }

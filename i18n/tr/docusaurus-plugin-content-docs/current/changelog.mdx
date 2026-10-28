@@ -22,25 +22,40 @@ Identity Update deneme aşamasındadır: 3.7.0 sürümüyle çıkışına kadar 
 ## 3.6.0 Shield Update {#3-6-0}
 
 - Yeni **[DISCON](./features/discon.md)**: `/discon` komutuyla veya [ekip için bir panelden](./features/discon.md#panel) tek tıkla ayarlanabilen, beş kademeli bir sunucu tehlike seviyesi. Her seviye sunucuyu otomatik olarak sıkılaştırır (doğrulama, captcha, DM kapatma, baskın modu, kilitleme) ve bir [ses kanalı](./features/discon.md#voice) geçerli seviyeyi gösterir.
-- Yeni [önleyici yavaş mod](./features/slowmode.md) (**Premium**): seçilen kanalların yavaş modu, belirlediğiniz mesaj akış hızını tutturmak için kendiliğinden ayarlanır.
-- [HoneyPot](./features/honeypot.md): iyi niyetli bir üyeye yanıldığını söyleme zamanı tanıyan yeni [cezadan önceki gecikme](./features/honeypot.md#grace).
-- Captcha'nın yeni [Akıllı tetiklemesi](./features/captcha.md#trigger): baskınlara ek olarak hesabı şüpheli görünen gelenleri de doğrular.
-- Yeni [Diğer sunucular](./features/automod.md#servers) filtresi, [Automod](./features/automod.md) içinde: diğer sunucuların davetleri, iletilen mesajları, kanal bağlantıları ve etiketleri, kara liste veya beyaz liste ile.
-- [Discord karantinasıyla](./features/sanctions.mdx#discord-quarantine) senkronize yeni **Karantina** yaptırımı.
-- [ScamLens](./features/scam-images.md): kendi dolandırıcılık görsellerinizi engellemek için [görsel kataloğu](./features/scam-images.md#catalog) (**Premium**).
-- Discord AutoMod tarafından engellenen her mesaj, “Discord Automod” adına sessiz bir [uyarı](./features/sanctions.mdx) oluşturur.
-- [Automod](./features/automod.md) içinde yeni [Dosya uzantıları](./features/automod.md#files) filtresi: tüm sunucuda veya kanal bazında uzantı kara listeleri ya da beyaz listeleri, yeniden adlandırılmış dosyaların tespitiyle birlikte. Bir kanal kuralı ücretsiz, Premium ile 20.
-- Diğer sunucular filtresi, başka bir sunucunun etkinlik bağlantılarını da okur.
-- Minimum hesap yaşı: jail, doğru tarihte kaldırılan bir [karantinaya](./features/onboarding.md#minage-action) dönüşür.
-- [Botların gelişi](./features/onboarding.md#bots): botlara özel roller (1 ücretsiz, 15 Premium) ve izin verilmeyen botların atılması, yalnızca sunucu sahibine ayrılmış `/bypass bot` ile birlikte.
-- `/lock`, `/unlock` ve `/slowmode`: `--silent` seçeneği ve tüm kanallarıyla birlikte [bir kategorinin kilitlenmesi](./features/channel-lock.md#lock-category).
-- `/ban` ve `/tempban` için varsayılan olarak ayarlanabilen [yasaklamada mesajların silinmesi](./features/sanctions.mdx#ban-delete).
-- [Authentication Manager](./features/authentication-manager.mdx): bir passkey'i yeniden adlandırma, aynı anda birden fazla rol için kimlik doğrulama.
-- [HoneyPot](./features/honeypot.md#sanction): yasaklama veya kalıcı jail.
-- Yeni [kurulum sihirbazı](./setup.md#wizard): bölüm bölüm yönlendirmeli bir akış, sunucunuza göre önerilen korumalar ve sonunda bir denetim önizlemesi.
 - [Anti-spam](./features/anti-spam.mdx) V3, 3.5.0'dan beri herkes için zaten yerinde:
   - Yeni algılama motoru: yaklaşık kopyalar, tekrarlanan bağlantılar, emojiler ve anlamsız mesajlar, flood ve birden fazla kanala yayılan spam.
   - [Hazır ayarlar](./features/anti-spam.mdx#presets) ve ailelere göre ceza; her tetikleyiciyi ayarlamak için bir [gelişmiş mod](./features/anti-spam.mdx#advanced) ve [süresi](./features/anti-spam.mdx#duration) ile birlikte.
+- [Anti-spam](./features/anti-spam.mdx#ignore): adında “spam” geçen ve şimdiye kadar hep yok sayılan kanalları izlemek için yeni seçenek. <SuggestionLink id="600" />
+- Yeni [önleyici yavaş mod](./features/slowmode.md) (**Premium**): seçilen kanalların yavaş modu, belirlediğiniz mesaj akış hızını tutturmak için kendiliğinden ayarlanır.
+- Yeni [Diğer sunucular](./features/automod.md#servers) filtresi, [Automod](./features/automod.md) içinde: diğer sunucuların davetleri, iletilen mesajları, kanal veya etkinlik bağlantıları ve etiketleri, kara liste veya beyaz liste ile.
+- Automod içinde yeni [Dosya uzantıları](./features/automod.md#files) filtresi: uzantı gruplarını engelleyin ya da yalnızca bazılarına izin verin, tüm sunucuda veya kanal kanal, bir dosya başka bir uzantının arkasına gizlendiğinde bile. **Premium** sunucularda kanal başına daha fazla kural vardır.
+- [HoneyPot](./features/honeypot.md): iyi niyetli bir üyeye yanıldığını söyleme zamanı tanıyan yeni [cezadan önceki gecikme](./features/honeypot.md#grace).
+- [HoneyPot](./features/honeypot.md#sanction): yasaklama ve jail kalıcı olabilir.
+- Captcha'nın yeni [Akıllı tetiklemesi](./features/captcha.md#trigger): baskınlara ek olarak hesabı şüpheli görünen gelenleri de doğrular.
+- [Discord karantinasıyla](./features/sanctions.mdx#discord-quarantine) senkronize yeni **Karantina** yaptırımı.
+- [ScamLens](./features/scam-images.md): kendi dolandırıcılık görsellerinizi engellemek için [görsel kataloğu](./features/scam-images.md#catalog) (**Premium**).
+- Discord AutoMod tarafından engellenen her mesaj, “Discord Automod” adına sessiz bir [uyarı](./features/sanctions.mdx) oluşturur.
+- Yeni [kurulum sihirbazı](./setup.md#wizard): bölüm bölüm yönlendirmeli bir akış, sunucunuza göre önerilen korumalar ve sonunda bir denetim önizlemesi.
+- [`/auth`](./features/authentication-manager.mdx#auth) birden fazla korumalı rolü tek komutla, tek seferde verir. <SuggestionLink id="601" />
+- Authentication Manager'ın [ayrı izin rolü](./features/authentication-manager.mdx#strategies): orijinal rolün kanal izinleri 🔑 rolüne taşınır ve bir onay kutusu yöneticilere tüm kanalları görme izni verir.
+- [`/auth`](./features/authentication-manager.mdx#logs-tab): oturumlar Authentication Manager'ın log kanalına kaydedilir.
+- [`/lock` ve `/unlock`](./features/channel-lock.md#lock) bütün bir kategoriyi kilitler ve kilidini açar, kategorinin kanalları senkronize kalır. <SuggestionLink id="595" />
+- Yeni [yasaklamada mesajların silinmesi](./features/sanctions.mdx#ban-delete) ayarı: `/ban`, `?ban` ve `/tempban` ile varsayılan olarak silinen geçmiş. <SuggestionLink id="592" />
+- [`/snipe`](./features/moderation.mdx#snipe), mesaj önbelleği kapalıyken uyarır ve açmayı önerir. Komutu kullanmak önbelleği otomatik olarak açar.
+- [`/lock`, `/unlock`](./features/channel-lock.md#lock) ve [`/slowmode`](./features/moderation.mdx#slowmode): kanalda duyuru yapmadan işlem için yeni `silent` seçeneği.
+- [DISCON](./features/discon.md#panel-channel): panel bir ses kanalının sohbetinde yayımlanabilir.
+- [Captcha Activity'si](./features/captcha.md#activity): **Premium** bir sunucuda RaidProtect logosunun yerini sunucunun simgesi alır.
+- [Authentication Manager](./features/authentication-manager.mdx#manage-methods): bir passkey'i yeniden adlandırabilirsiniz.
+- Yeni [Botların gelişi](./features/onboarding.md#bots) bölümü: sunucuya katılan botlara otomatik olarak verilen roller ve izin verilmeyen botların atılması, birine giriş izni vermek için [`/bypass bot`](./features/onboarding.md#bypass-bot) ile birlikte.
+- [Karşılama mesajı](./features/onboarding.md#welcome-buttons): her düğmenin kendi emojisi olabilir.
+- [Minimum hesap yaşı](./features/onboarding.md#minage-action): jail bir karantinaya dönüşür ve hesap gerekli yaşa ulaştığında otomatik olarak kaldırılır. Devam eden karantinalar minimum yaşı değiştirdiğinizde uyarlanır: yaş düşerse veya kapatılırsa kaldırılır, yükselirse uzatılır.
+- [`/unjail`](./features/moderation.mdx#unjail) bir karantinayı (minimum hesap yaşı, Discord) kaldırmayı reddeder ve nasıl kaldırılacağını açıklar. Jail sona erdiğinde karantinadaki üye rolünü korur.
+- Birkaç yeni log eklendi.
+- Düzeltme:
+  - `/unlock` kilitlemeden önceki izinleri birebir geri yükler ve RaidProtect artık kendi erişimlerini kaybetmez.
+  - `/auth` sahte bir oturum açmak yerine devre dışı bir rolü bildirir.
+  - [Jail](./features/moderation.mdx#jail)'e gönderilen bir üyenin ses bağlantısı kesilir.
+  - [Captcha](./features/captcha.md)'nın doğrulanmamış rolü artık otomatik rol olarak seçilemez.
 
 ## 3.5.0 Onboarding Update (19.10.2026) {#3-5-0}
 

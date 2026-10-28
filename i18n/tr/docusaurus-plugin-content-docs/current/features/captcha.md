@@ -77,7 +77,7 @@ Captcha, **Panel (Etkileşimli)** modunda, **Sürekli** tetiklemeyle, 3 denemeyl
 
 ### Activity içinde doğrulama {#activity}
 
-**Panel** modunda “**Doğrula**” düğmesi **RaidProtect Activity**'yi açar: üye, sunucunuzun renklerinde ve [Karşılama Sürecinizdeki](../guides/onboarding.md) kanal bağlantılarıyla küçük bir bulmacayı doğrudan Discord içinde çözer. Doğrulandıktan sonra orada [karşılama kartını](./onboarding.md#welcome-message) keşfeder.
+**Panel** modunda “**Doğrula**” düğmesi **RaidProtect Activity**'yi açar: üye, sunucunuzun renklerinde ve [Karşılama Sürecinizdeki](../guides/onboarding.md) kanal bağlantılarıyla küçük bir bulmacayı doğrudan Discord içinde çözer. Simgesi olan bir [Premium](/tr/premium) sunucuda, RaidProtect logosunun yerine bu simge gösterilir. Doğrulandıktan sonra orada [karşılama kartını](./onboarding.md#welcome-message) keşfeder.
 
 - **Bulmaca başarısız:** yanlış bir kod gibi bir deneme harcar ve denemeler tükendiğinde öngörülen yaptırım uygulanır. Activity önce sonucu üyeye bildirir, ardından yaptırım uygulanır.
 - **Başarı:** üye, başarı ekranından çıktığında doğrulanır. Bu arada “**Doğrula**”ya tıklarsa, doğrulaması Activity'yi yeniden başlatmak yerine hemen uygulanır.
