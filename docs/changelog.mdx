@@ -15,9 +15,11 @@ L'Identity Update est en expérimentation : en attendant sa sortie en 3.7.0, el
 - Nouvelle commande [`/alt`](./features/alt-accounts.md#alt) et [doubles comptes](./features/alt-accounts.md) : liez les comptes d'une même personne, choisissez son compte principal, et ses sanctions (bannissement, expulsion, mute, jail, timeout, softban) s'étendent aux comptes liés. Lever la sanction de l'un la lève pour tous. <SuggestionLink id="404" /> <SuggestionLink id="263" />
 - [Sanctions des comptes liés](./features/alt-accounts.md#modes) réglables par type, avec un mode **Piège** et une [sanction de contournement](./features/alt-accounts.md#evasion) pour le compte lié qui arrive ou écrit pendant la sanction.
 - Les comptes liés absents du serveur sont sanctionnés à leur arrivée.
+- Une sanction étendue au groupe devient une [sanction de groupe](./features/alt-accounts.md#group-sanction) dans `/sanctions` et `/modview` : on l'annule, la supprime ou la modifie d'un coup pour tous les comptes.
+- Les logs de sanction citent les comptes liés, avec un bouton “**Comptes liés**” vers le panneau `/alt` au format embed.
 - Nouveau réglage [Un seul compte par personne](./features/alt-accounts.md#single-account) : les comptes secondaires sont mis en quarantaine.
 - Le [captcha](./features/captcha.md#activity-alts) repère les doubles comptes : il lie lui-même les comptes sûrs d'être la même personne, et propose à votre équipe les liens probables.
-- Les [sanctions des comptes liés](./features/alt-accounts.md#modes) sont réservées au **Premium**. Sans Premium, `/alt` lie et consulte les comptes sans limite.
+- Les [sanctions des comptes liés](./features/alt-accounts.md#modes) sont réservées au **Premium**. Sans Premium, `/alt` lie et consulte les comptes sans limite, et Un seul compte par personne reste disponible.
 
 ## 3.6.0 Shield Update {#3-6-0}
 
