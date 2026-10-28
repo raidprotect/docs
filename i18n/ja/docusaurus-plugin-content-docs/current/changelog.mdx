@@ -15,9 +15,11 @@ Identity Update は実験中です。3.7.0 でのリリースまでは、[Premiu
 - 新コマンド [`/alt`](./features/alt-accounts.md#alt) と[複数アカウント](./features/alt-accounts.md)：同一人物のアカウントを連携し、主アカウントを選べます。その人物への処罰（BAN、キック、ミュート、Jail、タイムアウト、ソフトBAN）は、連携したアカウントにも及びます。いずれかの処罰を解除すると、全員の処罰が解除されます。 <SuggestionLink id="404" /> <SuggestionLink id="263" />
 - [連携アカウントの処罰](./features/alt-accounts.md#modes)を処罰の種類ごとに設定できます。**罠**モードと、処罰中に参加または書き込みをした連携アカウント向けの[回避への処罰](./features/alt-accounts.md#evasion)があります。
 - サーバーにいない連携アカウントは、参加時に処罰されます。
+- グループに及んだ処罰は、`/sanctions` と `/modview` で[グループ処罰](./features/alt-accounts.md#group-sanction)になります。全アカウント分をまとめて取り消し、削除、変更できます。
+- 処罰のログに連携アカウントが記載され、埋め込み形式では `/alt` パネルを開く「**連携アカウント**」ボタンが付きます。
 - 新設定[1人1アカウント](./features/alt-accounts.md#single-account)：副アカウントは隔離されます。
 - [キャプチャ](./features/captcha.md#activity-alts)が複数アカウントを検知します。同一人物と確実に判断できるアカウントは自動で連携し、可能性の高い連携は運営チームに提案します。
-- [連携アカウントの処罰](./features/alt-accounts.md#modes)は **Premium** 限定です。Premium でない場合、`/alt` はアカウントの連携と確認を、制限なく行えます。
+- [連携アカウントの処罰](./features/alt-accounts.md#modes)は **Premium** 限定です。Premium でない場合、`/alt` はアカウントの連携と確認を、制限なく行えます。1人1アカウントも引き続き利用できます。
 
 ## 3.6.0 Shield Update {#3-6-0}
 
