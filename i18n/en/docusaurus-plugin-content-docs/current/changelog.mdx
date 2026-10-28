@@ -28,28 +28,28 @@ The Identity Update is an experiment: until its release in 3.7.0, it is in publi
 - [Anti-spam](./features/anti-spam.mdx) V3, already in place for everyone since 3.5.0:
   - New detection engine: near-duplicates, repeated links, emojis and gibberish, flood, and spam spread across several channels.
   - [Presets](./features/anti-spam.mdx#presets) and sanctions per family, with an [advanced mode](./features/anti-spam.mdx#advanced) to set each trigger and its [duration](./features/anti-spam.mdx#duration).
-- [Anti-spam](./features/anti-spam.mdx#ignore): new option to monitor channels whose name contains “spam”, which were always ignored until now. <SuggestionLink id="600" />
-- New [preventive slowmode](./features/slowmode.md) (**Premium**): the slowmode of the chosen channels adjusts itself to hold the message rate you set.
 - New [Other servers](./features/automod.md#servers) filter in [Automod](./features/automod.md): invites, forwarded messages, channel or event links and tags from other servers, as a blocklist or an allowlist.
-- New [File extensions](./features/automod.md#files) filter in Automod: block groups of extensions or allow only some, server-wide or channel by channel, even when a file is disguised under another extension. **Premium** servers get more per-channel rules.
-- [HoneyPot](./features/honeypot.md): new [delay before sanction](./features/honeypot.md#grace), which gives a good-faith member time to say they made a mistake.
-- [HoneyPot](./features/honeypot.md#sanction): ban and jail can be permanent.
-- New [Smart trigger](./features/captcha.md#trigger) for the captcha: besides raids, it checks newcomers whose account looks suspicious.
-- New **Quarantine** sanction, synchronized with [Discord's quarantine](./features/sanctions.mdx#discord-quarantine).
-- [ScamLens](./features/scam-images.md): [image catalog](./features/scam-images.md#catalog) (**Premium**) to block your own scam images.
-- Each message blocked by Discord's AutoMod creates a silent [warning](./features/sanctions.mdx) in the name of "Discord Automod".
+- New [File extensions](./features/automod.md#files) filter in Automod: block groups of extensions or allow only some, server-wide or channel by channel, even when a file is disguised under another extension. **Premium** servers get more per-channel rules. <SuggestionLink id="505" />
+- New [preventive slowmode](./features/slowmode.md) (**Premium**): the slowmode of the chosen channels adjusts itself to hold the message rate you set.
 - New [setup wizard](./setup.md#wizard): a guided path section by section, protections suggested for your server and an audit preview to finish.
+- New [Bot arrival](./features/onboarding.md#bots) section: roles given automatically to bots that join the server, and kicking of unauthorized bots, with [`/bypass bot`](./features/onboarding.md#bypass-bot) to let one in.
+- New **Quarantine** sanction, synchronized with [Discord's quarantine](./features/sanctions.mdx#discord-quarantine).
+- New [Smart trigger](./features/captcha.md#trigger) for the captcha: besides raids, it checks newcomers whose account looks suspicious.
+- [ScamLens](./features/scam-images.md): [image catalog](./features/scam-images.md#catalog) (**Premium**) to block your own scam images.
+- [HoneyPot](./features/honeypot.md): new [delay before sanction](./features/honeypot.md#grace), which gives a good-faith member time to say they made a mistake.
+- [Anti-spam](./features/anti-spam.mdx#ignore): new option to monitor channels whose name contains “spam”, which were always ignored until now. <SuggestionLink id="600" />
+- [HoneyPot](./features/honeypot.md#sanction): ban and jail can be permanent.
+- Each message blocked by Discord's AutoMod creates a silent [warning](./features/sanctions.mdx) in the name of "Discord Automod".
 - [`/auth`](./features/authentication-manager.mdx#auth) assigns several protected roles at once, in a single command. <SuggestionLink id="601" />
 - Authentication Manager [separate permissions role](./features/authentication-manager.mdx#strategies): channel permissions of the original role are moved to the 🔑 role, and a checkbox lets you give administrators view access to every channel.
 - [`/auth`](./features/authentication-manager.mdx#logs-tab): sessions are logged in the Authentication Manager log channel.
 - [`/lock` and `/unlock`](./features/channel-lock.md#lock) lock and unlock a whole category, and its channels stay synced. <SuggestionLink id="595" />
+- [`/lock`, `/unlock`](./features/channel-lock.md#lock) and [`/slowmode`](./features/moderation.mdx#slowmode): new `silent` option to act without an announcement in the channel.
 - New [message deletion on ban](./features/sanctions.mdx#ban-delete) setting: the history deleted by default with `/ban`, `?ban` and `/tempban`. <SuggestionLink id="592" />
 - [`/snipe`](./features/moderation.mdx#snipe) warns you when message caching is disabled and offers to enable it. Using it turns message caching on.
-- [`/lock`, `/unlock`](./features/channel-lock.md#lock) and [`/slowmode`](./features/moderation.mdx#slowmode): new `silent` option to act without an announcement in the channel.
 - [DISCON](./features/discon.md#panel-channel): the panel can be posted in the chat of a voice channel.
 - [Captcha Activity](./features/captcha.md#activity): on a **Premium** server, the server icon replaces the RaidProtect logo.
 - [Authentication Manager](./features/authentication-manager.mdx#manage-methods): you can rename a passkey.
-- New [Bot arrival](./features/onboarding.md#bots) section: roles given automatically to bots that join the server, and kicking of unauthorized bots, with [`/bypass bot`](./features/onboarding.md#bypass-bot) to let one in.
 - [Welcome message](./features/onboarding.md#welcome-buttons): each button can have its own emoji.
 - [Minimum account age](./features/onboarding.md#minage-action): jail becomes a quarantine, lifted automatically when the account reaches the required age. Ongoing quarantines adjust when you change the minimum age: lifted if it goes down or is disabled, extended if it goes up.
 - [`/unjail`](./features/moderation.mdx#unjail) refuses to lift a quarantine (minimum account age, Discord) and explains how to do it. The end of a jail keeps the role of a quarantined member.

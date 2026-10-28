@@ -27,28 +27,28 @@ Identity Update 處於實驗階段：在 3.7.0 正式推出之前，它為 [Prem
 - [Antispam](./features/anti-spam.mdx) V3，自 3.5.0 起已對所有人啟用：
   - 新的偵測引擎：近似重複、重複連結、表情符號與亂碼、洗版，以及散布在多個頻道的垃圾訊息。
   - [預設組合](./features/anti-spam.mdx#presets)與依類別設定的處罰，並提供[進階模式](./features/anti-spam.mdx#advanced)來設定每個觸發器及其[時長](./features/anti-spam.mdx#duration)。
-- [Antispam](./features/anti-spam.mdx#ignore)：新增選項，可監控名稱包含「spam」的頻道，先前這些頻道一律被忽略。 <SuggestionLink id="600" />
-- 新增[預防性慢速模式](./features/slowmode.md)（**Premium**）：所選頻道的慢速模式會自動調整，以維持您所設定的訊息流量。
 - [Automod](./features/automod.md) 新增[其他伺服器](./features/automod.md#servers)過濾器：其他伺服器的邀請、轉發訊息、頻道或活動連結與標籤，支援黑名單或白名單。
-- Automod 新增[副檔名](./features/automod.md#files)過濾器：封鎖成組的副檔名，或只允許其中幾種，可套用於整個伺服器或逐一頻道設定，即使檔案偽裝成其他副檔名也能辨識。**Premium** 伺服器可設定更多頻道規則。
-- [HoneyPot](./features/honeypot.md)：新增[處罰前延遲](./features/honeypot.md#grace)，讓出於善意的成員有時間表示自己搞錯了。
-- [HoneyPot](./features/honeypot.md#sanction)：停權與監禁可以設為永久。
-- 新增驗證碼的[智慧觸發方式](./features/captcha.md#trigger)：除了突襲之外，它也會驗證帳號看起來可疑的新加入者。
-- 新增**隔離**處罰，與 [Discord 的隔離](./features/sanctions.mdx#discord-quarantine)同步。
-- [ScamLens](./features/scam-images.md)：[圖片目錄](./features/scam-images.md#catalog)（**Premium**），用於封鎖您自己的詐騙圖片。
-- 每則被 Discord AutoMod 攔截的訊息，都會以「Discord Automod」的名義建立一個靜默的[警告](./features/sanctions.mdx)。
+- Automod 新增[副檔名](./features/automod.md#files)過濾器：封鎖成組的副檔名，或只允許其中幾種，可套用於整個伺服器或逐一頻道設定，即使檔案偽裝成其他副檔名也能辨識。**Premium** 伺服器可設定更多頻道規則。 <SuggestionLink id="505" />
+- 新增[預防性慢速模式](./features/slowmode.md)（**Premium**）：所選頻道的慢速模式會自動調整，以維持您所設定的訊息流量。
 - 新的[安裝精靈](./setup.md#wizard)：逐區段的引導式流程、依您的伺服器提議的防護，並以稽核預覽作結。
+- 新增[機器人加入](./features/onboarding.md#bots)區段：為加入伺服器的機器人自動授予身分組，並踢出未經授權的機器人，可使用 [`/bypass bot`](./features/onboarding.md#bypass-bot) 放行某個機器人。
+- 新增**隔離**處罰，與 [Discord 的隔離](./features/sanctions.mdx#discord-quarantine)同步。
+- 新增驗證碼的[智慧觸發方式](./features/captcha.md#trigger)：除了突襲之外，它也會驗證帳號看起來可疑的新加入者。
+- [ScamLens](./features/scam-images.md)：[圖片目錄](./features/scam-images.md#catalog)（**Premium**），用於封鎖您自己的詐騙圖片。
+- [HoneyPot](./features/honeypot.md)：新增[處罰前延遲](./features/honeypot.md#grace)，讓出於善意的成員有時間表示自己搞錯了。
+- [Antispam](./features/anti-spam.mdx#ignore)：新增選項，可監控名稱包含「spam」的頻道，先前這些頻道一律被忽略。 <SuggestionLink id="600" />
+- [HoneyPot](./features/honeypot.md#sanction)：停權與監禁可以設為永久。
+- 每則被 Discord AutoMod 攔截的訊息，都會以「Discord Automod」的名義建立一個靜默的[警告](./features/sanctions.mdx)。
 - [`/auth`](./features/authentication-manager.mdx#auth) 可透過一個指令一次授予多個受保護的身分組。 <SuggestionLink id="601" />
 - Authentication Manager 的[獨立權限身分組](./features/authentication-manager.mdx#strategies)：原身分組的頻道權限會移到 🔑 身分組，並新增一個核取方塊，可讓管理員檢視所有頻道。
 - [`/auth`](./features/authentication-manager.mdx#logs-tab)：工作階段會記錄在 Authentication Manager 的日誌頻道。
 - [`/lock` 與 `/unlock`](./features/channel-lock.md#lock) 可鎖定和解鎖整個類別，類別內的頻道保持同步。 <SuggestionLink id="595" />
+- [`/lock`、`/unlock`](./features/channel-lock.md#lock) 與 [`/slowmode`](./features/moderation.mdx#slowmode)：新增 `silent` 選項，執行時不在頻道中發布公告。
 - 新增[停權時刪除訊息](./features/sanctions.mdx#ban-delete)設定：使用 `/ban`、`?ban` 與 `/tempban` 時預設刪除的訊息紀錄。 <SuggestionLink id="592" />
 - [`/snipe`](./features/moderation.mdx#snipe) 會在訊息快取關閉時提醒，並建議開啟。使用此指令會自動開啟快取。
-- [`/lock`、`/unlock`](./features/channel-lock.md#lock) 與 [`/slowmode`](./features/moderation.mdx#slowmode)：新增 `silent` 選項，執行時不在頻道中發布公告。
 - [DISCON](./features/discon.md#panel-channel)：面板可以發布在語音頻道的聊天室中。
 - [驗證碼 Activity](./features/captcha.md#activity)：在 **Premium** 伺服器上，伺服器圖示會取代 RaidProtect 標誌。
 - [Authentication Manager](./features/authentication-manager.mdx#manage-methods)：您可以重新命名 passkey。
-- 新增[機器人加入](./features/onboarding.md#bots)區段：為加入伺服器的機器人自動授予身分組，並踢出未經授權的機器人，可使用 [`/bypass bot`](./features/onboarding.md#bypass-bot) 放行某個機器人。
 - [歡迎訊息](./features/onboarding.md#welcome-buttons)：每個按鈕都可以設定自己的表情符號。
 - [帳號最短註冊時長](./features/onboarding.md#minage-action)：監禁改為隔離，帳號達到要求的時長後自動解除。變更最短時長時，進行中的隔離會跟著調整：降低或關閉則解除，提高則延長。
 - [`/unjail`](./features/moderation.mdx#unjail) 不會解除隔離（帳號最短註冊時長、Discord），並說明解除方式。監禁結束時，隔離中的成員會保留其身分組。
