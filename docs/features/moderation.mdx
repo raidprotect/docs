@@ -136,7 +136,7 @@ Utilisez la commande : ```/jail (membre) [--silent] [raison]```
 Remplacez `(membre)` par la mention ou l'identifiant souhaité et `[raison]` par le motif de la sanction.
 
 :::warning
-Le [rôle Jail](./sanctions.mdx#jail) doit être configuré via `/settings` avant de pouvoir utiliser cette commande. Les modules automatiques, eux, retombent sur un timeout quand aucun rôle Jail n'est configuré.
+Le [rôle Jail](./sanctions.mdx#jail) doit être configuré via `/settings` avant de pouvoir utiliser cette commande. Les modules automatiques, eux, retombent sur un timeout quand aucun rôle Jail n'est configuré. Un membre emprisonné est aussi déconnecté de son salon vocal.
 :::
 
 ### <Icon src="/img/icons/SanctionsJAILTemp.svg" alt="icon SanctionsJAILTemp" title=":iconSanctionsJAILTemp:" /> Emprisonner temporairement un utilisateur {#tempjail}
@@ -154,6 +154,8 @@ La commande `/unjail` vous permet de retirer le rôle Jail d'un membre, lui perm
 Utilisez la commande : ```/unjail (membre) [--silent] [raison]```
 
 Remplacez `(membre)` par la mention ou l'identifiant souhaité et `[raison]` par le motif de la libération.
+
+Un membre en quarantaine (âge minimum du compte, quarantaine Discord) n’est pas au jail : `/unjail` le refuse et indique comment lever sa quarantaine.
 
 ## <Icon src="/img/icons/SanctionsWARN.svg" alt="icon SanctionsWARN" title=":iconSanctionsWARN:" /> Avertir un utilisateur {#warn}
 

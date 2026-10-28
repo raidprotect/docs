@@ -20,7 +20,7 @@ L'historique des sanctions enregistre automatiquement toutes les actions de mod�
 - **Sanctions manuelles** : toutes les [commandes de modération](./moderation.mdx) (`/ban`, `/tempban`, `/kick`, `/mute`, `/jail`, `/warn`…) sont enregistrées dans l'historique.
 - **Sanctions automatiques** : les sanctions appliquées par nos modules de protection ([anti-spam](./anti-spam.mdx), [HoneyPot](./honeypot.md), [ScamLens](./scam-images.md)…) sont également ajoutées à l'historique.
 - **Bannissements, expulsions et timeouts** : les sanctions appliquées sans passer par RaidProtect sont ajoutées à l'historique.
-- **AutoMod de Discord** : les timeouts posés par l'AutoMod de Discord sont enregistrés. Avec la Shield Update (en expérimentation), chaque message bloqué par une règle AutoMod crée aussi un **avertissement** au nom de “**Discord Automod**”, silencieux (aucun MP), sauf si la règle applique déjà un timeout.
+- **AutoMod de Discord** : les timeouts posés par l'AutoMod de Discord sont enregistrés. Chaque message bloqué par une règle AutoMod crée aussi un **avertissement** au nom de “**Discord Automod**”, silencieux (aucun MP), sauf si la règle applique déjà un timeout.
 - **Notifications des sanctions** : les membres sanctionnés reçoivent un message privé les informant de la sanction et de sa raison. Le bot envoie également un accusé de réception détaillé confirmant le statut de l'envoi : **reçu**, **MP fermés**, **expiré** ou **silencieux** (lorsque l'option `[--silent]` est utilisée). Pour les kicks, softbans et bans temporaires, ce message contient également un **bouton avec une invitation au serveur** afin que le membre puisse revenir une fois la sanction terminée.
 
 :::info
@@ -159,11 +159,7 @@ Dans l'écran Jail, le sélecteur “**Gestion des rôles lors du jail**” cont
 - “**Ajouter le rôle de jail**” *(par défaut)* : le membre garde ses rôles, le rôle de jail est ajouté.
 - “**Remplacer tous les rôles**” : nous **retirons tous les rôles du membre** le temps de l'emprisonnement et les lui restaurons à sa libération. Plus strict, cela évite qu'un rôle avec des permissions explicites ne contourne les restrictions du rôle Jail.
 
-### Quarantaine Discord synchronisée <span className="badge-experiment">Expérimentation</span> {#discord-quarantine}
-
-:::info Expérimentation : Shield Update
-La quarantaine Discord synchronisée fait partie de la **Shield Update**, prévue pour la version 3.6.0. En attendant sa sortie, elle est en expérimentation, en bêta publique pour les serveurs [Premium](/premium).
-:::
+### Quarantaine Discord synchronisée {#discord-quarantine}
 
 L'AutoMod de Discord peut mettre en quarantaine un membre dont le profil enfreint une règle (pseudo, tag de serveur). Avec ce réglage, nous suivons cette quarantaine : le membre reçoit le **rôle de jail** et une sanction **Quarantaine** est enregistrée dans l'historique. Il en sort dès que Discord lève la quarantaine.
 
@@ -175,6 +171,10 @@ L'AutoMod de Discord peut mettre en quarantaine un membre dont le profil enfrein
 :::info
 Ce réglage exige un [rôle Jail](#jail). Le désactiver libère les quarantaines qu'il a posées.
 :::
+
+### Suppression des messages au bannissement {#ban-delete}
+
+Dans l'écran “**Sanctions**”, le sélecteur “**Suppression des messages au bannissement**” fixe l'historique supprimé par défaut quand vous bannissez avec `/ban`, `?ban` ou `/tempban` sans préciser `--delete-messages`. Choisissez “**Aucune suppression**” (par défaut), 1 heure, 6 heures, 12 heures, 1 jour, 3 jours ou 7 jours. Une valeur donnée dans la commande l'emporte.
 
 ### Mute {#mute}
 

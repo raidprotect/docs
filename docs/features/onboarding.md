@@ -120,13 +120,13 @@ Pour désactiver le filtre, cliquez sur “**Réinitialiser**”. RaidProtect a 
 | Action | Effet sur un compte trop récent |
 |---|---|
 | “**Expulser**” (par défaut) | Il est expulsé à chaque tentative tant que son compte est trop récent. |
-| “**Jail jusqu'à l'âge requis**” | Il entre sans rien voir du serveur, et sort du [jail](./sanctions.mdx#jail) dès qu'il a l'âge requis. |
+| “**Quarantaine jusqu'à l'âge requis**” | Il entre sans rien voir du serveur (via le [rôle Jail](./sanctions.mdx#jail)), et sort de sa quarantaine dès qu'il a l'âge requis, à la date indiquée. |
 | “**Retenir à l'entrée**” | Il est bloqué sur un [captcha](./captcha.md) qu'il ne peut résoudre qu'une fois l'âge atteint. |
 
-Le compte reçoit un message privé avec la date à laquelle il aura accès au serveur. Les expulsions, mises au jail et bannissements sont notés dans le salon de logs.
+Le compte reçoit un message privé avec la date à laquelle il aura accès au serveur. Les expulsions, quarantaines et bannissements sont notés dans le salon de logs.
 
 :::info
-- “**Jail jusqu'à l'âge requis**” demande un Rôle de Jail, configuré dans l'onglet “**Modération**” > “**Sanctions**”. Sans lui, RaidProtect vous propose de le configurer ou de vous replier sur “**Bannir jusqu'à l'âge requis**” : le compte sort du serveur et son bannissement est levé automatiquement à la bonne date.
+- “**Quarantaine jusqu'à l'âge requis**” demande un Rôle de Jail, configuré dans l'onglet “**Modération**” > “**Sanctions**”. Sans lui, RaidProtect vous propose de le configurer ou de vous replier sur “**Bannir jusqu'à l'âge requis**” : le compte sort du serveur et son bannissement est levé automatiquement à la bonne date.
 - “**Retenir à l'entrée**” demande un captcha actif en mode **Panneau (Interactif)**.
 :::
 
@@ -134,7 +134,7 @@ Le compte reçoit un message privé avec la date à laquelle il aura accès au s
 
 Utilisez la commande : ```/bypass minage [utilisateur]```
 
-Remplacez `[utilisateur]` par l'[identifiant](../guides/id.mdx) souhaité, ce dernier disposera de 10 minutes pour rejoindre le serveur sans être bloqué par l'âge requis. Vous pouvez aussi utiliser la commande sans spécifier d'utilisateur pour connaître la liste actuelle des utilisateurs bypass.
+Remplacez `[utilisateur]` par l'[identifiant](../guides/id.mdx) souhaité, ce dernier disposera de 10 minutes pour rejoindre le serveur sans être bloqué par l'âge requis. Vous pouvez aussi utiliser la commande sans spécifier d'utilisateur pour connaître la liste actuelle des utilisateurs bypass. Elle lève aussi la quarantaine d'un compte trop récent. `/unjail` ne la lève pas : il indique la commande à utiliser.
 
 ## Questions fréquentes {#faq}
 
@@ -160,4 +160,4 @@ Une valeur de quelques heures à 1 jour suffit à écarter la plupart des compt
 
 ### Un compte trop récent est-il banni ?
 
-Non, pas par défaut : il est expulsé à chaque tentative. Vous pouvez aussi le mettre au jail jusqu'à l'âge requis ou le retenir derrière le captcha. Le bannissement temporaire n'est qu'un repli quand le jail n'est pas configuré.
+Non, pas par défaut : il est expulsé à chaque tentative. Vous pouvez aussi le mettre en quarantaine jusqu'à l'âge requis ou le retenir derrière le captcha. Le bannissement temporaire n'est qu'un repli quand le rôle Jail n'est pas configuré.
