@@ -15,9 +15,11 @@ Identity Update 處於實驗階段：在 3.7.0 正式推出之前，它為 [Prem
 - 新增 [`/alt`](./features/alt-accounts.md#alt) 指令與[多帳號](./features/alt-accounts.md)：關聯同一個人的帳號，選擇其主帳號，其處罰（停權、踢出、禁言、監禁、超時、軟停權）會延伸到關聯帳號。解除其中一個的處罰，就會解除所有帳號的處罰。 <SuggestionLink id="404" /> <SuggestionLink id="263" />
 - [關聯帳號的處罰](./features/alt-accounts.md#modes)可依類型設定，並提供**陷阱**模式，以及針對在處罰期間加入或發言的關聯帳號的[規避處罰](./features/alt-accounts.md#evasion)。
 - 不在伺服器中的關聯帳號，會在其加入時受到處罰。
+- 延伸到群組的處罰，會在 `/sanctions` 和 `/modview` 中成為[群組處罰](./features/alt-accounts.md#group-sanction)：可一次為所有帳號取消、刪除或修改。
+- 處罰紀錄會列出關聯帳號，嵌入格式下還附有開啟 `/alt` 面板的「**關聯帳號**」按鈕。
 - 新增[每人僅限一個帳號](./features/alt-accounts.md#single-account)設定：次要帳號會被隔離。
 - [驗證碼](./features/captcha.md#activity-alts)能偵測多帳號：它會自行關聯確定是同一個人的帳號，並向您的團隊提議可能的關聯。
-- [關聯帳號的處罰](./features/alt-accounts.md#modes)僅限 **Premium**。沒有 Premium 時，`/alt` 仍可無限制地關聯與查閱帳號。
+- [關聯帳號的處罰](./features/alt-accounts.md#modes)僅限 **Premium**。沒有 Premium 時，`/alt` 仍可無限制地關聯與查閱帳號，每人僅限一個帳號也仍可使用。
 
 ## 3.6.0 Shield Update {#3-6-0}
 
