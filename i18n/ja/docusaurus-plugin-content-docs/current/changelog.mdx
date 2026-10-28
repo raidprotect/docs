@@ -27,30 +27,26 @@ Identity Update は実験中です。3.7.0 でのリリースまでは、[Premiu
 - [スパム対策](./features/anti-spam.mdx) V3。3.5.0 からすべてのサーバーで利用可能です。
   - 新しい検出エンジン：近似の重複、繰り返されるリンク、絵文字と意味のない文字列、フラッド、複数のチャンネルにまたがるスパム。
   - [プリセット](./features/anti-spam.mdx#presets)とファミリーごとの処罰。[詳細モード](./features/anti-spam.mdx#advanced)で、各トリガーとその[期間](./features/anti-spam.mdx#duration)を設定できます。
-- [Automod](./features/automod.md) の新フィルター[他のサーバー](./features/automod.md#servers)：他のサーバーの招待、転送メッセージ、チャンネルやイベントのリンク、タグを、ブラックリストまたはホワイトリストで管理できます。
-- Automod の新フィルター[ファイルの拡張子](./features/automod.md#files)：拡張子のグループをブロックしたり、一部の拡張子だけを許可したりできます。サーバー全体でもチャンネルごとでも設定でき、ファイルが別の拡張子に偽装されていても対応します。**Premium** サーバーでは、チャンネルごとのルールをより多く設定できます。 <SuggestionLink id="505" />
+  - 名前に「spam」を含むチャンネルを監視する新しい[オプション](./features/anti-spam.mdx#ignore)。これまでは常に無視されていました。 <SuggestionLink id="600" />
+- [Automod](./features/automod.md)：
+  - 新フィルター[他のサーバー](./features/automod.md#servers)：他のサーバーの招待、転送メッセージ、チャンネルやイベントのリンク、タグを、ブラックリストまたはホワイトリストで管理できます。
+  - 新フィルター[ファイルの拡張子](./features/automod.md#files)：拡張子のグループをブロックしたり、一部の拡張子だけを許可したりできます。サーバー全体でもチャンネルごとでも設定でき、ファイルが別の拡張子に偽装されていても対応します。**Premium** サーバーでは、チャンネルごとのルールをより多く設定できます。 <SuggestionLink id="505" />
+  - [ScamLens](./features/scam-images.md) の[カスタム画像カタログ](./features/scam-images.md#catalog)（**Premium**）で、独自の詐欺画像をブロックできます。
 - 新機能[予防スローモード](./features/slowmode.md)（**Premium**）：選んだチャンネルのスローモードが自動で調整され、設定したメッセージのレートが保たれます。
 - 新しい[インストールウィザード](./setup.md#wizard)：セクションごとのガイド付きの流れ、サーバーに合わせた保護の提案、最後に監査のプレビューを表示します。
 - 新しいセクション[ボットの参加](./features/onboarding.md#bots)：サーバーに参加したボットに自動で付与されるロールと、許可されていないボットのキック。[`/bypass bot`](./features/onboarding.md#bypass-bot) でボットを 1 つ参加させることができます。
 - 新しい処罰**隔離**。[Discord の隔離](./features/sanctions.mdx#discord-quarantine)と同期します。
 - キャプチャの新しい[スマートの作動条件](./features/captcha.md#trigger)：レイドに加えて、アカウントが不審に見える参加者も認証します。
-- [ScamLens](./features/scam-images.md)：独自の詐欺画像をブロックするための[画像カタログ](./features/scam-images.md#catalog)（**Premium**）。
 - [ハニーポット](./features/honeypot.md)：新しい[処罰までの猶予](./features/honeypot.md#grace)。善意のメンバーが誤りだと伝える時間を確保できます。
-- [スパム対策](./features/anti-spam.mdx#ignore)：名前に「spam」を含むチャンネルを監視する新しいオプション。これまでは常に無視されていました。 <SuggestionLink id="600" />
 - [ハニーポット](./features/honeypot.md#sanction)：BAN と Jail を無期限にできるようになりました。
 - Discord の AutoMod にブロックされたメッセージごとに、「Discord Automod」名義のサイレントな[警告](./features/sanctions.mdx)が作成されます。
-- [`/auth`](./features/authentication-manager.mdx#auth) で、複数の保護ロールを 1 回のコマンドでまとめて付与できるようになりました。 <SuggestionLink id="601" />
-- Authentication Manager の[権限用の別ロール](./features/authentication-manager.mdx#strategies)：元のロールのチャンネル権限が 🔑 ロールに移され、管理者にすべてのチャンネルの閲覧権限を与えるチェックボックスが追加されました。
 - [`/auth`](./features/authentication-manager.mdx#logs-tab)：セッションが Authentication Manager のログチャンネルに記録されるようになりました。
 - [`/lock` と `/unlock`](./features/channel-lock.md#lock) でカテゴリ全体をロック・ロック解除でき、カテゴリ内のチャンネルは同期されたままになります。 <SuggestionLink id="595" />
 - [`/lock`、`/unlock`](./features/channel-lock.md#lock) と [`/slowmode`](./features/moderation.mdx#slowmode)：チャンネルに告知せずに実行できる新しい `silent` オプション。
 - [BAN 時のメッセージ削除](./features/sanctions.mdx#ban-delete)の新しい設定：`/ban`、`?ban`、`/tempban` で、メッセージ履歴がデフォルトで削除されます。 <SuggestionLink id="592" />
 - [`/snipe`](./features/moderation.mdx#snipe) は、メッセージのキャッシュが無効なときに知らせ、有効にするよう提案します。使用するとキャッシュが自動で有効になります。
-- [DISCON](./features/discon.md#panel-channel)：パネルをボイスチャンネルのチャットに投稿できるようになりました。
 - [キャプチャの Activity](./features/captcha.md#activity)：**Premium** サーバーでは、RaidProtect のロゴの代わりにサーバーのアイコンが表示されます。
-- [Authentication Manager](./features/authentication-manager.mdx#manage-methods)：パスキーの名前を変更できるようになりました。
 - [ようこそメッセージ](./features/onboarding.md#welcome-buttons)：各ボタンに絵文字を付けられるようになりました。
-- [アカウントの最低作成日数](./features/onboarding.md#minage-action)：Jail が隔離に変わり、アカウントが必要な日数に達すると自動で解除されます。最低日数を変更すると、進行中の隔離も調整されます（下げるか無効にすると解除、上げると延長）。
 - [`/unjail`](./features/moderation.mdx#unjail) は隔離（アカウントの最低作成日数、Discord）を解除せず、解除方法を案内します。Jail が終了しても、隔離中のメンバーの隔離ロールはそのまま残ります。
 - ログを複数追加しました。
 - 修正：
@@ -58,6 +54,10 @@ Identity Update は実験中です。3.7.0 でのリリースまでは、[Premiu
   - `/auth` は、無効化されたロールに対して偽のセッションを開く代わりに、その旨を表示するようになりました。
   - [Jail](./features/moderation.mdx#jail) に送られたメンバーは、ボイスチャンネルから切断されるようになりました。
   - [キャプチャ](./features/captcha.md)の未認証ロールを、自動ロールとして選べないようにしました。
+  - [アカウントの最低作成日数](./features/onboarding.md#minage-action)：Jail が隔離に変わり、アカウントが必要な日数に達すると自動で解除されます。最低日数を変更すると、進行中の隔離も調整されます（下げるか無効にすると解除、上げると延長）。
+  - [Authentication Manager](./features/authentication-manager.mdx#manage-methods)：パスキーの名前を変更できるようになりました。
+  - Authentication Manager の[権限用の別ロール](./features/authentication-manager.mdx#strategies)：元のロールのチャンネル権限が 🔑 ロールに移されます。
+  - [`/auth`](./features/authentication-manager.mdx#auth) で、複数の保護ロールを 1 回のコマンドでまとめて付与できるようになりました。 <SuggestionLink id="601" />
 
 ## 3.5.0 Onboarding Update (2026/10/19) {#3-5-0}
 
