@@ -58,7 +58,18 @@ Por defecto, el HoneyPot aplica un **Softban**. Hay varias [sanciones](/es/learn
 | **Jail** | Asigna el [rol Jail](./sanctions.mdx#jail) configurado en tu servidor | Premium |
 | **Silencio** | Asigna el [rol de Silencio](./sanctions.mdx#mute) configurado en tu servidor | Premium |
 
-Para las sanciones con duración (Ban, Timeout, Jail, Silencio), elige una duración en el selector “**Duración**”: 5 minutos, 1 hora, **1 día** (por defecto) o 28 días, o “**Valor personalizado**” para introducir la tuya (por ejemplo `5m`, `1h`, `2d`; mínimo 1 minuto). El selector aparece atenuado para el Softban y la Expulsión, que no tienen duración.
+Para las sanciones con duración (Ban, Timeout, Jail, Silencio), elige una duración en el selector “**Duración**” (1 día por defecto), o “**Valor personalizado**” para introducir la tuya (por ejemplo `5m`, `1h`, `2d`; mínimo 1 minuto). El selector aparece atenuado para el Softban y la Expulsión, que no tienen duración.
+
+Las opciones del selector dependen de la sanción:
+
+| Sanción | Opciones propuestas |
+|---|---|
+| **Ban** | Permanente, 1 día, 7 días, 30 días |
+| **Jail** | Permanente, 1 hora, 1 día, 7 días |
+| **Silencio** | 5 minutos, 1 hora, 1 día, 7 días |
+| **Timeout** | 5 minutos, 1 hora, 1 día, 28 días |
+
+El Ban y el Jail pueden ser **permanentes**: la sanción no se levanta sola. Al cambiar de sanción, la duración elegida se conserva si sigue siendo posible (un permanente no pasa a un Timeout o un Silencio, y un Timeout se queda por debajo de 28 días).
 
 :::tip
 El **Softban** es un buen compromiso: limpia los mensajes y expulsa la cuenta hackeada, pero el propietario legítimo puede volver una vez asegurada su cuenta.
@@ -74,13 +85,9 @@ Para las demás sanciones (Kick, Timeout, Jail, Silencio), RaidProtect elimina �
 - Si tu servidor pierde el Premium, una sanción Premium vuelve automáticamente a **Softban** en la siguiente activación.
 :::
 
-### Plazo antes de la sanción <span className="badge-experiment">Experimental</span> {#grace}
+### Plazo antes de la sanción {#grace}
 
 Un miembro de buena fe puede escribir en el HoneyPot por error. El **plazo antes de la sanción** le deja tiempo para indicarlo antes de ser sancionado.
-
-:::info Experimental: Shield Update
-El plazo antes de la sanción forma parte de la **Shield Update**, prevista para la versión 3.6.0. Hasta su lanzamiento, está en fase experimental, en beta pública para los servidores [Premium](/es/premium).
-:::
 
 1. Ejecuta el [comando `/settings`](../setup.md#settings).
 2. Abre la pestaña “**Protección**”.

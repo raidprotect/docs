@@ -64,7 +64,7 @@ Puedes añadir bajo el mensaje botones que llevan a un canal del servidor, por e
 2. Abre la pestaña “**Llegadas**”.
 3. Haz clic en “**Configurar**” junto a “**Mensaje de bienvenida**”.
 4. En “**Gestionar los botones**”, elige “**Añadir un botón**”.
-5. Dale un nombre al botón y elige el canal al que vincularlo.
+5. Dale un nombre al botón, elige el canal al que vincularlo y, si lo deseas, un **emoji**: un emoji estándar, o un emoji de este servidor (`<:nombre:id>`, `:nombre:` o su identificador). Un emoji no válido no impide guardar: el botón se crea sin emoji.
 
 Para modificar o eliminar un botón, selecciónalo en la misma lista.
 
@@ -101,6 +101,27 @@ Evita los roles que tengan permisos: un rol dado automáticamente no debería co
 Si tu servidor usa otro bot para su rol automático, es posible que dé el rol antes del captcha. Sustitúyelo por los roles automáticos de RaidProtect.
 :::
 
+## 🤖 Llegada de los bots {#bots}
+
+Por defecto, un bot añadido al servidor recibe los [roles automáticos](#autorole) como un miembro. La sección “**Bots**” de la pestaña “**Llegadas**” cambia esto.
+
+1. Ejecuta el [comando `/settings`](../setup.md#settings).
+2. Abre la pestaña “**Llegadas**”.
+3. Haz clic en “**Configurar**” junto a “**Bots**”.
+
+- **Roles de los bots**: se dan a cada bot que llega, **en lugar** de los roles automáticos. Sin rol elegido, los bots reciben los roles automáticos. **Límites:** 1 rol en la versión gratuita, 15 roles con [Premium](/es/premium). Se aplican las mismas restricciones que para los roles automáticos (roles gestionados por una integración, por encima del tuyo o del de RaidProtect, o con un permiso de moderación).
+- **Expulsar los bots no autorizados**: todo bot añadido se expulsa de inmediato, salvo si el propietario lo ha autorizado antes con el comando `/bypass bot`. Desactivado por defecto. **Solo el propietario del servidor** puede activar o desactivar esta opción y autorizar un bot.
+
+### Autorizar un bot {#bypass-bot}
+
+Usa el comando: ```/bypass bot [bot]```
+
+Reemplaza `[bot]` con el bot que quieres autorizar: podrá unirse al servidor **una vez**, en los 10 minutos siguientes, sin ser expulsado. Sin bot, el comando lista los bots autorizados actualmente. Cada autorización se anota en tus logs.
+
+:::info
+RaidProtect necesita el permiso “**Expulsar miembros**” y un rol por encima del del bot para expulsarlo. Si no, el log lo indica y el bot se queda.
+:::
+
 ## 🎂 Edad mínima de la cuenta {#minage}
 
 Para reforzar la seguridad, puedes exigir una edad mínima a las cuentas de Discord de los nuevos miembros. Las cuentas creadas justo antes de un raid no pasan la puerta. El filtro se aplica en cada llegada.
@@ -120,13 +141,13 @@ Para desactivar el filtro, haz clic en “**Restablecer**”. RaidProtect necesi
 | Acción | Efecto sobre una cuenta demasiado reciente |
 |---|---|
 | “**Expulsar**” (por defecto) | Se expulsa en cada intento mientras su cuenta sea demasiado reciente. |
-| “**Jail hasta la antigüedad requerida**” | Entra sin ver nada del servidor y sale del [jail](./sanctions.mdx#jail) en cuanto tiene la edad requerida. |
+| “**Cuarentena hasta la antigüedad requerida**” | Entra sin ver nada del servidor (mediante el [rol Jail](./sanctions.mdx#jail)), y sale de su cuarentena en cuanto tiene la edad requerida, en la fecha indicada. |
 | “**Retener en la entrada**” | Queda bloqueada en un [captcha](./captcha.md) que solo puede resolver una vez alcanzada la edad. |
 
-La cuenta recibe un mensaje privado con la fecha en la que tendrá acceso al servidor. Las expulsiones, los jails y los baneos se anotan en el canal de logs.
+La cuenta recibe un mensaje privado con la fecha en la que tendrá acceso al servidor. Las expulsiones, las cuarentenas y los baneos se anotan en el canal de logs.
 
 :::info
-- “**Jail hasta la antigüedad requerida**” requiere un Rol de Jail, configurado en la pestaña “**Moderación**” > “**Sanciones**”. Sin él, RaidProtect te propone configurarlo o recurrir a “**Banear hasta la antigüedad requerida**”: la cuenta sale del servidor y su baneo se levanta automáticamente en la fecha correcta.
+- “**Cuarentena hasta la antigüedad requerida**” requiere un Rol de Jail, configurado en la pestaña “**Moderación**” > “**Sanciones**”. Sin él, RaidProtect te propone configurarlo o recurrir a “**Banear hasta la antigüedad requerida**”: la cuenta sale del servidor y su baneo se levanta automáticamente en la fecha correcta.
 - “**Retener en la entrada**” requiere un captcha activo en modo **Panel (Interactivo)**.
 :::
 
@@ -134,7 +155,7 @@ La cuenta recibe un mensaje privado con la fecha en la que tendrá acceso al ser
 
 Usa el comando: ```/bypass minage [user]```
 
-Reemplaza `[user]` con el [identificador](../guides/id.mdx) deseado; este dispondrá de 10 minutos para unirse al servidor sin quedar bloqueado por la edad requerida. También puedes usar el comando sin especificar un usuario para conocer la lista actual de usuarios con bypass.
+Reemplaza `[user]` con el [identificador](../guides/id.mdx) deseado; este dispondrá de 10 minutos para unirse al servidor sin quedar bloqueado por la edad requerida. También puedes usar el comando sin especificar un usuario para conocer la lista actual de usuarios con bypass. También levanta la cuarentena de una cuenta demasiado reciente. `/unjail` no la levanta: indica el comando que hay que usar.
 
 ## Preguntas frecuentes {#faq}
 
@@ -160,4 +181,4 @@ Un valor de unas horas a 1 día basta para descartar la mayoría de las cuentas 
 
 ### ¿Una cuenta demasiado reciente es baneada?
 
-No, no por defecto: se expulsa en cada intento. También puedes ponerla en jail hasta la edad requerida o retenerla tras el captcha. El baneo temporal es solo un recurso cuando el jail no está configurado.
+No, no por defecto: se expulsa en cada intento. También puedes ponerla en cuarentena hasta la edad requerida o retenerla tras el captcha. El baneo temporal es solo un recurso cuando el rol Jail no está configurado.

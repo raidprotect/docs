@@ -12,16 +12,21 @@ A veces es necesario bloquear temporalmente un canal para impedir que los usuari
 
 ## 🔒 Bloquear un canal {#lock}
 
-Usa el comando: ```/lock [channel] [duration] [reason]```
+Usa el comando: ```/lock [channel] [duration] [reason] [--silent]```
 
 Este comando retira al rol **@everyone** los permisos de enviar mensajes y de enviar mensajes en hilos, en el canal indicado, impidiendo así que todos los usuarios publiquen.
 
 - Reemplaza `[channel]` con la mención o el [identificador](../guides/id.mdx) del canal que quieres bloquear. Sin canal, bloqueamos aquel donde ejecutas el comando. Se aceptan los canales de texto, de anuncios, de voz, foros, multimedia, de conferencia y las categorías; los hilos no.
 - Reemplaza `[reason]` para indicar por qué se bloquea el canal (por ejemplo: *limpieza del chat*, *anuncio importante*, etc.).
+- Añade `--silent` para no anunciar nada en el canal: solo tú recibes la confirmación.
 
 :::info
 Un mismo canal solo puede bloquearse una vez cada 10 minutos.
 :::
+
+### Bloquear una categoría {#lock-category}
+
+Bloquear una categoría también bloquea todos sus canales visibles (excepto los hilos) de una sola vez, y `/unlock` sobre la categoría los desbloquea juntos. Un canal ya cerrado a la escritura (normas, anuncios) se deja tal cual, tanto al bloquear como al desbloquear. Cuando expira un bloqueo temporal de categoría, una sola línea de log nombra la categoría y el número de canales desbloqueados.
 
 ### Bloqueo temporal {#lock-duration}
 
@@ -29,9 +34,9 @@ El parámetro `[duration]` permite **desbloquear automáticamente el canal** tra
 
 ## 🔓 Desbloquear un canal {#unlock}
 
-Usa el comando: ```/unlock [channel] [reason]```
+Usa el comando: ```/unlock [channel] [reason] [--silent]```
 
-Este comando restablece al rol **@everyone** los permisos de enviar mensajes tal como estaban antes del bloqueo, permitiendo de nuevo que los usuarios publiquen. Reemplaza `[reason]` para indicar por qué se desbloquea el canal (por ejemplo: *discusión reabierta*, *anuncio finalizado*, etc.).
+Este comando restablece al rol **@everyone** los permisos de enviar mensajes tal como estaban antes del bloqueo, permitiendo de nuevo que los usuarios publiquen. Reemplaza `[reason]` para indicar por qué se desbloquea el canal (por ejemplo: *discusión reabierta*, *anuncio finalizado*, etc.). Con `--silent`, no se anuncia nada en el canal.
 
 :::warning
 Para que el bloqueo funcione correctamente, ningún rol abierto a todos debe tener un permiso explícito para escribir en ese canal. De lo contrario, los miembros con esos roles podrán seguir chateando. Los acuerdos definidos para los roles de tu equipo, en cambio, son útiles: mantienen la palabra al staff durante un `/lock`, y la [auditoría](./audit.md) ya no los señala como redundantes.
