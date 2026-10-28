@@ -218,7 +218,7 @@ Utilisez la commande : ```/snipe [utilisateur] [--channel=#salon]```
 Depuis la réponse, vous pouvez **sanctionner l’auteur** d'un message. La réponse n'est visible que par vous.
 
 :::warning
-`/snipe` ne voit que les messages que RaidProtect garde en mémoire, pendant une heure. Ils ne sont conservés que si la “**Mise en cache des messages**” est activée (`/settings`, onglet “**Utilitaires**”, désactivée par défaut), ou si l'[anti-spam](./anti-spam.mdx) ou les [signalements](./reports.md) sont actifs, ce qui l'active d'office. Sinon, la commande répond qu'aucun message supprimé n'a été trouvé.
+`/snipe` ne voit que les messages que RaidProtect garde en mémoire, pendant une heure. Ils ne sont conservés que si la “**Mise en cache des messages**” est activée (`/settings`, onglet “**Utilitaires**”, désactivée par défaut), ou si l'[anti-spam](./anti-spam.mdx) ou les [signalements](./reports.md) sont actifs, ce qui l'active d'office : utiliser `/snipe` à ce moment-là inscrit le réglage, qui reste actif même si l'anti-spam et les signalements sont coupés plus tard. Sinon, la commande indique que le cache des messages est désactivé et propose de l'activer à un administrateur (ou à un membre autorisé à utiliser `/settings` quand les permissions des Intégrations sont appliquées).
 :::
 
 Pour activer la mise en cache des messages :
