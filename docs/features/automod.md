@@ -1,6 +1,6 @@
 ---
 title: Automod
-description: "L'Automod de RaidProtect retire automatiquement les images d'arnaque, les fichiers d'extensions refusées et les références à d'autres serveurs Discord : invitations, messages transférés, liens de salon ou d'événement et tags de serveur."
+description: "L'Automod de RaidProtect retire automatiquement les images d'arnaque, les fichiers d'extensions refusées et les références à d'autres serveurs Discord : invitations, messages transférés, liens de salon ou d'événement et tags de serveur."
 ---
 
 import Settings from '@site/src/components/DiscordMessage/mockups/v2';
@@ -96,18 +96,18 @@ Les fichiers d'un message transféré comptent aussi, et un fil suit les règles
 
 1. Dans l'Automod, cliquez sur “**Configurer**” à côté de “**Extensions de fichiers**”.
 2. Activez le filtre avec l'interrupteur en haut à droite.
-3. Sous “**Tout le serveur**”, choisissez un mode : “**Désactivé**”, “**Liste noire**” ou “**Liste blanche**”.
+3. Sous “**Tout le serveur**”, choisissez un mode : “**Désactivé**”, “**Liste noire**” ou “**Liste blanche**”.
 4. Cochez des **groupes** (Exécutables, Images, Vidéos, Audio, Archives, Documents) et/ou saisissez d'autres extensions séparées par des virgules, par exemple `exe, msi`. Le point est facultatif. Une règle accepte 50 extensions libres au plus, en plus des groupes.
 
 :::warning
-Une liste blanche sans extension n'accepte aucun fichier : tout fichier envoyé est supprimé.
+Une liste blanche sans extension n'accepte aucun fichier : tout fichier envoyé est supprimé.
 :::
 
 ### Règles par salon et par catégorie {#files-channels}
 
 Cliquez sur “**Ajouter un salon**” pour donner une règle à un salon, un fil ou une catégorie. Une règle de catégorie vaut pour tous ses salons.
 
-Les règles s'additionnent, sauf pour une extension nommée par plusieurs règles : la règle **la plus précise** décide (salon, puis catégorie, puis serveur). Par exemple, un `.exe` autorisé dans un salon passe malgré la liste noire du serveur. Une extension qu'aucune règle ne nomme passe par toutes les règles.
+Les règles s'additionnent, sauf pour une extension nommée par plusieurs règles : la règle **la plus précise** décide (salon, puis catégorie, puis serveur). Par exemple, un `.exe` autorisé dans un salon passe malgré la liste noire du serveur. Une extension qu'aucune règle ne nomme passe par toutes les règles.
 
 | | Gratuit | <span className="badge-premium">Premium</span> |
 |---|---|---|
@@ -118,7 +118,7 @@ Sans Premium, les règles en trop sont conservées mais inactives.
 
 ### Fichiers corrompus {#files-disguised}
 
-Un fichier renommé pour se faire passer pour une image ou une vidéo (un `.exe` renommé en `.png`) est reconnu : Discord ne sait pas le lire comme une vraie image. Une liste blanche le refuse toujours. L'option “**Toujours refuser les fichiers corrompus**” le supprime aussi dans tous les salons, même sans liste blanche.
+Un fichier renommé pour se faire passer pour une image ou une vidéo (un `.exe` renommé en `.png`) est reconnu : Discord ne sait pas le lire comme une vraie image. Une liste blanche le refuse toujours. L'option “**Toujours refuser les fichiers corrompus**” le supprime aussi dans tous les salons, même sans liste blanche.
 
 ### Sanction {#files-sanction}
 

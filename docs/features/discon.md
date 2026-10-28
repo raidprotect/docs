@@ -89,7 +89,7 @@ Sous la configuration, vous retrouvez le niveau actuel, les cinq boutons de nive
 Les boutons du panneau ne demandent aucune permission : **c'est l'accès au salon qui fait office de contrôle**. Choisissez donc un salon réservé à votre équipe.
 
 - Un salon visible par tout le serveur est refusé : n'importe quel membre pourrait y changer le niveau.
-- Un salon vocal convient aussi : le panneau est alors posté dans son salon textuel intégré.
+- Un salon vocal convient aussi : le panneau est alors posté dans son salon textuel intégré.
 - “**Créer le salon du panneau**” crée un salon `#discon` invisible pour @everyone. Ouvrez-le ensuite aux rôles de votre équipe.
 
 ### Salon vocal de statut <span className="badge-premium">Premium</span> {#voice}

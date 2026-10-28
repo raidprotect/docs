@@ -18,7 +18,7 @@ Cette commande retire au rôle **@everyone** les permissions d’envoyer des mes
 
 - Remplacez `[#salon]` par la mention ou l'[identifiant](../guides/id.mdx) du salon à verrouiller. Sans salon, nous verrouillons celui où vous faites la commande. Les salons textuels, d'annonces, vocaux, forums, médias, de conférence et les catégories sont acceptés ; les fils ne le sont pas.
 - Remplacez `[raison]` pour indiquer pourquoi le salon est verrouillé (ex. : *nettoyage du chat*, *annonce importante*, etc.).
-- Ajoutez `--silent` pour ne rien annoncer dans le salon : vous seul recevez la confirmation.
+- Ajoutez `--silent` pour ne rien annoncer dans le salon : vous seul recevez la confirmation.
 
 :::info
 Un même salon ne peut être verrouillé qu'une fois toutes les 10 minutes.

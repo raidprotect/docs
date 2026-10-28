@@ -23,7 +23,7 @@ Le **slowmode préventif** de RaidProtect, réservé aux serveurs [Premium](/pre
 2. Ouvrez l'onglet “**Protection**”.
 3. Cliquez sur “**Configurer**” à côté de “**Slowmode préventif**”.
 4. Cliquez sur “**Ajouter**” à côté d'un emplacement libre.
-5. Choisissez le salon (salon textuel, d'annonces, vocal ou de conférence : le mode lent d'un salon vocal régule son salon textuel intégré).
+5. Choisissez le salon (salon textuel, d'annonces, vocal ou de conférence : le mode lent d'un salon vocal régule son salon textuel intégré).
 
 <Settings start="slowmode" />
 

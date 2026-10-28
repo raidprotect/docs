@@ -76,7 +76,7 @@ Les réglages sont rangés en cinq onglets :
 - **Modération** : [sanctions](./features/sanctions.mdx), [doubles comptes](./features/alt-accounts.md)\*, logs, [signalements](./features/reports.md) et [transparence](./features/transparency.md).
 - **Utilitaires** : [rôle de tag](./features/tag-role.md), [verrouillage de salon](./features/channel-lock.md), [rôle en service](./features/moderation.mdx#onduty) et mise en cache des messages.
 
-\* En expérimentation : cette ligne n'apparaît que sur les serveurs qui ont accès à l'Identity Update (doubles comptes), en bêta publique [Premium](/premium).
+\* En expérimentation : cette ligne n'apparaît que sur les serveurs qui ont accès à l'Identity Update (doubles comptes), en bêta publique [Premium](/premium).
 
 Chaque ligne affiche la valeur actuelle du réglage et un bouton : “**Configurer**” ouvre un écran dédié, “**Modifier**” ouvre une fenêtre de saisie. Tout changement s'applique immédiatement.
 

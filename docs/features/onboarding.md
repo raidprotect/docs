@@ -64,7 +64,7 @@ Vous pouvez ajouter sous le message des boutons qui mènent vers un salon du ser
 2. Ouvrez l'onglet “**Arrivées**”.
 3. Cliquez sur “**Configurer**” à côté de “**Message de bienvenue**”.
 4. Dans “**Gérer les boutons**”, choisissez “**Ajouter un bouton**”.
-5. Donnez un nom au bouton, choisissez le salon à lier et, si vous le souhaitez, un **emoji** : un emoji standard, ou un emoji de ce serveur (`<:nom:id>`, `:nom:` ou son identifiant). Un emoji invalide n'empêche pas l'enregistrement : le bouton est créé sans emoji.
+5. Donnez un nom au bouton, choisissez le salon à lier et, si vous le souhaitez, un **emoji** : un emoji standard, ou un emoji de ce serveur (`<:nom:id>`, `:nom:` ou son identifiant). Un emoji invalide n'empêche pas l'enregistrement : le bouton est créé sans emoji.
 
 Pour modifier ou supprimer un bouton, sélectionnez-le dans la même liste.
 
@@ -109,14 +109,14 @@ Par défaut, un bot ajouté au serveur reçoit les [rôles automatiques](#autoro
 2. Ouvrez l'onglet “**Arrivées**”.
 3. Cliquez sur “**Configurer**” à côté de “**Bots**”.
 
-- **Rôles des bots** : donnés à chaque bot qui arrive, **à la place** des rôles automatiques. Sans rôle choisi, les bots reçoivent les rôles automatiques. **Limites :** 1 rôle en version gratuite, 15 rôles avec le [Premium](/premium). RaidProtect refuse les rôles gérés par une intégration, ceux au-dessus du vôtre ou du sien et ceux qui donnent la permission **Administrateur**. Un rôle qui donne une permission de modération est accepté, avec un avertissement : gardez-le pour des bots de confiance. Les bots ne passent pas le captcha et reçoivent leurs rôles dès leur arrivée.
-- **Expulser les bots non autorisés** : tout bot ajouté est expulsé aussitôt, sauf si le propriétaire l'a autorisé avant avec la commande `/bypass bot`. Désactivé par défaut. **Seul le propriétaire du serveur** peut activer ou désactiver cette option et autoriser un bot.
+- **Rôles des bots** : donnés à chaque bot qui arrive, **à la place** des rôles automatiques. Sans rôle choisi, les bots reçoivent les rôles automatiques. **Limites :** 1 rôle en version gratuite, 15 rôles avec le [Premium](/premium). RaidProtect refuse les rôles gérés par une intégration, ceux au-dessus du vôtre ou du sien et ceux qui donnent la permission **Administrateur**. Un rôle qui donne une permission de modération est accepté, avec un avertissement : gardez-le pour des bots de confiance. Les bots ne passent pas le captcha et reçoivent leurs rôles dès leur arrivée.
+- **Expulser les bots non autorisés** : tout bot ajouté est expulsé aussitôt, sauf si le propriétaire l'a autorisé avant avec la commande `/bypass bot`. Désactivé par défaut. **Seul le propriétaire du serveur** peut activer ou désactiver cette option et autoriser un bot.
 
 ### Autoriser un bot {#bypass-bot}
 
-Utilisez la commande : ```/bypass bot [bot]```
+Utilisez la commande : ```/bypass bot [bot]```
 
-Remplacez `[bot]` par le bot à autoriser : il pourra rejoindre le serveur **une fois**, dans les 10 minutes qui suivent, sans être expulsé. Sans bot, la commande liste les bots actuellement autorisés. Chaque autorisation est notée dans vos logs.
+Remplacez `[bot]` par le bot à autoriser : il pourra rejoindre le serveur **une fois**, dans les 10 minutes qui suivent, sans être expulsé. Sans bot, la commande liste les bots actuellement autorisés. Chaque autorisation est notée dans vos logs.
 
 :::info
 RaidProtect a besoin de la permission “**Expulser des membres**” et d'un rôle au-dessus de celui du bot pour l'expulser. Sinon, le log l'indique et le bot reste.
@@ -155,7 +155,7 @@ Le compte reçoit un message privé avec la date à laquelle il aura accès au s
 
 Utilisez la commande : ```/bypass minage [utilisateur]```
 
-Remplacez `[utilisateur]` par l'[identifiant](../guides/id.mdx) souhaité, ce dernier disposera de 10 minutes pour rejoindre le serveur sans être bloqué par l'âge requis. Vous pouvez aussi utiliser la commande sans spécifier d'utilisateur pour connaître la liste actuelle des utilisateurs bypass. Elle lève aussi la quarantaine d'un compte trop récent. `/unjail` ne la lève pas : il indique la commande à utiliser.
+Remplacez `[utilisateur]` par l'[identifiant](../guides/id.mdx) souhaité, ce dernier disposera de 10 minutes pour rejoindre le serveur sans être bloqué par l'âge requis. Vous pouvez aussi utiliser la commande sans spécifier d'utilisateur pour connaître la liste actuelle des utilisateurs bypass. Elle lève aussi la quarantaine d'un compte trop récent. `/unjail` ne la lève pas : il indique la commande à utiliser.
 
 ## Questions fréquentes {#faq}
 

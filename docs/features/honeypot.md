@@ -60,7 +60,7 @@ Par défaut, le HoneyPot applique un **Softban**. Plusieurs [sanctions](/learn/d
 
 Pour les sanctions à durée (Bannissement, Timeout, Jail, Mute), choisissez une durée dans le sélecteur “**Durée**” (1 jour par défaut), ou “**Valeur personnalisée**” pour saisir la vôtre (par exemple `5m`, `1h`, `2d` ; minimum 1 minute). Le sélecteur est grisé pour le Softban et l'Expulsion, qui n'ont pas de durée.
 
-Les repères du sélecteur suivent la sanction :
+Les repères du sélecteur suivent la sanction :
 
 | Sanction | Repères proposés |
 |---|---|
@@ -69,7 +69,7 @@ Les repères du sélecteur suivent la sanction :
 | **Mute** | 5 minutes, 1 heure, 1 jour, 7 jours |
 | **Timeout** | 5 minutes, 1 heure, 1 jour, 28 jours |
 
-Le Bannissement et le Jail peuvent être **permanents** : la sanction ne se lève pas d'elle-même. En changeant de sanction, la durée choisie est conservée si elle reste possible (un permanent ne passe pas à un Timeout ou un Mute, et un Timeout reste sous 28 jours).
+Le Bannissement et le Jail peuvent être **permanents** : la sanction ne se lève pas d'elle-même. En changeant de sanction, la durée choisie est conservée si elle reste possible (un permanent ne passe pas à un Timeout ou un Mute, et un Timeout reste sous 28 jours).
 
 :::tip
 Le **Softban** est un bon compromis : il nettoie les messages et expulse le compte piraté, mais le propriétaire légitime peut revenir une fois son compte sécurisé.

@@ -37,7 +37,7 @@ Le captcha repose sur un rôle **@Non vérifié** et un salon **#vérification**
 | **Panneau (Interactif)**, par défaut | Un message permanent “**Système de vérification**” avec un bouton “**Vérifier**”, qui ouvre l'[Activity RaidProtect](#activity). Le membre ne peut pas écrire dans **#vérification**. |
 | **Challenge (Classique)** | Une image est postée dans **#vérification** à son arrivée, et il tape le code en message dans le salon. |
 
-Le panneau porte un bouton “**Translate**” pour le lire dans sa langue, et chaque arrivant y est mentionné dans le salon de vérification, puis le message est supprimé : il retrouve ainsi le salon.
+Le panneau porte un bouton “**Translate**” pour le lire dans sa langue, et chaque arrivant y est mentionné dans le salon de vérification, puis le message est supprimé : il retrouve ainsi le salon.
 
 Le mode Panneau garde le salon propre et permet des réglages en plus : choix de la sanction quand les essais sont épuisés, [captcha gelé pendant un raid](./raid-mode.md#action), [retenue à l'entrée des comptes trop récents](./onboarding.md#minage). Le mode Challenge expulse toujours le membre à la fin du temps imparti ou quand ses essais sont épuisés.
 
