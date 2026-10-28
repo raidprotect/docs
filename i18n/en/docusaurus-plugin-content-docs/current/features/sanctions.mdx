@@ -20,7 +20,7 @@ The sanction history automatically records all moderation actions performed on y
 - **Manual sanctions**: All [moderation commands](./moderation.mdx) (`/ban`, `/tempban`, `/kick`, `/mute`, `/jail`, `/warn`...) are recorded in the history.
 - **Automatic sanctions**: Sanctions applied by our protection modules ([anti-spam](./anti-spam.mdx), [HoneyPot](./honeypot.md), [ScamLens](./scam-images.md)...) are also added to the history.
 - **Bans, kicks and timeouts**: Sanctions applied without using RaidProtect are added to the history.
-- **Discord's AutoMod**: Timeouts applied by Discord's AutoMod are recorded. With the Shield Update (experiment), each message blocked by an AutoMod rule also creates a **warning** in the name of "**Discord Automod**", silent (no DM), unless the rule already applies a timeout.
+- **Discord's AutoMod**: Timeouts applied by Discord's AutoMod are recorded. Each message blocked by an AutoMod rule also creates a **warning** in the name of "**Discord Automod**", silent (no DM), unless the rule already applies a timeout.
 - **Sanction notifications**: Sanctioned members receive a private message informing them of the sanction and its reason. The bot also sends a detailed acknowledgment confirming the delivery status: **received**, **DMs closed**, **expired** or **silent** (when the `[--silent]` option is used). For kicks, softbans and temporary bans, this message also includes a **button with a server invite** so the member can come back once the sanction is over.
 
 :::info
@@ -159,11 +159,7 @@ In the Jail screen, the "**Role handling on jail**" selector controls what RaidP
 - "**Add the jail role**" *(default)*: the member keeps their roles, the jail role is added.
 - "**Replace all roles**": we **remove all of the member's roles** for the duration of the jail and restore them on release. Stricter, this prevents a role with explicit permissions from bypassing the Jail role's restrictions.
 
-### Synced Discord quarantine <span className="badge-experiment">Experiment</span> {#discord-quarantine}
-
-:::info Experiment: Shield Update
-The synced Discord quarantine is part of the **Shield Update**, planned for version 3.6.0. Until its release, it is an experiment, in public beta for [Premium](/en/premium) servers.
-:::
+### Synced Discord quarantine {#discord-quarantine}
 
 Discord's AutoMod can put a member whose profile breaks a rule (nickname, server tag) in quarantine. With this setting, we follow that quarantine: the member receives the **jail role** and a **Quarantine** sanction is recorded in the history. They leave it as soon as Discord lifts the quarantine.
 
@@ -175,6 +171,10 @@ Discord's AutoMod can put a member whose profile breaks a rule (nickname, server
 :::info
 This setting requires a [Jail role](#jail). Disabling it releases the quarantines it applied.
 :::
+
+### Message deletion on ban {#ban-delete}
+
+In the "**Sanctions**" screen, the "**Message deletion on ban**" selector sets the history deleted by default when you ban with `/ban`, `?ban` or `/tempban` without specifying `--delete-messages`. Choose "**No deletion**" (default), 1 hour, 6 hours, 12 hours, 1 day, 3 days or 7 days. A value given in the command takes precedence.
 
 ### Mute {#mute}
 

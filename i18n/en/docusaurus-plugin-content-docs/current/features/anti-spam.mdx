@@ -72,7 +72,7 @@ You can exclude certain channels, roles or members from anti-spam monitoring.
 The channel selector accepts **categories** (all their channels are then ignored), as well as voice channels, stages and forums. Threads follow their parent channel.
 
 :::info Who is ignored automatically?
-- Channels whose name contains "**spam**" (for a thread, the parent channel's name counts).
+- Channels whose name contains "**spam**" (for a thread, the parent channel's name counts). An "**Ignore 'spam' channels**" switch, in the anti-spam screen, lets you monitor them too.
 - Members that RaidProtect cannot moderate (role higher than its own).
 - **Staff** (`Administrator`, `Manage Server` or `Manage Messages` permission), **as long as no role or member is ignored**. As soon as you add a role or a member to the list, only this list counts: staff members who are not on it can then be sanctioned.
 :::
@@ -201,9 +201,9 @@ RaidProtect works with **Discord's AutoMod**:
 - **Blocked message spam**: when a member chains messages blocked by your AutoMod rules, the "**Blocked message spam (AutoMod)**" trigger sanctions them (**Automated** family). For this, the AutoMod rule must send its **alerts** to a channel RaidProtect can see: it is thanks to these alerts that we spot blocked messages.
 - **Warning for each blocked message**: if sanctions are active on your server, each message blocked by an AutoMod rule is recorded as a warning in the member's history, unless the rule already applies a timeout. The member does not receive a private message for this warning. More details on the [sanctions](./sanctions.mdx) page.
 
-## 🐢 Preventive slowmode <span className="badge-experiment">Experiment</span> <span className="badge-premium">Premium</span> {#slowmode}
+## 🐢 Preventive slowmode <span className="badge-premium">Premium</span> {#slowmode}
 
-To calm a very active channel without sanctioning anyone, [preventive slowmode](./slowmode.md) (Premium, experiment with the Shield Update) automatically adjusts your channels' slowmode according to their message rate.
+To calm a very active channel without sanctioning anyone, [preventive slowmode](./slowmode.md) (Premium) automatically adjusts your channels' slowmode according to their message rate.
 
 ## 📑 Anti-spam logs {#logs}
 

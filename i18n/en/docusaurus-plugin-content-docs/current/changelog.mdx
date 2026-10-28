@@ -20,11 +20,7 @@ The Identity Update is an experiment: until its release in 3.7.0, it is in publi
 - The [captcha](./features/captcha.md#activity-alts) spots alt accounts: it links accounts it is sure are the same person by itself, and suggests probable links to your team.
 - [Linked account sanctions](./features/alt-accounts.md#modes) are reserved for **Premium**. Without Premium, `/alt` links and views accounts with no limit.
 
-## 3.6.0 Shield Update <span className="badge-experiment">Experiment</span> {#3-6-0}
-
-:::info Experiment
-The Shield Update is an experiment: until its release in 3.6.0, it is in public beta for [Premium](/en/premium) servers. Its content may still change.
-:::
+## 3.6.0 Shield Update {#3-6-0}
 
 - New **[DISCON](./features/discon.md)**: a five-notch server danger level, adjustable in one click with the `/discon` command or from a [panel for the team](./features/discon.md#panel). Each level automatically hardens the server (verification, captcha, DM Lock, raid mode, lockdown), and a [voice channel](./features/discon.md#voice) shows the current level.
 - New [preventive slowmode](./features/slowmode.md) (**Premium**): the slowmode of the chosen channels adjusts itself to hold the message rate you set.
@@ -34,6 +30,14 @@ The Shield Update is an experiment: until its release in 3.6.0, it is in public 
 - New **Quarantine** sanction, synchronized with [Discord's quarantine](./features/sanctions.mdx#discord-quarantine).
 - [ScamLens](./features/scam-images.md): [image catalog](./features/scam-images.md#catalog) (**Premium**) to block your own scam images.
 - Each message blocked by Discord's AutoMod creates a silent [warning](./features/sanctions.mdx) in the name of "Discord Automod".
+- New [File extensions](./features/automod.md#files) filter in [Automod](./features/automod.md): blocklists or allowlists of extensions, server-wide or per channel, with detection of renamed files. One free channel rule, 20 with Premium.
+- The Other servers filter also reads event links from another server.
+- Minimum account age: the jail becomes a [quarantine](./features/onboarding.md#minage-action) lifted on the right date.
+- [Bot arrival](./features/onboarding.md#bots): roles specific to bots (1 free, 15 Premium) and kicking of unauthorized bots, with `/bypass bot` reserved for the owner.
+- `/lock`, `/unlock` and `/slowmode`: `--silent` option, and [locking a category](./features/channel-lock.md#lock-category) with all its channels.
+- [Message deletion on ban](./features/sanctions.mdx#ban-delete) configurable by default for `/ban` and `/tempban`.
+- [Authentication Manager](./features/authentication-manager.mdx): rename a passkey, authenticate for several roles at once.
+- [HoneyPot](./features/honeypot.md#sanction): permanent ban or jail.
 - New [setup wizard](./setup.md#wizard): a guided path section by section, protections suggested for your server and an audit preview to finish.
 - [Anti-spam](./features/anti-spam.mdx) V3, already in place for everyone since 3.5.0:
   - New detection engine: near-duplicates, repeated links, emojis and gibberish, flood, and spam spread across several channels.

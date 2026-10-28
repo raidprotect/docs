@@ -37,6 +37,8 @@ The captcha relies on an **@Unverified** role and a channel named **#verificatio
 | **Panel (Interactive)**, default | A permanent "**Verification System**" message with a "**Verify**" button, which opens the [RaidProtect Activity](#activity). The member cannot write in **#verification**. |
 | **Challenge (Classic)** | An image is posted in **#verification** when they arrive, and they type the code as a message in the channel. |
 
+The panel has a "**Translate**" button to read it in one's own language, and each newcomer is mentioned in the verification channel, then the message is deleted: this way they find the channel.
+
 Panel mode keeps the channel clean and allows extra settings: choice of the sanction when attempts are used up, [captcha frozen during a raid](./raid-mode.md#action), [hold at entry of accounts that are too new](./onboarding.md#minage). Challenge mode always kicks the member at the end of the allotted time or when their attempts are used up.
 
 ### Trigger {#trigger}
@@ -45,15 +47,11 @@ Panel mode keeps the channel clean and allows extra settings: choice of the sanc
 |---|---|
 | **Always**, default | On every arrival, unconditionally. |
 | **Automatic** | Only during a raid or a high DISCON level. Other newcomers enter directly. |
-| **Smart** <span className="badge-experiment">Experiment</span> | Like Automatic, plus accounts that look suspicious. |
+| **Smart** | Like Automatic, plus accounts that look suspicious. |
 
-With **Automatic**, the captcha applies during a raid only if [Auto RaidMode](./raid-mode.md#action) is set to "**Send to the captcha**" or "**Captcha frozen during the raid**", and during a [DISCON](./discon.md) alert from level 3 (experiment with the Shield Update).
+With **Automatic**, the captcha applies during a raid only if [Auto RaidMode](./raid-mode.md#action) is set to "**Send to the captcha**" or "**Captcha frozen during the raid**", and during a [DISCON](./discon.md) alert from level 3.
 
 The **Smart** trigger evaluates each newcomer's profile. A member approved by hand by your team is never considered suspicious.
-
-:::info Experiment: Shield Update
-The Smart trigger is part of the **Shield Update**, planned for version 3.6.0. Until its release, it is an experiment, in public beta for [Premium](/en/premium) servers. Without the experiment, it is not offered.
-:::
 
 ## 🚪 How to configure the captcha? {#config}
 
@@ -75,7 +73,7 @@ The captcha starts in **Panel (Interactive)** mode, triggered **Always**, with 3
 2. Open the "**Arrivals**" tab.
 3. Click "**Configure**" next to "**Captcha**".
 4. In "**Display Mode**", choose "**Panel (Interactive)**" or "**Challenge (Classic)**".
-5. In "**Trigger**", choose "**Always**", "**Automatic**" or "**Smart**" (Shield Update).
+5. In "**Trigger**", choose "**Always**", "**Automatic**" or "**Smart**".
 
 ### Verification in the Activity {#activity}
 
@@ -199,7 +197,7 @@ Replace `[user]` with the desired [identifier](../guides/id.mdx); that user will
 The captcha works with the other arrival protections:
 - **[Auto RaidMode](./raid-mode.md#action):** with the "**Send to the captcha**" action, a wave's newcomers pass the captcha instead of being kicked. With "**Captcha frozen during the raid**", they wait behind the captcha and pass it after the wave.
 - **[Minimum account age](./onboarding.md#minage):** the "**Hold at the gate**" action blocks an account that is too new on a captcha it can only solve once the age is reached.
-- **[DISCON](./discon.md#captcha):** from level 4, the captcha is enabled if it is configured, even if you had disabled it. From level 3, it applies to all newcomers, whatever its trigger (experiment with the Shield Update).
+- **[DISCON](./discon.md#captcha):** from level 4, the captcha is enabled if it is configured, even if you had disabled it. From level 3, it applies to all newcomers, whatever its trigger.
 
 ## Frequently asked questions {#faq}
 

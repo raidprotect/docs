@@ -12,16 +12,21 @@ Sometimes it is necessary to temporarily lock a channel to prevent users from se
 
 ## 🔒 Lock a channel {#lock}
 
-Use the command: ```/lock [#channel] [duration] [reason]```
+Use the command: ```/lock [#channel] [duration] [reason] [--silent]```
 
 This command removes the permissions to send messages and to send messages in threads from the **@everyone** role in the targeted channel, preventing all users from posting.
 
 - Replace `[#channel]` with the mention or [ID](../guides/id.mdx) of the channel to lock. Without a channel, we lock the one where you run the command. Text, announcement, voice, forum, media and stage channels and categories are accepted; threads are not.
 - Replace `[reason]` to indicate why the channel is locked (e.g., *chat cleanup*, *important announcement*, etc.).
+- Add `--silent` to announce nothing in the channel: only you receive the confirmation.
 
 :::info
 A given channel can only be locked once every 10 minutes.
 :::
+
+### Lock a category {#lock-category}
+
+Locking a category also locks all its visible channels (excluding threads) in one go, and `/unlock` on the category unlocks them together. A channel already closed to writing (rules, announcements) is left as is, when locking as when unlocking. When a temporary category lock expires, a single log line names the category and the number of unlocked channels.
 
 ### Temporary lock {#lock-duration}
 
@@ -29,9 +34,9 @@ The `[duration]` parameter lets you **automatically unlock the channel** after t
 
 ## 🔓 Unlock a channel {#unlock}
 
-Use the command: ```/unlock [#channel] [reason]```
+Use the command: ```/unlock [#channel] [reason] [--silent]```
 
-This command restores the send message permissions for the **@everyone** role to their state before the lock, allowing users to post again. Replace `[reason]` to indicate why the channel is unlocked (e.g., *discussion reopened*, *announcement finished*, etc.).
+This command restores the send message permissions for the **@everyone** role to their state before the lock, allowing users to post again. Replace `[reason]` to indicate why the channel is unlocked (e.g., *discussion reopened*, *announcement finished*, etc.). With `--silent`, nothing is announced in the channel.
 
 :::warning
 For the lock command to work correctly, no role open to everyone should have an explicit permission to write in that channel. Otherwise, members with those roles will still be able to chat. Overrides set for your team's roles, on the other hand, are useful: they keep staff able to speak during a `/lock`, and the [audit](./audit.md) no longer flags them as redundant.

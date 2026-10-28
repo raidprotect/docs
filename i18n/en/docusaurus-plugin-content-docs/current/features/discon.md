@@ -15,10 +15,6 @@ import Settings from '@site/src/components/DiscordMessage/mockups/v2';
 - **A clean return**: when going back down, we only turn off what DISCON itself enabled. A captcha, a DM Lock or a raid mode that you enabled by hand stay in place.
 - **A manual change**: the level never changes by itself, your team decides.
 
-:::info Experiment: Shield Update
-DISCON is part of the **Shield Update**, planned for version 3.6.0. Until its release, it is an experiment, in public beta for [Premium](/en/premium) servers. The [status voice channel](#voice) requires Premium.
-:::
-
 ## 🚦 The five levels {#levels}
 
 | Level | Name | What we apply |
@@ -81,7 +77,7 @@ For this, the captcha must be [configured](./captcha.md#config), with its channe
 1. Run the [`/settings` command](../setup.md#settings).
 2. Open the "**Protection**" tab.
 3. Click "**Configure**" next to "**DISCON**".
-4. Choose the panel channel in the selector, or click "**Create panel channel**".
+4. Choose the panel channel (text or voice) in the selector, or click "**Create panel channel**".
 5. Optionally ([Premium](/en/premium)), choose a status voice channel, or click "**Create status channel**".
 
 Below the configuration, you will find the current level, the five level buttons and the **level scale**, which describes what each level will do on your server.
@@ -93,6 +89,7 @@ Below the configuration, you will find the current level, the five level buttons
 The panel buttons require no permission: **access to the channel acts as the control**. So choose a channel reserved for your team.
 
 - A channel visible to the whole server is refused: any member could change the level there.
+- A voice channel works too: the panel is then posted in its built-in text channel.
 - "**Create panel channel**" creates a `#discon` channel invisible to @everyone. Then open it to your team's roles.
 
 ### Status voice channel <span className="badge-premium">Premium</span> {#voice}

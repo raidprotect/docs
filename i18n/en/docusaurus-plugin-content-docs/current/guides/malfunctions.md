@@ -57,7 +57,7 @@ This problem is relatively common, but depends on **your server's configuration*
 
 - **Have you enabled the captcha?** This is an optional feature: enable it in the "**Arrivals**" tab of [`/settings`](../setup.md#settings). Check the [documentation page dedicated to the captcha](../features/captcha.md#config) for more information.
 
-- **What is its trigger?** On "**Automatic**", the captcha only applies during a raid or a high [DISCON](../features/discon.md) level (Shield Update, experiment): the rest of the time, newcomers enter directly. Choose "**Always**" so that every newcomer passes the captcha.
+- **What is its trigger?** On "**Automatic**", the captcha only applies during a raid or a high [DISCON](../features/discon.md) level: the rest of the time, newcomers enter directly. Choose "**Always**" so that every newcomer passes the captcha.
 
 - **Does a role or a channel get around it?** The captcha screen flags the channels still visible to the verification role and the roles that give access to the server without passing it, with a button to fix them.
 

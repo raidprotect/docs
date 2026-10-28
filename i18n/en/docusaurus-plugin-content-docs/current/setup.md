@@ -50,7 +50,7 @@ Unchecking a module in `/setup` does not disable it. To turn off a feature, go t
 
 [Auto roles and the welcome message](./features/onboarding.md) are not part of the wizard: set them in the "**Arrivals**" tab of `/settings`.
 
-### 🧭 New setup wizard <span className="badge-experiment">Experiment</span> {#wizard}
+### 🧭 New setup wizard {#wizard}
 
 A new `/setup` wizard replaces the module list with a guided path:
 
@@ -62,10 +62,6 @@ A new `/setup` wizard replaces the module list with a guided path:
 - **An already configured server is checked, not redone**: the existing captcha panel and an already active DM Lock are kept.
 - **And then**: a preview of the [security audit](./features/audit.md) ends the installation, with shortcuts to test the captcha, customize the welcome message or open all the settings. A failed step can be resumed by running `/setup` again.
 
-:::info Experiment: Shield Update
-The new setup wizard arrives with the **Shield Update**, planned for version 3.6.0. For now it is only offered to a small number of servers.
-:::
-
 ## Modifying the configuration {#settings}
 
 The `/settings` command opens the RaidProtect dashboard. It is reserved for administrators and appears as a temporary private message, visible only to you.
@@ -76,11 +72,11 @@ Settings are organized into five tabs:
 
 - **General**: [language](./language.md), [message commands](./guides/prefix.md), [permissions](./guides/prefix.md#permissions) and the server's time zone.
 - **Arrivals**: [Auto RaidMode](./features/raid-mode.md), [captcha](./features/captcha.md), [minimum account age](./features/onboarding.md#minage), [auto roles](./features/onboarding.md#autorole) and [welcome message](./features/onboarding.md#welcome-message).
-- **Protection**: [DISCON](./features/discon.md)\*, [anti-spam](./features/anti-spam.mdx), [Automod](./features/automod.md) ([image filter](./features/scam-images.md) and [other servers](./features/automod.md#servers)\*), [HoneyPot](./features/honeypot.md), [preventive slowmode](./features/slowmode.md)\*, [Authentification Manager](./features/authentication-manager.mdx) and [DM Lock](./features/dm-lock.mdx).
+- **Protection**: [DISCON](./features/discon.md), [anti-spam](./features/anti-spam.mdx), [Automod](./features/automod.md) ([image filter](./features/scam-images.md), [other servers](./features/automod.md#servers) and [file extensions](./features/automod.md#files)), [HoneyPot](./features/honeypot.md), [preventive slowmode](./features/slowmode.md), [Authentification Manager](./features/authentication-manager.mdx) and [DM Lock](./features/dm-lock.mdx).
 - **Moderation**: [sanctions](./features/sanctions.mdx), [alt accounts](./features/alt-accounts.md)\*, logs, [reports](./features/reports.md) and [transparency](./features/transparency.md).
 - **Utilities**: [tag role](./features/tag-role.md), [channel lock](./features/channel-lock.md), [on-duty role](./features/moderation.mdx#onduty) and message caching.
 
-\* Experiment: these rows only appear on servers that have access to the Shield Update (DISCON, other servers, preventive slowmode) or the Identity Update (alt accounts), in [Premium](/en/premium) public beta.
+\* Experiment: this row only appears on servers that have access to the Identity Update (alt accounts), in [Premium](/en/premium) public beta.
 
 Each row shows the setting's current value and a button: "**Configure**" opens a dedicated screen, "**Edit**" opens an input window. Every change applies immediately.
 

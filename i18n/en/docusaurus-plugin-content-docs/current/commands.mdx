@@ -28,7 +28,7 @@ All RaidProtect commands, grouped by category. Click a command name to access it
 | [`/tagrole`](./features/tag-role.md) | `/tagrole` | Configures the role granted to members who wear the server tag. |
 | [`/display public`](./features/display.mdx) | `/display public` | Manages RaidProtect's public information panels. |
 | [`/display staff`](./features/display.mdx#staff) | `/display staff` | Manages the staff-only panels (DISCON, internal messages). |
-| [`/discon`](./features/discon.md) | `/discon` | Sets up the DISCON panel that adjusts the server's danger level (experiment, Shield Update). |
+| [`/discon`](./features/discon.md) | `/discon` | Sets up the DISCON panel that adjusts the server's danger level. |
 | [`/audit`](./features/audit.md) | `/audit` | Analyzes the server's security and offers to fix configuration flaws. |
 
 ## Moderation {#moderation}
@@ -64,9 +64,9 @@ All RaidProtect commands, grouped by category. Click a command name to access it
 
 | Command | Prototype | Description |
 |---|---|---|
-| [`/lock`](./features/channel-lock.md#lock) | `/lock [#channel] [duration] [reason]` | Locks a channel to prevent message sending (optional duration). |
-| [`/unlock`](./features/channel-lock.md#unlock) | `/unlock [#channel] [reason]` | Unlocks a previously locked channel. |
-| [`/slowmode`](./features/moderation.mdx#slowmode) | `/slowmode (delay) [duration] [#channel] [reason]` | Enables or modifies a channel's slowmode (optional duration of effect). |
+| [`/lock`](./features/channel-lock.md#lock) | `/lock [#channel] [duration] [reason] [--silent]` | Locks a channel to prevent message sending (optional duration). |
+| [`/unlock`](./features/channel-lock.md#unlock) | `/unlock [#channel] [reason] [--silent]` | Unlocks a previously locked channel. |
+| [`/slowmode`](./features/moderation.mdx#slowmode) | `/slowmode (delay) [duration] [#channel] [reason] [--silent]` | Enables or modifies a channel's slowmode (optional duration of effect). |
 
 ## Sanction history {#sanctions}
 
@@ -103,6 +103,7 @@ All RaidProtect commands, grouped by category. Click a command name to access it
 | [`/bypass captcha`](./features/captcha.md#bypass) | `/bypass captcha [@user]` | Allows a user to join without going through the captcha. |
 | [`/bypass minage`](./features/onboarding.md#bypass-minage) | `/bypass minage [@user]` | Allows a user to join without meeting the minimum account age. |
 | [`/bypass raid`](./features/raid-mode.md#bypass-raid) | `/bypass raid [@user]` | Allows a user to join despite raid mode (requires kick mode). |
+| [`/bypass bot`](./features/onboarding.md#bypass-bot) | `/bypass bot [bot]` | Allows a bot to join despite the bot kick (server owner). |
 
 ## Utilities {#utilities}
 
