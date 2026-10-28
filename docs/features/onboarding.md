@@ -109,7 +109,7 @@ Par défaut, un bot ajouté au serveur reçoit les [rôles automatiques](#autoro
 2. Ouvrez l'onglet “**Arrivées**”.
 3. Cliquez sur “**Configurer**” à côté de “**Bots**”.
 
-- **Rôles des bots** : donnés à chaque bot qui arrive, **à la place** des rôles automatiques. Sans rôle choisi, les bots reçoivent les rôles automatiques. **Limites :** 1 rôle en version gratuite, 15 rôles avec le [Premium](/premium). Les mêmes restrictions que pour les rôles automatiques s'appliquent (rôles gérés par une intégration, au-dessus du vôtre ou de RaidProtect, ou portant une permission de modération).
+- **Rôles des bots** : donnés à chaque bot qui arrive, **à la place** des rôles automatiques. Sans rôle choisi, les bots reçoivent les rôles automatiques. **Limites :** 1 rôle en version gratuite, 15 rôles avec le [Premium](/premium). RaidProtect refuse les rôles gérés par une intégration, ceux au-dessus du vôtre ou du sien et ceux qui donnent la permission **Administrateur**. Un rôle qui donne une permission de modération est accepté, avec un avertissement : gardez-le pour des bots de confiance. Les bots ne passent pas le captcha et reçoivent leurs rôles dès leur arrivée.
 - **Expulser les bots non autorisés** : tout bot ajouté est expulsé aussitôt, sauf si le propriétaire l'a autorisé avant avec la commande `/bypass bot`. Désactivé par défaut. **Seul le propriétaire du serveur** peut activer ou désactiver cette option et autoriser un bot.
 
 ### Autoriser un bot {#bypass-bot}
