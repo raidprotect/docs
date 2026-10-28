@@ -15,9 +15,11 @@ L'Identity Update è in fase di sperimentazione: in attesa della sua uscita nell
 - Nuovo comando [`/alt`](./features/alt-accounts.md#alt) e [doppi account](./features/alt-accounts.md): collega gli account di una stessa persona, scegli il suo account principale, e le sue sanzioni (bando, espulsione, mute, jail, timeout, softban) si estendono agli account collegati. Revocare la sanzione di uno la revoca per tutti. <SuggestionLink id="404" /> <SuggestionLink id="263" />
 - [Sanzioni degli account collegati](./features/alt-accounts.md#modes) regolabili per tipo, con una modalità **Trappola** e una [sanzione di elusione](./features/alt-accounts.md#evasion) per l'account collegato che arriva o scrive durante la sanzione.
 - Gli account collegati assenti dal server vengono sanzionati al loro arrivo.
+- Una sanzione estesa al gruppo diventa una [sanzione di gruppo](./features/alt-accounts.md#group-sanction) in `/sanctions` e `/modview`: la si annulla, la si elimina o la si modifica in un colpo solo per tutti gli account.
+- I log di sanzione citano gli account collegati, con un pulsante “**Account collegati**” verso il pannello `/alt` nel formato embed.
 - Nuova impostazione [Un solo account per persona](./features/alt-accounts.md#single-account): gli account secondari vengono messi in quarantena.
 - Il [captcha](./features/captcha.md#activity-alts) individua i doppi account: collega da solo gli account certamente appartenenti alla stessa persona e propone al tuo team i collegamenti probabili.
-- Le [sanzioni degli account collegati](./features/alt-accounts.md#modes) sono riservate al **Premium**. Senza Premium, `/alt` collega e consulta gli account senza limiti.
+- Le [sanzioni degli account collegati](./features/alt-accounts.md#modes) sono riservate al **Premium**. Senza Premium, `/alt` collega e consulta gli account senza limiti, e Un solo account per persona resta disponibile.
 
 ## 3.6.0 Shield Update {#3-6-0}
 

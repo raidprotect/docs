@@ -92,8 +92,8 @@ In modalità **Pannello**, il pulsante “**Verifica**” apre l'**Activity Raid
 
 Con l'[Identity Update](./alt-accounts.md), l'Activity individua anche i nuovi arrivati probabilmente gestiti dalla stessa persona di un membro del tuo server:
 
-- **Collegamento sicuro:** gli account vengono collegati automaticamente in [`/alt`](./alt-accounts.md#alt). I log del captcha lo segnalano, con un pulsante “**Scollega**”.
-- **Collegamento probabile:** se [Un solo account per persona](./alt-accounts.md#single-account) è attivo, il membro passa in revisione. “**Collega a un altro membro**” li collega in `/alt` e lo lascia entrare; se non è stato individuato nessun account, una finestra ti chiede di scegliere il membro (“**Account già sul server**”). Altrimenti il membro entra, e i log del captcha segnalano il collegamento probabile con un pulsante “**Collega gli account**”.
+- **Collegamento sicuro:** gli account vengono collegati automaticamente in [`/alt`](./alt-accounts.md#alt). I log del captcha lo segnalano, con un pulsante “**Scollega**”. Se il gruppo è sanzionato, o se [Un solo account per persona](./alt-accounts.md#single-account) trattiene i suoi account secondari, il nuovo arrivato riceve la sanzione del gruppo o passa in quarantena.
+- **Collegamento probabile:** se [Un solo account per persona](./alt-accounts.md#single-account) è attivo, il membro passa in revisione. “**Collega a un altro membro**” li collega in `/alt` e lo lascia entrare; se non è stato individuato nessun account, una finestra ti chiede di scegliere il membro (“**Account già sul server**”). Altrimenti il membro entra, e i log del captcha segnalano il collegamento probabile con un pulsante “**Collega**”.
 - **Collegamento sicuro non applicato:** nulla viene collegato automaticamente se un account del gruppo fa parte del team del server, se il nuovo arrivato è collegato a più gruppi `/alt`, o se i due account hanno già ciascuno il proprio gruppo (due gruppi non vengono mai uniti automaticamente). Il collegamento ti viene allora proposto allo stesso modo.
 
 Ti vengono mostrati solo gli account del tuo server: non viene detto nulla degli altri server.
