@@ -28,7 +28,7 @@ Alle RaidProtect-Befehle, gruppiert nach Kategorie. Klicken Sie auf den Namen ei
 | [`/tagrole`](./features/tag-role.md) | `/tagrole` | Konfiguriert die Rolle, die Mitgliedern mit dem Server-Tag zugewiesen wird. |
 | [`/display public`](./features/display.mdx) | `/display public` | Verwaltet die öffentlichen Informationspanels von RaidProtect. |
 | [`/display staff`](./features/display.mdx#staff) | `/display staff` | Verwaltet die dem Staff vorbehaltenen Panels (DISCON, interne Nachrichten). |
-| [`/discon`](./features/discon.md) | `/discon` | Richtet das DISCON-Panel ein, das die Gefahrenstufe des Servers einstellt (Experiment, Shield Update). |
+| [`/discon`](./features/discon.md) | `/discon` | Richtet das DISCON-Panel ein, das die Gefahrenstufe des Servers einstellt. |
 | [`/audit`](./features/audit.md) | `/audit` | Analysiert die Sicherheit des Servers und schlägt vor, Konfigurationslücken zu beheben. |
 
 ## Moderation {#moderation}
@@ -64,9 +64,9 @@ Alle RaidProtect-Befehle, gruppiert nach Kategorie. Klicken Sie auf den Namen ei
 
 | Befehl | Prototyp | Beschreibung |
 |---|---|---|
-| [`/lock`](./features/channel-lock.md#lock) | `/lock [#channel] [duration] [reason]` | Sperrt einen Kanal, um das Senden von Nachrichten zu verhindern (optionale Dauer). |
-| [`/unlock`](./features/channel-lock.md#unlock) | `/unlock [#channel] [reason]` | Entsperrt einen zuvor gesperrten Kanal. |
-| [`/slowmode`](./features/moderation.mdx#slowmode) | `/slowmode (delay) [duration] [#channel] [reason]` | Aktiviert oder ändert den Slowmode eines Kanals (optionale Anwendungsdauer). |
+| [`/lock`](./features/channel-lock.md#lock) | `/lock [#channel] [duration] [reason] [--silent]` | Sperrt einen Kanal, um das Senden von Nachrichten zu verhindern (optionale Dauer). |
+| [`/unlock`](./features/channel-lock.md#unlock) | `/unlock [#channel] [reason] [--silent]` | Entsperrt einen zuvor gesperrten Kanal. |
+| [`/slowmode`](./features/moderation.mdx#slowmode) | `/slowmode (delay) [duration] [#channel] [reason] [--silent]` | Aktiviert oder ändert den Slowmode eines Kanals (optionale Anwendungsdauer). |
 
 ## Sanktionsverlauf {#sanctions}
 
@@ -103,6 +103,7 @@ Alle RaidProtect-Befehle, gruppiert nach Kategorie. Klicken Sie auf den Namen ei
 | [`/bypass captcha`](./features/captcha.md#bypass) | `/bypass captcha [@user]` | Erlaubt einem Benutzer, ohne Captcha beizutreten. |
 | [`/bypass minage`](./features/onboarding.md#bypass-minage) | `/bypass minage [@user]` | Erlaubt einem Benutzer, ohne Mindestalter beizutreten. |
 | [`/bypass raid`](./features/raid-mode.md#bypass-raid) | `/bypass raid [@user]` | Erlaubt einem Benutzer, trotz Raid-Modus beizutreten (erfordert den Kick-Modus). |
+| [`/bypass bot`](./features/onboarding.md#bypass-bot) | `/bypass bot [bot]` | Erlaubt einem Bot, trotz Bot-Kick beizutreten (Eigentümer des Servers). |
 
 ## Dienstprogramme {#utilities}
 

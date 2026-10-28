@@ -64,7 +64,7 @@ Sie können unter der Nachricht Schaltflächen hinzufügen, die zu einem Kanal d
 2. Öffnen Sie den Tab „**Ankünfte**“.
 3. Klicken Sie neben „**Willkommensnachricht**“ auf „**Konfigurieren**“.
 4. Wählen Sie unter „**Buttons verwalten**“ die Option „**Button hinzufügen**“.
-5. Geben Sie der Schaltfläche einen Namen und wählen Sie den zu verlinkenden Kanal.
+5. Geben Sie der Schaltfläche einen Namen, wählen Sie den zu verlinkenden Kanal und, wenn Sie möchten, ein **Emoji**: ein Standard-Emoji oder ein Emoji dieses Servers (`<:nom:id>`, `:nom:` oder seine ID). Ein ungültiges Emoji verhindert das Speichern nicht: Die Schaltfläche wird ohne Emoji erstellt.
 
 Um eine Schaltfläche zu ändern oder zu löschen, wählen Sie sie in derselben Liste aus.
 
@@ -101,6 +101,27 @@ Vermeiden Sie Rollen mit Berechtigungen: Eine automatisch vergebene Rolle sollte
 Wenn Ihr Server einen anderen Bot für seine automatische Rolle verwendet, vergibt dieser die Rolle möglicherweise vor dem Captcha. Ersetzen Sie ihn durch die automatischen Rollen von RaidProtect.
 :::
 
+## 🤖 Ankunft der Bots {#bots}
+
+Standardmäßig erhält ein dem Server hinzugefügter Bot die [automatischen Rollen](#autorole) wie ein Mitglied. Der Abschnitt „**Bots**“ im Tab „**Ankünfte**“ ändert das.
+
+1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
+2. Öffnen Sie den Tab „**Ankünfte**“.
+3. Klicken Sie neben „**Bots**“ auf „**Konfigurieren**“.
+
+- **Rollen der Bots**: werden jedem ankommenden Bot **anstelle** der automatischen Rollen vergeben. Ohne gewählte Rolle erhalten die Bots die automatischen Rollen. **Grenzen:** 1 Rolle in der kostenlosen Version, 15 Rollen mit [Premium](/de/premium). Es gelten dieselben Einschränkungen wie für die automatischen Rollen (von einer Integration verwaltete Rollen, Rollen über Ihrer eigenen oder der von RaidProtect oder mit einer Moderationsberechtigung).
+- **Nicht freigegebene Bots kicken**: Jeder hinzugefügte Bot wird sofort gekickt, es sei denn, der Eigentümer hat ihn zuvor mit dem Befehl `/bypass bot` freigegeben. Standardmäßig deaktiviert. **Nur der Eigentümer des Servers** kann diese Option aktivieren oder deaktivieren und einen Bot freigeben.
+
+### Einen Bot freigeben {#bypass-bot}
+
+Verwenden Sie den Befehl: ```/bypass bot [bot]```
+
+Ersetzen Sie `[bot]` durch den freizugebenden Bot: Er kann dem Server **einmal** innerhalb der folgenden 10 Minuten beitreten, ohne gekickt zu werden. Ohne Bot listet der Befehl die aktuell freigegebenen Bots auf. Jede Freigabe wird in Ihren Logs festgehalten.
+
+:::info
+RaidProtect benötigt die Berechtigung „**Mitglieder kicken**“ und eine Rolle über der des Bots, um ihn zu kicken. Andernfalls weist das Log darauf hin, und der Bot bleibt.
+:::
+
 ## 🎂 Mindestalter des Kontos {#minage}
 
 Zur Erhöhung der Sicherheit können Sie ein Mindestalter für die Discord-Konten neuer Mitglieder verlangen. Kurz vor einem Raid erstellte Konten kommen nicht durch die Tür. Der Filter gilt bei jedem Beitritt.
@@ -120,13 +141,13 @@ Um den Filter zu deaktivieren, klicken Sie auf „**Zurücksetzen**“. RaidProt
 | Aktion | Wirkung auf ein zu junges Konto |
 |---|---|
 | „**Kicken**“ (Standard) | Es wird bei jedem Versuch gekickt, solange sein Konto zu jung ist. |
-| „**Bis zum erforderlichen Alter in den Jail**“ | Es tritt bei, ohne etwas vom Server zu sehen, und verlässt das [Jail](./sanctions.mdx#jail), sobald es das erforderliche Alter hat. |
+| „**Quarantäne bis zum erforderlichen Alter**“ | Es tritt bei, ohne etwas vom Server zu sehen (über die [Jail-Rolle](./sanctions.mdx#jail)), und verlässt seine Quarantäne, sobald es das erforderliche Alter hat, zum angegebenen Datum. |
 | „**Am Eingang festhalten**“ | Es wird an einem [Captcha](./captcha.md) festgehalten, das es erst lösen kann, wenn das Alter erreicht ist. |
 
-Das Konto erhält eine Privatnachricht mit dem Datum, ab dem es Zugang zum Server hat. Kicks, Jail-Einweisungen und Banns werden im Log-Kanal festgehalten.
+Das Konto erhält eine Privatnachricht mit dem Datum, ab dem es Zugang zum Server hat. Kicks, Quarantänen und Banns werden im Log-Kanal festgehalten.
 
 :::info
-- „**Bis zum erforderlichen Alter in den Jail**“ erfordert eine Jail-Rolle, die im Tab „**Moderation**“ > „**Sanktionen**“ konfiguriert wird. Ohne sie schlägt RaidProtect Ihnen vor, sie zu konfigurieren oder auf „**Bis zum erforderlichen Alter bannen**“ zurückzufallen: Das Konto verlässt den Server und sein Bann wird zum richtigen Zeitpunkt automatisch aufgehoben.
+- „**Quarantäne bis zum erforderlichen Alter**“ erfordert eine Jail-Rolle, die im Tab „**Moderation**“ > „**Sanktionen**“ konfiguriert wird. Ohne sie schlägt RaidProtect Ihnen vor, sie zu konfigurieren oder auf „**Bis zum erforderlichen Alter bannen**“ zurückzufallen: Das Konto verlässt den Server und sein Bann wird zum richtigen Zeitpunkt automatisch aufgehoben.
 - „**Am Eingang festhalten**“ erfordert ein aktives Captcha im Modus **Panel (Interaktiv)**.
 :::
 
@@ -134,7 +155,7 @@ Das Konto erhält eine Privatnachricht mit dem Datum, ab dem es Zugang zum Serve
 
 Verwenden Sie den Befehl: ```/bypass minage [@user]```
 
-Ersetzen Sie `[@user]` durch die gewünschte [Kennung](../guides/id.mdx); diese Person hat dann 10 Minuten Zeit, dem Server beizutreten, ohne durch das erforderliche Alter blockiert zu werden. Sie können den Befehl auch ohne Angabe eines Nutzers verwenden, um die aktuelle Liste der Bypass-Nutzer anzuzeigen.
+Ersetzen Sie `[@user]` durch die gewünschte [Kennung](../guides/id.mdx); diese Person hat dann 10 Minuten Zeit, dem Server beizutreten, ohne durch das erforderliche Alter blockiert zu werden. Sie können den Befehl auch ohne Angabe eines Nutzers verwenden, um die aktuelle Liste der Bypass-Nutzer anzuzeigen. Er hebt auch die Quarantäne eines zu jungen Kontos auf. `/unjail` hebt sie nicht auf: Es gibt den zu verwendenden Befehl an.
 
 ## Häufig gestellte Fragen {#faq}
 
@@ -160,4 +181,4 @@ Ein Wert von wenigen Stunden bis 1 Tag genügt, um die meisten für einen Raid e
 
 ### Wird ein zu junges Konto gebannt?
 
-Nein, standardmäßig nicht: Es wird bei jedem Versuch gekickt. Sie können es auch bis zum erforderlichen Alter ins Jail stecken oder hinter dem Captcha zurückhalten. Der temporäre Bann ist nur eine Ausweichlösung, wenn das Jail nicht konfiguriert ist.
+Nein, standardmäßig nicht: Es wird bei jedem Versuch gekickt. Sie können es auch bis zum erforderlichen Alter in Quarantäne setzen oder hinter dem Captcha zurückhalten. Der temporäre Bann ist nur eine Ausweichlösung, wenn die Jail-Rolle nicht konfiguriert ist.

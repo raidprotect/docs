@@ -37,6 +37,8 @@ Das Captcha basiert auf einer Rolle **@Nicht verifiziert** und einem Kanal **#ve
 | **Panel (Interaktiv)**, Standard | Eine dauerhafte Nachricht „**Verifizierungssystem**“ mit einer Schaltfläche „**Verifizieren**“, die die [RaidProtect-Activity](#activity) öffnet. Das Mitglied kann nicht in **#verifizierung** schreiben. |
 | **Challenge (Klassisch)** | Bei seiner Ankunft wird ein Bild in **#verifizierung** gepostet, und es tippt den Code als Nachricht in den Kanal. |
 
+Das Panel trägt eine Schaltfläche „**Translate**“, um es in der eigenen Sprache zu lesen, und jeder Neuankömmling wird im Verifizierungskanal erwähnt, danach wird die Nachricht gelöscht: So findet er den Kanal wieder.
+
 Der Panel-Modus hält den Kanal sauber und ermöglicht zusätzliche Einstellungen: Wahl der Sanktion bei aufgebrauchten Versuchen, [Captcha während eines Raids eingefroren](./raid-mode.md#action), [Zurückhalten zu junger Konten am Eingang](./onboarding.md#minage). Der Challenge-Modus kickt das Mitglied immer nach Ablauf der vorgegebenen Zeit oder wenn seine Versuche aufgebraucht sind.
 
 ### Auslöser {#trigger}
@@ -45,15 +47,11 @@ Der Panel-Modus hält den Kanal sauber und ermöglicht zusätzliche Einstellunge
 |---|---|
 | **Dauerhaft**, Standard | Bei jedem Beitritt, ohne Bedingung. |
 | **Automatisch** | Nur während eines Raids oder bei einer hohen DISCON-Stufe. Die übrigen Neuankömmlinge treten direkt bei. |
-| **Intelligent** <span className="badge-experiment">Experiment</span> | Wie Automatisch, zuzüglich der Konten, die verdächtig erscheinen. |
+| **Intelligent** | Wie Automatisch, zuzüglich der Konten, die verdächtig erscheinen. |
 
-Mit **Automatisch** wird das Captcha während eines Raids nur verlangt, wenn der [Auto RaidMode](./raid-mode.md#action) auf „**Zum Captcha schicken**“ oder „**Captcha während des Raids eingefroren**“ steht, sowie bei einem [DISCON](./discon.md)-Alarm ab Stufe 3 (im Experiment mit der Shield Update).
+Mit **Automatisch** wird das Captcha während eines Raids nur verlangt, wenn der [Auto RaidMode](./raid-mode.md#action) auf „**Zum Captcha schicken**“ oder „**Captcha während des Raids eingefroren**“ steht, sowie bei einem [DISCON](./discon.md)-Alarm ab Stufe 3.
 
 Der Auslöser **Intelligent** bewertet das Profil jedes Neuankömmlings. Ein von Ihrem Team von Hand genehmigtes Mitglied gilt nie als verdächtig.
-
-:::info Experiment: Shield Update
-Der intelligente Auslöser gehört zur **Shield Update**, die für Version 3.6.0 vorgesehen ist. Bis zu ihrer Veröffentlichung befindet er sich in der Experimentierphase, als öffentliche Beta für [Premium](/de/premium)-Server. Ohne das Experiment wird er nicht angeboten.
-:::
 
 ## 🚪 Wie konfiguriere ich das Captcha? {#config}
 
@@ -75,7 +73,7 @@ Das Captcha startet im Modus **Panel (Interaktiv)**, ausgelöst **Dauerhaft**, m
 2. Öffnen Sie den Tab „**Ankünfte**“.
 3. Klicken Sie neben „**Captcha**“ auf „**Konfigurieren**“.
 4. Wählen Sie unter „**Anzeigemodus**“ „**Panel (Interaktiv)**“ oder „**Challenge (Klassisch)**“.
-5. Wählen Sie unter „**Auslösung**“ „**Dauerhaft**“, „**Automatisch**“ oder „**Intelligent**“ (Shield Update).
+5. Wählen Sie unter „**Auslösung**“ „**Dauerhaft**“, „**Automatisch**“ oder „**Intelligent**“.
 
 ### Verifizierung in der Activity {#activity}
 
@@ -199,7 +197,7 @@ Ersetzen Sie `[@user]` durch die gewünschte [Kennung](../guides/id.mdx); diese 
 Das Captcha arbeitet mit den anderen Schutzmaßnahmen für Neuzugänge zusammen:
 - **[Auto RaidMode](./raid-mode.md#action):** Mit der Aktion „**Zum Captcha schicken**“ durchlaufen die Neuankömmlinge einer Welle das Captcha, statt gekickt zu werden. Mit „**Captcha während des Raids eingefroren**“ warten sie hinter dem Captcha und durchlaufen es nach der Welle.
 - **[Mindestalter des Kontos](./onboarding.md#minage):** Die Aktion „**Am Eingang festhalten**“ blockiert ein zu junges Konto an einem Captcha, das es erst lösen kann, wenn das Alter erreicht ist.
-- **[DISCON](./discon.md#captcha):** Ab Stufe 4 wird das Captcha aktiviert, falls es konfiguriert ist, auch wenn Sie es deaktiviert hatten. Ab Stufe 3 gilt es für alle Neuankömmlinge, unabhängig von seinem Auslöser (im Experiment mit der Shield Update).
+- **[DISCON](./discon.md#captcha):** Ab Stufe 4 wird das Captcha aktiviert, falls es konfiguriert ist, auch wenn Sie es deaktiviert hatten. Ab Stufe 3 gilt es für alle Neuankömmlinge, unabhängig von seinem Auslöser.
 
 ## Häufig gestellte Fragen {#faq}
 

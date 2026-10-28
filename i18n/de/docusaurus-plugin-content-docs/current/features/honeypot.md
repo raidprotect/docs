@@ -58,7 +58,18 @@ Standardmäßig wendet der HoneyPot einen **Softban** an. Mehrere [Sanktionen](/
 | **Jail** | Weist die auf Ihrem Server konfigurierte [Jail-Rolle](./sanctions.mdx#jail) zu | Premium |
 | **Mute** | Weist die auf Ihrem Server konfigurierte [Mute-Rolle](./sanctions.mdx#mute) zu | Premium |
 
-Für Sanktionen mit Dauer (Bann, Timeout, Jail, Mute) wählen Sie eine Dauer in der Auswahl „**Dauer**“: 5 Minuten, 1 Stunde, **1 Tag** (Standard) oder 28 Tage, oder „**Benutzerdefinierter Wert**“, um Ihre eigene einzugeben (zum Beispiel `5m`, `1h`, `2d`; Minimum 1 Minute). Die Auswahl ist beim Softban und beim Kick, die keine Dauer haben, ausgegraut.
+Für Sanktionen mit Dauer (Bann, Timeout, Jail, Mute) wählen Sie eine Dauer in der Auswahl „**Dauer**“ (standardmäßig 1 Tag) oder „**Benutzerdefinierter Wert**“, um Ihre eigene einzugeben (zum Beispiel `5m`, `1h`, `2d`; Minimum 1 Minute). Die Auswahl ist beim Softban und beim Kick, die keine Dauer haben, ausgegraut.
+
+Die Vorgaben der Auswahl richten sich nach der Sanktion:
+
+| Sanktion | Angebotene Vorgaben |
+|---|---|
+| **Bann** | Dauerhaft, 1 Tag, 7 Tage, 30 Tage |
+| **Jail** | Dauerhaft, 1 Stunde, 1 Tag, 7 Tage |
+| **Mute** | 5 Minuten, 1 Stunde, 1 Tag, 7 Tage |
+| **Timeout** | 5 Minuten, 1 Stunde, 1 Tag, 28 Tage |
+
+Bann und Jail können **dauerhaft** sein: Die Sanktion wird nicht von selbst aufgehoben. Beim Wechsel der Sanktion bleibt die gewählte Dauer erhalten, sofern sie möglich bleibt (eine dauerhafte Sanktion wird nicht zu einem Timeout oder Mute übernommen, und ein Timeout bleibt unter 28 Tagen).
 
 :::tip
 Der **Softban** ist ein guter Kompromiss: Er räumt die Nachrichten auf und schließt das gehackte Konto aus, aber der legitime Besitzer kann zurückkehren, sobald er sein Konto gesichert hat.
@@ -74,13 +85,9 @@ Für die anderen Sanktionen (Kick, Timeout, Jail, Mute) löscht RaidProtect die 
 - Verliert Ihr Server das Premium, fällt eine Premium-Sanktion beim nächsten Auslösen automatisch auf **Softban** zurück.
 :::
 
-### Frist vor der Sanktion <span className="badge-experiment">Experiment</span> {#grace}
+### Frist vor der Sanktion {#grace}
 
 Ein gutgläubiges Mitglied kann versehentlich in den HoneyPot schreiben. Die **Frist vor der Sanktion** lässt ihm Zeit, dies zu melden, bevor es sanktioniert wird.
-
-:::info Experiment: Shield Update
-Die Frist vor der Sanktion gehört zur **Shield Update**, die für Version 3.6.0 vorgesehen ist. Bis zu ihrer Veröffentlichung befindet sie sich in der Experimentierphase, als öffentliche Beta für [Premium](/de/premium)-Server.
-:::
 
 1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
 2. Öffnen Sie den Tab „**Schutz**“.

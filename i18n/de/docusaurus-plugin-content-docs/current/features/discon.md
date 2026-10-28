@@ -15,10 +15,6 @@ Der **DISCON** ist die Gefahrenstufe Ihres Servers nach dem Vorbild von DEFCON. 
 - **Eine saubere Rückkehr**: Beim Herunterstufen deaktivieren wir nur, was der DISCON selbst aktiviert hat. Ein Captcha, eine DM-Sperre oder ein Raid-Modus, die Sie von Hand aktiviert hatten, bleiben bestehen.
 - **Eine manuelle Änderung**: Die Stufe ändert sich nie von selbst, Ihr Team entscheidet.
 
-:::info Experiment: Shield Update
-Der DISCON gehört zur **Shield Update**, die für Version 3.6.0 vorgesehen ist. Bis zu ihrer Veröffentlichung befindet er sich in der Experimentierphase, als öffentliche Beta für [Premium](/de/premium)-Server. Der [Status-Sprachkanal](#voice) erfordert Premium.
-:::
-
 ## 🚦 Die fünf Stufen {#levels}
 
 | Stufe | Name | Was wir anwenden |
@@ -81,7 +77,7 @@ Dafür muss das Captcha mit Kanal und Rolle [konfiguriert](./captcha.md#config) 
 1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
 2. Öffnen Sie den Tab „**Schutz**“.
 3. Klicken Sie neben „**DISCON**“ auf „**Konfigurieren**“.
-4. Wählen Sie den Panel-Kanal in der Auswahl oder klicken Sie auf „**Panel-Kanal erstellen**“.
+4. Wählen Sie den Panel-Kanal (Text- oder Sprachkanal) in der Auswahl oder klicken Sie auf „**Panel-Kanal erstellen**“.
 5. Optional ([Premium](/de/premium)): Wählen Sie einen Status-Sprachkanal oder klicken Sie auf „**Status-Kanal erstellen**“.
 
 Unter der Konfiguration finden Sie die aktuelle Stufe, die fünf Stufen-Schaltflächen und die **Stufenübersicht**, die beschreibt, was jede Stufe auf Ihrem Server bewirken wird.
@@ -93,6 +89,7 @@ Unter der Konfiguration finden Sie die aktuelle Stufe, die fünf Stufen-Schaltfl
 Die Schaltflächen des Panels erfordern keine Berechtigung: **Der Zugang zum Kanal dient als Kontrolle**. Wählen Sie daher einen Kanal, der Ihrem Team vorbehalten ist.
 
 - Ein für den gesamten Server sichtbarer Kanal wird abgelehnt: Jedes Mitglied könnte dort die Stufe ändern.
+- Ein Sprachkanal eignet sich ebenfalls: Das Panel wird dann in seinem integrierten Textkanal gepostet.
 - „**Panel-Kanal erstellen**“ erstellt einen Kanal `#discon`, der für @everyone unsichtbar ist. Öffnen Sie ihn anschließend für die Rollen Ihres Teams.
 
 ### Status-Sprachkanal <span className="badge-premium">Premium</span> {#voice}

@@ -50,7 +50,7 @@ Ein Modul in `/setup` abzuwählen, deaktiviert es nicht. Um eine Funktion abzusc
 
 Die [automatischen Rollen und die Willkommensnachricht](./features/onboarding.md) gehören nicht zum Assistenten: Stellen Sie sie im Tab „**Ankünfte**“ von `/settings` ein.
 
-### 🧭 Neuer Installationsassistent <span className="badge-experiment">Experiment</span> {#wizard}
+### 🧭 Neuer Installationsassistent {#wizard}
 
 Ein neuer `/setup`-Assistent ersetzt die Modulliste durch einen geführten Ablauf:
 
@@ -62,10 +62,6 @@ Ein neuer `/setup`-Assistent ersetzt die Modulliste durch einen geführten Ablau
 - **Ein bereits konfigurierter Server wird geprüft, nicht neu gemacht**: Das vorhandene Captcha-Panel und die bereits aktive DM-Sperre bleiben erhalten.
 - **Und danach**: Eine Vorschau des [Sicherheitsaudits](./features/audit.md) schließt die Installation ab, mit Verknüpfungen, um das Captcha zu testen, die Willkommensnachricht anzupassen oder alle Einstellungen zu öffnen. Ein fehlgeschlagener Schritt wird durch erneutes Ausführen von `/setup` wieder aufgenommen.
 
-:::info Experiment: Shield Update
-Der neue Installationsassistent kommt mit der **Shield Update**, die für Version 3.6.0 vorgesehen ist. Er wird derzeit nur einer kleinen Zahl von Servern angeboten.
-:::
-
 ## Konfiguration ändern {#settings}
 
 Der Befehl `/settings` öffnet das Dashboard von RaidProtect. Er ist Administratoren vorbehalten und wird als temporäre Privatnachricht angezeigt, die nur Sie sehen.
@@ -76,11 +72,11 @@ Die Einstellungen sind in fünf Tabs geordnet:
 
 - **Allgemein**: [Sprache](./language.md), [Präfixbefehle](./guides/prefix.md), [Berechtigungen](./guides/prefix.md#permissions) und Zeitzone des Servers.
 - **Ankünfte**: [Auto RaidMode](./features/raid-mode.md), [Captcha](./features/captcha.md), [Mindestalter des Kontos](./features/onboarding.md#minage), [automatische Rollen](./features/onboarding.md#autorole) und [Willkommensnachricht](./features/onboarding.md#welcome-message).
-- **Schutz**: [DISCON](./features/discon.md)\*, [Anti-Spam](./features/anti-spam.mdx), [Automod](./features/automod.md) ([Bilderfilter](./features/scam-images.md) und [andere Server](./features/automod.md#servers)\*), [HoneyPot](./features/honeypot.md), [präventiver Slowmode](./features/slowmode.md)\*, [Authentification Manager](./features/authentication-manager.mdx) und [DM-Sperre](./features/dm-lock.mdx).
+- **Schutz**: [DISCON](./features/discon.md), [Anti-Spam](./features/anti-spam.mdx), [Automod](./features/automod.md) ([Bilderfilter](./features/scam-images.md), [andere Server](./features/automod.md#servers) und [Dateiendungen](./features/automod.md#files)), [HoneyPot](./features/honeypot.md), [präventiver Slowmode](./features/slowmode.md), [Authentification Manager](./features/authentication-manager.mdx) und [DM-Sperre](./features/dm-lock.mdx).
 - **Moderation**: [Sanktionen](./features/sanctions.mdx), [Zweitkonten](./features/alt-accounts.md)\*, Logs, [Meldungen](./features/reports.md) und [Transparenz](./features/transparency.md).
 - **Werkzeuge**: [Tag-Rolle](./features/tag-role.md), [Kanalsperre](./features/channel-lock.md), [Rolle „im Dienst“](./features/moderation.mdx#onduty) und Zwischenspeicherung von Nachrichten.
 
-\* Im Experiment: Diese Zeilen erscheinen nur auf Servern, die Zugang zur Shield Update (DISCON, andere Server, präventiver Slowmode) oder zur Identity Update (Zweitkonten) haben, als öffentliche [Premium](/de/premium)-Beta.
+\* Im Experiment: Diese Zeile erscheint nur auf Servern, die Zugang zur Identity Update (Zweitkonten) haben, als öffentliche [Premium](/de/premium)-Beta.
 
 Jede Zeile zeigt den aktuellen Wert der Einstellung und eine Schaltfläche: „**Konfigurieren**“ öffnet einen eigenen Bildschirm, „**Bearbeiten**“ öffnet ein Eingabefenster. Jede Änderung wird sofort angewendet.
 
