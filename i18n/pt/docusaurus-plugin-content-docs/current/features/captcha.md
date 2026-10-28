@@ -92,8 +92,8 @@ No modo **Painel**, o botão “**Verificar**” abre a **Activity RaidProtect**
 
 Com a [Identity Update](./alt-accounts.md), a Activity também detecta os recém-chegados provavelmente controlados pela mesma pessoa que um membro do seu servidor:
 
-- **Vínculo seguro:** as contas são vinculadas automaticamente em [`/alt`](./alt-accounts.md#alt). Os logs do captcha o sinalizam, com um botão “**Desvincular**”.
-- **Vínculo provável:** se [Uma conta por pessoa](./alt-accounts.md#single-account) estiver ativo, o membro passa por revisão. “**Vincular a outro membro**” as vincula em `/alt` e o deixa entrar; se nenhuma conta tiver sido detectada, uma janela pede que você escolha o membro (“**Conta já no servidor**”). Caso contrário, o membro entra, e os logs do captcha sinalizam o vínculo provável com um botão “**Vincular contas**”.
+- **Vínculo seguro:** as contas são vinculadas automaticamente em [`/alt`](./alt-accounts.md#alt). Os logs do captcha o sinalizam, com um botão “**Desvincular**”. Se o grupo estiver sancionado, ou se [Uma conta por pessoa](./alt-accounts.md#single-account) retiver as contas secundárias dele, o recém-chegado recebe a sanção do grupo ou entra em quarentena.
+- **Vínculo provável:** se [Uma conta por pessoa](./alt-accounts.md#single-account) estiver ativo, o membro passa por revisão. “**Vincular a outro membro**” as vincula em `/alt` e o deixa entrar; se nenhuma conta tiver sido detectada, uma janela pede que você escolha o membro (“**Conta já no servidor**”). Caso contrário, o membro entra, e os logs do captcha sinalizam o vínculo provável com um botão “**Vincular**”.
 - **Vínculo seguro não aplicado:** nada é vinculado automaticamente se uma conta do grupo fizer parte da equipe do servidor, se o recém-chegado estiver ligado a vários grupos `/alt`, ou se as duas contas já tiverem cada uma o seu grupo (dois grupos nunca são unidos automaticamente). O vínculo é então proposto a você da mesma forma.
 
 Somente as contas do seu servidor são mostradas a você: nada é dito sobre os outros servidores.

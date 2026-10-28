@@ -16,9 +16,11 @@ A Identity Update está em experimentação: até o lançamento na 3.7.0, ela es
 - Novo comando [`/alt`](./features/alt-accounts.md#alt) e [contas duplicadas](./features/alt-accounts.md): vincule as contas de uma mesma pessoa, escolha a conta principal dela, e as sanções dela (banimento, expulsão, mute, jail, timeout, softban) se estendem às contas vinculadas. Remover a sanção de uma a remove para todas. <SuggestionLink id="404" /> <SuggestionLink id="263" />
 - [Sanções das contas vinculadas](./features/alt-accounts.md#modes) configuráveis por tipo, com um modo **Armadilha** e uma [sanção de evasão](./features/alt-accounts.md#evasion) para a conta vinculada que chega ou escreve durante a sanção.
 - As contas vinculadas ausentes do servidor são sancionadas na chegada.
+- Uma sanção estendida ao grupo se torna uma [sanção em grupo](./features/alt-accounts.md#group-sanction) em `/sanctions` e `/modview`: ela é anulada, excluída ou editada de uma vez para todas as contas.
+- Os logs de sanção citam as contas vinculadas, com um botão “**Contas vinculadas**” para o painel `/alt` no formato embed.
 - Nova configuração [Uma conta por pessoa](./features/alt-accounts.md#single-account): as contas secundárias são colocadas em quarentena.
 - O [captcha](./features/captcha.md#activity-alts) detecta as contas duplicadas: ele mesmo vincula as contas que tem certeza de serem a mesma pessoa, e propõe à sua equipe os vínculos prováveis.
-- As [sanções das contas vinculadas](./features/alt-accounts.md#modes) são reservadas ao **Premium**. Sem Premium, `/alt` vincula e consulta as contas sem limite.
+- As [sanções das contas vinculadas](./features/alt-accounts.md#modes) são reservadas ao **Premium**. Sem Premium, `/alt` vincula e consulta as contas sem limite, e Uma conta por pessoa continua disponível.
 
 ## 3.6.0 Shield Update {#3-6-0}
 
