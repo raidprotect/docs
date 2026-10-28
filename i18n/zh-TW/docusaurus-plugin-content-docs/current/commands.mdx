@@ -28,7 +28,7 @@ RaidProtect 的所有指令，依類別分組。點擊指令名稱即可前往�
 | [`/tagrole`](./features/tag-role.md) | `/tagrole` | 設定授予佩戴伺服器標籤之成員的角色。 |
 | [`/display public`](./features/display.mdx) | `/display public` | 管理 RaidProtect 的公開資訊面板。 |
 | [`/display staff`](./features/display.mdx#staff) | `/display staff` | 管理工作人員專用的面板（DISCON、內部訊息）。 |
-| [`/discon`](./features/discon.md) | `/discon` | 設定 DISCON 面板，用以調整伺服器的危險等級（實驗階段，Shield Update）。 |
+| [`/discon`](./features/discon.md) | `/discon` | 設定 DISCON 面板，用以調整伺服器的危險等級。 |
 | [`/audit`](./features/audit.md) | `/audit` | 分析伺服器的安全性，並提議修正設定漏洞。 |
 
 ## 管理 {#moderation}
@@ -64,9 +64,9 @@ RaidProtect 的所有指令，依類別分組。點擊指令名稱即可前往�
 
 | 指令 | 原型 | 說明 |
 |---|---|---|
-| [`/lock`](./features/channel-lock.md#lock) | `/lock [#channel] [duration] [reason]` | 鎖定頻道以禁止發送訊息（時長為選填）。 |
-| [`/unlock`](./features/channel-lock.md#unlock) | `/unlock [#channel] [reason]` | 解除先前被鎖定的頻道。 |
-| [`/slowmode`](./features/moderation.mdx#slowmode) | `/slowmode (delay) [duration] [#channel] [reason]` | 啟用或修改頻道的慢速模式（套用時長為選填）。 |
+| [`/lock`](./features/channel-lock.md#lock) | `/lock [#channel] [duration] [reason] [--silent]` | 鎖定頻道以禁止發送訊息（時長為選填）。 |
+| [`/unlock`](./features/channel-lock.md#unlock) | `/unlock [#channel] [reason] [--silent]` | 解除先前被鎖定的頻道。 |
+| [`/slowmode`](./features/moderation.mdx#slowmode) | `/slowmode (delay) [duration] [#channel] [reason] [--silent]` | 啟用或修改頻道的慢速模式（套用時長為選填）。 |
 
 ## 處罰紀錄 {#sanctions}
 
@@ -103,6 +103,7 @@ RaidProtect 的所有指令，依類別分組。點擊指令名稱即可前往�
 | [`/bypass captcha`](./features/captcha.md#bypass) | `/bypass captcha [@user]` | 允許使用者不通過驗證碼即可加入。 |
 | [`/bypass minage`](./features/onboarding.md#bypass-minage) | `/bypass minage [@user]` | 允許使用者不受帳號最短註冊時長限制即可加入。 |
 | [`/bypass raid`](./features/raid-mode.md#bypass-raid) | `/bypass raid [@user]` | 允許使用者不受突襲模式影響而加入（需要踢出模式）。 |
+| [`/bypass bot`](./features/onboarding.md#bypass-bot) | `/bypass bot [bot]` | 允許機器人不受機器人踢出影響而加入（限伺服器擁有者）。 |
 
 ## 工具 {#utilities}
 

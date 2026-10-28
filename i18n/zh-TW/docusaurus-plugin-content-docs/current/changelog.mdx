@@ -19,11 +19,7 @@ Identity Update 處於實驗階段：在 3.7.0 正式推出之前，它為 [Prem
 - [驗證碼](./features/captcha.md#activity-alts)能偵測多帳號：它會自行關聯確定是同一個人的帳號，並向您的團隊提議可能的關聯。
 - [關聯帳號的處罰](./features/alt-accounts.md#modes)僅限 **Premium**。沒有 Premium 時，`/alt` 仍可無限制地關聯與查閱帳號。
 
-## 3.6.0 Shield Update <span className="badge-experiment">實驗</span> {#3-6-0}
-
-:::info 實驗
-Shield Update 處於實驗階段：在 3.6.0 正式推出之前，它為 [Premium](/zh-TW/premium) 伺服器提供公開測試版。其內容仍可能變動。
-:::
+## 3.6.0 Shield Update {#3-6-0}
 
 - 新增 [**DISCON**](./features/discon.md)：分為五級的伺服器危險等級，可透過 `/discon` 指令或[團隊專用面板](./features/discon.md#panel)一鍵調整。每個等級都會自動強化伺服器（驗證、驗證碼、私訊鎖定、突襲模式、鎖定），且[語音頻道](./features/discon.md#voice)會顯示目前的等級。
 - 新增[預防性慢速模式](./features/slowmode.md)（**Premium**）：所選頻道的慢速模式會自動調整，以維持您所設定的訊息流量。
@@ -33,6 +29,14 @@ Shield Update 處於實驗階段：在 3.6.0 正式推出之前，它為 [Premiu
 - 新增**隔離**處罰，與 [Discord 的隔離](./features/sanctions.mdx#discord-quarantine)同步。
 - [ScamLens](./features/scam-images.md)：[圖片目錄](./features/scam-images.md#catalog)（**Premium**），用於封鎖您自己的詐騙圖片。
 - 每則被 Discord AutoMod 攔截的訊息，都會以「Discord Automod」的名義建立一個靜默的[警告](./features/sanctions.mdx)。
+- [Automod](./features/automod.md) 新增[副檔名](./features/automod.md#files)過濾器：副檔名的黑名單或白名單，可套用於整個伺服器或個別頻道，並能偵測被改名的檔案。免費提供一條頻道規則，Premium 則可設定 20 條。
+- 其他伺服器過濾器也會讀取其他伺服器的活動連結。
+- 帳號最短註冊時長：監禁改為[隔離](./features/onboarding.md#minage-action)，並在達到要求的日期時解除。
+- [機器人加入](./features/onboarding.md#bots)：機器人專用的身分組（免費 1 個，Premium 15 個），以及踢出未經授權的機器人，並提供僅限擁有者使用的 `/bypass bot`。
+- `/lock`、`/unlock` 與 `/slowmode`：新增 `--silent` 選項，並可[鎖定整個分類](./features/channel-lock.md#lock-category)及其所有頻道。
+- 停權時的[訊息刪除](./features/sanctions.mdx#ban-delete)可為 `/ban` 與 `/tempban` 設定預設值。
+- [Authentication Manager](./features/authentication-manager.mdx)：重新命名 passkey，並可一次為多個身分組進行驗證。
+- [HoneyPot](./features/honeypot.md#sanction)：停權或永久監禁。
 - 新的[安裝精靈](./setup.md#wizard)：逐區段的引導式流程、依您的伺服器提議的防護，並以稽核預覽作結。
 - [Antispam](./features/anti-spam.mdx) V3，自 3.5.0 起已對所有人啟用：
   - 新的偵測引擎：近似重複、重複連結、表情符號與亂碼、洗版，以及散布在多個頻道的垃圾訊息。
