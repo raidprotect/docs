@@ -238,7 +238,7 @@
     "message": "搶先體驗新功能"
   },
   "premium.feature.beta.desc": {
-    "message": "訂閱者可搶先取得測試版功能，例如將 AutoMod 超時轉換為以角色為基礎的禁言。"
+    "message": "訂閱者可搶先取得測試版功能，目前是多帳號：使用 /alt 關聯同一個人的帳號，其處罰會隨之延伸。"
   },
   "premium.tier.free.name": {
     "message": "Basic"
@@ -527,6 +527,78 @@
   },
   "premium.compare.subtitle": {
     "message": "所有基本防護都維持免費。Premium 開放自訂與擴充的上限。Business 則提供專屬執行個體與真人陪伴。"
+  },
+  "premium.compare.row.preventiveSlowmode": {
+    "message": "預防性慢速模式（最多 6 個頻道）"
+  },
+  "premium.compare.row.disconVoice": {
+    "message": "DISCON 狀態語音頻道"
+  },
+  "premium.compare.cat.automod": {
+    "message": "Automod"
+  },
+  "premium.compare.row.imageCatalog": {
+    "message": "ScamLens 圖片目錄（清單）"
+  },
+  "premium.compare.row.fileRules": {
+    "message": "依頻道設定的副檔名規則"
+  },
+  "premium.compare.row.fileCategories": {
+    "message": "依類別設定的副檔名規則"
+  },
+  "premium.compare.row.privateInvites": {
+    "message": "好友邀請與群組邀請分開設定"
+  },
+  "premium.compare.cat.arrivals": {
+    "message": "新成員加入"
+  },
+  "premium.compare.row.autoroles": {
+    "message": "自動身分組"
+  },
+  "premium.compare.row.botRoles": {
+    "message": "機器人身分組"
+  },
+  "premium.compare.row.welcomeButtons": {
+    "message": "歡迎訊息按鈕"
+  },
+  "premium.compare.row.welcomeColor": {
+    "message": "歡迎訊息顏色"
+  },
+  "premium.compare.row.captchaIcon": {
+    "message": "驗證碼中顯示伺服器圖示"
+  },
+  "premium.compare.row.staffPanels": {
+    "message": "/display staff 面板"
+  },
+  "premium.compare.row.staffPanels.free": {
+    "message": "1 + DISCON"
+  },
+  "premium.compare.row.staffPanels.founder": {
+    "message": "4 + DISCON"
+  },
+  "premium.compare.cat.beta": {
+    "message": "公開測試中"
+  },
+  "premium.compare.row.altSanctions": {
+    "message": "處罰延伸至關聯帳號（/alt）"
+  },
+  "premium.compare.row.logChannels": {
+    "message": "不同的日誌頻道"
+  },
+  "premium.compare.row.messageCache": {
+    "message": "訊息快取時長（/snipe、日誌）"
+  },
+  "premium.compare.row.messageCache.free": {
+    "message": "15 分鐘"
+  },
+  "premium.compare.row.messageCache.premium": {
+    "message": "6 小時"
+  },
+  "premium.compare.row.compactLogs": {
+    "message": "精簡日誌格式"
+  },
+  "premium.compare.row.voiceReactionLogs": {
+    "message": "語音與反應日誌"
   },
   "premium.finalCta.title": {
     "message": "準備好升級到 Premium 了嗎？"

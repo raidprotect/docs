@@ -77,7 +77,7 @@ RaidProtect 的**驗證碼**要求每位新成員在進入您的 Discord 伺服�
 
 ### 在 Activity 中驗證 {#activity}
 
-在**面板**模式下，「**驗證**」按鈕會開啟 **RaidProtect Activity**：成員直接在 Discord 中解開一個小謎題，畫面採用您伺服器的色調，並附有您[新成員引導](../guides/onboarding.md)中的頻道連結。驗證完成後，他會在其中看到自己的[歡迎卡片](./onboarding.md#welcome-message)。
+在**面板**模式下，「**驗證**」按鈕會開啟 **RaidProtect Activity**：成員直接在 Discord 中解開一個小謎題，畫面採用您伺服器的色調，並附有您[新成員引導](../guides/onboarding.md)中的頻道連結。在擁有圖示的 [Premium](/zh-TW/premium) 伺服器上，會顯示伺服器圖示，而非 RaidProtect 標誌。驗證完成後，他會在其中看到自己的[歡迎卡片](./onboarding.md#welcome-message)。
 
 - **謎題失敗**：與輸入錯誤驗證碼相同，會消耗一次嘗試機會，並在嘗試次數用盡時施加預定的處罰。Activity 會先向成員告知結果，然後才施加處罰。
 - **通過**：成員離開成功畫面時即完成驗證。如果他在這段期間點擊「**驗證**」，他的驗證會立即生效，而不是重新開啟 Activity。
