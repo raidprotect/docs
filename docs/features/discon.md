@@ -15,10 +15,6 @@ Le **DISCON** est le niveau de danger de votre serveur, sur le modèle du DEFCON
 - **Un retour propre** : en redescendant, nous ne coupons que ce que le DISCON a lui-même activé. Un captcha, une Fermeture des MP ou un mode raid que vous aviez activés à la main restent en place.
 - **Un changement manuel** : le niveau ne change jamais tout seul, c'est votre équipe qui décide.
 
-:::info Expérimentation : Shield Update
-Le DISCON fait partie de la **Shield Update**, prévue pour la version 3.6.0. En attendant sa sortie, il est en expérimentation, en bêta publique pour les serveurs [Premium](/premium). Le [salon vocal de statut](#voice) demande le Premium.
-:::
-
 ## 🚦 Les cinq niveaux {#levels}
 
 | Niveau | Nom | Ce que nous appliquons |
@@ -81,7 +77,7 @@ Pour cela, le captcha doit être [configuré](./captcha.md#config), avec son sal
 1. Faites la [commande `/settings`](../setup.md#settings).
 2. Ouvrez l'onglet “**Protection**”.
 3. Cliquez sur “**Configurer**” à côté de “**DISCON**”.
-4. Choisissez le salon du panneau dans le sélecteur, ou cliquez sur “**Créer le salon du panneau**”.
+4. Choisissez le salon du panneau (textuel ou vocal) dans le sélecteur, ou cliquez sur “**Créer le salon du panneau**”.
 5. En option ([Premium](/premium)), choisissez un salon vocal de statut, ou cliquez sur “**Créer le salon de statut**”.
 
 Sous la configuration, vous retrouvez le niveau actuel, les cinq boutons de niveau et le **barème des niveaux**, qui décrit ce que chaque niveau fera sur votre serveur.
@@ -93,6 +89,7 @@ Sous la configuration, vous retrouvez le niveau actuel, les cinq boutons de nive
 Les boutons du panneau ne demandent aucune permission : **c'est l'accès au salon qui fait office de contrôle**. Choisissez donc un salon réservé à votre équipe.
 
 - Un salon visible par tout le serveur est refusé : n'importe quel membre pourrait y changer le niveau.
+- Un salon vocal convient aussi : le panneau est alors posté dans son salon textuel intégré.
 - “**Créer le salon du panneau**” crée un salon `#discon` invisible pour @everyone. Ouvrez-le ensuite aux rôles de votre équipe.
 
 ### Salon vocal de statut <span className="badge-premium">Premium</span> {#voice}
