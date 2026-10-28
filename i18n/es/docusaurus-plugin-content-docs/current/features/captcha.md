@@ -92,8 +92,8 @@ En modo **Panel**, el botón “**Verificar**” abre la **Activity RaidProtect*
 
 Con la [Identity Update](./alt-accounts.md), la Activity también detecta a los recién llegados probablemente manejados por la misma persona que un miembro de tu servidor:
 
-- **Vínculo seguro:** las cuentas se vinculan automáticamente en [`/alt`](./alt-accounts.md#alt). Los logs del captcha lo señalan, con un botón “**Desvincular**”.
-- **Vínculo probable:** si [Una sola cuenta por persona](./alt-accounts.md#single-account) está activo, el miembro pasa a revisión. “**Vincular a otro miembro**” las vincula en `/alt` y lo deja entrar; si no se ha detectado ninguna cuenta, una ventana te pide elegir al miembro (“**Cuenta ya presente en el servidor**”). Si no, el miembro entra, y los logs del captcha señalan el vínculo probable con un botón “**Vincular cuentas**”.
+- **Vínculo seguro:** las cuentas se vinculan automáticamente en [`/alt`](./alt-accounts.md#alt). Los logs del captcha lo señalan, con un botón “**Desvincular**”. Si el grupo está sancionado, o si [Una sola cuenta por persona](./alt-accounts.md#single-account) retiene sus cuentas secundarias, el recién llegado recibe la sanción del grupo o pasa a cuarentena.
+- **Vínculo probable:** si [Una sola cuenta por persona](./alt-accounts.md#single-account) está activo, el miembro pasa a revisión. “**Vincular a otro miembro**” las vincula en `/alt` y lo deja entrar; si no se ha detectado ninguna cuenta, una ventana te pide elegir al miembro (“**Cuenta ya presente en el servidor**”). Si no, el miembro entra, y los logs del captcha señalan el vínculo probable con un botón “**Vincular**”.
 - **Vínculo seguro no aplicado:** no se vincula nada automáticamente si una cuenta del grupo forma parte del equipo del servidor, si el recién llegado está vinculado a varios grupos `/alt`, o si las dos cuentas ya tienen cada una su grupo (dos grupos nunca se fusionan automáticamente). El vínculo se te propone entonces de la misma manera.
 
 Solo se te muestran las cuentas de tu servidor: no se dice nada de los demás servidores.
