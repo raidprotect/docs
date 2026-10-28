@@ -99,7 +99,7 @@ Với các hành động captcha, hãy đặt [kích hoạt của captcha](./cap
 
 #### Chế độ đuổi <span className="badge-premium">Premium</span> {#kick-mode}
 
-Công tắc “**Chế độ đuổi**” cũ đã trở thành hành động “**Đuổi những người vào**” của [hành động trong đợt tấn công](#action). Nó vẫn dành riêng cho các máy chủ [**Premium**](/vi/premium) và hoạt động mà không cần cộng đồng Discord.
+Công tắc “**Chế độ đuổi**” cũ đã trở thành hành động “**Đuổi những người vào**” của [hành động trong đợt tấn công](#action). Nó vẫn dành riêng cho các máy chủ [**Premium**](/vi/premium) và hoạt động mà không cần cộng đồng Discord. Nếu Premium hết hạn, hành động trở về “**Khoá lời mời**”. Tương tự, một hành động captcha mà captcha không dùng được sẽ quay về chế độ bình thường (đợt sóng bị đuổi, rồi lời mời bị khóa), không bao giờ là đuổi.
 
 #### Tự động đóng tin nhắn riêng {#close-dm}
 

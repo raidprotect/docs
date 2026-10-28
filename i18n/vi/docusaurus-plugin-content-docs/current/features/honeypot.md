@@ -58,7 +58,18 @@ Theo mặc định, HoneyPot áp dụng một **Softban**. Nhiều [hình phạt
 | **Jail** | Cấp [vai trò Jail](./sanctions.mdx#jail) đã được cấu hình trên máy chủ của bạn | Premium |
 | **Mute** | Cấp [vai trò Mute](./sanctions.mdx#mute) đã được cấu hình trên máy chủ của bạn | Premium |
 
-Với các hình phạt có thời lượng (Cấm, Timeout, Jail, Mute), hãy chọn một thời lượng trong bộ chọn “**Thời lượng**”: 5 phút, 1 giờ, **1 ngày** (mặc định) hoặc 28 ngày, hoặc “**Giá trị tùy chỉnh**” để nhập thời lượng của riêng bạn (ví dụ `5m`, `1h`, `2d`; tối thiểu 1 phút). Bộ chọn bị làm xám với Softban và Đuổi, vốn không có thời lượng.
+Với các hình phạt có thời lượng (Cấm, Timeout, Jail, Mute), hãy chọn một thời lượng trong bộ chọn “**Thời lượng**” (mặc định 1 ngày), hoặc “**Giá trị tùy chỉnh**” để nhập thời lượng của riêng bạn (ví dụ `5m`, `1h`, `2d`; tối thiểu 1 phút). Bộ chọn bị làm xám với Softban và Đuổi, vốn không có thời lượng.
+
+Các mốc của bộ chọn thay đổi theo hình phạt:
+
+| Hình phạt | Các mốc được đề xuất |
+|---|---|
+| **Cấm** | Vĩnh viễn, 1 ngày, 7 ngày, 30 ngày |
+| **Jail** | Vĩnh viễn, 1 giờ, 1 ngày, 7 ngày |
+| **Mute** | 5 phút, 1 giờ, 1 ngày, 7 ngày |
+| **Timeout** | 5 phút, 1 giờ, 1 ngày, 28 ngày |
+
+Cấm và Jail có thể là **vĩnh viễn**: hình phạt không tự được gỡ. Khi đổi hình phạt, thời lượng đã chọn được giữ lại nếu vẫn hợp lệ (vĩnh viễn không chuyển sang Timeout hay Mute, và Timeout luôn dưới 28 ngày).
 
 :::tip
 **Softban** là một sự dung hòa tốt: nó dọn sạch tin nhắn và loại tài khoản bị chiếm, nhưng chủ sở hữu hợp pháp có thể quay lại khi tài khoản đã được bảo mật.
@@ -74,13 +85,9 @@ Với các hình phạt khác (Kick, Timeout, Jail, Mute), chính RaidProtect x�
 - Nếu máy chủ của bạn mất Premium, một hình phạt Premium tự động trở về **Softban** ở lần kích hoạt tiếp theo.
 :::
 
-### Thời gian chờ trước khi xử phạt <span className="badge-experiment">Thử nghiệm</span> {#grace}
+### Thời gian chờ trước khi xử phạt {#grace}
 
 Một thành viên thiện chí có thể viết vào HoneyPot do nhầm. **Thời gian chờ trước khi xử phạt** cho họ thời gian để báo điều đó trước khi bị xử phạt.
-
-:::info Thử nghiệm: Shield Update
-Thời gian chờ trước khi xử phạt thuộc **Shield Update**, dự kiến trong phiên bản 3.6.0. Trong khi chờ phát hành, nó đang thử nghiệm, ở dạng bản beta công khai cho các máy chủ [Premium](/vi/premium).
-:::
 
 1. Dùng [lệnh `/settings`](../setup.md#settings).
 2. Mở thẻ “**Bảo vệ**”.

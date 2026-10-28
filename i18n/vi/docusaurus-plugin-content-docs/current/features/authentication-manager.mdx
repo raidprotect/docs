@@ -100,6 +100,7 @@ Từ hồ sơ của bạn, bạn có thể:
 - Thêm, đổi hoặc xóa một **mã PIN** (đơn giản hoặc tăng cường).
 - Bật **mã 2FA** (OTP) bằng mã QR hoặc khóa bí mật, tạo lại hoặc xóa nó.
 - Thêm một **passkey** từ trang đăng ký, hoặc xóa một passkey. Mỗi passkey hiển thị tên thiết bị và ngày sử dụng gần nhất.
+- **Đổi tên** một passkey: nút “**Sửa một Passkey**”, bên cạnh “**Thêm**”, mở một cửa sổ với các passkey của bạn và tên mới cần đặt (ví dụ `MacBook`, `iPhone`, `YubiKey`). Việc đổi tên được ghi vào nhật ký kiểm tra của bạn.
 
 Nếu bạn đã có một phương thức, chúng tôi yêu cầu bạn xác thực trước khi thêm hoặc sửa một phương thức. Phần cuối hồ sơ nhắc lại cấp của bạn và phương thức cần thêm để lên một bậc.
 
@@ -137,10 +138,10 @@ Dùng lệnh: ```/auth [role]```
 
 1. Dùng lệnh `/auth` trên máy chủ, hoặc nhấp vào “**Nhận một vai trò**” trong một bảng đội ngũ.
 2. Một menu hiển thị các vai trò khả dụng kèm cấp yêu cầu và thời lượng phiên của chúng.
-3. Chọn một vai trò.
+3. Chọn một hoặc nhiều vai trò (tối đa 10). Một lần xác thực duy nhất, ở mức của vai trò khắt khe nhất, mở tất cả các vai trò đó.
 4. Chọn một phương thức xác thực trong số những phương thức đạt cấp của vai trò.
 5. Thực hiện bước xác minh (PIN, OTP hoặc passkey).
-6. Nếu thành công, chúng tôi cấp cho bạn vai trò Discord và tạo một phiên.
+6. Nếu thành công, chúng tôi cấp cho bạn một hoặc các vai trò Discord và tạo một phiên cho mỗi vai trò. Các phiên được ghi vào nhật ký của Authentication Manager.
 
 :::info
 Chỉ những vai trò mà bạn được gán với trạng thái **Hoạt động** mới xuất hiện trong menu.
@@ -233,6 +234,8 @@ Chúng tôi từ chối một vai trò do tích hợp quản lý, một vai trò
 
 :::tip
 Nếu vai trò của bạn được **hiển thị riêng** trong danh sách thành viên, hãy chọn “**Tạo một vai trò quyền riêng biệt**”: các thành viên của bạn giữ vai trò hiển thị vĩnh viễn, còn các quyền nhạy cảm chỉ được cấp trong các phiên đã xác thực.
+
+Với một vai trò riêng biệt, các quyền kiểm duyệt kênh của vai trò hiển thị cũng được chuyển sang vai trò `🔑`. Với một vai trò quản trị viên, tùy chọn “**Giữ quyền xem tất cả các kênh ngoài phiên**” để vai trò hiển thị xem được tất cả các kênh ngoài các phiên; nếu không có tùy chọn này, vai trò đó không còn thấy gì khi không có quyền quản trị viên.
 :::
 
 #### Bảo vệ các vai trò quản trị viên từ `/audit` {#audit-bulk}

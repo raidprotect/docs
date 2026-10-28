@@ -15,10 +15,6 @@ import Settings from '@site/src/components/DiscordMessage/mockups/v2';
 - **Quay về gọn gàng**: khi hạ cấp, chúng tôi chỉ tắt những gì chính DISCON đã bật. Một captcha, một Đóng tin nhắn riêng hay một chế độ raid mà bạn đã tự bật vẫn được giữ nguyên.
 - **Đổi thủ công**: cấp không bao giờ tự đổi, chính đội ngũ của bạn quyết định.
 
-:::info Thử nghiệm: Shield Update
-DISCON thuộc **Shield Update**, dự kiến trong phiên bản 3.6.0. Trong khi chờ phát hành, nó đang thử nghiệm, ở dạng bản beta công khai cho các máy chủ [Premium](/vi/premium). [Kênh thoại trạng thái](#voice) yêu cầu Premium.
-:::
-
 ## 🚦 Năm cấp {#levels}
 
 | Cấp | Tên | Những gì chúng tôi áp dụng |
@@ -81,7 +77,7 @@ Muốn vậy, captcha phải được [cấu hình](./captcha.md#config), với 
 1. Dùng [lệnh `/settings`](../setup.md#settings).
 2. Mở thẻ “**Bảo vệ**”.
 3. Nhấp vào “**Cấu hình**” bên cạnh “**DISCON**”.
-4. Chọn kênh của bảng điều khiển trong bộ chọn, hoặc nhấp vào “**Tạo kênh của bảng điều khiển**”.
+4. Chọn kênh của bảng điều khiển (văn bản hoặc thoại) trong bộ chọn, hoặc nhấp vào “**Tạo kênh của bảng điều khiển**”.
 5. Tùy chọn ([Premium](/vi/premium)), chọn một kênh thoại trạng thái, hoặc nhấp vào “**Tạo kênh trạng thái**”.
 
 Bên dưới phần cấu hình, bạn thấy cấp hiện tại, năm nút cấp và **bảng mô tả các cấp**, mô tả những gì mỗi cấp sẽ làm trên máy chủ của bạn.
@@ -93,6 +89,7 @@ Bên dưới phần cấu hình, bạn thấy cấp hiện tại, năm nút cấ
 Các nút của bảng điều khiển không yêu cầu quyền nào: **chính quyền truy cập kênh đóng vai trò kiểm soát**. Vì vậy hãy chọn một kênh dành riêng cho đội ngũ của bạn.
 
 - Một kênh mà cả máy chủ đều thấy sẽ bị từ chối: bất kỳ thành viên nào cũng có thể đổi cấp ở đó.
+- Một kênh thoại cũng phù hợp: khi đó bảng điều khiển được đăng trong kênh văn bản tích hợp của nó.
 - “**Tạo kênh của bảng điều khiển**” tạo một kênh `#discon` ẩn với @everyone. Sau đó hãy mở nó cho các vai trò của đội ngũ bạn.
 
 ### Kênh thoại trạng thái <span className="badge-premium">Premium</span> {#voice}

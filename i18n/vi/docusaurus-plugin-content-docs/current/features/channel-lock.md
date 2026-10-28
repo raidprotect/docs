@@ -12,16 +12,21 @@ import Settings from '@site/src/components/DiscordMessage/mockups/v2';
 
 ## 🔒 Khóa một kênh {#lock}
 
-Dùng lệnh: ```/lock [#channel] [duration] [reason]```
+Dùng lệnh: ```/lock [#channel] [duration] [reason] [--silent]```
 
 Lệnh này gỡ khỏi vai trò **@everyone** các quyền gửi tin nhắn và gửi tin nhắn trong luồng, tại kênh được nhắm đến, từ đó ngăn mọi người dùng đăng bài ở đó.
 
 - Hãy thay `[#channel]` bằng lượt nhắc đến hoặc [ID](../guides/id.mdx) của kênh cần khóa. Nếu không có kênh, chúng tôi khóa kênh nơi bạn dùng lệnh. Các kênh văn bản, thông báo, thoại, diễn đàn, media, sân khấu và các danh mục đều được chấp nhận; luồng thì không.
 - Hãy thay `[reason]` để nêu lý do kênh bị khóa (ví dụ: *dọn dẹp cuộc trò chuyện*, *thông báo quan trọng*, v.v.).
+- Thêm `--silent` để không thông báo gì trong kênh: chỉ mình bạn nhận được xác nhận.
 
 :::info
 Một kênh chỉ có thể bị khóa một lần mỗi 10 phút.
 :::
+
+### Khóa một danh mục {#lock-category}
+
+Khóa một danh mục cũng khóa luôn tất cả các kênh hiển thị của nó (trừ luồng) trong một lần, và `/unlock` trên danh mục mở khóa chúng cùng lúc. Một kênh vốn đã đóng quyền viết (quy tắc, thông báo) được giữ nguyên, cả khi khóa lẫn khi mở khóa. Khi một lần khóa tạm thời danh mục hết hạn, chỉ một dòng nhật ký nêu tên danh mục và số kênh được mở khóa.
 
 ### Khóa tạm thời {#lock-duration}
 
@@ -29,9 +34,9 @@ Tham số `[duration]` cho phép **tự động mở khóa kênh** sau khoảng 
 
 ## 🔓 Mở khóa một kênh {#unlock}
 
-Dùng lệnh: ```/unlock [#channel] [reason]```
+Dùng lệnh: ```/unlock [#channel] [reason] [--silent]```
 
-Lệnh này khôi phục cho vai trò **@everyone** các quyền gửi tin nhắn như trước khi khóa, cho phép người dùng đăng bài trở lại. Hãy thay `[reason]` để nêu lý do kênh được mở khóa (ví dụ: *thảo luận mở lại*, *thông báo đã xong*, v.v.).
+Lệnh này khôi phục cho vai trò **@everyone** các quyền gửi tin nhắn như trước khi khóa, cho phép người dùng đăng bài trở lại. Hãy thay `[reason]` để nêu lý do kênh được mở khóa (ví dụ: *thảo luận mở lại*, *thông báo đã xong*, v.v.). Với `--silent`, không có gì được thông báo trong kênh.
 
 :::warning
 Để việc khóa hoạt động đúng, không vai trò nào mở cho mọi người được có quyền viết rõ ràng trong kênh này. Nếu không, các thành viên có những vai trò đó vẫn có thể trò chuyện. Ngược lại, các quyền được đặt cho vai trò đội ngũ của bạn thì hữu ích: chúng giữ quyền phát biểu cho đội ngũ trong lúc `/lock`, và [kiểm tra bảo mật](./audit.md) không còn báo chúng là dư thừa nữa.

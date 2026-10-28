@@ -55,11 +55,7 @@ Trong bộ chọn “**Thời lượng hình phạt**”, chọn 5 phút, 1 gi�
 - Tin nhắn công khai thông báo hình phạt theo thiết lập “**Tin nhắn công khai về hình phạt**” của [Chống spam](./anti-spam.mdx#public-message), có thể tắt với Premium.
 :::
 
-## 🗂️ Danh mục hình ảnh <span className="badge-experiment">Thử nghiệm</span> <span className="badge-premium">Premium</span> {#catalog}
-
-:::info Thử nghiệm: Shield Update
-Danh mục hình ảnh thuộc **Shield Update**, dự kiến trong phiên bản 3.6.0, đang thử nghiệm cho đến khi phát hành.
-:::
+## 🗂️ Danh mục hình ảnh <span className="badge-premium">Premium</span> {#catalog}
 
 Ngoài danh mục toàn cục “Crypto Scam”, do chúng tôi quản lý và áp dụng trên mọi máy chủ, các máy chủ [Premium](/vi/premium) có thể chặn **hình ảnh của riêng họ**, bất kể nội dung: ảnh chụp Nitro giả, hình ảnh của một vụ lừa đảo nhắm vào cộng đồng của bạn, hình ảnh bị cấm trên máy chủ của bạn…
 

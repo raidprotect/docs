@@ -28,7 +28,7 @@ Tất cả các lệnh của RaidProtect, được nhóm theo danh mục. Nhấp
 | [`/tagrole`](./features/tag-role.md) | `/tagrole` | Cấu hình vai trò được cấp cho các thành viên đeo tag của máy chủ. |
 | [`/display public`](./features/display.mdx) | `/display public` | Quản lý các bảng thông tin công khai của RaidProtect. |
 | [`/display staff`](./features/display.mdx#staff) | `/display staff` | Quản lý các bảng dành riêng cho đội ngũ (DISCON, tin nhắn nội bộ). |
-| [`/discon`](./features/discon.md) | `/discon` | Thiết lập bảng DISCON để chỉnh mức nguy hiểm của máy chủ (thử nghiệm, Shield Update). |
+| [`/discon`](./features/discon.md) | `/discon` | Thiết lập bảng DISCON để chỉnh mức nguy hiểm của máy chủ. |
 | [`/audit`](./features/audit.md) | `/audit` | Phân tích bảo mật máy chủ và đề xuất sửa các lỗ hổng cấu hình. |
 
 ## Kiểm duyệt {#moderation}
@@ -64,9 +64,9 @@ Tất cả các lệnh của RaidProtect, được nhóm theo danh mục. Nhấp
 
 | Lệnh | Mẫu lệnh | Mô tả |
 |---|---|---|
-| [`/lock`](./features/channel-lock.md#lock) | `/lock [#channel] [duration] [reason]` | Khóa một kênh để ngăn gửi tin nhắn (thời lượng tùy chọn). |
-| [`/unlock`](./features/channel-lock.md#unlock) | `/unlock [#channel] [reason]` | Mở khóa một kênh đã bị khóa trước đó. |
-| [`/slowmode`](./features/moderation.mdx#slowmode) | `/slowmode (delay) [duration] [#channel] [reason]` | Bật hoặc sửa chế độ chậm của một kênh (thời lượng áp dụng tùy chọn). |
+| [`/lock`](./features/channel-lock.md#lock) | `/lock [#channel] [duration] [reason] [--silent]` | Khóa một kênh để ngăn gửi tin nhắn (thời lượng tùy chọn). |
+| [`/unlock`](./features/channel-lock.md#unlock) | `/unlock [#channel] [reason] [--silent]` | Mở khóa một kênh đã bị khóa trước đó. |
+| [`/slowmode`](./features/moderation.mdx#slowmode) | `/slowmode (delay) [duration] [#channel] [reason] [--silent]` | Bật hoặc sửa chế độ chậm của một kênh (thời lượng áp dụng tùy chọn). |
 
 ## Lịch sử hình phạt {#sanctions}
 
@@ -103,6 +103,7 @@ Tất cả các lệnh của RaidProtect, được nhóm theo danh mục. Nhấp
 | [`/bypass captcha`](./features/captcha.md#bypass) | `/bypass captcha [@user]` | Cho phép một người dùng tham gia mà không qua captcha. |
 | [`/bypass minage`](./features/onboarding.md#bypass-minage) | `/bypass minage [@user]` | Cho phép một người dùng tham gia mà không cần đủ tuổi tối thiểu. |
 | [`/bypass raid`](./features/raid-mode.md#bypass-raid) | `/bypass raid [@user]` | Cho phép một người dùng tham gia bất chấp chế độ raid (cần chế độ đuổi). |
+| [`/bypass bot`](./features/onboarding.md#bypass-bot) | `/bypass bot [bot]` | Cho phép một bot tham gia bất chấp việc đuổi bot (chủ sở hữu máy chủ). |
 
 ## Tiện ích {#utilities}
 

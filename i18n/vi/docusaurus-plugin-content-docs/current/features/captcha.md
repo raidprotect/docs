@@ -37,6 +37,8 @@ Captcha dựa trên một vai trò **@Chưa xác minh** và một kênh **#xác-
 | **Bảng (Tương tác)**, mặc định | Một tin nhắn cố định “**Hệ thống xác minh**” với một nút “**Xác minh**”, mở [Activity RaidProtect](#activity). Thành viên không thể viết trong **#xác-minh**. |
 | **Thử thách (Cổ điển)** | Một hình ảnh được đăng trong **#xác-minh** khi họ vào, và họ gõ mã bằng tin nhắn trong kênh. |
 
+Bảng có một nút “**Translate**” để đọc nó bằng ngôn ngữ của họ, và mỗi người mới vào đều được nhắc đến trong kênh xác minh, rồi tin nhắn bị xóa: nhờ đó họ tìm lại được kênh.
+
 Chế độ Bảng giữ kênh gọn gàng và cho phép thêm các thiết lập: chọn hình phạt khi hết lượt thử, [captcha bị đóng băng trong đợt raid](./raid-mode.md#action), [giữ lại ở cửa các tài khoản quá mới](./onboarding.md#minage). Chế độ Thử thách luôn đuổi thành viên khi hết thời gian quy định hoặc khi hết lượt thử.
 
 ### Kích hoạt {#trigger}
@@ -45,15 +47,11 @@ Chế độ Bảng giữ kênh gọn gàng và cho phép thêm các thiết lậ
 |---|---|
 | **Luôn luôn**, mặc định | Mỗi lần có người vào, không điều kiện. |
 | **Tự động** | Chỉ trong một đợt raid hoặc ở mức DISCON cao. Những người vào khác vào thẳng. |
-| **Thông minh** <span className="badge-experiment">Thử nghiệm</span> | Như Tự động, cộng thêm các tài khoản có vẻ đáng ngờ. |
+| **Thông minh** | Như Tự động, cộng thêm các tài khoản có vẻ đáng ngờ. |
 
-Với **Tự động**, captcha chỉ được áp dụng trong một đợt raid nếu [Auto RaidMode](./raid-mode.md#action) được đặt ở “**Gửi tới captcha**” hoặc “**Captcha bị đóng băng trong đợt tấn công**”, và trong một cảnh báo [DISCON](./discon.md) từ cấp 3 (đang thử nghiệm cùng Shield Update).
+Với **Tự động**, captcha chỉ được áp dụng trong một đợt raid nếu [Auto RaidMode](./raid-mode.md#action) được đặt ở “**Gửi tới captcha**” hoặc “**Captcha bị đóng băng trong đợt tấn công**”, và trong một cảnh báo [DISCON](./discon.md) từ cấp 3.
 
 Kích hoạt **Thông minh** đánh giá hồ sơ của từng người vào. Một thành viên được đội ngũ của bạn duyệt thủ công không bao giờ bị coi là đáng ngờ.
-
-:::info Thử nghiệm: Shield Update
-Kích hoạt Thông minh thuộc **Shield Update**, dự kiến trong phiên bản 3.6.0. Trong khi chờ phát hành, nó đang thử nghiệm, ở dạng bản beta công khai cho các máy chủ [Premium](/vi/premium). Nếu không có bản thử nghiệm, nó không được cung cấp.
-:::
 
 ## 🚪 Cách cấu hình captcha? {#config}
 
@@ -75,7 +73,7 @@ Captcha khởi động ở chế độ **Bảng (Tương tác)**, kích hoạt *
 2. Mở thẻ “**Thành viên mới**”.
 3. Nhấp vào “**Cấu hình**” bên cạnh “**Captcha**”.
 4. Trong “**Chế độ hiển thị**”, chọn “**Bảng (Tương tác)**” hoặc “**Thử thách (Cổ điển)**”.
-5. Trong “**Kích hoạt**”, chọn “**Luôn luôn**”, “**Tự động**” hoặc “**Thông minh**” (Shield Update).
+5. Trong “**Kích hoạt**”, chọn “**Luôn luôn**”, “**Tự động**” hoặc “**Thông minh**”.
 
 ### Xác minh trong Activity {#activity}
 
@@ -199,7 +197,7 @@ Hãy thay `[user]` bằng [ID](../guides/id.mdx) mong muốn, người đó sẽ
 Captcha hoạt động cùng các biện pháp bảo vệ khác dành cho người mới vào:
 - **[Auto RaidMode](./raid-mode.md#action):** với hành động “**Gửi tới captcha**”, những người vào trong một đợt sóng phải qua captcha thay vì bị đuổi. Với “**Captcha bị đóng băng trong đợt tấn công**”, họ chờ phía sau captcha và qua nó sau đợt sóng.
 - **[Tuổi tối thiểu của tài khoản](./onboarding.md#minage):** hành động “**Giữ lại ở cửa**” chặn một tài khoản quá mới ở một captcha mà họ chỉ giải được khi đủ tuổi.
-- **[DISCON](./discon.md#captcha):** từ cấp 4, captcha được bật nếu đã cấu hình, ngay cả khi bạn đã tắt nó. Từ cấp 3, nó được áp dụng cho mọi người vào, bất kể kích hoạt của nó (đang thử nghiệm cùng Shield Update).
+- **[DISCON](./discon.md#captcha):** từ cấp 4, captcha được bật nếu đã cấu hình, ngay cả khi bạn đã tắt nó. Từ cấp 3, nó được áp dụng cho mọi người vào, bất kể kích hoạt của nó.
 
 ## Câu hỏi thường gặp {#faq}
 

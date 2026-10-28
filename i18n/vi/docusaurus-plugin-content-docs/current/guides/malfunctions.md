@@ -57,7 +57,7 @@ Vấn đề này khá phổ biến, nhưng phụ thuộc vào **cấu hình máy
 
 - **Bạn đã bật captcha chưa?** Đây là một tính năng tùy chọn: hãy bật nó trong thẻ “**Thành viên mới**” của [`/settings`](../setup.md#settings). Xem [trang dành riêng cho captcha](../features/captcha.md#config) để biết thêm.
 
-- **Kích hoạt của nó là gì?** Ở chế độ “**Tự động**”, captcha chỉ áp dụng trong một đợt raid hoặc khi mức [DISCON](../features/discon.md) cao (Shield Update, đang thử nghiệm): thời gian còn lại, người mới vào thẳng luôn. Chọn “**Luôn luôn**” để mỗi người mới vào đều phải qua captcha.
+- **Kích hoạt của nó là gì?** Ở chế độ “**Tự động**”, captcha chỉ áp dụng trong một đợt raid hoặc khi mức [DISCON](../features/discon.md) cao: thời gian còn lại, người mới vào thẳng luôn. Chọn “**Luôn luôn**” để mỗi người mới vào đều phải qua captcha.
 
 - **Có vai trò hay kênh nào qua mặt nó không?** Màn hình captcha báo các kênh vẫn hiển thị với vai trò xác minh và các vai trò cho phép vào máy chủ mà không qua captcha, kèm một nút để sửa.
 
