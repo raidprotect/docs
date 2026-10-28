@@ -64,7 +64,7 @@ Vous pouvez ajouter sous le message des boutons qui mènent vers un salon du ser
 2. Ouvrez l'onglet “**Arrivées**”.
 3. Cliquez sur “**Configurer**” à côté de “**Message de bienvenue**”.
 4. Dans “**Gérer les boutons**”, choisissez “**Ajouter un bouton**”.
-5. Donnez un nom au bouton et choisissez le salon à lier.
+5. Donnez un nom au bouton, choisissez le salon à lier et, si vous le souhaitez, un **emoji** : un emoji standard, ou un emoji de ce serveur (`<:nom:id>`, `:nom:` ou son identifiant). Un emoji invalide n'empêche pas l'enregistrement : le bouton est créé sans emoji.
 
 Pour modifier ou supprimer un bouton, sélectionnez-le dans la même liste.
 
@@ -99,6 +99,27 @@ Pour retirer tous les rôles automatiques, cliquez sur “**Réinitialiser**”.
 :::
 :::info
 Si votre serveur utilise un autre bot pour son rôle automatique, il risque de donner le rôle avant le captcha. Remplacez-le par les rôles automatiques de RaidProtect.
+:::
+
+## 🤖 Arrivée des bots {#bots}
+
+Par défaut, un bot ajouté au serveur reçoit les [rôles automatiques](#autorole) comme un membre. La section “**Bots**” de l'onglet “**Arrivées**” change cela.
+
+1. Faites la [commande `/settings`](../setup.md#settings).
+2. Ouvrez l'onglet “**Arrivées**”.
+3. Cliquez sur “**Configurer**” à côté de “**Bots**”.
+
+- **Rôles des bots** : donnés à chaque bot qui arrive, **à la place** des rôles automatiques. Sans rôle choisi, les bots reçoivent les rôles automatiques. **Limites :** 1 rôle en version gratuite, 15 rôles avec le [Premium](/premium). Les mêmes restrictions que pour les rôles automatiques s'appliquent (rôles gérés par une intégration, au-dessus du vôtre ou de RaidProtect, ou portant une permission de modération).
+- **Expulser les bots non autorisés** : tout bot ajouté est expulsé aussitôt, sauf si le propriétaire l'a autorisé avant avec la commande `/bypass bot`. Désactivé par défaut. **Seul le propriétaire du serveur** peut activer ou désactiver cette option et autoriser un bot.
+
+### Autoriser un bot {#bypass-bot}
+
+Utilisez la commande : ```/bypass bot [bot]```
+
+Remplacez `[bot]` par le bot à autoriser : il pourra rejoindre le serveur **une fois**, dans les 10 minutes qui suivent, sans être expulsé. Sans bot, la commande liste les bots actuellement autorisés. Chaque autorisation est notée dans vos logs.
+
+:::info
+RaidProtect a besoin de la permission “**Expulser des membres**” et d'un rôle au-dessus de celui du bot pour l'expulser. Sinon, le log l'indique et le bot reste.
 :::
 
 ## 🎂 Âge minimum du compte {#minage}
