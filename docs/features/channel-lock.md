@@ -12,16 +12,21 @@ Il arrive parfois qu’il soit nécessaire de verrouiller temporairement un salo
 
 ## 🔒 Verrouiller un salon {#lock}
 
-Utilisez la commande : ```/lock [#salon] [durée] [raison]```
+Utilisez la commande : ```/lock [#salon] [durée] [raison] [--silent]```
 
 Cette commande retire au rôle **@everyone** les permissions d’envoyer des messages et d’envoyer des messages dans les fils, dans le salon visé, empêchant ainsi tous les utilisateurs d’y poster.
 
 - Remplacez `[#salon]` par la mention ou l'[identifiant](../guides/id.mdx) du salon à verrouiller. Sans salon, nous verrouillons celui où vous faites la commande. Les salons textuels, d'annonces, vocaux, forums, médias, de conférence et les catégories sont acceptés ; les fils ne le sont pas.
 - Remplacez `[raison]` pour indiquer pourquoi le salon est verrouillé (ex. : *nettoyage du chat*, *annonce importante*, etc.).
+- Ajoutez `--silent` pour ne rien annoncer dans le salon : seul vous recevez la confirmation.
 
 :::info
 Un même salon ne peut être verrouillé qu'une fois toutes les 10 minutes.
 :::
+
+### Verrouiller une catégorie {#lock-category}
+
+Verrouiller une catégorie verrouille aussi tous ses salons visibles (hors fils) en une fois, et `/unlock` sur la catégorie les déverrouille ensemble. Un salon déjà fermé à l'écriture (règles, annonces) est laissé tel quel, au verrouillage comme au déverrouillage. Quand un verrouillage temporaire de catégorie expire, une seule ligne de log nomme la catégorie et le nombre de salons déverrouillés.
 
 ### Verrouillage temporaire {#lock-duration}
 
@@ -29,9 +34,9 @@ Le paramètre `[durée]` permet de **déverrouiller automatiquement le salon** a
 
 ## 🔓 Déverrouiller un salon {#unlock}
 
-Utilisez la commande : ```/unlock [#salon] [raison]```
+Utilisez la commande : ```/unlock [#salon] [raison] [--silent]```
 
-Cette commande rétablit au rôle **@everyone** les permissions d’envoyer des messages telles qu'elles étaient avant le verrouillage, permettant à nouveau aux utilisateurs d’y poster. Remplacez `[raison]` pour indiquer pourquoi le salon est déverrouillé (ex. : *discussion rouverte*, *annonce terminée*, etc.).
+Cette commande rétablit au rôle **@everyone** les permissions d’envoyer des messages telles qu'elles étaient avant le verrouillage, permettant à nouveau aux utilisateurs d’y poster. Remplacez `[raison]` pour indiquer pourquoi le salon est déverrouillé (ex. : *discussion rouverte*, *annonce terminée*, etc.). Avec `--silent`, rien n'est annoncé dans le salon.
 
 :::warning
 Pour que le verrouillage fonctionne correctement, aucun rôle ouvert à tous ne doit avoir de permission explicite d'écrire dans ce salon. Sinon, les membres avec ces rôles pourront toujours discuter. Les accords posés pour les rôles de votre équipe, eux, sont utiles : ils gardent la parole au staff pendant un `/lock`, et l'[audit](./audit.md) ne les signale plus comme redondants.

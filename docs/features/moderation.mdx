@@ -197,11 +197,12 @@ Remplacez `(nombre)` par le nombre de messages que vous souhaitez supprimer (de 
 
 La commande `/slowmode` vous permet d’activer ou de modifier le mode lent d’un salon, afin de limiter la fréquence des messages envoyés par les utilisateurs.
 
-Utilisez la commande : ```/slowmode (délai) [durée] [salon] [raison]```
+Utilisez la commande : ```/slowmode (délai) [durée] [salon] [raison] [--silent]```
 
 - Remplacez `(délai)` par la durée souhaitée entre chaque message (par ex. : `5s`, `1m`, `10m`, `1h`, jusqu'à 6 heures ; `0` pour désactiver).
 - Ajoutez `[durée]` pour désactiver automatiquement le slowmode après cette durée (par ex. `30m`, `2h`).
 - Ajoutez `[salon]` si vous souhaitez appliquer le slowmode à un autre salon que celui où vous tapez la commande.
+- Ajoutez `--silent` pour ne rien annoncer dans le salon.
 - Ajoutez `[raison]` pour préciser le motif, qui sera enregistré dans les logs du serveur.
 
 ## 🕵️ Récupérer un message supprimé {#snipe}
