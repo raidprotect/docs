@@ -14,14 +14,14 @@ Tài khoản phụ thuộc **Identity Update**, dự kiến trong phiên bản 3
 ## ❓ Cách hoạt động {#working}
 
 - **Một nhóm cho mỗi người**: một nhóm tập hợp các tài khoản mà đội ngũ của bạn coi là cùng một người. Các nhóm là riêng của máy chủ bạn: không có gì được chia sẻ với các máy chủ khác.
-- **Hình phạt dùng chung** ([Premium](/vi/premium)): cấm, đuổi, mute, jail và timeout được mở rộng sang các tài khoản khác trong nhóm, theo [chế độ](#modes) bạn chọn cho từng hình phạt. Hình phạt vẫn mang tên tài khoản bị nhắm đến, các tài khoản khác nhận trạng thái của nó. Không có Premium, các tài khoản vẫn liên kết và xem được, nhưng không có hình phạt nào được mở rộng: khi đó nhật ký hình phạt nêu các tài khoản khác của thành viên.
+- **Hình phạt dùng chung** ([Premium](/vi/premium)): cấm, đuổi, mute, jail và timeout được mở rộng sang các tài khoản khác trong nhóm, theo [chế độ](#modes) bạn chọn cho từng hình phạt. Hình phạt vẫn mang tên tài khoản bị nhắm đến, các tài khoản khác nhận trạng thái của nó. Hình phạt không bao giờ được mở rộng sang các tài khoản kiểm duyệt máy chủ (quản trị viên, quản lý máy chủ, cấm, đuổi hoặc timeout thành viên), chủ sở hữu máy chủ hay bot. Không có Premium, các tài khoản vẫn liên kết và xem được, nhưng không có hình phạt nào được mở rộng: khi đó nhật ký hình phạt nêu các tài khoản khác của thành viên.
 - **Gỡ chung**: gỡ hình phạt của một tài khoản bất kỳ sẽ gỡ cho tất cả, dù có hay không có Premium.
 - **Tìm kiếm theo nhóm**: [tìm kiếm hình phạt](./sanctions.mdx#search) của một tài khoản cũng hiển thị hình phạt của các tài khoản khác trong nhóm.
 - **AutoMod của Discord**: các timeout và mute do AutoMod của Discord áp dụng cũng được mở rộng sang các tài khoản liên kết.
 - **Được captcha phát hiện**: [Activity của captcha](./captcha.md#activity-alts) có thể tự liên kết hai tài khoản mà nó chắc chắn là cùng một người, hoặc đề xuất liên kết đó cho đội ngũ của bạn.
-- **Nhật ký**: các liên kết, việc gỡ và thay đổi tài khoản chính được ghi lại trong [nhật ký kiểm duyệt](./moderation.mdx#logs).
+- **Nhật ký**: các liên kết, việc gỡ và thay đổi tài khoản chính được ghi lại trong [nhật ký kiểm duyệt](./moderation.mdx#logs). Nhật ký của một hình phạt nêu các tài khoản liên kết kèm tên người dùng của chúng và, ở định dạng embed, có một nút “**Tài khoản liên kết**” mở bảng `/alt` của thành viên bị xử phạt.
 
-**Giới hạn:** không có, cả về số tài khoản trong mỗi nhóm lẫn số lượng nhóm.
+**Giới hạn:** không có giới hạn về số tài khoản trong mỗi nhóm lẫn số lượng nhóm. Một hình phạt được mở rộng sang **10 tài khoản liên kết** cùng lúc: các tài khoản tiếp theo bị xử phạt ở tin nhắn kế tiếp hoặc khi họ xuất hiện, và nút bên dưới hình phạt xử phạt họ ngay lập tức.
 
 ## 🔗 Liên kết tài khoản với /alt {#alt}
 
@@ -30,6 +30,8 @@ Dùng lệnh: ```/alt [thanhvien] [khac]```
 - Không có tùy chọn: hiển thị danh sách các nhóm tài khoản liên kết của máy chủ. Nút “**Liên kết hai tài khoản**” ở đó liên kết hai thành viên của máy chủ, hoặc hai tài khoản vắng mặt bằng ID của họ.
 - Với `[thanhvien]`: hiển thị nhóm của tài khoản đó, hoặc riêng tài khoản đó nếu nó chưa liên kết với tài khoản nào khác. Mỗi tài khoản xuất hiện kèm trạng thái (bị cấm khỏi máy chủ, đang trên máy chủ, không trên máy chủ, đang bị cách ly), tài khoản chính ở đầu.
 - Với `[thanhvien]` và `[khac]`: liên kết trực tiếp hai tài khoản, được khai báo là cùng một người.
+
+Nếu một trong các tài khoản của nhóm đã bị cấm ([Premium](/vi/premium)), các tài khoản liên kết dùng chung một lệnh cấm: RaidProtect đề xuất bạn “**Cấm cả nhóm**” để cấm luôn các tài khoản khác, “**Gỡ lệnh cấm**” của tài khoản bị cấm cho tất cả, hoặc quyết định “**Để sau**”.
 
 Hãy thay `[thanhvien]` và `[khac]` bằng lượt nhắc đến hoặc [ID](../guides/id.mdx) của các tài khoản mong muốn. Không thể liên kết bot.
 
@@ -84,7 +86,7 @@ Hình phạt né tránh áp dụng cho một tài khoản liên kết bị bắt
 <SettingsModal name="altsEvasion" />
 
 - “**Phần còn lại của hình phạt**” *(mặc định)*: tài khoản dùng chung hình phạt của nhóm cho đến khi kết thúc, không có hình phạt riêng mang tên nó.
-- **Một hình phạt** (Cấm, Đuổi, Mute, Jail hoặc Timeout): hình phạt được áp dụng mang tên tài khoản, với thời lượng riêng, và không được gỡ cùng nhóm. Để trống thời lượng cho hình phạt vĩnh viễn (ví dụ: `1h`, `3d`, `2w`).
+- **Một hình phạt** (Cấm, Đuổi, Mute, Jail hoặc Timeout): hình phạt được áp dụng mang tên tài khoản, với thời lượng riêng, và sau đó có hiệu lực cho cả nhóm. Mute hoặc jail sẽ quay lại nếu tài khoản rời máy chủ rồi tham gia lại. Để trống thời lượng cho hình phạt vĩnh viễn (ví dụ: `1h`, `3d`, `2w`).
 
 :::info
 Timeout luôn cần một thời lượng, tối đa 28 ngày. Mute và jail cần [vai trò](./sanctions.mdx#config) của chúng đã được cấu hình.
@@ -92,15 +94,15 @@ Timeout luôn cần một thời lượng, tối đa 28 ngày. Mute và jail c�
 
 ### Mỗi người một tài khoản {#single-account}
 
-Với thiết lập này, chỉ **tài khoản chính** của mỗi nhóm được hoạt động trên máy chủ. Các tài khoản khác bị **cách ly** bằng [vai trò jail](./sanctions.mdx#jail) (hình phạt “**Cách ly**” trong lịch sử). Chúng tự ra khỏi cách ly nếu trở thành tài khoản chính hoặc bị gỡ khỏi nhóm.
+Với thiết lập này, miễn phí giống như việc phát hiện bằng captcha, chỉ **tài khoản chính** của mỗi nhóm được hoạt động trên máy chủ. Các tài khoản khác bị **cách ly** bằng [vai trò jail](./sanctions.mdx#jail) (hình phạt “**Cách ly**” trong lịch sử). Chúng tự ra khỏi cách ly nếu trở thành tài khoản chính hoặc bị gỡ khỏi nhóm.
 
 1. Dùng [lệnh `/settings`](../setup.md#settings).
 2. Mở thẻ “**Kiểm duyệt**”.
 3. Nhấp vào “**Cấu hình**” bên cạnh “**Tài khoản phụ**”.
 4. Nhấp vào “**Bật**” bên cạnh “**Mỗi người một tài khoản**”.
 
-:::warning
-Thiết lập này yêu cầu một [vai trò Jail](./sanctions.mdx#jail). Không có nó, RaidProtect từ chối bật.
+:::info
+Thiết lập này cần một [vai trò Jail](./sanctions.mdx#jail). Nếu chưa có, một cửa sổ sẽ đề xuất bạn “**Bật và thiết lập jail**”: thiết lập được bật, và các tài khoản phụ bị cách ly ngay khi vai trò tồn tại.
 :::
 
 Để đổi tài khoản chính của một nhóm, hãy dùng `/alt` với một trong các tài khoản, rồi bộ chọn “**Chỉnh sửa một tài khoản của nhóm**”.

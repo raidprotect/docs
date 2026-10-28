@@ -92,8 +92,8 @@ Captcha khởi động ở chế độ **Bảng (Tương tác)**, kích hoạt *
 
 Với [Identity Update](./alt-accounts.md), Activity cũng phát hiện những người vào có khả năng do cùng một người sử dụng với một thành viên trong máy chủ của bạn:
 
-- **Liên kết chắc chắn:** các tài khoản được liên kết tự động trong [`/alt`](./alt-accounts.md#alt). Nhật ký của captcha báo điều đó, kèm một nút “**Hủy liên kết**”.
-- **Liên kết có thể:** nếu [Mỗi người một tài khoản](./alt-accounts.md#single-account) đang bật, thành viên được đưa vào diện xem xét. “**Liên kết với thành viên khác**” liên kết họ trong `/alt` và cho họ vào; nếu không phát hiện được tài khoản nào, một cửa sổ sẽ yêu cầu bạn chọn thành viên (“**Tài khoản đã có trên máy chủ**”). Nếu không, thành viên được vào, và nhật ký của captcha báo liên kết có thể này kèm một nút “**Liên kết tài khoản**”.
+- **Liên kết chắc chắn:** các tài khoản được liên kết tự động trong [`/alt`](./alt-accounts.md#alt). Nhật ký của captcha báo điều đó, kèm một nút “**Hủy liên kết**”. Nếu nhóm đang bị xử phạt, hoặc nếu [Mỗi người một tài khoản](./alt-accounts.md#single-account) đang giữ các tài khoản phụ của nhóm, người mới vào nhận hình phạt của nhóm hoặc bị cách ly.
+- **Liên kết có thể:** nếu [Mỗi người một tài khoản](./alt-accounts.md#single-account) đang bật, thành viên được đưa vào diện xem xét. “**Liên kết với thành viên khác**” liên kết họ trong `/alt` và cho họ vào; nếu không phát hiện được tài khoản nào, một cửa sổ sẽ yêu cầu bạn chọn thành viên (“**Tài khoản đã có trên máy chủ**”). Nếu không, thành viên được vào, và nhật ký của captcha báo liên kết có thể này kèm một nút “**Liên kết**”.
 - **Liên kết chắc chắn không được áp dụng:** không có gì được liên kết tự động nếu một tài khoản trong nhóm thuộc đội ngũ máy chủ, nếu người mới vào được liên kết với nhiều nhóm `/alt`, hoặc nếu cả hai tài khoản đều đã có nhóm riêng (hai nhóm không bao giờ được gộp tự động). Khi đó, liên kết được đề xuất cho bạn theo cùng cách.
 
 Chỉ các tài khoản của máy chủ bạn được hiển thị cho bạn: không có gì được nói về các máy chủ khác.
