@@ -95,7 +95,7 @@ Pour retirer tous les rôles automatiques, cliquez sur “**Réinitialiser**”.
 **Limites :** 3 rôles en version gratuite, 10 rôles en version [premium](/premium).
 
 :::warning
-Évitez les rôles qui portent des permissions : un rôle donné automatiquement ne devrait accorder aucun pouvoir. RaidProtect refuse les rôles gérés par une intégration, les rôles au-dessus du sien ou du vôtre, et ceux qui portent une permission de modération : les rôles acceptables de votre sélection sont gardés, et un message à part explique pourquoi les autres sont refusés (si tous le sont, la configuration en place reste inchangée). Il vous alerte si un rôle choisi gagne des permissions plus tard.
+Évitez les rôles qui portent des permissions : un rôle donné automatiquement ne devrait accorder aucun pouvoir. RaidProtect refuse les rôles gérés par une intégration, les rôles au-dessus du sien ou du vôtre, ceux qui portent une permission de modération et le rôle non vérifié du captcha (donné juste après le captcha, il bloquerait de nouveau le membre) : les rôles acceptables de votre sélection sont gardés, et un message à part explique pourquoi les autres sont refusés (si tous le sont, la configuration en place reste inchangée). Il vous alerte si un rôle choisi gagne des permissions plus tard.
 :::
 :::info
 Si votre serveur utilise un autre bot pour son rôle automatique, il risque de donner le rôle avant le captcha. Remplacez-le par les rôles automatiques de RaidProtect.
