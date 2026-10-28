@@ -20,7 +20,7 @@ RaidProtect 的处罚记录可让您跟踪和管理服务器上执行的所有[�
 - **手动处罚**：所有[管理命令](./moderation.mdx)（`/ban`、`/tempban`、`/kick`、`/mute`、`/jail`、`/warn` 等）都会被记录。
 - **自动处罚**：我们的防护模块（[Antispam](./anti-spam.mdx)、[HoneyPot](./honeypot.md)、[ScamLens](./scam-images.md) 等）所执行的处罚同样会被加入记录。
 - **封禁、踢出和超时**：不经过 RaidProtect 而执行的处罚也会被加入记录。
-- **Discord 的 AutoMod**：Discord 的 AutoMod 施加的超时会被记录。借助 Shield Update（试验中），AutoMod 规则每拦截一条消息，还会以“**Discord Automod**”的名义创建一条静默的**警告**（不发私信），除非该规则已经施加了超时。
+- **Discord 的 AutoMod**：Discord 的 AutoMod 施加的超时会被记录。AutoMod 规则每拦截一条消息，还会以“**Discord Automod**”的名义创建一条静默的**警告**（不发私信），除非该规则已经施加了超时。
 - **处罚通知**：被处罚的成员会收到一条私信，告知处罚及其原因。机器人还会发送详细的送达回执，确认发送状态：**已收到**、**私信已关闭**、**已过期**或**静默**（使用 `[--silent]` 选项时）。对于踢出、软封禁和临时封禁，这条消息还包含一个**带有服务器邀请的按钮**，以便成员在处罚结束后可以回来。
 
 :::info
@@ -159,11 +159,7 @@ RaidProtect 的处罚记录可让您跟踪和管理服务器上执行的所有[�
 - “**添加监禁角色**”*（默认）*：成员保留其角色，并添加监禁角色。
 - “**替换所有角色**”：我们会在监禁期间**移除成员的所有角色**，并在其被释放时恢复。更为严格，可避免带有明确权限的角色绕过监禁角色的限制。
 
-### 同步 Discord 隔离 <span className="badge-experiment">试验中</span> {#discord-quarantine}
-
-:::info 试验中：Shield Update
-同步 Discord 隔离属于计划在 3.6.0 版本发布的 **Shield Update**。在正式发布之前，它处于试验阶段，面向 [Premium](/zh-CN/premium) 服务器开放公开测试。
-:::
+### 同步 Discord 隔离 {#discord-quarantine}
 
 Discord 的 AutoMod 可以隔离个人资料（昵称、服务器标签）违反规则的成员。启用此设置后，我们会跟踪这一隔离：该成员会获得**监禁角色**，并在记录中添加一条**隔离**处罚。一旦 Discord 解除隔离，他就会随之脱离。
 
@@ -175,6 +171,10 @@ Discord 的 AutoMod 可以隔离个人资料（昵称、服务器标签）违反
 :::info
 此设置要求已有[监禁角色](#jail)。将其停用会释放由它施加的隔离。
 :::
+
+### 封禁时删除消息 {#ban-delete}
+
+在“**处罚**”界面中，“**封禁时删除消息**”选择器用于设置您使用 `/ban`、`?ban` 或 `/tempban` 封禁且未指定 `--delete-messages` 时默认删除的历史消息。可选择“**不删除**”（默认）、1 小时、6 小时、12 小时、1 天、3 天或 7 天。命令中给出的值优先。
 
 ### 禁言 {#mute}
 

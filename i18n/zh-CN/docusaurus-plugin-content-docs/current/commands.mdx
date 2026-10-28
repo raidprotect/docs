@@ -28,7 +28,7 @@ RaidProtect 的全部命令，按类别分组。点击命令名称即可查看�
 | [`/tagrole`](./features/tag-role.md) | `/tagrole` | 配置授予佩戴服务器标签的成员的角色。 |
 | [`/display public`](./features/display.mdx) | `/display public` | 管理 RaidProtect 的公开信息面板。 |
 | [`/display staff`](./features/display.mdx#staff) | `/display staff` | 管理仅限工作人员的面板（DISCON、内部消息）。 |
-| [`/discon`](./features/discon.md) | `/discon` | 设置 DISCON 面板，用于调节服务器的危险等级（试验中，Shield Update）。 |
+| [`/discon`](./features/discon.md) | `/discon` | 设置 DISCON 面板，用于调节服务器的危险等级。 |
 | [`/audit`](./features/audit.md) | `/audit` | 分析服务器的安全性，并建议修复配置漏洞。 |
 
 ## 管理 {#moderation}
@@ -64,9 +64,9 @@ RaidProtect 的全部命令，按类别分组。点击命令名称即可查看�
 
 | 命令 | 格式 | 说明 |
 |---|---|---|
-| [`/lock`](./features/channel-lock.md#lock) | `/lock [#channel] [duration] [reason]` | 锁定频道，禁止发送消息（时长可选）。 |
-| [`/unlock`](./features/channel-lock.md#unlock) | `/unlock [#channel] [reason]` | 解锁之前被锁定的频道。 |
-| [`/slowmode`](./features/moderation.mdx#slowmode) | `/slowmode (delay) [duration] [#channel] [reason]` | 启用或修改频道的慢速模式（生效时长可选）。 |
+| [`/lock`](./features/channel-lock.md#lock) | `/lock [#channel] [duration] [reason] [--silent]` | 锁定频道，禁止发送消息（时长可选）。 |
+| [`/unlock`](./features/channel-lock.md#unlock) | `/unlock [#channel] [reason] [--silent]` | 解锁之前被锁定的频道。 |
+| [`/slowmode`](./features/moderation.mdx#slowmode) | `/slowmode (delay) [duration] [#channel] [reason] [--silent]` | 启用或修改频道的慢速模式（生效时长可选）。 |
 
 ## 处罚记录 {#sanctions}
 
@@ -103,6 +103,7 @@ RaidProtect 的全部命令，按类别分组。点击命令名称即可查看�
 | [`/bypass captcha`](./features/captcha.md#bypass) | `/bypass captcha [@user]` | 允许用户无需通过验证码即可加入。 |
 | [`/bypass minage`](./features/onboarding.md#bypass-minage) | `/bypass minage [@user]` | 允许用户无需满足最短年龄要求即可加入。 |
 | [`/bypass raid`](./features/raid-mode.md#bypass-raid) | `/bypass raid [@user]` | 允许用户在突袭模式下仍可加入（需要踢出模式）。 |
+| [`/bypass bot`](./features/onboarding.md#bypass-bot) | `/bypass bot [bot]` | 允许机器人在踢出机器人功能启用时仍可加入（服务器所有者）。 |
 
 ## 实用工具 {#utilities}
 

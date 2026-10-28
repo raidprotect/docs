@@ -55,11 +55,7 @@ ScamLens 在“**防护**”选项卡的 **Automod** 模块中，于“**图片�
 - 公布处罚的公开消息遵循 [Antispam](./anti-spam.mdx#public-message) 的“**公开处罚消息**”设置，Premium 版可将其停用。
 :::
 
-## 🗂️ 图片目录 <span className="badge-experiment">试验中</span> <span className="badge-premium">Premium</span> {#catalog}
-
-:::info 试验中：Shield Update
-图片目录属于计划在 3.6.0 版本发布的 **Shield Update**，在正式发布前处于试验阶段。
-:::
+## 🗂️ 图片目录 <span className="badge-premium">Premium</span> {#catalog}
 
 除了由我们管理、应用于所有服务器的全局“加密货币诈骗”目录外，[Premium](/zh-CN/premium) 服务器还可以拦截**自己的图片**，无论其内容是什么：虚假 Nitro 的截图、针对您社区的诈骗素材、您服务器禁止的图片……
 

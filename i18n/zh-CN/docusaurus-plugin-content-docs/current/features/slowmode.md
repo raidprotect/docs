@@ -5,11 +5,7 @@ description: "RaidProtect 的预防性慢速模式会自动调整 Discord 服务
 
 import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
 
-RaidProtect 的**预防性慢速模式**会自动调整频道的[慢速模式](./moderation.mdx#slowmode)，使其保持在设定的每分钟**消息速率**以内。当某个频道变得失控（公告、直播、新成员涌入、[突袭](/zh-CN/learn/discord-raid)开始）时，我们会调高慢速模式；当它平静下来后，再将其调低。您的管理员不再需要盯着聊天、手动调整。
-
-:::info 试验中：Shield Update
-预防性慢速模式仅限 [Premium](/zh-CN/premium) 服务器使用。它属于计划在 3.6.0 版本发布的 **Shield Update**，在正式发布前处于试验阶段。
-:::
+RaidProtect 的**预防性慢速模式**仅限 [Premium](/zh-CN/premium) 服务器使用，它会自动调整频道的[慢速模式](./moderation.mdx#slowmode)，使其保持在设定的每分钟**消息速率**以内。当某个频道变得失控（公告、直播、新成员涌入、[突袭](/zh-CN/learn/discord-raid)开始）时，我们会调高慢速模式；当它平静下来后，再将其调低。您的管理员不再需要盯着聊天、手动调整。
 
 ## ❓ 工作原理 {#working}
 
@@ -27,7 +23,7 @@ RaidProtect 的**预防性慢速模式**会自动调整频道的[慢速模式](.
 2. 打开“**防护**”选项卡。
 3. 点击“**预防性慢速模式**”旁边的“**配置**”。
 4. 点击空闲位置旁边的“**添加**”。
-5. 选择频道（文字频道或公告频道）。
+5. 选择频道（文字、公告、语音或舞台频道：语音频道的慢速模式调节的是其内置的文字聊天）。
 
 <Settings start="slowmode" />
 
@@ -78,7 +74,7 @@ RaidProtect 必须在每个受调节的频道中拥有 `管理频道` 权限。
 
 ### 预防性慢速模式是免费的吗？
 
-不是，它仅限 Premium 服务器使用。它同时也属于仍在试验阶段的 Shield Update。
+不是，它仅限 Premium 服务器使用。
 
 ### 如果我手动设置慢速模式会怎样？
 
