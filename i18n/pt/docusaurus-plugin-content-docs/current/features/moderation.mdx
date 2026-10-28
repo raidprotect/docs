@@ -62,7 +62,7 @@ Use o comando: ```/ban (user) [duration] [--delete-messages=duration] [--silent]
 Substitua `(user)` pela menção ou ID desejado e `[reason]` pelo motivo da sanção.
 
 - `[duration]`: se for informada, o banimento se torna temporário (como com [`/tempban`](#tempban)).
-- `[--delete-messages]`: duração do histórico a excluir (por exemplo `1h`, `1d`, `7d`). O Discord limita a exclusão a no máximo 7 dias.
+- `[--delete-messages]`: duração do histórico a excluir (por exemplo `1h`, `1d`, `7d`). O Discord limita a exclusão a no máximo 7 dias. Sem essa opção, aplica-se o valor da [exclusão das mensagens no banimento](./sanctions.mdx#ban-delete).
 - `[--silent]`: não enviar DM ao alvo.
 
 :::tip
@@ -136,7 +136,7 @@ Use o comando: ```/jail (member) [--silent] [reason]```
 Substitua `(member)` pela menção ou ID desejado e `[reason]` pelo motivo da sanção.
 
 :::warning
-O [cargo Jail](./sanctions.mdx#jail) deve ser configurado via `/settings` antes que você possa usar este comando. Os módulos automáticos, por sua vez, aplicam um timeout quando nenhum cargo Jail está configurado.
+O [cargo Jail](./sanctions.mdx#jail) deve ser configurado via `/settings` antes que você possa usar este comando. Os módulos automáticos, por sua vez, aplicam um timeout quando nenhum cargo Jail está configurado. Um membro preso também é desconectado do seu canal de voz.
 :::
 
 ### <Icon src="/img/icons/SanctionsJAILTemp.svg" alt="icon SanctionsJAILTemp" title=":iconSanctionsJAILTemp:" /> Prender temporariamente um usuário {#tempjail}
@@ -154,6 +154,10 @@ O comando `/unjail` permite que você remova o cargo Jail de um membro, permitin
 Use o comando: ```/unjail (member) [--silent] [reason]```
 
 Substitua `(member)` pela menção ou ID desejado e `[reason]` pelo motivo da soltura.
+
+Um membro em quarentena (idade mínima da conta, quarentena do Discord) não está no jail: o `/unjail` o recusa e indica como remover a quarentena dele.
+
+Ein Mitglied in Quarantäne (Mindestalter des Kontos, Discord-Quarantäne) ist nicht im Jail: `/unjail` lehnt es ab und gibt an, wie seine Quarantäne aufgehoben wird.
 
 ## <Icon src="/img/icons/SanctionsWARN.svg" alt="icon SanctionsWARN" title=":iconSanctionsWARN:" /> Avisar um usuário {#warn}
 
@@ -195,11 +199,12 @@ Substitua `(amount)` pelo número de mensagens que você deseja excluir (de 2 a 
 
 O comando `/slowmode` permite que você ative ou modifique o modo lento de um canal, a fim de limitar a frequência com que os usuários enviam mensagens.
 
-Use o comando: ```/slowmode (delay) [duration] [channel] [reason]```
+Use o comando: ```/slowmode (delay) [duration] [channel] [reason] [--silent]```
 
 - Substitua `(delay)` pela duração desejada entre cada mensagem (por ex.: `5s`, `1m`, `10m`, `1h`, até 6 horas; `0` para desativar).
 - Adicione `[duration]` para desativar automaticamente o modo lento após essa duração (por ex. `30m`, `2h`).
 - Adicione `[channel]` se quiser aplicar o modo lento a um canal diferente daquele onde você digita o comando.
+- Adicione `--silent` para não anunciar nada no canal.
 - Adicione `[reason]` para especificar o motivo, que será registrado nos logs do servidor.
 
 ## 🕵️ Recuperar uma mensagem excluída {#snipe}
@@ -215,7 +220,7 @@ Use o comando: ```/snipe [user] [--channel=#channel]```
 A partir da resposta, você pode **sancionar o autor** de uma mensagem. A resposta só é visível para você.
 
 :::warning
-O `/snipe` só enxerga as mensagens que o RaidProtect salva em memória, durante uma hora. Elas só são conservadas se o “**Cache de mensagens**” estiver ativado (`/settings`, aba “**Utilitários**”, desativado por padrão), ou se o [anti-spam](./anti-spam.mdx) ou as [denúncias](./reports.md) estiverem ativos, o que o ativa automaticamente. Caso contrário, o comando responde que nenhuma mensagem excluída foi encontrada.
+O `/snipe` só enxerga as mensagens que o RaidProtect salva em memória, durante uma hora. Elas só são conservadas se o “**Cache de mensagens**” estiver ativado (`/settings`, aba “**Utilitários**”, desativado por padrão), ou se o [anti-spam](./anti-spam.mdx) ou as [denúncias](./reports.md) estiverem ativos, o que o ativa automaticamente: usar o `/snipe` nesse momento registra a configuração, que permanece ativa mesmo se o anti-spam e as denúncias forem desativados depois. Caso contrário, o comando indica que o cache de mensagens está desativado e propõe ativá-lo a um administrador (ou a um membro autorizado a usar o `/settings` quando as permissões das Integrações são aplicadas).
 :::
 
 Para ativar o cache de mensagens:

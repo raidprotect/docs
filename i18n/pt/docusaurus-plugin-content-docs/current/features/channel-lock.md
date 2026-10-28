@@ -12,16 +12,21 @@ import Settings from '@site/src/components/DiscordMessage/mockups/v2';
 
 ## 🔒 Bloquear um canal {#lock}
 
-Use o comando: ```/lock [#channel] [duration] [reason]```
+Use o comando: ```/lock [#channel] [duration] [reason] [--silent]```
 
 Este comando remove do cargo **@everyone** as permissões de enviar mensagens e de enviar mensagens em threads, no canal visado, impedindo assim que todos os usuários publiquem nele.
 
 - Substitua `[#channel]` pela menção ou pelo [ID](../guides/id.mdx) do canal a bloquear. Sem canal, bloqueamos aquele em que você executa o comando. Os canais de texto, de anúncios, de voz, fóruns, de mídia, de palco e as categorias são aceitos; as threads não.
 - Substitua `[reason]` para indicar o motivo do bloqueio do canal (por exemplo, *limpeza do chat*, *anúncio importante*, etc.).
+- Adicione `--silent` para não anunciar nada no canal: só você recebe a confirmação.
 
 :::info
 Um mesmo canal só pode ser bloqueado uma vez a cada 10 minutos.
 :::
+
+### Bloquear uma categoria {#lock-category}
+
+Bloquear uma categoria também bloqueia todos os seus canais visíveis (exceto threads) de uma só vez, e `/unlock` na categoria os desbloqueia juntos. Um canal já fechado para escrita (regras, anúncios) é deixado como está, tanto no bloqueio quanto no desbloqueio. Quando um bloqueio temporário de categoria expira, uma única linha de log indica a categoria e o número de canais desbloqueados.
 
 ### Bloqueio temporário {#lock-duration}
 
@@ -29,9 +34,9 @@ O parâmetro `[duration]` permite **desbloquear automaticamente o canal** após 
 
 ## 🔓 Desbloquear um canal {#unlock}
 
-Use o comando: ```/unlock [#channel] [reason]```
+Use o comando: ```/unlock [#channel] [reason] [--silent]```
 
-Este comando restaura para o cargo **@everyone** as permissões de enviar mensagens tais como eram antes do bloqueio, permitindo que os usuários voltem a publicar. Substitua `[reason]` para indicar o motivo do desbloqueio do canal (por exemplo, *discussão reaberta*, *anúncio finalizado*, etc.).
+Este comando restaura para o cargo **@everyone** as permissões de enviar mensagens tais como eram antes do bloqueio, permitindo que os usuários voltem a publicar. Substitua `[reason]` para indicar o motivo do desbloqueio do canal (por exemplo, *discussão reaberta*, *anúncio finalizado*, etc.). Com `--silent`, nada é anunciado no canal.
 
 :::warning
 Para que o bloqueio funcione corretamente, nenhum cargo aberto a todos deve ter permissão explícita para escrever nesse canal. Caso contrário, os membros com esses cargos ainda poderão conversar. As permissões definidas para os cargos da sua equipe, por outro lado, são úteis: elas garantem que a equipe continue podendo falar durante um `/lock`, e a [auditoria](./audit.md) não as sinaliza mais como redundantes.

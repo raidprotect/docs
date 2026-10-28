@@ -72,7 +72,7 @@ Você pode excluir certos canais, cargos ou membros do monitoramento do anti-spa
 O seletor de canais aceita as **categorias** (todos os seus canais são então ignorados), bem como os canais de voz, os palcos e os fóruns. As threads seguem o canal pai.
 
 :::info Quem é ignorado automaticamente?
-- Os canais cujo nome contém “**spam**” (para uma thread, é o nome do canal pai que conta).
+- Os canais cujo nome contém “**spam**” (para uma thread, é o nome do canal pai que conta). Um interruptor “**Ignorar os canais « spam »**”, na tela do anti-spam, permite monitorá-los também.
 - Os membros que o RaidProtect não pode moderar (cargo mais alto que o dele).
 - A **equipe** (permissão `Administrador`, `Gerenciar servidor` ou `Gerenciar mensagens`), **enquanto nenhum cargo nem membro for ignorado**. Assim que você adiciona um cargo ou um membro à lista, só essa lista conta: os membros da equipe que não constam nela podem então ser sancionados.
 :::
@@ -201,9 +201,9 @@ O RaidProtect trabalha com o **AutoMod do Discord**:
 - **Spam de mensagens bloqueadas**: quando um membro encadeia mensagens bloqueadas pelas suas regras do AutoMod, o gatilho “**Spam de mensagens bloqueadas (AutoMod)**” o sanciona (família **Automatizado**). Para isso, a regra do AutoMod deve enviar seus **alertas** para um canal que o RaidProtect possa ver: é graças a esses alertas que identificamos as mensagens bloqueadas.
 - **Aviso a cada mensagem bloqueada**: se as sanções estiverem ativas no seu servidor, cada mensagem bloqueada por uma regra do AutoMod é registrada como um aviso no histórico do membro, a menos que a regra já aplique um timeout. O membro não recebe mensagem privada por esse aviso. Mais detalhes na página das [sanções](./sanctions.mdx).
 
-## 🐢 Slowmode preventivo <span className="badge-experiment">Experimentação</span> <span className="badge-premium">Premium</span> {#slowmode}
+## 🐢 Slowmode preventivo <span className="badge-premium">Premium</span> {#slowmode}
 
-Para acalmar um canal muito ativo sem sancionar ninguém, o [slowmode preventivo](./slowmode.md) (Premium, em experimentação com a Shield Update) ajusta automaticamente o modo lento dos seus canais de acordo com o fluxo de mensagens.
+Para acalmar um canal muito ativo sem sancionar ninguém, o [slowmode preventivo](./slowmode.md) (Premium) ajusta automaticamente o modo lento dos seus canais de acordo com o fluxo de mensagens.
 
 ## 📑 Logs do anti-spam {#logs}
 

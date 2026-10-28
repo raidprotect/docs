@@ -37,6 +37,8 @@ O captcha se baseia em um cargo **@Não verificado** e um canal **#verificação
 | **Painel (Interativo)**, padrão | Uma mensagem permanente “**Sistema de verificação**” com um botão “**Verificar**”, que abre a [Activity RaidProtect](#activity). O membro não pode escrever em **#verificação**. |
 | **Desafio (Clássico)** | Uma imagem é postada em **#verificação** na chegada dele, e ele digita o código como mensagem no canal. |
 
+O painel traz um botão “**Translate**” para lê-lo no seu idioma, e cada recém-chegado é mencionado nele no canal de verificação, depois a mensagem é excluída: assim ele encontra o canal.
+
 O modo Painel mantém o canal limpo e permite configurações adicionais: escolha da sanção quando as tentativas se esgotam, [captcha congelado durante um raid](./raid-mode.md#action), [retenção na entrada das contas muito recentes](./onboarding.md#minage). O modo Desafio sempre expulsa o membro ao fim do tempo concedido ou quando suas tentativas se esgotam.
 
 ### Acionamento {#trigger}
@@ -45,15 +47,11 @@ O modo Painel mantém o canal limpo e permite configurações adicionais: escolh
 |---|---|
 | **Permanente**, padrão | A cada chegada, sem condição. |
 | **Automático** | Somente durante um raid ou um nível DISCON elevado. Os outros recém-chegados entram diretamente. |
-| **Inteligente** <span className="badge-experiment">Experimentação</span> | Como Automático, mais as contas que parecem suspeitas. |
+| **Inteligente** | Como Automático, mais as contas que parecem suspeitas. |
 
-Com **Automático**, o captcha se impõe durante um raid somente se o [Auto RaidMode](./raid-mode.md#action) estiver definido como “**Enviar ao captcha**” ou “**Captcha congelado durante o raid**”, e durante um alerta [DISCON](./discon.md) a partir do nível 3 (em experimentação com a Shield Update).
+Com **Automático**, o captcha se impõe durante um raid somente se o [Auto RaidMode](./raid-mode.md#action) estiver definido como “**Enviar ao captcha**” ou “**Captcha congelado durante o raid**”, e durante um alerta [DISCON](./discon.md) a partir do nível 3.
 
 O acionamento **Inteligente** avalia o perfil de cada recém-chegado. Um membro aprovado manualmente pela sua equipe nunca é considerado suspeito.
-
-:::info Experimentação: Shield Update
-O acionamento Inteligente faz parte da **Shield Update**, prevista para a versão 3.6.0. Até o lançamento, ele está em experimentação, em beta público para os servidores [Premium](/pt/premium). Sem a experimentação, ele não é oferecido.
-:::
 
 ## 🚪 Como configurar o captcha? {#config}
 
@@ -75,7 +73,7 @@ O captcha começa no modo **Painel (Interativo)**, com acionamento **Permanente*
 2. Abra a aba “**Chegadas**”.
 3. Clique em “**Configurar**” ao lado de “**Captcha**”.
 4. Em “**Modo de exibição**”, escolha “**Painel (Interativo)**” ou “**Desafio (Clássico)**”.
-5. Em “**Acionamento**”, escolha “**Permanente**”, “**Automático**” ou “**Inteligente**” (Shield Update).
+5. Em “**Acionamento**”, escolha “**Permanente**”, “**Automático**” ou “**Inteligente**”.
 
 ### Verificação na Activity {#activity}
 
@@ -199,7 +197,7 @@ Substitua `[user]` pelo [identificador](../guides/id.mdx) desejado; ele terá 10
 O captcha trabalha com as outras proteções das chegadas:
 - **[Auto RaidMode](./raid-mode.md#action):** com a ação “**Enviar ao captcha**”, os recém-chegados de uma onda passam pelo captcha em vez de serem expulsos. Com “**Captcha congelado durante o raid**”, eles esperam atrás do captcha e o passam depois da onda.
 - **[Idade mínima da conta](./onboarding.md#minage):** a ação “**Reter na entrada**” bloqueia uma conta muito recente em um captcha que ela só poderá resolver depois que a idade for atingida.
-- **[DISCON](./discon.md#captcha):** a partir do nível 4, o captcha é ativado se estiver configurado, mesmo que você o tivesse desativado. A partir do nível 3, ele se impõe a todos os recém-chegados, qualquer que seja o seu acionamento (em experimentação com a Shield Update).
+- **[DISCON](./discon.md#captcha):** a partir do nível 4, o captcha é ativado se estiver configurado, mesmo que você o tivesse desativado. A partir do nível 3, ele se impõe a todos os recém-chegados, qualquer que seja o seu acionamento.
 
 ## Perguntas frequentes {#faq}
 

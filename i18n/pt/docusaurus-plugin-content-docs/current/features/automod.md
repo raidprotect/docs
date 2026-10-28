@@ -1,6 +1,6 @@
 ---
 title: Automod
-description: "O Automod do RaidProtect remove automaticamente as imagens de golpe e as referências a outros servidores Discord: convites, mensagens encaminhadas, links de canal e tags de servidor."
+description: "O Automod do RaidProtect remove automaticamente as imagens de golpe, os arquivos de extensões recusadas e as referências a outros servidores Discord: convites, mensagens encaminhadas, links de canal ou de evento e tags de servidor."
 ---
 
 import Settings from '@site/src/components/DiscordMessage/mockups/v2';
@@ -21,13 +21,9 @@ O filtro **Imagens** exclui as imagens de golpe conhecidas (golpes de cripto, fa
 
 Todos os detalhes, a sanção e o catálogo de imagens estão na página [Imagens de golpe](./scam-images.md).
 
-## 🔗 Outros servidores <span className="badge-experiment">Experimentação</span> {#servers}
+## 🔗 Outros servidores {#servers}
 
-O filtro **Outros servidores** controla o que direciona para outros servidores Discord: os **convites**, as **mensagens encaminhadas** e os **links de canal**, bem como as **tags de servidor** exibidas pelos seus membros. Ele bloqueia a divulgação não autorizada e os servidores concorrentes ou maliciosos, sem afetar seus parceiros.
-
-:::info Experimentação: Shield Update
-O filtro Outros servidores faz parte da **Shield Update**, prevista para a versão 3.6.0. Até o lançamento, ele está em experimentação, em beta público para os servidores [Premium](/pt/premium).
-:::
+O filtro **Outros servidores** controla o que direciona para outros servidores Discord: os **convites**, as **mensagens encaminhadas**, os **links de canal** e os **links de evento**, bem como as **tags de servidor** exibidas pelos seus membros. Ele bloqueia a divulgação não autorizada e os servidores concorrentes ou maliciosos, sem afetar seus parceiros.
 
 ### Como funciona? {#servers-working}
 
@@ -40,7 +36,7 @@ Três comportamentos são configurados separadamente, cada um em um destes modos
 | Comportamento | O que acontece se for recusado |
 |---|---|
 | **Convite** | A mensagem que contém o convite é excluída. Os links `ptb.` e `canary.` também contam, e os convites escondidos em um embed, um componente ou uma mensagem encaminhada são lidos, assim como as mensagens editadas depois. |
-| **Mensagem encaminhada ou link de canal** | A mensagem encaminhada desse servidor, ou que contém um link para um de seus canais, é excluída. |
+| **Mensagem encaminhada ou link de canal** | A mensagem encaminhada desse servidor, ou que contém um link para um de seus canais ou de seus eventos, é excluída. |
 | **Tag de servidor exibida** | O membro é colocado em **quarentena** com o [cargo Jail](./sanctions.mdx#jail). Ela é removida assim que ele retira a tag. |
 
 Seu próprio servidor sempre passa, por qualquer um dos seus convites, e sua equipe (permissões **Gerenciar servidor** ou **Gerenciar mensagens**) nunca é visada.
@@ -61,6 +57,10 @@ Um convite de amizade ou de grupo privado não leva a nenhum servidor. No modo �
 - “**Sempre removidos**”: excluídos, qualquer que seja a lista.
 
 Sem Premium, eles sempre seguem a lista.
+
+:::tip
+Se você sair da tela de um filtro que modificou sem tê-lo ativado, o RaidProtect propõe ativá-lo antes de sair (“**Deixar desativado**” vem pré-selecionado).
+:::
 
 ### Sanção {#servers-sanction}
 
@@ -85,6 +85,46 @@ Para permitir apenas os convites dos seus parceiros, defina “**Convite**” co
 ### Logs {#servers-logs}
 
 Cada sanção e cada quarentena são registradas nos seus [logs de moderação](./moderation.mdx#logs), com o servidor e o canal envolvidos. Uma mensagem excluída sem sanção (“**Apenas apagar a mensagem**”) também é registrada. As sanções aparecem no [histórico de sanções](./sanctions.mdx), com os motivos “Convite para um servidor recusado”, “Convite de amizade ou de grupo recusado” (Premium), “Mensagem encaminhada ou link de canal de um servidor recusado” ou “Tag de um servidor recusada”.
+
+## 📎 Extensões de arquivos {#files}
+
+O filtro **Extensões de arquivos** exclui os arquivos cuja extensão é recusada. Você pode bloquear certas extensões (lista de bloqueio) ou permitir apenas algumas (lista de permissão), em todo o servidor ou canal por canal. Sua equipe (permissões **Gerenciar servidor** ou **Gerenciar mensagens**) nunca é visada.
+
+Os arquivos de uma mensagem encaminhada também contam, e uma thread segue as regras do seu canal.
+
+### Configuração {#files-config}
+
+1. No Automod, clique em “**Configurar**” ao lado de “**Extensões de arquivos**”.
+2. Ative o filtro com o interruptor no canto superior direito.
+3. Em “**Todo o servidor**”, escolha um modo: “**Desativado**”, “**Lista de bloqueio**” ou “**Lista de permissão**”.
+4. Marque **grupos** (Executáveis, Imagens, Vídeos, Áudio, Arquivos compactados, Documentos) e/ou digite outras extensões separadas por vírgulas, por exemplo `exe, msi`. O ponto é opcional. Uma regra aceita no máximo 50 extensões livres, além dos grupos.
+
+:::warning
+Uma lista de permissão sem extensão não aceita nenhum arquivo: todo arquivo enviado é excluído.
+:::
+
+### Regras por canal e por categoria {#files-channels}
+
+Clique em “**Adicionar um canal**” para dar uma regra a um canal, uma thread ou uma categoria. Uma regra de categoria vale para todos os seus canais.
+
+As regras se somam, exceto para uma extensão citada por várias regras: a regra **mais específica** decide (canal, depois categoria, depois servidor). Por exemplo, um `.exe` permitido em um canal passa apesar da lista de bloqueio do servidor. Uma extensão que nenhuma regra cita passa por todas as regras.
+
+| | Gratuito | <span className="badge-premium">Premium</span> |
+|---|---|---|
+| **Regras por canal** | 1 (o primeiro canal configurado) | 20 canais ou categorias |
+| **Regra de categoria** | Não | Sim |
+
+Sem Premium, as regras excedentes são mantidas, mas inativas.
+
+### Arquivos corrompidos {#files-disguised}
+
+Um arquivo renomeado para se passar por uma imagem ou um vídeo (um `.exe` renomeado como `.png`) é reconhecido: o Discord não consegue lê-lo como uma imagem de verdade. Uma lista de permissão sempre o recusa. A opção “**Sempre recusar os arquivos corrompidos**” também o exclui em todos os canais, mesmo sem lista de permissão.
+
+### Sanção {#files-sanction}
+
+Cada arquivo recusado é excluído com sua mensagem. Em “**Sanção das mensagens apagadas**”, escolha também uma sanção para o autor, ou “**Apenas apagar a mensagem**”. A sanção se aplica no máximo uma vez por minuto e por membro.
+
+Cada mensagem excluída é registrada nos seus [logs de moderação](./moderation.mdx#logs), com o arquivo, o canal e a extensão envolvidos. As sanções aparecem no [histórico de sanções](./sanctions.mdx) com o motivo “Arquivo de uma extensão recusada”.
 
 ## Perguntas frequentes {#faq}
 

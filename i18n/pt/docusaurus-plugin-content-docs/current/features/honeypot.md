@@ -58,7 +58,18 @@ Por padrão, o HoneyPot aplica um **Softban**. Várias [sanções](/pt/learn/dis
 | **Jail** | Atribui o [cargo Jail](./sanctions.mdx#jail) configurado no seu servidor | Premium |
 | **Mute** | Atribui o [cargo Mute](./sanctions.mdx#mute) configurado no seu servidor | Premium |
 
-Para as sanções com duração (Banimento, Timeout, Jail, Mute), escolha uma duração no seletor “**Duração**”: 5 minutos, 1 hora, **1 dia** (padrão) ou 28 dias, ou “**Valor personalizado**” para informar a sua (por exemplo `5m`, `1h`, `2d`; mínimo 1 minuto). O seletor fica esmaecido para o Softban e a Expulsão, que não têm duração.
+Para as sanções com duração (Banimento, Timeout, Jail, Mute), escolha uma duração no seletor “**Duração**” (1 dia por padrão), ou “**Valor personalizado**” para informar a sua (por exemplo `5m`, `1h`, `2d`; mínimo 1 minuto). O seletor fica esmaecido para o Softban e a Expulsão, que não têm duração.
+
+As opções do seletor acompanham a sanção:
+
+| Sanção | Opções propostas |
+|---|---|
+| **Banimento** | Permanente, 1 dia, 7 dias, 30 dias |
+| **Jail** | Permanente, 1 hora, 1 dia, 7 dias |
+| **Mute** | 5 minutos, 1 hora, 1 dia, 7 dias |
+| **Timeout** | 5 minutos, 1 hora, 1 dia, 28 dias |
+
+O Banimento e o Jail podem ser **permanentes**: a sanção não é removida sozinha. Ao trocar de sanção, a duração escolhida é mantida se continuar possível (uma permanente não passa para um Timeout ou um Mute, e um Timeout fica abaixo de 28 dias).
 
 :::tip
 O **Softban** é um bom meio-termo: ele limpa as mensagens e expulsa a conta invadida, mas o dono legítimo pode voltar assim que sua conta estiver protegida.
@@ -74,13 +85,9 @@ Para as outras sanções (Kick, Timeout, Jail, Mute), o RaidProtect exclui ele m
 - Se o seu servidor perder o Premium, uma sanção Premium volta automaticamente para **Softban** no próximo acionamento.
 :::
 
-### Prazo antes da sanção <span className="badge-experiment">Experimentação</span> {#grace}
+### Prazo antes da sanção {#grace}
 
 Um membro de boa-fé pode escrever no HoneyPot por engano. O **prazo antes da sanção** dá a ele tempo para avisar antes de ser sancionado.
-
-:::info Experimentação: Shield Update
-O prazo antes da sanção faz parte da **Shield Update**, prevista para a versão 3.6.0. Até o lançamento, ele está em experimentação, em beta público para os servidores [Premium](/pt/premium).
-:::
 
 1. Execute o [comando `/settings`](../setup.md#settings).
 2. Abra a aba “**Proteção**”.

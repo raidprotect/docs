@@ -100,6 +100,7 @@ A partir do seu perfil, você pode:
 - Adicionar, trocar ou excluir um **código PIN** (simples ou reforçado).
 - Ativar o **código 2FA** (OTP) com um QR code ou uma chave secreta, regenerá-lo ou excluí-lo.
 - Adicionar uma **passkey** a partir da página de registro, ou excluir uma. Cada passkey exibe o nome do dispositivo e a data do último uso.
+- **Renomear** uma passkey: o botão “**Modificar uma Passkey**”, ao lado de “**Adicionar**”, abre uma janela com suas passkeys e o novo nome a ser dado (por exemplo `MacBook`, `iPhone`, `YubiKey`). A renomeação é registrada no seu registro de auditoria.
 
 Se você já tiver um método, pedimos que se autentique antes de adicionar ou modificar um. A parte de baixo do perfil lembra o seu grau e o método a adicionar para subir um degrau.
 
@@ -137,10 +138,10 @@ Use o comando: ```/auth [role]```
 
 1. Execute o comando `/auth` no servidor, ou clique em “**Obter um cargo**” em um painel da equipe.
 2. Um menu exibe os cargos disponíveis com o grau exigido e a duração da sessão.
-3. Selecione um cargo.
+3. Selecione um ou mais cargos (até 10). Uma única autenticação, no nível do mais exigente, libera todos eles.
 4. Escolha um método de autenticação entre os que atingem o grau do cargo.
 5. Efetue a verificação (PIN, OTP ou passkey).
-6. Em caso de sucesso, atribuímos a você o cargo do Discord e criamos uma sessão.
+6. Em caso de sucesso, atribuímos a você o cargo ou os cargos do Discord e criamos uma sessão para cada um. As sessões são registradas nos logs do Authentification Manager.
 
 :::info
 Apenas os cargos aos quais você foi atribuído com o status **Ativo** aparecem no menu.
@@ -233,6 +234,8 @@ Recusamos um cargo gerenciado por uma integração, um cargo usado no Processo d
 
 :::tip
 Se o seu cargo for **exibido separadamente** na lista de membros, escolha “**Criar um cargo de permissões separado**”: seus membros mantêm o cargo visível permanentemente, e as permissões sensíveis só são atribuídas durante as sessões autenticadas.
+
+Com um cargo separado, as permissões de moderação de canal do cargo de exibição também passam para o cargo `🔑`. Para um cargo de administrador, a opção “**Manter a visão de todos os canais fora de sessão**” deixa ao cargo de exibição a visão de todos os canais fora das sessões; sem ela, ele não vê mais nada sem o administrador.
 :::
 
 #### Proteger os cargos de administrador a partir de `/audit` {#audit-bulk}

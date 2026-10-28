@@ -15,10 +15,6 @@ O **DISCON** é o nível de perigo do seu servidor, nos moldes do DEFCON. Durant
 - **Um retorno limpo**: ao descer, desativamos apenas o que o próprio DISCON ativou. Um captcha, um Bloqueio de DMs ou um modo raid que você tinha ativado manualmente permanecem no lugar.
 - **Uma mudança manual**: o nível nunca muda sozinho, é a sua equipe que decide.
 
-:::info Experimentação: Shield Update
-O DISCON faz parte da **Shield Update**, prevista para a versão 3.6.0. Até o lançamento, ele está em experimentação, em beta público para os servidores [Premium](/pt/premium). O [canal de voz de status](#voice) exige o Premium.
-:::
-
 ## 🚦 Os cinco níveis {#levels}
 
 | Nível | Nome | O que aplicamos |
@@ -81,7 +77,7 @@ Para isso, o captcha deve estar [configurado](./captcha.md#config), com seu cana
 1. Use o [comando `/settings`](../setup.md#settings).
 2. Abra a aba “**Proteção**”.
 3. Clique em “**Configurar**” ao lado de “**DISCON**”.
-4. Escolha o canal do painel no seletor, ou clique em “**Criar o canal do painel**”.
+4. Escolha o canal do painel (de texto ou de voz) no seletor, ou clique em “**Criar o canal do painel**”.
 5. Opcionalmente ([Premium](/pt/premium)), escolha um canal de voz de status, ou clique em “**Criar o canal de status**”.
 
 Abaixo da configuração, você encontra o nível atual, os cinco botões de nível e a **tabela dos níveis**, que descreve o que cada nível fará no seu servidor.
@@ -93,6 +89,7 @@ Abaixo da configuração, você encontra o nível atual, os cinco botões de ní
 Os botões do painel não exigem nenhuma permissão: **é o acesso ao canal que faz o papel de controle**. Escolha, portanto, um canal reservado à sua equipe.
 
 - Um canal visível para todo o servidor é recusado: qualquer membro poderia mudar o nível ali.
+- Um canal de voz também serve: o painel é então postado no seu canal de texto integrado.
 - “**Criar o canal do painel**” cria um canal `#discon` invisível para @everyone. Abra-o em seguida aos cargos da sua equipe.
 
 ### Canal de voz de status <span className="badge-premium">Premium</span> {#voice}
