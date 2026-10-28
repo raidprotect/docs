@@ -58,7 +58,18 @@ Par défaut, le HoneyPot applique un **Softban**. Plusieurs [sanctions](/learn/d
 | **Jail** | Donne le [rôle Jail](./sanctions.mdx#jail) configuré sur votre serveur | Premium |
 | **Mute** | Donne le [rôle Mute](./sanctions.mdx#mute) configuré sur votre serveur | Premium |
 
-Pour les sanctions à durée (Bannissement, Timeout, Jail, Mute), choisissez une durée dans le sélecteur “**Durée**” : 5 minutes, 1 heure, **1 jour** (par défaut) ou 28 jours, ou “**Valeur personnalisée**” pour saisir la vôtre (par exemple `5m`, `1h`, `2d` ; minimum 1 minute). Le sélecteur est grisé pour le Softban et l'Expulsion, qui n'ont pas de durée.
+Pour les sanctions à durée (Bannissement, Timeout, Jail, Mute), choisissez une durée dans le sélecteur “**Durée**” (1 jour par défaut), ou “**Valeur personnalisée**” pour saisir la vôtre (par exemple `5m`, `1h`, `2d` ; minimum 1 minute). Le sélecteur est grisé pour le Softban et l'Expulsion, qui n'ont pas de durée.
+
+Les repères du sélecteur suivent la sanction :
+
+| Sanction | Repères proposés |
+|---|---|
+| **Bannissement** | Permanent, 1 jour, 7 jours, 30 jours |
+| **Jail** | Permanent, 1 heure, 1 jour, 7 jours |
+| **Mute** | 5 minutes, 1 heure, 1 jour, 7 jours |
+| **Timeout** | 5 minutes, 1 heure, 1 jour, 28 jours |
+
+Le Bannissement et le Jail peuvent être **permanents** : la sanction ne se lève pas d'elle-même. En changeant de sanction, la durée choisie est conservée si elle reste possible (un permanent ne passe pas à un Timeout ou un Mute, et un Timeout reste sous 28 jours).
 
 :::tip
 Le **Softban** est un bon compromis : il nettoie les messages et expulse le compte piraté, mais le propriétaire légitime peut revenir une fois son compte sécurisé.
@@ -74,13 +85,9 @@ Pour les autres sanctions (Kick, Timeout, Jail, Mute), RaidProtect supprime lui-
 - Si votre serveur perd le Premium, une sanction Premium repasse automatiquement en **Softban** au prochain déclenchement.
 :::
 
-### Délai avant sanction <span className="badge-experiment">Expérimentation</span> {#grace}
+### Délai avant sanction {#grace}
 
 Un membre de bonne foi peut écrire dans le HoneyPot par erreur. Le **délai avant sanction** lui laisse le temps de le signaler avant d'être sanctionné.
-
-:::info Expérimentation : Shield Update
-Le délai avant sanction fait partie de la **Shield Update**, prévue pour la version 3.6.0. En attendant sa sortie, il est en expérimentation, en bêta publique pour les serveurs [Premium](/premium).
-:::
 
 1. Faites la [commande `/settings`](../setup.md#settings).
 2. Ouvrez l'onglet “**Protection**”.
