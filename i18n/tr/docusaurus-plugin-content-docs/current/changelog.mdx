@@ -28,27 +28,24 @@ Identity Update deneme aşamasındadır: 3.7.0 sürümüyle çıkışına kadar 
   - Yeni algılama motoru: yaklaşık kopyalar, tekrarlanan bağlantılar, emojiler ve anlamsız mesajlar, flood ve birden fazla kanala yayılan spam.
   - [Hazır ayarlar](./features/anti-spam.mdx#presets) ve ailelere göre ceza; her tetikleyiciyi ayarlamak için bir [gelişmiş mod](./features/anti-spam.mdx#advanced) ve [süresi](./features/anti-spam.mdx#duration) ile birlikte.
   - Adında “spam” geçen ve şimdiye kadar hep yok sayılan kanalları izlemek için yeni [seçenek](./features/anti-spam.mdx#ignore). <SuggestionLink id="600" />
+- Yeni [önleyici yavaş mod](./features/slowmode.md) (**Premium**): seçilen kanalların yavaş modu, belirlediğiniz mesaj akış hızını tutturmak için kendiliğinden ayarlanır.
 - [Automod](./features/automod.md):
   - Yeni [Diğer sunucular](./features/automod.md#servers) filtresi: diğer sunucuların davetleri, iletilen mesajları, kanal veya etkinlik bağlantıları ve etiketleri, kara liste veya beyaz liste ile.
   - Yeni [Dosya uzantıları](./features/automod.md#files) filtresi: uzantı gruplarını engelleyin ya da yalnızca bazılarına izin verin, tüm sunucuda veya kanal kanal, bir dosya başka bir uzantının arkasına gizlendiğinde bile. **Premium** sunucularda kanal başına daha fazla kural vardır. <SuggestionLink id="505" />
   - Kendi dolandırıcılık görsellerinizi engellemek için [ScamLens](./features/scam-images.md) [özel görsel kataloğu](./features/scam-images.md#catalog) (**Premium**).
-- Yeni [önleyici yavaş mod](./features/slowmode.md) (**Premium**): seçilen kanalların yavaş modu, belirlediğiniz mesaj akış hızını tutturmak için kendiliğinden ayarlanır.
 - Yeni [kurulum sihirbazı](./setup.md#wizard): bölüm bölüm yönlendirmeli bir akış, sunucunuza göre önerilen korumalar ve sonunda bir denetim önizlemesi.
 - Yeni [Botların gelişi](./features/onboarding.md#bots) (antibot) bölümü: sunucuya katılan botlara otomatik olarak verilen roller ve izin verilmeyen botların atılması, birine giriş izni vermek için [`/bypass bot`](./features/onboarding.md#bypass-bot) ile birlikte. <SuggestionLink id="244" />
 - [Discord karantinasıyla](./features/sanctions.mdx#discord-quarantine) senkronize yeni **Karantina** yaptırımı.
 - Captcha'nın yeni [Akıllı tetiklemesi](./features/captcha.md#trigger): baskınlara ek olarak hesabı şüpheli görünen gelenleri de doğrular.
+- [Captcha Activity'si](./features/captcha.md#activity): **Premium** bir sunucuda RaidProtect logosunun yerini sunucunun simgesi alır.
+- [Karşılama mesajı](./features/onboarding.md#welcome-buttons): her düğmenin kendi emojisi olabilir.
 - [HoneyPot](./features/honeypot.md): iyi niyetli bir üyeye yanıldığını söyleme zamanı tanıyan yeni [cezadan önceki gecikme](./features/honeypot.md#grace).
 - [HoneyPot](./features/honeypot.md#sanction): yasaklama ve jail kalıcı olabilir.
 - Discord AutoMod tarafından engellenen her mesaj, “Discord Automod” adına sessiz bir [uyarı](./features/sanctions.mdx) oluşturur.
-- [`/auth`](./features/authentication-manager.mdx#logs-tab): oturumlar Authentication Manager'ın log kanalına kaydedilir.
 - [`/lock` ve `/unlock`](./features/channel-lock.md#lock) bütün bir kategoriyi kilitler ve kilidini açar, kategorinin kanalları senkronize kalır. <SuggestionLink id="595" />
 - [`/lock`, `/unlock`](./features/channel-lock.md#lock) ve [`/slowmode`](./features/moderation.mdx#slowmode): kanalda duyuru yapmadan işlem için yeni `silent` seçeneği.
 - Yeni [yasaklamada mesajların silinmesi](./features/sanctions.mdx#ban-delete) ayarı: `/ban`, `?ban` ve `/tempban` ile varsayılan olarak silinen geçmiş. <SuggestionLink id="592" />
-- [`/snipe`](./features/moderation.mdx#snipe), mesaj önbelleği kapalıyken uyarır ve açmayı önerir. Komutu kullanmak önbelleği otomatik olarak açar.
-- [Captcha Activity'si](./features/captcha.md#activity): **Premium** bir sunucuda RaidProtect logosunun yerini sunucunun simgesi alır.
-- [Karşılama mesajı](./features/onboarding.md#welcome-buttons): her düğmenin kendi emojisi olabilir.
 - [`/unjail`](./features/moderation.mdx#unjail) bir karantinayı (minimum hesap yaşı, Discord) kaldırmayı reddeder ve nasıl kaldırılacağını açıklar. Jail sona erdiğinde karantinadaki üye rolünü korur.
-- Birkaç yeni log eklendi.
 - Düzeltme:
   - `/unlock` kilitlemeden önceki izinleri birebir geri yükler ve RaidProtect artık kendi erişimlerini kaybetmez.
   - `/auth` sahte bir oturum açmak yerine devre dışı bir rolü bildirir.
@@ -58,6 +55,9 @@ Identity Update deneme aşamasındadır: 3.7.0 sürümüyle çıkışına kadar 
   - [Authentication Manager](./features/authentication-manager.mdx#manage-methods): bir passkey'i yeniden adlandırabilirsiniz.
   - Authentication Manager'ın [ayrı izin rolü](./features/authentication-manager.mdx#strategies): orijinal rolün kanal izinleri 🔑 rolüne taşınır.
   - [`/auth`](./features/authentication-manager.mdx#auth) birden fazla korumalı rolü tek komutla, tek seferde verir. <SuggestionLink id="601" />
+  - [`/auth`](./features/authentication-manager.mdx#logs-tab): oturumlar Authentication Manager'ın log kanalına kaydedilir.
+  - [`/snipe`](./features/moderation.mdx#snipe), mesaj önbelleği kapalıyken uyarır ve açmayı önerir. Komutu kullanmak önbelleği otomatik olarak açar.
+  - Birkaç yeni log eklendi.
 
 ## 3.5.0 Onboarding Update (19.10.2026) {#3-5-0}
 

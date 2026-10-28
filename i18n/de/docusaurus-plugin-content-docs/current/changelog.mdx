@@ -29,27 +29,24 @@ Die Identity Update befindet sich in der Experimentierphase: Bis zu ihrer Veröf
   - Neue Erkennungs-Engine: ungefähre Duplikate, wiederholte Links, Emojis und Kauderwelsch, Flood sowie auf mehrere Kanäle verteilter Spam.
   - [Voreinstellungen](./features/anti-spam.mdx#presets) und Sanktionen pro Familie, mit einem [erweiterten Modus](./features/anti-spam.mdx#advanced), um jeden Auslöser und seine [Dauer](./features/anti-spam.mdx#duration) einzustellen.
   - Neue [Option](./features/anti-spam.mdx#ignore), um Kanäle zu überwachen, deren Name „spam“ enthält und die bisher immer ignoriert wurden. <SuggestionLink id="600" />
+- Neuer [präventiver Slowmode](./features/slowmode.md) (**Premium**): Der Langsam-Modus der gewählten Kanäle passt sich von selbst an, um die von Ihnen festgelegte Nachrichtenrate zu halten.
 - [Automod](./features/automod.md):
   - Neuer Filter [Andere Server](./features/automod.md#servers): Einladungen, weitergeleitete Nachrichten, Kanal- oder Event-Links und Tags anderer Server, als Sperrliste oder Zulassungsliste.
   - Neuer Filter [Dateiendungen](./features/automod.md#files): Sperren Sie Gruppen von Endungen oder lassen Sie nur bestimmte zu, auf dem ganzen Server oder Kanal für Kanal, selbst wenn eine Datei hinter einer anderen Endung getarnt ist. Auf **Premium**-Servern gibt es mehr Regeln pro Kanal. <SuggestionLink id="505" />
   - [Benutzerdefinierter Bilderkatalog](./features/scam-images.md#catalog) von [ScamLens](./features/scam-images.md) (**Premium**), um Ihre eigenen Betrugsbilder zu blockieren.
-- Neuer [präventiver Slowmode](./features/slowmode.md) (**Premium**): Der Langsam-Modus der gewählten Kanäle passt sich von selbst an, um die von Ihnen festgelegte Nachrichtenrate zu halten.
 - Neuer [Installationsassistent](./setup.md#wizard): ein geführter Ablauf Abschnitt für Abschnitt, je nach Server vorgeschlagene Schutzmaßnahmen und zum Abschluss eine Vorschau des Audits.
 - Neuer Abschnitt [Ankunft der Bots](./features/onboarding.md#bots) (antibot): Rollen, die Bots beim Beitritt zum Server automatisch erhalten, und der Kick nicht freigegebener Bots, mit [`/bypass bot`](./features/onboarding.md#bypass-bot), um einen hereinzulassen. <SuggestionLink id="244" />
 - Neue Sanktion **Quarantäne**, synchronisiert mit der [Quarantäne von Discord](./features/sanctions.mdx#discord-quarantine).
 - Neuer [intelligenter Auslöser](./features/captcha.md#trigger) des Captchas: Zusätzlich zu Raids prüft es Neuankömmlinge, deren Konto verdächtig erscheint.
+- [Activity des Captchas](./features/captcha.md#activity): Auf einem **Premium**-Server ersetzt das Serversymbol das RaidProtect-Logo.
+- [Willkommensnachricht](./features/onboarding.md#welcome-buttons): Jede Schaltfläche kann ein eigenes Emoji haben.
 - [HoneyPot](./features/honeypot.md): neue [Frist vor der Sanktion](./features/honeypot.md#grace), die einem gutgläubigen Mitglied Zeit lässt zu sagen, dass es sich geirrt hat.
 - [HoneyPot](./features/honeypot.md#sanction): Bann und Jail können dauerhaft sein.
 - Jede vom AutoMod von Discord blockierte Nachricht erzeugt eine stille [Verwarnung](./features/sanctions.mdx) im Namen von „Discord Automod“.
-- [`/auth`](./features/authentication-manager.mdx#logs-tab): Sitzungen werden im Log-Kanal des Authentication Managers protokolliert.
 - [`/lock` und `/unlock`](./features/channel-lock.md#lock) sperren und entsperren eine ganze Kategorie, und ihre Kanäle bleiben synchronisiert. <SuggestionLink id="595" />
 - [`/lock`, `/unlock`](./features/channel-lock.md#lock) und [`/slowmode`](./features/moderation.mdx#slowmode): neue Option `silent`, um ohne Ankündigung im Kanal zu handeln.
 - Neue Einstellung zur [Nachrichtenlöschung beim Bann](./features/sanctions.mdx#ban-delete): der standardmäßig gelöschte Verlauf bei `/ban`, `?ban` und `/tempban`. <SuggestionLink id="592" />
-- [`/snipe`](./features/moderation.mdx#snipe) weist darauf hin, wenn das Zwischenspeichern von Nachrichten deaktiviert ist, und bietet an, es zu aktivieren. Die Nutzung aktiviert es automatisch.
-- [Activity des Captchas](./features/captcha.md#activity): Auf einem **Premium**-Server ersetzt das Serversymbol das RaidProtect-Logo.
-- [Willkommensnachricht](./features/onboarding.md#welcome-buttons): Jede Schaltfläche kann ein eigenes Emoji haben.
 - [`/unjail`](./features/moderation.mdx#unjail) hebt keine Quarantäne auf (Mindestalter des Kontos, Discord) und erklärt, wie das geht. Am Ende eines Jails behält ein Mitglied in Quarantäne seine Rolle.
-- Mehrere neue Logs.
 - Korrekturen:
   - `/unlock` stellt genau die Berechtigungen von vor der Sperre wieder her, und RaidProtect verliert nicht mehr seine eigenen Zugriffe.
   - `/auth` meldet eine deaktivierte Rolle, statt eine Scheinsitzung zu öffnen.
@@ -59,6 +56,9 @@ Die Identity Update befindet sich in der Experimentierphase: Bis zu ihrer Veröf
   - [Authentication Manager](./features/authentication-manager.mdx#manage-methods): Sie können einen Passkey umbenennen.
   - [Separate Berechtigungsrolle](./features/authentication-manager.mdx#strategies) des Authentication Managers: Die Kanalberechtigungen der ursprünglichen Rolle werden auf die 🔑-Rolle verschoben.
   - [`/auth`](./features/authentication-manager.mdx#auth) vergibt mehrere geschützte Rollen auf einmal, mit einem einzigen Befehl. <SuggestionLink id="601" />
+  - [`/auth`](./features/authentication-manager.mdx#logs-tab): Sitzungen werden im Log-Kanal des Authentication Managers protokolliert.
+  - [`/snipe`](./features/moderation.mdx#snipe) weist darauf hin, wenn das Zwischenspeichern von Nachrichten deaktiviert ist, und bietet an, es zu aktivieren. Die Nutzung aktiviert es automatisch.
+  - Mehrere neue Logs.
 
 ## 3.5.0 Onboarding Update (19/10/2026) {#3-5-0}
 

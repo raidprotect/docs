@@ -28,27 +28,24 @@ Identity Update 处于试验阶段：在 3.7.0 正式发布之前，它面向 [P
   - 全新的检测引擎：近似重复、重复链接、表情符号和乱码、洪水刷屏，以及分散在多个频道的垃圾信息。
   - 按类别设置的[预设](./features/anti-spam.mdx#presets)和处罚，并提供[高级模式](./features/anti-spam.mdx#advanced)来调整每个触发器及其[时长](./features/anti-spam.mdx#duration)。
   - 新增[选项](./features/anti-spam.mdx#ignore)，可监控名称包含“spam”的频道，此前这些频道始终被忽略。 <SuggestionLink id="600" />
+- 新增[预防性慢速模式](./features/slowmode.md)（**Premium**）：所选频道的慢速模式会自动调整，以维持您设定的消息速率。
 - [Automod](./features/automod.md)：
   - 新增[其他服务器](./features/automod.md#servers)过滤器：可对其他服务器的邀请、转发的消息、频道或活动链接以及标签使用黑名单或白名单。
   - 新增[文件扩展名](./features/automod.md#files)过滤器：屏蔽成组的扩展名，或只允许其中一部分，可作用于整个服务器或逐个频道设置，即使文件伪装成其他扩展名也能识别。**Premium** 服务器可设置更多频道规则。 <SuggestionLink id="505" />
   - [ScamLens](./features/scam-images.md) 的[自定义图片目录](./features/scam-images.md#catalog)（**Premium**），用于拦截您自己收集的诈骗图片。
-- 新增[预防性慢速模式](./features/slowmode.md)（**Premium**）：所选频道的慢速模式会自动调整，以维持您设定的消息速率。
 - 新增[安装向导](./setup.md#wizard)：按部分逐步引导，根据您的服务器推荐防护，并在最后预览审计结果。
 - 新增[机器人加入](./features/onboarding.md#bots)（反机器人）部分：为加入服务器的机器人自动授予角色，并踢出未获授权的机器人，可使用 [`/bypass bot`](./features/onboarding.md#bypass-bot) 放行某个机器人。 <SuggestionLink id="244" />
 - 新增**隔离**处罚，与 [Discord 的隔离](./features/sanctions.mdx#discord-quarantine)同步。
 - 验证码新增[智能触发方式](./features/captcha.md#trigger)：除突袭外，还会验证账号看起来可疑的新成员。
+- [验证码 Activity](./features/captcha.md#activity)：在 **Premium** 服务器上，服务器图标会取代 RaidProtect 标志。
+- [欢迎消息](./features/onboarding.md#welcome-buttons)：每个按钮都可以设置自己的表情符号。
 - [HoneyPot](./features/honeypot.md)：新增[处罚前的延迟](./features/honeypot.md#grace)，让误触的善意成员有时间说明自己是误操作。
 - [HoneyPot](./features/honeypot.md#sanction)：封禁和监禁可以设为永久。
 - Discord 的 AutoMod 每拦截一条消息，都会以“Discord Automod”的名义创建一条静默的[警告](./features/sanctions.mdx)。
-- [`/auth`](./features/authentication-manager.mdx#logs-tab)：会话会记录在 Authentication Manager 的日志频道中。
 - [`/lock` 和 `/unlock`](./features/channel-lock.md#lock) 可锁定和解锁整个类别，类别内的频道保持同步。 <SuggestionLink id="595" />
 - [`/lock`、`/unlock`](./features/channel-lock.md#lock) 和 [`/slowmode`](./features/moderation.mdx#slowmode)：新增 `silent` 选项，操作时不在频道中发布公告。
 - 新增[封禁时删除消息](./features/sanctions.mdx#ban-delete)设置：使用 `/ban`、`?ban` 和 `/tempban` 时默认删除的消息记录。 <SuggestionLink id="592" />
-- [`/snipe`](./features/moderation.mdx#snipe) 会在消息缓存关闭时发出提示，并建议开启。使用该命令会自动开启缓存。
-- [验证码 Activity](./features/captcha.md#activity)：在 **Premium** 服务器上，服务器图标会取代 RaidProtect 标志。
-- [欢迎消息](./features/onboarding.md#welcome-buttons)：每个按钮都可以设置自己的表情符号。
 - [`/unjail`](./features/moderation.mdx#unjail) 不会解除隔离（账号最短注册时长、Discord），并会说明解除方法。监禁结束时，处于隔离中的成员会保留其角色。
-- 新增多项日志。
 - 修复：
   - `/unlock` 会精确恢复锁定前的权限，RaidProtect 也不会再失去自身的访问权限。
   - `/auth` 会提示角色已停用，而不是创建虚假会话。
@@ -58,6 +55,9 @@ Identity Update 处于试验阶段：在 3.7.0 正式发布之前，它面向 [P
   - [Authentication Manager](./features/authentication-manager.mdx#manage-methods)：您可以重命名 Passkey。
   - Authentication Manager 的[独立权限角色](./features/authentication-manager.mdx#strategies)：原角色的频道权限会转移到 🔑 角色。
   - [`/auth`](./features/authentication-manager.mdx#auth) 可通过一条命令一次授予多个受保护角色。 <SuggestionLink id="601" />
+  - [`/auth`](./features/authentication-manager.mdx#logs-tab)：会话会记录在 Authentication Manager 的日志频道中。
+  - [`/snipe`](./features/moderation.mdx#snipe) 会在消息缓存关闭时发出提示，并建议开启。使用该命令会自动开启缓存。
+  - 新增多项日志。
 
 ## 3.5.0 Onboarding Update (2026/10/19) {#3-5-0}
 

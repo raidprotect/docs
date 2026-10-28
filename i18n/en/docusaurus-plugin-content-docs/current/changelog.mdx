@@ -29,27 +29,24 @@ The Identity Update is an experiment: until its release in 3.7.0, it is in publi
   - New detection engine: near-duplicates, repeated links, emojis and gibberish, flood, and spam spread across several channels.
   - [Presets](./features/anti-spam.mdx#presets) and sanctions per family, with an [advanced mode](./features/anti-spam.mdx#advanced) to set each trigger and its [duration](./features/anti-spam.mdx#duration).
   - New [option](./features/anti-spam.mdx#ignore) to monitor channels whose name contains “spam”, which were always ignored until now. <SuggestionLink id="600" />
+- New [preventive slowmode](./features/slowmode.md) (**Premium**): the slowmode of the chosen channels adjusts itself to hold the message rate you set.
 - [Automod](./features/automod.md):
   - New [Other servers](./features/automod.md#servers) filter: invites, forwarded messages, channel or event links and tags from other servers, as a blocklist or an allowlist.
   - New [File extensions](./features/automod.md#files) filter: block groups of extensions or allow only some, server-wide or channel by channel, even when a file is disguised under another extension. **Premium** servers get more per-channel rules. <SuggestionLink id="505" />
   - [Custom image catalog](./features/scam-images.md#catalog) for [ScamLens](./features/scam-images.md) (**Premium**) to block your own scam images.
-- New [preventive slowmode](./features/slowmode.md) (**Premium**): the slowmode of the chosen channels adjusts itself to hold the message rate you set.
 - New [setup wizard](./setup.md#wizard): a guided path section by section, protections suggested for your server and an audit preview to finish.
 - New [Bot arrival](./features/onboarding.md#bots) (antibot) section: roles given automatically to bots that join the server, and kicking of unauthorized bots, with [`/bypass bot`](./features/onboarding.md#bypass-bot) to let one in. <SuggestionLink id="244" />
 - New **Quarantine** sanction, synchronized with [Discord's quarantine](./features/sanctions.mdx#discord-quarantine).
 - New [Smart trigger](./features/captcha.md#trigger) for the captcha: besides raids, it checks newcomers whose account looks suspicious.
+- [Captcha Activity](./features/captcha.md#activity): on a **Premium** server, the server icon replaces the RaidProtect logo.
+- [Welcome message](./features/onboarding.md#welcome-buttons): each button can have its own emoji.
 - [HoneyPot](./features/honeypot.md): new [delay before sanction](./features/honeypot.md#grace), which gives a good-faith member time to say they made a mistake.
 - [HoneyPot](./features/honeypot.md#sanction): ban and jail can be permanent.
 - Each message blocked by Discord's AutoMod creates a silent [warning](./features/sanctions.mdx) in the name of "Discord Automod".
-- [`/auth`](./features/authentication-manager.mdx#logs-tab): sessions are logged in the Authentication Manager log channel.
 - [`/lock` and `/unlock`](./features/channel-lock.md#lock) lock and unlock a whole category, and its channels stay synced. <SuggestionLink id="595" />
 - [`/lock`, `/unlock`](./features/channel-lock.md#lock) and [`/slowmode`](./features/moderation.mdx#slowmode): new `silent` option to act without an announcement in the channel.
 - New [message deletion on ban](./features/sanctions.mdx#ban-delete) setting: the history deleted by default with `/ban`, `?ban` and `/tempban`. <SuggestionLink id="592" />
-- [`/snipe`](./features/moderation.mdx#snipe) warns you when message caching is disabled and offers to enable it. Using it turns message caching on.
-- [Captcha Activity](./features/captcha.md#activity): on a **Premium** server, the server icon replaces the RaidProtect logo.
-- [Welcome message](./features/onboarding.md#welcome-buttons): each button can have its own emoji.
 - [`/unjail`](./features/moderation.mdx#unjail) refuses to lift a quarantine (minimum account age, Discord) and explains how to do it. The end of a jail keeps the role of a quarantined member.
-- Several new logs.
 - Fixes:
   - `/unlock` restores exactly the permissions from before the lock, and RaidProtect no longer loses its own access.
   - `/auth` reports a disabled role instead of opening a fake session.
@@ -59,6 +56,9 @@ The Identity Update is an experiment: until its release in 3.7.0, it is in publi
   - [Authentication Manager](./features/authentication-manager.mdx#manage-methods): you can rename a passkey.
   - Authentication Manager [separate permissions role](./features/authentication-manager.mdx#strategies): channel permissions of the original role are moved to the 🔑 role.
   - [`/auth`](./features/authentication-manager.mdx#auth) assigns several protected roles at once, in a single command. <SuggestionLink id="601" />
+  - [`/auth`](./features/authentication-manager.mdx#logs-tab): sessions are logged in the Authentication Manager log channel.
+  - [`/snipe`](./features/moderation.mdx#snipe) warns you when message caching is disabled and offers to enable it. Using it turns message caching on.
+  - Several new logs.
 
 ## 3.5.0 Onboarding Update (10/19/2026) {#3-5-0}
 
