@@ -45,7 +45,6 @@ const sidebars: SidebarsConfig = {
                 {
                     type: 'doc',
                     id: 'features/discon',
-                    customProps: {badges: ['experiment']},
                 },
                 {
                     type: 'doc',
@@ -54,7 +53,7 @@ const sidebars: SidebarsConfig = {
                 {
                     type: 'doc',
                     id: 'features/slowmode',
-                    customProps: {badges: ['experiment', 'premium']},
+                    customProps: {badges: ['premium']},
                 },
                 {
                     type: 'doc',
