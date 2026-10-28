@@ -99,7 +99,7 @@ Captcha eylemleriyle [captcha tetiklemesini](./captcha.md#trigger) **Otomatik** 
 
 #### Atma modu <span className="badge-premium">Premium</span> {#kick-mode}
 
-Eski “**Atma modu**” anahtarı, [baskın sırasındaki eylemin](#action) “**Gelenleri at**” eylemi haline geldi. Yalnızca [**Premium**](/tr/premium) sunuculara ayrılmıştır ve Discord topluluğu olmadan çalışır.
+Eski “**Atma modu**” anahtarı, [baskın sırasındaki eylemin](#action) “**Gelenleri at**” eylemi haline geldi. Yalnızca [**Premium**](/tr/premium) sunuculara ayrılmıştır ve Discord topluluğu olmadan çalışır. Premium sona ererse eylem “**Davetleri kilitle**”ye döner. Aynı şekilde, captcha'sı kullanılamayan bir captcha eylemi normal moda döner (dalga atılır, ardından davetler kilitlenir), asla atmaya dönmez.
 
 #### DM'leri otomatik kapatma {#close-dm}
 

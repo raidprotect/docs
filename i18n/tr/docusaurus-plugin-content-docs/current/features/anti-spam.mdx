@@ -72,7 +72,7 @@ Bazı kanalları, rolleri veya üyeleri anti-spam denetiminden hariç tutabilirs
 Kanal seçici **kategorileri** (tüm kanalları o zaman yok sayılır), ayrıca ses kanallarını, sahneleri ve forumları kabul eder. Alt başlıklar üst kanallarını izler.
 
 :::info Kim otomatik olarak yok sayılır?
-- Adında “**spam**” geçen kanallar (bir alt başlık için üst kanalın adı geçerlidir).
+- Adında “**spam**” geçen kanallar (bir alt başlık için üst kanalın adı geçerlidir). Anti-spam ekranındaki “**« spam » kanallarını yok say**” anahtarı, bunların da denetlenmesini sağlar.
 - RaidProtect'in modere edemediği üyeler (kendi rolünden yüksek rol).
 - **Ekip** (`Yönetici`, `Sunucuyu Yönet` veya `Mesajları Yönet` izni), **hiçbir rol veya üye yok sayılmadığı sürece**. Listeye bir rol veya üye eklediğiniz anda yalnızca bu liste geçerli olur: listede yer almayan ekip üyelerine o zaman ceza uygulanabilir.
 :::
@@ -201,9 +201,9 @@ RaidProtect, **Discord AutoMod** ile birlikte çalışır:
 - **Engellenen mesaj spamı**: bir üye AutoMod kurallarınız tarafından engellenen mesajları art arda gönderdiğinde “**Engellenen mesaj spamı (AutoMod)**” tetikleyicisi onu cezalandırır (**Otomatik** ailesi). Bunun için AutoMod kuralının **uyarılarını** RaidProtect'in görebildiği bir kanala göndermesi gerekir: engellenen mesajları bu uyarılar sayesinde tespit ederiz.
 - **Engellenen her mesajda uyarı**: sunucunuzda cezalar etkinse, kural zaten bir timeout uygulamıyorsa AutoMod kuralı tarafından engellenen her mesaj üyenin geçmişine bir uyarı olarak kaydedilir. Üye bu uyarı için özel mesaj almaz. Daha fazla ayrıntı [yaptırımlar](./sanctions.mdx) sayfasında.
 
-## 🐢 Önleyici yavaş mod <span className="badge-experiment">Deneme</span> <span className="badge-premium">Premium</span> {#slowmode}
+## 🐢 Önleyici yavaş mod <span className="badge-premium">Premium</span> {#slowmode}
 
-Hiç kimseyi cezalandırmadan çok aktif bir kanalı sakinleştirmek için [önleyici yavaş mod](./slowmode.md) (Premium, Shield Update ile deneme aşamasında) kanallarınızın yavaş modunu mesaj akış hızına göre otomatik olarak ayarlar.
+Hiç kimseyi cezalandırmadan çok aktif bir kanalı sakinleştirmek için [önleyici yavaş mod](./slowmode.md) (Premium) kanallarınızın yavaş modunu mesaj akış hızına göre otomatik olarak ayarlar.
 
 ## 📑 Anti-spam logları {#logs}
 

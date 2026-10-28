@@ -100,6 +100,7 @@ Profilinizden şunları yapabilirsiniz:
 - Bir **PIN kodu** (basit veya güçlendirilmiş) eklemek, değiştirmek veya silmek.
 - **2FA kodunu** (OTP) bir QR kodu veya gizli anahtarla etkinleştirmek, yeniden oluşturmak veya silmek.
 - Kayıt sayfasından bir **passkey** eklemek ya da birini silmek. Her passkey cihazın adını ve son kullanım tarihini gösterir.
+- Bir passkey'i **yeniden adlandırmak**: “**Ekle**”nin yanındaki “**Passkey'i düzenle**” düğmesi, passkey'lerinizi ve verilecek yeni adı içeren bir pencere açar (örneğin `MacBook`, `iPhone`, `YubiKey`). Yeniden adlandırma denetim kaydınıza yazılır.
 
 Zaten bir yönteminiz varsa, yenisini eklemeden veya değiştirmeden önce sizden kimlik doğrulamanızı isteriz. Profilin alt kısmı seviyenizi ve bir üst basamağa çıkmak için eklenecek yöntemi hatırlatır.
 
@@ -137,10 +138,10 @@ Bu eylem geri alınamaz. Tüm erişimleriniz hemen iptal edilir.
 
 1. Sunucuda `/auth` komutunu çalıştırın ya da bir ekip panelinde “**Bir rol al**”a tıklayın.
 2. Bir menü, kullanılabilir rolleri gerekli seviyeleri ve oturum süreleriyle birlikte gösterir.
-3. Bir rol seçin.
+3. Bir veya birden fazla rol seçin (en fazla 10). En yüksek seviyeyi isteyenin seviyesinde tek bir kimlik doğrulama hepsini açar.
 4. Rolün seviyesine ulaşan yöntemler arasından bir kimlik doğrulama yöntemi seçin.
 5. Doğrulamayı yapın (PIN, OTP veya passkey).
-6. Başarılı olursa size Discord rolünü verir ve bir oturum oluştururuz.
+6. Başarılı olursa size Discord rolünü veya rollerini verir ve her biri için bir oturum oluştururuz. Oturumlar Authentication Manager loglarına yazılır.
 
 :::info
 Menüde yalnızca **Aktif** durumuyla atandığınız roller görünür.
@@ -233,6 +234,8 @@ Bir entegrasyon tarafından yönetilen bir rolü, Discord Karşılama Sürecinde
 
 :::tip
 Rolünüz üye listesinde **ayrı olarak görüntüleniyorsa** “**Ayrı bir izin rolü oluştur**”u seçin: üyeleriniz rollerini kalıcı olarak görünür tutar ve hassas izinler yalnızca kimlik doğrulanmış oturumlar sırasında verilir.
+
+Ayrı bir rolle, görüntüleme rolünün kanal moderasyonu izinleri de `🔑` rolüne geçer. Bir yönetici rolü için “**Oturum dışında tüm kanalları görmeye devam et**” seçeneği, oturumlar dışında görüntüleme rolüne tüm kanalları görme yetkisini bırakır; bu seçenek olmadan rol, yönetici yetkisi olmadan artık hiçbir şey göremez.
 :::
 
 #### Yönetici rollerini `/audit` üzerinden koruma {#audit-bulk}

@@ -28,7 +28,7 @@ Tüm RaidProtect komutları, kategoriye göre gruplandırılmıştır. Ayrıntı
 | [`/tagrole`](./features/tag-role.md) | `/tagrole` | Sunucu etiketini taşıyan üyelere verilen rolü yapılandırır. |
 | [`/display public`](./features/display.mdx) | `/display public` | RaidProtect'in herkese açık bilgi panellerini yönetir. |
 | [`/display staff`](./features/display.mdx#staff) | `/display staff` | Yalnızca ekibe ayrılmış panelleri yönetir (DISCON, dahili mesajlar). |
-| [`/discon`](./features/discon.md) | `/discon` | Sunucunun tehlike seviyesini ayarlayan DISCON panelini kurar (deneme, Shield Update). |
+| [`/discon`](./features/discon.md) | `/discon` | Sunucunun tehlike seviyesini ayarlayan DISCON panelini kurar. |
 | [`/audit`](./features/audit.md) | `/audit` | Sunucunun güvenliğini analiz eder ve yapılandırma açıklarını düzeltmeyi önerir. |
 
 ## Moderasyon {#moderation}
@@ -64,9 +64,9 @@ Tüm RaidProtect komutları, kategoriye göre gruplandırılmıştır. Ayrıntı
 
 | Komut | Prototip | Açıklama |
 |---|---|---|
-| [`/lock`](./features/channel-lock.md#lock) | `/lock [#channel] [duration] [reason]` | Mesaj gönderilmesini engellemek için bir kanalı kilitler (isteğe bağlı süre). |
-| [`/unlock`](./features/channel-lock.md#unlock) | `/unlock [#channel] [reason]` | Daha önce kilitlenmiş bir kanalın kilidini açar. |
-| [`/slowmode`](./features/moderation.mdx#slowmode) | `/slowmode (delay) [duration] [#channel] [reason]` | Bir kanalın yavaş modunu etkinleştirir veya değiştirir (isteğe bağlı uygulama süresi). |
+| [`/lock`](./features/channel-lock.md#lock) | `/lock [#channel] [duration] [reason] [--silent]` | Mesaj gönderilmesini engellemek için bir kanalı kilitler (isteğe bağlı süre). |
+| [`/unlock`](./features/channel-lock.md#unlock) | `/unlock [#channel] [reason] [--silent]` | Daha önce kilitlenmiş bir kanalın kilidini açar. |
+| [`/slowmode`](./features/moderation.mdx#slowmode) | `/slowmode (delay) [duration] [#channel] [reason] [--silent]` | Bir kanalın yavaş modunu etkinleştirir veya değiştirir (isteğe bağlı uygulama süresi). |
 
 ## Yaptırım geçmişi {#sanctions}
 
@@ -103,6 +103,7 @@ Tüm RaidProtect komutları, kategoriye göre gruplandırılmıştır. Ayrıntı
 | [`/bypass captcha`](./features/captcha.md#bypass) | `/bypass captcha [@kullanıcı]` | Bir kullanıcının captcha'yı geçmeden katılmasına izin verir. |
 | [`/bypass minage`](./features/onboarding.md#bypass-minage) | `/bypass minage [@kullanıcı]` | Bir kullanıcının minimum yaşı karşılamadan katılmasına izin verir. |
 | [`/bypass raid`](./features/raid-mode.md#bypass-raid) | `/bypass raid [@kullanıcı]` | Bir kullanıcının baskın moduna rağmen katılmasına izin verir (atma modunu gerektirir). |
+| [`/bypass bot`](./features/onboarding.md#bypass-bot) | `/bypass bot [bot]` | Bot atma etkin olsa da bir botun katılmasına izin verir (sunucu sahibi). |
 
 ## Araçlar {#utilities}
 
