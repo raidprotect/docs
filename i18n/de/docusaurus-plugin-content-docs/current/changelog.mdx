@@ -16,9 +16,11 @@ Die Identity Update befindet sich in der Experimentierphase: Bis zu ihrer Veröf
 - Neuer Befehl [`/alt`](./features/alt-accounts.md#alt) und [Zweitkonten](./features/alt-accounts.md): Verknüpfen Sie die Konten ein und derselben Person, wählen Sie ihr Hauptkonto, und ihre Sanktionen (Bann, Kick, Mute, Jail, Timeout, Softban) erstrecken sich auf die verknüpften Konten. Die Sanktion eines Kontos aufzuheben, hebt sie für alle auf. <SuggestionLink id="404" /> <SuggestionLink id="263" />
 - [Sanktionen der verknüpften Konten](./features/alt-accounts.md#modes) pro Typ einstellbar, mit einem Modus **Falle** und einer [Umgehungssanktion](./features/alt-accounts.md#evasion) für das verknüpfte Konto, das während der Sanktion ankommt oder schreibt.
 - Nicht auf dem Server anwesende verknüpfte Konten werden bei ihrer Ankunft sanktioniert.
+- Eine auf die Gruppe erweiterte Sanktion wird in `/sanctions` und `/modview` zu einer [Gruppensanktion](./features/alt-accounts.md#group-sanction): Man hebt sie für alle Konten auf einmal auf, löscht oder bearbeitet sie.
+- Die Sanktionslogs nennen die verknüpften Konten, mit einer Schaltfläche „**Verknüpfte Konten**“ zum `/alt`-Panel im Embed-Format.
 - Neue Einstellung [Nur ein Konto pro Person](./features/alt-accounts.md#single-account): Die Zweitkonten werden in Quarantäne gesetzt.
 - Das [Captcha](./features/captcha.md#activity-alts) erkennt Zweitkonten: Es verknüpft selbst die Konten, bei denen es sicher ist, dass es dieselbe Person ist, und schlägt Ihrem Team die wahrscheinlichen Verknüpfungen vor.
-- Die [Sanktionen der verknüpften Konten](./features/alt-accounts.md#modes) sind **Premium** vorbehalten. Ohne Premium verknüpft und zeigt `/alt` die Konten ohne Limit an.
+- Die [Sanktionen der verknüpften Konten](./features/alt-accounts.md#modes) sind **Premium** vorbehalten. Ohne Premium verknüpft und zeigt `/alt` die Konten ohne Limit an, und Nur ein Konto pro Person bleibt verfügbar.
 
 ## 3.6.0 Shield Update {#3-6-0}
 
