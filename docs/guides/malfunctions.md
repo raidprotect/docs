@@ -57,7 +57,7 @@ Ce problème est relativement courant, mais dépend de **la configuration de vot
 
 - **Avez-vous activé le captcha ?** Il s'agit d'une fonctionnalité optionnelle : activez-la dans l'onglet “**Arrivées**” de [`/settings`](../setup.md#settings). Consultez la [page dédiée au captcha](../features/captcha.md#config) pour en savoir plus.
 
-- **Quel est son déclenchement ?** En “**Automatique**”, le captcha ne s'applique que pendant un raid ou un niveau [DISCON](../features/discon.md) élevé (Shield Update, en expérimentation) : le reste du temps, les arrivants entrent directement. Choisissez “**En permanence**” pour que chaque arrivant passe le captcha.
+- **Quel est son déclenchement ?** En “**Automatique**”, le captcha ne s'applique que pendant un raid ou un niveau [DISCON](../features/discon.md) élevé : le reste du temps, les arrivants entrent directement. Choisissez “**En permanence**” pour que chaque arrivant passe le captcha.
 
 - **Un rôle ou un salon le contourne-t-il ?** L'écran du captcha signale les salons encore visibles par le rôle de vérification et les rôles qui donnent accès au serveur sans le passer, avec un bouton pour corriger.
 
