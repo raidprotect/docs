@@ -14,14 +14,14 @@ Les doubles comptes font partie de l'**Identity Update**, prévue pour la versio
 ## ❓ Comment ça marche ? {#working}
 
 - **Un groupe par personne** : un groupe rassemble les comptes que votre équipe considère comme une même personne. Les groupes sont propres à votre serveur : rien n'est partagé avec d'autres serveurs.
-- **Sanctions partagées** ([Premium](/premium)) : le bannissement, l'expulsion, le mute, l'emprisonnement et le timeout s'étendent aux autres comptes du groupe, selon le [mode](#modes) que vous choisissez pour chaque sanction. La sanction reste au nom du compte visé, les autres en reçoivent le statut. Sans Premium, les comptes se lient et se consultent, mais aucune sanction ne s'étend : le log de la sanction cite alors les autres comptes du membre.
+- **Sanctions partagées** ([Premium](/premium)) : le bannissement, l'expulsion, le mute, l'emprisonnement et le timeout s'étendent aux autres comptes du groupe, selon le [mode](#modes) que vous choisissez pour chaque sanction. La sanction reste au nom du compte visé, les autres en reçoivent le statut. Elle ne s'étend jamais aux comptes qui modèrent le serveur (administration, gestion du serveur, bannissement, expulsion ou exclusion des membres), au propriétaire ni aux bots. Sans Premium, les comptes se lient et se consultent, mais aucune sanction ne s'étend : le log de la sanction cite alors les autres comptes du membre.
 - **Levée commune** : lever la sanction de l'un des comptes, quel qu'il soit, la lève pour tous, avec ou sans Premium.
 - **Recherche groupée** : [rechercher les sanctions](./sanctions.mdx#search) d'un compte montre aussi celles des autres comptes du groupe.
 - **AutoMod de Discord** : les timeouts et mutes posés par l'AutoMod de Discord s'étendent aussi aux comptes liés.
 - **Repérés par le captcha** : l'[Activity du captcha](./captcha.md#activity-alts) peut lier d'elle-même deux comptes sûrs d'être la même personne, ou proposer le lien à votre équipe.
-- **Logs** : les liens, les retraits et les changements de compte principal sont enregistrés dans les [logs de modération](./moderation.mdx#logs).
+- **Logs** : les liens, les retraits et les changements de compte principal sont enregistrés dans les [logs de modération](./moderation.mdx#logs). Le log d'une sanction cite les comptes liés avec leur nom d'utilisateur et, au format embed, porte un bouton “**Comptes liés**” qui ouvre le panneau `/alt` du membre sanctionné.
 
-**Limites :** aucune, ni sur le nombre de comptes par groupe ni sur le nombre de groupes.
+**Limites :** aucune sur le nombre de comptes par groupe ni sur le nombre de groupes. Une sanction s'étend à **10 comptes liés** d'un coup : les suivants sont sanctionnés à leur prochain message ou à leur arrivée, et le bouton sous la sanction les sanctionne tout de suite.
 
 ## 🔗 Lier des comptes avec /alt {#alt}
 
@@ -30,6 +30,8 @@ Utilisez la commande : ```/alt [membre] [autre]```
 - Sans option : affiche la liste des groupes de comptes liés du serveur. Le bouton “**Lier des comptes**” y lie deux membres du serveur, ou deux comptes absents par leurs identifiants.
 - Avec `[membre]` : affiche le groupe de ce compte, ou ce compte seul s'il n'est lié à aucun autre. Chaque compte y apparaît avec son état (banni du serveur, sur le serveur, pas sur le serveur, en quarantaine), le compte principal en tête.
 - Avec `[membre]` et `[autre]` : lie directement les deux comptes, déclarés comme la même personne.
+
+Si l'un des comptes du groupe est déjà banni ([Premium](/premium)), les comptes liés partagent un même ban : RaidProtect vous propose de “**Bannir aussi**” les autres comptes, de “**Lever le ban**” du compte banni pour tous, ou de décider “**Plus tard**”.
 
 Remplacez `[membre]` et `[autre]` par la mention ou l'[identifiant](../guides/id.mdx) des comptes souhaités. Les bots ne peuvent pas être liés.
 
@@ -84,7 +86,7 @@ La sanction de contournement s'applique à un compte lié pris en mode “**Piè
 <SettingsModal name="altsEvasion" />
 
 - “**Reste de la sanction**” *(par défaut)* : le compte partage la sanction du groupe jusqu'à sa fin, sans sanction à son nom.
-- **Une sanction** (Bannissement, Expulsion, Mute, Emprisonnement ou Timeout) : elle est posée à son nom, avec sa propre durée, et ne se lève pas avec le groupe. Laissez la durée vide pour une sanction définitive (ex. : `1h`, `3j`, `2w`).
+- **Une sanction** (Bannissement, Expulsion, Mute, Emprisonnement ou Timeout) : elle est posée à son nom, avec sa propre durée, et vaut ensuite pour tout le groupe. Un mute ou un emprisonnement revient si le compte quitte le serveur puis le rejoint. Laissez la durée vide pour une sanction définitive (ex. : `1h`, `3j`, `2w`).
 
 :::info
 Un timeout demande toujours une durée, de 28 jours au plus. Le mute et l'emprisonnement demandent que leur [rôle](./sanctions.mdx#config) soit configuré.
@@ -92,15 +94,15 @@ Un timeout demande toujours une durée, de 28 jours au plus. Le mute et l'empri
 
 ### Un seul compte par personne {#single-account}
 
-Avec ce réglage, seul le **compte principal** de chaque groupe circule sur le serveur. Les autres comptes sont mis en **quarantaine** avec le [rôle de jail](./sanctions.mdx#jail) (sanction “**Quarantaine**” dans l'historique). Ils en sortent d'eux-mêmes s'ils deviennent le compte principal ou s'ils sont retirés du groupe.
+Avec ce réglage, gratuit comme le repérage par le captcha, seul le **compte principal** de chaque groupe circule sur le serveur. Les autres comptes sont mis en **quarantaine** avec le [rôle de jail](./sanctions.mdx#jail) (sanction “**Quarantaine**” dans l'historique). Ils en sortent d'eux-mêmes s'ils deviennent le compte principal ou s'ils sont retirés du groupe.
 
 1. Faites la [commande `/settings`](../setup.md#settings).
 2. Ouvrez l'onglet “**Modération**”.
 3. Cliquez sur “**Configurer**” à côté de “**Doubles comptes**”.
 4. Cliquez sur “**Activer**” à côté de “**Un seul compte par personne**”.
 
-:::warning
-Ce réglage exige un [rôle Jail](./sanctions.mdx#jail). Sans lui, RaidProtect refuse de l'activer.
+:::info
+Ce réglage demande un [rôle Jail](./sanctions.mdx#jail). S'il n'y en a pas, une fenêtre vous propose “**Activer et configurer le jail**” : le réglage est activé, et les comptes secondaires sont mis en quarantaine dès que le rôle existe.
 :::
 
 Pour changer le compte principal d'un groupe, utilisez `/alt` avec l'un des comptes, puis le sélecteur “**Modifier un compte du groupe**”.

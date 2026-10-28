@@ -92,8 +92,8 @@ En mode **Panneau**, le bouton “**Vérifier**” ouvre l'**Activity RaidProtec
 
 Avec l'[Identity Update](./alt-accounts.md), l'Activity repère aussi les arrivants probablement tenus par la même personne qu'un membre de votre serveur :
 
-- **Lien sûr :** les comptes sont liés automatiquement dans [`/alt`](./alt-accounts.md#alt). Les logs du captcha le signalent, avec un bouton “**Délier**”.
-- **Lien probable :** si [Un seul compte par personne](./alt-accounts.md#single-account) est actif, le membre passe en revue. “**Lier à un autre membre**” les lie dans `/alt` et le laisse entrer ; si aucun compte n'a été repéré, une fenêtre vous demande de choisir le membre (“**Compte déjà sur le serveur**”). Sinon, le membre entre, et les logs du captcha signalent le lien probable avec un bouton “**Lier les comptes**”.
+- **Lien sûr :** les comptes sont liés automatiquement dans [`/alt`](./alt-accounts.md#alt). Les logs du captcha le signalent, avec un bouton “**Délier**”. Si le groupe est sanctionné, ou si [Un seul compte par personne](./alt-accounts.md#single-account) retient ses comptes secondaires, l'arrivant reçoit la sanction du groupe ou passe en quarantaine.
+- **Lien probable :** si [Un seul compte par personne](./alt-accounts.md#single-account) est actif, le membre passe en revue. “**Lier à un autre membre**” les lie dans `/alt` et le laisse entrer ; si aucun compte n'a été repéré, une fenêtre vous demande de choisir le membre (“**Compte déjà sur le serveur**”). Sinon, le membre entre, et les logs du captcha signalent le lien probable avec un bouton “**Lier**”.
 - **Lien sûr non appliqué :** rien n'est lié d'office si un compte du groupe fait partie de l'équipe du serveur, si l'arrivant est lié à plusieurs groupes `/alt`, ou si les deux comptes ont déjà chacun leur groupe (deux groupes ne sont jamais fusionnés d'office). Le lien vous est alors proposé de la même façon.
 
 Seuls les comptes de votre serveur vous sont montrés : rien n'est dit des autres serveurs.
