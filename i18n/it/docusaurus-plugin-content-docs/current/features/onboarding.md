@@ -103,7 +103,7 @@ Se il tuo server usa un altro bot per il suo ruolo automatico, rischia di assegn
 
 ## 🤖 Arrivo dei bot {#bots}
 
-Per impostazione predefinita, un bot aggiunto al server riceve i [ruoli automatici](#autorole) come un membro. La sezione “**Bot**” della scheda “**Arrivi**” cambia questo comportamento.
+È l'**antibot** di RaidProtect: controlla i bot che entrano nel tuo server. Per impostazione predefinita, un bot aggiunto al server riceve i [ruoli automatici](#autorole) come un membro. La sezione “**Bot**” della scheda “**Arrivi**” cambia questo comportamento.
 
 1. Esegui il [comando `/settings`](../setup.md#settings).
 2. Apri la scheda “**Arrivi**”.

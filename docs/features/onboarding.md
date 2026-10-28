@@ -103,7 +103,7 @@ Si votre serveur utilise un autre bot pour son rôle automatique, il risque de d
 
 ## 🤖 Arrivée des bots {#bots}
 
-Par défaut, un bot ajouté au serveur reçoit les [rôles automatiques](#autorole) comme un membre. La section “**Bots**” de l'onglet “**Arrivées**” change cela.
+C'est l'**antibot** de RaidProtect : il contrôle les bots qui rejoignent votre serveur. Par défaut, un bot ajouté au serveur reçoit les [rôles automatiques](#autorole) comme un membre. La section “**Bots**” de l'onglet “**Arrivées**” change cela.
 
 1. Faites la [commande `/settings`](../setup.md#settings).
 2. Ouvrez l'onglet “**Arrivées**”.

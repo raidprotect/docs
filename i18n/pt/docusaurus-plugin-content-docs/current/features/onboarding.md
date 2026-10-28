@@ -103,7 +103,7 @@ Se o seu servidor usa outro bot para o cargo automático, ele corre o risco de d
 
 ## 🤖 Chegada dos bots {#bots}
 
-Por padrão, um bot adicionado ao servidor recebe os [cargos automáticos](#autorole) como um membro. A seção “**Bots**” da aba “**Chegadas**” muda isso.
+É o **antibot** do RaidProtect: ele controla os bots que entram no seu servidor. Por padrão, um bot adicionado ao servidor recebe os [cargos automáticos](#autorole) como um membro. A seção “**Bots**” da aba “**Chegadas**” muda isso.
 
 1. Use o [comando `/settings`](../setup.md#settings).
 2. Abra a aba “**Chegadas**”.

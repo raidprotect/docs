@@ -103,7 +103,7 @@ If your server uses another bot for its auto role, it may give the role before t
 
 ## 🤖 Bot arrival {#bots}
 
-By default, a bot added to the server receives the [auto roles](#autorole) like a member. The "**Bots**" section of the "**Arrivals**" tab changes this.
+This is RaidProtect's **antibot**: it controls the bots that join your server. By default, a bot added to the server receives the [auto roles](#autorole) like a member. The "**Bots**" section of the "**Arrivals**" tab changes this.
 
 1. Run the [`/settings` command](../setup.md#settings).
 2. Open the "**Arrivals**" tab.

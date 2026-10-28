@@ -103,7 +103,7 @@ Nếu máy chủ của bạn dùng một bot khác cho vai trò tự động, n�
 
 ## 🤖 Bot tham gia {#bots}
 
-Theo mặc định, một bot được thêm vào máy chủ nhận [vai trò tự động](#autorole) như một thành viên. Mục “**Bot**” của thẻ “**Thành viên mới**” thay đổi điều đó.
+Đây là tính năng **antibot** của RaidProtect: kiểm soát các bot tham gia máy chủ của bạn. Theo mặc định, một bot được thêm vào máy chủ nhận [vai trò tự động](#autorole) như một thành viên. Mục “**Bot**” của thẻ “**Thành viên mới**” thay đổi điều đó.
 
 1. Dùng [lệnh `/settings`](../setup.md#settings).
 2. Mở thẻ “**Thành viên mới**”.

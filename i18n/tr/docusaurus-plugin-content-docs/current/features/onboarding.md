@@ -103,7 +103,7 @@ Sunucunuz otomatik rolü için başka bir bot kullanıyorsa rolü captcha'dan ö
 
 ## 🤖 Botların gelişi {#bots}
 
-Varsayılan olarak sunucuya eklenen bir bot, bir üye gibi [otomatik rolleri](#autorole) alır. “**Katılımlar**” sekmesinin “**Botlar**” bölümü bunu değiştirir.
+Bu, RaidProtect'in **antibot** özelliğidir: sunucunuza katılan botları denetler. Varsayılan olarak sunucuya eklenen bir bot, bir üye gibi [otomatik rolleri](#autorole) alır. “**Katılımlar**” sekmesinin “**Botlar**” bölümü bunu değiştirir.
 
 1. [`/settings` komutunu](../setup.md#settings) çalıştırın.
 2. “**Katılımlar**” sekmesini açın.

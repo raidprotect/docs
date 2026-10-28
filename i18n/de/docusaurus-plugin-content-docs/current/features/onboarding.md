@@ -103,7 +103,7 @@ Wenn Ihr Server einen anderen Bot für seine automatische Rolle verwendet, vergi
 
 ## 🤖 Ankunft der Bots {#bots}
 
-Standardmäßig erhält ein dem Server hinzugefügter Bot die [automatischen Rollen](#autorole) wie ein Mitglied. Der Abschnitt „**Bots**“ im Tab „**Ankünfte**“ ändert das.
+Das ist der **Antibot** von RaidProtect: Er kontrolliert die Bots, die Ihrem Server beitreten. Standardmäßig erhält ein dem Server hinzugefügter Bot die [automatischen Rollen](#autorole) wie ein Mitglied. Der Abschnitt „**Bots**“ im Tab „**Ankünfte**“ ändert das.
 
 1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
 2. Öffnen Sie den Tab „**Ankünfte**“.
