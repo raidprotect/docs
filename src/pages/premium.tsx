@@ -390,8 +390,8 @@ export default function PremiumPage(): React.ReactNode {
         {
             badge: translate({ id: 'premium.feature.beta.badge', message: 'Bêta publique' }),
             title: translate({ id: 'premium.feature.beta.title', message: 'Accès anticipé aux nouveautés' }),
-            description: translate({ id: 'premium.feature.beta.desc', message: 'Les abonnés reçoivent en avant-première les fonctionnalités en bêta, comme la conversion des timeouts AutoMod en mute par rôle.' }),
-            docsHref: '/docs/features/sanctions#mute-threshold',
+            description: translate({ id: 'premium.feature.beta.desc', message: 'Les abonnés reçoivent en avant-première les fonctionnalités en bêta, en ce moment les doubles comptes : liez les comptes d\'une même personne avec /alt, et ses sanctions les suivent.' }),
+            docsHref: '/docs/beta/features/alt-accounts',
         },
     ]
 
@@ -434,6 +434,21 @@ export default function PremiumPage(): React.ReactNode {
         { type: 'feature', label: translate({ id: 'premium.compare.row.antiscam', message: 'Anti-Scam & ScamLens' }), values: [yes, yes, yes] },
         { type: 'feature', label: translate({ id: 'premium.compare.row.moderation', message: 'Modération complète (ban, kick, mute, jail…)' }), values: [yes, yes, yes] },
         { type: 'feature', label: translate({ id: 'premium.compare.row.kickMode', message: 'Mode expulsion + DM (Fermeture des Jointures & Mode raid)' }), values: [no, yes, yes], small: true },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.preventiveSlowmode', message: 'Slowmode préventif (jusqu\'à 6 salons)' }), values: [no, yes, yes] },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.disconVoice', message: 'Salon vocal de statut du DISCON' }), values: [no, yes, yes] },
+
+        { type: 'category', label: translate({ id: 'premium.compare.cat.automod', message: 'Automod' }) },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.imageCatalog', message: 'Catalogue d\'images ScamLens (listes)' }), values: [no, '2', custom] },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.fileRules', message: 'Règles d\'extensions de fichiers par salon' }), values: ['1', '20', custom] },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.fileCategories', message: 'Règles d\'extensions par catégorie' }), values: [no, yes, yes] },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.privateInvites', message: 'Invitations d\'ami et de groupe réglées à part' }), values: [no, yes, yes] },
+
+        { type: 'category', label: translate({ id: 'premium.compare.cat.arrivals', message: 'Arrivées' }) },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.autoroles', message: 'Rôles automatiques' }), values: ['3', '10', custom] },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.botRoles', message: 'Rôles des bots' }), values: ['1', '15', custom] },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.welcomeButtons', message: 'Boutons du message de bienvenue' }), values: ['2', '4', custom] },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.welcomeColor', message: 'Couleur du message de bienvenue' }), values: [no, yes, yes] },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.captchaIcon', message: 'Icône du serveur dans le captcha' }), values: [no, yes, yes] },
 
         { type: 'category', label: translate({ id: 'premium.compare.cat.reports', message: 'Signalements' }) },
         { type: 'feature', label: translate({ id: 'premium.compare.row.trustedRole', message: 'Rôle de confiance (timeout préventif)' }), values: [no, yes, yes] },
@@ -449,6 +464,11 @@ export default function PremiumPage(): React.ReactNode {
             translate({ id: 'premium.compare.row.panels.founder', message: '4 + 1 Jail' }),
             custom,
         ] },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.staffPanels', message: 'Panneaux /display staff' }), values: [
+            translate({ id: 'premium.compare.row.staffPanels.free', message: '1 + DISCON' }),
+            translate({ id: 'premium.compare.row.staffPanels.founder', message: '4 + DISCON' }),
+            custom,
+        ] },
 
         { type: 'category', label: translate({ id: 'premium.compare.cat.honeypot', message: 'HoneyPot' }) },
         { type: 'feature', label: translate({ id: 'premium.compare.row.banSoftban', message: 'Bannissement & softban' }), values: [yes, yes, yes] },
@@ -461,6 +481,17 @@ export default function PremiumPage(): React.ReactNode {
             translate({ id: 'premium.compare.row.recapWindow.premium', message: '≈ 2 h' }),
             translate({ id: 'premium.compare.row.recapWindow.business', message: '≈ 1 min' }),
         ] },
+
+        { type: 'category', label: translate({ id: 'premium.compare.cat.beta', message: 'En bêta publique' }) },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.altSanctions', message: 'Sanctions étendues aux comptes liés (/alt)' }), values: [no, yes, yes] },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.logChannels', message: 'Salons de logs différents' }), values: ['3', '15', custom] },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.messageCache', message: 'Messages gardés en mémoire (/snipe, logs)' }), values: [
+            translate({ id: 'premium.compare.row.messageCache.free', message: '15 min' }),
+            translate({ id: 'premium.compare.row.messageCache.premium', message: '6 h' }),
+            custom,
+        ] },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.compactLogs', message: 'Format de logs compact' }), values: [no, yes, yes] },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.voiceReactionLogs', message: 'Logs vocales et de réactions' }), values: [no, yes, yes] },
 
         { type: 'category', label: translate({ id: 'premium.compare.cat.customization', message: 'Personnalisation' }) },
         { type: 'feature', label: translate({ id: 'premium.compare.row.botIdentity', message: 'Pseudo, avatar et bannière du bot' }), values: [no, yes, yes] },
