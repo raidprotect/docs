@@ -448,7 +448,7 @@ export default function PremiumPage(): React.ReactNode {
         { type: 'feature', label: translate({ id: 'premium.compare.row.botRoles', message: 'Rôles des bots' }), values: ['1', '15', custom] },
         { type: 'feature', label: translate({ id: 'premium.compare.row.welcomeButtons', message: 'Boutons du message de bienvenue' }), values: ['2', '4', custom] },
         { type: 'feature', label: translate({ id: 'premium.compare.row.welcomeColor', message: 'Couleur du message de bienvenue' }), values: [no, yes, yes] },
-        { type: 'feature', label: translate({ id: 'premium.compare.row.captchaIcon', message: 'Icône du serveur dans le captcha' }), values: [no, yes, yes] },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.captchaIcon', message: 'Captcha à l\'image de votre serveur' }), values: [no, yes, yes] },
 
         { type: 'category', label: translate({ id: 'premium.compare.cat.reports', message: 'Signalements' }) },
         { type: 'feature', label: translate({ id: 'premium.compare.row.trustedRole', message: 'Rôle de confiance (timeout préventif)' }), values: [no, yes, yes] },
