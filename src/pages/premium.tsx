@@ -438,7 +438,7 @@ export default function PremiumPage(): React.ReactNode {
         { type: 'feature', label: translate({ id: 'premium.compare.row.disconVoice', message: 'Salon vocal de statut du DISCON' }), values: [no, yes, yes] },
 
         { type: 'category', label: translate({ id: 'premium.compare.cat.automod', message: 'Automod' }) },
-        { type: 'feature', label: translate({ id: 'premium.compare.row.imageCatalog', message: 'Catalogue d\'images ScamLens (listes)' }), values: [no, '2', custom] },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.imageCatalog', message: 'Catalogue personnalisé d\'images ScamLens (listes)' }), values: [no, '2', custom] },
         { type: 'feature', label: translate({ id: 'premium.compare.row.fileRules', message: 'Règles d\'extensions de fichiers par salon' }), values: ['1', '20', custom] },
         { type: 'feature', label: translate({ id: 'premium.compare.row.fileCategories', message: 'Règles d\'extensions par catégorie' }), values: [no, yes, yes] },
         { type: 'feature', label: translate({ id: 'premium.compare.row.privateInvites', message: 'Invitations d\'ami et de groupe réglées à part' }), values: [no, yes, yes] },
