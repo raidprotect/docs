@@ -95,7 +95,7 @@ Um alle automatischen Rollen zu entfernen, klicken Sie auf „**Zurücksetzen**�
 **Grenzen:** 3 Rollen in der kostenlosen Version, 10 Rollen in der [Premium](/de/premium)-Version.
 
 :::warning
-Vermeiden Sie Rollen mit Berechtigungen: Eine automatisch vergebene Rolle sollte keinerlei Befugnisse gewähren. RaidProtect lehnt Rollen ab, die von einer Integration verwaltet werden, Rollen über seiner eigenen oder Ihrer und solche mit einer Moderationsberechtigung: Die akzeptablen Rollen Ihrer Auswahl werden behalten, und eine separate Nachricht erklärt, warum die anderen abgelehnt werden (sind es alle, bleibt die bestehende Konfiguration unverändert). Es warnt Sie, wenn eine gewählte Rolle später Berechtigungen erhält.
+Vermeiden Sie Rollen mit Berechtigungen: Eine automatisch vergebene Rolle sollte keinerlei Befugnisse gewähren. RaidProtect lehnt Rollen ab, die von einer Integration verwaltet werden, Rollen über seiner eigenen oder Ihrer, solche mit einer Moderationsberechtigung und die nicht verifizierte Rolle des Captchas (direkt nach dem Captcha vergeben, würde sie das Mitglied erneut blockieren): Die akzeptablen Rollen Ihrer Auswahl werden behalten, und eine separate Nachricht erklärt, warum die anderen abgelehnt werden (sind es alle, bleibt die bestehende Konfiguration unverändert). Es warnt Sie, wenn eine gewählte Rolle später Berechtigungen erhält.
 :::
 :::info
 Wenn Ihr Server einen anderen Bot für seine automatische Rolle verwendet, vergibt dieser die Rolle möglicherweise vor dem Captcha. Ersetzen Sie ihn durch die automatischen Rollen von RaidProtect.
@@ -109,7 +109,7 @@ Standardmäßig erhält ein dem Server hinzugefügter Bot die [automatischen Rol
 2. Öffnen Sie den Tab „**Ankünfte**“.
 3. Klicken Sie neben „**Bots**“ auf „**Konfigurieren**“.
 
-- **Rollen der Bots**: werden jedem ankommenden Bot **anstelle** der automatischen Rollen vergeben. Ohne gewählte Rolle erhalten die Bots die automatischen Rollen. **Grenzen:** 1 Rolle in der kostenlosen Version, 15 Rollen mit [Premium](/de/premium). Es gelten dieselben Einschränkungen wie für die automatischen Rollen (von einer Integration verwaltete Rollen, Rollen über Ihrer eigenen oder der von RaidProtect oder mit einer Moderationsberechtigung).
+- **Rollen der Bots**: werden jedem ankommenden Bot **anstelle** der automatischen Rollen vergeben. Ohne gewählte Rolle erhalten die Bots die automatischen Rollen. **Grenzen:** 1 Rolle in der kostenlosen Version, 15 Rollen mit [Premium](/de/premium). RaidProtect lehnt Rollen ab, die von einer Integration verwaltet werden, Rollen über Ihrer oder seiner eigenen und solche, die die Berechtigung **Administrator** gewähren. Eine Rolle mit einer Moderationsberechtigung wird mit einer Warnung akzeptiert: Behalten Sie sie vertrauenswürdigen Bots vor. Bots durchlaufen das Captcha nicht und erhalten ihre Rollen direkt bei ihrer Ankunft.
 - **Nicht freigegebene Bots kicken**: Jeder hinzugefügte Bot wird sofort gekickt, es sei denn, der Eigentümer hat ihn zuvor mit dem Befehl `/bypass bot` freigegeben. Standardmäßig deaktiviert. **Nur der Eigentümer des Servers** kann diese Option aktivieren oder deaktivieren und einen Bot freigeben.
 
 ### Einen Bot freigeben {#bypass-bot}

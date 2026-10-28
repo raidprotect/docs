@@ -1229,7 +1229,7 @@
     "message": "Früher Zugang zu Neuerungen"
   },
   "premium.feature.beta.desc": {
-    "message": "Abonnenten erhalten Beta-Funktionen vorab, etwa die Umwandlung von AutoMod-Timeouts in rollenbasierte Mutes."
+    "message": "Abonnenten erhalten Beta-Funktionen vorab, derzeit die Zweitkonten: Verknüpfen Sie die Konten einer Person mit /alt, und ihre Sanktionen folgen ihnen."
   },
   "premium.feature.learnMore": {
     "message": "Mehr erfahren"
@@ -7763,5 +7763,77 @@
   "mockup.v2.captcha.failBlock": {
     "message": "Versuche aufgebraucht: 10 Min. sperren",
     "description": "Mockup v2 — captcha: failure action option \"Block 10 min\""
+  },
+  "premium.compare.row.preventiveSlowmode": {
+    "message": "Präventiver Slowmode (bis zu 6 Kanäle)"
+  },
+  "premium.compare.row.disconVoice": {
+    "message": "DISCON-Status-Sprachkanal"
+  },
+  "premium.compare.cat.automod": {
+    "message": "Automod"
+  },
+  "premium.compare.row.imageCatalog": {
+    "message": "ScamLens-Bilderkatalog (Listen)"
+  },
+  "premium.compare.row.fileRules": {
+    "message": "Dateiendungsregeln pro Kanal"
+  },
+  "premium.compare.row.fileCategories": {
+    "message": "Endungsregeln pro Kategorie"
+  },
+  "premium.compare.row.privateInvites": {
+    "message": "Freundes- und Gruppeneinladungen separat einstellbar"
+  },
+  "premium.compare.cat.arrivals": {
+    "message": "Ankünfte"
+  },
+  "premium.compare.row.autoroles": {
+    "message": "Automatische Rollen"
+  },
+  "premium.compare.row.botRoles": {
+    "message": "Rollen der Bots"
+  },
+  "premium.compare.row.welcomeButtons": {
+    "message": "Schaltflächen der Willkommensnachricht"
+  },
+  "premium.compare.row.welcomeColor": {
+    "message": "Farbe der Willkommensnachricht"
+  },
+  "premium.compare.row.captchaIcon": {
+    "message": "Serversymbol im Captcha"
+  },
+  "premium.compare.row.staffPanels": {
+    "message": "/display staff-Panels"
+  },
+  "premium.compare.row.staffPanels.free": {
+    "message": "1 + DISCON"
+  },
+  "premium.compare.row.staffPanels.founder": {
+    "message": "4 + DISCON"
+  },
+  "premium.compare.cat.beta": {
+    "message": "In der öffentlichen Beta"
+  },
+  "premium.compare.row.altSanctions": {
+    "message": "Sanktionen auf verknüpfte Konten ausgeweitet (/alt)"
+  },
+  "premium.compare.row.logChannels": {
+    "message": "Getrennte Log-Kanäle"
+  },
+  "premium.compare.row.messageCache": {
+    "message": "Im Speicher gehaltene Nachrichten (/snipe, Logs)"
+  },
+  "premium.compare.row.messageCache.free": {
+    "message": "15 min"
+  },
+  "premium.compare.row.messageCache.premium": {
+    "message": "6 h"
+  },
+  "premium.compare.row.compactLogs": {
+    "message": "Kompaktes Log-Format"
+  },
+  "premium.compare.row.voiceReactionLogs": {
+    "message": "Sprach- und Reaktions-Logs"
   }
 }
