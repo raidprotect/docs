@@ -238,7 +238,7 @@
     "message": "抢先体验新功能"
   },
   "premium.feature.beta.desc": {
-    "message": "订阅者可抢先使用处于测试阶段的功能，例如将 AutoMod 的超时转换为角色禁言。"
+    "message": "订阅者可抢先使用处于测试阶段的功能，目前是多账号：使用 /alt 关联同一个人的账号，其处罚会随之延伸。"
   },
   "premium.tier.free.name": {
     "message": "Basic"
@@ -527,6 +527,78 @@
   },
   "premium.compare.subtitle": {
     "message": "所有基础防护始终免费。Premium 开放自定义功能并扩展上限。Business 则提供专用实例和真人支持。"
+  },
+  "premium.compare.row.preventiveSlowmode": {
+    "message": "预防性慢速模式（最多 6 个频道）"
+  },
+  "premium.compare.row.disconVoice": {
+    "message": "DISCON 状态语音频道"
+  },
+  "premium.compare.cat.automod": {
+    "message": "Automod"
+  },
+  "premium.compare.row.imageCatalog": {
+    "message": "ScamLens 图片目录（列表）"
+  },
+  "premium.compare.row.fileRules": {
+    "message": "按频道设置的文件扩展名规则"
+  },
+  "premium.compare.row.fileCategories": {
+    "message": "按类别设置的扩展名规则"
+  },
+  "premium.compare.row.privateInvites": {
+    "message": "好友邀请和群组邀请单独设置"
+  },
+  "premium.compare.cat.arrivals": {
+    "message": "新成员加入"
+  },
+  "premium.compare.row.autoroles": {
+    "message": "自动角色"
+  },
+  "premium.compare.row.botRoles": {
+    "message": "机器人角色"
+  },
+  "premium.compare.row.welcomeButtons": {
+    "message": "欢迎消息按钮"
+  },
+  "premium.compare.row.welcomeColor": {
+    "message": "欢迎消息颜色"
+  },
+  "premium.compare.row.captchaIcon": {
+    "message": "验证码中显示服务器图标"
+  },
+  "premium.compare.row.staffPanels": {
+    "message": "/display staff 面板"
+  },
+  "premium.compare.row.staffPanels.free": {
+    "message": "1 个 + DISCON"
+  },
+  "premium.compare.row.staffPanels.founder": {
+    "message": "4 个 + DISCON"
+  },
+  "premium.compare.cat.beta": {
+    "message": "公开测试中"
+  },
+  "premium.compare.row.altSanctions": {
+    "message": "处罚延伸到关联账号（/alt）"
+  },
+  "premium.compare.row.logChannels": {
+    "message": "不同的日志频道"
+  },
+  "premium.compare.row.messageCache": {
+    "message": "消息缓存时长（/snipe、日志）"
+  },
+  "premium.compare.row.messageCache.free": {
+    "message": "15 分钟"
+  },
+  "premium.compare.row.messageCache.premium": {
+    "message": "6 小时"
+  },
+  "premium.compare.row.compactLogs": {
+    "message": "精简日志格式"
+  },
+  "premium.compare.row.voiceReactionLogs": {
+    "message": "语音和反应日志"
   },
   "premium.finalCta.title": {
     "message": "准备好升级到 Premium 了吗？"

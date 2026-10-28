@@ -77,7 +77,7 @@ RaidProtect 的**验证码**会要求每位新成员在进入您的 Discord 服�
 
 ### 在 Activity 中验证 {#activity}
 
-在**面板**模式下，“**验证**”按钮会打开 **RaidProtect Activity**：成员直接在 Discord 中解答一个小拼图，界面采用您服务器的配色，并带有您[新成员引导](../guides/onboarding.md)中的频道链接。验证通过后，他会在其中看到自己的[欢迎卡片](./onboarding.md#welcome-message)。
+在**面板**模式下，“**验证**”按钮会打开 **RaidProtect Activity**：成员直接在 Discord 中解答一个小拼图，界面采用您服务器的配色，并带有您[新成员引导](../guides/onboarding.md)中的频道链接。在拥有图标的 [Premium](/zh-CN/premium) 服务器上，会显示服务器图标而非 RaidProtect 标志。验证通过后，他会在其中看到自己的[欢迎卡片](./onboarding.md#welcome-message)。
 
 - **拼图失败：** 与输错验证码一样，会消耗一次尝试，尝试次数用尽时会执行预设的处罚。Activity 会先向成员告知结果，随后才执行处罚。
 - **通过：** 成员离开通过界面时即完成验证。如果他在此期间点击了“**验证**”，其验证会立即生效，而不会重新启动 Activity。
