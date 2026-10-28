@@ -100,6 +100,7 @@ Desde tu perfil, puedes:
 - Añadir, cambiar o eliminar un **código PIN** (simple o reforzado).
 - Activar el **código 2FA** (OTP) con un código QR o una clave secreta, regenerarlo o eliminarlo.
 - Añadir una **passkey** desde la página de registro, o eliminar una. Cada passkey muestra el nombre del dispositivo y la fecha de último uso.
+- **Renombrar** una passkey: el botón “**Modificar una Passkey**”, junto a “**Añadir**”, abre una ventana con tus passkeys y el nuevo nombre que darle (por ejemplo `MacBook`, `iPhone`, `YubiKey`). El cambio de nombre se registra en tu registro de auditoría.
 
 Si ya tienes un método, te pedimos que te autentiques antes de añadir o modificar otro. El final del perfil te recuerda tu grado y el método a añadir para subir un escalón.
 
@@ -137,10 +138,10 @@ Usa el comando: ```/auth [role]```
 
 1. Ejecuta el comando `/auth` en el servidor, o haz clic en “**Tomar un rol**” en un panel staff.
 2. Un menú muestra los roles disponibles con su grado requerido y la duración de la sesión.
-3. Selecciona un rol.
+3. Selecciona uno o varios roles (hasta 10). Una sola autenticación, al nivel del más exigente, los abre todos.
 4. Elige un método de autenticación entre los que alcanzan el grado del rol.
 5. Efectúa la verificación (PIN, OTP o passkey).
-6. En caso de éxito, te asignamos el rol de Discord y creamos una sesión.
+6. En caso de éxito, te asignamos el rol o los roles de Discord y creamos una sesión para cada uno. Las sesiones se registran en los logs del Authentification Manager.
 
 :::info
 Solo los roles a los que has sido asignado con el estado **Activo** aparecen en el menú.
@@ -233,6 +234,8 @@ Rechazamos un rol gestionado por una integración, un rol usado en el Proceso de
 
 :::tip
 Si tu rol se **muestra por separado** en la lista de miembros, elige “**Crear un rol de permisos separado**”: tus miembros conservan su rol visible de forma permanente, y los permisos sensibles solo se asignan durante las sesiones autenticadas.
+
+Con un rol separado, los permisos de moderación de canal del rol de visualización también pasan al rol `🔑`. Para un rol administrador, la opción “**Conservar la vista de todos los canales fuera de sesión**” deja al rol de visualización la vista de todos los canales fuera de las sesiones; sin ella, ya no ve nada sin el administrador.
 :::
 
 #### Proteger los roles administrador desde `/audit` {#audit-bulk}

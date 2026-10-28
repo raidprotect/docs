@@ -64,7 +64,7 @@ Vous pouvez ajouter sous le message des boutons qui mènent vers un salon du ser
 2. Ouvrez l'onglet “**Arrivées**”.
 3. Cliquez sur “**Configurer**” à côté de “**Message de bienvenue**”.
 4. Dans “**Gérer les boutons**”, choisissez “**Ajouter un bouton**”.
-5. Donnez un nom au bouton et choisissez le salon à lier.
+5. Donnez un nom au bouton, choisissez le salon à lier et, si vous le souhaitez, un **emoji** : un emoji standard, ou un emoji de ce serveur (`<:nom:id>`, `:nom:` ou son identifiant). Un emoji invalide n'empêche pas l'enregistrement : le bouton est créé sans emoji.
 
 Pour modifier ou supprimer un bouton, sélectionnez-le dans la même liste.
 
@@ -95,10 +95,33 @@ Pour retirer tous les rôles automatiques, cliquez sur “**Réinitialiser**”.
 **Limites :** 3 rôles en version gratuite, 10 rôles en version [premium](/premium).
 
 :::warning
-Évitez les rôles qui portent des permissions : un rôle donné automatiquement ne devrait accorder aucun pouvoir. RaidProtect refuse les rôles gérés par une intégration, les rôles au-dessus du sien ou du vôtre, et ceux qui portent une permission de modération : les rôles acceptables de votre sélection sont gardés, et un message à part explique pourquoi les autres sont refusés (si tous le sont, la configuration en place reste inchangée). Il vous alerte si un rôle choisi gagne des permissions plus tard.
+Choisissez des rôles sans permission : un rôle donné à l'arrivée ne devrait accorder aucun pouvoir. RaidProtect refuse les rôles gérés par une intégration, ceux placés au-dessus du sien ou du vôtre, ceux qui donnent une permission de modération et le rôle non vérifié du captcha. Il vous prévient si un rôle choisi gagne des permissions plus tard.
 :::
 :::info
 Si votre serveur utilise un autre bot pour son rôle automatique, il risque de donner le rôle avant le captcha. Remplacez-le par les rôles automatiques de RaidProtect.
+:::
+
+## 🤖 Arrivée des bots {#bots}
+
+C'est l'**antibot** de RaidProtect : il contrôle les bots qui rejoignent votre serveur.
+
+1. Faites la [commande `/settings`](../setup.md#settings).
+2. Ouvrez l'onglet “**Arrivées**”.
+3. Cliquez sur “**Configurer**” à côté de “**Bots**”.
+
+- **Rôles des bots** : donnés à chaque bot dès son arrivée, **à la place** des [rôles automatiques](#autorole). Sans rôle choisi, les bots reçoivent les rôles automatiques. **Limites :** 1 rôle en version gratuite, 15 avec le [Premium](/premium).
+- **Expulser les bots non autorisés** : tout bot ajouté est expulsé, sauf si le propriétaire l'a [autorisé](#bypass-bot) avant. Désactivé par défaut, **seul le propriétaire du serveur** peut l'activer.
+
+RaidProtect refuse les rôles gérés par une intégration, ceux placés au-dessus du sien ou du vôtre et ceux qui donnent la permission **Administrateur**. Un rôle avec une permission de modération est accepté, avec un avertissement : réservez-le aux bots de confiance.
+
+### Autoriser un bot {#bypass-bot}
+
+Utilisez la commande : ```/bypass bot [bot]```
+
+Remplacez `[bot]` par le bot à autoriser : il pourra rejoindre le serveur **une fois**, dans les 10 minutes qui suivent, sans être expulsé. Sans bot, la commande liste les bots actuellement autorisés. Chaque autorisation est notée dans vos logs.
+
+:::info
+RaidProtect a besoin de la permission “**Expulser des membres**” et d'un rôle au-dessus de celui du bot pour l'expulser. Sinon, le log l'indique et le bot reste.
 :::
 
 ## 🎂 Âge minimum du compte {#minage}
@@ -120,13 +143,13 @@ Pour désactiver le filtre, cliquez sur “**Réinitialiser**”. RaidProtect a 
 | Action | Effet sur un compte trop récent |
 |---|---|
 | “**Expulser**” (par défaut) | Il est expulsé à chaque tentative tant que son compte est trop récent. |
-| “**Jail jusqu'à l'âge requis**” | Il entre sans rien voir du serveur, et sort du [jail](./sanctions.mdx#jail) dès qu'il a l'âge requis. |
+| “**Quarantaine jusqu'à l'âge requis**” | Il entre sans rien voir du serveur (via le [rôle Jail](./sanctions.mdx#jail)), et sort de sa quarantaine dès qu'il a l'âge requis, à la date indiquée. |
 | “**Retenir à l'entrée**” | Il est bloqué sur un [captcha](./captcha.md) qu'il ne peut résoudre qu'une fois l'âge atteint. |
 
-Le compte reçoit un message privé avec la date à laquelle il aura accès au serveur. Les expulsions, mises au jail et bannissements sont notés dans le salon de logs.
+Le compte reçoit un message privé avec la date à laquelle il aura accès au serveur. Les expulsions, quarantaines et bannissements sont notés dans le salon de logs.
 
 :::info
-- “**Jail jusqu'à l'âge requis**” demande un Rôle de Jail, configuré dans l'onglet “**Modération**” > “**Sanctions**”. Sans lui, RaidProtect vous propose de le configurer ou de vous replier sur “**Bannir jusqu'à l'âge requis**” : le compte sort du serveur et son bannissement est levé automatiquement à la bonne date.
+- “**Quarantaine jusqu'à l'âge requis**” demande un Rôle de Jail, configuré dans l'onglet “**Modération**” > “**Sanctions**”. Sans lui, RaidProtect vous propose de le configurer ou de vous replier sur “**Bannir jusqu'à l'âge requis**” : le compte sort du serveur et son bannissement est levé automatiquement à la bonne date.
 - “**Retenir à l'entrée**” demande un captcha actif en mode **Panneau (Interactif)**.
 :::
 
@@ -134,7 +157,7 @@ Le compte reçoit un message privé avec la date à laquelle il aura accès au s
 
 Utilisez la commande : ```/bypass minage [utilisateur]```
 
-Remplacez `[utilisateur]` par l'[identifiant](../guides/id.mdx) souhaité, ce dernier disposera de 10 minutes pour rejoindre le serveur sans être bloqué par l'âge requis. Vous pouvez aussi utiliser la commande sans spécifier d'utilisateur pour connaître la liste actuelle des utilisateurs bypass.
+Remplacez `[utilisateur]` par l'[identifiant](../guides/id.mdx) souhaité, ce dernier disposera de 10 minutes pour rejoindre le serveur sans être bloqué par l'âge requis. Vous pouvez aussi utiliser la commande sans spécifier d'utilisateur pour connaître la liste actuelle des utilisateurs bypass. Elle lève aussi la quarantaine d'un compte trop récent. `/unjail` ne la lève pas : il indique la commande à utiliser.
 
 ## Questions fréquentes {#faq}
 
@@ -160,4 +183,4 @@ Une valeur de quelques heures à 1 jour suffit à écarter la plupart des compt
 
 ### Un compte trop récent est-il banni ?
 
-Non, pas par défaut : il est expulsé à chaque tentative. Vous pouvez aussi le mettre au jail jusqu'à l'âge requis ou le retenir derrière le captcha. Le bannissement temporaire n'est qu'un repli quand le jail n'est pas configuré.
+Non, pas par défaut : il est expulsé à chaque tentative. Vous pouvez aussi le mettre en quarantaine jusqu'à l'âge requis ou le retenir derrière le captcha. Le bannissement temporaire n'est qu'un repli quand le rôle Jail n'est pas configuré.

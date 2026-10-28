@@ -55,11 +55,7 @@ ScamLens, “**Koruma**” sekmesindeki **Automod** modülünde, “**Görsel fi
 - Yaptırımı duyuran herkese açık mesaj, Premium'da devre dışı bırakılabilen [Anti-spam](./anti-spam.mdx#public-message)'in “**Herkese açık ceza mesajı**” ayarını izler.
 :::
 
-## 🗂️ Görsel kataloğu <span className="badge-experiment">Deneme</span> <span className="badge-premium">Premium</span> {#catalog}
-
-:::info Deneme: Shield Update
-Görsel kataloğu, 3.6.0 sürümü için planlanan **Shield Update**'in parçasıdır ve çıkışına kadar deneme aşamasındadır.
-:::
+## 🗂️ Görsel kataloğu <span className="badge-premium">Premium</span> {#catalog}
 
 Bizim yönettiğimiz ve tüm sunucularda uygulanan “Crypto Scam” genel kataloğuna ek olarak, [Premium](/tr/premium) sunucular içeriği ne olursa olsun **kendi görsellerini** engelleyebilir: sahte Nitro ekran görüntüleri, topluluğunuzu hedefleyen bir dolandırıcılığın görselleri, sunucunuzda yasak görseller…
 

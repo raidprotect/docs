@@ -64,7 +64,7 @@ Bạn có thể thêm bên dưới tin nhắn các nút dẫn đến một kênh
 2. Mở thẻ “**Thành viên mới**”.
 3. Nhấp vào “**Cấu hình**” bên cạnh “**Tin nhắn chào mừng**”.
 4. Trong “**Quản lý các nút**”, chọn “**Thêm nút**”.
-5. Đặt tên cho nút và chọn kênh cần liên kết.
+5. Đặt tên cho nút, chọn kênh cần liên kết và, nếu muốn, một **emoji**: một emoji tiêu chuẩn, hoặc một emoji của máy chủ này (`<:tên:id>`, `:tên:` hoặc ID của nó). Một emoji không hợp lệ không ngăn việc lưu: nút được tạo mà không có emoji.
 
 Để sửa hoặc xóa một nút, hãy chọn nó trong cùng danh sách.
 
@@ -95,10 +95,33 @@ Vai trò tự động được cấp cho mỗi thành viên mới ngay khi họ 
 **Giới hạn:** 3 vai trò ở bản miễn phí, 10 vai trò ở bản [premium](/vi/premium).
 
 :::warning
-Hãy tránh các vai trò mang quyền: một vai trò được cấp tự động không nên trao bất kỳ quyền lực nào. RaidProtect từ chối các vai trò do tích hợp quản lý, các vai trò cao hơn vai trò của nó hoặc của bạn, và những vai trò mang quyền kiểm duyệt: các vai trò chấp nhận được trong lựa chọn của bạn vẫn được giữ lại, và một tin nhắn khác giải thích vì sao các vai trò khác bị từ chối (nếu tất cả đều bị từ chối, cấu hình hiện có được giữ nguyên). Nó cảnh báo bạn nếu một vai trò đã chọn sau này có thêm quyền.
+Hãy chọn các vai trò không có quyền: một vai trò được cấp khi vào máy chủ không nên trao bất kỳ quyền lực nào. RaidProtect từ chối các vai trò do tích hợp quản lý, các vai trò cao hơn vai trò của nó hoặc của bạn, những vai trò cấp quyền kiểm duyệt và vai trò chưa xác minh của captcha. Nó cảnh báo bạn nếu một vai trò đã chọn sau này có thêm quyền.
 :::
 :::info
 Nếu máy chủ của bạn dùng một bot khác cho vai trò tự động, nó có thể cấp vai trò trước captcha. Hãy thay nó bằng các vai trò tự động của RaidProtect.
+:::
+
+## 🤖 Bot tham gia {#bots}
+
+Đây là tính năng **antibot** của RaidProtect: kiểm soát các bot tham gia máy chủ của bạn.
+
+1. Dùng [lệnh `/settings`](../setup.md#settings).
+2. Mở thẻ “**Thành viên mới**”.
+3. Nhấp vào “**Cấu hình**” bên cạnh “**Bot**”.
+
+- **Vai trò của bot**: được cấp cho mỗi bot ngay khi vào máy chủ, **thay cho** [vai trò tự động](#autorole). Nếu không chọn vai trò nào, các bot nhận vai trò tự động. **Giới hạn:** 1 vai trò ở bản miễn phí, 15 với [Premium](/vi/premium).
+- **Đuổi các bot không được phép**: mọi bot được thêm vào đều bị đuổi, trừ khi chủ sở hữu đã [cho phép](#bypass-bot) trước. Tắt theo mặc định, **chỉ chủ sở hữu máy chủ** mới có thể bật.
+
+RaidProtect từ chối các vai trò do tích hợp quản lý, các vai trò cao hơn vai trò của nó hoặc của bạn và những vai trò cấp quyền **Quản trị viên**. Một vai trò có quyền kiểm duyệt vẫn được chấp nhận, kèm một cảnh báo: chỉ dùng nó cho các bot đáng tin cậy.
+
+### Cho phép một bot {#bypass-bot}
+
+Dùng lệnh: ```/bypass bot [bot]```
+
+Hãy thay `[bot]` bằng bot cần cho phép: nó có thể tham gia máy chủ **một lần**, trong vòng 10 phút tiếp theo, mà không bị đuổi. Nếu không chỉ định bot, lệnh liệt kê các bot hiện đang được cho phép. Mỗi lần cho phép đều được ghi trong nhật ký của bạn.
+
+:::info
+RaidProtect cần quyền “**Đuổi thành viên**” và một vai trò cao hơn vai trò của bot để đuổi nó. Nếu không, nhật ký sẽ ghi lại điều đó và bot vẫn ở lại.
 :::
 
 ## 🎂 Tuổi tối thiểu của tài khoản {#minage}
@@ -120,13 +143,13 @@ Nếu máy chủ của bạn dùng một bot khác cho vai trò tự động, n�
 | Hành động | Hiệu lực với một tài khoản quá mới |
 |---|---|
 | “**Đuổi**” (mặc định) | Bị đuổi ở mỗi lần thử chừng nào tài khoản còn quá mới. |
-| “**Jail đến khi đủ tuổi**” | Vào được nhưng không thấy gì của máy chủ, và ra khỏi [jail](./sanctions.mdx#jail) ngay khi đủ tuổi yêu cầu. |
+| “**Cách ly đến khi đủ tuổi**” | Vào được nhưng không thấy gì của máy chủ (qua [vai trò Jail](./sanctions.mdx#jail)), và ra khỏi cách ly ngay khi đủ tuổi yêu cầu, vào ngày đã nêu. |
 | “**Giữ lại ở cửa**” | Bị chặn ở một [captcha](./captcha.md) mà chỉ giải được khi đủ tuổi. |
 
-Tài khoản nhận một tin nhắn riêng kèm ngày họ sẽ được truy cập máy chủ. Các lần đuổi, đưa vào jail và cấm được ghi trong kênh nhật ký.
+Tài khoản nhận một tin nhắn riêng kèm ngày họ sẽ được truy cập máy chủ. Các lần đuổi, cách ly và cấm được ghi trong kênh nhật ký.
 
 :::info
-- “**Jail đến khi đủ tuổi**” cần một Vai trò Jail, được cấu hình trong thẻ “**Kiểm duyệt**” > “**Hình phạt**”. Nếu không có, RaidProtect đề nghị bạn cấu hình nó hoặc chuyển sang “**Cấm đến khi đủ tuổi**”: tài khoản bị đưa ra khỏi máy chủ và lệnh cấm được gỡ tự động vào đúng ngày.
+- “**Cách ly đến khi đủ tuổi**” cần một Vai trò Jail, được cấu hình trong thẻ “**Kiểm duyệt**” > “**Hình phạt**”. Nếu không có, RaidProtect đề nghị bạn cấu hình nó hoặc chuyển sang “**Cấm đến khi đủ tuổi**”: tài khoản bị đưa ra khỏi máy chủ và lệnh cấm được gỡ tự động vào đúng ngày.
 - “**Giữ lại ở cửa**” cần một captcha đang hoạt động ở chế độ **Bảng (Tương tác)**.
 :::
 
@@ -134,7 +157,7 @@ Tài khoản nhận một tin nhắn riêng kèm ngày họ sẽ được truy c
 
 Dùng lệnh: ```/bypass minage [user]```
 
-Hãy thay `[user]` bằng [ID](../guides/id.mdx) mong muốn, người đó sẽ có 10 phút để tham gia máy chủ mà không bị chặn bởi tuổi yêu cầu. Bạn cũng có thể dùng lệnh mà không chỉ định người dùng để biết danh sách người dùng bypass hiện tại.
+Hãy thay `[user]` bằng [ID](../guides/id.mdx) mong muốn, người đó sẽ có 10 phút để tham gia máy chủ mà không bị chặn bởi tuổi yêu cầu. Bạn cũng có thể dùng lệnh mà không chỉ định người dùng để biết danh sách người dùng bypass hiện tại. Lệnh cũng gỡ cách ly cho một tài khoản quá mới. `/unjail` không gỡ được: nó cho biết lệnh cần dùng.
 
 ## Câu hỏi thường gặp {#faq}
 
@@ -160,4 +183,4 @@ Một giá trị từ vài giờ đến 1 ngày là đủ để loại phần l�
 
 ### Một tài khoản quá mới có bị cấm không?
 
-Không, mặc định thì không: nó bị đuổi ở mỗi lần thử. Bạn cũng có thể đưa nó vào jail đến khi đủ tuổi hoặc giữ nó sau captcha. Cấm tạm thời chỉ là phương án dự phòng khi jail chưa được cấu hình.
+Không, mặc định thì không: nó bị đuổi ở mỗi lần thử. Bạn cũng có thể cách ly nó đến khi đủ tuổi hoặc giữ nó sau captcha. Cấm tạm thời chỉ là phương án dự phòng khi vai trò Jail chưa được cấu hình.

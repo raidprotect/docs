@@ -1,0 +1,60 @@
+---
+title: 文件
+sidebar_label: 說明
+slug: /
+---
+
+import DocCard from '@theme/DocCard';
+import SearchHero from '@theme/SearchHero';
+
+<div className="margin-vert--lg">
+  <SearchHero suggestions={['驗證碼', '突襲模式', 'Antispam', '處罰']} />
+</div>
+
+本文件旨在向您說明 RaidProtect 的運作方式。歡迎隨時向我們提供意見回饋，讓我們能持續改進。
+別忘了[加入我們的 Discord 伺服器](https://raidprotect.bot/discord)，掌握專案的最新消息。您也可以聯絡我們的支援團隊，他們會解答您在使用機器人時的疑問。😄
+
+## 🚀 開始使用 RaidProtect {#start}
+
+要開始使用 RaidProtect，只需透過以下連結將它邀請到您的伺服器即可。
+
+<DocCard item={{ type: 'link', href: 'https://raidprotect.bot/invite', label: '邀請 RaidProtect' }} />
+<br />
+
+:::danger
+請注意，市面上流傳著**盜用 RaidProtect 名稱**的**機器人仿冒品**，請務必只從我們的官方網站邀請它。
+:::
+
+### 先決條件 {#requirement}
+
+為確保 RaidProtect 正常運作：
+1. **授予 RaidProtect 管理員權限**。這能讓它自動管理您所有的頻道。
+2. **將它的角色放在與伺服器管理員相同的層級**。權限系統不允許 RaidProtect 處罰角色位階高於它的使用者。
+
+### 安裝 {#install}
+
+將 RaidProtect 加入伺服器後，請執行 [`/setup`](./setup.md#install) 指令。
+
+<DocCard item={{ type: 'link', href: '/docs/beta/setup', docId: 'setup', label: '引導式安裝' }} />
+<br />
+
+:::note
+如果您不想花太多時間（或是比較趕時間），也可以直接閱讀 [`/setup` 指令](./setup.md#recommended)的說明，它彙整了各項功能的主要資訊。
+:::
+
+### 使用方式 {#use}
+
+請參閱本文件的各個章節，了解 RaidProtect 提供的所有功能。
+
+:::info
+在本文件中，指令參數為 `(必填)` 時與為 `[選填]` 時，會以這種方式顯示。
+:::
+
+<DocCard item={{ type: 'link', href: '/docs/beta/language', docId: 'language', label: '可用語言' }} />
+<br />
+<DocCard item={{ type: 'category', href: '/docs/beta/features', label: '功能', description: '我們各項功能的說明文件。' }} />
+<br />
+<DocCard item={{ type: 'category', href: '/docs/beta/guides', label: '我們的指南', description: '盡可能幫助您的各種指南。' }} />
+<br />
+<DocCard item={{ type: 'category', href: '/docs/beta/useful-links', label: '實用連結', description: 'RaidProtect 的各種實用連結。' }} />
+<br />

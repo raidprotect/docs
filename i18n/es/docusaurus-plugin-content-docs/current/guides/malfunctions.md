@@ -57,7 +57,7 @@ Este problema es relativamente común, pero depende de **la configuración de tu
 
 - **¿Has activado el captcha?** Es una función opcional: actívala en la pestaña “**Llegadas**” de [`/settings`](../setup.md#settings). Consulta la [página de documentación dedicada al captcha](../features/captcha.md#config) para más información.
 
-- **¿Cuál es su activación?** En “**Automática**”, el captcha solo se aplica durante un raid o un nivel [DISCON](../features/discon.md) alto (Shield Update, en fase experimental): el resto del tiempo, los recién llegados entran directamente. Elige “**Permanente**” para que cada recién llegado pase el captcha.
+- **¿Cuál es su activación?** En “**Automática**”, el captcha solo se aplica durante un raid o un nivel [DISCON](../features/discon.md) alto: el resto del tiempo, los recién llegados entran directamente. Elige “**Permanente**” para que cada recién llegado pase el captcha.
 
 - **¿Un rol o un canal lo eluden?** La pantalla del captcha señala los canales que el rol de verificación sigue viendo y los roles que dan acceso al servidor sin pasarlo, con un botón para corregirlo.
 

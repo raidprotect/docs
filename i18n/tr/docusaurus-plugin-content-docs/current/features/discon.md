@@ -15,10 +15,6 @@ import Settings from '@site/src/components/DiscordMessage/mockups/v2';
 - **Temiz bir geri dönüş**: seviye düşürülürken yalnızca DISCON'un kendisinin etkinleştirdiği şeyleri kapatırız. Elle etkinleştirdiğiniz bir captcha, bir DM Kapatma veya bir baskın modu yerinde kalır.
 - **Elle değişiklik**: seviye asla kendiliğinden değişmez, karar ekibinizindir.
 
-:::info Deneme: Shield Update
-DISCON, 3.6.0 sürümü için planlanan **Shield Update**'in parçasıdır. Çıkışına kadar deneme aşamasındadır; [Premium](/tr/premium) sunucular için herkese açık beta olarak sunulur. [Durum ses kanalı](#voice) Premium gerektirir.
-:::
-
 ## 🚦 Beş seviye {#levels}
 
 | Seviye | Ad | Uyguladığımız |
@@ -81,7 +77,7 @@ Bunun için captcha'nın kanalı ve rolüyle [yapılandırılmış](./captcha.md
 1. [`/settings` komutunu](../setup.md#settings) çalıştırın.
 2. “**Koruma**” sekmesini açın.
 3. “**DISCON**” yanındaki “**Yapılandır**” düğmesine tıklayın.
-4. Seçicide panel kanalını seçin ya da “**Panel kanalını oluştur**”a tıklayın.
+4. Seçicide panel kanalını (metin veya ses) seçin ya da “**Panel kanalını oluştur**”a tıklayın.
 5. İsteğe bağlı olarak ([Premium](/tr/premium)) bir durum ses kanalı seçin ya da “**Durum kanalını oluştur**”a tıklayın.
 
 Yapılandırmanın altında geçerli seviyeyi, beş seviye düğmesini ve her seviyenin sunucunuzda ne yapacağını açıklayan **seviye ölçeğini** bulursunuz.
@@ -93,6 +89,7 @@ Yapılandırmanın altında geçerli seviyeyi, beş seviye düğmesini ve her se
 Panelin düğmeleri hiçbir izin gerektirmez: **kontrol görevini kanala erişim üstlenir**. Bu nedenle ekibinize ayrılmış bir kanal seçin.
 
 - Tüm sunucunun görebildiği bir kanal reddedilir: herhangi bir üye orada seviyeyi değiştirebilirdi.
+- Bir ses kanalı da uygundur: panel bu durumda onun yerleşik metin kanalına gönderilir.
 - “**Panel kanalını oluştur**”, @everyone için görünmez bir `#discon` kanalı oluşturur. Ardından onu ekibinizin rollerine açın.
 
 ### Durum ses kanalı <span className="badge-premium">Premium</span> {#voice}

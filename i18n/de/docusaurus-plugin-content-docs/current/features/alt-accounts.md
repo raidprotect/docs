@@ -14,14 +14,14 @@ Die Zweitkonten gehören zur **Identity Update**, die für Version 3.7.0 vorgese
 ## ❓ Wie funktioniert es? {#working}
 
 - **Eine Gruppe pro Person**: Eine Gruppe vereint die Konten, die Ihr Team als ein und dieselbe Person betrachtet. Die Gruppen gehören zu Ihrem Server: Nichts wird mit anderen Servern geteilt.
-- **Geteilte Sanktionen** ([Premium](/de/premium)): Bann, Kick, Mute, Jail und Timeout erstrecken sich auf die anderen Konten der Gruppe, je nach dem [Modus](#modes), den Sie für jede Sanktion wählen. Die Sanktion bleibt auf den Namen des betroffenen Kontos eingetragen, die anderen erhalten ihren Status. Ohne Premium lassen sich die Konten verknüpfen und einsehen, aber keine Sanktion wird ausgeweitet: Das Log der Sanktion nennt dann die anderen Konten des Mitglieds.
+- **Geteilte Sanktionen** ([Premium](/de/premium)): Bann, Kick, Mute, Jail und Timeout erstrecken sich auf die anderen Konten der Gruppe, je nach dem [Modus](#modes), den Sie für jede Sanktion wählen. Die Sanktion bleibt auf den Namen des betroffenen Kontos eingetragen, die anderen erhalten ihren Status. Sie erstreckt sich nie auf Konten, die den Server moderieren (Administrator, Server verwalten, Mitglieder bannen, Mitglieder kicken oder Timeout für Mitglieder), auf den Eigentümer oder auf Bots. Ohne Premium lassen sich die Konten verknüpfen und einsehen, aber keine Sanktion wird ausgeweitet: Das Log der Sanktion nennt dann die anderen Konten des Mitglieds.
 - **Gemeinsame Aufhebung**: Die Sanktion eines beliebigen Kontos aufzuheben, hebt sie für alle auf, mit oder ohne Premium.
 - **Gruppierte Suche**: Die [Suche nach Sanktionen](./sanctions.mdx#search) eines Kontos zeigt auch die der anderen Konten der Gruppe.
 - **AutoMod von Discord**: Die vom AutoMod von Discord verhängten Timeouts und Mutes erstrecken sich ebenfalls auf die verknüpften Konten.
 - **Vom Captcha erkannt**: Die [Activity des Captchas](./captcha.md#activity-alts) kann zwei Konten, bei denen sie sicher ist, dass es dieselbe Person ist, selbst verknüpfen oder Ihrem Team die Verknüpfung vorschlagen.
-- **Logs**: Verknüpfungen, Entfernungen und Wechsel des Hauptkontos werden in den [Moderationslogs](./moderation.mdx#logs) aufgezeichnet.
+- **Logs**: Verknüpfungen, Entfernungen und Wechsel des Hauptkontos werden in den [Moderationslogs](./moderation.mdx#logs) aufgezeichnet. Das Log einer Sanktion nennt die verknüpften Konten mit ihrem Benutzernamen und trägt im Embed-Format eine Schaltfläche „**Verknüpfte Konten**“, die das `/alt`-Panel des sanktionierten Mitglieds öffnet.
 
-**Grenzen:** keine, weder bei der Anzahl der Konten pro Gruppe noch bei der Anzahl der Gruppen.
+**Grenzen:** keine bei der Anzahl der Konten pro Gruppe oder der Anzahl der Gruppen. Eine Sanktion erstreckt sich auf einmal auf **10 verknüpfte Konten**: Die weiteren werden bei ihrer nächsten Nachricht oder bei ihrer Ankunft sanktioniert, und die Schaltfläche unter der Sanktion sanktioniert sie sofort.
 
 ## 🔗 Konten mit /alt verknüpfen {#alt}
 
@@ -30,6 +30,8 @@ Verwenden Sie den Befehl: ```/alt [@mitglied] [@anderes]```
 - Ohne Option: zeigt die Liste der Gruppen verknüpfter Konten des Servers an. Mit der Schaltfläche „**Zwei Konten verknüpfen**“ verknüpfen Sie dort zwei Mitglieder des Servers oder zwei nicht anwesende Konten über ihre Kennungen.
 - Mit `[@mitglied]`: zeigt die Gruppe dieses Kontos an oder dieses Konto allein, wenn es mit keinem anderen verknüpft ist. Jedes Konto erscheint dort mit seinem Status (auf dem Server gebannt, auf dem Server, nicht auf dem Server, in Quarantäne), das Hauptkonto an erster Stelle.
 - Mit `[@mitglied]` und `[@anderes]`: verknüpft die beiden Konten direkt, als dieselbe Person deklariert.
+
+Ist eines der Konten der Gruppe bereits gebannt ([Premium](/de/premium)), teilen sich die verknüpften Konten denselben Bann: RaidProtect bietet Ihnen „**Ebenfalls bannen**“ für die anderen Konten, „**Bann aufheben**“ für das gebannte Konto und damit für alle, oder „**Später**“, um es danach zu entscheiden.
 
 Ersetzen Sie `[@mitglied]` und `[@anderes]` durch die Erwähnung oder die [Kennung](../guides/id.mdx) der gewünschten Konten. Bots können nicht verknüpft werden.
 
@@ -84,7 +86,7 @@ Die Umgehungssanktion gilt für ein im Modus „**Falle**“ erwischtes verknüp
 <SettingsModal name="altsEvasion" />
 
 - „**Rest der Sanktion**“ *(Standard)*: Das Konto teilt die Sanktion der Gruppe bis zu ihrem Ende, ohne Sanktion auf seinen Namen.
-- **Eine Sanktion** (Bann, Kick, Mute, Jail oder Timeout): Sie wird auf seinen Namen verhängt, mit eigener Dauer, und wird nicht mit der Gruppe aufgehoben. Lassen Sie die Dauer leer für eine endgültige Sanktion (z. B. `1h`, `3d`, `2w`).
+- **Eine Sanktion** (Bann, Kick, Mute, Jail oder Timeout): Sie wird auf seinen Namen verhängt, mit eigener Dauer, und gilt danach für die ganze Gruppe. Ein Mute oder Jail kehrt zurück, wenn das Konto den Server verlässt und ihm wieder beitritt. Lassen Sie die Dauer leer für eine endgültige Sanktion (z. B. `1h`, `3d`, `2w`).
 
 :::info
 Ein Timeout erfordert immer eine Dauer von höchstens 28 Tagen. Mute und Jail erfordern, dass ihre [Rolle](./sanctions.mdx#config) konfiguriert ist.
@@ -92,15 +94,15 @@ Ein Timeout erfordert immer eine Dauer von höchstens 28 Tagen. Mute und Jail er
 
 ### Nur ein Konto pro Person {#single-account}
 
-Mit dieser Einstellung bewegt sich nur das **Hauptkonto** jeder Gruppe auf dem Server. Die anderen Konten werden mit der [Jail-Rolle](./sanctions.mdx#jail) in **Quarantäne** gesetzt (Sanktion „**Quarantäne**“ im Verlauf). Sie verlassen sie von selbst, wenn sie zum Hauptkonto werden oder aus der Gruppe entfernt werden.
+Mit dieser Einstellung, die wie die Erkennung durch das Captcha kostenlos ist, bewegt sich nur das **Hauptkonto** jeder Gruppe auf dem Server. Die anderen Konten werden mit der [Jail-Rolle](./sanctions.mdx#jail) in **Quarantäne** gesetzt (Sanktion „**Quarantäne**“ im Verlauf). Sie verlassen sie von selbst, wenn sie zum Hauptkonto werden oder aus der Gruppe entfernt werden.
 
 1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
 2. Öffnen Sie den Tab „**Moderation**“.
 3. Klicken Sie neben „**Doppelkonten**“ auf „**Konfigurieren**“.
 4. Klicken Sie neben „**Nur ein Konto pro Person**“ auf „**Aktivieren**“.
 
-:::warning
-Diese Einstellung erfordert eine [Jail-Rolle](./sanctions.mdx#jail). Ohne sie weigert sich RaidProtect, sie zu aktivieren.
+:::info
+Diese Einstellung erfordert eine [Jail-Rolle](./sanctions.mdx#jail). Fehlt sie, bietet Ihnen ein Fenster „**Aktivieren und Jail einrichten**“ an: Die Einstellung wird aktiviert, und die Zweitkonten werden in Quarantäne gesetzt, sobald die Rolle existiert.
 :::
 
 Um das Hauptkonto einer Gruppe zu ändern, verwenden Sie `/alt` mit einem der Konten und dann die Auswahl „**Ein Konto der Gruppe bearbeiten**“.

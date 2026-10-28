@@ -99,7 +99,7 @@ With the captcha actions, set the [captcha trigger](./captcha.md#trigger) to **A
 
 #### Kick mode <span className="badge-premium">Premium</span> {#kick-mode}
 
-The former "**Kick mode**" switch has become the "**Kick everyone arriving**" action of the [action during the raid](#action). It remains reserved for [**Premium**](/en/premium) servers and works without Discord's community.
+The former "**Kick mode**" switch has become the "**Kick everyone arriving**" action of the [action during the raid](#action). It remains reserved for [**Premium**](/en/premium) servers and works without Discord's community. If Premium expires, the action goes back to "**Lock invites**". Likewise, a captcha action whose captcha is not usable falls back to normal mode (wave kicked, then invites locked), never to kicking.
 
 #### Close DMs automatically {#close-dm}
 

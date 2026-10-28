@@ -57,7 +57,7 @@ Bu sorun nispeten yaygındır, ancak **sunucunuzun yapılandırmasına** bağlı
 
 - **Captcha'yı etkinleştirdiniz mi?** İsteğe bağlı bir özelliktir: [`/settings`](../setup.md#settings) komutunun “**Katılımlar**” sekmesinden etkinleştirin. Daha fazla bilgi için [captcha sayfasına](../features/captcha.md#config) bakın.
 
-- **Tetiklemesi nedir?** “**Otomatik**” seçeneğinde captcha yalnızca bir baskın sırasında veya yüksek bir [DISCON](../features/discon.md) seviyesinde uygulanır (Shield Update, deneme aşamasında): geri kalan zamanlarda gelenler doğrudan girer. Her gelenin captcha'yı geçmesi için “**Sürekli**”yi seçin.
+- **Tetiklemesi nedir?** “**Otomatik**” seçeneğinde captcha yalnızca bir baskın sırasında veya yüksek bir [DISCON](../features/discon.md) seviyesinde uygulanır: geri kalan zamanlarda gelenler doğrudan girer. Her gelenin captcha'yı geçmesi için “**Sürekli**”yi seçin.
 
 - **Bir rol veya kanal onu atlatıyor mu?** Captcha ekranı, doğrulama rolünün hâlâ görebildiği kanalları ve captcha'yı geçmeden sunucuya erişim veren rolleri, düzeltmek için bir düğmeyle birlikte bildirir.
 

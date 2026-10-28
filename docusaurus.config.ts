@@ -153,17 +153,17 @@ export default async function createConfigAsync() {
                     'zh-TW': 'RaidProtect 是一款 Discord 機器人，透過防垃圾訊息與驗證碼功能保護您的伺服器免受惡意使用者侵害。<strong>就在那裡，還有一盆小天竺葵。&nbsp;</strong>'
                 },
                 announcementBar: {
-                    fr: '<strong>La mise à jour <a href="https://raidprotect.bot/blog/3.5.0-onboarding-update">Onboarding Update</a> est disponible !</strong>',
-                    en: '<strong>The <a href="https://raidprotect.bot/en/blog/3.5.0-onboarding-update">Onboarding Update</a> is now live!</strong>',
-                    de: '<strong>Das <a href="https://raidprotect.bot/de/blog/3.5.0-onboarding-update">Onboarding Update</a> ist jetzt verfügbar!</strong>',
-                    es: '<strong>¡La actualización <a href="https://raidprotect.bot/es/blog/3.5.0-onboarding-update">Onboarding Update</a> ya está disponible!</strong>',
-                    pt: '<strong>A atualização <a href="https://raidprotect.bot/pt/blog/3.5.0-onboarding-update">Onboarding Update</a> já está disponível!</strong>',
-                    it: '<strong>L\'<a href="https://raidprotect.bot/it/blog/3.5.0-onboarding-update">Onboarding Update</a> è ora disponibile!</strong>',
-                    tr: '<strong><a href="https://raidprotect.bot/tr/blog/3.5.0-onboarding-update">Onboarding Update</a> yayında!</strong>',
-                    vi: '<strong>Bản cập nhật <a href="https://raidprotect.bot/vi/blog/3.5.0-onboarding-update">Onboarding Update</a> đã ra mắt!</strong>',
-                    ja: '<strong><a href="https://raidprotect.bot/ja/blog/3.5.0-onboarding-update">Onboarding Update</a> が公開されました！</strong>',
-                    'zh-CN': '<strong><a href="https://raidprotect.bot/zh-CN/blog/3.5.0-onboarding-update">Onboarding Update</a> 现已上线！</strong>',
-                    'zh-TW': '<strong><a href="https://raidprotect.bot/zh-TW/blog/3.5.0-onboarding-update">Onboarding Update</a> 現已上線！</strong>'
+                    fr: '<strong>La mise à jour <a href="https://raidprotect.bot/blog/3.6.0-shield-update">Shield Update</a> est disponible !</strong>',
+                    en: '<strong>The <a href="https://raidprotect.bot/en/blog/3.6.0-shield-update">Shield Update</a> is now live!</strong>',
+                    de: '<strong>Das <a href="https://raidprotect.bot/de/blog/3.6.0-shield-update">Shield Update</a> ist jetzt verfügbar!</strong>',
+                    es: '<strong>¡La actualización <a href="https://raidprotect.bot/es/blog/3.6.0-shield-update">Shield Update</a> ya está disponible!</strong>',
+                    pt: '<strong>A atualização <a href="https://raidprotect.bot/pt/blog/3.6.0-shield-update">Shield Update</a> já está disponível!</strong>',
+                    it: '<strong>L\'<a href="https://raidprotect.bot/it/blog/3.6.0-shield-update">Shield Update</a> è ora disponibile!</strong>',
+                    tr: '<strong><a href="https://raidprotect.bot/tr/blog/3.6.0-shield-update">Shield Update</a> yayında!</strong>',
+                    vi: '<strong>Bản cập nhật <a href="https://raidprotect.bot/vi/blog/3.6.0-shield-update">Shield Update</a> đã ra mắt!</strong>',
+                    ja: '<strong><a href="https://raidprotect.bot/ja/blog/3.6.0-shield-update">Shield Update</a> が公開されました！</strong>',
+                    'zh-CN': '<strong><a href="https://raidprotect.bot/zh-CN/blog/3.6.0-shield-update">Shield Update</a> 现已上线！</strong>',
+                    'zh-TW': '<strong><a href="https://raidprotect.bot/zh-TW/blog/3.6.0-shield-update">Shield Update</a> 現已上線！</strong>'
                 }
             },
             excludedCanonical: []
@@ -489,8 +489,8 @@ export default async function createConfigAsync() {
                 },
             },
             announcementBar: {
-                id: '3.5.0',
-                content: '<strong>The <a href="https://raidprotect.bot/en/blog/3.5.0-onboarding-update">Onboarding Update</a> is now live!</strong>',
+                id: '3.6.0',
+                content: '<strong>The <a href="https://raidprotect.bot/en/blog/3.6.0-shield-update">Shield Update</a> is now live!</strong>',
                 backgroundColor: '#BD5454',
                 textColor: '#FFFFFF',
                 isCloseable: false

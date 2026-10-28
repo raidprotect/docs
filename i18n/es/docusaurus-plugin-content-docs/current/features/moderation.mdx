@@ -62,7 +62,7 @@ Usa el comando: ```/ban (user) [duration] [--delete-messages=duration] [--silent
 Reemplaza `(user)` con la mención o el identificador deseado y `[reason]` con el motivo de la sanción.
 
 - `[duration]`: si se indica, el baneo pasa a ser temporal (como con [`/tempban`](#tempban)).
-- `[--delete-messages]`: duración del historial a eliminar (por ejemplo `1h`, `1d`, `7d`). Discord limita la eliminación a un máximo de 7 días.
+- `[--delete-messages]`: duración del historial a eliminar (por ejemplo `1h`, `1d`, `7d`). Discord limita la eliminación a un máximo de 7 días. Sin esta opción, se aplica el valor de la [eliminación de los mensajes al banear](./sanctions.mdx#ban-delete).
 - `[--silent]`: no enviar MD al objetivo.
 
 :::tip
@@ -136,7 +136,7 @@ Usa el comando: ```/jail (member) [--silent] [reason]```
 Reemplaza `(member)` con la mención o el identificador deseado y `[reason]` con el motivo de la sanción.
 
 :::warning
-El [rol de Jail](./sanctions.mdx#jail) debe estar configurado mediante `/settings` antes de poder usar este comando. Los módulos automáticos, en cambio, recurren a un timeout cuando no hay ningún rol Jail configurado.
+El [rol de Jail](./sanctions.mdx#jail) debe estar configurado mediante `/settings` antes de poder usar este comando. Los módulos automáticos, en cambio, recurren a un timeout cuando no hay ningún rol Jail configurado. Un miembro encarcelado también se desconecta de su canal de voz.
 :::
 
 ### <Icon src="/img/icons/SanctionsJAILTemp.svg" alt="icon SanctionsJAILTemp" title=":iconSanctionsJAILTemp:" /> Encarcelar temporalmente a un usuario {#tempjail}
@@ -154,6 +154,8 @@ El comando `/unjail` te permite retirar el rol de Jail de un miembro, permitién
 Usa el comando: ```/unjail (member) [--silent] [reason]```
 
 Reemplaza `(member)` con la mención o el identificador deseado y `[reason]` con el motivo de la liberación.
+
+Un miembro en cuarentena (edad mínima de la cuenta, cuarentena de Discord) no está en jail: `/unjail` lo rechaza e indica cómo levantar su cuarentena.
 
 ## <Icon src="/img/icons/SanctionsWARN.svg" alt="icon SanctionsWARN" title=":iconSanctionsWARN:" /> Advertir a un usuario {#warn}
 
@@ -195,11 +197,12 @@ Reemplaza `(amount)` con el número de mensajes que deseas eliminar (de 2 a 100)
 
 El comando `/slowmode` te permite activar o modificar el modo lento de un canal, para limitar la frecuencia de los mensajes enviados por los usuarios.
 
-Usa el comando: ```/slowmode (delay) [duration] [channel] [reason]```
+Usa el comando: ```/slowmode (delay) [duration] [channel] [reason] [--silent]```
 
 - Reemplaza `(delay)` con la duración deseada entre cada mensaje (por ej.: `5s`, `1m`, `10m`, `1h`, hasta 6 horas; `0` para desactivar).
 - Añade `[duration]` para desactivar automáticamente el modo lento tras esa duración (por ej. `30m`, `2h`).
 - Añade `[channel]` si deseas aplicar el modo lento a un canal distinto de aquel en el que escribes el comando.
+- Añade `--silent` para no anunciar nada en el canal.
 - Añade `[reason]` para precisar el motivo, que se registrará en los logs del servidor.
 
 ## 🕵️ Recuperar un mensaje eliminado {#snipe}
@@ -215,7 +218,7 @@ Usa el comando: ```/snipe [user] [--channel=#channel]```
 Desde la respuesta, puedes **sancionar al autor** de un mensaje. La respuesta solo es visible para ti.
 
 :::warning
-`/snipe` solo ve los mensajes que RaidProtect guarda en memoria, durante una hora. Solo se conservan si la “**Caché de mensajes**” está activada (`/settings`, pestaña “**Utilidades**”, desactivada por defecto), o si el [anti-spam](./anti-spam.mdx) o los [reportes](./reports.md) están activos, lo que la activa de oficio. Si no, el comando responde que no se ha encontrado ningún mensaje eliminado.
+`/snipe` solo ve los mensajes que RaidProtect guarda en memoria, durante una hora. Solo se conservan si la “**Caché de mensajes**” está activada (`/settings`, pestaña “**Utilidades**”, desactivada por defecto), o si el [anti-spam](./anti-spam.mdx) o los [reportes](./reports.md) están activos, lo que la activa de oficio: usar `/snipe` en ese momento registra el ajuste, que sigue activo aunque el anti-spam y los reportes se desactiven más tarde. Si no, el comando indica que la caché de mensajes está desactivada y propone activarla a un administrador (o a un miembro autorizado a usar `/settings` cuando se aplican los permisos de las Integraciones).
 :::
 
 Para activar la caché de mensajes:
@@ -260,7 +263,7 @@ Por defecto, los logs de moderación se envían al canal de logs general de Raid
 
 <Settings start="logs" />
 
-La pantalla “**Logs**” reúne tres canales: “**General**”, “**Moderación**” y “**Captcha**”. Un canal “**Moderación**” o “**Captcha**” que se deja vacío redirige sus logs al canal general. El interruptor “**Logs de moderación pasivos**” elige si RaidProtect registra también las acciones realizadas sin pasar por el bot.
+La pantalla “**Logs**” reúne tres canales: “**General**”, “**Moderación**” y “**Captcha**”. Un canal “**Moderación**” o “**Captcha**” que se deja vacío redirige sus logs al canal general. El interruptor “**Logs de moderación pasivos**” elige si RaidProtect registra también las acciones realizadas sin pasar por el bot. Los canales, roles, miembros, mensajes y la voz tienen sus propios [logs del servidor](./logs.md).
 
 ## Preguntas frecuentes {#faq}
 

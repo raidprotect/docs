@@ -100,6 +100,7 @@ From your profile, you can:
 - Add, change or delete a **PIN code** (simple or reinforced).
 - Enable the **2FA code** (OTP) with a QR code or a secret key, regenerate it or delete it.
 - Add a **passkey** from the registration page, or delete one. Each passkey displays the device name and its date of last use.
+- **Rename** a passkey: the "**Edit Passkey**" button, next to "**Add**", opens a window with your passkeys and the new name to give (for example `MacBook`, `iPhone`, `YubiKey`). The rename is recorded in your audit log.
 
 If you already have a method, we ask you to authenticate before adding or changing one. The bottom of the profile reminds you of your grade and the method to add to go up a notch.
 
@@ -137,10 +138,10 @@ Use the command: ```/auth [role]```
 
 1. Run the `/auth` command on the server, or click "**Take a role**" in a staff panel.
 2. A menu displays the available roles with their required grade and session duration.
-3. Select a role.
+3. Select one or more roles (up to 10). A single authentication, at the level of the most demanding one, opens them all.
 4. Choose an authentication method from those that reach the role's grade.
 5. Complete the verification (PIN, OTP or passkey).
-6. On success, we assign you the Discord role and create a session.
+6. On success, we assign you the Discord role or roles and create a session for each. The sessions are recorded in the Authentication Manager logs.
 
 :::info
 Only roles you are assigned to with the **Active** status appear in the menu.
@@ -233,6 +234,8 @@ We refuse a role managed by an integration, a role used in Discord's Onboarding 
 
 :::tip
 If your role is **displayed separately** in the member list, choose "**Create a separate permissions role**": your members keep their visible role permanently, and the sensitive permissions are only granted during authenticated sessions.
+
+With a separate role, the channel moderation permissions of the display role also move to the `🔑` role. For an administrator role, the "**Keep view of all channels outside sessions**" option leaves the display role able to view all channels outside sessions; without it, it no longer sees anything without the administrator permission.
 :::
 
 #### Protect administrator roles from `/audit` {#audit-bulk}

@@ -5,11 +5,7 @@ description: "Le slowmode préventif de RaidProtect ajuste automatiquement le mo
 
 import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
 
-Le **slowmode préventif** de RaidProtect ajuste automatiquement le [mode lent](./moderation.mdx#slowmode) de vos salons pour tenir un **débit de messages** par minute. Quand un salon s'emballe (annonce, live, afflux de nouveaux membres, début de [raid](/learn/discord-raid)), nous montons le mode lent ; quand il se calme, nous le redescendons. Vos modérateurs n'ont plus à surveiller le chat pour le régler à la main.
-
-:::info Expérimentation : Shield Update
-Le slowmode préventif est réservé aux serveurs [Premium](/premium). Il fait partie de la **Shield Update**, prévue pour la version 3.6.0, en expérimentation d'ici sa sortie.
-:::
+Le **slowmode préventif** de RaidProtect, réservé aux serveurs [Premium](/premium), ajuste automatiquement le [mode lent](./moderation.mdx#slowmode) de vos salons pour tenir un **débit de messages** par minute. Quand un salon s'emballe (annonce, live, afflux de nouveaux membres, début de [raid](/learn/discord-raid)), nous montons le mode lent ; quand il se calme, nous le redescendons. Vos modérateurs n'ont plus à surveiller le chat pour le régler à la main.
 
 ## ❓ Comment ça marche ? {#working}
 
@@ -27,7 +23,7 @@ Le slowmode préventif est réservé aux serveurs [Premium](/premium). Il fait p
 2. Ouvrez l'onglet “**Protection**”.
 3. Cliquez sur “**Configurer**” à côté de “**Slowmode préventif**”.
 4. Cliquez sur “**Ajouter**” à côté d'un emplacement libre.
-5. Choisissez le salon (salon textuel ou salon d'annonces).
+5. Choisissez le salon (salon textuel, d'annonces, vocal ou de conférence : le mode lent d'un salon vocal régule son salon textuel intégré).
 
 <Settings start="slowmode" />
 
@@ -78,7 +74,7 @@ Jusqu'à 6 salons par serveur, avec chacun son débit de messages et ses bornes
 
 ### Le slowmode préventif est-il gratuit ?
 
-Non, il est réservé aux serveurs Premium. Il fait aussi partie de la Shield Update, encore en expérimentation.
+Non, il est réservé aux serveurs Premium.
 
 ### Que se passe-t-il si je règle le mode lent à la main ?
 

@@ -1,0 +1,188 @@
+---
+title: Komut listesi
+---
+
+import CommandCopy from '@site/src/components/CommandCopy';
+
+<CommandCopy />
+
+Tüm RaidProtect komutları, kategoriye göre gruplandırılmıştır. Ayrıntılı dokümantasyonuna ulaşmak için bir komutun adına tıklayın.
+
+## Prototip göstergesi {#legend}
+
+- `(arg)`: **zorunlu** argüman.
+- `[arg]`: **isteğe bağlı** argüman.
+- `[--flag]`: isteğe bağlı boolean flag (slash: `flag: true`, mesaj: `--flag`).
+- `[--flag=değer]`: değerli isteğe bağlı flag.
+- `(@üye)` / `(#kanal)` / `(@&rol)`: beklenen türü belirten ön ek.
+
+---
+
+## Yapılandırma ve kurulum {#config}
+
+| Komut | Prototip | Açıklama |
+|---|---|---|
+| [`/setup`](./setup.md#install) | `/setup` | RaidProtect'i sunucuda etkinleştirmek için yönlendirmeli kurulumu başlatır. |
+| [`/settings`](./setup.md#settings) | `/settings` | Yapılandırmayı istediğiniz zaman değiştirmek için etkileşimli menüyü açar. |
+| [`/honeypot`](./features/honeypot.md#config) | `/honeypot` | HoneyPot tuzak kanalını yapılandırır. |
+| [`/tagrole`](./features/tag-role.md) | `/tagrole` | Sunucu etiketini taşıyan üyelere verilen rolü yapılandırır. |
+| [`/display public`](./features/display.mdx) | `/display public` | RaidProtect'in herkese açık bilgi panellerini yönetir. |
+| [`/display staff`](./features/display.mdx#staff) | `/display staff` | Yalnızca ekibe ayrılmış panelleri yönetir (DISCON, dahili mesajlar). |
+| [`/discon`](./features/discon.md) | `/discon` | Sunucunun tehlike seviyesini ayarlayan DISCON panelini kurar. |
+| [`/audit`](./features/audit.md) | `/audit` | Sunucunun güvenliğini analiz eder ve yapılandırma açıklarını düzeltmeyi önerir. |
+
+## Moderasyon {#moderation}
+
+### Yaptırımlar
+
+| Komut | Prototip | Açıklama |
+|---|---|---|
+| [`/ban`](./features/moderation.mdx#ban) | `/ban (@user) [duration] [--delete-messages=duration] [--silent] [reason]` | Bir kullanıcıyı kalıcı olarak veya belirtilen süre için yasaklar. |
+| [`/tempban`](./features/moderation.mdx#tempban) | `/tempban (@user) (duration) [--delete-messages=duration] [--silent] [reason]` | Bir kullanıcıyı belirli bir süre için yasaklar. |
+| [`/softban`](./features/moderation.mdx#softban) | `/softban (@member) [--delete-messages=duration] [--silent] [reason]` | Mesajlarını silmek için bir üyeyi yasaklayıp yasağını kaldırır. |
+| [`/unban`](./features/moderation.mdx#unban) | `/unban (@user) [--silent] [reason]` | Bir yasağı kaldırır. |
+| [`/kick`](./features/moderation.mdx#kick) | `/kick (@member) [--silent] [reason]` | Bir üyeyi sunucudan atar. |
+| [`/mute`](./features/moderation.mdx#timeout) | `/mute (@member) (duration) [--force-timeout] [--silent] [reason]` | Bir üyeyi susturur (Mute rolü veya Discord timeout'u). |
+| [`/unmute`](./features/moderation.mdx#untimeout) | `/unmute (@member) [--silent] [reason]` | Bir üyenin mute / timeout'unu kaldırır. |
+| [`/jail`](./features/moderation.mdx#jail) | `/jail (@member) [--silent] [reason]` | Bir üyeyi Jail rolü aracılığıyla hapseder. |
+| [`/tempjail`](./features/moderation.mdx#tempjail) | `/tempjail (@member) (duration) [--silent] [reason]` | Bir üyeyi belirli bir süre için hapseder. |
+| [`/unjail`](./features/moderation.mdx#unjail) | `/unjail (@member) [--silent] [reason]` | Bir üyeyi Jail'den çıkarır. |
+| [`/warn`](./features/moderation.mdx#warn) | `/warn (@member) [--silent] [reason]` | Bir üyeyi DM ile resmen uyarır. |
+
+### Moderasyon araçları
+
+| Komut | Prototip | Açıklama |
+|---|---|---|
+| [`/clear`](./features/moderation.mdx#clear) | `/clear (sayı) [@user]` | Bir kanalda 2 ila 100 mesajı siler. |
+| [`/snipe`](./features/moderation.mdx#snipe) | `/snipe [@user] [--channel=#channel]` | Kanalda veya bir kullanıcıdan silinen son mesajı getirir (1 saat, mesaj önbelleğinin etkin olmasını gerektirir). |
+| [`/modview`](./features/moderation.mdx#modview) | `/modview (@user)` | Bir üyenin merkezi moderasyon görünümünü açar (yaptırımlar, not, snipe). |
+| [`/note`](./features/moderation.mdx#note) | `/note (@user)` | Bir üyenin dahili moderasyon notunu ekler veya düzenler. |
+| [`/nick`](./features/moderation.mdx#nick) | `/nick (@member) [takma]` | Bir üyenin sunucudaki takma adını değiştirir (sıfırlamak için boş bırakın). |
+| [`/onduty`](./features/moderation.mdx#onduty) | `/onduty` | Komutu kullanan moderatörün “görevde” rolünü ekler veya kaldırır. |
+
+### Kanal kilidi
+
+| Komut | Prototip | Açıklama |
+|---|---|---|
+| [`/lock`](./features/channel-lock.md#lock) | `/lock [#channel] [duration] [reason] [--silent]` | Mesaj gönderilmesini engellemek için bir kanalı kilitler (isteğe bağlı süre). |
+| [`/unlock`](./features/channel-lock.md#unlock) | `/unlock [#channel] [reason] [--silent]` | Daha önce kilitlenmiş bir kanalın kilidini açar. |
+| [`/slowmode`](./features/moderation.mdx#slowmode) | `/slowmode (delay) [duration] [#channel] [reason] [--silent]` | Bir kanalın yavaş modunu etkinleştirir veya değiştirir (isteğe bağlı uygulama süresi). |
+
+## Yaptırım geçmişi {#sanctions}
+
+| Komut | Prototip | Açıklama |
+|---|---|---|
+| [`/sanctions search`](./features/sanctions.mdx#search) | `/sanctions search [user] [moderator] [type] [reason] [date] [status] [moderator_type]` | Geçmişte filtrelerle arama yapar (kullanıcı, moderatör, tür, tarih, durum…). |
+| [`/sanctions info`](./features/sanctions.mdx#info) | `/sanctions info (id)` | Bir yaptırımın ayrıntılarını gösterir. |
+| [`/sanctions edit`](./features/sanctions.mdx#edit) | `/sanctions edit (id) [reason] [duration]` | Mevcut bir yaptırımın sebebini veya süresini değiştirir. |
+| [`/sanctions delete`](./features/sanctions.mdx#delete) | `/sanctions delete (id) [reason]` | Bir yaptırımı geçmişten siler. |
+| [`/yaptirimlarim`](./features/utilities.mdx#my-sanctions) | `/yaptirimlarim` | Bir üyenin kendi yaptırımlarını görüntülemesini sağlar. |
+| [`/alt`](./features/alt-accounts.md) | `/alt [@user] [@other]` | Aynı kişiye ait hesapları, yaptırımlarını paylaşmaları için bağlar (deneme, Identity Update). |
+
+## Anti-raid {#antiraid}
+
+| Komut | Prototip | Açıklama |
+|---|---|---|
+| [`/raidmode`](./features/raid-mode.md#raid-mode) | `/raidmode [status] [duration]` | Yeni katılımları engelleyen veya filtreleyen baskın modunu etkinleştirir veya devre dışı bırakır. |
+| [`/joinlock`](./features/join-lock.mdx) | `/joinlock [status]` | Sunucuya erişimi yeni üyelere süresiz olarak kapatır. |
+| [`/dmlock`](./features/dm-lock.mdx) | `/dmlock` | Sunucunun DM'lerinin kalıcı olarak kapatılmasını etkinleştirir veya devre dışı bırakır. |
+| [`/dmlock-info`](./features/dm-lock.mdx#info) | `/dmlock-info` | Üyeleri DM kapatma durumu hakkında bilgilendirir. |
+
+## Kimlik doğrulama {#auth}
+
+| Komut | Prototip | Açıklama |
+|---|---|---|
+| [`/auth`](./features/authentication-manager.mdx#auth) | `/auth [role]` | Korumalı bir rol almak için kimlik doğrular. |
+| [`/auth-profile`](./features/authentication-manager.mdx#auth-profile) | `/auth-profile` | Kimlik doğrulama profilini yönetir (PIN, OTP, passkey'ler). |
+| [`/auth-settings`](./features/authentication-manager.mdx#auth-settings) | `/auth-settings` | Korumalı rolleri ve yetkili kullanıcıları yapılandırır. |
+
+## Bypass {#bypass}
+
+| Komut | Prototip | Açıklama |
+|---|---|---|
+| [`/bypass captcha`](./features/captcha.md#bypass) | `/bypass captcha [@kullanıcı]` | Bir kullanıcının captcha'yı geçmeden katılmasına izin verir. |
+| [`/bypass minage`](./features/onboarding.md#bypass-minage) | `/bypass minage [@kullanıcı]` | Bir kullanıcının minimum yaşı karşılamadan katılmasına izin verir. |
+| [`/bypass raid`](./features/raid-mode.md#bypass-raid) | `/bypass raid [@kullanıcı]` | Bir kullanıcının baskın moduna rağmen katılmasına izin verir (atma modunu gerektirir). |
+| [`/bypass bot`](./features/onboarding.md#bypass-bot) | `/bypass bot [bot]` | Bot atma etkin olsa da bir botun katılmasına izin verir (sunucu sahibi). |
+
+## Araçlar {#utilities}
+
+| Komut | Prototip | Açıklama |
+|---|---|---|
+| [`/userinfo`](./features/utilities.mdx#userinfo) | `/userinfo [@user]` | Bir kullanıcının bilgilerini gösterir. |
+| [`/serverinfo`](./features/utilities.mdx#serverinfo) | `/serverinfo` | Sunucunun bilgilerini gösterir. |
+| [`/discord-sanctions`](./features/utilities.mdx#discord-sanctions) | `/discord-sanctions [@user]` | Bir kullanıcının Discord yaptırımlarını (DSA) veya kullanıcı belirtilmezse genel istatistikleri gösterir. |
+| [`/inviteinfo`](./features/utilities.mdx#inviteinfo) | `/inviteinfo (invite)` | Bir Discord davetinin bilgilerini gösterir (kod veya bağlantı). |
+| [`/prune`](./features/utilities.mdx#prune) | `/prune [duration]` | Etkin olmayan üyeleri etkileşimli bir menüyle çıkarır. |
+| [`/channel duplicate`](./features/utilities.mdx#channel-duplicate) | `/channel duplicate (#channel)` | Bir kanalı ayarları ve izinleriyle çoğaltır. |
+| [`/channel clear`](./features/utilities.mdx#channel-clear) | `/channel clear (#channel)` | Bir kanalı silip aynısını yeniden oluşturur. |
+| [`/block add`](./features/utilities.mdx#block-add) | `/block add [@user] [sebep]` | Bir kullanıcının bazı özellikleri kullanmasını engeller. |
+| [`/block remove`](./features/utilities.mdx#block-remove) | `/block remove [@user] [sebep]` | Bir kullanıcının engelini kaldırır. |
+| [`/block list`](./features/utilities.mdx#block-list) | `/block list` | Engellenen kullanıcıları listeler. |
+| [`/report`](./features/reports.md) | `/report (@üye)` | Üyelerin bir üyeyi moderasyona bildirmesini sağlar (sebep bir pencerede girilir). |
+
+## Bilgi ve yardım {#info}
+
+| Komut | Prototip | Açıklama |
+|---|---|---|
+| [`/about`](./readme.mdx) | `/about` | RaidProtect hakkında genel bilgileri gösterir. |
+| [`/help`](./readme.mdx) | `/help` | RaidProtect'in genel yardımını gösterir. |
+| [`/invite`](./useful-links/index.mdx) | `/invite` | Faydalı bağlantıları gösterir (davet, destek, botun sayfası). |
+| [`/transparency`](./features/transparency.md#command) | `/transparency` | Sunucunun son moderasyon şeffaflık raporunu gösterir. |
+| [`/changelog`](./changelog.mdx) | `/changelog` | RaidProtect'in değişiklik günlüğünü görüntüler. |
+| [`/feedback`](./features/utilities.mdx#feedback) | `/feedback` | Bir görüş, öneri veya hata bildirimi paylaşır. |
+| [`/privacy`](./features/utilities.mdx#privacy) | `/privacy` | RaidProtect'in bu sunucu hakkında neleri sakladığını gösterir. |
+
+## Bağlam menüleri {#context-menus}
+
+Bazı eylemler sağ tıkla, **Uygulamalar** menüsünde açılır:
+
+- Bir üyede: **Modview'i Aç** ([moderasyon görünümü](./features/moderation.mdx#modview)), **Yaptırım uygula** ([tek pencerede yaptırım](./features/moderation.mdx#context-menu)), **Discord Yaptırımları** ([Discord yaptırımları](./features/utilities.mdx#discord-sanctions)) ve **Kullanıcıyı bildir** ([bildirim](./features/reports.md)).
+- Bir mesajda: **Bu mesajı bildir** ([bildirim](./features/reports.md)).
+
+---
+
+## ⚙️ Bir komutu kullanmanın iki yolu {#usage}
+
+Yaygın moderasyon komutları iki biçimde bulunur: slash olarak ve ön ekli mesaj olarak. `/sanctions`, `/snipe` veya `/audit` gibi diğerleri yalnızca slash olarak kullanılır. [Mesaj komutları listesi](./guides/prefix.md#activated), hangilerinin ön ek kabul ettiğini belirtir.
+
+### Slash komutları: en basiti {#slash}
+
+Bir kanala `/` yazın, komutu seçin; **Discord her parametreyi size özel bir arayüzde sunar** (kullanıcı seçici, kanal seçici, sürelerde otomatik tamamlama vb.). Varsayılan olarak önerilen yol budur: hiçbir şey ezberlemeniz gerekmez.
+
+```
+/ban @üye sebep: scam spam'i
+```
+
+### Mesaj komutları: en karmaşığı {#prefix}
+
+[Mesaj komutları `/settings` içinde etkinleştirildikten](./guides/prefix.md) sonra komutları klasik bir mesaj olarak da yazabilirsiniz (`?ban …`, `?kick …` vb.). Grafik arayüz yoktur: **sözdizimini bilmeniz** gerekir (konumsal argümanlar, adlandırılmış flag'ler, satır sonunda serbest argüman). Karşılığında, komutlara hâkim moderatörler için klavyeyle daha hızlıdır.
+
+#### Konumsal argümanlar
+
+Prototipteki sırayla, adsız olarak verilir. Bunlar komutun ana argümanlarıdır.
+
+```
+?ban 123456789012345678
+?slowmode 10s
+```
+
+#### Adlandırılmış flag'ler (`--ad=değer`)
+
+İkincil seçenekler içindir. Flag'ler komutun **herhangi bir yerine**, herhangi bir sırada yerleştirilebilir.
+
+- `--silent` (boolean): seçeneği basitçe etkinleştirir.
+- `--delete-messages=7d`: seçeneğe bir değer verir.
+
+```
+?ban @üye --delete-messages=7d --silent yasaklama sebebi
+?tempban @üye 1d --silent yine yaptı
+```
+
+#### “rest” argümanı (serbest metin)
+
+Bazı komutların son argümanı (tipik olarak `[reason]`), **sonrasında yazdığınız her şeyi**, boşluklar dahil, tırnak işareti kullanmadan yakalar.
+
+```
+?warn @üye sunucunun 3. kuralını yine ihlal ettin
+```

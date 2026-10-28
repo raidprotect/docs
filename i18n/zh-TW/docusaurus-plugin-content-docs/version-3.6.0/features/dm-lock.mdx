@@ -1,0 +1,107 @@
+---
+title: 私訊鎖定
+description: "RaidProtect 的私訊鎖定能持續封鎖來自您 Discord 伺服器的私人訊息，是抵禦垃圾訊息與詐騙的盾牌。"
+---
+
+import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
+
+import DmLockMockup from '@site/src/components/DiscordMessage/mockups/dm-lock';
+
+<DmLockMockup />
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+RaidProtect 的**私訊鎖定**功能可永久關閉來自伺服器的私人訊息（私訊），突破了 Discord 原生功能的限制：Discord 只能透過「暫停私訊」網路安全動作阻擋 24 小時。
+
+## 🚦 使用情境與建議 {#recommendations}
+
+- **容易遭受垃圾訊息或騷擾的伺服器**：私訊鎖定特別推薦給公開或高人氣的社群，這類社群透過私訊遭受濫用的風險較高。
+- **臨時活動或敏感時期**：在發布、重要公告或人潮湧入的時期（例如：抽獎、促銷），啟用私訊鎖定可預防[網路釣魚](/zh-TW/learn/token-grabber)或詐騙企圖。
+- **有年輕族群的社群**：對於有大量未成年人的伺服器，限制私訊可以提升安全性，並預防不當行為。
+- **持續保護**：透過自動化，不會因為忘記手動續期而出現防護空窗。
+
+## ❓ 私訊鎖定的運作方式 {#working}
+
+RaidProtect 會在私訊封鎖到期前自動續期，不會有任何防護空窗。
+
+:::info
+仍可與以下對象傳送及接收訊息：
+- 好友
+- 機器人
+- 工作人員
+:::
+:::warning
+Discord 的社群功能是私訊鎖定正常運作不可或缺的條件。[請參考我們的指南，確認您的伺服器已啟用社群。](../guides/community.md)
+:::
+
+## 🚩 設定私訊鎖定 {#config}
+
+1. 使用 [`/settings` 指令](../setup.md#settings)。
+2. 開啟「**防護**」分頁。
+3. 點擊「**私訊鎖定**」旁的「**編輯**」。
+4. 在開啟的視窗中，勾選或取消勾選「**關閉伺服器私訊**」，然後確認。
+
+<SettingsModal name="dmlock" />
+
+### /dmlock 指令 {#dmlock}
+
+您也可以使用指令：```/dmlock```
+
+它會開啟「**私訊鎖定設定**」畫面，其中有開關可啟用或停用保護。若缺少先決條件（社群模式或「**管理伺服器**」權限），會有提示區塊告知您，修正後可點擊「**重新整理**」按鈕再次檢查。此指令僅限擁有「**管理伺服器**」權限的成員使用。
+
+<Settings start="dmlockCommand" />
+
+## ℹ️ /dmlock-info 指令 {#info}
+
+`/dmlock-info` 指令可讓成員了解伺服器目前**私訊鎖定**的狀態。它會顯示一則清楚的訊息，說明此限制是**已啟用**還是**已停用**，並附上淺顯易懂的用途說明。
+
+**目標**：
+- 說明為何限制私訊（對抗垃圾訊息、詐騙、網路釣魚）。
+- 減少新成員的困惑與重複的提問。
+- 提醒繼續透過私訊交流的條件（好友、工作人員、機器人、舊有聯絡人）。
+
+**顯示範例**
+<SeparatedBox>
+<Tabs>
+  <TabItem value="enable" label="已啟用" default>
+
+![dmlock-info 指令已啟用的截圖](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-dm-lock-info-enable.webp)
+
+  </TabItem>
+  <TabItem value="disable" label="已停用">
+
+![dmlock-info 指令已停用的截圖](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-dm-lock-info-disable.webp)
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+### ⚙️ 最佳實務
+
+- 邀請活躍成員使用 `/dmlock-info`，以回答新成員的問題。
+- 定期顯示它，或將它釘選在歡迎頻道中。
+- 與您的規則或公告結合，提醒伺服器的反垃圾訊息政策。
+
+## 常見問題 {#faq}
+
+### 在哪裡啟用私訊鎖定？
+
+在 `/settings` 的「防護」分頁中，點擊「私訊鎖定」旁的「編輯」，然後勾選「關閉伺服器私訊」。`/dmlock` 指令也會開啟專屬畫面。
+
+### 為什麼我無法啟用私訊鎖定？
+
+缺少先決條件：您的伺服器必須啟用 Discord 社群模式，且 RaidProtect 必須擁有「管理伺服器」權限。
+
+### 私訊會被關閉多久？
+
+只要保護處於啟用狀態就會持續關閉。Discord 將其安全動作限制為 24 小時，而我們會自動續期，直到您停用私訊鎖定為止。
+
+### 成員之間還能私訊嗎？
+
+可以，如果他們是好友或之前曾交談過。機器人與工作人員也仍然可以傳送私訊。
+
+### DISCON 會啟用私訊鎖定嗎？
+
+會，從 [DISCON](./discon.md) 第 3 級開始。降級時，只有在是由 DISCON 啟用的情況下，我們才會將其停用。

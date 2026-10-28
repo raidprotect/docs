@@ -1,0 +1,60 @@
+---
+title: ドキュメント
+sidebar_label: はじめに
+slug: /
+---
+
+import DocCard from '@theme/DocCard';
+import SearchHero from '@theme/SearchHero';
+
+<div className="margin-vert--lg">
+  <SearchHero suggestions={['キャプチャ', 'レイドモード', 'スパム対策', '処罰']} />
+</div>
+
+このドキュメントは、RaidProtect の仕組みをご説明するためのものです。改善のため、ぜひご意見をお寄せください。
+プロジェクトの最新情報を受け取るために、[公式 Discord サーバーに参加](https://raidprotect.bot/discord)するのもお忘れなく。ボットの使い方についての質問には、サポートチームがお答えします。😄
+
+## 🚀 RaidProtect を始める {#start}
+
+RaidProtect を使い始めるには、次のリンクからサーバーに招待するだけです。
+
+<DocCard item={{ type: 'link', href: 'https://raidprotect.bot/invite', label: 'RaidProtect を招待' }} />
+<br />
+
+:::danger
+ご注意ください。**RaidProtect の名前を使った偽のボット**が出回っています。招待は必ず公式サイトから行ってください。
+:::
+
+### 前提条件 {#requirement}
+
+RaidProtect を正しく動作させるために、次の 2 点を行ってください。
+1. RaidProtect に**管理者権限を付与**します。これにより、すべてのチャンネルを自動でモデレートできます。
+2. RaidProtect の**ロールを、サーバーの管理者と同じ位置に配置**します。権限の仕組み上、RaidProtect は自分より上位のロールを持つユーザーを処罰できません。
+
+### インストール {#install}
+
+RaidProtect をサーバーに追加したら、[`/setup`](./setup.md#install) コマンドを実行します。
+
+<DocCard item={{ type: 'link', href: '/docs/beta/setup', docId: 'setup', label: 'ガイド付きインストール' }} />
+<br />
+
+:::note
+手早く済ませたい方は、各機能の主な情報をまとめた [`/setup` コマンド](./setup.md#recommended)の案内を読むだけでも構いません。
+:::
+
+### 使い方 {#use}
+
+このドキュメントの各セクションで、RaidProtect が提供するすべての機能をご確認いただけます。
+
+:::info
+このドキュメントでは、コマンドのパラメーターは、必須の場合は `(必須)`、任意の場合は `[任意]` のように表示されます。
+:::
+
+<DocCard item={{ type: 'link', href: '/docs/beta/language', docId: 'language', label: '利用できる言語' }} />
+<br />
+<DocCard item={{ type: 'category', href: '/docs/beta/features', label: '機能', description: '各機能のドキュメントです。' }} />
+<br />
+<DocCard item={{ type: 'category', href: '/docs/beta/guides', label: 'ガイド', description: 'お困りの際に役立つガイドです。' }} />
+<br />
+<DocCard item={{ type: 'category', href: '/docs/beta/useful-links', label: 'お役立ちリンク', description: 'RaidProtect のさまざまなお役立ちリンクです。' }} />
+<br />

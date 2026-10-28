@@ -28,7 +28,7 @@ RaidProtect のすべてのコマンドを、カテゴリー別にまとめて�
 | [`/tagrole`](./features/tag-role.md) | `/tagrole` | サーバーのタグを掲げているメンバーに付与するロールを設定します。 |
 | [`/display public`](./features/display.mdx) | `/display public` | RaidProtect の公開用の情報パネルを管理します。 |
 | [`/display staff`](./features/display.mdx#staff) | `/display staff` | 運営専用のパネル（DISCON、内部メッセージ）を管理します。 |
-| [`/discon`](./features/discon.md) | `/discon` | サーバーの危険レベルを設定する DISCON パネルを設置します（実験中、Shield Update）。 |
+| [`/discon`](./features/discon.md) | `/discon` | サーバーの危険レベルを設定する DISCON パネルを設置します。 |
 | [`/audit`](./features/audit.md) | `/audit` | サーバーのセキュリティを分析し、設定の弱点の修正を提案します。 |
 
 ## モデレーション {#moderation}
@@ -64,9 +64,9 @@ RaidProtect のすべてのコマンドを、カテゴリー別にまとめて�
 
 | コマンド | プロトタイプ | 説明 |
 |---|---|---|
-| [`/lock`](./features/channel-lock.md#lock) | `/lock [#channel] [duration] [reason]` | チャンネルをロックして、メッセージの送信を防ぎます（期間は任意）。 |
-| [`/unlock`](./features/channel-lock.md#unlock) | `/unlock [#channel] [reason]` | ロックしたチャンネルのロックを解除します。 |
-| [`/slowmode`](./features/moderation.mdx#slowmode) | `/slowmode (delay) [duration] [#channel] [reason]` | チャンネルのスローモードを有効にする、または変更します（適用期間は任意）。 |
+| [`/lock`](./features/channel-lock.md#lock) | `/lock [#channel] [duration] [reason] [--silent]` | チャンネルをロックして、メッセージの送信を防ぎます（期間は任意）。 |
+| [`/unlock`](./features/channel-lock.md#unlock) | `/unlock [#channel] [reason] [--silent]` | ロックしたチャンネルのロックを解除します。 |
+| [`/slowmode`](./features/moderation.mdx#slowmode) | `/slowmode (delay) [duration] [#channel] [reason] [--silent]` | チャンネルのスローモードを有効にする、または変更します（適用期間は任意）。 |
 
 ## 処罰の履歴 {#sanctions}
 
@@ -103,6 +103,7 @@ RaidProtect のすべてのコマンドを、カテゴリー別にまとめて�
 | [`/bypass captcha`](./features/captcha.md#bypass) | `/bypass captcha [@user]` | ユーザーがキャプチャを通過せずに参加できるようにします。 |
 | [`/bypass minage`](./features/onboarding.md#bypass-minage) | `/bypass minage [@user]` | ユーザーが最低作成日数を満たさずに参加できるようにします。 |
 | [`/bypass raid`](./features/raid-mode.md#bypass-raid) | `/bypass raid [@user]` | レイドモード中でも、ユーザーが参加できるようにします（キックモードが必要）。 |
+| [`/bypass bot`](./features/onboarding.md#bypass-bot) | `/bypass bot [bot]` | ボットのキック中でも、ボットが参加できるようにします（サーバーのオーナー）。 |
 
 ## ユーティリティ {#utilities}
 

@@ -50,7 +50,7 @@ RaidProtect 通过两个命令进行配置：[`/setup`](#install) 是一次性�
 
 [自动角色和欢迎消息](./features/onboarding.md)不属于该向导：请在 `/settings` 的“**新成员**”选项卡中设置。
 
-### 🧭 新安装向导 <span className="badge-experiment">试验中</span> {#wizard}
+### 🧭 新安装向导 {#wizard}
 
 新的 `/setup` 向导用引导式流程取代了模块列表：
 
@@ -62,10 +62,6 @@ RaidProtect 通过两个命令进行配置：[`/setup`](#install) 是一次性�
 - **已配置的服务器只会被检查，不会被重做**：已有的验证码面板和已启用的私信锁定都会保留。
 - **之后**：安装的最后会显示[安全审计](./features/audit.md)的预览，并提供快捷方式，可测试验证码、自定义欢迎消息或打开全部设置。失败的步骤可通过重新运行 `/setup` 来继续。
 
-:::info 试验中：Shield Update
-新的安装向导将随 **Shield Update** 推出，计划在 3.6.0 版本发布。目前仅向少数服务器开放。
-:::
-
 ## 修改配置 {#settings}
 
 `/settings` 命令会打开 RaidProtect 的控制面板。它仅限管理员使用，并以仅您自己可见的临时私密消息形式显示。
@@ -76,11 +72,11 @@ RaidProtect 通过两个命令进行配置：[`/setup`](#install) 是一次性�
 
 - **常规**：[语言](./language.md)、[消息命令](./guides/prefix.md)、[权限](./guides/prefix.md#permissions)和服务器时区。
 - **新成员**：[Auto RaidMode](./features/raid-mode.md)、[验证码](./features/captcha.md)、[账号最短注册时长](./features/onboarding.md#minage)、[自动角色](./features/onboarding.md#autorole)和[欢迎消息](./features/onboarding.md#welcome-message)。
-- **防护**：[DISCON](./features/discon.md)\*、[Antispam](./features/anti-spam.mdx)、[Automod](./features/automod.md)（[图片过滤器](./features/scam-images.md)和[其他服务器](./features/automod.md#servers)\*）、[HoneyPot](./features/honeypot.md)、[预防性慢速模式](./features/slowmode.md)\*、[Authentification Manager](./features/authentication-manager.mdx) 和[私信锁定](./features/dm-lock.mdx)。
+- **防护**：[DISCON](./features/discon.md)、[Antispam](./features/anti-spam.mdx)、[Automod](./features/automod.md)（[图片过滤器](./features/scam-images.md)、[其他服务器](./features/automod.md#servers)和[文件扩展名](./features/automod.md#files)）、[HoneyPot](./features/honeypot.md)、[预防性慢速模式](./features/slowmode.md)、[Authentification Manager](./features/authentication-manager.mdx) 和[私信锁定](./features/dm-lock.mdx)。
 - **管理**：[处罚](./features/sanctions.mdx)、[多账号](./features/alt-accounts.md)\*、日志、[举报](./features/reports.md)和[透明度](./features/transparency.md)。
 - **实用工具**：[标签角色](./features/tag-role.md)、[频道锁定重命名](./features/channel-lock.md)、[在勤角色](./features/moderation.mdx#onduty)和消息缓存。
 
-\* 试验中：这些行仅出现在可使用 Shield Update（DISCON、其他服务器、预防性慢速模式）或 Identity Update（多账号）的服务器上，属于 [Premium](/zh-CN/premium) 公开测试版。
+\* 试验中：这一行仅出现在可使用 Identity Update（多账号）的服务器上，属于 [Premium](/zh-CN/premium) 公开测试版。
 
 每一行都会显示该设置的当前值和一个按钮：“**配置**”会打开专属界面，“**编辑**”会打开输入窗口。所有更改都会立即生效。
 

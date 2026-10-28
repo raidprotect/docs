@@ -1,0 +1,280 @@
+---
+title: 管理
+description: "RaidProtect 的管理指令（ban、kick、mute、jail、warn）與集中式的 ModView，協助您的管理人員管理 Discord 伺服器。"
+---
+
+import Settings from '@site/src/components/DiscordMessage/mockups/v2';
+
+import ModerationMockup from '@site/src/components/DiscordMessage/mockups/moderation';
+
+{/* <ModerationMockup /> : obsolète en 3.5.0 (libellés du sélecteur de sanction et du menu « Ouvrir Modview ») */}
+
+import Icon from "@site/src/components/Icon";
+
+為了方便您的管理人員作業，RaidProtect 內建了非常實用的管理指令，讓您可以直接與 Discord 的原生功能互動，例如使用者的[**停權**](/zh-TW/learn/discord-sanctions)與**踢出**。
+
+除了這些動作之外，RaidProtect 還會傳送私訊給被處罰的使用者，向他說明處罰的原因，同時也會記錄在[處罰紀錄](./sanctions.mdx)與伺服器紀錄中，供您追蹤。
+
+:::info
+處罰指令（`/ban`、`/kick`、`/mute`、`/jail`、`/warn`……）以及 `/nick`、`/clear` 和 `/slowmode`，[可使用前綴執行](../guides/prefix)。`/modview`、`/note`、`/snipe` 和 `/onduty` 則不行。
+:::
+
+:::info
+所有處罰指令都接受 `[--silent]` 選項，用以不透過私訊通知對象。通知用的私訊（踢出、軟停權、暫時停權）包含一個附有伺服器邀請的按鈕。
+:::
+
+## 🔍 成員的管理檢視 {#modview}
+
+`/modview` 指令會針對某位成員開啟**集中式的管理檢視**，並整合在單一回覆中：
+
+- 他的**最近處罰**，以及「**檢視全部處罰**」按鈕；
+- 他的內部**管理備註**，可透過「**編輯**」修改（見 [`/note`](#note)）；
+- 他的**最後一則被刪除的訊息**，以及「**檢視全部已刪除訊息（1 小時內）**」連結（見 [`/snipe`](#snipe)）；
+- 他的**關聯帳號**（如果您的伺服器可使用[多帳號](./alt-accounts.md)），並提供「**管理**」按鈕給有停權權限的管理人員；
+- 「**處罰該使用者**」選單，可立即採取行動。
+
+使用指令：```/modview (user)```
+
+將 `(user)` 替換為想要的提及或 ID。
+
+:::tip
+也可以透過情境選單使用此指令：在個人檔案上按右鍵 → **應用程式** → **開啟 Modview**。
+:::
+
+## 🖱️ 透過情境選單處罰 {#context-menu}
+
+除了斜線指令之外，您也可以直接從成員的個人檔案按右鍵進行處罰：**應用程式** → **處罰使用者**。
+
+接著會開啟一個視窗，讓您填寫：
+- **處罰類型**：要套用的處罰類型（必填）。
+- **時長**：停權、超時或監禁的時長（選填，例如：`1d 2h 30m`）。
+- **原因**：處罰的理由。
+- **靜默**：不傳送私訊給被處罰的人。
+
+所提供的類型取決於您對每個指令（`/ban`、`/softban`、`/jail`、`/kick`、`/mute`、`/warn`）的權限，包括 Discord 整合設定中的設定。只有在已設定[監禁角色](./sanctions.mdx#jail)時，才會出現監禁選項。
+
+## <Icon src="/img/icons/SanctionsBAN.svg" alt="icon SanctionsBAN" title=":iconSanctionsBAN:"/> 停權使用者 {#ban}
+
+`/ban` 指令讓您禁止某位使用者存取您的伺服器，可永久停權，也可在指定的時間內停權。
+
+使用指令：```/ban (user) [duration] [--delete-messages=duration] [--silent] [reason]```
+
+將 `(user)` 替換為想要的提及或 ID，並將 `[reason]` 替換為處罰的理由。
+
+- `[duration]`：若有填寫，停權就會變成暫時性（與 [`/tempban`](#tempban) 相同）。
+- `[--delete-messages]`：要刪除的歷史訊息時長（例如 `1h`、`1d`、`7d`）。Discord 限制最多只能刪除 7 天。若未使用此選項，則套用[停權時的訊息刪除](./sanctions.mdx#ban-delete)設定值。
+- `[--silent]`：不傳送私訊給對象。
+
+:::tip
+您可以憑 [Discord ID](../guides/id) 停權使用者，即使他不在線上，或不在您的伺服器上。
+:::
+
+### <Icon src="/img/icons/SanctionsBANTemp.svg" alt="icon SanctionsBANTemp" title=":iconSanctionsBANTemp:"/> 暫時停權使用者 {#tempban}
+
+`/tempban` 指令讓您暫時禁止某位使用者存取您的伺服器。
+
+使用指令：```/tempban (user) (duration) [--delete-messages=duration] [--silent] [reason]```
+
+將 `(user)` 替換為想要的提及或 ID、`(duration)` 替換為停權的時長，並將 `[reason]` 替換為處罰的理由。`[--delete-messages]` 參數可刪除該成員的歷史訊息（最多 7 天）。
+
+### <Icon src="/img/icons/SanctionsSOFTBAN.svg" alt="icon SanctionsSOFTBAN" title=":iconSanctionsSOFTBAN:"/> 軟停權使用者 {#softban}
+
+`/softban` 指令會立即先停權再解除停權某位成員。這樣可以**刪除他的歷史訊息**，又不會將他永久逐出伺服器：他可以憑新的邀請回來。
+
+使用指令：```/softban (member) [--delete-messages=duration] [--silent] [reason]```
+
+將 `(member)` 替換為想要的提及或 ID，並將 `[reason]` 替換為處罰的理由。`[--delete-messages]` 參數可選擇要刪除的訊息時長。
+
+:::tip
+軟停權特別適合**被盜帳號**：清除垃圾訊息並釋放帳號，待成員將帳號恢復安全後，不會將他永久逐出。
+:::
+
+### <Icon src="/img/icons/SanctionsUNBAN.svg" alt="icon SanctionsUNBAN" title=":iconSanctionsUNBAN:"/> 解除使用者停權 {#unban}
+
+`/unban` 指令讓您解除先前被停權使用者的停權，使他能夠再次加入您的伺服器。
+
+使用指令：```/unban (user) [--silent] [reason]```
+
+將 `(user)` 替換為想要的 ID，並將 `[reason]` 替換為解除停權的理由。
+
+## <Icon src="/img/icons/SanctionsKICK.svg" alt="icon SanctionsKICK" title=":iconSanctionsKICK:" /> 踢出使用者 {#kick}
+
+`/kick` 指令讓您將成員逐出伺服器，而不將他停權。使用者只要持有有效的邀請，就能再次加入伺服器。
+
+使用指令：```/kick (member) [--silent] [reason]```
+
+將 `(member)` 替換為想要的提及或 ID，並將 `[reason]` 替換為處罰的理由。
+
+## <Icon src="/img/icons/SanctionsTIMEOUT.svg" alt="icon SanctionsTIMEOUT" title=":iconSanctionsTIMEOUT:" /> 超時（或禁言）使用者 {#timeout}
+
+`/mute` 指令讓您暫時限制成員在伺服器上的互動能力。在此期間，成員將無法發送訊息、加表情、加入語音頻道，也無法傳送私訊給其他成員。
+
+使用指令：```/mute (member) (duration) [--force-timeout] [--silent] [reason]```
+
+將 `(member)` 替換為想要的提及或 ID、`(duration)` 替換為禁言的時長（例如：`10m`、`1h`、`1d`），並將 `[reason]` 替換為處罰的理由。
+
+:::tip
+`[--force-timeout]` 選項（前綴指令中的別名為 `ft`）可以跳過閾值規則，強制使用 Discord 超時，即使已設定禁言角色也一樣。此時時長不得超過 28 天。
+
+您可以在 `/settings` 的「**管理**」分頁、「**處罰**」、「**禁言**」那一行中，設定[禁言角色](./sanctions.mdx#mute)與[禁言閾值](./sanctions.mdx#mute-threshold)。超過所設定的閾值後，機器人會自動套用禁言角色，而不是 Discord 超時，讓時長可以超過 28 天。
+:::
+
+### <Icon src="/img/icons/SanctionsUNTIMEOUT.svg" alt="icon SanctionsUNTIMEOUT" title=":iconSanctionsUNTIMEOUT:" /> 解除使用者超時 {#untimeout}
+
+`/unmute` 指令讓您立即解除處於超時狀態的成員的限制，使他恢復在伺服器上的所有互動能力。
+
+使用指令：```/unmute (member) [--silent] [reason]```
+
+將 `(member)` 替換為想要的提及或 ID，並將 `[reason]` 替換為解除超時的理由。
+
+## <Icon src="/img/icons/SanctionsJAIL.svg" alt="icon SanctionsJAIL" title=":iconSanctionsJAIL:" /> 監禁使用者 {#jail}
+
+`/jail` 指令讓您透過賦予限制性角色來隔離成員。監禁的目的是提供停權以外的替代方案：成員保有對伺服器非常有限的存取權，而不是被完全逐出。
+
+使用指令：```/jail (member) [--silent] [reason]```
+
+將 `(member)` 替換為想要的提及或 ID，並將 `[reason]` 替換為處罰的理由。
+
+:::warning
+必須先透過 `/settings` 設定[監禁角色](./sanctions.mdx#jail)，才能使用此指令。至於自動模組，在未設定監禁角色時，會改用超時。被監禁的成員也會從其語音頻道中斷開連線。
+:::
+
+### <Icon src="/img/icons/SanctionsJAILTemp.svg" alt="icon SanctionsJAILTemp" title=":iconSanctionsJAILTemp:" /> 暫時監禁使用者 {#tempjail}
+
+`/tempjail` 指令讓您在指定的時長內暫時監禁成員。
+
+使用指令：```/tempjail (member) (duration) [--silent] [reason]```
+
+將 `(member)` 替換為想要的提及或 ID、`(duration)` 替換為監禁的時長，並將 `[reason]` 替換為處罰的理由。
+
+### <Icon src="/img/icons/SanctionsUNJAIL.svg" alt="icon SanctionsUNJAIL" title=":iconSanctionsUNJAIL:" /> 釋放使用者 {#unjail}
+
+`/unjail` 指令讓您移除成員的監禁角色，使他恢復對伺服器的正常存取。
+
+使用指令：```/unjail (member) [--silent] [reason]```
+
+將 `(member)` 替換為想要的提及或 ID，並將 `[reason]` 替換為釋放的理由。
+
+處於隔離狀態的成員（帳號最短註冊時長、Discord 隔離）並非被監禁：`/unjail` 會拒絕執行，並說明如何解除其隔離。
+
+## <Icon src="/img/icons/SanctionsWARN.svg" alt="icon SanctionsWARN" title=":iconSanctionsWARN:" /> 警告使用者 {#warn}
+
+`/warn` 指令讓您透過機器人傳送的私訊，正式警告成員。
+
+使用指令：```/warn (member) [--silent] [reason]```
+
+將 `(member)` 替換為想要的提及或 ID，並將 `[reason]` 替換為警告的理由。
+
+## 📝 管理備註 {#note}
+
+`/note` 指令可以新增或編輯成員的**內部管理備註**，無需經過 [`/modview`](#modview)。備註僅管理人員看得到。
+
+使用指令：```/note (user)```
+
+將 `(user)` 替換為想要的提及或 ID。會開啟一個視窗，供您輸入或編輯備註，最多 300 個字元。備註的新增、編輯與刪除都會記錄在[管理紀錄](#logs)中。
+
+## 🏷️ 變更成員暱稱 {#nick}
+
+`/nick` 指令讓您修改成員在伺服器上的暱稱，或將其重設。
+
+使用指令：```/nick (member) [pseudo]```
+
+將 `(member)` 替換為想要的提及或 ID。`[pseudo]` 參數是要套用的新暱稱（最多 32 個字元）。若省略，則會重設成員的暱稱。
+
+:::info
+此指令需要 Discord 的**管理暱稱**權限，並且也可透過別名 `nickname`、`rename` 和 `setnick` 作為[前綴指令](../guides/prefix)使用。變更會記錄在伺服器紀錄中。
+:::
+
+## 🧹 刪除一批訊息 {#clear}
+
+`/clear` 指令讓您快速刪除文字頻道中一定數量的訊息。您可以指定使用者，只刪除他的訊息。
+
+使用指令：```/clear (amount) [user]```
+
+將 `(amount)` 替換為您想刪除的訊息數量（2 到 100）。加上 `[user]`（使用提及或 ID），可只針對該使用者在頻道中的訊息。使用前綴時，此指令也可用別名 `clean`。
+
+## 🕒 在頻道中啟用慢速模式 {#slowmode}
+
+`/slowmode` 指令讓您啟用或修改頻道的慢速模式，以限制使用者發送訊息的頻率。
+
+使用指令：```/slowmode (delay) [duration] [channel] [reason] [--silent]```
+
+- 將 `(delay)` 替換為每則訊息之間想要的間隔（例如：`5s`、`1m`、`10m`、`1h`，最長 6 小時；`0` 表示停用）。
+- 加上 `[duration]`，可在該時間後自動停用慢速模式（例如 `30m`、`2h`）。
+- 如果想將慢速模式套用到您輸入指令的頻道以外的其他頻道，請加上 `[channel]`。
+- 加上 `--silent` 即不在頻道中發布任何公告。
+- 加上 `[reason]` 以說明理由，該理由會記錄在伺服器紀錄中。
+
+## 🕵️ 找回已刪除的訊息 {#snipe}
+
+`/snipe` 指令會逐頁顯示頻道中**最近一小時內被刪除的訊息**，由最新到最舊。
+
+使用指令：```/snipe [user] [--channel=#channel]```
+
+- 不帶參數：顯示目前頻道中被刪除的訊息。
+- 帶有 `[user]`：僅顯示該使用者被刪除的訊息。
+- 帶有 `[--channel]`：在您輸入指令的頻道以外的其他頻道中搜尋。
+
+在回覆中，您可以**處罰某則訊息的作者**。此回覆僅您自己看得到。
+
+:::warning
+`/snipe` 只看得到 RaidProtect 在記憶體中保留一小時的訊息。只有在啟用「**訊息快取**」（`/settings`、「**工具**」分頁，預設為停用），或 [Antispam](./anti-spam.mdx) 或[檢舉](./reports.md)處於啟用狀態（這會自動啟用它）時，才會保留這些訊息：此時使用 `/snipe` 會將該設定記錄下來，即使之後關閉 Antispam 與檢舉，它仍會保持啟用。否則，指令會說明訊息快取已停用，並向管理員（或在套用整合權限時，向獲准使用 `/settings` 的成員）提議啟用它。
+:::
+
+啟用訊息快取：
+
+1. 使用 [`/settings` 指令](../setup.md#settings)。
+2. 開啟「**工具**」分頁。
+3. 點擊「**訊息快取**」旁的「**啟用**」。
+
+:::info
+這些訊息會在記憶體中保留一小時，且絕不會寫入資料庫。`/privacy` 指令會顯示 RaidProtect 在您伺服器上保留的資料。
+:::
+
+## 🟢 在勤角色 {#onduty}
+
+**在勤角色**讓您的管理人員表明自己有空：透過 `/onduty` 指令，每個人都可以切換為在勤或離勤，我們會新增或移除所設定的角色。
+
+使用指令：```/onduty```
+
+此回覆僅您自己看得到。[工作人員面板（`/display staff`）](./display.mdx#staff)的「**在勤**」按鈕也有相同的效果。
+
+### 設定在勤角色 {#onduty-config}
+
+1. 使用 [`/settings` 指令](../setup.md#settings)。
+2. 開啟「**工具**」分頁。
+3. 點擊「**在勤角色**」旁的「**設定**」。
+4. 在選單中選擇現有的角色，或點擊「**幫我建立一個**」（我們會建立一個不含任何權限的 `在勤` 角色）。
+
+<Settings start="onduty" />
+
+:::warning
+在勤角色是由您的管理人員自助取得的：它不得帶有任何敏感權限。我們會拒絕擁有以下權限的角色：管理員、管理伺服器、管理角色、管理頻道、管理 Webhook、管理訊息、管理討論串、管理表情符號與貼圖、管理活動、踢出成員或停權成員。RaidProtect 也必須擁有**管理角色**權限，且其角色須位於在勤角色之上。
+:::
+
+## 📋 管理紀錄 {#logs}
+
+預設情況下，管理紀錄會發送到 RaidProtect 的一般紀錄頻道。您可以設定專用的紀錄頻道，將管理動作與其他紀錄分開。
+
+1. 使用 [`/settings` 指令](../setup.md#settings)。
+2. 開啟「**管理**」分頁。
+3. 點擊「**紀錄**」旁的「**設定**」。
+4. 在「**管理**」選單中，選擇要發送管理紀錄的頻道，或使用「**幫我建立一個**」按鈕。
+
+<Settings start="logs" />
+
+「**紀錄**」畫面整合了三個頻道：「**一般**」、「**管理**」和「**驗證碼**」。「**管理**」或「**驗證碼**」頻道若留空，其紀錄會轉送到一般頻道。「**被動管理紀錄**」開關決定 RaidProtect 是否也記錄不經過機器人所執行的動作。頻道、身分組、成員、訊息與語音則有各自的[伺服器紀錄](./logs.md)。
+
+## 常見問題 {#faq}
+
+### 為什麼 /snipe 找不到任何訊息？
+
+只有在 `/settings` 的「**工具**」分頁中啟用了訊息快取，或 Antispam 或檢舉處於啟用狀態時，RaidProtect 才會在記憶體中保留訊息。且只能取得最近一小時內的訊息。
+
+### 使用 /onduty 需要什麼權限？
+
+預設為**管理訊息**權限。您可以在 Discord 的整合設定中調整。管理員必須先在 `/settings` 的「**工具**」分頁中設定在勤角色。
+
+### 我可以停權不在我伺服器上的使用者嗎？
+
+可以，使用 `/ban` 並搭配其 [Discord ID](../guides/id)。

@@ -55,11 +55,7 @@ En el selector “**Duración de la sanción**”, elige 5 minutos, 1 hora, 1 d�
 - El mensaje público que anuncia la sanción sigue el ajuste “**Mensaje público de sanción**” del [Anti-spam](./anti-spam.mdx#public-message), desactivable en Premium.
 :::
 
-## 🗂️ Catálogo de imágenes <span className="badge-experiment">Experimental</span> <span className="badge-premium">Premium</span> {#catalog}
-
-:::info Experimental: Shield Update
-El catálogo de imágenes forma parte de la **Shield Update**, prevista para la versión 3.6.0, en fase experimental hasta su lanzamiento.
-:::
+## 🗂️ Catálogo de imágenes <span className="badge-premium">Premium</span> {#catalog}
 
 Además del catálogo global “Crypto Scam”, gestionado por nosotros y aplicado en todos los servidores, los servidores [Premium](/es/premium) pueden bloquear **sus propias imágenes**, sea cual sea su contenido: capturas de falso Nitro, imágenes de una estafa que apunta a tu comunidad, imágenes prohibidas en tu servidor…
 

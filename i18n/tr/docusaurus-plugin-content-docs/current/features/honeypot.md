@@ -58,7 +58,18 @@ Varsayılan olarak HoneyPot bir **Softban** uygular. “**Uygulanan ceza**” se
 | **Jail** | Sunucunuzda yapılandırılmış [Jail rolünü](./sanctions.mdx#jail) verir | Premium |
 | **Mute** | Sunucunuzda yapılandırılmış [Mute rolünü](./sanctions.mdx#mute) verir | Premium |
 
-Süreli yaptırımlar için (Yasaklama, Timeout, Jail, Mute) “**Süre**” seçicisinden bir süre seçin: 5 dakika, 1 saat, **1 gün** (varsayılan) veya 28 gün ya da kendi süreniz için “**Özel değer**” (örneğin `5m`, `1h`, `2d`; en az 1 dakika). Seçici, süresi olmayan Softban ve Atma için gri kalır.
+Süreli yaptırımlar için (Yasaklama, Timeout, Jail, Mute) “**Süre**” seçicisinden bir süre seçin (varsayılan 1 gün) ya da kendi süreniz için “**Özel değer**” (örneğin `5m`, `1h`, `2d`; en az 1 dakika). Seçici, süresi olmayan Softban ve Atma için gri kalır.
+
+Seçicideki seçenekler yaptırıma göre değişir:
+
+| Yaptırım | Sunulan seçenekler |
+|---|---|
+| **Yasaklama** | Kalıcı, 1 gün, 7 gün, 30 gün |
+| **Jail** | Kalıcı, 1 saat, 1 gün, 7 gün |
+| **Mute** | 5 dakika, 1 saat, 1 gün, 7 gün |
+| **Timeout** | 5 dakika, 1 saat, 1 gün, 28 gün |
+
+Yasaklama ve Jail **kalıcı** olabilir: yaptırım kendiliğinden kalkmaz. Yaptırım değiştirildiğinde, seçilen süre hâlâ mümkünse korunur (kalıcı bir süre Timeout'a veya Mute'a geçmez ve bir Timeout 28 günün altında kalır).
 
 :::tip
 **Softban** iyi bir uzlaşmadır: mesajları temizler ve ele geçirilmiş hesabı atar, ancak meşru sahip hesabını güvene aldıktan sonra geri dönebilir.
@@ -74,13 +85,9 @@ Diğer yaptırımlarda (Kick, Timeout, Jail, Mute) mesajları RaidProtect kendis
 - Sunucunuz Premium'u kaybederse bir Premium yaptırım, bir sonraki tetiklenmede otomatik olarak **Softban**'a döner.
 :::
 
-### Cezadan önceki gecikme <span className="badge-experiment">Deneme</span> {#grace}
+### Cezadan önceki gecikme {#grace}
 
 İyi niyetli bir üye HoneyPot'a yanlışlıkla yazabilir. **Cezadan önceki gecikme**, ona cezalandırılmadan önce bunu bildirmesi için zaman tanır.
-
-:::info Deneme: Shield Update
-Cezadan önceki gecikme, 3.6.0 sürümü için planlanan **Shield Update**'in parçasıdır. Çıkışına kadar deneme aşamasındadır; [Premium](/tr/premium) sunucular için herkese açık beta olarak sunulur.
-:::
 
 1. [`/settings` komutunu](../setup.md#settings) çalıştırın.
 2. “**Koruma**” sekmesini açın.

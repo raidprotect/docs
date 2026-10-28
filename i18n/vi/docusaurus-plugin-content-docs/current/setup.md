@@ -50,7 +50,7 @@ Bỏ chọn một mô-đun trong `/setup` không tắt nó. Để tắt một t�
 
 [Vai trò tự động và tin nhắn chào mừng](./features/onboarding.md) không thuộc trình hướng dẫn: hãy chỉnh chúng trong thẻ “**Thành viên mới**” của `/settings`.
 
-### 🧭 Trình hướng dẫn cài đặt mới <span className="badge-experiment">Thử nghiệm</span> {#wizard}
+### 🧭 Trình hướng dẫn cài đặt mới {#wizard}
 
 Một trình hướng dẫn `/setup` mới thay danh sách mô-đun bằng một lộ trình có hướng dẫn:
 
@@ -62,10 +62,6 @@ Một trình hướng dẫn `/setup` mới thay danh sách mô-đun bằng một
 - **Máy chủ đã được cấu hình thì được kiểm tra, không làm lại**: bảng captcha hiện có và chức năng đóng tin nhắn riêng đang bật được giữ nguyên.
 - **Và sau đó**: bản xem trước của [kiểm tra bảo mật](./features/audit.md) kết thúc quá trình cài đặt, kèm các lối tắt để thử captcha, tùy chỉnh tin nhắn chào mừng hoặc mở tất cả thiết lập. Một bước bị lỗi có thể làm lại bằng cách chạy lại `/setup`.
 
-:::info Thử nghiệm: Shield Update
-Trình hướng dẫn cài đặt mới sẽ đến cùng **Shield Update**, dự kiến trong phiên bản 3.6.0. Hiện tại nó chỉ được cung cấp cho một số ít máy chủ.
-:::
-
 ## Chỉnh sửa cấu hình {#settings}
 
 Lệnh `/settings` mở bảng điều khiển của RaidProtect. Lệnh này chỉ dành cho quản trị viên và hiển thị dưới dạng tin nhắn tạm thời, chỉ mình bạn thấy.
@@ -76,11 +72,11 @@ Các thiết lập được sắp xếp trong năm thẻ:
 
 - **Chung**: [ngôn ngữ](./language.md), [lệnh bằng tin nhắn](./guides/prefix.md), [quyền](./guides/prefix.md#permissions) và múi giờ của máy chủ.
 - **Thành viên mới**: [Auto RaidMode](./features/raid-mode.md), [captcha](./features/captcha.md), [tuổi tối thiểu của tài khoản](./features/onboarding.md#minage), [vai trò tự động](./features/onboarding.md#autorole) và [tin nhắn chào mừng](./features/onboarding.md#welcome-message).
-- **Bảo vệ**: [DISCON](./features/discon.md)\*, [chống spam](./features/anti-spam.mdx), [Automod](./features/automod.md) ([bộ lọc hình ảnh](./features/scam-images.md) và [máy chủ khác](./features/automod.md#servers)\*), [HoneyPot](./features/honeypot.md), [slowmode phòng ngừa](./features/slowmode.md)\*, [Authentification Manager](./features/authentication-manager.mdx) và [đóng tin nhắn riêng](./features/dm-lock.mdx).
+- **Bảo vệ**: [DISCON](./features/discon.md), [chống spam](./features/anti-spam.mdx), [Automod](./features/automod.md) ([bộ lọc hình ảnh](./features/scam-images.md), [máy chủ khác](./features/automod.md#servers) và [phần mở rộng tệp](./features/automod.md#files)), [HoneyPot](./features/honeypot.md), [slowmode phòng ngừa](./features/slowmode.md), [Authentification Manager](./features/authentication-manager.mdx) và [đóng tin nhắn riêng](./features/dm-lock.mdx).
 - **Kiểm duyệt**: [hình phạt](./features/sanctions.mdx), [tài khoản phụ](./features/alt-accounts.md)\*, nhật ký, [báo cáo](./features/reports.md) và [minh bạch](./features/transparency.md).
 - **Tiện ích**: [vai trò tag](./features/tag-role.md), [khóa kênh](./features/channel-lock.md), [vai trò đang trực](./features/moderation.mdx#onduty) và lưu đệm tin nhắn.
 
-\* Đang thử nghiệm: các dòng này chỉ xuất hiện trên những máy chủ có quyền truy cập Shield Update (DISCON, máy chủ khác, slowmode phòng ngừa) hoặc Identity Update (tài khoản phụ), trong bản beta công khai [Premium](/vi/premium).
+\* Đang thử nghiệm: dòng này chỉ xuất hiện trên những máy chủ có quyền truy cập Identity Update (tài khoản phụ), trong bản beta công khai [Premium](/vi/premium).
 
 Mỗi dòng hiển thị giá trị hiện tại của thiết lập và một nút: “**Cấu hình**” mở một màn hình riêng, “**Chỉnh sửa**” mở một cửa sổ nhập liệu. Mọi thay đổi được áp dụng ngay lập tức.
 

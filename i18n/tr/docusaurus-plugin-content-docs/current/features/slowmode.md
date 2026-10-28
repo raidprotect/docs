@@ -5,11 +5,7 @@ description: "RaidProtect'in önleyici yavaş modu, okunabilir bir mesaj akış�
 
 import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
 
-RaidProtect'in **önleyici yavaş modu**, dakika başına **mesaj hızını** tutturmak için kanallarınızın [yavaş modunu](./moderation.mdx#slowmode) otomatik olarak ayarlar. Bir kanal hızlandığında (duyuru, canlı yayın, yeni üye akını, bir [baskın](/tr/learn/discord-raid) başlangıcı) yavaş modu yükseltiriz; sakinleştiğinde düşürürüz. Moderatörlerinizin elle ayarlamak için artık sohbeti izlemesi gerekmez.
-
-:::info Deneme: Shield Update
-Önleyici yavaş mod yalnızca [Premium](/tr/premium) sunuculara ayrılmıştır. 3.6.0 sürümü için planlanan **Shield Update**'in parçasıdır ve çıkışına kadar deneme aşamasındadır.
-:::
+Yalnızca [Premium](/tr/premium) sunuculara ayrılmış olan RaidProtect'in **önleyici yavaş modu**, dakika başına **mesaj hızını** tutturmak için kanallarınızın [yavaş modunu](./moderation.mdx#slowmode) otomatik olarak ayarlar. Bir kanal hızlandığında (duyuru, canlı yayın, yeni üye akını, bir [baskın](/tr/learn/discord-raid) başlangıcı) yavaş modu yükseltiriz; sakinleştiğinde düşürürüz. Moderatörlerinizin elle ayarlamak için artık sohbeti izlemesi gerekmez.
 
 ## ❓ Nasıl çalışır? {#working}
 
@@ -27,7 +23,7 @@ RaidProtect'in **önleyici yavaş modu**, dakika başına **mesaj hızını** tu
 2. “**Koruma**” sekmesini açın.
 3. “**Önleyici yavaş mod**” yanındaki “**Yapılandır**” düğmesine tıklayın.
 4. Boş bir yuvanın yanındaki “**Ekle**”ye tıklayın.
-5. Kanalı seçin (metin kanalı veya duyuru kanalı).
+5. Kanalı seçin (metin, duyuru, ses veya sahne kanalı: bir ses kanalının yavaş modu, onun yerleşik metin kanalını düzenler).
 
 <Settings start="slowmode" />
 
@@ -78,7 +74,7 @@ Sunucu başına en fazla 6 kanal; her birinin kendi mesaj hızı ve sınırları
 
 ### Önleyici yavaş mod ücretsiz mi?
 
-Hayır, Premium sunuculara ayrılmıştır. Ayrıca hâlâ deneme aşamasında olan Shield Update'in parçasıdır.
+Hayır, Premium sunuculara ayrılmıştır.
 
 ### Yavaş modu elle ayarlarsam ne olur?
 

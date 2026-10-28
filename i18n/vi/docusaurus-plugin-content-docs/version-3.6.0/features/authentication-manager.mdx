@@ -1,0 +1,336 @@
+---
+title: Authentification Manager
+description: "Authentification Manager của RaidProtect bảo vệ quyền truy cập vào các vai trò nhạy cảm của bạn bằng một bước xác minh danh tính thực sự: passkey, mã PIN và OTP."
+---
+
+import AuthenticationManagerMockup from '@site/src/components/DiscordMessage/mockups/authentication-manager';
+import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
+
+<AuthenticationManagerMockup />
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import Icon from "@site/src/components/Icon";
+
+**Authentification Manager** (AM) của RaidProtect bảo vệ quyền truy cập vào các vai trò Discord nhạy cảm nhất của bạn bằng một bước xác minh danh tính thực sự. Nhờ passkey (WebAuthn), mã PIN và OTP, một thành viên chỉ nhận được một [vai trò nhạy cảm](/vi/learn/least-privilege) sau khi đã xác thực, và chỉ trong một thời gian giới hạn. Trong Discord, mô-đun này hiển thị với tên “**Authentification Manager**”.
+
+## ❓ Authentification Manager hoạt động thế nào? {#working}
+
+Authentification Manager dựa trên các **vai trò được bảo vệ** và các **phiên tạm thời**. Khi một quản trị viên bảo vệ một vai trò bằng AM:
+
+1. Vai trò Discord không còn được cấp vĩnh viễn nữa: phải xác thực mới nhận được nó.
+2. Các thành viên được phép xác thực bằng lệnh `/auth` (hoặc nút “**Nhận một vai trò**” của một [bảng đội ngũ](./display.mdx#staff)).
+3. Một **phiên tạm thời** được tạo với thời lượng đã định trên vai trò.
+4. Khi phiên hết hạn, chúng tôi tự động gỡ vai trò.
+
+:::info
+Mỗi thành viên trước hết phải tạo **hồ sơ xác thực** của mình bằng `/auth-profile` trước khi có thể xác thực.
+:::
+
+Trong một phiên, các hành động Discord của thành viên (cấm, xóa tin nhắn, ghim, sửa kênh…) được ghi vào nhật ký của AM, kèm đối tượng của chúng: bạn biết điều gì đã được thực hiện với từng vai trò được bảo vệ.
+
+## 🔐 Cấp bảo mật {#grades}
+
+Mỗi phương thức xác thực mang lại một **cấp bảo mật**. Mỗi vai trò được bảo vệ yêu cầu một cấp tối thiểu mà thành viên phải đạt.
+
+| **Cấp**                                                                     | **Điều kiện**                         |
+| --------------------------------------------------------------------------- | ------------------------------------- |
+| <Icon src="/img/icons/RankS.svg" alt="icon RankS" title=":securityRankS:"/> | Ít nhất một passkey đã đăng ký        |
+| <Icon src="/img/icons/RankA.svg" alt="icon RankA" title=":securityRankA:"/> | Đã bật mã OTP (2FA)                   |
+| <Icon src="/img/icons/RankB.svg" alt="icon RankB" title=":securityRankB:"/> | PIN tăng cường từ 8 chữ số trở lên    |
+| <Icon src="/img/icons/RankC.svg" alt="icon RankC" title=":securityRankC:"/> | PIN tăng cường từ 6 chữ số trở lên    |
+| <Icon src="/img/icons/RankD.svg" alt="icon RankD" title=":securityRankD:"/> | PIN đơn giản từ 6 chữ số trở lên      |
+| <Icon src="/img/icons/RankE.svg" alt="icon RankE" title=":securityRankE:"/> | PIN đơn giản từ 4 chữ số trở lên      |
+
+:::tip
+Cấp cao nhất trong các phương thức bạn đã cấu hình được tự động chọn. Ví dụ, nếu bạn có một PIN đơn giản (cấp D) và một passkey (cấp S), cấp của bạn sẽ là **S**.
+:::
+
+## 🛡️ Các phương thức xác thực {#methods}
+
+<SeparatedBox>
+<Tabs>
+<TabItem value="pin" label="PIN" default>
+
+Mã PIN là phương thức đơn giản nhất. Có hai chế độ:
+
+- **PIN đơn giản**: nhập thông thường trong một cửa sổ (4 đến 12 chữ số).
+- **PIN tăng cường**: bàn phím số có các phím đổi chỗ sau mỗi lần nhập (6 đến 12 chữ số), để người khác không đoán được mã của bạn khi nhìn bạn nhập.
+
+:::warning
+Các PIN quá đơn giản bị từ chối: chữ số lặp lại, dãy tăng dần hoặc giảm dần, và các mẫu thông dụng.
+:::
+
+</TabItem>
+<TabItem value="otp" label="OTP (Mã 2FA)">
+
+OTP dùng chuẩn TOTP (Time-based One-Time Password), tương thích với các ứng dụng xác thực như [Google Authenticator](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2), [Authy](https://authy.com/), [1Password](https://1password.com/), [Dashlane](https://www.dashlane.com/) hoặc [Bitwarden](https://bitwarden.com/).
+
+- Mã 6 chữ số được làm mới mỗi 30 giây.
+
+</TabItem>
+<TabItem value="passkey" label="Passkey (WebAuthn)">
+
+Passkey mang lại mức bảo mật cao nhất (cấp S). Việc xác thực diễn ra trong trình duyệt bằng:
+
+- **Vân tay** hoặc **nhận diện khuôn mặt** (Touch ID, Face ID, Windows Hello).
+- **Khóa bảo mật vật lý** (YubiKey, v.v.).
+
+Khi bạn dùng passkey, một liên kết bên ngoài mở trong trình duyệt của bạn, bằng ngôn ngữ Discord của bạn. Sau khi xác minh được chấp nhận, vai trò được cấp cho bạn.
+
+</TabItem>
+</Tabs>
+</SeparatedBox>
+
+## 👤 Hồ sơ xác thực (`/auth-profile`) {#auth-profile}
+
+Lệnh `/auth-profile` quản lý hồ sơ xác thực cá nhân của bạn. Lệnh hoạt động trên bất kỳ máy chủ nào và trong tin nhắn riêng, và hồ sơ của bạn giống nhau ở mọi nơi.
+
+<Settings start="authProfile" />
+
+### Lần dùng đầu tiên {#onboarding}
+
+Ở lần dùng đầu tiên, một màn hình chào mừng giới thiệu các cấp, các phiên tạm thời và các phương thức. Nhấp vào “**Tiếp tục**” để cấu hình phương thức đầu tiên của bạn.
+
+### Quản lý các phương thức xác thực {#manage-methods}
+
+Từ hồ sơ của bạn, bạn có thể:
+
+- Thêm, đổi hoặc xóa một **mã PIN** (đơn giản hoặc tăng cường).
+- Bật **mã 2FA** (OTP) bằng mã QR hoặc khóa bí mật, tạo lại hoặc xóa nó.
+- Thêm một **passkey** từ trang đăng ký, hoặc xóa một passkey. Mỗi passkey hiển thị tên thiết bị và ngày sử dụng gần nhất.
+- **Đổi tên** một passkey: nút “**Sửa một Passkey**”, bên cạnh “**Thêm**”, mở một cửa sổ với các passkey của bạn và tên mới cần đặt (ví dụ `MacBook`, `iPhone`, `YubiKey`). Việc đổi tên được ghi vào nhật ký kiểm tra của bạn.
+
+Nếu bạn đã có một phương thức, chúng tôi yêu cầu bạn xác thực trước khi thêm hoặc sửa một phương thức. Phần cuối hồ sơ nhắc lại cấp của bạn và phương thức cần thêm để lên một bậc.
+
+:::info
+Xóa một phương thức có thể làm cấp của bạn giảm xuống. Khi đó quyền truy cập của bạn vào các vai trò yêu cầu cấp cao hơn sẽ bị vô hiệu hóa.
+:::
+
+### Phiên đang hoạt động {#profile-sessions}
+
+Các phiên đang hoạt động của bạn, kèm thời điểm hết hạn, hiển thị trong bảng của lệnh [`/auth`](#sessions) trên mỗi máy chủ.
+
+### Nhật ký kiểm tra {#profile-audit}
+
+Hồ sơ của bạn hiển thị 3 hành động gần nhất được thực hiện trên tài khoản. Nút “**Xem tất cả nhật ký**” mở toàn bộ nhật ký, có phân trang, kèm máy chủ liên quan.
+
+### Đặt lại tài khoản {#reset}
+
+Nút “**Tôi quên thông tin xác thực**” đặt lại hoàn toàn tài khoản của bạn. Thao tác này:
+
+- xóa mọi phương thức xác thực của bạn (PIN, 2FA, passkey);
+- vô hiệu hóa quyền truy cập của bạn vào các vai trò được bảo vệ trên tất cả các máy chủ;
+- buộc bạn phải cấu hình lại mọi thứ.
+
+:::danger
+Thao tác này không thể hoàn tác. Mọi quyền truy cập của bạn bị thu hồi ngay lập tức.
+:::
+
+## 🔑 Xác thực (`/auth`) {#auth}
+
+Lệnh `/auth` cho phép xác thực để nhận một vai trò được bảo vệ.
+
+Dùng lệnh: ```/auth [role]```
+
+### Quy trình xác thực {#auth-flow}
+
+1. Dùng lệnh `/auth` trên máy chủ, hoặc nhấp vào “**Nhận một vai trò**” trong một bảng đội ngũ.
+2. Một menu hiển thị các vai trò khả dụng kèm cấp yêu cầu và thời lượng phiên của chúng.
+3. Chọn một hoặc nhiều vai trò (tối đa 10). Một lần xác thực duy nhất, ở mức của vai trò khắt khe nhất, mở tất cả các vai trò đó.
+4. Chọn một phương thức xác thực trong số những phương thức đạt cấp của vai trò.
+5. Thực hiện bước xác minh (PIN, OTP hoặc passkey).
+6. Nếu thành công, chúng tôi cấp cho bạn một hoặc các vai trò Discord và tạo một phiên cho mỗi vai trò. Các phiên được ghi vào nhật ký của Authentication Manager.
+
+:::info
+Chỉ những vai trò mà bạn được gán với trạng thái **Hoạt động** mới xuất hiện trong menu.
+:::
+
+### Quản lý phiên {#sessions}
+
+Bảng `/auth` liệt kê các phiên đang hoạt động của bạn. Với mỗi phiên, bạn có thể:
+
+- **Gia hạn phiên**: xác thực lại để bắt đầu lại một thời lượng đầy đủ.
+- **Ngắt kết nối**: phiên bị thu hồi ngay lập tức và vai trò Discord bị gỡ.
+
+### Bảo mật {#auth-security}
+
+- **Cảnh cáo**: một tin nhắn cảnh cáo xuất hiện từ lần thử thất bại thứ 3.
+- **Khóa**: sau 5 lần thất bại, tài khoản của bạn bị khóa trong 1 giờ.
+- **Đặt lại**: sau 10 lần thất bại, tài khoản của bạn bị đặt lại và mọi quyền truy cập bị thu hồi.
+
+## ⚙️ Cấu hình máy chủ {#auth-settings}
+
+Bảng cấu hình của Authentification Manager được mở theo hai cách:
+
+1. Dùng [lệnh `/settings`](../setup.md#settings).
+2. Mở thẻ “**Bảo vệ**”.
+3. Nhấp vào “**Cấu hình**” bên cạnh “**Authentification Manager**”.
+
+Khi đó bảng thay thế bảng điều khiển, với một nút “**Quay lại**” để trở về thẻ Bảo vệ. Bạn cũng có thể dùng trực tiếp lệnh `/auth-settings`, lệnh này mở cùng một bảng.
+
+<Settings start="auth" />
+
+:::info
+Lệnh `/auth-settings` mặc định chỉ dành cho quản trị viên. Để một người quản lý không phải quản trị viên có thể dùng nó, hãy cho phép lệnh này cho họ trong **Cài đặt máy chủ > Tích hợp > RaidProtect**.
+:::
+
+### Quyền {#permissions}
+
+| **Vai trò**     | **Quyền truy cập**                                                        |
+| --------------- | ------------------------------------------------------------------------- |
+| Chủ sở hữu      | Toàn quyền                                                                |
+| Quản trị viên   | Toàn quyền (trừ khi quyền Quản trị viên đến từ một vai trò được AM bảo vệ) |
+| Người quản lý   | Quyền hạn chế: phải xác thực, chỉ quản lý các vai trò và người dùng nằm dưới họ, không thể sửa cấu hình máy chủ |
+
+#### Xác thực của người quản lý {#manager-auth}
+
+Một người quản lý không phải chủ sở hữu cũng không phải quản trị viên phải xác thực mỗi lần mở bảng. Chúng tôi đề xuất cho họ các phương thức đạt **cấp tối thiểu của người quản lý**: “**Xác thực bằng PIN**”, “**Xác thực bằng OTP**” hoặc “**Xác thực bằng Passkey**”. PIN tăng cường được nhập trên bàn phím có các phím xáo trộn.
+
+Áp dụng các biện pháp bảo vệ giống như với `/auth`: cảnh cáo từ lần thất bại thứ 3, khóa một giờ ở lần thất bại thứ 5, đặt lại tài khoản ở lần thất bại thứ 10.
+
+### Thiết lập máy chủ {#server-settings}
+
+Nhấp vào “**Chỉnh sửa**” bên cạnh “**Cấu hình máy chủ**” để mở cửa sổ “**Cấu hình Xác thực của máy chủ**”:
+
+- **Thời lượng phiên mặc định**: thời lượng được đề xuất cho các vai trò mới, theo định dạng `30m`, `2h` hoặc `1d`. Tối đa 8 giờ ở bản miễn phí, 24 giờ ở bản [premium](/vi/premium). Mặc định: 10 phút.
+- **Cấp tối thiểu mặc định**: cấp được đề xuất cho các vai trò mới. Mặc định: A.
+- **Cấp tối thiểu của người quản lý**: cấp mà một người quản lý phải đạt để mở bảng. Mặc định: A.
+- **URL Webhook (để trống để xóa)**: webhook Discord nhận nhật ký của AM (tùy chọn). Chỉ chấp nhận URL webhook của Discord.
+
+Người quản lý không thể sửa các thiết lập này.
+
+### Thẻ Vai trò {#roles-tab}
+
+Thẻ Vai trò liệt kê các vai trò được bảo vệ của bạn kèm cấp, thời lượng phiên và số người dùng của chúng. Bên dưới các thẻ, khối “**Các phiên gần nhất**” hiển thị phiên mới nhất, và “**Xem tất cả**” mở danh sách mọi phiên.
+
+:::info
+**Giới hạn:** 3 vai trò ở bản miễn phí, 10 vai trò ở bản [premium](/vi/premium). Các vai trò bị tắt vẫn chiếm một chỗ.
+:::
+
+#### Thêm một vai trò {#add-role}
+
+1. Mở bảng Authentification Manager (xem [ở trên](#auth-settings)).
+2. Trong thẻ “**Vai trò**”, nhấp vào “**Thêm**”.
+3. Chọn **vai trò Discord** cần bảo vệ.
+4. Chọn **cấp bảo mật tối thiểu**.
+5. Nhập **thời lượng phiên**.
+6. Chọn một **chiến lược tích hợp** (xem bên dưới).
+7. Chúng tôi phát hiện các thành viên đã có vai trò này: chỉnh lại lựa chọn, rồi nhấp vào “**Gửi lời mời**” (hoặc “**Bỏ qua**”).
+
+Mỗi thành viên được chọn được gắn vào vai trò với trạng thái **Hoạt động** nếu cấp của họ đủ, nếu không thì **Đã mời**: khi đó họ nhận một tin nhắn riêng mời họ cấu hình `/auth-profile`.
+
+<SettingsModal name="authAddRole" />
+
+Chúng tôi từ chối một vai trò do tích hợp quản lý, một vai trò được dùng trong Quy trình chào đón của Discord, một vai trò nằm trên vai trò của RaidProtect hoặc trên vai trò của bạn, và một vai trò đã được bảo vệ.
+
+##### Chiến lược tích hợp {#strategies}
+
+| **Chiến lược** | **Hiệu lực** |
+|---|---|
+| “**Sử dụng vai trò này như hiện tại**” | Vai trò đã chọn trở thành trực tiếp vai trò được bảo vệ. Đây là lựa chọn mặc định. |
+| “**Tạo một vai trò quyền riêng biệt**” | Chúng tôi tạo một vai trò `🔑 <tên vai trò>` với các quyền ban đầu, ngay dưới vai trò đã chọn, và xóa sạch các quyền của vai trò ban đầu. Vai trò ban đầu giữ vĩnh viễn màu và cách hiển thị của nó, vai trò mới mới là vai trò được bảo vệ. |
+
+:::tip
+Nếu vai trò của bạn được **hiển thị riêng** trong danh sách thành viên, hãy chọn “**Tạo một vai trò quyền riêng biệt**”: các thành viên của bạn giữ vai trò hiển thị vĩnh viễn, còn các quyền nhạy cảm chỉ được cấp trong các phiên đã xác thực.
+
+Với một vai trò riêng biệt, các quyền kiểm duyệt kênh của vai trò hiển thị cũng được chuyển sang vai trò `🔑`. Với một vai trò quản trị viên, tùy chọn “**Giữ quyền xem tất cả các kênh ngoài phiên**” để vai trò hiển thị xem được tất cả các kênh ngoài các phiên; nếu không có tùy chọn này, vai trò đó không còn thấy gì khi không có quyền quản trị viên.
+:::
+
+#### Bảo vệ các vai trò quản trị viên từ `/audit` {#audit-bulk}
+
+Mục kiểm tra các vai trò quản trị viên của [bản kiểm tra bảo mật](./audit.md) có đề xuất “**Tích hợp tất cả**”: bạn bảo vệ cùng lúc các vai trò quản trị viên chưa được bảo vệ, tối đa 5 vai trò mỗi lượt và trong giới hạn các chỗ trống của bạn. Chỉ những vai trò nằm dưới RaidProtect và dưới vai trò cao nhất của bạn được đề xuất.
+
+#### Sửa một vai trò {#edit-role}
+
+Nhấp vào “**Chỉnh sửa**” trên dòng của vai trò để mở thẻ thông tin của nó (cấp tối thiểu, thời lượng phiên, người dùng được gán), rồi nhấp vào “**Chỉnh sửa**” để đổi cấp tối thiểu và thời lượng phiên.
+
+#### Bật / Tắt một vai trò {#toggle-role}
+
+Từ thẻ thông tin của vai trò, “**Tắt**” tạm dừng vai trò mà không xóa nó: không còn phiên nào được tạo cho nó. Các phiên đang diễn ra bị thu hồi và vai trò Discord bị gỡ khỏi các thành viên liên quan. “**Bật**” đưa nó hoạt động trở lại, trong giới hạn các chỗ của bạn.
+
+#### Xóa một vai trò {#delete-role}
+
+“**Xóa**” gỡ vĩnh viễn vai trò khỏi Authentification Manager, cùng mọi phép gán người dùng. Bạn sẽ được yêu cầu xác nhận.
+
+### Thẻ Người dùng {#users-tab}
+
+Thẻ Người dùng liệt kê các thành viên được gắn vào ít nhất một vai trò được bảo vệ, kèm cấp, số vai trò và trạng thái người quản lý của họ.
+
+:::info
+**Giới hạn:** 20 người dùng ở bản miễn phí, 50 ở bản [premium](/vi/premium).
+:::
+
+#### Thêm một người dùng {#add-user}
+
+1. Mở thẻ “**Người dùng**”.
+2. Nhấp vào “**Thêm**”.
+3. Chọn **người dùng** và **vai trò Xác thực** cần gán cho họ.
+
+Thành viên nhận một tin nhắn riêng: họ có thể dùng vai trò ngay nếu cấp của họ đủ, nếu không họ được mời cấu hình một phương thức có cấp đủ.
+
+:::info
+Các lời mời bị giới hạn để tránh spam. Những lời mời bị chặn có thể được gửi lại sau từ thẻ thông tin của thành viên.
+:::
+
+#### Thẻ người dùng và trạng thái {#member-status}
+
+Nhấp vào “**Quản lý**” để mở thẻ thông tin của một thành viên: cấp, ID, việc họ có phải người quản lý hay không, và từng vai trò của họ kèm trạng thái. Bộ chọn vai trò cho phép thêm hoặc gỡ vai trò.
+
+| **Trạng thái** | **Mô tả**                                                         |
+| ----------- | ----------------------------------------------------------------- |
+| Đã mời      | Thành viên đã được thêm nhưng cấp của họ chưa đủ (hồ sơ cần cấu hình) |
+| Đang chờ    | Đang chờ phê duyệt: nhấp vào “**Phê duyệt**”                       |
+| Hoạt động   | Thành viên có thể xác thực để nhận vai trò                        |
+| Đã tắt      | Quyền truy cập bị đình chỉ: nhấp vào “**Khôi phục**” để khôi phục  |
+
+#### Thăng làm người quản lý {#promote-manager}
+
+“**Thăng làm người quản lý**” cấp cho thành viên quyền truy cập bảng cấu hình, với điều kiện đạt cấp tối thiểu của người quản lý. Một người quản lý quản lý những người dùng và vai trò nằm dưới họ. “**Gỡ người quản lý**” thu hồi quyền truy cập này.
+
+#### Xóa một người dùng {#delete-user}
+
+“**Xóa người dùng**” gỡ thành viên khỏi mọi vai trò được bảo vệ của máy chủ. Bạn sẽ được yêu cầu xác nhận.
+
+### Thẻ Nhật ký {#logs-tab}
+
+Thẻ Nhật ký hiển thị nhật ký của Authentification Manager, có phân trang: các phiên được cấp, gia hạn hoặc thu hồi, các thay đổi cấu hình… Nút hình con mắt mở chi tiết của một mục (người dùng, hành động, loại, ngày, vai trò và đối tượng). Nhật ký cũng được gửi đến webhook đã cấu hình.
+
+### Phiên {#sessions-tab}
+
+Không có thẻ riêng: khối “**Các phiên gần nhất**” của thẻ Vai trò hiển thị phiên mới nhất, và “**Xem tất cả**” mở danh sách mọi phiên của máy chủ kèm trạng thái của chúng (Hoạt động, Đã hết hạn, Đã thu hồi). “**Xem**” hiển thị chi tiết một phiên và các hành động gần nhất của nó.
+
+### Bảo vệ Quy trình chào đón {#onboarding-protection}
+
+Nếu một vai trò được bảo vệ được thêm vào các câu hỏi của Quy trình chào đón Discord, chúng tôi tự động gỡ nó khỏi câu hỏi và ghi vào nhật ký: nếu không, bất kỳ người mới vào nào cũng có thể nhận vai trò mà không cần xác thực.
+
+### Khi Premium kết thúc {#premium-end}
+
+Khi một gói đăng ký [Premium](/vi/premium) kết thúc, các vai trò đang hoạt động vượt quá 3 sẽ bị tắt tự động (những vai trò cũ nhất được giữ lại) và các thời lượng phiên trên 8 giờ được đưa về 8 giờ.
+
+## Câu hỏi thường gặp {#faq}
+
+### Có những phương thức xác thực nào?
+
+Có ba phương thức: mã PIN (đơn giản hoặc tăng cường), OTP (mã 2FA theo chuẩn TOTP) và passkey (WebAuthn). Passkey mang lại mức bảo mật cao nhất (cấp S).
+
+### Cấu hình Authentification Manager ở đâu?
+
+Trong `/settings`, thẻ Bảo vệ, nhấp vào “Cấu hình” bên cạnh “Authentification Manager”, hoặc trực tiếp bằng lệnh `/auth-settings`.
+
+### Điều gì xảy ra khi một phiên hết hạn?
+
+Chúng tôi tự động gỡ vai trò được bảo vệ khỏi thành viên. Họ phải xác thực lại bằng `/auth` để nhận lại, hoặc gia hạn phiên trước khi nó hết hạn.
+
+### Làm gì nếu tôi quên thông tin xác thực?
+
+Từ hồ sơ `/auth-profile` của bạn, nút “Tôi quên thông tin xác thực” đặt lại hoàn toàn tài khoản của bạn: mọi phương thức bị xóa và quyền truy cập bị thu hồi. Thao tác này không thể hoàn tác và đòi hỏi cấu hình lại hoàn toàn.
+
+### Có thể bảo vệ bao nhiêu vai trò bằng Authentification Manager?
+
+Bạn có thể bảo vệ 3 vai trò ở bản miễn phí và 10 vai trò ở bản premium, tương ứng cho 20 và 50 người dùng. Các phiên kéo dài tối đa 8 giờ ở bản miễn phí và 24 giờ ở bản premium.
+
+### Người quản lý có thể sửa mọi thứ không?
+
+Không. Một người quản lý phải xác thực mỗi lần mở bảng, chỉ quản lý các vai trò và người dùng nằm dưới họ, và không thể sửa cấu hình máy chủ.

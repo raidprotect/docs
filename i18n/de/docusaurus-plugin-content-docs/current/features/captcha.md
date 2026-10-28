@@ -37,6 +37,8 @@ Das Captcha basiert auf einer Rolle **@Nicht verifiziert** und einem Kanal **#ve
 | **Panel (Interaktiv)**, Standard | Eine dauerhafte Nachricht „**Verifizierungssystem**“ mit einer Schaltfläche „**Verifizieren**“, die die [RaidProtect-Activity](#activity) öffnet. Das Mitglied kann nicht in **#verifizierung** schreiben. |
 | **Challenge (Klassisch)** | Bei seiner Ankunft wird ein Bild in **#verifizierung** gepostet, und es tippt den Code als Nachricht in den Kanal. |
 
+Das Panel trägt eine Schaltfläche „**Translate**“, um es in der eigenen Sprache zu lesen, und jeder Neuankömmling wird im Verifizierungskanal erwähnt, danach wird die Nachricht gelöscht: So findet er den Kanal wieder.
+
 Der Panel-Modus hält den Kanal sauber und ermöglicht zusätzliche Einstellungen: Wahl der Sanktion bei aufgebrauchten Versuchen, [Captcha während eines Raids eingefroren](./raid-mode.md#action), [Zurückhalten zu junger Konten am Eingang](./onboarding.md#minage). Der Challenge-Modus kickt das Mitglied immer nach Ablauf der vorgegebenen Zeit oder wenn seine Versuche aufgebraucht sind.
 
 ### Auslöser {#trigger}
@@ -45,15 +47,11 @@ Der Panel-Modus hält den Kanal sauber und ermöglicht zusätzliche Einstellunge
 |---|---|
 | **Dauerhaft**, Standard | Bei jedem Beitritt, ohne Bedingung. |
 | **Automatisch** | Nur während eines Raids oder bei einer hohen DISCON-Stufe. Die übrigen Neuankömmlinge treten direkt bei. |
-| **Intelligent** <span className="badge-experiment">Experiment</span> | Wie Automatisch, zuzüglich der Konten, die verdächtig erscheinen. |
+| **Intelligent** | Wie Automatisch, zuzüglich der Konten, die verdächtig erscheinen. |
 
-Mit **Automatisch** wird das Captcha während eines Raids nur verlangt, wenn der [Auto RaidMode](./raid-mode.md#action) auf „**Zum Captcha schicken**“ oder „**Captcha während des Raids eingefroren**“ steht, sowie bei einem [DISCON](./discon.md)-Alarm ab Stufe 3 (im Experiment mit der Shield Update).
+Mit **Automatisch** wird das Captcha während eines Raids nur verlangt, wenn der [Auto RaidMode](./raid-mode.md#action) auf „**Zum Captcha schicken**“ oder „**Captcha während des Raids eingefroren**“ steht, sowie bei einem [DISCON](./discon.md)-Alarm ab Stufe 3.
 
 Der Auslöser **Intelligent** bewertet das Profil jedes Neuankömmlings. Ein von Ihrem Team von Hand genehmigtes Mitglied gilt nie als verdächtig.
-
-:::info Experiment: Shield Update
-Der intelligente Auslöser gehört zur **Shield Update**, die für Version 3.6.0 vorgesehen ist. Bis zu ihrer Veröffentlichung befindet er sich in der Experimentierphase, als öffentliche Beta für [Premium](/de/premium)-Server. Ohne das Experiment wird er nicht angeboten.
-:::
 
 ## 🚪 Wie konfiguriere ich das Captcha? {#config}
 
@@ -75,11 +73,11 @@ Das Captcha startet im Modus **Panel (Interaktiv)**, ausgelöst **Dauerhaft**, m
 2. Öffnen Sie den Tab „**Ankünfte**“.
 3. Klicken Sie neben „**Captcha**“ auf „**Konfigurieren**“.
 4. Wählen Sie unter „**Anzeigemodus**“ „**Panel (Interaktiv)**“ oder „**Challenge (Klassisch)**“.
-5. Wählen Sie unter „**Auslösung**“ „**Dauerhaft**“, „**Automatisch**“ oder „**Intelligent**“ (Shield Update).
+5. Wählen Sie unter „**Auslösung**“ „**Dauerhaft**“, „**Automatisch**“ oder „**Intelligent**“.
 
 ### Verifizierung in der Activity {#activity}
 
-Im Modus **Panel** öffnet die Schaltfläche „**Verifizieren**“ die **RaidProtect-Activity**: Das Mitglied löst ein kleines Puzzle direkt in Discord, in den Farben Ihres Servers und mit den Kanal-Links Ihres [Onboarding-Prozesses](../guides/onboarding.md). Nach der Verifizierung entdeckt es dort seine [Willkommenskarte](./onboarding.md#welcome-message).
+Im Modus **Panel** öffnet die Schaltfläche „**Verifizieren**“ die **RaidProtect-Activity**: Das Mitglied löst ein kleines Puzzle direkt in Discord, in den Farben Ihres Servers und mit den Kanal-Links Ihres [Onboarding-Prozesses](../guides/onboarding.md). Auf einem [Premium](/de/premium)-Server mit Symbol wird das Serversymbol anstelle des RaidProtect-Logos angezeigt. Nach der Verifizierung entdeckt es dort seine [Willkommenskarte](./onboarding.md#welcome-message).
 
 - **Puzzle nicht geschafft:** Wie bei einem falschen Code kostet es einen Versuch, und die vorgesehene Sanktion greift, wenn die Versuche aufgebraucht sind. Die Activity teilt dem Mitglied zuerst das Ergebnis mit, danach wird die Sanktion angewendet.
 - **Erfolg:** Das Mitglied wird verifiziert, sobald es den Erfolgsbildschirm verlässt. Klickt es in der Zwischenzeit auf „**Verifizieren**“, gilt seine Validierung sofort, statt die Activity neu zu starten.
@@ -94,8 +92,8 @@ Im Modus **Panel** öffnet die Schaltfläche „**Verifizieren**“ die **RaidPr
 
 Mit der [Identity Update](./alt-accounts.md) erkennt die Activity auch Neuankömmlinge, die wahrscheinlich von derselben Person betrieben werden wie ein Mitglied Ihres Servers:
 
-- **Sichere Verknüpfung:** Die Konten werden automatisch in [`/alt`](./alt-accounts.md#alt) verknüpft. Die Captcha-Logs weisen darauf hin, mit einer Schaltfläche „**Verknüpfung aufheben**“.
-- **Wahrscheinliche Verknüpfung:** Ist [Nur ein Konto pro Person](./alt-accounts.md#single-account) aktiv, kommt das Mitglied zur Prüfung. „**Mit anderem Mitglied verknüpfen**“ verknüpft die Konten in `/alt` und lässt es herein; wurde kein Konto erkannt, bittet Sie ein Fenster, das Mitglied auszuwählen („**Konto bereits auf dem Server**“). Andernfalls tritt das Mitglied bei, und die Captcha-Logs melden die wahrscheinliche Verknüpfung mit einer Schaltfläche „**Konten verknüpfen**“.
+- **Sichere Verknüpfung:** Die Konten werden automatisch in [`/alt`](./alt-accounts.md#alt) verknüpft. Die Captcha-Logs weisen darauf hin, mit einer Schaltfläche „**Verknüpfung aufheben**“. Ist die Gruppe sanktioniert oder hält [Nur ein Konto pro Person](./alt-accounts.md#single-account) ihre Zweitkonten zurück, erhält der Neuankömmling die Sanktion der Gruppe oder kommt in Quarantäne.
+- **Wahrscheinliche Verknüpfung:** Ist [Nur ein Konto pro Person](./alt-accounts.md#single-account) aktiv, kommt das Mitglied zur Prüfung. „**Mit anderem Mitglied verknüpfen**“ verknüpft die Konten in `/alt` und lässt es herein; wurde kein Konto erkannt, bittet Sie ein Fenster, das Mitglied auszuwählen („**Konto bereits auf dem Server**“). Andernfalls tritt das Mitglied bei, und die Captcha-Logs melden die wahrscheinliche Verknüpfung mit einer Schaltfläche „**Verknüpfen**“.
 - **Sichere Verknüpfung nicht angewendet:** Es wird nichts automatisch verknüpft, wenn ein Konto der Gruppe zum Serverteam gehört, wenn der Neuankömmling mit mehreren `/alt`-Gruppen verknüpft ist oder wenn beide Konten bereits jeweils eine eigene Gruppe haben (zwei Gruppen werden nie automatisch zusammengeführt). Die Verknüpfung wird Ihnen dann auf die gleiche Weise vorgeschlagen.
 
 Es werden Ihnen nur die Konten Ihres Servers gezeigt: Über andere Server wird nichts gesagt.
@@ -199,7 +197,7 @@ Ersetzen Sie `[@user]` durch die gewünschte [Kennung](../guides/id.mdx); diese 
 Das Captcha arbeitet mit den anderen Schutzmaßnahmen für Neuzugänge zusammen:
 - **[Auto RaidMode](./raid-mode.md#action):** Mit der Aktion „**Zum Captcha schicken**“ durchlaufen die Neuankömmlinge einer Welle das Captcha, statt gekickt zu werden. Mit „**Captcha während des Raids eingefroren**“ warten sie hinter dem Captcha und durchlaufen es nach der Welle.
 - **[Mindestalter des Kontos](./onboarding.md#minage):** Die Aktion „**Am Eingang festhalten**“ blockiert ein zu junges Konto an einem Captcha, das es erst lösen kann, wenn das Alter erreicht ist.
-- **[DISCON](./discon.md#captcha):** Ab Stufe 4 wird das Captcha aktiviert, falls es konfiguriert ist, auch wenn Sie es deaktiviert hatten. Ab Stufe 3 gilt es für alle Neuankömmlinge, unabhängig von seinem Auslöser (im Experiment mit der Shield Update).
+- **[DISCON](./discon.md#captcha):** Ab Stufe 4 wird das Captcha aktiviert, falls es konfiguriert ist, auch wenn Sie es deaktiviert hatten. Ab Stufe 3 gilt es für alle Neuankömmlinge, unabhängig von seinem Auslöser.
 
 ## Häufig gestellte Fragen {#faq}
 

@@ -15,10 +15,6 @@ El **DISCON** es el nivel de peligro de tu servidor, basado en el modelo del DEF
 - **Una vuelta limpia**: al bajar de nivel, solo desactivamos lo que el propio DISCON activó. Un captcha, un Bloqueo de MD o un modo raid que hubieras activado a mano se quedan como están.
 - **Un cambio manual**: el nivel nunca cambia solo, es tu equipo quien decide.
 
-:::info Experimental: Shield Update
-El DISCON forma parte de la **Shield Update**, prevista para la versión 3.6.0. Hasta su lanzamiento, está en fase experimental, en beta pública para los servidores [Premium](/es/premium). El [canal de voz de estado](#voice) requiere Premium.
-:::
-
 ## 🚦 Los cinco niveles {#levels}
 
 | Nivel | Nombre | Lo que aplicamos |
@@ -81,7 +77,7 @@ Para ello, el captcha debe estar [configurado](./captcha.md#config), con su cana
 1. Ejecuta el [comando `/settings`](../setup.md#settings).
 2. Abre la pestaña “**Protección**”.
 3. Haz clic en “**Configurar**” junto a “**DISCON**”.
-4. Elige el canal del panel en el selector, o haz clic en “**Crear el canal del panel**”.
+4. Elige el canal del panel (de texto o de voz) en el selector, o haz clic en “**Crear el canal del panel**”.
 5. Opcionalmente ([Premium](/es/premium)), elige un canal de voz de estado, o haz clic en “**Crear el canal de estado**”.
 
 Debajo de la configuración encuentras el nivel actual, los cinco botones de nivel y la **escala de niveles**, que describe lo que hará cada nivel en tu servidor.
@@ -93,6 +89,7 @@ Debajo de la configuración encuentras el nivel actual, los cinco botones de niv
 Los botones del panel no requieren ningún permiso: **el acceso al canal hace de control**. Elige por tanto un canal reservado a tu equipo.
 
 - Se rechaza un canal visible para todo el servidor: cualquier miembro podría cambiar el nivel.
+- Un canal de voz también sirve: el panel se publica entonces en su canal de texto integrado.
 - “**Crear el canal del panel**” crea un canal `#discon` invisible para @everyone. Ábrelo después a los roles de tu equipo.
 
 ### Canal de voz de estado <span className="badge-premium">Premium</span> {#voice}

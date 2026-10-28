@@ -62,7 +62,7 @@ Bir pencere açılır ve şunları girmenizi sağlar:
 `(user)` yerine istediğiniz etiketi veya kimliği, `[reason]` yerine yaptırımın gerekçesini yazın.
 
 - `[duration]`: belirtilirse yasaklama geçici olur ([`/tempban`](#tempban) ile olduğu gibi).
-- `[--delete-messages]`: silinecek geçmişin süresi (örneğin `1h`, `1d`, `7d`). Discord silmeyi en fazla 7 günle sınırlar.
+- `[--delete-messages]`: silinecek geçmişin süresi (örneğin `1h`, `1d`, `7d`). Discord silmeyi en fazla 7 günle sınırlar. Bu seçenek olmadan [yasaklamada mesajların silinmesi](./sanctions.mdx#ban-delete) değeri uygulanır.
 - `[--silent]`: hedefe DM göndermez.
 
 :::tip
@@ -136,7 +136,7 @@ Softban özellikle **ele geçirilmiş hesaplar** için uygundur: spam temizlenir
 `(member)` yerine istediğiniz etiketi veya kimliği, `[reason]` yerine yaptırımın gerekçesini yazın.
 
 :::warning
-[Jail rolü](./sanctions.mdx#jail), bu komutu kullanabilmeden önce `/settings` üzerinden yapılandırılmalıdır. Otomatik modüller ise hiçbir Jail rolü yapılandırılmadığında timeout'a döner.
+[Jail rolü](./sanctions.mdx#jail), bu komutu kullanabilmeden önce `/settings` üzerinden yapılandırılmalıdır. Otomatik modüller ise hiçbir Jail rolü yapılandırılmadığında timeout'a döner. Hapsedilen bir üyenin ses kanalıyla bağlantısı da kesilir.
 :::
 
 ### <Icon src="/img/icons/SanctionsJAILTemp.svg" alt="icon SanctionsJAILTemp" title=":iconSanctionsJAILTemp:" /> Bir kullanıcıyı geçici olarak hapsetme {#tempjail}
@@ -154,6 +154,8 @@ Softban özellikle **ele geçirilmiş hesaplar** için uygundur: spam temizlenir
 Şu komutu kullanın: ```/unjail (member) [--silent] [reason]```
 
 `(member)` yerine istediğiniz etiketi veya kimliği, `[reason]` yerine serbest bırakmanın gerekçesini yazın.
+
+Karantinadaki bir üye (minimum hesap yaşı, Discord karantinası) jail'de değildir: `/unjail` bunu reddeder ve karantinasının nasıl kaldırılacağını belirtir.
 
 ## <Icon src="/img/icons/SanctionsWARN.svg" alt="icon SanctionsWARN" title=":iconSanctionsWARN:" /> Bir kullanıcıyı uyarma {#warn}
 
@@ -195,11 +197,12 @@ Komut, Discord'un **Takma Adları Yönet** iznini gerektirir ve [ön ekli komut]
 
 `/slowmode` komutu, kullanıcıların gönderdiği mesajların sıklığını sınırlamak için bir kanalın yavaş modunu etkinleştirmenizi veya değiştirmenizi sağlar.
 
-Şu komutu kullanın: ```/slowmode (delay) [duration] [channel] [reason]```
+Şu komutu kullanın: ```/slowmode (delay) [duration] [channel] [reason] [--silent]```
 
 - `(delay)` yerine her mesaj arasında istediğiniz süreyi yazın (örn.: `5s`, `1m`, `10m`, `1h`, 6 saate kadar; devre dışı bırakmak için `0`).
 - Yavaş modu bu süreden sonra otomatik olarak devre dışı bırakmak için `[duration]` ekleyin (örn. `30m`, `2h`).
 - Yavaş modu komutu yazdığınız kanaldan başka bir kanala uygulamak istiyorsanız `[channel]` ekleyin.
+- Kanalda hiçbir şey duyurulmaması için `--silent` ekleyin.
 - Sunucu loglarına kaydedilecek gerekçeyi belirtmek için `[reason]` ekleyin.
 
 ## 🕵️ Silinen bir mesajı geri alma {#snipe}
@@ -215,7 +218,7 @@ Komut, Discord'un **Takma Adları Yönet** iznini gerektirir ve [ön ekli komut]
 Yanıttan bir mesajın **yazarına yaptırım uygulayabilirsiniz**. Yanıtı yalnızca siz görürsünüz.
 
 :::warning
-`/snipe` yalnızca RaidProtect'in bir saat boyunca bellekte tuttuğu mesajları görür. Bunlar yalnızca “**Mesaj önbelleği**” etkinse (`/settings`, “**Araçlar**” sekmesi, varsayılan olarak devre dışı) ya da [anti-spam](./anti-spam.mdx) veya [bildirimler](./reports.md) etkinse, ki bu onu kendiliğinden etkinleştirir, saklanır. Aksi halde komut, silinen hiçbir mesaj bulunamadığını yanıtlar.
+`/snipe` yalnızca RaidProtect'in bir saat boyunca bellekte tuttuğu mesajları görür. Bunlar yalnızca “**Mesaj önbelleği**” etkinse (`/settings`, “**Araçlar**” sekmesi, varsayılan olarak devre dışı) ya da [anti-spam](./anti-spam.mdx) veya [bildirimler](./reports.md) etkinse, ki bu onu kendiliğinden etkinleştirir, saklanır: o sırada `/snipe` kullanmak ayarı kaydeder ve anti-spam ile bildirimler daha sonra kapatılsa bile ayar etkin kalır. Aksi halde komut, mesaj önbelleğinin devre dışı olduğunu belirtir ve bunu etkinleştirmeyi bir yöneticiye (ya da Entegrasyonların izinleri uygulandığında `/settings` kullanma yetkisi olan bir üyeye) önerir.
 :::
 
 Mesaj önbelleğini etkinleştirmek için:
@@ -260,7 +263,7 @@ Varsayılan olarak moderasyon logları RaidProtect'in genel log kanalına gönde
 
 <Settings start="logs" />
 
-“**Loglar**” ekranı üç kanalı bir araya getirir: “**Genel**”, “**Moderasyon**” ve “**Captcha**”. Boş bırakılan bir “**Moderasyon**” veya “**Captcha**” kanalı loglarını genel kanala yönlendirir. “**Pasif moderasyon logları**” anahtarı, RaidProtect'in bot üzerinden geçmeden yapılan eylemleri de kaydedip kaydetmeyeceğini seçer.
+“**Loglar**” ekranı üç kanalı bir araya getirir: “**Genel**”, “**Moderasyon**” ve “**Captcha**”. Boş bırakılan bir “**Moderasyon**” veya “**Captcha**” kanalı loglarını genel kanala yönlendirir. “**Pasif moderasyon logları**” anahtarı, RaidProtect'in bot üzerinden geçmeden yapılan eylemleri de kaydedip kaydetmeyeceğini seçer. Kanallar, roller, üyeler, mesajlar ve ses kendi [sunucu loglarına](./logs.md) sahiptir.
 
 ## Sık sorulan sorular {#faq}
 

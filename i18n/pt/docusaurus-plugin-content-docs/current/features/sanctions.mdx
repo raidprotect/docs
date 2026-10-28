@@ -20,7 +20,7 @@ O histórico de sanções registra automaticamente todas as ações de moderaç�
 - **Sanções manuais**: todos os [comandos de moderação](./moderation.mdx) (`/ban`, `/tempban`, `/kick`, `/mute`, `/jail`, `/warn`…) são registrados no histórico.
 - **Sanções automáticas**: as sanções aplicadas pelos nossos módulos de proteção ([anti-spam](./anti-spam.mdx), [HoneyPot](./honeypot.md), [ScamLens](./scam-images.md)…) também são adicionadas ao histórico.
 - **Banimentos, expulsões e timeouts**: as sanções aplicadas sem passar pelo RaidProtect são adicionadas ao histórico.
-- **AutoMod do Discord**: os timeouts aplicados pelo AutoMod do Discord são registrados. Com a Shield Update (em experimentação), cada mensagem bloqueada por uma regra do AutoMod também cria um **aviso** em nome de “**Discord Automod**”, silencioso (nenhuma DM), a menos que a regra já aplique um timeout.
+- **AutoMod do Discord**: os timeouts aplicados pelo AutoMod do Discord são registrados. Cada mensagem bloqueada por uma regra do AutoMod também cria um **aviso** em nome de “**Discord Automod**”, silencioso (nenhuma DM), a menos que a regra já aplique um timeout.
 - **Notificações de sanção**: os membros sancionados recebem uma mensagem privada informando-os sobre a sanção e o seu motivo. O bot também envia um aviso de recebimento detalhado confirmando o status do envio: **recebida**, **DM fechadas**, **expirada** ou **silenciosa** (quando a opção `[--silent]` é usada). Para expulsões, softbans e bans temporários, esta mensagem também contém um **botão com um convite para o servidor** para que o membro possa voltar quando a sanção terminar.
 
 :::info
@@ -159,11 +159,7 @@ Na tela Jail, o seletor “**Gestão de cargos ao prender**” controla o que o 
 - “**Adicionar o cargo de jail**” *(padrão)*: o membro mantém seus cargos, o cargo de jail é adicionado.
 - “**Substituir todos os cargos**”: **removemos todos os cargos do membro** durante o tempo de prisão e os restauramos quando ele é solto. Mais rigoroso, isso evita que um cargo com permissões explícitas contorne as restrições do cargo de Jail.
 
-### Quarentena do Discord sincronizada <span className="badge-experiment">Experimentação</span> {#discord-quarantine}
-
-:::info Experimentação: Shield Update
-A quarentena do Discord sincronizada faz parte da **Shield Update**, prevista para a versão 3.6.0. Até o lançamento, ela está em experimentação, em beta público para os servidores [Premium](/pt/premium).
-:::
+### Quarentena do Discord sincronizada {#discord-quarantine}
 
 O AutoMod do Discord pode colocar em quarentena um membro cujo perfil infrinja uma regra (apelido, tag de servidor). Com esta configuração, acompanhamos essa quarentena: o membro recebe o **cargo de jail** e uma sanção **Quarentena** é registrada no histórico. Ele sai dela assim que o Discord remove a quarentena.
 
@@ -175,6 +171,10 @@ O AutoMod do Discord pode colocar em quarentena um membro cujo perfil infrinja u
 :::info
 Esta configuração exige um [cargo Jail](#jail). Desativá-la libera as quarentenas que ela aplicou.
 :::
+
+### Exclusão das mensagens no banimento {#ban-delete}
+
+Na tela “**Sanções**”, o seletor “**Exclusão das mensagens no banimento**” define o histórico excluído por padrão quando você bane com `/ban`, `?ban` ou `/tempban` sem informar `--delete-messages`. Escolha “**Nenhuma exclusão**” (padrão), 1 hora, 6 horas, 12 horas, 1 dia, 3 dias ou 7 dias. Um valor informado no comando prevalece.
 
 ### Cargo de Mute {#mute}
 

@@ -1,0 +1,67 @@
+---
+title: Join lock
+description: "RaidProtect'in Join lock özelliği, Discord'un 24 saatlik sınırının ötesinde, Discord sunucunuza yeni katılımları kalıcı olarak engeller."
+---
+
+import JoinLockMockup from '@site/src/components/DiscordMessage/mockups/join-lock';
+
+{/* <JoinLockMockup /> : şimdilik gizli */}
+
+RaidProtect'in **Join lock** özelliği, siz devre dışı bırakana kadar sunucuya yeni katılımlara erişimi kapatır; böylece Discord'un bu engellemeye yalnızca “**Katılımları duraklat**” siber güvenlik eylemiyle 24 saat için izin veren yerel sınırlamasını aşar.
+
+## 🚦 Kullanım durumları ve öneriler {#recommendations}
+
+- **Özel ve kapalı sunucular:** Join lock, özel kalması gereken ve hiçbir yeni katılım istemeyen sunucular (şirket sunucuları, küçük ekipler, özel gruplar) için özellikle önerilir.
+- **Ekip sunucuları:** Yalnızca yetkili üyelerin erişebilmesi gereken, moderasyon veya yönetim ekibine ayrılmış sunucular için.
+- **Şirket veya profesyonel sunucular:** Discord'u dahili olarak kullanan ve sunucuya yalnızca mevcut çalışanların erişebilmesini garanti etmek isteyen kuruluşlar için.
+- **Sınırlı boyutlu topluluklar:** İstenen azami boyuta ulaşmış ve artık kalıcı olarak yeni üye kabul etmek istemeyen sunucular için.
+
+## ❓ Join lock nasıl çalışır {#working}
+
+Join lock etkin olduğu sürece RaidProtect, gelenlere Otomatik RaidMode için seçtiğiniz [baskın sırasındaki eylemi](./raid-mode.md#action) uygular. Her 24 saatte bir elle yenilenmesi gereken yerel Discord özelliğinin aksine engelleme, siz devre dışı bırakana kadar müdahale olmadan sürer.
+
+| Baskın sırasındaki eylem | Join lock'un etkisi |
+|---|---|
+| “**Davetleri kilitle**” (varsayılan) | Sunucunun davetleri devre dışı bırakılır: yeni kimse giremez. |
+| “**Gelenleri at**” ([Premium](/tr/premium)) | Her gelen atılır ve katılımların kapalı olduğunu belirten bir özel mesaj alır. |
+| “**Captcha'ya gönder**” | Gelenler **[captcha](./captcha.md)'yı çözdükten sonra girebilir**: sunucu bu nedenle kapalı değildir. |
+| “**Baskın boyunca captcha dondurulur**” | Join lock etkin olduğu sürece gelenler captcha'nın arkasında bekler. |
+
+:::warning
+Gerçekten kapalı kalması gereken bir sunucu için “**Davetleri kilitle**”, “**Gelenleri at**” veya “**Baskın boyunca captcha dondurulur**”u seçin. “**Captcha'ya gönder**” ile Join lock yalnızca gelenlere captcha'yı zorunlu kılmakla yetinir.
+:::
+:::info
+Sunucuda zaten bulunan üyeler etkin kalır ve sunucuyu normal şekilde kullanmaya devam edebilir. [Karşılama mesajı](./onboarding.md#welcome-message), Join lock etkin olduğu sürece susar.
+:::
+:::warning
+“**Davetleri kilitle**” eylemiyle, Discord'un topluluk özellikleri Join lock için vazgeçilmezdir. [Sunucunuzda topluluğun etkinleştirildiğini kontrol etmek için rehberimizi izleyin.](../guides/community.md) Diğer eylemler topluluk olmadan çalışır.
+:::
+
+## 🚩 Join lock yapılandırması {#config}
+
+Şu komutu kullanın: ```/joinlock [status]```
+
+- Seçenek olmadan komut, Join lock'un durumunu “**Etkinleştir**” veya “**Devre dışı bırak**” düğmesiyle birlikte gösterir.
+- `[status]` yerine doğrudan etkinleştirmek için **True** ya da devre dışı bırakmak için **False** yazın.
+
+![/joinlock komutunun ekran görüntüsü](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-join-lock.webp)
+
+Komut **Sunucuyu Yönet** iznini gerektirir ve her durum değişikliğinde log kanalına bir mesaj gönderilir.
+
+:::info
+`joinlock` komutu [ön ekle kullanılabilir](../guides/prefix.md). Join lock etkin olduğu sürece [`/raidmode` komutu](./raid-mode.md#enable) kullanılamaz: önce Join lock'u devre dışı bırakın.
+:::
+
+## Sık sorulan sorular {#faq}
+
+### Baskın modundan farkı nedir?
+
+[Baskın modu](./raid-mode.md) geçicidir (en fazla 24 saat) ve bir dalga sırasında kendiliğinden etkinleşebilir. Join lock elle etkinleştirilir ve siz devre dışı bırakana kadar yerinde kalır.
+
+### Discord topluluğunu etkinleştirmek gerekir mi?
+
+Yalnızca Otomatik RaidMode'un baskın sırasındaki eylemi “**Davetleri kilitle**” ise. Diğer eylemlerle Join lock topluluk olmadan çalışır.
+
+### Yeni üyeler hâlâ girebilir mi?
+
+“**Davetleri kilitle**”, “**Gelenleri at**” veya “**Baskın boyunca captcha dondurulur**” ile hayır. “**Captcha'ya gönder**” ile captcha'yı çözdükten sonra girerler.

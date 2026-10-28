@@ -100,6 +100,7 @@ In Ihrem Profil können Sie:
 - Einen **PIN-Code** (einfach oder verstärkt) hinzufügen, ändern oder löschen.
 - Den **2FA-Code** (OTP) mit einem QR-Code oder einem geheimen Schlüssel aktivieren, ihn neu erzeugen oder löschen.
 - Einen **Passkey** über die Registrierungsseite hinzufügen oder einen löschen. Jeder Passkey zeigt den Namen des Geräts und das Datum der letzten Verwendung an.
+- Einen Passkey **umbenennen**: Die Schaltfläche „**Passkey bearbeiten**“ neben „**Hinzufügen**“ öffnet ein Fenster mit Ihren Passkeys und dem neuen Namen, den Sie vergeben möchten (zum Beispiel `MacBook`, `iPhone`, `YubiKey`). Die Umbenennung wird in Ihrem Audit-Protokoll festgehalten.
 
 Haben Sie bereits eine Methode, bitten wir Sie, sich zu authentifizieren, bevor Sie eine hinzufügen oder ändern. Der untere Teil des Profils erinnert Sie an Ihren Grad und die Methode, die Sie hinzufügen müssen, um eine Stufe aufzusteigen.
 
@@ -137,10 +138,10 @@ Verwenden Sie den Befehl: ```/auth [role]```
 
 1. Führen Sie den Befehl `/auth` auf dem Server aus oder klicken Sie in einem Staff-Panel auf „**Rolle übernehmen**“.
 2. Ein Menü zeigt die verfügbaren Rollen mit ihrem erforderlichen Grad und ihrer Sitzungsdauer an.
-3. Wählen Sie eine Rolle.
+3. Wählen Sie eine oder mehrere Rollen (bis zu 10). Eine einzige Authentifizierung auf dem Grad der anspruchsvollsten öffnet sie alle.
 4. Wählen Sie eine Authentifizierungsmethode unter denen, die den Grad der Rolle erreichen.
 5. Führen Sie die Verifizierung durch (PIN, OTP oder Passkey).
-6. Bei Erfolg weisen wir Ihnen die Discord-Rolle zu und erstellen eine Sitzung.
+6. Bei Erfolg weisen wir Ihnen die Discord-Rolle oder -Rollen zu und erstellen für jede eine Sitzung. Die Sitzungen werden in den Logs des Authentification Manager festgehalten.
 
 :::info
 Nur Rollen, denen Sie mit dem Status **Aktiv** zugewiesen sind, erscheinen im Menü.
@@ -233,6 +234,8 @@ Wir lehnen eine von einer Integration verwaltete Rolle ab, eine im Onboarding-Pr
 
 :::tip
 Wird Ihre Rolle in der Mitgliederliste **separat angezeigt**, wählen Sie „**Separate Berechtigungsrolle erstellen**“: Ihre Mitglieder behalten ihre dauerhaft sichtbare Rolle, und die sensiblen Berechtigungen werden nur während authentifizierter Sitzungen vergeben.
+
+Mit einer separaten Rolle gehen auch die Kanalmoderationsberechtigungen der Anzeigerolle auf die Rolle `🔑` über. Bei einer Administrator-Rolle lässt die Option „**Ansicht aller Kanäle außerhalb einer Sitzung behalten**“ der Anzeigerolle außerhalb der Sitzungen die Sicht auf alle Kanäle; ohne sie sieht sie ohne den Administrator nichts mehr.
 :::
 
 #### Administrator-Rollen über `/audit` schützen {#audit-bulk}

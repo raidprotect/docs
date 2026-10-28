@@ -62,7 +62,7 @@ import Icon from "@site/src/components/Icon";
 将 `(user)` 替换为所需的提及或 ID，将 `[reason]` 替换为处罚的理由。
 
 - `[duration]`：如果填写，封禁将变为临时封禁（与 [`/tempban`](#tempban) 相同）。
-- `[--delete-messages]`：要删除的历史消息的时长（例如 `1h`、`1d`、`7d`）。Discord 限制最多只能删除 7 天。
+- `[--delete-messages]`：要删除的历史消息的时长（例如 `1h`、`1d`、`7d`）。Discord 限制最多只能删除 7 天。未使用此选项时，将采用[封禁时删除消息](./sanctions.mdx#ban-delete)的设置值。
 - `[--silent]`：不向目标发送私信。
 
 :::tip
@@ -136,7 +136,7 @@ import Icon from "@site/src/components/Icon";
 将 `(user)` 替换为所需的提及或 ID，将 `[reason]` 替换为处罚的理由。
 
 :::warning
-必须先通过 `/settings` 配置[监禁角色](./sanctions.mdx#jail)，才能使用此命令。而自动模块在未配置监禁角色时，会改为使用超时。
+必须先通过 `/settings` 配置[监禁角色](./sanctions.mdx#jail)，才能使用此命令。而自动模块在未配置监禁角色时，会改为使用超时。被监禁的成员也会从其语音频道断开。
 :::
 
 ### <Icon src="/img/icons/SanctionsJAILTemp.svg" alt="icon SanctionsJAILTemp" title=":iconSanctionsJAILTemp:" /> 临时监禁用户 {#tempjail}
@@ -154,6 +154,8 @@ import Icon from "@site/src/components/Icon";
 使用命令：```/unjail (user) [--silent] [reason]```
 
 将 `(user)` 替换为所需的提及或 ID，将 `[reason]` 替换为释放的理由。
+
+处于隔离状态的成员（账号最短注册时长、Discord 隔离）并不处于监禁中：`/unjail` 会拒绝执行，并说明如何解除其隔离。
 
 ## <Icon src="/img/icons/SanctionsWARN.svg" alt="icon SanctionsWARN" title=":iconSanctionsWARN:" /> 警告用户 {#warn}
 
@@ -195,11 +197,12 @@ import Icon from "@site/src/components/Icon";
 
 `/slowmode` 命令可让您启用或修改频道的慢速模式，以限制用户发送消息的频率。
 
-使用命令：```/slowmode (delay) [duration] [channel] [reason]```
+使用命令：```/slowmode (delay) [duration] [channel] [reason] [--silent]```
 
 - 将 `(delay)` 替换为每条消息之间所需的间隔（例如：`5s`、`1m`、`10m`、`1h`，最长 6 小时；`0` 表示停用）。
 - 添加 `[duration]`，可在该时长之后自动停用慢速模式（例如 `30m`、`2h`）。
 - 如果要将慢速模式应用于输入命令所在频道之外的频道，请添加 `[channel]`。
+- 添加 `--silent` 可不在频道中发布任何公告。
 - 添加 `[reason]` 以注明理由，它将记录在服务器日志中。
 
 ## 🕵️ 找回被删除的消息 {#snipe}
@@ -215,7 +218,7 @@ import Icon from "@site/src/components/Icon";
 在回复中，您可以**处罚消息的发送者**。回复仅您自己可见。
 
 :::warning
-`/snipe` 只能看到 RaidProtect 在内存中保留一小时的消息。只有在启用“**消息缓存**”（`/settings` 的“**实用工具**”选项卡，默认关闭）时，或在 [Antispam](./anti-spam.mdx) 或[举报](./reports.md)处于启用状态（这会自动启用缓存）时，才会保留这些消息。否则，该命令会回复未找到任何已删除的消息。
+`/snipe` 只能看到 RaidProtect 在内存中保留一小时的消息。只有在启用“**消息缓存**”（`/settings` 的“**实用工具**”选项卡，默认关闭）时，或在 [Antispam](./anti-spam.mdx) 或[举报](./reports.md)处于启用状态（这会自动启用缓存）时，才会保留这些消息：此时使用 `/snipe` 会写入该设置，即使之后关闭 Antispam 和举报，它也会保持启用。否则，该命令会提示消息缓存已停用，并向管理员（或在应用集成权限时，向获准使用 `/settings` 的成员）提供启用它的选项。
 :::
 
 启用消息缓存的方法：
@@ -260,7 +263,7 @@ import Icon from "@site/src/components/Icon";
 
 <Settings start="logs" />
 
-“**日志**”界面包含三个频道：“**常规**”、“**管理**”和“**验证码**”。“**管理**”或“**验证码**”频道留空时，其日志会回退到通用频道。“**被动管理日志**”开关用于选择 RaidProtect 是否也记录不经过机器人而执行的操作。
+“**日志**”界面包含三个频道：“**常规**”、“**管理**”和“**验证码**”。“**管理**”或“**验证码**”频道留空时，其日志会回退到通用频道。“**被动管理日志**”开关用于选择 RaidProtect 是否也记录不经过机器人而执行的操作。频道、角色、成员、消息和语音有各自的[服务器日志](./logs.md)。
 
 ## 常见问题 {#faq}
 

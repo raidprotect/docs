@@ -55,11 +55,7 @@ ScamLens は、「**保護**」タブの **Automod** モジュールにある「
 - 処罰を知らせる公開メッセージは、[スパム対策](./anti-spam.mdx#public-message)の「**処罰の公開メッセージ**」設定に従います。Premium では無効にできます。
 :::
 
-## 🗂️ 画像カタログ <span className="badge-experiment">実験中</span> <span className="badge-premium">Premium</span> {#catalog}
-
-:::info 実験中：Shield Update
-画像カタログは、バージョン 3.6.0 に予定されている **Shield Update** の一部で、リリースまでは実験中です。
-:::
+## 🗂️ 画像カタログ <span className="badge-premium">Premium</span> {#catalog}
 
 当社が管理し、すべてのサーバーに適用されるグローバルカタログ「Crypto Scam」に加えて、[Premium](/ja/premium) サーバーでは、内容を問わず**独自の画像**をブロックできます。偽 Nitro のスクリーンショット、コミュニティを狙った詐欺のビジュアル、サーバーで禁止されている画像などです。
 

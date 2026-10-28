@@ -1,0 +1,280 @@
+---
+title: Moderation
+description: "RaidProtect's moderation commands (ban, kick, mute, jail, warn) and the centralized ModView help your moderators manage your Discord server."
+---
+
+import Settings from '@site/src/components/DiscordMessage/mockups/v2';
+
+import ModerationMockup from '@site/src/components/DiscordMessage/mockups/moderation';
+
+{/* <ModerationMockup /> : obsolete in 3.5.0 (labels of the sanction selector and of the "Open Modview" menu) */}
+
+import Icon from "@site/src/components/Icon";
+
+To make your moderators' work easier, RaidProtect includes very handy moderation commands that let you interact directly with Discord's native features, such as **[banning](/en/learn/discord-sanctions)** and **kicking** users.
+
+In addition to these actions, RaidProtect sends direct messages to the sanctioned user to explain the reason for their sanction, and this is also recorded in the [sanctions history](./sanctions.mdx) and the server logs for your reference.
+
+:::info
+Sanction commands (`/ban`, `/kick`, `/mute`, `/jail`, `/warn`...), as well as `/nick`, `/clear` and `/slowmode`, are [usable via prefix](../guides/prefix). `/modview`, `/note`, `/snipe` and `/onduty` are not.
+:::
+
+:::info
+All sanction commands accept the `[--silent]` option to skip notifying the target by DM. Notification DMs (kick, softban, temporary ban) include a button with a server invite.
+:::
+
+## 🔍 Member moderation view {#modview}
+
+The `/modview` command opens a **centralized moderation view** for a member, gathered in a single response:
+
+- their **latest sanctions**, with the "**View all sanctions**" button;
+- their internal **moderation note**, editable with "**Edit**" (see [`/note`](#note));
+- their **last deleted message**, with the "**View all deleted messages (1h)**" link (see [`/snipe`](#snipe));
+- their **linked accounts**, if your server has access to [alt accounts](./alt-accounts.md), with the "**Manage**" button for moderators who can ban;
+- the "**Sanction the user**" selector to act right away.
+
+Use the command: ```/modview (user)```
+
+Replace `(user)` with the desired mention or ID.
+
+:::tip
+The command is also accessible via the context menu: right-click on a profile → **Apps** → **Open Modview**.
+:::
+
+## 🖱️ Sanction via the context menu {#context-menu}
+
+In addition to slash commands, you can sanction a member directly from their profile via a right-click: **Apps** → **Sanction User**.
+
+A window then opens allowing you to enter:
+- **Sanction type**: the type of sanction to apply (required).
+- **Duration**: a duration, for a ban, a timeout or a jail (optional, e.g., `1d 2h 30m`).
+- **Reason**: the reason for the sanction.
+- **Silent**: does not send a private message to the sanctioned person.
+
+The types offered depend on your permissions on each command (`/ban`, `/softban`, `/jail`, `/kick`, `/mute`, `/warn`), including Discord Integrations settings. Jail only appears if a [Jail role](./sanctions.mdx#jail) is configured.
+
+## <Icon src="/img/icons/SanctionsBAN.svg" alt="icon SanctionsBAN" title=":iconSanctionsBAN:"/> Ban a user {#ban}
+
+The `/ban` command lets you prohibit a user from accessing your server, permanently or for a given duration.
+
+Use the command: ```/ban (user) [duration] [--delete-messages=duration] [--silent] [reason]```
+
+Replace `(user)` with the desired mention or ID and `[reason]` with the reason for the sanction.
+
+- `[duration]`: if provided, the ban becomes temporary (as with [`/tempban`](#tempban)).
+- `[--delete-messages]`: duration of message history to delete (for example `1h`, `1d`, `7d`). Discord caps the deletion at 7 days maximum. Without this option, the [message deletion on ban](./sanctions.mdx#ban-delete) value applies.
+- `[--silent]`: skip sending a DM to the target.
+
+:::tip
+You can ban a user from their [Discord ID](../guides/id), even if they are not online or present on your server.
+:::
+
+### <Icon src="/img/icons/SanctionsBANTemp.svg" alt="icon SanctionsBANTemp" title=":iconSanctionsBANTemp:"/>  Temporarily ban a user {#tempban}
+
+The `/tempban` command lets you temporarily prohibit a user from accessing your server.
+
+Use the command: ```/tempban (user) (duration) [--delete-messages=duration] [--silent] [reason]```
+
+Replace `(user)` with the desired mention or ID, `(duration)` with the ban duration, and `[reason]` with the reason for the sanction. The `[--delete-messages]` parameter lets you delete the member's message history (up to 7 days).
+
+### <Icon src="/img/icons/SanctionsSOFTBAN.svg" alt="icon SanctionsSOFTBAN" title=":iconSanctionsSOFTBAN:"/> Softban a user {#softban}
+
+The `/softban` command bans then immediately unbans a member. This lets you **delete their message history** without permanently excluding them from the server: they can come back with a new invite.
+
+Use the command: ```/softban (member) [--delete-messages=duration] [--silent] [reason]```
+
+Replace `(member)` with the desired mention or ID and `[reason]` with the reason for the sanction. The `[--delete-messages]` parameter lets you choose the duration of messages to delete.
+
+:::tip
+The softban is particularly well suited to **hacked accounts**: it cleans up the spam and frees the account, without permanently excluding the member once they have secured their account.
+:::
+
+### <Icon src="/img/icons/SanctionsUNBAN.svg" alt="icon SanctionsUNBAN" title=":iconSanctionsUNBAN:"/> Unban a user {#unban}
+
+The `/unban` command lets you remove the ban from a previously banned user, allowing them to join your server again.
+
+Use the command: ```/unban (user) [--silent] [reason]```
+
+Replace `(user)` with the desired ID and `[reason]` with the reason for the unban.
+
+## <Icon src="/img/icons/SanctionsKICK.svg" alt="icon SanctionsKICK" title=":iconSanctionsKICK:" /> Kick a user {#kick}
+
+The `/kick` command lets you remove a member from your server without banning them. The user will be able to rejoin the server if they have a valid invite.
+
+Use the command: ```/kick (member) [--silent] [reason]```
+
+Replace `(member)` with the desired mention or ID and `[reason]` with the reason for the sanction.
+
+## <Icon src="/img/icons/SanctionsTIMEOUT.svg" alt="icon SanctionsTIMEOUT" title=":iconSanctionsTIMEOUT:" /> Timeout (or Mute) a user {#timeout}
+
+The `/mute` command lets you temporarily restrict a member's ability to interact on the server. During this period, the member will not be able to send messages, react, join voice channels or send direct messages to other members.
+
+Use the command: ```/mute (member) (duration) [--force-timeout] [--silent] [reason]```
+
+Replace `(member)` with the desired mention or ID, `(duration)` with the mute duration (e.g., `10m`, `1h`, `1d`), and `[reason]` with the reason for the sanction.
+
+:::tip
+The `[--force-timeout]` option (alias `ft` in prefix) lets you override the threshold rule and force the use of Discord's timeout, even if a Mute role is configured. The duration then cannot exceed 28 days.
+
+You can configure a [Mute role](./sanctions.mdx#mute) and a [mute threshold](./sanctions.mdx#mute-threshold) in `/settings`, "**Moderation**" tab, "**Sanctions**", "**Mute**" row. Beyond the defined threshold, the bot will automatically apply the Mute role instead of Discord's timeout, allowing durations longer than 28 days.
+:::
+
+### <Icon src="/img/icons/SanctionsUNTIMEOUT.svg" alt="icon SanctionsUNTIMEOUT" title=":iconSanctionsUNTIMEOUT:" /> Remove a user's timeout {#untimeout}
+
+The `/unmute` command lets you immediately remove the restrictions from a member in timeout, allowing them to regain all their interaction capabilities on the server.
+
+Use the command: ```/unmute (member) [--silent] [reason]```
+
+Replace `(member)` with the desired mention or ID and `[reason]` with the reason for removing the timeout.
+
+## <Icon src="/img/icons/SanctionsJAIL.svg" alt="icon SanctionsJAIL" title=":iconSanctionsJAIL:" /> Jail a user {#jail}
+
+The `/jail` command lets you isolate a member by assigning them a restrictive role. The Jail is intended as an alternative to banning: the member keeps very limited access to the server instead of being completely excluded from it.
+
+Use the command: ```/jail (member) [--silent] [reason]```
+
+Replace `(member)` with the desired mention or ID and `[reason]` with the reason for the sanction.
+
+:::warning
+The [Jail role](./sanctions.mdx#jail) must be configured via `/settings` before you can use this command. Automatic modules, on the other hand, fall back to a timeout when no Jail role is configured. A jailed member is also disconnected from their voice channel.
+:::
+
+### <Icon src="/img/icons/SanctionsJAILTemp.svg" alt="icon SanctionsJAILTemp" title=":iconSanctionsJAILTemp:" /> Temporarily jail a user {#tempjail}
+
+The `/tempjail` command lets you temporarily jail a member for a defined duration.
+
+Use the command: ```/tempjail (member) (duration) [--silent] [reason]```
+
+Replace `(member)` with the desired mention or ID, `(duration)` with the jail duration, and `[reason]` with the reason for the sanction.
+
+### <Icon src="/img/icons/SanctionsUNJAIL.svg" alt="icon SanctionsUNJAIL" title=":iconSanctionsUNJAIL:" /> Release a user {#unjail}
+
+The `/unjail` command lets you remove the Jail role from a member, allowing them to regain their normal access to the server.
+
+Use the command: ```/unjail (member) [--silent] [reason]```
+
+Replace `(member)` with the desired mention or ID and `[reason]` with the reason for the release.
+
+A member in quarantine (minimum account age, Discord quarantine) is not in jail: `/unjail` refuses it and explains how to lift their quarantine.
+
+## <Icon src="/img/icons/SanctionsWARN.svg" alt="icon SanctionsWARN" title=":iconSanctionsWARN:" /> Warn a user {#warn}
+
+The `/warn` command lets you formally warn a member via a private message sent by the bot.
+
+Use the command: ```/warn (member) [--silent] [reason]```
+
+Replace `(member)` with the desired mention or ID and `[reason]` with the reason for the warning.
+
+## 📝 Moderation note {#note}
+
+The `/note` command lets you add or edit a member's **internal moderation note**, without having to go through [`/modview`](#modview). The note is only visible to moderators.
+
+Use the command: ```/note (user)```
+
+Replace `(user)` with the desired mention or ID. A window opens to enter or edit the note, up to 300 characters. Adding, editing and deleting a note are recorded in the [moderation logs](#logs).
+
+## 🏷️ Change a member's nickname {#nick}
+
+The `/nick` command lets you change a member's nickname on the server, or reset it.
+
+Use the command: ```/nick (user) [pseudo]```
+
+Replace `(user)` with the desired mention or ID. The `[pseudo]` parameter is the new nickname to apply (32 characters maximum). If omitted, the member's nickname is reset.
+
+:::info
+The command requires the Discord **Manage Nicknames** permission and is also accessible via the aliases `nickname`, `rename` and `setnick` as a [prefix command](../guides/prefix). Changes are recorded in the server logs.
+:::
+
+## 🧹 Delete a group of messages {#clear}
+
+The `/clear` command lets you quickly delete a certain number of messages in a text channel. You can specify a user to delete only their messages.
+
+Use the command: ```/clear (amount) [user]```
+
+Replace `(amount)` with the number of messages you want to delete (from 2 to 100). Add `[user]` using the mention or ID to target only their messages in the channel. In prefix form, the command also answers to the alias `clean`.
+
+## 🕒 Enable slowmode in a channel {#slowmode}
+
+The `/slowmode` command lets you enable or modify the slowmode of a channel, in order to limit how frequently users can send messages.
+
+Use the command: ```/slowmode (delay) [duration] [channel] [reason] [--silent]```
+
+- Replace `(delay)` with the desired time between each message (e.g., `5s`, `1m`, `10m`, `1h`, up to 6 hours; `0` to disable).
+- Add `[duration]` to automatically disable the slowmode after this duration (e.g., `30m`, `2h`).
+- Add `[channel]` if you want to apply slowmode to a different channel than the one where you type the command.
+- Add `--silent` to announce nothing in the channel.
+- Add `[reason]` to specify the reason, which will be recorded in the server logs.
+
+## 🕵️ Retrieve a deleted message {#snipe}
+
+The `/snipe` command shows the **messages deleted in the past hour** in a channel, page by page, from newest to oldest.
+
+Use the command: ```/snipe [user] [--channel=#channel]```
+
+- Without an argument: shows the deleted messages of the current channel.
+- With `[user]`: shows only the messages deleted by that user.
+- With `[--channel]`: searches a different channel than the one where you type the command.
+
+From the response, you can **sanction the author** of a message. The response is only visible to you.
+
+:::warning
+`/snipe` only sees the messages that RaidProtect keeps in memory, for one hour. They are only kept if "**Message caching**" is enabled (`/settings`, "**Utilities**" tab, disabled by default), or if the [anti-spam](./anti-spam.mdx) or [reports](./reports.md) are active, which enables it automatically: using `/snipe` at that point records the setting, which stays active even if the anti-spam and reports are turned off later. Otherwise, the command says that message caching is disabled and offers to enable it to an administrator (or to a member allowed to use `/settings` when the Integrations permissions are applied).
+:::
+
+To enable message caching:
+
+1. Run the [`/settings` command](../setup.md#settings).
+2. Open the "**Utilities**" tab.
+3. Click "**Enable**" next to "**Message caching**".
+
+:::info
+These messages stay in memory for one hour and are never written to the database. The `/privacy` command shows what RaidProtect stores about your server.
+:::
+
+## 🟢 On-duty role {#onduty}
+
+The **on-duty role** lets your moderators signal that they are available: with the `/onduty` command, each one goes on or off duty, and we add or remove the configured role.
+
+Use the command: ```/onduty```
+
+The response is only visible to you. The same effect is available with the "**On duty**" button of a [staff panel (`/display staff`)](./display.mdx#staff).
+
+### Configure the on-duty role {#onduty-config}
+
+1. Run the [`/settings` command](../setup.md#settings).
+2. Open the "**Utilities**" tab.
+3. Click "**Configure**" next to "**On-duty role**".
+4. Choose an existing role in the selector, or click "**Create one for me**" (we create an `On duty` role with no permissions at all).
+
+<Settings start="onduty" />
+
+:::warning
+The on-duty role is taken on a self-service basis by your moderators: it must carry no sensitive permission. We refuse a role that has Administrator, Manage Server, Manage Roles, Manage Channels, Manage Webhooks, Manage Messages, Manage Threads, Manage Expressions, Manage Events, Kick or Ban Members. RaidProtect must also have the **Manage Roles** permission, with a role placed above the on-duty role.
+:::
+
+## 📋 Moderation logs {#logs}
+
+By default, moderation logs are sent to RaidProtect's general logs channel. You can configure a dedicated logs channel to separate moderation actions from other logs.
+
+1. Run the [`/settings` command](../setup.md#settings).
+2. Open the "**Moderation**" tab.
+3. Click "**Configure**" next to "**Logs**".
+4. In the "**Moderation**" selector, choose the channel where moderation logs will be sent, or use the "**Create one for me**" button.
+
+<Settings start="logs" />
+
+The "**Logs**" screen groups three channels: "**General**", "**Moderation**" and "**Captcha**". A "**Moderation**" or "**Captcha**" channel left empty sends its logs to the general channel. The "**Passive moderation logs**" toggle chooses whether RaidProtect also logs actions made without going through the bot. Channels, roles, members, messages and voice have their own [server logs](./logs.md).
+
+## Frequently asked questions {#faq}
+
+### Why does /snipe find no message?
+
+RaidProtect only keeps messages in memory if message caching is enabled in the "**Utilities**" tab of `/settings`, or if the anti-spam or reports are active. Only the last hour is available.
+
+### What permission is needed to use /onduty?
+
+By default, the **Manage Messages** permission. You can adjust it in Discord's Integrations. An administrator must first configure the on-duty role in the "**Utilities**" tab of `/settings`.
+
+### Can I ban a user who is not on my server?
+
+Yes, with `/ban` and their [Discord ID](../guides/id).

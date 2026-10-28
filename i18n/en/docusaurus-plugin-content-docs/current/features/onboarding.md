@@ -64,7 +64,7 @@ You can add buttons below the message that lead to a channel of the server, for 
 2. Open the "**Arrivals**" tab.
 3. Click "**Configure**" next to "**Welcome message**".
 4. In "**Manage buttons**", choose "**Add a button**".
-5. Give the button a name and choose the channel to link.
+5. Give the button a name, choose the channel to link and, if you wish, an **emoji**: a standard emoji, or an emoji from this server (`<:name:id>`, `:name:` or its ID). An invalid emoji does not prevent saving: the button is created without an emoji.
 
 To edit or delete a button, select it in the same list.
 
@@ -95,10 +95,33 @@ To remove all auto roles, click "**Reset**".
 **Limits:** 3 roles in the free version, 10 roles in the [premium](/en/premium) version.
 
 :::warning
-Avoid roles that carry permissions: a role given automatically should grant no power. RaidProtect refuses roles managed by an integration, roles above its own or yours, and those that carry a moderation permission: the acceptable roles in your selection are kept, and a separate message explains why the others are refused (if all of them are, the current configuration stays unchanged). It alerts you if a chosen role later gains permissions.
+Choose roles without permissions: a role given on arrival should grant no power. RaidProtect refuses roles managed by an integration, those placed above its own or yours, those that grant a moderation permission and the captcha's unverified role. It warns you if a chosen role later gains permissions.
 :::
 :::info
 If your server uses another bot for its auto role, it may give the role before the captcha. Replace it with RaidProtect's auto roles.
+:::
+
+## 🤖 Bot arrival {#bots}
+
+This is RaidProtect's **antibot**: it controls the bots that join your server.
+
+1. Run the [`/settings` command](../setup.md#settings).
+2. Open the "**Arrivals**" tab.
+3. Click "**Configure**" next to "**Bots**".
+
+- **Bot roles**: given to each bot as soon as it arrives, **instead of** the [auto roles](#autorole). With no role chosen, bots receive the auto roles. **Limits:** 1 role in the free version, 15 with [Premium](/en/premium).
+- **Kick unauthorized bots**: any added bot is kicked, unless the owner [allowed](#bypass-bot) it beforehand. Disabled by default, **only the server owner** can enable it.
+
+RaidProtect refuses roles managed by an integration, those placed above its own or yours and those that grant the **Administrator** permission. A role with a moderation permission is accepted, with a warning: keep it for trusted bots.
+
+### Allow a bot {#bypass-bot}
+
+Use the command: ```/bypass bot [bot]```
+
+Replace `[bot]` with the bot to allow: it can join the server **once**, within the next 10 minutes, without being kicked. Without a bot, the command lists the currently allowed bots. Each authorization is noted in your logs.
+
+:::info
+RaidProtect needs the "**Kick Members**" permission and a role above the bot's to kick it. Otherwise, the log says so and the bot stays.
 :::
 
 ## 🎂 Minimum account age {#minage}
@@ -120,13 +143,13 @@ To disable the filter, click "**Reset**". RaidProtect needs the `KICK_MEMBERS` p
 | Action | Effect on an account that is too new |
 |---|---|
 | "**Kick**" (default) | It is kicked on every attempt as long as its account is too new. |
-| "**Jail until the required age**" | It enters without seeing anything of the server, and leaves the [jail](./sanctions.mdx#jail) as soon as it reaches the required age. |
+| "**Quarantine until the required age**" | It enters without seeing anything of the server (via the [Jail role](./sanctions.mdx#jail)), and leaves its quarantine as soon as it reaches the required age, on the date indicated. |
 | "**Hold at the gate**" | It is blocked on a [captcha](./captcha.md) that it can only solve once the age is reached. |
 
-The account receives a private message with the date on which it will have access to the server. Kicks, jail placements and bans are noted in the logs channel.
+The account receives a private message with the date on which it will have access to the server. Kicks, quarantines and bans are noted in the logs channel.
 
 :::info
-- "**Jail until the required age**" requires a Jail Role, configured in the "**Moderation**" tab > "**Sanctions**". Without it, RaidProtect offers to configure it or to fall back to "**Ban until the required age**": the account leaves the server and its ban is lifted automatically on the right date.
+- "**Quarantine until the required age**" requires a Jail Role, configured in the "**Moderation**" tab > "**Sanctions**". Without it, RaidProtect offers to configure it or to fall back to "**Ban until the required age**": the account leaves the server and its ban is lifted automatically on the right date.
 - "**Hold at the gate**" requires an active captcha in **Panel (Interactive)** mode.
 :::
 
@@ -134,7 +157,7 @@ The account receives a private message with the date on which it will have acces
 
 Use the command: ```/bypass minage [user]```
 
-Replace `[user]` with the desired [ID](../guides/id.mdx); they will have 10 minutes to join the server without being blocked by the required age. You can also use the command without specifying a user to see the current list of bypassed users.
+Replace `[user]` with the desired [ID](../guides/id.mdx); they will have 10 minutes to join the server without being blocked by the required age. You can also use the command without specifying a user to see the current list of bypassed users. It also lifts the quarantine of an account that is too new. `/unjail` does not lift it: it indicates the command to use.
 
 ## Frequently asked questions {#faq}
 
@@ -160,4 +183,4 @@ A value of a few hours to 1 day is enough to keep out most accounts created for 
 
 ### Is an account that is too new banned?
 
-No, not by default: it is kicked on every attempt. You can also put it in jail until the required age or hold it behind the captcha. The temporary ban is only a fallback when jail is not configured.
+No, not by default: it is kicked on every attempt. You can also put it in quarantine until the required age or hold it behind the captcha. The temporary ban is only a fallback when the Jail role is not configured.

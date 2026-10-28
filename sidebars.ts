@@ -15,8 +15,9 @@ const sidebars: SidebarsConfig = {
             id: 'commands',
         },
         {
-             type: 'doc',
-             id: 'changelog'
+            type: 'doc',
+            id: 'changelog',
+            customProps: {anchor: '3-6-0'},
         },
         {
             type: 'doc',
@@ -45,7 +46,6 @@ const sidebars: SidebarsConfig = {
                 {
                     type: 'doc',
                     id: 'features/discon',
-                    customProps: {badges: ['experiment']},
                 },
                 {
                     type: 'doc',
@@ -54,7 +54,7 @@ const sidebars: SidebarsConfig = {
                 {
                     type: 'doc',
                     id: 'features/slowmode',
-                    customProps: {badges: ['experiment', 'premium']},
+                    customProps: {badges: ['premium']},
                 },
                 {
                     type: 'doc',
@@ -84,6 +84,11 @@ const sidebars: SidebarsConfig = {
                 {
                     type: 'doc',
                     id: 'features/moderation',
+                },
+                {
+                    type: 'doc',
+                    id: 'features/logs',
+                    customProps: {badges: ['experiment']},
                 },
                 {
                     type: 'doc',

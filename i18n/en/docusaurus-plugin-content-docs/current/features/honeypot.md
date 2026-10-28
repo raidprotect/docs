@@ -58,7 +58,18 @@ By default, the HoneyPot applies a **Softban**. Several [sanctions](/en/learn/di
 | **Jail** | Assigns the [Jail role](./sanctions.mdx#jail) configured on your server | Premium |
 | **Mute** | Assigns the [Mute role](./sanctions.mdx#mute) configured on your server | Premium |
 
-For sanctions with a duration (Ban, Timeout, Jail, Mute), choose a duration in the "**Duration**" selector: 5 minutes, 1 hour, **1 day** (default) or 28 days, or "**Custom value**" to enter your own (for example `5m`, `1h`, `2d`; minimum 1 minute). The selector is grayed out for Softban and Kick, which have no duration.
+For sanctions with a duration (Ban, Timeout, Jail, Mute), choose a duration in the "**Duration**" selector (1 day by default), or "**Custom value**" to enter your own (for example `5m`, `1h`, `2d`; minimum 1 minute). The selector is grayed out for Softban and Kick, which have no duration.
+
+The selector's presets follow the sanction:
+
+| Sanction | Presets offered |
+|---|---|
+| **Ban** | Permanent, 1 day, 7 days, 30 days |
+| **Jail** | Permanent, 1 hour, 1 day, 7 days |
+| **Mute** | 5 minutes, 1 hour, 1 day, 7 days |
+| **Timeout** | 5 minutes, 1 hour, 1 day, 28 days |
+
+Ban and Jail can be **permanent**: the sanction does not lift by itself. When changing sanctions, the chosen duration is kept if it remains possible (a permanent one does not carry over to a Timeout or a Mute, and a Timeout stays under 28 days).
 
 :::tip
 The **Softban** is a good compromise: it cleans up the messages and removes the hacked account, but the legitimate owner can come back once their account is secured.
@@ -74,13 +85,9 @@ For the other sanctions (Kick, Timeout, Jail, Mute), RaidProtect deletes the mes
 - If your server loses Premium, a Premium sanction automatically goes back to **Softban** on the next trigger.
 :::
 
-### Delay before sanction <span className="badge-experiment">Experiment</span> {#grace}
+### Delay before sanction {#grace}
 
 A good-faith member may write in the HoneyPot by mistake. The **delay before sanction** gives them time to report it before being sanctioned.
-
-:::info Experiment: Shield Update
-The delay before sanction is part of the **Shield Update**, planned for version 3.6.0. Until its release, it is an experiment, in public beta for [Premium](/en/premium) servers.
-:::
 
 1. Run the [`/settings` command](../setup.md#settings).
 2. Open the "**Protection**" tab.

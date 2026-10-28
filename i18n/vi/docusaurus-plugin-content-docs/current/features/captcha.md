@@ -37,6 +37,8 @@ Captcha dựa trên một vai trò **@Chưa xác minh** và một kênh **#xác-
 | **Bảng (Tương tác)**, mặc định | Một tin nhắn cố định “**Hệ thống xác minh**” với một nút “**Xác minh**”, mở [Activity RaidProtect](#activity). Thành viên không thể viết trong **#xác-minh**. |
 | **Thử thách (Cổ điển)** | Một hình ảnh được đăng trong **#xác-minh** khi họ vào, và họ gõ mã bằng tin nhắn trong kênh. |
 
+Bảng có một nút “**Translate**” để đọc nó bằng ngôn ngữ của họ, và mỗi người mới vào đều được nhắc đến trong kênh xác minh, rồi tin nhắn bị xóa: nhờ đó họ tìm lại được kênh.
+
 Chế độ Bảng giữ kênh gọn gàng và cho phép thêm các thiết lập: chọn hình phạt khi hết lượt thử, [captcha bị đóng băng trong đợt raid](./raid-mode.md#action), [giữ lại ở cửa các tài khoản quá mới](./onboarding.md#minage). Chế độ Thử thách luôn đuổi thành viên khi hết thời gian quy định hoặc khi hết lượt thử.
 
 ### Kích hoạt {#trigger}
@@ -45,15 +47,11 @@ Chế độ Bảng giữ kênh gọn gàng và cho phép thêm các thiết lậ
 |---|---|
 | **Luôn luôn**, mặc định | Mỗi lần có người vào, không điều kiện. |
 | **Tự động** | Chỉ trong một đợt raid hoặc ở mức DISCON cao. Những người vào khác vào thẳng. |
-| **Thông minh** <span className="badge-experiment">Thử nghiệm</span> | Như Tự động, cộng thêm các tài khoản có vẻ đáng ngờ. |
+| **Thông minh** | Như Tự động, cộng thêm các tài khoản có vẻ đáng ngờ. |
 
-Với **Tự động**, captcha chỉ được áp dụng trong một đợt raid nếu [Auto RaidMode](./raid-mode.md#action) được đặt ở “**Gửi tới captcha**” hoặc “**Captcha bị đóng băng trong đợt tấn công**”, và trong một cảnh báo [DISCON](./discon.md) từ cấp 3 (đang thử nghiệm cùng Shield Update).
+Với **Tự động**, captcha chỉ được áp dụng trong một đợt raid nếu [Auto RaidMode](./raid-mode.md#action) được đặt ở “**Gửi tới captcha**” hoặc “**Captcha bị đóng băng trong đợt tấn công**”, và trong một cảnh báo [DISCON](./discon.md) từ cấp 3.
 
 Kích hoạt **Thông minh** đánh giá hồ sơ của từng người vào. Một thành viên được đội ngũ của bạn duyệt thủ công không bao giờ bị coi là đáng ngờ.
-
-:::info Thử nghiệm: Shield Update
-Kích hoạt Thông minh thuộc **Shield Update**, dự kiến trong phiên bản 3.6.0. Trong khi chờ phát hành, nó đang thử nghiệm, ở dạng bản beta công khai cho các máy chủ [Premium](/vi/premium). Nếu không có bản thử nghiệm, nó không được cung cấp.
-:::
 
 ## 🚪 Cách cấu hình captcha? {#config}
 
@@ -75,11 +73,11 @@ Captcha khởi động ở chế độ **Bảng (Tương tác)**, kích hoạt *
 2. Mở thẻ “**Thành viên mới**”.
 3. Nhấp vào “**Cấu hình**” bên cạnh “**Captcha**”.
 4. Trong “**Chế độ hiển thị**”, chọn “**Bảng (Tương tác)**” hoặc “**Thử thách (Cổ điển)**”.
-5. Trong “**Kích hoạt**”, chọn “**Luôn luôn**”, “**Tự động**” hoặc “**Thông minh**” (Shield Update).
+5. Trong “**Kích hoạt**”, chọn “**Luôn luôn**”, “**Tự động**” hoặc “**Thông minh**”.
 
 ### Xác minh trong Activity {#activity}
 
-Ở chế độ **Bảng**, nút “**Xác minh**” mở **Activity RaidProtect**: thành viên giải một câu đố nhỏ ngay trong Discord, mang màu sắc của máy chủ bạn và kèm các liên kết kênh từ [Quy trình chào đón](../guides/onboarding.md) của bạn. Sau khi xác minh, họ khám phá ở đó [thẻ chào mừng](./onboarding.md#welcome-message) của mình.
+Ở chế độ **Bảng**, nút “**Xác minh**” mở **Activity RaidProtect**: thành viên giải một câu đố nhỏ ngay trong Discord, mang màu sắc của máy chủ bạn và kèm các liên kết kênh từ [Quy trình chào đón](../guides/onboarding.md) của bạn. Trên một máy chủ [Premium](/vi/premium) có biểu tượng, biểu tượng đó hiển thị thay cho logo RaidProtect. Sau khi xác minh, họ khám phá ở đó [thẻ chào mừng](./onboarding.md#welcome-message) của mình.
 
 - **Giải câu đố sai:** giống như một mã sai, nó tiêu tốn một lượt thử, và hình phạt dự kiến được áp dụng khi hết lượt thử. Activity thông báo kết quả cho thành viên trước, rồi hình phạt mới được áp dụng.
 - **Thành công:** thành viên được xác minh khi họ rời màn hình thành công. Nếu họ nhấp vào “**Xác minh**” trong lúc đó, việc xác nhận của họ được áp dụng ngay thay vì mở lại Activity.
@@ -94,8 +92,8 @@ Captcha khởi động ở chế độ **Bảng (Tương tác)**, kích hoạt *
 
 Với [Identity Update](./alt-accounts.md), Activity cũng phát hiện những người vào có khả năng do cùng một người sử dụng với một thành viên trong máy chủ của bạn:
 
-- **Liên kết chắc chắn:** các tài khoản được liên kết tự động trong [`/alt`](./alt-accounts.md#alt). Nhật ký của captcha báo điều đó, kèm một nút “**Hủy liên kết**”.
-- **Liên kết có thể:** nếu [Mỗi người một tài khoản](./alt-accounts.md#single-account) đang bật, thành viên được đưa vào diện xem xét. “**Liên kết với thành viên khác**” liên kết họ trong `/alt` và cho họ vào; nếu không phát hiện được tài khoản nào, một cửa sổ sẽ yêu cầu bạn chọn thành viên (“**Tài khoản đã có trên máy chủ**”). Nếu không, thành viên được vào, và nhật ký của captcha báo liên kết có thể này kèm một nút “**Liên kết tài khoản**”.
+- **Liên kết chắc chắn:** các tài khoản được liên kết tự động trong [`/alt`](./alt-accounts.md#alt). Nhật ký của captcha báo điều đó, kèm một nút “**Hủy liên kết**”. Nếu nhóm đang bị xử phạt, hoặc nếu [Mỗi người một tài khoản](./alt-accounts.md#single-account) đang giữ các tài khoản phụ của nhóm, người mới vào nhận hình phạt của nhóm hoặc bị cách ly.
+- **Liên kết có thể:** nếu [Mỗi người một tài khoản](./alt-accounts.md#single-account) đang bật, thành viên được đưa vào diện xem xét. “**Liên kết với thành viên khác**” liên kết họ trong `/alt` và cho họ vào; nếu không phát hiện được tài khoản nào, một cửa sổ sẽ yêu cầu bạn chọn thành viên (“**Tài khoản đã có trên máy chủ**”). Nếu không, thành viên được vào, và nhật ký của captcha báo liên kết có thể này kèm một nút “**Liên kết**”.
 - **Liên kết chắc chắn không được áp dụng:** không có gì được liên kết tự động nếu một tài khoản trong nhóm thuộc đội ngũ máy chủ, nếu người mới vào được liên kết với nhiều nhóm `/alt`, hoặc nếu cả hai tài khoản đều đã có nhóm riêng (hai nhóm không bao giờ được gộp tự động). Khi đó, liên kết được đề xuất cho bạn theo cùng cách.
 
 Chỉ các tài khoản của máy chủ bạn được hiển thị cho bạn: không có gì được nói về các máy chủ khác.
@@ -199,7 +197,7 @@ Hãy thay `[user]` bằng [ID](../guides/id.mdx) mong muốn, người đó sẽ
 Captcha hoạt động cùng các biện pháp bảo vệ khác dành cho người mới vào:
 - **[Auto RaidMode](./raid-mode.md#action):** với hành động “**Gửi tới captcha**”, những người vào trong một đợt sóng phải qua captcha thay vì bị đuổi. Với “**Captcha bị đóng băng trong đợt tấn công**”, họ chờ phía sau captcha và qua nó sau đợt sóng.
 - **[Tuổi tối thiểu của tài khoản](./onboarding.md#minage):** hành động “**Giữ lại ở cửa**” chặn một tài khoản quá mới ở một captcha mà họ chỉ giải được khi đủ tuổi.
-- **[DISCON](./discon.md#captcha):** từ cấp 4, captcha được bật nếu đã cấu hình, ngay cả khi bạn đã tắt nó. Từ cấp 3, nó được áp dụng cho mọi người vào, bất kể kích hoạt của nó (đang thử nghiệm cùng Shield Update).
+- **[DISCON](./discon.md#captcha):** từ cấp 4, captcha được bật nếu đã cấu hình, ngay cả khi bạn đã tắt nó. Từ cấp 3, nó được áp dụng cho mọi người vào, bất kể kích hoạt của nó.
 
 ## Câu hỏi thường gặp {#faq}
 

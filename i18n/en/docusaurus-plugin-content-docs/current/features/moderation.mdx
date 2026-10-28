@@ -62,7 +62,7 @@ Use the command: ```/ban (user) [duration] [--delete-messages=duration] [--silen
 Replace `(user)` with the desired mention or ID and `[reason]` with the reason for the sanction.
 
 - `[duration]`: if provided, the ban becomes temporary (as with [`/tempban`](#tempban)).
-- `[--delete-messages]`: duration of message history to delete (for example `1h`, `1d`, `7d`). Discord caps the deletion at 7 days maximum.
+- `[--delete-messages]`: duration of message history to delete (for example `1h`, `1d`, `7d`). Discord caps the deletion at 7 days maximum. Without this option, the [message deletion on ban](./sanctions.mdx#ban-delete) value applies.
 - `[--silent]`: skip sending a DM to the target.
 
 :::tip
@@ -136,7 +136,7 @@ Use the command: ```/jail (member) [--silent] [reason]```
 Replace `(member)` with the desired mention or ID and `[reason]` with the reason for the sanction.
 
 :::warning
-The [Jail role](./sanctions.mdx#jail) must be configured via `/settings` before you can use this command. Automatic modules, on the other hand, fall back to a timeout when no Jail role is configured.
+The [Jail role](./sanctions.mdx#jail) must be configured via `/settings` before you can use this command. Automatic modules, on the other hand, fall back to a timeout when no Jail role is configured. A jailed member is also disconnected from their voice channel.
 :::
 
 ### <Icon src="/img/icons/SanctionsJAILTemp.svg" alt="icon SanctionsJAILTemp" title=":iconSanctionsJAILTemp:" /> Temporarily jail a user {#tempjail}
@@ -154,6 +154,8 @@ The `/unjail` command lets you remove the Jail role from a member, allowing them
 Use the command: ```/unjail (member) [--silent] [reason]```
 
 Replace `(member)` with the desired mention or ID and `[reason]` with the reason for the release.
+
+A member in quarantine (minimum account age, Discord quarantine) is not in jail: `/unjail` refuses it and explains how to lift their quarantine.
 
 ## <Icon src="/img/icons/SanctionsWARN.svg" alt="icon SanctionsWARN" title=":iconSanctionsWARN:" /> Warn a user {#warn}
 
@@ -195,11 +197,12 @@ Replace `(amount)` with the number of messages you want to delete (from 2 to 100
 
 The `/slowmode` command lets you enable or modify the slowmode of a channel, in order to limit how frequently users can send messages.
 
-Use the command: ```/slowmode (delay) [duration] [channel] [reason]```
+Use the command: ```/slowmode (delay) [duration] [channel] [reason] [--silent]```
 
 - Replace `(delay)` with the desired time between each message (e.g., `5s`, `1m`, `10m`, `1h`, up to 6 hours; `0` to disable).
 - Add `[duration]` to automatically disable the slowmode after this duration (e.g., `30m`, `2h`).
 - Add `[channel]` if you want to apply slowmode to a different channel than the one where you type the command.
+- Add `--silent` to announce nothing in the channel.
 - Add `[reason]` to specify the reason, which will be recorded in the server logs.
 
 ## 🕵️ Retrieve a deleted message {#snipe}
@@ -215,7 +218,7 @@ Use the command: ```/snipe [user] [--channel=#channel]```
 From the response, you can **sanction the author** of a message. The response is only visible to you.
 
 :::warning
-`/snipe` only sees the messages that RaidProtect keeps in memory, for one hour. They are only kept if "**Message caching**" is enabled (`/settings`, "**Utilities**" tab, disabled by default), or if the [anti-spam](./anti-spam.mdx) or [reports](./reports.md) are active, which enables it automatically. Otherwise, the command replies that no deleted message was found.
+`/snipe` only sees the messages that RaidProtect keeps in memory, for one hour. They are only kept if "**Message caching**" is enabled (`/settings`, "**Utilities**" tab, disabled by default), or if the [anti-spam](./anti-spam.mdx) or [reports](./reports.md) are active, which enables it automatically: using `/snipe` at that point records the setting, which stays active even if the anti-spam and reports are turned off later. Otherwise, the command says that message caching is disabled and offers to enable it to an administrator (or to a member allowed to use `/settings` when the Integrations permissions are applied).
 :::
 
 To enable message caching:
@@ -260,7 +263,7 @@ By default, moderation logs are sent to RaidProtect's general logs channel. You 
 
 <Settings start="logs" />
 
-The "**Logs**" screen groups three channels: "**General**", "**Moderation**" and "**Captcha**". A "**Moderation**" or "**Captcha**" channel left empty sends its logs to the general channel. The "**Passive moderation logs**" toggle chooses whether RaidProtect also logs actions made without going through the bot.
+The "**Logs**" screen groups three channels: "**General**", "**Moderation**" and "**Captcha**". A "**Moderation**" or "**Captcha**" channel left empty sends its logs to the general channel. The "**Passive moderation logs**" toggle chooses whether RaidProtect also logs actions made without going through the bot. Channels, roles, members, messages and voice have their own [server logs](./logs.md).
 
 ## Frequently asked questions {#faq}
 

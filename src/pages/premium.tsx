@@ -11,13 +11,15 @@ import IdentityMockup from '@site/src/components/IdentityMockup'
 import styles from './premium.module.css'
 
 /** Type de mise en scène CSS associée à chaque avantage (aucune image). */
-type SceneKind = 'kickMode' | 'authLimits' | 'sanctionRename' | 'panels' | 'honeypot'
+type SceneKind = 'kickMode' | 'authLimits' | 'sanctionRename' | 'panels' | 'honeypot' | 'slowmode' | 'limits' | 'captcha'
 
 type Feature = {
     /** Mise en situation CSS ; absente pour les avantages sans illustration. */
     scene?: SceneKind
     /** Pastille optionnelle (ex. "Bêta publique" sur l'accès anticipé). */
     badge?: string
+    /** Place de la carte dans la mosaïque (grid-area). */
+    area: string
     title: string
     description: string
     docsHref?: string
@@ -48,11 +50,11 @@ type Stats = {
 }
 
 const FALLBACK_STATS: Stats = {
-    servers: 385786,
-    users: 50440378,
+    servers: 415000,
+    users: 63000000,
     captcha: 14515925,
     antispam: 1435257,
-    founder: 36,
+    founder: 46,
 }
 
 const FOUNDER_GOAL = 100
@@ -211,6 +213,113 @@ function FounderScarcity({ taken }: { taken: number }) {
 }
 
 /**
+ * Pass Founder du hero : la carte de membre que reçoit l'abonné, numérotée
+ * à la prochaine place libre. Elle entre une fois au chargement ; le reflet
+ * suit ensuite la souris.
+ */
+function FounderPass({ taken }: { taken?: number }): React.ReactNode {
+    const ref = useRef<HTMLDivElement>(null)
+    const seat = Math.min((taken ?? 0) + 1, FOUNDER_GOAL)
+    const left = Math.max(FOUNDER_GOAL - (taken ?? 0), 0)
+
+    const onMove = (event: React.MouseEvent<HTMLDivElement>) => {
+        const el = ref.current
+        if (!el) return
+        const rect = el.getBoundingClientRect()
+        const x = (event.clientX - rect.left) / rect.width
+        const y = (event.clientY - rect.top) / rect.height
+        el.style.setProperty('--px', `${x * 100}%`)
+        el.style.setProperty('--py', `${y * 100}%`)
+        el.style.setProperty('--rx', `${(0.5 - y) * 8}deg`)
+        el.style.setProperty('--ry', `${(x - 0.5) * 10}deg`)
+    }
+    const onLeave = () => {
+        const el = ref.current
+        if (!el) return
+        el.style.removeProperty('--rx')
+        el.style.removeProperty('--ry')
+    }
+
+    return (
+        <Link
+            to="https://raidprotect.bot/founder"
+            className={styles.passWrap}
+            aria-label={translate({ id: 'premium.hero.cta.subscribe', message: "S'abonner pour 2,99 $/mois" })}>
+            <div className={styles.pass} ref={ref} onMouseMove={onMove} onMouseLeave={onLeave}>
+                <div className={styles.passMain}>
+                    <div className={styles.passTop}>
+                        <img src="/img/rp-mark.svg" alt="" width={34} height={34} />
+                        <span className={styles.passSeat}>
+                            {translate({ id: 'premium.pass.seat', message: 'n° {seat}' }, { seat: String(seat).padStart(3, '0') })}
+                        </span>
+                    </div>
+                    <div className={styles.passName}>Founder</div>
+                    <div className={styles.passPrice}>
+                        <s>{translate({ id: 'premium.tier.founder.priceStrike', message: '5,99 $' })}</s>
+                        <strong>{translate({ id: 'premium.tier.founder.price', message: '2,99 $' })}</strong>
+                        <span>{translate({ id: 'premium.tier.founder.priceUnit', message: '/ mois' })}</span>
+                    </div>
+                    <div className={styles.passLock}>
+                        {translate({ id: 'premium.pass.lock', message: 'Tarif verrouillé à vie' })}
+                    </div>
+                </div>
+                <div className={styles.passStub}>
+                    <strong>{left}</strong>
+                    <span>{translate({ id: 'premium.pass.left', message: 'places restantes' })}</span>
+                </div>
+            </div>
+        </Link>
+    )
+}
+
+// Mêmes communautés que la maquette « Le bot prend l'identité de votre serveur ».
+const CAPTCHA_SERVERS: { name: string; icon: string }[] = [
+    { name: 'CYRILmp4', icon: '/img/landing/iconCyrilmp4.webp' },
+    { name: 'Jobless', icon: '/img/landing/iconJobless.webp' },
+    { name: 'Ligue 1', icon: '/img/landing/iconLigue1.webp' },
+    { name: 'NationsGlory', icon: '/img/landing/iconNationsGlory.webp' },
+    { name: 'Slash FR', icon: '/img/landing/iconSlashFR.webp' },
+    { name: 'Whiteout Survival', icon: '/img/identity/whiteoutsurvival-avatar.webp' },
+]
+
+const CAPTCHA_CYCLE_MS = 3200
+
+function CaptchaScene(): React.ReactNode {
+    const [index, setIndex] = useState(0)
+    const [animated, setAnimated] = useState(false)
+    useEffect(() => {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+        setAnimated(true)
+        const timer = window.setInterval(() => setIndex(i => (i + 1) % CAPTCHA_SERVERS.length), CAPTCHA_CYCLE_MS)
+        return () => window.clearInterval(timer)
+    }, [])
+    // Les cases se remplissent une à une pendant le cycle, la dernière
+    // juste avant le passage au serveur suivant.
+    const steps = 4
+    return (
+        <div className={styles.sceneCaptcha}>
+            <span className={styles.captchaIconStack}>
+                {CAPTCHA_SERVERS.map((server, i) => (
+                    <img key={server.icon} className={`${styles.captchaIcon} ${i === index ? styles.captchaActive : ''}`} src={server.icon} alt="" width={46} height={46} />
+                ))}
+            </span>
+            <span className={styles.captchaTitleStack}>
+                {CAPTCHA_SERVERS.map((server, i) => (
+                    <span key={server.name} className={`${styles.captchaTitle} ${i === index ? styles.captchaActive : ''}`}>
+                        {translate({ id: 'premium.scene.captcha.title', message: 'Vérification de {server}' }, { server: server.name })}
+                    </span>
+                ))}
+            </span>
+            <span key={index} className={`${styles.captchaPuzzle} ${animated ? styles.captchaRunning : ''}`}>
+                {Array.from({ length: steps }, (_, i) => (
+                    <span key={i} style={{ animationDelay: `${(i * CAPTCHA_CYCLE_MS) / (steps + 0.5)}ms` }} />
+                ))}
+            </span>
+        </div>
+    )
+}
+
+/**
  * Mise en situation CSS d'un avantage (aucune image) : chaque "scène" illustre
  * concrètement ce que le Premium débloque. Décoratif, donc aria-hidden côté
  * appelant. Les valeurs chiffrées reprennent le comparatif (source: docs).
@@ -292,6 +401,51 @@ function FeatureScene({ kind }: { kind: SceneKind }): React.ReactNode {
         )
     }
 
+    if (kind === 'slowmode') {
+        return (
+            <div className={styles.sceneSlowmode}>
+                <div className={styles.slowBars}>
+                    {[3, 5, 9, 14, 18, 12, 7, 4].map((h, i) => (
+                        <span key={i} style={{ height: `${h * 5}%` }} />
+                    ))}
+                </div>
+                <div className={styles.slowValue}>
+                    <span>{translate({ id: 'premium.scene.slowmode.label', message: 'Mode lent' })}</span>
+                    <strong>10 s</strong>
+                </div>
+            </div>
+        )
+    }
+
+    if (kind === 'limits') {
+        const rows: [string, string, string][] = [
+            [translate({ id: 'premium.scene.limits.autoroles', message: 'Rôles automatiques' }), '3', '10'],
+            [translate({ id: 'premium.scene.limits.botRoles', message: 'Rôles des bots' }), '1', '15'],
+            [translate({ id: 'premium.scene.limits.buttons', message: 'Boutons de bienvenue' }), '2', '4'],
+            [translate({ id: 'premium.scene.limits.fileRules', message: 'Règles de fichiers par salon' }), '1', '20'],
+        ]
+        return (
+            <div className={styles.sceneLimits}>
+                {rows.map(([label, free, prem]) => (
+                    <div key={label} className={styles.limitRow}>
+                        <span className={styles.limitLabel}>{label}</span>
+                        <span className={styles.limitFree}>{free}</span>
+                        <span className={styles.limitArrow} aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M5 12h13M13 6l6 6-6 6" />
+                            </svg>
+                        </span>
+                        <span className={styles.limitPrem}>{prem}</span>
+                    </div>
+                ))}
+            </div>
+        )
+    }
+
+    if (kind === 'captcha') {
+        return <CaptchaScene />
+    }
+
     if (kind === 'honeypot') {
         return (
             <div className={styles.sceneChips}>
@@ -328,6 +482,8 @@ export default function PremiumPage(): React.ReactNode {
     const [collapsed, setCollapsed] = useState<Record<string, boolean>>({})
     const toggleCategory = (label: string) =>
         setCollapsed(c => ({ ...c, [label]: !c[label] }))
+    // Comparatif replié sur ses premières catégories, déplié à la demande.
+    const [showAll, setShowAll] = useState(false)
 
     // Navbar : transparente en haut de page, dépolie (blur) dès qu'on scrolle.
     // On bascule une classe sur <body> que custom.css cible.
@@ -358,40 +514,53 @@ export default function PremiumPage(): React.ReactNode {
     // grille, chacun avec une petite mise en situation.
     const FEATURES: Feature[] = [
         {
-            scene: 'authLimits',
-            title: translate({ id: 'premium.feature.authManager.title', message: 'Authentification Manager étendu' }),
-            description: translate({ id: 'premium.feature.authManager.desc', message: 'Plus de rôles protégés, plus d\'utilisateurs autorisés et des sessions deux fois plus longues.' }),
-            docsHref: '/docs/features/authentication-manager',
+            scene: 'kickMode',
+            area: 'kick',
+            title: translate({ id: 'premium.feature.kickMode.title', message: 'Anti-raid en mode expulsion' }),
+            description: translate({ id: 'premium.feature.kickMode.desc', message: 'Pendant un raid, les arrivants sont expulsés avec un message pour revenir plus tard.' }),
+            docsHref: '/docs/features/raid-mode',
+        },
+        {
+            scene: 'slowmode',
+            area: 'slow',
+            title: translate({ id: 'premium.feature.slowmode.title', message: 'Slowmode préventif' }),
+            description: translate({ id: 'premium.feature.slowmode.desc', message: 'Quand un salon s\'emballe, le mode lent monte tout seul, puis redescend quand le calme revient. Jusqu\'à 6 salons.' }),
+            docsHref: '/docs/features/slowmode',
+        },
+        {
+            scene: 'limits',
+            area: 'limits',
+            title: translate({ id: 'premium.feature.limits.title', message: 'Plus de place partout' }),
+            description: translate({ id: 'premium.feature.limits.desc', message: 'Arrivées, Automod, Authentication Manager : chaque module voit ses limites s\'agrandir, sans rien perdre de la version gratuite.' }),
+            docsHref: '#compare',
         },
         {
             scene: 'sanctionRename',
+            area: 'names',
             title: translate({ id: 'premium.feature.sanctionNames.title', message: 'Noms de sanctions personnalisables' }),
             description: translate({ id: 'premium.feature.sanctionNames.desc', message: 'Adaptez chaque sanction au vocabulaire de votre communauté.' }),
             docsHref: '/docs/features/sanctions#custom-names',
         },
         {
-            scene: 'kickMode',
-            title: translate({ id: 'premium.feature.kickMode.title', message: 'Anti-raid en mode expulsion' }),
-            description: translate({ id: 'premium.feature.kickMode.desc', message: 'Expulsion + DM d\'explication au lieu d\'un blocage silencieux des invitations. Laissez entrer qui vous voulez avec /bypass.' }),
-            docsHref: '/docs/features/raid-mode',
-        },
-        {
-            scene: 'panels',
-            title: translate({ id: 'premium.feature.display.title', message: 'Plus de panneaux d\'information' }),
-            description: translate({ id: 'premium.feature.display.desc', message: 'Deux fois plus de panneaux libres avec /display public (de 2 à 4), slot Jail toujours inclus.' }),
-            docsHref: '/docs/features/display',
+            scene: 'captcha',
+            area: 'captcha',
+            title: translate({ id: 'premium.feature.captcha.title', message: 'Captcha à l\'image de votre serveur' }),
+            description: translate({ id: 'premium.feature.captcha.desc', message: 'L\'icône de votre serveur remplace le logo RaidProtect dans la vérification.' }),
+            docsHref: '/docs/features/captcha#activity',
         },
         {
             scene: 'honeypot',
+            area: 'honeypot',
             title: translate({ id: 'premium.feature.honeypot.title', message: 'Sanctions Honeypot avancées' }),
             description: translate({ id: 'premium.feature.honeypot.desc', message: 'Débloquez Kick, Timeout, Jail et Mute : les messages du spammeur sont effacés dans tous les salons, comme avec un ban.' }),
             docsHref: '/docs/features/honeypot',
         },
         {
             badge: translate({ id: 'premium.feature.beta.badge', message: 'Bêta publique' }),
+            area: 'beta',
             title: translate({ id: 'premium.feature.beta.title', message: 'Accès anticipé aux nouveautés' }),
-            description: translate({ id: 'premium.feature.beta.desc', message: 'Les abonnés reçoivent en avant-première les fonctionnalités en bêta, comme la conversion des timeouts AutoMod en mute par rôle.' }),
-            docsHref: '/docs/features/sanctions#mute-threshold',
+            description: translate({ id: 'premium.feature.beta.desc', message: 'Les abonnés reçoivent en avant-première les fonctionnalités en bêta, en ce moment les doubles comptes et les nouvelles logs du serveur : salons, membres, messages, vocal et réactions, avec l\'auteur de chaque action.' }),
+            docsHref: '/docs/beta/features/logs',
         },
     ]
 
@@ -434,6 +603,21 @@ export default function PremiumPage(): React.ReactNode {
         { type: 'feature', label: translate({ id: 'premium.compare.row.antiscam', message: 'Anti-Scam & ScamLens' }), values: [yes, yes, yes] },
         { type: 'feature', label: translate({ id: 'premium.compare.row.moderation', message: 'Modération complète (ban, kick, mute, jail…)' }), values: [yes, yes, yes] },
         { type: 'feature', label: translate({ id: 'premium.compare.row.kickMode', message: 'Mode expulsion + DM (Fermeture des Jointures & Mode raid)' }), values: [no, yes, yes], small: true },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.preventiveSlowmode', message: 'Slowmode préventif (jusqu\'à 6 salons)' }), values: [no, yes, yes] },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.disconVoice', message: 'Salon vocal de statut du DISCON' }), values: [no, yes, yes] },
+
+        { type: 'category', label: translate({ id: 'premium.compare.cat.automod', message: 'Automod' }) },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.imageCatalog', message: 'Catalogue personnalisé d\'images ScamLens (listes)' }), values: [no, '2', custom] },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.fileRules', message: 'Règles d\'extensions de fichiers par salon' }), values: ['1', '20', custom] },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.fileCategories', message: 'Règles d\'extensions par catégorie' }), values: [no, yes, yes] },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.privateInvites', message: 'Invitations d\'ami et de groupe réglées à part' }), values: [no, yes, yes] },
+
+        { type: 'category', label: translate({ id: 'premium.compare.cat.arrivals', message: 'Arrivées' }) },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.autoroles', message: 'Rôles automatiques' }), values: ['3', '10', custom] },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.botRoles', message: 'Rôles des bots' }), values: ['1', '15', custom] },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.welcomeButtons', message: 'Boutons du message de bienvenue' }), values: ['2', '4', custom] },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.welcomeColor', message: 'Couleur du message de bienvenue' }), values: [no, yes, yes] },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.captchaIcon', message: 'Captcha à l\'image de votre serveur' }), values: [no, yes, yes] },
 
         { type: 'category', label: translate({ id: 'premium.compare.cat.reports', message: 'Signalements' }) },
         { type: 'feature', label: translate({ id: 'premium.compare.row.trustedRole', message: 'Rôle de confiance (timeout préventif)' }), values: [no, yes, yes] },
@@ -447,6 +631,11 @@ export default function PremiumPage(): React.ReactNode {
         { type: 'feature', label: translate({ id: 'premium.compare.row.panels', message: 'Panneaux d\'information' }), values: [
             translate({ id: 'premium.compare.row.panels.free', message: '2 + 1 Jail' }),
             translate({ id: 'premium.compare.row.panels.founder', message: '4 + 1 Jail' }),
+            custom,
+        ] },
+        { type: 'feature', label: translate({ id: 'premium.compare.row.staffPanels', message: 'Panneaux /display staff' }), values: [
+            translate({ id: 'premium.compare.row.staffPanels.free', message: '1 + DISCON' }),
+            translate({ id: 'premium.compare.row.staffPanels.founder', message: '4 + DISCON' }),
             custom,
         ] },
 
@@ -479,6 +668,10 @@ export default function PremiumPage(): React.ReactNode {
         { type: 'feature', label: translate({ id: 'premium.compare.row.customIntegration', message: 'Intégration sur mesure' }), values: [no, no, yes] },
         { type: 'feature', label: translate({ id: 'premium.compare.row.expertFollowup', message: 'Suivi régulier avec un expert' }), values: [no, no, yes] },
     ]
+
+    const firstHidden = COMPARE_ROWS.findIndex((row, i) => row.type === 'category' && COMPARE_ROWS.slice(0, i).filter(r => r.type === 'category').length === 4)
+    const visibleRows = showAll || firstHidden < 0 ? COMPARE_ROWS : COMPARE_ROWS.slice(0, firstHidden)
+    const hiddenCount = COMPARE_ROWS.length - visibleRows.length - COMPARE_ROWS.slice(visibleRows.length).filter(r => r.type === 'category').length
 
     const FAQ_ITEMS: { q: string; a: string }[] = [
         {
@@ -518,7 +711,8 @@ export default function PremiumPage(): React.ReactNode {
             <main className={styles.page}>
                 {/* ============= HERO ============= */}
                 <section className={styles.hero}>
-                    <div className={styles.container}>
+                    <div className={`${styles.container} ${styles.heroGrid}`}>
+                        <div className={styles.heroCopy}>
                         {typeof stats.founder === 'number' && <FounderScarcity taken={stats.founder} />}
                         <h1 className={styles.heroTitle}>
                             <Translate id="premium.hero.title.line1" description="Première ligne du titre du hero premium">
@@ -548,6 +742,8 @@ export default function PremiumPage(): React.ReactNode {
                                 Annulable à tout moment
                             </Translate>
                         </p>
+                        </div>
+                        <FounderPass taken={stats.founder} />
                     </div>
                 </section>
 
@@ -617,7 +813,7 @@ export default function PremiumPage(): React.ReactNode {
                                     <Translate id="premium.features.eyebrow">Ce que vous débloquez</Translate>
                                 </span>
                                 <h2 className={styles.sectionTitle}>
-                                    <Translate id="premium.features.title">Les autres avantages du Premium</Translate>
+                                    <Translate id="premium.features.title">Tout le reste du Premium</Translate>
                                 </h2>
                                 <p className={styles.sectionSubtitle}>
                                     <Translate id="premium.features.subtitle">
@@ -626,9 +822,14 @@ export default function PremiumPage(): React.ReactNode {
                                 </p>
                             </div>
                         </div>
-                        <div className={styles.grid}>
+                        <div className={styles.bento}>
                             {FEATURES.map(feature => (
-                                <article key={feature.title} className={styles.featureCard}>
+                                <article
+                                    key={feature.title}
+                                    className={styles.bentoCell}
+                                    style={{ gridArea: feature.area }}
+                                    data-area={feature.area}
+                                >
                                     {feature.scene && (
                                         <div className={styles.featureScene} aria-hidden>
                                             <FeatureScene kind={feature.scene} />
@@ -643,9 +844,15 @@ export default function PremiumPage(): React.ReactNode {
                                     <p className={styles.featureDesc}>{feature.description}</p>
                                     {feature.docsHref && (
                                         <div className={styles.featureMeta}>
-                                            <Link to={feature.docsHref}>
-                                                <Translate id="premium.feature.learnMore">En savoir plus</Translate>
-                                            </Link>
+                                            {feature.docsHref.startsWith('#') ? (
+                                                <a href={feature.docsHref}>
+                                                    <Translate id="premium.feature.learnMore">En savoir plus</Translate>
+                                                </a>
+                                            ) : (
+                                                <Link to={feature.docsHref}>
+                                                    <Translate id="premium.feature.learnMore">En savoir plus</Translate>
+                                                </Link>
+                                            )}
                                         </div>
                                     )}
                                 </article>
@@ -718,7 +925,7 @@ export default function PremiumPage(): React.ReactNode {
                                 <tbody>
                                     {(() => {
                                         let cat = ''
-                                        return COMPARE_ROWS.map((row, i) => {
+                                        return visibleRows.map((row, i) => {
                                             if (row.type === 'category') {
                                                 cat = row.label
                                                 const isCollapsed = !!collapsed[row.label]
@@ -788,7 +995,7 @@ export default function PremiumPage(): React.ReactNode {
                                     <dl className={styles.stackList}>
                                         {(() => {
                                             let cat = ''
-                                            return COMPARE_ROWS.map((row, i) => {
+                                            return visibleRows.map((row, i) => {
                                                 if (row.type === 'category') {
                                                     cat = row.label
                                                     const isCollapsed = !!collapsed[row.label]
@@ -823,6 +1030,16 @@ export default function PremiumPage(): React.ReactNode {
                                 </div>
                             ))}
                         </div>
+
+                        {hiddenCount > 0 && (
+                            <div className={styles.compareMore}>
+                                <button type="button" className={styles.ctaSecondary} onClick={() => setShowAll(v => !v)} aria-expanded={showAll}>
+                                    {showAll
+                                        ? translate({ id: 'premium.compare.showLess', message: 'Replier le comparatif' })
+                                        : translate({ id: 'premium.compare.showAll', message: 'Voir les {count} autres lignes' }, { count: hiddenCount })}
+                                </button>
+                            </div>
+                        )}
                     </div>
                 </section>
 

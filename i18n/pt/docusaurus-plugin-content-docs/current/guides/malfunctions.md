@@ -57,7 +57,7 @@ Esse problema é relativamente comum, mas depende da **configuração do seu ser
 
 - **Você ativou o captcha?** Essa é uma funcionalidade opcional: ative-a na aba “**Chegadas**” de [`/settings`](../setup.md#settings). Consulte a [página dedicada ao captcha](../features/captcha.md#config) para mais informações.
 
-- **Qual é o acionamento dele?** Em “**Automático**”, o captcha só se aplica durante um raid ou um nível [DISCON](../features/discon.md) elevado (Shield Update, em experimentação): no resto do tempo, os recém-chegados entram diretamente. Escolha “**Permanente**” para que cada recém-chegado passe pelo captcha.
+- **Qual é o acionamento dele?** Em “**Automático**”, o captcha só se aplica durante um raid ou um nível [DISCON](../features/discon.md) elevado: no resto do tempo, os recém-chegados entram diretamente. Escolha “**Permanente**” para que cada recém-chegado passe pelo captcha.
 
 - **Algum cargo ou canal o contorna?** A tela do captcha sinaliza os canais ainda visíveis para o cargo de verificação e os cargos que dão acesso ao servidor sem passar por ele, com um botão para corrigir.
 

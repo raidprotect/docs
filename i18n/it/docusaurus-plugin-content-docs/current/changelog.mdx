@@ -6,6 +6,21 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Scopri l'elenco dettagliato delle modifiche apportate a RaidProtect.
 
+## 3.8.0 Logging Update <span className="badge-experiment">Sperimentazione</span> {#3-8-0}
+
+:::info Sperimentazione
+La Logging Update è in fase di sperimentazione: in attesa della sua uscita nella 3.8.0, è in beta pubblica per i server [Premium](/it/premium). Il suo contenuto può ancora cambiare.
+:::
+
+- Nuovi [log del server](./features/logs.md) in cinque famiglie: canali, ruoli e inviti, membri, messaggi, vocale, emoji e reazioni. Ogni famiglia ha il suo canale, e ogni tipo può essere disattivato o [inviato altrove](./features/logs.md#config).
+- Ogni log inizia con il suo autore (“@moderatore ha creato il canale #generale.”) e mostra il prima e il dopo di una modifica, permessi compresi.
+- Nuovi tipi di log: webhook, integrazioni, bot aggiunti o rimossi con il loro ruolo, messaggi fissati, membri inattivi rimossi, boost, nickname, emoji, sticker, suoni della soundboard e reazioni.
+- Il log di un messaggio eliminato dice chi l'ha eliminato. Un messaggio modificato mostra il prima e il dopo, con solo le righe cambiate per un messaggio lungo.
+- Log vocali: durata della sessione all'uscita, e azioni del team (silenziare, disattivare l'audio, spostare, disconnettere) con il loro autore.
+- Tre [formati di log](./features/logs.md#format): Predefinito, Riquadro e Compatto.
+- Nuova casella “**Messaggi sul server**” nelle [segnalazioni](./features/reports.md): il thread della segnalazione riprende gli ultimi messaggi del canale, messaggi eliminati compresi.
+- Riservato al **Premium**: il formato Compatto, i log vocali e delle reazioni, la copia degli allegati dei messaggi eliminati, [6 ore di messaggi in memoria](./features/logs.md#cache) invece di 15 minuti e fino a 15 canali di log invece di 3.
+
 ## 3.7.0 Identity Update <span className="badge-experiment">Sperimentazione</span> {#3-7-0}
 
 :::info Sperimentazione
@@ -15,28 +30,49 @@ L'Identity Update è in fase di sperimentazione: in attesa della sua uscita nell
 - Nuovo comando [`/alt`](./features/alt-accounts.md#alt) e [doppi account](./features/alt-accounts.md): collega gli account di una stessa persona, scegli il suo account principale, e le sue sanzioni (bando, espulsione, mute, jail, timeout, softban) si estendono agli account collegati. Revocare la sanzione di uno la revoca per tutti. <SuggestionLink id="404" /> <SuggestionLink id="263" />
 - [Sanzioni degli account collegati](./features/alt-accounts.md#modes) regolabili per tipo, con una modalità **Trappola** e una [sanzione di elusione](./features/alt-accounts.md#evasion) per l'account collegato che arriva o scrive durante la sanzione.
 - Gli account collegati assenti dal server vengono sanzionati al loro arrivo.
+- Una sanzione estesa al gruppo diventa una [sanzione di gruppo](./features/alt-accounts.md#group-sanction) in `/sanctions` e `/modview`: la si annulla, la si elimina o la si modifica in un colpo solo per tutti gli account.
+- I log di sanzione citano gli account collegati, con un pulsante “**Account collegati**” verso il pannello `/alt` nel formato embed.
 - Nuova impostazione [Un solo account per persona](./features/alt-accounts.md#single-account): gli account secondari vengono messi in quarantena.
 - Il [captcha](./features/captcha.md#activity-alts) individua i doppi account: collega da solo gli account certamente appartenenti alla stessa persona e propone al tuo team i collegamenti probabili.
-- Le [sanzioni degli account collegati](./features/alt-accounts.md#modes) sono riservate al **Premium**. Senza Premium, `/alt` collega e consulta gli account senza limiti.
+- Le [sanzioni degli account collegati](./features/alt-accounts.md#modes) sono riservate al **Premium**. Senza Premium, `/alt` collega e consulta gli account senza limiti, e Un solo account per persona resta disponibile.
 
-## 3.6.0 Shield Update <span className="badge-experiment">Sperimentazione</span> {#3-6-0}
-
-:::info Sperimentazione
-La Shield Update è in fase di sperimentazione: in attesa della sua uscita nella 3.6.0, è in beta pubblica per i server [Premium](/it/premium). Il suo contenuto può ancora cambiare.
-:::
+## 3.6.0 Shield Update (28/10/2026) {#3-6-0}
 
 - Nuovo **[DISCON](./features/discon.md)**: un livello di pericolo del server su cinque gradini, regolabile con un clic tramite il comando `/discon` o da un [pannello per il team](./features/discon.md#panel). Ogni livello irrigidisce automaticamente il server (verifica, captcha, chiusura dei MP, modalità raid, blocco), e un [canale vocale](./features/discon.md#voice) mostra il livello in corso.
-- Nuovo [slowmode preventivo](./features/slowmode.md) (**Premium**): la modalità lenta dei canali scelti si regola da sola per mantenere il flusso di messaggi che hai fissato.
-- [HoneyPot](./features/honeypot.md): nuovo [ritardo prima della sanzione](./features/honeypot.md#grace), che lascia a un membro in buona fede il tempo di dire che ha sbagliato.
-- Nuova [attivazione Intelligente](./features/captcha.md#trigger) del captcha: oltre ai raid, verifica chi arriva con un account che sembra sospetto.
-- Nuovo filtro [Altri server](./features/automod.md#servers) nell'[Automod](./features/automod.md): inviti, messaggi inoltrati, link di canali e tag di altri server, in blocklist o in allowlist.
-- Nuova sanzione **Quarantena**, sincronizzata con la [quarantena di Discord](./features/sanctions.mdx#discord-quarantine).
-- [ScamLens](./features/scam-images.md): [catalogo di immagini](./features/scam-images.md#catalog) (**Premium**) per bloccare le tue immagini di truffa.
-- Ogni messaggio bloccato dall'AutoMod di Discord crea un [avvertimento](./features/sanctions.mdx) silenzioso a nome di “Discord Automod”.
-- Nuovo [assistente di installazione](./setup.md#wizard): un percorso guidato sezione per sezione, protezioni proposte in base al tuo server e un'anteprima dell'audit per concludere.
 - [Anti-spam](./features/anti-spam.mdx) V3, già attivo per tutti dalla 3.5.0:
   - Nuovo motore di rilevamento: duplicati approssimativi, link ripetuti, emoji e testo senza senso, flood e spam distribuito su più canali.
   - [Preset](./features/anti-spam.mdx#presets) e sanzioni per famiglia, con una [modalità avanzata](./features/anti-spam.mdx#advanced) per regolare ogni trigger e la sua [durata](./features/anti-spam.mdx#duration).
+  - Nuova [opzione](./features/anti-spam.mdx#ignore) per monitorare i canali il cui nome contiene “spam”, finora sempre ignorati. <SuggestionLink id="600" />
+- Nuovo [slowmode preventivo](./features/slowmode.md) (**Premium**): la modalità lenta dei canali scelti si regola da sola per mantenere il flusso di messaggi che hai fissato.
+- [Automod](./features/automod.md):
+  - Nuovo filtro [Altri server](./features/automod.md#servers): inviti, messaggi inoltrati, link di canali o di eventi e tag di altri server, in blocklist o in allowlist.
+  - Nuovo filtro [Estensioni dei file](./features/automod.md#files): blocca gruppi di estensioni o autorizzane solo alcune, su tutto il server o canale per canale, anche quando un file è camuffato con un'altra estensione. Le regole per canale sono più numerose sui server **Premium**. <SuggestionLink id="505" />
+  - [Catalogo personalizzato di immagini](./features/scam-images.md#catalog) di [ScamLens](./features/scam-images.md) (**Premium**) per bloccare le tue immagini di truffa.
+- Nuovo [assistente di installazione](./setup.md#wizard): un percorso guidato sezione per sezione, protezioni proposte in base al tuo server e un'anteprima dell'audit per concludere.
+- Nuova sezione [Arrivo dei bot](./features/onboarding.md#bots) (antibot): ruoli assegnati automaticamente ai bot che entrano nel server ed espulsione dei bot non autorizzati, con [`/bypass bot`](./features/onboarding.md#bypass-bot) per farne entrare uno. <SuggestionLink id="244" />
+- Nuova sanzione **Quarantena**, sincronizzata con la [quarantena di Discord](./features/sanctions.mdx#discord-quarantine).
+- Nuova [attivazione Intelligente](./features/captcha.md#trigger) del captcha: oltre ai raid, verifica chi arriva con un account che sembra sospetto.
+- [Activity del captcha](./features/captcha.md#activity): su un server **Premium**, l'icona del server sostituisce il logo RaidProtect.
+- [Messaggio di benvenuto](./features/onboarding.md#welcome-buttons): ogni pulsante può avere il suo emoji.
+- [HoneyPot](./features/honeypot.md): nuovo [ritardo prima della sanzione](./features/honeypot.md#grace), che lascia a un membro in buona fede il tempo di dire che ha sbagliato.
+- [HoneyPot](./features/honeypot.md#sanction): il bando e il jail possono essere permanenti.
+- Ogni messaggio bloccato dall'AutoMod di Discord crea un [avvertimento](./features/sanctions.mdx) silenzioso a nome di “Discord Automod”.
+- [`/lock` e `/unlock`](./features/channel-lock.md#lock) bloccano e sbloccano un'intera categoria, e i suoi canali restano sincronizzati. <SuggestionLink id="595" />
+- [`/lock`, `/unlock`](./features/channel-lock.md#lock) e [`/slowmode`](./features/moderation.mdx#slowmode): nuova opzione `silent` per agire senza annunci nel canale.
+- Nuova impostazione di [eliminazione dei messaggi al bando](./features/sanctions.mdx#ban-delete): la cronologia eliminata per impostazione predefinita con `/ban`, `?ban` e `/tempban`. <SuggestionLink id="592" />
+- [`/unjail`](./features/moderation.mdx#unjail) rifiuta di rimuovere una quarantena (età minima dell'account, Discord) e spiega come farlo. Alla fine di un jail, un membro in quarantena conserva il suo ruolo.
+- Correzione:
+  - `/unlock` ripristina esattamente i permessi di prima del blocco, e RaidProtect non perde più i propri accessi.
+  - `/auth` segnala un ruolo disattivato invece di aprire una sessione fittizia.
+  - Un membro mandato in [jail](./features/moderation.mdx#jail) viene disconnesso dal vocale.
+  - Il ruolo non verificato del [captcha](./features/captcha.md) non può più essere scelto come ruolo automatico.
+  - [Età minima dell'account](./features/onboarding.md#minage-action): il jail diventa una quarantena, rimossa automaticamente quando l'account raggiunge l'età richiesta. Le quarantene in corso si adeguano quando cambi l'età minima: rimosse se si abbassa o viene disattivata, prolungate se si alza.
+  - [Authentication Manager](./features/authentication-manager.mdx#manage-methods): puoi rinominare una passkey.
+  - [Ruolo di permessi separato](./features/authentication-manager.mdx#strategies) dell'Authentication Manager: i permessi di canale del ruolo d'origine vengono spostati sul ruolo 🔑.
+  - [`/auth`](./features/authentication-manager.mdx#auth) assegna più ruoli protetti in una volta, con un solo comando. <SuggestionLink id="601" />
+  - [`/auth`](./features/authentication-manager.mdx#logs-tab): le sessioni vengono registrate nel canale dei log dell'Authentication Manager.
+  - [`/snipe`](./features/moderation.mdx#snipe) avvisa quando la memorizzazione nella cache dei messaggi è disattivata e propone di attivarla. Usarlo la attiva automaticamente.
+  - Aggiunta di diversi log.
 
 ## 3.5.0 Onboarding Update (19/10/2026) {#3-5-0}
 

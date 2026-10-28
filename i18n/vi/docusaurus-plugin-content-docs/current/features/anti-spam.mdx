@@ -72,7 +72,7 @@ Bạn có thể loại một số kênh, vai trò hoặc thành viên khỏi vi�
 Bộ chọn kênh chấp nhận cả **danh mục** (khi đó tất cả kênh của chúng đều được bỏ qua), cũng như kênh thoại, kênh sân khấu và diễn đàn. Các luồng theo kênh cha của chúng.
 
 :::info Ai được bỏ qua tự động?
-- Các kênh có tên chứa “**spam**” (với một luồng, tên của kênh cha mới được tính).
+- Các kênh có tên chứa “**spam**” (với một luồng, tên của kênh cha mới được tính). Một công tắc “**Bỏ qua các kênh « spam »**”, trong màn hình chống spam, cho phép giám sát cả các kênh này.
 - Các thành viên mà RaidProtect không thể kiểm duyệt (vai trò cao hơn vai trò của nó).
 - **Đội ngũ** (quyền `Quản trị viên`, `Quản lý máy chủ` hoặc `Quản lý tin nhắn`), **chừng nào chưa có vai trò hay thành viên nào bị bỏ qua**. Ngay khi bạn thêm một vai trò hoặc thành viên vào danh sách, chỉ danh sách đó được tính: các thành viên đội ngũ không có trong đó khi đó có thể bị xử phạt.
 :::
@@ -201,9 +201,9 @@ RaidProtect làm việc cùng **AutoMod của Discord**:
 - **Spam tin nhắn bị chặn**: khi một thành viên liên tục gửi các tin nhắn bị các quy tắc AutoMod của bạn chặn, trình kích hoạt “**Spam tin nhắn bị chặn (AutoMod)**” sẽ xử phạt họ (nhóm **Tự động**). Muốn vậy, quy tắc AutoMod phải gửi các **cảnh báo** của nó vào một kênh mà RaidProtect thấy được: nhờ những cảnh báo này mà chúng tôi nhận ra các tin nhắn bị chặn.
 - **Cảnh cáo cho mỗi tin nhắn bị chặn**: nếu các hình phạt đang bật trên máy chủ của bạn, mỗi tin nhắn bị một quy tắc AutoMod chặn được ghi lại như một cảnh cáo trong lịch sử của thành viên, trừ khi quy tắc đã áp dụng một timeout. Thành viên không nhận tin nhắn riêng cho cảnh cáo này. Xem thêm chi tiết ở trang [hình phạt](./sanctions.mdx).
 
-## 🐢 Slowmode phòng ngừa <span className="badge-experiment">Thử nghiệm</span> <span className="badge-premium">Premium</span> {#slowmode}
+## 🐢 Slowmode phòng ngừa <span className="badge-premium">Premium</span> {#slowmode}
 
-Để làm dịu một kênh rất sôi động mà không xử phạt ai, [slowmode phòng ngừa](./slowmode.md) (Premium, đang thử nghiệm cùng Shield Update) tự động điều chỉnh chế độ chậm của các kênh theo tốc độ tin nhắn của chúng.
+Để làm dịu một kênh rất sôi động mà không xử phạt ai, [slowmode phòng ngừa](./slowmode.md) (Premium) tự động điều chỉnh chế độ chậm của các kênh theo tốc độ tin nhắn của chúng.
 
 ## 📑 Nhật ký của chống spam {#logs}
 

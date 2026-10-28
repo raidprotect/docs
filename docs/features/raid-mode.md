@@ -99,7 +99,7 @@ Avec les actions captcha, réglez le [déclenchement du captcha](./captcha.md#tr
 
 #### Mode expulsion <span className="badge-premium">Premium</span> {#kick-mode}
 
-L'ancien interrupteur “**Mode expulsion**” est devenu l'action “**Expulser les arrivants**” de l'[action pendant le raid](#action). Elle reste réservée aux serveurs [**Premium**](/premium) et fonctionne sans la communauté Discord.
+L'ancien interrupteur “**Mode expulsion**” est devenu l'action “**Expulser les arrivants**” de l'[action pendant le raid](#action). Elle reste réservée aux serveurs [**Premium**](/premium) et fonctionne sans la communauté Discord. Si le Premium expire, l'action repasse à “**Bloquer les invitations**”. De même, une action captcha dont le captcha n'est pas utilisable retombe sur le mode normal (vague expulsée, puis invitations bloquées), jamais sur l'expulsion.
 
 #### Fermer les MP automatiquement {#close-dm}
 

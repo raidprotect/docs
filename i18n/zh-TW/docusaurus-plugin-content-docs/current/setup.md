@@ -50,7 +50,7 @@ Discord 的[社群模式](./guides/community.md)只有少數設定才需要，�
 
 [自動身分組與歡迎訊息](./features/onboarding.md)不屬於精靈的一部分：請在 `/settings` 的「**新成員加入**」分頁中設定。
 
-### 🧭 新的安裝精靈 <span className="badge-experiment">實驗</span> {#wizard}
+### 🧭 新的安裝精靈 {#wizard}
 
 新的 `/setup` 精靈以引導式流程取代模組清單：
 
@@ -62,10 +62,6 @@ Discord 的[社群模式](./guides/community.md)只有少數設定才需要，�
 - **已設定的伺服器會被檢查，而非重做**：現有的驗證碼面板與已啟用的私訊鎖定都會被保留。
 - **接下來**：安裝以[安全稽核](./features/audit.md)的預覽作結，並提供捷徑，可測試驗證碼、自訂歡迎訊息或開啟所有設定。失敗的步驟可重新執行 `/setup` 來繼續。
 
-:::info 實驗：Shield Update
-新的安裝精靈隨預計於 3.6.0 版推出的 **Shield Update** 一同登場。目前僅提供給少數伺服器。
-:::
-
 ## 修改設定 {#settings}
 
 `/settings` 指令會開啟 RaidProtect 的儀表板。它僅限管理員使用，並以臨時私人訊息顯示，只有您自己看得到。
@@ -76,11 +72,11 @@ Discord 的[社群模式](./guides/community.md)只有少數設定才需要，�
 
 - **一般**：[語言](./language.md)、[訊息指令](./guides/prefix.md)、[權限](./guides/prefix.md#permissions)以及伺服器時區。
 - **新成員加入**：[Auto RaidMode](./features/raid-mode.md)、[驗證碼](./features/captcha.md)、[帳號最短註冊時長](./features/onboarding.md#minage)、[自動身分組](./features/onboarding.md#autorole)與[歡迎訊息](./features/onboarding.md#welcome-message)。
-- **防護**：[DISCON](./features/discon.md)\*、[Antispam](./features/anti-spam.mdx)、[Automod](./features/automod.md)（[圖片過濾器](./features/scam-images.md)與[其他伺服器](./features/automod.md#servers)\*）、[HoneyPot](./features/honeypot.md)、[預防性慢速模式](./features/slowmode.md)\*、[Authentification Manager](./features/authentication-manager.mdx) 與[私訊鎖定](./features/dm-lock.mdx)。
+- **防護**：[DISCON](./features/discon.md)、[Antispam](./features/anti-spam.mdx)、[Automod](./features/automod.md)（[圖片過濾器](./features/scam-images.md)、[其他伺服器](./features/automod.md#servers)與[副檔名](./features/automod.md#files)）、[HoneyPot](./features/honeypot.md)、[預防性慢速模式](./features/slowmode.md)、[Authentification Manager](./features/authentication-manager.mdx) 與[私訊鎖定](./features/dm-lock.mdx)。
 - **管理**：[處罰](./features/sanctions.mdx)、[多帳號](./features/alt-accounts.md)\*、紀錄、[檢舉](./features/reports.md)與[透明度](./features/transparency.md)。
 - **工具**：[標籤角色](./features/tag-role.md)、[頻道鎖定](./features/channel-lock.md)、[在勤角色](./features/moderation.mdx#onduty)與訊息快取。
 
-\* 實驗中：這些項目只會出現在可使用 Shield Update（DISCON、其他伺服器、預防性慢速模式）或 Identity Update（多帳號）的伺服器上，為 [Premium](/zh-TW/premium) 公開測試版。
+\* 實驗中：此項目只會出現在可使用 Identity Update（多帳號）的伺服器上，為 [Premium](/zh-TW/premium) 公開測試版。
 
 每一行都會顯示該設定的目前值和一個按鈕：「**設定**」會開啟專屬畫面，「**編輯**」會開啟輸入視窗。任何變更都會立即生效。
 

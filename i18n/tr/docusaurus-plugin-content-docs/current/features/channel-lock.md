@@ -12,16 +12,21 @@ Bazen kullanıcıların mesaj göndermesini engellemek için bir kanalı geçici
 
 ## 🔒 Bir kanalı kilitleme {#lock}
 
-Şu komutu kullanın: ```/lock [#channel] [duration] [reason]```
+Şu komutu kullanın: ```/lock [#channel] [duration] [reason] [--silent]```
 
 Bu komut, hedeflenen kanalda **@everyone** rolünden mesaj gönderme ve alt başlıklarda mesaj gönderme izinlerini kaldırır; böylece tüm kullanıcıların orada yazmasını engeller.
 
 - `[#channel]` yerine kilitlenecek kanalın etiketini veya [kimliğini](../guides/id.mdx) yazın. Kanal belirtilmezse komutu verdiğiniz kanalı kilitleriz. Metin, duyuru, ses, forum, medya, sahne kanalları ve kategoriler kabul edilir; alt başlıklar kabul edilmez.
 - Kanalın neden kilitlendiğini belirtmek için `[reason]` yerine bir sebep yazın (örn.: *sohbet temizliği*, *önemli duyuru* vb.).
+- Kanalda hiçbir şey duyurulmaması için `--silent` ekleyin: onayı yalnızca siz alırsınız.
 
 :::info
 Aynı kanal 10 dakikada yalnızca bir kez kilitlenebilir.
 :::
+
+### Bir kategoriyi kilitleme {#lock-category}
+
+Bir kategoriyi kilitlemek, görünür tüm kanallarını da (alt başlıklar hariç) tek seferde kilitler; kategori üzerinde `/unlock` ise hepsinin kilidini birlikte açar. Yazmaya zaten kapalı bir kanal (kurallar, duyurular) kilitlemede de kilidi açmada da olduğu gibi bırakılır. Bir kategorinin geçici kilidi sona erdiğinde, tek bir log satırı kategoriyi ve kilidi açılan kanal sayısını belirtir.
 
 ### Geçici kilitleme {#lock-duration}
 
@@ -29,9 +34,9 @@ Aynı kanal 10 dakikada yalnızca bir kez kilitlenebilir.
 
 ## 🔓 Bir kanalın kilidini açma {#unlock}
 
-Şu komutu kullanın: ```/unlock [#channel] [reason]```
+Şu komutu kullanın: ```/unlock [#channel] [reason] [--silent]```
 
-Bu komut, **@everyone** rolünün mesaj gönderme izinlerini kilitlemeden önceki haline geri yükler ve kullanıcıların yeniden orada yazmasına olanak tanır. Kanalın neden açıldığını belirtmek için `[reason]` yerine bir sebep yazın (örn.: *tartışma yeniden açıldı*, *duyuru bitti* vb.).
+Bu komut, **@everyone** rolünün mesaj gönderme izinlerini kilitlemeden önceki haline geri yükler ve kullanıcıların yeniden orada yazmasına olanak tanır. Kanalın neden açıldığını belirtmek için `[reason]` yerine bir sebep yazın (örn.: *tartışma yeniden açıldı*, *duyuru bitti* vb.). `--silent` ile kanalda hiçbir şey duyurulmaz.
 
 :::warning
 Kilitlemenin düzgün çalışması için herkese açık hiçbir rolün bu kanalda açıkça yazma izni olmamalıdır. Aksi halde bu rollere sahip üyeler yine konuşabilir. Ekibinizin rolleri için konmuş izinler ise yararlıdır: bir `/lock` sırasında söz hakkını ekipte tutarlar ve [denetim](./audit.md) bunları artık gereksiz olarak bildirmez.

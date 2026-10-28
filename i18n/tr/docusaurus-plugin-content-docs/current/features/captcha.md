@@ -37,6 +37,8 @@ Captcha, bir **@Doğrulanmamış** rolüne ve bir **#doğrulama** kanalına daya
 | **Panel (Etkileşimli)**, varsayılan | “**Doğrulama sistemi**” başlıklı, [RaidProtect Activity](#activity)'yi açan bir “**Doğrula**” düğmesi içeren kalıcı bir mesaj. Üye **#doğrulama** kanalına yazamaz. |
 | **Meydan okuma (Klasik)** | Katıldığında **#doğrulama** kanalına bir görsel gönderilir ve üye kodu kanala mesaj olarak yazar. |
 
+Panelde kendi dilinde okumak için bir “**Translate**” düğmesi bulunur ve her gelen doğrulama kanalında etiketlenir, ardından bu mesaj silinir: böylece kanalı bulur.
+
 Panel modu kanalı temiz tutar ve ek ayarlara olanak tanır: denemeler tükendiğinde yaptırım seçimi, [baskın sırasında dondurulan captcha](./raid-mode.md#action), [çok yeni hesapların girişte tutulması](./onboarding.md#minage). Meydan okuma modu, verilen süre dolduğunda veya denemeleri tükendiğinde üyeyi her zaman atar.
 
 ### Tetikleme {#trigger}
@@ -45,15 +47,11 @@ Panel modu kanalı temiz tutar ve ek ayarlara olanak tanır: denemeler tükendi�
 |---|---|
 | **Sürekli**, varsayılan | Her katılımda, koşulsuz. |
 | **Otomatik** | Yalnızca bir baskın sırasında veya yüksek bir DISCON seviyesinde. Diğer gelenler doğrudan girer. |
-| **Akıllı** <span className="badge-experiment">Deneme</span> | Otomatik gibi, ayrıca şüpheli görünen hesaplar. |
+| **Akıllı** | Otomatik gibi, ayrıca şüpheli görünen hesaplar. |
 
-**Otomatik** ile captcha, bir baskın sırasında yalnızca [Otomatik RaidMode](./raid-mode.md#action) “**Captcha'ya gönder**” veya “**Baskın boyunca captcha dondurulur**” olarak ayarlıysa uygulanır; ayrıca 3. seviyeden itibaren bir [DISCON](./discon.md) uyarısı sırasında uygulanır (Shield Update ile deneme aşamasında).
+**Otomatik** ile captcha, bir baskın sırasında yalnızca [Otomatik RaidMode](./raid-mode.md#action) “**Captcha'ya gönder**” veya “**Baskın boyunca captcha dondurulur**” olarak ayarlıysa uygulanır; ayrıca 3. seviyeden itibaren bir [DISCON](./discon.md) uyarısı sırasında uygulanır.
 
 **Akıllı** tetikleme, her gelenin profilini değerlendirir. Ekibiniz tarafından elle onaylanan bir üye asla şüpheli sayılmaz.
-
-:::info Deneme: Shield Update
-Akıllı tetikleme, 3.6.0 sürümü için planlanan **Shield Update**'in parçasıdır. Çıkışına kadar deneme aşamasındadır; [Premium](/tr/premium) sunucular için herkese açık beta olarak sunulur. Deneme olmadan sunulmaz.
-:::
 
 ## 🚪 Captcha nasıl yapılandırılır? {#config}
 
@@ -75,11 +73,11 @@ Captcha, **Panel (Etkileşimli)** modunda, **Sürekli** tetiklemeyle, 3 denemeyl
 2. “**Katılımlar**” sekmesini açın.
 3. “**Captcha**” yanındaki “**Yapılandır**” düğmesine tıklayın.
 4. “**Görüntüleme modu**” içinde “**Panel (Etkileşimli)**” veya “**Meydan okuma (Klasik)**” seçin.
-5. “**Tetikleme**” içinde “**Sürekli**”, “**Otomatik**” veya “**Akıllı**” (Shield Update) seçin.
+5. “**Tetikleme**” içinde “**Sürekli**”, “**Otomatik**” veya “**Akıllı**” seçin.
 
 ### Activity içinde doğrulama {#activity}
 
-**Panel** modunda “**Doğrula**” düğmesi **RaidProtect Activity**'yi açar: üye, sunucunuzun renklerinde ve [Karşılama Sürecinizdeki](../guides/onboarding.md) kanal bağlantılarıyla küçük bir bulmacayı doğrudan Discord içinde çözer. Doğrulandıktan sonra orada [karşılama kartını](./onboarding.md#welcome-message) keşfeder.
+**Panel** modunda “**Doğrula**” düğmesi **RaidProtect Activity**'yi açar: üye, sunucunuzun renklerinde ve [Karşılama Sürecinizdeki](../guides/onboarding.md) kanal bağlantılarıyla küçük bir bulmacayı doğrudan Discord içinde çözer. Simgesi olan bir [Premium](/tr/premium) sunucuda, RaidProtect logosunun yerine bu simge gösterilir. Doğrulandıktan sonra orada [karşılama kartını](./onboarding.md#welcome-message) keşfeder.
 
 - **Bulmaca başarısız:** yanlış bir kod gibi bir deneme harcar ve denemeler tükendiğinde öngörülen yaptırım uygulanır. Activity önce sonucu üyeye bildirir, ardından yaptırım uygulanır.
 - **Başarı:** üye, başarı ekranından çıktığında doğrulanır. Bu arada “**Doğrula**”ya tıklarsa, doğrulaması Activity'yi yeniden başlatmak yerine hemen uygulanır.
@@ -94,8 +92,8 @@ Captcha, **Panel (Etkileşimli)** modunda, **Sürekli** tetiklemeyle, 3 denemeyl
 
 [Identity Update](./alt-accounts.md) ile Activity, sunucunuzdaki bir üyeyle büyük olasılıkla aynı kişi tarafından yönetilen gelenleri de tespit eder:
 
-- **Kesin bağlantı:** hesaplar [`/alt`](./alt-accounts.md#alt) içinde otomatik olarak bağlanır. Captcha logları bunu, “**Bağlantıyı kaldır**” düğmesiyle birlikte bildirir.
-- **Olası bağlantı:** [Kişi başına tek hesap](./alt-accounts.md#single-account) etkinse üye incelemeye geçer. “**Başka bir üyeye bağla**” onları `/alt` içinde bağlar ve üyeyi içeri alır; hiçbir hesap tespit edilmediyse bir pencere sizden üyeyi seçmenizi ister (“**Sunucuda zaten olan hesap**”). Aksi halde üye içeri girer ve captcha logları olası bağlantıyı bir “**Hesapları bağla**” düğmesiyle bildirir.
+- **Kesin bağlantı:** hesaplar [`/alt`](./alt-accounts.md#alt) içinde otomatik olarak bağlanır. Captcha logları bunu, “**Bağlantıyı kaldır**” düğmesiyle birlikte bildirir. Grup bir yaptırım altındaysa veya [Kişi başına tek hesap](./alt-accounts.md#single-account) ikincil hesaplarını tutuyorsa, gelen üye grubun yaptırımını alır veya karantinaya geçer.
+- **Olası bağlantı:** [Kişi başına tek hesap](./alt-accounts.md#single-account) etkinse üye incelemeye geçer. “**Başka bir üyeye bağla**” onları `/alt` içinde bağlar ve üyeyi içeri alır; hiçbir hesap tespit edilmediyse bir pencere sizden üyeyi seçmenizi ister (“**Sunucuda zaten olan hesap**”). Aksi halde üye içeri girer ve captcha logları olası bağlantıyı bir “**Bağla**” düğmesiyle bildirir.
 - **Uygulanmayan kesin bağlantı:** gruptaki bir hesap sunucu ekibindeyse, gelen üye birden fazla `/alt` grubuna bağlıysa ya da iki hesabın da zaten kendi grubu varsa (iki grup asla kendiliğinden birleştirilmez) hiçbir şey kendiliğinden bağlanmaz. Bağlantı bu durumda size aynı şekilde önerilir.
 
 Size yalnızca sunucunuzun hesapları gösterilir: diğer sunucular hakkında hiçbir şey söylenmez.
@@ -199,7 +197,7 @@ Otomatik rol artık captcha içinde ayarlanmaz: “**Katılımlar**” sekmesind
 Captcha, katılımların diğer korumalarıyla birlikte çalışır:
 - **[Otomatik RaidMode](./raid-mode.md#action):** “**Captcha'ya gönder**” eylemiyle, bir dalganın gelenleri atılmak yerine captcha'yı geçer. “**Baskın boyunca captcha dondurulur**” ile captcha'nın arkasında beklerler ve dalgadan sonra onu geçerler.
 - **[Minimum hesap yaşı](./onboarding.md#minage):** “**Girişte tut**” eylemi, çok yeni bir hesabı yalnızca gerekli yaşa ulaştıktan sonra çözebileceği bir captcha'da bloke eder.
-- **[DISCON](./discon.md#captcha):** 4. seviyeden itibaren, devre dışı bırakmış olsanız bile, yapılandırılmışsa captcha etkinleştirilir. 3. seviyeden itibaren, tetiklemesi ne olursa olsun tüm gelenlere uygulanır (Shield Update ile deneme aşamasında).
+- **[DISCON](./discon.md#captcha):** 4. seviyeden itibaren, devre dışı bırakmış olsanız bile, yapılandırılmışsa captcha etkinleştirilir. 3. seviyeden itibaren, tetiklemesi ne olursa olsun tüm gelenlere uygulanır.
 
 ## Sık sorulan sorular {#faq}
 

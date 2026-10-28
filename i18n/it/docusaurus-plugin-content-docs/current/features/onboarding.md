@@ -64,7 +64,7 @@ Puoi aggiungere sotto il messaggio dei pulsanti che portano a un canale del serv
 2. Apri la scheda “**Arrivi**”.
 3. Clicca su “**Configurare**” accanto a “**Messaggio di benvenuto**”.
 4. In “**Gestisci i pulsanti**”, scegli “**Aggiungi pulsante**”.
-5. Dai un nome al pulsante e scegli il canale da collegare.
+5. Dai un nome al pulsante, scegli il canale da collegare e, se lo desideri, un'**emoji**: un'emoji standard, o un'emoji di questo server (`<:nome:id>`, `:nome:` o il suo ID). Un'emoji non valida non impedisce il salvataggio: il pulsante viene creato senza emoji.
 
 Per modificare o eliminare un pulsante, selezionalo nella stessa lista.
 
@@ -95,10 +95,33 @@ Per togliere tutti i ruoli automatici, clicca su “**Reimpostare**”.
 **Limiti:** 3 ruoli nella versione gratuita, 10 ruoli nella versione [premium](/it/premium).
 
 :::warning
-Evita i ruoli che portano permessi: un ruolo assegnato automaticamente non dovrebbe concedere alcun potere. RaidProtect rifiuta i ruoli gestiti da un'integrazione, i ruoli sopra il suo o il tuo, e quelli che portano un permesso di moderazione: i ruoli accettabili della tua selezione vengono mantenuti, e un messaggio a parte spiega perché gli altri sono rifiutati (se lo sono tutti, la configurazione in atto resta invariata). Ti avvisa se un ruolo scelto acquisisce permessi più tardi.
+Scegli ruoli senza permessi: un ruolo assegnato all'arrivo non dovrebbe concedere alcun potere. RaidProtect rifiuta i ruoli gestiti da un'integrazione, quelli sopra il suo o il tuo, quelli che danno un permesso di moderazione e il ruolo non verificato del captcha. Ti avvisa se un ruolo scelto acquisisce permessi più tardi.
 :::
 :::info
 Se il tuo server usa un altro bot per il suo ruolo automatico, rischia di assegnare il ruolo prima del captcha. Sostituiscilo con i ruoli automatici di RaidProtect.
+:::
+
+## 🤖 Arrivo dei bot {#bots}
+
+È l'**antibot** di RaidProtect: controlla i bot che entrano nel tuo server.
+
+1. Esegui il [comando `/settings`](../setup.md#settings).
+2. Apri la scheda “**Arrivi**”.
+3. Clicca su “**Configurare**” accanto a “**Bot**”.
+
+- **Ruoli dei bot**: assegnati a ogni bot appena arriva, **al posto** dei [ruoli automatici](#autorole). Senza un ruolo scelto, i bot ricevono i ruoli automatici. **Limiti:** 1 ruolo nella versione gratuita, 15 con il [Premium](/it/premium).
+- **Espellere i bot non autorizzati**: ogni bot aggiunto viene espulso, a meno che il proprietario non lo abbia [autorizzato](#bypass-bot) prima. Disattivato per impostazione predefinita, **solo il proprietario del server** può attivarlo.
+
+RaidProtect rifiuta i ruoli gestiti da un'integrazione, quelli sopra il suo o il tuo e quelli che danno il permesso **Amministratore**. Un ruolo con un permesso di moderazione viene accettato, con un avviso: riservalo ai bot di fiducia.
+
+### Autorizzare un bot {#bypass-bot}
+
+Usa il comando: ```/bypass bot [bot]```
+
+Sostituisci `[bot]` con il bot da autorizzare: potrà unirsi al server **una volta**, entro i 10 minuti successivi, senza essere espulso. Senza bot, il comando elenca i bot attualmente autorizzati. Ogni autorizzazione viene registrata nei tuoi log.
+
+:::info
+RaidProtect ha bisogno del permesso “**Espellere i membri**” e di un ruolo sopra quello del bot per espellerlo. Altrimenti, il log lo indica e il bot resta.
 :::
 
 ## 🎂 Età minima dell'account {#minage}
@@ -120,13 +143,13 @@ Per disattivare il filtro, clicca su “**Reimpostare**”. RaidProtect ha bisog
 | Azione | Effetto su un account troppo recente |
 |---|---|
 | “**Espellere**” (predefinita) | Viene espulso a ogni tentativo finché il suo account è troppo recente. |
-| “**Jail fino all'età richiesta**” | Entra senza vedere nulla del server, ed esce dal [jail](./sanctions.mdx#jail) non appena ha l'età richiesta. |
+| “**Quarantena fino all'età richiesta**” | Entra senza vedere nulla del server (tramite il [ruolo Jail](./sanctions.mdx#jail)), ed esce dalla sua quarantena non appena ha l'età richiesta, alla data indicata. |
 | “**Trattenere all'ingresso**” | Viene bloccato su un [captcha](./captcha.md) che può risolvere solo una volta raggiunta l'età. |
 
-L'account riceve un messaggio privato con la data in cui avrà accesso al server. Le espulsioni, i jail e i bandi sono registrati nel canale dei log.
+L'account riceve un messaggio privato con la data in cui avrà accesso al server. Le espulsioni, le quarantene e i bandi sono registrati nel canale dei log.
 
 :::info
-- “**Jail fino all'età richiesta**” richiede un Ruolo Jail, configurato nella scheda “**Moderazione**” > “**Sanzioni**”. Senza di esso, RaidProtect ti propone di configurarlo o di ripiegare su “**Bannare fino all'età richiesta**”: l'account esce dal server e il suo bando viene revocato automaticamente alla data giusta.
+- “**Quarantena fino all'età richiesta**” richiede un Ruolo Jail, configurato nella scheda “**Moderazione**” > “**Sanzioni**”. Senza di esso, RaidProtect ti propone di configurarlo o di ripiegare su “**Bannare fino all'età richiesta**”: l'account esce dal server e il suo bando viene revocato automaticamente alla data giusta.
 - “**Trattenere all'ingresso**” richiede un captcha attivo in modalità **Pannello (Interattivo)**.
 :::
 
@@ -134,7 +157,7 @@ L'account riceve un messaggio privato con la data in cui avrà accesso al server
 
 Usa il comando: ```/bypass minage [utente]```
 
-Sostituisci `[utente]` con l'[ID](../guides/id.mdx) desiderato: avrà 10 minuti per unirsi al server senza essere bloccato dall'età richiesta. Puoi anche usare il comando senza specificare un utente per conoscere l'elenco attuale degli utenti in bypass.
+Sostituisci `[utente]` con l'[ID](../guides/id.mdx) desiderato: avrà 10 minuti per unirsi al server senza essere bloccato dall'età richiesta. Puoi anche usare il comando senza specificare un utente per conoscere l'elenco attuale degli utenti in bypass. Revoca anche la quarantena di un account troppo recente. `/unjail` non la revoca: indica il comando da usare.
 
 ## Domande frequenti {#faq}
 
@@ -160,4 +183,4 @@ Un valore da alcune ore a 1 giorno basta a scartare la maggior parte degli accou
 
 ### Un account troppo recente viene bannato?
 
-No, non per impostazione predefinita: viene espulso a ogni tentativo. Puoi anche metterlo in jail fino all'età richiesta o trattenerlo dietro il captcha. Il bando temporaneo è solo un ripiego quando il jail non è configurato.
+No, non per impostazione predefinita: viene espulso a ogni tentativo. Puoi anche metterlo in quarantena fino all'età richiesta o trattenerlo dietro il captcha. Il bando temporaneo è solo un ripiego quando il ruolo Jail non è configurato.

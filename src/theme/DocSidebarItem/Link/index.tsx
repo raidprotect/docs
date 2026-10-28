@@ -7,7 +7,9 @@ import FeatureBadges, {type FeatureBadge} from '@site/src/components/FeatureBadg
 type Props = WrapperProps<typeof LinkType>;
 
 // Les badges déclarés dans customProps.badges du sidebar s'affichent après le titre.
-export default function DocSidebarItemLinkWrapper(props: Props): ReactNode {
+// customProps.anchor fait pointer le lien vers une section de la page.
+export default function DocSidebarItemLinkWrapper(rawProps: Props): ReactNode {
+  const props = withAnchor(rawProps);
   const badges = (props.item.customProps?.badges ?? []) as FeatureBadge[];
   if (!badges.length) return <Link {...props} />;
 
@@ -19,4 +21,15 @@ export default function DocSidebarItemLinkWrapper(props: Props): ReactNode {
   );
 
   return <Link {...props} item={{...props.item, label: label as unknown as string}} />;
+}
+
+function withAnchor(props: Props): Props {
+  const anchor = props.item.customProps?.anchor as string | undefined;
+  if (!anchor) return props;
+  const href = `${props.item.href}#${anchor}`;
+  return {
+    ...props,
+    item: {...props.item, href},
+    activePath: props.activePath === props.item.href ? href : props.activePath,
+  };
 }

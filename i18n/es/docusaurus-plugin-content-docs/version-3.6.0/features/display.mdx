@@ -1,0 +1,106 @@
+---
+title: Paneles de información
+description: "El comando /display de RaidProtect crea y gestiona paneles de información públicos y paneles reservados al staff en tu servidor de Discord."
+---
+
+import DisplayMockup from '@site/src/components/DiscordMessage/mockups/display';
+
+<DisplayMockup />
+
+El comando `/display` te permite crear y gestionar paneles de información publicados por RaidProtect en tu servidor. Tiene dos vertientes:
+
+- `/display public`: paneles para tus miembros (bloqueo de MD, sanciones, reporte…).
+- `/display staff`: paneles reservados a tu equipo ([DISCON](./discon.md), toma de rol, documentación, entrada en servicio).
+
+Usa el comando: ```/display public``` o ```/display staff```
+
+:::info
+Los dos subcomandos requieren el permiso “**Gestionar servidor**”.
+:::
+
+## ❓ Cómo funciona {#working}
+
+Cada panel de información es publicado por el bot en un canal de tu elección. Dispones de varios espacios para crear paneles independientes, cada uno con su propio contenido y sus propias funciones.
+
+:::info
+**Límites de los paneles públicos:** 2 espacios en la versión gratuita, 4 en la versión [premium](/es/premium), más 1 espacio reservado para el contenido Cárcel. El panel del [captcha](./captcha.md) no consume ningún espacio.
+:::
+
+## 📄 Tipos de contenido {#content}
+
+Cada panel público puede contener uno o varios de los siguientes tipos de contenido:
+
+- **Bloqueo de MD**: Informa a los miembros sobre el estado del [bloqueo de los MD](./dm-lock.mdx). Muestra si los MD están bloqueados o no, y explica que solo los amigos, el staff, los bots y los contactos previos pueden enviar MD.
+- **Cárcel**: Muestra un mensaje destinado a los miembros en el jail, indicando que su acceso al servidor ha sido restringido tras un incumplimiento de las reglas.
+- **Sanciones**: Indica a los miembros cómo consultar el historial de sus sanciones personales mediante el comando `/mis-sanciones`.
+- **Reporte**: Explica a los miembros cómo reportar a un usuario o un mensaje mediante el comando `/reportar` o el menú contextual (clic derecho).
+
+## ⚙️ Funciones {#features}
+
+Además del contenido, cada panel público puede activar funciones interactivas:
+
+- **Traducción**: Añade un botón que permite a los miembros traducir el panel a todos los idiomas soportados por Discord.
+- **Acceso a Sanciones**: Añade un botón “**Consultar mis sanciones**” que permite a los miembros consultar directamente sus sanciones.
+- **Reporte**: Añade un botón “**Reportar un miembro**” para reportar rápidamente a un usuario.
+
+{/* TODO: Ajouter une capture d'écran de /display public */}
+
+## 📌 Espacios reservados {#reserved-slot}
+
+Algunos paneles los gestiona su módulo, no `/display`:
+
+- **Cárcel**: el último espacio público está reservado para el contenido Cárcel. Su canal solo se ajusta en `/settings`, pestaña “**Moderación**”, “**Sanciones**”, luego [Jail](./sanctions.mdx#jail) (“**Editar canal**”). En cambio, puedes añadirle contenidos y funciones desde `/display public`.
+- **Captcha**: el panel del [captcha](./captcha.md) en modo Panel lo coloca y lo retira el propio captcha (`/settings`, pestaña “**Llegadas**”, “**Captcha**”). No se puede crear ni eliminar desde `/display`.
+- **DISCON**: el panel [DISCON](./discon.md#panel) ocupa el espacio reservado de `/display staff`. Su canal solo se ajusta con `/discon`.
+
+## 🛡️ Paneles staff {#staff}
+
+El comando `/display staff` gestiona paneles destinados a tu equipo, para publicar en canales reservados al staff.
+
+Usa el comando: ```/display staff```
+
+:::info
+**Límites de los paneles staff:** 1 espacio en la versión gratuita, 4 en la versión [premium](/es/premium), más 1 espacio reservado para el panel [DISCON](./discon.md).
+:::
+
+### Contenidos reservados al staff {#staff-content}
+
+Cada contenido staff añade automáticamente su botón al panel:
+
+- **DISCON**: el nivel de peligro del servidor y sus cinco botones. Este contenido está reservado al espacio DISCON, gestionado desde la [configuración del DISCON](./discon.md#config). Puedes añadir otros contenidos a este panel desde `/display staff`.
+- **Tomar un rol**: un botón que abre la elección de los roles protegidos por el [Authentification Manager](./authentication-manager.mdx#auth), como el comando `/auth`.
+- **Documentación**: un botón hacia la documentación de moderación, y un recordatorio de los comandos útiles (`/modview`, `/sanctions`, `/clear`).
+- **En servicio**: un botón que añade o quita el [rol de servicio](./moderation.mdx#onduty), como el comando `/onduty`.
+
+La función **Traducción** también está disponible en los paneles staff.
+
+:::warning
+Los botones de los paneles staff no comprueban los permisos de quien hace clic: **el acceso al canal hace de control**. Publícalos únicamente en canales reservados a tu equipo.
+:::
+
+## 🔄 Actualización de los paneles {#update}
+
+Cuando cambias el idioma del bot o el contenido de los paneles es actualizado por RaidProtect, un indicador señala los paneles que no están actualizados. Entonces puedes hacer clic en el botón “**Actualizar**” para actualizar el panel.
+
+## ✏️ Modificar o eliminar un panel {#edit}
+
+Desde el menú `/display public` o `/display staff`, cada espacio ocupado dispone de botones para:
+
+- **Editar**: Cambiar el canal, el contenido o las funciones del panel.
+- **Eliminar**: Retirar el panel del canal y liberar el espacio.
+
+El canal de los espacios reservados (Cárcel, DISCON) se modifica desde su módulo.
+
+## Preguntas frecuentes {#faq}
+
+### ¿Qué diferencia hay entre `/display public` y `/display staff`?
+
+`/display public` publica paneles para tus miembros (MD, sanciones, reporte). `/display staff` publica paneles para tu equipo: nivel DISCON, toma de rol protegido, documentación y entrada en servicio.
+
+### ¿Cuántos paneles puedo crear?
+
+En público: 2 paneles en la versión gratuita, 4 en premium, más el espacio Cárcel. En staff: 1 panel en la versión gratuita, 4 en premium, más el espacio DISCON.
+
+### ¿Por qué no puedo eliminar el panel del captcha o del DISCON?
+
+Estos paneles pertenecen a su módulo: el captcha se gestiona en `/settings` y el DISCON con `/discon`. Eliminarlos desde `/display` rompería la función sin avisar.

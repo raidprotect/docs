@@ -100,6 +100,7 @@ Depuis votre profil, vous pouvez :
 - Ajouter, changer ou supprimer un **code PIN** (simple ou renforcé).
 - Activer le **code 2FA** (OTP) avec un QR code ou une clé secrète, le régénérer ou le supprimer.
 - Ajouter une **passkey** depuis la page d'enregistrement, ou en supprimer une. Chaque passkey affiche le nom de l'appareil et sa date de dernière utilisation.
+- **Renommer** une passkey : le bouton “**Modifier une Passkey**”, à côté de “**Ajouter**”, ouvre une fenêtre avec vos passkeys et le nouveau nom à donner (par exemple `MacBook`, `iPhone`, `YubiKey`). Le renommage est inscrit dans votre journal d'audit.
 
 Si vous avez déjà une méthode, nous vous demandons de vous authentifier avant d'en ajouter ou d'en modifier une. Le bas du profil rappelle votre grade et la méthode à ajouter pour monter d'un cran.
 
@@ -137,10 +138,10 @@ Utilisez la commande : ```/auth [rôle]```
 
 1. Faites la commande `/auth` sur le serveur, ou cliquez sur “**Prendre un rôle**” dans un panneau staff.
 2. Un menu affiche les rôles disponibles avec leur grade requis et leur durée de session.
-3. Sélectionnez un rôle.
+3. Sélectionnez un ou plusieurs rôles (jusqu'à 10). Une seule authentification, au niveau du plus exigeant, les ouvre tous.
 4. Choisissez une méthode d'authentification parmi celles qui atteignent le grade du rôle.
 5. Effectuez la vérification (PIN, OTP ou passkey).
-6. En cas de succès, nous vous attribuons le rôle Discord et créons une session.
+6. En cas de succès, nous vous attribuons le ou les rôles Discord et créons une session pour chacun. Les sessions sont inscrites dans les logs de l'Authentication Manager.
 
 :::info
 Seuls les rôles auxquels vous êtes assigné avec le statut **Actif** apparaissent dans le menu.
@@ -233,6 +234,8 @@ Nous refusons un rôle géré par une intégration, un rôle utilisé dans le Pr
 
 :::tip
 Si votre rôle est **affiché séparément** dans la liste des membres, choisissez “**Créer un rôle de permissions séparé**” : vos membres gardent leur rôle visible en permanence, et les permissions sensibles ne sont attribuées que pendant les sessions authentifiées.
+
+Avec un rôle séparé, les permissions de modération de salon du rôle d'affichage passent aussi au rôle `🔑`. Pour un rôle administrateur, l'option “**Garder la vue sur tous les salons hors session**” laisse au rôle d'affichage la vue de tous les salons en dehors des sessions ; sans elle, il ne voit plus rien sans l'administrateur.
 :::
 
 #### Protéger les rôles administrateur depuis `/audit` {#audit-bulk}

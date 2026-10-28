@@ -1,0 +1,67 @@
+---
+title: Bloqueo de acceso
+description: "El Bloqueo de acceso de RaidProtect cierra de forma duradera las nuevas llegadas a tu servidor de Discord, más allá del límite nativo de 24 horas de Discord."
+---
+
+import JoinLockMockup from '@site/src/components/DiscordMessage/mockups/join-lock';
+
+{/* <JoinLockMockup /> : oculta por el momento */}
+
+La función **Bloqueo de acceso** (o join lock) de RaidProtect cierra el acceso a las nuevas llegadas al servidor hasta que la desactives, superando así la limitación nativa de Discord que solo permite este bloqueo durante 24 horas mediante la acción de ciberseguridad “Pausar las llegadas”.
+
+## 🚦 Casos de uso y recomendaciones {#recommendations}
+
+- **Servidores privados y cerrados:** El Bloqueo de acceso está especialmente recomendado para los servidores que deben permanecer privados y no desean ninguna nueva llegada (servidores de empresa, equipos restringidos, grupos privados).
+- **Servidores de staff:** Para los servidores dedicados al equipo de moderación o de administración, donde solo los miembros autorizados deben tener acceso.
+- **Servidores de empresa o profesionales:** Para las organizaciones que usan Discord de forma interna y quieren garantizar que solo los empleados actuales puedan acceder al servidor.
+- **Comunidades de tamaño limitado:** Para los servidores que han alcanzado el tamaño máximo deseado y ya no quieren aceptar nuevos miembros de forma permanente.
+
+## ❓ Cómo funciona el Bloqueo de acceso {#working}
+
+Mientras el Bloqueo de acceso esté activo, RaidProtect aplica a los recién llegados la [acción durante el raid](./raid-mode.md#action) que hayas elegido para el Auto RaidMode. A diferencia de la función nativa de Discord que requiere una renovación manual cada 24 horas, el bloqueo dura sin intervención hasta que lo desactives.
+
+| Acción durante el raid | Efecto del Bloqueo de acceso |
+|---|---|
+| “**Bloquear las invitaciones**” (por defecto) | Las invitaciones del servidor se desactivan: nadie nuevo entra. |
+| “**Expulsar a quienes llegan**” ([Premium](/es/premium)) | Cada recién llegado es expulsado y recibe un mensaje privado que le indica que las llegadas están cerradas. |
+| “**Enviar al captcha**” | Los recién llegados **pueden entrar tras resolver el [captcha](./captcha.md)**: el servidor no queda por tanto cerrado. |
+| “**Captcha congelado durante el raid**” | Los recién llegados esperan tras el captcha mientras el Bloqueo de acceso esté activo. |
+
+:::warning
+Para un servidor que debe permanecer realmente cerrado, elige “**Bloquear las invitaciones**”, “**Expulsar a quienes llegan**” o “**Captcha congelado durante el raid**”. Con “**Enviar al captcha**”, el Bloqueo de acceso se limita a imponer el captcha a los recién llegados.
+:::
+:::info
+Los miembros que ya están presentes en el servidor permanecen activos y pueden seguir usando el servidor normalmente. El [mensaje de bienvenida](./onboarding.md#welcome-message) se calla mientras el Bloqueo de acceso esté activo.
+:::
+:::warning
+Con la acción “**Bloquear las invitaciones**”, las funciones comunitarias de Discord son indispensables para el Bloqueo de acceso. [Sigue nuestra guía para verificar la activación de la comunidad en tu servidor.](../guides/community.md) Las demás acciones funcionan sin la comunidad.
+:::
+
+## 🚩 Configuración del Bloqueo de acceso {#config}
+
+Usa el comando: ```/joinlock [status]```
+
+- Sin opción, el comando muestra el estado del Bloqueo de acceso con un botón “**Activar**” o “**Desactivar**”.
+- Reemplaza `[status]` con **True** para activarlo o **False** para desactivarlo directamente.
+
+![Captura de pantalla del comando /joinlock](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-join-lock.webp)
+
+El comando requiere el permiso **Gestionar servidor**, y se publica un mensaje en el canal de logs con cada cambio de estado.
+
+:::info
+El comando `joinlock` es [utilizable mediante prefijo](../guides/prefix.md). Mientras el Bloqueo de acceso esté activo, el [comando `/raidmode`](./raid-mode.md#enable) no está disponible: desactiva primero el Bloqueo de acceso.
+:::
+
+## Preguntas frecuentes {#faq}
+
+### ¿Qué diferencia hay con el modo raid?
+
+El [modo raid](./raid-mode.md) es temporal (24 horas como máximo) y puede activarse solo durante una oleada. El Bloqueo de acceso se activa a mano y se mantiene hasta que lo desactives.
+
+### ¿Hay que activar la comunidad de Discord?
+
+Solo si la acción durante el raid del Auto RaidMode es “**Bloquear las invitaciones**”. Con las demás acciones, el Bloqueo de acceso funciona sin la comunidad.
+
+### ¿Los nuevos miembros pueden seguir entrando?
+
+No con “**Bloquear las invitaciones**”, “**Expulsar a quienes llegan**” o “**Captcha congelado durante el raid**”. Con “**Enviar al captcha**”, entran tras resolver el captcha.

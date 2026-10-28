@@ -64,7 +64,7 @@ Você pode adicionar abaixo da mensagem botões que levam a um canal do servidor
 2. Abra a aba “**Chegadas**”.
 3. Clique em “**Configurar**” ao lado de “**Mensagem de boas-vindas**”.
 4. Em “**Gerenciar botões**”, escolha “**Adicionar um botão**”.
-5. Dê um nome ao botão e escolha o canal a vincular.
+5. Dê um nome ao botão, escolha o canal a vincular e, se quiser, um **emoji**: um emoji padrão, ou um emoji deste servidor (`<:nome:id>`, `:nome:` ou o ID dele). Um emoji inválido não impede o salvamento: o botão é criado sem emoji.
 
 Para modificar ou excluir um botão, selecione-o na mesma lista.
 
@@ -95,10 +95,33 @@ Para remover todos os cargos automáticos, clique em “**Redefinir**”.
 **Limites:** 3 cargos na versão gratuita, 10 cargos na versão [premium](/pt/premium).
 
 :::warning
-Evite os cargos que carregam permissões: um cargo dado automaticamente não deveria conceder nenhum poder. O RaidProtect recusa os cargos gerenciados por uma integração, os cargos acima do dele ou do seu, e aqueles que carregam uma permissão de moderação: os cargos aceitáveis da sua seleção são mantidos, e uma mensagem à parte explica por que os outros são recusados (se todos forem recusados, a configuração atual permanece inalterada). Ele alerta você se um cargo escolhido ganhar permissões mais tarde.
+Escolha cargos sem permissões: um cargo dado na chegada não deveria conceder nenhum poder. O RaidProtect recusa os cargos gerenciados por uma integração, os que estão acima do dele ou do seu, os que dão uma permissão de moderação e o cargo não verificado do captcha. Ele avisa você se um cargo escolhido ganhar permissões mais tarde.
 :::
 :::info
 Se o seu servidor usa outro bot para o cargo automático, ele corre o risco de dar o cargo antes do captcha. Substitua-o pelos cargos automáticos do RaidProtect.
+:::
+
+## 🤖 Chegada dos bots {#bots}
+
+É o **antibot** do RaidProtect: ele controla os bots que entram no seu servidor.
+
+1. Use o [comando `/settings`](../setup.md#settings).
+2. Abra a aba “**Chegadas**”.
+3. Clique em “**Configurar**” ao lado de “**Bots**”.
+
+- **Cargos dos bots**: dados a cada bot assim que ele chega, **no lugar** dos [cargos automáticos](#autorole). Sem cargo escolhido, os bots recebem os cargos automáticos. **Limites:** 1 cargo na versão gratuita, 15 com o [Premium](/pt/premium).
+- **Expulsar os bots não autorizados**: todo bot adicionado é expulso, a menos que o proprietário o tenha [autorizado](#bypass-bot) antes. Desativado por padrão, **somente o proprietário do servidor** pode ativá-lo.
+
+O RaidProtect recusa os cargos gerenciados por uma integração, os que estão acima do dele ou do seu e os que dão a permissão **Administrador**. Um cargo com uma permissão de moderação é aceito, com um aviso: reserve-o para bots de confiança.
+
+### Autorizar um bot {#bypass-bot}
+
+Use o comando: ```/bypass bot [bot]```
+
+Substitua `[bot]` pelo bot a autorizar: ele poderá entrar no servidor **uma vez**, nos 10 minutos seguintes, sem ser expulso. Sem bot, o comando lista os bots autorizados no momento. Cada autorização é registrada nos seus logs.
+
+:::info
+O RaidProtect precisa da permissão “**Expulsar membros**” e de um cargo acima do cargo do bot para expulsá-lo. Caso contrário, o log indica isso e o bot permanece.
 :::
 
 ## 🎂 Idade mínima da conta {#minage}
@@ -120,13 +143,13 @@ Para desativar o filtro, clique em “**Redefinir**”. O RaidProtect precisa da
 | Ação | Efeito sobre uma conta muito recente |
 |---|---|
 | “**Expulsar**” (padrão) | Ela é expulsa a cada tentativa enquanto sua conta for muito recente. |
-| “**Jail até a idade exigida**” | Ela entra sem ver nada do servidor e sai do [jail](./sanctions.mdx#jail) assim que atinge a idade exigida. |
+| “**Quarentena até a idade exigida**” | Ela entra sem ver nada do servidor (através do [cargo Jail](./sanctions.mdx#jail)) e sai da quarentena assim que atinge a idade exigida, na data indicada. |
 | “**Reter na entrada**” | Ela fica bloqueada em um [captcha](./captcha.md) que só pode resolver depois que a idade for atingida. |
 
-A conta recebe uma mensagem privada com a data em que terá acesso ao servidor. As expulsões, os jails e os banimentos são registrados no canal de logs.
+A conta recebe uma mensagem privada com a data em que terá acesso ao servidor. As expulsões, as quarentenas e os banimentos são registrados no canal de logs.
 
 :::info
-- “**Jail até a idade exigida**” exige um cargo Jail, configurado na aba “**Moderação**” > “**Sanções**”. Sem ele, o RaidProtect propõe que você o configure ou recorra a “**Banir até a idade exigida**”: a conta sai do servidor e seu banimento é removido automaticamente na data certa.
+- “**Quarentena até a idade exigida**” exige um cargo Jail, configurado na aba “**Moderação**” > “**Sanções**”. Sem ele, o RaidProtect propõe que você o configure ou recorra a “**Banir até a idade exigida**”: a conta sai do servidor e seu banimento é removido automaticamente na data certa.
 - “**Reter na entrada**” exige um captcha ativo no modo **Painel (Interativo)**.
 :::
 
@@ -134,7 +157,7 @@ A conta recebe uma mensagem privada com a data em que terá acesso ao servidor. 
 
 Use o comando: ```/bypass minage [user]```
 
-Substitua `[user]` pelo [ID](../guides/id.mdx) desejado; esse usuário terá 10 minutos para entrar no servidor sem ser bloqueado pela idade exigida. Você também pode usar o comando sem especificar um usuário para saber a lista atual de usuários com bypass.
+Substitua `[user]` pelo [ID](../guides/id.mdx) desejado; esse usuário terá 10 minutos para entrar no servidor sem ser bloqueado pela idade exigida. Você também pode usar o comando sem especificar um usuário para saber a lista atual de usuários com bypass. Ele também remove a quarentena de uma conta muito recente. O `/unjail` não a remove: ele indica o comando a usar.
 
 ## Perguntas frequentes {#faq}
 
@@ -160,4 +183,4 @@ Um valor de algumas horas a 1 dia basta para afastar a maioria das contas criada
 
 ### Uma conta muito recente é banida?
 
-Não, não por padrão: ela é expulsa a cada tentativa. Você também pode colocá-la em jail até a idade exigida ou retê-la atrás do captcha. O banimento temporário é apenas um recurso alternativo quando o jail não está configurado.
+Não, não por padrão: ela é expulsa a cada tentativa. Você também pode colocá-la em quarentena até a idade exigida ou retê-la atrás do captcha. O banimento temporário é apenas um recurso alternativo quando o cargo Jail não está configurado.

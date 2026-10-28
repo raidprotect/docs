@@ -64,7 +64,7 @@ Mesajın altına, sunucunun bir kanalına götüren düğmeler ekleyebilirsiniz;
 2. “**Katılımlar**” sekmesini açın.
 3. “**Karşılama mesajı**” yanındaki “**Yapılandır**” düğmesine tıklayın.
 4. “**Düğmeleri yönet**” içinde “**Düğme ekle**”yi seçin.
-5. Düğmeye bir ad verin ve bağlanacak kanalı seçin.
+5. Düğmeye bir ad verin, bağlanacak kanalı ve dilerseniz bir **emoji** seçin: standart bir emoji ya da bu sunucunun bir emojisi (`<:ad:id>`, `:ad:` veya kimliği). Geçersiz bir emoji kaydı engellemez: düğme emojisiz oluşturulur.
 
 Bir düğmeyi düzenlemek veya silmek için aynı listeden seçin.
 
@@ -95,10 +95,33 @@ Tüm otomatik rolleri kaldırmak için “**Sıfırla**”ya tıklayın.
 **Sınırlar:** ücretsiz sürümde 3 rol, [premium](/tr/premium) sürümde 10 rol.
 
 :::warning
-İzin taşıyan rollerden kaçının: otomatik olarak verilen bir rol hiçbir yetki vermemelidir. RaidProtect, bir entegrasyon tarafından yönetilen rolleri, kendi rolünün veya sizin rolünüzün üstündeki rolleri ve moderasyon izni taşıyan rolleri reddeder: seçiminizdeki kabul edilebilir roller korunur ve diğerlerinin neden reddedildiğini açıklayan ayrı bir mesaj gösterilir (hepsi reddedilirse mevcut yapılandırma değişmez). Seçilen bir rol sonradan izin kazanırsa sizi uyarır.
+İzinsiz roller seçin: katılımda verilen bir rol hiçbir yetki vermemelidir. RaidProtect, bir entegrasyon tarafından yönetilen rolleri, kendi rolünün veya sizin rolünüzün üstündeki rolleri, moderasyon izni veren rolleri ve captcha'nın doğrulanmamış rolünü reddeder. Seçilen bir rol sonradan izin kazanırsa sizi uyarır.
 :::
 :::info
 Sunucunuz otomatik rolü için başka bir bot kullanıyorsa rolü captcha'dan önce verebilir. Onu RaidProtect'in otomatik rolleriyle değiştirin.
+:::
+
+## 🤖 Botların gelişi {#bots}
+
+Bu, RaidProtect'in **antibot** özelliğidir: sunucunuza katılan botları denetler.
+
+1. [`/settings` komutunu](../setup.md#settings) çalıştırın.
+2. “**Katılımlar**” sekmesini açın.
+3. “**Botlar**” yanındaki “**Yapılandır**” düğmesine tıklayın.
+
+- **Botların rolleri**: her bota geldiği anda [otomatik rollerin](#autorole) **yerine** verilir. Rol seçilmezse botlar otomatik rolleri alır. **Sınırlar:** ücretsiz sürümde 1 rol, [Premium](/tr/premium) ile 15 rol.
+- **İzin verilmeyen botları at**: sahibi daha önce [izin vermediyse](#bypass-bot) eklenen her bot atılır. Varsayılan olarak devre dışıdır, **yalnızca sunucu sahibi** etkinleştirebilir.
+
+RaidProtect, bir entegrasyon tarafından yönetilen rolleri, kendi rolünün veya sizin rolünüzün üstündeki rolleri ve **Yönetici** iznini veren rolleri reddeder. Moderasyon izni olan bir rol bir uyarıyla kabul edilir: onu güvendiğiniz botlara ayırın.
+
+### Bir bota izin verme {#bypass-bot}
+
+Şu komutu kullanın: ```/bypass bot [bot]```
+
+`[bot]` yerine izin verilecek botu yazın: bot, sonraki 10 dakika içinde sunucuya atılmadan **bir kez** katılabilir. Bot belirtilmezse komut, şu anda izin verilen botları listeler. Her izin loglarınıza kaydedilir.
+
+:::info
+RaidProtect'in bir botu atabilmesi için “**Üyeleri At**” iznine ve o botun rolünün üstünde bir role ihtiyacı vardır. Aksi halde log bunu belirtir ve bot kalır.
 :::
 
 ## 🎂 Minimum hesap yaşı {#minage}
@@ -120,13 +143,13 @@ Filtreyi devre dışı bırakmak için “**Sıfırla**”ya tıklayın. RaidPro
 | Eylem | Çok yeni bir hesap üzerindeki etki |
 |---|---|
 | “**At**” (varsayılan) | Hesabı çok yeni olduğu sürece her denemede atılır. |
-| “**Gerekli yaşa kadar jail**” | Sunucudan hiçbir şey görmeden girer ve gerekli yaşa ulaşır ulaşmaz [jail](./sanctions.mdx#jail)'den çıkar. |
+| “**Gerekli yaşa kadar karantina**” | Sunucudan hiçbir şey görmeden girer ([Jail rolü](./sanctions.mdx#jail) aracılığıyla) ve gerekli yaşa ulaşır ulaşmaz, belirtilen tarihte karantinadan çıkar. |
 | “**Girişte tut**” | Yalnızca yaşa ulaştığında çözebileceği bir [captcha](./captcha.md)'da bloke edilir. |
 
-Hesap, sunucuya erişim kazanacağı tarihi içeren bir özel mesaj alır. Atmalar, jail'e alınmalar ve yasaklamalar log kanalına kaydedilir.
+Hesap, sunucuya erişim kazanacağı tarihi içeren bir özel mesaj alır. Atmalar, karantinalar ve yasaklamalar log kanalına kaydedilir.
 
 :::info
-- “**Gerekli yaşa kadar jail**”, “**Moderasyon**” > “**Cezalar**” sekmesinde yapılandırılan bir Jail rolü gerektirir. Onsuz RaidProtect, onu yapılandırmanızı ya da “**Gerekli yaşa kadar yasakla**”ya geçmenizi önerir: hesap sunucudan çıkar ve yasağı doğru tarihte otomatik olarak kaldırılır.
+- “**Gerekli yaşa kadar karantina**”, “**Moderasyon**” > “**Cezalar**” sekmesinde yapılandırılan bir Jail rolü gerektirir. Onsuz RaidProtect, onu yapılandırmanızı ya da “**Gerekli yaşa kadar yasakla**”ya geçmenizi önerir: hesap sunucudan çıkar ve yasağı doğru tarihte otomatik olarak kaldırılır.
 - “**Girişte tut**”, **Panel (Etkileşimli)** modunda etkin bir captcha gerektirir.
 :::
 
@@ -134,7 +157,7 @@ Hesap, sunucuya erişim kazanacağı tarihi içeren bir özel mesaj alır. Atmal
 
 Şu komutu kullanın: ```/bypass minage [kullanıcı]```
 
-`[kullanıcı]` yerine istediğiniz [kimliği](../guides/id.mdx) yazın; bu kullanıcı gerekli yaşa takılmadan sunucuya katılmak için 10 dakikaya sahip olur. Komutu kullanıcı belirtmeden de kullanarak geçerli bypass kullanıcıları listesini öğrenebilirsiniz.
+`[kullanıcı]` yerine istediğiniz [kimliği](../guides/id.mdx) yazın; bu kullanıcı gerekli yaşa takılmadan sunucuya katılmak için 10 dakikaya sahip olur. Komutu kullanıcı belirtmeden de kullanarak geçerli bypass kullanıcıları listesini öğrenebilirsiniz. Komut, çok yeni bir hesabın karantinasını da kaldırır. `/unjail` onu kaldırmaz: kullanılacak komutu belirtir.
 
 ## Sık sorulan sorular {#faq}
 
@@ -160,4 +183,4 @@ Birkaç saatten 1 güne kadar bir değer, gerçek üyeleri rahatsız etmeden bir
 
 ### Çok yeni bir hesap yasaklanır mı?
 
-Hayır, varsayılan olarak değil: her denemede atılır. Ayrıca gerekli yaşa kadar jail'e alabilir veya captcha'nın arkasında tutabilirsiniz. Geçici yasaklama, yalnızca jail yapılandırılmadığında bir geri çekilme yoludur.
+Hayır, varsayılan olarak değil: her denemede atılır. Ayrıca gerekli yaşa kadar karantinaya alabilir veya captcha'nın arkasında tutabilirsiniz. Geçici yasaklama, yalnızca Jail rolü yapılandırılmadığında bir geri çekilme yoludur.

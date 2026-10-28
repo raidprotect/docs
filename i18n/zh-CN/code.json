@@ -217,7 +217,7 @@
     "message": "踢出模式的反突袭"
   },
   "premium.feature.kickMode.desc": {
-    "message": "踢出并附带说明私信，而不是静默封锁邀请。借助 /bypass，您可以放行任何想放行的人。"
+    "message": "突袭期间，新加入者会被踢出，并收到一条请他们稍后再来的消息。"
   },
   "premium.feature.display.title": {
     "message": "更多信息面板"
@@ -238,7 +238,7 @@
     "message": "抢先体验新功能"
   },
   "premium.feature.beta.desc": {
-    "message": "订阅者可抢先使用处于测试阶段的功能，例如将 AutoMod 的超时转换为角色禁言。"
+    "message": "订阅者可抢先使用处于测试阶段的功能，目前是多账号和全新的服务器日志：频道、成员、消息、语音和反应，并注明每项操作的执行者。"
   },
   "premium.tier.free.name": {
     "message": "Basic"
@@ -511,7 +511,7 @@
     "message": "您将解锁的内容"
   },
   "premium.features.title": {
-    "message": "Premium 的其他优势"
+    "message": "Premium 的其他内容"
   },
   "premium.features.subtitle": {
     "message": "更高的上限、贴合您用语的处罚，以及新功能的抢先体验。"
@@ -527,6 +527,54 @@
   },
   "premium.compare.subtitle": {
     "message": "所有基础防护始终免费。Premium 开放自定义功能并扩展上限。Business 则提供专用实例和真人支持。"
+  },
+  "premium.compare.row.preventiveSlowmode": {
+    "message": "预防性慢速模式（最多 6 个频道）"
+  },
+  "premium.compare.row.disconVoice": {
+    "message": "DISCON 状态语音频道"
+  },
+  "premium.compare.cat.automod": {
+    "message": "Automod"
+  },
+  "premium.compare.row.imageCatalog": {
+    "message": "ScamLens 自定义图片目录（列表）"
+  },
+  "premium.compare.row.fileRules": {
+    "message": "按频道设置的文件扩展名规则"
+  },
+  "premium.compare.row.fileCategories": {
+    "message": "按类别设置的扩展名规则"
+  },
+  "premium.compare.row.privateInvites": {
+    "message": "好友邀请和群组邀请单独设置"
+  },
+  "premium.compare.cat.arrivals": {
+    "message": "新成员加入"
+  },
+  "premium.compare.row.autoroles": {
+    "message": "自动角色"
+  },
+  "premium.compare.row.botRoles": {
+    "message": "机器人角色"
+  },
+  "premium.compare.row.welcomeButtons": {
+    "message": "欢迎消息按钮"
+  },
+  "premium.compare.row.welcomeColor": {
+    "message": "欢迎消息颜色"
+  },
+  "premium.compare.row.captchaIcon": {
+    "message": "体现您服务器形象的验证码"
+  },
+  "premium.compare.row.staffPanels": {
+    "message": "/display staff 面板"
+  },
+  "premium.compare.row.staffPanels.free": {
+    "message": "1 个 + DISCON"
+  },
+  "premium.compare.row.staffPanels.founder": {
+    "message": "4 个 + DISCON"
   },
   "premium.finalCta.title": {
     "message": "准备好升级到 Premium 了吗？"
@@ -7763,5 +7811,56 @@
   "mockup.v2.captcha.failBlock": {
     "message": "尝试次数用尽：封锁 10 分钟",
     "description": "Mockup v2 — captcha: failure action option \"Block 10 min\""
+  },
+  "premium.compare.showAll": {
+    "message": "查看其余 {count} 行"
+  },
+  "premium.compare.showLess": {
+    "message": "收起对比表"
+  },
+  "premium.feature.captcha.title": {
+    "message": "带有您服务器形象的验证码"
+  },
+  "premium.feature.captcha.desc": {
+    "message": "验证时，您服务器的图标会取代 RaidProtect 的标志。"
+  },
+  "premium.feature.limits.title": {
+    "message": "处处更宽裕"
+  },
+  "premium.feature.limits.desc": {
+    "message": "新成员、Automod、Authentication Manager：每个模块的上限都会提高，免费版的功能一样不少。"
+  },
+  "premium.feature.slowmode.title": {
+    "message": "预防性慢速模式"
+  },
+  "premium.feature.slowmode.desc": {
+    "message": "频道一热闹，慢速模式就会自动提高，恢复平静后再降回来。最多 6 个频道。"
+  },
+  "premium.pass.left": {
+    "message": "个名额剩余"
+  },
+  "premium.pass.lock": {
+    "message": "价格终身锁定"
+  },
+  "premium.pass.seat": {
+    "message": "第 {seat} 号"
+  },
+  "premium.scene.captcha.title": {
+    "message": "{server} 验证"
+  },
+  "premium.scene.limits.autoroles": {
+    "message": "自动角色"
+  },
+  "premium.scene.limits.botRoles": {
+    "message": "机器人角色"
+  },
+  "premium.scene.limits.buttons": {
+    "message": "欢迎按钮"
+  },
+  "premium.scene.limits.fileRules": {
+    "message": "每个频道的文件规则"
+  },
+  "premium.scene.slowmode.label": {
+    "message": "慢速模式"
   }
 }

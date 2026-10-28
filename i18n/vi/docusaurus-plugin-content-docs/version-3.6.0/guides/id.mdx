@@ -1,0 +1,99 @@
+---
+title: Sử dụng ID
+description: "Tìm hiểu cách lấy ID Discord (người dùng, kênh, tin nhắn) nhờ chế độ nhà phát triển, để dùng trong các lệnh của RaidProtect."
+---
+
+import SeparatedBox from '@site/src/components/SeparatedBox';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+ID Discord là những con số duy nhất giúp nhận diện chính xác từng người dùng, kênh, máy chủ hoặc tin nhắn trên Discord. Chúng là cách đáng tin cậy và lâu dài để xác định các đối tượng trên nền tảng.
+
+:::note Lợi ích đối với kiểm duyệt
+Việc dùng ID Discord đặc biệt hữu ích cho các hành động kiểm duyệt vì nó cho phép:
+- **Xử phạt một người dùng vắng mặt**: Cấm một người đã rời máy chủ
+- **Tránh nhầm lẫn**: Xác định chính xác đúng người ngay cả khi biệt danh giống nhau
+- **Lưu vết**: ID không bao giờ thay đổi, khác với biệt danh
+- **Giải quyết xung đột**: Nhận diện rõ ràng khi có ký tự đặc biệt
+:::
+
+## Bật chế độ nhà phát triển
+
+Cần bật chế độ nhà phát triển để dùng ID Discord.
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="desktop" label="Trên Discord Desktop/Web" default>
+
+    1. **Mở cài đặt người dùng**
+    - Nhấp vào biểu tượng bánh răng ⚙️ ở góc dưới bên trái của giao diện
+
+    2. **Truy cập cài đặt nâng cao**
+    - Trong thanh bên, vào thẻ **Nâng cao**
+
+    3. **Bật chế độ nhà phát triển**
+    - Bật tùy chọn “**Chế độ nhà phát triển**” bằng cách nhấp vào công tắc
+    - Công tắc sẽ chuyển sang màu xanh khi đã bật
+
+  </TabItem>
+  <TabItem value="mobile" label="Trên Discord Mobile">
+
+    1. **Mở cài đặt người dùng**
+    - Nhấn vào ảnh đại diện của bạn ở góc dưới bên phải
+    - Nhấn vào biểu tượng bánh răng ⚙️ ở góc trên bên phải của giao diện
+
+    2. **Truy cập cài đặt nâng cao**
+    - Cuộn xuống và nhấn vào “**Nâng cao**”
+
+    3. **Bật chế độ nhà phát triển**
+    - Bật tùy chọn “**Chế độ nhà phát triển**”
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+## Sao chép một ID
+
+Khi chế độ nhà phát triển đã được bật, bạn có thể sao chép ID của bất kỳ đối tượng nào:
+
+<SeparatedBox>
+<Tabs>
+  <TabItem value="user" label="ID người dùng" default>
+
+    - **Nhấp chuột phải** vào ảnh đại diện hoặc tên người dùng
+    - Chọn “**Sao chép ID người dùng**”
+
+  </TabItem>
+  <TabItem value="channel" label="ID kênh">
+
+    - **Nhấp chuột phải** vào tên kênh trong danh sách kênh
+    - Chọn “**Sao chép ID kênh**”
+
+  </TabItem>
+  <TabItem value="server" label="ID máy chủ">
+
+    - **Nhấp chuột phải** vào tên máy chủ ở góc trên bên trái
+    - Chọn “**Sao chép ID máy chủ**”
+
+  </TabItem>
+  <TabItem value="message" label="ID tin nhắn">
+
+    - **Nhấp chuột phải** vào một tin nhắn
+    - Chọn “**Sao chép ID tin nhắn**”
+
+  </TabItem>
+</Tabs>
+</SeparatedBox>
+
+## Sử dụng với RaidProtect
+
+ID có thể được dùng trong các lệnh của RaidProtect thay cho lượt nhắc đến:
+
+- [`/ban user:123456789012345678 reason:Vi phạm quy tắc máy chủ`](../features/moderation#ban)
+- [`/clear amount:100 user:123456789012345678`](../features/moderation#clear)
+- [`/userinfo user:123456789012345678`](../features/utilities#userinfo)
+- [`/bypass minage user:123456789012345678`](../features/onboarding#bypass-minage)
+
+:::info
+Bạn có thể cấm một người dùng dựa trên ID Discord của họ, ngay cả khi họ không trực tuyến hoặc không có mặt trên máy chủ của bạn.
+:::

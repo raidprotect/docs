@@ -5,11 +5,7 @@ description: "Slowmode phòng ngừa của RaidProtect tự động điều ch�
 
 import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
 
-**Slowmode phòng ngừa** của RaidProtect tự động điều chỉnh [chế độ chậm](./moderation.mdx#slowmode) của các kênh để giữ một **tốc độ tin nhắn** mỗi phút. Khi một kênh sôi động quá mức (thông báo, livestream, dòng thành viên mới đổ vào, đầu một [đợt raid](/vi/learn/discord-raid)), chúng tôi tăng chế độ chậm; khi nó dịu xuống, chúng tôi hạ xuống. Những người kiểm duyệt của bạn không còn phải theo dõi cuộc trò chuyện để chỉnh thủ công.
-
-:::info Thử nghiệm: Shield Update
-Slowmode phòng ngừa dành riêng cho các máy chủ [Premium](/vi/premium). Nó thuộc **Shield Update**, dự kiến trong phiên bản 3.6.0, đang thử nghiệm cho đến khi phát hành.
-:::
+**Slowmode phòng ngừa** của RaidProtect, dành riêng cho các máy chủ [Premium](/vi/premium), tự động điều chỉnh [chế độ chậm](./moderation.mdx#slowmode) của các kênh để giữ một **tốc độ tin nhắn** mỗi phút. Khi một kênh sôi động quá mức (thông báo, livestream, dòng thành viên mới đổ vào, đầu một [đợt raid](/vi/learn/discord-raid)), chúng tôi tăng chế độ chậm; khi nó dịu xuống, chúng tôi hạ xuống. Những người kiểm duyệt của bạn không còn phải theo dõi cuộc trò chuyện để chỉnh thủ công.
 
 ## ❓ Cách hoạt động {#working}
 
@@ -27,7 +23,7 @@ Slowmode phòng ngừa dành riêng cho các máy chủ [Premium](/vi/premium). 
 2. Mở thẻ “**Bảo vệ**”.
 3. Nhấp vào “**Cấu hình**” bên cạnh “**Slowmode phòng ngừa**”.
 4. Nhấp vào “**Thêm**” bên cạnh một vị trí trống.
-5. Chọn kênh (kênh văn bản hoặc kênh thông báo).
+5. Chọn kênh (kênh văn bản, thông báo, thoại hoặc sân khấu: chế độ chậm của một kênh thoại điều tiết kênh văn bản tích hợp của nó).
 
 <Settings start="slowmode" />
 
@@ -78,7 +74,7 @@ Tối đa 6 kênh mỗi máy chủ, mỗi kênh có tốc độ tin nhắn và c
 
 ### Slowmode phòng ngừa có miễn phí không?
 
-Không, nó dành riêng cho các máy chủ Premium. Nó cũng thuộc Shield Update, vẫn đang thử nghiệm.
+Không, nó dành riêng cho các máy chủ Premium.
 
 ### Điều gì xảy ra nếu tôi chỉnh chế độ chậm thủ công?
 

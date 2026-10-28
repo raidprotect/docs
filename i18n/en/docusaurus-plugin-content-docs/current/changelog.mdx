@@ -7,6 +7,21 @@ import SuggestionLink from '@site/src/components/SuggestionLink';
 
 Discover the detailed list of changes made to RaidProtect.
 
+## 3.8.0 Logging Update <span className="badge-experiment">Experiment</span> {#3-8-0}
+
+:::info Experiment
+The Logging Update is an experiment: until its release in 3.8.0, it is in public beta for [Premium](/en/premium) servers. Its content may still change.
+:::
+
+- New [server logs](./features/logs.md) in five families: channels, roles and invites, members, messages, voice, emojis and reactions. Each family has its own channel, and each type can be turned off or [sent elsewhere](./features/logs.md#config).
+- Each log starts with its author ("@mod created the channel #general.") and shows the before and after of a change, permissions included.
+- New log types: webhooks, integrations, bots added or removed with their role, pinned messages, inactive members pruned, boosts, nicknames, emojis, stickers, soundboard sounds and reactions.
+- The log of a deleted message says who deleted it. An edited message shows the before and after, with only the changed lines for a long message.
+- Voice logs: session duration on departure, and staff actions (mute, deafen, move, disconnect) with their author.
+- Three [log formats](./features/logs.md#format): Default, Boxed and Compact.
+- New "**Server messages**" checkbox in [reports](./features/reports.md): the report thread includes the latest messages of the channel, deleted messages included.
+- Reserved for **Premium**: the Compact format, voice and reaction logs, copying attachments of deleted messages, [6 hours of messages in memory](./features/logs.md#cache) instead of 15 minutes and up to 15 logs channels instead of 3.
+
 ## 3.7.0 Identity Update <span className="badge-experiment">Experiment</span> {#3-7-0}
 
 :::info Experiment
@@ -16,28 +31,49 @@ The Identity Update is an experiment: until its release in 3.7.0, it is in publi
 - New [`/alt`](./features/alt-accounts.md#alt) command and [alt accounts](./features/alt-accounts.md): link the accounts of a single person, choose their main account, and their sanctions (ban, kick, mute, jail, timeout, softban) extend to the linked accounts. Removing the sanction of one removes it for all. <SuggestionLink id="404" /> <SuggestionLink id="263" />
 - [Linked account sanctions](./features/alt-accounts.md#modes) can be set per type, with a **Trap** mode and an [evasion sanction](./features/alt-accounts.md#evasion) for the linked account that arrives or writes during the sanction.
 - Linked accounts that are absent from the server are sanctioned when they arrive.
+- A sanction extended to the group becomes a [group sanction](./features/alt-accounts.md#group-sanction) in `/sanctions` and `/modview`: you cancel, delete or edit it at once for all the accounts.
+- Sanction logs mention the linked accounts, with a "**Linked accounts**" button to the `/alt` panel in embed format.
 - New [One account per person](./features/alt-accounts.md#single-account) setting: secondary accounts are put in quarantine.
 - The [captcha](./features/captcha.md#activity-alts) spots alt accounts: it links accounts it is sure are the same person by itself, and suggests probable links to your team.
-- [Linked account sanctions](./features/alt-accounts.md#modes) are reserved for **Premium**. Without Premium, `/alt` links and views accounts with no limit.
+- [Linked account sanctions](./features/alt-accounts.md#modes) are reserved for **Premium**. Without Premium, `/alt` links and views accounts with no limit, and One account per person remains available.
 
-## 3.6.0 Shield Update <span className="badge-experiment">Experiment</span> {#3-6-0}
-
-:::info Experiment
-The Shield Update is an experiment: until its release in 3.6.0, it is in public beta for [Premium](/en/premium) servers. Its content may still change.
-:::
+## 3.6.0 Shield Update (10/28/2026) {#3-6-0}
 
 - New **[DISCON](./features/discon.md)**: a five-notch server danger level, adjustable in one click with the `/discon` command or from a [panel for the team](./features/discon.md#panel). Each level automatically hardens the server (verification, captcha, DM Lock, raid mode, lockdown), and a [voice channel](./features/discon.md#voice) shows the current level.
-- New [preventive slowmode](./features/slowmode.md) (**Premium**): the slowmode of the chosen channels adjusts itself to hold the message rate you set.
-- [HoneyPot](./features/honeypot.md): new [delay before sanction](./features/honeypot.md#grace), which gives a good-faith member time to say they made a mistake.
-- New [Smart trigger](./features/captcha.md#trigger) for the captcha: besides raids, it checks newcomers whose account looks suspicious.
-- New [Other servers](./features/automod.md#servers) filter in [Automod](./features/automod.md): invites, forwarded messages, channel links and tags from other servers, as a blocklist or an allowlist.
-- New **Quarantine** sanction, synchronized with [Discord's quarantine](./features/sanctions.mdx#discord-quarantine).
-- [ScamLens](./features/scam-images.md): [image catalog](./features/scam-images.md#catalog) (**Premium**) to block your own scam images.
-- Each message blocked by Discord's AutoMod creates a silent [warning](./features/sanctions.mdx) in the name of "Discord Automod".
-- New [setup wizard](./setup.md#wizard): a guided path section by section, protections suggested for your server and an audit preview to finish.
 - [Anti-spam](./features/anti-spam.mdx) V3, already in place for everyone since 3.5.0:
   - New detection engine: near-duplicates, repeated links, emojis and gibberish, flood, and spam spread across several channels.
   - [Presets](./features/anti-spam.mdx#presets) and sanctions per family, with an [advanced mode](./features/anti-spam.mdx#advanced) to set each trigger and its [duration](./features/anti-spam.mdx#duration).
+  - New [option](./features/anti-spam.mdx#ignore) to monitor channels whose name contains “spam”, which were always ignored until now. <SuggestionLink id="600" />
+- New [preventive slowmode](./features/slowmode.md) (**Premium**): the slowmode of the chosen channels adjusts itself to hold the message rate you set.
+- [Automod](./features/automod.md):
+  - New [Other servers](./features/automod.md#servers) filter: invites, forwarded messages, channel or event links and tags from other servers, as a blocklist or an allowlist.
+  - New [File extensions](./features/automod.md#files) filter: block groups of extensions or allow only some, server-wide or channel by channel, even when a file is disguised under another extension. **Premium** servers get more per-channel rules. <SuggestionLink id="505" />
+  - [Custom image catalog](./features/scam-images.md#catalog) for [ScamLens](./features/scam-images.md) (**Premium**) to block your own scam images.
+- New [setup wizard](./setup.md#wizard): a guided path section by section, protections suggested for your server and an audit preview to finish.
+- New [Bot arrival](./features/onboarding.md#bots) (antibot) section: roles given automatically to bots that join the server, and kicking of unauthorized bots, with [`/bypass bot`](./features/onboarding.md#bypass-bot) to let one in. <SuggestionLink id="244" />
+- New **Quarantine** sanction, synchronized with [Discord's quarantine](./features/sanctions.mdx#discord-quarantine).
+- New [Smart trigger](./features/captcha.md#trigger) for the captcha: besides raids, it checks newcomers whose account looks suspicious.
+- [Captcha Activity](./features/captcha.md#activity): on a **Premium** server, the server icon replaces the RaidProtect logo.
+- [Welcome message](./features/onboarding.md#welcome-buttons): each button can have its own emoji.
+- [HoneyPot](./features/honeypot.md): new [delay before sanction](./features/honeypot.md#grace), which gives a good-faith member time to say they made a mistake.
+- [HoneyPot](./features/honeypot.md#sanction): ban and jail can be permanent.
+- Each message blocked by Discord's AutoMod creates a silent [warning](./features/sanctions.mdx) in the name of "Discord Automod".
+- [`/lock` and `/unlock`](./features/channel-lock.md#lock) lock and unlock a whole category, and its channels stay synced. <SuggestionLink id="595" />
+- [`/lock`, `/unlock`](./features/channel-lock.md#lock) and [`/slowmode`](./features/moderation.mdx#slowmode): new `silent` option to act without an announcement in the channel.
+- New [message deletion on ban](./features/sanctions.mdx#ban-delete) setting: the history deleted by default with `/ban`, `?ban` and `/tempban`. <SuggestionLink id="592" />
+- [`/unjail`](./features/moderation.mdx#unjail) refuses to lift a quarantine (minimum account age, Discord) and explains how to do it. The end of a jail keeps the role of a quarantined member.
+- Fixes:
+  - `/unlock` restores exactly the permissions from before the lock, and RaidProtect no longer loses its own access.
+  - `/auth` reports a disabled role instead of opening a fake session.
+  - A member sent to [jail](./features/moderation.mdx#jail) is disconnected from voice.
+  - The unverified role of the [captcha](./features/captcha.md) can no longer be chosen as an auto role.
+  - [Minimum account age](./features/onboarding.md#minage-action): jail becomes a quarantine, lifted automatically when the account reaches the required age. Ongoing quarantines adjust when you change the minimum age: lifted if it goes down or is disabled, extended if it goes up.
+  - [Authentication Manager](./features/authentication-manager.mdx#manage-methods): you can rename a passkey.
+  - Authentication Manager [separate permissions role](./features/authentication-manager.mdx#strategies): channel permissions of the original role are moved to the 🔑 role.
+  - [`/auth`](./features/authentication-manager.mdx#auth) assigns several protected roles at once, in a single command. <SuggestionLink id="601" />
+  - [`/auth`](./features/authentication-manager.mdx#logs-tab): sessions are logged in the Authentication Manager log channel.
+  - [`/snipe`](./features/moderation.mdx#snipe) warns you when message caching is disabled and offers to enable it. Using it turns message caching on.
+  - Several new logs.
 
 ## 3.5.0 Onboarding Update (10/19/2026) {#3-5-0}
 

@@ -62,7 +62,7 @@ Dùng lệnh: ```/ban (user) [duration] [--delete-messages=duration] [--silent] 
 Hãy thay `(user)` bằng lượt nhắc đến hoặc ID mong muốn và `[reason]` bằng lý do của hình phạt.
 
 - `[duration]`: nếu được nhập, việc cấm trở thành tạm thời (như với [`/tempban`](#tempban)).
-- `[--delete-messages]`: khoảng lịch sử cần xóa (ví dụ `1h`, `1d`, `7d`). Discord giới hạn việc xóa tối đa 7 ngày.
+- `[--delete-messages]`: khoảng lịch sử cần xóa (ví dụ `1h`, `1d`, `7d`). Discord giới hạn việc xóa tối đa 7 ngày. Không có tùy chọn này, giá trị của [xóa tin nhắn khi cấm](./sanctions.mdx#ban-delete) được áp dụng.
 - `[--silent]`: không gửi tin nhắn riêng cho đối tượng.
 
 :::tip
@@ -136,7 +136,7 @@ Dùng lệnh: ```/jail (member) [--silent] [reason]```
 Hãy thay `(member)` bằng lượt nhắc đến hoặc ID mong muốn và `[reason]` bằng lý do của hình phạt.
 
 :::warning
-[Vai trò Jail](./sanctions.mdx#jail) phải được cấu hình qua `/settings` trước khi dùng được lệnh này. Còn các mô-đun tự động thì quay về timeout khi chưa có vai trò Jail nào được cấu hình.
+[Vai trò Jail](./sanctions.mdx#jail) phải được cấu hình qua `/settings` trước khi dùng được lệnh này. Còn các mô-đun tự động thì quay về timeout khi chưa có vai trò Jail nào được cấu hình. Một thành viên bị đưa vào jail cũng bị ngắt kết nối khỏi kênh thoại của họ.
 :::
 
 ### <Icon src="/img/icons/SanctionsJAILTemp.svg" alt="icon SanctionsJAILTemp" title=":iconSanctionsJAILTemp:" /> Đưa tạm thời một người dùng vào jail {#tempjail}
@@ -154,6 +154,8 @@ Lệnh `/unjail` cho phép bạn gỡ vai trò Jail của một thành viên, đ
 Dùng lệnh: ```/unjail (member) [--silent] [reason]```
 
 Hãy thay `(member)` bằng lượt nhắc đến hoặc ID mong muốn và `[reason]` bằng lý do thả.
+
+Một thành viên đang bị cách ly (tuổi tối thiểu của tài khoản, cách ly Discord) không ở trong jail: `/unjail` từ chối và cho biết cách gỡ cách ly cho họ.
 
 ## <Icon src="/img/icons/SanctionsWARN.svg" alt="icon SanctionsWARN" title=":iconSanctionsWARN:" /> Cảnh cáo một người dùng {#warn}
 
@@ -195,11 +197,12 @@ Hãy thay `(amount)` bằng số tin nhắn bạn muốn xóa (từ 2 đến 100
 
 Lệnh `/slowmode` cho phép bạn bật hoặc sửa chế độ chậm của một kênh, nhằm hạn chế tần suất tin nhắn do người dùng gửi.
 
-Dùng lệnh: ```/slowmode (delay) [duration] [channel] [reason]```
+Dùng lệnh: ```/slowmode (delay) [duration] [channel] [reason] [--silent]```
 
 - Hãy thay `(delay)` bằng khoảng thời gian mong muốn giữa mỗi tin nhắn (ví dụ: `5s`, `1m`, `10m`, `1h`, tối đa 6 giờ; `0` để tắt).
 - Thêm `[duration]` để tự động tắt slowmode sau khoảng thời gian này (ví dụ `30m`, `2h`).
 - Thêm `[channel]` nếu bạn muốn áp dụng slowmode cho một kênh khác với kênh nơi bạn gõ lệnh.
+- Thêm `--silent` để không thông báo gì trong kênh.
 - Thêm `[reason]` để nêu lý do, sẽ được ghi vào nhật ký máy chủ.
 
 ## 🕵️ Lấy lại một tin nhắn đã xóa {#snipe}
@@ -215,7 +218,7 @@ Dùng lệnh: ```/snipe [user] [--channel=#channel]```
 Từ phản hồi, bạn có thể **xử phạt tác giả** của một tin nhắn. Phản hồi chỉ hiển thị với riêng bạn.
 
 :::warning
-`/snipe` chỉ thấy các tin nhắn mà RaidProtect giữ trong bộ nhớ, trong một giờ. Chúng chỉ được giữ nếu “**Lưu đệm tin nhắn**” được bật (`/settings`, thẻ “**Tiện ích**”, tắt theo mặc định), hoặc nếu [chống spam](./anti-spam.mdx) hay [báo cáo](./reports.md) đang hoạt động, điều này tự động bật nó. Nếu không, lệnh trả lời rằng không tìm thấy tin nhắn bị xóa nào.
+`/snipe` chỉ thấy các tin nhắn mà RaidProtect giữ trong bộ nhớ, trong một giờ. Chúng chỉ được giữ nếu “**Lưu đệm tin nhắn**” được bật (`/settings`, thẻ “**Tiện ích**”, tắt theo mặc định), hoặc nếu [chống spam](./anti-spam.mdx) hay [báo cáo](./reports.md) đang hoạt động, điều này tự động bật nó: dùng `/snipe` vào lúc đó sẽ ghi lại thiết lập, và nó vẫn bật ngay cả khi chống spam và báo cáo bị tắt sau này. Nếu không, lệnh cho biết bộ nhớ đệm tin nhắn đang tắt và đề nghị một quản trị viên bật nó (hoặc một thành viên được phép dùng `/settings` khi các quyền của Tích hợp được áp dụng).
 :::
 
 Để bật việc lưu đệm tin nhắn:
@@ -260,7 +263,7 @@ Theo mặc định, nhật ký kiểm duyệt được gửi vào kênh nhật k
 
 <Settings start="logs" />
 
-Màn hình “**Nhật ký**” gồm ba kênh: “**Chung**”, “**Kiểm duyệt**” và “**Captcha**”. Một kênh “**Kiểm duyệt**” hoặc “**Captcha**” để trống sẽ chuyển nhật ký của nó về kênh chung. Công tắc “**Nhật ký kiểm duyệt thụ động**” chọn xem RaidProtect có ghi cả những hành động thực hiện mà không qua bot hay không.
+Màn hình “**Nhật ký**” gồm ba kênh: “**Chung**”, “**Kiểm duyệt**” và “**Captcha**”. Một kênh “**Kiểm duyệt**” hoặc “**Captcha**” để trống sẽ chuyển nhật ký của nó về kênh chung. Công tắc “**Nhật ký kiểm duyệt thụ động**” chọn xem RaidProtect có ghi cả những hành động thực hiện mà không qua bot hay không. Kênh, vai trò, thành viên, tin nhắn và thoại có [nhật ký máy chủ](./logs.md) riêng.
 
 ## Câu hỏi thường gặp {#faq}
 

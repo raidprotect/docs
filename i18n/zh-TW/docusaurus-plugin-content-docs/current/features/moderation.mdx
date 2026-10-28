@@ -62,7 +62,7 @@ import Icon from "@site/src/components/Icon";
 將 `(user)` 替換為想要的提及或 ID，並將 `[reason]` 替換為處罰的理由。
 
 - `[duration]`：若有填寫，停權就會變成暫時性（與 [`/tempban`](#tempban) 相同）。
-- `[--delete-messages]`：要刪除的歷史訊息時長（例如 `1h`、`1d`、`7d`）。Discord 限制最多只能刪除 7 天。
+- `[--delete-messages]`：要刪除的歷史訊息時長（例如 `1h`、`1d`、`7d`）。Discord 限制最多只能刪除 7 天。若未使用此選項，則套用[停權時的訊息刪除](./sanctions.mdx#ban-delete)設定值。
 - `[--silent]`：不傳送私訊給對象。
 
 :::tip
@@ -136,7 +136,7 @@ import Icon from "@site/src/components/Icon";
 將 `(member)` 替換為想要的提及或 ID，並將 `[reason]` 替換為處罰的理由。
 
 :::warning
-必須先透過 `/settings` 設定[監禁角色](./sanctions.mdx#jail)，才能使用此指令。至於自動模組，在未設定監禁角色時，會改用超時。
+必須先透過 `/settings` 設定[監禁角色](./sanctions.mdx#jail)，才能使用此指令。至於自動模組，在未設定監禁角色時，會改用超時。被監禁的成員也會從其語音頻道中斷開連線。
 :::
 
 ### <Icon src="/img/icons/SanctionsJAILTemp.svg" alt="icon SanctionsJAILTemp" title=":iconSanctionsJAILTemp:" /> 暫時監禁使用者 {#tempjail}
@@ -154,6 +154,8 @@ import Icon from "@site/src/components/Icon";
 使用指令：```/unjail (member) [--silent] [reason]```
 
 將 `(member)` 替換為想要的提及或 ID，並將 `[reason]` 替換為釋放的理由。
+
+處於隔離狀態的成員（帳號最短註冊時長、Discord 隔離）並非被監禁：`/unjail` 會拒絕執行，並說明如何解除其隔離。
 
 ## <Icon src="/img/icons/SanctionsWARN.svg" alt="icon SanctionsWARN" title=":iconSanctionsWARN:" /> 警告使用者 {#warn}
 
@@ -195,11 +197,12 @@ import Icon from "@site/src/components/Icon";
 
 `/slowmode` 指令讓您啟用或修改頻道的慢速模式，以限制使用者發送訊息的頻率。
 
-使用指令：```/slowmode (delay) [duration] [channel] [reason]```
+使用指令：```/slowmode (delay) [duration] [channel] [reason] [--silent]```
 
 - 將 `(delay)` 替換為每則訊息之間想要的間隔（例如：`5s`、`1m`、`10m`、`1h`，最長 6 小時；`0` 表示停用）。
 - 加上 `[duration]`，可在該時間後自動停用慢速模式（例如 `30m`、`2h`）。
 - 如果想將慢速模式套用到您輸入指令的頻道以外的其他頻道，請加上 `[channel]`。
+- 加上 `--silent` 即不在頻道中發布任何公告。
 - 加上 `[reason]` 以說明理由，該理由會記錄在伺服器紀錄中。
 
 ## 🕵️ 找回已刪除的訊息 {#snipe}
@@ -215,7 +218,7 @@ import Icon from "@site/src/components/Icon";
 在回覆中，您可以**處罰某則訊息的作者**。此回覆僅您自己看得到。
 
 :::warning
-`/snipe` 只看得到 RaidProtect 在記憶體中保留一小時的訊息。只有在啟用「**訊息快取**」（`/settings`、「**工具**」分頁，預設為停用），或 [Antispam](./anti-spam.mdx) 或[檢舉](./reports.md)處於啟用狀態（這會自動啟用它）時，才會保留這些訊息。否則，指令會回覆找不到任何已刪除的訊息。
+`/snipe` 只看得到 RaidProtect 在記憶體中保留一小時的訊息。只有在啟用「**訊息快取**」（`/settings`、「**工具**」分頁，預設為停用），或 [Antispam](./anti-spam.mdx) 或[檢舉](./reports.md)處於啟用狀態（這會自動啟用它）時，才會保留這些訊息：此時使用 `/snipe` 會將該設定記錄下來，即使之後關閉 Antispam 與檢舉，它仍會保持啟用。否則，指令會說明訊息快取已停用，並向管理員（或在套用整合權限時，向獲准使用 `/settings` 的成員）提議啟用它。
 :::
 
 啟用訊息快取：
@@ -260,7 +263,7 @@ import Icon from "@site/src/components/Icon";
 
 <Settings start="logs" />
 
-「**紀錄**」畫面整合了三個頻道：「**一般**」、「**管理**」和「**驗證碼**」。「**管理**」或「**驗證碼**」頻道若留空，其紀錄會轉送到一般頻道。「**被動管理紀錄**」開關決定 RaidProtect 是否也記錄不經過機器人所執行的動作。
+「**紀錄**」畫面整合了三個頻道：「**一般**」、「**管理**」和「**驗證碼**」。「**管理**」或「**驗證碼**」頻道若留空，其紀錄會轉送到一般頻道。「**被動管理紀錄**」開關決定 RaidProtect 是否也記錄不經過機器人所執行的動作。頻道、身分組、成員、訊息與語音則有各自的[伺服器紀錄](./logs.md)。
 
 ## 常見問題 {#faq}
 

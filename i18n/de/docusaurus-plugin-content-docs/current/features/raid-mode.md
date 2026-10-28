@@ -99,7 +99,7 @@ Stellen Sie bei den Captcha-Aktionen den [Auslöser des Captchas](./captcha.md#t
 
 #### Kick-Modus <span className="badge-premium">Premium</span> {#kick-mode}
 
-Der frühere Schalter „**Kick-Modus**“ ist zur Aktion „**Ankömmlinge kicken**“ der [Aktion während des Raids](#action) geworden. Sie bleibt [**Premium**](/de/premium)-Servern vorbehalten und funktioniert ohne die Discord-Community.
+Der frühere Schalter „**Kick-Modus**“ ist zur Aktion „**Ankömmlinge kicken**“ der [Aktion während des Raids](#action) geworden. Sie bleibt [**Premium**](/de/premium)-Servern vorbehalten und funktioniert ohne die Discord-Community. Läuft Premium ab, wechselt die Aktion zurück auf „**Einladungen sperren**“. Ebenso fällt eine Captcha-Aktion, deren Captcha nicht verwendbar ist, auf den normalen Modus zurück (Welle gekickt, dann Einladungen gesperrt), nie auf den Kick.
 
 #### DMs automatisch schließen {#close-dm}
 

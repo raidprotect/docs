@@ -55,11 +55,7 @@ ScamLens 在「**防護**」分頁的 **Automod** 模組中、於「**圖片過�
 - 公告處罰的公開訊息遵循 [Antispam](./anti-spam.mdx#public-message) 的「**公開處罰訊息**」設定，Premium 版可停用。
 :::
 
-## 🗂️ 圖片目錄 <span className="badge-experiment">實驗</span> <span className="badge-premium">Premium</span> {#catalog}
-
-:::info 實驗：Shield Update
-圖片目錄屬於預計於 3.6.0 版推出的 **Shield Update**，在正式推出前處於實驗階段。
-:::
+## 🗂️ 圖片目錄 <span className="badge-premium">Premium</span> {#catalog}
 
 除了由我們管理、套用於所有伺服器的全域「Crypto Scam」目錄之外，[Premium](/zh-TW/premium) 伺服器還可以封鎖**自己的圖片**，不論內容為何：假 Nitro 的截圖、針對您社群的詐騙視覺素材、您伺服器禁止的圖片……
 

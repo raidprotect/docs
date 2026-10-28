@@ -1,0 +1,280 @@
+---
+title: Moderasyon
+description: "RaidProtect'in moderasyon komutları (ban, kick, mute, jail, warn) ve merkezi ModView, moderatörlerinizin Discord sunucunuzu yönetmesine yardımcı olur."
+---
+
+import Settings from '@site/src/components/DiscordMessage/mockups/v2';
+
+import ModerationMockup from '@site/src/components/DiscordMessage/mockups/moderation';
+
+{/* <ModerationMockup /> : 3.5.0'dan itibaren kullanım dışı (yaptırım seçicisinin ve “Modview'i Aç” menüsünün etiketleri) */}
+
+import Icon from "@site/src/components/Icon";
+
+Moderatörlerinizin işini kolaylaştırmak için RaidProtect, kullanıcıları **[yasaklama](/tr/learn/discord-sanctions)** ve **atma** gibi Discord'un yerel özellikleriyle doğrudan etkileşim kurmanızı sağlayan çok pratik moderasyon komutları içerir.
+
+Bu eylemlere ek olarak RaidProtect, yaptırım uygulanan kullanıcıya yaptırımının sebebini açıklayan özel mesajlar gönderir; bu da takibiniz için [yaptırım geçmişine](./sanctions.mdx) ve sunucu loglarına kaydedilir.
+
+:::info
+Yaptırım komutları (`/ban`, `/kick`, `/mute`, `/jail`, `/warn`…) ile `/nick`, `/clear` ve `/slowmode` [ön ekle kullanılabilir](../guides/prefix). `/modview`, `/note`, `/snipe` ve `/onduty` kullanılamaz.
+:::
+
+:::info
+Tüm yaptırım komutları, hedefi DM ile bilgilendirmemek için `[--silent]` seçeneğini kabul eder. Bildirim DM'leri (kick, softban, geçici ban) sunucuya bir davet içeren bir düğme barındırır.
+:::
+
+## 🔍 Bir üyenin moderasyon görünümü {#modview}
+
+`/modview` komutu, bir üye üzerinde tek bir yanıtta toplanan **merkezi bir moderasyon görünümü** açar:
+
+- “**Tüm yaptırımları gör**” düğmesiyle **son yaptırımları**;
+- “**Düzenle**” ile değiştirilebilen dahili **moderasyon notu** ([`/note`](#note) bölümüne bakın);
+- “**Silinen tüm mesajları gör (1s)**” bağlantısıyla **son silinen mesajı** ([`/snipe`](#snipe) bölümüne bakın);
+- sunucunuz [çift hesaplara](./alt-accounts.md) erişebiliyorsa **bağlı hesapları**, yasaklayabilen moderatörler için “**Yönet**” düğmesiyle;
+- hemen harekete geçmek için “**Kullanıcıyı cezalandır**” seçicisi.
+
+Şu komutu kullanın: ```/modview (user)```
+
+`(user)` yerine istediğiniz etiketi veya kimliği yazın.
+
+:::tip
+Komuta bağlam menüsünden de erişilebilir: bir profile sağ tık → **Uygulamalar** → **Modview'i Aç**.
+:::
+
+## 🖱️ Bağlam menüsüyle yaptırım uygulama {#context-menu}
+
+Slash komutlarına ek olarak, bir üyeye doğrudan profilinden sağ tıklayarak yaptırım uygulayabilirsiniz: **Uygulamalar** → **Yaptırım uygula**.
+
+Bir pencere açılır ve şunları girmenizi sağlar:
+- **Yaptırım türü**: uygulanacak yaptırım türü (zorunlu).
+- **Süre**: bir yasaklama, timeout veya jail için bir süre (isteğe bağlı, örn.: `1d 2h 30m`).
+- **Sebep**: yaptırımın gerekçesi.
+- **Sessiz**: yaptırım uygulanan kişiye özel mesaj göndermez.
+
+Önerilen türler, her komut (`/ban`, `/softban`, `/jail`, `/kick`, `/mute`, `/warn`) üzerindeki izinlerinize, Discord Entegrasyonları ayarları dahil, bağlıdır. Jail yalnızca bir [Jail rolü](./sanctions.mdx#jail) yapılandırılmışsa görünür.
+
+## <Icon src="/img/icons/SanctionsBAN.svg" alt="icon SanctionsBAN" title=":iconSanctionsBAN:"/> Bir kullanıcıyı yasaklama {#ban}
+
+`/ban` komutu, bir kullanıcının sunucunuza erişimini kalıcı olarak veya belirli bir süre için engellemenizi sağlar.
+
+Şu komutu kullanın: ```/ban (user) [duration] [--delete-messages=duration] [--silent] [reason]```
+
+`(user)` yerine istediğiniz etiketi veya kimliği, `[reason]` yerine yaptırımın gerekçesini yazın.
+
+- `[duration]`: belirtilirse yasaklama geçici olur ([`/tempban`](#tempban) ile olduğu gibi).
+- `[--delete-messages]`: silinecek geçmişin süresi (örneğin `1h`, `1d`, `7d`). Discord silmeyi en fazla 7 günle sınırlar. Bu seçenek olmadan [yasaklamada mesajların silinmesi](./sanctions.mdx#ban-delete) değeri uygulanır.
+- `[--silent]`: hedefe DM göndermez.
+
+:::tip
+Bir kullanıcıyı, çevrimiçi olmasa veya sunucunuzda bulunmasa bile [Discord kimliğinden](../guides/id) yasaklayabilirsiniz.
+:::
+
+### <Icon src="/img/icons/SanctionsBANTemp.svg" alt="icon SanctionsBANTemp" title=":iconSanctionsBANTemp:"/> Bir kullanıcıyı geçici olarak yasaklama {#tempban}
+
+`/tempban` komutu, bir kullanıcının sunucunuza erişimini geçici olarak engellemenizi sağlar.
+
+Şu komutu kullanın: ```/tempban (user) (duration) [--delete-messages=duration] [--silent] [reason]```
+
+`(user)` yerine istediğiniz etiketi veya kimliği, `(duration)` yerine yasaklamanın süresini ve `[reason]` yerine yaptırımın gerekçesini yazın. `[--delete-messages]` parametresi üyenin mesaj geçmişini silmeyi sağlar (en fazla 7 güne kadar).
+
+### <Icon src="/img/icons/SanctionsSOFTBAN.svg" alt="icon SanctionsSOFTBAN" title=":iconSanctionsSOFTBAN:"/> Bir kullanıcıya softban uygulama {#softban}
+
+`/softban` komutu, bir üyeyi yasaklayıp hemen ardından yasağını kaldırır. Bu, üyeyi sunucudan kalıcı olarak dışlamadan **mesaj geçmişini silmeyi** sağlar: yeni bir davetle geri dönebilir.
+
+Şu komutu kullanın: ```/softban (member) [--delete-messages=duration] [--silent] [reason]```
+
+`(member)` yerine istediğiniz etiketi veya kimliği, `[reason]` yerine yaptırımın gerekçesini yazın. `[--delete-messages]` parametresi silinecek mesajların süresini seçmeyi sağlar.
+
+:::tip
+Softban özellikle **ele geçirilmiş hesaplar** için uygundur: spam temizlenir ve hesap serbest bırakılır, üye hesabını güvene aldıktan sonra kalıcı olarak dışlanmaz.
+:::
+
+### <Icon src="/img/icons/SanctionsUNBAN.svg" alt="icon SanctionsUNBAN" title=":iconSanctionsUNBAN:"/> Bir kullanıcının yasağını kaldırma {#unban}
+
+`/unban` komutu, daha önce yasaklanmış bir kullanıcının yasağını kaldırmanızı ve böylece sunucunuza yeniden katılmasına izin vermenizi sağlar.
+
+Şu komutu kullanın: ```/unban (user) [--silent] [reason]```
+
+`(user)` yerine istediğiniz kimliği, `[reason]` yerine yasağın kaldırılma gerekçesini yazın.
+
+## <Icon src="/img/icons/SanctionsKICK.svg" alt="icon SanctionsKICK" title=":iconSanctionsKICK:" /> Bir kullanıcıyı atma {#kick}
+
+`/kick` komutu, bir üyeyi yasaklamadan sunucunuzdan atmanızı sağlar. Kullanıcı geçerli bir davetiyle sunucuya yeniden katılabilir.
+
+Şu komutu kullanın: ```/kick (member) [--silent] [reason]```
+
+`(member)` yerine istediğiniz etiketi veya kimliği, `[reason]` yerine yaptırımın gerekçesini yazın.
+
+## <Icon src="/img/icons/SanctionsTIMEOUT.svg" alt="icon SanctionsTIMEOUT" title=":iconSanctionsTIMEOUT:" /> Bir kullanıcıyı uzaklaştırma (veya Mute) {#timeout}
+
+`/mute` komutu, bir üyenin sunucuda etkileşim kurma yeteneğini geçici olarak kısıtlamanızı sağlar. Bu süre boyunca üye mesaj gönderemez, tepki veremez, sesli kanallara katılamaz veya diğer üyelere özel mesaj gönderemez.
+
+Şu komutu kullanın: ```/mute (member) (duration) [--force-timeout] [--silent] [reason]```
+
+`(member)` yerine istediğiniz etiketi veya kimliği, `(duration)` yerine mute süresini (örn.: `10m`, `1h`, `1d`) ve `[reason]` yerine yaptırımın gerekçesini yazın.
+
+:::tip
+`[--force-timeout]` seçeneği (ön ekle takma adı `ft`), eşik kuralını aşmayı ve bir Mute rolü yapılandırılmış olsa bile Discord timeout'unun kullanılmasını zorlamayı sağlar. Bu durumda süre 28 günü aşamaz.
+
+`/settings` içinde “**Moderasyon**” sekmesi, “**Cezalar**”, “**Mute**” satırında bir [Mute rolü](./sanctions.mdx#mute) ve bir [mute eşiği](./sanctions.mdx#mute-threshold) yapılandırabilirsiniz. Tanımlanan eşiğin ötesinde bot, Discord timeout'u yerine otomatik olarak Mute rolünü uygular; bu da 28 günü aşan sürelere olanak tanır.
+:::
+
+### <Icon src="/img/icons/SanctionsUNTIMEOUT.svg" alt="icon SanctionsUNTIMEOUT" title=":iconSanctionsUNTIMEOUT:" /> Bir kullanıcının uzaklaştırmasını kaldırma {#untimeout}
+
+`/unmute` komutu, timeout'taki bir üyenin kısıtlamalarını hemen kaldırmanızı ve sunucudaki tüm etkileşim yeteneklerini yeniden kazanmasını sağlar.
+
+Şu komutu kullanın: ```/unmute (member) [--silent] [reason]```
+
+`(member)` yerine istediğiniz etiketi veya kimliği, `[reason]` yerine timeout'un kaldırılma gerekçesini yazın.
+
+## <Icon src="/img/icons/SanctionsJAIL.svg" alt="icon SanctionsJAIL" title=":iconSanctionsJAIL:" /> Bir kullanıcıyı hapsetme {#jail}
+
+`/jail` komutu, bir üyeye kısıtlayıcı bir rol vererek onu izole etmenizi sağlar. Jail'in amacı, yasaklamaya bir alternatif sunmaktır: üye tamamen dışlanmak yerine sunucuya çok sınırlı bir erişimi korur.
+
+Şu komutu kullanın: ```/jail (member) [--silent] [reason]```
+
+`(member)` yerine istediğiniz etiketi veya kimliği, `[reason]` yerine yaptırımın gerekçesini yazın.
+
+:::warning
+[Jail rolü](./sanctions.mdx#jail), bu komutu kullanabilmeden önce `/settings` üzerinden yapılandırılmalıdır. Otomatik modüller ise hiçbir Jail rolü yapılandırılmadığında timeout'a döner. Hapsedilen bir üyenin ses kanalıyla bağlantısı da kesilir.
+:::
+
+### <Icon src="/img/icons/SanctionsJAILTemp.svg" alt="icon SanctionsJAILTemp" title=":iconSanctionsJAILTemp:" /> Bir kullanıcıyı geçici olarak hapsetme {#tempjail}
+
+`/tempjail` komutu, bir üyeyi belirli bir süre için geçici olarak hapsetmenizi sağlar.
+
+Şu komutu kullanın: ```/tempjail (member) (duration) [--silent] [reason]```
+
+`(member)` yerine istediğiniz etiketi veya kimliği, `(duration)` yerine hapsin süresini ve `[reason]` yerine yaptırımın gerekçesini yazın.
+
+### <Icon src="/img/icons/SanctionsUNJAIL.svg" alt="icon SanctionsUNJAIL" title=":iconSanctionsUNJAIL:" /> Bir kullanıcıyı serbest bırakma {#unjail}
+
+`/unjail` komutu, bir üyenin Jail rolünü kaldırmanızı ve normal sunucu erişimini yeniden kazanmasını sağlar.
+
+Şu komutu kullanın: ```/unjail (member) [--silent] [reason]```
+
+`(member)` yerine istediğiniz etiketi veya kimliği, `[reason]` yerine serbest bırakmanın gerekçesini yazın.
+
+Karantinadaki bir üye (minimum hesap yaşı, Discord karantinası) jail'de değildir: `/unjail` bunu reddeder ve karantinasının nasıl kaldırılacağını belirtir.
+
+## <Icon src="/img/icons/SanctionsWARN.svg" alt="icon SanctionsWARN" title=":iconSanctionsWARN:" /> Bir kullanıcıyı uyarma {#warn}
+
+`/warn` komutu, bir üyeyi bot aracılığıyla gönderilen bir özel mesajla resmen uyarmanızı sağlar.
+
+Şu komutu kullanın: ```/warn (member) [--silent] [reason]```
+
+`(member)` yerine istediğiniz etiketi veya kimliği, `[reason]` yerine uyarının gerekçesini yazın.
+
+## 📝 Moderasyon notu {#note}
+
+`/note` komutu, [`/modview`](#modview) üzerinden geçmeden bir üyenin **dahili moderasyon notunu** eklemeyi veya değiştirmeyi sağlar. Not yalnızca moderatörlere görünür.
+
+Şu komutu kullanın: ```/note (user)```
+
+`(user)` yerine istediğiniz etiketi veya kimliği yazın. Notu girmek veya değiştirmek için bir pencere açılır, en fazla 300 karakter. Bir notun eklenmesi, değiştirilmesi ve silinmesi [moderasyon loglarına](#logs) kaydedilir.
+
+## 🏷️ Bir üyenin takma adını değiştirme {#nick}
+
+`/nick` komutu, bir üyenin sunucudaki takma adını değiştirmenizi veya sıfırlamanızı sağlar.
+
+Şu komutu kullanın: ```/nick (user) [takma]```
+
+`(user)` yerine istediğiniz etiketi veya kimliği yazın. `[takma]` parametresi uygulanacak yeni takma addır (en fazla 32 karakter). Belirtilmezse üyenin takma adı sıfırlanır.
+
+:::info
+Komut, Discord'un **Takma Adları Yönet** iznini gerektirir ve [ön ekli komut](../guides/prefix) olarak `nickname`, `rename` ve `setnick` takma adlarıyla da erişilebilir. Değişiklikler sunucu loglarına kaydedilir.
+:::
+
+## 🧹 Bir mesaj grubunu silme {#clear}
+
+`/clear` komutu, bir metin kanalındaki belirli sayıda mesajı hızla silmenizi sağlar. Yalnızca mesajlarını silmek için bir kullanıcı belirtebilirsiniz.
+
+Şu komutu kullanın: ```/clear (sayı) [user]```
+
+`(sayı)` yerine silmek istediğiniz mesaj sayısını yazın (2 ile 100 arası). Kanaldaki yalnızca mesajlarını hedeflemek için etiketi veya kimliği kullanarak `[user]` ekleyin. Ön ekle komut ayrıca `clean` takma adına da yanıt verir.
+
+## 🕒 Bir kanalda yavaş modu etkinleştirme {#slowmode}
+
+`/slowmode` komutu, kullanıcıların gönderdiği mesajların sıklığını sınırlamak için bir kanalın yavaş modunu etkinleştirmenizi veya değiştirmenizi sağlar.
+
+Şu komutu kullanın: ```/slowmode (delay) [duration] [channel] [reason] [--silent]```
+
+- `(delay)` yerine her mesaj arasında istediğiniz süreyi yazın (örn.: `5s`, `1m`, `10m`, `1h`, 6 saate kadar; devre dışı bırakmak için `0`).
+- Yavaş modu bu süreden sonra otomatik olarak devre dışı bırakmak için `[duration]` ekleyin (örn. `30m`, `2h`).
+- Yavaş modu komutu yazdığınız kanaldan başka bir kanala uygulamak istiyorsanız `[channel]` ekleyin.
+- Kanalda hiçbir şey duyurulmaması için `--silent` ekleyin.
+- Sunucu loglarına kaydedilecek gerekçeyi belirtmek için `[reason]` ekleyin.
+
+## 🕵️ Silinen bir mesajı geri alma {#snipe}
+
+`/snipe` komutu, bir kanaldaki **son bir saatte silinen mesajları**, sayfa sayfa, en yeniden en eskiye doğru gösterir.
+
+Şu komutu kullanın: ```/snipe [user] [--channel=#channel]```
+
+- Argümansız: geçerli kanalın silinen mesajlarını gösterir.
+- `[user]` ile: yalnızca bu kullanıcının silinen mesajlarını gösterir.
+- `[--channel]` ile: komutu yazdığınız kanaldan başka bir kanalda arar.
+
+Yanıttan bir mesajın **yazarına yaptırım uygulayabilirsiniz**. Yanıtı yalnızca siz görürsünüz.
+
+:::warning
+`/snipe` yalnızca RaidProtect'in bir saat boyunca bellekte tuttuğu mesajları görür. Bunlar yalnızca “**Mesaj önbelleği**” etkinse (`/settings`, “**Araçlar**” sekmesi, varsayılan olarak devre dışı) ya da [anti-spam](./anti-spam.mdx) veya [bildirimler](./reports.md) etkinse, ki bu onu kendiliğinden etkinleştirir, saklanır: o sırada `/snipe` kullanmak ayarı kaydeder ve anti-spam ile bildirimler daha sonra kapatılsa bile ayar etkin kalır. Aksi halde komut, mesaj önbelleğinin devre dışı olduğunu belirtir ve bunu etkinleştirmeyi bir yöneticiye (ya da Entegrasyonların izinleri uygulandığında `/settings` kullanma yetkisi olan bir üyeye) önerir.
+:::
+
+Mesaj önbelleğini etkinleştirmek için:
+
+1. [`/settings` komutunu](../setup.md#settings) çalıştırın.
+2. “**Araçlar**” sekmesini açın.
+3. “**Mesaj önbelleği**” yanındaki “**Etkinleştir**”e tıklayın.
+
+:::info
+Bu mesajlar bir saat boyunca bellekte kalır ve asla veritabanına yazılmaz. `/privacy` komutu, RaidProtect'in sunucunuzda neleri sakladığını gösterir.
+:::
+
+## 🟢 Görevde rolü {#onduty}
+
+**Görevde rolü**, moderatörlerinizin müsait olduklarını belirtmesini sağlar: `/onduty` komutuyla her biri kendini görevde veya görev dışı yapar ve biz yapılandırılan rolü ekler veya kaldırırız.
+
+Şu komutu kullanın: ```/onduty```
+
+Yanıtı yalnızca siz görürsünüz. Aynı etki, bir [ekip panelinin (`/display staff`)](./display.mdx#staff) “**Görevde**” düğmesiyle de sağlanır.
+
+### Görevde rolünü yapılandırma {#onduty-config}
+
+1. [`/settings` komutunu](../setup.md#settings) çalıştırın.
+2. “**Araçlar**” sekmesini açın.
+3. “**Görevde rolü**” yanındaki “**Yapılandır**” düğmesine tıklayın.
+4. Seçiciden mevcut bir rol seçin ya da “**Benim için bir tane oluştur**” düğmesine tıklayın (hiçbir izni olmayan bir `Görevde` rolü oluştururuz).
+
+<Settings start="onduty" />
+
+:::warning
+Görevde rolünü moderatörleriniz kendi kendine alır: hassas hiçbir izin taşımamalıdır. Yönetici, Sunucuyu Yönet, Rolleri Yönet, Kanalları Yönet, Webhook'ları Yönet, Mesajları Yönet, Alt Başlıkları Yönet, İfadeleri Yönet, Etkinlikleri Yönet, At veya Üyeleri Yasakla izinlerinden birine sahip bir rolü reddederiz. RaidProtect'in ayrıca **Rolleri Yönet** iznine ve görevde rolünün üstüne yerleştirilmiş bir role sahip olması gerekir.
+:::
+
+## 📋 Moderasyon logları {#logs}
+
+Varsayılan olarak moderasyon logları RaidProtect'in genel log kanalına gönderilir. Moderasyon eylemlerini diğer loglardan ayırmak için özel bir log kanalı yapılandırabilirsiniz.
+
+1. [`/settings` komutunu](../setup.md#settings) çalıştırın.
+2. “**Moderasyon**” sekmesini açın.
+3. “**Loglar**” yanındaki “**Yapılandır**” düğmesine tıklayın.
+4. “**Moderasyon**” seçicisinde moderasyon loglarının gönderileceği kanalı seçin ya da “**Benim için bir tane oluştur**” düğmesini kullanın.
+
+<Settings start="logs" />
+
+“**Loglar**” ekranı üç kanalı bir araya getirir: “**Genel**”, “**Moderasyon**” ve “**Captcha**”. Boş bırakılan bir “**Moderasyon**” veya “**Captcha**” kanalı loglarını genel kanala yönlendirir. “**Pasif moderasyon logları**” anahtarı, RaidProtect'in bot üzerinden geçmeden yapılan eylemleri de kaydedip kaydetmeyeceğini seçer. Kanallar, roller, üyeler, mesajlar ve ses kendi [sunucu loglarına](./logs.md) sahiptir.
+
+## Sık sorulan sorular {#faq}
+
+### /snipe neden hiçbir mesaj bulamıyor?
+
+RaidProtect mesajları yalnızca `/settings` komutunun “**Araçlar**” sekmesinde mesaj önbelleği etkinse ya da anti-spam veya bildirimler etkinse bellekte tutar. Yalnızca son bir saat kullanılabilir.
+
+### /onduty kullanmak için hangi izin gerekir?
+
+Varsayılan olarak **Mesajları Yönet** izni. Bunu Discord'un Entegrasyonlarında ayarlayabilirsiniz. Bir yönetici önce görevde rolünü `/settings` komutunun “**Araçlar**” sekmesinde yapılandırmalıdır.
+
+### Sunucumda olmayan bir kullanıcıyı yasaklayabilir miyim?
+
+Evet, `/ban` ve [Discord kimliğiyle](../guides/id).

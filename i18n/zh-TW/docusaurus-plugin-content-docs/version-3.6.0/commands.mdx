@@ -1,0 +1,188 @@
+---
+title: 指令列表
+---
+
+import CommandCopy from '@site/src/components/CommandCopy';
+
+<CommandCopy />
+
+RaidProtect 的所有指令，依類別分組。點擊指令名稱即可前往其詳細文件。
+
+## 原型圖例 {#legend}
+
+- `(arg)`：**必填**參數。
+- `[arg]`：**選填**參數。
+- `[--flag]`：選填的布林旗標（斜線指令：`flag: true`，訊息指令：`--flag`）。
+- `[--flag=值]`：選填的帶值旗標。
+- `(@member)` / `(#channel)` / `(@&role)`：表示預期類型的前綴。
+
+---
+
+## 設定與安裝 {#config}
+
+| 指令 | 原型 | 說明 |
+|---|---|---|
+| [`/setup`](./setup.md#install) | `/setup` | 啟動引導式安裝，以在伺服器上啟用 RaidProtect。 |
+| [`/settings`](./setup.md#settings) | `/settings` | 開啟互動式選單，可隨時修改設定。 |
+| [`/honeypot`](./features/honeypot.md#config) | `/honeypot` | 設定 HoneyPot 陷阱頻道。 |
+| [`/tagrole`](./features/tag-role.md) | `/tagrole` | 設定授予佩戴伺服器標籤之成員的角色。 |
+| [`/display public`](./features/display.mdx) | `/display public` | 管理 RaidProtect 的公開資訊面板。 |
+| [`/display staff`](./features/display.mdx#staff) | `/display staff` | 管理工作人員專用的面板（DISCON、內部訊息）。 |
+| [`/discon`](./features/discon.md) | `/discon` | 設定 DISCON 面板，用以調整伺服器的危險等級。 |
+| [`/audit`](./features/audit.md) | `/audit` | 分析伺服器的安全性，並提議修正設定漏洞。 |
+
+## 管理 {#moderation}
+
+### 處罰
+
+| 指令 | 原型 | 說明 |
+|---|---|---|
+| [`/ban`](./features/moderation.mdx#ban) | `/ban (@user) [duration] [--delete-messages=duration] [--silent] [reason]` | 停權使用者，可永久或依指定時長。 |
+| [`/tempban`](./features/moderation.mdx#tempban) | `/tempban (@user) (duration) [--delete-messages=duration] [--silent] [reason]` | 在指定時長內停權使用者。 |
+| [`/softban`](./features/moderation.mdx#softban) | `/softban (@member) [--delete-messages=duration] [--silent] [reason]` | 先停權再解除停權成員，以刪除其訊息。 |
+| [`/unban`](./features/moderation.mdx#unban) | `/unban (@user) [--silent] [reason]` | 解除停權。 |
+| [`/kick`](./features/moderation.mdx#kick) | `/kick (@member) [--silent] [reason]` | 將成員逐出伺服器。 |
+| [`/mute`](./features/moderation.mdx#timeout) | `/mute (@member) (duration) [--force-timeout] [--silent] [reason]` | 讓成員保持沉默（禁言角色或 Discord 超時）。 |
+| [`/unmute`](./features/moderation.mdx#untimeout) | `/unmute (@member) [--silent] [reason]` | 移除成員的禁言／超時。 |
+| [`/jail`](./features/moderation.mdx#jail) | `/jail (@member) [--silent] [reason]` | 透過監禁角色監禁成員。 |
+| [`/tempjail`](./features/moderation.mdx#tempjail) | `/tempjail (@member) (duration) [--silent] [reason]` | 在指定時長內監禁成員。 |
+| [`/unjail`](./features/moderation.mdx#unjail) | `/unjail (@member) [--silent] [reason]` | 將成員從監禁中釋放。 |
+| [`/warn`](./features/moderation.mdx#warn) | `/warn (@member) [--silent] [reason]` | 透過私訊正式警告成員。 |
+
+### 管理工具
+
+| 指令 | 原型 | 說明 |
+|---|---|---|
+| [`/clear`](./features/moderation.mdx#clear) | `/clear (amount) [@user]` | 刪除頻道中 2 到 100 則訊息。 |
+| [`/snipe`](./features/moderation.mdx#snipe) | `/snipe [@user] [--channel=#channel]` | 找回頻道中或某位使用者最後被刪除的訊息（1 小時內，需要訊息快取）。 |
+| [`/modview`](./features/moderation.mdx#modview) | `/modview (@user)` | 開啟成員的集中式管理檢視（處罰、備註、snipe）。 |
+| [`/note`](./features/moderation.mdx#note) | `/note (@user)` | 新增或編輯成員的內部管理備註。 |
+| [`/nick`](./features/moderation.mdx#nick) | `/nick (@member) [pseudo]` | 變更成員在伺服器上的暱稱（留空則重設）。 |
+| [`/onduty`](./features/moderation.mdx#onduty) | `/onduty` | 為使用它的管理人員新增或移除「在勤」角色。 |
+
+### 頻道鎖定
+
+| 指令 | 原型 | 說明 |
+|---|---|---|
+| [`/lock`](./features/channel-lock.md#lock) | `/lock [#channel] [duration] [reason] [--silent]` | 鎖定頻道以禁止發送訊息（時長為選填）。 |
+| [`/unlock`](./features/channel-lock.md#unlock) | `/unlock [#channel] [reason] [--silent]` | 解除先前被鎖定的頻道。 |
+| [`/slowmode`](./features/moderation.mdx#slowmode) | `/slowmode (delay) [duration] [#channel] [reason] [--silent]` | 啟用或修改頻道的慢速模式（套用時長為選填）。 |
+
+## 處罰紀錄 {#sanctions}
+
+| 指令 | 原型 | 說明 |
+|---|---|---|
+| [`/sanctions search`](./features/sanctions.mdx#search) | `/sanctions search [@user] [@moderator] [type] [date] [status] [moderator_type]` | 使用篩選條件搜尋紀錄（使用者、管理人員、類型、日期、狀態……）。 |
+| [`/sanctions info`](./features/sanctions.mdx#info) | `/sanctions info (id)` | 顯示處罰的詳細資訊。 |
+| [`/sanctions edit`](./features/sanctions.mdx#edit) | `/sanctions edit (id) [reason] [duration]` | 修改現有處罰的原因或時長。 |
+| [`/sanctions delete`](./features/sanctions.mdx#delete) | `/sanctions delete (id) [reason]` | 從紀錄中刪除處罰。 |
+| [`/my-sanctions`](./features/utilities.mdx#my-sanctions) | `/my-sanctions` | 讓成員查看自己的處罰。 |
+| [`/alt`](./features/alt-accounts.md) | `/alt [@member] [@other]` | 關聯同一個人的帳號，使其共享處罰（實驗階段，Identity Update）。 |
+
+## 防突襲 {#antiraid}
+
+| 指令 | 原型 | 說明 |
+|---|---|---|
+| [`/raidmode`](./features/raid-mode.md#raid-mode) | `/raidmode [status] [duration]` | 啟用或停用突襲模式，用以封鎖或過濾新成員。 |
+| [`/joinlock`](./features/join-lock.mdx) | `/joinlock [status]` | 無限期對新成員關閉伺服器的存取。 |
+| [`/dmlock`](./features/dm-lock.mdx) | `/dmlock` | 啟用或停用伺服器私訊的永久鎖定。 |
+| [`/dmlock-info`](./features/dm-lock.mdx#info) | `/dmlock-info` | 告知成員私訊鎖定的狀態。 |
+
+## 身份驗證 {#auth}
+
+| 指令 | 原型 | 說明 |
+|---|---|---|
+| [`/auth`](./features/authentication-manager.mdx#auth) | `/auth [role]` | 進行驗證以取得受保護的角色。 |
+| [`/auth-profile`](./features/authentication-manager.mdx#auth-profile) | `/auth-profile` | 管理您的驗證設定檔（PIN、OTP、passkey）。 |
+| [`/auth-settings`](./features/authentication-manager.mdx#auth-settings) | `/auth-settings` | 設定受保護的角色與獲授權的使用者。 |
+
+## 繞過 {#bypass}
+
+| 指令 | 原型 | 說明 |
+|---|---|---|
+| [`/bypass captcha`](./features/captcha.md#bypass) | `/bypass captcha [@user]` | 允許使用者不通過驗證碼即可加入。 |
+| [`/bypass minage`](./features/onboarding.md#bypass-minage) | `/bypass minage [@user]` | 允許使用者不受帳號最短註冊時長限制即可加入。 |
+| [`/bypass raid`](./features/raid-mode.md#bypass-raid) | `/bypass raid [@user]` | 允許使用者不受突襲模式影響而加入（需要踢出模式）。 |
+| [`/bypass bot`](./features/onboarding.md#bypass-bot) | `/bypass bot [bot]` | 允許機器人不受機器人踢出影響而加入（限伺服器擁有者）。 |
+
+## 工具 {#utilities}
+
+| 指令 | 原型 | 說明 |
+|---|---|---|
+| [`/userinfo`](./features/utilities.mdx#userinfo) | `/userinfo [@user]` | 顯示使用者的資訊。 |
+| [`/serverinfo`](./features/utilities.mdx#serverinfo) | `/serverinfo` | 顯示伺服器的資訊。 |
+| [`/discord-sanctions`](./features/utilities.mdx#discord-sanctions) | `/discord-sanctions [@user]` | 顯示使用者的 Discord 處罰（DSA）；不指定使用者時顯示全球統計。 |
+| [`/inviteinfo`](./features/utilities.mdx#inviteinfo) | `/inviteinfo (invite)` | 顯示 Discord 邀請的資訊（代碼或連結）。 |
+| [`/prune`](./features/utilities.mdx#prune) | `/prune [duration]` | 透過互動式選單清理不活躍的成員。 |
+| [`/channel duplicate`](./features/utilities.mdx#channel-duplicate) | `/channel duplicate (#channel)` | 複製頻道及其設定與權限。 |
+| [`/channel clear`](./features/utilities.mdx#channel-clear) | `/channel clear (#channel)` | 刪除並原樣重新建立頻道。 |
+| [`/block add`](./features/utilities.mdx#block-add) | `/block add [@user] [reason]` | 阻止使用者使用某些功能。 |
+| [`/block remove`](./features/utilities.mdx#block-remove) | `/block remove [@user] [reason]` | 解除對使用者的封鎖。 |
+| [`/block list`](./features/utilities.mdx#block-list) | `/block list` | 列出被封鎖的使用者。 |
+| [`/report`](./features/reports.md) | `/report (@member)` | 讓成員向管理團隊檢舉某位成員（原因在視窗中輸入）。 |
+
+## 資訊與說明 {#info}
+
+| 指令 | 原型 | 說明 |
+|---|---|---|
+| [`/about`](./readme.mdx) | `/about` | 顯示 RaidProtect 的一般資訊。 |
+| [`/help`](./readme.mdx) | `/help` | 顯示 RaidProtect 的一般說明。 |
+| [`/invite`](./useful-links/index.mdx) | `/invite` | 顯示實用連結（邀請、支援、機器人頁面）。 |
+| [`/transparency`](./features/transparency.md#command) | `/transparency` | 顯示伺服器最新的管理透明度報告。 |
+| [`/changelog`](./changelog.mdx) | `/changelog` | 查看 RaidProtect 的更新日誌。 |
+| [`/feedback`](./features/utilities.mdx#feedback) | `/feedback` | 分享意見、建議或回報錯誤。 |
+| [`/privacy`](./features/utilities.mdx#privacy) | `/privacy` | 顯示 RaidProtect 在此伺服器上保留的資料。 |
+
+## 情境選單 {#context-menus}
+
+部分動作可以透過按右鍵，在**應用程式**選單中開啟：
+
+- 在成員上：**開啟 Modview**（[管理檢視](./features/moderation.mdx#modview)）、**處罰使用者**（[在單一視窗中處罰](./features/moderation.mdx#context-menu)）、**Discord 處罰**（[Discord 處罰](./features/utilities.mdx#discord-sanctions)）以及**檢舉使用者**（[檢舉](./features/reports.md)）。
+- 在訊息上：**檢舉訊息**（[檢舉](./features/reports.md)）。
+
+---
+
+## ⚙️ 使用指令的兩種方式 {#usage}
+
+常用的管理指令有兩種格式：斜線指令，以及帶前綴的訊息指令。其他指令，例如 `/sanctions`、`/snipe` 或 `/audit`，只能以斜線指令使用。[訊息指令清單](./guides/prefix.md#activated)列出了哪些指令接受前綴。
+
+### 斜線指令：最簡單 {#slash}
+
+在頻道中輸入 `/`，選擇指令，**Discord 會在專屬介面中為您提供每個參數**（使用者選擇器、頻道選擇器、時長自動完成等）。這是預設的建議方式：您無需記住任何東西。
+
+```
+/ban @member reason: 詐騙垃圾訊息
+```
+
+### 訊息指令：最複雜 {#prefix}
+
+在 [`/settings` 中啟用訊息指令](./guides/prefix.md)後，您也可以用一般訊息的方式輸入指令（`?ban …`、`?kick …` 等）。沒有圖形介面：您必須**熟悉語法**（位置參數、具名旗標、行尾的自由參數）。作為回報，對熟悉指令的管理人員來說，用鍵盤操作更快。
+
+#### 位置參數
+
+依原型的順序給出，不帶名稱。這些是指令的主要參數。
+
+```
+?ban 123456789012345678
+?slowmode 10s
+```
+
+#### 具名旗標（`--名稱=值`）
+
+用於次要選項。旗標可以放在指令中的**任何位置**，順序不拘。
+
+- `--silent`（布林）：直接啟用該選項。
+- `--delete-messages=7d`：為該選項傳入一個值。
+
+```
+?ban @member --delete-messages=7d --silent 停權原因
+?tempban @member 1d --silent 他又再犯了
+```
+
+#### 「rest」參數（自由文字）
+
+部分指令的最後一個參數（通常是 `[reason]`）會擷取**您在其後寫的所有內容**，包含空格，無需加上引號。
+
+```
+?warn @member 你又違反了伺服器的第 3 條規則
+```

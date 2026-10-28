@@ -72,7 +72,7 @@ Vous pouvez exclure certains salons, rôles ou membres de la surveillance anti-s
 Le sélecteur de salons accepte les **catégories** (tous leurs salons sont alors ignorés), ainsi que les salons vocaux, les scènes et les forums. Les fils suivent leur salon parent.
 
 :::info Qui est ignoré automatiquement ?
-- Les salons dont le nom contient “**spam**” (pour un fil, c'est le nom du salon parent qui compte).
+- Les salons dont le nom contient “**spam**” (pour un fil, c'est le nom du salon parent qui compte). Un interrupteur “**Ignorer les salons « spam »**”, dans l'écran de l'anti-spam, permet de les surveiller aussi.
 - Les membres que RaidProtect ne peut pas modérer (rôle plus haut que le sien).
 - Le **staff** (permission `Administrateur`, `Gérer le serveur` ou `Gérer les messages`), **tant qu'aucun rôle ni membre n'est ignoré**. Dès que vous ajoutez un rôle ou un membre à la liste, seule cette liste compte : les membres du staff qui n'y figurent pas peuvent alors être sanctionnés.
 :::
@@ -201,9 +201,9 @@ RaidProtect travaille avec l'**AutoMod de Discord** :
 - **Spam de messages bloqués** : quand un membre enchaîne les messages bloqués par vos règles AutoMod, le déclencheur “**Spam de messages bloqués (AutoMod)**” le sanctionne (famille **Automatisé**). Pour cela, la règle AutoMod doit envoyer ses **alertes** dans un salon que RaidProtect peut voir : c'est grâce à ces alertes que nous repérons les messages bloqués.
 - **Avertissement à chaque message bloqué** : si les sanctions sont actives sur votre serveur, chaque message bloqué par une règle AutoMod est enregistré comme un avertissement dans l'historique du membre, sauf si la règle applique déjà un timeout. Le membre ne reçoit pas de message privé pour cet avertissement. Plus de détails sur la page des [sanctions](./sanctions.mdx).
 
-## 🐢 Slowmode préventif <span className="badge-experiment">Expérimentation</span> <span className="badge-premium">Premium</span> {#slowmode}
+## 🐢 Slowmode préventif <span className="badge-premium">Premium</span> {#slowmode}
 
-Pour calmer un salon très actif sans sanctionner personne, le [slowmode préventif](./slowmode.md) (Premium, en expérimentation avec la Shield Update) ajuste automatiquement le mode lent de vos salons selon leur débit de messages.
+Pour calmer un salon très actif sans sanctionner personne, le [slowmode préventif](./slowmode.md) (Premium) ajuste automatiquement le mode lent de vos salons selon leur débit de messages.
 
 ## 📑 Logs de l'anti-spam {#logs}
 

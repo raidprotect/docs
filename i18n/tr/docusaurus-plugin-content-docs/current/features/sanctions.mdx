@@ -20,7 +20,7 @@ Yaptırım geçmişi, sunucunuzda yapılan tüm moderasyon eylemlerini otomatik 
 - **Manuel yaptırımlar**: tüm [moderasyon komutları](./moderation.mdx) (`/ban`, `/tempban`, `/kick`, `/mute`, `/jail`, `/warn`…) geçmişe kaydedilir.
 - **Otomatik yaptırımlar**: koruma modüllerimizin ([anti-spam](./anti-spam.mdx), [HoneyPot](./honeypot.md), [ScamLens](./scam-images.md)…) uyguladığı yaptırımlar da geçmişe eklenir.
 - **Yasaklamalar, atmalar ve timeout'lar**: RaidProtect üzerinden geçmeden uygulanan yaptırımlar geçmişe eklenir.
-- **Discord AutoMod**: Discord AutoMod'un uyguladığı timeout'lar kaydedilir. Shield Update ile (deneme aşamasında) bir AutoMod kuralı tarafından engellenen her mesaj ayrıca “**Discord Automod**” adına, sessiz (DM yok) bir **uyarı** oluşturur; kural zaten bir timeout uygulamıyorsa.
+- **Discord AutoMod**: Discord AutoMod'un uyguladığı timeout'lar kaydedilir. Bir AutoMod kuralı tarafından engellenen her mesaj ayrıca “**Discord Automod**” adına, sessiz (DM yok) bir **uyarı** oluşturur; kural zaten bir timeout uygulamıyorsa.
 - **Yaptırım bildirimleri**: yaptırım uygulanan üyeler yaptırımı ve sebebini bildiren bir özel mesaj alır. Bot ayrıca gönderim durumunu doğrulayan ayrıntılı bir alındı bildirimi gönderir: **alındı**, **DM kapalı**, **süresi doldu** veya **sessiz** (`[--silent]` seçeneği kullanıldığında). Kick, softban ve geçici ban için bu mesaj ayrıca, üyenin yaptırım bittikten sonra geri dönebilmesi için **sunucuya bir davet içeren bir düğme** de barındırır.
 
 :::info
@@ -159,11 +159,7 @@ Jail ekranında “**Jail sırasında rol yönetimi**” seçicisi, bir üye hap
 - “**Jail rolünü ekle**” *(varsayılan)*: üye rollerini korur, jail rolü eklenir.
 - “**Tüm rolleri değiştir**”: hapis süresince **üyenin tüm rollerini kaldırırız** ve serbest bırakıldığında onları geri yükleriz. Daha katıdır; açık izinleri olan bir rolün Jail rolünün kısıtlamalarını atlatmasını önler.
 
-### Senkronize Discord karantinası <span className="badge-experiment">Deneme</span> {#discord-quarantine}
-
-:::info Deneme: Shield Update
-Senkronize Discord karantinası, 3.6.0 sürümü için planlanan **Shield Update**'in parçasıdır. Çıkışına kadar deneme aşamasındadır; [Premium](/tr/premium) sunucular için herkese açık beta olarak sunulur.
-:::
+### Senkronize Discord karantinası {#discord-quarantine}
 
 Discord AutoMod, profili bir kuralı ihlal eden (takma ad, sunucu etiketi) bir üyeyi karantinaya alabilir. Bu ayarla bu karantinayı izleriz: üye **jail rolünü** alır ve geçmişe bir **Karantina** yaptırımı kaydedilir. Discord karantinayı kaldırdığı anda üye karantinadan çıkar.
 
@@ -175,6 +171,10 @@ Discord AutoMod, profili bir kuralı ihlal eden (takma ad, sunucu etiketi) bir �
 :::info
 Bu ayar bir [Jail rolü](#jail) gerektirir. Devre dışı bırakmak, koyduğu karantinaları serbest bırakır.
 :::
+
+### Yasaklamada mesajların silinmesi {#ban-delete}
+
+“**Cezalar**” ekranında, “**Yasaklamada mesajların silinmesi**” seçicisi `/ban`, `?ban` veya `/tempban` ile `--delete-messages` belirtmeden yasakladığınızda varsayılan olarak silinen geçmişi belirler. “**Silme yok**” (varsayılan), 1 saat, 6 saat, 12 saat, 1 gün, 3 gün veya 7 gün seçin. Komutta verilen bir değer önceliklidir.
 
 ### Mute {#mute}
 

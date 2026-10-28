@@ -1,6 +1,6 @@
 ---
 title: Automod
-description: "RaidProtect'in Automod'u dolandırıcılık görsellerini ve diğer Discord sunucularına yapılan göndermeleri otomatik olarak kaldırır: davetler, iletilen mesajlar, kanal bağlantıları ve sunucu etiketleri."
+description: "RaidProtect'in Automod'u dolandırıcılık görsellerini, reddedilen uzantılardaki dosyaları ve diğer Discord sunucularına yapılan göndermeleri otomatik olarak kaldırır: davetler, iletilen mesajlar, kanal veya etkinlik bağlantıları ve sunucu etiketleri."
 ---
 
 import Settings from '@site/src/components/DiscordMessage/mockups/v2';
@@ -21,13 +21,9 @@ Açmak için:
 
 Tüm ayrıntılar, yaptırım ve görsel kataloğu [Dolandırıcılık görselleri](./scam-images.md) sayfasındadır.
 
-## 🔗 Diğer sunucular <span className="badge-experiment">Deneme</span> {#servers}
+## 🔗 Diğer sunucular {#servers}
 
-**Diğer sunucular** filtresi, başka Discord sunucularına yönlendiren her şeyi denetler: **davetler**, **iletilen mesajlar** ve **kanal bağlantıları**, ayrıca üyelerinizin gösterdiği **sunucu etiketleri**. Ortaklarınıza dokunmadan başıboş reklamı ve rakip ya da kötü niyetli sunucuları engeller.
-
-:::info Deneme: Shield Update
-Diğer sunucular filtresi, 3.6.0 sürümü için planlanan **Shield Update**'in parçasıdır. Çıkışına kadar deneme aşamasındadır; [Premium](/tr/premium) sunucular için herkese açık beta olarak sunulur.
-:::
+**Diğer sunucular** filtresi, başka Discord sunucularına yönlendiren her şeyi denetler: **davetler**, **iletilen mesajlar**, **kanal bağlantıları** ve **etkinlik bağlantıları**, ayrıca üyelerinizin gösterdiği **sunucu etiketleri**. Ortaklarınıza dokunmadan başıboş reklamı ve rakip ya da kötü niyetli sunucuları engeller.
 
 ### Nasıl çalışır? {#servers-working}
 
@@ -40,7 +36,7 @@ Diğer sunucular filtresi, 3.6.0 sürümü için planlanan **Shield Update**'in 
 | Davranış | Reddedilirse ne olur |
 |---|---|
 | **Davet** | Daveti içeren mesaj silinir. `ptb.` ve `canary.` bağlantıları da sayılır; bir embed, bileşen veya iletilen mesaj içine gizlenmiş davetler ile sonradan düzenlenen mesajlar da okunur. |
-| **İletilen mesaj veya kanal bağlantısı** | O sunucudan iletilen veya kanallarından birine bağlantı içeren mesaj silinir. |
+| **İletilen mesaj veya kanal bağlantısı** | O sunucudan iletilen veya kanallarından ya da etkinliklerinden birine bağlantı içeren mesaj silinir. |
 | **Görüntülenen sunucu etiketi** | Üye, [Jail rolüyle](./sanctions.mdx#jail) **karantinaya** alınır. Etiketi kaldırdığı anda karantina kalkar. |
 
 Kendi sunucunuz, davetlerinden herhangi biriyle her zaman geçer ve ekibiniz (**Sunucuyu Yönet** veya **Mesajları Yönet** izinleri) asla hedef alınmaz.
@@ -61,6 +57,10 @@ Bir arkadaş veya özel grup daveti hiçbir sunucuya çıkmaz. “**Davet**” m
 - “**Her zaman silinir**”: liste ne olursa olsun silinir.
 
 Premium olmadan her zaman listeye uyarlar.
+
+:::tip
+Değiştirdiğiniz ama etkinleştirmediğiniz bir filtrenin ekranından çıkarsanız RaidProtect, ayrılmadan önce onu etkinleştirmeyi önerir (“**Devre dışı kalsın**” önceden seçilidir).
+:::
 
 ### Yaptırım {#servers-sanction}
 
@@ -85,6 +85,46 @@ Yalnızca ortaklarınızın davetlerine izin vermek için “**Davet**”i “**
 ### Loglar {#servers-logs}
 
 Her yaptırım ve her karantina, ilgili sunucu ve kanalla birlikte [moderasyon loglarınıza](./moderation.mdx#logs) yazılır. Yaptırımsız silinen bir mesaj (“**Yalnızca mesaj silinir**”) da kaydedilir. Yaptırımlar, “Reddedilen sunucuya davet”, “Reddedilen arkadaş veya grup daveti” (Premium), “Reddedilen sunucudan iletilen mesaj veya kanal bağlantısı” veya “Reddedilen sunucunun etiketi” gerekçeleriyle [yaptırım geçmişinde](./sanctions.mdx) görünür.
+
+## 📎 Dosya uzantıları {#files}
+
+**Dosya uzantıları** filtresi, uzantısı reddedilen dosyaları siler. Bazı uzantıları engelleyebilir (kara liste) veya yalnızca bazılarına izin verebilirsiniz (beyaz liste); tüm sunucuda ya da kanal kanal. Ekibiniz (**Sunucuyu Yönet** veya **Mesajları Yönet** izinleri) asla hedef alınmaz.
+
+İletilen bir mesajın dosyaları da sayılır ve bir alt başlık kendi kanalının kurallarına uyar.
+
+### Yapılandırma {#files-config}
+
+1. Automod içinde “**Dosya uzantıları**” yanındaki “**Yapılandır**”a tıklayın.
+2. Filtreyi sağ üstteki anahtarla etkinleştirin.
+3. “**Tüm sunucu**” altında bir mod seçin: “**Devre dışı**”, “**Kara liste**” veya “**Beyaz liste**”.
+4. **Grupları** (Yürütülebilir dosyalar, Görseller, Videolar, Ses, Arşivler, Belgeler) işaretleyin ve/veya virgülle ayrılmış başka uzantılar girin, örneğin `exe, msi`. Nokta isteğe bağlıdır. Bir kural, gruplara ek olarak en fazla 50 serbest uzantı kabul eder.
+
+:::warning
+Uzantısız bir beyaz liste hiçbir dosyayı kabul etmez: gönderilen her dosya silinir.
+:::
+
+### Kanal ve kategori kuralları {#files-channels}
+
+Bir kanala, alt başlığa veya kategoriye kural vermek için “**Kanal ekle**”ye tıklayın. Bir kategori kuralı tüm kanalları için geçerlidir.
+
+Kurallar toplanır; birden fazla kuralın adını verdiği bir uzantı hariç: bu durumda **en belirgin** kural karar verir (kanal, sonra kategori, sonra sunucu). Örneğin bir kanalda izin verilen bir `.exe`, sunucunun kara listesine rağmen geçer. Hiçbir kuralın adını vermediği bir uzantı tüm kurallardan geçer.
+
+| | Ücretsiz | <span className="badge-premium">Premium</span> |
+|---|---|---|
+| **Kanal kuralları** | 1 (ayarlanan ilk kanal) | 20 kanal veya kategori |
+| **Kategori kuralı** | Hayır | Evet |
+
+Premium olmadan fazla kurallar korunur ama etkin değildir.
+
+### Bozuk dosyalar {#files-disguised}
+
+Görsel veya video gibi görünmek için yeniden adlandırılmış bir dosya (`.png` olarak yeniden adlandırılmış bir `.exe`) tanınır: Discord onu gerçek bir görsel olarak okuyamaz. Bir beyaz liste onu her zaman reddeder. “**Bozuk dosyaları her zaman reddet**” seçeneği, beyaz liste olmasa bile onu tüm kanallarda siler.
+
+### Yaptırım {#files-sanction}
+
+Reddedilen her dosya mesajıyla birlikte silinir. “**Silinen mesajların yaptırımı**” içinde ayrıca yazarı için bir yaptırım ya da “**Yalnızca mesaj silinir**” seçin. Yaptırım, üye başına dakikada en fazla bir kez uygulanır.
+
+Silinen her mesaj; ilgili dosya, kanal ve uzantıyla birlikte [moderasyon loglarınıza](./moderation.mdx#logs) yazılır. Yaptırımlar “Reddedilen uzantıda dosya” gerekçesiyle [yaptırım geçmişinde](./sanctions.mdx) görünür.
 
 ## Sık sorulan sorular {#faq}
 

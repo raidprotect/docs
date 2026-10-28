@@ -12,16 +12,21 @@ Manchmal ist es notwendig, einen Kanal vorübergehend zu sperren, um zu verhinde
 
 ## 🔒 Einen Kanal sperren {#lock}
 
-Verwenden Sie den Befehl: ```/lock [#channel] [duration] [reason]```
+Verwenden Sie den Befehl: ```/lock [#channel] [duration] [reason] [--silent]```
 
 Dieser Befehl entzieht der Rolle **@everyone** im betroffenen Kanal die Berechtigungen, Nachrichten zu senden und Nachrichten in Threads zu senden, und verhindert so, dass Benutzer dort posten.
 
 - Ersetzen Sie `[#channel]` durch die Erwähnung oder die [Kennung](../guides/id.mdx) des zu sperrenden Kanals. Ohne Kanal sperren wir den, in dem Sie den Befehl ausführen. Text-, Ankündigungs-, Sprach-, Forum-, Medien- und Bühnenkanäle sowie Kategorien werden akzeptiert; Threads nicht.
 - Geben Sie mit `[reason]` an, warum der Kanal gesperrt wird (z. B. *Chat-Bereinigung*, *wichtige Ankündigung* usw.).
+- Fügen Sie `--silent` hinzu, um im Kanal nichts anzukündigen: Nur Sie erhalten die Bestätigung.
 
 :::info
 Ein und derselbe Kanal kann nur einmal alle 10 Minuten gesperrt werden.
 :::
+
+### Eine Kategorie sperren {#lock-category}
+
+Das Sperren einer Kategorie sperrt auch alle ihre sichtbaren Kanäle (außer Threads) auf einmal, und `/unlock` auf der Kategorie entsperrt sie gemeinsam. Ein bereits für das Schreiben geschlossener Kanal (Regeln, Ankündigungen) bleibt unverändert, beim Sperren wie beim Entsperren. Wenn eine temporäre Sperre einer Kategorie abläuft, nennt eine einzige Logzeile die Kategorie und die Anzahl der entsperrten Kanäle.
 
 ### Temporäre Sperre {#lock-duration}
 
@@ -29,9 +34,9 @@ Mit dem Parameter `[duration]` können Sie **den Kanal automatisch entsperren la
 
 ## 🔓 Einen Kanal entsperren {#unlock}
 
-Verwenden Sie den Befehl: ```/unlock [#channel] [reason]```
+Verwenden Sie den Befehl: ```/unlock [#channel] [reason] [--silent]```
 
-Dieser Befehl stellt die Berechtigungen zum Senden von Nachrichten für die Rolle **@everyone** auf den Zustand vor der Sperre wieder her und erlaubt es den Benutzern, wieder zu posten. Geben Sie mit `[reason]` an, warum der Kanal entsperrt wird (z. B. *Diskussion wieder eröffnet*, *Ankündigung beendet* usw.).
+Dieser Befehl stellt die Berechtigungen zum Senden von Nachrichten für die Rolle **@everyone** auf den Zustand vor der Sperre wieder her und erlaubt es den Benutzern, wieder zu posten. Geben Sie mit `[reason]` an, warum der Kanal entsperrt wird (z. B. *Diskussion wieder eröffnet*, *Ankündigung beendet* usw.). Mit `--silent` wird im Kanal nichts angekündigt.
 
 :::warning
 Damit die Sperre korrekt funktioniert, darf keine für alle offene Rolle eine explizite Berechtigung haben, in diesem Kanal zu schreiben. Andernfalls können Mitglieder mit diesen Rollen weiterhin schreiben. Die für die Rollen Ihres Teams gesetzten Freigaben sind dagegen nützlich: Sie lassen dem Staff während eines `/lock` das Wort, und das [Audit](./audit.md) meldet sie nicht mehr als redundant.

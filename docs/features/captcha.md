@@ -37,6 +37,8 @@ Le captcha repose sur un rôle **@Non vérifié** et un salon **#vérification**
 | **Panneau (Interactif)**, par défaut | Un message permanent “**Système de vérification**” avec un bouton “**Vérifier**”, qui ouvre l'[Activity RaidProtect](#activity). Le membre ne peut pas écrire dans **#vérification**. |
 | **Challenge (Classique)** | Une image est postée dans **#vérification** à son arrivée, et il tape le code en message dans le salon. |
 
+Le panneau porte un bouton “**Translate**” pour le lire dans sa langue, et chaque arrivant y est mentionné dans le salon de vérification, puis le message est supprimé : il retrouve ainsi le salon.
+
 Le mode Panneau garde le salon propre et permet des réglages en plus : choix de la sanction quand les essais sont épuisés, [captcha gelé pendant un raid](./raid-mode.md#action), [retenue à l'entrée des comptes trop récents](./onboarding.md#minage). Le mode Challenge expulse toujours le membre à la fin du temps imparti ou quand ses essais sont épuisés.
 
 ### Déclenchement {#trigger}
@@ -45,15 +47,11 @@ Le mode Panneau garde le salon propre et permet des réglages en plus : choix d
 |---|---|
 | **En permanence**, par défaut | À chaque arrivée, sans condition. |
 | **Automatique** | Seulement pendant un raid ou un niveau DISCON élevé. Les autres arrivants entrent directement. |
-| **Intelligent** <span className="badge-experiment">Expérimentation</span> | Comme Automatique, plus les comptes qui semblent suspects. |
+| **Intelligent** | Comme Automatique, plus les comptes qui semblent suspects. |
 
-Avec **Automatique**, le captcha s'impose pendant un raid seulement si l'[Auto RaidMode](./raid-mode.md#action) est réglé sur “**Envoyer au captcha**” ou “**Captcha gelé pendant le raid**”, et pendant une alerte [DISCON](./discon.md) à partir du niveau 3 (en expérimentation avec la Shield Update).
+Avec **Automatique**, le captcha s'impose pendant un raid seulement si l'[Auto RaidMode](./raid-mode.md#action) est réglé sur “**Envoyer au captcha**” ou “**Captcha gelé pendant le raid**”, et pendant une alerte [DISCON](./discon.md) à partir du niveau 3.
 
 Le déclenchement **Intelligent** évalue le profil de chaque arrivant. Un membre approuvé à la main par votre équipe n'est jamais considéré comme suspect.
-
-:::info Expérimentation : Shield Update
-Le déclenchement Intelligent fait partie de la **Shield Update**, prévue pour la version 3.6.0. En attendant sa sortie, il est en expérimentation, en bêta publique pour les serveurs [Premium](/premium). Sans l'expérimentation, il n'est pas proposé.
-:::
 
 ## 🚪 Comment configurer le captcha ? {#config}
 
@@ -75,11 +73,11 @@ Le captcha démarre en mode **Panneau (Interactif)**, déclenché **En permanenc
 2. Ouvrez l'onglet “**Arrivées**”.
 3. Cliquez sur “**Configurer**” à côté de “**Captcha**”.
 4. Dans “**Mode d'affichage**”, choisissez “**Panneau (Interactif)**” ou “**Challenge (Classique)**”.
-5. Dans “**Déclenchement**”, choisissez “**En permanence**”, “**Automatique**” ou “**Intelligent**” (Shield Update).
+5. Dans “**Déclenchement**”, choisissez “**En permanence**”, “**Automatique**” ou “**Intelligent**”.
 
 ### Vérification dans l'Activity {#activity}
 
-En mode **Panneau**, le bouton “**Vérifier**” ouvre l'**Activity RaidProtect** : le membre résout un petit puzzle directement dans Discord, aux couleurs de votre serveur et avec les liens de salon de votre [Processus d'accueil](../guides/onboarding.md). Une fois vérifié, il y découvre sa [carte de bienvenue](./onboarding.md#welcome-message).
+En mode **Panneau**, le bouton “**Vérifier**” ouvre l'**Activity RaidProtect** : le membre résout un petit puzzle directement dans Discord, aux couleurs de votre serveur et avec les liens de salon de votre [Processus d'accueil](../guides/onboarding.md). Sur un serveur [Premium](/premium) qui a une icône, elle s'affiche à la place du logo RaidProtect. Une fois vérifié, il y découvre sa [carte de bienvenue](./onboarding.md#welcome-message).
 
 - **Puzzle raté :** comme un code faux, il consomme un essai, et la sanction prévue tombe quand les essais sont épuisés. L'Activity annonce d'abord l'issue au membre, puis la sanction est appliquée.
 - **Réussite :** le membre est vérifié quand il quitte l'écran de réussite. S'il clique sur “**Vérifier**” entre-temps, sa validation s'applique tout de suite au lieu de relancer l'Activity.
@@ -94,8 +92,8 @@ En mode **Panneau**, le bouton “**Vérifier**” ouvre l'**Activity RaidProtec
 
 Avec l'[Identity Update](./alt-accounts.md), l'Activity repère aussi les arrivants probablement tenus par la même personne qu'un membre de votre serveur :
 
-- **Lien sûr :** les comptes sont liés automatiquement dans [`/alt`](./alt-accounts.md#alt). Les logs du captcha le signalent, avec un bouton “**Délier**”.
-- **Lien probable :** si [Un seul compte par personne](./alt-accounts.md#single-account) est actif, le membre passe en revue. “**Lier à un autre membre**” les lie dans `/alt` et le laisse entrer ; si aucun compte n'a été repéré, une fenêtre vous demande de choisir le membre (“**Compte déjà sur le serveur**”). Sinon, le membre entre, et les logs du captcha signalent le lien probable avec un bouton “**Lier les comptes**”.
+- **Lien sûr :** les comptes sont liés automatiquement dans [`/alt`](./alt-accounts.md#alt). Les logs du captcha le signalent, avec un bouton “**Délier**”. Si le groupe est sanctionné, ou si [Un seul compte par personne](./alt-accounts.md#single-account) retient ses comptes secondaires, l'arrivant reçoit la sanction du groupe ou passe en quarantaine.
+- **Lien probable :** si [Un seul compte par personne](./alt-accounts.md#single-account) est actif, le membre passe en revue. “**Lier à un autre membre**” les lie dans `/alt` et le laisse entrer ; si aucun compte n'a été repéré, une fenêtre vous demande de choisir le membre (“**Compte déjà sur le serveur**”). Sinon, le membre entre, et les logs du captcha signalent le lien probable avec un bouton “**Lier**”.
 - **Lien sûr non appliqué :** rien n'est lié d'office si un compte du groupe fait partie de l'équipe du serveur, si l'arrivant est lié à plusieurs groupes `/alt`, ou si les deux comptes ont déjà chacun leur groupe (deux groupes ne sont jamais fusionnés d'office). Le lien vous est alors proposé de la même façon.
 
 Seuls les comptes de votre serveur vous sont montrés : rien n'est dit des autres serveurs.
@@ -199,7 +197,7 @@ Remplacez `[utilisateur]` par l'[identifiant](../guides/id.mdx) souhaité, ce de
 Le captcha travaille avec les autres protections des arrivées :
 - **[Auto RaidMode](./raid-mode.md#action) :** avec l'action “**Envoyer au captcha**”, les arrivants d'une vague passent le captcha au lieu d'être expulsés. Avec “**Captcha gelé pendant le raid**”, ils attendent derrière le captcha et le passent après la vague.
 - **[Âge minimum du compte](./onboarding.md#minage) :** l'action “**Retenir à l'entrée**” bloque un compte trop récent sur un captcha qu'il ne pourra résoudre qu'une fois l'âge atteint.
-- **[DISCON](./discon.md#captcha) :** dès le niveau 4, le captcha est activé s'il est configuré, même si vous l'aviez désactivé. À partir du niveau 3, il s'impose à tous les arrivants, quel que soit son déclenchement (en expérimentation avec la Shield Update).
+- **[DISCON](./discon.md#captcha) :** dès le niveau 4, le captcha est activé s'il est configuré, même si vous l'aviez désactivé. À partir du niveau 3, il s'impose à tous les arrivants, quel que soit son déclenchement.
 
 ## Questions fréquentes {#faq}
 

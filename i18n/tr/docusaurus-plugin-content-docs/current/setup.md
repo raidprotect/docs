@@ -50,7 +50,7 @@ Onaylandığında RaidProtect:
 
 [Otomatik roller ve karşılama mesajı](./features/onboarding.md) sihirbazın parçası değildir: bunları `/settings` komutunun “**Katılımlar**” sekmesinde ayarlayın.
 
-### 🧭 Yeni kurulum sihirbazı <span className="badge-experiment">Deneme</span> {#wizard}
+### 🧭 Yeni kurulum sihirbazı {#wizard}
 
 Yeni bir `/setup` sihirbazı, modül listesinin yerine yönlendirmeli bir akış sunar:
 
@@ -62,10 +62,6 @@ Yeni bir `/setup` sihirbazı, modül listesinin yerine yönlendirmeli bir akış
 - **Zaten yapılandırılmış bir sunucu yeniden yapılmaz, kontrol edilir**: mevcut captcha paneli ve zaten etkin olan DM kapatma korunur.
 - **Ve sonrası**: bir [güvenlik denetimi](./features/audit.md) önizlemesi kurulumu tamamlar; captcha'yı test etmek, karşılama mesajını özelleştirmek veya tüm ayarları açmak için kısayollar sunar. Başarısız olan bir adıma `/setup` komutu yeniden çalıştırılarak devam edilir.
 
-:::info Deneme: Shield Update
-Yeni kurulum sihirbazı, 3.6.0 sürümü için planlanan **Shield Update** ile geliyor. Şimdilik yalnızca az sayıda sunucuya sunuluyor.
-:::
-
 ## Yapılandırmayı değiştirme {#settings}
 
 `/settings` komutu RaidProtect panelini açar. Yöneticilere ayrılmıştır ve yalnızca sizin görebildiğiniz geçici bir özel mesaj olarak görüntülenir.
@@ -76,11 +72,11 @@ Ayarlar beş sekmede düzenlenmiştir:
 
 - **Genel**: [dil](./language.md), [mesaj komutları](./guides/prefix.md), [izinler](./guides/prefix.md#permissions) ve sunucunun saat dilimi.
 - **Katılımlar**: [Otomatik RaidMode](./features/raid-mode.md), [captcha](./features/captcha.md), [minimum hesap yaşı](./features/onboarding.md#minage), [otomatik roller](./features/onboarding.md#autorole) ve [karşılama mesajı](./features/onboarding.md#welcome-message).
-- **Koruma**: [DISCON](./features/discon.md)\*, [anti-spam](./features/anti-spam.mdx), [Automod](./features/automod.md) ([görsel filtresi](./features/scam-images.md) ve [diğer sunucular](./features/automod.md#servers)\*), [HoneyPot](./features/honeypot.md), [önleyici yavaş mod](./features/slowmode.md)\*, [Authentification Manager](./features/authentication-manager.mdx) ve [DM kapatma](./features/dm-lock.mdx).
+- **Koruma**: [DISCON](./features/discon.md), [anti-spam](./features/anti-spam.mdx), [Automod](./features/automod.md) ([görsel filtresi](./features/scam-images.md), [diğer sunucular](./features/automod.md#servers) ve [dosya uzantıları](./features/automod.md#files)), [HoneyPot](./features/honeypot.md), [önleyici yavaş mod](./features/slowmode.md), [Authentification Manager](./features/authentication-manager.mdx) ve [DM kapatma](./features/dm-lock.mdx).
 - **Moderasyon**: [yaptırımlar](./features/sanctions.mdx), [çift hesaplar](./features/alt-accounts.md)\*, loglar, [bildirimler](./features/reports.md) ve [şeffaflık](./features/transparency.md).
 - **Araçlar**: [etiket rolü](./features/tag-role.md), [kanal kilitleme](./features/channel-lock.md), [görevde rolü](./features/moderation.mdx#onduty) ve mesaj önbelleği.
 
-\* Deneme aşamasında: bu satırlar yalnızca Shield Update'e (DISCON, diğer sunucular, önleyici yavaş mod) veya Identity Update'e (çift hesaplar) erişimi olan sunucularda görünür; [Premium](/tr/premium) herkese açık beta.
+\* Deneme aşamasında: bu satır yalnızca Identity Update'e (çift hesaplar) erişimi olan sunucularda görünür; [Premium](/tr/premium) herkese açık beta.
 
 Her satır ayarın geçerli değerini ve bir düğme gösterir: “**Yapılandır**” özel bir ekran açar, “**Düzenle**” bir giriş penceresi açar. Her değişiklik anında uygulanır.
 

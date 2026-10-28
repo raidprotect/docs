@@ -62,7 +62,7 @@ Verwenden Sie den Befehl: ```/ban (@user) [duration] [--delete-messages=dauer] [
 Ersetzen Sie `(@user)` durch die gewünschte Erwähnung oder ID und `[reason]` durch den Grund der Sanktion.
 
 - `[duration]`: Wird sie angegeben, wird der Bann temporär (wie bei [`/tempban`](#tempban)).
-- `[--delete-messages]`: Dauer des zu löschenden Nachrichtenverlaufs (zum Beispiel `1h`, `1d`, `7d`). Discord begrenzt die Löschung auf maximal 7 Tage.
+- `[--delete-messages]`: Dauer des zu löschenden Nachrichtenverlaufs (zum Beispiel `1h`, `1d`, `7d`). Discord begrenzt die Löschung auf maximal 7 Tage. Ohne diese Option gilt der Wert der [Nachrichtenlöschung beim Bann](./sanctions.mdx#ban-delete).
 - `[--silent]`: keine DM an die Zielperson senden.
 
 :::tip
@@ -136,7 +136,7 @@ Verwenden Sie den Befehl: ```/jail (@member) [--silent] [reason]```
 Ersetzen Sie `(@member)` durch die gewünschte Erwähnung oder ID und `[reason]` durch den Grund der Sanktion.
 
 :::warning
-Die [Jail-Rolle](./sanctions.mdx#jail) muss über `/settings` konfiguriert werden, bevor dieser Befehl verwendet werden kann. Die automatischen Module fallen dagegen auf einen Timeout zurück, wenn keine Jail-Rolle konfiguriert ist.
+Die [Jail-Rolle](./sanctions.mdx#jail) muss über `/settings` konfiguriert werden, bevor dieser Befehl verwendet werden kann. Die automatischen Module fallen dagegen auf einen Timeout zurück, wenn keine Jail-Rolle konfiguriert ist. Ein eingesperrtes Mitglied wird außerdem aus seinem Sprachkanal getrennt.
 :::
 
 ### <Icon src="/img/icons/SanctionsJAILTemp.svg" alt="icon SanctionsJAILTemp" title=":iconSanctionsJAILTemp:" /> Einen Benutzer temporär einsperren {#tempjail}
@@ -154,6 +154,8 @@ Der Befehl `/unjail` ermöglicht es Ihnen, einem Mitglied die Jail-Rolle zu entz
 Verwenden Sie den Befehl: ```/unjail (@member) [--silent] [reason]```
 
 Ersetzen Sie `(@member)` durch die gewünschte Erwähnung oder ID und `[reason]` durch den Grund der Freilassung.
+
+Ein Mitglied in Quarantäne (Mindestalter des Kontos, Discord-Quarantäne) ist nicht im Jail: `/unjail` lehnt es ab und gibt an, wie seine Quarantäne aufgehoben wird.
 
 ## <Icon src="/img/icons/SanctionsWARN.svg" alt="icon SanctionsWARN" title=":iconSanctionsWARN:" /> Einen Benutzer verwarnen {#warn}
 
@@ -195,11 +197,12 @@ Ersetzen Sie `(amount)` durch die Anzahl der Nachrichten, die Sie löschen möch
 
 Der Befehl `/slowmode` ermöglicht es Ihnen, den Langsam-Modus eines Kanals zu aktivieren oder anzupassen, um die Häufigkeit der von den Benutzern gesendeten Nachrichten zu begrenzen.
 
-Verwenden Sie den Befehl: ```/slowmode (delay) [duration] [#channel] [reason]```
+Verwenden Sie den Befehl: ```/slowmode (delay) [duration] [#channel] [reason] [--silent]```
 
 - Ersetzen Sie `(delay)` durch die gewünschte Zeit zwischen zwei Nachrichten (z. B. `5s`, `1m`, `10m`, `1h`, bis zu 6 Stunden; `0` zum Deaktivieren).
 - Fügen Sie `[duration]` hinzu, um den Slowmode nach dieser Dauer automatisch zu deaktivieren (z. B. `30m`, `2h`).
 - Fügen Sie `[#channel]` hinzu, wenn Sie den Slowmode in einem anderen Kanal anwenden möchten als in dem, in dem Sie den Befehl eingeben.
+- Fügen Sie `--silent` hinzu, um im Kanal nichts anzukündigen.
 - Fügen Sie `[reason]` hinzu, um den Grund anzugeben, der in den Server-Logs festgehalten wird.
 
 ## 🕵️ Eine gelöschte Nachricht abrufen {#snipe}
@@ -215,7 +218,7 @@ Verwenden Sie den Befehl: ```/snipe [@user] [--channel=#channel]```
 Von der Antwort aus können Sie den **Autor** einer Nachricht **sanktionieren**. Die Antwort ist nur für Sie sichtbar.
 
 :::warning
-`/snipe` sieht nur die Nachrichten, die RaidProtect eine Stunde lang im Speicher hält. Sie werden nur aufbewahrt, wenn der „**Nachrichten-Zwischenspeicher**“ aktiviert ist (`/settings`, Tab „**Werkzeuge**“, standardmäßig deaktiviert) oder wenn der [Anti-Spam](./anti-spam.mdx) oder die [Meldungen](./reports.md) aktiv sind, was sie automatisch aktiviert. Andernfalls antwortet der Befehl, dass keine gelöschte Nachricht gefunden wurde.
+`/snipe` sieht nur die Nachrichten, die RaidProtect eine Stunde lang im Speicher hält. Sie werden nur aufbewahrt, wenn der „**Nachrichten-Zwischenspeicher**“ aktiviert ist (`/settings`, Tab „**Werkzeuge**“, standardmäßig deaktiviert) oder wenn der [Anti-Spam](./anti-spam.mdx) oder die [Meldungen](./reports.md) aktiv sind, was sie automatisch aktiviert: Wird `/snipe` in diesem Moment verwendet, wird die Einstellung gespeichert und bleibt aktiv, auch wenn der Anti-Spam und die Meldungen später abgeschaltet werden. Andernfalls gibt der Befehl an, dass der Nachrichten-Zwischenspeicher deaktiviert ist, und schlägt einem Administrator vor, ihn zu aktivieren (oder einem Mitglied, das `/settings` verwenden darf, wenn die Berechtigungen der Integrationen angewendet werden).
 :::
 
 So aktivieren Sie die Zwischenspeicherung von Nachrichten:
@@ -260,7 +263,7 @@ Standardmäßig werden die Moderationslogs an den allgemeinen Log-Kanal von Raid
 
 <Settings start="logs" />
 
-Der Bildschirm „**Logs**“ vereint drei Kanäle: „**Allgemein**“, „**Moderation**“ und „**Captcha**“. Ein leer gelassener Kanal „**Moderation**“ oder „**Captcha**“ leitet seine Logs an den allgemeinen Kanal weiter. Der Schalter „**Passive Moderationslogs**“ legt fest, ob RaidProtect auch Aktionen protokolliert, die nicht über den Bot erfolgen.
+Der Bildschirm „**Logs**“ vereint drei Kanäle: „**Allgemein**“, „**Moderation**“ und „**Captcha**“. Ein leer gelassener Kanal „**Moderation**“ oder „**Captcha**“ leitet seine Logs an den allgemeinen Kanal weiter. Der Schalter „**Passive Moderationslogs**“ legt fest, ob RaidProtect auch Aktionen protokolliert, die nicht über den Bot erfolgen. Kanäle, Rollen, Mitglieder, Nachrichten und Sprachkanäle haben ihre eigenen [Server-Logs](./logs.md).
 
 ## Häufig gestellte Fragen {#faq}
 

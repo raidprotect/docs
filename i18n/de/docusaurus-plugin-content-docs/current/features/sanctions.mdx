@@ -20,7 +20,7 @@ Der Sanktionsverlauf erfasst automatisch alle auf Ihrem Server durchgeführten M
 - **Manuelle Sanktionen**: Alle [Moderationsbefehle](./moderation.mdx) (`/ban`, `/tempban`, `/kick`, `/mute`, `/jail`, `/warn` …) werden im Verlauf erfasst.
 - **Automatische Sanktionen**: Die von unseren Schutzmodulen verhängten Sanktionen ([Anti-Spam](./anti-spam.mdx), [HoneyPot](./honeypot.md), [ScamLens](./scam-images.md) …) werden ebenfalls dem Verlauf hinzugefügt.
 - **Banns, Kicks und Timeouts**: Ohne RaidProtect verhängte Sanktionen werden dem Verlauf hinzugefügt.
-- **AutoMod von Discord**: Die vom AutoMod von Discord verhängten Timeouts werden erfasst. Mit der Shield Update (im Experiment) erzeugt außerdem jede von einer AutoMod-Regel blockierte Nachricht eine **Verwarnung** im Namen von „**Discord Automod**“, still (keine DM), außer die Regel verhängt bereits einen Timeout.
+- **AutoMod von Discord**: Die vom AutoMod von Discord verhängten Timeouts werden erfasst. Außerdem erzeugt jede von einer AutoMod-Regel blockierte Nachricht eine **Verwarnung** im Namen von „**Discord Automod**“, still (keine DM), außer die Regel verhängt bereits einen Timeout.
 - **Benachrichtigungen über Sanktionen**: Sanktionierte Mitglieder erhalten eine Privatnachricht, die sie über die Sanktion und ihren Grund informiert. Der Bot sendet außerdem eine detaillierte Empfangsbestätigung mit dem Zustellstatus: **empfangen**, **DMs geschlossen**, **abgelaufen** oder **still** (wenn die Option `[--silent]` verwendet wird). Bei Kicks, Softbans und temporären Banns enthält diese Nachricht außerdem eine **Schaltfläche mit einer Server-Einladung**, damit das Mitglied nach Ende der Sanktion zurückkehren kann.
 
 :::info
@@ -159,11 +159,7 @@ Auf dem Jail-Bildschirm steuert die Auswahl „**Rollenverwaltung beim Jail**“
 - „**Jail-Rolle hinzufügen**“ *(Standard)*: Das Mitglied behält seine Rollen, die Jail-Rolle wird hinzugefügt.
 - „**Alle Rollen ersetzen**“: Wir **entfernen alle Rollen des Mitglieds** für die Dauer des Einsperrens und stellen sie bei der Freilassung wieder her. Das ist strenger und verhindert, dass eine Rolle mit expliziten Berechtigungen die Einschränkungen der Jail-Rolle umgeht.
 
-### Synchronisierte Discord-Quarantäne <span className="badge-experiment">Experiment</span> {#discord-quarantine}
-
-:::info Experiment: Shield Update
-Die synchronisierte Discord-Quarantäne gehört zur **Shield Update**, die für Version 3.6.0 vorgesehen ist. Bis zu ihrer Veröffentlichung befindet sie sich in der Experimentierphase, als öffentliche Beta für [Premium](/de/premium)-Server.
-:::
+### Synchronisierte Discord-Quarantäne {#discord-quarantine}
 
 Der AutoMod von Discord kann ein Mitglied in Quarantäne setzen, dessen Profil gegen eine Regel verstößt (Spitzname, Server-Tag). Mit dieser Einstellung folgen wir dieser Quarantäne: Das Mitglied erhält die **Jail-Rolle**, und eine Sanktion **Quarantäne** wird im Verlauf erfasst. Es verlässt sie, sobald Discord die Quarantäne aufhebt.
 
@@ -175,6 +171,10 @@ Der AutoMod von Discord kann ein Mitglied in Quarantäne setzen, dessen Profil g
 :::info
 Diese Einstellung erfordert eine [Jail-Rolle](#jail). Sie zu deaktivieren hebt die von ihr gesetzten Quarantänen auf.
 :::
+
+### Nachrichtenlöschung beim Bann {#ban-delete}
+
+Im Bildschirm „**Sanktionen**“ legt die Auswahl „**Nachrichtenlöschung beim Bann**“ fest, welcher Verlauf standardmäßig gelöscht wird, wenn Sie mit `/ban`, `?ban` oder `/tempban` bannen, ohne `--delete-messages` anzugeben. Wählen Sie „**Keine Löschung**“ (Standard), 1 Stunde, 6 Stunden, 12 Stunden, 1 Tag, 3 Tage oder 7 Tage. Ein im Befehl angegebener Wert hat Vorrang.
 
 ### Mute {#mute}
 

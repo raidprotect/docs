@@ -50,7 +50,7 @@ Discord の[コミュニティモード](./guides/community.md)が必要なの�
 
 [自動ロールとようこそメッセージ](./features/onboarding.md)はウィザードに含まれていません。`/settings` の「**参加**」タブで設定してください。
 
-### 🧭 新しいインストールウィザード <span className="badge-experiment">実験中</span> {#wizard}
+### 🧭 新しいインストールウィザード {#wizard}
 
 新しい `/setup` ウィザードでは、モジュール一覧に代わって、ガイド付きの流れでインストールを進めます。
 
@@ -62,10 +62,6 @@ Discord の[コミュニティモード](./guides/community.md)が必要なの�
 - **設定済みのサーバーは、やり直さずに確認だけ**：すでにあるキャプチャのパネルや、有効な DM の遮断はそのまま維持されます。
 - **その後**：[セキュリティ監査](./features/audit.md)のプレビューでインストールが終わり、キャプチャのテスト、ようこそメッセージのカスタマイズ、すべての設定を開くためのショートカットが表示されます。失敗したステップは、`/setup` を再実行すればやり直せます。
 
-:::info 実験中：Shield Update
-新しいインストールウィザードは、バージョン 3.6.0 に予定されている **Shield Update** で登場します。現時点では、ごく一部のサーバーにのみ提供されています。
-:::
-
 ## 設定を変更する {#settings}
 
 `/settings` コマンドは、RaidProtect のダッシュボードを開きます。管理者専用で、あなたにだけ見える一時的なプライベートメッセージとして表示されます。
@@ -76,11 +72,11 @@ Discord の[コミュニティモード](./guides/community.md)が必要なの�
 
 - **全般**：[言語](./language.md)、[メッセージコマンド](./guides/prefix.md)、[権限](./guides/prefix.md#permissions)、サーバーのタイムゾーン。
 - **参加**：[オート RaidMode](./features/raid-mode.md)、[キャプチャ](./features/captcha.md)、[アカウントの最低作成日数](./features/onboarding.md#minage)、[自動ロール](./features/onboarding.md#autorole)、[ようこそメッセージ](./features/onboarding.md#welcome-message)。
-- **保護**：[DISCON](./features/discon.md)\*、[スパム対策](./features/anti-spam.mdx)、[Automod](./features/automod.md)（[画像フィルター](./features/scam-images.md)と[他のサーバー](./features/automod.md#servers)\*）、[ハニーポット](./features/honeypot.md)、[予防スローモード](./features/slowmode.md)\*、[Authentification Manager](./features/authentication-manager.mdx)、[DM の遮断](./features/dm-lock.mdx)。
+- **保護**：[DISCON](./features/discon.md)、[スパム対策](./features/anti-spam.mdx)、[Automod](./features/automod.md)（[画像フィルター](./features/scam-images.md)、[他のサーバー](./features/automod.md#servers)、[ファイルの拡張子](./features/automod.md#files)）、[ハニーポット](./features/honeypot.md)、[予防スローモード](./features/slowmode.md)、[Authentification Manager](./features/authentication-manager.mdx)、[DM の遮断](./features/dm-lock.mdx)。
 - **モデレーション**：[処罰](./features/sanctions.mdx)、[複数アカウント](./features/alt-accounts.md)\*、ログ、[通報](./features/reports.md)、[透明性](./features/transparency.md)。
 - **ユーティリティ**：[タグロール](./features/tag-role.md)、[チャンネルロック](./features/channel-lock.md)、[勤務中ロール](./features/moderation.mdx#onduty)、メッセージのキャッシュ。
 
-\* 実験中：これらの項目は、Shield Update（DISCON、他のサーバー、予防スローモード）または Identity Update（複数アカウント）を利用できるサーバー、つまり [Premium](/ja/premium) の公開ベータでのみ表示されます。
+\* 実験中：この項目は、Identity Update（複数アカウント）を利用できるサーバー、つまり [Premium](/ja/premium) の公開ベータでのみ表示されます。
 
 各行には、設定の現在の値とボタンが表示されます。「**設定**」は専用の画面を開き、「**編集**」は入力ウィンドウを開きます。変更はすべて即座に反映されます。
 

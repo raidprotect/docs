@@ -1276,3 +1276,390 @@
   .featureCard { padding: 1.4rem; }
   .statValue { font-size: 1.9rem; }
 }
+
+/* ============= REFRESH : HERO AVEC SCÈNE DE RAID ============= */
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 3rem;
+  align-items: center;
+  text-align: left;
+}
+
+.heroCopy .heroTitle {
+  font-size: clamp(2.6rem, 5.6vw, 4.6rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin-left: 0;
+}
+
+.heroCopy .heroSubtitle,
+.heroCopy .heroMicro {
+  margin-left: 0;
+  text-align: left;
+}
+
+.heroCopy .heroCtas {
+  justify-content: flex-start;
+}
+
+/* ----- Pass Founder ----- */
+.passWrap {
+  position: relative;
+  display: flex;
+  color: inherit;
+  text-decoration: none;
+  justify-content: center;
+  perspective: 1200px;
+}
+
+.passWrap::before {
+  content: '';
+  position: absolute;
+  inset: 10% 5%;
+  background: radial-gradient(closest-side, var(--rp-premium-glow-strong), transparent);
+  filter: blur(40px);
+}
+
+.pass {
+  --px: 30%;
+  --py: 20%;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  width: min(100%, 460px);
+  aspect-ratio: 1.75;
+  border-radius: 22px;
+  color: #fff;
+  background:
+    radial-gradient(circle at var(--px) var(--py), rgba(255, 255, 255, 0.22), transparent 45%),
+    linear-gradient(135deg, #d35f5f 0%, #a8466f 48%, #5e2f6e 100%);
+  box-shadow: 0 40px 90px -35px rgba(211, 95, 95, 0.7), inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+  transform: rotateX(var(--rx, 6deg)) rotateY(var(--ry, -14deg)) rotateZ(-3deg);
+  cursor: pointer;
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  animation: passIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+  overflow: hidden;
+}
+
+/* Trame en losanges, comme le guilloché d'une carte de membre. */
+.pass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.06) 0 1px, transparent 1px 14px),
+    repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.06) 0 1px, transparent 1px 14px);
+  pointer-events: none;
+}
+
+.passMain {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1.6rem;
+}
+
+.passTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.passTop img {
+  filter: brightness(0) invert(1);
+}
+
+.passSeat {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 1.05rem;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.85;
+}
+
+.passName {
+  margin-top: auto;
+  font-family: var(--ifm-heading-font-family);
+  font-size: clamp(2.2rem, 5vw, 3.1rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.passPrice {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  margin-top: 0.5rem;
+}
+
+.passPrice s {
+  opacity: 0.6;
+  font-size: 0.95rem;
+}
+
+.passPrice strong {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 1.5rem;
+}
+
+.passPrice span {
+  opacity: 0.75;
+  font-size: 0.85rem;
+}
+
+.passLock {
+  margin-top: 0.35rem;
+  font-size: 0.82rem;
+  opacity: 0.8;
+}
+
+/* Talon détachable, séparé par une ligne de perforation. */
+.passStub {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  width: 112px;
+  padding: 1rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.18);
+  border-left: 2px dashed rgba(255, 255, 255, 0.35);
+}
+
+.passStub strong {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.passStub span {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.passWrap:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.passWrap:focus-visible {
+  outline: none;
+}
+
+.passWrap:focus-visible .pass {
+  outline: 3px solid var(--ifm-color-primary);
+  outline-offset: 6px;
+}
+
+@keyframes passIn {
+  from { opacity: 0; transform: translateY(40px) rotateX(20deg) rotateY(-30deg) rotateZ(-8deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pass {
+    animation: none;
+    transition: none;
+  }
+}
+
+@media (max-width: 996px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .pass {
+    transform: rotateZ(-2deg);
+  }
+}
+
+/* ============= REFRESH : MOSAÏQUE ============= */
+/* Un seul panneau découpé par des filets, sans cartes séparées : la grille
+   est toujours pleine, chaque case occupe la place que lui donne son aire. */
+.bento {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-areas:
+    'limits limits slow'
+    'names captcha slow'
+    'honeypot kick beta';
+  gap: 1px;
+  background: var(--rp-border);
+  border: 1px solid var(--rp-border);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.bentoCell {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background: var(--ifm-background-color);
+}
+
+.bentoCell .featureScene {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.bentoCell .featureTitle {
+  font-size: 1.05rem;
+}
+
+.bentoCell .featureMeta {
+  margin-top: auto;
+  padding-top: 0.75rem;
+}
+
+.bentoCell[data-area='slow'] .featureScene {
+  flex: 1;
+}
+
+@media (max-width: 996px) {
+  .bento {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      'limits limits'
+      'slow names'
+      'slow captcha'
+      'honeypot kick'
+      'beta beta';
+  }
+}
+
+@media (max-width: 640px) {
+  .bento {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'limits' 'slow' 'names' 'captcha' 'honeypot' 'kick' 'beta';
+  }
+}
+
+.sceneSlowmode {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  gap: 1rem;
+}
+
+.slowBars {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 150px;
+}
+
+.slowBars span {
+  flex: 1;
+  border-radius: 4px 4px 0 0;
+  background: linear-gradient(to top, var(--rp-premium-border-strong), var(--ifm-color-primary));
+}
+
+.slowValue {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  color: var(--rp-text-muted);
+  font-size: 0.85rem;
+}
+
+.slowValue strong {
+  font-family: var(--ifm-heading-font-family);
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.sceneCaptcha {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  gap: 0.6rem 0.8rem;
+  align-items: center;
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+.compareMore {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+
+.heroCopy .founder {
+  margin-left: 0;
+}
+
+.captchaIconStack {
+  grid-row: span 2;
+  position: relative;
+  width: 46px;
+  height: 46px;
+}
+
+.captchaIcon {
+  position: absolute;
+  inset: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.captchaTitleStack {
+  display: grid;
+}
+
+.captchaTitle {
+  grid-area: 1 / 1;
+  font-size: 0.85rem;
+  color: var(--rp-text-soft);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.captchaIcon.captchaActive,
+.captchaTitle.captchaActive {
+  opacity: 1;
+  transform: none;
+}
+
+.captchaPuzzle {
+  display: flex;
+  gap: 5px;
+}
+
+.captchaPuzzle span {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  background: var(--rp-surface-strong);
+}
+
+/* Sans animation, la dernière case reste colorée comme avant. */
+.captchaPuzzle:not(.captchaRunning) span:last-child {
+  background: var(--ifm-color-primary);
+}
+
+.captchaRunning span {
+  animation: captchaFill 0.35s ease-out forwards;
+}
+
+@keyframes captchaFill {
+  from { background: var(--rp-surface-strong); }
+  to { background: var(--ifm-color-primary); }
+}

@@ -62,7 +62,7 @@ Utilisez la commande : ```/ban (utilisateur) [durée] [--delete-messages=durée
 Remplacez `(utilisateur)` par la mention ou l’identifiant souhaité et `[raison]` par le motif de la sanction.
 
 - `[durée]` : si elle est renseignée, le bannissement devient temporaire (comme avec [`/tempban`](#tempban)).
-- `[--delete-messages]` : durée de l’historique à supprimer (par exemple `1h`, `1d`, `7d`). Discord limite la suppression à 7 jours maximum.
+- `[--delete-messages]` : durée de l’historique à supprimer (par exemple `1h`, `1d`, `7d`). Discord limite la suppression à 7 jours maximum. Sans cette option, la valeur de la [suppression des messages au bannissement](./sanctions.mdx#ban-delete) s’applique.
 - `[--silent]` : ne pas envoyer de MP à la cible.
 
 :::tip
@@ -136,7 +136,7 @@ Utilisez la commande : ```/jail (membre) [--silent] [raison]```
 Remplacez `(membre)` par la mention ou l'identifiant souhaité et `[raison]` par le motif de la sanction.
 
 :::warning
-Le [rôle Jail](./sanctions.mdx#jail) doit être configuré via `/settings` avant de pouvoir utiliser cette commande. Les modules automatiques, eux, retombent sur un timeout quand aucun rôle Jail n'est configuré.
+Le [rôle Jail](./sanctions.mdx#jail) doit être configuré via `/settings` avant de pouvoir utiliser cette commande. Les modules automatiques, eux, retombent sur un timeout quand aucun rôle Jail n'est configuré. Un membre emprisonné est aussi déconnecté de son salon vocal.
 :::
 
 ### <Icon src="/img/icons/SanctionsJAILTemp.svg" alt="icon SanctionsJAILTemp" title=":iconSanctionsJAILTemp:" /> Emprisonner temporairement un utilisateur {#tempjail}
@@ -154,6 +154,8 @@ La commande `/unjail` vous permet de retirer le rôle Jail d'un membre, lui perm
 Utilisez la commande : ```/unjail (membre) [--silent] [raison]```
 
 Remplacez `(membre)` par la mention ou l'identifiant souhaité et `[raison]` par le motif de la libération.
+
+Un membre en quarantaine (âge minimum du compte, quarantaine Discord) n’est pas au jail : `/unjail` le refuse et indique comment lever sa quarantaine.
 
 ## <Icon src="/img/icons/SanctionsWARN.svg" alt="icon SanctionsWARN" title=":iconSanctionsWARN:" /> Avertir un utilisateur {#warn}
 
@@ -195,11 +197,12 @@ Remplacez `(nombre)` par le nombre de messages que vous souhaitez supprimer (de 
 
 La commande `/slowmode` vous permet d’activer ou de modifier le mode lent d’un salon, afin de limiter la fréquence des messages envoyés par les utilisateurs.
 
-Utilisez la commande : ```/slowmode (délai) [durée] [salon] [raison]```
+Utilisez la commande : ```/slowmode (délai) [durée] [salon] [raison] [--silent]```
 
 - Remplacez `(délai)` par la durée souhaitée entre chaque message (par ex. : `5s`, `1m`, `10m`, `1h`, jusqu'à 6 heures ; `0` pour désactiver).
 - Ajoutez `[durée]` pour désactiver automatiquement le slowmode après cette durée (par ex. `30m`, `2h`).
 - Ajoutez `[salon]` si vous souhaitez appliquer le slowmode à un autre salon que celui où vous tapez la commande.
+- Ajoutez `--silent` pour ne rien annoncer dans le salon.
 - Ajoutez `[raison]` pour préciser le motif, qui sera enregistré dans les logs du serveur.
 
 ## 🕵️ Récupérer un message supprimé {#snipe}
@@ -215,7 +218,7 @@ Utilisez la commande : ```/snipe [utilisateur] [--channel=#salon]```
 Depuis la réponse, vous pouvez **sanctionner l’auteur** d'un message. La réponse n'est visible que par vous.
 
 :::warning
-`/snipe` ne voit que les messages que RaidProtect garde en mémoire, pendant une heure. Ils ne sont conservés que si la “**Mise en cache des messages**” est activée (`/settings`, onglet “**Utilitaires**”, désactivée par défaut), ou si l'[anti-spam](./anti-spam.mdx) ou les [signalements](./reports.md) sont actifs, ce qui l'active d'office. Sinon, la commande répond qu'aucun message supprimé n'a été trouvé.
+`/snipe` ne voit que les messages que RaidProtect garde en mémoire, pendant une heure. Ils ne sont conservés que si la “**Mise en cache des messages**” est activée (`/settings`, onglet “**Utilitaires**”, désactivée par défaut), ou si l'[anti-spam](./anti-spam.mdx) ou les [signalements](./reports.md) sont actifs, ce qui l'active d'office : utiliser `/snipe` à ce moment-là inscrit le réglage, qui reste actif même si l'anti-spam et les signalements sont coupés plus tard. Sinon, la commande indique que le cache des messages est désactivé et propose de l'activer à un administrateur (ou à un membre autorisé à utiliser `/settings` quand les permissions des Intégrations sont appliquées).
 :::
 
 Pour activer la mise en cache des messages :
@@ -260,7 +263,7 @@ Par défaut, les logs de modération sont envoyés dans le salon de logs génér
 
 <Settings start="logs" />
 
-L'écran “**Logs**” regroupe trois salons : “**Général**”, “**Moderation**” et “**Captcha**”. Un salon “**Moderation**” ou “**Captcha**” laissé vide renvoie ses logs vers le salon général. La bascule “**Logs de modération passives**” choisit si RaidProtect journalise aussi les actions faites sans passer par le bot.
+L'écran “**Logs**” regroupe trois salons : “**Général**”, “**Moderation**” et “**Captcha**”. Un salon “**Moderation**” ou “**Captcha**” laissé vide renvoie ses logs vers le salon général. La bascule “**Logs de modération passives**” choisit si RaidProtect journalise aussi les actions faites sans passer par le bot. Les salons, rôles, membres, messages et le vocal ont leurs propres [logs du serveur](./logs.md).
 
 ## Questions fréquentes {#faq}
 

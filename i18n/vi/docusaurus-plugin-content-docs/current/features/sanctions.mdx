@@ -20,7 +20,7 @@ Lịch sử hình phạt tự động ghi lại mọi hành động kiểm duy�
 - **Hình phạt thủ công**: mọi [lệnh kiểm duyệt](./moderation.mdx) (`/ban`, `/tempban`, `/kick`, `/mute`, `/jail`, `/warn`…) đều được ghi vào lịch sử.
 - **Hình phạt tự động**: các hình phạt do các mô-đun bảo vệ của chúng tôi áp dụng ([chống spam](./anti-spam.mdx), [HoneyPot](./honeypot.md), [ScamLens](./scam-images.md)…) cũng được thêm vào lịch sử.
 - **Cấm, đuổi và timeout**: các hình phạt được áp dụng mà không qua RaidProtect cũng được thêm vào lịch sử.
-- **AutoMod của Discord**: các timeout do AutoMod của Discord áp dụng được ghi lại. Với Shield Update (đang thử nghiệm), mỗi tin nhắn bị một quy tắc AutoMod chặn cũng tạo một **cảnh cáo** mang tên “**Discord Automod**”, im lặng (không có tin nhắn riêng), trừ khi quy tắc đã áp dụng một timeout.
+- **AutoMod của Discord**: các timeout do AutoMod của Discord áp dụng được ghi lại. Mỗi tin nhắn bị một quy tắc AutoMod chặn cũng tạo một **cảnh cáo** mang tên “**Discord Automod**”, im lặng (không có tin nhắn riêng), trừ khi quy tắc đã áp dụng một timeout.
 - **Thông báo hình phạt**: các thành viên bị xử phạt nhận một tin nhắn riêng cho biết hình phạt và lý do. Bot cũng gửi một biên nhận chi tiết xác nhận trạng thái gửi: **đã nhận**, **tin nhắn riêng đã đóng**, **hết hạn** hoặc **im lặng** (khi dùng tùy chọn `[--silent]`). Với kick, softban và cấm tạm thời, tin nhắn này còn chứa một **nút kèm lời mời vào máy chủ** để thành viên có thể quay lại khi hình phạt kết thúc.
 
 :::info
@@ -159,11 +159,7 @@ Trong màn hình Jail, bộ chọn “**Quản lý vai trò khi jail**” điề
 - “**Thêm vai trò jail**” *(mặc định)*: thành viên giữ các vai trò của mình, vai trò jail được thêm vào.
 - “**Thay thế mọi vai trò**”: chúng tôi **gỡ mọi vai trò của thành viên** trong thời gian bị giam và khôi phục chúng khi họ được thả. Nghiêm ngặt hơn, cách này tránh việc một vai trò có quyền tường minh qua mặt các hạn chế của vai trò Jail.
 
-### Đồng bộ cách ly Discord <span className="badge-experiment">Thử nghiệm</span> {#discord-quarantine}
-
-:::info Thử nghiệm: Shield Update
-Đồng bộ cách ly Discord thuộc **Shield Update**, dự kiến trong phiên bản 3.6.0. Trong khi chờ phát hành, nó đang thử nghiệm, ở dạng bản beta công khai cho các máy chủ [Premium](/vi/premium).
-:::
+### Đồng bộ cách ly Discord {#discord-quarantine}
 
 AutoMod của Discord có thể cách ly một thành viên có hồ sơ vi phạm một quy tắc (biệt danh, tag máy chủ). Với thiết lập này, chúng tôi theo dõi việc cách ly đó: thành viên nhận **vai trò jail** và một hình phạt **Cách ly** được ghi vào lịch sử. Họ ra khỏi cách ly ngay khi Discord gỡ nó.
 
@@ -175,6 +171,10 @@ AutoMod của Discord có thể cách ly một thành viên có hồ sơ vi ph�
 :::info
 Thiết lập này yêu cầu một [vai trò Jail](#jail). Tắt nó sẽ giải phóng các cách ly mà nó đã đặt.
 :::
+
+### Xóa tin nhắn khi cấm {#ban-delete}
+
+Trong màn hình “**Hình phạt**”, bộ chọn “**Xóa tin nhắn khi cấm**” đặt khoảng lịch sử bị xóa mặc định khi bạn cấm bằng `/ban`, `?ban` hoặc `/tempban` mà không nêu `--delete-messages`. Chọn “**Không xóa**” (mặc định), 1 giờ, 6 giờ, 12 giờ, 1 ngày, 3 ngày hoặc 7 ngày. Giá trị được nêu trong lệnh sẽ được ưu tiên.
 
 ### Mute {#mute}
 

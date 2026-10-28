@@ -57,7 +57,7 @@ Dieses Problem tritt relativ häufig auf, hängt aber von **der Konfiguration Ih
 
 - **Haben Sie das Captcha aktiviert?** Dies ist eine optionale Funktion: Aktivieren Sie sie im Tab „**Ankünfte**“ von [`/settings`](../setup.md#settings). Lesen Sie die [Dokumentationsseite zum Captcha](../features/captcha.md#config) für weitere Informationen.
 
-- **Wie ist sein Auslöser?** Bei „**Automatisch**“ gilt das Captcha nur während eines Raids oder bei einer hohen [DISCON](../features/discon.md)-Stufe (Shield Update, im Experiment): In der übrigen Zeit treten die Neuankömmlinge direkt bei. Wählen Sie „**Dauerhaft**“, damit jeder Neuankömmling das Captcha durchläuft.
+- **Wie ist sein Auslöser?** Bei „**Automatisch**“ gilt das Captcha nur während eines Raids oder bei einer hohen [DISCON](../features/discon.md)-Stufe: In der übrigen Zeit treten die Neuankömmlinge direkt bei. Wählen Sie „**Dauerhaft**“, damit jeder Neuankömmling das Captcha durchläuft.
 
 - **Umgeht eine Rolle oder ein Kanal es?** Der Captcha-Bildschirm weist auf Kanäle hin, die für die Verifizierungsrolle noch sichtbar sind, und auf Rollen, die Zugang zum Server geben, ohne es zu durchlaufen, mit einer Schaltfläche zur Korrektur.
 

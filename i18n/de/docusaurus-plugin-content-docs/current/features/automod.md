@@ -1,6 +1,6 @@
 ---
 title: Automod
-description: "Der Automod von RaidProtect entfernt automatisch Betrugsbilder und Verweise auf andere Discord-Server: Einladungen, weitergeleitete Nachrichten, Kanallinks und Server-Tags."
+description: "Der Automod von RaidProtect entfernt automatisch Betrugsbilder, Dateien mit abgelehnten Endungen und Verweise auf andere Discord-Server: Einladungen, weitergeleitete Nachrichten, Kanal- oder Event-Links und Server-Tags."
 ---
 
 import Settings from '@site/src/components/DiscordMessage/mockups/v2';
@@ -21,13 +21,9 @@ Der Filter **Bilder** löscht bekannte Betrugsbilder (Krypto-Betrug, gefälschte
 
 Alle Details, die Sanktion und der Bilderkatalog stehen auf der Seite [Betrugsbilder](./scam-images.md).
 
-## 🔗 Andere Server <span className="badge-experiment">Experiment</span> {#servers}
+## 🔗 Andere Server {#servers}
 
-Der Filter **Andere Server** kontrolliert alles, was auf andere Discord-Server verweist: **Einladungen**, **weitergeleitete Nachrichten** und **Kanallinks** sowie die von Ihren Mitgliedern angezeigten **Server-Tags**. Er blockiert wilde Werbung und konkurrierende oder bösartige Server, ohne Ihre Partner zu beeinträchtigen.
-
-:::info Experiment: Shield Update
-Der Filter „Andere Server“ gehört zur **Shield Update**, die für Version 3.6.0 vorgesehen ist. Bis zu ihrer Veröffentlichung befindet er sich in der Experimentierphase, als öffentliche Beta für [Premium](/de/premium)-Server.
-:::
+Der Filter **Andere Server** kontrolliert alles, was auf andere Discord-Server verweist: **Einladungen**, **weitergeleitete Nachrichten**, **Kanallinks** und **Event-Links** sowie die von Ihren Mitgliedern angezeigten **Server-Tags**. Er blockiert wilde Werbung und konkurrierende oder bösartige Server, ohne Ihre Partner zu beeinträchtigen.
 
 ### Wie funktioniert es? {#servers-working}
 
@@ -40,7 +36,7 @@ Drei Verhaltensweisen lassen sich getrennt einstellen, jeweils in einem dieser M
 | Verhalten | Was bei einer Ablehnung geschieht |
 |---|---|
 | **Einladung** | Die Nachricht mit der Einladung wird gelöscht. Auch `ptb.`- und `canary.`-Links zählen, und Einladungen, die in einem Embed, einer Komponente oder einer weitergeleiteten Nachricht versteckt sind, werden gelesen, ebenso nachträglich bearbeitete Nachrichten. |
-| **Weitergeleitete Nachricht oder Kanallink** | Die von diesem Server weitergeleitete Nachricht oder die Nachricht mit einem Link zu einem seiner Kanäle wird gelöscht. |
+| **Weitergeleitete Nachricht oder Kanallink** | Die von diesem Server weitergeleitete Nachricht oder die Nachricht mit einem Link zu einem seiner Kanäle oder Events wird gelöscht. |
 | **Angezeigter Server-Tag** | Das Mitglied wird mit der [Jail-Rolle](./sanctions.mdx#jail) in **Quarantäne** gesetzt. Sie wird aufgehoben, sobald es den Tag entfernt. |
 
 Ihr eigener Server kommt immer durch, mit jeder seiner Einladungen, und Ihr Team (Berechtigungen **Server verwalten** oder **Nachrichten verwalten**) wird nie erfasst.
@@ -61,6 +57,10 @@ Eine Freundes- oder private Gruppeneinladung führt zu keinem Server. Unter dem 
 - „**Immer gelöscht**“: gelöscht, unabhängig von der Liste.
 
 Ohne Premium folgen sie immer der Liste.
+
+:::tip
+Wenn Sie den Bildschirm eines Filters verlassen, den Sie geändert, aber nicht aktiviert haben, schlägt RaidProtect Ihnen vor, ihn vor dem Verlassen zu aktivieren („**Deaktiviert lassen**“ ist vorausgewählt).
+:::
 
 ### Sanktion {#servers-sanction}
 
@@ -85,6 +85,46 @@ Um nur die Einladungen Ihrer Partner zuzulassen, stellen Sie „**Einladung**“
 ### Logs {#servers-logs}
 
 Jede Sanktion und jede Quarantäne wird in Ihren [Moderationslogs](./moderation.mdx#logs) festgehalten, mit dem betroffenen Server und Kanal. Eine ohne Sanktion gelöschte Nachricht („**Nur Nachricht löschen**“) wird ebenfalls festgehalten. Die Sanktionen erscheinen im [Sanktionsverlauf](./sanctions.mdx) mit den Gründen „Einladung zu einem Server abgelehnt“, „Freundes- oder Gruppeneinladung abgelehnt“ (Premium), „Weitergeleitete Nachricht oder Kanallink eines Servers abgelehnt“ oder „Tag eines Servers abgelehnt“.
+
+## 📎 Dateiendungen {#files}
+
+Der Filter **Dateiendungen** löscht Dateien, deren Endung abgelehnt wird. Sie können bestimmte Endungen sperren (Sperrliste) oder nur bestimmte zulassen (Zulassungsliste), auf dem ganzen Server oder Kanal für Kanal. Ihr Team (Berechtigungen **Server verwalten** oder **Nachrichten verwalten**) wird nie erfasst.
+
+Auch die Dateien einer weitergeleiteten Nachricht zählen, und ein Thread folgt den Regeln seines Kanals.
+
+### Konfiguration {#files-config}
+
+1. Klicken Sie im Automod neben „**Dateiendungen**“ auf „**Konfigurieren**“.
+2. Aktivieren Sie den Filter mit dem Schalter oben rechts.
+3. Wählen Sie unter „**Ganzer Server**“ einen Modus: „**Deaktiviert**“, „**Sperrliste**“ oder „**Zulassungsliste**“.
+4. Kreuzen Sie **Gruppen** an (Ausführbare Dateien, Bilder, Videos, Audio, Archive, Dokumente) und/oder geben Sie weitere Endungen durch Kommas getrennt ein, zum Beispiel `exe, msi`. Der Punkt ist optional. Eine Regel akzeptiert höchstens 50 freie Endungen, zusätzlich zu den Gruppen.
+
+:::warning
+Eine Zulassungsliste ohne Endung akzeptiert keine Datei: Jede gesendete Datei wird gelöscht.
+:::
+
+### Regeln pro Kanal und pro Kategorie {#files-channels}
+
+Klicken Sie auf „**Kanal hinzufügen**“, um einem Kanal, einem Thread oder einer Kategorie eine Regel zu geben. Eine Kategorieregel gilt für alle ihre Kanäle.
+
+Die Regeln addieren sich, außer bei einer Endung, die von mehreren Regeln genannt wird: Dann entscheidet die **genaueste** Regel (Kanal, dann Kategorie, dann Server). Zum Beispiel kommt eine in einem Kanal erlaubte `.exe` trotz der Sperrliste des Servers durch. Eine Endung, die keine Regel nennt, kommt durch alle Regeln.
+
+| | Kostenlos | <span className="badge-premium">Premium</span> |
+|---|---|---|
+| **Regeln pro Kanal** | 1 (der erste eingestellte Kanal) | 20 Kanäle oder Kategorien |
+| **Kategorieregel** | Nein | Ja |
+
+Ohne Premium werden die überzähligen Regeln behalten, sind aber inaktiv.
+
+### Beschädigte Dateien {#files-disguised}
+
+Eine umbenannte Datei, die sich als Bild oder Video ausgibt (eine in `.png` umbenannte `.exe`), wird erkannt: Discord kann sie nicht als echtes Bild lesen. Eine Zulassungsliste lehnt sie immer ab. Die Option „**Beschädigte Dateien immer ablehnen**“ löscht sie auch in allen Kanälen, selbst ohne Zulassungsliste.
+
+### Sanktion {#files-sanction}
+
+Jede abgelehnte Datei wird mit ihrer Nachricht gelöscht. Wählen Sie unter „**Sanktion für gelöschte Nachrichten**“ zusätzlich eine Sanktion für ihren Autor oder „**Nur Nachricht löschen**“. Die Sanktion wird höchstens einmal pro Minute und Mitglied angewendet.
+
+Jede gelöschte Nachricht wird in Ihren [Moderationslogs](./moderation.mdx#logs) festgehalten, mit der Datei, dem Kanal und der betroffenen Endung. Die Sanktionen erscheinen im [Sanktionsverlauf](./sanctions.mdx) mit dem Grund „Datei mit abgelehnter Endung“.
 
 ## Häufig gestellte Fragen {#faq}
 

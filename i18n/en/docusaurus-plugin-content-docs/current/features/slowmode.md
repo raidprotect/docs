@@ -5,11 +5,7 @@ description: "RaidProtect's preventive slowmode automatically adjusts the slowmo
 
 import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
 
-RaidProtect's **preventive slowmode** automatically adjusts your channels' [slowmode](./moderation.mdx#slowmode) to hold a **message rate** per minute. When a channel runs away (announcement, live stream, influx of new members, start of a [raid](/en/learn/discord-raid)), we raise the slowmode; when it calms down, we lower it again. Your moderators no longer have to watch the chat to set it by hand.
-
-:::info Experiment: Shield Update
-Preventive slowmode is reserved for [Premium](/en/premium) servers. It is part of the **Shield Update**, planned for version 3.6.0, and is an experiment until its release.
-:::
+RaidProtect's **preventive slowmode**, reserved for [Premium](/en/premium) servers, automatically adjusts your channels' [slowmode](./moderation.mdx#slowmode) to hold a **message rate** per minute. When a channel runs away (announcement, live stream, influx of new members, start of a [raid](/en/learn/discord-raid)), we raise the slowmode; when it calms down, we lower it again. Your moderators no longer have to watch the chat to set it by hand.
 
 ## ❓ How does it work? {#working}
 
@@ -27,7 +23,7 @@ Preventive slowmode is reserved for [Premium](/en/premium) servers. It is part o
 2. Open the "**Protection**" tab.
 3. Click "**Configure**" next to "**Preventive slowmode**".
 4. Click "**Add**" next to a free slot.
-5. Choose the channel (text channel or announcement channel).
+5. Choose the channel (text, announcement, voice or stage channel: the slowmode of a voice channel regulates its built-in text channel).
 
 <Settings start="slowmode" />
 
@@ -78,7 +74,7 @@ Up to 6 channels per server, each with its own message rate and bounds.
 
 ### Is preventive slowmode free?
 
-No, it is reserved for Premium servers. It is also part of the Shield Update, still an experiment.
+No, it is reserved for Premium servers.
 
 ### What happens if I set the slowmode by hand?
 

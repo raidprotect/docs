@@ -14,14 +14,14 @@ As contas duplicadas fazem parte da **Identity Update**, prevista para a versão
 ## ❓ Como funciona? {#working}
 
 - **Um grupo por pessoa**: um grupo reúne as contas que sua equipe considera como uma mesma pessoa. Os grupos são próprios do seu servidor: nada é compartilhado com outros servidores.
-- **Sanções compartilhadas** ([Premium](/pt/premium)): o banimento, a expulsão, o mute, o jail e o timeout se estendem às outras contas do grupo, de acordo com o [modo](#modes) que você escolher para cada sanção. A sanção continua no nome da conta visada, as outras recebem o status dela. Sem Premium, as contas são vinculadas e consultadas, mas nenhuma sanção se estende: o log da sanção cita então as outras contas do membro.
+- **Sanções compartilhadas** ([Premium](/pt/premium)): o banimento, a expulsão, o mute, o jail e o timeout se estendem às outras contas do grupo, de acordo com o [modo](#modes) que você escolher para cada sanção. A sanção continua no nome da conta visada, as outras recebem o status dela. Ela nunca se estende às contas que moderam o servidor (administração, gerenciamento do servidor, banimento, expulsão ou castigo de membros), ao dono nem aos bots. Sem Premium, as contas são vinculadas e consultadas, mas nenhuma sanção se estende: o log da sanção cita então as outras contas do membro.
 - **Remoção em comum**: remover a sanção de uma das contas, qualquer que seja, a remove para todas, com ou sem Premium.
 - **Busca agrupada**: [buscar as sanções](./sanctions.mdx#search) de uma conta também mostra as das outras contas do grupo.
 - **AutoMod do Discord**: os timeouts e mutes aplicados pelo AutoMod do Discord também se estendem às contas vinculadas.
 - **Detectadas pelo captcha**: a [Activity do captcha](./captcha.md#activity-alts) pode vincular por conta própria duas contas que tem certeza de serem a mesma pessoa, ou propor o vínculo à sua equipe.
-- **Logs**: os vínculos, as remoções e as mudanças de conta principal são registrados nos [logs de moderação](./moderation.mdx#logs).
+- **Logs**: os vínculos, as remoções e as mudanças de conta principal são registrados nos [logs de moderação](./moderation.mdx#logs). O log de uma sanção cita as contas vinculadas com o nome de usuário delas e, no formato embed, traz um botão “**Contas vinculadas**” que abre o painel `/alt` do membro sancionado.
 
-**Limites:** nenhum, nem no número de contas por grupo nem no número de grupos.
+**Limites:** nenhum no número de contas por grupo nem no número de grupos. Uma sanção se estende a **10 contas vinculadas** de uma vez: as seguintes são sancionadas na próxima mensagem ou na chegada, e o botão abaixo da sanção as sanciona na hora.
 
 ## 🔗 Vincular contas com /alt {#alt}
 
@@ -30,6 +30,8 @@ Use o comando: ```/alt [membro] [outra]```
 - Sem opção: exibe a lista dos grupos de contas vinculadas do servidor. O botão “**Vincular contas**” vincula ali dois membros do servidor, ou duas contas ausentes por meio de seus IDs.
 - Com `[membro]`: exibe o grupo dessa conta, ou essa conta sozinha se ela não estiver vinculada a nenhuma outra. Cada conta aparece ali com seu estado (banida do servidor, no servidor, fora do servidor, em quarentena), com a conta principal no topo.
 - Com `[membro]` e `[outra]`: vincula diretamente as duas contas, declaradas como a mesma pessoa.
+
+Se uma das contas do grupo já estiver banida ([Premium](/pt/premium)), as contas vinculadas compartilham um mesmo banimento: o RaidProtect propõe “**Banir também**” as outras contas, “**Remover o banimento**” da conta banida para todas, ou decidir “**Mais tarde**”.
 
 Substitua `[membro]` e `[outra]` pela menção ou pelo [ID](../guides/id.mdx) das contas desejadas. Os bots não podem ser vinculados.
 
@@ -84,7 +86,7 @@ A sanção de evasão se aplica a uma conta vinculada pega no modo “**Armadilh
 <SettingsModal name="altsEvasion" />
 
 - “**Resto da sanção**” *(padrão)*: a conta compartilha a sanção do grupo até o fim, sem sanção em seu nome.
-- **Uma sanção** (Banimento, Expulsão, Mute, Jail ou Timeout): ela é aplicada em seu nome, com sua própria duração, e não é removida junto com a do grupo. Deixe a duração vazia para uma sanção definitiva (ex.: `1h`, `3d`, `2w`).
+- **Uma sanção** (Banimento, Expulsão, Mute, Jail ou Timeout): ela é aplicada em seu nome, com sua própria duração, e depois vale para todo o grupo. Um mute ou um jail volta se a conta sair do servidor e entrar de novo. Deixe a duração vazia para uma sanção definitiva (ex.: `1h`, `3d`, `2w`).
 
 :::info
 Um timeout sempre exige uma duração, de no máximo 28 dias. O mute e o jail exigem que seu [cargo](./sanctions.mdx#config) esteja configurado.
@@ -92,15 +94,15 @@ Um timeout sempre exige uma duração, de no máximo 28 dias. O mute e o jail ex
 
 ### Uma conta por pessoa {#single-account}
 
-Com essa configuração, apenas a **conta principal** de cada grupo circula no servidor. As outras contas são colocadas em **quarentena** com o [cargo de jail](./sanctions.mdx#jail) (sanção “**Quarentena**” no histórico). Elas saem dela por conta própria se se tornarem a conta principal ou se forem removidas do grupo.
+Com essa configuração, gratuita como a detecção pelo captcha, apenas a **conta principal** de cada grupo circula no servidor. As outras contas são colocadas em **quarentena** com o [cargo de jail](./sanctions.mdx#jail) (sanção “**Quarentena**” no histórico). Elas saem dela por conta própria se se tornarem a conta principal ou se forem removidas do grupo.
 
 1. Use o [comando `/settings`](../setup.md#settings).
 2. Abra a aba “**Moderação**”.
 3. Clique em “**Configurar**” ao lado de “**Contas duplicadas**”.
 4. Clique em “**Ativar**” ao lado de “**Uma conta por pessoa**”.
 
-:::warning
-Essa configuração exige um [cargo Jail](./sanctions.mdx#jail). Sem ele, o RaidProtect se recusa a ativá-la.
+:::info
+Essa configuração exige um [cargo Jail](./sanctions.mdx#jail). Se não houver, uma janela propõe “**Ativar e configurar o jail**”: a configuração é ativada, e as contas secundárias são colocadas em quarentena assim que o cargo existir.
 :::
 
 Para mudar a conta principal de um grupo, use `/alt` com uma das contas e depois o seletor “**Editar uma conta do grupo**”.

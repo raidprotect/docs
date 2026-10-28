@@ -5,11 +5,7 @@ description: "Der präventive Slowmode von RaidProtect passt den Langsam-Modus d
 
 import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/mockups/v2';
 
-Der **präventive Slowmode** von RaidProtect passt den [Langsam-Modus](./moderation.mdx#slowmode) Ihrer Kanäle automatisch an, um eine **Nachrichtenrate** pro Minute zu halten. Wenn ein Kanal ausufert (Ankündigung, Live, Zustrom neuer Mitglieder, Beginn eines [Raids](/de/learn/discord-raid)), erhöhen wir den Langsam-Modus; wenn er sich beruhigt, senken wir ihn wieder. Ihre Moderatoren müssen den Chat nicht mehr beobachten, um ihn von Hand einzustellen.
-
-:::info Experiment: Shield Update
-Der präventive Slowmode ist [Premium](/de/premium)-Servern vorbehalten. Er gehört zur **Shield Update**, die für Version 3.6.0 vorgesehen ist, und befindet sich bis zu ihrer Veröffentlichung in der Experimentierphase.
-:::
+Der **präventive Slowmode** von RaidProtect, [Premium](/de/premium)-Servern vorbehalten, passt den [Langsam-Modus](./moderation.mdx#slowmode) Ihrer Kanäle automatisch an, um eine **Nachrichtenrate** pro Minute zu halten. Wenn ein Kanal ausufert (Ankündigung, Live, Zustrom neuer Mitglieder, Beginn eines [Raids](/de/learn/discord-raid)), erhöhen wir den Langsam-Modus; wenn er sich beruhigt, senken wir ihn wieder. Ihre Moderatoren müssen den Chat nicht mehr beobachten, um ihn von Hand einzustellen.
 
 ## ❓ Wie funktioniert es? {#working}
 
@@ -27,7 +23,7 @@ Der präventive Slowmode ist [Premium](/de/premium)-Servern vorbehalten. Er geh�
 2. Öffnen Sie den Tab „**Schutz**“.
 3. Klicken Sie neben „**Präventiver Slowmode**“ auf „**Konfigurieren**“.
 4. Klicken Sie neben einem freien Platz auf „**Hinzufügen**“.
-5. Wählen Sie den Kanal (Textkanal oder Ankündigungskanal).
+5. Wählen Sie den Kanal (Text-, Ankündigungs-, Sprach- oder Bühnenkanal: Der Langsam-Modus eines Sprachkanals reguliert seinen integrierten Textkanal).
 
 <Settings start="slowmode" />
 
@@ -78,7 +74,7 @@ Bis zu 6 Kanäle pro Server, jeder mit eigener Nachrichtenrate und eigenen Grenz
 
 ### Ist der präventive Slowmode kostenlos?
 
-Nein, er ist Premium-Servern vorbehalten. Er gehört außerdem zur Shield Update, die sich noch in der Experimentierphase befindet.
+Nein, er ist Premium-Servern vorbehalten.
 
 ### Was passiert, wenn ich den Langsam-Modus von Hand einstelle?
 
