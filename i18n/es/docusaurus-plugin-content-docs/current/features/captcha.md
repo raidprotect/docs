@@ -77,7 +77,7 @@ El captcha arranca en modo **Panel (Interactivo)**, con activación **Permanente
 
 ### Verificación en la Activity {#activity}
 
-En modo **Panel**, el botón “**Verificar**” abre la **Activity RaidProtect**: el miembro resuelve un pequeño puzle directamente en Discord, con los colores de tu servidor y con los enlaces de canal de tu [Proceso de bienvenida](../guides/onboarding.md). Una vez verificado, descubre ahí su [tarjeta de bienvenida](./onboarding.md#welcome-message).
+En modo **Panel**, el botón “**Verificar**” abre la **Activity RaidProtect**: el miembro resuelve un pequeño puzle directamente en Discord, con los colores de tu servidor y con los enlaces de canal de tu [Proceso de bienvenida](../guides/onboarding.md). En un servidor [Premium](/es/premium) que tiene un icono, este se muestra en lugar del logo de RaidProtect. Una vez verificado, descubre ahí su [tarjeta de bienvenida](./onboarding.md#welcome-message).
 
 - **Puzle fallido:** como un código incorrecto, consume un intento, y la sanción prevista cae cuando se agotan los intentos. La Activity anuncia primero el resultado al miembro y luego se aplica la sanción.
 - **Éxito:** el miembro queda verificado al salir de la pantalla de éxito. Si hace clic en “**Verificar**” entretanto, su validación se aplica de inmediato en lugar de volver a lanzar la Activity.
