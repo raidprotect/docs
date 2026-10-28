@@ -92,8 +92,8 @@ Captcha, **Panel (Etkileşimli)** modunda, **Sürekli** tetiklemeyle, 3 denemeyl
 
 [Identity Update](./alt-accounts.md) ile Activity, sunucunuzdaki bir üyeyle büyük olasılıkla aynı kişi tarafından yönetilen gelenleri de tespit eder:
 
-- **Kesin bağlantı:** hesaplar [`/alt`](./alt-accounts.md#alt) içinde otomatik olarak bağlanır. Captcha logları bunu, “**Bağlantıyı kaldır**” düğmesiyle birlikte bildirir.
-- **Olası bağlantı:** [Kişi başına tek hesap](./alt-accounts.md#single-account) etkinse üye incelemeye geçer. “**Başka bir üyeye bağla**” onları `/alt` içinde bağlar ve üyeyi içeri alır; hiçbir hesap tespit edilmediyse bir pencere sizden üyeyi seçmenizi ister (“**Sunucuda zaten olan hesap**”). Aksi halde üye içeri girer ve captcha logları olası bağlantıyı bir “**Hesapları bağla**” düğmesiyle bildirir.
+- **Kesin bağlantı:** hesaplar [`/alt`](./alt-accounts.md#alt) içinde otomatik olarak bağlanır. Captcha logları bunu, “**Bağlantıyı kaldır**” düğmesiyle birlikte bildirir. Grup bir yaptırım altındaysa veya [Kişi başına tek hesap](./alt-accounts.md#single-account) ikincil hesaplarını tutuyorsa, gelen üye grubun yaptırımını alır veya karantinaya geçer.
+- **Olası bağlantı:** [Kişi başına tek hesap](./alt-accounts.md#single-account) etkinse üye incelemeye geçer. “**Başka bir üyeye bağla**” onları `/alt` içinde bağlar ve üyeyi içeri alır; hiçbir hesap tespit edilmediyse bir pencere sizden üyeyi seçmenizi ister (“**Sunucuda zaten olan hesap**”). Aksi halde üye içeri girer ve captcha logları olası bağlantıyı bir “**Bağla**” düğmesiyle bildirir.
 - **Uygulanmayan kesin bağlantı:** gruptaki bir hesap sunucu ekibindeyse, gelen üye birden fazla `/alt` grubuna bağlıysa ya da iki hesabın da zaten kendi grubu varsa (iki grup asla kendiliğinden birleştirilmez) hiçbir şey kendiliğinden bağlanmaz. Bağlantı bu durumda size aynı şekilde önerilir.
 
 Size yalnızca sunucunuzun hesapları gösterilir: diğer sunucular hakkında hiçbir şey söylenmez.

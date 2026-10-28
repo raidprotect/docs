@@ -15,9 +15,11 @@ Identity Update deneme aşamasındadır: 3.7.0 sürümüyle çıkışına kadar 
 - Yeni [`/alt`](./features/alt-accounts.md#alt) komutu ve [çift hesaplar](./features/alt-accounts.md): aynı kişiye ait hesapları bağlayın, ana hesabını seçin; yaptırımları (yasaklama, atma, mute, jail, timeout, softban) bağlı hesaplara yayılır. Birinin yaptırımını kaldırmak hepsi için kaldırır. <SuggestionLink id="404" /> <SuggestionLink id="263" />
 - [Bağlı hesapların yaptırımları](./features/alt-accounts.md#modes) türe göre ayarlanabilir; **Tuzak** modu ve yaptırım sürerken gelen veya yazan bağlı hesap için bir [atlatma yaptırımı](./features/alt-accounts.md#evasion) ile birlikte.
 - Sunucuda olmayan bağlı hesaplara geldiklerinde yaptırım uygulanır.
+- Gruba yayılan bir yaptırım, `/sanctions` ve `/modview` içinde bir [grup yaptırımı](./features/alt-accounts.md#group-sanction) olur: tüm hesaplar için tek seferde iptal edilir, silinir veya düzenlenir.
+- Yaptırım logları bağlı hesapları belirtir; embed biçiminde `/alt` paneline açılan bir “**Bağlı hesaplar**” düğmesi de bulunur.
 - Yeni [Kişi başına tek hesap](./features/alt-accounts.md#single-account) ayarı: ikincil hesaplar karantinaya alınır.
 - [Captcha](./features/captcha.md#activity-alts) çift hesapları tespit eder: aynı kişi olduğundan emin olduğu hesapları kendisi bağlar ve olası bağlantıları ekibinize önerir.
-- [Bağlı hesapların yaptırımları](./features/alt-accounts.md#modes) **Premium**'a ayrılmıştır. Premium olmadan `/alt` hesapları sınırsız bağlar ve görüntüler.
+- [Bağlı hesapların yaptırımları](./features/alt-accounts.md#modes) **Premium**'a ayrılmıştır. Premium olmadan `/alt` hesapları sınırsız bağlar ve görüntüler, Kişi başına tek hesap da kullanılabilir kalır.
 
 ## 3.6.0 Shield Update {#3-6-0}
 

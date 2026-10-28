@@ -14,14 +14,14 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 ## ❓ Nasıl çalışır? {#working}
 
 - **Kişi başına bir grup**: bir grup, ekibinizin aynı kişi olarak kabul ettiği hesapları bir araya getirir. Gruplar sunucunuza özeldir: diğer sunucularla hiçbir şey paylaşılmaz.
-- **Paylaşılan yaptırımlar** ([Premium](/tr/premium)): yasaklama, atma, mute, jail ve timeout, her yaptırım için seçtiğiniz [moda](#modes) göre grubun diğer hesaplarına yayılır. Yaptırım hedeflenen hesabın adına kalır, diğerleri onun durumunu alır. Premium olmadan hesaplar bağlanır ve görüntülenir ama hiçbir yaptırım yayılmaz: yaptırımın logu bu durumda üyenin diğer hesaplarını belirtir.
+- **Paylaşılan yaptırımlar** ([Premium](/tr/premium)): yasaklama, atma, mute, jail ve timeout, her yaptırım için seçtiğiniz [moda](#modes) göre grubun diğer hesaplarına yayılır. Yaptırım hedeflenen hesabın adına kalır, diğerleri onun durumunu alır. Yaptırım, sunucuyu yöneten hesaplara (Yönetici, Sunucuyu Yönet, Üyeleri Yasakla, Üyeleri At veya Üyelere Zaman Aşımı Uygula izinleri), sunucu sahibine ve botlara asla yayılmaz. Premium olmadan hesaplar bağlanır ve görüntülenir ama hiçbir yaptırım yayılmaz: yaptırımın logu bu durumda üyenin diğer hesaplarını belirtir.
 - **Ortak kaldırma**: hesaplardan herhangi birinin yaptırımını kaldırmak, Premium'lu veya Premium'suz, yaptırımı hepsi için kaldırır.
 - **Gruplu arama**: bir hesabın [yaptırımlarını aramak](./sanctions.mdx#search), grubun diğer hesaplarının yaptırımlarını da gösterir.
 - **Discord'un AutoMod'u**: Discord'un AutoMod'unun uyguladığı timeout ve mute'lar da bağlı hesaplara yayılır.
 - **Captcha tarafından tespit edilenler**: [captcha Activity'si](./captcha.md#activity-alts), aynı kişi olduğundan emin olduğu iki hesabı kendiliğinden bağlayabilir ya da bağlantıyı ekibinize önerebilir.
-- **Loglar**: bağlantılar, çıkarmalar ve ana hesap değişiklikleri [moderasyon loglarına](./moderation.mdx#logs) kaydedilir.
+- **Loglar**: bağlantılar, çıkarmalar ve ana hesap değişiklikleri [moderasyon loglarına](./moderation.mdx#logs) kaydedilir. Bir yaptırımın logu bağlı hesapları kullanıcı adlarıyla belirtir ve embed biçiminde, yaptırım alan üyenin `/alt` panelini açan bir “**Bağlı hesaplar**” düğmesi taşır.
 
-**Sınırlar:** yok; ne grup başına hesap sayısında ne de grup sayısında.
+**Sınırlar:** ne grup başına hesap sayısında ne de grup sayısında sınır yok. Bir yaptırım tek seferde **10 bağlı hesaba** yayılır: sonrakiler bir sonraki mesajlarında veya geldiklerinde yaptırım alır, yaptırımın altındaki düğme ise onlara hemen yaptırım uygular.
 
 ## 🔗 /alt ile hesapları bağlama {#alt}
 
@@ -30,6 +30,8 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 - Seçenek olmadan: sunucunun bağlı hesap gruplarının listesini gösterir. “**Hesap bağla**” düğmesi buradan sunucunun iki üyesini ya da sunucuda olmayan iki hesabı kimlikleriyle bağlar.
 - `[user]` ile: bu hesabın grubunu veya başka hiçbir hesaba bağlı değilse yalnızca bu hesabı gösterir. Her hesap durumuyla birlikte görünür (sunucudan yasaklı, sunucuda, sunucuda değil, karantinada), ana hesap en başta.
 - `[user]` ve `[other]` ile: aynı kişi olarak bildirilen iki hesabı doğrudan bağlar.
+
+Grubun hesaplarından biri zaten yasaklıysa ([Premium](/tr/premium)), bağlı hesaplar aynı yasağı paylaşır: RaidProtect size diğer hesapları da yasaklamak için “**Onları da yasakla**”, yasaklı hesabın yasağını herkes için kaldırmak için “**Yasağı kaldır**” ya da kararı ertelemek için “**Daha sonra**” seçeneklerini sunar.
 
 `[user]` ve `[other]` yerine istediğiniz hesapların etiketini veya [kimliğini](../guides/id.mdx) yazın. Botlar bağlanamaz.
 
@@ -84,7 +86,7 @@ Atlatma yaptırımı, “**Tuzak**” modunda yakalanan bir bağlı hesaba uygul
 <SettingsModal name="altsEvasion" />
 
 - “**Yaptırımın kalanı**” *(varsayılan)*: hesap, kendi adına bir yaptırım uygulanmadan, grubun yaptırımını bitimine kadar paylaşır.
-- **Bir yaptırım** (Yasaklama, Atma, Susturma, Hapsetme veya Timeout): hesabın adına, kendi süresiyle uygulanır ve grupla birlikte kaldırılmaz. Kalıcı bir yaptırım için süreyi boş bırakın (örn.: `1h`, `3d`, `2w`).
+- **Bir yaptırım** (Yasaklama, Atma, Susturma, Hapsetme veya Timeout): hesabın adına, kendi süresiyle uygulanır ve ardından tüm grup için geçerli olur. Hesap sunucudan ayrılıp yeniden katılırsa mute veya jail geri gelir. Kalıcı bir yaptırım için süreyi boş bırakın (örn.: `1h`, `3d`, `2w`).
 
 :::info
 Timeout her zaman bir süre gerektirir, en fazla 28 gün. Mute ve jail, [rollerinin](./sanctions.mdx#config) yapılandırılmış olmasını gerektirir.
@@ -92,15 +94,15 @@ Timeout her zaman bir süre gerektirir, en fazla 28 gün. Mute ve jail, [rolleri
 
 ### Kişi başına tek hesap {#single-account}
 
-Bu ayarla sunucuda yalnızca her grubun **ana hesabı** dolaşır. Diğer hesaplar [jail rolüyle](./sanctions.mdx#jail) **karantinaya** alınır (geçmişte “**Karantina**” yaptırımı). Ana hesap olurlarsa veya gruptan çıkarılırlarsa karantinadan kendiliğinden çıkarlar.
+Captcha ile tespit gibi ücretsiz olan bu ayarla sunucuda yalnızca her grubun **ana hesabı** dolaşır. Diğer hesaplar [jail rolüyle](./sanctions.mdx#jail) **karantinaya** alınır (geçmişte “**Karantina**” yaptırımı). Ana hesap olurlarsa veya gruptan çıkarılırlarsa karantinadan kendiliğinden çıkarlar.
 
 1. [`/settings` komutunu](../setup.md#settings) çalıştırın.
 2. “**Moderasyon**” sekmesini açın.
 3. “**Çift hesaplar**” yanındaki “**Yapılandır**” düğmesine tıklayın.
 4. “**Kişi başına tek hesap**” yanındaki “**Etkinleştir**”e tıklayın.
 
-:::warning
-Bu ayar bir [Jail rolü](./sanctions.mdx#jail) gerektirir. Onsuz RaidProtect ayarı etkinleştirmeyi reddeder.
+:::info
+Bu ayar bir [Jail rolü](./sanctions.mdx#jail) gerektirir. Rol yoksa bir pencere size “**Etkinleştir ve jail'i ayarla**” seçeneğini sunar: ayar etkinleştirilir ve rol oluşturulur oluşturulmaz ikincil hesaplar karantinaya alınır.
 :::
 
 Bir grubun ana hesabını değiştirmek için hesaplardan biriyle `/alt` komutunu, ardından “**Gruptaki bir hesabı düzenle**” seçicisini kullanın.
