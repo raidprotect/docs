@@ -95,7 +95,7 @@ Per togliere tutti i ruoli automatici, clicca su “**Reimpostare**”.
 **Limiti:** 3 ruoli nella versione gratuita, 10 ruoli nella versione [premium](/it/premium).
 
 :::warning
-Evita i ruoli che portano permessi: un ruolo assegnato automaticamente non dovrebbe concedere alcun potere. RaidProtect rifiuta i ruoli gestiti da un'integrazione, i ruoli sopra il suo o il tuo, e quelli che portano un permesso di moderazione: i ruoli accettabili della tua selezione vengono mantenuti, e un messaggio a parte spiega perché gli altri sono rifiutati (se lo sono tutti, la configurazione in atto resta invariata). Ti avvisa se un ruolo scelto acquisisce permessi più tardi.
+Evita i ruoli che portano permessi: un ruolo assegnato automaticamente non dovrebbe concedere alcun potere. RaidProtect rifiuta i ruoli gestiti da un'integrazione, i ruoli sopra il suo o il tuo, quelli che portano un permesso di moderazione e il ruolo non verificato del captcha (assegnato subito dopo il captcha, bloccherebbe di nuovo il membro): i ruoli accettabili della tua selezione vengono mantenuti, e un messaggio a parte spiega perché gli altri sono rifiutati (se lo sono tutti, la configurazione in atto resta invariata). Ti avvisa se un ruolo scelto acquisisce permessi più tardi.
 :::
 :::info
 Se il tuo server usa un altro bot per il suo ruolo automatico, rischia di assegnare il ruolo prima del captcha. Sostituiscilo con i ruoli automatici di RaidProtect.
@@ -109,7 +109,7 @@ Per impostazione predefinita, un bot aggiunto al server riceve i [ruoli automati
 2. Apri la scheda “**Arrivi**”.
 3. Clicca su “**Configurare**” accanto a “**Bot**”.
 
-- **Ruoli dei bot**: assegnati a ogni bot che arriva, **al posto** dei ruoli automatici. Senza un ruolo scelto, i bot ricevono i ruoli automatici. **Limiti:** 1 ruolo nella versione gratuita, 15 ruoli con il [Premium](/it/premium). Si applicano le stesse restrizioni dei ruoli automatici (ruoli gestiti da un'integrazione, sopra il tuo o quello di RaidProtect, o che portano un permesso di moderazione).
+- **Ruoli dei bot**: assegnati a ogni bot che arriva, **al posto** dei ruoli automatici. Senza un ruolo scelto, i bot ricevono i ruoli automatici. **Limiti:** 1 ruolo nella versione gratuita, 15 ruoli con il [Premium](/it/premium). RaidProtect rifiuta i ruoli gestiti da un'integrazione, quelli sopra il tuo o il suo e quelli che danno il permesso **Amministratore**. Un ruolo che dà un permesso di moderazione viene accettato, con un avviso: riservalo ai bot di fiducia. I bot non passano dal captcha e ricevono i loro ruoli appena arrivano.
 - **Espellere i bot non autorizzati**: ogni bot aggiunto viene espulso subito, a meno che il proprietario non lo abbia autorizzato prima con il comando `/bypass bot`. Disattivato per impostazione predefinita. **Solo il proprietario del server** può attivare o disattivare questa opzione e autorizzare un bot.
 
 ### Autorizzare un bot {#bypass-bot}
