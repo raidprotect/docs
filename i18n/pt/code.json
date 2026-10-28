@@ -1135,7 +1135,7 @@
     "message": "O que você desbloqueia"
   },
   "premium.features.title": {
-    "message": "As outras vantagens do Premium"
+    "message": "Todo o resto do Premium"
   },
   "premium.features.subtitle": {
     "message": "Limites mais altos, sanções com o seu próprio vocabulário e acesso antecipado às novidades."
@@ -1220,7 +1220,7 @@
     "message": "Anti-raid em modo expulsão"
   },
   "premium.feature.kickMode.desc": {
-    "message": "Expulsão + DM de explicação em vez de bloquear convites em silêncio. Deixe entrar quem quiser com /bypass."
+    "message": "Durante um raid, quem chega é expulso com uma mensagem para voltar mais tarde."
   },
   "premium.feature.beta.badge": {
     "message": "Beta pública"
@@ -7811,5 +7811,56 @@
   },
   "premium.compare.row.staffPanels.founder": {
     "message": "4 + DISCON"
+  },
+  "premium.compare.showAll": {
+    "message": "Ver as outras {count} linhas"
+  },
+  "premium.compare.showLess": {
+    "message": "Recolher o comparativo"
+  },
+  "premium.feature.captcha.title": {
+    "message": "Captcha com a cara do seu servidor"
+  },
+  "premium.feature.captcha.desc": {
+    "message": "O ícone do seu servidor substitui o logo do RaidProtect na verificação."
+  },
+  "premium.feature.limits.title": {
+    "message": "Mais espaço em todo lugar"
+  },
+  "premium.feature.limits.desc": {
+    "message": "Chegadas, Automod, Authentication Manager: cada módulo ganha limites maiores, sem perder nada da versão gratuita."
+  },
+  "premium.feature.slowmode.title": {
+    "message": "Slowmode preventivo"
+  },
+  "premium.feature.slowmode.desc": {
+    "message": "Quando um canal esquenta, o modo lento sobe sozinho e volta a baixar quando a calma retorna. Até 6 canais."
+  },
+  "premium.pass.left": {
+    "message": "vagas restantes"
+  },
+  "premium.pass.lock": {
+    "message": "Preço travado para sempre"
+  },
+  "premium.pass.seat": {
+    "message": "Nº {seat}"
+  },
+  "premium.scene.captcha.title": {
+    "message": "Verificação de {server}"
+  },
+  "premium.scene.limits.autoroles": {
+    "message": "Cargos automáticos"
+  },
+  "premium.scene.limits.botRoles": {
+    "message": "Cargos dos bots"
+  },
+  "premium.scene.limits.buttons": {
+    "message": "Botões de boas-vindas"
+  },
+  "premium.scene.limits.fileRules": {
+    "message": "Regras de arquivos por canal"
+  },
+  "premium.scene.slowmode.label": {
+    "message": "Modo lento"
   }
 }

@@ -217,7 +217,7 @@
     "message": "Anti-raid in modalità espulsione"
   },
   "premium.feature.kickMode.desc": {
-    "message": "Espulsione + MP di spiegazione invece di un blocco silenzioso degli inviti. Lascia entrare chi vuoi con /bypass."
+    "message": "Durante un raid, i nuovi arrivati vengono espulsi con un messaggio che li invita a tornare più tardi."
   },
   "premium.feature.display.title": {
     "message": "Più pannelli informativi"
@@ -511,7 +511,7 @@
     "message": "Cosa sblocchi"
   },
   "premium.features.title": {
-    "message": "Gli altri vantaggi del Premium"
+    "message": "Tutto il resto del Premium"
   },
   "premium.features.subtitle": {
     "message": "Limiti più alti, sanzioni con il tuo vocabolario e accesso anticipato alle novità."
@@ -7811,5 +7811,56 @@
   },
   "premium.compare.row.staffPanels.founder": {
     "message": "4 + DISCON"
+  },
+  "premium.compare.showAll": {
+    "message": "Mostra le altre {count} righe"
+  },
+  "premium.compare.showLess": {
+    "message": "Comprimi il confronto"
+  },
+  "premium.feature.captcha.title": {
+    "message": "Un captcha a immagine del tuo server"
+  },
+  "premium.feature.captcha.desc": {
+    "message": "L'icona del tuo server sostituisce il logo di RaidProtect nella verifica."
+  },
+  "premium.feature.limits.title": {
+    "message": "Più spazio ovunque"
+  },
+  "premium.feature.limits.desc": {
+    "message": "Arrivi, Automod, Authentication Manager: ogni modulo vede i suoi limiti crescere, senza perdere nulla della versione gratuita."
+  },
+  "premium.feature.slowmode.title": {
+    "message": "Slowmode preventivo"
+  },
+  "premium.feature.slowmode.desc": {
+    "message": "Quando un canale si scalda, la modalità lenta sale da sola, poi scende quando torna la calma. Fino a 6 canali."
+  },
+  "premium.pass.left": {
+    "message": "posti rimasti"
+  },
+  "premium.pass.lock": {
+    "message": "Prezzo bloccato a vita"
+  },
+  "premium.pass.seat": {
+    "message": "N. {seat}"
+  },
+  "premium.scene.captcha.title": {
+    "message": "Verifica di {server}"
+  },
+  "premium.scene.limits.autoroles": {
+    "message": "Ruoli automatici"
+  },
+  "premium.scene.limits.botRoles": {
+    "message": "Ruoli dei bot"
+  },
+  "premium.scene.limits.buttons": {
+    "message": "Pulsanti di benvenuto"
+  },
+  "premium.scene.limits.fileRules": {
+    "message": "Regole dei file per canale"
+  },
+  "premium.scene.slowmode.label": {
+    "message": "Modalità lenta"
   }
 }

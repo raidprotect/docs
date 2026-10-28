@@ -217,7 +217,7 @@
     "message": "キックモードのアンチレイド"
   },
   "premium.feature.kickMode.desc": {
-    "message": "招待を黙ってブロックする代わりに、キックと説明の DM を送ります。/bypass で、入れたい人を入れられます。"
+    "message": "レイド中は、参加者をキックし、後でまた来るよう案内するメッセージを送ります。"
   },
   "premium.feature.display.title": {
     "message": "より多くの情報パネル"
@@ -7811,5 +7811,56 @@
   },
   "premium.compare.row.staffPanels.founder": {
     "message": "4 + DISCON"
+  },
+  "premium.compare.showAll": {
+    "message": "残りの {count} 行を表示"
+  },
+  "premium.compare.showLess": {
+    "message": "比較表をたたむ"
+  },
+  "premium.feature.captcha.title": {
+    "message": "サーバーらしいキャプチャ"
+  },
+  "premium.feature.captcha.desc": {
+    "message": "認証画面で、RaidProtect のロゴの代わりにサーバーのアイコンが表示されます。"
+  },
+  "premium.feature.limits.title": {
+    "message": "どこでもゆとりを"
+  },
+  "premium.feature.limits.desc": {
+    "message": "参加、Automod、Authentication Manager：無料版の機能はそのままに、各モジュールの上限が広がります。"
+  },
+  "premium.feature.slowmode.title": {
+    "message": "予防低速モード"
+  },
+  "premium.feature.slowmode.desc": {
+    "message": "チャンネルが荒れると低速モードが自動で上がり、落ち着くと元に戻ります。最大 6 チャンネル。"
+  },
+  "premium.pass.left": {
+    "message": "枠の残り"
+  },
+  "premium.pass.lock": {
+    "message": "価格は永久に固定"
+  },
+  "premium.pass.seat": {
+    "message": "No. {seat}"
+  },
+  "premium.scene.captcha.title": {
+    "message": "{server} の認証"
+  },
+  "premium.scene.limits.autoroles": {
+    "message": "自動ロール"
+  },
+  "premium.scene.limits.botRoles": {
+    "message": "ボットのロール"
+  },
+  "premium.scene.limits.buttons": {
+    "message": "ウェルカムボタン"
+  },
+  "premium.scene.limits.fileRules": {
+    "message": "チャンネルごとのファイルルール"
+  },
+  "premium.scene.slowmode.label": {
+    "message": "低速モード"
   }
 }

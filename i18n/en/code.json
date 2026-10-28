@@ -1135,7 +1135,7 @@
     "message": "What you unlock"
   },
   "premium.features.title": {
-    "message": "The other Premium benefits"
+    "message": "Everything else in Premium"
   },
   "premium.features.subtitle": {
     "message": "Higher limits, sanctions in your own words, and early access to what's next."
@@ -1220,7 +1220,7 @@
     "message": "Anti-raid in kick mode"
   },
   "premium.feature.kickMode.desc": {
-    "message": "Kick + explanation DM instead of silently blocking invites. Let anyone in with /bypass."
+    "message": "During a raid, newcomers are kicked with a message asking them to come back later."
   },
   "premium.feature.beta.badge": {
     "message": "Public beta"
@@ -7811,5 +7811,56 @@
   },
   "premium.compare.row.staffPanels.founder": {
     "message": "4 + DISCON"
+  },
+  "premium.compare.showAll": {
+    "message": "See the {count} other rows"
+  },
+  "premium.compare.showLess": {
+    "message": "Collapse the comparison"
+  },
+  "premium.feature.captcha.title": {
+    "message": "A captcha in your server's image"
+  },
+  "premium.feature.captcha.desc": {
+    "message": "Your server's icon replaces the RaidProtect logo in the verification."
+  },
+  "premium.feature.limits.title": {
+    "message": "More room everywhere"
+  },
+  "premium.feature.limits.desc": {
+    "message": "Arrivals, Automod, Authentication Manager: every module gets higher limits, without losing anything from the free version."
+  },
+  "premium.feature.slowmode.title": {
+    "message": "Preventive slowmode"
+  },
+  "premium.feature.slowmode.desc": {
+    "message": "When a channel gets heated, slowmode rises on its own, then comes back down once things calm down. Up to 6 channels."
+  },
+  "premium.pass.left": {
+    "message": "spots left"
+  },
+  "premium.pass.lock": {
+    "message": "Price locked for life"
+  },
+  "premium.pass.seat": {
+    "message": "No. {seat}"
+  },
+  "premium.scene.captcha.title": {
+    "message": "Verifying {server}"
+  },
+  "premium.scene.limits.autoroles": {
+    "message": "Auto roles"
+  },
+  "premium.scene.limits.botRoles": {
+    "message": "Bot roles"
+  },
+  "premium.scene.limits.buttons": {
+    "message": "Welcome buttons"
+  },
+  "premium.scene.limits.fileRules": {
+    "message": "File rules per channel"
+  },
+  "premium.scene.slowmode.label": {
+    "message": "Slowmode"
   }
 }

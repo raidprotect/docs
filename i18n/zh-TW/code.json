@@ -217,7 +217,7 @@
     "message": "踢出模式的防突襲"
   },
   "premium.feature.kickMode.desc": {
-    "message": "以踢出加說明私訊，取代無聲的邀請封鎖。透過 /bypass 讓您想放行的人進入。"
+    "message": "突襲期間，新成員會被踢出，並收到一則請他們稍後再來的訊息。"
   },
   "premium.feature.display.title": {
     "message": "更多資訊面板"
@@ -511,7 +511,7 @@
     "message": "您將解鎖的內容"
   },
   "premium.features.title": {
-    "message": "Premium 的其他優勢"
+    "message": "Premium 的其他內容"
   },
   "premium.features.subtitle": {
     "message": "更高的上限、符合您用語的處罰，以及搶先體驗新功能。"
@@ -7811,5 +7811,56 @@
   "mockup.v2.captcha.failBlock": {
     "message": "嘗試次數用盡：封鎖 10 分鐘",
     "description": "Mockup v2 — captcha: failure action option \"Block 10 min\""
+  },
+  "premium.compare.showAll": {
+    "message": "查看其餘 {count} 列"
+  },
+  "premium.compare.showLess": {
+    "message": "收合比較表"
+  },
+  "premium.feature.captcha.title": {
+    "message": "帶有您伺服器形象的驗證碼"
+  },
+  "premium.feature.captcha.desc": {
+    "message": "驗證時，您伺服器的圖示會取代 RaidProtect 的標誌。"
+  },
+  "premium.feature.limits.title": {
+    "message": "處處更寬裕"
+  },
+  "premium.feature.limits.desc": {
+    "message": "新成員加入、Automod、Authentication Manager：每個模組的上限都會提高，免費版的功能一樣不少。"
+  },
+  "premium.feature.slowmode.title": {
+    "message": "預防性慢速模式"
+  },
+  "premium.feature.slowmode.desc": {
+    "message": "頻道一熱絡，慢速模式就會自動調高，恢復平靜後再調回來。最多 6 個頻道。"
+  },
+  "premium.pass.left": {
+    "message": "個名額剩餘"
+  },
+  "premium.pass.lock": {
+    "message": "價格終身鎖定"
+  },
+  "premium.pass.seat": {
+    "message": "第 {seat} 號"
+  },
+  "premium.scene.captcha.title": {
+    "message": "{server} 驗證"
+  },
+  "premium.scene.limits.autoroles": {
+    "message": "自動身分組"
+  },
+  "premium.scene.limits.botRoles": {
+    "message": "機器人角色"
+  },
+  "premium.scene.limits.buttons": {
+    "message": "歡迎按鈕"
+  },
+  "premium.scene.limits.fileRules": {
+    "message": "每個頻道的檔案規則"
+  },
+  "premium.scene.slowmode.label": {
+    "message": "慢速模式"
   }
 }

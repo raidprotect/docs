@@ -1135,7 +1135,7 @@
     "message": "Những gì bạn mở khóa"
   },
   "premium.features.title": {
-    "message": "Các ưu điểm khác của Premium"
+    "message": "Mọi thứ còn lại của Premium"
   },
   "premium.features.subtitle": {
     "message": "Giới hạn cao hơn, hình phạt theo từ vựng của bạn và truy cập sớm các tính năng mới."
@@ -1220,7 +1220,7 @@
     "message": "Chống raid ở chế độ đuổi"
   },
   "premium.feature.kickMode.desc": {
-    "message": "Đuổi + tin nhắn riêng giải thích thay vì chặn lời mời một cách âm thầm. Cho ai bạn muốn vào bằng /bypass."
+    "message": "Trong một đợt raid, người mới vào bị đuổi kèm tin nhắn mời quay lại sau."
   },
   "premium.feature.beta.badge": {
     "message": "Bản beta công khai"
@@ -7811,5 +7811,56 @@
   },
   "premium.compare.row.staffPanels.founder": {
     "message": "4 + DISCON"
+  },
+  "premium.compare.showAll": {
+    "message": "Xem {count} dòng còn lại"
+  },
+  "premium.compare.showLess": {
+    "message": "Thu gọn bảng so sánh"
+  },
+  "premium.feature.captcha.title": {
+    "message": "Captcha mang hình ảnh máy chủ của bạn"
+  },
+  "premium.feature.captcha.desc": {
+    "message": "Biểu tượng máy chủ của bạn thay cho logo RaidProtect trong bước xác minh."
+  },
+  "premium.feature.limits.title": {
+    "message": "Thêm chỗ ở mọi nơi"
+  },
+  "premium.feature.limits.desc": {
+    "message": "Thành viên mới, Automod, Authentication Manager: mỗi module đều được nâng giới hạn, không mất gì của bản miễn phí."
+  },
+  "premium.feature.slowmode.title": {
+    "message": "Slowmode phòng ngừa"
+  },
+  "premium.feature.slowmode.desc": {
+    "message": "Khi một kênh trở nên sôi động, chế độ chậm tự tăng lên rồi giảm xuống khi mọi thứ lắng lại. Tối đa 6 kênh."
+  },
+  "premium.pass.left": {
+    "message": "chỗ còn lại"
+  },
+  "premium.pass.lock": {
+    "message": "Giá cố định trọn đời"
+  },
+  "premium.pass.seat": {
+    "message": "Số {seat}"
+  },
+  "premium.scene.captcha.title": {
+    "message": "Xác minh {server}"
+  },
+  "premium.scene.limits.autoroles": {
+    "message": "Vai trò tự động"
+  },
+  "premium.scene.limits.botRoles": {
+    "message": "Vai trò của bot"
+  },
+  "premium.scene.limits.buttons": {
+    "message": "Nút chào mừng"
+  },
+  "premium.scene.limits.fileRules": {
+    "message": "Quy tắc tệp theo kênh"
+  },
+  "premium.scene.slowmode.label": {
+    "message": "Chế độ chậm"
   }
 }

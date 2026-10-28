@@ -1135,7 +1135,7 @@
     "message": "Kilidini açtıklarınız"
   },
   "premium.features.title": {
-    "message": "Premium'un diğer avantajları"
+    "message": "Premium'un geri kalanı"
   },
   "premium.features.subtitle": {
     "message": "Daha yüksek sınırlar, kelime dağarcığınıza göre yaptırımlar ve yeniliklere erken erişim."
@@ -1220,7 +1220,7 @@
     "message": "Atma modunda anti-raid"
   },
   "premium.feature.kickMode.desc": {
-    "message": "Davetlerin sessizce engellenmesi yerine atma + açıklama DM'i. /bypass ile istediğinizi içeri alın."
+    "message": "Bir baskın sırasında yeni gelenler, daha sonra tekrar gelmelerini söyleyen bir mesajla atılır."
   },
   "premium.feature.beta.badge": {
     "message": "Herkese açık beta"
@@ -7811,5 +7811,56 @@
   },
   "premium.compare.row.staffPanels.founder": {
     "message": "4 + DISCON"
+  },
+  "premium.compare.showAll": {
+    "message": "Diğer {count} satırı gör"
+  },
+  "premium.compare.showLess": {
+    "message": "Karşılaştırmayı daralt"
+  },
+  "premium.feature.captcha.title": {
+    "message": "Sunucunuzun görünümünde captcha"
+  },
+  "premium.feature.captcha.desc": {
+    "message": "Doğrulamada RaidProtect logosunun yerini sunucunuzun simgesi alır."
+  },
+  "premium.feature.limits.title": {
+    "message": "Her yerde daha fazla alan"
+  },
+  "premium.feature.limits.desc": {
+    "message": "Katılımlar, Automod, Authentication Manager: her modülün sınırları büyür, ücretsiz sürümden hiçbir şey kaybetmeden."
+  },
+  "premium.feature.slowmode.title": {
+    "message": "Önleyici yavaş mod"
+  },
+  "premium.feature.slowmode.desc": {
+    "message": "Bir kanal hareketlendiğinde yavaş mod kendiliğinden yükselir, sakinlik dönünce yeniden düşer. 6 kanala kadar."
+  },
+  "premium.pass.left": {
+    "message": "yer kaldı"
+  },
+  "premium.pass.lock": {
+    "message": "Ömür boyu sabit fiyat"
+  },
+  "premium.pass.seat": {
+    "message": "No. {seat}"
+  },
+  "premium.scene.captcha.title": {
+    "message": "{server} doğrulaması"
+  },
+  "premium.scene.limits.autoroles": {
+    "message": "Otomatik roller"
+  },
+  "premium.scene.limits.botRoles": {
+    "message": "Botların rolleri"
+  },
+  "premium.scene.limits.buttons": {
+    "message": "Hoş geldin butonları"
+  },
+  "premium.scene.limits.fileRules": {
+    "message": "Kanal başına dosya kuralları"
+  },
+  "premium.scene.slowmode.label": {
+    "message": "Yavaş mod"
   }
 }
