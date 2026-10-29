@@ -267,7 +267,7 @@ export function protectionPart({ s, flip }: Ctx, disconState: { level: number; s
             ? [
                 text(`-# ${i("iconPremium")} ${t("servers.private.heading", "Invitations d'ami et de groupe privé, réglables séparément en premium")}`),
                 select(t("servers.private.placeholder", "Invitations d'ami et de groupe"), [
-                  { label: t("servers.private.follow", "Suivre la liste"), description: t("servers.private.followDesc", "Passent en liste noire, supprimées en liste blanche"), emoji: "iconReset", default: true },
+                  { label: t("servers.private.follow", "Suivre la liste"), description: t("servers.private.followDesc", "Passent en liste noire, supprimées en liste blanche"), emoji: "iconLinks", default: true },
                   { label: t("servers.private.allow", "Toujours autorisées"), description: t("servers.private.allowDesc", "Invitations d'ami et de groupe privé acceptées, quelle que soit la liste"), emoji: "iconPremium" },
                   { label: t("servers.private.block", "Toujours supprimées"), description: t("servers.private.blockDesc", "Invitations d'ami et de groupe privé supprimées, quelle que soit la liste"), emoji: "iconPremium" },
                 ]),
@@ -304,7 +304,7 @@ export function protectionPart({ s, flip }: Ctx, disconState: { level: number; s
     [t("files.groups.videos", "Vidéos"), "mp4, mov, webm, mkv, avi, m4v, wmv"],
     [t("files.groups.audio", "Audio"), "mp3, wav, ogg, flac, m4a, aac, opus"],
     [t("files.groups.archives", "Archives"), "zip, rar, 7z, tar, gz, tgz, bz2, xz"],
-    [t("files.groups.documents", "Documents"), "pdf, txt, md, doc, docx, odt, rtf, xls, xlsx…"],
+    [t("files.groups.documents", "Documents"), "pdf, txt, md, doc, docx, odt, rtf, xls, xlsx, ods, csv, ppt, pptx, odp"],
   ];
 
   const fileModes = (selected: number): Opt[] => [
