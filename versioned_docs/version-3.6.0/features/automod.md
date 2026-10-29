@@ -99,6 +99,8 @@ Les fichiers d'un message transféré comptent aussi, et un fil suit les règles
 3. Sous “**Tout le serveur**”, choisissez un mode : “**Désactivé**”, “**Liste noire**” ou “**Liste blanche**”.
 4. Cochez des **groupes** (Exécutables, Images, Vidéos, Audio, Archives, Documents) et/ou saisissez d'autres extensions séparées par des virgules, par exemple `exe, msi`. Le point est facultatif. Une règle accepte 50 extensions libres au plus, en plus des groupes.
 
+<Settings start="files" />
+
 :::warning
 Une liste blanche sans extension n'accepte aucun fichier : tout fichier envoyé est supprimé.
 :::

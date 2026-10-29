@@ -99,6 +99,8 @@ Các tệp của một tin nhắn được chuyển tiếp cũng được tính,
 3. Dưới “**Toàn máy chủ**”, chọn một chế độ: “**Tắt**”, “**Danh sách chặn**” hoặc “**Danh sách cho phép**”.
 4. Đánh dấu các **nhóm** (Tệp thực thi, Hình ảnh, Video, Âm thanh, Tệp nén, Tài liệu) và/hoặc nhập các phần mở rộng khác cách nhau bằng dấu phẩy, ví dụ `exe, msi`. Dấu chấm là tùy chọn. Một quy tắc chấp nhận tối đa 50 phần mở rộng tự do, ngoài các nhóm.
 
+<Settings start="files" />
+
 :::warning
 Một danh sách cho phép không có phần mở rộng nào sẽ không chấp nhận tệp nào: mọi tệp được gửi đều bị xóa.
 :::

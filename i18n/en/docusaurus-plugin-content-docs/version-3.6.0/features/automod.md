@@ -99,6 +99,8 @@ Files in a forwarded message count too, and a thread follows its channel's rules
 3. Under "**Whole server**", choose a mode: "**Disabled**", "**Blocklist**" or "**Allowlist**".
 4. Check **groups** (Executables, Images, Videos, Audio, Archives, Documents) and/or enter other extensions separated by commas, for example `exe, msi`. The dot is optional. A rule accepts 50 free-form extensions at most, in addition to the groups.
 
+<Settings start="files" />
+
 :::warning
 An allowlist with no extension accepts no file: any file sent is deleted.
 :::

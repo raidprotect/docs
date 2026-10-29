@@ -99,6 +99,8 @@ Auch die Dateien einer weitergeleiteten Nachricht zählen, und ein Thread folgt 
 3. Wählen Sie unter „**Ganzer Server**“ einen Modus: „**Deaktiviert**“, „**Sperrliste**“ oder „**Zulassungsliste**“.
 4. Kreuzen Sie **Gruppen** an (Ausführbare Dateien, Bilder, Videos, Audio, Archive, Dokumente) und/oder geben Sie weitere Endungen durch Kommas getrennt ein, zum Beispiel `exe, msi`. Der Punkt ist optional. Eine Regel akzeptiert höchstens 50 freie Endungen, zusätzlich zu den Gruppen.
 
+<Settings start="files" />
+
 :::warning
 Eine Zulassungsliste ohne Endung akzeptiert keine Datei: Jede gesendete Datei wird gelöscht.
 :::

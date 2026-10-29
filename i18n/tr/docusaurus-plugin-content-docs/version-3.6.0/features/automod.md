@@ -99,6 +99,8 @@ Her yaptırım ve her karantina, ilgili sunucu ve kanalla birlikte [moderasyon l
 3. “**Tüm sunucu**” altında bir mod seçin: “**Devre dışı**”, “**Kara liste**” veya “**Beyaz liste**”.
 4. **Grupları** (Yürütülebilir dosyalar, Görseller, Videolar, Ses, Arşivler, Belgeler) işaretleyin ve/veya virgülle ayrılmış başka uzantılar girin, örneğin `exe, msi`. Nokta isteğe bağlıdır. Bir kural, gruplara ek olarak en fazla 50 serbest uzantı kabul eder.
 
+<Settings start="files" />
+
 :::warning
 Uzantısız bir beyaz liste hiçbir dosyayı kabul etmez: gönderilen her dosya silinir.
 :::
