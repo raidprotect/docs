@@ -1567,20 +1567,36 @@
 }
 
 .slowFeed {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  gap: 0.45rem;
-  height: 128px;
+  position: relative;
   overflow: hidden;
   mask-image: linear-gradient(to bottom, transparent, #000 35%);
 }
 
+.slowTrack {
+  position: absolute;
+  inset: 0 0 auto;
+  transition-property: transform;
+  transition-timing-function: linear;
+}
+
+.sceneSlowmode:not(.slowAnimated) .slowTrack {
+  transition: none;
+}
+
 .slowMsg {
+  position: absolute;
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  animation: slowMsgIn 0.3s ease-out;
+  height: 18px;
+  transition: opacity 0.3s;
+}
+
+.slowMsgBlocked {
+  opacity: 0.22;
+  filter: grayscale(1);
 }
 
 .slowAvatar {
@@ -1635,16 +1651,27 @@
 
 .slowChart {
   position: relative;
+  height: 90px;
+  overflow: hidden;
+}
+
+.slowChartTrack {
   display: flex;
   align-items: flex-end;
-  gap: 4px;
-  height: 90px;
+  gap: 3px;
+  height: 100%;
+}
+
+.slowAnimated .slowChartTrack {
+  animation-name: slowChartShift;
+  animation-timing-function: linear;
 }
 
 .slowTarget {
   position: absolute;
   left: 0;
   right: 0;
+  z-index: 1;
   border-top: 1px dashed rgba(255, 255, 255, 0.3);
 }
 
@@ -1652,7 +1679,10 @@
   position: relative;
   flex: 1;
   height: 100%;
-  animation: slowBarIn 0.4s ease-out;
+}
+
+.slowBarLive .slowActual {
+  box-shadow: 0 0 12px rgba(211, 95, 95, 0.7);
 }
 
 .slowDemand,
@@ -1677,12 +1707,8 @@
   animation: slowValueIn 0.4s ease-out;
 }
 
-@keyframes slowMsgIn {
-  from { opacity: 0; transform: translateY(8px); }
-}
-
-@keyframes slowBarIn {
-  from { opacity: 0; }
+@keyframes slowChartShift {
+  from { transform: translateX(calc(100% / 24)); }
 }
 
 @keyframes slowValueIn {
@@ -1690,8 +1716,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .slowMsg,
-  .slowBar,
   .slowValueChange {
     animation: none;
   }
