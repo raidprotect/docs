@@ -99,6 +99,8 @@ Contano anche i file di un messaggio inoltrato, e un thread segue le regole del 
 3. Sotto “**Tutto il server**”, scegli una modalità: “**Disattivato**”, “**Blocklist**” o “**Allowlist**”.
 4. Spunta dei **gruppi** (Eseguibili, Immagini, Video, Audio, Archivi, Documenti) e/o inserisci altre estensioni separate da virgole, per esempio `exe, msi`. Il punto è facoltativo. Una regola accetta al massimo 50 estensioni libere, oltre ai gruppi.
 
+<Settings start="files" />
+
 :::warning
 Un'allowlist senza estensioni non accetta alcun file: ogni file inviato viene eliminato.
 :::

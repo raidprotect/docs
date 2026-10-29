@@ -7862,5 +7862,146 @@
   },
   "premium.scene.slowmode.label": {
     "message": "Chế độ chậm"
+  },
+  "mockup.v2.files.name": {
+    "message": "Phần mở rộng tệp"
+  },
+  "mockup.v2.files.short": {
+    "message": "Chặn tệp hoặc chỉ cho phép một số tệp, theo kênh"
+  },
+  "mockup.v2.files.hint": {
+    "message": "Xóa các tệp có phần mở rộng bị từ chối, trên toàn máy chủ hoặc trong một số kênh."
+  },
+  "mockup.v2.servers.private.heading": {
+    "message": "Lời mời kết bạn và nhóm riêng, cài đặt riêng với premium"
+  },
+  "mockup.v2.servers.private.placeholder": {
+    "message": "Lời mời kết bạn và nhóm"
+  },
+  "mockup.v2.servers.private.follow": {
+    "message": "Theo danh sách"
+  },
+  "mockup.v2.servers.private.followDesc": {
+    "message": "Được phép với danh sách đen, bị xóa với danh sách trắng"
+  },
+  "mockup.v2.servers.private.allow": {
+    "message": "Luôn cho phép"
+  },
+  "mockup.v2.servers.private.allowDesc": {
+    "message": "Lời mời kết bạn và nhóm riêng được chấp nhận, bất kể danh sách"
+  },
+  "mockup.v2.servers.private.block": {
+    "message": "Luôn xóa"
+  },
+  "mockup.v2.servers.private.blockDesc": {
+    "message": "Lời mời kết bạn và nhóm riêng bị xóa, bất kể danh sách"
+  },
+  "mockup.v2.files.groups.executables": {
+    "message": "Tệp thực thi"
+  },
+  "mockup.v2.files.groups.images": {
+    "message": "Hình ảnh"
+  },
+  "mockup.v2.files.groups.videos": {
+    "message": "Video"
+  },
+  "mockup.v2.files.groups.audio": {
+    "message": "Âm thanh"
+  },
+  "mockup.v2.files.groups.archives": {
+    "message": "Tệp nén"
+  },
+  "mockup.v2.files.groups.documents": {
+    "message": "Tài liệu"
+  },
+  "mockup.v2.files.server.off": {
+    "message": "Không có phần mở rộng nào bị từ chối trên toàn máy chủ"
+  },
+  "mockup.v2.files.server.blocklist": {
+    "message": "Xóa các tệp có những phần mở rộng này, ở mọi nơi"
+  },
+  "mockup.v2.files.server.allowlist": {
+    "message": "Xóa mọi tệp có phần mở rộng khác, ở mọi nơi"
+  },
+  "mockup.v2.files.title": {
+    "message": "Phần mở rộng tệp"
+  },
+  "mockup.v2.files.server.name": {
+    "message": "Toàn bộ máy chủ"
+  },
+  "mockup.v2.files.server.hint": {
+    "message": "Áp dụng cho mọi kênh, cùng với quy tắc riêng của kênh đó."
+  },
+  "mockup.v2.files.modePh": {
+    "message": "Chọn chế độ"
+  },
+  "mockup.v2.files.server.blocked": {
+    "message": "Phần mở rộng bị chặn"
+  },
+  "mockup.v2.files.disguised.name": {
+    "message": "Luôn từ chối tệp bị hỏng"
+  },
+  "mockup.v2.files.disguised.hint": {
+    "message": "Hình ảnh hoặc video mà Discord không đọc được (một tệp `.exe` bị đổi tên thành `.png`) bị xóa ở mọi kênh, không chỉ khi có danh sách cho phép."
+  },
+  "mockup.v2.files.channels.name": {
+    "message": "Kênh và danh mục ({count})"
+  },
+  "mockup.v2.files.channels.allowOnly": {
+    "message": "chỉ nhận {extensions}"
+  },
+  "mockup.v2.files.channels.editPh": {
+    "message": "Sửa một kênh"
+  },
+  "mockup.v2.files.add.button": {
+    "message": "Thêm kênh"
+  },
+  "mockup.v2.files.remove.button": {
+    "message": "Gỡ"
+  },
+  "mockup.v2.files.sanction.field": {
+    "message": "Hình phạt cho tin nhắn bị xóa"
+  },
+  "mockup.v2.files.sanction.hint": {
+    "message": "Mọi tin nhắn bị từ chối đều bị xóa; hình phạt áp dụng tối đa một lần mỗi phút cho mỗi thành viên."
+  },
+  "mockup.v2.files.sanction.placeholder": {
+    "message": "Chọn hình phạt"
+  },
+  "mockup.v2.files.sanction.none": {
+    "message": "Chỉ xóa tin nhắn"
+  },
+  "mockup.v2.files.extensions.groups": {
+    "message": "Nhóm"
+  },
+  "mockup.v2.files.extensions.label": {
+    "message": "Phần mở rộng khác"
+  },
+  "mockup.v2.files.extensions.description": {
+    "message": "Cách nhau bằng dấu phẩy, dấu chấm là tùy chọn."
+  },
+  "mockup.v2.files.add.title": {
+    "message": "Thêm kênh"
+  },
+  "mockup.v2.files.add.channel": {
+    "message": "Kênh hoặc danh mục"
+  },
+  "mockup.v2.files.add.channelDescription": {
+    "message": "Nếu đã có quy tắc, quy tắc đó sẽ được thay thế."
+  },
+  "mockup.v2.files.add.mode": {
+    "message": "Chế độ"
+  },
+  "mockup.v2.files.channels.allowDescription": {
+    "message": "Chỉ các tệp có những phần mở rộng này được qua"
+  },
+  "mockup.v2.files.channels.blockDescription": {
+    "message": "Các tệp có những phần mở rộng này bị xóa"
+  },
+  "mockup.v2.files.remove.title": {
+    "message": "Gỡ kênh"
+  },
+  "mockup.v2.files.remove.label": {
+    "message": "Kênh cần gỡ"
   }
 }

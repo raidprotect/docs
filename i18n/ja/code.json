@@ -7862,5 +7862,146 @@
   },
   "premium.scene.slowmode.label": {
     "message": "低速モード"
+  },
+  "mockup.v2.files.name": {
+    "message": "ファイル拡張子"
+  },
+  "mockup.v2.files.short": {
+    "message": "ブロックまたは許可するファイルをチャンネルごとに設定"
+  },
+  "mockup.v2.files.hint": {
+    "message": "拒否された拡張子のファイルを、サーバー全体または特定のチャンネルで削除します。"
+  },
+  "mockup.v2.servers.private.heading": {
+    "message": "フレンド・グループDMの招待（プレミアムで個別に設定）"
+  },
+  "mockup.v2.servers.private.placeholder": {
+    "message": "フレンド・グループ招待"
+  },
+  "mockup.v2.servers.private.follow": {
+    "message": "リストに従う"
+  },
+  "mockup.v2.servers.private.followDesc": {
+    "message": "ブラックリストでは許可、ホワイトリストでは削除"
+  },
+  "mockup.v2.servers.private.allow": {
+    "message": "常に許可"
+  },
+  "mockup.v2.servers.private.allowDesc": {
+    "message": "リストに関係なく、フレンド・グループDMの招待を許可"
+  },
+  "mockup.v2.servers.private.block": {
+    "message": "常に削除"
+  },
+  "mockup.v2.servers.private.blockDesc": {
+    "message": "リストに関係なく、フレンド・グループDMの招待を削除"
+  },
+  "mockup.v2.files.groups.executables": {
+    "message": "実行ファイル"
+  },
+  "mockup.v2.files.groups.images": {
+    "message": "画像"
+  },
+  "mockup.v2.files.groups.videos": {
+    "message": "動画"
+  },
+  "mockup.v2.files.groups.audio": {
+    "message": "音声"
+  },
+  "mockup.v2.files.groups.archives": {
+    "message": "アーカイブ"
+  },
+  "mockup.v2.files.groups.documents": {
+    "message": "ドキュメント"
+  },
+  "mockup.v2.files.server.off": {
+    "message": "サーバー全体で拒否する拡張子はありません"
+  },
+  "mockup.v2.files.server.blocklist": {
+    "message": "これらの拡張子のファイルを、どこでも削除"
+  },
+  "mockup.v2.files.server.allowlist": {
+    "message": "それ以外の拡張子のファイルを、どこでも削除"
+  },
+  "mockup.v2.files.title": {
+    "message": "ファイル拡張子"
+  },
+  "mockup.v2.files.server.name": {
+    "message": "サーバー全体"
+  },
+  "mockup.v2.files.server.hint": {
+    "message": "各チャンネル自身のルールに加えて、すべてのチャンネルに適用されます。"
+  },
+  "mockup.v2.files.modePh": {
+    "message": "モードを選択"
+  },
+  "mockup.v2.files.server.blocked": {
+    "message": "ブロックする拡張子"
+  },
+  "mockup.v2.files.disguised.name": {
+    "message": "破損したファイルを常に拒否"
+  },
+  "mockup.v2.files.disguised.hint": {
+    "message": "Discord が読み取れない画像や動画（`.png` に名前を変えた `.exe` など）を、ホワイトリストだけでなくすべてのチャンネルで削除します。"
+  },
+  "mockup.v2.files.channels.name": {
+    "message": "チャンネルとカテゴリ（{count}）"
+  },
+  "mockup.v2.files.channels.allowOnly": {
+    "message": "{extensions} のみ許可"
+  },
+  "mockup.v2.files.channels.editPh": {
+    "message": "チャンネルを編集"
+  },
+  "mockup.v2.files.add.button": {
+    "message": "チャンネルを追加"
+  },
+  "mockup.v2.files.remove.button": {
+    "message": "削除"
+  },
+  "mockup.v2.files.sanction.field": {
+    "message": "削除したメッセージへの処罰"
+  },
+  "mockup.v2.files.sanction.hint": {
+    "message": "拒否されたメッセージはすべて削除されます。処罰はメンバーごとに1分に1回までです。"
+  },
+  "mockup.v2.files.sanction.placeholder": {
+    "message": "処罰を選択"
+  },
+  "mockup.v2.files.sanction.none": {
+    "message": "メッセージの削除のみ"
+  },
+  "mockup.v2.files.extensions.groups": {
+    "message": "グループ"
+  },
+  "mockup.v2.files.extensions.label": {
+    "message": "その他の拡張子"
+  },
+  "mockup.v2.files.extensions.description": {
+    "message": "カンマ区切り。ドットは省略できます。"
+  },
+  "mockup.v2.files.add.title": {
+    "message": "チャンネルを追加"
+  },
+  "mockup.v2.files.add.channel": {
+    "message": "チャンネルまたはカテゴリ"
+  },
+  "mockup.v2.files.add.channelDescription": {
+    "message": "設定済みの場合、そのルールが置き換えられます。"
+  },
+  "mockup.v2.files.add.mode": {
+    "message": "モード"
+  },
+  "mockup.v2.files.channels.allowDescription": {
+    "message": "これらの拡張子のファイルだけが通ります"
+  },
+  "mockup.v2.files.channels.blockDescription": {
+    "message": "これらの拡張子のファイルは削除されます"
+  },
+  "mockup.v2.files.remove.title": {
+    "message": "チャンネルを削除"
+  },
+  "mockup.v2.files.remove.label": {
+    "message": "削除するチャンネル"
   }
 }

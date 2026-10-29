@@ -99,6 +99,8 @@ Os arquivos de uma mensagem encaminhada também contam, e uma thread segue as re
 3. Em “**Todo o servidor**”, escolha um modo: “**Desativado**”, “**Lista de bloqueio**” ou “**Lista de permissão**”.
 4. Marque **grupos** (Executáveis, Imagens, Vídeos, Áudio, Arquivos compactados, Documentos) e/ou digite outras extensões separadas por vírgulas, por exemplo `exe, msi`. O ponto é opcional. Uma regra aceita no máximo 50 extensões livres, além dos grupos.
 
+<Settings start="files" />
+
 :::warning
 Uma lista de permissão sem extensão não aceita nenhum arquivo: todo arquivo enviado é excluído.
 :::

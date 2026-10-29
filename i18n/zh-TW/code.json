@@ -7862,5 +7862,146 @@
   },
   "premium.scene.slowmode.label": {
     "message": "慢速模式"
+  },
+  "mockup.v2.files.name": {
+    "message": "檔案副檔名"
+  },
+  "mockup.v2.files.short": {
+    "message": "依頻道封鎖或限定允許的檔案"
+  },
+  "mockup.v2.files.hint": {
+    "message": "刪除副檔名被拒絕的檔案，可套用於整個伺服器或特定頻道。"
+  },
+  "mockup.v2.servers.private.heading": {
+    "message": "好友和私人群組邀請，高級版可單獨設定"
+  },
+  "mockup.v2.servers.private.placeholder": {
+    "message": "好友和群組邀請"
+  },
+  "mockup.v2.servers.private.follow": {
+    "message": "遵循清單"
+  },
+  "mockup.v2.servers.private.followDesc": {
+    "message": "黑名單下放行，白名單下刪除"
+  },
+  "mockup.v2.servers.private.allow": {
+    "message": "一律允許"
+  },
+  "mockup.v2.servers.private.allowDesc": {
+    "message": "無論清單為何，皆接受好友和私人群組邀請"
+  },
+  "mockup.v2.servers.private.block": {
+    "message": "一律刪除"
+  },
+  "mockup.v2.servers.private.blockDesc": {
+    "message": "無論清單為何，皆刪除好友和私人群組邀請"
+  },
+  "mockup.v2.files.groups.executables": {
+    "message": "可執行檔"
+  },
+  "mockup.v2.files.groups.images": {
+    "message": "圖片"
+  },
+  "mockup.v2.files.groups.videos": {
+    "message": "影片"
+  },
+  "mockup.v2.files.groups.audio": {
+    "message": "音訊"
+  },
+  "mockup.v2.files.groups.archives": {
+    "message": "壓縮檔"
+  },
+  "mockup.v2.files.groups.documents": {
+    "message": "文件"
+  },
+  "mockup.v2.files.server.off": {
+    "message": "整個伺服器皆未拒絕任何副檔名"
+  },
+  "mockup.v2.files.server.blocklist": {
+    "message": "刪除這些副檔名的檔案，所有頻道皆然"
+  },
+  "mockup.v2.files.server.allowlist": {
+    "message": "刪除其他副檔名的所有檔案，所有頻道皆然"
+  },
+  "mockup.v2.files.title": {
+    "message": "檔案副檔名"
+  },
+  "mockup.v2.files.server.name": {
+    "message": "整個伺服器"
+  },
+  "mockup.v2.files.server.hint": {
+    "message": "除了各頻道自己的規則之外，也會套用於每個頻道。"
+  },
+  "mockup.v2.files.modePh": {
+    "message": "選擇模式"
+  },
+  "mockup.v2.files.server.blocked": {
+    "message": "封鎖的副檔名"
+  },
+  "mockup.v2.files.disguised.name": {
+    "message": "一律拒絕損毀的檔案"
+  },
+  "mockup.v2.files.disguised.hint": {
+    "message": "Discord 無法讀取的圖片或影片（例如改名為 `.png` 的 `.exe`）會在所有頻道被刪除，不限於白名單的情況。"
+  },
+  "mockup.v2.files.channels.name": {
+    "message": "頻道與類別（{count}）"
+  },
+  "mockup.v2.files.channels.allowOnly": {
+    "message": "僅接受 {extensions}"
+  },
+  "mockup.v2.files.channels.editPh": {
+    "message": "編輯頻道"
+  },
+  "mockup.v2.files.add.button": {
+    "message": "新增頻道"
+  },
+  "mockup.v2.files.remove.button": {
+    "message": "移除"
+  },
+  "mockup.v2.files.sanction.field": {
+    "message": "被刪除訊息的處罰"
+  },
+  "mockup.v2.files.sanction.hint": {
+    "message": "每則被拒絕的訊息都會被刪除；每位成員每分鐘最多受到一次處罰。"
+  },
+  "mockup.v2.files.sanction.placeholder": {
+    "message": "選擇處罰"
+  },
+  "mockup.v2.files.sanction.none": {
+    "message": "僅刪除訊息"
+  },
+  "mockup.v2.files.extensions.groups": {
+    "message": "群組"
+  },
+  "mockup.v2.files.extensions.label": {
+    "message": "其他副檔名"
+  },
+  "mockup.v2.files.extensions.description": {
+    "message": "以逗號分隔，開頭的句點可省略。"
+  },
+  "mockup.v2.files.add.title": {
+    "message": "新增頻道"
+  },
+  "mockup.v2.files.add.channel": {
+    "message": "頻道或類別"
+  },
+  "mockup.v2.files.add.channelDescription": {
+    "message": "若已設定，其規則會被取代。"
+  },
+  "mockup.v2.files.add.mode": {
+    "message": "模式"
+  },
+  "mockup.v2.files.channels.allowDescription": {
+    "message": "僅允許這些副檔名的檔案通過"
+  },
+  "mockup.v2.files.channels.blockDescription": {
+    "message": "這些副檔名的檔案會被刪除"
+  },
+  "mockup.v2.files.remove.title": {
+    "message": "移除頻道"
+  },
+  "mockup.v2.files.remove.label": {
+    "message": "要移除的頻道"
   }
 }

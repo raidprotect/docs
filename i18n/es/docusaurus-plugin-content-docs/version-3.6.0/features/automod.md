@@ -99,6 +99,8 @@ Los archivos de un mensaje reenviado también cuentan, y un hilo sigue las regla
 3. En “**Todo el servidor**”, elige un modo: “**Desactivado**”, “**Lista negra**” o “**Lista blanca**”.
 4. Marca **grupos** (Ejecutables, Imágenes, Vídeos, Audio, Archivos comprimidos, Documentos) y/o escribe otras extensiones separadas por comas, por ejemplo `exe, msi`. El punto es opcional. Una regla acepta 50 extensiones libres como máximo, además de los grupos.
 
+<Settings start="files" />
+
 :::warning
 Una lista blanca sin extensiones no acepta ningún archivo: se elimina todo archivo enviado.
 :::

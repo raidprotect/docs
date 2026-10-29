@@ -1,5 +1,5 @@
 import type { Component } from "../../types";
-import type { ModalData } from "../../Modal";
+import type { ModalData, ModalItem } from "../../Modal";
 import {
   t, i, btn, text, sep, row, container, section, setting, heading, select, channelSelect, roleSelect, userSelect,
   toggle, reset, edit, configure, custom, screen, premiumNotice, COLORS, type IconName, type Opt,
@@ -225,6 +225,13 @@ export function protectionPart({ s, flip }: Ctx, disconState: { level: number; s
           configure("serverRefs"),
           t("servers.hint", "Supprime les invitations et messages transférés d'autres serveurs, met en quarantaine leurs tags.")
         ),
+        setting(
+          "iconFilter",
+          t("files.name", "Extensions de fichiers"),
+          t("files.short", "Fichiers bloqués ou seuls autorisés, par salon"),
+          configure("files"),
+          t("files.hint", "Supprime les fichiers d'une extension refusée, sur tout le serveur ou dans certains salons.")
+        ),
       ],
     });
 
@@ -256,6 +263,16 @@ export function protectionPart({ s, flip }: Ctx, disconState: { level: number; s
         ...SERVER_KINDS.flatMap(([, label, icon, mode]) => [
           heading(icon, label),
           select(t("servers.modePh", "Choisir un mode"), serverModes(mode)),
+          ...(label === t("servers.link", "Invitation") && mode !== 0
+            ? [
+                text(`-# ${i("iconPremium")} ${t("servers.private.heading", "Invitations d'ami et de groupe privé, réglables séparément en premium")}`),
+                select(t("servers.private.placeholder", "Invitations d'ami et de groupe"), [
+                  { label: t("servers.private.follow", "Suivre la liste"), description: t("servers.private.followDesc", "Passent en liste noire, supprimées en liste blanche"), emoji: "iconLinks", default: true },
+                  { label: t("servers.private.allow", "Toujours autorisées"), description: t("servers.private.allowDesc", "Invitations d'ami et de groupe privé acceptées, quelle que soit la liste"), emoji: "iconPremium" },
+                  { label: t("servers.private.block", "Toujours supprimées"), description: t("servers.private.blockDesc", "Invitations d'ami et de groupe privé supprimées, quelle que soit la liste"), emoji: "iconPremium" },
+                ]),
+              ]
+            : []),
         ]),
         sep(),
         heading("iconSanctions", t("servers.sanction", "Sanction des messages supprimés")),
@@ -278,6 +295,77 @@ export function protectionPart({ s, flip }: Ctx, disconState: { level: number; s
           btn({ label: t("servers.add", "Ajouter un serveur"), style: 1, emoji: "iconCreateWhite" }),
           btn({ label: t("servers.remove", "Retirer"), style: 2, emoji: "iconTrash" })
         ),
+      ],
+    });
+
+  const FILE_GROUPS: Array<[string, string]> = [
+    [t("files.groups.executables", "Exécutables"), "exe, msi, msix, appx, bat, cmd, com, scr, pif, cpl, ps1, vbs…"],
+    [t("files.groups.images", "Images"), "png, jpg, jpeg, gif, webp, avif, bmp, heic, tif, tiff"],
+    [t("files.groups.videos", "Vidéos"), "mp4, mov, webm, mkv, avi, m4v, wmv"],
+    [t("files.groups.audio", "Audio"), "mp3, wav, ogg, flac, m4a, aac, opus"],
+    [t("files.groups.archives", "Archives"), "zip, rar, 7z, tar, gz, tgz, bz2, xz"],
+    [t("files.groups.documents", "Documents"), "pdf, txt, md, doc, docx, odt, rtf, xls, xlsx, ods, csv, ppt, pptx, odp"],
+  ];
+
+  const fileModes = (selected: number): Opt[] => [
+    { label: t("disabled", "Désactivé"), description: t("files.server.off", "Aucune extension refusée sur tout le serveur"), emoji: "iconToggleDisable", default: selected === 0 },
+    { label: t("servers.blocklist", "Liste noire"), description: t("files.server.blocklist", "Supprime les fichiers de ces extensions, partout"), emoji: "iconFail", default: selected === 1 },
+    { label: t("servers.allowlist", "Liste blanche"), description: t("files.server.allowlist", "Supprime tout fichier d'une autre extension, partout"), emoji: "iconSuccess", default: selected === 2 },
+  ];
+
+  const files = (): Component[] =>
+    screen({
+      tab: "protection",
+      icon: "iconFilter",
+      title: t("files.title", "Extensions de fichiers"),
+      desc: t(
+        "files.desc",
+        "Bloquez des extensions de fichiers ou n'autorisez que certaines, sur tout le serveur ou par salon. Votre équipe n'est jamais visée."
+      ),
+      accessory: toggle(s.files, "toggle:files"),
+      crumbs: [{ label: "Automod", id: "automod" }, { label: t("files.name", "Extensions de fichiers") }],
+      docs: "features/automod#files-config",
+      body: [
+        text(`### ${i("iconSettings")} ${t("files.server.name", "Tout le serveur")}\n-# ${t("files.server.hint", "S'applique à chaque salon, en plus de sa propre règle.")}`),
+        select(t("files.modePh", "Choisir un mode"), fileModes(1)),
+        setting("iconFail", t("files.server.blocked", "Extensions bloquées"), `${FILE_GROUPS[0][0]}, .psd`, edit("modal:filesServer")),
+        setting(
+          "iconWarning",
+          t("files.disguised.name", "Toujours refuser les fichiers corrompus"),
+          null,
+          toggle(s.filesDisguised, "toggle:filesDisguised"),
+          t("files.disguised.hint", "Une image ou une vidéo que Discord ne sait pas lire (un `.exe` renommé en `.png`) est supprimée dans tous les salons, pas seulement par une liste blanche.")
+        ),
+        sep(),
+        text(
+          `### ${i("iconChannelText")} ${t("files.channels.name", "Salons et catégories ({count})").replace("{count}", "1")}\n-# ${t(
+            "files.channels.hint",
+            "Une règle de catégorie vaut pour tous ses salons. Une extension nommée par une règle suit la plus précise : salon, puis catégorie, puis serveur."
+          )}\n-# ${i("iconPremium")} ${t(
+            "files.channels.premiumRequired",
+            "Sans premium, une seule règle de salon s'applique et les catégories ne sont pas disponibles ; jusqu'à {max} règles avec le premium."
+          ).replace("{max}", "20")}\n- ${CH("médias")} : ${t("files.channels.allowOnly", "n'accepte que {extensions}").replace(
+            "{extensions}",
+            `${FILE_GROUPS[1][0]}, ${FILE_GROUPS[2][0]}`
+          )}`
+        ),
+        select(t("files.channels.editPh", "Modifier un salon"), [
+          { label: CH("médias"), description: `${FILE_GROUPS[1][0]}, ${FILE_GROUPS[2][0]}`, emoji: "iconSuccess" },
+        ]),
+        row(
+          btn({ label: t("files.add.button", "Ajouter un salon"), style: 1, emoji: "iconPremium", id: "modal:filesChannel" }),
+          btn({ label: t("files.remove.button", "Retirer"), style: 2, emoji: "iconTrash", id: "modal:filesRemove" })
+        ),
+        sep(),
+        heading(
+          "iconSanctions",
+          t("files.sanction.field", "Sanction des messages supprimés"),
+          t("files.sanction.hint", "Chaque message refusé est supprimé ; la sanction s'applique au plus une fois par minute et par membre.")
+        ),
+        select(t("files.sanction.placeholder", "Choisir une sanction"), [
+          { label: t("files.sanction.none", "Message supprimé seulement"), emoji: "iconTrash", default: true },
+          ...SANCTIONS.map(([label, emoji]) => ({ label: sanctionLabel(label), emoji })),
+        ]),
       ],
     });
 
@@ -464,6 +552,12 @@ export function protectionPart({ s, flip }: Ctx, disconState: { level: number; s
       rows: [row(btn({ label: t("suggest", "Faire une suggestion"), style: 5, emoji: "iconSuggestWhite", url: "https://suggestions.raidprotect.bot" }))],
     });
 
+  const fileGroupsField = (checked: string[]): ModalItem =>
+    checkField(
+      t("files.extensions.groups", "Groupes"),
+      FILE_GROUPS.map(([label, extensions]) => ({ label, description: extensions.slice(0, 100), checked: checked.includes(label) }))
+    );
+
   const modals: Record<string, () => ModalData> = {
     antispamFamily: () => ({
       title: t("antispam.familyModal", "Sanction des déclencheurs"),
@@ -492,6 +586,40 @@ export function protectionPart({ s, flip }: Ctx, disconState: { level: number; s
           t("antispam.keepDuration", "Pour le mute, le timeout et le jail. Laisser vide pour garder la durée actuelle.")
         ),
         textField(t("antispam.customDuration", "Durée personnalisée"), "ex. 5m 30s", undefined, t("antispam.customDurationHint", "Remplace la durée choisie au-dessus (5 minutes minimum).")),
+      ],
+    }),
+    filesServer: () => ({
+      title: t("files.server.blocked", "Extensions bloquées"),
+      items: [
+        {
+          type: "text",
+          content: `### ${i("iconDocs")} Documentation\n${t(
+            "files.server.docs",
+            "Cochez des groupes, saisissez des extensions séparées par des virgules (`exe, msi`), ou les deux. Le point est facultatif."
+          )}`,
+        },
+        fileGroupsField([FILE_GROUPS[0][0]]),
+        textField(t("files.extensions.label", "Autres extensions"), "exe, msi, psd", "psd", t("files.extensions.description", "Séparées par des virgules, le point est facultatif.")),
+      ],
+    }),
+    filesChannel: () => ({
+      title: t("files.add.title", "Ajouter un salon"),
+      items: [
+        { type: "field", label: t("files.add.channel", "Salon ou catégorie"), description: t("files.add.channelDescription", "Déjà réglé, sa règle est remplacée."), required: true, input: { kind: "channel" } },
+        selectField(t("files.add.mode", "Mode"), [
+          { label: t("servers.allowlist", "Liste blanche"), description: t("files.channels.allowDescription", "Seuls les fichiers de ces extensions passent"), emoji: "iconSuccess", default: true },
+          { label: t("servers.blocklist", "Liste noire"), description: t("files.channels.blockDescription", "Les fichiers de ces extensions sont supprimés"), emoji: "iconFail" },
+        ]),
+        fileGroupsField([]),
+        textField(t("files.extensions.label", "Autres extensions"), "exe, msi, psd", undefined, t("files.extensions.description", "Séparées par des virgules, le point est facultatif.")),
+      ],
+    }),
+    filesRemove: () => ({
+      title: t("files.remove.title", "Retirer des salons"),
+      items: [
+        selectField(t("files.remove.label", "Salons à retirer"), [
+          { label: CH("médias"), description: `${t("servers.allowlist", "Liste blanche")} · ${FILE_GROUPS[1][0]}, ${FILE_GROUPS[2][0]}`, emoji: "iconSuccess" },
+        ]),
       ],
     }),
     antispamSimulate: () => ({
@@ -559,6 +687,7 @@ export function protectionPart({ s, flip }: Ctx, disconState: { level: number; s
       automod,
       imageFilter,
       serverRefs,
+      files,
       honeypot: honeypot(),
       honeypotCommand: honeypot(true),
       slowmode,
@@ -571,6 +700,8 @@ export function protectionPart({ s, flip }: Ctx, disconState: { level: number; s
       "toggle:antispamAdvanced": flip("antispamAdvanced"),
       "toggle:imageFilter": flip("imageFilter"),
       "toggle:serverRefs": flip("serverRefs"),
+      "toggle:files": flip("files"),
+      "toggle:filesDisguised": flip("filesDisguised"),
       "toggle:honeypot": flip("honeypot"),
       ...Object.fromEntries([5, 4, 3, 2, 1].map((n) => [`discon:level:${n}`, () => disconState.setLevel(n)])),
     },
