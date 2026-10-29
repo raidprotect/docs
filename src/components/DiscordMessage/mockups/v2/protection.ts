@@ -299,12 +299,12 @@ export function protectionPart({ s, flip }: Ctx, disconState: { level: number; s
     });
 
   const FILE_GROUPS: Array<[string, string]> = [
-    [t("files.groups.executables", "Exécutables"), "exe, msi, bat, cmd, com, scr, jar, apk, ps1, vbs, sh"],
-    [t("files.groups.images", "Images"), "png, jpg, jpeg, gif, webp, bmp, svg, heic"],
-    [t("files.groups.videos", "Vidéos"), "mp4, mov, webm, mkv, avi, wmv"],
-    [t("files.groups.audio", "Audio"), "mp3, wav, ogg, flac, m4a, aac"],
-    [t("files.groups.archives", "Archives"), "zip, rar, 7z, tar, gz, iso"],
-    [t("files.groups.documents", "Documents"), "pdf, doc, docx, xls, xlsx, ppt, pptx, txt, odt"],
+    [t("files.groups.executables", "Exécutables"), "exe, msi, msix, appx, bat, cmd, com, scr, pif, cpl, ps1, vbs…"],
+    [t("files.groups.images", "Images"), "png, jpg, jpeg, gif, webp, avif, bmp, heic, tif, tiff"],
+    [t("files.groups.videos", "Vidéos"), "mp4, mov, webm, mkv, avi, m4v, wmv"],
+    [t("files.groups.audio", "Audio"), "mp3, wav, ogg, flac, m4a, aac, opus"],
+    [t("files.groups.archives", "Archives"), "zip, rar, 7z, tar, gz, tgz, bz2, xz"],
+    [t("files.groups.documents", "Documents"), "pdf, txt, md, doc, docx, odt, rtf, xls, xlsx…"],
   ];
 
   const fileModes = (selected: number): Opt[] => [
