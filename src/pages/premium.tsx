@@ -54,7 +54,7 @@ const FALLBACK_STATS: Stats = {
     users: 63000000,
     captcha: 14515925,
     antispam: 1435257,
-    founder: 46,
+    founder: 49,
 }
 
 const FOUNDER_GOAL = 100
