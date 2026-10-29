@@ -1708,8 +1708,10 @@
   border-radius: 3px 3px 0 0;
 }
 
+/* Un socle reste visible même sans message : chaque instant a sa barre. */
 .slowDemand {
-  background: rgba(255, 255, 255, 0.08);
+  min-height: 4px;
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .slowActual {
