@@ -827,7 +827,6 @@ export default function PremiumPage(): React.ReactNode {
                                 <article
                                     key={feature.title}
                                     className={styles.bentoCell}
-                                    style={{ gridArea: feature.area }}
                                     data-area={feature.area}
                                 >
                                     {feature.scene && (

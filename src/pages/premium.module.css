@@ -1515,6 +1515,16 @@
   padding-top: 0.75rem;
 }
 
+/* Les aires sont posées ici et pas en style inline : le minifieur renomme les
+   noms d'aires du CSS, un nom inline ne correspondrait plus à rien. */
+.bentoCell[data-area='limits'] { grid-area: limits; }
+.bentoCell[data-area='slow'] { grid-area: slow; }
+.bentoCell[data-area='names'] { grid-area: names; }
+.bentoCell[data-area='captcha'] { grid-area: captcha; }
+.bentoCell[data-area='honeypot'] { grid-area: honeypot; }
+.bentoCell[data-area='kick'] { grid-area: kick; }
+.bentoCell[data-area='beta'] { grid-area: beta; }
+
 .bentoCell[data-area='slow'] .featureScene {
   flex: 1;
 }
