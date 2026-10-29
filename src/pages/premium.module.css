@@ -1594,11 +1594,6 @@
   transition: opacity 0.3s;
 }
 
-.slowMsgBlocked {
-  opacity: 0.22;
-  filter: grayscale(1);
-}
-
 .slowAvatar {
   flex: none;
   width: 22px;
@@ -1637,6 +1632,25 @@
   font-size: 0.72rem;
 }
 
+.slowUsers {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.slowUser {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  transition: opacity 0.25s, box-shadow 0.25s;
+}
+
+.slowUserWait {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+}
+
 .slowChip {
   display: inline-flex;
   align-items: center;
@@ -1658,7 +1672,7 @@
 .slowChartTrack {
   display: flex;
   align-items: flex-end;
-  gap: 3px;
+  gap: 2px;
   height: 100%;
 }
 
@@ -1708,7 +1722,7 @@
 }
 
 @keyframes slowChartShift {
-  from { transform: translateX(calc(100% / 24)); }
+  from { transform: translateX(calc(100% / 48)); }
 }
 
 @keyframes slowValueIn {

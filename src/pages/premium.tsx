@@ -319,89 +319,99 @@ function CaptchaScene(): React.ReactNode {
     )
 }
 
-// Débit voulu par le salon à chaque tick : un cycle de 12 s (calme, pic, calme),
-// assez court pour que le graphique montre toujours les deux.
-const SLOW_DEMAND = [2, 2, 3, 2, 3, 5, 8, 12, 16, 18, 18, 16, 13, 9, 6, 4, 3, 2, 2, 3, 2, 2, 3, 2]
+// Salon simulé en ticks de 250 ms, sur un cycle de 12 s : calme, spam, calme.
+// SLOW_WANT est la probabilité qu'un membre veuille écrire à ce tick.
+const SLOW_WANT = [
+    ...Array(12).fill(0.06),
+    0.3, 0.5, 0.7, 0.8,
+    ...Array(12).fill(0.8),
+    0.5, 0.3, 0.15, 0.08,
+    ...Array(16).fill(0.06),
+]
+const SLOW_TICK_MS = 250
+const SLOW_BARS = SLOW_WANT.length
+const SLOW_USERS = ['#d35f5f', '#a561a3', '#5f9ed3', '#d3a65f', '#5fd39a']
+// Mode lent affiché, et attente imposée à chaque membre dans la simulation (en ticks).
 const SLOW_LEVELS = [0, 5, 10, 30]
-const SLOW_CAPS = [Infinity, 7, 6, 5]
-const SLOW_STEPS = [6, 10, 15]
-const SLOW_TARGET = 6
-const SLOW_MAX = 18
-const SLOW_BARS = SLOW_DEMAND.length
-const SLOW_TICK_MS = 500
+const SLOW_COOLDOWN = [0, 2, 4, 8]
+// Débit d'envois voulus (par tick, moyenne sur 1 s) au-delà duquel chaque niveau s'impose.
+const SLOW_STEPS = [1, 2.2, 3.4]
+// La première réaction laisse le salon s'agiter un moment, les crans suivants vont plus vite.
+const SLOW_REACT = [5, 2, 2]
+const SLOW_RELAX = 6
+const SLOW_MAX = SLOW_USERS.length
+const SLOW_TARGET = 1.2
 const SLOW_ROW = 22
 const SLOW_FEED = 128
-const SLOW_COLORS = ['#d35f5f', '#a561a3', '#5f9ed3', '#d3a65f', '#5fd39a']
 
-type SlowMsg = { id: number; color: string; name: number; width: number; blocked: boolean }
+type SlowMsg = { id: number; user: number; width: number }
 type SlowState = {
     t: number
     level: number
-    calm: number
-    bars: { demand: number; actual: number }[]
+    streak: number
+    ready: number[]
+    bars: { want: number; sent: number }[]
     msgs: SlowMsg[]
     next: number
-    pending: number
-    passed: number
+}
+
+const slowRandom = (t: number, u: number) => {
+    const x = Math.sin(t * 12.9898 + u * 78.233) * 43758.5453
+    return x - Math.floor(x)
 }
 
 function slowStep(s: SlowState): SlowState {
-    const demand = SLOW_DEMAND[s.t % SLOW_DEMAND.length]
-    const wanted = SLOW_STEPS.filter(step => demand > step).length
-    let { level, calm } = s
-    // Monte tout de suite, redescend d'un cran après 3 ticks plus calmes.
-    if (wanted > level) {
-        level = wanted
-        calm = 0
-    } else if (wanted < level) {
-        calm += 1
-        if (calm >= 3) {
-            level -= 1
-            calm = 0
-        }
-    } else {
-        calm = 0
-    }
-    const actual = Math.min(demand, SLOW_CAPS[level])
-    const bars = [...s.bars, { demand, actual }].slice(-SLOW_BARS)
-    // Un message affiché pour 4 de débit voulu. La part au-dessus de ce que le
-    // mode lent laisse passer apparaît bloquée, comme les barres claires.
-    let pending = s.pending + demand / 4
-    let passed = s.passed
+    const p = SLOW_WANT[s.t % SLOW_WANT.length]
+    const cooldown = SLOW_COOLDOWN[s.level]
+    const ready = [...s.ready]
+    let want = 0
     let next = s.next
     const fresh: SlowMsg[] = []
-    while (pending >= 1) {
-        pending -= 1
+    SLOW_USERS.forEach((_, u) => {
+        if (slowRandom(s.t, u) >= p) return
+        want += 1
+        // Pendant son attente, le membre ne peut pas envoyer : c'est le mode lent.
+        if (s.t < ready[u]) return
+        ready[u] = s.t + cooldown
         next += 1
-        passed += actual / demand
-        const blocked = passed < 1
-        if (!blocked) passed -= 1
-        fresh.push({
-            id: next,
-            color: SLOW_COLORS[(next * 7) % SLOW_COLORS.length],
-            name: 30 + ((next * 13) % 30),
-            width: 35 + ((next * 29) % 55),
-            blocked,
-        })
+        fresh.push({ id: next, user: u, width: 35 + ((next * 29) % 55) })
+    })
+    const bars = [...s.bars, { want, sent: fresh.length }].slice(-SLOW_BARS)
+
+    // Le mode lent réagit au débit de la dernière seconde, et seulement quand
+    // l'écart dure : il monte après SLOW_REACT ticks, redescend après SLOW_RELAX.
+    const recent = bars.slice(-4)
+    const rate = recent.reduce((sum, bar) => sum + bar.want, 0) / recent.length
+    const wanted = SLOW_STEPS.filter(step => rate > step).length
+    let { level, streak } = s
+    if (wanted === level) {
+        streak = 0
+    } else {
+        streak += 1
+        if (streak >= (wanted > level ? SLOW_REACT[level] : SLOW_RELAX)) {
+            level += wanted > level ? 1 : -1
+            streak = 0
+        }
     }
-    return { t: s.t + 1, level, calm, bars, msgs: [...s.msgs, ...fresh].slice(-12), next, pending, passed }
+    return { t: s.t + 1, level, streak, ready, bars, msgs: [...s.msgs, ...fresh].slice(-14), next }
 }
 
 function slowInitial(ticks: number): SlowState {
-    let s: SlowState = { t: 0, level: 0, calm: 0, bars: [], msgs: [], next: 0, pending: 0, passed: 0 }
+    let s: SlowState = { t: 0, level: 0, streak: 0, ready: SLOW_USERS.map(() => 0), bars: [], msgs: [], next: 0 }
     for (let i = 0; i < ticks; i++) s = slowStep(s)
     return s
 }
 
 /**
- * Salon simulé : le fil défile au débit du moment, le mode lent monte quand le
- * débit dépasse la cible puis redescend. Les barres claires et les messages
- * estompés sont ce que le salon aurait reçu, les pleines ce qui passe.
+ * Salon simulé : une couleur par membre. Quand le salon s'agite, le mode lent
+ * monte un peu après, et chaque membre doit attendre entre deux messages : les
+ * couleurs s'espacent dans le fil. Les barres claires sont les envois voulus,
+ * les pleines ceux qui passent.
  */
 function SlowmodeScene(): React.ReactNode {
     const ref = useRef<HTMLDivElement>(null)
     // Le rendu serveur et le mouvement réduit montrent un cycle complet, pic en cours.
-    const [state, setState] = useState(() => slowInitial(SLOW_BARS + 11))
+    const [state, setState] = useState(() => slowInitial(SLOW_BARS + 24))
     const [animated, setAnimated] = useState(false)
     useEffect(() => {
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
@@ -423,6 +433,7 @@ function SlowmodeScene(): React.ReactNode {
     }, [])
 
     const seconds = SLOW_LEVELS[state.level]
+    const cooldown = SLOW_COOLDOWN[state.level]
     const scroll = SLOW_FEED - (state.next + 1) * SLOW_ROW
     return (
         <div ref={ref} className={`${styles.sceneSlowmode} ${animated ? styles.slowAnimated : ''}`}>
@@ -430,14 +441,10 @@ function SlowmodeScene(): React.ReactNode {
                 <div className={styles.slowFeed} style={{ height: SLOW_FEED }}>
                     <div className={styles.slowTrack} style={{ transform: `translateY(${scroll}px)`, transitionDuration: `${SLOW_TICK_MS}ms` }}>
                         {state.msgs.map(msg => (
-                            <div
-                                key={msg.id}
-                                className={`${styles.slowMsg} ${msg.blocked ? styles.slowMsgBlocked : ''}`}
-                                style={{ top: msg.id * SLOW_ROW }}
-                            >
-                                <span className={styles.slowAvatar} style={{ background: msg.color }} />
+                            <div key={msg.id} className={styles.slowMsg} style={{ top: msg.id * SLOW_ROW }}>
+                                <span className={styles.slowAvatar} style={{ background: SLOW_USERS[msg.user] }} />
                                 <span className={styles.slowLines}>
-                                    <span className={styles.slowName} style={{ width: `${msg.name}%`, background: msg.color }} />
+                                    <span className={styles.slowName} style={{ width: `${30 + msg.user * 7}%`, background: SLOW_USERS[msg.user] }} />
                                     <span className={styles.slowText} style={{ width: `${msg.width}%` }} />
                                 </span>
                             </div>
@@ -445,7 +452,21 @@ function SlowmodeScene(): React.ReactNode {
                     </div>
                 </div>
                 <div className={`${styles.slowInput} ${seconds ? styles.slowInputOn : ''}`}>
-                    <span>{translate({ id: 'premium.scene.slowmode.input', message: 'Envoyer un message' })}</span>
+                    <span className={styles.slowUsers}>
+                        {SLOW_USERS.map((color, u) => {
+                            // Anneau qui se vide pendant l'attente du membre.
+                            const left = cooldown ? Math.max(0, state.ready[u] - state.t) / cooldown : 0
+                            return (
+                                <span
+                                    key={color}
+                                    className={styles.slowUser}
+                                    style={{ background: color, boxShadow: left ? `0 0 0 2px ${color}55` : undefined, opacity: left ? 0.45 : 1 }}
+                                >
+                                    {left > 0 && <span className={styles.slowUserWait} style={{ background: `conic-gradient(rgba(0, 0, 0, 0.55) ${left * 360}deg, transparent 0)` }} />}
+                                </span>
+                            )
+                        })}
+                    </span>
                     <span className={styles.slowChip}>
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round">
                             <circle cx="12" cy="13" r="8" />
@@ -461,8 +482,8 @@ function SlowmodeScene(): React.ReactNode {
                 <div key={state.t} className={styles.slowChartTrack} style={{ animationDuration: `${SLOW_TICK_MS}ms` }}>
                     {state.bars.map((bar, i) => (
                         <span key={i} className={`${styles.slowBar} ${i === state.bars.length - 1 ? styles.slowBarLive : ''}`}>
-                            <span className={styles.slowDemand} style={{ height: `${(bar.demand / SLOW_MAX) * 100}%` }} />
-                            <span className={styles.slowActual} style={{ height: `${(bar.actual / SLOW_MAX) * 100}%` }} />
+                            <span className={styles.slowDemand} style={{ height: `${(bar.want / SLOW_MAX) * 100}%` }} />
+                            <span className={styles.slowActual} style={{ height: `${(bar.sent / SLOW_MAX) * 100}%` }} />
                         </span>
                     ))}
                 </div>
