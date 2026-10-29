@@ -20,7 +20,7 @@ L'historique des sanctions enregistre automatiquement toutes les actions de mod�
 - **Sanctions manuelles** : toutes les [commandes de modération](./moderation.mdx) (`/ban`, `/tempban`, `/kick`, `/mute`, `/jail`, `/warn`…) sont enregistrées dans l'historique.
 - **Sanctions automatiques** : les sanctions appliquées par nos modules de protection ([anti-spam](./anti-spam.mdx), [HoneyPot](./honeypot.md), [ScamLens](./scam-images.md)…) sont également ajoutées à l'historique.
 - **Bannissements, expulsions et timeouts** : les sanctions appliquées sans passer par RaidProtect sont ajoutées à l'historique.
-- **AutoMod de Discord** : les timeouts posés par l'AutoMod de Discord sont enregistrés. Chaque message bloqué par une règle AutoMod crée aussi un **avertissement** au nom de “**Discord Automod**”, silencieux (aucun MP), sauf si la règle applique déjà un timeout.
+- **AutoMod de Discord** : les timeouts posés par l'AutoMod de Discord sont enregistrés. Chaque message bloqué par une règle AutoMod crée aussi un **avertissement** au nom de “**Discord Automod**”, silencieux (aucun MP), sauf si la règle applique déjà un timeout. Ce warn est activé par défaut et se coupe avec “**Warn des messages bloqués par l'AutoMod**” : faites la [commande `/settings`](../setup.md#settings), onglet “**Modération**”, “**Sanctions**”.
 - **Notifications des sanctions** : les membres sanctionnés reçoivent un message privé les informant de la sanction et de sa raison. Le bot envoie également un accusé de réception détaillé confirmant le statut de l'envoi : **reçu**, **MP fermés**, **expiré** ou **silencieux** (lorsque l'option `[--silent]` est utilisée). Pour les kicks, softbans et bans temporaires, ce message contient également un **bouton avec une invitation au serveur** afin que le membre puisse revenir une fois la sanction terminée.
 
 :::info
@@ -327,4 +327,4 @@ Oui, si vous réglez la [confidentialité des sanctions](#sanctions-privacy) sur
 
 ### Les messages bloqués par l'AutoMod de Discord comptent-ils comme des sanctions ?
 
-Oui : chaque message bloqué crée un avertissement silencieux au nom de “**Discord Automod**”, sauf si la règle applique déjà un timeout. Ces avertissements ne sont journalisés que si les logs de modération passives sont activés.
+Oui, par défaut : chaque message bloqué crée un avertissement silencieux au nom de “**Discord Automod**”, sauf si la règle applique déjà un timeout. Vous pouvez couper ce warn avec “**Warn des messages bloqués par l'AutoMod**” dans `/settings`, onglet “**Modération**”, “**Sanctions**”. Ces avertissements ne sont journalisés que si les logs de modération passives sont activés.

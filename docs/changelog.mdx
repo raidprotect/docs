@@ -36,6 +36,11 @@ L'Identity Update est en expérimentation : en attendant sa sortie en 3.7.0, el
 - Le [captcha](./features/captcha.md#activity-alts) repère les doubles comptes : il lie lui-même les comptes sûrs d'être la même personne, et propose à votre équipe les liens probables.
 - Les [sanctions des comptes liés](./features/alt-accounts.md#modes) sont réservées au **Premium**. Sans Premium, `/alt` lie et consulte les comptes sans limite, et Un seul compte par personne reste disponible.
 
+## 3.6.1 {#3-6-1}
+
+- Le [mode test du captcha](./features/captcha.md#test-mode) est retiré : il n'y a plus d'interrupteur, votre équipe (propriétaire, **Administrateur** ou **Gérer le serveur**) peut toujours cliquer sur “**Vérifier**” pour tester le captcha, sans qu'aucune action ne soit appliquée.
+- Le [warn des messages bloqués par l'AutoMod de Discord](./features/sanctions.mdx#working) peut être coupé avec le nouveau réglage “**Warn des messages bloqués par l'AutoMod**” dans `/settings`, onglet “**Modération**”, “**Sanctions**”. Il reste activé par défaut.
+
 ## 3.6.0 Shield Update (28/10/2026) {#3-6-0}
 
 - Nouveau **[DISCON](./features/discon.md)** : un niveau de danger du serveur en cinq crans, réglable d'un clic avec la commande `/discon` ou depuis un [panneau pour l'équipe](./features/discon.md#panel). Chaque niveau durcit automatiquement le serveur (vérification, captcha, fermeture des MP, mode raid, verrouillage), et un [salon vocal](./features/discon.md#voice) affiche le niveau en cours.
