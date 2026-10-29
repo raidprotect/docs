@@ -26,6 +26,8 @@ export interface State {
   slowmodeChannel: boolean;
   quarantineSync: boolean;
   serverRefs: boolean;
+  files: boolean;
+  filesDisguised: boolean;
 }
 
 export const INITIAL: State = {
@@ -51,6 +53,8 @@ export const INITIAL: State = {
   slowmodeChannel: true,
   quarantineSync: true,
   serverRefs: true,
+  files: true,
+  filesDisguised: true,
 };
 
 export interface Ctx {
