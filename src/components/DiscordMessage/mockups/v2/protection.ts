@@ -263,6 +263,16 @@ export function protectionPart({ s, flip }: Ctx, disconState: { level: number; s
         ...SERVER_KINDS.flatMap(([, label, icon, mode]) => [
           heading(icon, label),
           select(t("servers.modePh", "Choisir un mode"), serverModes(mode)),
+          ...(label === t("servers.link", "Invitation") && mode !== 0
+            ? [
+                text(`-# ${i("iconPremium")} ${t("servers.private.heading", "Invitations d'ami et de groupe privé, réglables séparément en premium")}`),
+                select(t("servers.private.placeholder", "Invitations d'ami et de groupe"), [
+                  { label: t("servers.private.follow", "Suivre la liste"), description: t("servers.private.followDesc", "Passent en liste noire, supprimées en liste blanche"), emoji: "iconReset", default: true },
+                  { label: t("servers.private.allow", "Toujours autorisées"), description: t("servers.private.allowDesc", "Invitations d'ami et de groupe privé acceptées, quelle que soit la liste"), emoji: "iconPremium" },
+                  { label: t("servers.private.block", "Toujours supprimées"), description: t("servers.private.blockDesc", "Invitations d'ami et de groupe privé supprimées, quelle que soit la liste"), emoji: "iconPremium" },
+                ]),
+              ]
+            : []),
         ]),
         sep(),
         heading("iconSanctions", t("servers.sanction", "Sanction des messages supprimés")),
