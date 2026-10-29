@@ -1557,17 +1557,184 @@
   gap: 1rem;
 }
 
-.slowBars {
+.slowChannel {
   display: flex;
-  align-items: flex-end;
-  gap: 6px;
-  height: 150px;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.6rem;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.25);
 }
 
-.slowBars span {
+.slowFeed {
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, transparent, #000 35%);
+}
+
+.slowTrack {
+  position: absolute;
+  inset: 0 0 auto;
+  transition-property: transform;
+  transition-timing-function: linear;
+}
+
+.sceneSlowmode:not(.slowAnimated) .slowTrack {
+  transition: none;
+}
+
+.slowMsg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 16px;
+  transition: opacity 0.3s;
+}
+
+.slowAvatar {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  opacity: 0.85;
+}
+
+.slowLines {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   flex: 1;
-  border-radius: 4px 4px 0 0;
+}
+
+.slowName {
+  height: 6px;
+  border-radius: 3px;
+  opacity: 0.7;
+}
+
+.slowText {
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.slowInput {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--rp-text-muted);
+  font-size: 0.72rem;
+}
+
+.slowUsers {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.slowUser {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: opacity 0.25s, box-shadow 0.25s;
+}
+
+.slowUserWait {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+}
+
+.slowChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-variant-numeric: tabular-nums;
+  transition: color 0.3s;
+}
+
+.slowInputOn .slowChip {
+  color: var(--ifm-color-primary);
+}
+
+.slowChart {
+  position: relative;
+  height: 110px;
+  overflow: hidden;
+}
+
+.slowChartTrack {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 100%;
+}
+
+.slowAnimated .slowChartTrack {
+  animation-name: slowChartShift;
+  animation-timing-function: linear;
+}
+
+.slowTarget {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  border-top: 1px dashed rgba(255, 255, 255, 0.3);
+}
+
+.slowBar {
+  position: relative;
+  flex: 1;
+  height: 100%;
+}
+
+.slowBarLive .slowActual {
+  box-shadow: 0 0 12px rgba(211, 95, 95, 0.7);
+}
+
+.slowDemand,
+.slowActual {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 3px 3px 0 0;
+}
+
+/* Un socle reste visible même sans message : chaque instant a sa barre. */
+.slowDemand {
+  min-height: 4px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.slowActual {
   background: linear-gradient(to top, var(--rp-premium-border-strong), var(--ifm-color-primary));
+  transition: height 0.4s ease-out;
+}
+
+.slowValueChange {
+  animation: slowValueIn 0.4s ease-out;
+}
+
+@keyframes slowChartShift {
+  from { transform: translateX(calc(100% / 24)); }
+}
+
+@keyframes slowValueIn {
+  from { opacity: 0; transform: translateY(-6px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slowValueChange {
+    animation: none;
+  }
 }
 
 .slowValue {
