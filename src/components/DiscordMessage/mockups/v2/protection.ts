@@ -598,7 +598,7 @@ export function protectionPart({ s, flip }: Ctx, disconState: { level: number; s
             "Cochez des groupes, saisissez des extensions séparées par des virgules (`exe, msi`), ou les deux. Le point est facultatif."
           )}`,
         },
-        fileGroupsField(["Exécutables"]),
+        fileGroupsField([FILE_GROUPS[0][0]]),
         textField(t("files.extensions.label", "Autres extensions"), "exe, msi, psd", "psd", t("files.extensions.description", "Séparées par des virgules, le point est facultatif.")),
       ],
     }),
