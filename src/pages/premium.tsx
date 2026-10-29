@@ -319,6 +319,127 @@ function CaptchaScene(): React.ReactNode {
     )
 }
 
+// Débit voulu par le salon à chaque tick : calme, montée, pic, retour au calme.
+const SLOW_DEMAND = [2, 2, 3, 2, 3, 4, 6, 9, 13, 16, 18, 18, 17, 15, 12, 9, 7, 5, 4, 3, 2, 2, 3, 2, 2, 3, 2, 2]
+const SLOW_LEVELS = [0, 5, 10, 30]
+const SLOW_CAPS = [Infinity, 7, 6, 5]
+const SLOW_STEPS = [6, 10, 15]
+const SLOW_TARGET = 6
+const SLOW_MAX = 18
+const SLOW_BARS = 14
+const SLOW_TICK_MS = 650
+const SLOW_COLORS = ['#d35f5f', '#a561a3', '#5f9ed3', '#d3a65f', '#5fd39a']
+
+type SlowMsg = { id: number; color: string; name: number; width: number }
+type SlowState = { t: number; level: number; calm: number; bars: { demand: number; actual: number }[]; msgs: SlowMsg[]; next: number; pending: number }
+
+function slowStep(s: SlowState): SlowState {
+    const demand = SLOW_DEMAND[s.t % SLOW_DEMAND.length]
+    const wanted = SLOW_STEPS.filter(step => demand > step).length
+    let { level, calm } = s
+    // Monte tout de suite, redescend d'un cran après 3 ticks plus calmes.
+    if (wanted > level) {
+        level = wanted
+        calm = 0
+    } else if (wanted < level) {
+        calm += 1
+        if (calm >= 3) {
+            level -= 1
+            calm = 0
+        }
+    } else {
+        calm = 0
+    }
+    const actual = Math.min(demand, SLOW_CAPS[level])
+    const bars = [...s.bars, { demand, actual }].slice(-SLOW_BARS)
+    // Le salon affiche un message pour 3 du débit : on voit le rythme changer.
+    let pending = s.pending + actual / 3
+    let next = s.next
+    const fresh: SlowMsg[] = []
+    while (pending >= 1) {
+        pending -= 1
+        next += 1
+        fresh.push({ id: next, color: SLOW_COLORS[(next * 7) % SLOW_COLORS.length], name: 30 + ((next * 13) % 30), width: 35 + ((next * 29) % 55) })
+    }
+    return { t: s.t + 1, level, calm, bars, msgs: [...s.msgs, ...fresh].slice(-5), next, pending }
+}
+
+function slowInitial(ticks: number): SlowState {
+    let s: SlowState = { t: 0, level: 0, calm: 0, bars: [], msgs: [], next: 0, pending: 0 }
+    for (let i = 0; i < ticks; i++) s = slowStep(s)
+    return s
+}
+
+/**
+ * Salon simulé : les messages arrivent au débit du moment, le mode lent monte
+ * quand le débit dépasse la cible puis redescend. Les barres claires montrent
+ * le débit voulu, les pleines celui que le mode lent laisse passer.
+ */
+function SlowmodeScene(): React.ReactNode {
+    const ref = useRef<HTMLDivElement>(null)
+    // Rendu statique au pic : c'est aussi ce qu'affichent le SSR et le mouvement réduit.
+    const [state, setState] = useState(() => slowInitial(12))
+    useEffect(() => {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+        let timer: number | undefined
+        const start = () => {
+            if (timer === undefined) timer = window.setInterval(() => setState(slowStep), SLOW_TICK_MS)
+        }
+        const stop = () => {
+            window.clearInterval(timer)
+            timer = undefined
+        }
+        const observer = new IntersectionObserver(([entry]) => (entry.isIntersecting ? start() : stop()))
+        if (ref.current) observer.observe(ref.current)
+        return () => {
+            observer.disconnect()
+            stop()
+        }
+    }, [])
+
+    const seconds = SLOW_LEVELS[state.level]
+    return (
+        <div ref={ref} className={styles.sceneSlowmode}>
+            <div className={styles.slowChannel}>
+                <div className={styles.slowFeed}>
+                    {state.msgs.map(msg => (
+                        <div key={msg.id} className={styles.slowMsg}>
+                            <span className={styles.slowAvatar} style={{ background: msg.color }} />
+                            <span className={styles.slowLines}>
+                                <span className={styles.slowName} style={{ width: `${msg.name}%`, background: msg.color }} />
+                                <span className={styles.slowText} style={{ width: `${msg.width}%` }} />
+                            </span>
+                        </div>
+                    ))}
+                </div>
+                <div className={`${styles.slowInput} ${seconds ? styles.slowInputOn : ''}`}>
+                    <span>{translate({ id: 'premium.scene.slowmode.input', message: 'Envoyer un message' })}</span>
+                    <span className={styles.slowChip}>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round">
+                            <circle cx="12" cy="13" r="8" />
+                            <path d="M12 9v4l2 2M9 2h6" />
+                        </svg>
+                        {seconds ? `${seconds} s` : translate({ id: 'premium.scene.slowmode.off', message: 'désactivé' })}
+                    </span>
+                </div>
+            </div>
+            <div className={styles.slowChart}>
+                <span className={styles.slowTarget} style={{ bottom: `${(SLOW_TARGET / SLOW_MAX) * 100}%` }} />
+                {state.bars.map((bar, i) => (
+                    <span key={state.t - state.bars.length + i} className={styles.slowBar}>
+                        <span className={styles.slowDemand} style={{ height: `${(bar.demand / SLOW_MAX) * 100}%` }} />
+                        <span className={styles.slowActual} style={{ height: `${(bar.actual / SLOW_MAX) * 100}%` }} />
+                    </span>
+                ))}
+            </div>
+            <div className={styles.slowValue}>
+                <span>{translate({ id: 'premium.scene.slowmode.label', message: 'Mode lent' })}</span>
+                <strong key={seconds} className={styles.slowValueChange}>{seconds} s</strong>
+            </div>
+        </div>
+    )
+}
+
 /**
  * Mise en situation CSS d'un avantage (aucune image) : chaque "scène" illustre
  * concrètement ce que le Premium débloque. Décoratif, donc aria-hidden côté
@@ -402,19 +523,7 @@ function FeatureScene({ kind }: { kind: SceneKind }): React.ReactNode {
     }
 
     if (kind === 'slowmode') {
-        return (
-            <div className={styles.sceneSlowmode}>
-                <div className={styles.slowBars}>
-                    {[3, 5, 9, 14, 18, 12, 7, 4].map((h, i) => (
-                        <span key={i} style={{ height: `${h * 5}%` }} />
-                    ))}
-                </div>
-                <div className={styles.slowValue}>
-                    <span>{translate({ id: 'premium.scene.slowmode.label', message: 'Mode lent' })}</span>
-                    <strong>10 s</strong>
-                </div>
-            </div>
-        )
+        return <SlowmodeScene />
     }
 
     if (kind === 'limits') {

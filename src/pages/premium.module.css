@@ -1557,17 +1557,144 @@
   gap: 1rem;
 }
 
-.slowBars {
+.slowChannel {
   display: flex;
-  align-items: flex-end;
-  gap: 6px;
-  height: 150px;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.6rem;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.25);
 }
 
-.slowBars span {
+.slowFeed {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.45rem;
+  height: 128px;
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, transparent, #000 35%);
+}
+
+.slowMsg {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  animation: slowMsgIn 0.3s ease-out;
+}
+
+.slowAvatar {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  opacity: 0.85;
+}
+
+.slowLines {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   flex: 1;
-  border-radius: 4px 4px 0 0;
+}
+
+.slowName {
+  height: 6px;
+  border-radius: 3px;
+  opacity: 0.7;
+}
+
+.slowText {
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.slowInput {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--rp-text-muted);
+  font-size: 0.72rem;
+}
+
+.slowChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-variant-numeric: tabular-nums;
+  transition: color 0.3s;
+}
+
+.slowInputOn .slowChip {
+  color: var(--ifm-color-primary);
+}
+
+.slowChart {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 90px;
+}
+
+.slowTarget {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-top: 1px dashed rgba(255, 255, 255, 0.3);
+}
+
+.slowBar {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  animation: slowBarIn 0.4s ease-out;
+}
+
+.slowDemand,
+.slowActual {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 3px 3px 0 0;
+}
+
+.slowDemand {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.slowActual {
   background: linear-gradient(to top, var(--rp-premium-border-strong), var(--ifm-color-primary));
+  transition: height 0.4s ease-out;
+}
+
+.slowValueChange {
+  animation: slowValueIn 0.4s ease-out;
+}
+
+@keyframes slowMsgIn {
+  from { opacity: 0; transform: translateY(8px); }
+}
+
+@keyframes slowBarIn {
+  from { opacity: 0; }
+}
+
+@keyframes slowValueIn {
+  from { opacity: 0; transform: translateY(-6px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slowMsg,
+  .slowBar,
+  .slowValueChange {
+    animation: none;
+  }
 }
 
 .slowValue {
