@@ -1590,14 +1590,14 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  height: 18px;
+  height: 16px;
   transition: opacity 0.3s;
 }
 
 .slowAvatar {
   flex: none;
-  width: 22px;
-  height: 22px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   opacity: 0.85;
 }
@@ -1639,8 +1639,8 @@
 
 .slowUser {
   position: relative;
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   transition: opacity 0.25s, box-shadow 0.25s;
 }
@@ -1665,14 +1665,14 @@
 
 .slowChart {
   position: relative;
-  height: 90px;
+  height: 110px;
   overflow: hidden;
 }
 
 .slowChartTrack {
   display: flex;
   align-items: flex-end;
-  gap: 2px;
+  gap: 4px;
   height: 100%;
 }
 
@@ -1724,7 +1724,7 @@
 }
 
 @keyframes slowChartShift {
-  from { transform: translateX(calc(100% / 48)); }
+  from { transform: translateX(calc(100% / 24)); }
 }
 
 @keyframes slowValueIn {

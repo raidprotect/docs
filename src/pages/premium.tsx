@@ -322,26 +322,30 @@ function CaptchaScene(): React.ReactNode {
 // Salon simulé en ticks de 250 ms, sur un cycle de 12 s : calme, spam, calme.
 // SLOW_WANT est la probabilité qu'un membre veuille écrire à ce tick.
 const SLOW_WANT = [
-    ...Array(12).fill(0.06),
-    0.3, 0.5, 0.7, 0.8,
-    ...Array(12).fill(0.8),
-    0.5, 0.3, 0.15, 0.08,
-    ...Array(16).fill(0.06),
+    ...Array(8).fill(0.05),
+    0.2, 0.35, 0.45, 0.5,
+    ...Array(22).fill(0.5),
+    0.35, 0.2, 0.1, 0.06,
+    ...Array(10).fill(0.05),
 ]
 const SLOW_TICK_MS = 250
-const SLOW_BARS = SLOW_WANT.length
-const SLOW_USERS = ['#d35f5f', '#a561a3', '#5f9ed3', '#d3a65f', '#5fd39a']
+// Une barre du graphique regroupe deux ticks : 24 barres pour le cycle.
+const SLOW_BUCKET = 2
+const SLOW_BARS = SLOW_WANT.length / SLOW_BUCKET
+const SLOW_USERS = ['#d35f5f', '#a561a3', '#5f9ed3', '#d3a65f', '#5fd39a', '#d35fa6', '#5fc9d3', '#a6d35f']
 // Mode lent affiché, et attente imposée à chaque membre dans la simulation (en ticks).
 const SLOW_LEVELS = [0, 5, 10, 30]
-const SLOW_COOLDOWN = [0, 2, 4, 8]
-// Débit d'envois voulus (par tick, moyenne sur 1 s) au-delà duquel chaque niveau s'impose.
-const SLOW_STEPS = [1, 2.2, 3.4]
+const SLOW_COOLDOWN = [0, 2, 4, 6]
+// Envois voulus (par tick, moyenne sur 1 s) au-delà desquels chaque niveau s'impose.
+// À 30 s, chaque membre envoie au plus un message toutes les 2 s : le salon garde
+// un débit régulier, celui de la ligne visée, que la modération peut suivre.
+const SLOW_STEPS = [1, 2, 3]
 // La première réaction laisse le salon s'agiter un moment, les crans suivants vont plus vite.
 const SLOW_REACT = [5, 2, 2]
-const SLOW_RELAX = 6
-const SLOW_MAX = SLOW_USERS.length
-const SLOW_TARGET = 1.2
-const SLOW_ROW = 22
+const SLOW_RELAX = 3
+const SLOW_MAX = 10
+const SLOW_TARGET = 2
+const SLOW_ROW = 20
 const SLOW_FEED = 128
 
 type SlowMsg = { id: number; user: number; width: number }
@@ -350,6 +354,7 @@ type SlowState = {
     level: number
     streak: number
     ready: number[]
+    recent: number[]
     bars: { want: number; sent: number }[]
     msgs: SlowMsg[]
     next: number
@@ -372,16 +377,21 @@ function slowStep(s: SlowState): SlowState {
         want += 1
         // Pendant son attente, le membre ne peut pas envoyer : c'est le mode lent.
         if (s.t < ready[u]) return
-        ready[u] = s.t + cooldown
+        // Chacun reprend la parole à son rythme : un léger décalage par membre
+        // évite que tout le salon réécrive au même instant.
+        ready[u] = s.t + cooldown + (cooldown ? (u * 3) % 5 : 0)
         next += 1
         fresh.push({ id: next, user: u, width: 35 + ((next * 29) % 55) })
     })
-    const bars = [...s.bars, { want, sent: fresh.length }].slice(-SLOW_BARS)
+    const bars =
+        s.t % SLOW_BUCKET === 0
+            ? [...s.bars, { want, sent: fresh.length }].slice(-SLOW_BARS)
+            : [...s.bars.slice(0, -1), { want: s.bars[s.bars.length - 1].want + want, sent: s.bars[s.bars.length - 1].sent + fresh.length }]
 
     // Le mode lent réagit au débit de la dernière seconde, et seulement quand
     // l'écart dure : il monte après SLOW_REACT ticks, redescend après SLOW_RELAX.
-    const recent = bars.slice(-4)
-    const rate = recent.reduce((sum, bar) => sum + bar.want, 0) / recent.length
+    const recent = [...s.recent, want].slice(-4)
+    const rate = recent.reduce((sum, n) => sum + n, 0) / recent.length
     const wanted = SLOW_STEPS.filter(step => rate > step).length
     let { level, streak } = s
     if (wanted === level) {
@@ -393,11 +403,11 @@ function slowStep(s: SlowState): SlowState {
             streak = 0
         }
     }
-    return { t: s.t + 1, level, streak, ready, bars, msgs: [...s.msgs, ...fresh].slice(-14), next }
+    return { t: s.t + 1, level, streak, ready, recent, bars, msgs: [...s.msgs, ...fresh].slice(-16), next }
 }
 
 function slowInitial(ticks: number): SlowState {
-    let s: SlowState = { t: 0, level: 0, streak: 0, ready: SLOW_USERS.map(() => 0), bars: [], msgs: [], next: 0 }
+    let s: SlowState = { t: 0, level: 0, streak: 0, ready: SLOW_USERS.map(() => 0), recent: [], bars: [], msgs: [], next: 0 }
     for (let i = 0; i < ticks; i++) s = slowStep(s)
     return s
 }
@@ -411,7 +421,7 @@ function slowInitial(ticks: number): SlowState {
 function SlowmodeScene(): React.ReactNode {
     const ref = useRef<HTMLDivElement>(null)
     // Le rendu serveur et le mouvement réduit montrent un cycle complet, pic en cours.
-    const [state, setState] = useState(() => slowInitial(SLOW_BARS + 24))
+    const [state, setState] = useState(() => slowInitial(SLOW_WANT.length + 22))
     const [animated, setAnimated] = useState(false)
     useEffect(() => {
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
@@ -478,8 +488,8 @@ function SlowmodeScene(): React.ReactNode {
             </div>
             <div className={styles.slowChart}>
                 <span className={styles.slowTarget} style={{ bottom: `${(SLOW_TARGET / SLOW_MAX) * 100}%` }} />
-                {/* Remonté à chaque tick : la piste glisse d'une barre, sans à-coup. */}
-                <div key={state.t} className={styles.slowChartTrack} style={{ animationDuration: `${SLOW_TICK_MS}ms` }}>
+                {/* Remonté à chaque nouvelle barre : la piste glisse d'une barre, sans à-coup. */}
+                <div key={Math.floor((state.t - 1) / SLOW_BUCKET)} className={styles.slowChartTrack} style={{ animationDuration: `${SLOW_TICK_MS * SLOW_BUCKET}ms` }}>
                     {state.bars.map((bar, i) => (
                         <span key={i} className={`${styles.slowBar} ${i === state.bars.length - 1 ? styles.slowBarLive : ''}`}>
                             <span className={styles.slowDemand} style={{ height: `${(bar.want / SLOW_MAX) * 100}%` }} />
