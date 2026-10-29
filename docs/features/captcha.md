@@ -102,7 +102,7 @@ Seuls les comptes de votre serveur vous sont montrés : rien n'est dit des autr
 Le repérage des doubles comptes fait partie de l'**Identity Update**, prévue pour la version 3.7.0. En attendant sa sortie, il est en expérimentation, en bêta publique pour les serveurs [Premium](/premium).
 :::
 
-### Mode test {#test-mode}
+### Tester le captcha {#test-mode}
 
 Il n'y a rien à activer : en mode Panneau, un membre de votre équipe déjà vérifié (le propriétaire, ou un membre avec la permission **Administrateur** ou **Gérer le serveur**) peut toujours cliquer sur “**Vérifier**” pour refaire le captcha. Les essais et le temps de résolution s'appliquent comme pour un arrivant. Rien n'est appliqué : le log du captcha (“**Test de l'équipe**”) dit ce qui aurait été fait.
 
