@@ -7862,5 +7862,146 @@
   },
   "premium.scene.slowmode.label": {
     "message": "慢速模式"
+  },
+  "mockup.v2.files.name": {
+    "message": "文件扩展名"
+  },
+  "mockup.v2.files.short": {
+    "message": "按频道阻止或仅允许的文件"
+  },
+  "mockup.v2.files.hint": {
+    "message": "删除扩展名被拒绝的文件，可作用于整个服务器或指定频道。"
+  },
+  "mockup.v2.servers.private.heading": {
+    "message": "好友和私人群组邀请，高级版可单独设置"
+  },
+  "mockup.v2.servers.private.placeholder": {
+    "message": "好友和群组邀请"
+  },
+  "mockup.v2.servers.private.follow": {
+    "message": "遵循列表"
+  },
+  "mockup.v2.servers.private.followDesc": {
+    "message": "黑名单下放行，白名单下删除"
+  },
+  "mockup.v2.servers.private.allow": {
+    "message": "始终允许"
+  },
+  "mockup.v2.servers.private.allowDesc": {
+    "message": "无论列表如何，均接受好友和私人群组邀请"
+  },
+  "mockup.v2.servers.private.block": {
+    "message": "始终删除"
+  },
+  "mockup.v2.servers.private.blockDesc": {
+    "message": "无论列表如何，均删除好友和私人群组邀请"
+  },
+  "mockup.v2.files.groups.executables": {
+    "message": "可执行文件"
+  },
+  "mockup.v2.files.groups.images": {
+    "message": "图片"
+  },
+  "mockup.v2.files.groups.videos": {
+    "message": "视频"
+  },
+  "mockup.v2.files.groups.audio": {
+    "message": "音频"
+  },
+  "mockup.v2.files.groups.archives": {
+    "message": "压缩包"
+  },
+  "mockup.v2.files.groups.documents": {
+    "message": "文档"
+  },
+  "mockup.v2.files.server.off": {
+    "message": "整个服务器不拒绝任何扩展名"
+  },
+  "mockup.v2.files.server.blocklist": {
+    "message": "在所有位置删除这些扩展名的文件"
+  },
+  "mockup.v2.files.server.allowlist": {
+    "message": "在所有位置删除其他扩展名的文件"
+  },
+  "mockup.v2.files.title": {
+    "message": "文件扩展名"
+  },
+  "mockup.v2.files.server.name": {
+    "message": "整个服务器"
+  },
+  "mockup.v2.files.server.hint": {
+    "message": "适用于每个频道，与频道自身的规则叠加。"
+  },
+  "mockup.v2.files.modePh": {
+    "message": "选择模式"
+  },
+  "mockup.v2.files.server.blocked": {
+    "message": "已阻止的扩展名"
+  },
+  "mockup.v2.files.disguised.name": {
+    "message": "始终拒绝损坏的文件"
+  },
+  "mockup.v2.files.disguised.hint": {
+    "message": "Discord 无法读取的图片或视频（例如改名为 `.png` 的 `.exe`）会在所有频道被删除，而不仅限于白名单。"
+  },
+  "mockup.v2.files.channels.name": {
+    "message": "频道和分类（{count}）"
+  },
+  "mockup.v2.files.channels.allowOnly": {
+    "message": "仅接受 {extensions}"
+  },
+  "mockup.v2.files.channels.editPh": {
+    "message": "修改频道"
+  },
+  "mockup.v2.files.add.button": {
+    "message": "添加频道"
+  },
+  "mockup.v2.files.remove.button": {
+    "message": "移除"
+  },
+  "mockup.v2.files.sanction.field": {
+    "message": "被删除消息的处罚"
+  },
+  "mockup.v2.files.sanction.hint": {
+    "message": "每条被拒绝的消息都会被删除；每位成员每分钟最多受到一次处罚。"
+  },
+  "mockup.v2.files.sanction.placeholder": {
+    "message": "选择处罚"
+  },
+  "mockup.v2.files.sanction.none": {
+    "message": "仅删除消息"
+  },
+  "mockup.v2.files.extensions.groups": {
+    "message": "分组"
+  },
+  "mockup.v2.files.extensions.label": {
+    "message": "其他扩展名"
+  },
+  "mockup.v2.files.extensions.description": {
+    "message": "以逗号分隔，前面的点可省略。"
+  },
+  "mockup.v2.files.add.title": {
+    "message": "添加频道"
+  },
+  "mockup.v2.files.add.channel": {
+    "message": "频道或分类"
+  },
+  "mockup.v2.files.add.channelDescription": {
+    "message": "已设置过的，其规则将被替换。"
+  },
+  "mockup.v2.files.add.mode": {
+    "message": "模式"
+  },
+  "mockup.v2.files.channels.allowDescription": {
+    "message": "仅放行这些扩展名的文件"
+  },
+  "mockup.v2.files.channels.blockDescription": {
+    "message": "删除这些扩展名的文件"
+  },
+  "mockup.v2.files.remove.title": {
+    "message": "移除频道"
+  },
+  "mockup.v2.files.remove.label": {
+    "message": "要移除的频道"
   }
 }

@@ -7862,5 +7862,146 @@
   },
   "premium.scene.slowmode.label": {
     "message": "Yavaş mod"
+  },
+  "mockup.v2.files.name": {
+    "message": "Dosya uzantıları"
+  },
+  "mockup.v2.files.short": {
+    "message": "Kanal başına engellenen veya yalnızca izin verilen dosyalar"
+  },
+  "mockup.v2.files.hint": {
+    "message": "Reddedilen bir uzantıdaki dosyaları tüm sunucuda ya da yalnızca belirli kanallarda siler."
+  },
+  "mockup.v2.servers.private.heading": {
+    "message": "Arkadaş ve özel grup davetleri, premium ile ayrıca ayarlanabilir"
+  },
+  "mockup.v2.servers.private.placeholder": {
+    "message": "Arkadaş ve grup davetleri"
+  },
+  "mockup.v2.servers.private.follow": {
+    "message": "Listeye uy"
+  },
+  "mockup.v2.servers.private.followDesc": {
+    "message": "Kara listede geçer, beyaz listede silinir"
+  },
+  "mockup.v2.servers.private.allow": {
+    "message": "Her zaman izinli"
+  },
+  "mockup.v2.servers.private.allowDesc": {
+    "message": "Arkadaş ve özel grup davetleri, liste ne olursa olsun kabul edilir"
+  },
+  "mockup.v2.servers.private.block": {
+    "message": "Her zaman silinir"
+  },
+  "mockup.v2.servers.private.blockDesc": {
+    "message": "Arkadaş ve özel grup davetleri, liste ne olursa olsun silinir"
+  },
+  "mockup.v2.files.groups.executables": {
+    "message": "Çalıştırılabilir dosyalar"
+  },
+  "mockup.v2.files.groups.images": {
+    "message": "Görseller"
+  },
+  "mockup.v2.files.groups.videos": {
+    "message": "Videolar"
+  },
+  "mockup.v2.files.groups.audio": {
+    "message": "Ses"
+  },
+  "mockup.v2.files.groups.archives": {
+    "message": "Arşivler"
+  },
+  "mockup.v2.files.groups.documents": {
+    "message": "Belgeler"
+  },
+  "mockup.v2.files.server.off": {
+    "message": "Tüm sunucuda reddedilen uzantı yok"
+  },
+  "mockup.v2.files.server.blocklist": {
+    "message": "Bu uzantılardaki dosyaları her yerde siler"
+  },
+  "mockup.v2.files.server.allowlist": {
+    "message": "Başka uzantıdaki her dosyayı her yerde siler"
+  },
+  "mockup.v2.files.title": {
+    "message": "Dosya uzantıları"
+  },
+  "mockup.v2.files.server.name": {
+    "message": "Tüm sunucu"
+  },
+  "mockup.v2.files.server.hint": {
+    "message": "Her kanalda, kanalın kendi kuralına ek olarak uygulanır."
+  },
+  "mockup.v2.files.modePh": {
+    "message": "Bir mod seçin"
+  },
+  "mockup.v2.files.server.blocked": {
+    "message": "Engellenen uzantılar"
+  },
+  "mockup.v2.files.disguised.name": {
+    "message": "Bozuk dosyaları her zaman reddet"
+  },
+  "mockup.v2.files.disguised.hint": {
+    "message": "Discord'un okuyamadığı bir görsel veya video (`.png` olarak yeniden adlandırılmış bir `.exe`), yalnızca beyaz listede değil tüm kanallarda silinir."
+  },
+  "mockup.v2.files.channels.name": {
+    "message": "Kanallar ve kategoriler ({count})"
+  },
+  "mockup.v2.files.channels.allowOnly": {
+    "message": "yalnızca {extensions} kabul eder"
+  },
+  "mockup.v2.files.channels.editPh": {
+    "message": "Bir kanalı düzenleyin"
+  },
+  "mockup.v2.files.add.button": {
+    "message": "Kanal ekle"
+  },
+  "mockup.v2.files.remove.button": {
+    "message": "Kaldır"
+  },
+  "mockup.v2.files.sanction.field": {
+    "message": "Silinen mesajların yaptırımı"
+  },
+  "mockup.v2.files.sanction.hint": {
+    "message": "Reddedilen her mesaj silinir; yaptırım üye başına dakikada en fazla bir kez uygulanır."
+  },
+  "mockup.v2.files.sanction.placeholder": {
+    "message": "Bir yaptırım seçin"
+  },
+  "mockup.v2.files.sanction.none": {
+    "message": "Yalnızca mesaj silinir"
+  },
+  "mockup.v2.files.extensions.groups": {
+    "message": "Gruplar"
+  },
+  "mockup.v2.files.extensions.label": {
+    "message": "Diğer uzantılar"
+  },
+  "mockup.v2.files.extensions.description": {
+    "message": "Virgülle ayırın, nokta isteğe bağlıdır."
+  },
+  "mockup.v2.files.add.title": {
+    "message": "Kanal ekle"
+  },
+  "mockup.v2.files.add.channel": {
+    "message": "Kanal veya kategori"
+  },
+  "mockup.v2.files.add.channelDescription": {
+    "message": "Zaten ayarlıysa kuralı değiştirilir."
+  },
+  "mockup.v2.files.add.mode": {
+    "message": "Mod"
+  },
+  "mockup.v2.files.channels.allowDescription": {
+    "message": "Yalnızca bu uzantılardaki dosyalar geçer"
+  },
+  "mockup.v2.files.channels.blockDescription": {
+    "message": "Bu uzantılardaki dosyalar silinir"
+  },
+  "mockup.v2.files.remove.title": {
+    "message": "Kanalları kaldır"
+  },
+  "mockup.v2.files.remove.label": {
+    "message": "Kaldırılacak kanallar"
   }
 }

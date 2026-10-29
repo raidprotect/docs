@@ -7862,5 +7862,146 @@
   },
   "premium.scene.slowmode.label": {
     "message": "Slowmode"
+  },
+  "mockup.v2.files.name": {
+    "message": "Dateiendungen"
+  },
+  "mockup.v2.files.short": {
+    "message": "Gesperrte oder einzig erlaubte Dateien, pro Kanal"
+  },
+  "mockup.v2.files.hint": {
+    "message": "Löscht Dateien mit abgelehnter Endung, auf dem ganzen Server oder in bestimmten Kanälen."
+  },
+  "mockup.v2.servers.private.heading": {
+    "message": "Freundes- und Gruppen-DM-Einladungen, mit Premium separat einstellbar"
+  },
+  "mockup.v2.servers.private.placeholder": {
+    "message": "Freundes- und Gruppeneinladungen"
+  },
+  "mockup.v2.servers.private.follow": {
+    "message": "Liste folgen"
+  },
+  "mockup.v2.servers.private.followDesc": {
+    "message": "Mit Blacklist erlaubt, mit Whitelist gelöscht"
+  },
+  "mockup.v2.servers.private.allow": {
+    "message": "Immer erlaubt"
+  },
+  "mockup.v2.servers.private.allowDesc": {
+    "message": "Freundes- und Gruppen-DM-Einladungen erlaubt, unabhängig von der Liste"
+  },
+  "mockup.v2.servers.private.block": {
+    "message": "Immer gelöscht"
+  },
+  "mockup.v2.servers.private.blockDesc": {
+    "message": "Freundes- und Gruppen-DM-Einladungen gelöscht, unabhängig von der Liste"
+  },
+  "mockup.v2.files.groups.executables": {
+    "message": "Ausführbare Dateien"
+  },
+  "mockup.v2.files.groups.images": {
+    "message": "Bilder"
+  },
+  "mockup.v2.files.groups.videos": {
+    "message": "Videos"
+  },
+  "mockup.v2.files.groups.audio": {
+    "message": "Audio"
+  },
+  "mockup.v2.files.groups.archives": {
+    "message": "Archive"
+  },
+  "mockup.v2.files.groups.documents": {
+    "message": "Dokumente"
+  },
+  "mockup.v2.files.server.off": {
+    "message": "Keine Endung auf dem ganzen Server abgelehnt"
+  },
+  "mockup.v2.files.server.blocklist": {
+    "message": "Löscht Dateien mit diesen Endungen, überall"
+  },
+  "mockup.v2.files.server.allowlist": {
+    "message": "Löscht jede Datei mit einer anderen Endung, überall"
+  },
+  "mockup.v2.files.title": {
+    "message": "Dateiendungen"
+  },
+  "mockup.v2.files.server.name": {
+    "message": "Ganzer Server"
+  },
+  "mockup.v2.files.server.hint": {
+    "message": "Gilt für jeden Kanal, zusätzlich zu dessen eigener Regel."
+  },
+  "mockup.v2.files.modePh": {
+    "message": "Modus wählen"
+  },
+  "mockup.v2.files.server.blocked": {
+    "message": "Gesperrte Endungen"
+  },
+  "mockup.v2.files.disguised.name": {
+    "message": "Beschädigte Dateien immer ablehnen"
+  },
+  "mockup.v2.files.disguised.hint": {
+    "message": "Ein Bild oder Video, das Discord nicht lesen kann (eine in `.png` umbenannte `.exe`), wird in allen Kanälen gelöscht, nicht nur durch eine Zulassungsliste."
+  },
+  "mockup.v2.files.channels.name": {
+    "message": "Kanäle und Kategorien ({count})"
+  },
+  "mockup.v2.files.channels.allowOnly": {
+    "message": "akzeptiert nur {extensions}"
+  },
+  "mockup.v2.files.channels.editPh": {
+    "message": "Einen Kanal bearbeiten"
+  },
+  "mockup.v2.files.add.button": {
+    "message": "Kanal hinzufügen"
+  },
+  "mockup.v2.files.remove.button": {
+    "message": "Entfernen"
+  },
+  "mockup.v2.files.sanction.field": {
+    "message": "Sanktion für gelöschte Nachrichten"
+  },
+  "mockup.v2.files.sanction.hint": {
+    "message": "Jede abgelehnte Nachricht wird gelöscht; die Sanktion greift höchstens einmal pro Minute und Mitglied."
+  },
+  "mockup.v2.files.sanction.placeholder": {
+    "message": "Sanktion wählen"
+  },
+  "mockup.v2.files.sanction.none": {
+    "message": "Nur Nachricht löschen"
+  },
+  "mockup.v2.files.extensions.groups": {
+    "message": "Gruppen"
+  },
+  "mockup.v2.files.extensions.label": {
+    "message": "Weitere Endungen"
+  },
+  "mockup.v2.files.extensions.description": {
+    "message": "Durch Kommas getrennt, der Punkt ist optional."
+  },
+  "mockup.v2.files.add.title": {
+    "message": "Kanal hinzufügen"
+  },
+  "mockup.v2.files.add.channel": {
+    "message": "Kanal oder Kategorie"
+  },
+  "mockup.v2.files.add.channelDescription": {
+    "message": "Bereits eingestellt: Seine Regel wird ersetzt."
+  },
+  "mockup.v2.files.add.mode": {
+    "message": "Modus"
+  },
+  "mockup.v2.files.channels.allowDescription": {
+    "message": "Nur Dateien mit diesen Endungen kommen durch"
+  },
+  "mockup.v2.files.channels.blockDescription": {
+    "message": "Dateien mit diesen Endungen werden gelöscht"
+  },
+  "mockup.v2.files.remove.title": {
+    "message": "Kanäle entfernen"
+  },
+  "mockup.v2.files.remove.label": {
+    "message": "Zu entfernende Kanäle"
   }
 }

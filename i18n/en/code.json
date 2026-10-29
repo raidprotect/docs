@@ -7862,5 +7862,146 @@
   },
   "premium.scene.slowmode.label": {
     "message": "Slowmode"
+  },
+  "mockup.v2.files.name": {
+    "message": "File extensions"
+  },
+  "mockup.v2.files.short": {
+    "message": "Blocked files, or only allowed ones, per channel"
+  },
+  "mockup.v2.files.hint": {
+    "message": "Deletes files with a refused extension, server-wide or in specific channels."
+  },
+  "mockup.v2.servers.private.heading": {
+    "message": "Friend and group DM invites, set separately with premium"
+  },
+  "mockup.v2.servers.private.placeholder": {
+    "message": "Friend and group invites"
+  },
+  "mockup.v2.servers.private.follow": {
+    "message": "Follow the list"
+  },
+  "mockup.v2.servers.private.followDesc": {
+    "message": "Allowed with a blocklist, removed with an allowlist"
+  },
+  "mockup.v2.servers.private.allow": {
+    "message": "Always allowed"
+  },
+  "mockup.v2.servers.private.allowDesc": {
+    "message": "Friend and group DM invites accepted, whatever the list"
+  },
+  "mockup.v2.servers.private.block": {
+    "message": "Always removed"
+  },
+  "mockup.v2.servers.private.blockDesc": {
+    "message": "Friend and group DM invites removed, whatever the list"
+  },
+  "mockup.v2.files.groups.executables": {
+    "message": "Executables"
+  },
+  "mockup.v2.files.groups.images": {
+    "message": "Images"
+  },
+  "mockup.v2.files.groups.videos": {
+    "message": "Videos"
+  },
+  "mockup.v2.files.groups.audio": {
+    "message": "Audio"
+  },
+  "mockup.v2.files.groups.archives": {
+    "message": "Archives"
+  },
+  "mockup.v2.files.groups.documents": {
+    "message": "Documents"
+  },
+  "mockup.v2.files.server.off": {
+    "message": "No extension refused server-wide"
+  },
+  "mockup.v2.files.server.blocklist": {
+    "message": "Deletes files with these extensions, everywhere"
+  },
+  "mockup.v2.files.server.allowlist": {
+    "message": "Deletes any file with another extension, everywhere"
+  },
+  "mockup.v2.files.title": {
+    "message": "File extensions"
+  },
+  "mockup.v2.files.server.name": {
+    "message": "Entire server"
+  },
+  "mockup.v2.files.server.hint": {
+    "message": "Applies to every channel, on top of its own rule."
+  },
+  "mockup.v2.files.modePh": {
+    "message": "Choose a mode"
+  },
+  "mockup.v2.files.server.blocked": {
+    "message": "Blocked extensions"
+  },
+  "mockup.v2.files.disguised.name": {
+    "message": "Always refuse corrupted files"
+  },
+  "mockup.v2.files.disguised.hint": {
+    "message": "An image or video that Discord cannot read (an `.exe` renamed to `.png`) is deleted in every channel, not only by an allowlist."
+  },
+  "mockup.v2.files.channels.name": {
+    "message": "Channels and categories ({count})"
+  },
+  "mockup.v2.files.channels.allowOnly": {
+    "message": "only accepts {extensions}"
+  },
+  "mockup.v2.files.channels.editPh": {
+    "message": "Edit a channel"
+  },
+  "mockup.v2.files.add.button": {
+    "message": "Add a channel"
+  },
+  "mockup.v2.files.remove.button": {
+    "message": "Remove"
+  },
+  "mockup.v2.files.sanction.field": {
+    "message": "Sanction for deleted messages"
+  },
+  "mockup.v2.files.sanction.hint": {
+    "message": "Every refused message is deleted; the sanction applies at most once per minute per member."
+  },
+  "mockup.v2.files.sanction.placeholder": {
+    "message": "Choose a sanction"
+  },
+  "mockup.v2.files.sanction.none": {
+    "message": "Message deleted only"
+  },
+  "mockup.v2.files.extensions.groups": {
+    "message": "Groups"
+  },
+  "mockup.v2.files.extensions.label": {
+    "message": "Other extensions"
+  },
+  "mockup.v2.files.extensions.description": {
+    "message": "Comma-separated, the dot is optional."
+  },
+  "mockup.v2.files.add.title": {
+    "message": "Add a channel"
+  },
+  "mockup.v2.files.add.channel": {
+    "message": "Channel or category"
+  },
+  "mockup.v2.files.add.channelDescription": {
+    "message": "If already set, its rule is replaced."
+  },
+  "mockup.v2.files.add.mode": {
+    "message": "Mode"
+  },
+  "mockup.v2.files.channels.allowDescription": {
+    "message": "Only files with these extensions pass"
+  },
+  "mockup.v2.files.channels.blockDescription": {
+    "message": "Files with these extensions are deleted"
+  },
+  "mockup.v2.files.remove.title": {
+    "message": "Remove channels"
+  },
+  "mockup.v2.files.remove.label": {
+    "message": "Channels to remove"
   }
 }

@@ -7862,5 +7862,146 @@
   },
   "premium.scene.slowmode.label": {
     "message": "Modalità lenta"
+  },
+  "mockup.v2.files.name": {
+    "message": "Estensioni dei file"
+  },
+  "mockup.v2.files.short": {
+    "message": "File bloccati o unici consentiti, per canale"
+  },
+  "mockup.v2.files.hint": {
+    "message": "Elimina i file con un'estensione rifiutata, su tutto il server o in alcuni canali."
+  },
+  "mockup.v2.servers.private.heading": {
+    "message": "Inviti di amicizia e di gruppo privato, impostabili a parte con il premium"
+  },
+  "mockup.v2.servers.private.placeholder": {
+    "message": "Inviti di amicizia e di gruppo"
+  },
+  "mockup.v2.servers.private.follow": {
+    "message": "Segui la lista"
+  },
+  "mockup.v2.servers.private.followDesc": {
+    "message": "Passano con la lista nera, rimossi con la lista bianca"
+  },
+  "mockup.v2.servers.private.allow": {
+    "message": "Sempre consentiti"
+  },
+  "mockup.v2.servers.private.allowDesc": {
+    "message": "Inviti di amicizia e di gruppo privato accettati, qualunque sia la lista"
+  },
+  "mockup.v2.servers.private.block": {
+    "message": "Sempre rimossi"
+  },
+  "mockup.v2.servers.private.blockDesc": {
+    "message": "Inviti di amicizia e di gruppo privato rimossi, qualunque sia la lista"
+  },
+  "mockup.v2.files.groups.executables": {
+    "message": "Eseguibili"
+  },
+  "mockup.v2.files.groups.images": {
+    "message": "Immagini"
+  },
+  "mockup.v2.files.groups.videos": {
+    "message": "Video"
+  },
+  "mockup.v2.files.groups.audio": {
+    "message": "Audio"
+  },
+  "mockup.v2.files.groups.archives": {
+    "message": "Archivi"
+  },
+  "mockup.v2.files.groups.documents": {
+    "message": "Documenti"
+  },
+  "mockup.v2.files.server.off": {
+    "message": "Nessuna estensione rifiutata su tutto il server"
+  },
+  "mockup.v2.files.server.blocklist": {
+    "message": "Elimina i file con queste estensioni, ovunque"
+  },
+  "mockup.v2.files.server.allowlist": {
+    "message": "Elimina qualsiasi file con un'altra estensione, ovunque"
+  },
+  "mockup.v2.files.title": {
+    "message": "Estensioni dei file"
+  },
+  "mockup.v2.files.server.name": {
+    "message": "Tutto il server"
+  },
+  "mockup.v2.files.server.hint": {
+    "message": "Si applica a ogni canale, oltre alla sua regola specifica."
+  },
+  "mockup.v2.files.modePh": {
+    "message": "Scegli una modalità"
+  },
+  "mockup.v2.files.server.blocked": {
+    "message": "Estensioni bloccate"
+  },
+  "mockup.v2.files.disguised.name": {
+    "message": "Rifiuta sempre i file corrotti"
+  },
+  "mockup.v2.files.disguised.hint": {
+    "message": "Un'immagine o un video che Discord non sa leggere (un `.exe` rinominato in `.png`) viene eliminato in tutti i canali, non solo da una allowlist."
+  },
+  "mockup.v2.files.channels.name": {
+    "message": "Canali e categorie ({count})"
+  },
+  "mockup.v2.files.channels.allowOnly": {
+    "message": "accetta solo {extensions}"
+  },
+  "mockup.v2.files.channels.editPh": {
+    "message": "Modifica un canale"
+  },
+  "mockup.v2.files.add.button": {
+    "message": "Aggiungi un canale"
+  },
+  "mockup.v2.files.remove.button": {
+    "message": "Rimuovi"
+  },
+  "mockup.v2.files.sanction.field": {
+    "message": "Sanzione dei messaggi eliminati"
+  },
+  "mockup.v2.files.sanction.hint": {
+    "message": "Ogni messaggio rifiutato viene eliminato; la sanzione si applica al massimo una volta al minuto per membro."
+  },
+  "mockup.v2.files.sanction.placeholder": {
+    "message": "Scegli una sanzione"
+  },
+  "mockup.v2.files.sanction.none": {
+    "message": "Solo messaggio eliminato"
+  },
+  "mockup.v2.files.extensions.groups": {
+    "message": "Gruppi"
+  },
+  "mockup.v2.files.extensions.label": {
+    "message": "Altre estensioni"
+  },
+  "mockup.v2.files.extensions.description": {
+    "message": "Separate da virgole, il punto è facoltativo."
+  },
+  "mockup.v2.files.add.title": {
+    "message": "Aggiungi un canale"
+  },
+  "mockup.v2.files.add.channel": {
+    "message": "Canale o categoria"
+  },
+  "mockup.v2.files.add.channelDescription": {
+    "message": "Se già impostato, la sua regola viene sostituita."
+  },
+  "mockup.v2.files.add.mode": {
+    "message": "Modalità"
+  },
+  "mockup.v2.files.channels.allowDescription": {
+    "message": "Passano solo i file con queste estensioni"
+  },
+  "mockup.v2.files.channels.blockDescription": {
+    "message": "I file con queste estensioni vengono eliminati"
+  },
+  "mockup.v2.files.remove.title": {
+    "message": "Rimuovi canali"
+  },
+  "mockup.v2.files.remove.label": {
+    "message": "Canali da rimuovere"
   }
 }
