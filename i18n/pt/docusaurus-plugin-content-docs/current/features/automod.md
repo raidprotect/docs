@@ -68,6 +68,16 @@ Cada mensagem recusada é excluída. Em “**Sanção das mensagens apagadas**�
 
 A sanção se aplica no máximo uma vez por minuto e por membro: um membro que cola vários convites em sequência é sancionado apenas uma vez.
 
+### Canais ignorados {#servers-ignored}
+
+Em “**Canais e categorias ignorados**”, escolha até 25 canais ou categorias onde o filtro deixa tudo passar, por exemplo o seu canal de parcerias. Nenhuma mensagem desses canais, dos seus tópicos nem dos canais dessas categorias é excluída ou sancionada. Os canais de anúncios e os fóruns também podem ser escolhidos.
+
+O controle da **tag de servidor** exibida continua ativo em todo lugar: ele visa o membro, não o canal onde ele escreve.
+
+:::info Experimentação: Identity Update
+Nos servidores [Premium](/pt/premium), onde a Identity Update está em beta público, os canais ignorados passam para uma tela “**Exceções**”, que adiciona **cargos ignorados** e **membros ignorados** (25 no máximo cada). Uma mensagem de um membro ignorado, ou que tem um cargo ignorado, não é excluída nem sancionada. Prático para um membro da sua equipe que publica os convites dos seus parceiros sem ter a permissão Gerenciar mensagens. Previsto para a versão 3.7.0.
+:::
+
 ### Listas de servidores {#servers-lists}
 
 1. Clique em “**Adicionar um servidor**”.
@@ -132,7 +142,7 @@ Cada mensagem excluída é registrada nos seus [logs de moderação](./moderatio
 
 ### Meus parceiros ainda podem compartilhar seu convite?
 
-Sim. Adicione-os à lista de permissão do filtro Outros servidores, ou deixe-os fora da lista de bloqueio.
+Sim. Adicione-os à lista de permissão do filtro Outros servidores, ou deixe-os fora da lista de bloqueio. Você também pode [ignorar o canal](#servers-ignored) onde publica as suas parcerias.
 
 ### O que acontece quando um membro retira a tag recusada?
 

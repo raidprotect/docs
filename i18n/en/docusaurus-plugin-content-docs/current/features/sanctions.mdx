@@ -20,7 +20,7 @@ The sanction history automatically records all moderation actions performed on y
 - **Manual sanctions**: All [moderation commands](./moderation.mdx) (`/ban`, `/tempban`, `/kick`, `/mute`, `/jail`, `/warn`...) are recorded in the history.
 - **Automatic sanctions**: Sanctions applied by our protection modules ([anti-spam](./anti-spam.mdx), [HoneyPot](./honeypot.md), [ScamLens](./scam-images.md)...) are also added to the history.
 - **Bans, kicks and timeouts**: Sanctions applied without using RaidProtect are added to the history.
-- **Discord's AutoMod**: Timeouts applied by Discord's AutoMod are recorded. Each message blocked by an AutoMod rule also creates a **warning** in the name of "**Discord Automod**", silent (no DM), unless the rule already applies a timeout.
+- **Discord's AutoMod**: Timeouts applied by Discord's AutoMod are recorded. Each message blocked by an AutoMod rule also creates a **warning** in the name of "**Discord Automod**", silent (no DM), unless the rule already applies a timeout. It is not given either when the member receives a heavier sanction (timeout, mute, jail, kick, softban, ban, quarantine) within 10 seconds of the block, for example from the [HoneyPot](./honeypot.md) or the [anti-spam](./anti-spam.mdx) for the same message. This warn is enabled by default and can be turned off with "**Warn on messages blocked by AutoMod**": run the [`/settings` command](../setup.md#settings), "**Moderation**" tab, "**Sanctions**".
 - **Sanction notifications**: Sanctioned members receive a private message informing them of the sanction and its reason. The bot also sends a detailed acknowledgment confirming the delivery status: **received**, **DMs closed**, **expired** or **silent** (when the `[--silent]` option is used). For kicks, softbans and temporary bans, this message also includes a **button with a server invite** so the member can come back once the sanction is over.
 
 :::info
@@ -327,4 +327,4 @@ Yes, if you set the [sanctions privacy](#sanctions-privacy) to a level other tha
 
 ### Do messages blocked by Discord's AutoMod count as sanctions?
 
-Yes: each blocked message creates a silent warning in the name of "**Discord Automod**", unless the rule already applies a timeout. These warnings are only logged if passive moderation logs are enabled.
+Yes, by default: each blocked message creates a silent warning in the name of "**Discord Automod**", unless the rule already applies a timeout or the member receives a heavier sanction at the same time. You can turn this warn off with "**Warn on messages blocked by AutoMod**" in `/settings`, "**Moderation**" tab, "**Sanctions**". These warnings are only logged if passive moderation logs are enabled.

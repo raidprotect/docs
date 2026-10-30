@@ -184,6 +184,14 @@ import Settings from '@site/src/components/DiscordMessage/mockups/v2';
 - **綜合意見回饋**：以 1 到 5 分為您的體驗評分。
 - **好評**。
 
+## 🎮 RaidProtect 首頁 {#activity-home}
+
+RaidProtect 的「**Launch**」按鈕會在 Discord Activity 中開啟 **RaidProtect 首頁**。它可以在您的伺服器上、與機器人的私訊中，以及從新增到您 Discord 帳號的 RaidProtect 使用。不會在頻道中發布任何內容。
+
+- **示範**：我們的防護在迷你 Discord 頻道中實際運作的樣子（Antispam、防突襲、驗證碼，以及 [HoneyPot](./honeypot.md) 的陷阱頻道）。
+- **小遊戲**：防火牆（抵擋一波波機器人，守護您的伺服器圖示）、Snek、Ban Hammer 與快速分類。
+- **排行榜**：每個遊戲都會顯示您伺服器與所有伺服器的前十名玩家，以及您的名次。
+
 ## 👤 使用者資訊 {#userinfo}
 
 `/userinfo` 指令讓您取得使用者的詳細資訊。
@@ -285,6 +293,30 @@ import Settings from '@site/src/components/DiscordMessage/mockups/v2';
 | `AUTOMOD_QUARANTINED_GUILD_TAG`          | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | 因標籤或暱稱被自動管理隔離。                                      |
 | `BYPASSES_VERIFICATION`                  | <Icon src="/img/icons/BypassVerification.svg" alt="icon BypassVerification" title=":BypassVerification:"/>             | 使用者可以略過伺服器的驗證。                                      |
 | `SPAMMER`                                | <Icon src="/img/icons/UnusualAccountActivity.svg" alt="icon UnusualAccountActivity" title=":UnusualAccountActivity:"/> | 帳號被標記為垃圾訊息發送者，或偵測到異常活動。                    |
+
+## 🎨 身分組資訊 {#roleinfo}
+
+:::info 實驗：Logging Update
+`/roleinfo` 屬於預計於 3.8.0 版推出的 **Logging Update**。在正式推出之前，此指令處於實驗階段，為 [Premium](/zh-TW/premium) 伺服器提供公開測試版。
+:::
+
+`/roleinfo` 指令會顯示伺服器中某個身分組的資訊卡。
+
+使用指令：```/roleinfo [role]```
+
+- **名稱**、提及與 ID
+- **顏色**或漸層、**圖示**或表情符號
+- **建立日期**與在身分組清單中的**位置**
+- **分開顯示**與**可提及**
+- **來源**：機器人、整合、加成、訂閱的身分組，或連結身分組
+- **成員數**（對 `@everyone` 而言，為伺服器的所有成員）
+- **敏感權限**：所有人都看得到是或否，只有管理人員看得到詳細內容
+
+與身分組相關的[伺服器紀錄](./logs.md)（建立或修改身分組、為成員新增或移除身分組）附有「**身分組**」按鈕，可開啟此資訊卡。
+
+:::info
+`roleinfo` 指令[可使用前綴執行](../guides/prefix.md)（別名 `ri`），僅限在伺服器中使用。
+:::
 
 ## ⚖️ Discord 處罰 {#discord-sanctions}
 

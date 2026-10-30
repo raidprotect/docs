@@ -68,6 +68,16 @@ Ogni messaggio rifiutato viene eliminato. In “**Sanzione dei messaggi eliminat
 
 La sanzione si applica al massimo una volta al minuto e per membro: un membro che incolla più inviti di fila viene sanzionato una sola volta.
 
+### Canali ignorati {#servers-ignored}
+
+In “**Canali e categorie ignorati**”, scegli fino a 25 canali o categorie in cui il filtro lascia passare tutto, per esempio il tuo canale delle partnership. Nessun messaggio di questi canali, dei loro thread o dei canali di queste categorie viene eliminato o sanzionato. Possono essere scelti anche i canali annunci e i forum.
+
+Il controllo del **tag del server** mostrato resta attivo ovunque: riguarda il membro, non il canale in cui scrive.
+
+:::info Sperimentazione: Identity Update
+Sui server [Premium](/it/premium), dove l'Identity Update è in beta pubblica, i canali ignorati passano in una schermata “**Eccezioni**”, che aggiunge **ruoli ignorati** e **membri ignorati** (25 al massimo ciascuno). Un messaggio di un membro ignorato, o che ha un ruolo ignorato, non viene né eliminato né sanzionato. Comodo per un membro del tuo team che pubblica gli inviti dei tuoi partner senza avere il permesso Gestire i messaggi. Previsto per la versione 3.7.0.
+:::
+
 ### Elenchi di server {#servers-lists}
 
 1. Clicca su “**Aggiungi un server**”.
@@ -132,7 +142,7 @@ Ogni messaggio eliminato viene registrato nei tuoi [log di moderazione](./modera
 
 ### I miei partner possono ancora condividere il loro invito?
 
-Sì. Aggiungili all'allowlist del filtro Altri server, oppure lasciali fuori dalla blocklist.
+Sì. Aggiungili all'allowlist del filtro Altri server, oppure lasciali fuori dalla blocklist. Puoi anche [ignorare il canale](#servers-ignored) in cui pubblichi le tue partnership.
 
 ### Cosa succede quando un membro toglie il tag rifiutato?
 

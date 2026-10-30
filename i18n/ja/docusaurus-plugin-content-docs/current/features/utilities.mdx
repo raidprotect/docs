@@ -184,6 +184,14 @@ RaidProtect の内部設定を持つチャンネルを複製すると、ボッ�
 - **全般的な評価**：体験を 1〜5 で評価します。
 - **お褒めの言葉**。
 
+## 🎮 RaidProtect ホーム {#activity-home}
+
+RaidProtect の「**Launch**」ボタンで、Discord の Activity に **RaidProtect ホーム**が開きます。サーバーでも、ボットとの DM でも、Discord アカウントに追加した RaidProtect からでも使えます。チャンネルには何も投稿されません。
+
+- **デモ**：小さな Discord チャンネルの中で、私たちの保護機能が動く様子を見られます（スパム対策、アンチレイド、キャプチャ、[ハニーポット](./honeypot.md)の罠チャンネル）。
+- **ミニゲーム**：サーバーのアイコンをロボットの波から守る Firewall、Snek、Ban Hammer、Quick sort。
+- **ランキング**：ゲームごとに、あなたのサーバーと全サーバーの上位 10 人のプレイヤーと、あなたの順位を表示します。
+
 ## 👤 ユーザー情報 {#userinfo}
 
 `/userinfo` コマンドで、ユーザーの詳細な情報を取得できます。
@@ -285,6 +293,30 @@ RaidProtect の内部設定を持つチャンネルを複製すると、ボッ�
 | `AUTOMOD_QUARANTINED_GUILD_TAG`          | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | タグまたはニックネームが原因で、AutoMod により隔離された。    |
 | `BYPASSES_VERIFICATION`                  | <Icon src="/img/icons/BypassVerification.svg" alt="icon BypassVerification" title=":BypassVerification:"/>             | ユーザーはサーバーの認証を回避できる。       |
 | `SPAMMER`                                | <Icon src="/img/icons/UnusualAccountActivity.svg" alt="icon UnusualAccountActivity" title=":UnusualAccountActivity:"/> | スパマーとしてマークされたアカウント、または異常なアクティビティを検出。   |
+
+## 🎨 ロールの情報 {#roleinfo}
+
+:::info 実験中：Logging Update
+`/roleinfo` は、バージョン 3.8.0 に予定されている **Logging Update** の一部です。リリースまではコマンドは実験中で、[Premium](/ja/premium) サーバー向けに公開ベータとして提供されています。
+:::
+
+`/roleinfo` コマンドは、サーバーのロールの情報を表示します。
+
+次のコマンドを使用します：```/roleinfo [role]```
+
+- **名前**、メンション、ID
+- **色**またはグラデーション、**アイコン**または絵文字
+- **作成日**と、ロールの一覧での**位置**
+- **別表示**と**メンション可能**
+- **由来**：ボット、連携サービス、ブースト、サブスクリプションのロール、またはリンクされたロール
+- **メンバー数**（`@everyone` ではサーバーの全メンバー）
+- **注意が必要な権限**：全員には有無だけ、モデレーターには詳細を表示
+
+ロールに関する[サーバーログ](./logs.md)（ロールの作成や変更、メンバーへのロールの付与や削除）には、この情報を開く「**ロール**」ボタンが付きます。
+
+:::info
+`roleinfo` コマンドは[プレフィックスでも使えます](../guides/prefix.md)（別名 `ri`）。サーバーでのみ動作します。
+:::
 
 ## ⚖️ Discord の処罰 {#discord-sanctions}
 

@@ -18,8 +18,11 @@ Logging Update deneme aşamasındadır: 3.8.0 sürümüyle çıkışına kadar [
 - Silinen bir mesajın logu, onu kimin sildiğini söyler. Düzenlenen bir mesaj öncesini ve sonrasını gösterir, uzun bir mesajda yalnızca değişen satırlarla.
 - Ses logları: ayrılışta oturum süresi ve ekibin eylemleri (susturma, sağırlaştırma, taşıma, bağlantıyı kesme) yapanıyla birlikte.
 - Üç [log biçimi](./features/logs.md#format): Varsayılan, Çerçeveli ve Kompakt.
+- Yeni log türleri: Discord AutoMod kuralları, planlanmış etkinlikler ve ilgilenen üyeler, sahne etkinlikleri ve söz alma, sunucu avatarları ve yeniden sıralanan roller.
+- Denetim kaydından alınan loglar, eylemi yapanın verdiği sebebi gösterir.
+- Yeni [`/roleinfo`](./features/utilities.mdx#roleinfo) komutu: bir rolün kartı (renk, konum, kaynak, üye sayısı, hassas izinler), bir role bağlı logların “**Rol**” düğmesiyle de açılır.
 - [Bildirimlerde](./features/reports.md) yeni “**Sunucudaki mesajlar**” kutusu: bildirimin alt başlığı, silinen mesajlar dahil kanalın son mesajlarını içerir.
-- **Premium**'a ayrılanlar: Kompakt biçim, ses ve tepki logları, silinen mesajların eklerinin kopyalanması, 15 dakika yerine [6 saat bellekte mesaj](./features/logs.md#cache) ve 3 yerine 15 log kanalına kadar.
+- **Premium**'a ayrılanlar: Kompakt biçim, ses (sahne etkinlikleri dahil), tepki ve bir etkinlikle ilgilenen üyelerin logları, silinen mesajların eklerinin kopyalanması, 15 dakika yerine [6 saat bellekte mesaj](./features/logs.md#cache) ve 3 yerine 15 log kanalına kadar.
 
 ## 3.7.0 Identity Update <span className="badge-experiment">Deneme</span> {#3-7-0}
 
@@ -34,6 +37,7 @@ Identity Update deneme aşamasındadır: 3.7.0 sürümüyle çıkışına kadar 
 - Yaptırım logları bağlı hesapları belirtir; embed biçiminde `/alt` paneline açılan bir “**Bağlı hesaplar**” düğmesi de bulunur.
 - Yeni [Kişi başına tek hesap](./features/alt-accounts.md#single-account) ayarı: ikincil hesaplar karantinaya alınır.
 - [Captcha](./features/captcha.md#activity-alts) çift hesapları tespit eder: aynı kişi olduğundan emin olduğu hesapları kendisi bağlar ve olası bağlantıları ekibinize önerir.
+- Automod'un [Diğer sunucular](./features/automod.md#servers-ignored) filtresi rolleri ve üyeleri de yok sayabilir.
 - [Bağlı hesapların yaptırımları](./features/alt-accounts.md#modes) **Premium**'a ayrılmıştır. Premium olmadan `/alt` hesapları sınırsız bağlar ve görüntüler, Kişi başına tek hesap da kullanılabilir kalır.
 
 ## 3.6.0 Shield Update (28.10.2026) {#3-6-0}
@@ -45,7 +49,7 @@ Identity Update deneme aşamasındadır: 3.7.0 sürümüyle çıkışına kadar 
   - Adında “spam” geçen ve şimdiye kadar hep yok sayılan kanalları izlemek için yeni [seçenek](./features/anti-spam.mdx#ignore). <SuggestionLink id="600" />
 - Yeni [önleyici yavaş mod](./features/slowmode.md) (**Premium**): seçilen kanalların yavaş modu, belirlediğiniz mesaj akış hızını tutturmak için kendiliğinden ayarlanır.
 - [Automod](./features/automod.md):
-  - Yeni [Diğer sunucular](./features/automod.md#servers) filtresi: diğer sunucuların davetleri, iletilen mesajları, kanal veya etkinlik bağlantıları ve etiketleri, kara liste veya beyaz liste ile.
+  - Yeni [Diğer sunucular](./features/automod.md#servers) filtresi: diğer sunucuların davetleri, iletilen mesajları, kanal veya etkinlik bağlantıları ve etiketleri, kara liste veya beyaz liste ile. [Kanalları ve kategorileri yok sayabilir](./features/automod.md#servers-ignored), örneğin ortaklık kanalınızı.
   - Yeni [Dosya uzantıları](./features/automod.md#files) filtresi: uzantı gruplarını engelleyin ya da yalnızca bazılarına izin verin, tüm sunucuda veya kanal kanal, bir dosya başka bir uzantının arkasına gizlendiğinde bile. **Premium** sunucularda kanal başına daha fazla kural vardır. <SuggestionLink id="505" />
   - Kendi dolandırıcılık görsellerinizi engellemek için [ScamLens](./features/scam-images.md) [özel görsel kataloğu](./features/scam-images.md#catalog) (**Premium**).
 - Yeni [kurulum sihirbazı](./setup.md#wizard): bölüm bölüm yönlendirmeli bir akış, sunucunuza göre önerilen korumalar ve sonunda bir denetim önizlemesi.
@@ -53,10 +57,12 @@ Identity Update deneme aşamasındadır: 3.7.0 sürümüyle çıkışına kadar 
 - [Discord karantinasıyla](./features/sanctions.mdx#discord-quarantine) senkronize yeni **Karantina** yaptırımı.
 - Captcha'nın yeni [Akıllı tetiklemesi](./features/captcha.md#trigger): baskınlara ek olarak hesabı şüpheli görünen gelenleri de doğrular.
 - [Captcha Activity'si](./features/captcha.md#activity): **Premium** bir sunucuda RaidProtect logosunun yerini sunucunun simgesi alır.
+- [Captcha'yı test etmek](./features/captcha.md#test-mode) artık bir test modunu etkinleştirmeyi gerektirmez: ekibiniz (sunucu sahibi, **Yönetici** veya **Sunucuyu Yönet**) denemek için her zaman “**Doğrula**”ya tıklayabilir, hiçbir eylem uygulanmaz.
+- Activity içinde yeni [RaidProtect ana sayfası](./features/utilities.mdx#activity-home): “**Launch**” düğmesi korumalarımızın demolarını ve sıralamalarıyla birlikte mini oyunları açar, hem sunucunuzda hem de botla DM'de.
 - [Karşılama mesajı](./features/onboarding.md#welcome-buttons): her düğmenin kendi emojisi olabilir.
 - [HoneyPot](./features/honeypot.md): iyi niyetli bir üyeye yanıldığını söyleme zamanı tanıyan yeni [cezadan önceki gecikme](./features/honeypot.md#grace).
 - [HoneyPot](./features/honeypot.md#sanction): yasaklama ve jail kalıcı olabilir.
-- Discord AutoMod tarafından engellenen her mesaj, “Discord Automod” adına sessiz bir [uyarı](./features/sanctions.mdx) oluşturur.
+- Discord AutoMod tarafından engellenen her mesaj, “Discord Automod” adına sessiz bir [uyarı](./features/sanctions.mdx#working) oluşturur. Üye aynı anda daha ağır bir yaptırım aldığında verilmez ve “**AutoMod'un engellediği mesajlar için uyarı**” ayarıyla kapatılır (`/settings`, “**Moderasyon**” sekmesi, “**Yaptırımlar**”).
 - [`/lock` ve `/unlock`](./features/channel-lock.md#lock) bütün bir kategoriyi kilitler ve kilidini açar, kategorinin kanalları senkronize kalır. <SuggestionLink id="595" />
 - [`/lock`, `/unlock`](./features/channel-lock.md#lock) ve [`/slowmode`](./features/moderation.mdx#slowmode): kanalda duyuru yapmadan işlem için yeni `silent` seçeneği.
 - Yeni [yasaklamada mesajların silinmesi](./features/sanctions.mdx#ban-delete) ayarı: `/ban`, `?ban` ve `/tempban` ile varsayılan olarak silinen geçmiş. <SuggestionLink id="592" />
@@ -73,6 +79,12 @@ Identity Update deneme aşamasındadır: 3.7.0 sürümüyle çıkışına kadar 
   - [`/auth`](./features/authentication-manager.mdx#logs-tab): oturumlar Authentication Manager'ın log kanalına kaydedilir.
   - [`/snipe`](./features/moderation.mdx#snipe), mesaj önbelleği kapalıyken uyarır ve açmayı önerir. Komutu kullanmak önbelleği otomatik olarak açar.
   - Birkaç yeni log eklendi.
+  - Serbest bırakıldıktan sonra [HoneyPot](./features/honeypot.md)'a yeniden düşen bir üyeye tekrar yaptırım uygulanır.
+  - [DISCON](./features/discon.md) kanallarının oluşturma düğmeleri, bu kanallar elle silindiğinde artık gri kalmaz.
+  - [Minimum hesap yaşı](./features/onboarding.md#minage-action): captcha'nın katılım logu bir üyenin tutulduğunu belirtir ve `/bypass minage` gerçekten uygulanan eylemi adlandırır.
+  - RaidProtect, bir jail veya mute uygulamadan önce bir rol ve bir kanalın izinleri üzerinde yetkisi olduğunu doğrular.
+  - [Anti-spam](./features/anti-spam.mdx), [Diğer sunucular](./features/automod.md#servers) filtresinin zaten sildiği mesajları da sayar: aynı daveti tekrar tekrar yapıştıran bir üyeye yaptırım uygulanır.
+  - Çeşitli düzeltmeler ve çeviri düzeltmeleri.
 
 ## 3.5.0 Onboarding Update (19.10.2026) {#3-5-0}
 

@@ -29,13 +29,15 @@ Die Kanäle „**Allgemein**“, „**Moderation**“ und „**Captcha**“ der 
 
 | Familie | Was erfasst wird |
 | --- | --- |
-| **Kanäle, Rollen und Einladungen** | Erstellte, geänderte oder gelöschte Kategorien, Kanäle, Sprachkanäle und Threads, einschließlich Berechtigungen. Rollen, Einladungen, Webhooks, Integrationen sowie hinzugefügte oder entfernte Bots mit ihrer Rolle. |
-| **Mitglieder** | Beitritte (mit dem Alter des Kontos) und Austritte (mit dem Beitrittsdatum und den Rollen), akzeptierte Regeln, hinzugefügte oder entfernte Rollen, Spitznamen, entfernte inaktive Mitglieder und Boosts. |
+| **Kanäle, Rollen und Einladungen** | Erstellte, geänderte oder gelöschte Kategorien, Kanäle, Sprachkanäle und Threads, einschließlich Berechtigungen. Rollen (und ihre neue Reihenfolge), Einladungen, Webhooks, Integrationen sowie hinzugefügte oder entfernte Bots mit ihrer Rolle. AutoMod-Regeln von Discord, mit den hinzugefügten oder entfernten Wörtern und Ausdrücken, und geplante Events. Die an einem Event interessierten Mitglieder sind [Premium](/de/premium) vorbehalten. |
+| **Mitglieder** | Beitritte (mit dem Alter des Kontos) und Austritte (mit dem Beitrittsdatum und den Rollen), akzeptierte Regeln, hinzugefügte oder entfernte Rollen, Spitznamen, Server-Avatare, entfernte inaktive Mitglieder und Boosts. |
 | **Nachrichten** | Gelöschte Nachrichten, mit der Angabe, wer sie gelöscht hat, bearbeitete Nachrichten, Massenlöschungen, angeheftete oder losgelöste Nachrichten. |
-| **Sprachkanäle** <span className="badge-premium">Premium</span> | Beitritte, Austritte mit der Dauer der Sitzung, Kanalwechsel, Mikrofon, Ton, Kamera und Bildschirmübertragung. Die Aktionen des Teams (stummschalten, Ton deaktivieren, verschieben, trennen) werden gesondert erfasst, mit ihrem Urheber. |
+| **Sprachkanäle** <span className="badge-premium">Premium</span> | Beitritte, Austritte mit der Dauer der Sitzung, Kanalwechsel, Mikrofon, Ton, Kamera und Bildschirmübertragung. Die Aktionen des Teams (stummschalten, Ton deaktivieren, verschieben, trennen) werden gesondert erfasst, mit ihrem Urheber. Gestartete, geänderte oder beendete Stages sowie Mitglieder, die das Wort ergreifen oder die Hand heben. |
 | **Emojis und Reaktionen** | Erstellte, geänderte oder gelöschte Emojis, Sticker und Soundboard-Sounds. Hinzugefügte oder entfernte Reaktionen sind [Premium](/de/premium) vorbehalten und standardmäßig deaktiviert. |
 
 Eine bearbeitete Nachricht zeigt den Zustand davor und danach. Bei einer langen Nachricht werden nur die geänderten Zeilen angezeigt.
+
+Hat der Urheber einer Aktion einen **Grund** angegeben (sichtbar im Audit-Log von Discord), erscheint er im Log. Rollenbezogene Logs haben eine Schaltfläche „**Rolle**“, die ihr Profil [`/roleinfo`](./utilities.mdx#roleinfo) öffnet.
 
 Von RaidProtect selbst gelöschte Nachrichten (Anti-Spam, HoneyPot, Betrugsschutz, `/clear`) bleiben in den Logs des betreffenden Moduls, ohne Dopplung.
 

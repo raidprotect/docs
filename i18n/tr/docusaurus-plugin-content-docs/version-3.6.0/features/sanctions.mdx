@@ -20,7 +20,7 @@ Yaptırım geçmişi, sunucunuzda yapılan tüm moderasyon eylemlerini otomatik 
 - **Manuel yaptırımlar**: tüm [moderasyon komutları](./moderation.mdx) (`/ban`, `/tempban`, `/kick`, `/mute`, `/jail`, `/warn`…) geçmişe kaydedilir.
 - **Otomatik yaptırımlar**: koruma modüllerimizin ([anti-spam](./anti-spam.mdx), [HoneyPot](./honeypot.md), [ScamLens](./scam-images.md)…) uyguladığı yaptırımlar da geçmişe eklenir.
 - **Yasaklamalar, atmalar ve timeout'lar**: RaidProtect üzerinden geçmeden uygulanan yaptırımlar geçmişe eklenir.
-- **Discord AutoMod**: Discord AutoMod'un uyguladığı timeout'lar kaydedilir. Bir AutoMod kuralı tarafından engellenen her mesaj ayrıca “**Discord Automod**” adına, sessiz (DM yok) bir **uyarı** oluşturur; kural zaten bir timeout uygulamıyorsa.
+- **Discord AutoMod**: Discord AutoMod'un uyguladığı timeout'lar kaydedilir. Bir AutoMod kuralı tarafından engellenen her mesaj ayrıca “**Discord Automod**” adına, sessiz (DM yok) bir **uyarı** oluşturur; kural zaten bir timeout uygulamıyorsa. Üye, engellemenin öncesi ve sonrasındaki 10 saniye içinde daha ağır bir yaptırım (timeout, mute, jail, atma, softban, yasaklama, karantina) aldığında da verilmez, örneğin aynı mesaj için [HoneyPot](./honeypot.md) veya [anti-spam](./anti-spam.mdx) tarafından. Bu uyarı varsayılan olarak etkindir ve “**AutoMod'un engellediği mesajlar için uyarı**” ile kapatılır: [`/settings` komutunu](../setup.md#settings) çalıştırın, “**Moderasyon**” sekmesi, “**Yaptırımlar**”.
 - **Yaptırım bildirimleri**: yaptırım uygulanan üyeler yaptırımı ve sebebini bildiren bir özel mesaj alır. Bot ayrıca gönderim durumunu doğrulayan ayrıntılı bir alındı bildirimi gönderir: **alındı**, **DM kapalı**, **süresi doldu** veya **sessiz** (`[--silent]` seçeneği kullanıldığında). Kick, softban ve geçici ban için bu mesaj ayrıca, üyenin yaptırım bittikten sonra geri dönebilmesi için **sunucuya bir davet içeren bir düğme** de barındırır.
 
 :::info
@@ -327,4 +327,4 @@ Evet, [yaptırımların gizliliğini](#sanctions-privacy) “**Devre dışı**�
 
 ### Discord AutoMod tarafından engellenen mesajlar yaptırım sayılır mı?
 
-Evet: engellenen her mesaj, kural zaten bir timeout uygulamıyorsa “**Discord Automod**” adına sessiz bir uyarı oluşturur. Bu uyarılar yalnızca pasif moderasyon logları etkinse kaydedilir.
+Evet, varsayılan olarak: engellenen her mesaj, kural zaten bir timeout uygulamıyorsa veya üye aynı anda daha ağır bir yaptırım almıyorsa “**Discord Automod**” adına sessiz bir uyarı oluşturur. Bu uyarıyı `/settings` içinde, “**Moderasyon**” sekmesi, “**Yaptırımlar**” altında “**AutoMod'un engellediği mesajlar için uyarı**” ile kapatabilirsiniz. Bu uyarılar yalnızca pasif moderasyon logları etkinse kaydedilir.

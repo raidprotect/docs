@@ -68,6 +68,16 @@ Cada mensaje rechazado se elimina. En “**Sanción de los mensajes eliminados**
 
 La sanción se aplica como máximo una vez por minuto y por miembro: un miembro que pega varias invitaciones seguidas solo es sancionado una vez.
 
+### Canales ignorados {#servers-ignored}
+
+En “**Canales y categorías ignorados**”, elige hasta 25 canales o categorías donde el filtro deja pasar todo, por ejemplo tu canal de alianzas. No se elimina ni se sanciona ningún mensaje de esos canales, de sus hilos ni de los canales de esas categorías. También se pueden elegir los canales de anuncios y los foros.
+
+El control de la **etiqueta de servidor** mostrada sigue activo en todas partes: se dirige al miembro, no al canal donde escribe.
+
+:::info Experimental: Identity Update
+En los servidores [Premium](/es/premium), donde la Identity Update está en beta pública, los canales ignorados pasan a una pantalla “**Excepciones**”, que añade **roles ignorados** y **miembros ignorados** (25 como máximo cada uno). Un mensaje de un miembro ignorado, o que tiene un rol ignorado, no se elimina ni se sanciona. Práctico para un miembro de tu equipo que publica las invitaciones de tus socios sin tener el permiso Gestionar mensajes. Previsto para la versión 3.7.0.
+:::
+
 ### Listas de servidores {#servers-lists}
 
 1. Haz clic en “**Añadir un servidor**”.
@@ -132,7 +142,7 @@ Cada mensaje eliminado se anota en tus [logs de moderación](./moderation.mdx#lo
 
 ### ¿Mis socios pueden seguir compartiendo su invitación?
 
-Sí. Añádelos a la lista blanca del filtro Otros servidores, o déjalos fuera de la lista negra.
+Sí. Añádelos a la lista blanca del filtro Otros servidores, o déjalos fuera de la lista negra. También puedes [ignorar el canal](#servers-ignored) donde publicas tus alianzas.
 
 ### ¿Qué pasa cuando un miembro quita la etiqueta rechazada?
 

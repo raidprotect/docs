@@ -29,13 +29,15 @@ Os canais “**Diversos**”, “**Moderação**” e “**Captcha**” dos [log
 
 | Família | O que é registrado |
 | --- | --- |
-| **Canais, cargos e convites** | Categorias, canais, canais de voz e tópicos criados, modificados ou excluídos, permissões incluídas. Cargos, convites, webhooks, integrações, e bots adicionados ou removidos com o seu cargo. |
-| **Membros** | Chegadas (com a idade da conta) e saídas (com a data de chegada e os cargos), regras aceitas, cargos adicionados ou removidos, apelidos, membros inativos removidos e boosts. |
+| **Canais, cargos e convites** | Categorias, canais, canais de voz e tópicos criados, modificados ou excluídos, permissões incluídas. Cargos (e a sua nova ordem), convites, webhooks, integrações, e bots adicionados ou removidos com o seu cargo. Regras do AutoMod do Discord, com as palavras e expressões adicionadas ou removidas, e eventos programados. Os membros interessados em um evento são reservados ao [Premium](/pt/premium). |
+| **Membros** | Chegadas (com a idade da conta) e saídas (com a data de chegada e os cargos), regras aceitas, cargos adicionados ou removidos, apelidos, avatares de servidor, membros inativos removidos e boosts. |
 | **Mensagens** | Mensagens excluídas, com quem as excluiu, mensagens editadas, exclusões em massa, mensagens fixadas ou desafixadas. |
-| **Voz** <span className="badge-premium">Premium</span> | Chegadas, saídas com a duração da sessão, mudanças de canal, microfone, som, câmera e compartilhamento de tela. As ações da equipe (silenciar, ensurdecer, mover, desconectar) ficam à parte, com o seu autor. |
+| **Voz** <span className="badge-premium">Premium</span> | Chegadas, saídas com a duração da sessão, mudanças de canal, microfone, som, câmera e compartilhamento de tela. As ações da equipe (silenciar, ensurdecer, mover, desconectar) ficam à parte, com o seu autor. Palcos iniciados, modificados ou encerrados, e membros que tomam a palavra ou levantam a mão. |
 | **Emojis e reações** | Emojis, figurinhas e sons da soundboard criados, modificados ou excluídos. As reações adicionadas ou removidas são reservadas ao [Premium](/pt/premium) e desmarcadas por padrão. |
 
 Uma mensagem editada mostra o antes e o depois. Para uma mensagem longa, só as linhas alteradas são exibidas.
+
+Quando o autor de uma ação deu um **motivo** (visível no registro de auditoria do Discord), ele aparece no log. Os logs ligados a um cargo têm um botão “**Cargo**” que abre a sua ficha [`/roleinfo`](./utilities.mdx#roleinfo).
 
 As mensagens excluídas pelo próprio RaidProtect (anti-spam, HoneyPot, antigolpe, `/clear`) ficam nos logs do módulo correspondente, sem duplicata.
 

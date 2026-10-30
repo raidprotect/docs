@@ -102,14 +102,9 @@ Size yalnızca sunucunuzun hesapları gösterilir: diğer sunucular hakkında hi
 Çift hesapların tespiti, 3.7.0 sürümü için planlanan **Identity Update**'in parçasıdır. Çıkışına kadar deneme aşamasındadır; [Premium](/tr/premium) sunucular için herkese açık beta olarak sunulur.
 :::
 
-### Test modu {#test-mode}
+### Captcha'yı test etmek {#test-mode}
 
-1. [`/settings` komutunu](../setup.md#settings) çalıştırın.
-2. “**Katılımlar**” sekmesini açın.
-3. “**Captcha**” yanındaki “**Yapılandır**” düğmesine tıklayın.
-4. “**Test modu**” yanındaki “**Etkinleştir**”e tıklayın.
-
-Panel modunda, ekibinizin zaten doğrulanmış bir üyesi (**Sunucuyu Yönet** izni veya sunucu sahibi) o zaman captcha'yı yeniden yapmak için “**Doğrula**”ya tıklayabilir. Denemeler ve çözüm süresi bir yeni gelenle aynı şekilde uygulanır: captcha logu ne yapılacağını söyler, hiçbir şey uygulanmaz.
+Etkinleştirilecek bir şey yok: Panel modunda, ekibinizin zaten doğrulanmış bir üyesi (sunucu sahibi veya **Yönetici** ya da **Sunucuyu Yönet** iznine sahip bir üye) captcha'yı yeniden yapmak için her zaman “**Doğrula**”ya tıklayabilir. Denemeler ve çözüm süresi bir yeni gelenle aynı şekilde uygulanır. Hiçbir şey uygulanmaz: captcha logu (“**Ekip testi**”) ne yapılacağını söyler.
 
 ### Zorluk {#difficulty}
 

@@ -29,13 +29,15 @@ Các kênh “**Chung**”, “**Kiểm duyệt**” và “**Captcha**” của
 
 | Nhóm | Những gì được ghi lại |
 | --- | --- |
-| **Kênh, vai trò và lời mời** | Danh mục, kênh, kênh thoại và chủ đề được tạo, sửa hoặc xóa, kể cả quyền. Vai trò, lời mời, webhook, tích hợp, và bot được thêm hoặc gỡ cùng vai trò của chúng. |
-| **Thành viên** | Lượt vào (kèm tuổi tài khoản) và lượt rời (kèm ngày vào và các vai trò), chấp nhận nội quy, vai trò được thêm hoặc gỡ, biệt danh, thành viên không hoạt động bị loại và lượt boost. |
+| **Kênh, vai trò và lời mời** | Danh mục, kênh, kênh thoại và chủ đề được tạo, sửa hoặc xóa, kể cả quyền. Vai trò (và thứ tự mới của chúng), lời mời, webhook, tích hợp, và bot được thêm hoặc gỡ cùng vai trò của chúng. Quy tắc AutoMod của Discord, kèm các từ và cụm từ được thêm hoặc gỡ, và sự kiện đã lên lịch. Các thành viên quan tâm đến một sự kiện dành riêng cho [Premium](/vi/premium). |
+| **Thành viên** | Lượt vào (kèm tuổi tài khoản) và lượt rời (kèm ngày vào và các vai trò), chấp nhận nội quy, vai trò được thêm hoặc gỡ, biệt danh, ảnh đại diện máy chủ, thành viên không hoạt động bị loại và lượt boost. |
 | **Tin nhắn** | Tin nhắn bị xóa, kèm người đã xóa, tin nhắn được sửa, xóa hàng loạt, tin nhắn được ghim hoặc bỏ ghim. |
-| **Thoại** <span className="badge-premium">Premium</span> | Lượt vào, lượt rời kèm thời lượng phiên, đổi kênh, micro, âm thanh, camera và chia sẻ màn hình. Các hành động của đội ngũ (tắt tiếng, tắt nghe, di chuyển, ngắt kết nối) được tách riêng, kèm người thực hiện. |
+| **Thoại** <span className="badge-premium">Premium</span> | Lượt vào, lượt rời kèm thời lượng phiên, đổi kênh, micro, âm thanh, camera và chia sẻ màn hình. Các hành động của đội ngũ (tắt tiếng, tắt nghe, di chuyển, ngắt kết nối) được tách riêng, kèm người thực hiện. Sân khấu được bắt đầu, sửa hoặc kết thúc, và thành viên lên phát biểu hoặc giơ tay. |
 | **Emoji và biểu cảm** | Emoji, sticker và âm thanh soundboard được tạo, sửa hoặc xóa. Các biểu cảm được thêm hoặc gỡ dành riêng cho [Premium](/vi/premium) và bị bỏ chọn theo mặc định. |
 
 Một tin nhắn được sửa hiển thị trạng thái trước và sau. Với một tin nhắn dài, chỉ những dòng thay đổi được hiển thị.
+
+Khi người thực hiện một hành động đã đưa ra **lý do** (hiển thị trong nhật ký kiểm tra của Discord), lý do đó xuất hiện trong nhật ký. Các nhật ký liên quan đến một vai trò có một nút “**Vai trò**” để mở thông tin [`/roleinfo`](./utilities.mdx#roleinfo) của vai trò đó.
 
 Các tin nhắn do chính RaidProtect xóa (chống spam, HoneyPot, chống lừa đảo, `/clear`) vẫn nằm trong nhật ký của mô-đun liên quan, không bị trùng lặp.
 

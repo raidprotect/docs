@@ -102,14 +102,9 @@ Only accounts from your server are shown to you: nothing is said about other ser
 Alt account detection is part of the **Identity Update**, planned for version 3.7.0. Until its release, it is an experiment, in public beta for [Premium](/en/premium) servers.
 :::
 
-### Test mode {#test-mode}
+### Testing the captcha {#test-mode}
 
-1. Run the [`/settings` command](../setup.md#settings).
-2. Open the "**Arrivals**" tab.
-3. Click "**Configure**" next to "**Captcha**".
-4. Click "**Enable**" next to "**Test mode**".
-
-In Panel mode, an already verified team member (**Manage Server** permission, or the owner) can then click "**Verify**" to redo the captcha. Attempts and solving time apply as for a newcomer: the captcha log says what would have been done, nothing is applied.
+There is nothing to enable: in Panel mode, an already verified team member (the owner, or a member with the **Administrator** or **Manage Server** permission) can always click "**Verify**" to redo the captcha. Attempts and solving time apply as for a newcomer. Nothing is applied: the captcha log ("**Team test**") says what would have been done.
 
 ### Difficulty {#difficulty}
 

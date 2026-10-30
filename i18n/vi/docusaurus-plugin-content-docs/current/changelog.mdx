@@ -18,8 +18,11 @@ Logging Update đang thử nghiệm: trong khi chờ phát hành ở phiên bả
 - Nhật ký của một tin nhắn bị xóa cho biết ai đã xóa nó. Một tin nhắn được sửa hiển thị trạng thái trước và sau, chỉ với những dòng thay đổi nếu là tin nhắn dài.
 - Nhật ký thoại: thời lượng phiên khi rời đi, và các hành động của đội ngũ (tắt tiếng, tắt nghe, di chuyển, ngắt kết nối) kèm người thực hiện.
 - Ba [định dạng nhật ký](./features/logs.md#format): Mặc định, Khung và Gọn.
+- Các loại nhật ký mới: quy tắc AutoMod của Discord, sự kiện đã lên lịch và thành viên quan tâm, sân khấu và lượt phát biểu, ảnh đại diện máy chủ và vai trò được sắp xếp lại.
+- Các nhật ký lấy từ nhật ký kiểm tra hiển thị lý do mà người thực hiện hành động đã đưa ra.
+- Lệnh mới [`/roleinfo`](./features/utilities.mdx#roleinfo): thông tin của một vai trò (màu, vị trí, nguồn gốc, số thành viên, quyền nhạy cảm), cũng mở được bằng nút “**Vai trò**” của các nhật ký liên quan đến một vai trò.
 - Ô mới “**Tin nhắn trên máy chủ**” trong [báo cáo](./features/reports.md): luồng của báo cáo hiển thị lại các tin nhắn gần nhất của kênh, kể cả tin nhắn đã bị xóa.
-- Dành riêng cho **Premium**: định dạng Gọn, nhật ký thoại và biểu cảm, sao chép tệp đính kèm của tin nhắn bị xóa, [6 giờ tin nhắn trong bộ nhớ](./features/logs.md#cache) thay vì 15 phút và tối đa 15 kênh nhật ký thay vì 3.
+- Dành riêng cho **Premium**: định dạng Gọn, nhật ký thoại (kể cả sân khấu), biểu cảm và thành viên quan tâm đến một sự kiện, sao chép tệp đính kèm của tin nhắn bị xóa, [6 giờ tin nhắn trong bộ nhớ](./features/logs.md#cache) thay vì 15 phút và tối đa 15 kênh nhật ký thay vì 3.
 
 ## 3.7.0 Identity Update <span className="badge-experiment">Thử nghiệm</span> {#3-7-0}
 
@@ -34,6 +37,7 @@ Identity Update đang thử nghiệm: trong khi chờ phát hành ở phiên b�
 - Nhật ký hình phạt nêu các tài khoản liên kết, và ở định dạng embed có một nút “**Tài khoản liên kết**” dẫn đến bảng `/alt`.
 - Thiết lập mới [Mỗi người một tài khoản](./features/alt-accounts.md#single-account): các tài khoản phụ bị cách ly.
 - [Captcha](./features/captcha.md#activity-alts) phát hiện tài khoản phụ: nó tự liên kết các tài khoản chắc chắn là cùng một người, và đề xuất cho đội ngũ của bạn các liên kết có khả năng.
+- Bộ lọc [Máy chủ khác](./features/automod.md#servers-ignored) của Automod cũng có thể bỏ qua vai trò và thành viên.
 - [Hình phạt cho tài khoản liên kết](./features/alt-accounts.md#modes) dành riêng cho **Premium**. Không có Premium, `/alt` liên kết và xem các tài khoản không giới hạn, và Mỗi người một tài khoản vẫn khả dụng.
 
 ## 3.6.0 Shield Update (28/10/2026) {#3-6-0}
@@ -45,7 +49,7 @@ Identity Update đang thử nghiệm: trong khi chờ phát hành ở phiên b�
   - [Tùy chọn](./features/anti-spam.mdx#ignore) mới để giám sát các kênh có tên chứa “spam”, trước đây luôn bị bỏ qua. <SuggestionLink id="600" />
 - [Slowmode phòng ngừa](./features/slowmode.md) mới (**Premium**): chế độ chậm của các kênh được chọn tự điều chỉnh để giữ tốc độ tin nhắn mà bạn đặt.
 - [Automod](./features/automod.md):
-  - Bộ lọc [Máy chủ khác](./features/automod.md#servers) mới: lời mời, tin nhắn được chuyển tiếp, liên kết kênh hoặc sự kiện và tag của các máy chủ khác, theo danh sách chặn hoặc danh sách cho phép.
+  - Bộ lọc [Máy chủ khác](./features/automod.md#servers) mới: lời mời, tin nhắn được chuyển tiếp, liên kết kênh hoặc sự kiện và tag của các máy chủ khác, theo danh sách chặn hoặc danh sách cho phép. Bộ lọc có thể [bỏ qua kênh và danh mục](./features/automod.md#servers-ignored), ví dụ kênh đối tác của bạn.
   - Bộ lọc [Phần mở rộng tệp](./features/automod.md#files) mới: chặn các nhóm phần mở rộng hoặc chỉ cho phép một số phần mở rộng, trên toàn máy chủ hoặc theo từng kênh, kể cả khi một tệp được ngụy trang dưới một phần mở rộng khác. Các máy chủ **Premium** có nhiều quy tắc theo kênh hơn. <SuggestionLink id="505" />
   - [Danh mục hình ảnh tùy chỉnh](./features/scam-images.md#catalog) của [ScamLens](./features/scam-images.md) (**Premium**) để chặn các hình ảnh lừa đảo của riêng bạn.
 - [Trình hướng dẫn cài đặt](./setup.md#wizard) mới: một lộ trình có hướng dẫn từng phần một, các biện pháp bảo vệ được đề xuất theo máy chủ của bạn và một bản xem trước của bản kiểm tra để kết thúc.
@@ -53,10 +57,12 @@ Identity Update đang thử nghiệm: trong khi chờ phát hành ở phiên b�
 - Hình phạt **Cách ly** mới, đồng bộ với [cách ly của Discord](./features/sanctions.mdx#discord-quarantine).
 - [Kích hoạt Thông minh](./features/captcha.md#trigger) mới của captcha: ngoài các đợt raid, nó kiểm tra những người vào có tài khoản trông đáng ngờ.
 - [Activity của captcha](./features/captcha.md#activity): trên một máy chủ **Premium**, biểu tượng của máy chủ thay cho logo RaidProtect.
+- [Thử captcha](./features/captcha.md#test-mode) không còn cần bật chế độ thử: đội ngũ của bạn (chủ sở hữu, **Quản trị viên** hoặc **Quản lý máy chủ**) luôn có thể nhấp vào “**Xác minh**” để thử, mà không có hành động nào được áp dụng.
+- [Trang chủ RaidProtect](./features/utilities.mdx#activity-home) mới trong Activity: nút “**Launch**” mở các bản demo về các biện pháp bảo vệ của chúng tôi và các trò chơi nhỏ cùng bảng xếp hạng, trên máy chủ của bạn cũng như trong tin nhắn riêng với bot.
 - [Tin nhắn chào mừng](./features/onboarding.md#welcome-buttons): mỗi nút có thể có emoji riêng.
 - [HoneyPot](./features/honeypot.md): [thời gian chờ trước khi xử phạt](./features/honeypot.md#grace) mới, cho một thành viên thiện chí thời gian để nói rằng mình đã nhầm.
 - [HoneyPot](./features/honeypot.md#sanction): cấm và jail có thể là vĩnh viễn.
-- Mỗi tin nhắn bị AutoMod của Discord chặn tạo một [cảnh cáo](./features/sanctions.mdx) im lặng mang tên “Discord Automod”.
+- Mỗi tin nhắn bị AutoMod của Discord chặn tạo một [cảnh cáo](./features/sanctions.mdx#working) im lặng mang tên “Discord Automod”. Cảnh cáo này không được đưa ra khi thành viên cùng lúc nhận một hình phạt nặng hơn, và có thể tắt bằng thiết lập “**Cảnh cáo tin nhắn bị AutoMod chặn**” (`/settings`, thẻ “**Kiểm duyệt**”, “**Hình phạt**”).
 - [`/lock` và `/unlock`](./features/channel-lock.md#lock) khóa và mở khóa cả một danh mục, các kênh của danh mục vẫn được đồng bộ. <SuggestionLink id="595" />
 - [`/lock`, `/unlock`](./features/channel-lock.md#lock) và [`/slowmode`](./features/moderation.mdx#slowmode): tùy chọn `silent` mới để thực hiện mà không thông báo trong kênh.
 - Cài đặt mới để [xóa tin nhắn khi cấm](./features/sanctions.mdx#ban-delete): lịch sử tin nhắn được xóa theo mặc định với `/ban`, `?ban` và `/tempban`. <SuggestionLink id="592" />
@@ -73,6 +79,12 @@ Identity Update đang thử nghiệm: trong khi chờ phát hành ở phiên b�
   - [`/auth`](./features/authentication-manager.mdx#logs-tab): các phiên được ghi vào kênh log của Authentication Manager.
   - [`/snipe`](./features/moderation.mdx#snipe) cảnh báo khi bộ nhớ đệm tin nhắn bị tắt và đề xuất bật lên. Dùng lệnh này sẽ tự động bật bộ nhớ đệm.
   - Thêm nhiều log mới.
+  - Một thành viên lại rơi vào [HoneyPot](./features/honeypot.md) sau khi đã được thả sẽ lại bị xử phạt.
+  - Các nút tạo kênh [DISCON](./features/discon.md) không còn bị mờ khi các kênh này đã bị xóa thủ công.
+  - [Tuổi tối thiểu của tài khoản](./features/onboarding.md#minage-action): nhật ký tham gia của captcha cho biết một thành viên đang bị giữ lại, và `/bypass minage` nêu đúng hành động thực sự được áp dụng.
+  - RaidProtect kiểm tra rằng nó có quyền trên một vai trò và trên quyền của một kênh trước khi áp dụng jail hoặc mute.
+  - [Chống spam](./features/anti-spam.mdx) cũng đếm các tin nhắn đã bị bộ lọc [Máy chủ khác](./features/automod.md#servers) xóa: một thành viên dán đi dán lại cùng một lời mời sẽ bị xử phạt.
+  - Nhiều sửa lỗi khác và sửa lỗi bản dịch.
 
 ## 3.5.0 Onboarding Update (19/10/2026) {#3-5-0}
 

@@ -68,6 +68,16 @@ Reddedilen her mesaj silinir. “**Silinen mesajların yaptırımı**” içinde
 
 Yaptırım, üye başına dakikada en fazla bir kez uygulanır: art arda birkaç davet yapıştıran bir üyeye yalnızca bir kez yaptırım uygulanır.
 
+### Yok sayılan kanallar {#servers-ignored}
+
+“**Yok sayılan kanallar ve kategoriler**” içinde, filtrenin her şeyin geçmesine izin verdiği en fazla 25 kanal veya kategori seçin, örneğin ortaklık kanalınız. Bu kanallardan, alt başlıklarından veya bu kategorilerin kanallarından gelen hiçbir mesaj silinmez veya cezalandırılmaz. Duyuru kanalları ve forumlar da seçilebilir.
+
+Görüntülenen **sunucu etiketi** denetimi her yerde etkin kalır: yazdığı kanalı değil, üyeyi hedefler.
+
+:::info Deneme: Identity Update
+Identity Update'in herkese açık betada olduğu [Premium](/tr/premium) sunucularda yok sayılan kanallar bir “**İstisnalar**” ekranına taşınır; bu ekran **yok sayılan roller** ve **yok sayılan üyeler** ekler (her biri en fazla 25). Yok sayılan bir üyenin ya da yok sayılan bir role sahip bir üyenin mesajı silinmez ve cezalandırılmaz. Mesajları Yönet iznine sahip olmadan ortaklarınızın davetlerini paylaşan bir ekip üyeniz için kullanışlıdır. 3.7.0 sürümü için planlanmıştır.
+:::
+
 ### Sunucu listeleri {#servers-lists}
 
 1. “**Sunucu ekle**”ye tıklayın.
@@ -132,7 +142,7 @@ Silinen her mesaj; ilgili dosya, kanal ve uzantıyla birlikte [moderasyon loglar
 
 ### Ortaklarım davetlerini hâlâ paylaşabilir mi?
 
-Evet. Onları Diğer sunucular filtresinin beyaz listesine ekleyin ya da kara liste dışında bırakın.
+Evet. Onları Diğer sunucular filtresinin beyaz listesine ekleyin ya da kara liste dışında bırakın. Ortaklıklarınızı yayımladığınız [kanalı yok sayabilirsiniz](#servers-ignored) de.
 
 ### Bir üye reddedilen etiketi kaldırırsa ne olur?
 

@@ -184,6 +184,14 @@ Geri bildirim türünü seçin, ardından açılan pencereyi doldurun:
 - **Genel görüş**: deneyiminizi 1 ile 5 arasında puanlayın.
 - **Övgü**.
 
+## 🎮 RaidProtect ana sayfası {#activity-home}
+
+RaidProtect'in “**Launch**” düğmesi, Discord Activity içinde **RaidProtect ana sayfasını** açar. Sunucunuzda, botla DM'de ve Discord hesabınıza eklenen RaidProtect'ten çalışır. Kanala hiçbir şey gönderilmez.
+
+- **Demolar**: korumalarımız minyatür bir Discord kanalında iş başında (anti-spam, anti-raid, captcha ve [HoneyPot](./honeypot.md) tuzak kanalı).
+- **Mini oyunlar**: sunucunuzun simgesini robot dalgalarına karşı savunduğunuz Güvenlik Duvarı, Snek, Ban Hammer ve Hızlı Ayıklama.
+- **Sıralamalar**: her oyun için sunucunuzun ve tüm sunucuların en iyi on oyuncusu, sizin sıranızla birlikte.
+
 ## 👤 Kullanıcı bilgileri {#userinfo}
 
 `/userinfo` komutu, bir kullanıcı hakkında ayrıntılı bilgi almanızı sağlar.
@@ -285,6 +293,30 @@ Hedef sunucunun bir üyesiyse ek bilgiler şunları içerir:
 | `AUTOMOD_QUARANTINED_GUILD_TAG`          | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | Etiket veya takma ad nedeniyle otomatik moderasyon tarafından karantinaya alındı. |
 | `BYPASSES_VERIFICATION`                  | <Icon src="/img/icons/BypassVerification.svg" alt="icon BypassVerification" title=":BypassVerification:"/>             | Kullanıcı sunucunun doğrulamasını atlayabilir.                    |
 | `SPAMMER`                                | <Icon src="/img/icons/UnusualAccountActivity.svg" alt="icon UnusualAccountActivity" title=":UnusualAccountActivity:"/> | Hesap spam yapan olarak işaretlendi veya olağandışı etkinlik algılandı. |
+
+## 🎨 Bir rolün bilgileri {#roleinfo}
+
+:::info Deneme: Logging Update
+`/roleinfo`, 3.8.0 sürümü için planlanan **Logging Update**'in parçasıdır. Çıkışına kadar komut deneme aşamasındadır; [Premium](/tr/premium) sunucular için herkese açık beta olarak sunulur.
+:::
+
+`/roleinfo` komutu, sunucudaki bir rolün kartını görüntüler.
+
+Şu komutu kullanın: ```/roleinfo [role]```
+
+- **Ad**, etiket ve kimlik
+- **Renk** veya gradyan, **simge** veya emoji
+- **Oluşturulma tarihi** ve rol listesindeki **konumu**
+- **Ayrı gösteriliyor** ve **etiketlenebilir**
+- **Kaynak**: bir botun, bir entegrasyonun, takviyelerin, bir aboneliğin rolü veya bağlantılı rol
+- **Üye sayısı** (`@everyone` için sunucunun tüm üyeleri)
+- **Hassas izinler**: herkes için evet veya hayır, ayrıntı yalnızca moderatörler için
+
+Bir role bağlı [sunucu logları](./logs.md) (oluşturulan veya düzenlenen rol, bir üyeye eklenen veya kaldırılan rol), bu kartı açan bir “**Rol**” düğmesine sahiptir.
+
+:::info
+`roleinfo` komutu [ön ekle kullanılabilir](../guides/prefix.md) (takma ad `ri`), yalnızca bir sunucuda.
+:::
 
 ## ⚖️ Discord yaptırımları {#discord-sanctions}
 

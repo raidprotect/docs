@@ -184,6 +184,14 @@ import Settings from '@site/src/components/DiscordMessage/mockups/v2';
 - **综合反馈**：为您的体验打 1 到 5 分。
 - **好评**。
 
+## 🎮 RaidProtect 主页 {#activity-home}
+
+RaidProtect 的“**Launch**”按钮会在 Discord Activity 中打开 **RaidProtect 主页**。它可以在您的服务器上、与机器人的私信中，以及将 RaidProtect 添加到您的 Discord 账号后使用。频道中不会发布任何内容。
+
+- **演示**：在一个迷你 Discord 频道中展示我们的防护如何运作（Antispam、反突袭、验证码和 [HoneyPot](./honeypot.md) 的陷阱频道）。
+- **小游戏**：防火墙（抵御一波波机器人，守护您的服务器图标）、Snek、Ban Hammer 和快速分类。
+- **排行榜**：每个游戏都会显示您服务器上以及所有服务器中排名前十的玩家，并显示您的名次。
+
 ## 👤 用户信息 {#userinfo}
 
 `/userinfo` 命令可让您获取某位用户的详细信息。
@@ -285,6 +293,30 @@ import Settings from '@site/src/components/DiscordMessage/mockups/v2';
 | `AUTOMOD_QUARANTINED_GUILD_TAG`          | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | 因标签或昵称被自动管理隔离。    |
 | `BYPASSES_VERIFICATION`                  | <Icon src="/img/icons/BypassVerification.svg" alt="icon BypassVerification" title=":BypassVerification:"/>             | 该用户可以绕过服务器的验证。       |
 | `SPAMMER`                                | <Icon src="/img/icons/UnusualAccountActivity.svg" alt="icon UnusualAccountActivity" title=":UnusualAccountActivity:"/> | 账号被标记为垃圾信息发送者，或检测到异常活动。   |
+
+## 🎨 角色信息 {#roleinfo}
+
+:::info 试验中：Logging Update
+`/roleinfo` 属于 **Logging Update**，预计在 3.8.0 版本推出。在其正式发布之前，该命令处于试验阶段，面向 [Premium](/zh-CN/premium) 服务器开放公开测试。
+:::
+
+`/roleinfo` 命令会显示服务器中某个角色的信息卡。
+
+使用命令：```/roleinfo [role]```
+
+- **名称**、提及和 ID
+- **颜色**或渐变色，**图标**或表情符号
+- **创建日期**以及在角色列表中的**位置**
+- **单独显示**和**可提及**
+- **来源**：机器人、集成、助力、订阅的角色，或关联角色
+- **成员数量**（对于 `@everyone`，即服务器的全部成员）
+- **敏感权限**：所有人都能看到“是”或“否”，详情仅向管理人员显示
+
+与角色相关的[服务器日志](./logs.md)（角色的创建或修改、为成员添加或移除角色）带有“**身份组**”按钮，可打开此信息卡。
+
+:::info
+`roleinfo` 命令[可通过前缀使用](../guides/prefix.md)（别名 `ri`），仅限在服务器中使用。
+:::
 
 ## ⚖️ Discord 处罚 {#discord-sanctions}
 

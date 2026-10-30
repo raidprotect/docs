@@ -184,6 +184,14 @@ Chọn loại phản hồi, rồi điền vào cửa sổ mở ra:
 - **Đánh giá chung**: chấm điểm trải nghiệm của bạn từ 1 đến 5.
 - **Lời khen**.
 
+## 🎮 Trang chủ RaidProtect {#activity-home}
+
+Nút “**Launch**” của RaidProtect mở **trang chủ RaidProtect** trong Activity của Discord. Nó hoạt động trên máy chủ của bạn, trong tin nhắn riêng với bot, và từ RaidProtect được thêm vào tài khoản Discord của bạn. Không có gì được đăng trong kênh.
+
+- **Demo**: các biện pháp bảo vệ của chúng tôi đang hoạt động trong một kênh Discord thu nhỏ (chống spam, chống raid, captcha và kênh bẫy của [HoneyPot](./honeypot.md)).
+- **Trò chơi nhỏ**: Tường lửa, nơi bạn bảo vệ biểu tượng máy chủ của mình trước các đợt robot, Snek, Ban Hammer và Sắp xếp nhanh.
+- **Bảng xếp hạng**: với mỗi trò chơi, mười người chơi giỏi nhất của máy chủ bạn và của tất cả các máy chủ, kèm thứ hạng của bạn.
+
 ## 👤 Thông tin người dùng {#userinfo}
 
 Lệnh `/userinfo` cho phép bạn lấy thông tin chi tiết về một người dùng.
@@ -285,6 +293,30 @@ Nếu đối tượng là một thành viên của máy chủ, các thông tin b
 | `AUTOMOD_QUARANTINED_GUILD_TAG`          | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | Bị tự động kiểm duyệt cách ly vì tag hoặc biệt danh.              |
 | `BYPASSES_VERIFICATION`                  | <Icon src="/img/icons/BypassVerification.svg" alt="icon BypassVerification" title=":BypassVerification:"/>             | Người dùng có thể bỏ qua bước xác minh của máy chủ.               |
 | `SPAMMER`                                | <Icon src="/img/icons/UnusualAccountActivity.svg" alt="icon UnusualAccountActivity" title=":UnusualAccountActivity:"/> | Tài khoản bị đánh dấu là kẻ spam hoặc phát hiện hoạt động bất thường. |
+
+## 🎨 Thông tin của một vai trò {#roleinfo}
+
+:::info Thử nghiệm: Logging Update
+`/roleinfo` thuộc **Logging Update**, dự kiến cho phiên bản 3.8.0. Trong khi chờ phát hành, lệnh đang thử nghiệm, ở dạng bản beta công khai cho các máy chủ [Premium](/vi/premium).
+:::
+
+Lệnh `/roleinfo` hiển thị thông tin của một vai trò trên máy chủ.
+
+Dùng lệnh: ```/roleinfo [role]```
+
+- **Tên**, lượt nhắc đến và ID
+- **Màu** hoặc dải màu, **biểu tượng** hoặc emoji
+- **Ngày tạo** và **vị trí** trong danh sách vai trò
+- **Hiển thị riêng** và **có thể nhắc đến**
+- **Nguồn gốc**: vai trò của một bot, của một tích hợp, của lượt boost, của một gói đăng ký hoặc vai trò liên kết
+- **Số thành viên** (với `@everyone`, tất cả thành viên của máy chủ)
+- **Quyền nhạy cảm**: có hoặc không với mọi người, chi tiết chỉ dành cho người kiểm duyệt
+
+Các [nhật ký máy chủ](./logs.md) liên quan đến một vai trò (vai trò được tạo hoặc sửa, vai trò được thêm hoặc gỡ khỏi một thành viên) có một nút “**Vai trò**” để mở thông tin này.
+
+:::info
+Lệnh `roleinfo` có thể [dùng qua tiền tố](../guides/prefix.md) (bí danh `ri`), chỉ trên máy chủ.
+:::
 
 ## ⚖️ Hình phạt Discord {#discord-sanctions}
 

@@ -18,8 +18,11 @@ La Logging Update è in fase di sperimentazione: in attesa della sua uscita nell
 - Il log di un messaggio eliminato dice chi l'ha eliminato. Un messaggio modificato mostra il prima e il dopo, con solo le righe cambiate per un messaggio lungo.
 - Log vocali: durata della sessione all'uscita, e azioni del team (silenziare, disattivare l'audio, spostare, disconnettere) con il loro autore.
 - Tre [formati di log](./features/logs.md#format): Predefinito, Riquadro e Compatto.
+- Nuovi tipi di log: regole AutoMod di Discord, eventi programmati e membri interessati, stage e prese di parola, avatar del server e ruoli riordinati.
+- I log ricavati dal registro di controllo mostrano il motivo indicato dall'autore dell'azione.
+- Nuovo comando [`/roleinfo`](./features/utilities.mdx#roleinfo): la scheda di un ruolo (colore, posizione, origine, numero di membri, permessi sensibili), aperta anche dal pulsante “**Ruolo**” dei log legati a un ruolo.
 - Nuova casella “**Messaggi sul server**” nelle [segnalazioni](./features/reports.md): il thread della segnalazione riprende gli ultimi messaggi del canale, messaggi eliminati compresi.
-- Riservato al **Premium**: il formato Compatto, i log vocali e delle reazioni, la copia degli allegati dei messaggi eliminati, [6 ore di messaggi in memoria](./features/logs.md#cache) invece di 15 minuti e fino a 15 canali di log invece di 3.
+- Riservato al **Premium**: il formato Compatto, i log vocali (stage compresi), delle reazioni e dei membri interessati a un evento, la copia degli allegati dei messaggi eliminati, [6 ore di messaggi in memoria](./features/logs.md#cache) invece di 15 minuti e fino a 15 canali di log invece di 3.
 
 ## 3.7.0 Identity Update <span className="badge-experiment">Sperimentazione</span> {#3-7-0}
 
@@ -34,6 +37,7 @@ L'Identity Update è in fase di sperimentazione: in attesa della sua uscita nell
 - I log di sanzione citano gli account collegati, con un pulsante “**Account collegati**” verso il pannello `/alt` nel formato embed.
 - Nuova impostazione [Un solo account per persona](./features/alt-accounts.md#single-account): gli account secondari vengono messi in quarantena.
 - Il [captcha](./features/captcha.md#activity-alts) individua i doppi account: collega da solo gli account certamente appartenenti alla stessa persona e propone al tuo team i collegamenti probabili.
+- Il filtro [Altri server](./features/automod.md#servers-ignored) dell'Automod può anche ignorare ruoli e membri.
 - Le [sanzioni degli account collegati](./features/alt-accounts.md#modes) sono riservate al **Premium**. Senza Premium, `/alt` collega e consulta gli account senza limiti, e Un solo account per persona resta disponibile.
 
 ## 3.6.0 Shield Update (28/10/2026) {#3-6-0}
@@ -45,7 +49,7 @@ L'Identity Update è in fase di sperimentazione: in attesa della sua uscita nell
   - Nuova [opzione](./features/anti-spam.mdx#ignore) per monitorare i canali il cui nome contiene “spam”, finora sempre ignorati. <SuggestionLink id="600" />
 - Nuovo [slowmode preventivo](./features/slowmode.md) (**Premium**): la modalità lenta dei canali scelti si regola da sola per mantenere il flusso di messaggi che hai fissato.
 - [Automod](./features/automod.md):
-  - Nuovo filtro [Altri server](./features/automod.md#servers): inviti, messaggi inoltrati, link di canali o di eventi e tag di altri server, in blocklist o in allowlist.
+  - Nuovo filtro [Altri server](./features/automod.md#servers): inviti, messaggi inoltrati, link di canali o di eventi e tag di altri server, in blocklist o in allowlist. Può [ignorare canali e categorie](./features/automod.md#servers-ignored), per esempio il tuo canale delle partnership.
   - Nuovo filtro [Estensioni dei file](./features/automod.md#files): blocca gruppi di estensioni o autorizzane solo alcune, su tutto il server o canale per canale, anche quando un file è camuffato con un'altra estensione. Le regole per canale sono più numerose sui server **Premium**. <SuggestionLink id="505" />
   - [Catalogo personalizzato di immagini](./features/scam-images.md#catalog) di [ScamLens](./features/scam-images.md) (**Premium**) per bloccare le tue immagini di truffa.
 - Nuovo [assistente di installazione](./setup.md#wizard): un percorso guidato sezione per sezione, protezioni proposte in base al tuo server e un'anteprima dell'audit per concludere.
@@ -53,10 +57,12 @@ L'Identity Update è in fase di sperimentazione: in attesa della sua uscita nell
 - Nuova sanzione **Quarantena**, sincronizzata con la [quarantena di Discord](./features/sanctions.mdx#discord-quarantine).
 - Nuova [attivazione Intelligente](./features/captcha.md#trigger) del captcha: oltre ai raid, verifica chi arriva con un account che sembra sospetto.
 - [Activity del captcha](./features/captcha.md#activity): su un server **Premium**, l'icona del server sostituisce il logo RaidProtect.
+- [Provare il captcha](./features/captcha.md#test-mode) non richiede più di attivare una modalità test: il tuo team (proprietario, **Amministratore** o **Gestire il server**) può sempre cliccare su “**Verifica**” per provarlo, senza che venga applicata alcuna azione.
+- Nuova [home di RaidProtect](./features/utilities.mdx#activity-home) nell'Activity: il pulsante “**Launch**” apre delle demo delle nostre protezioni e dei minigiochi con le loro classifiche, sul tuo server come nei MP con il bot.
 - [Messaggio di benvenuto](./features/onboarding.md#welcome-buttons): ogni pulsante può avere il suo emoji.
 - [HoneyPot](./features/honeypot.md): nuovo [ritardo prima della sanzione](./features/honeypot.md#grace), che lascia a un membro in buona fede il tempo di dire che ha sbagliato.
 - [HoneyPot](./features/honeypot.md#sanction): il bando e il jail possono essere permanenti.
-- Ogni messaggio bloccato dall'AutoMod di Discord crea un [avvertimento](./features/sanctions.mdx) silenzioso a nome di “Discord Automod”.
+- Ogni messaggio bloccato dall'AutoMod di Discord crea un [avvertimento](./features/sanctions.mdx#working) silenzioso a nome di “Discord Automod”. Non viene dato quando il membro riceve nello stesso momento una sanzione più pesante, e si disattiva con l'impostazione “**Warn dei messaggi bloccati dall'AutoMod**” (`/settings`, scheda “**Moderazione**”, “**Sanzioni**”).
 - [`/lock` e `/unlock`](./features/channel-lock.md#lock) bloccano e sbloccano un'intera categoria, e i suoi canali restano sincronizzati. <SuggestionLink id="595" />
 - [`/lock`, `/unlock`](./features/channel-lock.md#lock) e [`/slowmode`](./features/moderation.mdx#slowmode): nuova opzione `silent` per agire senza annunci nel canale.
 - Nuova impostazione di [eliminazione dei messaggi al bando](./features/sanctions.mdx#ban-delete): la cronologia eliminata per impostazione predefinita con `/ban`, `?ban` e `/tempban`. <SuggestionLink id="592" />
@@ -73,6 +79,12 @@ L'Identity Update è in fase di sperimentazione: in attesa della sua uscita nell
   - [`/auth`](./features/authentication-manager.mdx#logs-tab): le sessioni vengono registrate nel canale dei log dell'Authentication Manager.
   - [`/snipe`](./features/moderation.mdx#snipe) avvisa quando la memorizzazione nella cache dei messaggi è disattivata e propone di attivarla. Usarlo la attiva automaticamente.
   - Aggiunta di diversi log.
+  - Un membro che ricade nell'[HoneyPot](./features/honeypot.md) dopo essere stato rilasciato viene di nuovo sanzionato.
+  - I pulsanti di creazione dei canali [DISCON](./features/discon.md) non restano più disattivati quando questi canali sono stati eliminati a mano.
+  - [Età minima dell'account](./features/onboarding.md#minage-action): il log di arrivo del captcha indica che un membro è trattenuto, e `/bypass minage` indica l'azione realmente applicata.
+  - RaidProtect verifica di avere i diritti su un ruolo e sui permessi di un canale prima di applicare un jail o un mute.
+  - L'[anti-spam](./features/anti-spam.mdx) conta anche i messaggi già eliminati dal filtro [Altri server](./features/automod.md#servers): un membro che incolla lo stesso invito a ripetizione viene sanzionato.
+  - Correzioni varie e correzioni di traduzioni.
 
 ## 3.5.0 Onboarding Update (19/10/2026) {#3-5-0}
 

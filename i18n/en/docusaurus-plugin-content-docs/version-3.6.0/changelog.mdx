@@ -19,8 +19,11 @@ The Logging Update is an experiment: until its release in 3.8.0, it is in public
 - The log of a deleted message says who deleted it. An edited message shows the before and after, with only the changed lines for a long message.
 - Voice logs: session duration on departure, and staff actions (mute, deafen, move, disconnect) with their author.
 - Three [log formats](./features/logs.md#format): Default, Boxed and Compact.
+- New log types: Discord AutoMod rules, scheduled events and interested members, stages and speakers, server avatars and reordered roles.
+- Logs taken from the audit log show the reason given by the author of the action.
+- New [`/roleinfo`](./features/utilities.mdx#roleinfo) command: the profile of a role (color, position, origin, member count, sensitive permissions), also opened by the "**Role**" button of role-related logs.
 - New "**Server messages**" checkbox in [reports](./features/reports.md): the report thread includes the latest messages of the channel, deleted messages included.
-- Reserved for **Premium**: the Compact format, voice and reaction logs, copying attachments of deleted messages, [6 hours of messages in memory](./features/logs.md#cache) instead of 15 minutes and up to 15 logs channels instead of 3.
+- Reserved for **Premium**: the Compact format, voice logs (stages included), reaction logs and logs of members interested in an event, copying attachments of deleted messages, [6 hours of messages in memory](./features/logs.md#cache) instead of 15 minutes and up to 15 logs channels instead of 3.
 
 ## 3.7.0 Identity Update <span className="badge-experiment">Experiment</span> {#3-7-0}
 
@@ -35,6 +38,7 @@ The Identity Update is an experiment: until its release in 3.7.0, it is in publi
 - Sanction logs mention the linked accounts, with a "**Linked accounts**" button to the `/alt` panel in embed format.
 - New [One account per person](./features/alt-accounts.md#single-account) setting: secondary accounts are put in quarantine.
 - The [captcha](./features/captcha.md#activity-alts) spots alt accounts: it links accounts it is sure are the same person by itself, and suggests probable links to your team.
+- The Automod's [Other servers](./features/automod.md#servers-ignored) filter can also ignore roles and members.
 - [Linked account sanctions](./features/alt-accounts.md#modes) are reserved for **Premium**. Without Premium, `/alt` links and views accounts with no limit, and One account per person remains available.
 
 ## 3.6.0 Shield Update (10/28/2026) {#3-6-0}
@@ -46,7 +50,7 @@ The Identity Update is an experiment: until its release in 3.7.0, it is in publi
   - New [option](./features/anti-spam.mdx#ignore) to monitor channels whose name contains “spam”, which were always ignored until now. <SuggestionLink id="600" />
 - New [preventive slowmode](./features/slowmode.md) (**Premium**): the slowmode of the chosen channels adjusts itself to hold the message rate you set.
 - [Automod](./features/automod.md):
-  - New [Other servers](./features/automod.md#servers) filter: invites, forwarded messages, channel or event links and tags from other servers, as a blocklist or an allowlist.
+  - New [Other servers](./features/automod.md#servers) filter: invites, forwarded messages, channel or event links and tags from other servers, as a blocklist or an allowlist. It can [ignore channels and categories](./features/automod.md#servers-ignored), for example your partnerships channel.
   - New [File extensions](./features/automod.md#files) filter: block groups of extensions or allow only some, server-wide or channel by channel, even when a file is disguised under another extension. **Premium** servers get more per-channel rules. <SuggestionLink id="505" />
   - [Custom image catalog](./features/scam-images.md#catalog) for [ScamLens](./features/scam-images.md) (**Premium**) to block your own scam images.
 - New [setup wizard](./setup.md#wizard): a guided path section by section, protections suggested for your server and an audit preview to finish.
@@ -54,10 +58,12 @@ The Identity Update is an experiment: until its release in 3.7.0, it is in publi
 - New **Quarantine** sanction, synchronized with [Discord's quarantine](./features/sanctions.mdx#discord-quarantine).
 - New [Smart trigger](./features/captcha.md#trigger) for the captcha: besides raids, it checks newcomers whose account looks suspicious.
 - [Captcha Activity](./features/captcha.md#activity): on a **Premium** server, the server icon replaces the RaidProtect logo.
+- [Testing the captcha](./features/captcha.md#test-mode) no longer requires enabling a test mode: your team (owner, **Administrator** or **Manage Server**) can always click "**Verify**" to try it, without any action being applied.
+- New [RaidProtect home](./features/utilities.mdx#activity-home) in the Activity: the "**Launch**" button opens demos of our protections and mini-games with their leaderboards, on your server as well as in DMs with the bot.
 - [Welcome message](./features/onboarding.md#welcome-buttons): each button can have its own emoji.
 - [HoneyPot](./features/honeypot.md): new [delay before sanction](./features/honeypot.md#grace), which gives a good-faith member time to say they made a mistake.
 - [HoneyPot](./features/honeypot.md#sanction): ban and jail can be permanent.
-- Each message blocked by Discord's AutoMod creates a silent [warning](./features/sanctions.mdx) in the name of "Discord Automod".
+- Each message blocked by Discord's AutoMod creates a silent [warning](./features/sanctions.mdx#working) in the name of "Discord Automod". It is not given when the member receives a heavier sanction at the same time, and can be turned off with the "**Warn on messages blocked by AutoMod**" setting (`/settings`, "**Moderation**" tab, "**Sanctions**").
 - [`/lock` and `/unlock`](./features/channel-lock.md#lock) lock and unlock a whole category, and its channels stay synced. <SuggestionLink id="595" />
 - [`/lock`, `/unlock`](./features/channel-lock.md#lock) and [`/slowmode`](./features/moderation.mdx#slowmode): new `silent` option to act without an announcement in the channel.
 - New [message deletion on ban](./features/sanctions.mdx#ban-delete) setting: the history deleted by default with `/ban`, `?ban` and `/tempban`. <SuggestionLink id="592" />
@@ -74,6 +80,12 @@ The Identity Update is an experiment: until its release in 3.7.0, it is in publi
   - [`/auth`](./features/authentication-manager.mdx#logs-tab): sessions are logged in the Authentication Manager log channel.
   - [`/snipe`](./features/moderation.mdx#snipe) warns you when message caching is disabled and offers to enable it. Using it turns message caching on.
   - Several new logs.
+  - A member who falls into the [HoneyPot](./features/honeypot.md) again after being released is sanctioned again.
+  - The creation buttons of the [DISCON](./features/discon.md) channels no longer stay grayed out when those channels were deleted by hand.
+  - [Minimum account age](./features/onboarding.md#minage-action): the captcha arrival log says that a member is held, and `/bypass minage` names the action actually applied.
+  - RaidProtect checks that it has the rights on a role and on the permissions of a channel before applying a jail or a mute.
+  - The [anti-spam](./features/anti-spam.mdx) also counts messages already deleted by the [Other servers](./features/automod.md#servers) filter: a member who pastes the same invite over and over is sanctioned.
+  - Various fixes and translation fixes.
 
 ## 3.5.0 Onboarding Update (10/19/2026) {#3-5-0}
 

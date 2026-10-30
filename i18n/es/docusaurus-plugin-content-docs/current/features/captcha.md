@@ -102,14 +102,9 @@ Solo se te muestran las cuentas de tu servidor: no se dice nada de los demás se
 La detección de cuentas duplicadas forma parte de la **Identity Update**, prevista para la versión 3.7.0. Hasta su lanzamiento, está en fase experimental, en beta pública para los servidores [Premium](/es/premium).
 :::
 
-### Modo de prueba {#test-mode}
+### Probar el captcha {#test-mode}
 
-1. Ejecuta el [comando `/settings`](../setup.md#settings).
-2. Abre la pestaña “**Llegadas**”.
-3. Haz clic en “**Configurar**” junto a “**Captcha**”.
-4. Haz clic en “**Activar**” junto a “**Modo de prueba**”.
-
-En modo Panel, un miembro de tu equipo ya verificado (permiso **Gestionar servidor**, o el propietario) puede entonces hacer clic en “**Verificar**” para repetir el captcha. Los intentos y el tiempo de resolución se aplican como a un recién llegado: el log del captcha dice lo que se habría hecho, no se aplica nada.
+No hay nada que activar: en modo Panel, un miembro de tu equipo ya verificado (el propietario, o un miembro con el permiso **Administrador** o **Gestionar servidor**) siempre puede hacer clic en “**Verificar**” para repetir el captcha. Los intentos y el tiempo de resolución se aplican como a un recién llegado. No se aplica nada: el log del captcha (“**Prueba del equipo**”) dice lo que se habría hecho.
 
 ### Dificultad {#difficulty}
 
