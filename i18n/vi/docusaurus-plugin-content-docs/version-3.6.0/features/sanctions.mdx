@@ -20,7 +20,7 @@ Lịch sử hình phạt tự động ghi lại mọi hành động kiểm duy�
 - **Hình phạt thủ công**: mọi [lệnh kiểm duyệt](./moderation.mdx) (`/ban`, `/tempban`, `/kick`, `/mute`, `/jail`, `/warn`…) đều được ghi vào lịch sử.
 - **Hình phạt tự động**: các hình phạt do các mô-đun bảo vệ của chúng tôi áp dụng ([chống spam](./anti-spam.mdx), [HoneyPot](./honeypot.md), [ScamLens](./scam-images.md)…) cũng được thêm vào lịch sử.
 - **Cấm, đuổi và timeout**: các hình phạt được áp dụng mà không qua RaidProtect cũng được thêm vào lịch sử.
-- **AutoMod của Discord**: các timeout do AutoMod của Discord áp dụng được ghi lại. Mỗi tin nhắn bị một quy tắc AutoMod chặn cũng tạo một **cảnh cáo** mang tên “**Discord Automod**”, im lặng (không có tin nhắn riêng), trừ khi quy tắc đã áp dụng một timeout.
+- **AutoMod của Discord**: các timeout do AutoMod của Discord áp dụng được ghi lại. Mỗi tin nhắn bị một quy tắc AutoMod chặn cũng tạo một **cảnh cáo** mang tên “**Discord Automod**”, im lặng (không có tin nhắn riêng), trừ khi quy tắc đã áp dụng một timeout. Cảnh cáo này cũng không được đưa ra khi thành viên nhận một hình phạt nặng hơn (timeout, mute, jail, đuổi, softban, cấm, cách ly) trong vòng 10 giây quanh lần chặn, ví dụ từ [HoneyPot](./honeypot.md) hoặc [chống spam](./anti-spam.mdx) cho cùng tin nhắn đó. Cảnh cáo này được bật theo mặc định và có thể tắt bằng “**Cảnh cáo tin nhắn bị AutoMod chặn**”: dùng [lệnh `/settings`](../setup.md#settings), thẻ “**Kiểm duyệt**”, “**Hình phạt**”.
 - **Thông báo hình phạt**: các thành viên bị xử phạt nhận một tin nhắn riêng cho biết hình phạt và lý do. Bot cũng gửi một biên nhận chi tiết xác nhận trạng thái gửi: **đã nhận**, **tin nhắn riêng đã đóng**, **hết hạn** hoặc **im lặng** (khi dùng tùy chọn `[--silent]`). Với kick, softban và cấm tạm thời, tin nhắn này còn chứa một **nút kèm lời mời vào máy chủ** để thành viên có thể quay lại khi hình phạt kết thúc.
 
 :::info
@@ -327,4 +327,4 @@ Có, nếu bạn đặt [quyền riêng tư của hình phạt](#sanctions-priva
 
 ### Các tin nhắn bị AutoMod của Discord chặn có được tính là hình phạt không?
 
-Có: mỗi tin nhắn bị chặn tạo một cảnh cáo im lặng mang tên “**Discord Automod**”, trừ khi quy tắc đã áp dụng một timeout. Các cảnh cáo này chỉ được ghi nhật ký nếu nhật ký kiểm duyệt thụ động được bật.
+Có, theo mặc định: mỗi tin nhắn bị chặn tạo một cảnh cáo im lặng mang tên “**Discord Automod**”, trừ khi quy tắc đã áp dụng một timeout hoặc thành viên cùng lúc nhận một hình phạt nặng hơn. Bạn có thể tắt cảnh cáo này bằng “**Cảnh cáo tin nhắn bị AutoMod chặn**” trong `/settings`, thẻ “**Kiểm duyệt**”, “**Hình phạt**”. Các cảnh cáo này chỉ được ghi nhật ký nếu nhật ký kiểm duyệt thụ động được bật.

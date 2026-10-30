@@ -102,14 +102,9 @@ Es werden Ihnen nur die Konten Ihres Servers gezeigt: Über andere Server wird n
 Die Erkennung von Zweitkonten gehört zur **Identity Update**, die für Version 3.7.0 vorgesehen ist. Bis zu ihrer Veröffentlichung befindet sie sich in der Experimentierphase, als öffentliche Beta für [Premium](/de/premium)-Server.
 :::
 
-### Testmodus {#test-mode}
+### Das Captcha testen {#test-mode}
 
-1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
-2. Öffnen Sie den Tab „**Ankünfte**“.
-3. Klicken Sie neben „**Captcha**“ auf „**Konfigurieren**“.
-4. Klicken Sie neben „**Testmodus**“ auf „**Aktivieren**“.
-
-Im Panel-Modus kann dann ein bereits verifiziertes Mitglied Ihres Teams (Berechtigung **Server verwalten** oder der Eigentümer) auf „**Verifizieren**“ klicken, um das Captcha zu wiederholen. Versuche und Lösungszeit gelten wie für einen Neuankömmling: Das Captcha-Log sagt, was getan worden wäre, es wird nichts angewendet.
+Es muss nichts aktiviert werden: Im Panel-Modus kann ein bereits verifiziertes Mitglied Ihres Teams (der Eigentümer oder ein Mitglied mit der Berechtigung **Administrator** oder **Server verwalten**) jederzeit auf „**Verifizieren**“ klicken, um das Captcha zu wiederholen. Versuche und Lösungszeit gelten wie für einen Neuankömmling. Es wird nichts angewendet: Das Captcha-Log („**Teamtest**“) sagt, was getan worden wäre.
 
 ### Schwierigkeit {#difficulty}
 

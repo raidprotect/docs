@@ -68,6 +68,16 @@ Mỗi tin nhắn bị từ chối đều bị xóa. Trong “**Hình phạt cho 
 
 Hình phạt được áp dụng tối đa một lần mỗi phút cho mỗi thành viên: một thành viên dán nhiều lời mời liên tiếp chỉ bị xử phạt một lần.
 
+### Kênh bị bỏ qua {#servers-ignored}
+
+Trong “**Kênh và danh mục bị bỏ qua**”, hãy chọn tối đa 25 kênh hoặc danh mục nơi bộ lọc cho mọi thứ đi qua, ví dụ kênh đối tác của bạn. Không tin nhắn nào trong các kênh này, trong các luồng của chúng hay trong các kênh của các danh mục này bị xóa hay bị xử phạt. Các kênh thông báo và diễn đàn cũng có thể được chọn.
+
+Việc kiểm tra **tag máy chủ** hiển thị vẫn hoạt động ở mọi nơi: nó nhắm vào thành viên, không phải kênh mà họ viết.
+
+:::info Thử nghiệm: Identity Update
+Trên các máy chủ [Premium](/vi/premium), nơi Identity Update đang ở bản beta công khai, các kênh bị bỏ qua chuyển sang màn hình “**Ngoại lệ**”, thêm **vai trò bị bỏ qua** và **thành viên bị bỏ qua** (mỗi loại tối đa 25). Tin nhắn của một thành viên bị bỏ qua, hoặc mang một vai trò bị bỏ qua, không bị xóa cũng không bị xử phạt. Tiện cho một thành viên đội ngũ của bạn đăng lời mời của các đối tác mà không có quyền Quản lý tin nhắn. Dự kiến cho phiên bản 3.7.0.
+:::
+
 ### Danh sách máy chủ {#servers-lists}
 
 1. Nhấp vào “**Thêm máy chủ**”.
@@ -132,7 +142,7 @@ Mỗi tin nhắn bị xóa đều được ghi trong [nhật ký kiểm duyệt]
 
 ### Các đối tác của tôi có còn chia sẻ được lời mời của họ không?
 
-Có. Hãy thêm họ vào danh sách cho phép của bộ lọc Máy chủ khác, hoặc để họ ngoài danh sách chặn.
+Có. Hãy thêm họ vào danh sách cho phép của bộ lọc Máy chủ khác, hoặc để họ ngoài danh sách chặn. Bạn cũng có thể [bỏ qua kênh](#servers-ignored) nơi bạn đăng các đối tác của mình.
 
 ### Điều gì xảy ra khi một thành viên bỏ tag bị từ chối?
 

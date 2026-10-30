@@ -184,6 +184,14 @@ Choose the type of feedback, then fill in the window that opens:
 - **General feedback**: rate your experience from 1 to 5.
 - **Compliment**.
 
+## 🎮 RaidProtect home {#activity-home}
+
+RaidProtect's "**Launch**" button opens the **RaidProtect home** in the Discord Activity. It works on your server, in DMs with the bot, and from RaidProtect added to your Discord account. Nothing is posted in the channel.
+
+- **Demos**: our protections in action in a miniature Discord channel (anti-spam, anti-raid, captcha and the [HoneyPot](./honeypot.md) trap channel).
+- **Mini-games**: Firewall, where you defend your server's icon against waves of robots, Snek, Ban Hammer and Quick sort.
+- **Leaderboards**: for each game, the top ten players of your server and of all servers, with your rank.
+
 ## 👤 User information {#userinfo}
 
 The `/userinfo` command lets you get detailed information about a user.
@@ -285,6 +293,30 @@ If the target is a server member, additional info includes:
 | `AUTOMOD_QUARANTINED_GUILD_TAG`          | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | Quarantined by automoderation because of the tag or nickname.     |
 | `BYPASSES_VERIFICATION`                  | <Icon src="/img/icons/BypassVerification.svg" alt="icon BypassVerification" title=":BypassVerification:"/>             | The user can bypass server verification.                          |
 | `SPAMMER`                                | <Icon src="/img/icons/UnusualAccountActivity.svg" alt="icon UnusualAccountActivity" title=":UnusualAccountActivity:"/> | Account marked as a spammer or unusual activity detected.         |
+
+## 🎨 Role information {#roleinfo}
+
+:::info Experiment: Logging Update
+`/roleinfo` is part of the **Logging Update**, planned for version 3.8.0. Until its release, the command is an experiment, in public beta for [Premium](/en/premium) servers.
+:::
+
+The `/roleinfo` command shows the profile of a server role.
+
+Use the command: ```/roleinfo [role]```
+
+- **Name**, mention and ID
+- **Color** or gradient, **icon** or emoji
+- **Creation date** and **position** in the role list
+- **Displayed separately** and **mentionable**
+- **Origin**: role of a bot, an integration, boosts, a subscription, or a linked role
+- **Member count** (for `@everyone`, all the server's members)
+- **Sensitive permissions**: yes or no for everyone, the details only for moderators
+
+[Server logs](./logs.md) related to a role (role created or edited, role added to or removed from a member) have a "**Role**" button that opens this profile.
+
+:::info
+The `roleinfo` command is [usable via prefix](../guides/prefix.md) (alias `ri`), on a server only.
+:::
 
 ## ⚖️ Discord sanctions {#discord-sanctions}
 

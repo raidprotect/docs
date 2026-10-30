@@ -68,6 +68,16 @@ Jede abgelehnte Nachricht wird gelöscht. Wählen Sie unter „**Sanktion für g
 
 Die Sanktion wird höchstens einmal pro Minute und Mitglied angewendet: Ein Mitglied, das mehrere Einladungen hintereinander einfügt, wird nur einmal sanktioniert.
 
+### Ignorierte Kanäle {#servers-ignored}
+
+Wählen Sie unter „**Ignorierte Kanäle und Kategorien**“ bis zu 25 Kanäle oder Kategorien, in denen der Filter alles durchlässt, zum Beispiel Ihren Partnerschaftskanal. Keine Nachricht aus diesen Kanälen, ihren Threads oder den Kanälen dieser Kategorien wird gelöscht oder sanktioniert. Auch Ankündigungskanäle und Foren können gewählt werden.
+
+Die Prüfung des angezeigten **Server-Tags** bleibt überall aktiv: Sie betrifft das Mitglied, nicht den Kanal, in dem es schreibt.
+
+:::info Experiment: Identity Update
+Auf [Premium](/de/premium)-Servern, wo sich die Identity Update in der öffentlichen Beta befindet, wandern die ignorierten Kanäle in einen Bildschirm „**Ausnahmen**“, der **ignorierte Rollen** und **ignorierte Mitglieder** hinzufügt (jeweils höchstens 25). Eine Nachricht eines ignorierten Mitglieds oder eines Mitglieds mit einer ignorierten Rolle wird weder gelöscht noch sanktioniert. Praktisch für ein Mitglied Ihres Teams, das die Einladungen Ihrer Partner postet, ohne die Berechtigung „Nachrichten verwalten“ zu haben. Vorgesehen für Version 3.7.0.
+:::
+
 ### Serverlisten {#servers-lists}
 
 1. Klicken Sie auf „**Server hinzufügen**“.
@@ -132,7 +142,7 @@ Jede gelöschte Nachricht wird in Ihren [Moderationslogs](./moderation.mdx#logs)
 
 ### Können meine Partner weiterhin ihre Einladung teilen?
 
-Ja. Fügen Sie sie der Zulassungsliste des Filters „Andere Server“ hinzu oder lassen Sie sie außerhalb der Sperrliste.
+Ja. Fügen Sie sie der Zulassungsliste des Filters „Andere Server“ hinzu oder lassen Sie sie außerhalb der Sperrliste. Sie können auch [den Kanal ignorieren](#servers-ignored), in dem Sie Ihre Partnerschaften veröffentlichen.
 
 ### Was passiert, wenn ein Mitglied den abgelehnten Tag entfernt?
 

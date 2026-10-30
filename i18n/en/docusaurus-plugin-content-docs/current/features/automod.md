@@ -68,6 +68,16 @@ Each refused message is deleted. In "**Sanction for deleted messages**", also ch
 
 The sanction applies at most once per minute and per member: a member who pastes several invites in a row is only sanctioned once.
 
+### Ignored channels {#servers-ignored}
+
+In "**Ignored channels and categories**", choose up to 25 channels or categories where the filter lets everything through, for example your partnerships channel. No message from these channels, their threads or the channels of these categories is deleted or sanctioned. Announcement channels and forums can also be chosen.
+
+The check of the displayed **server tag** stays active everywhere: it targets the member, not the channel they write in.
+
+:::info Experiment: Identity Update
+On [Premium](/en/premium) servers, where the Identity Update is in public beta, ignored channels move to an "**Exceptions**" screen, which adds **ignored roles** and **ignored members** (25 at most each). A message from an ignored member, or from a member with an ignored role, is neither deleted nor sanctioned. Handy for a team member who posts your partners' invites without having the Manage Messages permission. Planned for version 3.7.0.
+:::
+
 ### Server lists {#servers-lists}
 
 1. Click "**Add a server**".
@@ -132,7 +142,7 @@ Each deleted message is noted in your [moderation logs](./moderation.mdx#logs), 
 
 ### Can my partners still share their invite?
 
-Yes. Add them to the Other servers filter's allowlist, or leave them off the blocklist.
+Yes. Add them to the Other servers filter's allowlist, or leave them off the blocklist. You can also [ignore the channel](#servers-ignored) where you post your partnerships.
 
 ### What happens when a member removes the refused tag?
 

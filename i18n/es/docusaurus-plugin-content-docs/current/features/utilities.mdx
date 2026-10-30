@@ -184,6 +184,14 @@ Elige el tipo de comentario y rellena la ventana que se abre:
 - **Opinión general**: valora tu experiencia de 1 a 5.
 - **Cumplido**.
 
+## 🎮 Inicio de RaidProtect {#activity-home}
+
+El botón “**Launch**” de RaidProtect abre el **inicio de RaidProtect** en la Activity de Discord. Funciona en tu servidor, por MD con el bot, y desde RaidProtect añadido a tu cuenta de Discord. No se publica nada en el canal.
+
+- **Demos**: nuestras protecciones en acción en un canal de Discord en miniatura (anti-spam, anti-raid, captcha y canal trampa del [HoneyPot](./honeypot.md)).
+- **Minijuegos**: Firewall, donde defiendes el icono de tu servidor contra oleadas de robots, Snek, Ban Hammer y Quick sort.
+- **Clasificaciones**: para cada juego, los diez mejores jugadores de tu servidor y de todos los servidores, con tu puesto.
+
 ## 👤 Información del usuario {#userinfo}
 
 El comando `/userinfo` te permite obtener información detallada sobre un usuario.
@@ -285,6 +293,30 @@ Si el objetivo es un miembro del servidor, la información adicional incluye:
 | `AUTOMOD_QUARANTINED_GUILD_TAG`          | <Icon src="/img/icons/MemberQuarantined.svg" alt="icon MemberQuarantined" title=":MemberQuarantined:"/>                | Puesto en cuarentena por la automoderación por la etiqueta o el apodo. |
 | `BYPASSES_VERIFICATION`                  | <Icon src="/img/icons/BypassVerification.svg" alt="icon BypassVerification" title=":BypassVerification:"/>             | El usuario puede omitir la verificación del servidor.             |
 | `SPAMMER`                                | <Icon src="/img/icons/UnusualAccountActivity.svg" alt="icon UnusualAccountActivity" title=":UnusualAccountActivity:"/> | Cuenta marcada como spammer o actividad inusual detectada.        |
+
+## 🎨 Información de un rol {#roleinfo}
+
+:::info Experimental: Logging Update
+`/roleinfo` forma parte de la **Logging Update**, prevista para la versión 3.8.0. Hasta su lanzamiento, el comando está en fase experimental, en beta pública para los servidores [Premium](/es/premium).
+:::
+
+El comando `/roleinfo` muestra la ficha de un rol del servidor.
+
+Usa el comando: ```/roleinfo [rol]```
+
+- **Nombre**, mención e identificador
+- **Color** o degradado, **icono** o emoji
+- **Fecha de creación** y **posición** en la lista de roles
+- **Mostrado por separado** y **mencionable**
+- **Origen**: rol de un bot, de una integración, de los boosts, de una suscripción o rol vinculado
+- **Número de miembros** (para `@everyone`, todos los miembros del servidor)
+- **Permisos sensibles**: sí o no para todo el mundo, el detalle solo para los moderadores
+
+Los [logs del servidor](./logs.md) relacionados con un rol (rol creado o modificado, rol añadido o retirado a un miembro) tienen un botón “**Rol**” que abre esta ficha.
+
+:::info
+El comando `roleinfo` es [utilizable mediante prefijo](../guides/prefix.md) (alias `ri`), solo en un servidor.
+:::
 
 ## ⚖️ Sanciones de Discord {#discord-sanctions}
 

@@ -20,7 +20,7 @@ El historial de sanciones registra automáticamente todas las acciones de modera
 - **Sanciones manuales**: todos los [comandos de moderación](./moderation.mdx) (`/ban`, `/tempban`, `/kick`, `/mute`, `/jail`, `/warn`…) se registran en el historial.
 - **Sanciones automáticas**: las sanciones aplicadas por nuestros módulos de protección ([anti-spam](./anti-spam.mdx), [HoneyPot](./honeypot.md), [ScamLens](./scam-images.md)…) también se añaden al historial.
 - **Baneos, expulsiones y timeouts**: las sanciones aplicadas sin pasar por RaidProtect se añaden al historial.
-- **AutoMod de Discord**: los timeouts aplicados por el AutoMod de Discord quedan registrados. Cada mensaje bloqueado por una regla del AutoMod crea además una **advertencia** a nombre de “**Discord Automod**”, silenciosa (sin MD), salvo si la regla ya aplica un timeout.
+- **AutoMod de Discord**: los timeouts aplicados por el AutoMod de Discord quedan registrados. Cada mensaje bloqueado por una regla del AutoMod crea además una **advertencia** a nombre de “**Discord Automod**”, silenciosa (sin MD), salvo si la regla ya aplica un timeout. Tampoco se da cuando el miembro recibe una sanción más grave (timeout, mute, jail, expulsión, softban, ban, cuarentena) en los 10 segundos alrededor del bloqueo, por ejemplo por el [HoneyPot](./honeypot.md) o el [anti-spam](./anti-spam.mdx) por el mismo mensaje. Este warn está activado por defecto y se desactiva con “**Warn de los mensajes bloqueados por el AutoMod**”: ejecuta el [comando `/settings`](../setup.md#settings), pestaña “**Moderación**”, “**Sanciones**”.
 - **Notificaciones de sanciones**: los miembros sancionados reciben un mensaje privado que les informa de la sanción y de su razón. El bot también envía un acuse de recibo detallado que confirma el estado del envío: **recibido**, **MD cerrados**, **expirado** o **silencioso** (cuando se usa la opción `[--silent]`). Para los kicks, softbans y bans temporales, este mensaje contiene además un **botón con una invitación al servidor** para que el miembro pueda volver una vez terminada la sanción.
 
 :::info
@@ -327,4 +327,4 @@ Sí, si ajustas la [privacidad de las sanciones](#sanctions-privacy) en un nivel
 
 ### ¿Los mensajes bloqueados por el AutoMod de Discord cuentan como sanciones?
 
-Sí: cada mensaje bloqueado crea una advertencia silenciosa a nombre de “**Discord Automod**”, salvo si la regla ya aplica un timeout. Estas advertencias solo se registran si los logs de moderación pasiva están activados.
+Sí, por defecto: cada mensaje bloqueado crea una advertencia silenciosa a nombre de “**Discord Automod**”, salvo si la regla ya aplica un timeout o si el miembro recibe al mismo tiempo una sanción más grave. Puedes desactivar este warn con “**Warn de los mensajes bloqueados por el AutoMod**” en `/settings`, pestaña “**Moderación**”, “**Sanciones**”. Estas advertencias solo se registran si los logs de moderación pasiva están activados.

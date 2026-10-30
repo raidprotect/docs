@@ -18,8 +18,11 @@ Logging Update 處於實驗階段：在 3.8.0 正式推出之前，它為 [Premi
 - 已刪除訊息的紀錄會註明刪除者。修改的訊息會顯示修改前後的內容，長訊息則只顯示有變更的行。
 - 語音紀錄：離開時顯示工作階段時長，並記錄工作人員的動作（靜音、拒聽、移動、中斷連線）與其執行者。
 - 三種[紀錄格式](./features/logs.md#format)：預設、嵌入與精簡。
+- 新的紀錄類型：Discord 的 AutoMod 規則、活動與感興趣的成員、舞台與發言、伺服器頭像，以及重新排序的身分組。
+- 取自審核日誌的紀錄會顯示執行者提供的原因。
+- 新增 [`/roleinfo`](./features/utilities.mdx#roleinfo) 指令：顯示身分組的資訊卡（顏色、位置、來源、成員數、敏感權限），也可以透過身分組相關紀錄上的「**身分組**」按鈕開啟。
 - [檢舉](./features/reports.md)新增「**伺服器上的訊息**」選項：檢舉的討論串會附上頻道的最新訊息，包含已刪除的訊息。
-- 僅限 **Premium**：精簡格式、語音與反應紀錄、複製已刪除訊息的附件、[記憶體中保留 6 小時的訊息](./features/logs.md#cache)（而非 15 分鐘），以及最多 15 個紀錄頻道（而非 3 個）。
+- 僅限 **Premium**：精簡格式、語音紀錄（包含舞台）、反應紀錄與對活動感興趣的成員紀錄、複製已刪除訊息的附件、[記憶體中保留 6 小時的訊息](./features/logs.md#cache)（而非 15 分鐘），以及最多 15 個紀錄頻道（而非 3 個）。
 
 ## 3.7.0 Identity Update <span className="badge-experiment">實驗</span> {#3-7-0}
 
@@ -34,6 +37,7 @@ Identity Update 處於實驗階段：在 3.7.0 正式推出之前，它為 [Prem
 - 處罰紀錄會列出關聯帳號，嵌入格式下還附有開啟 `/alt` 面板的「**關聯帳號**」按鈕。
 - 新增[每人僅限一個帳號](./features/alt-accounts.md#single-account)設定：次要帳號會被隔離。
 - [驗證碼](./features/captcha.md#activity-alts)能偵測多帳號：它會自行關聯確定是同一個人的帳號，並向您的團隊提議可能的關聯。
+- Automod 的[其他伺服器](./features/automod.md#servers-ignored)過濾器也可以忽略身分組與成員。
 - [關聯帳號的處罰](./features/alt-accounts.md#modes)僅限 **Premium**。沒有 Premium 時，`/alt` 仍可無限制地關聯與查閱帳號，每人僅限一個帳號也仍可使用。
 
 ## 3.6.0 Shield Update (2026/10/28) {#3-6-0}
@@ -45,7 +49,7 @@ Identity Update 處於實驗階段：在 3.7.0 正式推出之前，它為 [Prem
   - 新增[選項](./features/anti-spam.mdx#ignore)，可監控名稱包含「spam」的頻道，先前這些頻道一律被忽略。 <SuggestionLink id="600" />
 - 新增[預防性慢速模式](./features/slowmode.md)（**Premium**）：所選頻道的慢速模式會自動調整，以維持您所設定的訊息流量。
 - [Automod](./features/automod.md)：
-  - 新增[其他伺服器](./features/automod.md#servers)過濾器：其他伺服器的邀請、轉發訊息、頻道或活動連結與標籤，支援黑名單或白名單。
+  - 新增[其他伺服器](./features/automod.md#servers)過濾器：其他伺服器的邀請、轉發訊息、頻道或活動連結與標籤，支援黑名單或白名單。它可以[忽略頻道與類別](./features/automod.md#servers-ignored)，例如您的合作夥伴頻道。
   - 新增[副檔名](./features/automod.md#files)過濾器：封鎖成組的副檔名，或只允許其中幾種，可套用於整個伺服器或逐一頻道設定，即使檔案偽裝成其他副檔名也能辨識。**Premium** 伺服器可設定更多頻道規則。 <SuggestionLink id="505" />
   - [ScamLens](./features/scam-images.md) 的[自訂圖片目錄](./features/scam-images.md#catalog)（**Premium**），用於封鎖您自己的詐騙圖片。
 - 新的[安裝精靈](./setup.md#wizard)：逐區段的引導式流程、依您的伺服器提議的防護，並以稽核預覽作結。
@@ -53,10 +57,12 @@ Identity Update 處於實驗階段：在 3.7.0 正式推出之前，它為 [Prem
 - 新增**隔離**處罰，與 [Discord 的隔離](./features/sanctions.mdx#discord-quarantine)同步。
 - 新增驗證碼的[智慧觸發方式](./features/captcha.md#trigger)：除了突襲之外，它也會驗證帳號看起來可疑的新加入者。
 - [驗證碼 Activity](./features/captcha.md#activity)：在 **Premium** 伺服器上，伺服器圖示會取代 RaidProtect 標誌。
+- [測試驗證碼](./features/captcha.md#test-mode)不再需要啟用測試模式：您的團隊（擁有者，或擁有**管理員**或**管理伺服器**權限的成員）隨時都可以點擊「**驗證**」來試用，而不會套用任何處置。
+- Activity 中新增 [RaidProtect 首頁](./features/utilities.mdx#activity-home)：「**Launch**」按鈕會開啟我們各項防護的示範，以及附有排行榜的小遊戲，在您的伺服器上或與機器人的私訊中都能使用。
 - [歡迎訊息](./features/onboarding.md#welcome-buttons)：每個按鈕都可以設定自己的表情符號。
 - [HoneyPot](./features/honeypot.md)：新增[處罰前延遲](./features/honeypot.md#grace)，讓出於善意的成員有時間表示自己搞錯了。
 - [HoneyPot](./features/honeypot.md#sanction)：停權與監禁可以設為永久。
-- 每則被 Discord AutoMod 攔截的訊息，都會以「Discord Automod」的名義建立一個靜默的[警告](./features/sanctions.mdx)。
+- 每則被 Discord AutoMod 攔截的訊息，都會以「Discord Automod」的名義建立一個靜默的[警告](./features/sanctions.mdx#working)。若該成員同時受到更重的處罰，則不會給予此警告；也可以透過「**Discord AutoMod 封鎖訊息的警告**」設定關閉（`/settings`，「**管理**」分頁，「**處罰**」）。
 - [`/lock` 與 `/unlock`](./features/channel-lock.md#lock) 可鎖定和解鎖整個類別，類別內的頻道保持同步。 <SuggestionLink id="595" />
 - [`/lock`、`/unlock`](./features/channel-lock.md#lock) 與 [`/slowmode`](./features/moderation.mdx#slowmode)：新增 `silent` 選項，執行時不在頻道中發布公告。
 - 新增[停權時刪除訊息](./features/sanctions.mdx#ban-delete)設定：使用 `/ban`、`?ban` 與 `/tempban` 時預設刪除的訊息紀錄。 <SuggestionLink id="592" />
@@ -73,6 +79,12 @@ Identity Update 處於實驗階段：在 3.7.0 正式推出之前，它為 [Prem
   - [`/auth`](./features/authentication-manager.mdx#logs-tab)：工作階段會記錄在 Authentication Manager 的日誌頻道。
   - [`/snipe`](./features/moderation.mdx#snipe) 會在訊息快取關閉時提醒，並建議開啟。使用此指令會自動開啟快取。
   - 新增多項日誌。
+  - 被放出後再次落入 [HoneyPot](./features/honeypot.md) 的成員會再次受到處罰。
+  - 當 [DISCON](./features/discon.md) 頻道被手動刪除後，建立這些頻道的按鈕不會再保持灰色。
+  - [帳號最短註冊時長](./features/onboarding.md#minage-action)：驗證碼的加入紀錄會註明成員被暫留，`/bypass minage` 也會指出實際套用的處置。
+  - RaidProtect 在施加監禁或禁言之前，會檢查自己是否有權管理該身分組與頻道權限。
+  - [Antispam](./features/anti-spam.mdx) 也會計算已被[其他伺服器](./features/automod.md#servers)過濾器刪除的訊息：反覆貼上同一個邀請的成員會受到處罰。
+  - 多項修正與翻譯修正。
 
 ## 3.5.0 Onboarding Update (2026/10/19) {#3-5-0}
 

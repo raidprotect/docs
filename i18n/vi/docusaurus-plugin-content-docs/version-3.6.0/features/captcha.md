@@ -102,14 +102,9 @@ Chỉ các tài khoản của máy chủ bạn được hiển thị cho bạn: 
 Việc phát hiện tài khoản phụ thuộc **Identity Update**, dự kiến trong phiên bản 3.7.0. Trong khi chờ phát hành, nó đang thử nghiệm, ở dạng bản beta công khai cho các máy chủ [Premium](/vi/premium).
 :::
 
-### Chế độ thử {#test-mode}
+### Thử captcha {#test-mode}
 
-1. Dùng [lệnh `/settings`](../setup.md#settings).
-2. Mở thẻ “**Thành viên mới**”.
-3. Nhấp vào “**Cấu hình**” bên cạnh “**Captcha**”.
-4. Nhấp vào “**Bật**” bên cạnh “**Chế độ thử**”.
-
-Ở chế độ Bảng, một thành viên đội ngũ đã được xác minh (quyền **Quản lý máy chủ**, hoặc chủ sở hữu) khi đó có thể nhấp vào “**Xác minh**” để làm lại captcha. Số lần thử và thời gian giải được áp dụng như với một người mới vào: nhật ký của captcha cho biết điều lẽ ra đã được làm, không có gì được áp dụng.
+Không có gì cần bật: ở chế độ Bảng, một thành viên đội ngũ đã được xác minh (chủ sở hữu, hoặc một thành viên có quyền **Quản trị viên** hoặc **Quản lý máy chủ**) luôn có thể nhấp vào “**Xác minh**” để làm lại captcha. Số lần thử và thời gian giải được áp dụng như với một người mới vào. Không có gì được áp dụng: nhật ký của captcha (“**Chế độ thử của đội ngũ**”) cho biết điều lẽ ra đã được làm.
 
 ### Độ khó {#difficulty}
 

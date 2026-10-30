@@ -29,13 +29,15 @@ The "**General**", "**Moderation**" and "**Captcha**" channels of the [moderatio
 
 | Family | What is recorded |
 | --- | --- |
-| **Channels, roles and invites** | Categories, channels, voice channels and threads created, edited or deleted, permissions included. Roles, invites, webhooks, integrations, and bots added or removed with their role. |
-| **Members** | Arrivals (with the account age) and departures (with the join date and roles), rules accepted, roles added or removed, nicknames, inactive members pruned and boosts. |
+| **Channels, roles and invites** | Categories, channels, voice channels and threads created, edited or deleted, permissions included. Roles (and their new order), invites, webhooks, integrations, and bots added or removed with their role. Discord AutoMod rules, with the words and phrases added or removed, and scheduled events. Members interested in an event are reserved for [Premium](/en/premium). |
+| **Members** | Arrivals (with the account age) and departures (with the join date and roles), rules accepted, roles added or removed, nicknames, server avatars, inactive members pruned and boosts. |
 | **Messages** | Deleted messages, with who deleted them, edited messages, bulk deletions, pinned or unpinned messages. |
-| **Voice** <span className="badge-premium">Premium</span> | Arrivals, departures with the session duration, channel changes, microphone, sound, camera and screen sharing. Staff actions (mute, deafen, move, disconnect) are separate, with their author. |
+| **Voice** <span className="badge-premium">Premium</span> | Arrivals, departures with the session duration, channel changes, microphone, sound, camera and screen sharing. Staff actions (mute, deafen, move, disconnect) are separate, with their author. Stages started, edited or ended, and members who become speakers or raise their hand. |
 | **Emojis and reactions** | Emojis, stickers and soundboard sounds created, edited or deleted. Reactions added or removed are reserved for [Premium](/en/premium) and unchecked by default. |
 
 An edited message shows the before and after. For a long message, only the changed lines are displayed.
+
+When the author of an action gave a **reason** (visible in Discord's audit log), it appears in the log. Role-related logs have a "**Role**" button that opens its [`/roleinfo`](./utilities.mdx#roleinfo) profile.
 
 Messages deleted by RaidProtect itself (anti-spam, HoneyPot, anti-scam, `/clear`) stay in the logs of the module concerned, without duplicates.
 

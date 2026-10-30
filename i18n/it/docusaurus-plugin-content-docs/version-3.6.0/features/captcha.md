@@ -102,14 +102,9 @@ Ti vengono mostrati solo gli account del tuo server: non viene detto nulla degli
 L'individuazione dei doppi account fa parte dell'**Identity Update**, prevista per la versione 3.7.0. In attesa della sua uscita, è in sperimentazione, in beta pubblica per i server [Premium](/it/premium).
 :::
 
-### Modalità test {#test-mode}
+### Provare il captcha {#test-mode}
 
-1. Esegui il [comando `/settings`](../setup.md#settings).
-2. Apri la scheda “**Arrivi**”.
-3. Clicca su “**Configurare**” accanto a “**Captcha**”.
-4. Clicca su “**Attivare**” accanto a “**Modalità test**”.
-
-In modalità Pannello, un membro del tuo team già verificato (permesso **Gestire il server**, oppure il proprietario) può allora cliccare su “**Verifica**” per rifare il captcha. I tentativi e il tempo di risoluzione si applicano come per un nuovo arrivato: il log del captcha dice cosa sarebbe stato fatto, nulla viene applicato.
+Non c'è nulla da attivare: in modalità Pannello, un membro del tuo team già verificato (il proprietario, oppure un membro con il permesso **Amministratore** o **Gestire il server**) può sempre cliccare su “**Verifica**” per rifare il captcha. I tentativi e il tempo di risoluzione si applicano come per un nuovo arrivato. Nulla viene applicato: il log del captcha (“**Test del team**”) dice cosa sarebbe stato fatto.
 
 ### Difficoltà {#difficulty}
 
