@@ -68,6 +68,16 @@ Chaque message refusé est supprimé. Dans “**Sanction des messages supprimés
 
 La sanction s'applique au plus une fois par minute et par membre : un membre qui colle plusieurs invitations d'affilée n'est sanctionné qu'une fois.
 
+### Salons ignorés {#servers-ignored}
+
+Dans “**Salons et catégories ignorés**”, choisissez jusqu'à 25 salons ou catégories où le filtre laisse tout passer, par exemple votre salon de partenariats. Aucun message de ces salons, de leurs fils ni des salons de ces catégories n'est supprimé ni sanctionné. Les salons d'annonces et les forums peuvent aussi être choisis.
+
+Le contrôle du **tag de serveur** affiché reste actif partout : il vise le membre, pas le salon où il écrit.
+
+:::info Expérimentation : Identity Update
+Sur les serveurs [Premium](/premium), où l'Identity Update est en bêta publique, les salons ignorés passent dans un écran “**Exceptions**”, qui ajoute des **rôles ignorés** et des **membres ignorés** (25 au plus chacun). Un message d'un membre ignoré, ou qui porte un rôle ignoré, n'est ni supprimé ni sanctionné. Pratique pour un membre de votre équipe qui poste les invitations de vos partenaires sans avoir la permission Gérer les messages. Prévu pour la version 3.7.0.
+:::
+
 ### Listes de serveurs {#servers-lists}
 
 1. Cliquez sur “**Ajouter un serveur**”.
@@ -132,7 +142,7 @@ Chaque message supprimé est noté dans vos [logs de modération](./moderation.m
 
 ### Mes partenaires peuvent-ils toujours partager leur invitation ?
 
-Oui. Ajoutez-les à la liste blanche du filtre Autres serveurs, ou laissez-les hors de la liste noire.
+Oui. Ajoutez-les à la liste blanche du filtre Autres serveurs, ou laissez-les hors de la liste noire. Vous pouvez aussi [ignorer le salon](#servers-ignored) où vous publiez vos partenariats.
 
 ### Que se passe-t-il quand un membre retire le tag refusé ?
 

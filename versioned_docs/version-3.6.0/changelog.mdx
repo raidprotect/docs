@@ -18,8 +18,11 @@ La Logging Update est en expérimentation : en attendant sa sortie en 3.8.0, el
 - Le log d'un message supprimé dit qui l'a supprimé. Un message modifié montre l'avant et l'après, avec seulement les lignes changées pour un long message.
 - Logs vocales : durée de la session au départ, et actions du staff (rendre muet, mettre en sourdine, déplacer, déconnecter) avec leur auteur.
 - Trois [formats de logs](./features/logs.md#format) : Défaut, Encadré et Compact.
+- Nouveaux types de logs : règles AutoMod de Discord, événements programmés et membres intéressés, conférences et prises de parole, avatars de serveur et rôles réordonnés.
+- Les logs tirées du journal d'audit affichent la raison donnée par l'auteur de l'action.
+- Nouvelle commande [`/roleinfo`](./features/utilities.mdx#roleinfo) : la fiche d'un rôle (couleur, position, origine, nombre de membres, permissions sensibles), aussi ouverte par le bouton “**Rôle**” des logs liées à un rôle.
 - Nouvelle case “**Messages sur le serveur**” dans les [signalements](./features/reports.md) : le fil du signalement reprend les derniers messages du salon, messages supprimés compris.
-- Réservé au **Premium** : le format Compact, les logs vocales et de réactions, la copie des pièces jointes des messages supprimés, [6 heures de messages en mémoire](./features/logs.md#cache) au lieu de 15 minutes et jusqu'à 15 salons de logs au lieu de 3.
+- Réservé au **Premium** : le format Compact, les logs vocales (conférences comprises), de réactions et des membres intéressés par un événement, la copie des pièces jointes des messages supprimés, [6 heures de messages en mémoire](./features/logs.md#cache) au lieu de 15 minutes et jusqu'à 15 salons de logs au lieu de 3.
 
 ## 3.7.0 Identity Update <span className="badge-experiment">Expérimentation</span> {#3-7-0}
 
@@ -34,6 +37,7 @@ L'Identity Update est en expérimentation : en attendant sa sortie en 3.7.0, el
 - Les logs de sanction citent les comptes liés, avec un bouton “**Comptes liés**” vers le panneau `/alt` au format embed.
 - Nouveau réglage [Un seul compte par personne](./features/alt-accounts.md#single-account) : les comptes secondaires sont mis en quarantaine.
 - Le [captcha](./features/captcha.md#activity-alts) repère les doubles comptes : il lie lui-même les comptes sûrs d'être la même personne, et propose à votre équipe les liens probables.
+- Le filtre [Autres serveurs](./features/automod.md#servers-ignored) de l'Automod peut aussi ignorer des rôles et des membres.
 - Les [sanctions des comptes liés](./features/alt-accounts.md#modes) sont réservées au **Premium**. Sans Premium, `/alt` lie et consulte les comptes sans limite, et Un seul compte par personne reste disponible.
 
 ## 3.6.0 Shield Update (28/10/2026) {#3-6-0}
@@ -45,7 +49,7 @@ L'Identity Update est en expérimentation : en attendant sa sortie en 3.7.0, el
   - Nouvelle [option](./features/anti-spam.mdx#ignore) pour surveiller les salons dont le nom contient « spam », jusque-là toujours ignorés. <SuggestionLink id="600" />
 - Nouveau [slowmode préventif](./features/slowmode.md) (**Premium**) : le mode lent des salons choisis s'ajuste tout seul pour tenir le débit de messages que vous fixez.
 - [Automod](./features/automod.md) :
-  - Nouveau filtre [Autres serveurs](./features/automod.md#servers) : invitations, messages transférés, liens de salon ou d'événement et tags d'autres serveurs, en liste noire ou en liste blanche.
+  - Nouveau filtre [Autres serveurs](./features/automod.md#servers) : invitations, messages transférés, liens de salon ou d'événement et tags d'autres serveurs, en liste noire ou en liste blanche. Il peut [ignorer des salons et des catégories](./features/automod.md#servers-ignored), par exemple votre salon de partenariats.
   - Nouveau filtre [Extensions de fichiers](./features/automod.md#files) : bloquez des groupes d'extensions ou n'autorisez que certaines, sur tout le serveur ou salon par salon, même quand un fichier est déguisé sous une autre extension. Les règles par salon sont plus nombreuses sur les serveurs **Premium**. <SuggestionLink id="505" />
   - [Catalogue personnalisé d'images](./features/scam-images.md#catalog) de [ScamLens](./features/scam-images.md) (**Premium**) pour bloquer vos propres images d'arnaque.
 - Nouvel [assistant d'installation](./setup.md#wizard) : un parcours guidé section par section, des protections proposées selon votre serveur et un aperçu de l'audit pour finir.
@@ -53,10 +57,12 @@ L'Identity Update est en expérimentation : en attendant sa sortie en 3.7.0, el
 - Nouvelle sanction **Quarantaine**, synchronisée avec la [quarantaine de Discord](./features/sanctions.mdx#discord-quarantine).
 - Nouveau [déclenchement Intelligent](./features/captcha.md#trigger) du captcha : en plus des raids, il vérifie les arrivants dont le compte semble suspect.
 - [Activity du captcha](./features/captcha.md#activity) : sur un serveur **Premium**, l'icône du serveur remplace le logo RaidProtect.
+- [Tester le captcha](./features/captcha.md#test-mode) ne demande plus d'activer un mode test : votre équipe (propriétaire, **Administrateur** ou **Gérer le serveur**) peut toujours cliquer sur “**Vérifier**” pour l'essayer, sans qu'aucune action ne soit appliquée.
+- Nouvel [accueil RaidProtect](./features/utilities.mdx#activity-home) dans l'Activity : le bouton “**Launch**” ouvre des démos de nos protections et des mini-jeux avec leurs classements, sur votre serveur comme en MP avec le bot.
 - [Message de bienvenue](./features/onboarding.md#welcome-buttons) : chaque bouton peut avoir son emoji.
 - [HoneyPot](./features/honeypot.md) : nouveau [délai avant sanction](./features/honeypot.md#grace), qui laisse à un membre de bonne foi le temps de dire qu'il s'est trompé.
 - [HoneyPot](./features/honeypot.md#sanction) : le bannissement et le jail peuvent être permanents.
-- Chaque message bloqué par l'AutoMod de Discord crée un [avertissement](./features/sanctions.mdx) silencieux au nom de “Discord Automod”.
+- Chaque message bloqué par l'AutoMod de Discord crée un [avertissement](./features/sanctions.mdx#working) silencieux au nom de “Discord Automod”. Il n'est pas donné quand le membre reçoit au même moment une sanction plus lourde, et se coupe avec le réglage “**Warn des messages bloqués par l'AutoMod**” (`/settings`, onglet “**Modération**”, “**Sanctions**”).
 - [`/lock` et `/unlock`](./features/channel-lock.md#lock) verrouillent et déverrouillent une catégorie entière, et ses salons restent synchronisés. <SuggestionLink id="595" />
 - [`/lock`, `/unlock`](./features/channel-lock.md#lock) et [`/slowmode`](./features/moderation.mdx#slowmode) : nouvelle option `silent` pour agir sans annonce dans le salon.
 - Nouveau réglage de [suppression des messages au bannissement](./features/sanctions.mdx#ban-delete) : l'historique supprimé par défaut avec `/ban`, `?ban` et `/tempban`. <SuggestionLink id="592" />
@@ -73,6 +79,12 @@ L'Identity Update est en expérimentation : en attendant sa sortie en 3.7.0, el
   - [`/auth`](./features/authentication-manager.mdx#logs-tab) : les sessions sont journalisées dans le salon de logs de l'Authentication Manager.
   - [`/snipe`](./features/moderation.mdx#snipe) prévient quand la mise en cache des messages est désactivée et propose de l'activer. L'utiliser active la mise en cache d'office.
   - Ajout de plusieurs logs.
+  - Un membre qui retombe dans le [HoneyPot](./features/honeypot.md) après avoir été relâché est de nouveau sanctionné.
+  - Les boutons de création des salons [DISCON](./features/discon.md) ne restent plus grisés quand ces salons ont été supprimés à la main.
+  - [Âge minimum du compte](./features/onboarding.md#minage-action) : le log d'arrivée du captcha indique qu'un membre est retenu, et `/bypass minage` nomme l'action réellement appliquée.
+  - RaidProtect vérifie qu'il a les droits sur un rôle et sur les permissions d'un salon avant d'appliquer un jail ou un mute.
+  - L'[anti-spam](./features/anti-spam.mdx) compte aussi les messages déjà supprimés par le filtre [Autres serveurs](./features/automod.md#servers) : un membre qui recolle la même invitation en boucle est sanctionné.
+  - Corrections diverses et corrections de traductions.
 
 ## 3.5.0 Onboarding Update (19/10/2026) {#3-5-0}
 
