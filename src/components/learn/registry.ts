@@ -139,4 +139,18 @@ export const LEARN_ARTICLES: LearnEntry[] = [
       description: 'Learn hub card teaser: server-raidable',
     }),
   },
+  {
+    slug: 'captcha-discord',
+    term: translate({
+      id: 'learn.captcha-discord.cardTerm',
+      message: 'Captcha et vérification',
+      description: 'Learn hub card term: captcha-discord',
+    }),
+    teaser: translate({
+      id: 'learn.captcha-discord.cardTeaser',
+      message:
+        "Dans Discord ou sur un site externe : ce que chaque vérification récupère, et comment repérer les doubles comptes sans adresse IP.",
+      description: 'Learn hub card teaser: captcha-discord',
+    }),
+  },
 ];
