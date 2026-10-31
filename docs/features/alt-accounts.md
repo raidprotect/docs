@@ -18,7 +18,7 @@ Les doubles comptes font partie de l'**Identity Update**, prévue pour la versio
 - **Levée commune** : lever la sanction de l'un des comptes, quel qu'il soit, la lève pour tous, avec ou sans Premium.
 - **Recherche groupée** : [rechercher les sanctions](./sanctions.mdx#search) d'un compte montre aussi celles des autres comptes du groupe.
 - **AutoMod de Discord** : les timeouts et mutes posés par l'AutoMod de Discord s'étendent aussi aux comptes liés.
-- **Repérés par le captcha** : l'[Activity du captcha](./captcha.md#activity-alts) peut lier d'elle-même deux comptes sûrs d'être la même personne, ou proposer le lien à votre équipe.
+- **Repérés par le captcha** : l'[Activity du captcha](./captcha.md#activity-alts) peut lier d'elle-même deux comptes sûrs d'être la même personne, ou proposer le lien à votre équipe. Elle s'appuie sur l'appareil, [jamais sur l'adresse IP](#ip).
 - **Logs** : les liens, les retraits et les changements de compte principal sont enregistrés dans les [logs de modération](./moderation.mdx#logs). Le log d'une sanction cite les comptes liés avec leur nom d'utilisateur et, au format embed, porte un bouton “**Comptes liés**” qui ouvre le panneau `/alt` du membre sanctionné.
 
 **Limites :** aucune sur le nombre de comptes par groupe ni sur le nombre de groupes. Une sanction s'étend à **10 comptes liés** d'un coup : les suivants sont sanctionnés à leur prochain message ou à leur arrivée, et le bouton sous la sanction les sanctionne tout de suite.
@@ -112,6 +112,10 @@ Pour changer le compte principal d'un groupe, utilisez `/alt` avec l'un des comp
 ### Les doubles comptes sont-ils partagés entre serveurs ?
 
 Non. Les groupes sont propres à votre serveur et rien n'est partagé avec d'autres serveurs.
+
+### RaidProtect utilise-t-il l'adresse IP pour repérer les doubles comptes ? {#ip}
+
+Non. Nous ne récupérons jamais l'adresse IP : le bot ne la reçoit pas de Discord, et l'[Activity du captcha](./captcha.md#privacy) passe par le proxy de Discord, qui ne la transmet pas. Les doubles comptes sont liés par votre équipe avec `/alt`, ou repérés par la vérification de l'appareil, faite avec l'accord du membre. Un lien qui ne repose que sur l'appareil n'est jamais appliqué d'office : il est proposé à votre équipe. Pour en savoir plus, lisez notre article sur [le captcha et la vérification sur Discord](/learn/captcha-discord#alts).
 
 ### Que se passe-t-il quand je débannis l'un des comptes ?
 

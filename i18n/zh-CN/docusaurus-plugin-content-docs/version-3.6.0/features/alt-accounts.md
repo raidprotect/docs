@@ -18,7 +18,7 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 - **共同解除**：解除其中任何一个账号的处罚，都会为所有账号解除，无论是否使用 Premium。
 - **分组搜索**：[搜索某个账号的处罚](./sanctions.mdx#search)时，也会显示分组中其他账号的处罚。
 - **Discord 的 AutoMod**：Discord 的 AutoMod 施加的超时和禁言同样会扩展到关联账号。
-- **由验证码发现**：[验证码的 Activity](./captcha.md#activity-alts) 可以自行关联两个确定属于同一个人的账号，或向您的团队提出关联建议。
+- **由验证码发现**：[验证码的 Activity](./captcha.md#activity-alts) 可以自行关联两个确定属于同一个人的账号，或向您的团队提出关联建议。它依据的是设备，[绝不依据 IP 地址](#ip)。
 - **日志**：关联、移除以及主账号的变更都会记录在[管理日志](./moderation.mdx#logs)中。处罚日志会列出关联账号及其用户名；采用嵌入格式时，还会附带“**关联账号**”按钮，用于打开被处罚成员的 `/alt` 面板。
 
 **上限：** 每个分组的账号数量和分组数量均不受限制。一次处罚最多同时扩展到 **10 个关联账号**：其余账号会在下次发言或加入时受到处罚，处罚下方的按钮可立即处罚它们。
@@ -112,6 +112,10 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 ### 多账号会在服务器之间共享吗？
 
 不会。分组为您的服务器所独有，不会与其他服务器共享任何内容。
+
+### RaidProtect 会使用 IP 地址来发现多账号吗？ {#ip}
+
+不会。我们从不获取 IP 地址：机器人不会从 Discord 收到它，而[验证码的 Activity](./captcha.md#privacy) 经过 Discord 的代理，该代理不会传递它。多账号由您的团队通过 `/alt` 关联，或由设备验证发现，而设备验证须经成员同意。仅依据设备的关联绝不会被自动应用：它会作为建议提交给您的团队。要了解更多，请阅读我们关于 [Discord 上的验证码与验证](/zh-CN/learn/captcha-discord#alts)的文章。
 
 ### 我解封其中一个账号时会发生什么？
 

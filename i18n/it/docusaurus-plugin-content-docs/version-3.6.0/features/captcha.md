@@ -84,7 +84,7 @@ In modalità **Pannello**, il pulsante “**Verifica**” apre l'**Activity Raid
 - **Robot:** un captcha risolto da un automa viene sanzionato subito, come all'esaurimento dei tentativi: espulsione, jail o blocco secondo la tua impostazione.
 - **Revisione da parte del tuo team:** in caso di dubbio, il membro resta bloccato all'ingresso, senza un tempo che scorre, e il tuo team riceve un rapporto automatico del captcha. Arriva nei [log del captcha](#logs), in mancanza nel canale delle [segnalazioni](./reports.md), in mancanza nei log del server. Una volta preso in carico, il rapporto propone “**Lascia entrare**”, “**Collega a un altro membro**” (con l'[Identity Update](#activity-alts)) e “**Rifiuta**”, che applica la tua azione di fallimento del captcha (espulsione, jail o blocco): il menu delle sanzioni non compare.
 - **Jail dopo tentativi esauriti:** questo jail non ha durata e apre anche un rapporto di revisione. “**Lascia entrare**” toglie il jail e convalida il membro; altrimenti sanzionalo.
-- **Verifica del dispositivo rifiutata:** l'Activity chiede al membro il consenso prima di verificare il suo dispositivo. Se rifiuta, subisce l'azione di fallimento come dopo dei tentativi esauriti (espulsione, jail o blocco).
+- **Verifica del dispositivo rifiutata:** l'Activity chiede al membro il consenso prima di [verificare il suo dispositivo](#privacy). Se rifiuta, subisce l'azione di fallimento come dopo dei tentativi esauriti (espulsione, jail o blocco).
 - **Activity che non si apre:** il membro può cliccare su “**Inserisci un codice**”. Un codice corretto passa allora in revisione dal tuo team.
 - **Cancellazione dei dati:** un membro può chiedere la cancellazione dei suoi dati di verifica a [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot). Rifà allora il captcha, e le sue sanzioni restano.
 
@@ -101,6 +101,17 @@ Ti vengono mostrati solo gli account del tuo server: non viene detto nulla degli
 :::info Sperimentazione: Identity Update
 L'individuazione dei doppi account fa parte dell'**Identity Update**, prevista per la versione 3.7.0. In attesa della sua uscita, è in sperimentazione, in beta pubblica per i server [Premium](/it/premium).
 :::
+
+### Privacy: nessun indirizzo IP {#privacy}
+
+RaidProtect non recupera l'indirizzo IP dei membri che superano il captcha, e l'Activity lo mostra lei stessa al membro.
+
+- **In Discord, senza sito esterno:** l'Activity si apre in Discord, e i suoi scambi passano dal proxy di Discord, che non ci trasmette l'indirizzo IP del membro. Non lo vediamo mai, quindi non possiamo né conservarlo né confrontarlo. Nemmeno il bot lo riceve: Discord non lo fornisce a nessun bot.
+- **Verifica del dispositivo, con il suo consenso:** prima del puzzle, l'Activity chiede al membro l'autorizzazione a verificare il suo dispositivo, per individuare gli automi e i doppi account. Ciò che rileviamo serve a riconoscere un dispositivo già visto, non a sapere chi lo usa.
+- **Il tuo team vede solo il risultato:** successo, fallimento, revisione o collegamento di doppi account, mai le caratteristiche del dispositivo.
+- **Modalità Sfida:** il membro scrive il codice in un messaggio nel canale, e non viene rilevato nulla sul suo dispositivo.
+
+Un membro può chiedere la cancellazione dei suoi dati di verifica a [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot). Per capire i diversi modi di verificare i membri, leggi il nostro articolo su [il captcha e la verifica su Discord](/it/learn/captcha-discord).
 
 ### Provare il captcha {#test-mode}
 

@@ -18,7 +18,7 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 - **共同解除**：解除群組中任一帳號的處罰，不論是哪一個，都會解除所有帳號的處罰，無論有無 Premium。
 - **群組搜尋**：[搜尋某個帳號的處罰](./sanctions.mdx#search)時，也會顯示群組中其他帳號的處罰。
 - **Discord 的 AutoMod**：由 Discord AutoMod 施加的超時和禁言，同樣會延伸到關聯帳號。
-- **由驗證碼發現**：[驗證碼的 Activity](./captcha.md#activity-alts) 可以自行關聯兩個確定是同一個人的帳號，或向您的團隊提議建立關聯。
+- **由驗證碼發現**：[驗證碼的 Activity](./captcha.md#activity-alts) 可以自行關聯兩個確定是同一個人的帳號，或向您的團隊提議建立關聯。它依據的是裝置，[絕不是 IP 位址](#ip)。
 - **紀錄**：關聯、移除以及主帳號的變更都會記錄在[管理紀錄](./moderation.mdx#logs)中。處罰紀錄會列出關聯帳號及其使用者名稱；採用嵌入格式時，還會附有「**關聯帳號**」按鈕，可開啟被處罰成員的 `/alt` 面板。
 
 **限制**：群組中的帳號數量與群組數量皆無上限。一項處罰一次最多延伸到 **10 個關聯帳號**：其餘帳號會在下次發言或加入時受到處罰，而處罰下方的按鈕可立即處罰它們。
@@ -112,6 +112,10 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 ### 多帳號會在伺服器之間共享嗎？
 
 不會。群組專屬於您的伺服器，不會與其他伺服器共享任何內容。
+
+### RaidProtect 會使用 IP 位址來找出多帳號嗎？ {#ip}
+
+不會。我們從不取得 IP 位址：機器人不會從 Discord 收到它，而[驗證碼的 Activity](./captcha.md#privacy) 經由 Discord 的代理伺服器，代理伺服器也不會傳送它。多帳號由您的團隊使用 `/alt` 關聯，或透過經成員同意的裝置驗證找出。僅依據裝置的關聯絕不會自動套用：它會提議給您的團隊。若想進一步了解，請閱讀我們關於[Discord 上的驗證碼與驗證](/zh-TW/learn/captcha-discord#alts)的文章。
 
 ### 解除其中一個帳號的停權會怎樣？
 

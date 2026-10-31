@@ -8006,5 +8006,189 @@
   },
   "premium.scene.slowmode.off": {
     "message": "tắt"
+  },
+  "learn.captcha-discord.cardTerm": {
+    "message": "Captcha và xác minh",
+    "description": "Learn hub card term: captcha-discord"
+  },
+  "learn.captcha-discord.cardTeaser": {
+    "message": "Trong Discord hay trên trang web bên ngoài: mỗi kiểu xác minh lấy những gì, và cách phát hiện tài khoản phụ mà không cần địa chỉ IP.",
+    "description": "Learn hub card teaser: captcha-discord"
+  },
+  "learn.captcha-discord.metaTitle": {
+    "message": "Captcha Discord: xác minh thành viên mà không lấy IP",
+    "description": "Learn article meta title: captcha-discord"
+  },
+  "learn.captcha-discord.metaDescription": {
+    "message": "Captcha trong Discord, trang web bên ngoài hay Activity: các cách xác minh thành viên mới, mỗi cách lấy những gì, và cách phát hiện tài khoản phụ mà không cần địa chỉ IP.",
+    "description": "Learn article meta description: captcha-discord"
+  },
+  "learn.captcha-discord.term": {
+    "message": "Captcha và xác minh Discord",
+    "description": "Learn glossary term name (breadcrumb + schema)"
+  },
+  "learn.captcha-discord.title": {
+    "message": "Captcha và xác minh trên Discord",
+    "description": "H1"
+  },
+  "learn.captcha-discord.definition": {
+    "message": "Xác minh, hay captcha, yêu cầu mỗi thành viên mới chứng minh mình là con người trước khi vào máy chủ. Tùy công cụ, việc này diễn ra trong Discord hoặc trên một trang web bên ngoài, và lựa chọn đó quyết định dữ liệu nào bị lấy, trước hết là địa chỉ IP.",
+    "description": "definition"
+  },
+  "learn.captcha-discord.definitionText": {
+    "message": "Xác minh, hay captcha, yêu cầu mỗi thành viên mới chứng minh mình là con người trước khi vào máy chủ. Tùy công cụ, việc này diễn ra trong Discord hoặc trên một trang web bên ngoài, và lựa chọn đó quyết định dữ liệu nào bị lấy, trước hết là địa chỉ IP.",
+    "description": "Learn definition plain text for schema.org"
+  },
+  "learn.captcha-discord.s1.h": {
+    "message": "Xác minh dùng để làm gì",
+    "description": "h"
+  },
+  "learn.captcha-discord.s1.p1": {
+    "message": "Khi vào, thành viên nhận một vai trò “chưa xác minh” chỉ cho họ thấy một kênh xác minh. Chừng nào chưa vượt qua thử thách, họ không thấy phần còn lại của máy chủ và không thể viết ở đó. Một {selfbot}, hay một làn sóng tài khoản trong một đợt {raid}, bị giữ lại ở cửa.",
+    "description": "p with links"
+  },
+  "learn.captcha-discord.s1.selfbot": {
+    "message": "self-bot",
+    "description": "link"
+  },
+  "learn.captcha-discord.s1.raid": {
+    "message": "raid",
+    "description": "link"
+  },
+  "learn.captcha-discord.s2.h": {
+    "message": "Ba cách xác minh một thành viên",
+    "description": "h"
+  },
+  "learn.captcha-discord.s2.i1": {
+    "message": "Trong Discord, bằng tin nhắn: thành viên nhập lại một mã hiển thị trên hình ảnh, hoặc bấm một nút. Không có gì rời khỏi Discord, nhưng một chương trình tự động được huấn luyện tốt đôi khi có thể đọc được hình ảnh.",
+    "description": "li"
+  },
+  "learn.captcha-discord.s2.i2": {
+    "message": "Trên một trang web bên ngoài: một nút mở trang web hiển thị captcha. Trang này thấy địa chỉ IP và trình duyệt của thành viên, và có thể đặt cookie. Nhiều bot so sánh IP theo cách này để phát hiện tài khoản phụ.",
+    "description": "li"
+  },
+  "learn.captcha-discord.s2.i3": {
+    "message": "Trong một Activity Discord: trang mở ngay trong Discord, giống như một trò chơi. Mọi trao đổi của nó đi qua proxy của Discord, nơi không chuyển địa chỉ IP của thành viên cho ứng dụng.",
+    "description": "li"
+  },
+  "learn.captcha-discord.s3.h": {
+    "message": "Một bot Discord thấy gì về bạn",
+    "description": "h"
+  },
+  "learn.captcha-discord.s3.p1": {
+    "message": "Discord không cung cấp địa chỉ IP của người dùng cho bất kỳ bot nào. Một bot thấy tài khoản, vai trò và tin nhắn của bạn trên máy chủ, không hơn. IP chỉ bị lấy nếu bạn mở một trang web được lưu trữ bên ngoài Discord. Trước khi xác minh trên một trang web, hãy xem địa chỉ của nó: ngay khi bạn rời Discord, trang đó có thể thấy IP của bạn.",
+    "description": "p"
+  },
+  "learn.captcha-discord.s4.h": {
+    "message": "Phát hiện tài khoản phụ mà không cần địa chỉ IP",
+    "description": "h"
+  },
+  "learn.captcha-discord.s4.p1": {
+    "message": "So sánh địa chỉ IP là cách phổ biến nhất, nhưng nó có giới hạn. Nhiều người thường dùng chung một IP (một gia đình, một ký túc xá, một mạng di động), khiến người vô tội bị nghi ngờ, và chỉ cần một VPN là đổi được IP. Nó cũng buộc phải lưu giữ một dữ liệu cá nhân.",
+    "description": "p"
+  },
+  "learn.captcha-discord.s4.p2": {
+    "message": "Vẫn có những dấu hiệu khác: thiết bị được dùng, cách giải thử thách, hoặc đơn giản là liên kết do đội ngũ kiểm duyệt khai báo khi họ nhận ra ai đó.",
+    "description": "p"
+  },
+  "learn.captcha-discord.s6.h": {
+    "message": "Một địa chỉ IP không được lưu thì không thể bị rò rỉ",
+    "description": "h"
+  },
+  "learn.captcha-discord.s6.p1": {
+    "message": "Vào tháng 10 năm 2026, Double Counter, một bot phát hiện tài khoản phụ xác minh thành viên trên trang web của mình, đã bị rò rỉ dữ liệu. Theo {source}, khoảng 27 triệu bản ghi địa chỉ IP và vị trí đã bị sao chép, cùng hàng triệu ID Discord. Đó là giới hạn của mọi kiểu xác minh lưu giữ địa chỉ IP: một khi đã lưu, chúng có thể bị rò rỉ, và chúng cho phép xác định vị trí của một người. Chúng tôi không bao giờ thấy địa chỉ IP của thành viên, nên chúng tôi không có rủi ro này.",
+    "description": "p with external source link"
+  },
+  "learn.captcha-discord.s6.source": {
+    "message": "Cyber Security News",
+    "description": "link"
+  },
+  "learn.captcha-discord.s5.h": {
+    "message": "RaidProtect làm thế nào",
+    "description": "h"
+  },
+  "learn.captcha-discord.s5.i1": {
+    "message": "{link} của chúng tôi diễn ra trong Activity RaidProtect, ngay trong Discord. Chúng tôi không lấy địa chỉ IP của thành viên, và Activity cho họ biết điều đó.",
+    "description": "li with link"
+  },
+  "learn.captcha-discord.s5.i1.link": {
+    "message": "Captcha",
+    "description": "link"
+  },
+  "learn.captcha-discord.s5.i2": {
+    "message": "Khi có sự đồng ý của thành viên, Activity kiểm tra thiết bị của họ để phát hiện chương trình tự động và tài khoản phụ. Đội ngũ máy chủ chỉ nhận được kết quả.",
+    "description": "li"
+  },
+  "learn.captcha-discord.s5.i3": {
+    "message": "Với Identity Update, đang thử nghiệm, hai {link} chắc chắn là cùng một người sẽ được liên kết tự động. Một liên kết chỉ dựa vào thiết bị được đề xuất cho đội ngũ, không bao giờ được áp dụng tự động.",
+    "description": "li with link"
+  },
+  "learn.captcha-discord.s5.i3.link": {
+    "message": "tài khoản phụ",
+    "description": "link"
+  },
+  "learn.captcha-discord.s5.i4": {
+    "message": "Tài khoản phụ là riêng của từng máy chủ: không có gì được chia sẻ với các máy chủ khác.",
+    "description": "li"
+  },
+  "learn.captcha-discord.s5.i5": {
+    "message": "Ở chế độ Thử thách, thành viên nhập lại một mã bằng tin nhắn trong kênh, và không có gì được ghi nhận trên thiết bị của họ.",
+    "description": "li"
+  },
+  "learn.captcha-discord.faq.q1": {
+    "message": "Captcha Discord có thể thấy địa chỉ IP của tôi không?",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a1": {
+    "message": "Không, nếu nó diễn ra trong Discord: Discord không cung cấp địa chỉ IP cho bất kỳ bot nào, và một Activity đi qua proxy của Discord. Còn một trang web bên ngoài thì thấy IP của bạn.",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.faq.q2": {
+    "message": "RaidProtect có lấy địa chỉ IP của tôi không?",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a2": {
+    "message": "Không. Captcha của chúng tôi diễn ra trong Activity RaidProtect, ngay trong Discord, và chúng tôi không bao giờ thấy địa chỉ IP của thành viên.",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.faq.q3": {
+    "message": "RaidProtect phát hiện tài khoản phụ như thế nào?",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a3": {
+    "message": "Bằng việc kiểm tra thiết bị, thực hiện trong Activity của captcha khi có sự đồng ý của thành viên, và bằng các liên kết mà đội ngũ khai báo với /alt. Không bao giờ bằng địa chỉ IP.",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.faq.q4": {
+    "message": "Điều gì xảy ra nếu tôi từ chối kiểm tra thiết bị?",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a4": {
+    "message": "Bạn không thể vào máy chủ: việc từ chối được tính là captcha thất bại, và máy chủ áp dụng hành động đã định (đuổi, jail hoặc chặn vài phút).",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.faq.q5": {
+    "message": "Captcha có làm phiền thành viên thật không?",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a5": {
+    "message": "Nó thêm một bước khi vào. Vì vậy captcha của RaidProtect có thể chỉ áp dụng trong một đợt raid, hoặc áp dụng thêm cho các tài khoản có vẻ đáng ngờ.",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.rel1": {
+    "message": "Self-bot là gì?",
+    "description": "related"
+  },
+  "learn.captcha-discord.rel2": {
+    "message": "Raid Discord là gì?",
+    "description": "related"
+  },
+  "learn.captcha-discord.rel3": {
+    "message": "Captcha của RaidProtect",
+    "description": "related"
+  },
+  "learn.captcha-discord.rel4": {
+    "message": "Tài khoản phụ",
+    "description": "related"
   }
 }

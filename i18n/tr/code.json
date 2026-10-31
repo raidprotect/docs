@@ -8006,5 +8006,189 @@
   },
   "premium.scene.slowmode.off": {
     "message": "kapalı"
+  },
+  "learn.captcha-discord.cardTerm": {
+    "message": "Captcha ve doğrulama",
+    "description": "Learn hub card term: captcha-discord"
+  },
+  "learn.captcha-discord.cardTeaser": {
+    "message": "Discord içinde veya harici bir sitede: her doğrulamanın ne topladığı ve çift hesapların IP adresi olmadan nasıl tespit edileceği.",
+    "description": "Learn hub card teaser: captcha-discord"
+  },
+  "learn.captcha-discord.metaTitle": {
+    "message": "Discord captcha: üyeleri IP adreslerini almadan doğrulayın",
+    "description": "Learn article meta title: captcha-discord"
+  },
+  "learn.captcha-discord.metaDescription": {
+    "message": "Discord içinde captcha, harici web sayfası veya Activity: yeni üyeleri doğrulamanın yolları, her birinin ne topladığı ve çift hesapların IP adresi olmadan nasıl tespit edileceği.",
+    "description": "Learn article meta description: captcha-discord"
+  },
+  "learn.captcha-discord.term": {
+    "message": "Discord captcha ve doğrulama",
+    "description": "Learn glossary term name (breadcrumb + schema)"
+  },
+  "learn.captcha-discord.title": {
+    "message": "Discord'da captcha ve doğrulama",
+    "description": "H1"
+  },
+  "learn.captcha-discord.definition": {
+    "message": "Doğrulama veya captcha, her yeni üyeden sunucuya erişmeden önce insan olduğunu kanıtlamasını ister. Araca göre Discord içinde ya da harici bir sitede gerçekleşir ve bu seçim, başta IP adresi olmak üzere hangi verilerin toplandığını belirler.",
+    "description": "definition"
+  },
+  "learn.captcha-discord.definitionText": {
+    "message": "Doğrulama veya captcha, her yeni üyeden sunucuya erişmeden önce insan olduğunu kanıtlamasını ister. Araca göre Discord içinde ya da harici bir sitede gerçekleşir ve bu seçim, başta IP adresi olmak üzere hangi verilerin toplandığını belirler.",
+    "description": "Learn definition plain text for schema.org"
+  },
+  "learn.captcha-discord.s1.h": {
+    "message": "Doğrulama ne işe yarar",
+    "description": "h"
+  },
+  "learn.captcha-discord.s1.p1": {
+    "message": "Üye geldiğinde, ona yalnızca bir doğrulama kanalı gösteren “doğrulanmamış” bir rol alır. Sınavı geçene kadar sunucunun geri kalanını göremez ve oraya yazamaz. Bir {selfbot} veya bir {raid} sırasında gelen hesap dalgası girişte bloke kalır.",
+    "description": "p with links"
+  },
+  "learn.captcha-discord.s1.selfbot": {
+    "message": "self-bot",
+    "description": "link"
+  },
+  "learn.captcha-discord.s1.raid": {
+    "message": "baskın",
+    "description": "link"
+  },
+  "learn.captcha-discord.s2.h": {
+    "message": "Bir üyeyi doğrulamanın üç yolu",
+    "description": "h"
+  },
+  "learn.captcha-discord.s2.i1": {
+    "message": "Discord içinde, mesajla: üye bir görselde gösterilen kodu yeniden yazar veya bir düğmeye tıklar. Hiçbir şey Discord'un dışına çıkmaz, ancak iyi eğitilmiş bir otomat bazen görseli okuyabilir.",
+    "description": "li"
+  },
+  "learn.captcha-discord.s2.i2": {
+    "message": "Harici bir sitede: bir düğme, captcha'yı gösteren bir web sayfası açar. Bu site üyenin IP adresini ve tarayıcısını görür, çerez de bırakabilir. Bazı botlar çift hesapları tespit etmek için IP'leri genellikle bu şekilde karşılaştırır.",
+    "description": "li"
+  },
+  "learn.captcha-discord.s2.i3": {
+    "message": "Bir Discord Activity'sinde: sayfa, bir oyun gibi Discord içinde açılır. İletişimi, üyenin IP adresini uygulamaya iletmeyen Discord proxy'si üzerinden geçer.",
+    "description": "li"
+  },
+  "learn.captcha-discord.s3.h": {
+    "message": "Bir Discord botu sizden neyi görür",
+    "description": "h"
+  },
+  "learn.captcha-discord.s3.p1": {
+    "message": "Discord, kullanıcılarının IP adresini hiçbir bota vermez. Bir bot sunucudaki hesabınızı, rollerinizi ve mesajlarınızı görür, fazlasını değil. Bir IP ancak Discord dışında barındırılan bir web sayfası açarsanız alınır. Bir sitede doğrulanmadan önce adresine bakın: Discord'dan çıktığınız anda o site IP'nizi görebilir.",
+    "description": "p"
+  },
+  "learn.captcha-discord.s4.h": {
+    "message": "Çift hesapları IP adresi olmadan tespit etmek",
+    "description": "h"
+  },
+  "learn.captcha-discord.s4.p1": {
+    "message": "IP adreslerini karşılaştırmak en yaygın yöntemdir, ancak sınırları vardır. Birkaç kişi çoğu zaman aynı IP'yi paylaşır (bir aile, bir yurt, bir mobil ağ), bu da masum kişileri suçlar; bir VPN ise IP'yi değiştirmeye yeter. Ayrıca kişisel bir veriyi saklamayı gerektirir.",
+    "description": "p"
+  },
+  "learn.captcha-discord.s4.p2": {
+    "message": "Başka ipuçları da vardır: kullanılan cihaz, sınavın çözülme şekli ya da moderasyon ekibinin birini tanıdığında bildirdiği bağlantı.",
+    "description": "p"
+  },
+  "learn.captcha-discord.s6.h": {
+    "message": "Saklanmayan bir IP adresi sızamaz",
+    "description": "h"
+  },
+  "learn.captcha-discord.s6.p1": {
+    "message": "Ekim 2026'da, üyeleri kendi sitesinde doğrulayan çift hesap tespit botu Double Counter bir veri sızıntısına uğradı. {source} haberine göre, milyonlarca Discord kimliğiyle birlikte yaklaşık 27 milyon IP adresi ve konum kaydı kopyalandı. IP adreslerini saklayan her doğrulamanın sınırı budur: bir kez depolandıklarında sızabilirler ve bir kişinin yerini belirlemeye olanak tanırlar. Üyelerin IP adresini hiçbir zaman görmüyoruz, dolayısıyla bu risk bizde yok.",
+    "description": "p with external source link"
+  },
+  "learn.captcha-discord.s6.source": {
+    "message": "Cyber Security News",
+    "description": "link"
+  },
+  "learn.captcha-discord.s5.h": {
+    "message": "RaidProtect nasıl yapıyor",
+    "description": "h"
+  },
+  "learn.captcha-discord.s5.i1": {
+    "message": "{link} doğrulamamız Discord içinde, RaidProtect Activity'sinde gerçekleşir. Üyelerin IP adresini almıyoruz ve Activity bunu onlara belirtir.",
+    "description": "li with link"
+  },
+  "learn.captcha-discord.s5.i1.link": {
+    "message": "Captcha",
+    "description": "link"
+  },
+  "learn.captcha-discord.s5.i2": {
+    "message": "Üyenin onayıyla Activity, otomatları ve çift hesapları tespit etmek için cihazını doğrular. Sunucu ekibi yalnızca sonucu alır.",
+    "description": "li"
+  },
+  "learn.captcha-discord.s5.i3": {
+    "message": "Deneme aşamasındaki Identity Update ile, aynı kişi olduğundan emin olunan iki {link} otomatik olarak bağlanır. Yalnızca cihaza dayanan bir bağlantı ekibe önerilir, asla kendiliğinden uygulanmaz.",
+    "description": "li with link"
+  },
+  "learn.captcha-discord.s5.i3.link": {
+    "message": "çift hesap",
+    "description": "link"
+  },
+  "learn.captcha-discord.s5.i4": {
+    "message": "Çift hesaplar her sunucuya özel kalır: diğer sunucularla hiçbir şey paylaşılmaz.",
+    "description": "li"
+  },
+  "learn.captcha-discord.s5.i5": {
+    "message": "Meydan okuma modunda üye kodu kanala mesaj olarak yazar ve cihazı hakkında hiçbir şey toplanmaz.",
+    "description": "li"
+  },
+  "learn.captcha-discord.faq.q1": {
+    "message": "Bir Discord captcha'sı IP adresimi görebilir mi?",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a1": {
+    "message": "Discord içinde gerçekleşiyorsa hayır: Discord IP adresini hiçbir bota vermez ve bir Activity onun proxy'si üzerinden geçer. Harici bir web sayfası ise IP'nizi görür.",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.faq.q2": {
+    "message": "RaidProtect IP adresimi alıyor mu?",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a2": {
+    "message": "Hayır. Captcha'mız Discord içinde, RaidProtect Activity'sinde gerçekleşir ve üyelerin IP adresini hiçbir zaman görmeyiz.",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.faq.q3": {
+    "message": "RaidProtect çift hesapları nasıl tespit ediyor?",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a3": {
+    "message": "Captcha Activity'sinde üyenin onayıyla yapılan cihaz doğrulamasıyla ve ekibin /alt ile bildirdiği bağlantılarla. Asla IP adresiyle değil.",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.faq.q4": {
+    "message": "Cihaz doğrulamasını reddedersem ne olur?",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a4": {
+    "message": "Sunucuya erişemezsiniz: ret başarısız bir captcha sayılır ve sunucu öngörülen eylemi uygular (atma, jail veya birkaç dakikalık engelleme).",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.faq.q5": {
+    "message": "Captcha gerçek üyeleri rahatsız eder mi?",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a5": {
+    "message": "Girişe bir adım ekler. Bu yüzden RaidProtect'in captcha'sı yalnızca bir baskın sırasında ya da şüpheli görünen hesaplara da uygulanabilir.",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.rel1": {
+    "message": "Self-bot nedir?",
+    "description": "related"
+  },
+  "learn.captcha-discord.rel2": {
+    "message": "Discord baskını nedir?",
+    "description": "related"
+  },
+  "learn.captcha-discord.rel3": {
+    "message": "RaidProtect captcha'sı",
+    "description": "related"
+  },
+  "learn.captcha-discord.rel4": {
+    "message": "Çift hesaplar",
+    "description": "related"
   }
 }

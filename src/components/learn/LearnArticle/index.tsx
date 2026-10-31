@@ -5,6 +5,7 @@ import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import useBrokenLinks from '@docusaurus/useBrokenLinks';
 import {localizedRedirectUrl} from '@site/src/utils/links';
 import shared from '@site/src/components/landing/styles/shared.module.css';
 import styles from './styles.module.css';
@@ -16,6 +17,8 @@ import styles from './styles.module.css';
  * BreadcrumbList) pour le référencement. */
 
 export type LearnSection = {
+  /** Ancre optionnelle, pour lier une section depuis la doc. */
+  id?: string;
   heading: ReactNode;
   /** Corps de section (JSX riche : paragraphes, listes, liens…). */
   body: ReactNode;
@@ -59,6 +62,8 @@ export default function LearnArticle({
 }: {
   content: LearnContent;
 }): ReactNode {
+  const brokenLinks = useBrokenLinks();
+  content.sections.forEach((section) => section.id && brokenLinks.collectAnchor(section.id));
   const {
     siteConfig: {url: siteUrl},
     i18n: {currentLocale, defaultLocale},
@@ -166,7 +171,7 @@ export default function LearnArticle({
 
             <div className={styles.body}>
               {content.sections.map((section, i) => (
-                <section key={i} className={styles.section}>
+                <section key={i} id={section.id} className={styles.section}>
                   <h2 className={styles.sectionHeading}>{section.heading}</h2>
                   <div className={styles.sectionBody}>{section.body}</div>
                 </section>

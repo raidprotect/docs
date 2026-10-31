@@ -18,7 +18,7 @@ Tài khoản phụ thuộc **Identity Update**, dự kiến trong phiên bản 3
 - **Gỡ chung**: gỡ hình phạt của một tài khoản bất kỳ sẽ gỡ cho tất cả, dù có hay không có Premium.
 - **Tìm kiếm theo nhóm**: [tìm kiếm hình phạt](./sanctions.mdx#search) của một tài khoản cũng hiển thị hình phạt của các tài khoản khác trong nhóm.
 - **AutoMod của Discord**: các timeout và mute do AutoMod của Discord áp dụng cũng được mở rộng sang các tài khoản liên kết.
-- **Được captcha phát hiện**: [Activity của captcha](./captcha.md#activity-alts) có thể tự liên kết hai tài khoản mà nó chắc chắn là cùng một người, hoặc đề xuất liên kết đó cho đội ngũ của bạn.
+- **Được captcha phát hiện**: [Activity của captcha](./captcha.md#activity-alts) có thể tự liên kết hai tài khoản mà nó chắc chắn là cùng một người, hoặc đề xuất liên kết đó cho đội ngũ của bạn. Nó dựa vào thiết bị, [không bao giờ dựa vào địa chỉ IP](#ip).
 - **Nhật ký**: các liên kết, việc gỡ và thay đổi tài khoản chính được ghi lại trong [nhật ký kiểm duyệt](./moderation.mdx#logs). Nhật ký của một hình phạt nêu các tài khoản liên kết kèm tên người dùng của chúng và, ở định dạng embed, có một nút “**Tài khoản liên kết**” mở bảng `/alt` của thành viên bị xử phạt.
 
 **Giới hạn:** không có giới hạn về số tài khoản trong mỗi nhóm lẫn số lượng nhóm. Một hình phạt được mở rộng sang **10 tài khoản liên kết** cùng lúc: các tài khoản tiếp theo bị xử phạt ở tin nhắn kế tiếp hoặc khi họ xuất hiện, và nút bên dưới hình phạt xử phạt họ ngay lập tức.
@@ -112,6 +112,10 @@ Thiết lập này cần một [vai trò Jail](./sanctions.mdx#jail). Nếu chư
 ### Tài khoản phụ có được chia sẻ giữa các máy chủ không?
 
 Không. Các nhóm là riêng của máy chủ bạn và không có gì được chia sẻ với các máy chủ khác.
+
+### RaidProtect có dùng địa chỉ IP để phát hiện tài khoản phụ không? {#ip}
+
+Không. Chúng tôi không bao giờ lấy địa chỉ IP: bot không nhận được nó từ Discord, và [Activity của captcha](./captcha.md#privacy) đi qua proxy của Discord, nơi không chuyển nó đi. Tài khoản phụ được đội ngũ của bạn liên kết bằng `/alt`, hoặc được phát hiện nhờ việc kiểm tra thiết bị, thực hiện khi có sự đồng ý của thành viên. Một liên kết chỉ dựa vào thiết bị không bao giờ được áp dụng tự động: nó được đề xuất cho đội ngũ của bạn. Để tìm hiểu thêm, hãy đọc bài viết của chúng tôi về [captcha và xác minh trên Discord](/vi/learn/captcha-discord#alts).
 
 ### Điều gì xảy ra khi tôi bỏ cấm một trong các tài khoản?
 

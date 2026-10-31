@@ -84,7 +84,7 @@ Im Modus **Panel** öffnet die Schaltfläche „**Verifizieren**“ die **RaidPr
 - **Roboter:** Ein von einem Automaten gelöstes Captcha wird sofort sanktioniert, wie bei aufgebrauchten Versuchen: Kick, Jail oder Sperre je nach Ihrer Einstellung.
 - **Prüfung durch Ihr Team:** Im Zweifelsfall bleibt das Mitglied am Eingang blockiert, ohne laufende Frist, und Ihr Team erhält einen automatischen Captcha-Bericht. Er landet in den [Captcha-Logs](#logs), andernfalls im Kanal der [Meldungen](./reports.md), andernfalls in den Server-Logs. Sobald der Bericht übernommen ist, bietet er „**Einlassen**“, „**Mit anderem Mitglied verknüpfen**“ (mit der [Identity Update](#activity-alts)) und „**Ablehnen**“ an, das Ihre Captcha-Fehlschlag-Aktion anwendet (Kick, Jail oder Sperre): Das Sanktionsmenü ist dort nicht vorhanden.
 - **Jail nach aufgebrauchten Versuchen:** Dieses Jail hat keine Dauer und eröffnet ebenfalls einen Prüfbericht. „**Einlassen**“ hebt das Jail auf und verifiziert das Mitglied; andernfalls sanktionieren Sie es.
-- **Geräteprüfung abgelehnt:** Die Activity bittet das Mitglied um sein Einverständnis, bevor sie sein Gerät prüft. Lehnt es ab, erhält es die Fehlschlag-Aktion wie nach aufgebrauchten Versuchen (Kick, Jail oder Sperre).
+- **Geräteprüfung abgelehnt:** Die Activity bittet das Mitglied um sein Einverständnis, bevor sie [sein Gerät prüft](#privacy). Lehnt es ab, erhält es die Fehlschlag-Aktion wie nach aufgebrauchten Versuchen (Kick, Jail oder Sperre).
 - **Activity öffnet sich nicht:** Das Mitglied kann auf „**Code eingeben**“ klicken. Ein korrekter Code geht dann zur Prüfung an Ihr Team.
 - **Löschung der Daten:** Ein Mitglied kann die Löschung seiner Verifizierungsdaten unter [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot) beantragen. Es durchläuft das Captcha dann erneut, und seine Sanktionen bleiben bestehen.
 
@@ -101,6 +101,17 @@ Es werden Ihnen nur die Konten Ihres Servers gezeigt: Über andere Server wird n
 :::info Experiment: Identity Update
 Die Erkennung von Zweitkonten gehört zur **Identity Update**, die für Version 3.7.0 vorgesehen ist. Bis zu ihrer Veröffentlichung befindet sie sich in der Experimentierphase, als öffentliche Beta für [Premium](/de/premium)-Server.
 :::
+
+### Datenschutz: keine IP-Adresse {#privacy}
+
+RaidProtect ruft die IP-Adresse der Mitglieder, die das Captcha durchlaufen, nicht ab, und die Activity zeigt das dem Mitglied selbst an.
+
+- **In Discord, ohne externe Website:** Die Activity öffnet sich in Discord, und ihr Datenverkehr läuft über den Proxy von Discord, der uns die IP-Adresse des Mitglieds nicht übermittelt. Wir sehen sie nie, also können wir sie weder speichern noch vergleichen. Auch der Bot selbst erhält sie nicht: Discord gibt sie an keinen Bot weiter.
+- **Geräteprüfung, mit seinem Einverständnis:** Vor dem Puzzle bittet die Activity das Mitglied um die Erlaubnis, sein Gerät zu prüfen, um Automaten und Zweitkonten zu erkennen. Was wir erfassen, dient dazu, ein bereits gesehenes Gerät wiederzuerkennen, nicht dazu, herauszufinden, wer es benutzt.
+- **Ihr Team sieht nur das Ergebnis:** Erfolg, Fehlschlag, Prüfung oder Verknüpfung von Zweitkonten, nie die Merkmale des Geräts.
+- **Challenge-Modus:** Das Mitglied tippt den Code als Nachricht in den Kanal, und auf seinem Gerät wird nichts erfasst.
+
+Ein Mitglied kann die Löschung seiner Verifizierungsdaten unter [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot) beantragen. Um die verschiedenen Möglichkeiten zu verstehen, Mitglieder zu verifizieren, lesen Sie unseren Artikel über [das Captcha und die Verifizierung auf Discord](/de/learn/captcha-discord).
 
 ### Das Captcha testen {#test-mode}
 

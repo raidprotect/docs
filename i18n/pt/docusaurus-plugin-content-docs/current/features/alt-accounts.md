@@ -18,7 +18,7 @@ As contas duplicadas fazem parte da **Identity Update**, prevista para a versão
 - **Remoção em comum**: remover a sanção de uma das contas, qualquer que seja, a remove para todas, com ou sem Premium.
 - **Busca agrupada**: [buscar as sanções](./sanctions.mdx#search) de uma conta também mostra as das outras contas do grupo.
 - **AutoMod do Discord**: os timeouts e mutes aplicados pelo AutoMod do Discord também se estendem às contas vinculadas.
-- **Detectadas pelo captcha**: a [Activity do captcha](./captcha.md#activity-alts) pode vincular por conta própria duas contas que tem certeza de serem a mesma pessoa, ou propor o vínculo à sua equipe.
+- **Detectadas pelo captcha**: a [Activity do captcha](./captcha.md#activity-alts) pode vincular por conta própria duas contas que tem certeza de serem a mesma pessoa, ou propor o vínculo à sua equipe. Ela se baseia no dispositivo, [nunca no endereço IP](#ip).
 - **Logs**: os vínculos, as remoções e as mudanças de conta principal são registrados nos [logs de moderação](./moderation.mdx#logs). O log de uma sanção cita as contas vinculadas com o nome de usuário delas e, no formato embed, traz um botão “**Contas vinculadas**” que abre o painel `/alt` do membro sancionado.
 
 **Limites:** nenhum no número de contas por grupo nem no número de grupos. Uma sanção se estende a **10 contas vinculadas** de uma vez: as seguintes são sancionadas na próxima mensagem ou na chegada, e o botão abaixo da sanção as sanciona na hora.
@@ -112,6 +112,10 @@ Para mudar a conta principal de um grupo, use `/alt` com uma das contas e depois
 ### As contas duplicadas são compartilhadas entre servidores?
 
 Não. Os grupos são próprios do seu servidor e nada é compartilhado com outros servidores.
+
+### O RaidProtect usa o endereço IP para detectar as contas duplicadas? {#ip}
+
+Não. Nunca obtemos o endereço IP: o bot não o recebe do Discord, e a [Activity do captcha](./captcha.md#privacy) passa pelo proxy do Discord, que não o repassa. As contas duplicadas são vinculadas pela sua equipe com `/alt`, ou detectadas pela verificação do dispositivo, feita com o consentimento do membro. Um vínculo que se baseia apenas no dispositivo nunca é aplicado automaticamente: ele é proposto à sua equipe. Para saber mais, leia nosso artigo sobre [o captcha e a verificação no Discord](/pt/learn/captcha-discord#alts).
 
 ### O que acontece quando eu removo o banimento de uma das contas?
 
