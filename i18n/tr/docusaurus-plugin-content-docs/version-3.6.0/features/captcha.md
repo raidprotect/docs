@@ -84,7 +84,7 @@ Captcha, **Panel (Etkileşimli)** modunda, **Sürekli** tetiklemeyle, 3 denemeyl
 - **Robot:** bir otomat tarafından çözülen captcha, denemelerin tükenmesinde olduğu gibi hemen cezalandırılır: ayarınıza göre atma, jail veya engelleme.
 - **Ekibiniz tarafından inceleme:** şüphe durumunda üye, işleyen bir süre olmaksızın girişte bloke kalır ve ekibiniz otomatik bir captcha raporu alır. Rapor [captcha loglarına](#logs), yoksa [bildirimlerin](./reports.md) kanalına, o da yoksa sunucu loglarına gelir. Rapor ele alındığında “**İçeri al**”, “**Başka bir üyeye bağla**” ([Identity Update](#activity-alts) ile) ve “**Reddet**” seçenekleri sunulur; “**Reddet**”, captcha başarısızlık eyleminizi (atma, jail veya engelleme) uygular: yaptırım menüsü burada yer almaz.
 - **Denemeler tükendikten sonra jail:** bu jail'in süresi yoktur ve ayrıca bir inceleme raporu açar. “**İçeri al**” jail'i kaldırır ve üyeyi doğrular; aksi halde ona yaptırım uygulayın.
-- **Cihaz doğrulaması reddedildi:** Activity, üyeden cihazını doğrulamadan önce onay ister. Reddederse, denemeleri tükenmiş gibi başarısızlık eylemine tabi olur (atma, jail veya engelleme).
+- **Cihaz doğrulaması reddedildi:** Activity, üyeden [cihazını doğrulamadan](#privacy) önce onay ister. Reddederse, denemeleri tükenmiş gibi başarısızlık eylemine tabi olur (atma, jail veya engelleme).
 - **Activity açılmıyor:** üye “**Kod gir**”e tıklayabilir. Doğru bir kod bu durumda ekibiniz tarafından incelemeye geçer.
 - **Verilerin silinmesi:** bir üye, doğrulama verilerinin silinmesini [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot) adresinden isteyebilir. Bu durumda captcha'yı yeniden geçer; yaptırımları kalır.
 
@@ -101,6 +101,17 @@ Size yalnızca sunucunuzun hesapları gösterilir: diğer sunucular hakkında hi
 :::info Deneme: Identity Update
 Çift hesapların tespiti, 3.7.0 sürümü için planlanan **Identity Update**'in parçasıdır. Çıkışına kadar deneme aşamasındadır; [Premium](/tr/premium) sunucular için herkese açık beta olarak sunulur.
 :::
+
+### Gizlilik: IP adresi yok {#privacy}
+
+RaidProtect, captcha'yı geçen üyelerin IP adresini almaz ve Activity bunu üyeye kendisi de gösterir.
+
+- **Discord içinde, harici site olmadan:** Activity Discord içinde açılır ve iletişimi, üyenin IP adresini bize iletmeyen Discord proxy'si üzerinden geçer. Bu adresi hiçbir zaman görmeyiz, dolayısıyla ne saklayabilir ne de karşılaştırabiliriz. Botun kendisi de onu almaz: Discord bunu hiçbir bota vermez.
+- **Üyenin onayıyla cihaz doğrulaması:** bulmacadan önce Activity, otomatları ve çift hesapları tespit etmek için üyeden cihazını doğrulama izni ister. Topladığımız bilgiler, daha önce görülmüş bir cihazı tanımaya yarar, onu kimin kullandığını bilmeye değil.
+- **Ekibiniz yalnızca sonucu görür:** başarı, başarısızlık, inceleme veya çift hesap bağlantısı; cihazın özelliklerini asla görmez.
+- **Meydan okuma modu:** üye kodu kanala mesaj olarak yazar ve cihazı hakkında hiçbir şey toplanmaz.
+
+Bir üye, doğrulama verilerinin silinmesini [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot) adresinden isteyebilir. Üyeleri doğrulamanın farklı yollarını anlamak için [Discord'da captcha ve doğrulama](/tr/learn/captcha-discord) hakkındaki makalemizi okuyun.
 
 ### Captcha'yı test etmek {#test-mode}
 

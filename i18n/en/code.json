@@ -8006,5 +8006,189 @@
   },
   "premium.scene.slowmode.off": {
     "message": "off"
+  },
+  "learn.captcha-discord.cardTerm": {
+    "message": "Captcha and verification",
+    "description": "Learn hub card term: captcha-discord"
+  },
+  "learn.captcha-discord.cardTeaser": {
+    "message": "In Discord or on an external website: what each verification collects, and how to spot alt accounts without an IP address.",
+    "description": "Learn hub card teaser: captcha-discord"
+  },
+  "learn.captcha-discord.metaTitle": {
+    "message": "Discord Captcha: Verify Members Without Collecting Their IP",
+    "description": "Learn article meta title: captcha-discord"
+  },
+  "learn.captcha-discord.metaDescription": {
+    "message": "Captcha in Discord, external web page or Activity: the ways to verify new members, what each one collects, and how to spot alt accounts without an IP address.",
+    "description": "Learn article meta description: captcha-discord"
+  },
+  "learn.captcha-discord.term": {
+    "message": "Discord captcha and verification",
+    "description": "Learn glossary term name (breadcrumb + schema)"
+  },
+  "learn.captcha-discord.title": {
+    "message": "Captcha and verification on Discord",
+    "description": "H1"
+  },
+  "learn.captcha-discord.definition": {
+    "message": "A verification, or captcha, asks every new member to prove they are human before accessing the server. Depending on the tool, it takes place in Discord or on an external website, and that choice decides what data is collected, starting with the IP address.",
+    "description": "definition"
+  },
+  "learn.captcha-discord.definitionText": {
+    "message": "A verification, or captcha, asks every new member to prove they are human before accessing the server. Depending on the tool, it takes place in Discord or on an external website, and that choice decides what data is collected, starting with the IP address.",
+    "description": "Learn definition plain text for schema.org"
+  },
+  "learn.captcha-discord.s1.h": {
+    "message": "What a verification is for",
+    "description": "h"
+  },
+  "learn.captcha-discord.s1.p1": {
+    "message": "When they arrive, the member receives an \"unverified\" role that only shows them a verification channel. Until they pass the test, they cannot see the rest of the server or write in it. A {selfbot}, or a wave of accounts during a {raid}, stays blocked at the entrance.",
+    "description": "p with links"
+  },
+  "learn.captcha-discord.s1.selfbot": {
+    "message": "self-bot",
+    "description": "link"
+  },
+  "learn.captcha-discord.s1.raid": {
+    "message": "raid",
+    "description": "link"
+  },
+  "learn.captcha-discord.s2.h": {
+    "message": "The three ways to verify a member",
+    "description": "h"
+  },
+  "learn.captcha-discord.s2.i1": {
+    "message": "In Discord, by message: the member types back a code shown on an image, or clicks a button. Nothing leaves Discord, but a well-trained automated tool can sometimes read the image.",
+    "description": "li"
+  },
+  "learn.captcha-discord.s2.i2": {
+    "message": "On an external website: a button opens a web page that shows the captcha. That website sees the member's IP address and browser, and can set cookies. This is often how bots compare IPs to spot alt accounts.",
+    "description": "li"
+  },
+  "learn.captcha-discord.s2.i3": {
+    "message": "In a Discord Activity: the page opens in Discord, like a game. Its traffic goes through Discord's proxy, which does not pass the member's IP address on to the app.",
+    "description": "li"
+  },
+  "learn.captcha-discord.s3.h": {
+    "message": "What a Discord bot sees of you",
+    "description": "h"
+  },
+  "learn.captcha-discord.s3.p1": {
+    "message": "Discord does not give its users' IP addresses to any bot. A bot sees your account, your roles and your messages on the server, nothing more. An IP is only collected if you open a web page hosted outside Discord. Before verifying on a website, check its address: as soon as you leave Discord, that website can see your IP.",
+    "description": "p"
+  },
+  "learn.captcha-discord.s4.h": {
+    "message": "Spotting alt accounts without an IP address",
+    "description": "h"
+  },
+  "learn.captcha-discord.s4.p1": {
+    "message": "Comparing IP addresses is the most common method, but it has its limits. Several people often share the same IP (a family, a boarding school, a mobile network), which accuses innocent people, and a VPN is enough to change it. It also means keeping personal data.",
+    "description": "p"
+  },
+  "learn.captcha-discord.s4.p2": {
+    "message": "Other clues exist: the device used, the way the test is solved, or simply the link declared by the moderation team when it recognizes someone.",
+    "description": "p"
+  },
+  "learn.captcha-discord.s6.h": {
+    "message": "An IP address we do not keep cannot leak",
+    "description": "h"
+  },
+  "learn.captcha-discord.s6.p1": {
+    "message": "In October 2026, Double Counter, an alt account detection bot that verifies members on its website, suffered a data breach. According to {source}, about 27 million IP address and location records were copied, along with millions of Discord IDs. This is the limit of any verification that keeps IP addresses: once stored, they can leak, and they make it possible to locate a person. We never see members' IP addresses, so we do not carry that risk.",
+    "description": "p with external source link"
+  },
+  "learn.captcha-discord.s6.source": {
+    "message": "Cyber Security News",
+    "description": "link"
+  },
+  "learn.captcha-discord.s5.h": {
+    "message": "How RaidProtect does it",
+    "description": "h"
+  },
+  "learn.captcha-discord.s5.i1": {
+    "message": "Our {link} takes place in the RaidProtect Activity, in Discord. We do not collect members' IP addresses, and the Activity tells them so.",
+    "description": "li with link"
+  },
+  "learn.captcha-discord.s5.i1.link": {
+    "message": "captcha",
+    "description": "link"
+  },
+  "learn.captcha-discord.s5.i2": {
+    "message": "With the member's consent, the Activity checks their device to spot automated tools and alt accounts. The server team only receives the result.",
+    "description": "li"
+  },
+  "learn.captcha-discord.s5.i3": {
+    "message": "With the Identity Update, currently an experiment, two {link} that are sure to be the same person are linked automatically. A link that relies only on the device is suggested to the team, never applied automatically.",
+    "description": "li with link"
+  },
+  "learn.captcha-discord.s5.i3.link": {
+    "message": "alt accounts",
+    "description": "link"
+  },
+  "learn.captcha-discord.s5.i4": {
+    "message": "Alt accounts stay specific to each server: nothing is shared with other servers.",
+    "description": "li"
+  },
+  "learn.captcha-discord.s5.i5": {
+    "message": "In Challenge mode, the member types back a code as a message in the channel, and nothing is collected from their device.",
+    "description": "li"
+  },
+  "learn.captcha-discord.faq.q1": {
+    "message": "Can a Discord captcha see my IP address?",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a1": {
+    "message": "Not if it takes place in Discord: Discord does not give the IP address to any bot, and an Activity goes through its proxy. An external web page, on the other hand, sees your IP.",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.faq.q2": {
+    "message": "Does RaidProtect collect my IP address?",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a2": {
+    "message": "No. Our captcha takes place in the RaidProtect Activity, in Discord, and we never see members' IP addresses.",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.faq.q3": {
+    "message": "How does RaidProtect spot alt accounts?",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a3": {
+    "message": "Through the device check, done in the captcha Activity with the member's consent, and through the links the team declares with /alt. Never through the IP address.",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.faq.q4": {
+    "message": "What happens if I refuse the device check?",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a4": {
+    "message": "You cannot access the server: refusing counts as a failed captcha, and the server applies its chosen action (kick, jail or a block of a few minutes).",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.faq.q5": {
+    "message": "Does a captcha get in the way of real members?",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a5": {
+    "message": "It adds a step when they arrive. That is why the RaidProtect captcha can apply only during a raid, or also to accounts that look suspicious.",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.rel1": {
+    "message": "What is a self-bot?",
+    "description": "related"
+  },
+  "learn.captcha-discord.rel2": {
+    "message": "What is a Discord raid?",
+    "description": "related"
+  },
+  "learn.captcha-discord.rel3": {
+    "message": "The RaidProtect captcha",
+    "description": "related"
+  },
+  "learn.captcha-discord.rel4": {
+    "message": "Alt accounts",
+    "description": "related"
   }
 }

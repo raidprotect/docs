@@ -84,7 +84,7 @@ Captcha khởi động ở chế độ **Bảng (Tương tác)**, kích hoạt *
 - **Robot:** một captcha do chương trình tự động giải sẽ bị xử phạt ngay, như khi hết lượt thử: đuổi, jail hoặc chặn tùy thiết lập của bạn.
 - **Đội ngũ của bạn xem xét:** khi có nghi ngờ, thành viên bị giữ lại ở cửa, không có thời gian chờ nào chạy, và đội ngũ của bạn nhận một báo cáo captcha tự động. Báo cáo đến [nhật ký của captcha](#logs), nếu không có thì đến kênh [báo cáo](./reports.md), nếu không nữa thì đến nhật ký máy chủ. Khi báo cáo đã được tiếp nhận, nó đề xuất “**Cho vào**”, “**Liên kết với thành viên khác**” (cùng [Identity Update](#activity-alts)) và “**Từ chối**”, áp dụng hành động thất bại của captcha mà bạn đã chọn (đuổi, jail hoặc chặn): menu hình phạt không có ở đó.
 - **Jail sau khi hết lượt thử:** jail này không có thời hạn và cũng mở một báo cáo xem xét. “**Cho vào**” gỡ jail và xác minh thành viên; nếu không, hãy xử phạt họ.
-- **Từ chối kiểm tra thiết bị:** Activity xin sự đồng ý của thành viên trước khi kiểm tra thiết bị của họ. Nếu họ từ chối, họ chịu hành động thất bại như khi hết lượt thử (đuổi, jail hoặc chặn).
+- **Từ chối kiểm tra thiết bị:** Activity xin sự đồng ý của thành viên trước khi [kiểm tra thiết bị của họ](#privacy). Nếu họ từ chối, họ chịu hành động thất bại như khi hết lượt thử (đuổi, jail hoặc chặn).
 - **Activity không mở được:** thành viên có thể nhấp vào “**Nhập mã**”. Khi đó, một mã đúng sẽ được đội ngũ của bạn xem xét.
 - **Xóa dữ liệu:** một thành viên có thể yêu cầu xóa dữ liệu xác minh của mình tại [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot). Họ sẽ làm lại captcha, và các hình phạt của họ vẫn còn.
 
@@ -101,6 +101,17 @@ Chỉ các tài khoản của máy chủ bạn được hiển thị cho bạn: 
 :::info Thử nghiệm: Identity Update
 Việc phát hiện tài khoản phụ thuộc **Identity Update**, dự kiến trong phiên bản 3.7.0. Trong khi chờ phát hành, nó đang thử nghiệm, ở dạng bản beta công khai cho các máy chủ [Premium](/vi/premium).
 :::
+
+### Quyền riêng tư: không có địa chỉ IP {#privacy}
+
+RaidProtect không lấy địa chỉ IP của các thành viên làm captcha, và chính Activity cũng hiển thị điều này cho thành viên.
+
+- **Trong Discord, không có trang web bên ngoài:** Activity mở ngay trong Discord, và mọi trao đổi của nó đi qua proxy của Discord, nơi không chuyển cho chúng tôi địa chỉ IP của thành viên. Chúng tôi không bao giờ thấy nó, nên chúng tôi không thể lưu giữ hay so sánh nó. Bản thân bot cũng không nhận được nó: Discord không cung cấp nó cho bất kỳ bot nào.
+- **Kiểm tra thiết bị, khi có sự đồng ý của thành viên:** trước câu đố, Activity xin phép thành viên để kiểm tra thiết bị của họ, nhằm phát hiện chương trình tự động và tài khoản phụ. Những gì chúng tôi ghi nhận dùng để nhận ra một thiết bị đã từng thấy, không phải để biết ai đang dùng nó.
+- **Đội ngũ của bạn chỉ thấy kết quả:** thành công, thất bại, xem xét hoặc liên kết tài khoản phụ, không bao giờ thấy các đặc điểm của thiết bị.
+- **Chế độ Thử thách:** thành viên gõ mã bằng tin nhắn trong kênh, và không có gì được ghi nhận trên thiết bị của họ.
+
+Một thành viên có thể yêu cầu xóa dữ liệu xác minh của mình tại [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot). Để hiểu các cách khác nhau để xác minh thành viên, hãy đọc bài viết của chúng tôi về [captcha và xác minh trên Discord](/vi/learn/captcha-discord).
 
 ### Thử captcha {#test-mode}
 

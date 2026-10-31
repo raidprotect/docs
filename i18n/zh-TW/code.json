@@ -8006,5 +8006,189 @@
   },
   "premium.scene.slowmode.off": {
     "message": "已關閉"
+  },
+  "learn.captcha-discord.cardTerm": {
+    "message": "驗證碼與驗證",
+    "description": "Learn hub card term: captcha-discord"
+  },
+  "learn.captcha-discord.cardTeaser": {
+    "message": "在 Discord 中或外部網站上：每種驗證會取得哪些資料，以及如何不靠 IP 位址找出多帳號。",
+    "description": "Learn hub card teaser: captcha-discord"
+  },
+  "learn.captcha-discord.metaTitle": {
+    "message": "Discord 驗證碼：驗證成員而不取得其 IP",
+    "description": "Learn article meta title: captcha-discord"
+  },
+  "learn.captcha-discord.metaDescription": {
+    "message": "Discord 中的驗證碼、外部網頁或 Activity：驗證新成員的各種方式、每種方式會取得哪些資料，以及如何不靠 IP 位址找出多帳號。",
+    "description": "Learn article meta description: captcha-discord"
+  },
+  "learn.captcha-discord.term": {
+    "message": "Discord 驗證碼與驗證",
+    "description": "Learn glossary term name (breadcrumb + schema)"
+  },
+  "learn.captcha-discord.title": {
+    "message": "Discord 上的驗證碼與驗證",
+    "description": "H1"
+  },
+  "learn.captcha-discord.definition": {
+    "message": "驗證，或稱驗證碼，會要求每位新成員在進入伺服器前證明自己是真人。依工具不同，驗證會在 Discord 中或外部網站上進行，而這個選擇決定了會取得哪些資料，首先就是 IP 位址。",
+    "description": "definition"
+  },
+  "learn.captcha-discord.definitionText": {
+    "message": "驗證，或稱驗證碼，會要求每位新成員在進入伺服器前證明自己是真人。依工具不同，驗證會在 Discord 中或外部網站上進行，而這個選擇決定了會取得哪些資料，首先就是 IP 位址。",
+    "description": "Learn definition plain text for schema.org"
+  },
+  "learn.captcha-discord.s1.h": {
+    "message": "驗證有什麼用途",
+    "description": "h"
+  },
+  "learn.captcha-discord.s1.p1": {
+    "message": "成員加入時會獲得一個「未驗證」身分組，只能看到一個驗證頻道。在通過考驗之前，他看不到伺服器的其他部分，也無法在其中發言。{selfbot}，或{raid}期間湧入的大量帳號，都會被擋在入口。",
+    "description": "p with links"
+  },
+  "learn.captcha-discord.s1.selfbot": {
+    "message": "selfbot",
+    "description": "link"
+  },
+  "learn.captcha-discord.s1.raid": {
+    "message": "突襲",
+    "description": "link"
+  },
+  "learn.captcha-discord.s2.h": {
+    "message": "驗證成員的三種方式",
+    "description": "h"
+  },
+  "learn.captcha-discord.s2.i1": {
+    "message": "在 Discord 中，透過訊息：成員輸入圖片上顯示的驗證碼，或點擊一個按鈕。沒有任何資料離開 Discord，但訓練有素的自動程式有時能讀出圖片。",
+    "description": "li"
+  },
+  "learn.captcha-discord.s2.i2": {
+    "message": "在外部網站上：按鈕會開啟一個顯示驗證碼的網頁。這個網站看得到成員的 IP 位址與瀏覽器，還能設定 cookie。不少機器人正是這樣比對 IP 來找出多帳號。",
+    "description": "li"
+  },
+  "learn.captcha-discord.s2.i3": {
+    "message": "在 Discord Activity 中：頁面像遊戲一樣在 Discord 中開啟。其通訊經由 Discord 的代理伺服器，而代理伺服器不會將成員的 IP 位址傳給應用程式。",
+    "description": "li"
+  },
+  "learn.captcha-discord.s3.h": {
+    "message": "Discord 機器人能看到您的哪些資料",
+    "description": "h"
+  },
+  "learn.captcha-discord.s3.p1": {
+    "message": "Discord 不會將使用者的 IP 位址提供給任何機器人。機器人只看得到您在伺服器上的帳號、身分組與訊息，僅此而已。只有當您開啟託管在 Discord 以外的網頁時，IP 才會被取得。在網站上進行驗證前，請先看清它的網址：一旦離開 Discord，該網站就可能看到您的 IP。",
+    "description": "p"
+  },
+  "learn.captcha-discord.s4.h": {
+    "message": "不靠 IP 位址找出多帳號",
+    "description": "h"
+  },
+  "learn.captcha-discord.s4.p1": {
+    "message": "比對 IP 位址是最常見的方法，但它有其侷限。多人經常共用同一個 IP（一個家庭、一間宿舍、一個行動網路），這會冤枉無辜的人，而只要一個 VPN 就能換掉 IP。這種方法也必須保存一項個人資料。",
+    "description": "p"
+  },
+  "learn.captcha-discord.s4.p2": {
+    "message": "還有其他線索：使用的裝置、解開考驗的方式，或單純由管理團隊在認出某人時宣告的關聯。",
+    "description": "p"
+  },
+  "learn.captcha-discord.s6.h": {
+    "message": "沒有保存的 IP 位址就不會外洩",
+    "description": "h"
+  },
+  "learn.captcha-discord.s6.p1": {
+    "message": "2026 年 10 月，Double Counter 這個在自家網站上驗證成員的多帳號偵測機器人發生了資料外洩。根據 {source} 的報導，約 2,700 萬筆 IP 位址與位置紀錄連同數百萬個 Discord ID 遭到複製。這正是所有保存 IP 位址的驗證方式的侷限：一旦儲存，就可能外洩，而且能用來定位一個人。我們從來看不到成員的 IP 位址，因此沒有這種風險。",
+    "description": "p with external source link"
+  },
+  "learn.captcha-discord.s6.source": {
+    "message": "Cyber Security News",
+    "description": "link"
+  },
+  "learn.captcha-discord.s5.h": {
+    "message": "RaidProtect 的做法",
+    "description": "h"
+  },
+  "learn.captcha-discord.s5.i1": {
+    "message": "我們的{link}在 Discord 中的 RaidProtect Activity 進行。我們不會取得成員的 IP 位址，Activity 也會向他們說明這一點。",
+    "description": "li with link"
+  },
+  "learn.captcha-discord.s5.i1.link": {
+    "message": "驗證碼",
+    "description": "link"
+  },
+  "learn.captcha-discord.s5.i2": {
+    "message": "經成員同意後，Activity 會驗證其裝置，以找出自動程式與多帳號。伺服器團隊只會收到結果。",
+    "description": "li"
+  },
+  "learn.captcha-discord.s5.i3": {
+    "message": "搭配仍在實驗階段的 Identity Update，確定屬於同一人的兩個{link}會自動關聯。僅依據裝置的關聯會提議給團隊，絕不會自動套用。",
+    "description": "li with link"
+  },
+  "learn.captcha-discord.s5.i3.link": {
+    "message": "多帳號",
+    "description": "link"
+  },
+  "learn.captcha-discord.s5.i4": {
+    "message": "多帳號專屬於各個伺服器：不會與其他伺服器共享任何內容。",
+    "description": "li"
+  },
+  "learn.captcha-discord.s5.i5": {
+    "message": "在挑戰模式下，成員在頻道中以訊息輸入驗證碼，不會記錄其裝置的任何資訊。",
+    "description": "li"
+  },
+  "learn.captcha-discord.faq.q1": {
+    "message": "Discord 驗證碼看得到我的 IP 位址嗎？",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a1": {
+    "message": "如果在 Discord 中進行就看不到：Discord 不會將 IP 位址提供給任何機器人，而 Activity 經由其代理伺服器。外部網頁則看得到您的 IP。",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.faq.q2": {
+    "message": "RaidProtect 會取得我的 IP 位址嗎？",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a2": {
+    "message": "不會。我們的驗證碼在 Discord 中的 RaidProtect Activity 進行，我們從來看不到成員的 IP 位址。",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.faq.q3": {
+    "message": "RaidProtect 如何找出多帳號？",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a3": {
+    "message": "透過在驗證碼的 Activity 中、經成員同意進行的裝置驗證，以及團隊使用 /alt 宣告的關聯。絕不透過 IP 位址。",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.faq.q4": {
+    "message": "如果我拒絕裝置驗證會怎樣？",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a4": {
+    "message": "您將無法進入伺服器：拒絕會視同驗證碼失敗，伺服器會套用預定的處置（踢出、監禁或封鎖數分鐘）。",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.faq.q5": {
+    "message": "驗證碼會妨礙真正的成員嗎？",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a5": {
+    "message": "它會在加入時多加一個步驟。因此 RaidProtect 的驗證碼可以只在突襲期間套用，或也套用於看起來可疑的帳號。",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.rel1": {
+    "message": "什麼是 selfbot？",
+    "description": "related"
+  },
+  "learn.captcha-discord.rel2": {
+    "message": "什麼是 Discord 突襲？",
+    "description": "related"
+  },
+  "learn.captcha-discord.rel3": {
+    "message": "RaidProtect 驗證碼",
+    "description": "related"
+  },
+  "learn.captcha-discord.rel4": {
+    "message": "多帳號",
+    "description": "related"
   }
 }

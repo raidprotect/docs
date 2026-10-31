@@ -84,7 +84,7 @@ In **Panel** mode, the "**Verify**" button opens the **RaidProtect Activity**: t
 - **Bot:** a captcha solved by an automated tool is sanctioned right away, as when attempts run out: kick, jail or block depending on your setting.
 - **Review by your team:** when in doubt, the member stays blocked at the entrance, with no countdown running, and your team receives an automatic captcha report. It arrives in the [captcha logs](#logs), otherwise in the [reports](./reports.md) channel, otherwise in the server logs. Once the report is taken over, it offers "**Let in**", "**Link to another member**" (with the [Identity Update](#activity-alts)) and "**Refuse**", which applies your captcha failure action (kick, jail or block): the sanctions menu is not shown there.
 - **Jail after attempts run out:** this jail has no duration and also opens a review report. "**Let in**" lifts the jail and verifies the member; otherwise, sanction them.
-- **Device check refused:** the Activity asks the member for their consent before checking their device. If they refuse, they get the failure action as after attempts run out (kick, jail or block).
+- **Device check refused:** the Activity asks the member for their consent before [checking their device](#privacy). If they refuse, they get the failure action as after attempts run out (kick, jail or block).
 - **Activity that does not open:** the member can click "**Enter a code**". A correct code then goes to review by your team.
 - **Data erasure:** a member can request the erasure of their verification data at [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot). They then take the captcha again, and their sanctions remain.
 
@@ -101,6 +101,17 @@ Only accounts from your server are shown to you: nothing is said about other ser
 :::info Experiment: Identity Update
 Alt account detection is part of the **Identity Update**, planned for version 3.7.0. Until its release, it is an experiment, in public beta for [Premium](/en/premium) servers.
 :::
+
+### Privacy: no IP address {#privacy}
+
+RaidProtect does not retrieve the IP address of members who take the captcha, and the Activity tells the member so itself.
+
+- **In Discord, with no external website:** the Activity opens in Discord, and its traffic goes through Discord's proxy, which does not pass the member's IP address on to us. We never see it, so we can neither keep it nor compare it. The bot itself does not receive it either: Discord does not give it to any bot.
+- **Device check, with their consent:** before the puzzle, the Activity asks the member for permission to check their device, to spot automated tools and alt accounts. What we collect is used to recognize a device we have already seen, not to know who uses it.
+- **Your team only sees the result:** success, failure, review or alt account link, never the device's characteristics.
+- **Challenge mode:** the member types the code as a message in the channel, and nothing is collected from their device.
+
+A member can request the erasure of their verification data at [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot). To understand the different ways to verify members, read our article on [captcha and verification on Discord](/en/learn/captcha-discord).
 
 ### Testing the captcha {#test-mode}
 

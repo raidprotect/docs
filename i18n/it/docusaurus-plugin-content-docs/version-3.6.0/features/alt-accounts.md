@@ -18,7 +18,7 @@ I doppi account fanno parte dell'**Identity Update**, prevista per la versione 3
 - **Revoca comune**: revocare la sanzione di uno qualsiasi degli account la revoca per tutti, con o senza Premium.
 - **Ricerca raggruppata**: [cercare le sanzioni](./sanctions.mdx#search) di un account mostra anche quelle degli altri account del gruppo.
 - **AutoMod di Discord**: anche i timeout e i mute applicati dall'AutoMod di Discord si estendono agli account collegati.
-- **Individuati dal captcha**: l'[Activity del captcha](./captcha.md#activity-alts) può collegare da sola due account certamente della stessa persona, oppure proporre il collegamento al tuo team.
+- **Individuati dal captcha**: l'[Activity del captcha](./captcha.md#activity-alts) può collegare da sola due account certamente della stessa persona, oppure proporre il collegamento al tuo team. Si basa sul dispositivo, [mai sull'indirizzo IP](#ip).
 - **Log**: i collegamenti, le rimozioni e i cambi di account principale sono registrati nei [log di moderazione](./moderation.mdx#logs). Il log di una sanzione cita gli account collegati con il loro nome utente e, nel formato embed, riporta un pulsante “**Account collegati**” che apre il pannello `/alt` del membro sanzionato.
 
 **Limiti:** nessuno sul numero di account per gruppo né sul numero di gruppi. Una sanzione si estende a **10 account collegati** alla volta: i successivi vengono sanzionati al loro prossimo messaggio o al loro arrivo, e il pulsante sotto la sanzione li sanziona subito.
@@ -112,6 +112,10 @@ Per cambiare l'account principale di un gruppo, usa `/alt` con uno degli account
 ### I doppi account sono condivisi tra server?
 
 No. I gruppi sono propri del tuo server e nulla viene condiviso con altri server.
+
+### RaidProtect usa l'indirizzo IP per individuare i doppi account? {#ip}
+
+No. Non recuperiamo mai l'indirizzo IP: il bot non lo riceve da Discord, e l'[Activity del captcha](./captcha.md#privacy) passa dal proxy di Discord, che non lo trasmette. I doppi account vengono collegati dal tuo team con `/alt`, oppure individuati dalla verifica del dispositivo, fatta con il consenso del membro. Un collegamento che si basa solo sul dispositivo non viene mai applicato d'ufficio: viene proposto al tuo team. Per saperne di più, leggi il nostro articolo su [il captcha e la verifica su Discord](/it/learn/captcha-discord#alts).
 
 ### Cosa succede quando sbanno uno degli account?
 

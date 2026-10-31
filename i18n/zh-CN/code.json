@@ -8006,5 +8006,189 @@
   },
   "premium.scene.slowmode.off": {
     "message": "已关闭"
+  },
+  "learn.captcha-discord.cardTerm": {
+    "message": "验证码与验证",
+    "description": "Learn hub card term: captcha-discord"
+  },
+  "learn.captcha-discord.cardTeaser": {
+    "message": "在 Discord 内还是在外部网站：每种验证会获取什么，以及如何在不使用 IP 地址的情况下发现多账号。",
+    "description": "Learn hub card teaser: captcha-discord"
+  },
+  "learn.captcha-discord.metaTitle": {
+    "message": "Discord 验证码：验证成员而不获取其 IP",
+    "description": "Learn article meta title: captcha-discord"
+  },
+  "learn.captcha-discord.metaDescription": {
+    "message": "Discord 内的验证码、外部网页或 Activity：验证新成员的各种方式，每种方式会获取什么，以及如何在不使用 IP 地址的情况下发现多账号。",
+    "description": "Learn article meta description: captcha-discord"
+  },
+  "learn.captcha-discord.term": {
+    "message": "Discord 验证码与验证",
+    "description": "Learn glossary term name (breadcrumb + schema)"
+  },
+  "learn.captcha-discord.title": {
+    "message": "Discord 上的验证码与验证",
+    "description": "H1"
+  },
+  "learn.captcha-discord.definition": {
+    "message": "验证（即验证码）要求每位新成员在进入服务器之前证明自己是真人。根据所用工具的不同，验证在 Discord 内或外部网站上进行，而这一选择决定了会获取哪些数据，首先就是 IP 地址。",
+    "description": "definition"
+  },
+  "learn.captcha-discord.definitionText": {
+    "message": "验证（即验证码）要求每位新成员在进入服务器之前证明自己是真人。根据所用工具的不同，验证在 Discord 内或外部网站上进行，而这一选择决定了会获取哪些数据，首先就是 IP 地址。",
+    "description": "Learn definition plain text for schema.org"
+  },
+  "learn.captcha-discord.s1.h": {
+    "message": "验证有什么用",
+    "description": "h"
+  },
+  "learn.captcha-discord.s1.p1": {
+    "message": "成员加入时会获得一个“未验证”角色，只能看到一个验证频道。在通过考验之前，他看不到服务器的其他部分，也无法在其中发言。{selfbot}，或{raid}期间涌入的大批账号，都会被拦在入口。",
+    "description": "p with links"
+  },
+  "learn.captcha-discord.s1.selfbot": {
+    "message": "自助机器人",
+    "description": "link"
+  },
+  "learn.captcha-discord.s1.raid": {
+    "message": "突袭",
+    "description": "link"
+  },
+  "learn.captcha-discord.s2.h": {
+    "message": "验证成员的三种方式",
+    "description": "h"
+  },
+  "learn.captcha-discord.s2.i1": {
+    "message": "在 Discord 内，通过消息：成员抄录图片上显示的代码，或点击一个按钮。一切都不离开 Discord，但训练有素的自动程序有时能识别图片。",
+    "description": "li"
+  },
+  "learn.captcha-discord.s2.i2": {
+    "message": "在外部网站上：一个按钮会打开显示验证码的网页。该网站能看到成员的 IP 地址和浏览器，还可以设置 Cookie。不少机器人正是这样比对 IP 来发现多账号的。",
+    "description": "li"
+  },
+  "learn.captcha-discord.s2.i3": {
+    "message": "在 Discord Activity 中：页面像游戏一样在 Discord 内打开。其通信经过 Discord 的代理，该代理不会把成员的 IP 地址传给应用。",
+    "description": "li"
+  },
+  "learn.captcha-discord.s3.h": {
+    "message": "Discord 机器人能看到您的哪些信息",
+    "description": "h"
+  },
+  "learn.captcha-discord.s3.p1": {
+    "message": "Discord 不会把用户的 IP 地址提供给任何机器人。机器人能看到您的账号、您的角色以及您在服务器中的消息，仅此而已。只有当您打开托管在 Discord 之外的网页时，IP 才会被获取。在网站上进行验证之前，请查看它的网址：一旦离开 Discord，该网站就可能看到您的 IP。",
+    "description": "p"
+  },
+  "learn.captcha-discord.s4.h": {
+    "message": "不使用 IP 地址发现多账号",
+    "description": "h"
+  },
+  "learn.captcha-discord.s4.p1": {
+    "message": "比对 IP 地址是最常见的方法，但它有其局限。多人往往共用同一个 IP（一个家庭、一所寄宿学校、一个移动网络），这会冤枉无辜的人，而一个 VPN 就足以更换 IP。它还要求保存一项个人数据。",
+    "description": "p"
+  },
+  "learn.captcha-discord.s4.p2": {
+    "message": "还有其他线索：所用的设备、解答考验的方式，或者仅仅是管理团队认出某人时声明的关联。",
+    "description": "p"
+  },
+  "learn.captcha-discord.s6.h": {
+    "message": "不保存的 IP 地址就不会泄露",
+    "description": "h"
+  },
+  "learn.captcha-discord.s6.p1": {
+    "message": "2026 年 10 月，Double Counter（一款在其网站上验证成员的多账号检测机器人）发生了数据泄露。据 {source} 报道，约 2700 万条 IP 地址和位置记录被复制，同时还有数百万个 Discord ID。这是所有保存 IP 地址的验证方式的局限：一旦被存储，它们就可能泄露，并且可以用来定位一个人。我们从来看不到成员的 IP 地址，因此不存在这种风险。",
+    "description": "p with external source link"
+  },
+  "learn.captcha-discord.s6.source": {
+    "message": "Cyber Security News",
+    "description": "link"
+  },
+  "learn.captcha-discord.s5.h": {
+    "message": "RaidProtect 的做法",
+    "description": "h"
+  },
+  "learn.captcha-discord.s5.i1": {
+    "message": "我们的{link}在 Discord 内的 RaidProtect Activity 中进行。我们不获取成员的 IP 地址，Activity 也会向他们说明这一点。",
+    "description": "li with link"
+  },
+  "learn.captcha-discord.s5.i1.link": {
+    "message": "验证码",
+    "description": "link"
+  },
+  "learn.captcha-discord.s5.i2": {
+    "message": "经成员同意后，Activity 会验证其设备，以发现自动程序和多账号。服务器团队只会收到结果。",
+    "description": "li"
+  },
+  "learn.captcha-discord.s5.i3": {
+    "message": "借助试验中的 Identity Update，两个确定属于同一个人的{link}会被自动关联。仅依据设备的关联会作为建议提交给团队，绝不会被自动应用。",
+    "description": "li with link"
+  },
+  "learn.captcha-discord.s5.i3.link": {
+    "message": "多账号",
+    "description": "link"
+  },
+  "learn.captcha-discord.s5.i4": {
+    "message": "多账号仅属于各自的服务器：不会与其他服务器共享任何内容。",
+    "description": "li"
+  },
+  "learn.captcha-discord.s5.i5": {
+    "message": "在挑战模式下，成员在频道中以消息形式抄录验证码，不会记录其设备的任何信息。",
+    "description": "li"
+  },
+  "learn.captcha-discord.faq.q1": {
+    "message": "Discord 验证码能看到我的 IP 地址吗？",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a1": {
+    "message": "如果在 Discord 内进行就不能：Discord 不会把 IP 地址提供给任何机器人，而 Activity 经过它的代理。外部网页则能看到您的 IP。",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.faq.q2": {
+    "message": "RaidProtect 会获取我的 IP 地址吗？",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a2": {
+    "message": "不会。我们的验证码在 Discord 内的 RaidProtect Activity 中进行，我们从来看不到成员的 IP 地址。",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.faq.q3": {
+    "message": "RaidProtect 如何发现多账号？",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a3": {
+    "message": "通过设备验证（在验证码的 Activity 中经成员同意后进行），以及团队通过 /alt 声明的关联。绝不依据 IP 地址。",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.faq.q4": {
+    "message": "如果我拒绝设备验证会怎样？",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a4": {
+    "message": "您将无法进入服务器：拒绝视同验证码失败，服务器会执行预设的处理方式（踢出、监禁或封锁几分钟）。",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.faq.q5": {
+    "message": "验证码会给真正的成员带来不便吗？",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a5": {
+    "message": "它会在加入时增加一个步骤。因此，RaidProtect 的验证码可以只在突袭期间生效，也可以同时用于看起来可疑的账号。",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.rel1": {
+    "message": "什么是自助机器人（self-bot）？",
+    "description": "related"
+  },
+  "learn.captcha-discord.rel2": {
+    "message": "什么是 Discord 突袭？",
+    "description": "related"
+  },
+  "learn.captcha-discord.rel3": {
+    "message": "RaidProtect 验证码",
+    "description": "related"
+  },
+  "learn.captcha-discord.rel4": {
+    "message": "多账号",
+    "description": "related"
   }
 }

@@ -18,7 +18,7 @@ Die Zweitkonten gehören zur **Identity Update**, die für Version 3.7.0 vorgese
 - **Gemeinsame Aufhebung**: Die Sanktion eines beliebigen Kontos aufzuheben, hebt sie für alle auf, mit oder ohne Premium.
 - **Gruppierte Suche**: Die [Suche nach Sanktionen](./sanctions.mdx#search) eines Kontos zeigt auch die der anderen Konten der Gruppe.
 - **AutoMod von Discord**: Die vom AutoMod von Discord verhängten Timeouts und Mutes erstrecken sich ebenfalls auf die verknüpften Konten.
-- **Vom Captcha erkannt**: Die [Activity des Captchas](./captcha.md#activity-alts) kann zwei Konten, bei denen sie sicher ist, dass es dieselbe Person ist, selbst verknüpfen oder Ihrem Team die Verknüpfung vorschlagen.
+- **Vom Captcha erkannt**: Die [Activity des Captchas](./captcha.md#activity-alts) kann zwei Konten, bei denen sie sicher ist, dass es dieselbe Person ist, selbst verknüpfen oder Ihrem Team die Verknüpfung vorschlagen. Sie stützt sich auf das Gerät, [nie auf die IP-Adresse](#ip).
 - **Logs**: Verknüpfungen, Entfernungen und Wechsel des Hauptkontos werden in den [Moderationslogs](./moderation.mdx#logs) aufgezeichnet. Das Log einer Sanktion nennt die verknüpften Konten mit ihrem Benutzernamen und trägt im Embed-Format eine Schaltfläche „**Verknüpfte Konten**“, die das `/alt`-Panel des sanktionierten Mitglieds öffnet.
 
 **Grenzen:** keine bei der Anzahl der Konten pro Gruppe oder der Anzahl der Gruppen. Eine Sanktion erstreckt sich auf einmal auf **10 verknüpfte Konten**: Die weiteren werden bei ihrer nächsten Nachricht oder bei ihrer Ankunft sanktioniert, und die Schaltfläche unter der Sanktion sanktioniert sie sofort.
@@ -112,6 +112,10 @@ Um das Hauptkonto einer Gruppe zu ändern, verwenden Sie `/alt` mit einem der Ko
 ### Werden die Zweitkonten zwischen Servern geteilt?
 
 Nein. Die Gruppen gehören zu Ihrem Server, und nichts wird mit anderen Servern geteilt.
+
+### Verwendet RaidProtect die IP-Adresse, um Zweitkonten zu erkennen? {#ip}
+
+Nein. Wir rufen die IP-Adresse nie ab: Der Bot erhält sie nicht von Discord, und die [Activity des Captchas](./captcha.md#privacy) läuft über den Proxy von Discord, der sie nicht weitergibt. Zweitkonten werden von Ihrem Team mit `/alt` verknüpft oder durch die Geräteprüfung erkannt, die mit dem Einverständnis des Mitglieds erfolgt. Eine Verknüpfung, die nur auf dem Gerät beruht, wird nie automatisch angewendet: Sie wird Ihrem Team vorgeschlagen. Mehr dazu erfahren Sie in unserem Artikel über [das Captcha und die Verifizierung auf Discord](/de/learn/captcha-discord#alts).
 
 ### Was passiert, wenn ich eines der Konten entbanne?
 

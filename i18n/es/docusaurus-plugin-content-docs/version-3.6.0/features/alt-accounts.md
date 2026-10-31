@@ -18,7 +18,7 @@ Las cuentas duplicadas forman parte de la **Identity Update**, prevista para la 
 - **Levantamiento común**: levantar la sanción de una de las cuentas, sea cual sea, la levanta para todas, con o sin Premium.
 - **Búsqueda agrupada**: [buscar las sanciones](./sanctions.mdx#search) de una cuenta muestra también las de las demás cuentas del grupo.
 - **AutoMod de Discord**: los timeouts y silencios aplicados por el AutoMod de Discord también se extienden a las cuentas vinculadas.
-- **Detectadas por el captcha**: la [Activity del captcha](./captcha.md#activity-alts) puede vincular por sí misma dos cuentas que está segura de que son la misma persona, o proponer el vínculo a tu equipo.
+- **Detectadas por el captcha**: la [Activity del captcha](./captcha.md#activity-alts) puede vincular por sí misma dos cuentas que está segura de que son la misma persona, o proponer el vínculo a tu equipo. Se basa en el dispositivo, [nunca en la dirección IP](#ip).
 - **Logs**: los vínculos, las retiradas y los cambios de cuenta principal se registran en los [logs de moderación](./moderation.mdx#logs). El log de una sanción cita las cuentas vinculadas con su nombre de usuario y, en formato embed, lleva un botón “**Cuentas vinculadas**” que abre el panel `/alt` del miembro sancionado.
 
 **Límites:** ninguno en el número de cuentas por grupo ni en el número de grupos. Una sanción se extiende a **10 cuentas vinculadas** de una vez: las siguientes se sancionan en su próximo mensaje o a su llegada, y el botón bajo la sanción las sanciona al momento.
@@ -112,6 +112,10 @@ Para cambiar la cuenta principal de un grupo, usa `/alt` con una de las cuentas 
 ### ¿Las cuentas duplicadas se comparten entre servidores?
 
 No. Los grupos son propios de tu servidor y no se comparte nada con otros servidores.
+
+### ¿RaidProtect usa la dirección IP para detectar las cuentas duplicadas? {#ip}
+
+No. Nunca obtenemos la dirección IP: el bot no la recibe de Discord, y la [Activity del captcha](./captcha.md#privacy) pasa por el proxy de Discord, que no la transmite. Las cuentas duplicadas las vincula tu equipo con `/alt`, o se detectan mediante la verificación del dispositivo, hecha con la conformidad del miembro. Un vínculo que solo se basa en el dispositivo nunca se aplica automáticamente: se propone a tu equipo. Para saber más, lee nuestro artículo sobre [el captcha y la verificación en Discord](/es/learn/captcha-discord#alts).
 
 ### ¿Qué pasa cuando desbaneo una de las cuentas?
 

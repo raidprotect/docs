@@ -18,7 +18,7 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 - **Ortak kaldırma**: hesaplardan herhangi birinin yaptırımını kaldırmak, Premium'lu veya Premium'suz, yaptırımı hepsi için kaldırır.
 - **Gruplu arama**: bir hesabın [yaptırımlarını aramak](./sanctions.mdx#search), grubun diğer hesaplarının yaptırımlarını da gösterir.
 - **Discord'un AutoMod'u**: Discord'un AutoMod'unun uyguladığı timeout ve mute'lar da bağlı hesaplara yayılır.
-- **Captcha tarafından tespit edilenler**: [captcha Activity'si](./captcha.md#activity-alts), aynı kişi olduğundan emin olduğu iki hesabı kendiliğinden bağlayabilir ya da bağlantıyı ekibinize önerebilir.
+- **Captcha tarafından tespit edilenler**: [captcha Activity'si](./captcha.md#activity-alts), aynı kişi olduğundan emin olduğu iki hesabı kendiliğinden bağlayabilir ya da bağlantıyı ekibinize önerebilir. Cihaza dayanır, [IP adresine asla](#ip).
 - **Loglar**: bağlantılar, çıkarmalar ve ana hesap değişiklikleri [moderasyon loglarına](./moderation.mdx#logs) kaydedilir. Bir yaptırımın logu bağlı hesapları kullanıcı adlarıyla belirtir ve embed biçiminde, yaptırım alan üyenin `/alt` panelini açan bir “**Bağlı hesaplar**” düğmesi taşır.
 
 **Sınırlar:** ne grup başına hesap sayısında ne de grup sayısında sınır yok. Bir yaptırım tek seferde **10 bağlı hesaba** yayılır: sonrakiler bir sonraki mesajlarında veya geldiklerinde yaptırım alır, yaptırımın altındaki düğme ise onlara hemen yaptırım uygular.
@@ -112,6 +112,10 @@ Bir grubun ana hesabını değiştirmek için hesaplardan biriyle `/alt` komutun
 ### Çift hesaplar sunucular arasında paylaşılır mı?
 
 Hayır. Gruplar sunucunuza özeldir ve diğer sunucularla hiçbir şey paylaşılmaz.
+
+### RaidProtect çift hesapları tespit etmek için IP adresini kullanıyor mu? {#ip}
+
+Hayır. IP adresini hiçbir zaman almayız: bot onu Discord'dan almaz ve [captcha Activity'si](./captcha.md#privacy), onu iletmeyen Discord proxy'si üzerinden geçer. Çift hesaplar ekibiniz tarafından `/alt` ile bağlanır ya da üyenin onayıyla yapılan cihaz doğrulamasıyla tespit edilir. Yalnızca cihaza dayanan bir bağlantı asla kendiliğinden uygulanmaz: ekibinize önerilir. Daha fazla bilgi için [Discord'da captcha ve doğrulama](/tr/learn/captcha-discord#alts) hakkındaki makalemizi okuyun.
 
 ### Hesaplardan birinin yasağını kaldırdığımda ne olur?
 

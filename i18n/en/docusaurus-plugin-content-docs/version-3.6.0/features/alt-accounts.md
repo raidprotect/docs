@@ -18,7 +18,7 @@ Alt accounts are part of the **Identity Update**, planned for version 3.7.0. Unt
 - **Shared removal**: removing the sanction of any one of the accounts removes it for all of them, with or without Premium.
 - **Grouped search**: [searching the sanctions](./sanctions.mdx#search) of an account also shows those of the other accounts in the group.
 - **Discord's AutoMod**: timeouts and mutes applied by Discord's AutoMod also extend to linked accounts.
-- **Spotted by the captcha**: the [captcha Activity](./captcha.md#activity-alts) can link two accounts it is sure are the same person by itself, or suggest the link to your team.
+- **Spotted by the captcha**: the [captcha Activity](./captcha.md#activity-alts) can link two accounts it is sure are the same person by itself, or suggest the link to your team. It relies on the device, [never on the IP address](#ip).
 - **Logs**: links, removals and changes of main account are recorded in the [moderation logs](./moderation.mdx#logs). A sanction's log mentions the linked accounts with their username and, in embed format, carries a "**Linked accounts**" button that opens the sanctioned member's `/alt` panel.
 
 **Limits:** none on the number of accounts per group or on the number of groups. A sanction extends to **10 linked accounts** at once: the next ones are sanctioned on their next message or when they arrive, and the button below the sanction sanctions them right away.
@@ -112,6 +112,10 @@ To change a group's main account, use `/alt` with one of the accounts, then the 
 ### Are alt accounts shared between servers?
 
 No. Groups are specific to your server and nothing is shared with other servers.
+
+### Does RaidProtect use the IP address to spot alt accounts? {#ip}
+
+No. We never retrieve the IP address: the bot does not receive it from Discord, and the [captcha Activity](./captcha.md#privacy) goes through Discord's proxy, which does not pass it on. Alt accounts are linked by your team with `/alt`, or spotted by the device check, done with the member's consent. A link that relies only on the device is never applied automatically: it is suggested to your team. To learn more, read our article on [captcha and verification on Discord](/en/learn/captcha-discord#alts).
 
 ### What happens when I unban one of the accounts?
 

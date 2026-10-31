@@ -8006,5 +8006,189 @@
   },
   "premium.scene.slowmode.off": {
     "message": "オフ"
+  },
+  "learn.captcha-discord.cardTerm": {
+    "message": "キャプチャと認証",
+    "description": "Learn hub card term: captcha-discord"
+  },
+  "learn.captcha-discord.cardTeaser": {
+    "message": "Discord の中か外部サイトか。それぞれの認証が取得する情報と、IP アドレスを使わずに複数アカウントを見つける方法。",
+    "description": "Learn hub card teaser: captcha-discord"
+  },
+  "learn.captcha-discord.metaTitle": {
+    "message": "Discord のキャプチャ：IP を取得せずにメンバーを認証する",
+    "description": "Learn article meta title: captcha-discord"
+  },
+  "learn.captcha-discord.metaDescription": {
+    "message": "Discord 内のキャプチャ、外部の Web ページ、Activity：新規メンバーを認証する方法と、それぞれが取得する情報、IP アドレスを使わずに複数アカウントを見つける方法。",
+    "description": "Learn article meta description: captcha-discord"
+  },
+  "learn.captcha-discord.term": {
+    "message": "Discord のキャプチャと認証",
+    "description": "Learn glossary term name (breadcrumb + schema)"
+  },
+  "learn.captcha-discord.title": {
+    "message": "Discord のキャプチャと認証",
+    "description": "H1"
+  },
+  "learn.captcha-discord.definition": {
+    "message": "認証（キャプチャ）は、新規メンバーにサーバーへ入る前に人間であることの証明を求める仕組みです。ツールによって Discord の中で行われるか外部サイトで行われるかが異なり、その違いが、取得されるデータ、まず IP アドレスを左右します。",
+    "description": "definition"
+  },
+  "learn.captcha-discord.definitionText": {
+    "message": "認証（キャプチャ）は、新規メンバーにサーバーへ入る前に人間であることの証明を求める仕組みです。ツールによって Discord の中で行われるか外部サイトで行われるかが異なり、その違いが、取得されるデータ、まず IP アドレスを左右します。",
+    "description": "Learn definition plain text for schema.org"
+  },
+  "learn.captcha-discord.s1.h": {
+    "message": "認証の役割",
+    "description": "h"
+  },
+  "learn.captcha-discord.s1.p1": {
+    "message": "参加したメンバーには、認証用チャンネルだけが見える「未認証」ロールが付与されます。課題をクリアするまで、サーバーの他の部分は見えず、書き込みもできません。{selfbot}や、{raid}中に押し寄せるアカウントは、入口で足止めされます。",
+    "description": "p with links"
+  },
+  "learn.captcha-discord.s1.selfbot": {
+    "message": "セルフボット",
+    "description": "link"
+  },
+  "learn.captcha-discord.s1.raid": {
+    "message": "レイド",
+    "description": "link"
+  },
+  "learn.captcha-discord.s2.h": {
+    "message": "メンバーを認証する 3 つの方法",
+    "description": "h"
+  },
+  "learn.captcha-discord.s2.i1": {
+    "message": "Discord の中でメッセージを使う：メンバーは画像に表示されたコードを入力するか、ボタンをクリックします。Discord の外には何も出ませんが、よく訓練された自動化プログラムは画像を読み取れることがあります。",
+    "description": "li"
+  },
+  "learn.captcha-discord.s2.i2": {
+    "message": "外部サイトで行う：ボタンでキャプチャを表示する Web ページが開きます。このサイトにはメンバーの IP アドレスとブラウザが見え、Cookie を設定することもできます。IP を比較して複数アカウントを見つけるボットは、多くがこの方法です。",
+    "description": "li"
+  },
+  "learn.captcha-discord.s2.i3": {
+    "message": "Discord の Activity で行う：ページはゲームのように Discord の中で開きます。通信は Discord のプロキシを経由し、プロキシはメンバーの IP アドレスをアプリケーションに渡しません。",
+    "description": "li"
+  },
+  "learn.captcha-discord.s3.h": {
+    "message": "Discord のボットに見えるもの",
+    "description": "h"
+  },
+  "learn.captcha-discord.s3.p1": {
+    "message": "Discord は、ユーザーの IP アドレスをどのボットにも渡しません。ボットに見えるのは、サーバー上のアカウント、ロール、メッセージだけです。IP が取得されるのは、Discord 以外でホストされている Web ページを開いた場合だけです。サイトで認証する前に、そのアドレスを確認してください。Discord を離れた時点で、そのサイトには IP が見えます。",
+    "description": "p"
+  },
+  "learn.captcha-discord.s4.h": {
+    "message": "IP アドレスを使わずに複数アカウントを見つける",
+    "description": "h"
+  },
+  "learn.captcha-discord.s4.p1": {
+    "message": "IP アドレスの比較は最も広く使われている方法ですが、限界があります。同じ IP を複数の人が共有することは多く（家族、寮、モバイル回線）、無関係な人が疑われてしまいます。また、VPN を使えば簡単に IP を変えられます。さらに、個人データを保存し続ける必要があります。",
+    "description": "p"
+  },
+  "learn.captcha-discord.s4.p2": {
+    "message": "他の手がかりもあります。使われている端末、課題の解き方、あるいは単に、モデレーションチームが誰かに気づいたときに登録する連携です。",
+    "description": "p"
+  },
+  "learn.captcha-discord.s6.h": {
+    "message": "保存しない IP アドレスは流出しない",
+    "description": "h"
+  },
+  "learn.captcha-discord.s6.p1": {
+    "message": "2026 年 10 月、自社サイトでメンバーを認証する複数アカウント検知ボット Double Counter で、データ流出が起きました。{source}によると、IP アドレスと位置情報の記録約 2,700 万件が、数百万件の Discord ID とともにコピーされました。これは IP アドレスを保存するすべての認証に共通する限界です。一度保存されると流出する可能性があり、人の居場所の特定にもつながります。私たちはメンバーの IP アドレスを一切見ないため、このリスクはありません。",
+    "description": "p with external source link"
+  },
+  "learn.captcha-discord.s6.source": {
+    "message": "Cyber Security News",
+    "description": "link"
+  },
+  "learn.captcha-discord.s5.h": {
+    "message": "RaidProtect の仕組み",
+    "description": "h"
+  },
+  "learn.captcha-discord.s5.i1": {
+    "message": "私たちの{link}は、Discord の中の RaidProtect Activity で行われます。私たちはメンバーの IP アドレスを取得せず、Activity もそのことをメンバーに表示します。",
+    "description": "li with link"
+  },
+  "learn.captcha-discord.s5.i1.link": {
+    "message": "キャプチャ",
+    "description": "link"
+  },
+  "learn.captcha-discord.s5.i2": {
+    "message": "メンバーの同意を得て、Activity は端末を確認し、自動化プログラムと複数アカウントを見つけます。サーバーの運営チームが受け取るのは結果だけです。",
+    "description": "li"
+  },
+  "learn.captcha-discord.s5.i3": {
+    "message": "実験中の Identity Update では、同一人物と確実に判断できる 2 つの{link}が自動で連携されます。端末だけに基づく連携は運営チームに提案され、自動で適用されることはありません。",
+    "description": "li with link"
+  },
+  "learn.captcha-discord.s5.i3.link": {
+    "message": "複数アカウント",
+    "description": "link"
+  },
+  "learn.captcha-discord.s5.i4": {
+    "message": "複数アカウントはサーバーごとに独立しており、他のサーバーと共有されることはありません。",
+    "description": "li"
+  },
+  "learn.captcha-discord.s5.i5": {
+    "message": "チャレンジモードでは、メンバーはチャンネルにメッセージでコードを入力し、端末については何も記録されません。",
+    "description": "li"
+  },
+  "learn.captcha-discord.faq.q1": {
+    "message": "Discord のキャプチャに IP アドレスは見えますか？",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a1": {
+    "message": "Discord の中で行われるなら見えません。Discord はどのボットにも IP アドレスを渡さず、Activity は Discord のプロキシを経由します。一方、外部の Web ページには IP が見えます。",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.faq.q2": {
+    "message": "RaidProtect は IP アドレスを取得しますか？",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a2": {
+    "message": "いいえ。私たちのキャプチャは Discord の中の RaidProtect Activity で行われ、私たちがメンバーの IP アドレスを見ることはありません。",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.faq.q3": {
+    "message": "RaidProtect はどうやって複数アカウントを見つけるのですか？",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a3": {
+    "message": "メンバーの同意を得てキャプチャの Activity で行う端末の確認と、運営チームが /alt で登録する連携によってです。IP アドレスは決して使いません。",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.faq.q4": {
+    "message": "端末の確認を拒否するとどうなりますか？",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a4": {
+    "message": "サーバーに入れません。拒否はキャプチャの失敗として扱われ、サーバーが設定した対応（キック、Jail、または数分間のブロック）が適用されます。",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.faq.q5": {
+    "message": "キャプチャは本物のメンバーの妨げになりますか？",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a5": {
+    "message": "参加時に 1 つ手順が増えます。そのため RaidProtect のキャプチャは、レイド中だけ、または疑わしく見えるアカウントにも適用するよう設定できます。",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.rel1": {
+    "message": "セルフボットとは？",
+    "description": "related"
+  },
+  "learn.captcha-discord.rel2": {
+    "message": "Discord のレイドとは？",
+    "description": "related"
+  },
+  "learn.captcha-discord.rel3": {
+    "message": "RaidProtect のキャプチャ",
+    "description": "related"
+  },
+  "learn.captcha-discord.rel4": {
+    "message": "複数アカウント",
+    "description": "related"
   }
 }

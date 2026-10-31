@@ -8006,5 +8006,189 @@
   },
   "premium.scene.slowmode.off": {
     "message": "disattivato"
+  },
+  "learn.captcha-discord.cardTerm": {
+    "message": "Captcha e verifica",
+    "description": "Learn hub card term: captcha-discord"
+  },
+  "learn.captcha-discord.cardTeaser": {
+    "message": "In Discord o su un sito esterno: cosa recupera ogni verifica, e come individuare i doppi account senza indirizzo IP.",
+    "description": "Learn hub card teaser: captcha-discord"
+  },
+  "learn.captcha-discord.metaTitle": {
+    "message": "Captcha Discord: verificare i membri senza recuperare il loro IP",
+    "description": "Learn article meta title: captcha-discord"
+  },
+  "learn.captcha-discord.metaDescription": {
+    "message": "Captcha in Discord, pagina web esterna o Activity: i modi di verificare i nuovi membri, cosa recupera ciascuno, e come individuare i doppi account senza indirizzo IP.",
+    "description": "Learn article meta description: captcha-discord"
+  },
+  "learn.captcha-discord.term": {
+    "message": "Captcha e verifica Discord",
+    "description": "Learn glossary term name (breadcrumb + schema)"
+  },
+  "learn.captcha-discord.title": {
+    "message": "Il captcha e la verifica su Discord",
+    "description": "H1"
+  },
+  "learn.captcha-discord.definition": {
+    "message": "Una verifica, o captcha, chiede a ogni nuovo membro di dimostrare di essere umano prima di accedere al server. A seconda dello strumento, avviene in Discord o su un sito esterno, e questa scelta decide quali dati vengono recuperati, a cominciare dall'indirizzo IP.",
+    "description": "definition"
+  },
+  "learn.captcha-discord.definitionText": {
+    "message": "Una verifica, o captcha, chiede a ogni nuovo membro di dimostrare di essere umano prima di accedere al server. A seconda dello strumento, avviene in Discord o su un sito esterno, e questa scelta decide quali dati vengono recuperati, a cominciare dall'indirizzo IP.",
+    "description": "Learn definition plain text for schema.org"
+  },
+  "learn.captcha-discord.s1.h": {
+    "message": "A cosa serve una verifica",
+    "description": "h"
+  },
+  "learn.captcha-discord.s1.p1": {
+    "message": "Al suo arrivo, il membro riceve un ruolo “non verificato” che gli mostra solo un canale di verifica. Finché non ha superato la prova, non vede il resto del server e non può scriverci. Un {selfbot}, o un'ondata di account durante un {raid}, resta bloccato all'ingresso.",
+    "description": "p with links"
+  },
+  "learn.captcha-discord.s1.selfbot": {
+    "message": "self-bot",
+    "description": "link"
+  },
+  "learn.captcha-discord.s1.raid": {
+    "message": "raid",
+    "description": "link"
+  },
+  "learn.captcha-discord.s2.h": {
+    "message": "I tre modi di verificare un membro",
+    "description": "h"
+  },
+  "learn.captcha-discord.s2.i1": {
+    "message": "In Discord, tramite messaggio: il membro ricopia un codice mostrato su un'immagine, o clicca su un pulsante. Nulla esce da Discord, ma un automa ben addestrato a volte riesce a leggere l'immagine.",
+    "description": "li"
+  },
+  "learn.captcha-discord.s2.i2": {
+    "message": "Su un sito esterno: un pulsante apre una pagina web che mostra il captcha. Questo sito vede l'indirizzo IP del membro e il suo browser, e può impostare dei cookie. Spesso è così che alcuni bot confrontano gli IP per individuare i doppi account.",
+    "description": "li"
+  },
+  "learn.captcha-discord.s2.i3": {
+    "message": "In un'Activity Discord: la pagina si apre in Discord, come un gioco. I suoi scambi passano dal proxy di Discord, che non trasmette l'indirizzo IP del membro all'applicazione.",
+    "description": "li"
+  },
+  "learn.captcha-discord.s3.h": {
+    "message": "Cosa vede di te un bot Discord",
+    "description": "h"
+  },
+  "learn.captcha-discord.s3.p1": {
+    "message": "Discord non fornisce l'indirizzo IP dei suoi utenti a nessun bot. Un bot vede il tuo account, i tuoi ruoli e i tuoi messaggi sul server, niente di più. Un IP viene recuperato solo se apri una pagina web ospitata fuori da Discord. Prima di verificarti su un sito, controlla il suo indirizzo: appena esci da Discord, quel sito può vedere il tuo IP.",
+    "description": "p"
+  },
+  "learn.captcha-discord.s4.h": {
+    "message": "Individuare i doppi account senza indirizzo IP",
+    "description": "h"
+  },
+  "learn.captcha-discord.s4.p1": {
+    "message": "Confrontare gli indirizzi IP è il metodo più diffuso, ma ha i suoi limiti. Più persone condividono spesso lo stesso IP (una famiglia, un collegio, una rete mobile), il che accusa degli innocenti, e basta una VPN per cambiarlo. Obbliga inoltre a conservare un dato personale.",
+    "description": "p"
+  },
+  "learn.captcha-discord.s4.p2": {
+    "message": "Esistono altri indizi: il dispositivo usato, il modo di risolvere la prova, o semplicemente il collegamento dichiarato dal team di moderazione quando riconosce qualcuno.",
+    "description": "p"
+  },
+  "learn.captcha-discord.s6.h": {
+    "message": "Un indirizzo IP che non si conserva non può trapelare",
+    "description": "h"
+  },
+  "learn.captcha-discord.s6.p1": {
+    "message": "Nell'ottobre 2026, Double Counter, un bot di rilevamento dei doppi account che verifica i membri sul suo sito, ha subito una fuga di dati. Secondo {source}, circa 27 milioni di registrazioni di indirizzi IP e di localizzazione sono state copiate, insieme a milioni di identificativi Discord. È il limite di ogni verifica che conserva gli indirizzi IP: una volta archiviati, possono trapelare, e permettono di localizzare una persona. Noi non vediamo mai l'indirizzo IP dei membri, quindi non corriamo questo rischio.",
+    "description": "p with external source link"
+  },
+  "learn.captcha-discord.s6.source": {
+    "message": "Cyber Security News",
+    "description": "link"
+  },
+  "learn.captcha-discord.s5.h": {
+    "message": "Come fa RaidProtect",
+    "description": "h"
+  },
+  "learn.captcha-discord.s5.i1": {
+    "message": "Il nostro {link} si svolge nell'Activity RaidProtect, in Discord. Non recuperiamo l'indirizzo IP dei membri, e l'Activity glielo indica.",
+    "description": "li with link"
+  },
+  "learn.captcha-discord.s5.i1.link": {
+    "message": "captcha",
+    "description": "link"
+  },
+  "learn.captcha-discord.s5.i2": {
+    "message": "Con il consenso del membro, l'Activity verifica il suo dispositivo per individuare gli automi e i doppi account. Il team del server riceve solo il risultato.",
+    "description": "li"
+  },
+  "learn.captcha-discord.s5.i3": {
+    "message": "Con l'Identity Update, in sperimentazione, due {link} certamente della stessa persona vengono collegati automaticamente. Un collegamento che si basa solo sul dispositivo viene proposto al team, mai applicato d'ufficio.",
+    "description": "li with link"
+  },
+  "learn.captcha-discord.s5.i3.link": {
+    "message": "doppi account",
+    "description": "link"
+  },
+  "learn.captcha-discord.s5.i4": {
+    "message": "I doppi account restano propri di ogni server: nulla viene condiviso con altri server.",
+    "description": "li"
+  },
+  "learn.captcha-discord.s5.i5": {
+    "message": "In modalità Sfida, il membro ricopia un codice in un messaggio nel canale, e non viene rilevato nulla sul suo dispositivo.",
+    "description": "li"
+  },
+  "learn.captcha-discord.faq.q1": {
+    "message": "Un captcha Discord può vedere il mio indirizzo IP?",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a1": {
+    "message": "No, se avviene in Discord: Discord non fornisce l'indirizzo IP a nessun bot, e un'Activity passa dal suo proxy. Una pagina web esterna, invece, vede il tuo IP.",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.faq.q2": {
+    "message": "RaidProtect recupera il mio indirizzo IP?",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a2": {
+    "message": "No. Il nostro captcha si svolge nell'Activity RaidProtect, in Discord, e non vediamo mai l'indirizzo IP dei membri.",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.faq.q3": {
+    "message": "Come individua RaidProtect i doppi account?",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a3": {
+    "message": "Con la verifica del dispositivo, fatta nell'Activity del captcha con il consenso del membro, e con i collegamenti che il team dichiara con /alt. Mai con l'indirizzo IP.",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.faq.q4": {
+    "message": "Cosa succede se rifiuto la verifica del dispositivo?",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a4": {
+    "message": "Non puoi accedere al server: il rifiuto conta come un captcha fallito, e il server applica l'azione prevista (espulsione, jail o blocco di qualche minuto).",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.faq.q5": {
+    "message": "Un captcha disturba i veri membri?",
+    "description": "faq q"
+  },
+  "learn.captcha-discord.faq.a5": {
+    "message": "Aggiunge un passaggio all'arrivo. Per questo il captcha di RaidProtect può applicarsi solo durante un raid, o anche agli account che sembrano sospetti.",
+    "description": "faq a"
+  },
+  "learn.captcha-discord.rel1": {
+    "message": "Cos'è un self-bot?",
+    "description": "related"
+  },
+  "learn.captcha-discord.rel2": {
+    "message": "Cos'è un raid Discord?",
+    "description": "related"
+  },
+  "learn.captcha-discord.rel3": {
+    "message": "Il captcha di RaidProtect",
+    "description": "related"
+  },
+  "learn.captcha-discord.rel4": {
+    "message": "I doppi account",
+    "description": "related"
   }
 }
