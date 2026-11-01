@@ -76,7 +76,7 @@ Ayarlar beş sekmede düzenlenmiştir:
 - **Moderasyon**: [yaptırımlar](./features/sanctions.mdx), [çift hesaplar](./features/alt-accounts.md)\*, loglar, [bildirimler](./features/reports.md) ve [şeffaflık](./features/transparency.md).
 - **Araçlar**: [etiket rolü](./features/tag-role.md), [kanal kilitleme](./features/channel-lock.md), [görevde rolü](./features/moderation.mdx#onduty) ve mesaj önbelleği.
 
-\* Deneme aşamasında: bu satır yalnızca Identity Update'e (çift hesaplar) erişimi olan sunucularda görünür; [Premium](/tr/premium) herkese açık beta.
+\* 3.7.0 sürümünün (Identity Update) yeniliği, şimdiden beta olarak kullanılabilir.
 
 Her satır ayarın geçerli değerini ve bir düğme gösterir: “**Yapılandır**” özel bir ekran açar, “**Düzenle**” bir giriş penceresi açar. Her değişiklik anında uygulanır.
 

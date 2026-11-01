@@ -8190,5 +8190,62 @@
   "learn.captcha-discord.rel4": {
     "message": "Alt accounts",
     "description": "related"
+  },
+  "mockup.captcha.serverName": {
+    "message": "My Community"
+  },
+  "mockup.captcha.stepConsent": {
+    "message": "Consent"
+  },
+  "mockup.captcha.stepChallenge": {
+    "message": "Challenge"
+  },
+  "mockup.captcha.stepVerified": {
+    "message": "Verified"
+  },
+  "mockup.captcha.title": {
+    "message": "Verification"
+  },
+  "mockup.captcha.for": {
+    "message": "for {server}"
+  },
+  "mockup.captcha.consent": {
+    "message": "This server asks for a check of your device to detect bots and duplicate accounts."
+  },
+  "mockup.captcha.consentNote": {
+    "message": "The server team only receives the result. If you refuse, you will not be able to access the server."
+  },
+  "mockup.captcha.accept": {
+    "message": "I accept and continue"
+  },
+  "mockup.captcha.refuse": {
+    "message": "Decline"
+  },
+  "mockup.captcha.hint": {
+    "message": "Drag the piece into the gap."
+  },
+  "mockup.captcha.slide": {
+    "message": "Slide to place the piece"
+  },
+  "mockup.captcha.passTitle": {
+    "message": "Verification passed"
+  },
+  "mockup.captcha.panelTitle": {
+    "message": "Verification system"
+  },
+  "mockup.captcha.panelDescription": {
+    "message": "Click the button below to prove you are human and access the server."
+  },
+  "mockup.captcha.panelButton": {
+    "message": "Verify"
+  },
+  "mockup.captcha.opening": {
+    "message": "The verification Activity is opening…"
+  },
+  "mockup.captcha.cardWelcome": {
+    "message": "Welcome to"
+  },
+  "mockup.captcha.cardMember": {
+    "message": "Member #1,234"
   }
 }

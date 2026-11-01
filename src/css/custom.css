@@ -573,3 +573,76 @@ body:not(.editor-page) [class*="expandButton"] {
 .feature-badge-tooltip--visible {
   opacity: 1;
 }
+
+/* Blocs repliables (<details>) des pages de doc */
+.markdown details {
+  --details-border: var(--ifm-color-emphasis-200);
+  --details-bg: var(--ifm-color-emphasis-100);
+  --details-accent: var(--ifm-color-primary);
+  margin: 0 0 var(--ifm-leading);
+  padding: 0;
+  color: inherit;
+  background-color: var(--details-bg);
+  border: 1px solid var(--details-border);
+  border-radius: 12px;
+  box-shadow: none;
+  transition: border-color 0.2s;
+}
+
+.markdown details:hover {
+  border-color: var(--details-accent);
+}
+
+.markdown details a {
+  color: var(--ifm-link-color);
+}
+
+.markdown details > summary {
+  position: relative;
+  padding: 14px 18px 14px 46px;
+  font-weight: 600;
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+}
+
+.markdown details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.markdown details > summary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  width: 9px;
+  height: 9px;
+  margin-top: -6px;
+  border: solid var(--details-accent);
+  border-width: 0 2px 2px 0;
+  transform: rotate(-45deg);
+  transform-origin: center;
+  transition: transform 0.2s;
+}
+
+.markdown details[data-collapsed][data-collapsed='false'] > summary::before,
+.markdown details[open]:not([data-collapsed]) > summary::before {
+  margin-top: -7px;
+  transform: rotate(45deg);
+}
+
+.markdown details > summary:focus-visible {
+  border-radius: 12px;
+  box-shadow: 0 0 0 2px var(--details-accent);
+}
+
+.markdown details > div > div {
+  margin: 0;
+  padding: 2px 20px 4px 46px;
+  border-top: none;
+}
+
+.markdown details > div > div > :last-child {
+  margin-bottom: 16px;
+}

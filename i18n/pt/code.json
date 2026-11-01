@@ -8190,5 +8190,62 @@
   "learn.captcha-discord.cardTeaser": {
     "message": "No Discord ou em um site externo: o que cada verificação obtém e como detectar contas duplicadas sem endereço IP.",
     "description": "Learn hub card teaser: captcha-discord"
+  },
+  "mockup.captcha.serverName": {
+    "message": "Minha Comunidade"
+  },
+  "mockup.captcha.stepConsent": {
+    "message": "Consentimento"
+  },
+  "mockup.captcha.stepChallenge": {
+    "message": "Desafio"
+  },
+  "mockup.captcha.stepVerified": {
+    "message": "Verificado"
+  },
+  "mockup.captcha.title": {
+    "message": "Verificação"
+  },
+  "mockup.captcha.for": {
+    "message": "para {server}"
+  },
+  "mockup.captcha.consent": {
+    "message": "Este servidor pede uma verificação do seu dispositivo para detectar programas automatizados e contas duplicadas."
+  },
+  "mockup.captcha.consentNote": {
+    "message": "A equipe do servidor recebe apenas o resultado. Se você recusar, não poderá acessar o servidor."
+  },
+  "mockup.captcha.accept": {
+    "message": "Aceito e continuo"
+  },
+  "mockup.captcha.refuse": {
+    "message": "Recusar"
+  },
+  "mockup.captcha.hint": {
+    "message": "Arraste a peça até o buraco."
+  },
+  "mockup.captcha.slide": {
+    "message": "Deslize para encaixar a peça"
+  },
+  "mockup.captcha.passTitle": {
+    "message": "Verificação concluída"
+  },
+  "mockup.captcha.panelTitle": {
+    "message": "Sistema de verificação"
+  },
+  "mockup.captcha.panelDescription": {
+    "message": "Clique no botão abaixo para provar que você é humano e acessar o servidor."
+  },
+  "mockup.captcha.panelButton": {
+    "message": "Verificar"
+  },
+  "mockup.captcha.opening": {
+    "message": "Abrindo a Activity de verificação…"
+  },
+  "mockup.captcha.cardWelcome": {
+    "message": "Boas-vindas a"
+  },
+  "mockup.captcha.cardMember": {
+    "message": "Membro nº1.234"
   }
 }

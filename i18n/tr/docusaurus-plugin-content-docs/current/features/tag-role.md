@@ -71,7 +71,7 @@ Etiketi, üyenin profilinin bir sonraki güncellenişinde algılarız. Hiçbir �
 
 ### Rolüm neden reddedildi?
 
-Etiket Rolü, RaidProtect tarafından zaten kullanılan bir rol, bir uygulama tarafından yönetilen bir rol, RaidProtect'in veya sizin üstünüzde yer alan bir rol ya da hassas izinleri olan bir rol olamaz.
+Etiket Rolü, RaidProtect tarafından zaten kullanılan bir rol, bir uygulama tarafından yönetilen bir rol, RaidProtect'in veya sizin üstünüzde yer alan bir rol ya da hassas izinleri olan bir rol olamaz. Hatanın altındaki “**Bu izinleri kaldır**” düğmesi, bu izinleri rolden sizin yerinize kaldırır: **Rolleri Yönet** izni ve bu rolden daha yüksek bir rol gerekir, ayrıca kendinizde olmayan bir izni kaldıramazsınız. RaidProtect'in da bu rolü düzenleyebilmesi gerekir.
 
 ### Etiket Rolünü kim yapılandırabilir?
 

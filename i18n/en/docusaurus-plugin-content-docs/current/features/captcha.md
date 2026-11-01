@@ -7,7 +7,7 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 
 import CaptchaMockup from '@site/src/components/DiscordMessage/mockups/captcha';
 
-{/* <CaptchaMockup /> : obsolete in 3.5.0 (shows Challenge mode with automatic kick) */}
+<CaptchaMockup />
 
 RaidProtect's **captcha** asks every new member to type back a code before accessing your Discord server, which blocks [selfbots](/en/learn/self-bot) and [raids](/en/learn/discord-raid) by filtering out accounts that are not human.
 
@@ -17,7 +17,7 @@ It is one of RaidProtect's most popular features, and it remains entirely option
 
 The captcha relies on an **@Unverified** role and a channel named **#verification**. When a user joins your server:
 - **Waiting:** we give them the **@Unverified** role, which limits their access to the **#verification** channel only.
-- **Challenge:** in Panel mode, they solve a puzzle in the [RaidProtect Activity](#activity). In Challenge mode, they type back a code shown on an image. See the [display modes](#display-mode).
+- **Challenge:** they solve a puzzle in the [RaidProtect Activity](#activity). See the [display modes](#display-mode).
 - **Success:** the **@Unverified** role is removed and the member gains access to the server. Their [auto roles](./onboarding.md#autorole) and the [welcome message](./onboarding.md#welcome-message) are sent at that moment.
 - **Failure:** when they run out of attempts, they are kicked, put in jail or blocked for a few minutes before they can try again, depending on your setting. They can come back and try the captcha again after a kick.
 - **Logs:** each arrival is noted in the logs channel with the account creation date, as well as successes, failures and expired time limits.
@@ -35,11 +35,12 @@ The captcha relies on an **@Unverified** role and a channel named **#verificatio
 | Mode | What the new member sees |
 |---|---|
 | **Panel (Interactive)**, default | A permanent "**Verification System**" message with a "**Verify**" button, which opens the [RaidProtect Activity](#activity). The member cannot write in **#verification**. |
-| **Challenge (Classic)** | An image is posted in **#verification** when they arrive, and they type the code as a message in the channel. |
 
 The panel has a "**Translate**" button to read it in one's own language, and each newcomer is mentioned in the verification channel, then the message is deleted: this way they find the channel.
 
-Panel mode keeps the channel clean and allows extra settings: choice of the sanction when attempts are used up, [captcha frozen during a raid](./raid-mode.md#action), [hold at entry of accounts that are too new](./onboarding.md#minage). Challenge mode always kicks the member at the end of the allotted time or when their attempts are used up.
+Panel mode keeps the channel clean and allows extra settings: choice of the sanction when attempts are used up, [captcha frozen during a raid](./raid-mode.md#action), [hold at entry of accounts that are too new](./onboarding.md#minage). 
+
+The **Challenge (Classic)** mode, where the member typed back a code in the channel, is no longer offered. A server that still used it automatically moves to Panel mode at the next member arrival. The image with a code is still used for a member whose device cannot open the Activity.
 
 ### Trigger {#trigger}
 
@@ -72,7 +73,7 @@ The captcha starts in **Panel (Interactive)** mode, triggered **Always**, with 3
 1. Run the [`/settings` command](../setup.md#settings).
 2. Open the "**Arrivals**" tab.
 3. Click "**Configure**" next to "**Captcha**".
-4. In "**Display Mode**", choose "**Panel (Interactive)**" or "**Challenge (Classic)**".
+4. In "**Display Mode**", choose "**Panel (Interactive)**".
 5. In "**Trigger**", choose "**Always**", "**Automatic**" or "**Smart**".
 
 ### Verification in the Activity {#activity}
@@ -88,7 +89,7 @@ In **Panel** mode, the "**Verify**" button opens the **RaidProtect Activity**: t
 - **Activity that does not open:** the member can click "**Enter a code**". A correct code then goes to review by your team.
 - **Data erasure:** a member can request the erasure of their verification data at [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot). They then take the captcha again, and their sanctions remain.
 
-#### Alt accounts spotted by the captcha <span className="badge-experiment">Experiment</span> {#activity-alts}
+#### Alt accounts spotted by the captcha {#activity-alts}
 
 With the [Identity Update](./alt-accounts.md), the Activity also spots newcomers who are probably run by the same person as a member of your server:
 
@@ -98,8 +99,8 @@ With the [Identity Update](./alt-accounts.md), the Activity also spots newcomers
 
 Only accounts from your server are shown to you: nothing is said about other servers.
 
-:::info Experiment: Identity Update
-Alt account detection is part of the **Identity Update**, planned for version 3.7.0. Until its release, it is an experiment, in public beta for [Premium](/en/premium) servers.
+:::info Identity Update (3.7.0)
+Alt account detection is part of the **Identity Update**, planned for version 3.7.0 and already available in beta.
 :::
 
 ### Privacy: no IP address {#privacy}
@@ -109,13 +110,14 @@ RaidProtect does not retrieve the IP address of members who take the captcha, an
 - **In Discord, with no external website:** the Activity opens in Discord, and its traffic goes through Discord's proxy, which does not pass the member's IP address on to us. We never see it, so we can neither keep it nor compare it. The bot itself does not receive it either: Discord does not give it to any bot.
 - **Device check, with their consent:** before the puzzle, the Activity asks the member for permission to check their device, to spot automated tools and alt accounts. What we collect is used to recognize a device we have already seen, not to know who uses it.
 - **Your team only sees the result:** success, failure, review or alt account link, never the device's characteristics.
-- **Challenge mode:** the member types the code as a message in the channel, and nothing is collected from their device.
 
 A member can request the erasure of their verification data at [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot). To understand the different ways to verify members, read our article on [captcha and verification on Discord](/en/learn/captcha-discord).
 
 ### Testing the captcha {#test-mode}
 
-There is nothing to enable: in Panel mode, an already verified team member (the owner, or a member with the **Administrator** or **Manage Server** permission) can always click "**Verify**" to redo the captcha. Attempts and solving time apply as for a newcomer. Nothing is applied: the captcha log ("**Team test**") says what would have been done.
+There is nothing to enable: an already verified team member (the owner, or a member with the **Administrator** or **Manage Server** permission) can always click "**Verify**" to redo the captcha. Attempts and solving time apply as for a newcomer. Nothing is applied: the captcha log ("**Team test**") says what would have been done.
+
+The "**Test the captcha**" button on the Captcha screen of `/settings` opens the Activity the same way, even before a verification channel has been chosen (same permission required).
 
 ### Difficulty {#difficulty}
 
@@ -132,7 +134,6 @@ There is nothing to enable: in Panel mode, an already verified team member (the 
 | "**Attempts**" | 1 to 10 attempts | 3 attempts |
 | "**Action when attempts run out**" (Panel) | "**Attempts exhausted: Kick**", "**Attempts exhausted: Jail**" or "**Attempts exhausted: Block 10 min**" | Kick |
 | "**Resolution Time**" (Panel) | Disabled, 15, 30 or 45 seconds, 1, 2, 3 or 5 minutes: the time given to solve the puzzle, counted from the first challenge (after the member's consent). An image code keeps at least 2 minutes | 30 seconds |
-| "**Resolution time (before expulsion)**" (Challenge) | 3, 5, 10 or 15 minutes, or a value from 30 seconds to 15 minutes: after this time, the member is kicked | 5 minutes |
 
 :::info
 The "**Attempts exhausted: Jail**" choice puts the member in [jail](./sanctions.mdx#jail) instead of kicking them. This requires a Jail Role configured in the "**Moderation**" tab > "**Sanctions**". The "**Attempts exhausted: Block 10 min**" choice keeps the member on the server: they wait 10 minutes, then start over with fresh attempts.
@@ -140,7 +141,7 @@ The "**Attempts exhausted: Jail**" choice puts the member in [jail](./sanctions.
 
 ### Delay before kick {#timeout}
 
-In Panel mode, this delay is counted from the member's arrival: if they are not verified in time, they get your failure action (kick, jail or block).
+This delay is counted from the member's arrival: if they are not verified in time, they get your failure action (kick, jail or block). The deadline survives a bot restart.
 
 1. Run the [`/settings` command](../setup.md#settings).
 2. Open the "**Arrivals**" tab.
@@ -155,7 +156,7 @@ With the delay disabled, unverified accounts stay on the server and can DM your 
 
 The captcha screen displays boxes when something prevents verification from working properly:
 - **Channel invisible on arrival:** the verification channel is not in any default channel of Discord's Onboarding Process. Click "**Move into** _category_" or "**Create a new category**" so that we fix it, or follow the [Onboarding Process guide](../guides/onboarding.md).
-- **@Unverified role leaks:** roles given by Discord's Onboarding Process at the same time as **@Unverified** bypass verification, the **@Unverified** role carries permissions, **@everyone** has the `ADMINISTRATOR` permission, or channels remain visible to members being verified (or in jail). The "**Fix**" button closes the channels concerned.
+- **@Unverified role leaks:** roles given by Discord's Onboarding Process at the same time as **@Unverified** bypass verification, the **@Unverified** role carries permissions, **@everyone** has the `ADMINISTRATOR` permission, or channels remain visible to members being verified (or in jail). The "**Fix**" button closes the channels concerned. If this is intended, "**Mark as OK**" keeps the alert off, like the [audit](./audit.md#ignore) exceptions.
 - **High verification level:** this Discord level makes members wait 10 minutes before they can write. The captcha already filters entry: the recommended level with the captcha is **Medium**.
 - **Missing permissions:** RaidProtect needs `KICK_MEMBERS` and `MANAGE_ROLES`.
 
@@ -209,7 +210,7 @@ The captcha works with the other arrival protections:
 
 ### How long do members have to solve the captcha?
 
-In Panel mode, the member has 3 attempts by default (1 to 10) and 30 seconds by default to solve the puzzle (can be disabled, up to 5 minutes), counted from the first challenge. No kick delay is applied by default, but you can set one of up to 30 minutes. In Challenge mode, they have 5 minutes by default (from 30 seconds to 15 minutes) before being kicked.
+The member has 3 attempts by default (1 to 10) and 30 seconds by default to solve the puzzle (can be disabled, up to 5 minutes), counted from the first challenge. No kick delay is applied by default, but you can set one of up to 30 minutes.
 
 ### What happens if a member fails the captcha?
 

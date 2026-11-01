@@ -8190,5 +8190,62 @@
   "learn.captcha-discord.rel4": {
     "message": "多帳號",
     "description": "related"
+  },
+  "mockup.captcha.serverName": {
+    "message": "我的社群"
+  },
+  "mockup.captcha.stepConsent": {
+    "message": "同意"
+  },
+  "mockup.captcha.stepChallenge": {
+    "message": "挑戰"
+  },
+  "mockup.captcha.stepVerified": {
+    "message": "已驗證"
+  },
+  "mockup.captcha.title": {
+    "message": "驗證"
+  },
+  "mockup.captcha.for": {
+    "message": "{server}"
+  },
+  "mockup.captcha.consent": {
+    "message": "此伺服器要求檢查你的裝置，以偵測自動化程式和重複帳號。"
+  },
+  "mockup.captcha.consentNote": {
+    "message": "伺服器團隊只會收到結果。如果你拒絕，將無法進入此伺服器。"
+  },
+  "mockup.captcha.accept": {
+    "message": "我同意並繼續"
+  },
+  "mockup.captcha.refuse": {
+    "message": "拒絕"
+  },
+  "mockup.captcha.hint": {
+    "message": "把拼圖塊拖進缺口。"
+  },
+  "mockup.captcha.slide": {
+    "message": "滑動以放置拼圖塊"
+  },
+  "mockup.captcha.passTitle": {
+    "message": "驗證成功"
+  },
+  "mockup.captcha.panelTitle": {
+    "message": "驗證系統"
+  },
+  "mockup.captcha.panelDescription": {
+    "message": "請點擊下方按鈕證明你是真人，即可進入伺服器。"
+  },
+  "mockup.captcha.panelButton": {
+    "message": "驗證"
+  },
+  "mockup.captcha.opening": {
+    "message": "正在開啟驗證 Activity…"
+  },
+  "mockup.captcha.cardWelcome": {
+    "message": "歡迎來到"
+  },
+  "mockup.captcha.cardMember": {
+    "message": "第 1,234 位成員"
   }
 }

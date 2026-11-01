@@ -71,11 +71,11 @@ On top of the global "Crypto Scam" catalog, managed by us and applied on all ser
 6. Choose the list's "**Verification channel**".
 7. Click "**Add images**" and upload up to 10 images. The result shows the images added, the variants attached, the duplicates ignored and the images refused.
 
-The images of a list are deleted as soon as they reappear on your server, and their author receives the sanction chosen above. The sanction's reason names the list ("Image from the "_name_" list"). Without a sanction, the deletion is noted in your moderation logs, with the channel and the list.
+The images of a list are deleted as soon as they reappear on your server, and their author receives the sanction chosen above, or the list's own if you gave it one (see below). The sanction's reason names the list ("Image from the "_name_" list"). Without a sanction, the deletion is noted in your moderation logs, with the channel and the list.
 
-:::warning One list = a single image registry
-Put only one type of content in a list. Mixing unrelated images in the same list corrupts detection: create a second list instead.
-:::
+### List sanction {#list-sanction}
+
+Each list has its own screen. Click "**Adjust**" next to the list, then choose "**Sanction of this list**" and, if needed, its duration. "**Same as the filter**" (default) keeps the sanction of the Images filter.
 
 ### Verification channel {#review}
 

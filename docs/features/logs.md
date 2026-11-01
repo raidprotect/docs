@@ -29,8 +29,9 @@ Les salons “**Général**”, “**Moderation**” et “**Captcha**” des [l
 
 | Famille | Ce qui est enregistré |
 | --- | --- |
-| **Salons, rôles et invitations** | Catégories, salons, salons vocaux et fils créés, modifiés ou supprimés, permissions comprises. Rôles (et leur nouvel ordre), invitations, webhooks, intégrations, et bots ajoutés ou retirés avec leur rôle. Règles AutoMod de Discord, avec les mots et expressions ajoutés ou retirés, et événements programmés. Les membres intéressés par un événement sont réservés au [Premium](/premium). |
-| **Membres** | Arrivées (avec l'âge du compte) et départs (avec la date d'arrivée et les rôles), règlement accepté, rôles ajoutés ou retirés, pseudos, avatars de serveur, membres inactifs retirés et boosts. |
+| **Salons et rôles** | Catégories, salons, salons vocaux et fils créés, modifiés ou supprimés, permissions comprises. Rôles (et leur nouvel ordre) et webhooks. |
+| **Serveur** | Bots ajoutés ou retirés avec leur rôle, intégrations, règles AutoMod de Discord (avec les mots et expressions ajoutés ou retirés) et événements programmés. Les membres intéressés par un événement sont réservés au [Premium](/premium). |
+| **Membres** | Arrivées (avec l'âge du compte) et départs (avec la date d'arrivée et les rôles), invitations créées ou supprimées, règlement accepté, rôles ajoutés ou retirés, pseudos, avatars de serveur, membres inactifs retirés et boosts. |
 | **Messages** | Messages supprimés, avec qui les a supprimés, messages modifiés, suppressions en masse, messages épinglés ou désépinglés. |
 | **Vocal** <span className="badge-premium">Premium</span> | Arrivées, départs avec la durée de la session, changements de salon, micro, son, caméra et partage d'écran. Les actions du staff (rendre muet, mettre en sourdine, déplacer, déconnecter) sont à part, avec leur auteur. Conférences lancées, modifiées ou terminées, et membres qui prennent la parole ou lèvent la main. |
 | **Emojis et réactions** | Emojis, stickers et sons du soundboard créés, modifiés ou supprimés. Les réactions ajoutées ou retirées sont réservées au [Premium](/premium) et décochées par défaut. |

@@ -8190,5 +8190,62 @@
   "learn.captcha-discord.rel4": {
     "message": "多账号",
     "description": "related"
+  },
+  "mockup.captcha.serverName": {
+    "message": "我的社区"
+  },
+  "mockup.captcha.stepConsent": {
+    "message": "同意"
+  },
+  "mockup.captcha.stepChallenge": {
+    "message": "挑战"
+  },
+  "mockup.captcha.stepVerified": {
+    "message": "已验证"
+  },
+  "mockup.captcha.title": {
+    "message": "验证"
+  },
+  "mockup.captcha.for": {
+    "message": "{server}"
+  },
+  "mockup.captcha.consent": {
+    "message": "此服务器要求检查你的设备，以检测自动化程序和重复账号。"
+  },
+  "mockup.captcha.consentNote": {
+    "message": "服务器团队只会收到结果。如果你拒绝，将无法进入此服务器。"
+  },
+  "mockup.captcha.accept": {
+    "message": "我同意并继续"
+  },
+  "mockup.captcha.refuse": {
+    "message": "拒绝"
+  },
+  "mockup.captcha.hint": {
+    "message": "把拼图块拖进缺口。"
+  },
+  "mockup.captcha.slide": {
+    "message": "滑动以放置拼图块"
+  },
+  "mockup.captcha.passTitle": {
+    "message": "验证成功"
+  },
+  "mockup.captcha.panelTitle": {
+    "message": "验证系统"
+  },
+  "mockup.captcha.panelDescription": {
+    "message": "点击下方按钮证明你是真人，即可进入服务器。"
+  },
+  "mockup.captcha.panelButton": {
+    "message": "验证"
+  },
+  "mockup.captcha.opening": {
+    "message": "验证 Activity 正在打开…"
+  },
+  "mockup.captcha.cardWelcome": {
+    "message": "欢迎来到"
+  },
+  "mockup.captcha.cardMember": {
+    "message": "第 1,234 位成员"
   }
 }

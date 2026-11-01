@@ -7,8 +7,8 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 
 **Tài khoản phụ** cho phép đội ngũ của bạn khai báo rằng nhiều tài khoản Discord thuộc về cùng một người. Khi đó [hình phạt](./sanctions.mdx) của tài khoản này được mở rộng sang các tài khoản kia: một thành viên bị cấm sẽ không thể quay lại bằng tài khoản thứ hai để né tránh hình phạt.
 
-:::info Thử nghiệm: Identity Update
-Tài khoản phụ thuộc **Identity Update**, dự kiến trong phiên bản 3.7.0. Trong khi chờ phát hành, tính năng này đang thử nghiệm, ở dạng bản beta công khai cho các máy chủ [Premium](/vi/premium).
+:::info Identity Update (3.7.0)
+Tài khoản phụ thuộc **Identity Update**, dự kiến trong phiên bản 3.7.0 và đã có sẵn ở dạng beta.
 :::
 
 ## ❓ Cách hoạt động {#working}
@@ -53,6 +53,8 @@ Lệnh `/alt` và các nút của nó yêu cầu quyền **Cấm thành viên**.
 3. Nhấp vào “**Cấu hình**” bên cạnh “**Tài khoản phụ**”.
 
 <Settings start="alts" />
+
+Màn hình mở đầu bằng thiết lập miễn phí [Mỗi người một tài khoản](#single-account), rồi đến các hình phạt cho tài khoản liên kết, được đánh dấu Premium ở những chỗ cần.
 
 ### Hình phạt cho tài khoản liên kết <span className="badge-premium">Premium</span> {#modes}
 
@@ -107,6 +109,8 @@ Thiết lập này cần một [vai trò Jail](./sanctions.mdx#jail). Nếu chư
 
 Để đổi tài khoản chính của một nhóm, hãy dùng `/alt` với một trong các tài khoản, rồi bộ chọn “**Chỉnh sửa một tài khoản của nhóm**”.
 
+RaidProtect ghi nhớ một liên kết đến từ đội ngũ của bạn hay từ bot (xem [captcha](./captcha.md#activity-alts)). Xác nhận thủ công một liên kết do bot tạo sẽ biến nó thành liên kết của đội ngũ, và một liên kết do đội ngũ tạo không bao giờ trở lại thành liên kết của bot.
+
 ## Câu hỏi thường gặp {#faq}
 
 ### Tài khoản phụ có được chia sẻ giữa các máy chủ không?
@@ -127,4 +131,4 @@ Có. Trong bảng điều khiển `/alt`, nhấp vào “**Liên kết thành vi
 
 ### Ai có thể dùng /alt?
 
-Các thành viên có quyền **Cấm thành viên**, trên một máy chủ [Premium](/vi/premium) chừng nào Identity Update còn đang thử nghiệm.
+Các thành viên có quyền **Cấm thành viên**.

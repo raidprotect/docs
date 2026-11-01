@@ -71,11 +71,11 @@ Zusätzlich zum globalen Katalog „Crypto Scam“, den wir pflegen und der auf 
 6. Wählen Sie den „**Verifizierungskanal**“ der Liste.
 7. Klicken Sie auf „**Bilder hinzufügen**“ und senden Sie bis zu 10 Bilder. Das Ergebnis nennt die hinzugefügten Bilder, die zugeordneten Varianten, die ignorierten Duplikate und die abgelehnten Bilder.
 
-Die Bilder einer Liste werden gelöscht, sobald sie auf Ihrem Server wieder auftauchen, und ihr Autor erhält die oben gewählte Sanktion. Der Grund der Sanktion nennt die Liste („Bild aus der Liste ‚_Name_‘“). Ohne Sanktion wird die Löschung in Ihren Moderationslogs festgehalten, mit Kanal und Liste.
+Die Bilder einer Liste werden gelöscht, sobald sie auf Ihrem Server wieder auftauchen, und ihr Autor erhält die oben gewählte Sanktion oder die der Liste, falls Sie ihr eine gegeben haben (siehe unten). Der Grund der Sanktion nennt die Liste („Bild aus der Liste ‚_Name_‘“). Ohne Sanktion wird die Löschung in Ihren Moderationslogs festgehalten, mit Kanal und Liste.
 
-:::warning Eine Liste = ein einziges Bilderregister
-Legen Sie in einer Liste nur eine Art von Inhalt ab. Unzusammenhängende Bilder in einer Liste zu mischen verfälscht die Erkennung: Erstellen Sie stattdessen eine zweite Liste.
-:::
+### Sanktion einer Liste {#list-sanction}
+
+Jede Liste hat ihren eigenen Bildschirm. Klicken Sie neben der Liste auf „**Einstellen**“, wählen Sie dann „**Sanktion dieser Liste**“ und bei Bedarf ihre Dauer. „**Wie der Filter**“ (Standard) behält die Sanktion des Filters Bilder bei.
 
 ### Verifizierungskanal {#review}
 

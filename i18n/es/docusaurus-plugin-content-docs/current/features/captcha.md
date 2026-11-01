@@ -7,7 +7,7 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 
 import CaptchaMockup from '@site/src/components/DiscordMessage/mockups/captcha';
 
-{/* <CaptchaMockup /> : obsoleto en la 3.5.0 (muestra el modo Desafío con expulsión automática) */}
+<CaptchaMockup />
 
 El **captcha** de RaidProtect pide a cada nuevo miembro que copie un código antes de acceder a tu servidor de Discord, lo que bloquea los [selfbots](/es/learn/self-bot) y los [raids](/es/learn/discord-raid) al filtrar las cuentas que no son humanas.
 
@@ -17,7 +17,7 @@ Es una de las funciones más populares de RaidProtect, y sigue siendo totalmente
 
 El captcha se basa en un rol **@No verificado** y un canal **#verificación**. Cuando un usuario se une a tu servidor:
 - **Puesta en espera:** le damos el rol **@No verificado**, que limita su acceso al único canal **#verificación**.
-- **Prueba:** en modo Panel, resuelve un puzle en la [Activity RaidProtect](#activity). En modo Desafío, copia un código mostrado en una imagen. Ver los [modos de visualización](#display-mode).
+- **Prueba:** resuelve un puzle en la [Activity RaidProtect](#activity). Ver los [modos de visualización](#display-mode).
 - **Éxito:** se retira el rol **@No verificado** y el miembro accede al servidor. Sus [roles automáticos](./onboarding.md#autorole) y el [mensaje de bienvenida](./onboarding.md#welcome-message) se envían en ese momento.
 - **Fallo:** cuando agota sus intentos, es expulsado, puesto en jail o bloqueado unos minutos antes de poder reintentar, según tu ajuste. Puede volver y reintentar el captcha tras una expulsión.
 - **Logs:** cada llegada se anota en el canal de logs con la fecha de creación de la cuenta, así como los éxitos, los fallos y los plazos agotados.
@@ -35,11 +35,12 @@ El captcha se basa en un rol **@No verificado** y un canal **#verificación**. C
 | Modo | Lo que ve el nuevo miembro |
 |---|---|
 | **Panel (Interactivo)**, por defecto | Un mensaje permanente “**Sistema de verificación**” con un botón “**Verificar**”, que abre la [Activity RaidProtect](#activity). El miembro no puede escribir en **#verificación**. |
-| **Desafío (Clásico)** | Se publica una imagen en **#verificación** a su llegada, y escribe el código como mensaje en el canal. |
 
 El panel lleva un botón “**Translate**” para leerlo en su idioma, y cada recién llegado es mencionado en el canal de verificación, y luego se elimina el mensaje: así encuentra el canal.
 
-El modo Panel mantiene el canal limpio y permite ajustes adicionales: elección de la sanción cuando se agotan los intentos, [captcha congelado durante un raid](./raid-mode.md#action), [retención en la entrada de las cuentas demasiado recientes](./onboarding.md#minage). El modo Desafío siempre expulsa al miembro al terminar el tiempo concedido o cuando agota sus intentos.
+El modo Panel mantiene el canal limpio y permite ajustes adicionales: elección de la sanción cuando se agotan los intentos, [captcha congelado durante un raid](./raid-mode.md#action), [retención en la entrada de las cuentas demasiado recientes](./onboarding.md#minage). 
+
+El modo **Desafío (Clásico)**, en el que el miembro copiaba un código en el canal, ya no se ofrece. Un servidor que aún lo usaba pasa automáticamente al modo Panel en la próxima llegada de un miembro. La imagen con un código sigue usándose para un miembro cuyo dispositivo no puede abrir la Activity.
 
 ### Activación {#trigger}
 
@@ -72,7 +73,7 @@ El captcha arranca en modo **Panel (Interactivo)**, con activación **Permanente
 1. Ejecuta el [comando `/settings`](../setup.md#settings).
 2. Abre la pestaña “**Llegadas**”.
 3. Haz clic en “**Configurar**” junto a “**Captcha**”.
-4. En “**Modo de visualización**”, elige “**Panel (Interactivo)**” o “**Desafío (Clásico)**”.
+4. En “**Modo de visualización**”, elige “**Panel (Interactivo)**”.
 5. En “**Activación**”, elige “**Permanente**”, “**Automática**” o “**Inteligente**”.
 
 ### Verificación en la Activity {#activity}
@@ -88,7 +89,7 @@ En modo **Panel**, el botón “**Verificar**” abre la **Activity RaidProtect*
 - **Activity que no se abre:** el miembro puede hacer clic en “**Introducir un código**”. Un código correcto pasa entonces a revisión por tu equipo.
 - **Borrado de datos:** un miembro puede solicitar el borrado de sus datos de verificación en [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot). Vuelve entonces a pasar el captcha, y sus sanciones se mantienen.
 
-#### Cuentas duplicadas detectadas por el captcha <span className="badge-experiment">Experimental</span> {#activity-alts}
+#### Cuentas duplicadas detectadas por el captcha {#activity-alts}
 
 Con la [Identity Update](./alt-accounts.md), la Activity también detecta a los recién llegados probablemente manejados por la misma persona que un miembro de tu servidor:
 
@@ -98,8 +99,8 @@ Con la [Identity Update](./alt-accounts.md), la Activity también detecta a los 
 
 Solo se te muestran las cuentas de tu servidor: no se dice nada de los demás servidores.
 
-:::info Experimental: Identity Update
-La detección de cuentas duplicadas forma parte de la **Identity Update**, prevista para la versión 3.7.0. Hasta su lanzamiento, está en fase experimental, en beta pública para los servidores [Premium](/es/premium).
+:::info Identity Update (3.7.0)
+La detección de cuentas duplicadas forma parte de la **Identity Update**, prevista para la versión 3.7.0 y ya disponible en beta.
 :::
 
 ### Privacidad: sin dirección IP {#privacy}
@@ -109,13 +110,14 @@ RaidProtect no obtiene la dirección IP de los miembros que pasan el captcha, y 
 - **En Discord, sin sitio externo:** la Activity se abre en Discord, y sus intercambios pasan por el proxy de Discord, que no nos transmite la dirección IP del miembro. Nunca la vemos, así que no podemos ni guardarla ni compararla. El propio bot tampoco la recibe: Discord no se la da a ningún bot.
 - **Verificación del dispositivo, con su conformidad:** antes del puzle, la Activity pide al miembro permiso para verificar su dispositivo, para detectar los autómatas y las cuentas duplicadas. Lo que registramos sirve para reconocer un dispositivo ya visto, no para saber quién lo usa.
 - **Tu equipo solo ve el resultado:** éxito, fallo, revisión o vínculo de cuentas duplicadas, nunca las características del dispositivo.
-- **Modo Desafío:** el miembro escribe el código en un mensaje en el canal, y no se registra nada de su dispositivo.
 
 Un miembro puede solicitar el borrado de sus datos de verificación en [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot). Para entender las distintas formas de verificar a los miembros, lee nuestro artículo sobre [el captcha y la verificación en Discord](/es/learn/captcha-discord).
 
 ### Probar el captcha {#test-mode}
 
-No hay nada que activar: en modo Panel, un miembro de tu equipo ya verificado (el propietario, o un miembro con el permiso **Administrador** o **Gestionar servidor**) siempre puede hacer clic en “**Verificar**” para repetir el captcha. Los intentos y el tiempo de resolución se aplican como a un recién llegado. No se aplica nada: el log del captcha (“**Prueba del equipo**”) dice lo que se habría hecho.
+No hay nada que activar: un miembro de tu equipo ya verificado (el propietario, o un miembro con el permiso **Administrador** o **Gestionar servidor**) siempre puede hacer clic en “**Verificar**” para repetir el captcha. Los intentos y el tiempo de resolución se aplican como a un recién llegado. No se aplica nada: el log del captcha (“**Prueba del equipo**”) dice lo que se habría hecho.
+
+El botón “**Probar el captcha**” de la pantalla Captcha de `/settings` abre la Activity de la misma manera, incluso antes de haber elegido un canal de verificación (mismo permiso requerido).
 
 ### Dificultad {#difficulty}
 
@@ -132,7 +134,6 @@ No hay nada que activar: en modo Panel, un miembro de tu equipo ya verificado (e
 | “**Intentos**” | de 1 a 10 intentos | 3 intentos |
 | “**Acción cuando se agotan los intentos**” (Panel) | “**Intentos agotados: Expulsar**”, “**Intentos agotados: Jail**” o “**Intentos agotados: Bloquear 10 min**” | Expulsar |
 | “**Tiempo de resolución**” (Panel) | Desactivado, 15, 30 o 45 segundos, 1, 2, 3 o 5 minutos: el tiempo concedido para resolver el puzle, contado desde la primera prueba (tras el acuerdo del miembro). Un código en imagen conserva al menos 2 minutos | 30 segundos |
-| “**Tiempo de resolución (antes de la expulsión)**” (Desafío) | 3, 5, 10 o 15 minutos, o un valor de 30 segundos a 15 minutos: pasado este plazo, el miembro es expulsado | 5 minutos |
 
 :::info
 La opción “**Intentos agotados: Jail**” pone al miembro en el [jail](./sanctions.mdx#jail) en lugar de expulsarlo. Para ello hace falta un Rol de Jail configurado en la pestaña “**Moderación**” > “**Sanciones**”. La opción “**Intentos agotados: Bloquear 10 min**” mantiene al miembro en el servidor: espera 10 minutos y vuelve a empezar con intentos nuevos.
@@ -140,7 +141,7 @@ La opción “**Intentos agotados: Jail**” pone al miembro en el [jail](./sanc
 
 ### Plazo antes de la expulsión {#timeout}
 
-En modo Panel, este plazo cuenta desde la llegada del miembro: si no se verifica a tiempo, sufre tu acción de fallo (expulsión, jail o bloqueo).
+Este plazo cuenta desde la llegada del miembro: si no se verifica a tiempo, sufre tu acción de fallo (expulsión, jail o bloqueo). El plazo sobrevive a un reinicio del bot.
 
 1. Ejecuta el [comando `/settings`](../setup.md#settings).
 2. Abre la pestaña “**Llegadas**”.
@@ -155,7 +156,7 @@ Con el plazo desactivado, las cuentas no verificadas permanecen en el servidor y
 
 La pantalla del captcha muestra recuadros cuando algo impide que la verificación funcione bien:
 - **Canal invisible a la llegada:** el canal de verificación no está en ningún canal por defecto del Proceso de bienvenida de Discord. Haz clic en “**Mover a** _categoría_” o “**Crear una nueva categoría**” para que lo corrijamos, o sigue la [guía del Proceso de bienvenida](../guides/onboarding.md).
-- **Fugas del rol @No verificado:** roles dados por el Proceso de bienvenida de Discord al mismo tiempo que **@No verificado** eluden la verificación, el rol **@No verificado** tiene permisos, **@everyone** tiene el permiso `ADMINISTRATOR`, o hay canales que siguen siendo visibles para los miembros en verificación (o en jail). El botón “**Corregir**” cierra los canales afectados.
+- **Fugas del rol @No verificado:** roles dados por el Proceso de bienvenida de Discord al mismo tiempo que **@No verificado** eluden la verificación, el rol **@No verificado** tiene permisos, **@everyone** tiene el permiso `ADMINISTRATOR`, o hay canales que siguen siendo visibles para los miembros en verificación (o en jail). El botón “**Corregir**” cierra los canales afectados. Si es intencionado, “**Marcar como OK**” mantiene la alerta apagada, igual que las excepciones de la [auditoría](./audit.md#ignore).
 - **Nivel de verificación Alto:** este nivel de Discord hace esperar 10 minutos antes de poder escribir. El captcha ya filtra la entrada: el nivel aconsejado con el captcha es **Medio**.
 - **Permisos que faltan:** RaidProtect necesita `KICK_MEMBERS` y `MANAGE_ROLES`.
 
@@ -209,7 +210,7 @@ El captcha trabaja con las demás protecciones de las llegadas:
 
 ### ¿Cuánto tiempo se tiene para resolver el captcha?
 
-En modo Panel, el miembro tiene 3 intentos por defecto (de 1 a 10) y 30 segundos por defecto para resolver el puzle (se puede desactivar, hasta 5 minutos), contados desde la primera prueba. No se aplica ningún plazo de expulsión por defecto, pero puedes ajustar uno de hasta 30 minutos. En modo Desafío, tiene 5 minutos por defecto (de 30 segundos a 15 minutos) antes de ser expulsado.
+El miembro tiene 3 intentos por defecto (de 1 a 10) y 30 segundos por defecto para resolver el puzle (se puede desactivar, hasta 5 minutos), contados desde la primera prueba. No se aplica ningún plazo de expulsión por defecto, pero puedes ajustar uno de hasta 30 minutos.
 
 ### ¿Qué pasa si un miembro falla el captcha?
 

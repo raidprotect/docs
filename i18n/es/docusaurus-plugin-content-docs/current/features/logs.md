@@ -29,8 +29,9 @@ Los canales “**General**”, “**Moderación**” y “**Captcha**” de los 
 
 | Familia | Lo que se registra |
 | --- | --- |
-| **Canales, roles e invitaciones** | Categorías, canales, canales de voz e hilos creados, modificados o eliminados, permisos incluidos. Roles (y su nuevo orden), invitaciones, webhooks, integraciones, y bots añadidos o retirados con su rol. Reglas del AutoMod de Discord, con las palabras y expresiones añadidas o retiradas, y eventos programados. Los miembros interesados en un evento están reservados a [Premium](/es/premium). |
-| **Miembros** | Llegadas (con la antigüedad de la cuenta) y salidas (con la fecha de llegada y los roles), reglamento aceptado, roles añadidos o retirados, apodos, avatares de servidor, miembros inactivos retirados y boosts. |
+| **Canales y roles** | Categorías, canales, canales de voz e hilos creados, modificados o eliminados, permisos incluidos. Roles (y su nuevo orden) y webhooks. |
+| **Servidor** | Bots añadidos o retirados con su rol, integraciones, reglas del AutoMod de Discord (con las palabras y expresiones añadidas o retiradas) y eventos programados. Los miembros interesados en un evento están reservados a [Premium](/es/premium). |
+| **Miembros** | Llegadas (con la antigüedad de la cuenta) y salidas (con la fecha de llegada y los roles), invitaciones creadas o eliminadas, reglamento aceptado, roles añadidos o retirados, apodos, avatares de servidor, miembros inactivos retirados y boosts. |
 | **Mensajes** | Mensajes eliminados, con quién los eliminó, mensajes modificados, eliminaciones masivas, mensajes fijados o desfijados. |
 | **Voz** <span className="badge-premium">Premium</span> | Llegadas, salidas con la duración de la sesión, cambios de canal, micrófono, sonido, cámara y pantalla compartida. Las acciones del equipo (silenciar, ensordecer, mover, desconectar) van aparte, con su autor. Escenarios iniciados, modificados o terminados, y miembros que toman la palabra o levantan la mano. |
 | **Emojis y reacciones** | Emojis, stickers y sonidos de la soundboard creados, modificados o eliminados. Las reacciones añadidas o retiradas están reservadas a [Premium](/es/premium) y desmarcadas por defecto. |

@@ -7,7 +7,7 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 
 import CaptchaMockup from '@site/src/components/DiscordMessage/mockups/captcha';
 
-{/* <CaptchaMockup /> : 3.5.0'dan itibaren kullanım dışı (otomatik atmalı Meydan okuma modunu gösteriyor) */}
+<CaptchaMockup />
 
 RaidProtect'in **captcha**'sı, her yeni üyeden Discord sunucunuza erişmeden önce bir kodu yeniden yazmasını ister; böylece insan olmayan hesapları eleyerek [selfbotları](/tr/learn/self-bot) ve [baskınları](/tr/learn/discord-raid) engeller.
 
@@ -17,7 +17,7 @@ RaidProtect'in en popüler özelliklerinden biridir ve tamamen isteğe bağlı k
 
 Captcha, bir **@Doğrulanmamış** rolüne ve bir **#doğrulama** kanalına dayanır. Bir kullanıcı sunucunuza katıldığında:
 - **Beklemeye alma:** ona, erişimini yalnızca **#doğrulama** kanalıyla sınırlayan **@Doğrulanmamış** rolünü veririz.
-- **Sınav:** Panel modunda [RaidProtect Activity](#activity) içinde bir bulmaca çözer. Meydan okuma modunda bir görselde gösterilen kodu yeniden yazar. [Görüntüleme modlarına](#display-mode) bakın.
+- **Sınav:** [RaidProtect Activity](#activity) içinde bir bulmaca çözer. [Görüntüleme modlarına](#display-mode) bakın.
 - **Başarı:** **@Doğrulanmamış** rolü kaldırılır ve üye sunucuya erişir. [Otomatik rolleri](./onboarding.md#autorole) ve [karşılama mesajı](./onboarding.md#welcome-message) o anda gönderilir.
 - **Başarısızlık:** denemelerini tükettiğinde, ayarınıza göre atılır, jail'e alınır veya yeniden denemeden önce birkaç dakika engellenir. Atıldıktan sonra geri dönüp captcha'yı yeniden deneyebilir.
 - **Loglar:** her katılım, hesabın oluşturulma tarihiyle birlikte log kanalına kaydedilir; ayrıca başarılar, başarısızlıklar ve süresi dolan zaman aşımları da kaydedilir.
@@ -35,11 +35,12 @@ Captcha, bir **@Doğrulanmamış** rolüne ve bir **#doğrulama** kanalına daya
 | Mod | Yeni üyenin gördüğü |
 |---|---|
 | **Panel (Etkileşimli)**, varsayılan | “**Doğrulama sistemi**” başlıklı, [RaidProtect Activity](#activity)'yi açan bir “**Doğrula**” düğmesi içeren kalıcı bir mesaj. Üye **#doğrulama** kanalına yazamaz. |
-| **Meydan okuma (Klasik)** | Katıldığında **#doğrulama** kanalına bir görsel gönderilir ve üye kodu kanala mesaj olarak yazar. |
 
 Panelde kendi dilinde okumak için bir “**Translate**” düğmesi bulunur ve her gelen doğrulama kanalında etiketlenir, ardından bu mesaj silinir: böylece kanalı bulur.
 
-Panel modu kanalı temiz tutar ve ek ayarlara olanak tanır: denemeler tükendiğinde yaptırım seçimi, [baskın sırasında dondurulan captcha](./raid-mode.md#action), [çok yeni hesapların girişte tutulması](./onboarding.md#minage). Meydan okuma modu, verilen süre dolduğunda veya denemeleri tükendiğinde üyeyi her zaman atar.
+Panel modu kanalı temiz tutar ve ek ayarlara olanak tanır: denemeler tükendiğinde yaptırım seçimi, [baskın sırasında dondurulan captcha](./raid-mode.md#action), [çok yeni hesapların girişte tutulması](./onboarding.md#minage).
+
+Üyenin kodu kanala yeniden yazdığı **Meydan okuma (Klasik)** modu artık sunulmuyor. Hâlâ onu kullanan bir sunucu, bir üye katıldığında otomatik olarak Panel moduna geçer. Kodlu görsel, cihazı Activity'yi açamayan üyeler için kullanılmaya devam eder.
 
 ### Tetikleme {#trigger}
 
@@ -72,7 +73,7 @@ Captcha, **Panel (Etkileşimli)** modunda, **Sürekli** tetiklemeyle, 3 denemeyl
 1. [`/settings` komutunu](../setup.md#settings) çalıştırın.
 2. “**Katılımlar**” sekmesini açın.
 3. “**Captcha**” yanındaki “**Yapılandır**” düğmesine tıklayın.
-4. “**Görüntüleme modu**” içinde “**Panel (Etkileşimli)**” veya “**Meydan okuma (Klasik)**” seçin.
+4. “**Görüntüleme modu**” içinde “**Panel (Etkileşimli)**” seçin.
 5. “**Tetikleme**” içinde “**Sürekli**”, “**Otomatik**” veya “**Akıllı**” seçin.
 
 ### Activity içinde doğrulama {#activity}
@@ -88,7 +89,7 @@ Captcha, **Panel (Etkileşimli)** modunda, **Sürekli** tetiklemeyle, 3 denemeyl
 - **Activity açılmıyor:** üye “**Kod gir**”e tıklayabilir. Doğru bir kod bu durumda ekibiniz tarafından incelemeye geçer.
 - **Verilerin silinmesi:** bir üye, doğrulama verilerinin silinmesini [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot) adresinden isteyebilir. Bu durumda captcha'yı yeniden geçer; yaptırımları kalır.
 
-#### Captcha tarafından tespit edilen çift hesaplar <span className="badge-experiment">Deneme</span> {#activity-alts}
+#### Captcha tarafından tespit edilen çift hesaplar {#activity-alts}
 
 [Identity Update](./alt-accounts.md) ile Activity, sunucunuzdaki bir üyeyle büyük olasılıkla aynı kişi tarafından yönetilen gelenleri de tespit eder:
 
@@ -98,8 +99,8 @@ Captcha, **Panel (Etkileşimli)** modunda, **Sürekli** tetiklemeyle, 3 denemeyl
 
 Size yalnızca sunucunuzun hesapları gösterilir: diğer sunucular hakkında hiçbir şey söylenmez.
 
-:::info Deneme: Identity Update
-Çift hesapların tespiti, 3.7.0 sürümü için planlanan **Identity Update**'in parçasıdır. Çıkışına kadar deneme aşamasındadır; [Premium](/tr/premium) sunucular için herkese açık beta olarak sunulur.
+:::info Identity Update (3.7.0)
+Çift hesapların tespiti, 3.7.0 sürümü için planlanan ve şimdiden beta olarak kullanılabilen **Identity Update**'in parçasıdır.
 :::
 
 ### Gizlilik: IP adresi yok {#privacy}
@@ -109,13 +110,14 @@ RaidProtect, captcha'yı geçen üyelerin IP adresini almaz ve Activity bunu üy
 - **Discord içinde, harici site olmadan:** Activity Discord içinde açılır ve iletişimi, üyenin IP adresini bize iletmeyen Discord proxy'si üzerinden geçer. Bu adresi hiçbir zaman görmeyiz, dolayısıyla ne saklayabilir ne de karşılaştırabiliriz. Botun kendisi de onu almaz: Discord bunu hiçbir bota vermez.
 - **Üyenin onayıyla cihaz doğrulaması:** bulmacadan önce Activity, otomatları ve çift hesapları tespit etmek için üyeden cihazını doğrulama izni ister. Topladığımız bilgiler, daha önce görülmüş bir cihazı tanımaya yarar, onu kimin kullandığını bilmeye değil.
 - **Ekibiniz yalnızca sonucu görür:** başarı, başarısızlık, inceleme veya çift hesap bağlantısı; cihazın özelliklerini asla görmez.
-- **Meydan okuma modu:** üye kodu kanala mesaj olarak yazar ve cihazı hakkında hiçbir şey toplanmaz.
 
 Bir üye, doğrulama verilerinin silinmesini [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot) adresinden isteyebilir. Üyeleri doğrulamanın farklı yollarını anlamak için [Discord'da captcha ve doğrulama](/tr/learn/captcha-discord) hakkındaki makalemizi okuyun.
 
 ### Captcha'yı test etmek {#test-mode}
 
-Etkinleştirilecek bir şey yok: Panel modunda, ekibinizin zaten doğrulanmış bir üyesi (sunucu sahibi veya **Yönetici** ya da **Sunucuyu Yönet** iznine sahip bir üye) captcha'yı yeniden yapmak için her zaman “**Doğrula**”ya tıklayabilir. Denemeler ve çözüm süresi bir yeni gelenle aynı şekilde uygulanır. Hiçbir şey uygulanmaz: captcha logu (“**Ekip testi**”) ne yapılacağını söyler.
+Etkinleştirilecek bir şey yok: ekibinizin zaten doğrulanmış bir üyesi (sunucu sahibi veya **Yönetici** ya da **Sunucuyu Yönet** iznine sahip bir üye) captcha'yı yeniden yapmak için her zaman “**Doğrula**”ya tıklayabilir. Denemeler ve çözüm süresi bir yeni gelenle aynı şekilde uygulanır. Hiçbir şey uygulanmaz: captcha logu (“**Ekip testi**”) ne yapılacağını söyler.
+
+`/settings` içindeki Captcha ekranında bulunan “**Captcha'yı test et**” düğmesi, henüz bir doğrulama kanalı seçmemiş olsanız bile Activity'yi aynı şekilde açar (aynı izin gerekir).
 
 ### Zorluk {#difficulty}
 
@@ -132,7 +134,6 @@ Etkinleştirilecek bir şey yok: Panel modunda, ekibinizin zaten doğrulanmış 
 | “**Denemeler**” | 1 ile 10 arası deneme | 3 deneme |
 | “**Denemeler tükendiğinde eylem**” (Panel) | “**Denemeler tükendi: At**”, “**Denemeler tükendi: Jail**” veya “**Denemeler tükendi: 10 dk engelle**” | At |
 | “**Çözüm süresi**” (Panel) | Devre dışı, 15, 30 veya 45 saniye, 1, 2, 3 veya 5 dakika: bulmacayı çözmek için tanınan süre, ilk testten (üyenin onayından sonra) itibaren sayılır. Görüntülü kod en az 2 dakika korunur | 30 saniye |
-| “**Çözüm süresi (atmadan önce)**” (Meydan okuma) | 3, 5, 10 veya 15 dakika ya da 30 saniye ile 15 dakika arasında bir değer: bu süre dolduktan sonra üye atılır | 5 dakika |
 
 :::info
 “**Denemeler tükendi: Jail**” seçimi, üyeyi atmak yerine [jail](./sanctions.mdx#jail)'e yerleştirir. Bunun için “**Moderasyon**” > “**Cezalar**” sekmesinde yapılandırılmış bir Jail rolü gerekir. “**Denemeler tükendi: 10 dk engelle**” seçimi üyeyi sunucuda tutar: 10 dakika bekler, ardından yeni denemelerle yeniden başlar.
@@ -140,7 +141,7 @@ Etkinleştirilecek bir şey yok: Panel modunda, ekibinizin zaten doğrulanmış 
 
 ### Atmadan önceki süre {#timeout}
 
-Panel modunda bu süre, üyenin katıldığı andan itibaren sayılır: zamanında doğrulanmazsa başarısızlık eylemine tabi olur (atma, jail veya engelleme).
+Bu süre, üyenin katıldığı andan itibaren sayılır: zamanında doğrulanmazsa başarısızlık eylemine tabi olur (atma, jail veya engelleme). Bu süre botun yeniden başlatılmasından etkilenmez.
 
 1. [`/settings` komutunu](../setup.md#settings) çalıştırın.
 2. “**Katılımlar**” sekmesini açın.
@@ -155,7 +156,7 @@ Süre devre dışıyken doğrulanmamış hesaplar sunucuda kalır ve üyeleriniz
 
 Captcha ekranı, doğrulamanın düzgün çalışmasını engelleyen bir şey olduğunda kutular gösterir:
 - **Katılımda görünmeyen kanal:** doğrulama kanalı, Discord Karşılama Sürecinin hiçbir varsayılan kanalında yer almıyor. Bizim düzeltmemiz için “**Şuraya taşı:** _kategori_” veya “**Yeni kategori oluştur**”a tıklayın ya da [Karşılama Süreci rehberini](../guides/onboarding.md) izleyin.
-- **@Doğrulanmamış rolünün sızıntıları:** Discord Karşılama Sürecinin **@Doğrulanmamış** ile aynı anda verdiği roller doğrulamayı atlatıyor, **@Doğrulanmamış** rolü izinler taşıyor, **@everyone** rolünde `ADMINISTRATOR` izni var ya da kanallar doğrulamadaki üyelere (veya jail'dekilere) hâlâ görünür. “**Düzelt**” düğmesi ilgili kanalları kapatır.
+- **@Doğrulanmamış rolünün sızıntıları:** Discord Karşılama Sürecinin **@Doğrulanmamış** ile aynı anda verdiği roller doğrulamayı atlatıyor, **@Doğrulanmamış** rolü izinler taşıyor, **@everyone** rolünde `ADMINISTRATOR` izni var ya da kanallar doğrulamadaki üyelere (veya jail'dekilere) hâlâ görünür. “**Düzelt**” düğmesi ilgili kanalları kapatır. Bu bilerek yapıldıysa “**OK olarak işaretle**”, uyarıyı [denetimin](./audit.md#ignore) istisnaları gibi kapalı tutar.
 - **Yüksek doğrulama düzeyi:** bu Discord düzeyi, yazabilmek için 10 dakika beklettirir. Captcha girişi zaten filtreler: captcha ile önerilen düzey **Orta**'dır.
 - **Eksik izinler:** RaidProtect'in `KICK_MEMBERS` ve `MANAGE_ROLES` izinlerine ihtiyacı vardır.
 
@@ -209,7 +210,7 @@ Captcha, katılımların diğer korumalarıyla birlikte çalışır:
 
 ### Captcha'yı çözmek için ne kadar süre var?
 
-Panel modunda üyenin varsayılan olarak 3 denemesi (1 ila 10) ve bulmacayı çözmek için varsayılan olarak 30 saniyesi vardır (devre dışı bırakılabilir, en fazla 5 dakika); süre ilk testten itibaren sayılır. Varsayılan olarak atma süresi uygulanmaz ama 30 dakikaya kadar bir süre ayarlayabilirsiniz. Meydan okuma modunda atılmadan önce varsayılan olarak 5 dakikası (30 saniyeden 15 dakikaya) vardır.
+Üyenin varsayılan olarak 3 denemesi (1 ila 10) ve bulmacayı çözmek için varsayılan olarak 30 saniyesi vardır (devre dışı bırakılabilir, en fazla 5 dakika); süre ilk testten itibaren sayılır. Varsayılan olarak atma süresi uygulanmaz ama 30 dakikaya kadar bir süre ayarlayabilirsiniz.
 
 ### Bir üye captcha'yı geçemezse ne olur?
 

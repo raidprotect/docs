@@ -76,7 +76,7 @@ Die Einstellungen sind in fünf Tabs geordnet:
 - **Moderation**: [Sanktionen](./features/sanctions.mdx), [Zweitkonten](./features/alt-accounts.md)\*, Logs, [Meldungen](./features/reports.md) und [Transparenz](./features/transparency.md).
 - **Werkzeuge**: [Tag-Rolle](./features/tag-role.md), [Kanalsperre](./features/channel-lock.md), [Rolle „im Dienst“](./features/moderation.mdx#onduty) und Zwischenspeicherung von Nachrichten.
 
-\* Im Experiment: Diese Zeile erscheint nur auf Servern, die Zugang zur Identity Update (Zweitkonten) haben, als öffentliche [Premium](/de/premium)-Beta.
+\* Neuheit der Version 3.7.0 (Identity Update), bereits als Beta verfügbar.
 
 Jede Zeile zeigt den aktuellen Wert der Einstellung und eine Schaltfläche: „**Konfigurieren**“ öffnet einen eigenen Bildschirm, „**Bearbeiten**“ öffnet ein Eingabefenster. Jede Änderung wird sofort angewendet.
 

@@ -7,7 +7,9 @@ import Settings from '@site/src/components/DiscordMessage/mockups/v2';
 
 L'**Automod** de RaidProtect regroupe les filtres qui retirent automatiquement un contenu indésirable dès qu'il est posté. Chaque filtre a sa propre sanction pour l'auteur du message.
 
-Pour l'ouvrir :
+Les filtres s'affichent dans l'ordre Fichiers, Images, puis Autres serveurs.
+
+Pour l'ouvrir :
 
 1. Faites la [commande `/settings`](../setup.md#settings).
 2. Ouvrez l'onglet “**Protection**”.
@@ -74,8 +76,8 @@ Dans “**Salons et catégories ignorés**”, choisissez jusqu'à 25 salons ou 
 
 Le contrôle du **tag de serveur** affiché reste actif partout : il vise le membre, pas le salon où il écrit.
 
-:::info Expérimentation : Identity Update
-Sur les serveurs [Premium](/premium), où l'Identity Update est en bêta publique, les salons ignorés passent dans un écran “**Exceptions**”, qui ajoute des **rôles ignorés** et des **membres ignorés** (25 au plus chacun). Un message d'un membre ignoré, ou qui porte un rôle ignoré, n'est ni supprimé ni sanctionné. Pratique pour un membre de votre équipe qui poste les invitations de vos partenaires sans avoir la permission Gérer les messages. Prévu pour la version 3.7.0.
+:::info Identity Update (3.7.0)
+Dans la bêta, les salons ignorés passent dans un écran “**Exceptions**”, qui ajoute des **rôles ignorés** et des **membres ignorés** (25 au plus chacun). Un message d'un membre ignoré, ou qui porte un rôle ignoré, n'est ni supprimé ni sanctionné. Pratique pour un membre de votre équipe qui poste les invitations de vos partenaires sans avoir la permission Gérer les messages.
 :::
 
 ### Listes de serveurs {#servers-lists}
@@ -104,7 +106,7 @@ Les fichiers d'un message transféré comptent aussi, et un fil suit les règles
 
 ### Configuration {#files-config}
 
-1. Dans l'Automod, cliquez sur “**Configurer**” à côté de “**Extensions de fichiers**”.
+1. Dans l'Automod, cliquez sur “**Configurer**” à côté de “**Fichiers**” (le filtre Extensions de fichiers).
 2. Activez le filtre avec l'interrupteur en haut à droite.
 3. Sous “**Tout le serveur**”, choisissez un mode : “**Désactivé**”, “**Liste noire**” ou “**Liste blanche**”.
 4. Cochez des **groupes** (Exécutables, Images, Vidéos, Audio, Archives, Documents) et/ou saisissez d'autres extensions séparées par des virgules, par exemple `exe, msi`. Le point est facultatif. Une règle accepte 50 extensions libres au plus, en plus des groupes.

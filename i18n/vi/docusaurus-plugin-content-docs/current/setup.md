@@ -76,7 +76,7 @@ Các thiết lập được sắp xếp trong năm thẻ:
 - **Kiểm duyệt**: [hình phạt](./features/sanctions.mdx), [tài khoản phụ](./features/alt-accounts.md)\*, nhật ký, [báo cáo](./features/reports.md) và [minh bạch](./features/transparency.md).
 - **Tiện ích**: [vai trò tag](./features/tag-role.md), [khóa kênh](./features/channel-lock.md), [vai trò đang trực](./features/moderation.mdx#onduty) và lưu đệm tin nhắn.
 
-\* Đang thử nghiệm: dòng này chỉ xuất hiện trên những máy chủ có quyền truy cập Identity Update (tài khoản phụ), trong bản beta công khai [Premium](/vi/premium).
+\* Tính năng mới của phiên bản 3.7.0 (Identity Update), đã có sẵn trong bản beta.
 
 Mỗi dòng hiển thị giá trị hiện tại của thiết lập và một nút: “**Cấu hình**” mở một màn hình riêng, “**Chỉnh sửa**” mở một cửa sổ nhập liệu. Mọi thay đổi được áp dụng ngay lập tức.
 

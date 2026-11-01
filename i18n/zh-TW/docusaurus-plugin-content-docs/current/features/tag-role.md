@@ -71,7 +71,7 @@ import TagRoleConceptMockup from '@site/src/components/DiscordMessage/mockups/ta
 
 ### 為什麼我的角色被拒絕？
 
-標籤角色不能是 RaidProtect 已在使用的角色、由應用程式管理的角色、位階高於 RaidProtect 或您自己的角色，也不能是含有敏感權限的角色。
+標籤角色不能是 RaidProtect 已在使用的角色、由應用程式管理的角色、位階高於 RaidProtect 或您自己的角色，也不能是含有敏感權限的角色。出現錯誤訊息時，其下方的「**移除這些權限**」按鈕會替您從該角色中移除它們：需要**管理角色**權限，且您的角色位階要高於該角色，並且您無法移除自己沒有的權限。RaidProtect 也必須能夠修改該角色。
 
 ### 誰可以設定標籤角色？
 

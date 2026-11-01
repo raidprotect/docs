@@ -34,7 +34,7 @@ RaidProtect imposta da solo i permessi del canale `#verifica` e del ruolo `@Non 
 2. Nella scheda **Permessi**:
    - Assicurati che `@everyone` **non abbia** il permesso di vedere il canale.
    - Verifica che il ruolo `@Non verificato` **abbia** il permesso di **vedere il canale** e **leggere la cronologia dei messaggi**.
-   - In modalità **Pannello (Interattivo)**, la modalità predefinita, `@Non verificato` **non deve** poter inviare messaggi: il codice si inserisce in una finestra. In modalità **Sfida (Classica)**, deve poter **inviare messaggi** per digitare il codice.
+   - `@Non verificato` **non deve** poter inviare messaggi: la verifica si fa con il pulsante “**Verifica**”.
 
 {/* ![Screenshot della verifica dei permessi del canale](../assets/rp-verification-channel-permissions.webp) : mostra “Inviare messaggi” autorizzato, vero solo in modalità Sfida */}
 
@@ -62,7 +62,7 @@ Per confermare che tutto sia configurato bene:
 
 1. Unisciti al server con un altro account Discord.
 2. Verifica che il canale `#verifica` sia visibile all'arrivo.
-3. Clicca su “**Verifica**” e inserisci il codice (modalità Pannello), oppure digita il codice nel canale (modalità Sfida).
+3. Clicca su “**Verifica**” e poi risolvi il puzzle.
 4. Una volta verificato, l'account dovrebbe avere accesso agli altri canali.
 
 ## 🛠️ Problemi frequenti e soluzioni {#common-issues}
@@ -70,7 +70,7 @@ Per confermare che tutto sia configurato bene:
 | Problema | Soluzione |
 |---------|----------|
 | 🔴 Il canale `#verifica` resta invisibile | Clicca su “**Sposta in** _categoria_” nella schermata Captcha, oppure metti il canale in una **categoria spuntata** del benvenuto Discord. |
-| 🚫 Il ruolo `@Non verificato` non può scrivere | Normale in modalità Pannello: il membro clicca su “**Verifica**”. In modalità Sfida, dagli il **permesso di inviare messaggi** in `#verifica`. |
+| 🚫 Il ruolo `@Non verificato` non può scrivere | Normale: il membro clicca su “**Verifica**”. |
 | 🔓 Un membro non verificato vede altri canali | Clicca su “**Correggi**” nel riquadro di falla della schermata Captcha, e togli i ruoli che il Processo di benvenuto Discord assegna all'arrivo. |
 | ❌ Il Captcha non funziona dopo una modifica | Clicca su “**Aggiornare**” nella schermata Captcha (scheda “**Arrivi**” di `/settings`). |
 

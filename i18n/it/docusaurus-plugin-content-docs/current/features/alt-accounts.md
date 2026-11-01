@@ -7,8 +7,8 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 
 I **doppi account** permettono al tuo team di dichiarare che più account Discord appartengono a una stessa persona. Le [sanzioni](./sanctions.mdx) di uno si estendono allora agli altri: un membro bannato non torna più con un secondo account per eludere la sua sanzione.
 
-:::info Sperimentazione: Identity Update
-I doppi account fanno parte dell'**Identity Update**, prevista per la versione 3.7.0. In attesa della sua uscita, sono in sperimentazione, in beta pubblica per i server [Premium](/it/premium).
+:::info Identity Update (3.7.0)
+I doppi account fanno parte dell'**Identity Update**, prevista per la versione 3.7.0 e già disponibile in beta.
 :::
 
 ## ❓ Come funziona? {#working}
@@ -53,6 +53,8 @@ Il comando `/alt` e i suoi pulsanti richiedono il permesso **Bannare i membri**.
 3. Clicca su “**Configurare**” accanto a “**Doppi account**”.
 
 <Settings start="alts" />
+
+La schermata si apre sull'impostazione gratuita [Un solo account per persona](#single-account), poi vengono le sanzioni degli account collegati, contrassegnate Premium dove lo sono.
 
 ### Sanzioni degli account collegati <span className="badge-premium">Premium</span> {#modes}
 
@@ -107,6 +109,8 @@ Questa impostazione richiede un [ruolo Jail](./sanctions.mdx#jail). Se manca, un
 
 Per cambiare l'account principale di un gruppo, usa `/alt` con uno degli account, poi il selettore “**Modifica un account del gruppo**”.
 
+RaidProtect ricorda se un collegamento viene dal tuo team o dal bot (il [captcha](./captcha.md#activity-alts)). Confermare a mano un collegamento posto dal bot lo rende un collegamento del tuo team, e un collegamento posto dal tuo team non torna mai a essere un collegamento del bot.
+
 ## Domande frequenti {#faq}
 
 ### I doppi account sono condivisi tra server?
@@ -127,4 +131,4 @@ Sì. Nel pannello `/alt`, clicca su “**Collega un membro**” e inserisci il s
 
 ### Chi può usare /alt?
 
-I membri che hanno il permesso **Bannare i membri**, su un server [Premium](/it/premium) finché l'Identity Update è in sperimentazione.
+I membri che hanno il permesso **Bannare i membri**.

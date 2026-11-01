@@ -34,7 +34,7 @@ RaidProtect tự đặt quyền cho kênh `#xác-minh` và vai trò `@Chưa xác
 2. Trong thẻ **Quyền**:
    - Đảm bảo `@everyone` **không có** quyền xem kênh.
    - Kiểm tra rằng vai trò `@Chưa xác minh` **có** quyền **xem kênh** và **xem lịch sử tin nhắn**.
-   - Ở chế độ **Bảng (Tương tác)**, chế độ mặc định, `@Chưa xác minh` **không được** gửi tin nhắn: mã được nhập trong một cửa sổ. Ở chế độ **Thử thách (Cổ điển)**, vai trò này phải có thể **gửi tin nhắn** để gõ mã.
+   - `@Chưa xác minh` **không được** gửi tin nhắn: việc xác minh được thực hiện bằng nút “**Xác minh**”.
 
 {/* ![Ảnh chụp màn hình kiểm tra quyền của kênh](../assets/rp-verification-channel-permissions.webp) : cho thấy “Gửi tin nhắn” được cho phép, chỉ đúng ở chế độ Thử thách */}
 
@@ -62,7 +62,7 @@ Nếu bạn muốn sửa thủ công:
 
 1. Tham gia máy chủ bằng một tài khoản Discord khác.
 2. Kiểm tra rằng kênh `#xác-minh` hiển thị khi vừa vào.
-3. Nhấp vào “**Xác minh**” và nhập mã (chế độ Bảng), hoặc gõ mã trong kênh (chế độ Thử thách).
+3. Nhấp vào “**Xác minh**” rồi giải câu đố.
 4. Sau khi xác minh, tài khoản sẽ có quyền truy cập các kênh còn lại.
 
 ## 🛠️ Vấn đề thường gặp và giải pháp {#common-issues}
@@ -70,7 +70,7 @@ Nếu bạn muốn sửa thủ công:
 | Vấn đề | Giải pháp |
 |---------|----------|
 | 🔴 Kênh `#xác-minh` vẫn không hiển thị | Nhấp vào “**Chuyển vào** _danh mục_” trên màn hình Captcha, hoặc đặt kênh vào một **danh mục đã được đánh dấu** trong phần chào đón của Discord. |
-| 🚫 Vai trò `@Chưa xác minh` không viết được | Bình thường ở chế độ Bảng: thành viên nhấp vào “**Xác minh**”. Ở chế độ Thử thách, hãy cấp cho họ **quyền gửi tin nhắn** trong `#xác-minh`. |
+| 🚫 Vai trò `@Chưa xác minh` không viết được | Bình thường: thành viên nhấp vào “**Xác minh**”. |
 | 🔓 Một thành viên chưa xác minh thấy các kênh khác | Nhấp vào “**Sửa**” trong khung cảnh báo lỗ hổng của màn hình Captcha, và gỡ các vai trò mà Quy trình chào đón Discord cấp khi vào. |
 | ❌ Captcha không hoạt động sau khi chỉnh sửa | Nhấp vào “**Làm mới**” trên màn hình Captcha (thẻ “**Thành viên mới**” của `/settings`). |
 

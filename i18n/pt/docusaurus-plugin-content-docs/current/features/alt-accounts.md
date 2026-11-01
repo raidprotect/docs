@@ -7,8 +7,8 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 
 As **contas duplicadas** permitem que sua equipe declare que várias contas do Discord pertencem a uma mesma pessoa. As [sanções](./sanctions.mdx) de uma se estendem então às outras: um membro banido não volta mais com uma segunda conta para burlar a sanção.
 
-:::info Experimentação: Identity Update
-As contas duplicadas fazem parte da **Identity Update**, prevista para a versão 3.7.0. Até o lançamento, elas estão em experimentação, em beta público para os servidores [Premium](/pt/premium).
+:::info Identity Update (3.7.0)
+As contas duplicadas fazem parte da **Identity Update**, prevista para a versão 3.7.0 e já disponível em beta.
 :::
 
 ## ❓ Como funciona? {#working}
@@ -53,6 +53,8 @@ O comando `/alt` e seus botões exigem a permissão **Banir membros**.
 3. Clique em “**Configurar**” ao lado de “**Contas duplicadas**”.
 
 <Settings start="alts" />
+
+A tela abre com a configuração gratuita [Uma conta por pessoa](#single-account), e depois vêm as sanções das contas vinculadas, marcadas como Premium onde forem.
 
 ### Sanções das contas vinculadas <span className="badge-premium">Premium</span> {#modes}
 
@@ -107,6 +109,8 @@ Essa configuração exige um [cargo Jail](./sanctions.mdx#jail). Se não houver,
 
 Para mudar a conta principal de um grupo, use `/alt` com uma das contas e depois o seletor “**Editar uma conta do grupo**”.
 
+O RaidProtect registra se um vínculo veio da sua equipe ou do bot (o [captcha](./captcha.md#activity-alts)). Confirmar manualmente um vínculo criado pelo bot o torna um vínculo da sua equipe, e um vínculo criado pela sua equipe nunca volta a ser um vínculo do bot.
+
 ## Perguntas frequentes {#faq}
 
 ### As contas duplicadas são compartilhadas entre servidores?
@@ -127,4 +131,4 @@ Sim. No painel `/alt`, clique em “**Vincular um membro**” e informe o ID do 
 
 ### Quem pode usar /alt?
 
-Os membros que têm a permissão **Banir membros**, em um servidor [Premium](/pt/premium) enquanto a Identity Update estiver em experimentação.
+Os membros que têm a permissão **Banir membros**.

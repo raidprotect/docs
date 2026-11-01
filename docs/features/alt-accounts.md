@@ -7,8 +7,8 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 
 Les **doubles comptes** permettent à votre équipe de déclarer que plusieurs comptes Discord appartiennent à une même personne. Les [sanctions](./sanctions.mdx) de l'un s'étendent alors aux autres : un membre banni ne revient plus avec un second compte pour contourner sa sanction.
 
-:::info Expérimentation : Identity Update
-Les doubles comptes font partie de l'**Identity Update**, prévue pour la version 3.7.0. En attendant sa sortie, ils sont en expérimentation, en bêta publique pour les serveurs [Premium](/premium).
+:::info Identity Update (3.7.0)
+Les doubles comptes font partie de l'**Identity Update**, prévue pour la version 3.7.0 et déjà disponible en bêta.
 :::
 
 ## ❓ Comment ça marche ? {#working}
@@ -53,6 +53,8 @@ La commande `/alt` et ses boutons demandent la permission **Bannir des membres**
 3. Cliquez sur “**Configurer**” à côté de “**Doubles comptes**”.
 
 <Settings start="alts" />
+
+L'écran s'ouvre sur le réglage gratuit [Un seul compte par personne](#single-account), puis viennent les sanctions des comptes liés, marquées Premium là où elles le sont.
 
 ### Sanctions des comptes liés <span className="badge-premium">Premium</span> {#modes}
 
@@ -107,6 +109,8 @@ Ce réglage demande un [rôle Jail](./sanctions.mdx#jail). S'il n'y en a pas, un
 
 Pour changer le compte principal d'un groupe, utilisez `/alt` avec l'un des comptes, puis le sélecteur “**Modifier un compte du groupe**”.
 
+RaidProtect retient si un lien vient de votre équipe ou du bot (le [captcha](./captcha.md#activity-alts)). Confirmer à la main un lien posé par le bot en fait un lien de votre équipe, et un lien posé par votre équipe ne redevient jamais un lien du bot.
+
 ## Questions fréquentes {#faq}
 
 ### Les doubles comptes sont-ils partagés entre serveurs ?
@@ -127,4 +131,4 @@ Oui. Dans le panneau `/alt`, cliquez sur “**Lier un membre**” et saisissez s
 
 ### Qui peut utiliser /alt ?
 
-Les membres qui ont la permission **Bannir des membres**, sur un serveur [Premium](/premium) tant que l'Identity Update est en expérimentation.
+Les membres qui ont la permission **Bannir des membres**.

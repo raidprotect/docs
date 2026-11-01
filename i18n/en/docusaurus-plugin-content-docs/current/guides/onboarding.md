@@ -34,7 +34,7 @@ RaidProtect sets the permissions of the `#verification` channel and of the `@Unv
 2. In the **Permissions** tab:
    - Make sure `@everyone` **does not** have permission to view the channel.
    - Verify that the `@Unverified` role **has** permission to **view the channel** and **read message history**.
-   - In **Panel (Interactive)** mode, the default mode, `@Unverified` **must not** be able to send messages: the code is entered in a window. In **Challenge (Classic)** mode, it must be able to **send messages** to type the code.
+   - `@Unverified` **must not** be able to send messages: verification is done with the "**Verify**" button.
 
 {/* ![Channel permissions verification screenshot](../assets/rp-verification-channel-permissions.webp) : shows "Send messages" allowed, only true in Challenge mode */}
 
@@ -62,7 +62,7 @@ To confirm everything is properly configured:
 
 1. Join the server with another Discord account.
 2. Verify that the `#verification` channel is visible upon arrival.
-3. Click "**Verify**" and enter the code (Panel mode), or type the code in the channel (Challenge mode).
+3. Click "**Verify**" and then solve the puzzle.
 4. Once verified, the account should have access to the other channels.
 
 ## 🛠️ Common issues and solutions {#common-issues}
@@ -70,7 +70,7 @@ To confirm everything is properly configured:
 | Issue | Solution |
 |---------|----------|
 | 🔴 The `#verification` channel remains invisible | Click "**Move into** _category_" on the Captcha screen, or put the channel in a **checked category** of Discord's Onboarding Process. |
-| 🚫 The `@Unverified` role cannot write | Normal in Panel mode: the member clicks "**Verify**". In Challenge mode, grant it **send messages permission** in `#verification`. |
+| 🚫 The `@Unverified` role cannot write | Normal: the member clicks "**Verify**". |
 | 🔓 An unverified member sees other channels | Click "**Fix**" in the leak box of the Captcha screen, and remove the roles that Discord's Onboarding Process gives on arrival. |
 | ❌ The captcha does not work after a change | Click "**Refresh**" on the Captcha screen ("**Arrivals**" tab of `/settings`). |
 

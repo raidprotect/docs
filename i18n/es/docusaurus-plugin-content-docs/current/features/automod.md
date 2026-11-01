@@ -7,6 +7,8 @@ import Settings from '@site/src/components/DiscordMessage/mockups/v2';
 
 El **Automod** de RaidProtect reúne los filtros que eliminan automáticamente un contenido no deseado en cuanto se publica. Cada filtro tiene su propia sanción para el autor del mensaje.
 
+Los filtros se muestran en el orden Archivos, Imágenes y luego Otros servidores.
+
 Para abrirlo:
 
 1. Ejecuta el [comando `/settings`](../setup.md#settings).
@@ -74,8 +76,8 @@ En “**Canales y categorías ignorados**”, elige hasta 25 canales o categorí
 
 El control de la **etiqueta de servidor** mostrada sigue activo en todas partes: se dirige al miembro, no al canal donde escribe.
 
-:::info Experimental: Identity Update
-En los servidores [Premium](/es/premium), donde la Identity Update está en beta pública, los canales ignorados pasan a una pantalla “**Excepciones**”, que añade **roles ignorados** y **miembros ignorados** (25 como máximo cada uno). Un mensaje de un miembro ignorado, o que tiene un rol ignorado, no se elimina ni se sanciona. Práctico para un miembro de tu equipo que publica las invitaciones de tus socios sin tener el permiso Gestionar mensajes. Previsto para la versión 3.7.0.
+:::info Identity Update (3.7.0)
+En la beta, los canales ignorados pasan a una pantalla “**Excepciones**”, que añade **roles ignorados** y **miembros ignorados** (25 como máximo cada uno). Un mensaje de un miembro ignorado, o que tiene un rol ignorado, no se elimina ni se sanciona. Práctico para un miembro de tu equipo que publica las invitaciones de tus socios sin tener el permiso Gestionar mensajes.
 :::
 
 ### Listas de servidores {#servers-lists}
@@ -104,7 +106,7 @@ Los archivos de un mensaje reenviado también cuentan, y un hilo sigue las regla
 
 ### Configuración {#files-config}
 
-1. En el Automod, haz clic en “**Configurar**” junto a “**Extensiones de archivo**”.
+1. En el Automod, haz clic en “**Configurar**” junto a “**Archivos**” (el filtro Extensiones de archivo).
 2. Activa el filtro con el interruptor de arriba a la derecha.
 3. En “**Todo el servidor**”, elige un modo: “**Desactivado**”, “**Lista negra**” o “**Lista blanca**”.
 4. Marca **grupos** (Ejecutables, Imágenes, Vídeos, Audio, Archivos comprimidos, Documentos) y/o escribe otras extensiones separadas por comas, por ejemplo `exe, msi`. El punto es opcional. Una regla acepta 50 extensiones libres como máximo, además de los grupos.

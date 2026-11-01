@@ -76,7 +76,7 @@ Discord 的[社群模式](./guides/community.md)只有少數設定才需要，�
 - **管理**：[處罰](./features/sanctions.mdx)、[多帳號](./features/alt-accounts.md)\*、紀錄、[檢舉](./features/reports.md)與[透明度](./features/transparency.md)。
 - **工具**：[標籤角色](./features/tag-role.md)、[頻道鎖定](./features/channel-lock.md)、[在勤角色](./features/moderation.mdx#onduty)與訊息快取。
 
-\* 實驗中：此項目只會出現在可使用 Identity Update（多帳號）的伺服器上，為 [Premium](/zh-TW/premium) 公開測試版。
+\* 3.7.0 版（Identity Update）的新功能，目前已有測試版。
 
 每一行都會顯示該設定的目前值和一個按鈕：「**設定**」會開啟專屬畫面，「**編輯**」會開啟輸入視窗。任何變更都會立即生效。
 
