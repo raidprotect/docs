@@ -62,7 +62,7 @@ Pour confirmer que tout est bien configuré :
 
 1. Rejoignez le serveur avec un autre compte Discord.
 2. Vérifiez que le salon `#vérification` est visible à l’arrivée.
-3. Cliquez sur “**Vérifier**” et puis résolvez le puzzle.
+3. Cliquez sur “**Vérifier**” puis résolvez le puzzle.
 4. Une fois vérifié, le compte devrait avoir accès aux autres salons.
 
 ## 🛠️ Problèmes fréquents et solutions {#common-issues}
