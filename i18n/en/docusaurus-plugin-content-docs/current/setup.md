@@ -76,7 +76,7 @@ Settings are organized into five tabs:
 - **Moderation**: [sanctions](./features/sanctions.mdx), [alt accounts](./features/alt-accounts.md)\*, logs, [reports](./features/reports.md) and [transparency](./features/transparency.md).
 - **Utilities**: [tag role](./features/tag-role.md), [channel lock](./features/channel-lock.md), [on-duty role](./features/moderation.mdx#onduty) and message caching.
 
-\* Experiment: this row only appears on servers that have access to the Identity Update (alt accounts), in [Premium](/en/premium) public beta.
+\* New in version 3.7.0 (Identity Update), already available in beta.
 
 Each row shows the setting's current value and a button: "**Configure**" opens a dedicated screen, "**Edit**" opens an input window. Every change applies immediately.
 

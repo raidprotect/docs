@@ -71,7 +71,7 @@ Nous détectons le tag à la prochaine mise à jour du profil du membre. Tant qu
 
 ### Pourquoi mon rôle est-il refusé ?
 
-Le Rôle de Tag ne peut pas être un rôle déjà utilisé par RaidProtect, un rôle géré par une application, un rôle placé au-dessus de RaidProtect ou de vous, ni un rôle avec des permissions sensibles.
+Le Rôle de Tag ne peut pas être un rôle déjà utilisé par RaidProtect, un rôle géré par une application, un rôle placé au-dessus de RaidProtect ou de vous, ni un rôle avec des permissions sensibles. Sous l'erreur, le bouton “**Retirer ces permissions**” les retire du rôle à votre place : il faut la permission **Gérer les rôles** et un rôle plus haut que celui-ci, et vous ne pouvez pas retirer une permission que vous n'avez pas vous-même. RaidProtect doit aussi pouvoir modifier ce rôle.
 
 ### Qui peut configurer le Rôle de Tag ?
 

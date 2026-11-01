@@ -34,7 +34,7 @@ import Settings from '@site/src/components/DiscordMessage/mockups/v2';
 2. 在**权限**选项卡中：
    - 确认 `@everyone` **没有**查看频道的权限。
    - 确认 `@未验证` 角色**拥有**“查看频道”和“查看历史消息”的权限。
-   - 在**面板（交互）**模式（默认模式）下，`@未验证` **不应**能发送消息：验证码在弹出窗口中输入。在**挑战（经典）**模式下，它必须能**发送消息**才能输入验证码。
+   - `@未验证` **不应**能发送消息：验证通过“**验证**”按钮进行。
 
 {/* ![频道权限检查截图](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-verification-channel-permissions.webp) : montre « Envoyer des messages » autorisé, vrai seulement en mode Challenge */}
 
@@ -62,7 +62,7 @@ import Settings from '@site/src/components/DiscordMessage/mockups/v2';
 
 1. 用另一个 Discord 账号加入服务器。
 2. 确认加入时能看到 `#验证` 频道。
-3. 点击“**验证**”并输入验证码（面板模式），或在频道中输入验证码（挑战模式）。
+3. 点击“**验证**”，然后解答拼图。
 4. 验证通过后，该账号应当可以访问其他频道。
 
 ## 🛠️ 常见问题与解决办法 {#common-issues}
@@ -70,7 +70,7 @@ import Settings from '@site/src/components/DiscordMessage/mockups/v2';
 | 问题 | 解决办法 |
 |---------|----------|
 | 🔴 `#验证` 频道始终不可见 | 在验证码界面点击“**移动到** _分类_”，或将频道放入 Discord 新成员引导中**已勾选的分类**。 |
-| 🚫 `@未验证` 角色无法发言 | 在面板模式下这是正常的：成员需点击“**验证**”。在挑战模式下，请授予其在 `#验证` 中**发送消息的权限**。 |
+| 🚫 `@未验证` 角色无法发言 | 这是正常的：成员需点击“**验证**”。 |
 | 🔓 未验证的成员能看到其他频道 | 在验证码界面的漏洞提示框中点击“**修复**”，并移除 Discord 新成员引导在成员加入时授予的角色。 |
 | ❌ 修改后验证码无法工作 | 在验证码界面点击“**刷新**”（`/settings` 的“**新成员**”选项卡）。 |
 

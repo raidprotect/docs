@@ -7,8 +7,8 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 
 **多账号**功能让您的团队可以声明多个 Discord 账号属于同一个人。其中一个账号受到的[处罚](./sanctions.mdx)会扩展到其他账号：被封禁的成员无法再用第二个账号回来规避处罚。
 
-:::info 试验中：Identity Update
-多账号属于计划在 3.7.0 版本发布的 **Identity Update**。在正式发布之前，它处于试验阶段，面向 [Premium](/zh-CN/premium) 服务器开放公开测试。
+:::info Identity Update (3.7.0)
+多账号属于计划在 3.7.0 版本发布的 **Identity Update**，目前已可在测试版中使用。
 :::
 
 ## ❓ 工作原理 {#working}
@@ -53,6 +53,8 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 3. 点击“**多账号**”旁边的“**配置**”。
 
 <Settings start="alts" />
+
+界面首先显示免费设置[每人仅限一个账号](#single-account)，然后是关联账号的处罚，其中需要 Premium 的项目会逐项标注。
 
 ### 关联账号的处罚 <span className="badge-premium">Premium</span> {#modes}
 
@@ -107,6 +109,8 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 
 要更改分组的主账号，请对其中任一账号使用 `/alt`，然后使用“**修改分组中的账号**”选择器。
 
+RaidProtect 会记录关联来自您的团队还是机器人（[验证码](./captcha.md#activity-alts)）。手动确认机器人建立的关联，会使其变为您团队的关联；而由您团队建立的关联，永远不会再变回机器人的关联。
+
 ## 常见问题 {#faq}
 
 ### 多账号会在服务器之间共享吗？
@@ -127,4 +131,4 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 
 ### 谁可以使用 /alt？
 
-拥有**封禁成员**权限的成员；在 Identity Update 处于试验阶段期间，仅限 [Premium](/zh-CN/premium) 服务器。
+拥有**封禁成员**权限的成员。

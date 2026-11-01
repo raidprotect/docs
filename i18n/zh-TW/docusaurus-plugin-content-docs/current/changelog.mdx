@@ -24,10 +24,10 @@ Logging Update 處於實驗階段：在 3.8.0 正式推出之前，它為 [Premi
 - [檢舉](./features/reports.md)新增「**伺服器上的訊息**」選項：檢舉的討論串會附上頻道的最新訊息，包含已刪除的訊息。
 - 僅限 **Premium**：精簡格式、語音紀錄（包含舞台）、反應紀錄與對活動感興趣的成員紀錄、複製已刪除訊息的附件、[記憶體中保留 6 小時的訊息](./features/logs.md#cache)（而非 15 分鐘），以及最多 15 個紀錄頻道（而非 3 個）。
 
-## 3.7.0 Identity Update <span className="badge-experiment">實驗</span> {#3-7-0}
+## 3.7.0 Identity Update（測試版） {#3-7-0}
 
-:::info 實驗
-Identity Update 處於實驗階段：在 3.7.0 正式推出之前，它為 [Premium](/zh-TW/premium) 伺服器提供公開測試版。其內容仍可能變動。
+:::info 測試版
+Identity Update 預計於 3.7.0 版推出，目前已可在測試版中使用。其內容仍可能變動。
 :::
 
 - 新增 [`/alt`](./features/alt-accounts.md#alt) 指令與[多帳號](./features/alt-accounts.md)：關聯同一個人的帳號，選擇其主帳號，其處罰（停權、踢出、禁言、監禁、超時、軟停權）會延伸到關聯帳號。解除其中一個的處罰，就會解除所有帳號的處罰。 <SuggestionLink id="404" /> <SuggestionLink id="263" />
@@ -39,6 +39,14 @@ Identity Update 處於實驗階段：在 3.7.0 正式推出之前，它為 [Prem
 - [驗證碼](./features/captcha.md#activity-alts)能偵測多帳號：它會自行關聯確定是同一個人的帳號，並向您的團隊提議可能的關聯。
 - Automod 的[其他伺服器](./features/automod.md#servers-ignored)過濾器也可以忽略身分組與成員。
 - [關聯帳號的處罰](./features/alt-accounts.md#modes)僅限 **Premium**。沒有 Premium 時，`/alt` 仍可無限制地關聯與查閱帳號，每人僅限一個帳號也仍可使用。
+
+## 3.6.1 (2026/10/31) {#3-6-1}
+
+- **RaidProtect 首頁**可從 Activity 的 Launch 按鈕開啟：示範、小遊戲，以及您伺服器與所有伺服器的排行榜。
+- 當同時觸發更重的處罰時，[Discord AutoMod 攔截訊息的警告](./features/sanctions.mdx#working)不再發出，並且可以停用。
+- 其他伺服器過濾器中[忽略的頻道](./features/automod.md#servers-ignored)現在能正確作用於對其他伺服器的引用。
+- 您的團隊現在可以[隨時測試面板的驗證碼](./features/captcha.md#test-mode)：「測試模式」選項已移除。
+- 大量修正與最佳化。
 
 ## 3.6.0 Shield Update (2026/10/28) {#3-6-0}
 

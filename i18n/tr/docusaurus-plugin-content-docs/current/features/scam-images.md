@@ -71,11 +71,11 @@ Bizim yönettiğimiz ve tüm sunucularda uygulanan “Crypto Scam” genel katal
 6. Listenin “**Doğrulama kanalı**”nı seçin.
 7. “**Görsel ekle**”ye tıklayın ve en fazla 10 görsel gönderin. Sonuç; eklenen görselleri, bağlanan varyantları, yok sayılan kopyaları ve reddedilen görselleri belirtir.
 
-Bir listedeki görseller sunucunuzda yeniden göründükleri anda silinir ve yazarları yukarıda seçilen yaptırımı alır. Yaptırımın sebebi listenin adını belirtir (“"_ad_" listesindeki görsel”). Yaptırım yoksa silme, kanal ve listeyle birlikte moderasyon loglarınıza kaydedilir.
+Bir listedeki görseller sunucunuzda yeniden göründükleri anda silinir ve yazarları yukarıda seçilen yaptırımı alır; listeye kendi yaptırımını verdiyseniz o uygulanır (aşağıya bakın). Yaptırımın sebebi listenin adını belirtir (“"_ad_" listesindeki görsel”). Yaptırım yoksa silme, kanal ve listeyle birlikte moderasyon loglarınıza kaydedilir.
 
-:::warning Bir liste = tek bir görsel kaydı
-Bir listede tek bir içerik türü tutun. İlgisiz görselleri aynı listede karıştırmak algılamayı bozar: bunun yerine ikinci bir liste oluşturun.
-:::
+### Bir listenin yaptırımı {#list-sanction}
+
+Her listenin kendi ekranı vardır. Listenin yanındaki “**Ayarla**”ya tıklayın, ardından “**Bu listenin yaptırımı**”nı ve gerekirse süresini seçin. “**Filtre gibi**” (varsayılan) Görseller filtresinin yaptırımını korur.
 
 ### Doğrulama kanalı {#review}
 

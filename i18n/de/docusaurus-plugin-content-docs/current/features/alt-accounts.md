@@ -7,8 +7,8 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 
 Mit den **Zweitkonten** kann Ihr Team festlegen, dass mehrere Discord-Konten zu ein und derselben Person gehören. Die [Sanktionen](./sanctions.mdx) des einen erstrecken sich dann auf die anderen: Ein gebanntes Mitglied kommt nicht mehr mit einem zweiten Konto zurück, um seine Sanktion zu umgehen.
 
-:::info Experiment: Identity Update
-Die Zweitkonten gehören zur **Identity Update**, die für Version 3.7.0 vorgesehen ist. Bis zu ihrer Veröffentlichung befinden sie sich in der Experimentierphase, als öffentliche Beta für [Premium](/de/premium)-Server.
+:::info Identity Update (3.7.0)
+Die Zweitkonten gehören zur **Identity Update**, die für Version 3.7.0 vorgesehen und bereits als Beta verfügbar ist.
 :::
 
 ## ❓ Wie funktioniert es? {#working}
@@ -53,6 +53,8 @@ Der Befehl `/alt` und seine Schaltflächen erfordern die Berechtigung **Mitglied
 3. Klicken Sie neben „**Doppelkonten**“ auf „**Konfigurieren**“.
 
 <Settings start="alts" />
+
+Der Bildschirm öffnet sich mit der kostenlosen Einstellung [Nur ein Konto pro Person](#single-account), danach folgen die Sanktionen der verknüpften Konten, dort als Premium gekennzeichnet, wo sie es sind.
 
 ### Sanktionen verknüpfter Konten <span className="badge-premium">Premium</span> {#modes}
 
@@ -107,6 +109,8 @@ Diese Einstellung erfordert eine [Jail-Rolle](./sanctions.mdx#jail). Fehlt sie, 
 
 Um das Hauptkonto einer Gruppe zu ändern, verwenden Sie `/alt` mit einem der Konten und dann die Auswahl „**Ein Konto der Gruppe bearbeiten**“.
 
+RaidProtect merkt sich, ob eine Verknüpfung von Ihrem Team oder vom Bot stammt (dem [Captcha](./captcha.md#activity-alts)). Bestätigen Sie eine vom Bot gesetzte Verknüpfung von Hand, wird sie zu einer Verknüpfung Ihres Teams, und eine von Ihrem Team gesetzte Verknüpfung wird nie wieder zu einer des Bots.
+
 ## Häufig gestellte Fragen {#faq}
 
 ### Werden die Zweitkonten zwischen Servern geteilt?
@@ -127,4 +131,4 @@ Ja. Klicken Sie im `/alt`-Panel auf „**Mitglied verknüpfen**“ und geben Sie
 
 ### Wer kann /alt verwenden?
 
-Mitglieder mit der Berechtigung **Mitglieder bannen**, auf einem [Premium](/de/premium)-Server, solange sich die Identity Update in der Experimentierphase befindet.
+Mitglieder mit der Berechtigung **Mitglieder bannen**.

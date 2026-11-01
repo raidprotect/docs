@@ -24,10 +24,10 @@ Logging Update 处于试验阶段：在 3.8.0 正式发布之前，它面向 [Pr
 - [举报](./features/reports.md)中新增“**服务器上的消息**”选项：举报的子区会附上该频道最近的消息，包括被删除的消息。
 - **Premium** 专属：紧凑格式、语音（包括舞台）、反应以及对活动感兴趣的成员的日志、复制被删除消息的附件、[在内存中保留 6 小时的消息](./features/logs.md#cache)（而非 15 分钟），以及最多 15 个日志频道（而非 3 个）。
 
-## 3.7.0 Identity Update <span className="badge-experiment">试验中</span> {#3-7-0}
+## 3.7.0 Identity Update（测试版） {#3-7-0}
 
-:::info 试验中
-Identity Update 处于试验阶段：在 3.7.0 正式发布之前，它面向 [Premium](/zh-CN/premium) 服务器开放公开测试。其内容仍可能变动。
+:::info 测试版
+Identity Update 计划在 3.7.0 版本发布，目前已可在测试版中使用。其内容仍可能变动。
 :::
 
 - 新增 [`/alt`](./features/alt-accounts.md#alt) 命令和[多账号](./features/alt-accounts.md)功能：关联同一个人的多个账号，指定其主账号，该成员的处罚（封禁、踢出、禁言、监禁、超时、软封禁）会扩展到所有关联账号。解除其中一个账号的处罚，所有账号的处罚都会随之解除。 <SuggestionLink id="404" /> <SuggestionLink id="263" />
@@ -39,6 +39,14 @@ Identity Update 处于试验阶段：在 3.7.0 正式发布之前，它面向 [P
 - [验证码](./features/captcha.md#activity-alts)可识别多账号：它会自动关联确定属于同一个人的账号，并向您的团队提示可能存在的关联。
 - Automod 的[其他服务器](./features/automod.md#servers-ignored)过滤器还可以忽略角色和成员。
 - [关联账号的处罚](./features/alt-accounts.md#modes)为 **Premium** 专属。没有 Premium 时，`/alt` 仍可不限数量地关联和查看账号，每人仅限一个账号也仍然可用。
+
+## 3.6.1 (2026/10/31) {#3-6-1}
+
+- **RaidProtect 主页**可从 Activity 的 Launch 按钮打开：演示、小游戏，以及您服务器和所有服务器的排行榜。
+- 当同时触发更重的处罚时，[Discord AutoMod 拦截消息的警告](./features/sanctions.mdx#working)不再发出，并且可以停用。
+- 其他服务器过滤器中[忽略的频道](./features/automod.md#servers-ignored)现在能正确作用于对其他服务器的引用。
+- 您的团队现在可以[随时测试面板的验证码](./features/captcha.md#test-mode)：“测试模式”选项已移除。
+- 大量修复和优化。
 
 ## 3.6.0 Shield Update (2026/10/28) {#3-6-0}
 

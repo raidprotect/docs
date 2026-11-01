@@ -76,7 +76,7 @@ RaidProtect 通过两个命令进行配置：[`/setup`](#install) 是一次性�
 - **管理**：[处罚](./features/sanctions.mdx)、[多账号](./features/alt-accounts.md)\*、日志、[举报](./features/reports.md)和[透明度](./features/transparency.md)。
 - **实用工具**：[标签角色](./features/tag-role.md)、[频道锁定重命名](./features/channel-lock.md)、[在勤角色](./features/moderation.mdx#onduty)和消息缓存。
 
-\* 试验中：这一行仅出现在可使用 Identity Update（多账号）的服务器上，属于 [Premium](/zh-CN/premium) 公开测试版。
+\* 3.7.0 版本（Identity Update）的新功能，目前已有测试版。
 
 每一行都会显示该设置的当前值和一个按钮：“**配置**”会打开专属界面，“**编辑**”会打开输入窗口。所有更改都会立即生效。
 

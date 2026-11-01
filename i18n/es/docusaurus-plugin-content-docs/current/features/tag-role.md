@@ -71,7 +71,7 @@ Detectamos la etiqueta en la siguiente actualización del perfil del miembro. Mi
 
 ### ¿Por qué se rechaza mi rol?
 
-El Rol de Etiqueta no puede ser un rol ya utilizado por RaidProtect, un rol gestionado por una aplicación, un rol situado por encima de RaidProtect o de ti, ni un rol con permisos sensibles.
+El Rol de Etiqueta no puede ser un rol ya utilizado por RaidProtect, un rol gestionado por una aplicación, un rol situado por encima de RaidProtect o de ti, ni un rol con permisos sensibles. Bajo el error, el botón “**Quitar estos permisos**” se los quita al rol por ti: hace falta el permiso **Gestionar roles** y un rol más alto que este, y no puedes quitar un permiso que tú mismo no tienes. RaidProtect también debe poder modificar este rol.
 
 ### ¿Quién puede configurar el Rol de Etiqueta?
 

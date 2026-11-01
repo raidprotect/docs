@@ -25,10 +25,10 @@ The Logging Update is an experiment: until its release in 3.8.0, it is in public
 - New "**Server messages**" checkbox in [reports](./features/reports.md): the report thread includes the latest messages of the channel, deleted messages included.
 - Reserved for **Premium**: the Compact format, voice logs (stages included), reaction logs and logs of members interested in an event, copying attachments of deleted messages, [6 hours of messages in memory](./features/logs.md#cache) instead of 15 minutes and up to 15 logs channels instead of 3.
 
-## 3.7.0 Identity Update <span className="badge-experiment">Experiment</span> {#3-7-0}
+## 3.7.0 Identity Update (beta) {#3-7-0}
 
-:::info Experiment
-The Identity Update is an experiment: until its release in 3.7.0, it is in public beta for [Premium](/en/premium) servers. Its content may still change.
+:::info Beta
+The Identity Update is planned for version 3.7.0 and already available in beta. Its content may still change.
 :::
 
 - New [`/alt`](./features/alt-accounts.md#alt) command and [alt accounts](./features/alt-accounts.md): link the accounts of a single person, choose their main account, and their sanctions (ban, kick, mute, jail, timeout, softban) extend to the linked accounts. Removing the sanction of one removes it for all. <SuggestionLink id="404" /> <SuggestionLink id="263" />
@@ -40,6 +40,14 @@ The Identity Update is an experiment: until its release in 3.7.0, it is in publi
 - The [captcha](./features/captcha.md#activity-alts) spots alt accounts: it links accounts it is sure are the same person by itself, and suggests probable links to your team.
 - The Automod's [Other servers](./features/automod.md#servers-ignored) filter can also ignore roles and members.
 - [Linked account sanctions](./features/alt-accounts.md#modes) are reserved for **Premium**. Without Premium, `/alt` links and views accounts with no limit, and One account per person remains available.
+
+## 3.6.1 (10/31/2026) {#3-6-1}
+
+- The **RaidProtect home** opens from the Launch button of the Activity: demos, mini-games and leaderboards for your server and for all servers.
+- The [warn for messages blocked by Discord's AutoMod](./features/sanctions.mdx#working) is no longer given when a heavier sanction lands at the same time, and can be turned off.
+- The ignored channels of the [Other servers](./features/automod.md#servers-ignored) filter now apply properly to references to other servers.
+- Your team can [always test the captcha](./features/captcha.md#test-mode) of the panel: the "test mode" option is gone.
+- Many fixes and optimizations.
 
 ## 3.6.0 Shield Update (10/28/2026) {#3-6-0}
 

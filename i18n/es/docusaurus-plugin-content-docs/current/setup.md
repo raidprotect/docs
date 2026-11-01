@@ -76,7 +76,7 @@ Los ajustes están organizados en cinco pestañas:
 - **Moderación**: [sanciones](./features/sanctions.mdx), [cuentas duplicadas](./features/alt-accounts.md)\*, logs, [reportes](./features/reports.md) y [transparencia](./features/transparency.md).
 - **Utilidades**: [rol de etiqueta](./features/tag-role.md), [bloqueo de canal](./features/channel-lock.md), [rol de servicio](./features/moderation.mdx#onduty) y caché de mensajes.
 
-\* En fase experimental: esta línea solo aparece en los servidores que tienen acceso a la Identity Update (cuentas duplicadas), en beta pública [Premium](/es/premium).
+\* Novedad de la versión 3.7.0 (Identity Update), ya disponible en beta.
 
 Cada línea muestra el valor actual del ajuste y un botón: “**Configurar**” abre una pantalla dedicada, “**Editar**” abre una ventana de entrada. Cualquier cambio se aplica de inmediato.
 

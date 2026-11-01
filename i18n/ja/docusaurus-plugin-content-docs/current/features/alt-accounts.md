@@ -7,8 +7,8 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 
 **複数アカウント**機能では、複数の Discord アカウントが同一人物のものであることを、運営チームが宣言できます。一方への[処罰](./sanctions.mdx)は他方にも及ぶため、BAN されたメンバーが 2 つ目のアカウントで戻ってきて処罰を回避することはできなくなります。
 
-:::info 実験中：Identity Update
-複数アカウントは、バージョン 3.7.0 に予定されている **Identity Update** の一部です。リリースまでは実験中で、[Premium](/ja/premium) サーバー向けに公開ベータとして提供されています。
+:::info Identity Update (3.7.0)
+複数アカウントは、バージョン 3.7.0 に予定されており、すでにベータで利用できる **Identity Update** の一部です。
 :::
 
 ## ❓ 仕組み {#working}
@@ -53,6 +53,8 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 3. 「**複数アカウント**」の横にある「**設定**」をクリックします。
 
 <Settings start="alts" />
+
+画面は無料の設定[1人1アカウント](#single-account)から始まり、続いて連携アカウントの処罰が並びます。Premium 限定のものには、その印が付いています。
 
 ### 連携アカウントの処罰 <span className="badge-premium">Premium</span> {#modes}
 
@@ -107,6 +109,8 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 
 グループの主アカウントを変更するには、いずれかのアカウントで `/alt` を使い、「**グループのアカウントを編集**」セレクターを使います。
 
+RaidProtect は、リンクが運営チームによるものか、ボット（[キャプチャ](./captcha.md#activity-alts)）によるものかを記録します。ボットが作成したリンクを手動で確認すると運営チームのリンクになり、運営チームが作成したリンクがボットのリンクに戻ることはありません。
+
 ## よくある質問 {#faq}
 
 ### 複数アカウントはサーバー間で共有されますか？
@@ -127,4 +131,4 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 
 ### /alt を使えるのは誰ですか？
 
-**メンバーをBAN**の権限を持つメンバーです。Identity Update が実験中の間は、[Premium](/ja/premium) サーバーに限ります。
+**メンバーをBAN**の権限を持つメンバーです。

@@ -34,7 +34,7 @@ O RaidProtect define ele mesmo as permissões do canal `#verificação` e do car
 2. Na aba **Permissões**:
    - Certifique-se de que `@everyone` **não** tem permissão para ver o canal.
    - Verifique se o cargo `@Não verificado` **tem** permissão para **ver o canal** e **ler o histórico de mensagens**.
-   - No modo **Painel (Interativo)**, o modo padrão, `@Não verificado` **não deve** poder enviar mensagens: o código é inserido em uma janela. No modo **Desafio (Clássico)**, ele deve poder **enviar mensagens** para digitar o código.
+   - `@Não verificado` **não deve** poder enviar mensagens: a verificação é feita com o botão “**Verificar**”.
 
 {/* ![Capture d'écran vérification des permissions du salon](../assets/rp-verification-channel-permissions.webp) : montre « Envoyer des messages » autorisé, vrai seulement en mode Challenge */}
 
@@ -62,7 +62,7 @@ Para confirmar que tudo está devidamente configurado:
 
 1. Entre no servidor com outra conta Discord.
 2. Verifique se o canal `#verificação` está visível na chegada.
-3. Clique em “**Verificar**” e insira o código (modo Painel), ou digite o código no canal (modo Desafio).
+3. Clique em “**Verificar**” e depois resolva o quebra-cabeça.
 4. Após a verificação, a conta deve ter acesso aos outros canais.
 
 ## 🛠️ Problemas comuns e soluções {#common-issues}
@@ -70,7 +70,7 @@ Para confirmar que tudo está devidamente configurado:
 | Problema | Solução |
 |---------|----------|
 | 🔴 O canal `#verificação` permanece invisível | Clique em “**Mover para** _categoria_” na tela Captcha, ou coloque o canal em uma **categoria marcada** do processo de integração do Discord. |
-| 🚫 O cargo `@Não verificado` não pode escrever | Normal no modo Painel: o membro clica em “**Verificar**”. No modo Desafio, conceda a ele a **permissão para enviar mensagens** em `#verificação`. |
+| 🚫 O cargo `@Não verificado` não pode escrever | Normal: o membro clica em “**Verificar**”. |
 | 🔓 Um membro não verificado vê outros canais | Clique em “**Corrigir**” no aviso de vazamento da tela Captcha e retire os cargos que o Processo de integração do Discord atribui na chegada. |
 | ❌ O captcha não funciona após a modificação | Clique em “**Atualizar**” na tela Captcha (aba “**Chegadas**” de `/settings`). |
 

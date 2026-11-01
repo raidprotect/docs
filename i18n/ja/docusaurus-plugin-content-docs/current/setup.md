@@ -76,7 +76,7 @@ Discord の[コミュニティモード](./guides/community.md)が必要なの�
 - **モデレーション**：[処罰](./features/sanctions.mdx)、[複数アカウント](./features/alt-accounts.md)\*、ログ、[通報](./features/reports.md)、[透明性](./features/transparency.md)。
 - **ユーティリティ**：[タグロール](./features/tag-role.md)、[チャンネルロック](./features/channel-lock.md)、[勤務中ロール](./features/moderation.mdx#onduty)、メッセージのキャッシュ。
 
-\* 実験中：この項目は、Identity Update（複数アカウント）を利用できるサーバー、つまり [Premium](/ja/premium) の公開ベータでのみ表示されます。
+\* バージョン 3.7.0（Identity Update）の新機能で、すでにベータで利用できます。
 
 各行には、設定の現在の値とボタンが表示されます。「**設定**」は専用の画面を開き、「**編集**」は入力ウィンドウを開きます。変更はすべて即座に反映されます。
 

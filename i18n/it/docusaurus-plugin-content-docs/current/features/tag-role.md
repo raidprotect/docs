@@ -71,7 +71,7 @@ Rileviamo il tag al prossimo aggiornamento del profilo del membro. Finché non m
 
 ### Perché il mio ruolo è rifiutato?
 
-Il Ruolo del Tag non può essere un ruolo già usato da RaidProtect, un ruolo gestito da un'applicazione, un ruolo posizionato sopra RaidProtect o sopra di te, né un ruolo con permessi sensibili.
+Il Ruolo del Tag non può essere un ruolo già usato da RaidProtect, un ruolo gestito da un'applicazione, un ruolo posizionato sopra RaidProtect o sopra di te, né un ruolo con permessi sensibili. Sotto l'errore, il pulsante “**Rimuovi questi permessi**” li toglie al ruolo al posto tuo: serve il permesso **Gestire i ruoli** e un ruolo più alto di questo, e non puoi togliere un permesso che non hai tu stesso. RaidProtect deve anche poter modificare questo ruolo.
 
 ### Chi può configurare il Ruolo del Tag?
 

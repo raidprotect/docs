@@ -76,7 +76,7 @@ Le impostazioni sono organizzate in cinque schede:
 - **Moderazione**: [sanzioni](./features/sanctions.mdx), [doppi account](./features/alt-accounts.md)\*, log, [segnalazioni](./features/reports.md) e [trasparenza](./features/transparency.md).
 - **Utilità**: [ruolo del tag](./features/tag-role.md), [blocco canale](./features/channel-lock.md), [ruolo in servizio](./features/moderation.mdx#onduty) e memorizzazione dei messaggi.
 
-\* In sperimentazione: questa riga compare solo sui server che hanno accesso all'Identity Update (doppi account), in beta pubblica [Premium](/it/premium).
+\* Novità della versione 3.7.0 (Identity Update), già disponibile in beta.
 
 Ogni riga mostra il valore attuale dell'impostazione e un pulsante: “**Configurare**” apre una schermata dedicata, “**Modifica**” apre una finestra di inserimento. Ogni modifica si applica immediatamente.
 

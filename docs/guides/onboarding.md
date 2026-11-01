@@ -34,7 +34,7 @@ RaidProtect pose lui-même les permissions du salon `#vérification` et du rôle
 2. Dans l’onglet **Permissions** :
    - Assurez-vous que `@everyone` **n’a pas** la permission de voir le salon.
    - Vérifiez que le rôle `@Non vérifié` **a** la permission de **voir le salon** et **voir les anciens messages**.
-   - En mode **Panneau (Interactif)**, le mode par défaut, `@Non vérifié` **ne doit pas** pouvoir envoyer de messages : le code se saisit dans une fenêtre. En mode **Challenge (Classique)**, il doit pouvoir **envoyer des messages** pour taper le code.
+   - `@Non vérifié` **ne doit pas** pouvoir envoyer de messages : la vérification se fait avec le bouton “**Vérifier**”.
 
 {/* ![Capture d'écran vérification des permissions du salon](../assets/rp-verification-channel-permissions.webp) : montre « Envoyer des messages » autorisé, vrai seulement en mode Challenge */}
 
@@ -62,7 +62,7 @@ Pour confirmer que tout est bien configuré :
 
 1. Rejoignez le serveur avec un autre compte Discord.
 2. Vérifiez que le salon `#vérification` est visible à l’arrivée.
-3. Cliquez sur “**Vérifier**” et saisissez le code (mode Panneau), ou tapez le code dans le salon (mode Challenge).
+3. Cliquez sur “**Vérifier**” et puis résolvez le puzzle.
 4. Une fois vérifié, le compte devrait avoir accès aux autres salons.
 
 ## 🛠️ Problèmes fréquents et solutions {#common-issues}
@@ -70,7 +70,7 @@ Pour confirmer que tout est bien configuré :
 | Problème | Solution |
 |---------|----------|
 | 🔴 Le salon `#vérification` reste invisible | Cliquez sur “**Déplacer dans** _catégorie_” sur l'écran Captcha, ou mettez le salon dans une **catégorie cochée** de l’accueil Discord. |
-| 🚫 Le rôle `@Non vérifié` ne peut pas écrire | Normal en mode Panneau : le membre clique sur “**Vérifier**”. En mode Challenge, donnez-lui la **permission d’envoyer des messages** dans `#vérification`. |
+| 🚫 Le rôle `@Non vérifié` ne peut pas écrire | Normal : le membre clique sur “**Vérifier**”. |
 | 🔓 Un membre non vérifié voit d'autres salons | Cliquez sur “**Corriger**” dans l'encart de fuite de l'écran Captcha, et retirez les rôles que le Processus d'accueil Discord donne à l'arrivée. |
 | ❌ Le Captcha ne fonctionne pas après modification | Cliquez sur “**Actualiser**” sur l'écran Captcha (onglet “**Arrivées**” de `/settings`). |
 

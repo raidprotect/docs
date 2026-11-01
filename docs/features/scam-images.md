@@ -71,11 +71,11 @@ En plus du catalogue global « Crypto Scam », géré par nos soins et appli
 6. Choisissez le “**Salon de vérification**” de la liste.
 7. Cliquez sur “**Ajouter des images**” et envoyez jusqu'à 10 images. Le résultat indique les images ajoutées, les variantes rattachées, les doublons ignorés et les images refusées.
 
-Les images d'une liste sont supprimées dès qu'elles réapparaissent sur votre serveur, et leur auteur reçoit la sanction choisie plus haut. Le motif de la sanction nomme la liste (« Image de la liste « _nom_ » »). Sans sanction, la suppression est notée dans vos logs de modération, avec le salon et la liste.
+Les images d'une liste sont supprimées dès qu'elles réapparaissent sur votre serveur, et leur auteur reçoit la sanction choisie plus haut, ou celle de la liste si vous lui en avez donné une (voir ci-dessous). Le motif de la sanction nomme la liste (« Image de la liste « _nom_ » »). Sans sanction, la suppression est notée dans vos logs de modération, avec le salon et la liste.
 
-:::warning Une liste = un seul registre d'images
-Rangez dans une liste un seul type de contenu. Mélanger des images sans rapport dans une même liste corrompt la détection : créez plutôt une seconde liste.
-:::
+### Sanction d'une liste {#list-sanction}
+
+Chaque liste a son propre écran. Cliquez sur “**Régler**” à côté de la liste, puis choisissez “**Sanction de cette liste**” et, si besoin, sa durée. “**Comme le filtre**” (par défaut) garde la sanction du filtre Images.
 
 ### Salon de vérification {#review}
 

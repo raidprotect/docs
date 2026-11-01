@@ -21,7 +21,7 @@ Un raid repose presque toujours sur des comptes jetables, créés en série et q
 
 Le captcha repose sur un rôle **@Non vérifié** et un salon **#vérification**. Lorsqu'un utilisateur rejoint votre serveur :
 - **Mise en attente :** nous lui donnons le rôle **@Non vérifié**, qui limite son accès au seul salon **#vérification**.
-- **Épreuve :** en mode Panneau, il résout un puzzle dans l'[Activity RaidProtect](#activity). En mode Challenge, il recopie un code affiché sur une image. Voir les [modes d'affichage](#display-mode).
+- **Épreuve :** il résout un puzzle dans l'[Activity RaidProtect](#activity). Voir les [modes d'affichage](#display-mode).
 - **Réussite :** le rôle **@Non vérifié** est retiré et le membre accède au serveur. Ses [rôles automatiques](./onboarding.md#autorole) et le [message de bienvenue](./onboarding.md#welcome-message) partent à ce moment-là.
 - **Échec :** quand il épuise ses essais, il est expulsé, mis au jail ou bloqué quelques minutes avant de pouvoir réessayer, selon votre réglage. Il peut revenir et retenter le captcha après une expulsion.
 - **Logs :** chaque arrivée est notée dans le salon de logs avec la date de création du compte, ainsi que les réussites, les échecs et les délais expirés.
@@ -39,11 +39,12 @@ Le captcha repose sur un rôle **@Non vérifié** et un salon **#vérification**
 | Mode | Ce que voit le nouveau membre |
 |---|---|
 | **Panneau (Interactif)**, par défaut | Un message permanent “**Système de vérification**” avec un bouton “**Vérifier**”, qui ouvre l'[Activity RaidProtect](#activity). Le membre ne peut pas écrire dans **#vérification**. |
-| **Challenge (Classique)** | Une image est postée dans **#vérification** à son arrivée, et il tape le code en message dans le salon. |
 
 Le panneau porte un bouton “**Translate**” pour le lire dans sa langue, et chaque arrivant y est mentionné dans le salon de vérification, puis le message est supprimé : il retrouve ainsi le salon.
 
-Le mode Panneau garde le salon propre et permet des réglages en plus : choix de la sanction quand les essais sont épuisés, [captcha gelé pendant un raid](./raid-mode.md#action), [retenue à l'entrée des comptes trop récents](./onboarding.md#minage). Le mode Challenge expulse toujours le membre à la fin du temps imparti ou quand ses essais sont épuisés.
+Le mode Panneau garde le salon propre et permet des réglages en plus : choix de la sanction quand les essais sont épuisés, [captcha gelé pendant un raid](./raid-mode.md#action), [retenue à l'entrée des comptes trop récents](./onboarding.md#minage). 
+
+Le mode **Challenge (Classique)**, où le membre recopiait un code dans le salon, n'est plus proposé. Un serveur qui l'utilisait encore passe automatiquement au mode Panneau à la prochaine arrivée d'un membre. L'image avec un code reste utilisée pour un membre dont l'appareil ne peut pas ouvrir l'Activity.
 
 ### Déclenchement {#trigger}
 
@@ -76,7 +77,7 @@ Le captcha démarre en mode **Panneau (Interactif)**, déclenché **En permanenc
 1. Faites la [commande `/settings`](../setup.md#settings).
 2. Ouvrez l'onglet “**Arrivées**”.
 3. Cliquez sur “**Configurer**” à côté de “**Captcha**”.
-4. Dans “**Mode d'affichage**”, choisissez “**Panneau (Interactif)**” ou “**Challenge (Classique)**”.
+4. Dans “**Mode d'affichage**”, choisissez “**Panneau (Interactif)**”.
 5. Dans “**Déclenchement**”, choisissez “**En permanence**”, “**Automatique**” ou “**Intelligent**”.
 
 ### Vérification dans l'Activity {#activity}
@@ -97,7 +98,7 @@ En mode **Panneau**, le bouton “**Vérifier**” ouvre l'**Activity RaidProtec
 
 </details>
 
-#### Doubles comptes repérés par le captcha <span className="badge-experiment">Expérimentation</span> {#activity-alts}
+#### Doubles comptes repérés par le captcha {#activity-alts}
 
 Avec l'[Identity Update](./alt-accounts.md), l'Activity repère aussi les arrivants probablement tenus par la même personne qu'un membre de votre serveur :
 
@@ -112,8 +113,8 @@ Avec l'[Identity Update](./alt-accounts.md), l'Activity repère aussi les arriva
 
 Seuls les comptes de votre serveur vous sont montrés : rien n'est dit des autres serveurs.
 
-:::info Expérimentation : Identity Update
-Le repérage des doubles comptes fait partie de l'**Identity Update**, prévue pour la version 3.7.0. En attendant sa sortie, il est en expérimentation, en bêta publique pour les serveurs [Premium](/premium).
+:::info Identity Update (3.7.0)
+Le repérage des doubles comptes fait partie de l'**Identity Update**, prévue pour la version 3.7.0 et déjà disponible en bêta.
 :::
 
 :::tip Pourquoi repérer les doubles comptes ?
@@ -131,7 +132,6 @@ RaidProtect ne récupère pas l'adresse IP des membres qui passent le captcha, e
 
 - **Dans Discord, sans site externe :** l'Activity s'ouvre dans Discord, et ses échanges passent par le proxy de Discord, qui ne nous transmet pas l'adresse IP du membre. Nous ne la voyons jamais, donc nous ne pouvons ni la garder ni la comparer. Le bot lui-même ne la reçoit pas non plus : Discord ne la donne à aucun bot.
 - **Votre équipe ne voit que le résultat :** réussite, échec, revue ou lien de doubles comptes, jamais les caractéristiques de l'appareil.
-- **Mode Challenge :** le membre tape le code en message dans le salon, et rien n'est relevé sur son appareil.
 
 </details>
 
@@ -139,7 +139,9 @@ Un membre peut demander l'effacement de ses données de vérification à [privac
 
 ### Tester le captcha {#test-mode}
 
-Il n'y a rien à activer : en mode Panneau, un membre de votre équipe déjà vérifié (le propriétaire, ou un membre avec la permission **Administrateur** ou **Gérer le serveur**) peut toujours cliquer sur “**Vérifier**” pour refaire le captcha. Les essais et le temps de résolution s'appliquent comme pour un arrivant. Rien n'est appliqué : le log du captcha (“**Test de l'équipe**”) dit ce qui aurait été fait.
+Il n'y a rien à activer : un membre de votre équipe déjà vérifié (le propriétaire, ou un membre avec la permission **Administrateur** ou **Gérer le serveur**) peut toujours cliquer sur “**Vérifier**” pour refaire le captcha. Les essais et le temps de résolution s'appliquent comme pour un arrivant. Rien n'est appliqué : le log du captcha (“**Test de l'équipe**”) dit ce qui aurait été fait.
+
+Le bouton “**Tester le captcha**” de l'écran Captcha de `/settings` ouvre l'Activity de la même façon, avant même d'avoir choisi un salon de vérification (même permission requise).
 
 ### Difficulté {#difficulty}
 
@@ -156,7 +158,6 @@ Il n'y a rien à activer : en mode Panneau, un membre de votre équipe déjà v�
 | “**Essais**” | de 1 à 10 essais | 3 essais |
 | “**Action quand les essais sont épuisés**” (Panneau) | “**Essais épuisés : Expulser**”, “**Essais épuisés : Jail**” ou “**Essais épuisés : Bloquer 10 min**” | Expulser |
 | “**Temps de résolution**” (Panneau) | Désactivé, 15, 30 ou 45 secondes, 1, 2, 3 ou 5 minutes : le temps laissé pour résoudre le puzzle, compté dès la première épreuve (après l'accord du membre). Un code en image garde au moins 2 minutes | 30 secondes |
-| “**Temps de résolution (avant expulsion)**” (Challenge) | 3, 5, 10 ou 15 minutes, ou une valeur de 30 secondes à 15 minutes : passé ce délai, le membre est expulsé | 5 minutes |
 
 :::info
 Le choix “**Essais épuisés : Jail**” place le membre au [jail](./sanctions.mdx#jail) au lieu de l'expulser. Il faut pour cela un Rôle de Jail configuré dans l'onglet “**Modération**” > “**Sanctions**”. Le choix “**Essais épuisés : Bloquer 10 min**” garde le membre sur le serveur : il attend 10 minutes, puis recommence avec des essais neufs.
@@ -168,7 +169,7 @@ Pour un serveur communautaire ouvert à tous, gardez le mode **Panneau**, le dé
 
 ### Délai avant expulsion {#timeout}
 
-En mode Panneau, ce délai est compté dès l'arrivée du membre : s'il n'est pas vérifié à temps, il subit votre action d'échec (expulsion, jail ou blocage).
+Ce délai est compté dès l'arrivée du membre : s'il n'est pas vérifié à temps, il subit votre action d'échec (expulsion, jail ou blocage). L'échéance survit à un redémarrage du bot.
 
 1. Faites la [commande `/settings`](../setup.md#settings).
 2. Ouvrez l'onglet “**Arrivées**”.
@@ -191,7 +192,7 @@ L'écran du captcha affiche des encarts quand quelque chose empêche la vérific
 <summary>Les quatre alertes possibles et comment les régler</summary>
 
 - **Salon invisible à l'arrivée :** le salon de vérification n'est dans aucun salon par défaut du Processus d'accueil Discord. Cliquez sur “**Déplacer dans** _catégorie_” ou “**Créer une nouvelle catégorie**” pour que nous le corrigions, ou suivez le [guide du Processus d'accueil](../guides/onboarding.md).
-- **Fuites du rôle @Non vérifié :** des rôles donnés par le Processus d'accueil Discord en même temps que **@Non vérifié** contournent la vérification, le rôle **@Non vérifié** porte des permissions, **@everyone** a la permission `ADMINISTRATOR`, ou des salons restent visibles aux membres en vérification (ou au jail). Le bouton “**Corriger**” ferme les salons concernés.
+- **Fuites du rôle @Non vérifié :** des rôles donnés par le Processus d'accueil Discord en même temps que **@Non vérifié** contournent la vérification, le rôle **@Non vérifié** porte des permissions, **@everyone** a la permission `ADMINISTRATOR`, ou des salons restent visibles aux membres en vérification (ou au jail). Le bouton “**Corriger**” ferme les salons concernés. Si c'est voulu, “**Marquer comme OK**” garde l'alerte éteinte, comme les exceptions de l'[audit](./audit.md#ignore).
 - **Niveau de vérification Élevé :** ce niveau Discord fait attendre 10 minutes avant de pouvoir écrire. Le captcha filtre déjà l'entrée : le niveau conseillé avec le captcha est **Moyen**.
 - **Permissions manquantes :** RaidProtect a besoin de `KICK_MEMBERS` et `MANAGE_ROLES`.
 
@@ -255,7 +256,7 @@ Le captcha travaille avec les autres protections des arrivées :
 
 ### Combien de temps a-t-on pour résoudre le captcha ?
 
-En mode Panneau, le membre a 3 essais par défaut (1 à 10) et 30 secondes par défaut pour résoudre le puzzle (désactivable, jusqu'à 5 minutes), compté dès la première épreuve. Aucun délai d'expulsion n'est appliqué par défaut, mais vous pouvez en régler un jusqu'à 30 minutes. En mode Challenge, il a 5 minutes par défaut (de 30 secondes à 15 minutes) avant d'être expulsé.
+Le membre a 3 essais par défaut (1 à 10) et 30 secondes par défaut pour résoudre le puzzle (désactivable, jusqu'à 5 minutes), compté dès la première épreuve. Aucun délai d'expulsion n'est appliqué par défaut, mais vous pouvez en régler un jusqu'à 30 minutes.
 
 ### Que se passe-t-il si un membre échoue le captcha ?
 

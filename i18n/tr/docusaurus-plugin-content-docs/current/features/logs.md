@@ -29,8 +29,9 @@ Her ailede iki liste bulunur:
 
 | Aile | Kaydedilenler |
 | --- | --- |
-| **Kanallar, roller ve davetler** | Oluşturulan, düzenlenen veya silinen kategoriler, kanallar, ses kanalları ve alt başlıklar, izinler dahil. Roller (ve yeni sıralamaları), davetler, webhook'lar, entegrasyonlar ve rolleriyle birlikte eklenen veya çıkarılan botlar. Eklenen veya çıkarılan kelime ve ifadeleriyle Discord AutoMod kuralları ve planlanmış etkinlikler. Bir etkinlikle ilgilenen üyeler [Premium](/tr/premium)'a ayrılmıştır. |
-| **Üyeler** | Katılımlar (hesap yaşıyla) ve ayrılmalar (katılma tarihi ve rollerle), kabul edilen kurallar, eklenen veya kaldırılan roller, takma adlar, sunucu avatarları, çıkarılan etkin olmayan üyeler ve takviyeler. |
+| **Kanallar ve roller** | Oluşturulan, düzenlenen veya silinen kategoriler, kanallar, ses kanalları ve alt başlıklar, izinler dahil. Roller (ve yeni sıralamaları) ve webhook'lar. |
+| **Sunucu** | Rolleriyle birlikte eklenen veya çıkarılan botlar, entegrasyonlar, Discord AutoMod kuralları (eklenen veya çıkarılan kelime ve ifadelerle) ve planlanmış etkinlikler. Bir etkinlikle ilgilenen üyeler [Premium](/tr/premium)'a ayrılmıştır. |
+| **Üyeler** | Katılımlar (hesap yaşıyla) ve ayrılmalar (katılma tarihi ve rollerle), oluşturulan veya silinen davetler, kabul edilen kurallar, eklenen veya kaldırılan roller, takma adlar, sunucu avatarları, çıkarılan etkin olmayan üyeler ve takviyeler. |
 | **Mesajlar** | Kimin sildiğiyle birlikte silinen mesajlar, düzenlenen mesajlar, toplu silmeler, sabitlenen veya sabitlemesi kaldırılan mesajlar. |
 | **Ses** <span className="badge-premium">Premium</span> | Katılımlar, oturum süresiyle ayrılmalar, kanal değişiklikleri, mikrofon, ses, kamera ve ekran paylaşımı. Ekibin eylemleri (susturma, sağırlaştırma, taşıma, bağlantıyı kesme) yapanıyla birlikte ayrı tutulur. Başlatılan, düzenlenen veya sona eren sahne etkinlikleri ve söz alan ya da el kaldıran üyeler. |
 | **Emojiler ve tepkiler** | Oluşturulan, düzenlenen veya silinen emojiler, çıkartmalar ve soundboard sesleri. Eklenen veya kaldırılan tepkiler [Premium](/tr/premium)'a ayrılmıştır ve varsayılan olarak işaretsizdir. |
