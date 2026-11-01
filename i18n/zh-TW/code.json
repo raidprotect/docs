@@ -8230,9 +8230,6 @@
   "mockup.captcha.passTitle": {
     "message": "驗證成功"
   },
-  "mockup.captcha.passText": {
-    "message": "歡迎來到 {server}！"
-  },
   "mockup.captcha.panelTitle": {
     "message": "驗證系統"
   },
@@ -8244,5 +8241,11 @@
   },
   "mockup.captcha.opening": {
     "message": "正在開啟驗證 Activity…"
+  },
+  "mockup.captcha.cardWelcome": {
+    "message": "歡迎來到"
+  },
+  "mockup.captcha.cardMember": {
+    "message": "第 1,234 位成員"
   }
 }

@@ -8230,9 +8230,6 @@
   "mockup.captcha.passTitle": {
     "message": "Doğrulama başarılı"
   },
-  "mockup.captcha.passText": {
-    "message": "{server} sunucusuna hoş geldin!"
-  },
   "mockup.captcha.panelTitle": {
     "message": "Doğrulama sistemi"
   },
@@ -8244,5 +8241,11 @@
   },
   "mockup.captcha.opening": {
     "message": "Doğrulama Activity'si açılıyor…"
+  },
+  "mockup.captcha.cardWelcome": {
+    "message": "Hoş geldiniz:"
+  },
+  "mockup.captcha.cardMember": {
+    "message": "1.234. üye"
   }
 }

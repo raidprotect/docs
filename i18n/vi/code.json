@@ -8230,9 +8230,6 @@
   "mockup.captcha.passTitle": {
     "message": "Xác minh thành công"
   },
-  "mockup.captcha.passText": {
-    "message": "Chào mừng đến với {server}!"
-  },
   "mockup.captcha.panelTitle": {
     "message": "Hệ thống xác minh"
   },
@@ -8244,5 +8241,11 @@
   },
   "mockup.captcha.opening": {
     "message": "Đang mở Activity xác minh…"
+  },
+  "mockup.captcha.cardWelcome": {
+    "message": "Chào mừng đến với"
+  },
+  "mockup.captcha.cardMember": {
+    "message": "Thành viên số 1.234"
   }
 }

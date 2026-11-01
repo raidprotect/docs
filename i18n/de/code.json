@@ -8230,9 +8230,6 @@
   "mockup.captcha.passTitle": {
     "message": "Verifizierung erfolgreich"
   },
-  "mockup.captcha.passText": {
-    "message": "Willkommen auf {server}!"
-  },
   "mockup.captcha.panelTitle": {
     "message": "Verifizierungssystem"
   },
@@ -8244,5 +8241,11 @@
   },
   "mockup.captcha.opening": {
     "message": "Die Verifizierungs-Activity wird geöffnet…"
+  },
+  "mockup.captcha.cardWelcome": {
+    "message": "Willkommen auf"
+  },
+  "mockup.captcha.cardMember": {
+    "message": "Mitglied Nr. 1.234"
   }
 }

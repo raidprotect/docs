@@ -8230,9 +8230,6 @@
   "mockup.captcha.passTitle": {
     "message": "認証が完了しました"
   },
-  "mockup.captcha.passText": {
-    "message": "{server} へようこそ！"
-  },
   "mockup.captcha.panelTitle": {
     "message": "認証システム"
   },
@@ -8244,5 +8241,11 @@
   },
   "mockup.captcha.opening": {
     "message": "認証アクティビティを開いています…"
+  },
+  "mockup.captcha.cardWelcome": {
+    "message": "ようこそ"
+  },
+  "mockup.captcha.cardMember": {
+    "message": "1,234 番目のメンバー"
   }
 }

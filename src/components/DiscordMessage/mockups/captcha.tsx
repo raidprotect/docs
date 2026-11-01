@@ -69,7 +69,7 @@ function Activity({ phase }: { phase: number }) {
         <>
           <p className={styles.hint}>{t("hint", "Faites glisser la pièce dans le trou.")}</p>
           <div className={`${styles.puzzle} ${phase === 5 ? styles.puzzleOk : ""}`} aria-hidden>
-            <svg viewBox="0 0 320 180">
+            <svg viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice">
               <defs>
                 <linearGradient id="cpzBg" x1="0" y1="0" x2="1" y2="1">
                   <stop offset="0" stopColor="#3b4a8f" />
@@ -98,9 +98,15 @@ function Activity({ phase }: { phase: number }) {
 
       {phase >= 6 && (
         <div className={styles.result}>
-          <div className={styles.resultIcon}>✓</div>
+          <div className={styles.card} aria-hidden>
+            <div className={styles.cardAvatar} />
+            <div className={styles.cardText}>
+              <span className={styles.cardWelcome}>{t("cardWelcome", "Bienvenue sur")}</span>
+              <span className={styles.cardServer}>{server}</span>
+              <span className={styles.cardMember}>{t("cardMember", "Membre n°1 234")}</span>
+            </div>
+          </div>
           <h5 className={styles.resultTitle}>{t("passTitle", "Vérification réussie")}</h5>
-          <p className={styles.resultText}>{t("passText", "Bienvenue sur {server} !", { server })}</p>
         </div>
       )}
     </div>

@@ -8230,9 +8230,6 @@
   "mockup.captcha.passTitle": {
     "message": "验证成功"
   },
-  "mockup.captcha.passText": {
-    "message": "欢迎来到 {server}！"
-  },
   "mockup.captcha.panelTitle": {
     "message": "验证系统"
   },
@@ -8244,5 +8241,11 @@
   },
   "mockup.captcha.opening": {
     "message": "验证 Activity 正在打开…"
+  },
+  "mockup.captcha.cardWelcome": {
+    "message": "欢迎来到"
+  },
+  "mockup.captcha.cardMember": {
+    "message": "第 1,234 位成员"
   }
 }
