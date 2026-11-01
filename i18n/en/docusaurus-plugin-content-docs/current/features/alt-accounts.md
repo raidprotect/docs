@@ -7,8 +7,8 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 
 **Alt accounts** let your team declare that several Discord accounts belong to the same person. The [sanctions](./sanctions.mdx) of one then extend to the others: a banned member can no longer come back with a second account to get around their sanction.
 
-:::info Experiment: Identity Update
-Alt accounts are part of the **Identity Update**, planned for version 3.7.0. Until its release, they are an experiment, in public beta for [Premium](/en/premium) servers.
+:::info Identity Update (3.7.0)
+Alt accounts are part of the **Identity Update**, planned for version 3.7.0 and already available in beta.
 :::
 
 ## ❓ How does it work? {#working}
@@ -53,6 +53,8 @@ The `/alt` command and its buttons require the **Ban Members** permission.
 3. Click "**Configure**" next to "**Duplicate accounts**".
 
 <Settings start="alts" />
+
+The screen opens on the free [One account per person](#single-account) setting, followed by the linked account sanctions, marked Premium where they are.
 
 ### Linked account sanctions <span className="badge-premium">Premium</span> {#modes}
 
@@ -107,6 +109,8 @@ This setting requires a [Jail role](./sanctions.mdx#jail). If there is none, a w
 
 To change a group's main account, use `/alt` with one of the accounts, then the "**Edit an account in the group**" selector.
 
+RaidProtect remembers whether a link comes from your team or from the bot (the [captcha](./captcha.md#activity-alts)). Manually confirming a link set by the bot makes it a link of your team, and a link set by your team never goes back to being a bot link.
+
 ## Frequently asked questions {#faq}
 
 ### Are alt accounts shared between servers?
@@ -127,4 +131,4 @@ Yes. In the `/alt` panel, click "**Link a member**" and enter its Discord ID.
 
 ### Who can use /alt?
 
-Members who have the **Ban Members** permission, on a [Premium](/en/premium) server while the Identity Update is an experiment.
+Members who have the **Ban Members** permission.

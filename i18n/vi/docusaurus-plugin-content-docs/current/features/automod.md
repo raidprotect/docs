@@ -7,6 +7,8 @@ import Settings from '@site/src/components/DiscordMessage/mockups/v2';
 
 **Automod** của RaidProtect gom các bộ lọc tự động gỡ nội dung không mong muốn ngay khi nó được đăng. Mỗi bộ lọc có hình phạt riêng cho tác giả tin nhắn.
 
+Các bộ lọc được hiển thị theo thứ tự Tệp, Hình ảnh, rồi Máy chủ khác.
+
 Để mở nó:
 
 1. Dùng [lệnh `/settings`](../setup.md#settings).
@@ -74,8 +76,8 @@ Trong “**Kênh và danh mục bị bỏ qua**”, hãy chọn tối đa 25 kê
 
 Việc kiểm tra **tag máy chủ** hiển thị vẫn hoạt động ở mọi nơi: nó nhắm vào thành viên, không phải kênh mà họ viết.
 
-:::info Thử nghiệm: Identity Update
-Trên các máy chủ [Premium](/vi/premium), nơi Identity Update đang ở bản beta công khai, các kênh bị bỏ qua chuyển sang màn hình “**Ngoại lệ**”, thêm **vai trò bị bỏ qua** và **thành viên bị bỏ qua** (mỗi loại tối đa 25). Tin nhắn của một thành viên bị bỏ qua, hoặc mang một vai trò bị bỏ qua, không bị xóa cũng không bị xử phạt. Tiện cho một thành viên đội ngũ của bạn đăng lời mời của các đối tác mà không có quyền Quản lý tin nhắn. Dự kiến cho phiên bản 3.7.0.
+:::info Identity Update (3.7.0)
+Trong bản beta, các kênh bị bỏ qua chuyển sang màn hình “**Ngoại lệ**”, thêm **vai trò bị bỏ qua** và **thành viên bị bỏ qua** (mỗi loại tối đa 25). Tin nhắn của một thành viên bị bỏ qua, hoặc mang một vai trò bị bỏ qua, không bị xóa cũng không bị xử phạt. Tiện cho một thành viên đội ngũ của bạn đăng lời mời của các đối tác mà không có quyền Quản lý tin nhắn.
 :::
 
 ### Danh sách máy chủ {#servers-lists}
@@ -104,7 +106,7 @@ Các tệp của một tin nhắn được chuyển tiếp cũng được tính,
 
 ### Cấu hình {#files-config}
 
-1. Trong Automod, nhấp vào “**Cấu hình**” bên cạnh “**Phần mở rộng tệp**”.
+1. Trong Automod, nhấp vào “**Cấu hình**” bên cạnh “**Tệp**” (bộ lọc Phần mở rộng tệp).
 2. Bật bộ lọc bằng công tắc ở phía trên bên phải.
 3. Dưới “**Toàn máy chủ**”, chọn một chế độ: “**Tắt**”, “**Danh sách chặn**” hoặc “**Danh sách cho phép**”.
 4. Đánh dấu các **nhóm** (Tệp thực thi, Hình ảnh, Video, Âm thanh, Tệp nén, Tài liệu) và/hoặc nhập các phần mở rộng khác cách nhau bằng dấu phẩy, ví dụ `exe, msi`. Dấu chấm là tùy chọn. Một quy tắc chấp nhận tối đa 50 phần mở rộng tự do, ngoài các nhóm.

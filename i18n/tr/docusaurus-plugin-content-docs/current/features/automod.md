@@ -7,6 +7,8 @@ import Settings from '@site/src/components/DiscordMessage/mockups/v2';
 
 RaidProtect'in **Automod**'u, istenmeyen bir içerik gönderilir gönderilmez onu otomatik olarak kaldıran filtreleri bir araya getirir. Her filtrenin, mesajın yazarı için kendi yaptırımı vardır.
 
+Filtreler Dosyalar, Görseller, ardından Diğer sunucular sırasıyla listelenir.
+
 Açmak için:
 
 1. [`/settings` komutunu](../setup.md#settings) çalıştırın.
@@ -74,8 +76,8 @@ Yaptırım, üye başına dakikada en fazla bir kez uygulanır: art arda birkaç
 
 Görüntülenen **sunucu etiketi** denetimi her yerde etkin kalır: yazdığı kanalı değil, üyeyi hedefler.
 
-:::info Deneme: Identity Update
-Identity Update'in herkese açık betada olduğu [Premium](/tr/premium) sunucularda yok sayılan kanallar bir “**İstisnalar**” ekranına taşınır; bu ekran **yok sayılan roller** ve **yok sayılan üyeler** ekler (her biri en fazla 25). Yok sayılan bir üyenin ya da yok sayılan bir role sahip bir üyenin mesajı silinmez ve cezalandırılmaz. Mesajları Yönet iznine sahip olmadan ortaklarınızın davetlerini paylaşan bir ekip üyeniz için kullanışlıdır. 3.7.0 sürümü için planlanmıştır.
+:::info Identity Update (3.7.0)
+Betada, yok sayılan kanallar bir “**İstisnalar**” ekranına taşınır; bu ekran **yok sayılan roller** ve **yok sayılan üyeler** ekler (her biri en fazla 25). Yok sayılan bir üyenin ya da yok sayılan bir role sahip bir üyenin mesajı silinmez ve cezalandırılmaz. Mesajları Yönet iznine sahip olmadan ortaklarınızın davetlerini paylaşan bir ekip üyeniz için kullanışlıdır.
 :::
 
 ### Sunucu listeleri {#servers-lists}
@@ -104,7 +106,7 @@ Her yaptırım ve her karantina, ilgili sunucu ve kanalla birlikte [moderasyon l
 
 ### Yapılandırma {#files-config}
 
-1. Automod içinde “**Dosya uzantıları**” yanındaki “**Yapılandır**”a tıklayın.
+1. Automod içinde “**Dosyalar**” (Dosya uzantıları filtresi) yanındaki “**Yapılandır**”a tıklayın.
 2. Filtreyi sağ üstteki anahtarla etkinleştirin.
 3. “**Tüm sunucu**” altında bir mod seçin: “**Devre dışı**”, “**Kara liste**” veya “**Beyaz liste**”.
 4. **Grupları** (Yürütülebilir dosyalar, Görseller, Videolar, Ses, Arşivler, Belgeler) işaretleyin ve/veya virgülle ayrılmış başka uzantılar girin, örneğin `exe, msi`. Nokta isteğe bağlıdır. Bir kural, gruplara ek olarak en fazla 50 serbest uzantı kabul eder.

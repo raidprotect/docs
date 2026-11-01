@@ -34,7 +34,7 @@ RaidProtect establece por sí mismo los permisos del canal `#verificación` y de
 2. En la pestaña **Permisos**:
    - Asegúrate de que `@everyone` **no** tenga permiso para ver el canal.
    - Verifica que el rol `@No verificado` **tenga** permiso para **ver el canal** y **leer el historial de mensajes**.
-   - En modo **Panel (Interactivo)**, el modo por defecto, `@No verificado` **no debe** poder enviar mensajes: el código se introduce en una ventana. En modo **Desafío (Clásico)**, debe poder **enviar mensajes** para escribir el código.
+   - `@No verificado` **no debe** poder enviar mensajes: la verificación se hace con el botón “**Verificar**”.
 
 {/* ![Captura de pantalla de la verificación de permisos del canal](../../../../en/docusaurus-plugin-content-docs/current/assets/rp-verification-channel-permissions.webp) : muestra “Enviar mensajes” permitido, cierto solo en modo Desafío */}
 
@@ -62,7 +62,7 @@ Para confirmar que todo está configurado correctamente:
 
 1. Únete al servidor con otra cuenta de Discord.
 2. Verifica que el canal `#verificación` sea visible al llegar.
-3. Haz clic en “**Verificar**” e introduce el código (modo Panel), o escribe el código en el canal (modo Desafío).
+3. Haz clic en “**Verificar**” y luego resuelve el puzle.
 4. Una vez verificada, la cuenta debería tener acceso a los demás canales.
 
 ## 🛠️ Problemas comunes y soluciones {#common-issues}
@@ -70,7 +70,7 @@ Para confirmar que todo está configurado correctamente:
 | Problema | Solución |
 |---------|----------|
 | 🔴 El canal `#verificación` sigue invisible | Haz clic en “**Mover a** _categoría_” en la pantalla Captcha, o coloca el canal en una **categoría marcada** de la incorporación de Discord. |
-| 🚫 El rol `@No verificado` no puede escribir | Es normal en modo Panel: el miembro hace clic en “**Verificar**”. En modo Desafío, otórgale el **permiso de enviar mensajes** en `#verificación`. |
+| 🚫 El rol `@No verificado` no puede escribir | Es normal: el miembro hace clic en “**Verificar**”. |
 | 🔓 Un miembro no verificado ve otros canales | Haz clic en “**Corregir**” en el recuadro de fuga de la pantalla Captcha, y quita los roles que el Proceso de bienvenida de Discord da al llegar. |
 | ❌ El Captcha no funciona después de la modificación | Haz clic en “**Actualizar**” en la pantalla Captcha (pestaña “**Llegadas**” de `/settings`). |
 

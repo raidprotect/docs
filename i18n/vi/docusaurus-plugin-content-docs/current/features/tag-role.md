@@ -71,7 +71,7 @@ Chúng tôi phát hiện tag ở lần cập nhật hồ sơ tiếp theo của t
 
 ### Vì sao vai trò của tôi bị từ chối?
 
-Vai trò Tag không thể là một vai trò đã được RaidProtect sử dụng, một vai trò do ứng dụng quản lý, một vai trò nằm trên RaidProtect hoặc trên bạn, cũng không thể là vai trò có quyền nhạy cảm.
+Vai trò Tag không thể là một vai trò đã được RaidProtect sử dụng, một vai trò do ứng dụng quản lý, một vai trò nằm trên RaidProtect hoặc trên bạn, cũng không thể là vai trò có quyền nhạy cảm. Bên dưới lỗi, nút “**Gỡ các quyền này**” gỡ chúng khỏi vai trò thay bạn: cần quyền **Quản lý vai trò** và một vai trò cao hơn vai trò này, và bạn không thể gỡ một quyền mà chính bạn không có. RaidProtect cũng phải có thể sửa vai trò đó.
 
 ### Ai có thể cấu hình Vai trò Tag?
 

@@ -34,7 +34,7 @@ RaidProtect, `#doğrulama` kanalının ve `@Doğrulanmamış` rolünün izinleri
 2. **İzinler** sekmesinde:
    - `@everyone` rolünün kanalı görme iznine **sahip olmadığından** emin olun.
    - `@Doğrulanmamış` rolünün **kanalı görme** ve **eski mesajları görme** iznine **sahip olduğunu** doğrulayın.
-   - Varsayılan mod olan **Panel (Etkileşimli)** modunda `@Doğrulanmamış` rolü mesaj **gönderememelidir**: kod bir pencerede girilir. **Meydan okuma (Klasik)** modunda ise kodu yazmak için **mesaj gönderebilmelidir**.
+   - `@Doğrulanmamış` rolü mesaj **gönderememelidir**: doğrulama “**Doğrula**” düğmesiyle yapılır.
 
 {/* ![Kanal izinleri doğrulaması ekran görüntüsü](../assets/rp-verification-channel-permissions.webp) : “Mesaj Gönder” izinli gösteriliyor, yalnızca Meydan okuma modunda doğru */}
 
@@ -62,7 +62,7 @@ Her şeyin doğru yapılandırıldığını doğrulamak için:
 
 1. Başka bir Discord hesabıyla sunucuya katılın.
 2. `#doğrulama` kanalının katılımda görünür olduğunu kontrol edin.
-3. “**Doğrula**”ya tıklayıp kodu girin (Panel modu) veya kodu kanala yazın (Meydan okuma modu).
+3. “**Doğrula**”ya tıklayın ve ardından bulmacayı çözün.
 4. Doğrulandıktan sonra hesabın diğer kanallara erişimi olmalıdır.
 
 ## 🛠️ Sık karşılaşılan sorunlar ve çözümleri {#common-issues}
@@ -70,7 +70,7 @@ Her şeyin doğru yapılandırıldığını doğrulamak için:
 | Sorun | Çözüm |
 |---------|----------|
 | 🔴 `#doğrulama` kanalı görünmez kalıyor | Captcha ekranında “**Şuraya taşı:** _kategori_”ye tıklayın veya kanalı Discord karşılama sürecinde **işaretli bir kategoriye** koyun. |
-| 🚫 `@Doğrulanmamış` rolü yazamıyor | Panel modunda normaldir: üye “**Doğrula**”ya tıklar. Meydan okuma modunda ona `#doğrulama` kanalında **mesaj gönderme izni** verin. |
+| 🚫 `@Doğrulanmamış` rolü yazamıyor | Normaldir: üye “**Doğrula**”ya tıklar. |
 | 🔓 Doğrulanmamış bir üye başka kanalları görüyor | Captcha ekranındaki sızıntı kutusunda “**Düzelt**”e tıklayın ve Discord Karşılama Sürecinin katılımda verdiği rolleri kaldırın. |
 | ❌ Captcha değişiklikten sonra çalışmıyor | Captcha ekranında “**Yenile**”ye tıklayın (`/settings` komutunun “**Katılımlar**” sekmesi). |
 

@@ -7,6 +7,8 @@ import Settings from '@site/src/components/DiscordMessage/mockups/v2';
 
 L'**Automod** di RaidProtect raggruppa i filtri che rimuovono automaticamente un contenuto indesiderato non appena viene pubblicato. Ogni filtro ha la propria sanzione per l'autore del messaggio.
 
+I filtri sono mostrati nell'ordine File, Immagini, poi Altri server.
+
 Per aprirlo:
 
 1. Esegui il [comando `/settings`](../setup.md#settings).
@@ -74,8 +76,8 @@ In “**Canali e categorie ignorati**”, scegli fino a 25 canali o categorie in
 
 Il controllo del **tag del server** mostrato resta attivo ovunque: riguarda il membro, non il canale in cui scrive.
 
-:::info Sperimentazione: Identity Update
-Sui server [Premium](/it/premium), dove l'Identity Update è in beta pubblica, i canali ignorati passano in una schermata “**Eccezioni**”, che aggiunge **ruoli ignorati** e **membri ignorati** (25 al massimo ciascuno). Un messaggio di un membro ignorato, o che ha un ruolo ignorato, non viene né eliminato né sanzionato. Comodo per un membro del tuo team che pubblica gli inviti dei tuoi partner senza avere il permesso Gestire i messaggi. Previsto per la versione 3.7.0.
+:::info Identity Update (3.7.0)
+Nella beta, i canali ignorati passano in una schermata “**Eccezioni**”, che aggiunge **ruoli ignorati** e **membri ignorati** (25 al massimo ciascuno). Un messaggio di un membro ignorato, o che ha un ruolo ignorato, non viene né eliminato né sanzionato. Comodo per un membro del tuo team che pubblica gli inviti dei tuoi partner senza avere il permesso Gestire i messaggi.
 :::
 
 ### Elenchi di server {#servers-lists}
@@ -104,7 +106,7 @@ Contano anche i file di un messaggio inoltrato, e un thread segue le regole del 
 
 ### Configurazione {#files-config}
 
-1. Nell'Automod, clicca su “**Configurare**” accanto a “**Estensioni dei file**”.
+1. Nell'Automod, clicca su “**Configurare**” accanto a “**File**” (il filtro Estensioni dei file).
 2. Attiva il filtro con l'interruttore in alto a destra.
 3. Sotto “**Tutto il server**”, scegli una modalità: “**Disattivato**”, “**Blocklist**” o “**Allowlist**”.
 4. Spunta dei **gruppi** (Eseguibili, Immagini, Video, Audio, Archivi, Documenti) e/o inserisci altre estensioni separate da virgole, per esempio `exe, msi`. Il punto è facoltativo. Una regola accetta al massimo 50 estensioni libere, oltre ai gruppi.

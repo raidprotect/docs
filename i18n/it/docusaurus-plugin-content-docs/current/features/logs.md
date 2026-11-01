@@ -29,8 +29,9 @@ I canali “**Generale**”, “**Moderazione**” e “**Captcha**” dei [log 
 
 | Famiglia | Cosa viene registrato |
 | --- | --- |
-| **Canali, ruoli e inviti** | Categorie, canali, canali vocali e thread creati, modificati o eliminati, permessi compresi. Ruoli (e il loro nuovo ordine), inviti, webhook, integrazioni, e bot aggiunti o rimossi con il loro ruolo. Regole AutoMod di Discord, con le parole e le espressioni aggiunte o rimosse, ed eventi programmati. I membri interessati a un evento sono riservati al [Premium](/it/premium). |
-| **Membri** | Arrivi (con l'età dell'account) e uscite (con la data di arrivo e i ruoli), regolamento accettato, ruoli aggiunti o rimossi, nickname, avatar del server, membri inattivi rimossi e boost. |
+| **Canali e ruoli** | Categorie, canali, canali vocali e thread creati, modificati o eliminati, permessi compresi. Ruoli (e il loro nuovo ordine) e webhook. |
+| **Server** | Bot aggiunti o rimossi con il loro ruolo, integrazioni, regole AutoMod di Discord (con le parole e le espressioni aggiunte o rimosse) ed eventi programmati. I membri interessati a un evento sono riservati al [Premium](/it/premium). |
+| **Membri** | Arrivi (con l'età dell'account) e uscite (con la data di arrivo e i ruoli), inviti creati o eliminati, regolamento accettato, ruoli aggiunti o rimossi, nickname, avatar del server, membri inattivi rimossi e boost. |
 | **Messaggi** | Messaggi eliminati, con chi li ha eliminati, messaggi modificati, eliminazioni in massa, messaggi fissati o non più fissati. |
 | **Vocale** <span className="badge-premium">Premium</span> | Arrivi, uscite con la durata della sessione, cambi di canale, microfono, audio, videocamera e condivisione dello schermo. Le azioni del team (silenziare, disattivare l'audio, spostare, disconnettere) sono a parte, con il loro autore. Stage avviati, modificati o terminati, e membri che prendono la parola o alzano la mano. |
 | **Emoji e reazioni** | Emoji, sticker e suoni della soundboard creati, modificati o eliminati. Le reazioni aggiunte o rimosse sono riservate al [Premium](/it/premium) e deselezionate per impostazione predefinita. |

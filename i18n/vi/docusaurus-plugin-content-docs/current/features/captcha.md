@@ -17,7 +17,7 @@ import CaptchaMockup from '@site/src/components/DiscordMessage/mockups/captcha';
 
 Captcha dựa trên một vai trò **@Chưa xác minh** và một kênh **#xác-minh**. Khi một người dùng tham gia máy chủ của bạn:
 - **Chờ xác minh:** chúng tôi cấp cho họ vai trò **@Chưa xác minh**, giới hạn quyền truy cập của họ ở kênh **#xác-minh** duy nhất.
-- **Thử thách:** ở chế độ Bảng, họ giải một câu đố trong [Activity RaidProtect](#activity). Ở chế độ Thử thách, họ nhập lại một mã hiển thị trên hình ảnh. Xem [các chế độ hiển thị](#display-mode).
+- **Thử thách:** họ giải một câu đố trong [Activity RaidProtect](#activity). Xem [các chế độ hiển thị](#display-mode).
 - **Thành công:** vai trò **@Chưa xác minh** bị gỡ và thành viên vào được máy chủ. [Vai trò tự động](./onboarding.md#autorole) và [tin nhắn chào mừng](./onboarding.md#welcome-message) của họ được gửi vào đúng lúc này.
 - **Thất bại:** khi hết lượt thử, họ bị đuổi, bị đưa vào jail hoặc bị chặn vài phút trước khi được thử lại, tùy thiết lập của bạn. Họ có thể quay lại và thử lại captcha sau khi bị đuổi.
 - **Nhật ký:** mỗi lượt vào được ghi trong kênh nhật ký kèm ngày tạo tài khoản, cũng như các lần thành công, thất bại và hết thời gian.
@@ -35,11 +35,12 @@ Captcha dựa trên một vai trò **@Chưa xác minh** và một kênh **#xác-
 | Chế độ | Điều thành viên mới thấy |
 |---|---|
 | **Bảng (Tương tác)**, mặc định | Một tin nhắn cố định “**Hệ thống xác minh**” với một nút “**Xác minh**”, mở [Activity RaidProtect](#activity). Thành viên không thể viết trong **#xác-minh**. |
-| **Thử thách (Cổ điển)** | Một hình ảnh được đăng trong **#xác-minh** khi họ vào, và họ gõ mã bằng tin nhắn trong kênh. |
 
 Bảng có một nút “**Translate**” để đọc nó bằng ngôn ngữ của họ, và mỗi người mới vào đều được nhắc đến trong kênh xác minh, rồi tin nhắn bị xóa: nhờ đó họ tìm lại được kênh.
 
-Chế độ Bảng giữ kênh gọn gàng và cho phép thêm các thiết lập: chọn hình phạt khi hết lượt thử, [captcha bị đóng băng trong đợt raid](./raid-mode.md#action), [giữ lại ở cửa các tài khoản quá mới](./onboarding.md#minage). Chế độ Thử thách luôn đuổi thành viên khi hết thời gian quy định hoặc khi hết lượt thử.
+Chế độ Bảng giữ kênh gọn gàng và cho phép thêm các thiết lập: chọn hình phạt khi hết lượt thử, [captcha bị đóng băng trong đợt raid](./raid-mode.md#action), [giữ lại ở cửa các tài khoản quá mới](./onboarding.md#minage).
+
+Chế độ **Thử thách (Cổ điển)**, nơi thành viên gõ lại một mã trong kênh, không còn được cung cấp. Một máy chủ vẫn dùng nó sẽ tự động chuyển sang chế độ Bảng khi có thành viên vào tiếp theo. Hình ảnh kèm mã vẫn được dùng cho thành viên có thiết bị không mở được Activity.
 
 ### Kích hoạt {#trigger}
 
@@ -72,7 +73,7 @@ Captcha khởi động ở chế độ **Bảng (Tương tác)**, kích hoạt *
 1. Dùng [lệnh `/settings`](../setup.md#settings).
 2. Mở thẻ “**Thành viên mới**”.
 3. Nhấp vào “**Cấu hình**” bên cạnh “**Captcha**”.
-4. Trong “**Chế độ hiển thị**”, chọn “**Bảng (Tương tác)**” hoặc “**Thử thách (Cổ điển)**”.
+4. Trong “**Chế độ hiển thị**”, chọn “**Bảng (Tương tác)**”.
 5. Trong “**Kích hoạt**”, chọn “**Luôn luôn**”, “**Tự động**” hoặc “**Thông minh**”.
 
 ### Xác minh trong Activity {#activity}
@@ -88,7 +89,7 @@ Captcha khởi động ở chế độ **Bảng (Tương tác)**, kích hoạt *
 - **Activity không mở được:** thành viên có thể nhấp vào “**Nhập mã**”. Khi đó, một mã đúng sẽ được đội ngũ của bạn xem xét.
 - **Xóa dữ liệu:** một thành viên có thể yêu cầu xóa dữ liệu xác minh của mình tại [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot). Họ sẽ làm lại captcha, và các hình phạt của họ vẫn còn.
 
-#### Tài khoản phụ được captcha phát hiện <span className="badge-experiment">Thử nghiệm</span> {#activity-alts}
+#### Tài khoản phụ được captcha phát hiện {#activity-alts}
 
 Với [Identity Update](./alt-accounts.md), Activity cũng phát hiện những người vào có khả năng do cùng một người sử dụng với một thành viên trong máy chủ của bạn:
 
@@ -98,8 +99,8 @@ Với [Identity Update](./alt-accounts.md), Activity cũng phát hiện những 
 
 Chỉ các tài khoản của máy chủ bạn được hiển thị cho bạn: không có gì được nói về các máy chủ khác.
 
-:::info Thử nghiệm: Identity Update
-Việc phát hiện tài khoản phụ thuộc **Identity Update**, dự kiến trong phiên bản 3.7.0. Trong khi chờ phát hành, nó đang thử nghiệm, ở dạng bản beta công khai cho các máy chủ [Premium](/vi/premium).
+:::info Identity Update (3.7.0)
+Việc phát hiện tài khoản phụ thuộc **Identity Update**, dự kiến trong phiên bản 3.7.0 và đã có sẵn ở dạng beta.
 :::
 
 ### Quyền riêng tư: không có địa chỉ IP {#privacy}
@@ -109,13 +110,14 @@ RaidProtect không lấy địa chỉ IP của các thành viên làm captcha, v
 - **Trong Discord, không có trang web bên ngoài:** Activity mở ngay trong Discord, và mọi trao đổi của nó đi qua proxy của Discord, nơi không chuyển cho chúng tôi địa chỉ IP của thành viên. Chúng tôi không bao giờ thấy nó, nên chúng tôi không thể lưu giữ hay so sánh nó. Bản thân bot cũng không nhận được nó: Discord không cung cấp nó cho bất kỳ bot nào.
 - **Kiểm tra thiết bị, khi có sự đồng ý của thành viên:** trước câu đố, Activity xin phép thành viên để kiểm tra thiết bị của họ, nhằm phát hiện chương trình tự động và tài khoản phụ. Những gì chúng tôi ghi nhận dùng để nhận ra một thiết bị đã từng thấy, không phải để biết ai đang dùng nó.
 - **Đội ngũ của bạn chỉ thấy kết quả:** thành công, thất bại, xem xét hoặc liên kết tài khoản phụ, không bao giờ thấy các đặc điểm của thiết bị.
-- **Chế độ Thử thách:** thành viên gõ mã bằng tin nhắn trong kênh, và không có gì được ghi nhận trên thiết bị của họ.
 
 Một thành viên có thể yêu cầu xóa dữ liệu xác minh của mình tại [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot). Để hiểu các cách khác nhau để xác minh thành viên, hãy đọc bài viết của chúng tôi về [captcha và xác minh trên Discord](/vi/learn/captcha-discord).
 
 ### Thử captcha {#test-mode}
 
-Không có gì cần bật: ở chế độ Bảng, một thành viên đội ngũ đã được xác minh (chủ sở hữu, hoặc một thành viên có quyền **Quản trị viên** hoặc **Quản lý máy chủ**) luôn có thể nhấp vào “**Xác minh**” để làm lại captcha. Số lần thử và thời gian giải được áp dụng như với một người mới vào. Không có gì được áp dụng: nhật ký của captcha (“**Chế độ thử của đội ngũ**”) cho biết điều lẽ ra đã được làm.
+Không có gì cần bật: một thành viên đội ngũ đã được xác minh (chủ sở hữu, hoặc một thành viên có quyền **Quản trị viên** hoặc **Quản lý máy chủ**) luôn có thể nhấp vào “**Xác minh**” để làm lại captcha. Số lần thử và thời gian giải được áp dụng như với một người mới vào. Không có gì được áp dụng: nhật ký của captcha (“**Chế độ thử của đội ngũ**”) cho biết điều lẽ ra đã được làm.
+
+Nút “**Thử captcha**” trên màn hình Captcha của `/settings` mở Activity theo cách tương tự, ngay cả khi bạn chưa chọn kênh xác minh (cần cùng quyền).
 
 ### Độ khó {#difficulty}
 
@@ -132,7 +134,6 @@ Không có gì cần bật: ở chế độ Bảng, một thành viên đội ng
 | “**Lần thử**” | từ 1 đến 10 lần thử | 3 lần thử |
 | “**Chọn hành động khi hết lượt thử**” (Bảng) | “**Hết lượt thử: Đuổi**”, “**Hết lượt thử: Jail**” hoặc “**Hết lượt thử: Chặn 10 phút**” | Đuổi |
 | “**Thời gian giải**” (Bảng) | Tắt, 15, 30 hoặc 45 giây, 1, 2, 3 hoặc 5 phút: thời gian để giải câu đố, tính từ thử thách đầu tiên (sau khi thành viên đồng ý). Mã dạng ảnh được giữ tối thiểu 2 phút | 30 giây |
-| “**Thời gian giải (trước khi bị đuổi)**” (Thử thách) | 3, 5, 10 hoặc 15 phút, hoặc một giá trị từ 30 giây đến 15 phút: quá thời gian này, thành viên bị đuổi | 5 phút |
 
 :::info
 Lựa chọn “**Hết lượt thử: Jail**” đưa thành viên vào [jail](./sanctions.mdx#jail) thay vì đuổi họ. Muốn vậy cần có một Vai trò Jail được cấu hình trong thẻ “**Kiểm duyệt**” > “**Hình phạt**”. Lựa chọn “**Hết lượt thử: Chặn 10 phút**” giữ thành viên ở lại máy chủ: họ chờ 10 phút rồi làm lại với số lần thử mới.
@@ -140,7 +141,7 @@ Lựa chọn “**Hết lượt thử: Jail**” đưa thành viên vào [jail](
 
 ### Thời gian chờ trước khi đuổi {#timeout}
 
-Ở chế độ Bảng, thời gian chờ này được tính ngay từ khi thành viên vào: nếu họ không được xác minh kịp thời, họ chịu hành động thất bại của bạn (đuổi, jail hoặc chặn).
+Thời gian chờ này được tính ngay từ khi thành viên vào: nếu họ không được xác minh kịp thời, họ chịu hành động thất bại của bạn (đuổi, jail hoặc chặn). Thời hạn vẫn còn hiệu lực sau khi bot khởi động lại.
 
 1. Dùng [lệnh `/settings`](../setup.md#settings).
 2. Mở thẻ “**Thành viên mới**”.
@@ -155,7 +156,7 @@ Khi thời gian chờ bị tắt, các tài khoản chưa xác minh ở lại m�
 
 Màn hình captcha hiển thị các khung thông báo khi có điều gì đó cản trở việc xác minh hoạt động tốt:
 - **Kênh không hiển thị khi vừa vào:** kênh xác minh không nằm trong kênh mặc định nào của Quy trình chào đón Discord. Nhấp vào “**Chuyển vào** _danh mục_” hoặc “**Tạo danh mục mới**” để chúng tôi sửa, hoặc làm theo [hướng dẫn về Quy trình chào đón](../guides/onboarding.md).
-- **Lỗ hổng của vai trò @Chưa xác minh:** các vai trò được Quy trình chào đón Discord cấp cùng lúc với **@Chưa xác minh** qua mặt bước xác minh, vai trò **@Chưa xác minh** mang các quyền, **@everyone** có quyền `ADMINISTRATOR`, hoặc các kênh vẫn hiển thị với thành viên đang xác minh (hoặc đang ở jail). Nút “**Sửa**” đóng các kênh liên quan.
+- **Lỗ hổng của vai trò @Chưa xác minh:** các vai trò được Quy trình chào đón Discord cấp cùng lúc với **@Chưa xác minh** qua mặt bước xác minh, vai trò **@Chưa xác minh** mang các quyền, **@everyone** có quyền `ADMINISTRATOR`, hoặc các kênh vẫn hiển thị với thành viên đang xác minh (hoặc đang ở jail). Nút “**Sửa**” đóng các kênh liên quan. Nếu đó là chủ ý, “**Đánh dấu là OK**” giữ cảnh báo tắt, giống như các ngoại lệ của [kiểm tra](./audit.md#ignore).
 - **Mức độ xác minh Cao:** mức Discord này bắt phải chờ 10 phút trước khi có thể viết. Captcha đã lọc ngay từ lối vào: mức được khuyên dùng khi có captcha là **Trung bình**.
 - **Thiếu quyền:** RaidProtect cần `KICK_MEMBERS` và `MANAGE_ROLES`.
 
@@ -209,7 +210,7 @@ Captcha hoạt động cùng các biện pháp bảo vệ khác dành cho ngư�
 
 ### Có bao lâu để giải captcha?
 
-Ở chế độ Bảng, thành viên có mặc định 3 lượt thử (1 đến 10) và 30 giây để giải câu đố (có thể tắt, tối đa 5 phút), tính từ thử thách đầu tiên. Mặc định không áp dụng thời gian chờ đuổi nào, nhưng bạn có thể đặt một khoảng lên đến 30 phút. Ở chế độ Thử thách, họ có mặc định 5 phút (từ 30 giây đến 15 phút) trước khi bị đuổi.
+Thành viên có mặc định 3 lượt thử (1 đến 10) và 30 giây để giải câu đố (có thể tắt, tối đa 5 phút), tính từ thử thách đầu tiên. Mặc định không áp dụng thời gian chờ đuổi nào, nhưng bạn có thể đặt một khoảng lên đến 30 phút.
 
 ### Điều gì xảy ra nếu một thành viên thất bại ở captcha?
 

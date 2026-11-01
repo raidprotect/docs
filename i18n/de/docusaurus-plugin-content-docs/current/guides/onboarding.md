@@ -34,7 +34,7 @@ RaidProtect setzt die Berechtigungen des Kanals `#verifizierung` und der Rolle `
 2. Im Tab **Berechtigungen**:
    - Stellen Sie sicher, dass `@everyone` **keine** Berechtigung hat, den Kanal zu sehen.
    - Überprüfen Sie, dass die Rolle `@Nicht verifiziert` die Berechtigung hat, den **Kanal zu sehen** und **den Nachrichtenverlauf zu lesen**.
-   - Im Modus **Panel (Interaktiv)**, dem Standardmodus, darf `@Nicht verifiziert` **keine** Nachrichten senden können: Der Code wird in einem Fenster eingegeben. Im Modus **Challenge (Klassisch)** muss die Rolle **Nachrichten senden** können, um den Code zu tippen.
+   - `@Nicht verifiziert` darf **keine** Nachrichten senden können: Die Verifizierung läuft über die Schaltfläche „**Verifizieren**“.
 
 {/* ![Screenshot Überprüfung der Kanalberechtigungen](../assets/rp-verification-channel-permissions.webp) : zeigt „Nachrichten senden“ als erlaubt, gilt nur im Challenge-Modus */}
 
@@ -62,7 +62,7 @@ Um zu bestätigen, dass alles richtig konfiguriert ist:
 
 1. Treten Sie dem Server mit einem anderen Discord-Konto bei.
 2. Überprüfen Sie, ob der Kanal `#verifizierung` bei der Ankunft sichtbar ist.
-3. Klicken Sie auf „**Verifizieren**“ und geben Sie den Code ein (Panel-Modus) oder tippen Sie den Code in den Kanal (Challenge-Modus).
+3. Klicken Sie auf „**Verifizieren**“ und lösen Sie dann das Puzzle.
 4. Nach der Verifizierung sollte das Konto Zugang zu den anderen Kanälen haben.
 
 ## 🛠️ Häufige Probleme und Lösungen {#common-issues}
@@ -70,7 +70,7 @@ Um zu bestätigen, dass alles richtig konfiguriert ist:
 | Problem | Lösung |
 |---------|----------|
 | 🔴 Der Kanal `#verifizierung` bleibt unsichtbar | Klicken Sie auf dem Captcha-Bildschirm auf „**Verschieben nach** _Kategorie_“ oder legen Sie den Kanal in eine **markierte Kategorie** des Discord-Onboardings. |
-| 🚫 Die Rolle `@Nicht verifiziert` kann nicht schreiben | Normal im Panel-Modus: Das Mitglied klickt auf „**Verifizieren**“. Im Challenge-Modus erteilen Sie ihr die **Berechtigung zum Senden von Nachrichten** in `#verifizierung`. |
+| 🚫 Die Rolle `@Nicht verifiziert` kann nicht schreiben | Normal: Das Mitglied klickt auf „**Verifizieren**“. |
 | 🔓 Ein nicht verifiziertes Mitglied sieht andere Kanäle | Klicken Sie im Lücken-Hinweis des Captcha-Bildschirms auf „**Beheben**“ und entfernen Sie die Rollen, die der Discord-Onboarding-Prozess bei der Ankunft vergibt. |
 | ❌ Das Captcha funktioniert nach der Änderung nicht | Klicken Sie auf dem Captcha-Bildschirm (Tab „**Ankünfte**“ von `/settings`) auf „**Aktualisieren**“. |
 

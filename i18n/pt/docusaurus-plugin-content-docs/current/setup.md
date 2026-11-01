@@ -76,7 +76,7 @@ As configurações são organizadas em cinco abas:
 - **Moderação**: [sanções](./features/sanctions.mdx), [contas duplicadas](./features/alt-accounts.md)\*, logs, [denúncias](./features/reports.md) e [transparência](./features/transparency.md).
 - **Utilitários**: [Cargo de Tag](./features/tag-role.md), [bloqueio de canal](./features/channel-lock.md), [cargo em serviço](./features/moderation.mdx#onduty) e cache de mensagens.
 
-\* Em experimentação: essa linha só aparece nos servidores que têm acesso à Identity Update (contas duplicadas), em beta público [Premium](/pt/premium).
+\* Novidade da versão 3.7.0 (Identity Update), já disponível em beta.
 
 Cada linha exibe o valor atual da configuração e um botão: “**Configurar**” abre uma tela dedicada, “**Editar**” abre uma janela de entrada. Qualquer mudança se aplica imediatamente.
 

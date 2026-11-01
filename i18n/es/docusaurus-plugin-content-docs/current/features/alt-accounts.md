@@ -7,8 +7,8 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 
 Las **cuentas duplicadas** permiten a tu equipo declarar que varias cuentas de Discord pertenecen a una misma persona. Las [sanciones](./sanctions.mdx) de una se extienden entonces a las demás: un miembro baneado ya no vuelve con una segunda cuenta para eludir su sanción.
 
-:::info Experimental: Identity Update
-Las cuentas duplicadas forman parte de la **Identity Update**, prevista para la versión 3.7.0. Hasta su lanzamiento, están en fase experimental, en beta pública para los servidores [Premium](/es/premium).
+:::info Identity Update (3.7.0)
+Las cuentas duplicadas forman parte de la **Identity Update**, prevista para la versión 3.7.0 y ya disponible en beta.
 :::
 
 ## ❓ ¿Cómo funciona? {#working}
@@ -53,6 +53,8 @@ El comando `/alt` y sus botones requieren el permiso **Banear miembros**.
 3. Haz clic en “**Configurar**” junto a “**Cuentas duplicadas**”.
 
 <Settings start="alts" />
+
+La pantalla se abre con el ajuste gratuito [Una sola cuenta por persona](#single-account), y siguen las sanciones de las cuentas vinculadas, marcadas Premium donde lo son.
 
 ### Sanciones de las cuentas vinculadas <span className="badge-premium">Premium</span> {#modes}
 
@@ -107,6 +109,8 @@ Este ajuste requiere un [rol Jail](./sanctions.mdx#jail). Si no lo hay, una vent
 
 Para cambiar la cuenta principal de un grupo, usa `/alt` con una de las cuentas y luego el selector “**Modificar una cuenta del grupo**”.
 
+RaidProtect recuerda si un vínculo viene de tu equipo o del bot (el [captcha](./captcha.md#activity-alts)). Confirmar a mano un vínculo puesto por el bot lo convierte en un vínculo de tu equipo, y un vínculo puesto por tu equipo nunca vuelve a ser un vínculo del bot.
+
 ## Preguntas frecuentes {#faq}
 
 ### ¿Las cuentas duplicadas se comparten entre servidores?
@@ -127,4 +131,4 @@ Sí. En el panel `/alt`, haz clic en “**Vincular un miembro**” e introduce s
 
 ### ¿Quién puede usar /alt?
 
-Los miembros que tienen el permiso **Banear miembros**, en un servidor [Premium](/es/premium) mientras la Identity Update esté en fase experimental.
+Los miembros que tienen el permiso **Banear miembros**.

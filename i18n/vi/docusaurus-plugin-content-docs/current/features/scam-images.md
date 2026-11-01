@@ -71,11 +71,11 @@ Ngoài danh mục toàn cục “Crypto Scam”, do chúng tôi quản lý và �
 6. Chọn “**Kênh xác minh**” của danh sách.
 7. Nhấp vào “**Thêm hình ảnh**” và gửi tối đa 10 hình ảnh. Kết quả cho biết các hình ảnh đã thêm, các biến thể được gắn vào, các bản trùng bị bỏ qua và các hình ảnh bị từ chối.
 
-Các hình ảnh của một danh sách bị xóa ngay khi chúng xuất hiện lại trên máy chủ của bạn, và tác giả nhận hình phạt đã chọn ở trên. Lý do của hình phạt nêu tên danh sách (“Hình ảnh trong danh sách ‘_tên_’”). Nếu không có hình phạt, việc xóa được ghi vào nhật ký kiểm duyệt của bạn, kèm kênh và danh sách.
+Các hình ảnh của một danh sách bị xóa ngay khi chúng xuất hiện lại trên máy chủ của bạn, và tác giả nhận hình phạt đã chọn ở trên, hoặc hình phạt của danh sách nếu bạn đã đặt một hình phạt riêng cho nó (xem bên dưới). Lý do của hình phạt nêu tên danh sách (“Hình ảnh trong danh sách ‘_tên_’”). Nếu không có hình phạt, việc xóa được ghi vào nhật ký kiểm duyệt của bạn, kèm kênh và danh sách.
 
-:::warning Một danh sách = một sổ đăng ký hình ảnh duy nhất
-Hãy xếp vào một danh sách chỉ một loại nội dung. Trộn các hình ảnh không liên quan trong cùng một danh sách làm hỏng việc phát hiện: hãy tạo một danh sách thứ hai thay vào đó.
-:::
+### Hình phạt của một danh sách {#list-sanction}
+
+Mỗi danh sách có màn hình riêng. Nhấp vào “**Chỉnh**” bên cạnh danh sách, rồi chọn “**Hình phạt của danh sách này**” và, nếu cần, thời hạn của nó. “**Như bộ lọc**” (mặc định) giữ hình phạt của bộ lọc Hình ảnh.
 
 ### Kênh xác minh {#review}
 

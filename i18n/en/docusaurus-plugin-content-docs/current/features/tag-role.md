@@ -71,7 +71,7 @@ We detect the tag at the member's next profile update. As long as they change no
 
 ### Why is my role refused?
 
-The Tag Role cannot be a role already used by RaidProtect, a role managed by an application, a role placed above RaidProtect or above you, or a role with sensitive permissions.
+The Tag Role cannot be a role already used by RaidProtect, a role managed by an application, a role placed above RaidProtect or above you, or a role with sensitive permissions. Under the error, the "**Remove these permissions**" button removes them from the role for you: it requires the **Manage Roles** permission and a role above this one, and you cannot remove a permission that you do not have yourself. RaidProtect must also be able to edit this role.
 
 ### Who can configure the Tag Role?
 

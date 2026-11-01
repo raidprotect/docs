@@ -71,7 +71,7 @@ Detectamos a tag na próxima atualização do perfil do membro. Enquanto ele nã
 
 ### Por que meu cargo é recusado?
 
-O Cargo de Tag não pode ser um cargo já usado pelo RaidProtect, um cargo gerenciado por um aplicativo, um cargo posicionado acima do RaidProtect ou de você, nem um cargo com permissões sensíveis.
+O Cargo de Tag não pode ser um cargo já usado pelo RaidProtect, um cargo gerenciado por um aplicativo, um cargo posicionado acima do RaidProtect ou de você, nem um cargo com permissões sensíveis. Sob o erro, o botão “**Remover essas permissões**” as remove do cargo no seu lugar: é preciso ter a permissão **Gerenciar cargos** e um cargo acima desse, e você não pode remover uma permissão que você mesmo não tem. O RaidProtect também precisa poder editar esse cargo.
 
 ### Quem pode configurar o Cargo de Tag?
 

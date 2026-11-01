@@ -7,6 +7,8 @@ import Settings from '@site/src/components/DiscordMessage/mockups/v2';
 
 RaidProtect's **Automod** brings together the filters that automatically remove unwanted content as soon as it is posted. Each filter has its own sanction for the message's author.
 
+The filters are displayed in the order Files, Images, then Other servers.
+
 To open it:
 
 1. Run the [`/settings` command](../setup.md#settings).
@@ -74,8 +76,8 @@ In "**Ignored channels and categories**", choose up to 25 channels or categories
 
 The check of the displayed **server tag** stays active everywhere: it targets the member, not the channel they write in.
 
-:::info Experiment: Identity Update
-On [Premium](/en/premium) servers, where the Identity Update is in public beta, ignored channels move to an "**Exceptions**" screen, which adds **ignored roles** and **ignored members** (25 at most each). A message from an ignored member, or from a member with an ignored role, is neither deleted nor sanctioned. Handy for a team member who posts your partners' invites without having the Manage Messages permission. Planned for version 3.7.0.
+:::info Identity Update (3.7.0)
+In the beta, ignored channels move to an "**Exceptions**" screen, which adds **ignored roles** and **ignored members** (25 at most each). A message from an ignored member, or from a member with an ignored role, is neither deleted nor sanctioned. Handy for a team member who posts your partners' invites without having the Manage Messages permission.
 :::
 
 ### Server lists {#servers-lists}
@@ -104,7 +106,7 @@ Files in a forwarded message count too, and a thread follows its channel's rules
 
 ### Configuration {#files-config}
 
-1. In Automod, click "**Configure**" next to "**File extensions**".
+1. In Automod, click "**Configure**" next to "**Files**" (the File extensions filter).
 2. Enable the filter with the switch at the top right.
 3. Under "**Whole server**", choose a mode: "**Disabled**", "**Blocklist**" or "**Allowlist**".
 4. Check **groups** (Executables, Images, Videos, Audio, Archives, Documents) and/or enter other extensions separated by commas, for example `exe, msi`. The dot is optional. A rule accepts 50 free-form extensions at most, in addition to the groups.

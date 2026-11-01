@@ -7,8 +7,8 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 
 **多帳號**讓您的團隊可以宣告多個 Discord 帳號屬於同一個人。其中一個帳號的[處罰](./sanctions.mdx)會延伸到其他帳號：被停權的成員無法再用第二個帳號回來規避處罰。
 
-:::info 實驗：Identity Update
-多帳號屬於預計於 3.7.0 版推出的 **Identity Update**。在正式推出之前，它處於實驗階段，為 [Premium](/zh-TW/premium) 伺服器提供公開測試版。
+:::info Identity Update (3.7.0)
+多帳號屬於預計於 3.7.0 版推出的 **Identity Update**，目前已可在測試版中使用。
 :::
 
 ## ❓ 運作方式 {#working}
@@ -53,6 +53,8 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 3. 點擊「**多帳號**」旁的「**設定**」。
 
 <Settings start="alts" />
+
+畫面首先顯示免費設定[每人僅限一個帳號](#single-account)，接著是關聯帳號的處罰，其中需要 Premium 的項目會逐項標註。
 
 ### 關聯帳號的處罰 <span className="badge-premium">Premium</span> {#modes}
 
@@ -107,6 +109,8 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 
 若要變更群組的主帳號，請對其中一個帳號使用 `/alt`，然後使用「**編輯群組中的帳號**」選單。
 
+RaidProtect 會記錄關聯來自您的團隊還是機器人（[驗證碼](./captcha.md#activity-alts)）。手動確認機器人建立的關聯，會使其變為您團隊的關聯；而由您團隊建立的關聯，永遠不會再變回機器人的關聯。
+
 ## 常見問題 {#faq}
 
 ### 多帳號會在伺服器之間共享嗎？
@@ -127,4 +131,4 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 
 ### 誰可以使用 /alt？
 
-擁有**停權成員**權限的成員，且在 Identity Update 處於實驗階段期間，需在 [Premium](/zh-TW/premium) 伺服器上使用。
+擁有**停權成員**權限的成員。

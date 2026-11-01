@@ -7,6 +7,8 @@ import Settings from '@site/src/components/DiscordMessage/mockups/v2';
 
 Der **Automod** von RaidProtect bündelt die Filter, die unerwünschte Inhalte automatisch entfernen, sobald sie gepostet werden. Jeder Filter hat seine eigene Sanktion für den Autor der Nachricht.
 
+Die Filter werden in der Reihenfolge Dateien, Bilder, dann Andere Server angezeigt.
+
 So öffnen Sie ihn:
 
 1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
@@ -74,8 +76,8 @@ Wählen Sie unter „**Ignorierte Kanäle und Kategorien**“ bis zu 25 Kanäle 
 
 Die Prüfung des angezeigten **Server-Tags** bleibt überall aktiv: Sie betrifft das Mitglied, nicht den Kanal, in dem es schreibt.
 
-:::info Experiment: Identity Update
-Auf [Premium](/de/premium)-Servern, wo sich die Identity Update in der öffentlichen Beta befindet, wandern die ignorierten Kanäle in einen Bildschirm „**Ausnahmen**“, der **ignorierte Rollen** und **ignorierte Mitglieder** hinzufügt (jeweils höchstens 25). Eine Nachricht eines ignorierten Mitglieds oder eines Mitglieds mit einer ignorierten Rolle wird weder gelöscht noch sanktioniert. Praktisch für ein Mitglied Ihres Teams, das die Einladungen Ihrer Partner postet, ohne die Berechtigung „Nachrichten verwalten“ zu haben. Vorgesehen für Version 3.7.0.
+:::info Identity Update (3.7.0)
+In der Beta wandern die ignorierten Kanäle in einen Bildschirm „**Ausnahmen**“, der **ignorierte Rollen** und **ignorierte Mitglieder** hinzufügt (jeweils höchstens 25). Eine Nachricht eines ignorierten Mitglieds oder eines Mitglieds mit einer ignorierten Rolle wird weder gelöscht noch sanktioniert. Praktisch für ein Mitglied Ihres Teams, das die Einladungen Ihrer Partner postet, ohne die Berechtigung „Nachrichten verwalten“ zu haben.
 :::
 
 ### Serverlisten {#servers-lists}
@@ -104,7 +106,7 @@ Auch die Dateien einer weitergeleiteten Nachricht zählen, und ein Thread folgt 
 
 ### Konfiguration {#files-config}
 
-1. Klicken Sie im Automod neben „**Dateiendungen**“ auf „**Konfigurieren**“.
+1. Klicken Sie im Automod neben „**Dateien**“ (dem Filter Dateiendungen) auf „**Konfigurieren**“.
 2. Aktivieren Sie den Filter mit dem Schalter oben rechts.
 3. Wählen Sie unter „**Ganzer Server**“ einen Modus: „**Deaktiviert**“, „**Sperrliste**“ oder „**Zulassungsliste**“.
 4. Kreuzen Sie **Gruppen** an (Ausführbare Dateien, Bilder, Videos, Audio, Archive, Dokumente) und/oder geben Sie weitere Endungen durch Kommas getrennt ein, zum Beispiel `exe, msi`. Der Punkt ist optional. Eine Regel akzeptiert höchstens 50 freie Endungen, zusätzlich zu den Gruppen.

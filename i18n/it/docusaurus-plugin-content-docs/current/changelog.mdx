@@ -24,10 +24,10 @@ La Logging Update è in fase di sperimentazione: in attesa della sua uscita nell
 - Nuova casella “**Messaggi sul server**” nelle [segnalazioni](./features/reports.md): il thread della segnalazione riprende gli ultimi messaggi del canale, messaggi eliminati compresi.
 - Riservato al **Premium**: il formato Compatto, i log vocali (stage compresi), delle reazioni e dei membri interessati a un evento, la copia degli allegati dei messaggi eliminati, [6 ore di messaggi in memoria](./features/logs.md#cache) invece di 15 minuti e fino a 15 canali di log invece di 3.
 
-## 3.7.0 Identity Update <span className="badge-experiment">Sperimentazione</span> {#3-7-0}
+## 3.7.0 Identity Update (beta) {#3-7-0}
 
-:::info Sperimentazione
-L'Identity Update è in fase di sperimentazione: in attesa della sua uscita nella 3.7.0, è in beta pubblica per i server [Premium](/it/premium). Il suo contenuto può ancora cambiare.
+:::info Beta
+L'Identity Update è prevista per la versione 3.7.0 ed è già disponibile in beta. Il suo contenuto può ancora cambiare.
 :::
 
 - Nuovo comando [`/alt`](./features/alt-accounts.md#alt) e [doppi account](./features/alt-accounts.md): collega gli account di una stessa persona, scegli il suo account principale, e le sue sanzioni (bando, espulsione, mute, jail, timeout, softban) si estendono agli account collegati. Revocare la sanzione di uno la revoca per tutti. <SuggestionLink id="404" /> <SuggestionLink id="263" />
@@ -39,6 +39,14 @@ L'Identity Update è in fase di sperimentazione: in attesa della sua uscita nell
 - Il [captcha](./features/captcha.md#activity-alts) individua i doppi account: collega da solo gli account certamente appartenenti alla stessa persona e propone al tuo team i collegamenti probabili.
 - Il filtro [Altri server](./features/automod.md#servers-ignored) dell'Automod può anche ignorare ruoli e membri.
 - Le [sanzioni degli account collegati](./features/alt-accounts.md#modes) sono riservate al **Premium**. Senza Premium, `/alt` collega e consulta gli account senza limiti, e Un solo account per persona resta disponibile.
+
+## 3.6.1 (31/10/2026) {#3-6-1}
+
+- La **home di RaidProtect** si apre dal pulsante Launch dell'Activity: demo, minigiochi e classifiche del tuo server e di tutti i server.
+- Il [warn dei messaggi bloccati dall'AutoMod di Discord](./features/sanctions.mdx#working) non viene più dato quando nello stesso momento scatta una sanzione più pesante, e si può disattivare.
+- I canali ignorati del filtro [Altri server](./features/automod.md#servers-ignored) si applicano correttamente ai riferimenti ad altri server.
+- Il tuo team può [sempre testare il captcha](./features/captcha.md#test-mode) del pannello: l'opzione «modalità test» scompare.
+- Numerose correzioni e ottimizzazioni.
 
 ## 3.6.0 Shield Update (28/10/2026) {#3-6-0}
 

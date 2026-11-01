@@ -71,7 +71,7 @@ Wir erkennen den Tag bei der nächsten Aktualisierung des Profils des Mitglieds.
 
 ### Warum wird meine Rolle abgelehnt?
 
-Die Tag-Rolle darf keine bereits von RaidProtect verwendete Rolle sein, keine von einer Anwendung verwaltete Rolle, keine Rolle über RaidProtect oder über Ihnen und keine Rolle mit sensiblen Berechtigungen.
+Die Tag-Rolle darf keine bereits von RaidProtect verwendete Rolle sein, keine von einer Anwendung verwaltete Rolle, keine Rolle über RaidProtect oder über Ihnen und keine Rolle mit sensiblen Berechtigungen. Unter dem Fehler entfernt die Schaltfläche „**Diese Berechtigungen entfernen**“ sie für Sie von der Rolle: Dafür sind die Berechtigung **Rollen verwalten** und eine Rolle über dieser nötig, und Sie können keine Berechtigung entfernen, die Sie selbst nicht haben. RaidProtect muss diese Rolle außerdem bearbeiten können.
 
 ### Wer kann die Tag-Rolle konfigurieren?
 

@@ -24,10 +24,10 @@ Logging Update deneme aşamasındadır: 3.8.0 sürümüyle çıkışına kadar [
 - [Bildirimlerde](./features/reports.md) yeni “**Sunucudaki mesajlar**” kutusu: bildirimin alt başlığı, silinen mesajlar dahil kanalın son mesajlarını içerir.
 - **Premium**'a ayrılanlar: Kompakt biçim, ses (sahne etkinlikleri dahil), tepki ve bir etkinlikle ilgilenen üyelerin logları, silinen mesajların eklerinin kopyalanması, 15 dakika yerine [6 saat bellekte mesaj](./features/logs.md#cache) ve 3 yerine 15 log kanalına kadar.
 
-## 3.7.0 Identity Update <span className="badge-experiment">Deneme</span> {#3-7-0}
+## 3.7.0 Identity Update (beta) {#3-7-0}
 
-:::info Deneme
-Identity Update deneme aşamasındadır: 3.7.0 sürümüyle çıkışına kadar [Premium](/tr/premium) sunucular için herkese açık betadır. İçeriği hâlâ değişebilir.
+:::info Beta
+Identity Update 3.7.0 sürümü için planlanmıştır ve şimdiden beta olarak kullanılabilir. İçeriği hâlâ değişebilir.
 :::
 
 - Yeni [`/alt`](./features/alt-accounts.md#alt) komutu ve [çift hesaplar](./features/alt-accounts.md): aynı kişiye ait hesapları bağlayın, ana hesabını seçin; yaptırımları (yasaklama, atma, mute, jail, timeout, softban) bağlı hesaplara yayılır. Birinin yaptırımını kaldırmak hepsi için kaldırır. <SuggestionLink id="404" /> <SuggestionLink id="263" />
@@ -39,6 +39,14 @@ Identity Update deneme aşamasındadır: 3.7.0 sürümüyle çıkışına kadar 
 - [Captcha](./features/captcha.md#activity-alts) çift hesapları tespit eder: aynı kişi olduğundan emin olduğu hesapları kendisi bağlar ve olası bağlantıları ekibinize önerir.
 - Automod'un [Diğer sunucular](./features/automod.md#servers-ignored) filtresi rolleri ve üyeleri de yok sayabilir.
 - [Bağlı hesapların yaptırımları](./features/alt-accounts.md#modes) **Premium**'a ayrılmıştır. Premium olmadan `/alt` hesapları sınırsız bağlar ve görüntüler, Kişi başına tek hesap da kullanılabilir kalır.
+
+## 3.6.1 (31.10.2026) {#3-6-1}
+
+- **RaidProtect ana sayfası** Activity'nin Launch düğmesinden açılır: sunucunuzun ve tüm sunucuların demoları, mini oyunları ve sıralamaları.
+- [Discord AutoMod'un engellediği mesajların warn'ı](./features/sanctions.mdx#working) aynı anda daha ağır bir yaptırım uygulandığında artık verilmez ve kapatılabilir.
+- [Diğer sunucular](./features/automod.md#servers-ignored) filtresinin yok sayılan kanalları artık diğer sunuculara yapılan referanslara gerçekten uygulanır.
+- Ekibiniz panelin [captcha'sını her zaman test edebilir](./features/captcha.md#test-mode): “test modu” seçeneği kalktı.
+- Çok sayıda düzeltme ve optimizasyon.
 
 ## 3.6.0 Shield Update (28.10.2026) {#3-6-0}
 

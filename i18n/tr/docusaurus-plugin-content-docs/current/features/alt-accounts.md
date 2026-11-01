@@ -7,8 +7,8 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 
 **Çift hesaplar**, ekibinizin birden fazla Discord hesabının aynı kişiye ait olduğunu bildirmesini sağlar. Birinin [yaptırımları](./sanctions.mdx) böylece diğerlerine de yayılır: yasaklanan bir üye, yaptırımını atlatmak için ikinci bir hesapla geri dönemez.
 
-:::info Deneme: Identity Update
-Çift hesaplar, 3.7.0 sürümü için planlanan **Identity Update**'in parçasıdır. Çıkışına kadar deneme aşamasındadır; [Premium](/tr/premium) sunucular için herkese açık beta olarak sunulur.
+:::info Identity Update (3.7.0)
+Çift hesaplar, 3.7.0 sürümü için planlanan ve şimdiden beta olarak kullanılabilen **Identity Update**'in parçasıdır.
 :::
 
 ## ❓ Nasıl çalışır? {#working}
@@ -53,6 +53,8 @@ Bir üyenin bağlı hesaplarını ayrıca [`/modview` moderasyon görünümünde
 3. “**Çift hesaplar**” yanındaki “**Yapılandır**” düğmesine tıklayın.
 
 <Settings start="alts" />
+
+Ekran, ücretsiz [Kişi başına tek hesap](#single-account) ayarıyla açılır; ardından bağlı hesapların yaptırımları gelir, Premium olanlar işaretlidir.
 
 ### Bağlı hesapların yaptırımları <span className="badge-premium">Premium</span> {#modes}
 
@@ -107,6 +109,8 @@ Bu ayar bir [Jail rolü](./sanctions.mdx#jail) gerektirir. Rol yoksa bir pencere
 
 Bir grubun ana hesabını değiştirmek için hesaplardan biriyle `/alt` komutunu, ardından “**Gruptaki bir hesabı düzenle**” seçicisini kullanın.
 
+RaidProtect, bir bağlantının ekibinizden mi yoksa bottan mı (bkz. [captcha](./captcha.md#activity-alts)) geldiğini hatırlar. Bot tarafından kurulan bir bağlantıyı elle onaylamak onu ekibinizin bağlantısı yapar; ekibinizin kurduğu bir bağlantı ise bir daha asla botun bağlantısına dönmez.
+
 ## Sık sorulan sorular {#faq}
 
 ### Çift hesaplar sunucular arasında paylaşılır mı?
@@ -127,4 +131,4 @@ Evet. `/alt` panelinde “**Üye bağla**”ya tıklayın ve Discord kimliğini 
 
 ### /alt komutunu kim kullanabilir?
 
-**Üyeleri Yasakla** iznine sahip üyeler; Identity Update deneme aşamasında olduğu sürece [Premium](/tr/premium) bir sunucuda.
+**Üyeleri Yasakla** iznine sahip üyeler.

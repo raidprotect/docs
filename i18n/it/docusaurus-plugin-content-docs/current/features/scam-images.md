@@ -71,11 +71,11 @@ Oltre al catalogo globale “Crypto Scam”, gestito da noi e applicato su tutti
 6. Scegli il “**Canale di verifica**” della lista.
 7. Clicca su “**Aggiungi immagini**” e invia fino a 10 immagini. Il risultato indica le immagini aggiunte, le varianti collegate, i duplicati ignorati e le immagini rifiutate.
 
-Le immagini di una lista vengono eliminate non appena ricompaiono sul tuo server, e il loro autore riceve la sanzione scelta sopra. Il motivo della sanzione cita la lista (“Immagine della lista ‘_nome_’”). Senza sanzione, l'eliminazione viene registrata nei tuoi log di moderazione, con il canale e la lista.
+Le immagini di una lista vengono eliminate non appena ricompaiono sul tuo server, e il loro autore riceve la sanzione scelta sopra, o quella della lista se gliene hai data una (vedi sotto). Il motivo della sanzione cita la lista (“Immagine della lista ‘_nome_’”). Senza sanzione, l'eliminazione viene registrata nei tuoi log di moderazione, con il canale e la lista.
 
-:::warning Una lista = un solo registro di immagini
-Metti in una lista un solo tipo di contenuto. Mescolare immagini senza rapporto in una stessa lista corrompe il rilevamento: crea piuttosto una seconda lista.
-:::
+### Sanzione di una lista {#list-sanction}
+
+Ogni lista ha la propria schermata. Clicca su “**Regola**” accanto alla lista, poi scegli “**Sanzione di questa lista**” e, se serve, la sua durata. “**Come il filtro**” (predefinito) mantiene la sanzione del filtro Immagini.
 
 ### Canale di verifica {#review}
 
