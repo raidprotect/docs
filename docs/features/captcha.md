@@ -9,7 +9,7 @@ import CaptchaMockup from '@site/src/components/DiscordMessage/mockups/captcha';
 
 <CaptchaMockup />
 
-Le **captcha** de RaidProtect demande à chaque nouveau membre de recopier un code avant d'accéder à votre serveur Discord, ce qui bloque les [selfbots](/learn/self-bot) et les [raids](/learn/discord-raid) en filtrant les comptes qui ne sont pas humains.
+Le **captcha** de RaidProtect demande à chaque nouveau membre de résoudre un petit puzzle avant d'accéder à votre serveur Discord, ce qui bloque les [selfbots](/learn/self-bot) et les [raids](/learn/discord-raid) en filtrant les comptes qui ne sont pas humains.
 
 C'est l'une des fonctionnalités les plus populaires de RaidProtect, et elle reste entièrement optionnelle. Vous choisissez quand l'imposer : à chaque arrivée, seulement pendant un raid, ou aussi pour les comptes suspects.
 
@@ -77,8 +77,9 @@ Le captcha démarre en mode **Panneau (Interactif)**, déclenché **En permanenc
 1. Faites la [commande `/settings`](../setup.md#settings).
 2. Ouvrez l'onglet “**Arrivées**”.
 3. Cliquez sur “**Configurer**” à côté de “**Captcha**”.
-4. Dans “**Mode d'affichage**”, choisissez “**Panneau (Interactif)**”.
-5. Dans “**Déclenchement**”, choisissez “**En permanence**”, “**Automatique**” ou “**Intelligent**”.
+4. Dans “**Déclenchement**”, choisissez “**En permanence**”, “**Automatique**” ou “**Intelligent**”.
+
+Le captcha s'active en mode **Panneau (Interactif)** : le sélecteur “**Mode d'affichage**” ne propose plus que “**Panneau (Interactif)**”, “**Désactivé**” et “**Supprimer**”.
 
 ### Vérification dans l'Activity {#activity}
 
