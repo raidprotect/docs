@@ -1,7 +1,18 @@
 /* Fenêtre de l'Activity de vérification, reprise de l'esthétique de
    raidprotect/captcha (fond sombre, accent rouge RaidProtect). */
 .stage {
-  min-height: 330px;
+  display: grid;
+}
+
+.sizer,
+.layer {
+  grid-area: 1 / 1;
+  min-width: 0;
+}
+
+.sizer {
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .activity {

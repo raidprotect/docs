@@ -144,6 +144,11 @@ export default function CaptchaMockup() {
   return (
     <div className={`${concept.animWrap} ${concept.animWrapWide}`}>
       <div className={styles.stage}>
+        {/* L'écran du puzzle, le plus haut, réserve sa place : la page ne saute pas d'une phase à l'autre. */}
+        <div className={styles.sizer} aria-hidden>
+          <Activity phase={4} />
+        </div>
+        <div className={styles.layer}>
         {inActivity ? (
           <Activity phase={phase} />
         ) : (
@@ -158,6 +163,7 @@ export default function CaptchaMockup() {
             )}
           </div>
         )}
+        </div>
       </div>
     </div>
   );
