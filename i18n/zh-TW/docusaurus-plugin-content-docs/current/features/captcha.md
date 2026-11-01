@@ -7,7 +7,7 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 
 import CaptchaMockup from '@site/src/components/DiscordMessage/mockups/captcha';
 
-{/* <CaptchaMockup /> : obsolète en 3.5.0 (montre le mode Challenge avec expulsion automatique) */}
+<CaptchaMockup />
 
 RaidProtect 的**驗證碼**要求每位新成員在進入您的 Discord 伺服器前輸入一組驗證碼，藉由過濾非人類的帳號，阻擋 [selfbot](/zh-TW/learn/self-bot) 與[突襲](/zh-TW/learn/discord-raid)。
 

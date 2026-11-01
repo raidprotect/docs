@@ -7,7 +7,7 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 
 import CaptchaMockup from '@site/src/components/DiscordMessage/mockups/captcha';
 
-{/* <CaptchaMockup /> : obsolète en 3.5.0 (montre le mode Challenge avec expulsion automatique) */}
+<CaptchaMockup />
 
 O **captcha** do RaidProtect pede a cada novo membro que copie um código antes de acessar o seu servidor Discord, o que bloqueia os [selfbots](/pt/learn/self-bot) e os [raids](/pt/learn/discord-raid) ao filtrar as contas que não são humanas.
 

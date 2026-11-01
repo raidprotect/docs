@@ -7,7 +7,7 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 
 import CaptchaMockup from '@site/src/components/DiscordMessage/mockups/captcha';
 
-{/* <CaptchaMockup /> : obsolète en 3.5.0 (montre le mode Challenge avec expulsion automatique) */}
+<CaptchaMockup />
 
 **Captcha** của RaidProtect yêu cầu mỗi thành viên mới nhập lại một mã trước khi vào máy chủ Discord của bạn, qua đó chặn [selfbot](/vi/learn/self-bot) và [raid](/vi/learn/discord-raid) bằng cách lọc các tài khoản không phải con người.
 

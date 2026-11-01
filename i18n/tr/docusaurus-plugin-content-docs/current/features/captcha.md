@@ -7,7 +7,7 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 
 import CaptchaMockup from '@site/src/components/DiscordMessage/mockups/captcha';
 
-{/* <CaptchaMockup /> : 3.5.0'dan itibaren kullanım dışı (otomatik atmalı Meydan okuma modunu gösteriyor) */}
+<CaptchaMockup />
 
 RaidProtect'in **captcha**'sı, her yeni üyeden Discord sunucunuza erişmeden önce bir kodu yeniden yazmasını ister; böylece insan olmayan hesapları eleyerek [selfbotları](/tr/learn/self-bot) ve [baskınları](/tr/learn/discord-raid) engeller.
 

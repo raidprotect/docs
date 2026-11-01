@@ -8190,5 +8190,59 @@
   "learn.captcha-discord.rel4": {
     "message": "Las cuentas duplicadas",
     "description": "related"
+  },
+  "mockup.captcha.serverName": {
+    "message": "Mi Comunidad"
+  },
+  "mockup.captcha.stepConsent": {
+    "message": "Consentimiento"
+  },
+  "mockup.captcha.stepChallenge": {
+    "message": "Prueba"
+  },
+  "mockup.captcha.stepVerified": {
+    "message": "Verificado"
+  },
+  "mockup.captcha.title": {
+    "message": "Verificación"
+  },
+  "mockup.captcha.for": {
+    "message": "para {server}"
+  },
+  "mockup.captcha.consent": {
+    "message": "Este servidor solicita una comprobación de tu dispositivo para detectar programas automatizados y cuentas duplicadas."
+  },
+  "mockup.captcha.consentNote": {
+    "message": "El equipo del servidor solo recibe el resultado. Si te niegas, no podrás acceder al servidor."
+  },
+  "mockup.captcha.accept": {
+    "message": "Acepto y continúo"
+  },
+  "mockup.captcha.refuse": {
+    "message": "Rechazar"
+  },
+  "mockup.captcha.hint": {
+    "message": "Arrastra la pieza hasta el hueco."
+  },
+  "mockup.captcha.slide": {
+    "message": "Desliza para colocar la pieza"
+  },
+  "mockup.captcha.passTitle": {
+    "message": "Verificación completada"
+  },
+  "mockup.captcha.passText": {
+    "message": "¡Bienvenido a {server}!"
+  },
+  "mockup.captcha.panelTitle": {
+    "message": "Sistema de verificación"
+  },
+  "mockup.captcha.panelDescription": {
+    "message": "Haz clic en el botón de abajo para demostrar que eres humano y acceder al servidor."
+  },
+  "mockup.captcha.panelButton": {
+    "message": "Verificar"
+  },
+  "mockup.captcha.opening": {
+    "message": "Se está abriendo la Activity de verificación…"
   }
 }

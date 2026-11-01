@@ -8190,5 +8190,59 @@
   "learn.captcha-discord.rel4": {
     "message": "Die Zweitkonten",
     "description": "related"
+  },
+  "mockup.captcha.serverName": {
+    "message": "Meine Community"
+  },
+  "mockup.captcha.stepConsent": {
+    "message": "Zustimmung"
+  },
+  "mockup.captcha.stepChallenge": {
+    "message": "Aufgabe"
+  },
+  "mockup.captcha.stepVerified": {
+    "message": "Verifiziert"
+  },
+  "mockup.captcha.title": {
+    "message": "Verifizierung"
+  },
+  "mockup.captcha.for": {
+    "message": "für {server}"
+  },
+  "mockup.captcha.consent": {
+    "message": "Dieser Server verlangt eine Überprüfung deines Geräts, um automatisierte Programme und Zweitkonten zu erkennen."
+  },
+  "mockup.captcha.consentNote": {
+    "message": "Das Serverteam erhält nur das Ergebnis. Wenn du ablehnst, kannst du den Server nicht betreten."
+  },
+  "mockup.captcha.accept": {
+    "message": "Ich stimme zu und fahre fort"
+  },
+  "mockup.captcha.refuse": {
+    "message": "Ablehnen"
+  },
+  "mockup.captcha.hint": {
+    "message": "Ziehe das Teil in die Lücke."
+  },
+  "mockup.captcha.slide": {
+    "message": "Schieben, um das Teil zu platzieren"
+  },
+  "mockup.captcha.passTitle": {
+    "message": "Verifizierung erfolgreich"
+  },
+  "mockup.captcha.passText": {
+    "message": "Willkommen auf {server}!"
+  },
+  "mockup.captcha.panelTitle": {
+    "message": "Verifizierungssystem"
+  },
+  "mockup.captcha.panelDescription": {
+    "message": "Klicke auf den Button unten, um zu beweisen, dass du ein Mensch bist, und Zugang zum Server zu erhalten."
+  },
+  "mockup.captcha.panelButton": {
+    "message": "Verifizieren"
+  },
+  "mockup.captcha.opening": {
+    "message": "Die Verifizierungs-Activity wird geöffnet…"
   }
 }

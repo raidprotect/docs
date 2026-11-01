@@ -7,7 +7,7 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 
 import CaptchaMockup from '@site/src/components/DiscordMessage/mockups/captcha';
 
-{/* <CaptchaMockup /> : 3.5.0 で廃止（自動キックのあるチャレンジモードを表示） */}
+<CaptchaMockup />
 
 RaidProtect の**キャプチャ**は、Discord サーバーに入る前に、新規メンバーにコードの入力を求めます。人間でないアカウントを排除することで、[セルフボット](/ja/learn/self-bot)と[レイド](/ja/learn/discord-raid)をブロックします。
 

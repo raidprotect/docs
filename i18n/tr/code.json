@@ -8190,5 +8190,59 @@
   "learn.captcha-discord.rel4": {
     "message": "Çift hesaplar",
     "description": "related"
+  },
+  "mockup.captcha.serverName": {
+    "message": "Topluluğum"
+  },
+  "mockup.captcha.stepConsent": {
+    "message": "Onay"
+  },
+  "mockup.captcha.stepChallenge": {
+    "message": "Görev"
+  },
+  "mockup.captcha.stepVerified": {
+    "message": "Doğrulandı"
+  },
+  "mockup.captcha.title": {
+    "message": "Doğrulama"
+  },
+  "mockup.captcha.for": {
+    "message": "{server} için"
+  },
+  "mockup.captcha.consent": {
+    "message": "Bu sunucu, otomatik programları ve çift hesapları tespit etmek için cihazının kontrol edilmesini istiyor."
+  },
+  "mockup.captcha.consentNote": {
+    "message": "Sunucu ekibi yalnızca sonucu alır. Reddedersen sunucuya erişemezsin."
+  },
+  "mockup.captcha.accept": {
+    "message": "Kabul ediyorum ve devam et"
+  },
+  "mockup.captcha.refuse": {
+    "message": "Reddet"
+  },
+  "mockup.captcha.hint": {
+    "message": "Parçayı boşluğa sürükle."
+  },
+  "mockup.captcha.slide": {
+    "message": "Parçayı yerleştirmek için kaydır"
+  },
+  "mockup.captcha.passTitle": {
+    "message": "Doğrulama başarılı"
+  },
+  "mockup.captcha.passText": {
+    "message": "{server} sunucusuna hoş geldin!"
+  },
+  "mockup.captcha.panelTitle": {
+    "message": "Doğrulama sistemi"
+  },
+  "mockup.captcha.panelDescription": {
+    "message": "İnsan olduğunu kanıtlamak ve sunucuya erişmek için aşağıdaki düğmeye tıkla."
+  },
+  "mockup.captcha.panelButton": {
+    "message": "Doğrula"
+  },
+  "mockup.captcha.opening": {
+    "message": "Doğrulama Activity'si açılıyor…"
   }
 }

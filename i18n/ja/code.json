@@ -8190,5 +8190,59 @@
   "learn.captcha-discord.rel4": {
     "message": "複数アカウント",
     "description": "related"
+  },
+  "mockup.captcha.serverName": {
+    "message": "私のコミュニティ"
+  },
+  "mockup.captcha.stepConsent": {
+    "message": "同意"
+  },
+  "mockup.captcha.stepChallenge": {
+    "message": "チャレンジ"
+  },
+  "mockup.captcha.stepVerified": {
+    "message": "認証済み"
+  },
+  "mockup.captcha.title": {
+    "message": "認証"
+  },
+  "mockup.captcha.for": {
+    "message": "{server}"
+  },
+  "mockup.captcha.consent": {
+    "message": "このサーバーは、自動化プログラムと重複アカウントを検出するため、お使いのデバイスの確認を求めています。"
+  },
+  "mockup.captcha.consentNote": {
+    "message": "サーバーのチームが受け取るのは結果のみです。拒否すると、サーバーに参加できません。"
+  },
+  "mockup.captcha.accept": {
+    "message": "同意して続ける"
+  },
+  "mockup.captcha.refuse": {
+    "message": "拒否する"
+  },
+  "mockup.captcha.hint": {
+    "message": "ピースを穴までドラッグしてください。"
+  },
+  "mockup.captcha.slide": {
+    "message": "スライドしてピースを合わせる"
+  },
+  "mockup.captcha.passTitle": {
+    "message": "認証が完了しました"
+  },
+  "mockup.captcha.passText": {
+    "message": "{server} へようこそ！"
+  },
+  "mockup.captcha.panelTitle": {
+    "message": "認証システム"
+  },
+  "mockup.captcha.panelDescription": {
+    "message": "下のボタンをクリックして、人間であることを証明し、サーバーに入ってください。"
+  },
+  "mockup.captcha.panelButton": {
+    "message": "認証する"
+  },
+  "mockup.captcha.opening": {
+    "message": "認証アクティビティを開いています…"
   }
 }
