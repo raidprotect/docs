@@ -46,10 +46,12 @@ Anti-spam'i ayarlamanın en basit yolu bir **hazır ayar** seçmektir. Her ailen
 | Hazır ayar | Aşırılık | Spam | Otomatik | Çok kanallı spam |
 |---|---|---|---|---|
 | **Esnek** | Uyarı | Timeout | Jail | Timeout |
-| **Standart** *(varsayılan)* | Timeout | Softban | Yasaklama | Jail |
+| **Standart** *(varsayılan)* | Timeout | Timeout | Jail | Jail |
 | **Sıkı** *(önerilmez)* | Softban | Yasaklama | Yasaklama | Yasaklama |
 
 **Esnek** hazır ayarı hiçbir zaman atmaz ve yasaklamaz: en fazla bir timeout ya da jail uygular.
+
+Varsayılan olarak RaidProtect üyeyi sunucudan göndermeden tutar: yanlış bir pozitif üyeye sunucudaki yerini kaybettirmez. Yapılandırılmış rolü olmayan bir Jail, Timeout'a dönüşür. Kendi cezasını seçmiş bir sunucu onu korur ve zaten Sıkı hazır ayarında olan sunucular otomatik hesaplar için yasaklamayı korur.
 
 1. [`/settings` komutunu](../setup.md#settings) çalıştırın.
 2. “**Koruma**” sekmesini açın.
@@ -96,12 +98,12 @@ Her aile, aynı nitelikteki tetikleyicileri bir araya getirir. İşte algıladı
 | **Aşırılık** | Spam | Kısa sürede çok fazla mesaj. Emojiler, çıkartmalar ve anlamsız mesajlar (tekrarlanan karakter, döngüdeki kelimeler) de sayılır. | Timeout |
 | **Aşırılık** | Flood (ekran doldurma) | Ekranı dolduran mesajlar: uzun metinler, görseller, bağlantı önizlemeleri, çıkartmalar | Timeout |
 | **Aşırılık** | Dosya spamı | Toplu dosya veya görsel gönderimi | Timeout |
-| **Spam** | Yinelenen mesaj spamı | Kopyalanıp yapıştırılmış veya neredeyse aynı mesajlar | Softban |
-| **Spam** | Bağlantı spamı | Toplu bağlantı gönderimi (bir Discord daveti, `https://` olmasa bile bir bağlantı sayılır; diğer Discord bağlantıları ve GIF'ler nötr kalır) | Softban |
-| **Spam** | Bahsetme spamı | Toplu bahsetmeler | Softban |
-| **Otomatik** | Selfbot ile spam | Spam yapmak için [selfbot](/tr/learn/self-bot) kullanımı | Yasaklama |
-| **Otomatik** | Harici komut spamı | Spam yapmak için [harici komut](/tr/learn/server-raidable) kullanımı | Yasaklama |
-| **Otomatik** | Engellenen mesaj spamı (AutoMod) | [Discord AutoMod](#automod) tarafından engellenen, tekrarlanan mesajlar | Yasaklama |
+| **Spam** | Yinelenen mesaj spamı | Kopyalanıp yapıştırılmış veya neredeyse aynı mesajlar | Timeout |
+| **Spam** | Bağlantı spamı | Toplu bağlantı gönderimi (bir Discord daveti, `https://` olmasa bile bir bağlantı sayılır; diğer Discord bağlantıları ve GIF'ler nötr kalır) | Timeout |
+| **Spam** | Bahsetme spamı | Toplu bahsetmeler | Timeout |
+| **Otomatik** | Selfbot ile spam | Spam yapmak için [selfbot](/tr/learn/self-bot) kullanımı | Jail |
+| **Otomatik** | Harici komut spamı | Spam yapmak için [harici komut](/tr/learn/server-raidable) kullanımı | Jail |
+| **Otomatik** | Engellenen mesaj spamı (AutoMod) | [Discord AutoMod](#automod) tarafından engellenen, tekrarlanan mesajlar | Jail |
 | *(ayrı)* | Çok kanallı spam | Aynı mesajın kısa sürede birden fazla kanalda gönderilmesi | Jail |
 
 :::info Çok kanallı spam

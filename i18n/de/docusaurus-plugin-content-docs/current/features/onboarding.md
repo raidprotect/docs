@@ -68,6 +68,8 @@ Sie können unter der Nachricht Schaltflächen hinzufügen, die zu einem Kanal d
 
 Um eine Schaltfläche zu ändern oder zu löschen, wählen Sie sie in derselben Liste aus.
 
+Hat Ihr Server einen Server-Guide mit Aktionen, bietet „**Schaltflächen verwalten**“ auch „**Aus dem Server-Guide hinzufügen**“ („Übernimmt die Aktionen Ihres Server-Guides“). Ein Fenster „**Schaltflächen des Server-Guides**“ listet die Aktionen des Guides auf: Jede angekreuzte Aktion wird zu einer Schaltfläche zu ihrem Kanal, mit ihrem Titel und ihrem Emoji. Eine bereits vorhandene Schaltfläche für denselben Kanal wird ersetzt. Die Gesamtzahl bleibt innerhalb der unten genannten Grenze: Wird sie überschritten, wird nichts gespeichert und eine Meldung nennt das Maximum.
+
 **Grenzen:** 2 Schaltflächen in der kostenlosen Version, 4 Schaltflächen in der [Premium](/de/premium)-Version. Läuft das Premium ab, bleiben nur die ersten 2 Schaltflächen sichtbar.
 
 ### Farbe <span className="badge-premium">Premium</span> {#welcome-color}
@@ -95,7 +97,7 @@ Um alle automatischen Rollen zu entfernen, klicken Sie auf „**Zurücksetzen**�
 **Grenzen:** 3 Rollen in der kostenlosen Version, 10 Rollen in der [Premium](/de/premium)-Version.
 
 :::warning
-Wählen Sie Rollen ohne Berechtigungen: Eine bei der Ankunft vergebene Rolle sollte keinerlei Befugnisse gewähren. RaidProtect lehnt Rollen ab, die von einer Integration verwaltet werden, Rollen über seiner eigenen oder Ihrer, Rollen mit einer Moderationsberechtigung und die nicht verifizierte Rolle des Captchas. Es warnt Sie, wenn eine gewählte Rolle später Berechtigungen erhält.
+Wählen Sie Rollen ohne Berechtigungen: Eine bei der Ankunft vergebene Rolle sollte keinerlei Befugnisse gewähren. RaidProtect lehnt Rollen ab, die von einer Integration verwaltet werden, Rollen über seiner eigenen oder Ihrer, Rollen mit einer Moderationsberechtigung und die nicht verifizierte Rolle des Captchas. Es warnt Sie, wenn eine gewählte Rolle später Berechtigungen erhält. Trägt eine gewählte Rolle abgelehnte Berechtigungen, bietet der Fehlerhinweis eine Schaltfläche „**Diese Berechtigungen entfernen**“ („**@Rolle korrigieren**“ bei mehreren Rollen) an, die sie für Sie entfernt, unter denselben Bedingungen wie bei der [Tag-Rolle](./tag-role.md): Berechtigung **Rollen verwalten**, höher platzierte Rolle und keine Berechtigung, die Sie selbst nicht haben.
 :::
 :::info
 Wenn Ihr Server einen anderen Bot für seine automatische Rolle verwendet, vergibt dieser die Rolle möglicherweise vor dem Captcha. Ersetzen Sie ihn durch die automatischen Rollen von RaidProtect.

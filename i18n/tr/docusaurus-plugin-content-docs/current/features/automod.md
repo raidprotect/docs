@@ -41,7 +41,7 @@ Tüm ayrıntılar, yaptırım ve görsel kataloğu [Dolandırıcılık görselle
 | **İletilen mesaj veya kanal bağlantısı** | O sunucudan iletilen veya kanallarından ya da etkinliklerinden birine bağlantı içeren mesaj silinir. |
 | **Görüntülenen sunucu etiketi** | Üye, [Jail rolüyle](./sanctions.mdx#jail) **karantinaya** alınır. Etiketi kaldırdığı anda karantina kalkar. |
 
-Kendi sunucunuz, davetlerinden herhangi biriyle her zaman geçer ve ekibiniz (**Sunucuyu Yönet** veya **Mesajları Yönet** izinleri) asla hedef alınmaz.
+Kendi sunucunuz, davetlerinden herhangi biriyle her zaman geçer ve ekibiniz (**Sunucuyu Yönet** veya **Mesajları Yönet** izinleri) asla hedef alınmaz. RaidProtect sunucularının davetleri ve etiketleri de her zaman geçer.
 
 ### Yapılandırma {#servers-config}
 

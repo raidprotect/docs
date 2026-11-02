@@ -68,6 +68,8 @@ Puoi aggiungere sotto il messaggio dei pulsanti che portano a un canale del serv
 
 Per modificare o eliminare un pulsante, selezionalo nella stessa lista.
 
+Se il tuo server ha una guida del server (Server Guide) con delle azioni, “**Gestisci i pulsanti**” propone anche “**Aggiungi dalla guida del server**” (« Riprende le azioni della guida del tuo server »). Una finestra “**Pulsanti della guida del server**” elenca le azioni della guida: ogni azione selezionata diventa un pulsante verso il suo canale, con il suo titolo e la sua emoji. Un pulsante già presente per lo stesso canale viene sostituito. Il totale resta entro il limite qui sotto: oltre, non viene salvato nulla e un messaggio indica il massimo.
+
 **Limiti:** 2 pulsanti nella versione gratuita, 4 pulsanti nella versione [premium](/it/premium). Se il Premium scade, restano visualizzati solo i primi 2 pulsanti.
 
 ### Colore <span className="badge-premium">Premium</span> {#welcome-color}
@@ -95,7 +97,7 @@ Per togliere tutti i ruoli automatici, clicca su “**Reimpostare**”.
 **Limiti:** 3 ruoli nella versione gratuita, 10 ruoli nella versione [premium](/it/premium).
 
 :::warning
-Scegli ruoli senza permessi: un ruolo assegnato all'arrivo non dovrebbe concedere alcun potere. RaidProtect rifiuta i ruoli gestiti da un'integrazione, quelli sopra il suo o il tuo, quelli che danno un permesso di moderazione e il ruolo non verificato del captcha. Ti avvisa se un ruolo scelto acquisisce permessi più tardi.
+Scegli ruoli senza permessi: un ruolo assegnato all'arrivo non dovrebbe concedere alcun potere. RaidProtect rifiuta i ruoli gestiti da un'integrazione, quelli sopra il suo o il tuo, quelli che danno un permesso di moderazione e il ruolo non verificato del captcha. Ti avvisa se un ruolo scelto acquisisce permessi più tardi. Quando un ruolo scelto ha dei permessi rifiutati, il riquadro di errore propone un pulsante “**Rimuovi questi permessi**” (“**Correggi @ruolo**” se i ruoli sono più di uno) che li rimuove al posto tuo, con le stesse condizioni del [Ruolo del Tag](./tag-role.md): permesso **Gestire i ruoli**, ruolo posizionato più in alto e nessun permesso che non hai tu stesso.
 :::
 :::info
 Se il tuo server usa un altro bot per il suo ruolo automatico, rischia di assegnare il ruolo prima del captcha. Sostituiscilo con i ruoli automatici di RaidProtect.

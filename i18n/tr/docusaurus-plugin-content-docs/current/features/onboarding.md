@@ -68,6 +68,8 @@ Mesajın altına, sunucunun bir kanalına götüren düğmeler ekleyebilirsiniz;
 
 Bir düğmeyi düzenlemek veya silmek için aynı listeden seçin.
 
+Sunucunuzda eylemleri olan bir sunucu rehberi (Server Guide) varsa “**Düğmeleri yönet**” ayrıca “**Sunucu rehberinden ekle**” (« Sunucu rehberinizin eylemlerini alır ») seçeneğini sunar. “**Sunucu rehberi düğmeleri**” penceresi rehberin eylemlerini listeler: işaretlenen her eylem, başlığı ve emojisiyle kendi kanalına giden bir düğme olur. Aynı kanal için zaten var olan bir düğmenin yerine geçer. Toplam, aşağıdaki sınırın içinde kalır: aşıldığında hiçbir şey kaydedilmez ve bir mesaj üst sınırı belirtir.
+
 **Sınırlar:** ücretsiz sürümde 2 düğme, [premium](/tr/premium) sürümde 4 düğme. Premium sona ererse yalnızca ilk 2 düğme görüntülenmeye devam eder.
 
 ### Renk <span className="badge-premium">Premium</span> {#welcome-color}
@@ -95,7 +97,7 @@ Tüm otomatik rolleri kaldırmak için “**Sıfırla**”ya tıklayın.
 **Sınırlar:** ücretsiz sürümde 3 rol, [premium](/tr/premium) sürümde 10 rol.
 
 :::warning
-İzinsiz roller seçin: katılımda verilen bir rol hiçbir yetki vermemelidir. RaidProtect, bir entegrasyon tarafından yönetilen rolleri, kendi rolünün veya sizin rolünüzün üstündeki rolleri, moderasyon izni veren rolleri ve captcha'nın doğrulanmamış rolünü reddeder. Seçilen bir rol sonradan izin kazanırsa sizi uyarır.
+İzinsiz roller seçin: katılımda verilen bir rol hiçbir yetki vermemelidir. RaidProtect, bir entegrasyon tarafından yönetilen rolleri, kendi rolünün veya sizin rolünüzün üstündeki rolleri, moderasyon izni veren rolleri ve captcha'nın doğrulanmamış rolünü reddeder. Seçilen bir rol sonradan izin kazanırsa sizi uyarır. Seçilen bir rolde reddedilen izinler varsa hata kutusu, bu izinleri sizin yerinize kaldıran bir “**Bu izinleri kaldır**” düğmesi (birden fazla rol varsa “**@rolü düzelt**”) sunar; koşullar [Etiket Rolü](./tag-role.md) ile aynıdır: **Rolleri Yönet** izni, daha yukarıda bir rol ve sizin sahip olmadığınız bir izin olmaması.
 :::
 :::info
 Sunucunuz otomatik rolü için başka bir bot kullanıyorsa rolü captcha'dan önce verebilir. Onu RaidProtect'in otomatik rolleriyle değiştirin.

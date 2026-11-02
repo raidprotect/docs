@@ -41,7 +41,7 @@ Ba hành vi được chỉnh riêng, mỗi hành vi ở một trong các chế �
 | **Tin chuyển tiếp hoặc liên kết kênh** | Tin nhắn được chuyển tiếp từ máy chủ đó, hoặc chứa liên kết đến một trong các kênh hoặc sự kiện của nó, bị xóa. |
 | **Tag máy chủ được hiển thị** | Thành viên bị **cách ly** bằng [vai trò Jail](./sanctions.mdx#jail). Việc cách ly được gỡ ngay khi họ bỏ tag. |
 
-Máy chủ của chính bạn luôn được qua, bằng bất kỳ lời mời nào của nó, và đội ngũ của bạn (quyền **Quản lý máy chủ** hoặc **Quản lý tin nhắn**) không bao giờ bị nhắm đến.
+Máy chủ của chính bạn luôn được qua, bằng bất kỳ lời mời nào của nó, và đội ngũ của bạn (quyền **Quản lý máy chủ** hoặc **Quản lý tin nhắn**) không bao giờ bị nhắm đến. Lời mời và tag của các máy chủ của RaidProtect cũng luôn được qua.
 
 ### Cấu hình {#servers-config}
 

@@ -41,7 +41,7 @@ Três comportamentos são configurados separadamente, cada um em um destes modos
 | **Mensagem encaminhada ou link de canal** | A mensagem encaminhada desse servidor, ou que contém um link para um de seus canais ou de seus eventos, é excluída. |
 | **Tag de servidor exibida** | O membro é colocado em **quarentena** com o [cargo Jail](./sanctions.mdx#jail). Ela é removida assim que ele retira a tag. |
 
-Seu próprio servidor sempre passa, por qualquer um dos seus convites, e sua equipe (permissões **Gerenciar servidor** ou **Gerenciar mensagens**) nunca é visada.
+Seu próprio servidor sempre passa, por qualquer um dos seus convites, e sua equipe (permissões **Gerenciar servidor** ou **Gerenciar mensagens**) nunca é visada. Os convites e tags dos servidores do RaidProtect também sempre passam.
 
 ### Configuração {#servers-config}
 

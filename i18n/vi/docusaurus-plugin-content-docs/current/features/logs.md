@@ -29,7 +29,7 @@ Các kênh “**Chung**”, “**Kiểm duyệt**” và “**Captcha**” của
 
 | Nhóm | Những gì được ghi lại |
 | --- | --- |
-| **Kênh và vai trò** | Danh mục, kênh, kênh thoại và chủ đề được tạo, sửa hoặc xóa, kể cả quyền. Vai trò (và thứ tự mới của chúng) và webhook. |
+| **Kênh và vai trò** | Danh mục, kênh, kênh thoại và chủ đề được tạo, sửa, xóa, tham gia, rời đi hoặc có thành viên bị loại, kể cả quyền. Vai trò (và thứ tự mới của chúng) và webhook. |
 | **Máy chủ** | Bot được thêm hoặc gỡ cùng vai trò của chúng, tích hợp, quy tắc AutoMod của Discord (kèm các từ và cụm từ được thêm hoặc gỡ) và sự kiện đã lên lịch. Các thành viên quan tâm đến một sự kiện dành riêng cho [Premium](/vi/premium). |
 | **Thành viên** | Lượt vào (kèm tuổi tài khoản) và lượt rời (kèm ngày vào và các vai trò), lời mời được tạo hoặc xóa, chấp nhận nội quy, vai trò được thêm hoặc gỡ, biệt danh, ảnh đại diện máy chủ, thành viên không hoạt động bị loại và lượt boost. |
 | **Tin nhắn** | Tin nhắn bị xóa, kèm người đã xóa, tin nhắn được sửa, xóa hàng loạt, tin nhắn được ghim hoặc bỏ ghim. |
@@ -54,8 +54,12 @@ Chọn định dạng trong “**Định dạng nhật ký**”, trên cùng mà
 
 Một máy chủ mất Premium sẽ quay về định dạng Mặc định. Lựa chọn của nó được giữ lại cho lần quay lại.
 
+## 🔘 Nút của nhật ký {#buttons}
+
+Tùy loại nhật ký, có các nút đi kèm: “**Xem kênh**”, “**Xem tin nhắn**”, “**Xem sự kiện**”, “**Xem emoji**” (liên kết), và “**Thông tin thành viên**”. “**Thông tin thành viên**” mở hồ sơ kiểm duyệt của thành viên ([`/modview`](./moderation.mdx)) trong một cửa sổ lấy lại các nội dung của nó; hộp “**Gửi cho tôi hồ sơ đầy đủ, kèm các hành động**”, ở cuối cửa sổ, gửi lại toàn bộ hồ sơ vào cuộc trò chuyện, kèm các nút của nó. Bạn cần có quyền truy cập lệnh `/modview`.
+
 ## 💾 Tin nhắn trong bộ nhớ {#cache}
 
-Để tìm lại nội dung của một tin nhắn bị xóa, RaidProtect giữ các tin nhắn gần đây trong bộ nhớ: **15 phút** ở phiên bản miễn phí, **6 giờ** với [Premium](/vi/premium). Quá thời gian đó, nhật ký cho biết nội dung đã không được lưu giữ.
+Để tìm lại nội dung của một tin nhắn bị xóa, RaidProtect giữ các tin nhắn gần đây trong bộ nhớ: **15 phút** ở phiên bản miễn phí, **6 giờ** với [Premium](/vi/premium). Quá thời gian đó, nhật ký cho biết nội dung đã không được lưu giữ. Cùng khoảng thời gian này áp dụng cho `/snipe` và phần snipe của `/modview`: với Logging Update, chúng hiển thị các tin nhắn trong khoảng đó thay vì một giờ.
 
 Với Premium, các tệp đính kèm của tin nhắn bị xóa cũng được sao chép vào nhật ký (10 MB mỗi tệp, 100 MB mỗi máy chủ, các tệp cũ nhất bị thay thế trước).

@@ -46,10 +46,12 @@ Il modo più semplice per regolare l'anti-spam è scegliere un **preset**. Fissa
 | Preset | Eccesso | Spam | Automatizzato | Spam multicanale |
 |---|---|---|---|---|
 | **Morbido** | Avvertimento | Timeout | Jail | Timeout |
-| **Standard** *(predefinito)* | Timeout | Softban | Bando | Jail |
+| **Standard** *(predefinito)* | Timeout | Timeout | Jail | Jail |
 | **Rigido** *(sconsigliato)* | Softban | Bando | Bando | Bando |
 
 Il preset **Morbido** non espelle né banna mai: al massimo un timeout o il jail.
+
+Per impostazione predefinita, RaidProtect trattiene il membro senza rimandarlo via: un falso positivo non gli costa il posto nel server. Un Jail senza ruolo configurato diventa un Timeout. Un server che aveva scelto la propria sanzione la mantiene, e i server già su Rigido mantengono il bando degli account automatizzati.
 
 1. Esegui il [comando `/settings`](../setup.md#settings).
 2. Apri la scheda “**Protezione**”.
@@ -96,12 +98,12 @@ Ogni famiglia raggruppa trigger della stessa natura. Ecco i trigger che rileviam
 | **Eccesso** | Spam | Troppi messaggi in poco tempo. Contano anche emoji, sticker e messaggi senza senso (carattere ripetuto, parole in loop). | Timeout |
 | **Eccesso** | Flood (schermo riempito) | Messaggi che riempiono lo schermo: testi lunghi, immagini, anteprime di link, sticker | Timeout |
 | **Eccesso** | Spam di file | Invio massiccio di file o immagini | Timeout |
-| **Spam** | Spam di duplicati | Messaggi copiati e incollati o quasi identici | Softban |
-| **Spam** | Spam di link | Invio massiccio di link (un invito Discord conta come un link, anche senza `https://`; gli altri link Discord e le GIF restano neutri) | Softban |
-| **Spam** | Spam di menzioni | Menzioni di massa | Softban |
-| **Automatizzato** | Spam con selfbot | Uso di [selfbot](/it/learn/self-bot) per fare spam | Bando |
-| **Automatizzato** | Spam di comandi esterni | Uso di [comandi esterni](/it/learn/server-raidable) per fare spam | Bando |
-| **Automatizzato** | Spam di messaggi bloccati (AutoMod) | Messaggi ripetuti bloccati dall'[AutoMod di Discord](#automod) | Bando |
+| **Spam** | Spam di duplicati | Messaggi copiati e incollati o quasi identici | Timeout |
+| **Spam** | Spam di link | Invio massiccio di link (un invito Discord conta come un link, anche senza `https://`; gli altri link Discord e le GIF restano neutri) | Timeout |
+| **Spam** | Spam di menzioni | Menzioni di massa | Timeout |
+| **Automatizzato** | Spam con selfbot | Uso di [selfbot](/it/learn/self-bot) per fare spam | Jail |
+| **Automatizzato** | Spam di comandi esterni | Uso di [comandi esterni](/it/learn/server-raidable) per fare spam | Jail |
+| **Automatizzato** | Spam di messaggi bloccati (AutoMod) | Messaggi ripetuti bloccati dall'[AutoMod di Discord](#automod) | Jail |
 | *(a parte)* | Spam multicanale | Lo stesso messaggio pubblicato in più canali in poco tempo | Jail |
 
 :::info Spam multicanale

@@ -68,6 +68,8 @@ Puedes añadir bajo el mensaje botones que llevan a un canal del servidor, por e
 
 Para modificar o eliminar un botón, selecciónalo en la misma lista.
 
+Si tu servidor tiene una guía del servidor (Server Guide) con acciones, “**Gestionar los botones**” también ofrece “**Añadir desde la guía del servidor**” («Retoma las acciones de tu guía de servidor»). Una ventana “**Botones de la guía del servidor**” lista las acciones de la guía: cada acción marcada se convierte en un botón hacia su canal, con su título y su emoji. Un botón ya presente para el mismo canal se reemplaza. El total respeta el límite de abajo: si se supera, no se guarda nada y un mensaje indica el máximo.
+
 **Límites:** 2 botones en la versión gratuita, 4 botones en la versión [Premium](/es/premium). Si el Premium caduca, solo se siguen mostrando los 2 primeros botones.
 
 ### Color <span className="badge-premium">Premium</span> {#welcome-color}
@@ -95,7 +97,7 @@ Para quitar todos los roles automáticos, haz clic en “**Restablecer**”.
 **Límites:** 3 roles en la versión gratuita, 10 roles en la versión [Premium](/es/premium).
 
 :::warning
-Elige roles sin permisos: un rol dado al llegar no debería conceder ningún poder. RaidProtect rechaza los roles gestionados por una integración, los que están por encima del suyo o del tuyo, los que dan un permiso de moderación y el rol no verificado del captcha. Te avisa si un rol elegido gana permisos más tarde.
+Elige roles sin permisos: un rol dado al llegar no debería conceder ningún poder. RaidProtect rechaza los roles gestionados por una integración, los que están por encima del suyo o del tuyo, los que dan un permiso de moderación y el rol no verificado del captcha. Te avisa si un rol elegido gana permisos más tarde. Cuando un rol elegido tiene permisos rechazados, el recuadro de error ofrece un botón “**Quitar estos permisos**” (“**Corregir @rol**” si hay varios roles) que se los quita por ti, con las mismas condiciones que para el [Rol de Etiqueta](./tag-role.md): permiso **Gestionar roles**, rol situado más arriba y ningún permiso que tú mismo no tengas.
 :::
 :::info
 Si tu servidor usa otro bot para su rol automático, es posible que dé el rol antes del captcha. Sustitúyelo por los roles automáticos de RaidProtect.

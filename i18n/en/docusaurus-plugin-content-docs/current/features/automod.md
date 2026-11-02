@@ -41,7 +41,7 @@ Three behaviors are set separately, each on one of these modes:
 | **Forwarded message or channel link** | The message forwarded from that server, or containing a link to one of its channels or events, is deleted. |
 | **Displayed server tag** | The member is put in **quarantine** with the [Jail role](./sanctions.mdx#jail). It is lifted as soon as they remove the tag. |
 
-Your own server always gets through, by any of its invites, and your team (**Manage Server** or **Manage Messages** permissions) is never targeted.
+Your own server always gets through, by any of its invites, and your team (**Manage Server** or **Manage Messages** permissions) is never targeted. The invites and tags of RaidProtect's servers also always get through.
 
 ### Configuration {#servers-config}
 

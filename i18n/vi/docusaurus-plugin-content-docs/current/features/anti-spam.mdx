@@ -46,10 +46,12 @@ Cách đơn giản nhất để chỉnh chống spam là chọn một **mẫu c�
 | Mẫu có sẵn | Quá mức | Spam | Tự động | Spam nhiều kênh |
 |---|---|---|---|---|
 | **Nhẹ** | Cảnh cáo | Timeout | Jail | Timeout |
-| **Tiêu chuẩn** *(mặc định)* | Timeout | Softban | Cấm | Jail |
+| **Tiêu chuẩn** *(mặc định)* | Timeout | Timeout | Jail | Jail |
 | **Nghiêm ngặt** *(không khuyến nghị)* | Softban | Cấm | Cấm | Cấm |
 
 Mẫu **Nhẹ** không bao giờ đuổi hay cấm: tối đa chỉ là một timeout hoặc jail.
+
+Theo mặc định, RaidProtect giữ thành viên lại mà không đuổi họ đi: một trường hợp dương tính giả không khiến họ mất chỗ trên máy chủ. Một Jail chưa có vai trò được cấu hình sẽ trở thành Timeout. Máy chủ đã chọn hình phạt riêng thì giữ nguyên, và các máy chủ đang dùng Nghiêm ngặt giữ việc cấm các tài khoản tự động.
 
 1. Dùng [lệnh `/settings`](../setup.md#settings).
 2. Mở thẻ “**Bảo vệ**”.
@@ -96,12 +98,12 @@ Mỗi nhóm gom các trình kích hoạt cùng bản chất. Dưới đây là c
 | **Quá mức** | Spam | Quá nhiều tin nhắn trong thời gian ngắn. Emoji, sticker và các tin nhắn vô nghĩa (ký tự lặp lại, từ lặp vòng) cũng được tính. | Timeout |
 | **Quá mức** | Flood (tràn màn hình) | Tin nhắn làm đầy màn hình: văn bản dài, hình ảnh, bản xem trước liên kết, sticker | Timeout |
 | **Quá mức** | Spam tệp đính kèm | Gửi hàng loạt tệp hoặc hình ảnh | Timeout |
-| **Spam** | Spam trùng lặp | Tin nhắn sao chép dán hoặc gần như giống hệt | Softban |
-| **Spam** | Spam liên kết | Gửi hàng loạt liên kết (một lời mời Discord được tính là một liên kết, kể cả khi không có `https://`; các liên kết Discord khác và GIF không được tính) | Softban |
-| **Spam** | Spam nhắc đến | Nhắc đến hàng loạt | Softban |
-| **Tự động** | Spam bằng selfbot | Dùng [selfbot](/vi/learn/self-bot) để spam | Cấm |
-| **Tự động** | Spam lệnh bên ngoài | Dùng [lệnh bên ngoài](/vi/learn/server-raidable) để spam | Cấm |
-| **Tự động** | Spam tin nhắn bị chặn (AutoMod) | Các tin nhắn lặp lại bị [AutoMod của Discord](#automod) chặn | Cấm |
+| **Spam** | Spam trùng lặp | Tin nhắn sao chép dán hoặc gần như giống hệt | Timeout |
+| **Spam** | Spam liên kết | Gửi hàng loạt liên kết (một lời mời Discord được tính là một liên kết, kể cả khi không có `https://`; các liên kết Discord khác và GIF không được tính) | Timeout |
+| **Spam** | Spam nhắc đến | Nhắc đến hàng loạt | Timeout |
+| **Tự động** | Spam bằng selfbot | Dùng [selfbot](/vi/learn/self-bot) để spam | Jail |
+| **Tự động** | Spam lệnh bên ngoài | Dùng [lệnh bên ngoài](/vi/learn/server-raidable) để spam | Jail |
+| **Tự động** | Spam tin nhắn bị chặn (AutoMod) | Các tin nhắn lặp lại bị [AutoMod của Discord](#automod) chặn | Jail |
 | *(riêng)* | Spam nhiều kênh | Cùng một tin nhắn được đăng trong nhiều kênh trong thời gian ngắn | Jail |
 
 :::info Spam nhiều kênh

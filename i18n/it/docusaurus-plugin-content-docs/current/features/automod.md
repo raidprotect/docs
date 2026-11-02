@@ -41,7 +41,7 @@ Tre comportamenti si regolano separatamente, ciascuno su una di queste modalità
 | **Messaggio inoltrato o link di un canale** | Il messaggio inoltrato da quel server, o contenente un link a uno dei suoi canali o dei suoi eventi, viene eliminato. |
 | **Tag del server visualizzato** | Il membro viene messo in **quarantena** con il [ruolo Jail](./sanctions.mdx#jail). Viene revocata non appena toglie il tag. |
 
-Il tuo server passa sempre, con qualsiasi dei suoi inviti, e il tuo team (permessi **Gestire il server** o **Gestire i messaggi**) non viene mai preso di mira.
+Il tuo server passa sempre, con qualsiasi dei suoi inviti, e il tuo team (permessi **Gestire il server** o **Gestire i messaggi**) non viene mai preso di mira. Anche gli inviti e i tag dei server di RaidProtect passano sempre.
 
 ### Configurazione {#servers-config}
 

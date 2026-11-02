@@ -18,7 +18,7 @@ I membri possono segnalare un contenuto con 4 metodi principali.
 Un membro può fare clic destro su un messaggio che ritiene infranga il regolamento, selezionare **`App`**, poi cliccare su **`Segnala questo messaggio`**. Si apre una finestra, in cui precisa il motivo della segnalazione.
 
 2. **Clic destro su un profilo**
-Allo stesso modo, un membro può fare clic destro su un profilo che giudica problematico, scegliere **`App`**, poi cliccare su **`Segnala l'utente`**. Si apre allora una finestra che gli permette di precisare cosa segnala (immagine del profilo, nome utente, bio, attività in vocale, attività nei messaggi privati) e il motivo.
+Allo stesso modo, un membro può fare clic destro su un profilo che giudica problematico, scegliere **`App`**, poi cliccare su **`Segnala l'utente`**. Si apre allora una finestra che gli permette di precisare cosa segnala (immagine del profilo, nome utente, bio, attività in vocale, attività nei messaggi privati) e il motivo. Con la [Logging Update](./logs.md#cache), la finestra propone anche “**Messaggi sul server**”: il thread della segnalazione riprende allora gli ultimi messaggi del canale, **messaggi eliminati compresi** (contrassegnati come eliminati, con il membro segnalato in grassetto), nella finestra di 15 minuti (6 ore in Premium).
 
 3. **Pulsante su un pannello informativo**
 Se la funzionalità “**Segnalazione**” è attivata su un [pannello informativo (`/display public`)](./display.mdx), un pulsante “**Segnalare un membro**” è disponibile direttamente sotto il pannello, permettendo ai membri di segnalare rapidamente un utente.

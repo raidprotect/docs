@@ -68,6 +68,8 @@ You can add buttons below the message that lead to a channel of the server, for 
 
 To edit or delete a button, select it in the same list.
 
+If your server has a Server Guide with actions, "**Manage buttons**" also offers "**Add from the Server Guide**" ("Reuses the actions of your Server Guide"). A "**Server Guide buttons**" window lists the guide's actions: each checked action becomes a button to its channel, with its title and emoji. A button already present for the same channel is replaced. The total stays within the limit below: beyond it, nothing is saved and a message states the maximum.
+
 **Limits:** 2 buttons in the free version, 4 buttons in the [premium](/en/premium) version. If Premium expires, only the first 2 buttons remain displayed.
 
 ### Color <span className="badge-premium">Premium</span> {#welcome-color}
@@ -95,7 +97,7 @@ To remove all auto roles, click "**Reset**".
 **Limits:** 3 roles in the free version, 10 roles in the [premium](/en/premium) version.
 
 :::warning
-Choose roles without permissions: a role given on arrival should grant no power. RaidProtect refuses roles managed by an integration, those placed above its own or yours, those that grant a moderation permission and the captcha's unverified role. It warns you if a chosen role later gains permissions.
+Choose roles without permissions: a role given on arrival should grant no power. RaidProtect refuses roles managed by an integration, those placed above its own or yours, those that grant a moderation permission and the captcha's unverified role. It warns you if a chosen role later gains permissions. When a chosen role carries refused permissions, the error notice offers a "**Remove these permissions**" button ("**Fix @role**" if there are several roles) that removes them for you, under the same conditions as for the [Tag Role](./tag-role.md): **Manage Roles** permission, a role placed higher, and no permission that you do not have yourself.
 :::
 :::info
 If your server uses another bot for its auto role, it may give the role before the captcha. Replace it with RaidProtect's auto roles.

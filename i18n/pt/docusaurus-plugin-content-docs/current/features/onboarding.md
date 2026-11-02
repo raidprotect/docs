@@ -68,6 +68,8 @@ Você pode adicionar abaixo da mensagem botões que levam a um canal do servidor
 
 Para modificar ou excluir um botão, selecione-o na mesma lista.
 
+Se o seu servidor tem um guia do servidor (Server Guide) com ações, “**Gerenciar botões**” também oferece “**Adicionar a partir do guia do servidor**” (« Reaproveita as ações do seu guia de servidor »). Uma janela “**Botões do guia do servidor**” lista as ações do guia: cada ação marcada vira um botão para o canal dela, com o título e o emoji. Um botão já existente para o mesmo canal é substituído. O total continua dentro do limite abaixo: acima dele, nada é salvo e uma mensagem indica o máximo.
+
 **Limites:** 2 botões na versão gratuita, 4 botões na versão [premium](/pt/premium). Se o Premium expirar, apenas os 2 primeiros botões continuam exibidos.
 
 ### Cor <span className="badge-premium">Premium</span> {#welcome-color}
@@ -95,7 +97,7 @@ Para remover todos os cargos automáticos, clique em “**Redefinir**”.
 **Limites:** 3 cargos na versão gratuita, 10 cargos na versão [premium](/pt/premium).
 
 :::warning
-Escolha cargos sem permissões: um cargo dado na chegada não deveria conceder nenhum poder. O RaidProtect recusa os cargos gerenciados por uma integração, os que estão acima do dele ou do seu, os que dão uma permissão de moderação e o cargo não verificado do captcha. Ele avisa você se um cargo escolhido ganhar permissões mais tarde.
+Escolha cargos sem permissões: um cargo dado na chegada não deveria conceder nenhum poder. O RaidProtect recusa os cargos gerenciados por uma integração, os que estão acima do dele ou do seu, os que dão uma permissão de moderação e o cargo não verificado do captcha. Ele avisa você se um cargo escolhido ganhar permissões mais tarde. Quando um cargo escolhido tem permissões recusadas, o aviso de erro oferece um botão “**Remover essas permissões**” (“**Corrigir @cargo**” se houver vários cargos) que as remove por você, com as mesmas condições do [Cargo de Tag](./tag-role.md): permissão **Gerenciar cargos**, cargo posicionado acima e nenhuma permissão que você mesmo não tenha.
 :::
 :::info
 Se o seu servidor usa outro bot para o cargo automático, ele corre o risco de dar o cargo antes do captcha. Substitua-o pelos cargos automáticos do RaidProtect.

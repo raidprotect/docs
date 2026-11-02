@@ -41,7 +41,7 @@ Tres comportamientos se ajustan por separado, cada uno en uno de estos modos:
 | **Mensaje reenviado o enlace de canal** | Se elimina el mensaje reenviado desde ese servidor, o que contiene un enlace a uno de sus canales o de sus eventos. |
 | **Etiqueta de servidor mostrada** | El miembro se pone en **cuarentena** con el [rol Jail](./sanctions.mdx#jail). Se levanta en cuanto quita la etiqueta. |
 
-Tu propio servidor siempre pasa, por cualquiera de sus invitaciones, y tu equipo (permisos **Gestionar servidor** o **Gestionar mensajes**) nunca es objetivo del filtro.
+Tu propio servidor siempre pasa, por cualquiera de sus invitaciones, y tu equipo (permisos **Gestionar servidor** o **Gestionar mensajes**) nunca es objetivo del filtro. Las invitaciones y etiquetas de los servidores de RaidProtect también pasan siempre.
 
 ### Configuración {#servers-config}
 

@@ -29,7 +29,7 @@ Los canales “**General**”, “**Moderación**” y “**Captcha**” de los 
 
 | Familia | Lo que se registra |
 | --- | --- |
-| **Canales y roles** | Categorías, canales, canales de voz e hilos creados, modificados o eliminados, permisos incluidos. Roles (y su nuevo orden) y webhooks. |
+| **Canales y roles** | Categorías, canales, canales de voz e hilos creados, modificados, eliminados, a los que se une o que abandona un miembro, o de los que se retira a un miembro, permisos incluidos. Roles (y su nuevo orden) y webhooks. |
 | **Servidor** | Bots añadidos o retirados con su rol, integraciones, reglas del AutoMod de Discord (con las palabras y expresiones añadidas o retiradas) y eventos programados. Los miembros interesados en un evento están reservados a [Premium](/es/premium). |
 | **Miembros** | Llegadas (con la antigüedad de la cuenta) y salidas (con la fecha de llegada y los roles), invitaciones creadas o eliminadas, reglamento aceptado, roles añadidos o retirados, apodos, avatares de servidor, miembros inactivos retirados y boosts. |
 | **Mensajes** | Mensajes eliminados, con quién los eliminó, mensajes modificados, eliminaciones masivas, mensajes fijados o desfijados. |
@@ -54,8 +54,12 @@ Elige el formato en “**Formato de los logs**”, en la misma pantalla.
 
 Un servidor que pierde Premium vuelve al formato Por defecto. Su elección se conserva para cuando vuelva.
 
+## 🔘 Botones de los logs {#buttons}
+
+Según el tipo de log, se adjuntan botones: “**Ver el canal**”, “**Ver el mensaje**”, “**Ver el evento**”, “**Ver el emoji**” (enlaces) e “**Info del miembro**”. “**Info del miembro**” abre la ficha de moderación del miembro ([`/modview`](./moderation.mdx)) en una ventana que reproduce sus textos; la casilla “**Enviarme la ficha completa, con sus acciones**”, al final de la ventana, reenvía la ficha entera al chat, con sus botones. Hay que tener acceso al comando `/modview`.
+
 ## 💾 Mensajes en memoria {#cache}
 
-Para recuperar el contenido de un mensaje eliminado, RaidProtect guarda los mensajes recientes en memoria: **15 minutos** en la versión gratuita, **6 horas** con [Premium](/es/premium). Pasado ese tiempo, el log indica que el contenido no se ha conservado.
+Para recuperar el contenido de un mensaje eliminado, RaidProtect guarda los mensajes recientes en memoria: **15 minutos** en la versión gratuita, **6 horas** con [Premium](/es/premium). Pasado ese tiempo, el log indica que el contenido no se ha conservado. La misma ventana vale para `/snipe` y para la parte snipe de `/modview`: con la Logging Update, muestran los mensajes de esa ventana en lugar de una hora.
 
 Con Premium, los archivos adjuntos de los mensajes eliminados también se copian en el log (10 MB por archivo, 100 MB por servidor, los más antiguos se reemplazan primero).

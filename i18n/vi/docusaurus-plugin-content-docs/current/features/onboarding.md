@@ -68,6 +68,8 @@ Bạn có thể thêm bên dưới tin nhắn các nút dẫn đến một kênh
 
 Để sửa hoặc xóa một nút, hãy chọn nó trong cùng danh sách.
 
+Nếu máy chủ của bạn có hướng dẫn máy chủ (Server Guide) với các hành động, “**Quản lý các nút**” còn đề xuất “**Thêm từ hướng dẫn máy chủ**” (“Lấy các hành động từ hướng dẫn máy chủ của bạn”). Một cửa sổ “**Nút của hướng dẫn máy chủ**” liệt kê các hành động của hướng dẫn: mỗi hành động được đánh dấu trở thành một nút dẫn đến kênh của nó, kèm tiêu đề và emoji. Một nút đã có cho cùng kênh sẽ được thay thế. Tổng số vẫn nằm trong giới hạn bên dưới: vượt quá thì không có gì được lưu và một tin nhắn cho biết mức tối đa.
+
 **Giới hạn:** 2 nút ở bản miễn phí, 4 nút ở bản [premium](/vi/premium). Nếu Premium hết hạn, chỉ 2 nút đầu tiên còn được hiển thị.
 
 ### Màu <span className="badge-premium">Premium</span> {#welcome-color}
@@ -95,7 +97,7 @@ Vai trò tự động được cấp cho mỗi thành viên mới ngay khi họ 
 **Giới hạn:** 3 vai trò ở bản miễn phí, 10 vai trò ở bản [premium](/vi/premium).
 
 :::warning
-Hãy chọn các vai trò không có quyền: một vai trò được cấp khi vào máy chủ không nên trao bất kỳ quyền lực nào. RaidProtect từ chối các vai trò do tích hợp quản lý, các vai trò cao hơn vai trò của nó hoặc của bạn, những vai trò cấp quyền kiểm duyệt và vai trò chưa xác minh của captcha. Nó cảnh báo bạn nếu một vai trò đã chọn sau này có thêm quyền.
+Hãy chọn các vai trò không có quyền: một vai trò được cấp khi vào máy chủ không nên trao bất kỳ quyền lực nào. RaidProtect từ chối các vai trò do tích hợp quản lý, các vai trò cao hơn vai trò của nó hoặc của bạn, những vai trò cấp quyền kiểm duyệt và vai trò chưa xác minh của captcha. Nó cảnh báo bạn nếu một vai trò đã chọn sau này có thêm quyền. Khi một vai trò đã chọn mang các quyền bị từ chối, khung báo lỗi có một nút “**Gỡ các quyền này**” (“**Sửa @vai trò**” nếu có nhiều vai trò) để gỡ chúng thay bạn, với cùng điều kiện như [Vai trò Tag](./tag-role.md): quyền **Quản lý vai trò**, vai trò nằm cao hơn, và không có quyền mà chính bạn không có.
 :::
 :::info
 Nếu máy chủ của bạn dùng một bot khác cho vai trò tự động, nó có thể cấp vai trò trước captcha. Hãy thay nó bằng các vai trò tự động của RaidProtect.

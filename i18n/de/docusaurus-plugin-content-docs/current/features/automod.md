@@ -41,7 +41,7 @@ Drei Verhaltensweisen lassen sich getrennt einstellen, jeweils in einem dieser M
 | **Weitergeleitete Nachricht oder Kanallink** | Die von diesem Server weitergeleitete Nachricht oder die Nachricht mit einem Link zu einem seiner Kanäle oder Events wird gelöscht. |
 | **Angezeigter Server-Tag** | Das Mitglied wird mit der [Jail-Rolle](./sanctions.mdx#jail) in **Quarantäne** gesetzt. Sie wird aufgehoben, sobald es den Tag entfernt. |
 
-Ihr eigener Server kommt immer durch, mit jeder seiner Einladungen, und Ihr Team (Berechtigungen **Server verwalten** oder **Nachrichten verwalten**) wird nie erfasst.
+Ihr eigener Server kommt immer durch, mit jeder seiner Einladungen, und Ihr Team (Berechtigungen **Server verwalten** oder **Nachrichten verwalten**) wird nie erfasst. Die Einladungen und Tags der RaidProtect-Server kommen ebenfalls immer durch.
 
 ### Konfiguration {#servers-config}
 

@@ -29,7 +29,7 @@ The "**General**", "**Moderation**" and "**Captcha**" channels of the [moderatio
 
 | Family | What is recorded |
 | --- | --- |
-| **Channels and roles** | Categories, channels, voice channels and threads created, edited or deleted, permissions included. Roles (and their new order) and webhooks. |
+| **Channels and roles** | Categories, channels, voice channels and threads created, edited, deleted, joined, left or from which a member is removed, permissions included. Roles (and their new order) and webhooks. |
 | **Server** | Bots added or removed with their role, integrations, Discord AutoMod rules (with the words and phrases added or removed) and scheduled events. Members interested in an event are reserved for [Premium](/en/premium). |
 | **Members** | Arrivals (with the account age) and departures (with the join date and roles), invites created or deleted, rules accepted, roles added or removed, nicknames, server avatars, inactive members pruned and boosts. |
 | **Messages** | Deleted messages, with who deleted them, edited messages, bulk deletions, pinned or unpinned messages. |
@@ -54,8 +54,12 @@ Choose the format in "**Log format**", on the same screen.
 
 A server that loses Premium goes back to the Default format. Its choice is kept for when it returns.
 
+## 🔘 Log buttons {#buttons}
+
+Depending on the log type, buttons are attached: "**View channel**", "**View message**", "**View event**", "**View emoji**" (links), and "**Member info**". "**Member info**" opens the member's moderation sheet ([`/modview`](./moderation.mdx)) in a window that reuses its texts; the "**Send me the full sheet, with its actions**" checkbox, at the bottom of the window, sends the whole sheet back in the chat, with its buttons. You need access to the `/modview` command.
+
 ## 💾 Messages in memory {#cache}
 
-To recover the content of a deleted message, RaidProtect keeps recent messages in memory: **15 minutes** in the free version, **6 hours** with [Premium](/en/premium). Beyond that, the log indicates that the content was not kept.
+To recover the content of a deleted message, RaidProtect keeps recent messages in memory: **15 minutes** in the free version, **6 hours** with [Premium](/en/premium). Beyond that, the log indicates that the content was not kept. The same window applies to `/snipe` and to the snipe part of `/modview`: with the Logging Update, they show the messages of this window instead of one hour.
 
 With Premium, attachments of deleted messages are also copied into the log (10 MB per file, 100 MB per server, the oldest are replaced first).
