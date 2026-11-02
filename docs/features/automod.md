@@ -41,7 +41,7 @@ Trois comportements se règlent séparément, chacun sur l'un de ces modes :
 | **Message transféré ou lien de salon** | Le message transféré depuis ce serveur, ou contenant un lien vers l'un de ses salons ou de ses événements, est supprimé. |
 | **Tag de serveur affiché** | Le membre est mis en **quarantaine** avec le [rôle Jail](./sanctions.mdx#jail). Elle est levée dès qu'il retire le tag. |
 
-Votre propre serveur passe toujours, par n'importe laquelle de ses invitations, et votre équipe (permissions **Gérer le serveur** ou **Gérer les messages**) n'est jamais visée.
+Votre propre serveur passe toujours, par n'importe laquelle de ses invitations, et votre équipe (permissions **Gérer le serveur** ou **Gérer les messages**) n'est jamais visée. Les invitations et tags des serveurs de RaidProtect passent aussi toujours.
 
 ### Configuration {#servers-config}
 
