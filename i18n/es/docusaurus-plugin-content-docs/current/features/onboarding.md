@@ -24,6 +24,8 @@ El mensaje de bienvenida se envía al canal que elijas cuando un miembro es admi
 3. Haz clic en “**Configurar**” junto a “**Mensaje de bienvenida**”.
 4. En “**Canal de bienvenida**”, elige el canal de texto donde se enviará el mensaje. Elegir un canal activa el mensaje.
 
+El botón “**Quitar el canal**”, mostrado bajo el selector cuando hay un canal elegido, lo retira: el mensaje ya no se publica en público, y solo queda activa la tarjeta de bienvenida de la [Activity del captcha](./captcha.md#activity).
+
 El interruptor de arriba a la derecha de la pantalla activa o desactiva el mensaje de bienvenida. Una vista previa del mensaje se muestra bajo la pantalla y se actualiza con cada modificación.
 
 :::info

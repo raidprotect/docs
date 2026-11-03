@@ -24,6 +24,8 @@ Karşılama mesajı, bir üye sunucuya kabul edildiğinde seçtiğiniz kanala g�
 3. “**Karşılama mesajı**” yanındaki “**Yapılandır**” düğmesine tıklayın.
 4. “**Karşılama kanalı**” içinde mesajın gönderileceği metin kanalını seçin. Bir kanal seçmek mesajı etkinleştirir.
 
+Bir kanal seçiliyken seçicinin altında görünen “**Kanalı kaldır**” düğmesi kanalı kaldırır: mesaj artık herkese açık olarak gönderilmez, yalnızca [captcha Activity'sinin](./captcha.md#activity) karşılama kartı etkin kalır.
+
 Ekranın sağ üstündeki anahtar, karşılama mesajını etkinleştirir veya devre dışı bırakır. Mesajın bir önizlemesi ekranın altında görüntülenir ve her değişiklikte güncellenir.
 
 :::info

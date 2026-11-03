@@ -24,6 +24,8 @@ A mensagem de boas-vindas é enviada no canal de sua escolha quando um membro é
 3. Clique em “**Configurar**” ao lado de “**Mensagem de boas-vindas**”.
 4. Em “**Canal de boas-vindas**”, escolha o canal de texto onde a mensagem será enviada. Escolher um canal ativa a mensagem.
 
+O botão “**Remover o canal**”, exibido sob o seletor quando um canal está escolhido, o remove: a mensagem deixa então de ser publicada em público, e só o cartão de boas-vindas da [Activity do captcha](./captcha.md#activity) continua ativo.
+
 O interruptor no canto superior direito da tela ativa ou desativa a mensagem de boas-vindas. Uma prévia da mensagem é exibida abaixo da tela e é atualizada a cada modificação.
 
 :::info

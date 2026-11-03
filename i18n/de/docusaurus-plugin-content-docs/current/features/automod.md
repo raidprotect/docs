@@ -82,13 +82,21 @@ In der Beta wandern die ignorierten Kanäle in einen Bildschirm „**Ausnahmen**
 
 ### Serverlisten {#servers-lists}
 
-1. Klicken Sie auf „**Server hinzufügen**“.
-2. Fügen Sie eine noch gültige Einladung des Servers ein (z. B. `discord.gg/beispiel`): Name und ID werden daraus gelesen. Eine ID allein wird nicht mehr akzeptiert.
-3. Wählen Sie die Liste: Sperrliste oder Zulassungsliste.
+Jede Liste hat ihre eigene Auswahl, „**Sperrliste**“ und „**Zulassungsliste**“, mit der Anzahl der enthaltenen Server. Ab 25 Servern zeigt eine zweite Auswahl „**Fortsetzung**“ die weiteren an.
 
-Ein bereits vorhandener Server wechselt einfach die Liste. Mit „**Entfernen**“ nehmen Sie einen oder mehrere Server aus den Listen.
+1. Wählen Sie in der Auswahl der Liste „**Hinzufügen**“.
+2. Fügen Sie eine oder mehrere noch gültige Einladungen ein (z. B. `discord.gg/beispiel`), getrennt durch Kommas, Leerzeichen oder Zeilenumbrüche: Name und ID jedes Servers werden daraus gelesen. Eine ID allein wird nicht akzeptiert. Eine ungültige oder abgelaufene Einladung wird gemeldet, ohne die anderen zu blockieren.
 
-**Grenzen:** 25 Server insgesamt in beiden Listen.
+Ein bereits vorhandener Server wechselt einfach die Liste. Um Server zu entfernen, wählen Sie sie in der Auswahl ihrer Liste aus.
+
+**Grenzen:** 25 Server pro Liste, 50 pro Liste mit [Premium](/de/premium). Eine volle Liste ohne Premium bietet es an; ein Server, der wieder kostenlos wird, behält seine Einträge.
+
+#### Offizielle Server und 18+-Server {#servers-switches}
+
+Zwei kostenlose Schalter ergänzen die Listen:
+
+- „**Offizielle Discord-Server**“: lässt Discord Town Hall und Discord Developers zu, ohne einen Platz in der Zulassungsliste zu belegen, für jedes Verhalten, das auf Zulassungsliste steht. Ohne Wirkung bei einem Verhalten auf Sperrliste oder deaktiviert.
+- „**Einladungen zu 18+-Servern**“: lehnt Einladungen zu einem Server ab, den Discord als 18+ markiert, wenn „**Einladung**“ auf Sperrliste steht. Weitergeleitete Nachrichten, Kanallinks und Tags tragen nur die ID des Servers: Sie sind nicht betroffen. Die Zulassungsliste, Ihr Server und die Server von RaidProtect werden immer durchgelassen.
 
 :::tip
 Um nur die Einladungen Ihrer Partner zuzulassen, stellen Sie „**Einladung**“ auf „**Zulassungsliste**“ und fügen Sie Ihre Partner der Zulassungsliste hinzu. Eine leere Zulassungsliste lehnt alle Einladungen zu anderen Servern ab.

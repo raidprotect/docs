@@ -24,6 +24,8 @@ Tin nhắn chào mừng được gửi vào kênh bạn chọn khi một thành 
 3. Nhấp vào “**Cấu hình**” bên cạnh “**Tin nhắn chào mừng**”.
 4. Trong “**Kênh chào mừng**”, chọn kênh văn bản nơi tin nhắn sẽ được gửi. Chọn một kênh sẽ bật tin nhắn.
 
+Nút “**Gỡ kênh**”, hiển thị bên dưới bộ chọn khi đã chọn một kênh, sẽ gỡ kênh đó: tin nhắn khi ấy không còn được đăng công khai, chỉ thẻ chào mừng của [Activity của captcha](./captcha.md#activity) vẫn hoạt động.
+
 Công tắc ở phía trên bên phải màn hình bật hoặc tắt tin nhắn chào mừng. Bản xem trước của tin nhắn hiển thị bên dưới màn hình và được cập nhật sau mỗi lần chỉnh sửa.
 
 :::info

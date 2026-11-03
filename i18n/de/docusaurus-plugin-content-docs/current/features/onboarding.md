@@ -24,6 +24,8 @@ Die Willkommensnachricht wird im Kanal Ihrer Wahl gesendet, wenn ein Mitglied au
 3. Klicken Sie neben „**Willkommensnachricht**“ auf „**Konfigurieren**“.
 4. Wählen Sie unter „**Willkommenskanal**“ den Textkanal, in dem die Nachricht gesendet wird. Die Wahl eines Kanals aktiviert die Nachricht.
 
+Die Schaltfläche „**Kanal entfernen**“, die unter der Auswahl erscheint, sobald ein Kanal gewählt ist, entfernt ihn: Die Nachricht wird dann nicht mehr öffentlich gepostet, nur die Willkommenskarte der [Activity des Captchas](./captcha.md#activity) bleibt aktiv.
+
 Der Schalter oben rechts auf dem Bildschirm aktiviert oder deaktiviert die Willkommensnachricht. Eine Vorschau der Nachricht erscheint unter dem Bildschirm und aktualisiert sich bei jeder Änderung.
 
 :::info

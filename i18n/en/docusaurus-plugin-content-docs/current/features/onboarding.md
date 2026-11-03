@@ -24,6 +24,8 @@ The welcome message is sent to the channel of your choice when a member is admit
 3. Click "**Configure**" next to "**Welcome message**".
 4. In "**Welcome channel**", choose the text channel where the message will be sent. Choosing a channel enables the message.
 
+The "**Remove the channel**" button, shown under the selector when a channel is chosen, removes it: the message is then no longer posted publicly, and only the welcome card of the [captcha Activity](./captcha.md#activity) stays active.
+
 The switch at the top right of the screen enables or disables the welcome message. A preview of the message is shown below the screen and updates with every change.
 
 :::info

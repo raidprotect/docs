@@ -40,7 +40,7 @@ O painel traz um botão “**Translate**” para lê-lo no seu idioma, e cada re
 
 O modo Painel mantém o canal limpo e permite configurações adicionais: escolha da sanção quando as tentativas se esgotam, [captcha congelado durante um raid](./raid-mode.md#action), [retenção na entrada das contas muito recentes](./onboarding.md#minage). 
 
-O modo **Desafio (Clássico)**, em que o membro copiava um código no canal, não é mais oferecido. Um servidor que ainda o usava passa automaticamente para o modo Painel na próxima chegada de um membro. A imagem com um código continua sendo usada para um membro cujo dispositivo não consegue abrir a Activity.
+O modo **Desafio (Clássico)**, em que o membro copiava um código no canal, não é mais oferecido. Um servidor que ainda o usava passa automaticamente para o modo Painel na próxima chegada de um membro. Um membro cujo dispositivo não consegue abrir a Activity faz a mesma verificação no [navegador](#activity).
 
 ### Acionamento {#trigger}
 
@@ -86,18 +86,18 @@ No modo **Painel**, o botão “**Verificar**” abre a **Activity RaidProtect**
 - **Revisão pela sua equipe:** em caso de dúvida, o membro permanece bloqueado na entrada, sem prazo correndo, e sua equipe recebe um relatório automático do captcha. Ele chega aos [logs do captcha](#logs) ou, na falta deles, ao canal de [denúncias](./reports.md) ou, na falta deste, aos logs do servidor. Depois que o relatório é assumido, ele oferece “**Deixar entrar**”, “**Vincular a outro membro**” (com a [Identity Update](#activity-alts)) e “**Recusar**”, que aplica a sua ação de falha do captcha (expulsão, jail ou bloqueio): o menu de sanções não aparece nele.
 - **Jail após tentativas esgotadas:** esse jail não tem duração e também abre um relatório de revisão. “**Deixar entrar**” tira o membro do jail e o valida; senão, sancione-o.
 - **Verificação do dispositivo recusada:** a Activity pede o consentimento do membro antes de [verificar seu dispositivo](#privacy). Se ele recusar, sofre a ação de falha como após tentativas esgotadas (expulsão, jail ou bloqueio).
-- **Activity que não abre:** o membro pode clicar em “**Digitar um código**”. Um código correto passa então por revisão da sua equipe.
+- **Activity que não abre:** o painel oferece “**Verificar no navegador**”: a mesma verificação abre no navegador do membro, que se conecta com o Discord. O RaidProtect também não vê ali o endereço IP dele, mascarado pelo proxy do Discord.
 - **Apagamento de dados:** um membro pode solicitar o apagamento de seus dados de verificação em [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot). Ele refaz então o captcha, e suas sanções permanecem.
 
 #### Contas duplicadas detectadas pelo captcha {#activity-alts}
 
 Com a [Identity Update](./alt-accounts.md), a Activity também detecta os recém-chegados provavelmente controlados pela mesma pessoa que um membro do seu servidor:
 
-- **Vínculo seguro:** as contas são vinculadas automaticamente em [`/alt`](./alt-accounts.md#alt). Os logs do captcha o sinalizam, com um botão “**Desvincular**”. Se o grupo estiver sancionado, ou se [Uma conta por pessoa](./alt-accounts.md#single-account) retiver as contas secundárias dele, o recém-chegado recebe a sanção do grupo ou entra em quarentena.
-- **Vínculo provável:** se [Uma conta por pessoa](./alt-accounts.md#single-account) estiver ativo, o membro passa por revisão. “**Vincular a outro membro**” as vincula em `/alt` e o deixa entrar; se nenhuma conta tiver sido detectada, uma janela pede que você escolha o membro (“**Conta já no servidor**”). Caso contrário, o membro entra, e os logs do captcha sinalizam o vínculo provável com um botão “**Vincular**”.
+- **Vínculo seguro:** as contas são vinculadas automaticamente em [`/alt`](./alt-accounts.md#alt). Os logs do captcha o sinalizam, com “**Desvincular**” e “**Mantida vinculada**”. Se o grupo estiver sancionado, ou se [Uma conta por pessoa](./alt-accounts.md#single-account) retiver as contas secundárias dele, o recém-chegado recebe a sanção do grupo ou entra em quarentena.
+- **Vínculo provável:** se [Uma conta por pessoa](./alt-accounts.md#single-account) estiver ativo, o membro passa por revisão. “**Vincular a outro membro**” as vincula em `/alt` e o deixa entrar; se nenhuma conta tiver sido detectada, uma janela pede que você escolha o membro (“**Conta já no servidor**”). Caso contrário, o membro entra, e sua equipe recebe um [alerta de conta duplicada](./alt-accounts.md#alerts): cada conta provável tem ali sua linha, com “**Vincular**” e “**Mantida sem vínculo**”. Um clique decide a linha e nomeia quem o fez; o alerta é tratado quando todas as suas linhas o são.
 - **Vínculo seguro não aplicado:** nada é vinculado automaticamente se uma conta do grupo fizer parte da equipe do servidor, se o recém-chegado estiver ligado a vários grupos `/alt`, ou se as duas contas já tiverem cada uma o seu grupo (dois grupos nunca são unidos automaticamente). O vínculo é então proposto a você da mesma forma.
 
-Somente as contas do seu servidor são mostradas a você: nada é dito sobre os outros servidores.
+Somente as contas do seu servidor são mostradas a você: nada é dito sobre os outros servidores. A confiança a partir da qual a equipe é alertada, e aquela a partir da qual o captcha vincula sozinho, são definidas nos [alertas de conta duplicada](./alt-accounts.md#alerts).
 
 :::info Identity Update (3.7.0)
 A detecção das contas duplicadas faz parte da **Identity Update**, prevista para a versão 3.7.0 e já disponível em beta.
@@ -112,6 +112,14 @@ O RaidProtect não obtém o endereço IP dos membros que passam pelo captcha, e 
 - **Sua equipe vê apenas o resultado:** sucesso, falha, revisão ou vínculo de contas duplicadas, nunca as características do dispositivo.
 
 Um membro pode solicitar o apagamento de seus dados de verificação em [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot). Para entender as diferentes formas de verificar os membros, leia nosso artigo sobre [o captcha e a verificação no Discord](/pt/learn/captcha-discord).
+
+#### Consentimento da Activity {#consent}
+
+A etapa de informação sobre os dados, exibida antes do quebra-cabeça, é definida na tela Captcha (modo Painel, captcha ativo) com o seletor “**Consentimento da Activity**”:
+
+- “**Membros do EEE**” *(padrão)*: exibida aos membros do Espaço Econômico Europeu e àqueles cujo país é desconhecido, tratados como membros do EEE;
+- “**Todos**”: exibida a todos os membros, qualquer que seja o país;
+- “**Desativado**”: a etapa não é exibida a ninguém.
 
 ### Testar o captcha {#test-mode}
 

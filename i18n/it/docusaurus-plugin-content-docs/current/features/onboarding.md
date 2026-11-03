@@ -24,6 +24,8 @@ Il messaggio di benvenuto viene inviato nel canale che preferisci quando un memb
 3. Clicca su “**Configurare**” accanto a “**Messaggio di benvenuto**”.
 4. In “**Canale di benvenuto**”, scegli il canale testuale in cui verrà inviato il messaggio. Scegliere un canale attiva il messaggio.
 
+Il pulsante “**Rimuovi il canale**”, mostrato sotto il selettore quando un canale è scelto, lo rimuove: il messaggio non viene più pubblicato in pubblico, resta attiva solo la carta di benvenuto dell'[Activity del captcha](./captcha.md#activity).
+
 L'interruttore in alto a destra della schermata attiva o disattiva il messaggio di benvenuto. Un'anteprima del messaggio viene mostrata sotto la schermata e si aggiorna a ogni modifica.
 
 :::info
