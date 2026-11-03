@@ -44,7 +44,7 @@ Le panneau porte un bouton “**Translate**” pour le lire dans sa langue, et c
 
 Le mode Panneau garde le salon propre et permet des réglages en plus : choix de la sanction quand les essais sont épuisés, [captcha gelé pendant un raid](./raid-mode.md#action), [retenue à l'entrée des comptes trop récents](./onboarding.md#minage). 
 
-Le mode **Challenge (Classique)**, où le membre recopiait un code dans le salon, n'est plus proposé. Un serveur qui l'utilisait encore passe automatiquement au mode Panneau à la prochaine arrivée d'un membre. L'image avec un code reste utilisée pour un membre dont l'appareil ne peut pas ouvrir l'Activity.
+Le mode **Challenge (Classique)**, où le membre recopiait un code dans le salon, n'est plus proposé. Un serveur qui l'utilisait encore passe automatiquement au mode Panneau à la prochaine arrivée d'un membre. Un membre dont l'appareil ne peut pas ouvrir l'Activity fait la même vérification dans son [navigateur](#activity).
 
 ### Déclenchement {#trigger}
 
@@ -94,7 +94,7 @@ En mode **Panneau**, le bouton “**Vérifier**” ouvre l'**Activity RaidProtec
 - **Revue par votre équipe :** en cas de doute, le membre reste bloqué à l'entrée, sans délai qui court, et votre équipe reçoit un rapport automatique du captcha. Il arrive dans les [logs du captcha](#logs), à défaut dans le salon des [signalements](./reports.md), à défaut dans les logs du serveur. Une fois le rapport pris en charge, il propose “**Laisser entrer**”, “**Lier à un autre membre**” (avec l'[Identity Update](#activity-alts)) et “**Refuser**”, qui applique votre action d'échec du captcha (expulsion, jail ou blocage) : le menu des sanctions n'y figure pas.
 - **Jail après des essais épuisés :** ce jail n'a pas de durée et ouvre aussi un rapport de revue. “**Laisser entrer**” lève le jail et valide le membre ; sinon sanctionnez-le.
 - **Vérification de l'appareil refusée :** l'Activity demande au membre son accord avant de [vérifier son appareil](#privacy). S'il refuse, il subit l'action d'échec comme après des essais épuisés (expulsion, jail ou blocage).
-- **Activity qui ne s'ouvre pas :** le membre peut cliquer sur “**Saisir un code**”. Un code correct passe alors en revue par votre équipe.
+- **Activity qui ne s'ouvre pas :** le panneau propose “**Vérifier dans le navigateur**” : la même vérification s'ouvre dans le navigateur du membre, qui se connecte avec Discord. RaidProtect n'y voit pas davantage son adresse IP, masquée par le proxy de Discord.
 - **Effacement des données :** un membre peut demander l'effacement de ses données de vérification à [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot). Il repasse alors le captcha, et ses sanctions restent.
 
 </details>
@@ -106,13 +106,13 @@ Avec l'[Identity Update](./alt-accounts.md), l'Activity repère aussi les arriva
 <details>
 <summary>Lien sûr, lien probable, lien non appliqué : ce qui se passe dans chaque cas</summary>
 
-- **Lien sûr :** les comptes sont liés automatiquement dans [`/alt`](./alt-accounts.md#alt). Les logs du captcha le signalent, avec un bouton “**Délier**”. Si le groupe est sanctionné, ou si [Un seul compte par personne](./alt-accounts.md#single-account) retient ses comptes secondaires, l'arrivant reçoit la sanction du groupe ou passe en quarantaine.
-- **Lien probable :** si [Un seul compte par personne](./alt-accounts.md#single-account) est actif, le membre passe en revue. “**Lier à un autre membre**” les lie dans `/alt` et le laisse entrer ; si aucun compte n'a été repéré, une fenêtre vous demande de choisir le membre (“**Compte déjà sur le serveur**”). Sinon, le membre entre, et les logs du captcha signalent le lien probable avec un bouton “**Lier**”.
+- **Lien sûr :** les comptes sont liés automatiquement dans [`/alt`](./alt-accounts.md#alt). Les logs du captcha le signalent, avec “**Délier**” et “**Gardé lié**”. Si le groupe est sanctionné, ou si [Un seul compte par personne](./alt-accounts.md#single-account) retient ses comptes secondaires, l'arrivant reçoit la sanction du groupe ou passe en quarantaine.
+- **Lien probable :** si [Un seul compte par personne](./alt-accounts.md#single-account) est actif, le membre passe en revue. “**Lier à un autre membre**” les lie dans `/alt` et le laisse entrer ; si aucun compte n'a été repéré, une fenêtre vous demande de choisir le membre (“**Compte déjà sur le serveur**”). Sinon, le membre entre, et votre équipe reçoit une [alerte de double compte](./alt-accounts.md#alerts) : chaque compte probable y a sa ligne, avec “**Lier**” et “**Gardé non lié**”. Un clic tranche la ligne et nomme qui l'a fait ; l'alerte est traitée quand toutes ses lignes le sont.
 - **Lien sûr non appliqué :** rien n'est lié d'office si un compte du groupe fait partie de l'équipe du serveur, si l'arrivant est lié à plusieurs groupes `/alt`, ou si les deux comptes ont déjà chacun leur groupe (deux groupes ne sont jamais fusionnés d'office). Le lien vous est alors proposé de la même façon.
 
 </details>
 
-Seuls les comptes de votre serveur vous sont montrés : rien n'est dit des autres serveurs.
+Seuls les comptes de votre serveur vous sont montrés : rien n'est dit des autres serveurs. La confiance à partir de laquelle l'équipe est alertée, et celle à partir de laquelle le captcha lie seul, se règlent dans les [alertes de double compte](./alt-accounts.md#alerts).
 
 :::info Identity Update (3.7.0)
 Le repérage des doubles comptes fait partie de l'**Identity Update**, prévue pour la version 3.7.0 et déjà disponible en bêta.
@@ -137,6 +137,14 @@ RaidProtect ne récupère pas l'adresse IP des membres qui passent le captcha, e
 </details>
 
 Un membre peut demander l'effacement de ses données de vérification à [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot). Pour comprendre les différentes façons de vérifier les membres, lisez notre article sur [le captcha et la vérification sur Discord](/learn/captcha-discord).
+
+#### Consentement de l'Activity {#consent}
+
+L'étape d'information sur les données, affichée avant le puzzle, se règle dans l'écran Captcha (mode Panneau, captcha actif) avec le sélecteur “**Consentement de l'Activity**” :
+
+- “**Membres de l'EEE**” *(par défaut)* : affichée aux membres de l'Espace économique européen et à ceux dont le pays est inconnu, traités comme des membres de l'EEE ;
+- “**Tout le monde**” : affichée à tous les membres, quel que soit leur pays ;
+- “**Désactivé**” : l'étape n'est affichée à personne.
 
 ### Tester le captcha {#test-mode}
 

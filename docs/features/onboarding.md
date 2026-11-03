@@ -24,6 +24,8 @@ Le message de bienvenue est envoyé dans le salon de votre choix quand un membre
 3. Cliquez sur “**Configurer**” à côté de “**Message de bienvenue**”.
 4. Dans “**Salon de bienvenue**”, choisissez le salon textuel où le message sera envoyé. Choisir un salon active le message.
 
+Le bouton “**Retirer le salon**”, affiché sous le sélecteur quand un salon est choisi, le retire : le message n'est alors plus posté en public, seule la carte de bienvenue de l'[Activity du captcha](./captcha.md#activity) reste active.
+
 L'interrupteur en haut à droite de l'écran active ou désactive le message de bienvenue. Un aperçu du message s'affiche sous l'écran et se met à jour à chaque modification.
 
 :::info
