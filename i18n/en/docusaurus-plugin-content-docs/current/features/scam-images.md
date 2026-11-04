@@ -77,6 +77,10 @@ The images of a list are deleted as soon as they reappear on your server, and th
 
 Each list has its own screen. Click "**Adjust**" next to the list, then choose "**Sanction of this list**" and, if needed, its duration. "**Same as the filter**" (default) keeps the sanction of the Images filter.
 
+### Delete a list {#delete-list}
+
+On the list screen, "**Delete the list**" removes it after confirmation: its reference images are no longer detected and its own sanction disappears. Sanctions already applied stay. This is permanent. A list created with Premium can be deleted even after the subscription has ended.
+
 ### Verification channel {#review}
 
 When an image looks like an image in your list without a certain match, we flag it in the list's **verification channel** ("Verification required: list ..."), with two buttons:
