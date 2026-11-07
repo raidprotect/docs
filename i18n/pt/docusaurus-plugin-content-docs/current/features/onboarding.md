@@ -13,7 +13,7 @@ Quando um usuário entra no seu servidor, o [modo raid](./raid-mode.md#action), 
 
 ## 👋 Mensagem de boas-vindas {#welcome-message}
 
-A mensagem de boas-vindas é enviada no canal de sua escolha quando um membro é admitido no servidor. Ela contém o seu texto e um **cartão de boas-vindas** gerado para cada membro: seu avatar, “Boas-vindas a” seguido do nome do servidor, e seu número de membro.
+A mensagem de boas-vindas é enviada no canal de sua escolha quando um membro é admitido no servidor. Ela contém um **cartão de boas-vindas** gerado para cada membro (seu avatar, “Boas-vindas a” seguido do nome do servidor, e seu número de membro), precedido do seu texto, se você tiver escrito um.
 
 <Settings start="welcome" />
 
@@ -38,11 +38,11 @@ O canal de boas-vindas não pode ser o do captcha, do jail, do HoneyPot ou do DI
 2. Abra a aba “**Chegadas**”.
 3. Clique em “**Configurar**” ao lado de “**Mensagem de boas-vindas**”.
 4. Em “**Conteúdo da mensagem**”, clique em “**Texto**”.
-5. Escreva a sua mensagem (no máximo 1.200 caracteres) e confirme. Deixe o campo vazio para voltar à mensagem padrão.
+5. Escreva a sua mensagem (no máximo 1.200 caracteres) e confirme. Deixe o campo vazio para enviar apenas o cartão: a mensagem é então enviada sem texto, e o cartão e os [botões](#welcome-buttons) aparecem sozinhos, sem a barra de cor.
 
 <SettingsModal name="welcomeText" />
 
-O texto padrão é “Bem-vindo(a) `{user.mention}` ao **`{server.name}`**! 🎉”, no idioma do servidor. Você pode usar estas variáveis:
+Enquanto você nunca tiver definido um texto, a mensagem usa o padrão, “Bem-vindo(a) `{user.mention}` ao **`{server.name}`**! 🎉”, no idioma do servidor. Você pode usar estas variáveis:
 
 | Variável | Substituída por |
 |---|---|

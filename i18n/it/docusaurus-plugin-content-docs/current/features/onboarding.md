@@ -13,7 +13,7 @@ Quando un utente si unisce al tuo server, la [modalità raid](./raid-mode.md#act
 
 ## 👋 Messaggio di benvenuto {#welcome-message}
 
-Il messaggio di benvenuto viene inviato nel canale che preferisci quando un membro viene ammesso sul server. Contiene il tuo testo e una **scheda di benvenuto** generata per ogni membro: il suo avatar, “Benvenuto su” seguito dal nome del server, e il suo numero di membro.
+Il messaggio di benvenuto viene inviato nel canale che preferisci quando un membro viene ammesso sul server. Contiene una **scheda di benvenuto** generata per ogni membro (il suo avatar, “Benvenuto su” seguito dal nome del server, e il suo numero di membro), preceduta dal tuo testo se ne hai scritto uno.
 
 <Settings start="welcome" />
 
@@ -38,11 +38,11 @@ Il canale di benvenuto non può essere quello del captcha, del jail, dell'HoneyP
 2. Apri la scheda “**Arrivi**”.
 3. Clicca su “**Configurare**” accanto a “**Messaggio di benvenuto**”.
 4. In “**Contenuto del messaggio**”, clicca su “**Testo**”.
-5. Scrivi il tuo messaggio (1 200 caratteri al massimo), poi conferma. Lascia vuoto il campo per tornare al messaggio predefinito.
+5. Scrivi il tuo messaggio (1 200 caratteri al massimo), poi conferma. Lascia vuoto il campo per inviare solo la scheda: il messaggio parte allora senza testo, e la scheda e i [pulsanti](#welcome-buttons) vengono mostrati da soli, senza la barra colorata.
 
 <SettingsModal name="welcomeText" />
 
-Il testo predefinito è “Benvenuto `{user.mention}` su **`{server.name}`**! 🎉”, nella lingua del server. Puoi usare queste variabili:
+Finché non hai mai impostato un testo, il messaggio usa quello predefinito, “Benvenuto `{user.mention}` su **`{server.name}`**! 🎉”, nella lingua del server. Puoi usare queste variabili:
 
 | Variabile | Sostituita da |
 |---|---|

@@ -13,7 +13,7 @@ Khi một người dùng tham gia máy chủ của bạn, [chế độ raid](./r
 
 ## 👋 Tin nhắn chào mừng {#welcome-message}
 
-Tin nhắn chào mừng được gửi vào kênh bạn chọn khi một thành viên được chấp nhận vào máy chủ. Nó chứa văn bản của bạn và một **thẻ chào mừng** được tạo cho từng thành viên: ảnh đại diện của họ, “Chào mừng đến với” theo sau là tên máy chủ, và số thứ tự thành viên của họ.
+Tin nhắn chào mừng được gửi vào kênh bạn chọn khi một thành viên được chấp nhận vào máy chủ. Nó chứa một **thẻ chào mừng** được tạo cho từng thành viên (ảnh đại diện của họ, “Chào mừng đến với” theo sau là tên máy chủ, và số thứ tự thành viên của họ), đứng sau văn bản của bạn nếu bạn đã viết một đoạn.
 
 <Settings start="welcome" />
 
@@ -38,11 +38,11 @@ Kênh chào mừng không thể là kênh của captcha, của jail, của Honey
 2. Mở thẻ “**Thành viên mới**”.
 3. Nhấp vào “**Cấu hình**” bên cạnh “**Tin nhắn chào mừng**”.
 4. Trong “**Nội dung tin nhắn**”, nhấp vào “**Văn bản**”.
-5. Viết tin nhắn của bạn (tối đa 1 200 ký tự), rồi xác nhận. Để trống trường này để quay về tin nhắn mặc định.
+5. Viết tin nhắn của bạn (tối đa 1 200 ký tự), rồi xác nhận. Để trống trường này để chỉ gửi thẻ: tin nhắn khi ấy được gửi không có văn bản, và thẻ cùng các [nút](#welcome-buttons) hiển thị riêng lẻ, không có thanh màu.
 
 <SettingsModal name="welcomeText" />
 
-Văn bản mặc định là “Chào mừng `{user.mention}` đến với **`{server.name}`**! 🎉”, bằng ngôn ngữ của máy chủ. Bạn có thể dùng các biến sau:
+Chừng nào bạn chưa từng đặt văn bản, tin nhắn dùng văn bản mặc định, “Chào mừng `{user.mention}` đến với **`{server.name}`**! 🎉”, bằng ngôn ngữ của máy chủ. Bạn có thể dùng các biến sau:
 
 | Biến | Được thay bằng |
 |---|---|

@@ -13,7 +13,7 @@ Wenn ein Nutzer Ihrem Server beitritt, greifen vor seiner Aufnahme der [Raid-Mod
 
 ## 👋 Willkommensnachricht {#welcome-message}
 
-Die Willkommensnachricht wird im Kanal Ihrer Wahl gesendet, wenn ein Mitglied auf dem Server aufgenommen wird. Sie enthält Ihren Text und eine für jedes Mitglied erzeugte **Willkommenskarte**: sein Avatar, „Willkommen auf“ gefolgt vom Servernamen und seine Mitgliedsnummer.
+Die Willkommensnachricht wird im Kanal Ihrer Wahl gesendet, wenn ein Mitglied auf dem Server aufgenommen wird. Sie enthält eine für jedes Mitglied erzeugte **Willkommenskarte** (sein Avatar, „Willkommen auf“ gefolgt vom Servernamen und seine Mitgliedsnummer), der Ihr Text vorangestellt ist, falls Sie einen geschrieben haben.
 
 <Settings start="welcome" />
 
@@ -38,11 +38,11 @@ Der Willkommenskanal darf nicht der Kanal des Captchas, des Jails, des HoneyPots
 2. Öffnen Sie den Tab „**Ankünfte**“.
 3. Klicken Sie neben „**Willkommensnachricht**“ auf „**Konfigurieren**“.
 4. Klicken Sie unter „**Nachrichteninhalt**“ auf „**Text**“.
-5. Schreiben Sie Ihre Nachricht (maximal 1.200 Zeichen) und bestätigen Sie. Lassen Sie das Feld leer, um zur Standardnachricht zurückzukehren.
+5. Schreiben Sie Ihre Nachricht (maximal 1.200 Zeichen) und bestätigen Sie. Lassen Sie das Feld leer, um nur die Karte zu senden: Die Nachricht wird dann ohne Text gesendet, und die Karte und die [Schaltflächen](#welcome-buttons) erscheinen allein, ohne die Farbleiste.
 
 <SettingsModal name="welcomeText" />
 
-Der Standardtext lautet „Willkommen `{user.mention}` auf **`{server.name}`**! 🎉“ in der Sprache des Servers. Sie können diese Variablen verwenden:
+Solange Sie nie einen Text festgelegt haben, verwendet die Nachricht den Standardtext „Willkommen `{user.mention}` auf **`{server.name}`**! 🎉“ in der Sprache des Servers. Sie können diese Variablen verwenden:
 
 | Variable | Wird ersetzt durch |
 |---|---|

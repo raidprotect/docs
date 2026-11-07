@@ -13,7 +13,7 @@ Quand un utilisateur rejoint votre serveur, le [mode raid](./raid-mode.md#action
 
 ## 👋 Message de bienvenue {#welcome-message}
 
-Le message de bienvenue est envoyé dans le salon de votre choix quand un membre est admis sur le serveur. Il contient votre texte et une **carte de bienvenue** générée pour chaque membre : son avatar, « Bienvenue sur » suivi du nom du serveur, et son numéro de membre.
+Le message de bienvenue est envoyé dans le salon de votre choix quand un membre est admis sur le serveur. Il contient une **carte de bienvenue** générée pour chaque membre (son avatar, « Bienvenue sur » suivi du nom du serveur, et son numéro de membre), précédée de votre texte si vous en avez écrit un.
 
 <Settings start="welcome" />
 
@@ -38,11 +38,11 @@ Le salon de bienvenue ne peut pas être celui du captcha, du jail, du HoneyPot o
 2. Ouvrez l'onglet “**Arrivées**”.
 3. Cliquez sur “**Configurer**” à côté de “**Message de bienvenue**”.
 4. Dans “**Contenu du message**”, cliquez sur “**Texte**”.
-5. Écrivez votre message (1 200 caractères maximum), puis validez. Laissez le champ vide pour revenir au message par défaut.
+5. Écrivez votre message (1 200 caractères maximum), puis validez. Laissez le champ vide pour n'envoyer que la carte : le message part alors sans texte, et la carte et les [boutons](#welcome-buttons) s'affichent seuls, sans la barre de couleur.
 
 <SettingsModal name="welcomeText" />
 
-Le texte par défaut est « Bienvenue `{user.mention}` sur **`{server.name}`** ! 🎉 », dans la langue du serveur. Vous pouvez utiliser ces variables :
+Tant que vous n'avez jamais réglé de texte, le message utilise celui par défaut, « Bienvenue `{user.mention}` sur **`{server.name}`** ! 🎉 », dans la langue du serveur. Vous pouvez utiliser ces variables :
 
 | Variable | Remplacée par |
 |---|---|

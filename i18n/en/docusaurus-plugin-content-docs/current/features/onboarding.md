@@ -13,7 +13,7 @@ When a user joins your server, [raid mode](./raid-mode.md#action), the [minimum 
 
 ## 👋 Welcome message {#welcome-message}
 
-The welcome message is sent to the channel of your choice when a member is admitted to the server. It contains your text and a **welcome card** generated for each member: their avatar, "Welcome to" followed by the server name, and their member number.
+The welcome message is sent to the channel of your choice when a member is admitted to the server. It contains a **welcome card** generated for each member (their avatar, "Welcome to" followed by the server name, and their member number), preceded by your text if you wrote one.
 
 <Settings start="welcome" />
 
@@ -38,11 +38,11 @@ The welcome channel cannot be the captcha, jail, HoneyPot or DISCON channel. If 
 2. Open the "**Arrivals**" tab.
 3. Click "**Configure**" next to "**Welcome message**".
 4. In "**Message content**", click "**Text**".
-5. Write your message (1,200 characters maximum), then confirm. Leave the field empty to go back to the default message.
+5. Write your message (1,200 characters maximum), then confirm. Leave the field empty to send only the card: the message is then sent without text, and the card and the [buttons](#welcome-buttons) are shown alone, without the color bar.
 
 <SettingsModal name="welcomeText" />
 
-The default text is "Welcome `{user.mention}` to **`{server.name}`**! 🎉", in the server's language. You can use these variables:
+Until you have set a text, the message uses the default one, "Welcome `{user.mention}` to **`{server.name}`**! 🎉", in the server's language. You can use these variables:
 
 | Variable | Replaced by |
 |---|---|

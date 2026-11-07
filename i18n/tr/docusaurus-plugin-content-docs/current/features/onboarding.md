@@ -13,7 +13,7 @@ Bir kullanıcı sunucunuza katıldığında, kabul edilmeden önce [baskın modu
 
 ## 👋 Karşılama mesajı {#welcome-message}
 
-Karşılama mesajı, bir üye sunucuya kabul edildiğinde seçtiğiniz kanala gönderilir. Metninizi ve her üye için oluşturulan bir **karşılama kartı** içerir: avatarı, “Hoş geldiniz:” ve ardından sunucunun adı, ayrıca üye numarası.
+Karşılama mesajı, bir üye sunucuya kabul edildiğinde seçtiğiniz kanala gönderilir. Her üye için oluşturulan bir **karşılama kartı** içerir (avatarı, “Hoş geldiniz:” ve ardından sunucunun adı, ayrıca üye numarası); bir metin yazdıysanız kartın öncesinde o metin yer alır.
 
 <Settings start="welcome" />
 
@@ -38,11 +38,11 @@ Karşılama kanalı; captcha, jail, HoneyPot veya DISCON kanalı olamaz. Kanal s
 2. “**Katılımlar**” sekmesini açın.
 3. “**Karşılama mesajı**” yanındaki “**Yapılandır**” düğmesine tıklayın.
 4. “**Mesaj içeriği**” içinde “**Metin**”e tıklayın.
-5. Mesajınızı yazın (en fazla 1.200 karakter), ardından onaylayın. Varsayılan mesaja dönmek için alanı boş bırakın.
+5. Mesajınızı yazın (en fazla 1.200 karakter), ardından onaylayın. Yalnızca kartı göndermek için alanı boş bırakın: mesaj o zaman metinsiz gider, kart ve [düğmeler](#welcome-buttons) renk çubuğu olmadan tek başına görüntülenir.
 
 <SettingsModal name="welcomeText" />
 
-Varsayılan metin, sunucunun dilinde “**`{server.name}`** sunucusuna hoş geldin `{user.mention}`! 🎉” şeklindedir. Şu değişkenleri kullanabilirsiniz:
+Metni hiç ayarlamadığınız sürece mesaj, sunucunun dilinde varsayılan metni, “**`{server.name}`** sunucusuna hoş geldin `{user.mention}`! 🎉” mesajını kullanır. Şu değişkenleri kullanabilirsiniz:
 
 | Değişken | Yerine geçen |
 |---|---|
