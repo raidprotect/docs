@@ -18,7 +18,7 @@ Les membres peuvent signaler un contenu via 4 méthodes principales.
 Un membre peut faire un clic droit sur un message qu'il estime enfreindre le règlement, sélectionner **`Applications`**, puis cliquer sur **`Signaler ce message`**. Une fenêtre s'ouvre, dans laquelle il précise la raison du signalement.
 
 2. **Clic droit sur un profil**
-De la même manière, un membre peut faire un clic droit sur un profil qu'il juge problématique, choisir **`Applications`**, puis cliquer sur **`Signaler l'utilisateur`**. Une fenêtre s'ouvre alors pour lui permettre de préciser ce qu'il signale (photo de profil, nom d'utilisateur, bio, activité en vocal, activité en messages privés) et la raison.
+De la même manière, un membre peut faire un clic droit sur un profil qu'il juge problématique, choisir **`Applications`**, puis cliquer sur **`Signaler l'utilisateur`**. Une fenêtre s'ouvre alors pour lui permettre de préciser ce qu'il signale (photo de profil, nom d'utilisateur, bio, activité en vocal, activité en messages privés) et la raison. Avec la [Logging Update](./logs.md#cache), la fenêtre propose aussi “**Messages sur le serveur**” : le fil du signalement reprend alors les derniers messages du salon, **messages supprimés compris** (marqués supprimés, le membre signalé en gras), dans la fenêtre de 15 minutes (6 heures en Premium).
 
 3. **Bouton sur un panneau d'information**
 Si la fonctionnalité "Signalement" est activée sur un [panneau d'information (`/display public`)](./display.mdx), un bouton “**Signaler un membre**” est disponible directement sous le panneau, permettant aux membres de signaler rapidement un utilisateur.

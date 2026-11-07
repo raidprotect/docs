@@ -29,7 +29,7 @@ Her ailede iki liste bulunur:
 
 | Aile | Kaydedilenler |
 | --- | --- |
-| **Kanallar ve roller** | Oluşturulan, düzenlenen veya silinen kategoriler, kanallar, ses kanalları ve alt başlıklar, izinler dahil. Roller (ve yeni sıralamaları) ve webhook'lar. |
+| **Kanallar ve roller** | Oluşturulan, düzenlenen, silinen, katılınan, ayrılan veya bir üyenin çıkarıldığı kategoriler, kanallar, ses kanalları ve alt başlıklar, izinler dahil. Roller (ve yeni sıralamaları) ve webhook'lar. |
 | **Sunucu** | Rolleriyle birlikte eklenen veya çıkarılan botlar, entegrasyonlar, Discord AutoMod kuralları (eklenen veya çıkarılan kelime ve ifadelerle) ve planlanmış etkinlikler. Bir etkinlikle ilgilenen üyeler [Premium](/tr/premium)'a ayrılmıştır. |
 | **Üyeler** | Katılımlar (hesap yaşıyla) ve ayrılmalar (katılma tarihi ve rollerle), oluşturulan veya silinen davetler, kabul edilen kurallar, eklenen veya kaldırılan roller, takma adlar, sunucu avatarları, çıkarılan etkin olmayan üyeler ve takviyeler. |
 | **Mesajlar** | Kimin sildiğiyle birlikte silinen mesajlar, düzenlenen mesajlar, toplu silmeler, sabitlenen veya sabitlemesi kaldırılan mesajlar. |
@@ -54,8 +54,12 @@ Biçimi aynı ekrandaki “**Log biçimi**” bölümünden seçin.
 
 Premium'u kaybeden bir sunucu Varsayılan biçime döner. Seçimi, geri dönüşü için saklanır.
 
+## 🔘 Log düğmeleri {#buttons}
+
+Log türüne göre düğmeler eklenir: “**Kanalı gör**”, “**Mesajı gör**”, “**Etkinliği gör**”, “**Emojiyi gör**” (bağlantılar) ve “**Üye bilgisi**”. “**Üye bilgisi**”, üyenin moderasyon kartını ([`/modview`](./moderation.mdx)) kendi metinlerini içeren bir pencerede açar; pencerenin altındaki “**Tam kartı, eylemleriyle birlikte bana gönder**” kutusu kartın tamamını düğmeleriyle birlikte sohbete gönderir. `/modview` komutuna erişiminizin olması gerekir.
+
 ## 💾 Bellekteki mesajlar {#cache}
 
-Silinen bir mesajın içeriğini bulabilmek için RaidProtect son mesajları bellekte tutar: ücretsiz sürümde **15 dakika**, [Premium](/tr/premium) ile **6 saat**. Bu sürenin ötesinde log, içeriğin saklanmadığını belirtir.
+Silinen bir mesajın içeriğini bulabilmek için RaidProtect son mesajları bellekte tutar: ücretsiz sürümde **15 dakika**, [Premium](/tr/premium) ile **6 saat**. Bu sürenin ötesinde log, içeriğin saklanmadığını belirtir. Aynı süre `/snipe` ve `/modview`'in snipe bölümü için de geçerlidir: Logging Update ile bir saat yerine bu süredeki mesajları gösterirler.
 
 Premium ile silinen mesajların ekleri de loga kopyalanır (dosya başına 10 MB, sunucu başına 100 MB, en eskiler önce değiştirilir).

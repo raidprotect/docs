@@ -46,10 +46,12 @@ Lo más sencillo para ajustar el anti-spam es elegir un **preajuste**. Fija de g
 | Preajuste | Exceso | Spam | Automatizado | Spam multicanal |
 |---|---|---|---|---|
 | **Suave** | Advertencia | Timeout | Jail | Timeout |
-| **Estándar** *(por defecto)* | Timeout | Softban | Baneo | Jail |
+| **Estándar** *(por defecto)* | Timeout | Timeout | Jail | Jail |
 | **Estricto** *(no recomendado)* | Softban | Baneo | Baneo | Baneo |
 
 El preajuste **Suave** nunca expulsa ni banea: como mucho un timeout o el jail.
+
+Por defecto, RaidProtect retiene al miembro sin devolverlo: un falso positivo no le cuesta su lugar en el servidor. Un Jail sin rol configurado se convierte en un Timeout. Un servidor que había elegido su propia sanción la conserva, y los servidores que ya estaban en Estricto mantienen el baneo de las cuentas automatizadas.
 
 1. Ejecuta el [comando `/settings`](../setup.md#settings).
 2. Abre la pestaña “**Protección**”.
@@ -96,12 +98,12 @@ Cada familia agrupa disparadores de la misma naturaleza. Estos son los disparado
 | **Exceso** | Spam | Demasiados mensajes en poco tiempo. Los emojis, stickers y mensajes ininteligibles (carácter repetido, palabras en bucle) también cuentan. | Timeout |
 | **Exceso** | Flood (pantalla llena) | Mensajes que llenan la pantalla: textos largos, imágenes, vistas previas de enlaces, stickers | Timeout |
 | **Exceso** | Spam de archivos | Envío masivo de archivos o imágenes | Timeout |
-| **Spam** | Spam de duplicados | Mensajes copiados y pegados o casi idénticos | Softban |
-| **Spam** | Spam de enlaces | Envío masivo de enlaces (una invitación de Discord cuenta como un enlace, incluso sin `https://`; los demás enlaces de Discord y los GIF siguen siendo neutros) | Softban |
-| **Spam** | Spam de menciones | Menciones masivas | Softban |
-| **Automatizado** | Spam con selfbot | Uso de [selfbots](/es/learn/self-bot) para hacer spam | Baneo |
-| **Automatizado** | Spam de comandos externos | Uso de [comandos externos](/es/learn/server-raidable) para hacer spam | Baneo |
-| **Automatizado** | Spam de mensajes bloqueados (AutoMod) | Mensajes repetidos bloqueados por el [AutoMod de Discord](#automod) | Baneo |
+| **Spam** | Spam de duplicados | Mensajes copiados y pegados o casi idénticos | Timeout |
+| **Spam** | Spam de enlaces | Envío masivo de enlaces (una invitación de Discord cuenta como un enlace, incluso sin `https://`; los demás enlaces de Discord y los GIF siguen siendo neutros) | Timeout |
+| **Spam** | Spam de menciones | Menciones masivas | Timeout |
+| **Automatizado** | Spam con selfbot | Uso de [selfbots](/es/learn/self-bot) para hacer spam | Jail |
+| **Automatizado** | Spam de comandos externos | Uso de [comandos externos](/es/learn/server-raidable) para hacer spam | Jail |
+| **Automatizado** | Spam de mensajes bloqueados (AutoMod) | Mensajes repetidos bloqueados por el [AutoMod de Discord](#automod) | Jail |
 | *(aparte)* | Spam multicanal | El mismo mensaje publicado en varios canales en poco tiempo | Jail |
 
 :::info Spam multicanal

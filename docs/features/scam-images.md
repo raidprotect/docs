@@ -77,6 +77,10 @@ Les images d'une liste sont supprimées dès qu'elles réapparaissent sur votre 
 
 Chaque liste a son propre écran. Cliquez sur “**Régler**” à côté de la liste, puis choisissez “**Sanction de cette liste**” et, si besoin, sa durée. “**Comme le filtre**” (par défaut) garde la sanction du filtre Images.
 
+### Supprimer une liste {#delete-list}
+
+Sur l'écran de la liste, “**Supprimer la liste**” l'efface après confirmation : ses images de référence ne sont plus détectées et sa sanction propre disparaît. Les sanctions déjà posées restent. C'est définitif. Une liste créée en Premium se supprime même une fois l'abonnement terminé.
+
 ### Salon de vérification {#review}
 
 Quand une image ressemble à une image de votre liste sans correspondance certaine, nous la signalons dans le **salon de vérification** de la liste (« Vérification requise : liste … »), avec deux boutons :

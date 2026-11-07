@@ -159,7 +159,7 @@ import Settings from '@site/src/components/DiscordMessage/mockups/v2';
 
 ## 🗂️ 消息缓存 {#message-cache}
 
-缓存会在内存中保留**每个频道一小时的消息**，绝不写入数据库。它为 [`/snipe`](./moderation.mdx#snipe) 命令以及 `/modview` 的 snipe 部分提供数据。没有缓存时，这些命令找不到任何已删除的消息。
+缓存会在内存中保留**每个频道一小时的消息**，绝不写入数据库。它为 [`/snipe`](./moderation.mdx#snipe) 命令以及 `/modview` 的 snipe 部分提供数据。没有缓存时，这些命令找不到任何已删除的消息。启用 [Logging Update](./logs.md#cache) 后，时间窗口为：免费版 **15 分钟**，[Premium](/zh-CN/premium) 版 **6 小时**，而不是一小时。
 
 1. 使用 [`/settings` 命令](../setup.md#settings)。
 2. 打开“**实用工具**”选项卡。

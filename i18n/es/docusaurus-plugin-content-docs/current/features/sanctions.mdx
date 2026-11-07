@@ -20,7 +20,7 @@ El historial de sanciones registra automáticamente todas las acciones de modera
 - **Sanciones manuales**: todos los [comandos de moderación](./moderation.mdx) (`/ban`, `/tempban`, `/kick`, `/mute`, `/jail`, `/warn`…) se registran en el historial.
 - **Sanciones automáticas**: las sanciones aplicadas por nuestros módulos de protección ([anti-spam](./anti-spam.mdx), [HoneyPot](./honeypot.md), [ScamLens](./scam-images.md)…) también se añaden al historial.
 - **Baneos, expulsiones y timeouts**: las sanciones aplicadas sin pasar por RaidProtect se añaden al historial.
-- **AutoMod de Discord**: los timeouts aplicados por el AutoMod de Discord quedan registrados. Cada mensaje bloqueado por una regla del AutoMod crea además una **advertencia** a nombre de “**Discord Automod**”, silenciosa (sin MD), salvo si la regla ya aplica un timeout. Tampoco se da cuando el miembro recibe una sanción más grave (timeout, mute, jail, expulsión, softban, ban, cuarentena) en los 10 segundos alrededor del bloqueo, por ejemplo por el [HoneyPot](./honeypot.md) o el [anti-spam](./anti-spam.mdx) por el mismo mensaje. Este warn está activado por defecto y se desactiva con “**Warn de los mensajes bloqueados por el AutoMod**”: ejecuta el [comando `/settings`](../setup.md#settings), pestaña “**Moderación**”, “**Sanciones**”.
+- **AutoMod de Discord**: los timeouts aplicados por el AutoMod de Discord quedan registrados. Cada mensaje bloqueado por una regla del AutoMod crea además una **advertencia** a nombre de “**Discord Automod**”, silenciosa (sin MD), salvo si la regla ya aplica un timeout. Tampoco se da cuando el miembro recibe una sanción más grave (timeout, mute, jail, expulsión, softban, ban, cuarentena) en los 10 segundos alrededor del bloqueo, por ejemplo por el [HoneyPot](./honeypot.md) o el [anti-spam](./anti-spam.mdx) por el mismo mensaje. Su motivo nombra la regla del AutoMod activada y cita el pasaje bloqueado. Este warn está activado por defecto y se desactiva con “**Warn de los mensajes bloqueados por el AutoMod**”: ejecuta el [comando `/settings`](../setup.md#settings), pestaña “**Moderación**”, “**Sanciones**”.
 - **Notificaciones de sanciones**: los miembros sancionados reciben un mensaje privado que les informa de la sanción y de su razón. El bot también envía un acuse de recibo detallado que confirma el estado del envío: **recibido**, **MD cerrados**, **expirado** o **silencioso** (cuando se usa la opción `[--silent]`). Para los kicks, softbans y bans temporales, este mensaje contiene además un **botón con una invitación al servidor** para que el miembro pueda volver una vez terminada la sanción.
 
 :::info
@@ -161,7 +161,7 @@ En la pantalla Jail, el selector “**Gestión de roles al hacer jail**” contr
 
 ### Cuarentena de Discord sincronizada {#discord-quarantine}
 
-El AutoMod de Discord puede poner en cuarentena a un miembro cuyo perfil infringe una regla (apodo, etiqueta de servidor). Con este ajuste, seguimos esa cuarentena: el miembro recibe el **rol de jail** y se registra una sanción **Cuarentena** en el historial. Sale de ella en cuanto Discord levanta la cuarentena.
+El AutoMod de Discord puede poner en cuarentena a un miembro cuyo perfil infringe una regla (apodo, etiqueta de servidor). Con este ajuste, seguimos esa cuarentena: el miembro recibe el **rol de jail** y se registra una sanción **Cuarentena** en el historial, con el motivo de lo que el AutoMod bloqueó (apodo del servidor, nombre para mostrar, nombre de usuario o etiqueta de servidor). Sale de ella en cuanto Discord levanta la cuarentena.
 
 1. Ejecuta el [comando `/settings`](../setup.md#settings).
 2. Abre la pestaña “**Moderación**”.
@@ -174,7 +174,7 @@ Este ajuste exige un [rol Jail](#jail). Desactivarlo libera las cuarentenas que 
 
 ### Eliminación de los mensajes al banear {#ban-delete}
 
-En la pantalla “**Sanciones**”, el selector “**Eliminación de los mensajes al banear**” fija el historial eliminado por defecto cuando baneas con `/ban`, `?ban` o `/tempban` sin precisar `--delete-messages`. Elige “**Sin eliminación**” (por defecto), 1 hora, 6 horas, 12 horas, 1 día, 3 días o 7 días. Un valor indicado en el comando tiene prioridad.
+En la pantalla “**Sanciones**”, el selector “**Eliminación de los mensajes al banear**” fija el historial eliminado por defecto cuando un moderador banea sin precisar una ventana, sea cual sea el punto de entrada: `/ban`, `?ban`, `/tempban`, pero también los botones de baneo de las fichas y de los reportes (sin `--delete-messages`). Los baneos automáticos (anti-spam, HoneyPot…) no se ven afectados. Elige “**Sin eliminación**” (por defecto), 1 hora, 6 horas, 12 horas, 1 día, 3 días o 7 días. Un valor indicado en el comando tiene prioridad.
 
 ### Silencio {#mute}
 

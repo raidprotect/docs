@@ -29,7 +29,7 @@ Die Kanäle „**Allgemein**“, „**Moderation**“ und „**Captcha**“ der 
 
 | Familie | Was erfasst wird |
 | --- | --- |
-| **Kanäle und Rollen** | Erstellte, geänderte oder gelöschte Kategorien, Kanäle, Sprachkanäle und Threads, einschließlich Berechtigungen. Rollen (und ihre neue Reihenfolge) und Webhooks. |
+| **Kanäle und Rollen** | Erstellte, geänderte, gelöschte, betretene oder verlassene Kategorien, Kanäle, Sprachkanäle und Threads (oder aus denen ein Mitglied entfernt wurde), einschließlich Berechtigungen. Rollen (und ihre neue Reihenfolge) und Webhooks. |
 | **Server** | Hinzugefügte oder entfernte Bots mit ihrer Rolle, Integrationen, AutoMod-Regeln von Discord (mit den hinzugefügten oder entfernten Wörtern und Ausdrücken) und geplante Events. Die an einem Event interessierten Mitglieder sind [Premium](/de/premium) vorbehalten. |
 | **Mitglieder** | Beitritte (mit dem Alter des Kontos) und Austritte (mit dem Beitrittsdatum und den Rollen), erstellte oder gelöschte Einladungen, akzeptierte Regeln, hinzugefügte oder entfernte Rollen, Spitznamen, Server-Avatare, entfernte inaktive Mitglieder und Boosts. |
 | **Nachrichten** | Gelöschte Nachrichten, mit der Angabe, wer sie gelöscht hat, bearbeitete Nachrichten, Massenlöschungen, angeheftete oder losgelöste Nachrichten. |
@@ -54,8 +54,12 @@ Wählen Sie das Format unter „**Log-Format**“ auf demselben Bildschirm.
 
 Ein Server, der Premium verliert, wechselt zurück zum Format Standard. Seine Wahl bleibt für seine Rückkehr gespeichert.
 
+## 🔘 Log-Schaltflächen {#buttons}
+
+Je nach Log-Typ sind Schaltflächen angehängt: „**Kanal ansehen**“, „**Nachricht ansehen**“, „**Event ansehen**“, „**Emoji ansehen**“ (Links) und „**Mitglieder-Infos**“. „**Mitglieder-Infos**“ öffnet die Moderationskarte des Mitglieds ([`/modview`](./moderation.mdx)) in einem Fenster, das ihre Texte übernimmt; das Kästchen „**Die vollständige Karte mit ihren Aktionen an mich senden**“ am unteren Rand des Fensters schickt die ganze Karte mit ihren Schaltflächen in den Chat. Sie müssen Zugriff auf den Befehl `/modview` haben.
+
 ## 💾 Gespeicherte Nachrichten {#cache}
 
-Um den Inhalt einer gelöschten Nachricht wiederzufinden, hält RaidProtect die neuesten Nachrichten im Speicher: **15 Minuten** in der kostenlosen Version, **6 Stunden** mit [Premium](/de/premium). Danach gibt der Log an, dass der Inhalt nicht gespeichert wurde.
+Um den Inhalt einer gelöschten Nachricht wiederzufinden, hält RaidProtect die neuesten Nachrichten im Speicher: **15 Minuten** in der kostenlosen Version, **6 Stunden** mit [Premium](/de/premium). Danach gibt der Log an, dass der Inhalt nicht gespeichert wurde. Dasselbe Zeitfenster gilt für `/snipe` und für den Snipe-Teil von `/modview`: Mit dem Logging Update zeigen sie die Nachrichten dieses Zeitfensters statt einer Stunde.
 
 Mit Premium werden auch die Anhänge gelöschter Nachrichten in den Log kopiert (10 MB pro Datei, 100 MB pro Server, die ältesten werden zuerst ersetzt).

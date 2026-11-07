@@ -13,7 +13,7 @@ Wenn ein Nutzer Ihrem Server beitritt, greifen vor seiner Aufnahme der [Raid-Mod
 
 ## 👋 Willkommensnachricht {#welcome-message}
 
-Die Willkommensnachricht wird im Kanal Ihrer Wahl gesendet, wenn ein Mitglied auf dem Server aufgenommen wird. Sie enthält Ihren Text und eine für jedes Mitglied erzeugte **Willkommenskarte**: sein Avatar, „Willkommen auf“ gefolgt vom Servernamen und seine Mitgliedsnummer.
+Die Willkommensnachricht wird im Kanal Ihrer Wahl gesendet, wenn ein Mitglied auf dem Server aufgenommen wird. Sie enthält eine für jedes Mitglied erzeugte **Willkommenskarte** (sein Avatar, „Willkommen auf“ gefolgt vom Servernamen und seine Mitgliedsnummer), der Ihr Text vorangestellt ist, falls Sie einen geschrieben haben.
 
 <Settings start="welcome" />
 
@@ -23,6 +23,8 @@ Die Willkommensnachricht wird im Kanal Ihrer Wahl gesendet, wenn ein Mitglied au
 2. Öffnen Sie den Tab „**Ankünfte**“.
 3. Klicken Sie neben „**Willkommensnachricht**“ auf „**Konfigurieren**“.
 4. Wählen Sie unter „**Willkommenskanal**“ den Textkanal, in dem die Nachricht gesendet wird. Die Wahl eines Kanals aktiviert die Nachricht.
+
+Die Schaltfläche „**Kanal entfernen**“, die unter der Auswahl erscheint, sobald ein Kanal gewählt ist, entfernt ihn: Die Nachricht wird dann nicht mehr öffentlich gepostet, nur die Willkommenskarte der [Activity des Captchas](./captcha.md#activity) bleibt aktiv.
 
 Der Schalter oben rechts auf dem Bildschirm aktiviert oder deaktiviert die Willkommensnachricht. Eine Vorschau der Nachricht erscheint unter dem Bildschirm und aktualisiert sich bei jeder Änderung.
 
@@ -36,11 +38,11 @@ Der Willkommenskanal darf nicht der Kanal des Captchas, des Jails, des HoneyPots
 2. Öffnen Sie den Tab „**Ankünfte**“.
 3. Klicken Sie neben „**Willkommensnachricht**“ auf „**Konfigurieren**“.
 4. Klicken Sie unter „**Nachrichteninhalt**“ auf „**Text**“.
-5. Schreiben Sie Ihre Nachricht (maximal 1.200 Zeichen) und bestätigen Sie. Lassen Sie das Feld leer, um zur Standardnachricht zurückzukehren.
+5. Schreiben Sie Ihre Nachricht (maximal 1.200 Zeichen) und bestätigen Sie. Lassen Sie das Feld leer, um nur die Karte zu senden: Die Nachricht wird dann ohne Text gesendet, und die Karte und die [Schaltflächen](#welcome-buttons) erscheinen allein, ohne die Farbleiste.
 
 <SettingsModal name="welcomeText" />
 
-Der Standardtext lautet „Willkommen `{user.mention}` auf **`{server.name}`**! 🎉“ in der Sprache des Servers. Sie können diese Variablen verwenden:
+Solange Sie nie einen Text festgelegt haben, verwendet die Nachricht den Standardtext „Willkommen `{user.mention}` auf **`{server.name}`**! 🎉“ in der Sprache des Servers. Sie können diese Variablen verwenden:
 
 | Variable | Wird ersetzt durch |
 |---|---|
@@ -67,6 +69,8 @@ Sie können unter der Nachricht Schaltflächen hinzufügen, die zu einem Kanal d
 5. Geben Sie der Schaltfläche einen Namen, wählen Sie den zu verlinkenden Kanal und, wenn Sie möchten, ein **Emoji**: ein Standard-Emoji oder ein Emoji dieses Servers (`<:nom:id>`, `:nom:` oder seine ID). Ein ungültiges Emoji verhindert das Speichern nicht: Die Schaltfläche wird ohne Emoji erstellt.
 
 Um eine Schaltfläche zu ändern oder zu löschen, wählen Sie sie in derselben Liste aus.
+
+Hat Ihr Server einen Server-Guide mit Aktionen, bietet „**Schaltflächen verwalten**“ auch „**Aus dem Server-Guide hinzufügen**“ („Übernimmt die Aktionen Ihres Server-Guides“). Ein Fenster „**Schaltflächen des Server-Guides**“ listet die Aktionen des Guides auf: Jede angekreuzte Aktion wird zu einer Schaltfläche zu ihrem Kanal, mit ihrem Titel und ihrem Emoji. Eine bereits vorhandene Schaltfläche für denselben Kanal wird ersetzt. Die Gesamtzahl bleibt innerhalb der unten genannten Grenze: Wird sie überschritten, wird nichts gespeichert und eine Meldung nennt das Maximum.
 
 **Grenzen:** 2 Schaltflächen in der kostenlosen Version, 4 Schaltflächen in der [Premium](/de/premium)-Version. Läuft das Premium ab, bleiben nur die ersten 2 Schaltflächen sichtbar.
 
@@ -95,7 +99,7 @@ Um alle automatischen Rollen zu entfernen, klicken Sie auf „**Zurücksetzen**�
 **Grenzen:** 3 Rollen in der kostenlosen Version, 10 Rollen in der [Premium](/de/premium)-Version.
 
 :::warning
-Wählen Sie Rollen ohne Berechtigungen: Eine bei der Ankunft vergebene Rolle sollte keinerlei Befugnisse gewähren. RaidProtect lehnt Rollen ab, die von einer Integration verwaltet werden, Rollen über seiner eigenen oder Ihrer, Rollen mit einer Moderationsberechtigung und die nicht verifizierte Rolle des Captchas. Es warnt Sie, wenn eine gewählte Rolle später Berechtigungen erhält.
+Wählen Sie Rollen ohne Berechtigungen: Eine bei der Ankunft vergebene Rolle sollte keinerlei Befugnisse gewähren. RaidProtect lehnt Rollen ab, die von einer Integration verwaltet werden, Rollen über seiner eigenen oder Ihrer, Rollen mit einer Moderationsberechtigung und die nicht verifizierte Rolle des Captchas. Es warnt Sie, wenn eine gewählte Rolle später Berechtigungen erhält. Trägt eine gewählte Rolle abgelehnte Berechtigungen, bietet der Fehlerhinweis eine Schaltfläche „**Diese Berechtigungen entfernen**“ („**@Rolle korrigieren**“ bei mehreren Rollen) an, die sie für Sie entfernt, unter denselben Bedingungen wie bei der [Tag-Rolle](./tag-role.md): Berechtigung **Rollen verwalten**, höher platzierte Rolle und keine Berechtigung, die Sie selbst nicht haben.
 :::
 :::info
 Wenn Ihr Server einen anderen Bot für seine automatische Rolle verwendet, vergibt dieser die Rolle möglicherweise vor dem Captcha. Ersetzen Sie ihn durch die automatischen Rollen von RaidProtect.

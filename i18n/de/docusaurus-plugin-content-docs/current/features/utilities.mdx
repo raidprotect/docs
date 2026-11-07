@@ -159,7 +159,7 @@ Die Antwort verweist auf unsere Datenschutzerklärung, die die Aufbewahrungsdaue
 
 ## 🗂️ Zwischenspeicherung von Nachrichten {#message-cache}
 
-Die Zwischenspeicherung hält **eine Stunde Nachrichten pro Kanal im Arbeitsspeicher**, nie in die Datenbank geschrieben. Sie speist den Befehl [`/snipe`](./moderation.mdx#snipe) und den Snipe-Teil von `/modview`. Ohne sie finden diese Befehle keine gelöschte Nachricht.
+Die Zwischenspeicherung hält **eine Stunde Nachrichten pro Kanal im Arbeitsspeicher**, nie in die Datenbank geschrieben. Sie speist den Befehl [`/snipe`](./moderation.mdx#snipe) und den Snipe-Teil von `/modview`. Ohne sie finden diese Befehle keine gelöschte Nachricht. Mit dem [Logging Update](./logs.md#cache) beträgt das Zeitfenster **15 Minuten** in der kostenlosen Version und **6 Stunden** mit [Premium](/de/premium), statt einer Stunde.
 
 1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
 2. Öffnen Sie den Tab „**Werkzeuge**“.

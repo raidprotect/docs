@@ -20,7 +20,7 @@ Yaptırım geçmişi, sunucunuzda yapılan tüm moderasyon eylemlerini otomatik 
 - **Manuel yaptırımlar**: tüm [moderasyon komutları](./moderation.mdx) (`/ban`, `/tempban`, `/kick`, `/mute`, `/jail`, `/warn`…) geçmişe kaydedilir.
 - **Otomatik yaptırımlar**: koruma modüllerimizin ([anti-spam](./anti-spam.mdx), [HoneyPot](./honeypot.md), [ScamLens](./scam-images.md)…) uyguladığı yaptırımlar da geçmişe eklenir.
 - **Yasaklamalar, atmalar ve timeout'lar**: RaidProtect üzerinden geçmeden uygulanan yaptırımlar geçmişe eklenir.
-- **Discord AutoMod**: Discord AutoMod'un uyguladığı timeout'lar kaydedilir. Bir AutoMod kuralı tarafından engellenen her mesaj ayrıca “**Discord Automod**” adına, sessiz (DM yok) bir **uyarı** oluşturur; kural zaten bir timeout uygulamıyorsa. Üye, engellemenin öncesi ve sonrasındaki 10 saniye içinde daha ağır bir yaptırım (timeout, mute, jail, atma, softban, yasaklama, karantina) aldığında da verilmez, örneğin aynı mesaj için [HoneyPot](./honeypot.md) veya [anti-spam](./anti-spam.mdx) tarafından. Bu uyarı varsayılan olarak etkindir ve “**AutoMod'un engellediği mesajlar için uyarı**” ile kapatılır: [`/settings` komutunu](../setup.md#settings) çalıştırın, “**Moderasyon**” sekmesi, “**Yaptırımlar**”.
+- **Discord AutoMod**: Discord AutoMod'un uyguladığı timeout'lar kaydedilir. Bir AutoMod kuralı tarafından engellenen her mesaj ayrıca “**Discord Automod**” adına, sessiz (DM yok) bir **uyarı** oluşturur; kural zaten bir timeout uygulamıyorsa. Üye, engellemenin öncesi ve sonrasındaki 10 saniye içinde daha ağır bir yaptırım (timeout, mute, jail, atma, softban, yasaklama, karantina) aldığında da verilmez, örneğin aynı mesaj için [HoneyPot](./honeypot.md) veya [anti-spam](./anti-spam.mdx) tarafından. Sebebi, tetiklenen AutoMod kuralını belirtir ve engellenen bölümü alıntılar. Bu uyarı varsayılan olarak etkindir ve “**AutoMod'un engellediği mesajlar için uyarı**” ile kapatılır: [`/settings` komutunu](../setup.md#settings) çalıştırın, “**Moderasyon**” sekmesi, “**Yaptırımlar**”.
 - **Yaptırım bildirimleri**: yaptırım uygulanan üyeler yaptırımı ve sebebini bildiren bir özel mesaj alır. Bot ayrıca gönderim durumunu doğrulayan ayrıntılı bir alındı bildirimi gönderir: **alındı**, **DM kapalı**, **süresi doldu** veya **sessiz** (`[--silent]` seçeneği kullanıldığında). Kick, softban ve geçici ban için bu mesaj ayrıca, üyenin yaptırım bittikten sonra geri dönebilmesi için **sunucuya bir davet içeren bir düğme** de barındırır.
 
 :::info
@@ -161,7 +161,7 @@ Jail ekranında “**Jail sırasında rol yönetimi**” seçicisi, bir üye hap
 
 ### Senkronize Discord karantinası {#discord-quarantine}
 
-Discord AutoMod, profili bir kuralı ihlal eden (takma ad, sunucu etiketi) bir üyeyi karantinaya alabilir. Bu ayarla bu karantinayı izleriz: üye **jail rolünü** alır ve geçmişe bir **Karantina** yaptırımı kaydedilir. Discord karantinayı kaldırdığı anda üye karantinadan çıkar.
+Discord AutoMod, profili bir kuralı ihlal eden (takma ad, sunucu etiketi) bir üyeyi karantinaya alabilir. Bu ayarla bu karantinayı izleriz: üye **jail rolünü** alır ve geçmişe bir **Karantina** yaptırımı kaydedilir, sebep olarak AutoMod'un engellediği şey yazılır (sunucu takma adı, görünen ad, kullanıcı adı veya sunucu etiketi). Discord karantinayı kaldırdığı anda üye karantinadan çıkar.
 
 1. [`/settings` komutunu](../setup.md#settings) çalıştırın.
 2. “**Moderasyon**” sekmesini açın.
@@ -174,7 +174,7 @@ Bu ayar bir [Jail rolü](#jail) gerektirir. Devre dışı bırakmak, koyduğu ka
 
 ### Yasaklamada mesajların silinmesi {#ban-delete}
 
-“**Cezalar**” ekranında, “**Yasaklamada mesajların silinmesi**” seçicisi `/ban`, `?ban` veya `/tempban` ile `--delete-messages` belirtmeden yasakladığınızda varsayılan olarak silinen geçmişi belirler. “**Silme yok**” (varsayılan), 1 saat, 6 saat, 12 saat, 1 gün, 3 gün veya 7 gün seçin. Komutta verilen bir değer önceliklidir.
+“**Cezalar**” ekranında, “**Yasaklamada mesajların silinmesi**” seçicisi, bir moderatör pencere belirtmeden yasakladığında, giriş noktası ne olursa olsun, varsayılan olarak silinen geçmişi belirler: `/ban`, `?ban`, `/tempban`, ayrıca kartların ve bildirimlerin yasaklama düğmeleri (`--delete-messages` olmadan). Otomatik yasaklamalar (anti-spam, HoneyPot…) kapsam dışıdır. “**Silme yok**” (varsayılan), 1 saat, 6 saat, 12 saat, 1 gün, 3 gün veya 7 gün seçin. Komutta verilen bir değer önceliklidir.
 
 ### Mute {#mute}
 

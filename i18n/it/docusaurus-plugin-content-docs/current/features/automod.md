@@ -41,7 +41,7 @@ Tre comportamenti si regolano separatamente, ciascuno su una di queste modalità
 | **Messaggio inoltrato o link di un canale** | Il messaggio inoltrato da quel server, o contenente un link a uno dei suoi canali o dei suoi eventi, viene eliminato. |
 | **Tag del server visualizzato** | Il membro viene messo in **quarantena** con il [ruolo Jail](./sanctions.mdx#jail). Viene revocata non appena toglie il tag. |
 
-Il tuo server passa sempre, con qualsiasi dei suoi inviti, e il tuo team (permessi **Gestire il server** o **Gestire i messaggi**) non viene mai preso di mira.
+Il tuo server passa sempre, con qualsiasi dei suoi inviti, e il tuo team (permessi **Gestire il server** o **Gestire i messaggi**) non viene mai preso di mira. Anche gli inviti e i tag dei server di RaidProtect passano sempre.
 
 ### Configurazione {#servers-config}
 
@@ -82,13 +82,21 @@ Nella beta, i canali ignorati passano in una schermata “**Eccezioni**”, che 
 
 ### Elenchi di server {#servers-lists}
 
-1. Clicca su “**Aggiungi un server**”.
-2. Incolla un invito del server ancora valido (ad es. `discord.gg/esempio`): ne vengono letti il nome e l'ID. Un ID da solo non è più accettato.
-3. Scegli l'elenco: blocklist o allowlist.
+Ogni elenco ha il suo selettore, “**Blocklist**” e “**Allowlist**”, con il numero di server che contiene. Oltre i 25 server, un secondo selettore “**il seguito**” mostra i successivi.
 
-Un server già presente cambia semplicemente elenco. “**Rimuovi**” toglie uno o più server dagli elenchi.
+1. Nel selettore dell'elenco, scegli “**Aggiungi**”.
+2. Incolla uno o più inviti ancora validi (ad es. `discord.gg/esempio`), separati da virgole, spazi o a capo: il nome e l'ID di ogni server ne vengono letti. Un ID da solo non è accettato. Un invito non valido o scaduto viene segnalato senza bloccare gli altri.
 
-**Limiti:** 25 server in totale nei due elenchi.
+Un server già presente cambia semplicemente elenco. Per rimuovere dei server, selezionali nel selettore del loro elenco.
+
+**Limiti:** 25 server per elenco, 50 per elenco con il [Premium](/it/premium). Un elenco pieno senza Premium lo propone; un server che torna al gratuito mantiene le sue voci.
+
+#### Server ufficiali e server 18+ {#servers-switches}
+
+Due interruttori gratuiti completano gli elenchi:
+
+- “**Server ufficiali di Discord**”: autorizza Discord Town Hall e Discord Developers, senza occupare posto nell'allowlist, per ogni comportamento impostato in allowlist. Nessun effetto per un comportamento in blocklist o disattivato.
+- “**Inviti verso server 18+**”: rifiuta gli inviti verso un server che Discord segna come 18+, quando “**Invito**” è in blocklist. I messaggi inoltrati, i link di canale e i tag portano solo l'ID del server: non sono interessati. L'allowlist, il tuo server e quelli di RaidProtect passano sempre.
 
 :::tip
 Per autorizzare solo gli inviti dei tuoi partner, imposta “**Invito**” su “**Allowlist**” e aggiungi i tuoi partner all'allowlist. Un'allowlist vuota rifiuta tutti gli inviti verso altri server.

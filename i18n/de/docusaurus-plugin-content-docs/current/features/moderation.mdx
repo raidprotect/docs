@@ -207,7 +207,7 @@ Verwenden Sie den Befehl: ```/slowmode (delay) [duration] [#channel] [reason] [-
 
 ## 🕵️ Eine gelöschte Nachricht abrufen {#snipe}
 
-Der Befehl `/snipe` zeigt die **in der letzten Stunde gelöschten Nachrichten** eines Kanals an, Seite für Seite, von der neuesten zur ältesten.
+Der Befehl `/snipe` zeigt die **in der letzten Stunde gelöschten Nachrichten** eines Kanals an, Seite für Seite, von der neuesten zur ältesten. Mit dem [Logging Update](./logs.md) zeigen `/snipe` und der Snipe-Teil von `/modview` die Nachrichten des Log-Zeitfensters: **15 Minuten** in der kostenlosen Version, **6 Stunden** mit [Premium](/de/premium), statt einer Stunde.
 
 Verwenden Sie den Befehl: ```/snipe [@user] [--channel=#channel]```
 
@@ -264,6 +264,8 @@ Standardmäßig werden die Moderationslogs an den allgemeinen Log-Kanal von Raid
 <Settings start="logs" />
 
 Der Bildschirm „**Logs**“ vereint drei Kanäle: „**Allgemein**“, „**Moderation**“ und „**Captcha**“. Ein leer gelassener Kanal „**Moderation**“ oder „**Captcha**“ leitet seine Logs an den allgemeinen Kanal weiter. Der Schalter „**Passive Moderationslogs**“ legt fest, ob RaidProtect auch Aktionen protokolliert, die nicht über den Bot erfolgen. Kanäle, Rollen, Mitglieder, Nachrichten und Sprachkanäle haben ihre eigenen [Server-Logs](./logs.md).
+
+Jede in `/settings` geänderte Einstellung hinterlässt außerdem eine Spur im Log-Kanal „**Allgemein**“: „@modo hat **Modul › Option** geändert: vorher → nachher.“ Erfasst sind unter anderem das Captcha, der Anti-Spam, der Anti-Raid, ScamLens und die Bildlisten, Andere Server, der HoneyPot, der präventive Slowmode, das Mindestalter, die Sanktionen, Zweitkonten, die Transparenz-Zusammenfassungen, die Zeitzone und das Zwischenspeichern von Nachrichten. Eine von RaidProtect automatisch deaktivierte Einstellung wird mit „automatisch“ vermerkt. Es wird nichts geschrieben, wenn sich der Wert nicht ändert.
 
 ## Häufig gestellte Fragen {#faq}
 

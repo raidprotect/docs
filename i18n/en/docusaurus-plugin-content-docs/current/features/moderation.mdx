@@ -207,7 +207,7 @@ Use the command: ```/slowmode (delay) [duration] [channel] [reason] [--silent]``
 
 ## 🕵️ Retrieve a deleted message {#snipe}
 
-The `/snipe` command shows the **messages deleted in the past hour** in a channel, page by page, from newest to oldest.
+The `/snipe` command shows the **messages deleted in the past hour** in a channel, page by page, from newest to oldest. With the [Logging Update](./logs.md), `/snipe` and the snipe part of `/modview` show the messages of the logs window: **15 minutes** in the free version, **6 hours** in [Premium](/en/premium), instead of one hour.
 
 Use the command: ```/snipe [user] [--channel=#channel]```
 
@@ -264,6 +264,8 @@ By default, moderation logs are sent to RaidProtect's general logs channel. You 
 <Settings start="logs" />
 
 The "**Logs**" screen groups three channels: "**General**", "**Moderation**" and "**Captcha**". A "**Moderation**" or "**Captcha**" channel left empty sends its logs to the general channel. The "**Passive moderation logs**" toggle chooses whether RaidProtect also logs actions made without going through the bot. Channels, roles, members, messages and voice have their own [server logs](./logs.md).
+
+Each setting changed from `/settings` also leaves a trace in the "**General**" logs channel: "@mod changed **Module › Option**: before → after." This covers, among others, the captcha, anti-spam, anti-raid, ScamLens and image lists, Other servers, the HoneyPot, preventive slowmode, minimum age, sanctions, duplicate accounts, transparency recaps, time zone and message caching. A setting turned off automatically by RaidProtect is noted "automatically". Nothing is written if the value does not change.
 
 ## Frequently asked questions {#faq}
 

@@ -18,7 +18,7 @@ Các thành viên có thể báo cáo một nội dung qua 4 cách chính.
 Một thành viên có thể nhấp chuột phải vào một tin nhắn mà họ cho là vi phạm nội quy, chọn **`Ứng dụng`**, rồi nhấp vào **`Báo cáo tin nhắn này`**. Một cửa sổ mở ra, nơi họ nêu lý do báo cáo.
 
 2. **Nhấp chuột phải vào một hồ sơ**
-Tương tự, một thành viên có thể nhấp chuột phải vào một hồ sơ mà họ thấy có vấn đề, chọn **`Ứng dụng`**, rồi nhấp vào **`Báo cáo người dùng`**. Một cửa sổ mở ra để họ nêu rõ điều mình báo cáo (ảnh đại diện, tên người dùng, tiểu sử, hoạt động trong kênh thoại, hoạt động trong tin nhắn riêng) và lý do.
+Tương tự, một thành viên có thể nhấp chuột phải vào một hồ sơ mà họ thấy có vấn đề, chọn **`Ứng dụng`**, rồi nhấp vào **`Báo cáo người dùng`**. Một cửa sổ mở ra để họ nêu rõ điều mình báo cáo (ảnh đại diện, tên người dùng, tiểu sử, hoạt động trong kênh thoại, hoạt động trong tin nhắn riêng) và lý do. Với [Logging Update](./logs.md#cache), cửa sổ còn có “**Tin nhắn trên máy chủ**”: luồng báo cáo khi đó lấy các tin nhắn gần nhất của kênh, **kể cả tin nhắn đã xóa** (được đánh dấu là đã xóa, thành viên bị báo cáo in đậm), trong khoảng 15 phút (6 giờ với Premium).
 
 3. **Nút trên một bảng thông tin**
 Nếu tính năng “Báo cáo” được bật trên một [bảng thông tin (`/display public`)](./display.mdx), một nút “**Báo cáo thành viên**” có sẵn ngay dưới bảng, cho phép các thành viên báo cáo nhanh một người dùng.

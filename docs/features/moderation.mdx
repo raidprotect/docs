@@ -207,7 +207,7 @@ Utilisez la commande : ```/slowmode (délai) [durée] [salon] [raison] [--silen
 
 ## 🕵️ Récupérer un message supprimé {#snipe}
 
-La commande `/snipe` affiche les **messages supprimés de la dernière heure** dans un salon, page par page, du plus récent au plus ancien.
+La commande `/snipe` affiche les **messages supprimés de la dernière heure** dans un salon, page par page, du plus récent au plus ancien. Avec la [Logging Update](./logs.md), `/snipe` et la partie snipe de `/modview` montrent les messages de la fenêtre des logs : **15 minutes** en version gratuite, **6 heures** en [Premium](/premium), au lieu d'une heure.
 
 Utilisez la commande : ```/snipe [utilisateur] [--channel=#salon]```
 
@@ -264,6 +264,8 @@ Par défaut, les logs de modération sont envoyés dans le salon de logs génér
 <Settings start="logs" />
 
 L'écran “**Logs**” regroupe trois salons : “**Général**”, “**Moderation**” et “**Captcha**”. Un salon “**Moderation**” ou “**Captcha**” laissé vide renvoie ses logs vers le salon général. La bascule “**Logs de modération passives**” choisit si RaidProtect journalise aussi les actions faites sans passer par le bot. Les salons, rôles, membres, messages et le vocal ont leurs propres [logs du serveur](./logs.md).
+
+Chaque réglage modifié depuis `/settings` laisse aussi une trace dans le salon de logs “**Général**” : « @modo a modifié **Module › Option** : avant → après. » Sont couverts, entre autres, le captcha, l'anti-spam, l'anti-raid, ScamLens et les listes d'images, Autres serveurs, le HoneyPot, le slowmode préventif, l'âge minimum, les sanctions, les doubles comptes, les récaps de transparence, le fuseau horaire et la mise en cache des messages. Un réglage coupé automatiquement par RaidProtect est noté « automatiquement ». Rien n'est écrit si la valeur ne change pas.
 
 ## Questions fréquentes {#faq}
 

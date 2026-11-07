@@ -20,7 +20,7 @@ Lịch sử hình phạt tự động ghi lại mọi hành động kiểm duy�
 - **Hình phạt thủ công**: mọi [lệnh kiểm duyệt](./moderation.mdx) (`/ban`, `/tempban`, `/kick`, `/mute`, `/jail`, `/warn`…) đều được ghi vào lịch sử.
 - **Hình phạt tự động**: các hình phạt do các mô-đun bảo vệ của chúng tôi áp dụng ([chống spam](./anti-spam.mdx), [HoneyPot](./honeypot.md), [ScamLens](./scam-images.md)…) cũng được thêm vào lịch sử.
 - **Cấm, đuổi và timeout**: các hình phạt được áp dụng mà không qua RaidProtect cũng được thêm vào lịch sử.
-- **AutoMod của Discord**: các timeout do AutoMod của Discord áp dụng được ghi lại. Mỗi tin nhắn bị một quy tắc AutoMod chặn cũng tạo một **cảnh cáo** mang tên “**Discord Automod**”, im lặng (không có tin nhắn riêng), trừ khi quy tắc đã áp dụng một timeout. Cảnh cáo này cũng không được đưa ra khi thành viên nhận một hình phạt nặng hơn (timeout, mute, jail, đuổi, softban, cấm, cách ly) trong vòng 10 giây quanh lần chặn, ví dụ từ [HoneyPot](./honeypot.md) hoặc [chống spam](./anti-spam.mdx) cho cùng tin nhắn đó. Cảnh cáo này được bật theo mặc định và có thể tắt bằng “**Cảnh cáo tin nhắn bị AutoMod chặn**”: dùng [lệnh `/settings`](../setup.md#settings), thẻ “**Kiểm duyệt**”, “**Hình phạt**”.
+- **AutoMod của Discord**: các timeout do AutoMod của Discord áp dụng được ghi lại. Mỗi tin nhắn bị một quy tắc AutoMod chặn cũng tạo một **cảnh cáo** mang tên “**Discord Automod**”, im lặng (không có tin nhắn riêng), trừ khi quy tắc đã áp dụng một timeout. Cảnh cáo này cũng không được đưa ra khi thành viên nhận một hình phạt nặng hơn (timeout, mute, jail, đuổi, softban, cấm, cách ly) trong vòng 10 giây quanh lần chặn, ví dụ từ [HoneyPot](./honeypot.md) hoặc [chống spam](./anti-spam.mdx) cho cùng tin nhắn đó. Lý do của nó nêu tên quy tắc AutoMod đã kích hoạt và trích đoạn bị chặn. Cảnh cáo này được bật theo mặc định và có thể tắt bằng “**Cảnh cáo tin nhắn bị AutoMod chặn**”: dùng [lệnh `/settings`](../setup.md#settings), thẻ “**Kiểm duyệt**”, “**Hình phạt**”.
 - **Thông báo hình phạt**: các thành viên bị xử phạt nhận một tin nhắn riêng cho biết hình phạt và lý do. Bot cũng gửi một biên nhận chi tiết xác nhận trạng thái gửi: **đã nhận**, **tin nhắn riêng đã đóng**, **hết hạn** hoặc **im lặng** (khi dùng tùy chọn `[--silent]`). Với kick, softban và cấm tạm thời, tin nhắn này còn chứa một **nút kèm lời mời vào máy chủ** để thành viên có thể quay lại khi hình phạt kết thúc.
 
 :::info
@@ -161,7 +161,7 @@ Trong màn hình Jail, bộ chọn “**Quản lý vai trò khi jail**” điề
 
 ### Đồng bộ cách ly Discord {#discord-quarantine}
 
-AutoMod của Discord có thể cách ly một thành viên có hồ sơ vi phạm một quy tắc (biệt danh, tag máy chủ). Với thiết lập này, chúng tôi theo dõi việc cách ly đó: thành viên nhận **vai trò jail** và một hình phạt **Cách ly** được ghi vào lịch sử. Họ ra khỏi cách ly ngay khi Discord gỡ nó.
+AutoMod của Discord có thể cách ly một thành viên có hồ sơ vi phạm một quy tắc (biệt danh, tag máy chủ). Với thiết lập này, chúng tôi theo dõi việc cách ly đó: thành viên nhận **vai trò jail** và một hình phạt **Cách ly** được ghi vào lịch sử, với lý do là nội dung AutoMod đã chặn (biệt danh trên máy chủ, tên hiển thị, tên người dùng hoặc tag máy chủ). Họ ra khỏi cách ly ngay khi Discord gỡ nó.
 
 1. Dùng [lệnh `/settings`](../setup.md#settings).
 2. Mở thẻ “**Kiểm duyệt**”.
@@ -174,7 +174,7 @@ Thiết lập này yêu cầu một [vai trò Jail](#jail). Tắt nó sẽ giả
 
 ### Xóa tin nhắn khi cấm {#ban-delete}
 
-Trong màn hình “**Hình phạt**”, bộ chọn “**Xóa tin nhắn khi cấm**” đặt khoảng lịch sử bị xóa mặc định khi bạn cấm bằng `/ban`, `?ban` hoặc `/tempban` mà không nêu `--delete-messages`. Chọn “**Không xóa**” (mặc định), 1 giờ, 6 giờ, 12 giờ, 1 ngày, 3 ngày hoặc 7 ngày. Giá trị được nêu trong lệnh sẽ được ưu tiên.
+Trong màn hình “**Hình phạt**”, bộ chọn “**Xóa tin nhắn khi cấm**” đặt khoảng lịch sử bị xóa mặc định khi một người kiểm duyệt cấm mà không nêu khoảng thời gian, dù từ điểm vào nào: `/ban`, `?ban`, `/tempban`, và cả các nút cấm của hồ sơ và báo cáo (không có `--delete-messages`). Các lượt cấm tự động (chống spam, HoneyPot…) không bị ảnh hưởng. Chọn “**Không xóa**” (mặc định), 1 giờ, 6 giờ, 12 giờ, 1 ngày, 3 ngày hoặc 7 ngày. Giá trị được nêu trong lệnh sẽ được ưu tiên.
 
 ### Mute {#mute}
 

@@ -41,7 +41,7 @@ Trois comportements se règlent séparément, chacun sur l'un de ces modes :
 | **Message transféré ou lien de salon** | Le message transféré depuis ce serveur, ou contenant un lien vers l'un de ses salons ou de ses événements, est supprimé. |
 | **Tag de serveur affiché** | Le membre est mis en **quarantaine** avec le [rôle Jail](./sanctions.mdx#jail). Elle est levée dès qu'il retire le tag. |
 
-Votre propre serveur passe toujours, par n'importe laquelle de ses invitations, et votre équipe (permissions **Gérer le serveur** ou **Gérer les messages**) n'est jamais visée.
+Votre propre serveur passe toujours, par n'importe laquelle de ses invitations, et votre équipe (permissions **Gérer le serveur** ou **Gérer les messages**) n'est jamais visée. Les invitations et tags des serveurs de RaidProtect passent aussi toujours.
 
 ### Configuration {#servers-config}
 
@@ -82,13 +82,21 @@ Dans la bêta, les salons ignorés passent dans un écran “**Exceptions**”, 
 
 ### Listes de serveurs {#servers-lists}
 
-1. Cliquez sur “**Ajouter un serveur**”.
-2. Collez une invitation du serveur encore valide (par ex. `discord.gg/exemple`) : son nom et son identifiant en sont lus. Un identifiant seul n'est plus accepté.
-3. Choisissez la liste : noire ou blanche.
+Chaque liste a son sélecteur, “**Liste noire**” et “**Liste blanche**”, avec le nombre de serveurs qu'elle contient. Au-delà de 25 serveurs, un second sélecteur “**la suite**” montre les suivants.
 
-Un serveur déjà présent change simplement de liste. “**Retirer**” enlève un ou plusieurs serveurs des listes.
+1. Dans le sélecteur de la liste, choisissez “**Ajouter**”.
+2. Collez une ou plusieurs invitations encore valides (par ex. `discord.gg/exemple`), séparées par des virgules, des espaces ou des retours à la ligne : le nom et l'identifiant de chaque serveur en sont lus. Un identifiant seul n'est pas accepté. Une invitation invalide ou expirée est signalée sans bloquer les autres.
 
-**Limites :** 25 serveurs au total dans les deux listes.
+Un serveur déjà présent change simplement de liste. Pour retirer des serveurs, sélectionnez-les dans le sélecteur de leur liste.
+
+**Limites :** 25 serveurs par liste, 50 par liste avec le [Premium](/premium). Une liste pleine sans Premium le propose ; un serveur qui repasse en gratuit garde ses entrées.
+
+#### Serveurs officiels et serveurs 18+ {#servers-switches}
+
+Deux interrupteurs gratuits complètent les listes :
+
+- “**Serveurs officiels de Discord**” : autorise Discord Town Hall et Discord Developers, sans occuper de place dans la liste blanche, pour chaque comportement réglé en liste blanche. Sans effet pour un comportement en liste noire ou désactivé.
+- “**Invitations vers des serveurs 18+**” : refuse les invitations vers un serveur que Discord marque 18+, quand “**Invitation**” est en liste noire. Les messages transférés, liens de salon et tags ne portent que l'identifiant du serveur : ils ne sont pas concernés. La liste blanche, votre serveur et ceux de RaidProtect passent toujours.
 
 :::tip
 Pour n'autoriser que les invitations de vos partenaires, réglez “**Invitation**” sur “**Liste blanche**” et ajoutez vos partenaires à la liste blanche. Une liste blanche vide refuse toutes les invitations vers d'autres serveurs.

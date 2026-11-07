@@ -20,7 +20,7 @@ The sanction history automatically records all moderation actions performed on y
 - **Manual sanctions**: All [moderation commands](./moderation.mdx) (`/ban`, `/tempban`, `/kick`, `/mute`, `/jail`, `/warn`...) are recorded in the history.
 - **Automatic sanctions**: Sanctions applied by our protection modules ([anti-spam](./anti-spam.mdx), [HoneyPot](./honeypot.md), [ScamLens](./scam-images.md)...) are also added to the history.
 - **Bans, kicks and timeouts**: Sanctions applied without using RaidProtect are added to the history.
-- **Discord's AutoMod**: Timeouts applied by Discord's AutoMod are recorded. Each message blocked by an AutoMod rule also creates a **warning** in the name of "**Discord Automod**", silent (no DM), unless the rule already applies a timeout. It is not given either when the member receives a heavier sanction (timeout, mute, jail, kick, softban, ban, quarantine) within 10 seconds of the block, for example from the [HoneyPot](./honeypot.md) or the [anti-spam](./anti-spam.mdx) for the same message. This warn is enabled by default and can be turned off with "**Warn on messages blocked by AutoMod**": run the [`/settings` command](../setup.md#settings), "**Moderation**" tab, "**Sanctions**".
+- **Discord's AutoMod**: Timeouts applied by Discord's AutoMod are recorded. Each message blocked by an AutoMod rule also creates a **warning** in the name of "**Discord Automod**", silent (no DM), unless the rule already applies a timeout. It is not given either when the member receives a heavier sanction (timeout, mute, jail, kick, softban, ban, quarantine) within 10 seconds of the block, for example from the [HoneyPot](./honeypot.md) or the [anti-spam](./anti-spam.mdx) for the same message. Its reason names the AutoMod rule that was triggered and quotes the blocked passage. This warn is enabled by default and can be turned off with "**Warn on messages blocked by AutoMod**": run the [`/settings` command](../setup.md#settings), "**Moderation**" tab, "**Sanctions**".
 - **Sanction notifications**: Sanctioned members receive a private message informing them of the sanction and its reason. The bot also sends a detailed acknowledgment confirming the delivery status: **received**, **DMs closed**, **expired** or **silent** (when the `[--silent]` option is used). For kicks, softbans and temporary bans, this message also includes a **button with a server invite** so the member can come back once the sanction is over.
 
 :::info
@@ -161,7 +161,7 @@ In the Jail screen, the "**Role handling on jail**" selector controls what RaidP
 
 ### Synced Discord quarantine {#discord-quarantine}
 
-Discord's AutoMod can put a member whose profile breaks a rule (nickname, server tag) in quarantine. With this setting, we follow that quarantine: the member receives the **jail role** and a **Quarantine** sanction is recorded in the history. They leave it as soon as Discord lifts the quarantine.
+Discord's AutoMod can put a member whose profile breaks a rule (nickname, server tag) in quarantine. With this setting, we follow that quarantine: the member receives the **jail role** and a **Quarantine** sanction is recorded in the history, with the reason being what AutoMod blocked (server nickname, display name, username or server tag). They leave it as soon as Discord lifts the quarantine.
 
 1. Run the [`/settings` command](../setup.md#settings).
 2. Open the "**Moderation**" tab.
@@ -174,7 +174,7 @@ This setting requires a [Jail role](#jail). Disabling it releases the quarantine
 
 ### Message deletion on ban {#ban-delete}
 
-In the "**Sanctions**" screen, the "**Message deletion on ban**" selector sets the history deleted by default when you ban with `/ban`, `?ban` or `/tempban` without specifying `--delete-messages`. Choose "**No deletion**" (default), 1 hour, 6 hours, 12 hours, 1 day, 3 days or 7 days. A value given in the command takes precedence.
+In the "**Sanctions**" screen, the "**Message deletion on ban**" selector sets the history deleted by default when a moderator bans without specifying a window, whatever the entry point: `/ban`, `?ban`, `/tempban`, but also the ban buttons of the sheets and reports (without `--delete-messages`). Automatic bans (anti-spam, HoneyPot...) are not affected. Choose "**No deletion**" (default), 1 hour, 6 hours, 12 hours, 1 day, 3 days or 7 days. A value given in the command takes precedence.
 
 ### Mute {#mute}
 

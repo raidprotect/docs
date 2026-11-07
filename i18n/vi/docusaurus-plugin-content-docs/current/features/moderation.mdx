@@ -207,7 +207,7 @@ Dùng lệnh: ```/slowmode (delay) [duration] [channel] [reason] [--silent]```
 
 ## 🕵️ Lấy lại một tin nhắn đã xóa {#snipe}
 
-Lệnh `/snipe` hiển thị **các tin nhắn bị xóa trong giờ vừa qua** trong một kênh, từng trang một, từ mới nhất đến cũ nhất.
+Lệnh `/snipe` hiển thị **các tin nhắn bị xóa trong giờ vừa qua** trong một kênh, từng trang một, từ mới nhất đến cũ nhất. Với [Logging Update](./logs.md), `/snipe` và phần snipe của `/modview` hiển thị các tin nhắn trong khoảng thời gian của nhật ký: **15 phút** ở phiên bản miễn phí, **6 giờ** với [Premium](/vi/premium), thay vì một giờ.
 
 Dùng lệnh: ```/snipe [user] [--channel=#channel]```
 
@@ -264,6 +264,8 @@ Theo mặc định, nhật ký kiểm duyệt được gửi vào kênh nhật k
 <Settings start="logs" />
 
 Màn hình “**Nhật ký**” gồm ba kênh: “**Chung**”, “**Kiểm duyệt**” và “**Captcha**”. Một kênh “**Kiểm duyệt**” hoặc “**Captcha**” để trống sẽ chuyển nhật ký của nó về kênh chung. Công tắc “**Nhật ký kiểm duyệt thụ động**” chọn xem RaidProtect có ghi cả những hành động thực hiện mà không qua bot hay không. Kênh, vai trò, thành viên, tin nhắn và thoại có [nhật ký máy chủ](./logs.md) riêng.
+
+Mỗi thiết lập được sửa từ `/settings` cũng để lại dấu vết trong kênh nhật ký “**Chung**”: “@modo đã sửa **Mô-đun › Tùy chọn**: trước → sau.” Được bao gồm, trong số khác, captcha, chống spam, chống raid, ScamLens và các danh sách hình ảnh, Máy chủ khác, HoneyPot, slowmode phòng ngừa, tuổi tối thiểu, hình phạt, tài khoản phụ, bản tóm tắt minh bạch, múi giờ và lưu đệm tin nhắn. Một thiết lập bị RaidProtect tự động tắt được ghi là “tự động”. Không có gì được ghi nếu giá trị không đổi.
 
 ## Câu hỏi thường gặp {#faq}
 

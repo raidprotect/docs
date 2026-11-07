@@ -41,7 +41,7 @@ Três comportamentos são configurados separadamente, cada um em um destes modos
 | **Mensagem encaminhada ou link de canal** | A mensagem encaminhada desse servidor, ou que contém um link para um de seus canais ou de seus eventos, é excluída. |
 | **Tag de servidor exibida** | O membro é colocado em **quarentena** com o [cargo Jail](./sanctions.mdx#jail). Ela é removida assim que ele retira a tag. |
 
-Seu próprio servidor sempre passa, por qualquer um dos seus convites, e sua equipe (permissões **Gerenciar servidor** ou **Gerenciar mensagens**) nunca é visada.
+Seu próprio servidor sempre passa, por qualquer um dos seus convites, e sua equipe (permissões **Gerenciar servidor** ou **Gerenciar mensagens**) nunca é visada. Os convites e tags dos servidores do RaidProtect também sempre passam.
 
 ### Configuração {#servers-config}
 
@@ -82,13 +82,21 @@ No beta, os canais ignorados passam para uma tela “**Exceções**”, que adic
 
 ### Listas de servidores {#servers-lists}
 
-1. Clique em “**Adicionar um servidor**”.
-2. Cole um convite do servidor ainda válido (por ex. `discord.gg/exemplo`): o nome e o ID dele são lidos. Um ID sozinho não é mais aceito.
-3. Escolha a lista: de bloqueio ou de permissão.
+Cada lista tem seu seletor, “**Lista de bloqueio**” e “**Lista de permissão**”, com o número de servidores que ela contém. Acima de 25 servidores, um segundo seletor “**a continuação**” mostra os seguintes.
 
-Um servidor já presente simplesmente muda de lista. “**Remover**” retira um ou mais servidores das listas.
+1. No seletor da lista, escolha “**Adicionar**”.
+2. Cole um ou mais convites ainda válidos (por ex. `discord.gg/exemplo`), separados por vírgulas, espaços ou quebras de linha: o nome e o ID de cada servidor são lidos. Um ID sozinho não é aceito. Um convite inválido ou expirado é sinalizado sem bloquear os outros.
 
-**Limites:** 25 servidores no total nas duas listas.
+Um servidor já presente simplesmente muda de lista. Para remover servidores, selecione-os no seletor da lista deles.
+
+**Limites:** 25 servidores por lista, 50 por lista com o [Premium](/pt/premium). Uma lista cheia sem Premium o oferece; um servidor que volta ao plano gratuito mantém suas entradas.
+
+#### Servidores oficiais e servidores 18+ {#servers-switches}
+
+Dois interruptores gratuitos complementam as listas:
+
+- “**Servidores oficiais do Discord**”: autoriza o Discord Town Hall e o Discord Developers, sem ocupar espaço na lista de permissão, para cada comportamento definido em lista de permissão. Sem efeito para um comportamento em lista de bloqueio ou desativado.
+- “**Convites para servidores 18+**”: recusa os convites para um servidor que o Discord marca como 18+, quando “**Convite**” está em lista de bloqueio. As mensagens encaminhadas, os links de canal e as tags só trazem o ID do servidor: não são afetados. A lista de permissão, o seu servidor e os do RaidProtect sempre passam.
 
 :::tip
 Para permitir apenas os convites dos seus parceiros, defina “**Convite**” como “**Lista de permissão**” e adicione seus parceiros à lista de permissão. Uma lista de permissão vazia recusa todos os convites para outros servidores.
