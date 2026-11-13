@@ -60,6 +60,6 @@ description: "RaidProtect 的紀錄會追蹤您 Discord 伺服器上發生的一
 
 ## 💾 記憶體中的訊息 {#cache}
 
-為了找回已刪除訊息的內容，RaidProtect 會將近期訊息保留在記憶體中：免費版 **15 分鐘**，[Premium](/zh-TW/premium) 則為 **6 小時**。超過這段時間，紀錄會註明內容未被保留。同一段時間也適用於 `/snipe` 與 `/modview` 的 snipe 部分：搭配 Logging Update，它們會顯示這段時間內的訊息，而非一小時內的訊息。
+為了找回已刪除訊息的內容，RaidProtect 會將近期訊息保留在記憶體中：免費版 **30 分鐘**，[Premium](/zh-TW/premium) 則為 **24 小時**。超過這段時間，紀錄會註明內容未被保留。同一段時間也適用於 `/snipe` 與 `/modview` 的 snipe 部分：搭配 Logging Update，它們會顯示這段時間內的訊息，而非一小時內的訊息。
 
 有了 Premium，已刪除訊息的附件也會複製到紀錄中（每個檔案 10 MB，每個伺服器 100 MB，最舊的會優先被取代）。

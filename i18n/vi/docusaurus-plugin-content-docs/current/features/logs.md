@@ -60,6 +60,6 @@ Tùy loại nhật ký, có các nút đi kèm: “**Xem kênh**”, “**Xem ti
 
 ## 💾 Tin nhắn trong bộ nhớ {#cache}
 
-Để tìm lại nội dung của một tin nhắn bị xóa, RaidProtect giữ các tin nhắn gần đây trong bộ nhớ: **15 phút** ở phiên bản miễn phí, **6 giờ** với [Premium](/vi/premium). Quá thời gian đó, nhật ký cho biết nội dung đã không được lưu giữ. Cùng khoảng thời gian này áp dụng cho `/snipe` và phần snipe của `/modview`: với Logging Update, chúng hiển thị các tin nhắn trong khoảng đó thay vì một giờ.
+Để tìm lại nội dung của một tin nhắn bị xóa, RaidProtect giữ các tin nhắn gần đây trong bộ nhớ: **30 phút** ở phiên bản miễn phí, **24 giờ** với [Premium](/vi/premium). Quá thời gian đó, nhật ký cho biết nội dung đã không được lưu giữ. Cùng khoảng thời gian này áp dụng cho `/snipe` và phần snipe của `/modview`: với Logging Update, chúng hiển thị các tin nhắn trong khoảng đó thay vì một giờ.
 
 Với Premium, các tệp đính kèm của tin nhắn bị xóa cũng được sao chép vào nhật ký (10 MB mỗi tệp, 100 MB mỗi máy chủ, các tệp cũ nhất bị thay thế trước).

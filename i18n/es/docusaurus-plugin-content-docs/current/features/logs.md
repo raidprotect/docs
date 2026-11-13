@@ -60,6 +60,6 @@ Según el tipo de log, se adjuntan botones: “**Ver el canal**”, “**Ver el 
 
 ## 💾 Mensajes en memoria {#cache}
 
-Para recuperar el contenido de un mensaje eliminado, RaidProtect guarda los mensajes recientes en memoria: **15 minutos** en la versión gratuita, **6 horas** con [Premium](/es/premium). Pasado ese tiempo, el log indica que el contenido no se ha conservado. La misma ventana vale para `/snipe` y para la parte snipe de `/modview`: con la Logging Update, muestran los mensajes de esa ventana en lugar de una hora.
+Para recuperar el contenido de un mensaje eliminado, RaidProtect guarda los mensajes recientes en memoria: **30 minutos** en la versión gratuita, **24 horas** con [Premium](/es/premium). Pasado ese tiempo, el log indica que el contenido no se ha conservado. La misma ventana vale para `/snipe` y para la parte snipe de `/modview`: con la Logging Update, muestran los mensajes de esa ventana en lugar de una hora.
 
 Con Premium, los archivos adjuntos de los mensajes eliminados también se copian en el log (10 MB por archivo, 100 MB por servidor, los más antiguos se reemplazan primero).

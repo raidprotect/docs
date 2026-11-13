@@ -60,6 +60,6 @@ Depending on the log type, buttons are attached: "**View channel**", "**View mes
 
 ## 💾 Messages in memory {#cache}
 
-To recover the content of a deleted message, RaidProtect keeps recent messages in memory: **15 minutes** in the free version, **6 hours** with [Premium](/en/premium). Beyond that, the log indicates that the content was not kept. The same window applies to `/snipe` and to the snipe part of `/modview`: with the Logging Update, they show the messages of this window instead of one hour.
+To recover the content of a deleted message, RaidProtect keeps recent messages in memory: **30 minutes** in the free version, **24 hours** with [Premium](/en/premium). Beyond that, the log indicates that the content was not kept. The same window applies to `/snipe` and to the snipe part of `/modview`: with the Logging Update, they show the messages of this window instead of one hour.
 
 With Premium, attachments of deleted messages are also copied into the log (10 MB per file, 100 MB per server, the oldest are replaced first).

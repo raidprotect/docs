@@ -60,6 +60,6 @@ description: "RaidProtect 的日志会记录您 Discord 服务器上发生的一
 
 ## 💾 内存中的消息 {#cache}
 
-为了找回被删除消息的内容，RaidProtect 会在内存中保留最近的消息：免费版 **15 分钟**，[Premium](/zh-CN/premium) 版 **6 小时**。超过这个时间，日志会注明内容未被保留。同一时间窗口也适用于 `/snipe` 和 `/modview` 的 snipe 部分：启用 Logging Update 后，它们显示的是该窗口内的消息，而不是一小时内的消息。
+为了找回被删除消息的内容，RaidProtect 会在内存中保留最近的消息：免费版 **30 分钟**，[Premium](/zh-CN/premium) 版 **24 小时**。超过这个时间，日志会注明内容未被保留。同一时间窗口也适用于 `/snipe` 和 `/modview` 的 snipe 部分：启用 Logging Update 后，它们显示的是该窗口内的消息，而不是一小时内的消息。
 
 使用 Premium 时，被删除消息的附件也会复制到日志中（每个文件 10 MB，每个服务器 100 MB，最早的附件会最先被替换）。

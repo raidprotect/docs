@@ -60,6 +60,6 @@ Conforme o tipo de log, botões são anexados: “**Ver o canal**”, “**Ver a
 
 ## 💾 Mensagens na memória {#cache}
 
-Para recuperar o conteúdo de uma mensagem excluída, o RaidProtect guarda as mensagens recentes na memória: **15 minutos** na versão gratuita, **6 horas** com o [Premium](/pt/premium). Depois disso, o log indica que o conteúdo não foi guardado. A mesma janela vale para o `/snipe` e para a parte snipe do `/modview`: com a Logging Update, eles mostram as mensagens dessa janela em vez de uma hora.
+Para recuperar o conteúdo de uma mensagem excluída, o RaidProtect guarda as mensagens recentes na memória: **30 minutos** na versão gratuita, **24 horas** com o [Premium](/pt/premium). Depois disso, o log indica que o conteúdo não foi guardado. A mesma janela vale para o `/snipe` e para a parte snipe do `/modview`: com a Logging Update, eles mostram as mensagens dessa janela em vez de uma hora.
 
 Com o Premium, os anexos das mensagens excluídas também são copiados no log (10 MB por arquivo, 100 MB por servidor, os mais antigos são substituídos primeiro).

@@ -60,6 +60,6 @@ Je nach Log-Typ sind Schaltflächen angehängt: „**Kanal ansehen**“, „**Na
 
 ## 💾 Gespeicherte Nachrichten {#cache}
 
-Um den Inhalt einer gelöschten Nachricht wiederzufinden, hält RaidProtect die neuesten Nachrichten im Speicher: **15 Minuten** in der kostenlosen Version, **6 Stunden** mit [Premium](/de/premium). Danach gibt der Log an, dass der Inhalt nicht gespeichert wurde. Dasselbe Zeitfenster gilt für `/snipe` und für den Snipe-Teil von `/modview`: Mit dem Logging Update zeigen sie die Nachrichten dieses Zeitfensters statt einer Stunde.
+Um den Inhalt einer gelöschten Nachricht wiederzufinden, hält RaidProtect die neuesten Nachrichten im Speicher: **30 Minuten** in der kostenlosen Version, **24 Stunden** mit [Premium](/de/premium). Danach gibt der Log an, dass der Inhalt nicht gespeichert wurde. Dasselbe Zeitfenster gilt für `/snipe` und für den Snipe-Teil von `/modview`: Mit dem Logging Update zeigen sie die Nachrichten dieses Zeitfensters statt einer Stunde.
 
 Mit Premium werden auch die Anhänge gelöschter Nachrichten in den Log kopiert (10 MB pro Datei, 100 MB pro Server, die ältesten werden zuerst ersetzt).

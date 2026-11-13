@@ -60,6 +60,6 @@ Selon le type de log, des boutons sont joints : “**Voir le salon**”, “**V
 
 ## 💾 Messages en mémoire {#cache}
 
-Pour retrouver le contenu d'un message supprimé, RaidProtect garde les messages récents en mémoire : **15 minutes** en version gratuite, **6 heures** avec le [Premium](/premium). Au-delà, le log indique que le contenu n'a pas été conservé. La même fenêtre vaut pour `/snipe` et pour la partie snipe de `/modview` : avec la Logging Update, ils montrent les messages de cette fenêtre au lieu d'une heure.
+Pour retrouver le contenu d'un message supprimé, RaidProtect garde les messages récents en mémoire : **30 minutes** en version gratuite, **24 heures** avec le [Premium](/premium). Au-delà, le log indique que le contenu n'a pas été conservé. La même fenêtre vaut pour `/snipe` et pour la partie snipe de `/modview` : avec la Logging Update, ils montrent les messages de cette fenêtre au lieu d'une heure.
 
 Avec le Premium, les pièces jointes des messages supprimés sont aussi copiées dans le log (10 Mo par fichier, 100 Mo par serveur, les plus anciennes sont remplacées en premier).

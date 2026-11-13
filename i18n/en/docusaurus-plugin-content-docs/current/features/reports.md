@@ -18,7 +18,7 @@ Members can report content through 4 main methods.
 A member can right-click on a message they believe violates the rules, select **`Apps`**, then click **`Report Message`**. A window opens, in which they state the reason for the report.
 
 2. **Right-click on a profile**
-Similarly, a member can right-click on a profile they find problematic, choose **`Apps`**, then click **`Report User`**. A window then opens, allowing them to specify what they are reporting (profile picture, username, bio, voice activity, DM activity) and the reason. With the [Logging Update](./logs.md#cache), the window also offers "**Messages on the server**": the report thread then includes the latest messages of the channel, **deleted messages included** (marked as deleted, the reported member in bold), within the 15-minute window (6 hours in Premium).
+Similarly, a member can right-click on a profile they find problematic, choose **`Apps`**, then click **`Report User`**. A window then opens, allowing them to specify what they are reporting (profile picture, username, bio, voice activity, DM activity) and the reason. With the [Logging Update](./logs.md#cache), the window also offers "**Messages on the server**": the report thread then includes the latest messages of the channel, **deleted messages included** (marked as deleted, the reported member in bold), within the 30-minute window (24 hours in Premium).
 
 3. **Button on an information panel**
 If the "Reports" feature is enabled on an [information panel (`/display public`)](./display.mdx), a "**Report a member**" button is available directly below the panel, allowing members to quickly report a user.

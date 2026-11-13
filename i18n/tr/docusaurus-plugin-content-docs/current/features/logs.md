@@ -60,6 +60,6 @@ Log türüne göre düğmeler eklenir: “**Kanalı gör**”, “**Mesajı gör
 
 ## 💾 Bellekteki mesajlar {#cache}
 
-Silinen bir mesajın içeriğini bulabilmek için RaidProtect son mesajları bellekte tutar: ücretsiz sürümde **15 dakika**, [Premium](/tr/premium) ile **6 saat**. Bu sürenin ötesinde log, içeriğin saklanmadığını belirtir. Aynı süre `/snipe` ve `/modview`'in snipe bölümü için de geçerlidir: Logging Update ile bir saat yerine bu süredeki mesajları gösterirler.
+Silinen bir mesajın içeriğini bulabilmek için RaidProtect son mesajları bellekte tutar: ücretsiz sürümde **30 dakika**, [Premium](/tr/premium) ile **24 saat**. Bu sürenin ötesinde log, içeriğin saklanmadığını belirtir. Aynı süre `/snipe` ve `/modview`'in snipe bölümü için de geçerlidir: Logging Update ile bir saat yerine bu süredeki mesajları gösterirler.
 
 Premium ile silinen mesajların ekleri de loga kopyalanır (dosya başına 10 MB, sunucu başına 100 MB, en eskiler önce değiştirilir).
