@@ -13,7 +13,7 @@ Khi một người dùng tham gia máy chủ của bạn, [chế độ raid](./r
 
 ## 👋 Tin nhắn chào mừng {#welcome-message}
 
-Tin nhắn chào mừng được gửi vào kênh bạn chọn khi một thành viên được chấp nhận vào máy chủ. Nó chứa văn bản của bạn và một **thẻ chào mừng** được tạo cho từng thành viên: ảnh đại diện của họ, “Chào mừng đến với” theo sau là tên máy chủ, và số thứ tự thành viên của họ.
+Tin nhắn chào mừng được gửi vào kênh bạn chọn khi một thành viên được chấp nhận vào máy chủ. Nó chứa một **thẻ chào mừng** được tạo cho từng thành viên (ảnh đại diện của họ, “Chào mừng đến với” theo sau là tên máy chủ, và số thứ tự thành viên của họ), đứng sau văn bản của bạn nếu bạn đã viết một đoạn.
 
 <Settings start="welcome" />
 
@@ -23,6 +23,8 @@ Tin nhắn chào mừng được gửi vào kênh bạn chọn khi một thành 
 2. Mở thẻ “**Thành viên mới**”.
 3. Nhấp vào “**Cấu hình**” bên cạnh “**Tin nhắn chào mừng**”.
 4. Trong “**Kênh chào mừng**”, chọn kênh văn bản nơi tin nhắn sẽ được gửi. Chọn một kênh sẽ bật tin nhắn.
+
+Nút “**Gỡ kênh**”, hiển thị bên dưới bộ chọn khi đã chọn một kênh, sẽ gỡ kênh đó: tin nhắn khi ấy không còn được đăng công khai, chỉ thẻ chào mừng của [Activity của captcha](./captcha.md#activity) vẫn hoạt động.
 
 Công tắc ở phía trên bên phải màn hình bật hoặc tắt tin nhắn chào mừng. Bản xem trước của tin nhắn hiển thị bên dưới màn hình và được cập nhật sau mỗi lần chỉnh sửa.
 
@@ -36,11 +38,11 @@ Kênh chào mừng không thể là kênh của captcha, của jail, của Honey
 2. Mở thẻ “**Thành viên mới**”.
 3. Nhấp vào “**Cấu hình**” bên cạnh “**Tin nhắn chào mừng**”.
 4. Trong “**Nội dung tin nhắn**”, nhấp vào “**Văn bản**”.
-5. Viết tin nhắn của bạn (tối đa 1 200 ký tự), rồi xác nhận. Để trống trường này để quay về tin nhắn mặc định.
+5. Viết tin nhắn của bạn (tối đa 1 200 ký tự), rồi xác nhận. Để trống trường này để chỉ gửi thẻ: tin nhắn khi ấy được gửi không có văn bản, và thẻ cùng các [nút](#welcome-buttons) hiển thị riêng lẻ, không có thanh màu.
 
 <SettingsModal name="welcomeText" />
 
-Văn bản mặc định là “Chào mừng `{user.mention}` đến với **`{server.name}`**! 🎉”, bằng ngôn ngữ của máy chủ. Bạn có thể dùng các biến sau:
+Chừng nào bạn chưa từng đặt văn bản, tin nhắn dùng văn bản mặc định, “Chào mừng `{user.mention}` đến với **`{server.name}`**! 🎉”, bằng ngôn ngữ của máy chủ. Bạn có thể dùng các biến sau:
 
 | Biến | Được thay bằng |
 |---|---|
@@ -67,6 +69,8 @@ Bạn có thể thêm bên dưới tin nhắn các nút dẫn đến một kênh
 5. Đặt tên cho nút, chọn kênh cần liên kết và, nếu muốn, một **emoji**: một emoji tiêu chuẩn, hoặc một emoji của máy chủ này (`<:tên:id>`, `:tên:` hoặc ID của nó). Một emoji không hợp lệ không ngăn việc lưu: nút được tạo mà không có emoji.
 
 Để sửa hoặc xóa một nút, hãy chọn nó trong cùng danh sách.
+
+Nếu máy chủ của bạn có hướng dẫn máy chủ (Server Guide) với các hành động, “**Quản lý các nút**” còn đề xuất “**Thêm từ hướng dẫn máy chủ**” (“Lấy các hành động từ hướng dẫn máy chủ của bạn”). Một cửa sổ “**Nút của hướng dẫn máy chủ**” liệt kê các hành động của hướng dẫn: mỗi hành động được đánh dấu trở thành một nút dẫn đến kênh của nó, kèm tiêu đề và emoji. Một nút đã có cho cùng kênh sẽ được thay thế. Tổng số vẫn nằm trong giới hạn bên dưới: vượt quá thì không có gì được lưu và một tin nhắn cho biết mức tối đa.
 
 **Giới hạn:** 2 nút ở bản miễn phí, 4 nút ở bản [premium](/vi/premium). Nếu Premium hết hạn, chỉ 2 nút đầu tiên còn được hiển thị.
 
@@ -95,7 +99,7 @@ Vai trò tự động được cấp cho mỗi thành viên mới ngay khi họ 
 **Giới hạn:** 3 vai trò ở bản miễn phí, 10 vai trò ở bản [premium](/vi/premium).
 
 :::warning
-Hãy chọn các vai trò không có quyền: một vai trò được cấp khi vào máy chủ không nên trao bất kỳ quyền lực nào. RaidProtect từ chối các vai trò do tích hợp quản lý, các vai trò cao hơn vai trò của nó hoặc của bạn, những vai trò cấp quyền kiểm duyệt và vai trò chưa xác minh của captcha. Nó cảnh báo bạn nếu một vai trò đã chọn sau này có thêm quyền.
+Hãy chọn các vai trò không có quyền: một vai trò được cấp khi vào máy chủ không nên trao bất kỳ quyền lực nào. RaidProtect từ chối các vai trò do tích hợp quản lý, các vai trò cao hơn vai trò của nó hoặc của bạn, những vai trò cấp quyền kiểm duyệt và vai trò chưa xác minh của captcha. Nó cảnh báo bạn nếu một vai trò đã chọn sau này có thêm quyền. Khi một vai trò đã chọn mang các quyền bị từ chối, khung báo lỗi có một nút “**Gỡ các quyền này**” (“**Sửa @vai trò**” nếu có nhiều vai trò) để gỡ chúng thay bạn, với cùng điều kiện như [Vai trò Tag](./tag-role.md): quyền **Quản lý vai trò**, vai trò nằm cao hơn, và không có quyền mà chính bạn không có.
 :::
 :::info
 Nếu máy chủ của bạn dùng một bot khác cho vai trò tự động, nó có thể cấp vai trò trước captcha. Hãy thay nó bằng các vai trò tự động của RaidProtect.

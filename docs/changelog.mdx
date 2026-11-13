@@ -12,7 +12,7 @@ Découvrez la liste détaillée des modifications qui ont été apportées à Ra
 La Logging Update est en expérimentation : en attendant sa sortie en 3.8.0, elle est en bêta publique pour les serveurs [Premium](/premium). Son contenu peut encore évoluer.
 :::
 
-- Nouvelles [logs du serveur](./features/logs.md) en cinq familles : salons, rôles et invitations, membres, messages, vocal, emojis et réactions. Chaque famille a son salon, et chaque type peut être coupé ou [envoyé ailleurs](./features/logs.md#config).
+- Nouvelles [logs du serveur](./features/logs.md) en six familles : salons et rôles, serveur, membres, messages, vocal, emojis et réactions. Chaque famille a son salon, et chaque type peut être coupé ou [envoyé ailleurs](./features/logs.md#config).
 - Chaque log commence par son auteur (« @modo a créé le salon #général. ») et montre l'avant et l'après d'une modification, permissions comprises.
 - Nouveaux types de logs : webhooks, intégrations, bots ajoutés ou retirés avec leur rôle, messages épinglés, membres inactifs retirés, boosts, pseudos, emojis, stickers, sons du soundboard et réactions.
 - Le log d'un message supprimé dit qui l'a supprimé. Un message modifié montre l'avant et l'après, avec seulement les lignes changées pour un long message.
@@ -22,7 +22,7 @@ La Logging Update est en expérimentation : en attendant sa sortie en 3.8.0, el
 - Les logs tirées du journal d'audit affichent la raison donnée par l'auteur de l'action.
 - Nouvelle commande [`/roleinfo`](./features/utilities.mdx#roleinfo) : la fiche d'un rôle (couleur, position, origine, nombre de membres, permissions sensibles), aussi ouverte par le bouton “**Rôle**” des logs liées à un rôle.
 - Nouvelle case “**Messages sur le serveur**” dans les [signalements](./features/reports.md) : le fil du signalement reprend les derniers messages du salon, messages supprimés compris.
-- Réservé au **Premium** : le format Compact, les logs vocales (conférences comprises), de réactions et des membres intéressés par un événement, la copie des pièces jointes des messages supprimés, [6 heures de messages en mémoire](./features/logs.md#cache) au lieu de 15 minutes et jusqu'à 15 salons de logs au lieu de 3.
+- Réservé au **Premium** : le format Compact, les logs vocales (conférences comprises), de réactions et des membres intéressés par un événement, la copie des pièces jointes des messages supprimés, [24 heures de messages en mémoire](./features/logs.md#cache) au lieu de 30 minutes et jusqu'à 15 salons de logs au lieu de 3.
 
 ## 3.7.0 Identity Update (bêta) {#3-7-0}
 

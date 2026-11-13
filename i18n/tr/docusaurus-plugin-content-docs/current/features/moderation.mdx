@@ -207,7 +207,7 @@ Komut, Discord'un **Takma Adları Yönet** iznini gerektirir ve [ön ekli komut]
 
 ## 🕵️ Silinen bir mesajı geri alma {#snipe}
 
-`/snipe` komutu, bir kanaldaki **son bir saatte silinen mesajları**, sayfa sayfa, en yeniden en eskiye doğru gösterir.
+`/snipe` komutu, bir kanaldaki **son bir saatte silinen mesajları**, sayfa sayfa, en yeniden en eskiye doğru gösterir. [Logging Update](./logs.md) ile `/snipe` ve `/modview`'in snipe bölümü, bir saat yerine logların süresindeki mesajları gösterir: ücretsiz sürümde **30 dakika**, [Premium](/tr/premium)'da **24 saat**.
 
 Şu komutu kullanın: ```/snipe [user] [--channel=#channel]```
 
@@ -264,6 +264,8 @@ Varsayılan olarak moderasyon logları RaidProtect'in genel log kanalına gönde
 <Settings start="logs" />
 
 “**Loglar**” ekranı üç kanalı bir araya getirir: “**Genel**”, “**Moderasyon**” ve “**Captcha**”. Boş bırakılan bir “**Moderasyon**” veya “**Captcha**” kanalı loglarını genel kanala yönlendirir. “**Pasif moderasyon logları**” anahtarı, RaidProtect'in bot üzerinden geçmeden yapılan eylemleri de kaydedip kaydetmeyeceğini seçer. Kanallar, roller, üyeler, mesajlar ve ses kendi [sunucu loglarına](./logs.md) sahiptir.
+
+`/settings` üzerinden değiştirilen her ayar ayrıca “**Genel**” log kanalında bir iz bırakır: «@modo **Modül › Seçenek** ayarını değiştirdi: önce → sonra.» Diğerlerinin yanı sıra captcha, anti-spam, anti-raid, ScamLens ve görsel listeleri, Diğer sunucular, HoneyPot, önleyici yavaş mod, minimum yaş, yaptırımlar, çift hesaplar, şeffaflık özetleri, saat dilimi ve mesaj önbelleği kapsanır. RaidProtect tarafından otomatik olarak kapatılan bir ayar «otomatik olarak» diye belirtilir. Değer değişmezse hiçbir şey yazılmaz.
 
 ## Sık sorulan sorular {#faq}
 

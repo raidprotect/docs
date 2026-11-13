@@ -40,7 +40,7 @@ Bảng có một nút “**Translate**” để đọc nó bằng ngôn ngữ c�
 
 Chế độ Bảng giữ kênh gọn gàng và cho phép thêm các thiết lập: chọn hình phạt khi hết lượt thử, [captcha bị đóng băng trong đợt raid](./raid-mode.md#action), [giữ lại ở cửa các tài khoản quá mới](./onboarding.md#minage).
 
-Chế độ **Thử thách (Cổ điển)**, nơi thành viên gõ lại một mã trong kênh, không còn được cung cấp. Một máy chủ vẫn dùng nó sẽ tự động chuyển sang chế độ Bảng khi có thành viên vào tiếp theo. Hình ảnh kèm mã vẫn được dùng cho thành viên có thiết bị không mở được Activity.
+Chế độ **Thử thách (Cổ điển)**, nơi thành viên gõ lại một mã trong kênh, không còn được cung cấp. Một máy chủ vẫn dùng nó sẽ tự động chuyển sang chế độ Bảng khi có thành viên vào tiếp theo. Một thành viên có thiết bị không mở được Activity sẽ thực hiện cùng bước xác minh đó trong [trình duyệt](#activity) của họ.
 
 ### Kích hoạt {#trigger}
 
@@ -86,18 +86,18 @@ Captcha khởi động ở chế độ **Bảng (Tương tác)**, kích hoạt *
 - **Đội ngũ của bạn xem xét:** khi có nghi ngờ, thành viên bị giữ lại ở cửa, không có thời gian chờ nào chạy, và đội ngũ của bạn nhận một báo cáo captcha tự động. Báo cáo đến [nhật ký của captcha](#logs), nếu không có thì đến kênh [báo cáo](./reports.md), nếu không nữa thì đến nhật ký máy chủ. Khi báo cáo đã được tiếp nhận, nó đề xuất “**Cho vào**”, “**Liên kết với thành viên khác**” (cùng [Identity Update](#activity-alts)) và “**Từ chối**”, áp dụng hành động thất bại của captcha mà bạn đã chọn (đuổi, jail hoặc chặn): menu hình phạt không có ở đó.
 - **Jail sau khi hết lượt thử:** jail này không có thời hạn và cũng mở một báo cáo xem xét. “**Cho vào**” gỡ jail và xác minh thành viên; nếu không, hãy xử phạt họ.
 - **Từ chối kiểm tra thiết bị:** Activity xin sự đồng ý của thành viên trước khi [kiểm tra thiết bị của họ](#privacy). Nếu họ từ chối, họ chịu hành động thất bại như khi hết lượt thử (đuổi, jail hoặc chặn).
-- **Activity không mở được:** thành viên có thể nhấp vào “**Nhập mã**”. Khi đó, một mã đúng sẽ được đội ngũ của bạn xem xét.
+- **Activity không mở được:** bảng đề xuất “**Xác minh trong trình duyệt**”: cùng bước xác minh đó mở trong trình duyệt của thành viên, nơi họ đăng nhập bằng Discord. RaidProtect cũng không thấy địa chỉ IP của họ ở đó, vì nó bị proxy của Discord che đi.
 - **Xóa dữ liệu:** một thành viên có thể yêu cầu xóa dữ liệu xác minh của mình tại [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot). Họ sẽ làm lại captcha, và các hình phạt của họ vẫn còn.
 
 #### Tài khoản phụ được captcha phát hiện {#activity-alts}
 
 Với [Identity Update](./alt-accounts.md), Activity cũng phát hiện những người vào có khả năng do cùng một người sử dụng với một thành viên trong máy chủ của bạn:
 
-- **Liên kết chắc chắn:** các tài khoản được liên kết tự động trong [`/alt`](./alt-accounts.md#alt). Nhật ký của captcha báo điều đó, kèm một nút “**Hủy liên kết**”. Nếu nhóm đang bị xử phạt, hoặc nếu [Mỗi người một tài khoản](./alt-accounts.md#single-account) đang giữ các tài khoản phụ của nhóm, người mới vào nhận hình phạt của nhóm hoặc bị cách ly.
-- **Liên kết có thể:** nếu [Mỗi người một tài khoản](./alt-accounts.md#single-account) đang bật, thành viên được đưa vào diện xem xét. “**Liên kết với thành viên khác**” liên kết họ trong `/alt` và cho họ vào; nếu không phát hiện được tài khoản nào, một cửa sổ sẽ yêu cầu bạn chọn thành viên (“**Tài khoản đã có trên máy chủ**”). Nếu không, thành viên được vào, và nhật ký của captcha báo liên kết có thể này kèm một nút “**Liên kết**”.
+- **Liên kết chắc chắn:** các tài khoản được liên kết tự động trong [`/alt`](./alt-accounts.md#alt). Nhật ký của captcha báo điều đó, kèm “**Hủy liên kết**” và “**Giữ liên kết**”. Nếu nhóm đang bị xử phạt, hoặc nếu [Mỗi người một tài khoản](./alt-accounts.md#single-account) đang giữ các tài khoản phụ của nhóm, người mới vào nhận hình phạt của nhóm hoặc bị cách ly.
+- **Liên kết có thể:** nếu [Mỗi người một tài khoản](./alt-accounts.md#single-account) đang bật, thành viên được đưa vào diện xem xét. “**Liên kết với thành viên khác**” liên kết họ trong `/alt` và cho họ vào; nếu không phát hiện được tài khoản nào, một cửa sổ sẽ yêu cầu bạn chọn thành viên (“**Tài khoản đã có trên máy chủ**”). Nếu không, thành viên được vào, và đội ngũ của bạn nhận một [cảnh báo tài khoản phụ](./alt-accounts.md#alerts): mỗi tài khoản có thể có một dòng riêng, kèm “**Liên kết**” và “**Giữ không liên kết**”. Một lần nhấp quyết định dòng đó và nêu tên người đã làm; cảnh báo được xử lý khi mọi dòng của nó đều đã xử lý.
 - **Liên kết chắc chắn không được áp dụng:** không có gì được liên kết tự động nếu một tài khoản trong nhóm thuộc đội ngũ máy chủ, nếu người mới vào được liên kết với nhiều nhóm `/alt`, hoặc nếu cả hai tài khoản đều đã có nhóm riêng (hai nhóm không bao giờ được gộp tự động). Khi đó, liên kết được đề xuất cho bạn theo cùng cách.
 
-Chỉ các tài khoản của máy chủ bạn được hiển thị cho bạn: không có gì được nói về các máy chủ khác.
+Chỉ các tài khoản của máy chủ bạn được hiển thị cho bạn: không có gì được nói về các máy chủ khác. Mức tin cậy từ đó đội ngũ được cảnh báo, và mức từ đó captcha tự liên kết, được đặt trong [cảnh báo tài khoản phụ](./alt-accounts.md#alerts).
 
 :::info Identity Update (3.7.0)
 Việc phát hiện tài khoản phụ thuộc **Identity Update**, dự kiến trong phiên bản 3.7.0 và đã có sẵn ở dạng beta.
@@ -112,6 +112,14 @@ RaidProtect không lấy địa chỉ IP của các thành viên làm captcha, v
 - **Đội ngũ của bạn chỉ thấy kết quả:** thành công, thất bại, xem xét hoặc liên kết tài khoản phụ, không bao giờ thấy các đặc điểm của thiết bị.
 
 Một thành viên có thể yêu cầu xóa dữ liệu xác minh của mình tại [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot). Để hiểu các cách khác nhau để xác minh thành viên, hãy đọc bài viết của chúng tôi về [captcha và xác minh trên Discord](/vi/learn/captcha-discord).
+
+#### Sự đồng ý của Activity {#consent}
+
+Bước thông tin về dữ liệu, hiển thị trước câu đố, được đặt trong màn hình Captcha (chế độ Bảng, captcha đang bật) bằng bộ chọn “**Sự đồng ý của Activity**”:
+
+- “**Thành viên EEA**” *(mặc định)*: hiển thị cho thành viên thuộc Khu vực Kinh tế Châu Âu và những người không rõ quốc gia, được coi như thành viên EEA;
+- “**Mọi người**”: hiển thị cho mọi thành viên, bất kể quốc gia;
+- “**Đã tắt**”: bước này không hiển thị cho ai.
 
 ### Thử captcha {#test-mode}
 

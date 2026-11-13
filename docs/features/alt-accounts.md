@@ -18,7 +18,7 @@ Les doubles comptes font partie de l'**Identity Update**, prévue pour la versio
 - **Levée commune** : lever la sanction de l'un des comptes, quel qu'il soit, la lève pour tous, avec ou sans Premium.
 - **Recherche groupée** : [rechercher les sanctions](./sanctions.mdx#search) d'un compte montre aussi celles des autres comptes du groupe.
 - **AutoMod de Discord** : les timeouts et mutes posés par l'AutoMod de Discord s'étendent aussi aux comptes liés.
-- **Repérés par le captcha** : l'[Activity du captcha](./captcha.md#activity-alts) peut lier d'elle-même deux comptes sûrs d'être la même personne, ou proposer le lien à votre équipe. Elle s'appuie sur l'appareil, [jamais sur l'adresse IP](#ip).
+- **Repérés par le captcha** : l'[Activity du captcha](./captcha.md#activity-alts) peut lier d'elle-même deux comptes sûrs d'être la même personne, ou [alerter votre équipe](#alerts) d'un lien probable. Elle s'appuie sur l'appareil, [jamais sur l'adresse IP](#ip).
 - **Logs** : les liens, les retraits et les changements de compte principal sont enregistrés dans les [logs de modération](./moderation.mdx#logs). Le log d'une sanction cite les comptes liés avec leur nom d'utilisateur et, au format embed, porte un bouton “**Comptes liés**” qui ouvre le panneau `/alt` du membre sanctionné.
 
 **Limites :** aucune sur le nombre de comptes par groupe ni sur le nombre de groupes. Une sanction s'étend à **10 comptes liés** d'un coup : les suivants sont sanctionnés à leur prochain message ou à leur arrivée, et le bouton sous la sanction les sanctionne tout de suite.
@@ -110,6 +110,28 @@ Ce réglage demande un [rôle Jail](./sanctions.mdx#jail). S'il n'y en a pas, un
 Pour changer le compte principal d'un groupe, utilisez `/alt` avec l'un des comptes, puis le sélecteur “**Modifier un compte du groupe**”.
 
 RaidProtect retient si un lien vient de votre équipe ou du bot (le [captcha](./captcha.md#activity-alts)). Confirmer à la main un lien posé par le bot en fait un lien de votre équipe, et un lien posé par votre équipe ne redevient jamais un lien du bot.
+
+### Alertes de double compte {#alerts}
+
+Au captcha, un arrivant probablement lié à un membre de votre serveur alerte votre équipe, qui lie ou non. Un lien posé d'office n'alerte pas. Un membre que vous sanctionnez et dont RaidProtect connaît des doubles comptes probables vous est aussi signalé, dans la confirmation de la sanction ou par une alerte “**Double compte probable : … (membre sanctionné)**”.
+
+1. Faites la [commande `/settings`](../setup.md#settings).
+2. Ouvrez l'onglet “**Modération**”.
+3. Cliquez sur “**Configurer**” à côté de “**Doubles comptes**”.
+4. Sur la ligne “**Alertes de double compte**”, cliquez sur “**Seuils**” ou “**Salon et rôle**”. Le récapitulatif de la ligne décrit chaque seuil et nomme le salon et le rôle.
+
+**Seuils :**
+
+| Réglage | Valeurs | Par défaut |
+|---|---|---|
+| “**Seuil d'alerte**” | “**Jamais**” (les doutes restent dans les logs du captcha), “**Faible**”, “**Probable**” ou “**Fort**” : la confiance dès laquelle l'équipe est alertée | Probable |
+| “**Seuil de lien automatique**” | “**Probable**”, “**Fort**” ou “**Jamais d'office**” : la confiance dès laquelle le captcha lie seul. L'équipe et les groupes déjà formés ne sont jamais liés d'office | Fort |
+
+Le seuil d'alerte reste strictement inférieur au seuil de lien automatique.
+
+**Salon et rôle :** choisissez le “**Salon d'alerte**” (facultatif : sinon le salon des [signalements](./reports.md), puis les logs du captcha, sans mention) et la “**Mention**” : un rôle, @everyone ou @here. Les cases “**Créer le salon**” et “**Créer le rôle**” laissent RaidProtect créer un salon #alertes-doubles-comptes, fermé à @everyone, et un rôle “Alertes doubles comptes” ; une case cochée l'emporte sur le salon ou le rôle sélectionné. Le rôle est prévenu au premier suspect, puis toutes les 5 alertes ou toutes les heures.
+
+Dans une alerte, chaque compte probable a sa ligne : “**Lier**” + “**Gardé non lié**” pour un doute, “**Délier**” + “**Gardé lié**” pour un lien posé d'office. Un clic remplace la paire par l'issue et le nom de qui a tranché ; l'alerte est traitée quand toutes ses lignes le sont.
 
 ## Questions fréquentes {#faq}
 

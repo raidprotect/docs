@@ -46,10 +46,12 @@ The simplest way to set up the anti-spam is to choose a **preset**. It sets the 
 | Preset | Excess | Spam | Automated | Multi-channel spam |
 |---|---|---|---|---|
 | **Soft** | Warn | Timeout | Jail | Timeout |
-| **Standard** *(default)* | Timeout | Softban | Ban | Jail |
+| **Standard** *(default)* | Timeout | Timeout | Jail | Jail |
 | **Strict** *(not recommended)* | Softban | Ban | Ban | Ban |
 
 The **Soft** preset never kicks or bans: at most a timeout or the jail.
+
+By default, RaidProtect holds the member without sending them away: a false positive does not cost them their place on the server. A Jail with no configured role becomes a Timeout. A server that had chosen its own sanction keeps it, and servers already on Strict keep the ban for automated accounts.
 
 1. Run the [`/settings` command](../setup.md#settings).
 2. Open the "**Protection**" tab.
@@ -96,12 +98,12 @@ Each family groups triggers of the same nature. Here are the triggers we detect,
 | **Excess** | Spam | Too many messages in a short time. Emojis, stickers and gibberish messages (repeated character, looping words) count too. | Timeout |
 | **Excess** | Flood (screen filled) | Messages that fill the screen: long texts, images, link previews, stickers | Timeout |
 | **Excess** | Attachment spam | Mass sending of files or images | Timeout |
-| **Spam** | Duplicate spam | Copy-pasted or nearly identical messages | Softban |
-| **Spam** | Link spam | Mass link sending (a Discord invite counts as a link, even without `https://`; other Discord links and GIFs stay neutral) | Softban |
-| **Spam** | Mention spam | Mass mentions | Softban |
-| **Automated** | Selfbot spam | Using [selfbots](/en/learn/self-bot) to spam | Ban |
-| **Automated** | External command spam | Using [external commands](/en/learn/server-raidable) to spam | Ban |
-| **Automated** | Blocked message spam (AutoMod) | Repeated messages blocked by [Discord's AutoMod](#automod) | Ban |
+| **Spam** | Duplicate spam | Copy-pasted or nearly identical messages | Timeout |
+| **Spam** | Link spam | Mass link sending (a Discord invite counts as a link, even without `https://`; other Discord links and GIFs stay neutral) | Timeout |
+| **Spam** | Mention spam | Mass mentions | Timeout |
+| **Automated** | Selfbot spam | Using [selfbots](/en/learn/self-bot) to spam | Jail |
+| **Automated** | External command spam | Using [external commands](/en/learn/server-raidable) to spam | Jail |
+| **Automated** | Blocked message spam (AutoMod) | Repeated messages blocked by [Discord's AutoMod](#automod) | Jail |
 | *(separate)* | Multi-channel spam | The same message posted in several channels in a short time | Jail |
 
 :::info Multi-channel spam

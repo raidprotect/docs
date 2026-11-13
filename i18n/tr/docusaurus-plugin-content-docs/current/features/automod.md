@@ -41,7 +41,7 @@ Tüm ayrıntılar, yaptırım ve görsel kataloğu [Dolandırıcılık görselle
 | **İletilen mesaj veya kanal bağlantısı** | O sunucudan iletilen veya kanallarından ya da etkinliklerinden birine bağlantı içeren mesaj silinir. |
 | **Görüntülenen sunucu etiketi** | Üye, [Jail rolüyle](./sanctions.mdx#jail) **karantinaya** alınır. Etiketi kaldırdığı anda karantina kalkar. |
 
-Kendi sunucunuz, davetlerinden herhangi biriyle her zaman geçer ve ekibiniz (**Sunucuyu Yönet** veya **Mesajları Yönet** izinleri) asla hedef alınmaz.
+Kendi sunucunuz, davetlerinden herhangi biriyle her zaman geçer ve ekibiniz (**Sunucuyu Yönet** veya **Mesajları Yönet** izinleri) asla hedef alınmaz. RaidProtect sunucularının davetleri ve etiketleri de her zaman geçer.
 
 ### Yapılandırma {#servers-config}
 
@@ -82,13 +82,21 @@ Betada, yok sayılan kanallar bir “**İstisnalar**” ekranına taşınır; bu
 
 ### Sunucu listeleri {#servers-lists}
 
-1. “**Sunucu ekle**”ye tıklayın.
-2. Sunucunun hâlâ geçerli bir davetini yapıştırın (örn. `discord.gg/ornek`): adı ve kimliği ondan okunur. Yalnızca kimlik artık kabul edilmez.
-3. Listeyi seçin: kara veya beyaz.
+Her listenin kendi seçicisi vardır, “**Kara liste**” ve “**Beyaz liste**”; içerdiği sunucu sayısı da gösterilir. 25 sunucudan sonrasını “**devamı**” adlı ikinci bir seçici gösterir.
 
-Zaten listede olan bir sunucu yalnızca liste değiştirir. “**Kaldır**”, bir veya birden fazla sunucuyu listelerden çıkarır.
+1. Listenin seçicisinde “**Ekle**”yi seçin.
+2. Hâlâ geçerli bir veya birkaç davet yapıştırın (örn. `discord.gg/ornek`); virgül, boşluk veya satır sonuyla ayırın: her sunucunun adı ve kimliği davetten okunur. Yalnızca kimlik kabul edilmez. Geçersiz veya süresi dolmuş bir davet, diğerlerini engellemeden bildirilir.
 
-**Sınırlar:** iki listede toplam 25 sunucu.
+Zaten listede olan bir sunucu yalnızca liste değiştirir. Sunucuları kaldırmak için onları kendi listelerinin seçicisinde seçin.
+
+**Sınırlar:** liste başına 25 sunucu, [Premium](/tr/premium) ile liste başına 50. Premium olmadan dolu bir liste Premium'u önerir; ücretsiz sürüme dönen bir sunucu girdilerini korur.
+
+#### Resmî sunucular ve 18+ sunucular {#servers-switches}
+
+İki ücretsiz anahtar listeleri tamamlar:
+
+- “**Discord'un resmî sunucuları**”: beyaz listeye ayarlı her davranış için Discord Town Hall ve Discord Developers'a, beyaz listede yer kaplamadan izin verir. Kara listeye ayarlı veya devre dışı bir davranış üzerinde etkisi yoktur.
+- “**18+ sunuculara davetler**”: “**Davet**” kara listedeyken, Discord'un 18+ olarak işaretlediği bir sunucuya giden davetleri reddeder. İletilen mesajlar, kanal bağlantıları ve etiketler yalnızca sunucu kimliğini taşır: bunlar kapsam dışıdır. Beyaz liste, sunucunuz ve RaidProtect'in sunucuları her zaman geçer.
 
 :::tip
 Yalnızca ortaklarınızın davetlerine izin vermek için “**Davet**”i “**Beyaz liste**” olarak ayarlayın ve ortaklarınızı beyaz listeye ekleyin. Boş bir beyaz liste, diğer sunuculara giden tüm davetleri reddeder.

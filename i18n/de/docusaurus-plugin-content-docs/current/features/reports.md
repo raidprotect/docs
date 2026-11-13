@@ -18,7 +18,7 @@ Mitglieder können einen Inhalt über 4 Hauptmethoden melden.
 Ein Mitglied kann per Rechtsklick auf eine Nachricht, die es als Regelverstoß betrachtet, **`Apps`** auswählen und dann auf **`Nachricht melden`** klicken. Es öffnet sich ein Fenster, in dem es den Grund der Meldung angibt.
 
 2. **Rechtsklick auf ein Profil**
-Auf die gleiche Weise kann ein Mitglied per Rechtsklick auf ein Profil, das es für problematisch hält, **`Apps`** auswählen und dann auf **`Benutzer melden`** klicken. Daraufhin öffnet sich ein Fenster, in dem es angeben kann, was es meldet (Profilbild, Benutzername, Bio, Aktivität im Sprachkanal, Aktivität in Direktnachrichten), und den Grund.
+Auf die gleiche Weise kann ein Mitglied per Rechtsklick auf ein Profil, das es für problematisch hält, **`Apps`** auswählen und dann auf **`Benutzer melden`** klicken. Daraufhin öffnet sich ein Fenster, in dem es angeben kann, was es meldet (Profilbild, Benutzername, Bio, Aktivität im Sprachkanal, Aktivität in Direktnachrichten), und den Grund. Mit dem [Logging Update](./logs.md#cache) bietet das Fenster außerdem „**Nachrichten auf dem Server**“ an: Der Meldungs-Thread übernimmt dann die letzten Nachrichten des Kanals, **einschließlich gelöschter Nachrichten** (als gelöscht markiert, das gemeldete Mitglied fett), innerhalb des Zeitfensters von 30 Minuten (24 Stunden mit Premium).
 
 3. **Schaltfläche auf einem Informationspanel**
 Wenn die Funktion „Meldung“ auf einem [Informationspanel (`/display public`)](./display.mdx) aktiviert ist, steht direkt unter dem Panel eine Schaltfläche „**Mitglied melden**“ zur Verfügung, über die Mitglieder schnell einen Nutzer melden können.

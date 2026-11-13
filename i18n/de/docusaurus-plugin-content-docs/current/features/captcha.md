@@ -40,7 +40,7 @@ Das Panel trägt eine Schaltfläche „**Translate**“, um es in der eigenen Sp
 
 Der Panel-Modus hält den Kanal sauber und ermöglicht zusätzliche Einstellungen: Wahl der Sanktion bei aufgebrauchten Versuchen, [Captcha während eines Raids eingefroren](./raid-mode.md#action), [Zurückhalten zu junger Konten am Eingang](./onboarding.md#minage). 
 
-Der Modus **Challenge (Klassisch)**, in dem das Mitglied einen Code in den Kanal abtippte, wird nicht mehr angeboten. Ein Server, der ihn noch nutzte, wechselt bei der nächsten Ankunft eines Mitglieds automatisch in den Panel-Modus. Das Bild mit einem Code wird weiterhin für ein Mitglied verwendet, dessen Gerät die Activity nicht öffnen kann.
+Der Modus **Challenge (Klassisch)**, in dem das Mitglied einen Code in den Kanal abtippte, wird nicht mehr angeboten. Ein Server, der ihn noch nutzte, wechselt bei der nächsten Ankunft eines Mitglieds automatisch in den Panel-Modus. Ein Mitglied, dessen Gerät die Activity nicht öffnen kann, führt dieselbe Prüfung in seinem [Browser](#activity) durch.
 
 ### Auslöser {#trigger}
 
@@ -86,18 +86,18 @@ Im Modus **Panel** öffnet die Schaltfläche „**Verifizieren**“ die **RaidPr
 - **Prüfung durch Ihr Team:** Im Zweifelsfall bleibt das Mitglied am Eingang blockiert, ohne laufende Frist, und Ihr Team erhält einen automatischen Captcha-Bericht. Er landet in den [Captcha-Logs](#logs), andernfalls im Kanal der [Meldungen](./reports.md), andernfalls in den Server-Logs. Sobald der Bericht übernommen ist, bietet er „**Einlassen**“, „**Mit anderem Mitglied verknüpfen**“ (mit der [Identity Update](#activity-alts)) und „**Ablehnen**“ an, das Ihre Captcha-Fehlschlag-Aktion anwendet (Kick, Jail oder Sperre): Das Sanktionsmenü ist dort nicht vorhanden.
 - **Jail nach aufgebrauchten Versuchen:** Dieses Jail hat keine Dauer und eröffnet ebenfalls einen Prüfbericht. „**Einlassen**“ hebt das Jail auf und verifiziert das Mitglied; andernfalls sanktionieren Sie es.
 - **Geräteprüfung abgelehnt:** Die Activity bittet das Mitglied um sein Einverständnis, bevor sie [sein Gerät prüft](#privacy). Lehnt es ab, erhält es die Fehlschlag-Aktion wie nach aufgebrauchten Versuchen (Kick, Jail oder Sperre).
-- **Activity öffnet sich nicht:** Das Mitglied kann auf „**Code eingeben**“ klicken. Ein korrekter Code geht dann zur Prüfung an Ihr Team.
+- **Activity öffnet sich nicht:** Das Panel bietet „**Im Browser verifizieren**“: Dieselbe Prüfung öffnet sich im Browser des Mitglieds, das sich mit Discord anmeldet. RaidProtect sieht auch dort seine IP-Adresse nicht, sie bleibt durch den Proxy von Discord verborgen.
 - **Löschung der Daten:** Ein Mitglied kann die Löschung seiner Verifizierungsdaten unter [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot) beantragen. Es durchläuft das Captcha dann erneut, und seine Sanktionen bleiben bestehen.
 
 #### Vom Captcha erkannte Zweitkonten {#activity-alts}
 
 Mit der [Identity Update](./alt-accounts.md) erkennt die Activity auch Neuankömmlinge, die wahrscheinlich von derselben Person betrieben werden wie ein Mitglied Ihres Servers:
 
-- **Sichere Verknüpfung:** Die Konten werden automatisch in [`/alt`](./alt-accounts.md#alt) verknüpft. Die Captcha-Logs weisen darauf hin, mit einer Schaltfläche „**Verknüpfung aufheben**“. Ist die Gruppe sanktioniert oder hält [Nur ein Konto pro Person](./alt-accounts.md#single-account) ihre Zweitkonten zurück, erhält der Neuankömmling die Sanktion der Gruppe oder kommt in Quarantäne.
-- **Wahrscheinliche Verknüpfung:** Ist [Nur ein Konto pro Person](./alt-accounts.md#single-account) aktiv, kommt das Mitglied zur Prüfung. „**Mit anderem Mitglied verknüpfen**“ verknüpft die Konten in `/alt` und lässt es herein; wurde kein Konto erkannt, bittet Sie ein Fenster, das Mitglied auszuwählen („**Konto bereits auf dem Server**“). Andernfalls tritt das Mitglied bei, und die Captcha-Logs melden die wahrscheinliche Verknüpfung mit einer Schaltfläche „**Verknüpfen**“.
+- **Sichere Verknüpfung:** Die Konten werden automatisch in [`/alt`](./alt-accounts.md#alt) verknüpft. Die Captcha-Logs weisen darauf hin, mit „**Trennen**“ und „**Verknüpft lassen**“. Ist die Gruppe sanktioniert oder hält [Nur ein Konto pro Person](./alt-accounts.md#single-account) ihre Zweitkonten zurück, erhält der Neuankömmling die Sanktion der Gruppe oder kommt in Quarantäne.
+- **Wahrscheinliche Verknüpfung:** Ist [Nur ein Konto pro Person](./alt-accounts.md#single-account) aktiv, kommt das Mitglied zur Prüfung. „**Mit anderem Mitglied verknüpfen**“ verknüpft die Konten in `/alt` und lässt es herein; wurde kein Konto erkannt, bittet Sie ein Fenster, das Mitglied auszuwählen („**Konto bereits auf dem Server**“). Andernfalls tritt das Mitglied bei, und Ihr Team erhält eine [Doppelkonto-Warnung](./alt-accounts.md#alerts): Jedes wahrscheinliche Konto hat dort seine Zeile, mit „**Verknüpfen**“ und „**Getrennt lassen**“. Ein Klick entscheidet die Zeile und nennt, wer es getan hat; die Warnung ist erledigt, wenn alle ihre Zeilen erledigt sind.
 - **Sichere Verknüpfung nicht angewendet:** Es wird nichts automatisch verknüpft, wenn ein Konto der Gruppe zum Serverteam gehört, wenn der Neuankömmling mit mehreren `/alt`-Gruppen verknüpft ist oder wenn beide Konten bereits jeweils eine eigene Gruppe haben (zwei Gruppen werden nie automatisch zusammengeführt). Die Verknüpfung wird Ihnen dann auf die gleiche Weise vorgeschlagen.
 
-Es werden Ihnen nur die Konten Ihres Servers gezeigt: Über andere Server wird nichts gesagt.
+Es werden Ihnen nur die Konten Ihres Servers gezeigt: Über andere Server wird nichts gesagt. Die Sicherheit, ab der das Team alarmiert wird, und die, ab der das Captcha selbst verknüpft, werden in den [Doppelkonto-Warnungen](./alt-accounts.md#alerts) eingestellt.
 
 :::info Identity Update (3.7.0)
 Die Erkennung von Zweitkonten gehört zur **Identity Update**, die für Version 3.7.0 vorgesehen und bereits als Beta verfügbar ist.
@@ -112,6 +112,14 @@ RaidProtect ruft die IP-Adresse der Mitglieder, die das Captcha durchlaufen, nic
 - **Ihr Team sieht nur das Ergebnis:** Erfolg, Fehlschlag, Prüfung oder Verknüpfung von Zweitkonten, nie die Merkmale des Geräts.
 
 Ein Mitglied kann die Löschung seiner Verifizierungsdaten unter [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot) beantragen. Um die verschiedenen Möglichkeiten zu verstehen, Mitglieder zu verifizieren, lesen Sie unseren Artikel über [das Captcha und die Verifizierung auf Discord](/de/learn/captcha-discord).
+
+#### Einverständnis der Activity {#consent}
+
+Der Informationsschritt zu den Daten, der vor dem Puzzle angezeigt wird, wird im Captcha-Bildschirm (Panel-Modus, Captcha aktiv) mit der Auswahl „**Einverständnis der Activity**“ eingestellt:
+
+- „**EWR-Mitglieder**“ *(Standard)*: wird Mitgliedern des Europäischen Wirtschaftsraums und Mitgliedern mit unbekanntem Land angezeigt, die als EWR-Mitglieder behandelt werden;
+- „**Alle**“: wird allen Mitgliedern angezeigt, unabhängig von ihrem Land;
+- „**Deaktiviert**“: der Schritt wird niemandem angezeigt.
 
 ### Das Captcha testen {#test-mode}
 

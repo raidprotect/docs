@@ -18,7 +18,7 @@ As contas duplicadas fazem parte da **Identity Update**, prevista para a versão
 - **Remoção em comum**: remover a sanção de uma das contas, qualquer que seja, a remove para todas, com ou sem Premium.
 - **Busca agrupada**: [buscar as sanções](./sanctions.mdx#search) de uma conta também mostra as das outras contas do grupo.
 - **AutoMod do Discord**: os timeouts e mutes aplicados pelo AutoMod do Discord também se estendem às contas vinculadas.
-- **Detectadas pelo captcha**: a [Activity do captcha](./captcha.md#activity-alts) pode vincular por conta própria duas contas que tem certeza de serem a mesma pessoa, ou propor o vínculo à sua equipe. Ela se baseia no dispositivo, [nunca no endereço IP](#ip).
+- **Detectadas pelo captcha**: a [Activity do captcha](./captcha.md#activity-alts) pode vincular por conta própria duas contas que tem certeza de serem a mesma pessoa, ou [alertar sua equipe](#alerts) sobre um vínculo provável. Ela se baseia no dispositivo, [nunca no endereço IP](#ip).
 - **Logs**: os vínculos, as remoções e as mudanças de conta principal são registrados nos [logs de moderação](./moderation.mdx#logs). O log de uma sanção cita as contas vinculadas com o nome de usuário delas e, no formato embed, traz um botão “**Contas vinculadas**” que abre o painel `/alt` do membro sancionado.
 
 **Limites:** nenhum no número de contas por grupo nem no número de grupos. Uma sanção se estende a **10 contas vinculadas** de uma vez: as seguintes são sancionadas na próxima mensagem ou na chegada, e o botão abaixo da sanção as sanciona na hora.
@@ -110,6 +110,28 @@ Essa configuração exige um [cargo Jail](./sanctions.mdx#jail). Se não houver,
 Para mudar a conta principal de um grupo, use `/alt` com uma das contas e depois o seletor “**Editar uma conta do grupo**”.
 
 O RaidProtect registra se um vínculo veio da sua equipe ou do bot (o [captcha](./captcha.md#activity-alts)). Confirmar manualmente um vínculo criado pelo bot o torna um vínculo da sua equipe, e um vínculo criado pela sua equipe nunca volta a ser um vínculo do bot.
+
+### Alertas de conta duplicada {#alerts}
+
+No captcha, um recém-chegado provavelmente ligado a um membro do seu servidor alerta sua equipe, que vincula ou não. Um vínculo criado automaticamente não alerta. Um membro que você sanciona e para o qual o RaidProtect conhece contas duplicadas prováveis também é sinalizado a você, na confirmação da sanção ou por um alerta “**Conta duplicada provável: … (membro sancionado)**”.
+
+1. Use o [comando `/settings`](../setup.md#settings).
+2. Abra a aba “**Moderação**”.
+3. Clique em “**Configurar**” ao lado de “**Contas duplicadas**”.
+4. Na linha “**Alertas de conta duplicada**”, clique em “**Limites**” ou “**Canal e cargo**”. O resumo da linha descreve cada limite e nomeia o canal e o cargo.
+
+**Limites:**
+
+| Configuração | Valores | Padrão |
+|---|---|---|
+| “**Limite de alerta**” | “**Nunca**” (as dúvidas ficam nos logs do captcha), “**Baixo**”, “**Provável**” ou “**Forte**”: a confiança a partir da qual a equipe é alertada | Provável |
+| “**Limite de vínculo automático**” | “**Provável**”, “**Forte**” ou “**Nunca automático**”: a confiança a partir da qual o captcha vincula sozinho. A equipe e os grupos já formados nunca são vinculados automaticamente | Forte |
+
+O limite de alerta permanece estritamente inferior ao limite de vínculo automático.
+
+**Canal e cargo:** escolha o “**Canal de alerta**” (opcional: caso contrário, o canal das [denúncias](./reports.md), depois os logs do captcha, sem menção) e a “**Menção**”: um cargo, @everyone ou @here. As caixas “**Criar o canal**” e “**Criar o cargo**” deixam o RaidProtect criar um canal #alertas-contas-duplicadas, fechado para @everyone, e um cargo “Alertas contas duplicadas”; uma caixa marcada prevalece sobre o canal ou o cargo selecionado. O cargo é avisado no primeiro suspeito, depois a cada 5 alertas ou a cada hora.
+
+Em um alerta, cada conta provável tem sua linha: “**Vincular**” + “**Mantida sem vínculo**” para uma dúvida, “**Desvincular**” + “**Mantida vinculada**” para um vínculo criado automaticamente. Um clique substitui o par pelo resultado e pelo nome de quem decidiu; o alerta é tratado quando todas as suas linhas o são.
 
 ## Perguntas frequentes {#faq}
 

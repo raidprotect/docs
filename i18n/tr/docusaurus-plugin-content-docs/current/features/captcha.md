@@ -40,7 +40,7 @@ Panelde kendi dilinde okumak için bir “**Translate**” düğmesi bulunur ve 
 
 Panel modu kanalı temiz tutar ve ek ayarlara olanak tanır: denemeler tükendiğinde yaptırım seçimi, [baskın sırasında dondurulan captcha](./raid-mode.md#action), [çok yeni hesapların girişte tutulması](./onboarding.md#minage).
 
-Üyenin kodu kanala yeniden yazdığı **Meydan okuma (Klasik)** modu artık sunulmuyor. Hâlâ onu kullanan bir sunucu, bir üye katıldığında otomatik olarak Panel moduna geçer. Kodlu görsel, cihazı Activity'yi açamayan üyeler için kullanılmaya devam eder.
+Üyenin kodu kanala yeniden yazdığı **Meydan okuma (Klasik)** modu artık sunulmuyor. Hâlâ onu kullanan bir sunucu, bir üye katıldığında otomatik olarak Panel moduna geçer. Cihazı Activity'yi açamayan bir üye aynı doğrulamayı [tarayıcısında](#activity) yapar.
 
 ### Tetikleme {#trigger}
 
@@ -86,18 +86,18 @@ Captcha, **Panel (Etkileşimli)** modunda, **Sürekli** tetiklemeyle, 3 denemeyl
 - **Ekibiniz tarafından inceleme:** şüphe durumunda üye, işleyen bir süre olmaksızın girişte bloke kalır ve ekibiniz otomatik bir captcha raporu alır. Rapor [captcha loglarına](#logs), yoksa [bildirimlerin](./reports.md) kanalına, o da yoksa sunucu loglarına gelir. Rapor ele alındığında “**İçeri al**”, “**Başka bir üyeye bağla**” ([Identity Update](#activity-alts) ile) ve “**Reddet**” seçenekleri sunulur; “**Reddet**”, captcha başarısızlık eyleminizi (atma, jail veya engelleme) uygular: yaptırım menüsü burada yer almaz.
 - **Denemeler tükendikten sonra jail:** bu jail'in süresi yoktur ve ayrıca bir inceleme raporu açar. “**İçeri al**” jail'i kaldırır ve üyeyi doğrular; aksi halde ona yaptırım uygulayın.
 - **Cihaz doğrulaması reddedildi:** Activity, üyeden [cihazını doğrulamadan](#privacy) önce onay ister. Reddederse, denemeleri tükenmiş gibi başarısızlık eylemine tabi olur (atma, jail veya engelleme).
-- **Activity açılmıyor:** üye “**Kod gir**”e tıklayabilir. Doğru bir kod bu durumda ekibiniz tarafından incelemeye geçer.
+- **Activity açılmıyor:** panel “**Tarayıcıda doğrula**” seçeneğini sunar: aynı doğrulama üyenin tarayıcısında açılır ve üye Discord ile giriş yapar. RaidProtect orada da IP adresini görmez, Discord'un proxy'si onu gizler.
 - **Verilerin silinmesi:** bir üye, doğrulama verilerinin silinmesini [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot) adresinden isteyebilir. Bu durumda captcha'yı yeniden geçer; yaptırımları kalır.
 
 #### Captcha tarafından tespit edilen çift hesaplar {#activity-alts}
 
 [Identity Update](./alt-accounts.md) ile Activity, sunucunuzdaki bir üyeyle büyük olasılıkla aynı kişi tarafından yönetilen gelenleri de tespit eder:
 
-- **Kesin bağlantı:** hesaplar [`/alt`](./alt-accounts.md#alt) içinde otomatik olarak bağlanır. Captcha logları bunu, “**Bağlantıyı kaldır**” düğmesiyle birlikte bildirir. Grup bir yaptırım altındaysa veya [Kişi başına tek hesap](./alt-accounts.md#single-account) ikincil hesaplarını tutuyorsa, gelen üye grubun yaptırımını alır veya karantinaya geçer.
-- **Olası bağlantı:** [Kişi başına tek hesap](./alt-accounts.md#single-account) etkinse üye incelemeye geçer. “**Başka bir üyeye bağla**” onları `/alt` içinde bağlar ve üyeyi içeri alır; hiçbir hesap tespit edilmediyse bir pencere sizden üyeyi seçmenizi ister (“**Sunucuda zaten olan hesap**”). Aksi halde üye içeri girer ve captcha logları olası bağlantıyı bir “**Bağla**” düğmesiyle bildirir.
+- **Kesin bağlantı:** hesaplar [`/alt`](./alt-accounts.md#alt) içinde otomatik olarak bağlanır. Captcha logları bunu “**Bağlantıyı kaldır**” ve “**Bağlı bırakıldı**” ile bildirir. Grup bir yaptırım altındaysa veya [Kişi başına tek hesap](./alt-accounts.md#single-account) ikincil hesaplarını tutuyorsa, gelen üye grubun yaptırımını alır veya karantinaya geçer.
+- **Olası bağlantı:** [Kişi başına tek hesap](./alt-accounts.md#single-account) etkinse üye incelemeye geçer. “**Başka bir üyeye bağla**” onları `/alt` içinde bağlar ve üyeyi içeri alır; hiçbir hesap tespit edilmediyse bir pencere sizden üyeyi seçmenizi ister (“**Sunucuda zaten olan hesap**”). Aksi halde üye içeri girer ve ekibiniz bir [çift hesap uyarısı](./alt-accounts.md#alerts) alır: her olası hesabın orada kendi satırı vardır, “**Bağla**” ve “**Bağlanmadan bırakıldı**” ile. Bir tıklama satırı karara bağlar ve bunu yapanı belirtir; tüm satırlar karara bağlandığında uyarı işlenmiş olur.
 - **Uygulanmayan kesin bağlantı:** gruptaki bir hesap sunucu ekibindeyse, gelen üye birden fazla `/alt` grubuna bağlıysa ya da iki hesabın da zaten kendi grubu varsa (iki grup asla kendiliğinden birleştirilmez) hiçbir şey kendiliğinden bağlanmaz. Bağlantı bu durumda size aynı şekilde önerilir.
 
-Size yalnızca sunucunuzun hesapları gösterilir: diğer sunucular hakkında hiçbir şey söylenmez.
+Size yalnızca sunucunuzun hesapları gösterilir: diğer sunucular hakkında hiçbir şey söylenmez. Ekibin uyarılacağı güven düzeyi ve captcha'nın tek başına bağlayacağı güven düzeyi, [çift hesap uyarılarında](./alt-accounts.md#alerts) ayarlanır.
 
 :::info Identity Update (3.7.0)
 Çift hesapların tespiti, 3.7.0 sürümü için planlanan ve şimdiden beta olarak kullanılabilen **Identity Update**'in parçasıdır.
@@ -112,6 +112,14 @@ RaidProtect, captcha'yı geçen üyelerin IP adresini almaz ve Activity bunu üy
 - **Ekibiniz yalnızca sonucu görür:** başarı, başarısızlık, inceleme veya çift hesap bağlantısı; cihazın özelliklerini asla görmez.
 
 Bir üye, doğrulama verilerinin silinmesini [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot) adresinden isteyebilir. Üyeleri doğrulamanın farklı yollarını anlamak için [Discord'da captcha ve doğrulama](/tr/learn/captcha-discord) hakkındaki makalemizi okuyun.
+
+#### Activity onayı {#consent}
+
+Puzzle'dan önce gösterilen veri bilgilendirme adımı, Captcha ekranında (Panel modu, captcha etkin) “**Activity onayı**” seçicisiyle ayarlanır:
+
+- “**AEA üyeleri**” *(varsayılan)*: Avrupa Ekonomik Alanı üyelerine ve ülkesi bilinmeyenlere gösterilir, bunlar AEA üyesi sayılır;
+- “**Herkes**”: ülkesi ne olursa olsun tüm üyelere gösterilir;
+- “**Devre dışı**”: adım hiç kimseye gösterilmez.
 
 ### Captcha'yı test etmek {#test-mode}
 

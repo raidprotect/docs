@@ -18,7 +18,7 @@ I doppi account fanno parte dell'**Identity Update**, prevista per la versione 3
 - **Revoca comune**: revocare la sanzione di uno qualsiasi degli account la revoca per tutti, con o senza Premium.
 - **Ricerca raggruppata**: [cercare le sanzioni](./sanctions.mdx#search) di un account mostra anche quelle degli altri account del gruppo.
 - **AutoMod di Discord**: anche i timeout e i mute applicati dall'AutoMod di Discord si estendono agli account collegati.
-- **Individuati dal captcha**: l'[Activity del captcha](./captcha.md#activity-alts) può collegare da sola due account certamente della stessa persona, oppure proporre il collegamento al tuo team. Si basa sul dispositivo, [mai sull'indirizzo IP](#ip).
+- **Individuati dal captcha**: l'[Activity del captcha](./captcha.md#activity-alts) può collegare da sola due account certamente della stessa persona, oppure [avvisare il tuo team](#alerts) di un collegamento probabile. Si basa sul dispositivo, [mai sull'indirizzo IP](#ip).
 - **Log**: i collegamenti, le rimozioni e i cambi di account principale sono registrati nei [log di moderazione](./moderation.mdx#logs). Il log di una sanzione cita gli account collegati con il loro nome utente e, nel formato embed, riporta un pulsante “**Account collegati**” che apre il pannello `/alt` del membro sanzionato.
 
 **Limiti:** nessuno sul numero di account per gruppo né sul numero di gruppi. Una sanzione si estende a **10 account collegati** alla volta: i successivi vengono sanzionati al loro prossimo messaggio o al loro arrivo, e il pulsante sotto la sanzione li sanziona subito.
@@ -110,6 +110,28 @@ Questa impostazione richiede un [ruolo Jail](./sanctions.mdx#jail). Se manca, un
 Per cambiare l'account principale di un gruppo, usa `/alt` con uno degli account, poi il selettore “**Modifica un account del gruppo**”.
 
 RaidProtect ricorda se un collegamento viene dal tuo team o dal bot (il [captcha](./captcha.md#activity-alts)). Confermare a mano un collegamento posto dal bot lo rende un collegamento del tuo team, e un collegamento posto dal tuo team non torna mai a essere un collegamento del bot.
+
+### Avvisi di doppio account {#alerts}
+
+Al captcha, un nuovo arrivato probabilmente collegato a un membro del tuo server avvisa il tuo team, che collega o no. Un collegamento posto automaticamente non genera avvisi. Anche un membro che sanzioni e di cui RaidProtect conosce dei doppi account probabili ti viene segnalato, nella conferma della sanzione o con un avviso “**Doppio account probabile: … (membro sanzionato)**”.
+
+1. Esegui il [comando `/settings`](../setup.md#settings).
+2. Apri la scheda “**Moderazione**”.
+3. Clicca su “**Configurare**” accanto a “**Doppi account**”.
+4. Sulla riga “**Avvisi di doppio account**”, clicca su “**Soglie**” o “**Canale e ruolo**”. Il riepilogo della riga descrive ogni soglia e nomina il canale e il ruolo.
+
+**Soglie:**
+
+| Impostazione | Valori | Predefinito |
+|---|---|---|
+| “**Soglia di avviso**” | “**Mai**” (i dubbi restano nei log del captcha), “**Bassa**”, “**Probabile**” o “**Forte**”: la fiducia a partire dalla quale il team viene avvisato | Probabile |
+| “**Soglia di collegamento automatico**” | “**Probabile**”, “**Forte**” o “**Mai automatico**”: la fiducia a partire dalla quale il captcha collega da solo. Il team e i gruppi già formati non vengono mai collegati automaticamente | Forte |
+
+La soglia di avviso resta strettamente inferiore alla soglia di collegamento automatico.
+
+**Canale e ruolo:** scegli il “**Canale di avviso**” (facoltativo: altrimenti il canale delle [segnalazioni](./reports.md), poi i log del captcha, senza menzione) e la “**Menzione**”: un ruolo, @everyone o @here. Le caselle “**Crea il canale**” e “**Crea il ruolo**” lasciano che RaidProtect crei un canale #avvisi-doppi-account, chiuso a @everyone, e un ruolo “Avvisi doppi account”; una casella spuntata ha la precedenza sul canale o sul ruolo selezionato. Il ruolo viene avvisato al primo sospetto, poi ogni 5 avvisi o ogni ora.
+
+In un avviso, ogni account probabile ha la sua riga: “**Collega**” + “**Mantenuto non collegato**” per un dubbio, “**Scollega**” + “**Mantenuto collegato**” per un collegamento posto automaticamente. Un clic sostituisce la coppia con l'esito e il nome di chi ha deciso; l'avviso è gestito quando tutte le sue righe lo sono.
 
 ## Domande frequenti {#faq}
 

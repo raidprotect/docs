@@ -80,6 +80,8 @@ Le impostazioni sono organizzate in cinque schede:
 
 Ogni riga mostra il valore attuale dell'impostazione e un pulsante: “**Configurare**” apre una schermata dedicata, “**Modifica**” apre una finestra di inserimento. Ogni modifica si applica immediatamente.
 
+`/settings` si apre anche se RaidProtect non ha i permessi **Gestire i canali** o **Gestire i ruoli**. Ogni azione che ne ha bisogno (“**Crearne uno per me**”, attivare il captcha o scegliere il suo canale, modalità di visualizzazione del captcha, canale dell'HoneyPot, del jail, delle segnalazioni) rifiuta allora indicando i permessi mancanti. Nella schermata del captcha, il selettore del canale e i pulsanti “**Creare**” e “**Attivare**” sono disattivati finché RaidProtect non ha **Espellere i membri** e **Gestire i ruoli**.
+
 Dopo un aggiornamento, un badge **Nuovo** segnala per due settimane le impostazioni appena arrivate, e anche la loro scheda finché non l'hai aperta.
 
 Esplora la dashboard qui sotto, i pulsanti sono cliccabili:
