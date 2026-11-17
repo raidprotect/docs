@@ -258,17 +258,20 @@ Nếu đối tượng là một thành viên của máy chủ, các thông tin b
     - `MANAGE_SERVER_EXPRESSIONS`
 
   </TabItem>
-  <TabItem value="admin" label="Quản trị viên">
+  <TabItem value="supervisor" label="Giám sát viên">
 
-    Nhóm **Quản trị viên** được hiển thị trong **hai trường hợp có thể xảy ra**:
+    Nhóm **Giám sát viên** được hiển thị nếu thành viên có **cùng lúc ba quyền sau**, nhưng không có `ADMINISTRATOR`:
 
-    1️⃣ Có quyền:
-    - `ADMINISTRATOR`
-
-    2️⃣ Có **cùng lúc ba quyền sau**:
     - `MANAGE_GUILD`
     - `MANAGE_ROLES`
     - `MANAGE_CHANNELS`
+
+  </TabItem>
+  <TabItem value="admin" label="Quản trị viên">
+
+    Nhóm **Quản trị viên** được hiển thị nếu thành viên có quyền:
+
+    - `ADMINISTRATOR`
 
   </TabItem>
   <TabItem value="owner" label="Chủ sở hữu">

@@ -258,17 +258,20 @@ RaidProtect 的“**Launch**”按钮会在 Discord Activity 中打开 **RaidPro
     - `MANAGE_SERVER_EXPRESSIONS`
 
   </TabItem>
-  <TabItem value="admin" label="管理员">
+  <TabItem value="supervisor" label="主管">
 
-    在**以下两种情况**下会显示**管理员**类别：
+    成员**同时**拥有以下**三项权限**、但没有 `ADMINISTRATOR` 时，会显示**主管**类别：
 
-    1️⃣ 拥有以下权限：
-    - `ADMINISTRATOR`
-
-    2️⃣ **同时**拥有以下**三项权限**：
     - `MANAGE_GUILD`
     - `MANAGE_ROLES`
     - `MANAGE_CHANNELS`
+
+  </TabItem>
+  <TabItem value="admin" label="管理员">
+
+    成员拥有以下权限时，会显示**管理员**类别：
+
+    - `ADMINISTRATOR`
 
   </TabItem>
   <TabItem value="owner" label="所有者">

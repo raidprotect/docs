@@ -258,17 +258,20 @@ If the target is a server member, additional info includes:
     - `MANAGE_SERVER_EXPRESSIONS`
 
   </TabItem>
-  <TabItem value="admin" label="Administrator">
+  <TabItem value="supervisor" label="Supervisor">
 
-    The **Administrator** category is shown in **two possible cases**:
+    The **Supervisor** category is shown if the member has **all three of the following permissions at the same time**, without `ADMINISTRATOR`:
 
-    1️⃣ Has the permission:
-    - `ADMINISTRATOR`
-
-    2️⃣ Has **all three of the following permissions at the same time**:
     - `MANAGE_GUILD`
     - `MANAGE_ROLES`
     - `MANAGE_CHANNELS`
+
+  </TabItem>
+  <TabItem value="admin" label="Administrator">
+
+    The **Administrator** category is shown if the member has the permission:
+
+    - `ADMINISTRATOR`
 
   </TabItem>
   <TabItem value="owner" label="Owner">

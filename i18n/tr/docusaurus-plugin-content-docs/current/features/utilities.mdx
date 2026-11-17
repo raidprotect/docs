@@ -258,17 +258,20 @@ Hedef sunucunun bir üyesiyse ek bilgiler şunları içerir:
     - `MANAGE_SERVER_EXPRESSIONS`
 
   </TabItem>
-  <TabItem value="admin" label="Yönetici">
+  <TabItem value="supervisor" label="Denetçi">
 
-    **Yönetici** kategorisi **iki olası durumda** gösterilir:
+    **Denetçi** kategorisi, üye `ADMINISTRATOR` iznine sahip olmadan **aşağıdaki üç izne aynı anda** sahipse gösterilir:
 
-    1️⃣ Şu izne sahiptir:
-    - `ADMINISTRATOR`
-
-    2️⃣ **Aşağıdaki üç izne aynı anda** sahiptir:
     - `MANAGE_GUILD`
     - `MANAGE_ROLES`
     - `MANAGE_CHANNELS`
+
+  </TabItem>
+  <TabItem value="admin" label="Yönetici">
+
+    **Yönetici** kategorisi, üye şu izne sahipse gösterilir:
+
+    - `ADMINISTRATOR`
 
   </TabItem>
   <TabItem value="owner" label="Sahip">
