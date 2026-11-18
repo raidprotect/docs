@@ -125,7 +125,7 @@ Dùng lệnh: ```/honeypot```
 RaidProtect đã tích hợp sẵn **[ScamLens](./scam-images.md)**, công cụ phân tích hình ảnh và xóa những hình là các vụ lừa đảo đã biết (crypto, giveaway giả, khuyến mãi sòng bạc giả).
 
 Cả hai phối hợp chặt chẽ với nhau:
-- **ScamLens đi trước.** Nếu hình ảnh đăng trong HoneyPot đã được biết, chính ScamLens xóa tin nhắn và xử phạt tài khoản bị xâm phạm; hình phạt của HoneyPot không được áp dụng thêm.
+- **ScamLens đi trước.** Nếu hình ảnh đăng trong HoneyPot đã được biết, chính ScamLens xóa tin nhắn và xử phạt tài khoản bị xâm phạm; hình phạt của HoneyPot không được áp dụng thêm. Nếu ScamLens xóa tin nhắn mà không xử phạt, HoneyPot sẽ xử phạt ngay lập tức, không có [thời gian chờ](#grace).
 - **HoneyPot tiếp quản** mọi thứ còn lại: hình ảnh mới chưa được biết, spam liên kết, nhắc đến hàng loạt, raid bằng văn bản, bot.
 - **Mỗi hình ảnh mới bị một HoneyPot bắt được sẽ làm giàu thêm cho ScamLens**, và sau đó ScamLens có thể chặn nó trên mọi máy chủ được bảo vệ.
 - **ScamLens theo HoneyPot của bạn**: chừng nào bạn chưa đặt cho nó thiết lập riêng, nó áp dụng [hình phạt và thời lượng](./scam-images.md#config) của HoneyPot của bạn.

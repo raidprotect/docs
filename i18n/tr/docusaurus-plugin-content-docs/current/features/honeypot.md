@@ -125,7 +125,7 @@ RaidProtect her durumda **kendisini ve diğer botları asla cezalandırmaz**. Bo
 RaidProtect, görselleri analiz eden ve bilinen dolandırıcılıkları (kripto, sahte çekilişler, sahte kumarhane promosyonları) silen **[ScamLens](./scam-images.md)**'i zaten içerir.
 
 İkisi el ele çalışır:
-- **ScamLens önce devreye girer.** HoneyPot'a gönderilen görsel zaten biliniyorsa mesajı silen ve ele geçirilmiş hesaba yaptırım uygulayan ScamLens'tir; HoneyPot'un yaptırımı ayrıca uygulanmaz.
+- **ScamLens önce devreye girer.** HoneyPot'a gönderilen görsel zaten biliniyorsa mesajı silen ve ele geçirilmiş hesaba yaptırım uygulayan ScamLens'tir; HoneyPot'un yaptırımı ayrıca uygulanmaz. ScamLens mesajı yaptırım uygulamadan silerse, HoneyPot hemen yaptırım uygular, [gecikme](#grace) olmadan.
 - **HoneyPot geri kalan her şeyde devralır**: henüz bilinmeyen yeni görseller, bağlantı spam'i, toplu etiketlemeler, metin baskınları, botlar.
 - **Bir HoneyPot'un yakaladığı her yeni görsel ScamLens'i zenginleştirir**; ScamLens sonra onu korunan tüm sunucularda engelleyebilir.
 - **ScamLens HoneyPot'unuzu izler**: ona kendi ayarını vermediğiniz sürece HoneyPot'unuzun [yaptırımını ve süresini](./scam-images.md#config) uygular.
