@@ -40,7 +40,7 @@ The panel has a "**Translate**" button to read it in one's own language, and eac
 
 Panel mode keeps the channel clean and allows extra settings: choice of the sanction when attempts are used up, [captcha frozen during a raid](./raid-mode.md#action), [hold at entry of accounts that are too new](./onboarding.md#minage). 
 
-The **Challenge (Classic)** mode, where the member typed back a code in the channel, is no longer offered. A server that still used it automatically moves to Panel mode at the next member arrival. The image with a code is still used for a member whose device cannot open the Activity.
+The **Challenge (Classic)** mode, where the member typed back a code in the channel, is no longer offered. A server that still used it automatically moves to Panel mode at the next member arrival. A member whose device cannot open the Activity does the same verification in their [browser](#activity).
 
 ### Trigger {#trigger}
 
@@ -86,18 +86,18 @@ In **Panel** mode, the "**Verify**" button opens the **RaidProtect Activity**: t
 - **Review by your team:** when in doubt, the member stays blocked at the entrance, with no countdown running, and your team receives an automatic captcha report. It arrives in the [captcha logs](#logs), otherwise in the [reports](./reports.md) channel, otherwise in the server logs. Once the report is taken over, it offers "**Let in**", "**Link to another member**" (with the [Identity Update](#activity-alts)) and "**Refuse**", which applies your captcha failure action (kick, jail or block): the sanctions menu is not shown there.
 - **Jail after attempts run out:** this jail has no duration and also opens a review report. "**Let in**" lifts the jail and verifies the member; otherwise, sanction them.
 - **Device check refused:** the Activity asks the member for their consent before [checking their device](#privacy). If they refuse, they get the failure action as after attempts run out (kick, jail or block).
-- **Activity that does not open:** the member can click "**Enter a code**". A correct code then goes to review by your team.
+- **Activity that does not open:** the panel offers "**Verify in the browser**": the same verification opens in the member's browser, where they sign in with Discord. RaidProtect does not see their IP address there either, as it is hidden by Discord's proxy.
 - **Data erasure:** a member can request the erasure of their verification data at [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot). They then take the captcha again, and their sanctions remain.
 
 #### Alt accounts spotted by the captcha {#activity-alts}
 
 With the [Identity Update](./alt-accounts.md), the Activity also spots newcomers who are probably run by the same person as a member of your server:
 
-- **Certain link:** the accounts are linked automatically in [`/alt`](./alt-accounts.md#alt). The captcha logs flag it, with an "**Unlink**" button. If the group is sanctioned, or if [One account per person](./alt-accounts.md#single-account) holds back its secondary accounts, the newcomer receives the group's sanction or goes into quarantine.
-- **Probable link:** if [One account per person](./alt-accounts.md#single-account) is on, the member goes to review. "**Link to another member**" links them in `/alt` and lets them in; if no account was spotted, a window asks you to choose the member ("**Account already on the server**"). Otherwise, the member gets in, and the captcha logs flag the probable link with a "**Link**" button.
+- **Certain link:** the accounts are linked automatically in [`/alt`](./alt-accounts.md#alt). The captcha logs flag it, with "**Unlink**" and "**Kept linked**". If the group is sanctioned, or if [One account per person](./alt-accounts.md#single-account) holds back its secondary accounts, the newcomer receives the group's sanction or goes into quarantine.
+- **Probable link:** if [One account per person](./alt-accounts.md#single-account) is on, the member goes to review. "**Link to another member**" links them in `/alt` and lets them in; if no account was spotted, a window asks you to choose the member ("**Account already on the server**"). Otherwise, the member gets in, and your team receives a [duplicate account alert](./alt-accounts.md#alerts): each probable account has its own row there, with "**Link**" and "**Kept unlinked**". A click settles the row and names who did it; the alert is handled when all its rows are.
 - **Certain link not applied:** nothing is linked automatically if an account in the group is on the server team, if the newcomer is linked to several `/alt` groups, or if both accounts already have their own group (two groups are never merged automatically). The link is then suggested to you in the same way.
 
-Only accounts from your server are shown to you: nothing is said about other servers.
+Only accounts from your server are shown to you: nothing is said about other servers. The confidence at which the team is alerted, and the one at which the captcha links on its own, are set in the [duplicate account alerts](./alt-accounts.md#alerts).
 
 :::info Identity Update (3.7.0)
 Alt account detection is part of the **Identity Update**, planned for version 3.7.0 and already available in beta.
@@ -112,6 +112,14 @@ RaidProtect does not retrieve the IP address of members who take the captcha, an
 - **Your team only sees the result:** success, failure, review or alt account link, never the device's characteristics.
 
 A member can request the erasure of their verification data at [privacy@raidprotect.bot](mailto:privacy@raidprotect.bot). To understand the different ways to verify members, read our article on [captcha and verification on Discord](/en/learn/captcha-discord).
+
+#### Activity consent {#consent}
+
+The data information step, shown before the puzzle, is set in the Captcha screen (Panel mode, captcha enabled) with the "**Activity consent**" selector:
+
+- "**EEA members**" *(default)*: shown to members of the European Economic Area and to those whose country is unknown, treated as EEA members;
+- "**Everyone**": shown to all members, whatever their country;
+- "**Disabled**": the step is shown to nobody.
 
 ### Testing the captcha {#test-mode}
 

@@ -18,7 +18,7 @@ Tài khoản phụ thuộc **Identity Update**, dự kiến trong phiên bản 3
 - **Gỡ chung**: gỡ hình phạt của một tài khoản bất kỳ sẽ gỡ cho tất cả, dù có hay không có Premium.
 - **Tìm kiếm theo nhóm**: [tìm kiếm hình phạt](./sanctions.mdx#search) của một tài khoản cũng hiển thị hình phạt của các tài khoản khác trong nhóm.
 - **AutoMod của Discord**: các timeout và mute do AutoMod của Discord áp dụng cũng được mở rộng sang các tài khoản liên kết.
-- **Được captcha phát hiện**: [Activity của captcha](./captcha.md#activity-alts) có thể tự liên kết hai tài khoản mà nó chắc chắn là cùng một người, hoặc đề xuất liên kết đó cho đội ngũ của bạn. Nó dựa vào thiết bị, [không bao giờ dựa vào địa chỉ IP](#ip).
+- **Được captcha phát hiện**: [Activity của captcha](./captcha.md#activity-alts) có thể tự liên kết hai tài khoản mà nó chắc chắn là cùng một người, hoặc [cảnh báo đội ngũ của bạn](#alerts) về một liên kết có thể. Nó dựa vào thiết bị, [không bao giờ dựa vào địa chỉ IP](#ip).
 - **Nhật ký**: các liên kết, việc gỡ và thay đổi tài khoản chính được ghi lại trong [nhật ký kiểm duyệt](./moderation.mdx#logs). Nhật ký của một hình phạt nêu các tài khoản liên kết kèm tên người dùng của chúng và, ở định dạng embed, có một nút “**Tài khoản liên kết**” mở bảng `/alt` của thành viên bị xử phạt.
 
 **Giới hạn:** không có giới hạn về số tài khoản trong mỗi nhóm lẫn số lượng nhóm. Một hình phạt được mở rộng sang **10 tài khoản liên kết** cùng lúc: các tài khoản tiếp theo bị xử phạt ở tin nhắn kế tiếp hoặc khi họ xuất hiện, và nút bên dưới hình phạt xử phạt họ ngay lập tức.
@@ -110,6 +110,28 @@ Thiết lập này cần một [vai trò Jail](./sanctions.mdx#jail). Nếu chư
 Để đổi tài khoản chính của một nhóm, hãy dùng `/alt` với một trong các tài khoản, rồi bộ chọn “**Chỉnh sửa một tài khoản của nhóm**”.
 
 RaidProtect ghi nhớ một liên kết đến từ đội ngũ của bạn hay từ bot (xem [captcha](./captcha.md#activity-alts)). Xác nhận thủ công một liên kết do bot tạo sẽ biến nó thành liên kết của đội ngũ, và một liên kết do đội ngũ tạo không bao giờ trở lại thành liên kết của bot.
+
+### Cảnh báo tài khoản phụ {#alerts}
+
+Ở captcha, một người mới vào có khả năng liên kết với một thành viên trong máy chủ của bạn sẽ cảnh báo đội ngũ của bạn, và đội ngũ quyết định liên kết hay không. Một liên kết được áp dụng tự động thì không gửi cảnh báo. Khi bạn xử phạt một thành viên mà RaidProtect biết có tài khoản phụ có thể, bạn cũng được báo, trong xác nhận hình phạt hoặc qua cảnh báo “**Tài khoản phụ có thể: … (thành viên bị xử phạt)**”.
+
+1. Dùng [lệnh `/settings`](../setup.md#settings).
+2. Mở thẻ “**Kiểm duyệt**”.
+3. Nhấp vào “**Cấu hình**” bên cạnh “**Tài khoản phụ**”.
+4. Ở dòng “**Cảnh báo tài khoản phụ**”, nhấp vào “**Ngưỡng**” hoặc “**Kênh và vai trò**”. Phần tóm tắt của dòng mô tả từng ngưỡng và nêu tên kênh và vai trò.
+
+**Ngưỡng:**
+
+| Thiết lập | Giá trị | Mặc định |
+|---|---|---|
+| “**Ngưỡng cảnh báo**” | “**Không bao giờ**” (các nghi ngờ chỉ nằm trong nhật ký của captcha), “**Thấp**”, “**Có thể**” hoặc “**Cao**”: mức tin cậy từ đó đội ngũ được cảnh báo | Có thể |
+| “**Ngưỡng tự động liên kết**” | “**Có thể**”, “**Cao**” hoặc “**Không bao giờ tự động**”: mức tin cậy từ đó captcha tự liên kết. Đội ngũ và các nhóm đã hình thành không bao giờ bị liên kết tự động | Cao |
+
+Ngưỡng cảnh báo luôn thấp hơn hẳn ngưỡng tự động liên kết.
+
+**Kênh và vai trò:** chọn “**Kênh cảnh báo**” (tùy chọn: nếu không, dùng kênh [báo cáo](./reports.md), rồi đến nhật ký của captcha, không nhắc ai) và “**Nhắc đến**”: một vai trò, @everyone hoặc @here. Các ô “**Tạo kênh**” và “**Tạo vai trò**” để RaidProtect tạo một kênh #cảnh-báo-tài-khoản-phụ, đóng với @everyone, và một vai trò “Cảnh báo tài khoản phụ”; ô được chọn sẽ thắng kênh hoặc vai trò đã chọn. Vai trò được nhắc ở nghi vấn đầu tiên, rồi cứ sau 5 cảnh báo hoặc mỗi giờ.
+
+Trong một cảnh báo, mỗi tài khoản có thể có một dòng riêng: “**Liên kết**” + “**Giữ không liên kết**” cho một nghi ngờ, “**Hủy liên kết**” + “**Giữ liên kết**” cho một liên kết được áp dụng tự động. Một lần nhấp thay cặp nút bằng kết quả và tên người đã quyết định; cảnh báo được xử lý khi mọi dòng của nó đều đã xử lý.
 
 ## Câu hỏi thường gặp {#faq}
 

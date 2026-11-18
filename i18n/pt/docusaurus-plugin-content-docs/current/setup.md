@@ -80,6 +80,8 @@ As configurações são organizadas em cinco abas:
 
 Cada linha exibe o valor atual da configuração e um botão: “**Configurar**” abre uma tela dedicada, “**Editar**” abre uma janela de entrada. Qualquer mudança se aplica imediatamente.
 
+O `/settings` abre mesmo que o RaidProtect não tenha as permissões **Gerenciar canais** ou **Gerenciar cargos**. Cada ação que precisa delas (“**Criar um para mim**”, ativar o captcha ou escolher o canal dele, modo de exibição do captcha, canal do HoneyPot, do jail, das denúncias) recusa então nomeando as permissões ausentes. Na tela do captcha, o seletor de canal e os botões “**Criar**” e “**Ativar**” ficam desabilitados enquanto o RaidProtect não tiver **Expulsar membros** e **Gerenciar cargos**.
+
 Após uma atualização, um selo **Novo** sinaliza por duas semanas as configurações que acabaram de chegar, bem como a aba delas enquanto você não a tiver aberto.
 
 Explore o painel de controle abaixo, os botões são clicáveis:

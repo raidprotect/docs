@@ -41,7 +41,7 @@ Ba hành vi được chỉnh riêng, mỗi hành vi ở một trong các chế �
 | **Tin chuyển tiếp hoặc liên kết kênh** | Tin nhắn được chuyển tiếp từ máy chủ đó, hoặc chứa liên kết đến một trong các kênh hoặc sự kiện của nó, bị xóa. |
 | **Tag máy chủ được hiển thị** | Thành viên bị **cách ly** bằng [vai trò Jail](./sanctions.mdx#jail). Việc cách ly được gỡ ngay khi họ bỏ tag. |
 
-Máy chủ của chính bạn luôn được qua, bằng bất kỳ lời mời nào của nó, và đội ngũ của bạn (quyền **Quản lý máy chủ** hoặc **Quản lý tin nhắn**) không bao giờ bị nhắm đến.
+Máy chủ của chính bạn luôn được qua, bằng bất kỳ lời mời nào của nó, và đội ngũ của bạn (quyền **Quản lý máy chủ** hoặc **Quản lý tin nhắn**) không bao giờ bị nhắm đến. Lời mời và tag của các máy chủ của RaidProtect cũng luôn được qua.
 
 ### Cấu hình {#servers-config}
 
@@ -82,13 +82,21 @@ Trong bản beta, các kênh bị bỏ qua chuyển sang màn hình “**Ngoại
 
 ### Danh sách máy chủ {#servers-lists}
 
-1. Nhấp vào “**Thêm máy chủ**”.
-2. Dán một lời mời còn hiệu lực của máy chủ (ví dụ `discord.gg/vidu`): tên và ID của máy chủ sẽ được đọc từ đó. ID đơn lẻ không còn được chấp nhận.
-3. Chọn danh sách: chặn hoặc cho phép.
+Mỗi danh sách có bộ chọn riêng, “**Danh sách chặn**” và “**Danh sách cho phép**”, kèm số máy chủ nó chứa. Từ 25 máy chủ trở lên, một bộ chọn thứ hai “**phần tiếp theo**” hiển thị các máy chủ còn lại.
 
-Một máy chủ đã có sẽ đơn giản chuyển sang danh sách khác. “**Gỡ**” loại một hoặc nhiều máy chủ khỏi các danh sách.
+1. Trong bộ chọn của danh sách, chọn “**Thêm**”.
+2. Dán một hoặc nhiều lời mời còn hiệu lực (ví dụ `discord.gg/vidu`), phân tách bằng dấu phẩy, dấu cách hoặc xuống dòng: tên và ID của từng máy chủ sẽ được đọc từ đó. ID đơn lẻ không được chấp nhận. Một lời mời không hợp lệ hoặc đã hết hạn sẽ được báo mà không chặn các lời mời khác.
 
-**Giới hạn:** tổng cộng 25 máy chủ trong cả hai danh sách.
+Một máy chủ đã có sẽ đơn giản chuyển sang danh sách khác. Để gỡ máy chủ, hãy chọn chúng trong bộ chọn của danh sách chứa chúng.
+
+**Giới hạn:** 25 máy chủ mỗi danh sách, 50 mỗi danh sách với [Premium](/vi/premium). Một danh sách đầy khi không có Premium sẽ đề xuất Premium; một máy chủ trở lại gói miễn phí vẫn giữ các mục của mình.
+
+#### Máy chủ chính thức và máy chủ 18+ {#servers-switches}
+
+Hai công tắc miễn phí bổ sung cho các danh sách:
+
+- “**Máy chủ chính thức của Discord**”: cho phép Discord Town Hall và Discord Developers, không chiếm chỗ trong danh sách cho phép, với mỗi hành vi đặt ở danh sách cho phép. Không có tác dụng với hành vi ở danh sách chặn hoặc đã tắt.
+- “**Lời mời đến máy chủ 18+**”: từ chối các lời mời đến máy chủ mà Discord đánh dấu 18+, khi “**Lời mời**” ở danh sách chặn. Tin nhắn chuyển tiếp, liên kết kênh và tag chỉ mang ID của máy chủ nên không bị ảnh hưởng. Danh sách cho phép, máy chủ của bạn và các máy chủ của RaidProtect luôn được qua.
 
 :::tip
 Để chỉ cho phép lời mời của các đối tác, hãy đặt “**Lời mời**” ở “**Danh sách cho phép**” và thêm các đối tác của bạn vào danh sách cho phép. Một danh sách cho phép trống sẽ từ chối mọi lời mời đến các máy chủ khác.

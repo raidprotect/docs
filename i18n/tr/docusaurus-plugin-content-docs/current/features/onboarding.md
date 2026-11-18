@@ -13,7 +13,7 @@ Bir kullanıcı sunucunuza katıldığında, kabul edilmeden önce [baskın modu
 
 ## 👋 Karşılama mesajı {#welcome-message}
 
-Karşılama mesajı, bir üye sunucuya kabul edildiğinde seçtiğiniz kanala gönderilir. Metninizi ve her üye için oluşturulan bir **karşılama kartı** içerir: avatarı, “Hoş geldiniz:” ve ardından sunucunun adı, ayrıca üye numarası.
+Karşılama mesajı, bir üye sunucuya kabul edildiğinde seçtiğiniz kanala gönderilir. Her üye için oluşturulan bir **karşılama kartı** içerir (avatarı, “Hoş geldiniz:” ve ardından sunucunun adı, ayrıca üye numarası); bir metin yazdıysanız kartın öncesinde o metin yer alır.
 
 <Settings start="welcome" />
 
@@ -23,6 +23,8 @@ Karşılama mesajı, bir üye sunucuya kabul edildiğinde seçtiğiniz kanala g�
 2. “**Katılımlar**” sekmesini açın.
 3. “**Karşılama mesajı**” yanındaki “**Yapılandır**” düğmesine tıklayın.
 4. “**Karşılama kanalı**” içinde mesajın gönderileceği metin kanalını seçin. Bir kanal seçmek mesajı etkinleştirir.
+
+Bir kanal seçiliyken seçicinin altında görünen “**Kanalı kaldır**” düğmesi kanalı kaldırır: mesaj artık herkese açık olarak gönderilmez, yalnızca [captcha Activity'sinin](./captcha.md#activity) karşılama kartı etkin kalır.
 
 Ekranın sağ üstündeki anahtar, karşılama mesajını etkinleştirir veya devre dışı bırakır. Mesajın bir önizlemesi ekranın altında görüntülenir ve her değişiklikte güncellenir.
 
@@ -36,11 +38,11 @@ Karşılama kanalı; captcha, jail, HoneyPot veya DISCON kanalı olamaz. Kanal s
 2. “**Katılımlar**” sekmesini açın.
 3. “**Karşılama mesajı**” yanındaki “**Yapılandır**” düğmesine tıklayın.
 4. “**Mesaj içeriği**” içinde “**Metin**”e tıklayın.
-5. Mesajınızı yazın (en fazla 1.200 karakter), ardından onaylayın. Varsayılan mesaja dönmek için alanı boş bırakın.
+5. Mesajınızı yazın (en fazla 1.200 karakter), ardından onaylayın. Yalnızca kartı göndermek için alanı boş bırakın: mesaj o zaman metinsiz gider, kart ve [düğmeler](#welcome-buttons) renk çubuğu olmadan tek başına görüntülenir.
 
 <SettingsModal name="welcomeText" />
 
-Varsayılan metin, sunucunun dilinde “**`{server.name}`** sunucusuna hoş geldin `{user.mention}`! 🎉” şeklindedir. Şu değişkenleri kullanabilirsiniz:
+Metni hiç ayarlamadığınız sürece mesaj, sunucunun dilinde varsayılan metni, “**`{server.name}`** sunucusuna hoş geldin `{user.mention}`! 🎉” mesajını kullanır. Şu değişkenleri kullanabilirsiniz:
 
 | Değişken | Yerine geçen |
 |---|---|
@@ -67,6 +69,8 @@ Mesajın altına, sunucunun bir kanalına götüren düğmeler ekleyebilirsiniz;
 5. Düğmeye bir ad verin, bağlanacak kanalı ve dilerseniz bir **emoji** seçin: standart bir emoji ya da bu sunucunun bir emojisi (`<:ad:id>`, `:ad:` veya kimliği). Geçersiz bir emoji kaydı engellemez: düğme emojisiz oluşturulur.
 
 Bir düğmeyi düzenlemek veya silmek için aynı listeden seçin.
+
+Sunucunuzda eylemleri olan bir sunucu rehberi (Server Guide) varsa “**Düğmeleri yönet**” ayrıca “**Sunucu rehberinden ekle**” (« Sunucu rehberinizin eylemlerini alır ») seçeneğini sunar. “**Sunucu rehberi düğmeleri**” penceresi rehberin eylemlerini listeler: işaretlenen her eylem, başlığı ve emojisiyle kendi kanalına giden bir düğme olur. Aynı kanal için zaten var olan bir düğmenin yerine geçer. Toplam, aşağıdaki sınırın içinde kalır: aşıldığında hiçbir şey kaydedilmez ve bir mesaj üst sınırı belirtir.
 
 **Sınırlar:** ücretsiz sürümde 2 düğme, [premium](/tr/premium) sürümde 4 düğme. Premium sona ererse yalnızca ilk 2 düğme görüntülenmeye devam eder.
 
@@ -95,7 +99,7 @@ Tüm otomatik rolleri kaldırmak için “**Sıfırla**”ya tıklayın.
 **Sınırlar:** ücretsiz sürümde 3 rol, [premium](/tr/premium) sürümde 10 rol.
 
 :::warning
-İzinsiz roller seçin: katılımda verilen bir rol hiçbir yetki vermemelidir. RaidProtect, bir entegrasyon tarafından yönetilen rolleri, kendi rolünün veya sizin rolünüzün üstündeki rolleri, moderasyon izni veren rolleri ve captcha'nın doğrulanmamış rolünü reddeder. Seçilen bir rol sonradan izin kazanırsa sizi uyarır.
+İzinsiz roller seçin: katılımda verilen bir rol hiçbir yetki vermemelidir. RaidProtect, bir entegrasyon tarafından yönetilen rolleri, kendi rolünün veya sizin rolünüzün üstündeki rolleri, moderasyon izni veren rolleri ve captcha'nın doğrulanmamış rolünü reddeder. Seçilen bir rol sonradan izin kazanırsa sizi uyarır. Seçilen bir rolde reddedilen izinler varsa hata kutusu, bu izinleri sizin yerinize kaldıran bir “**Bu izinleri kaldır**” düğmesi (birden fazla rol varsa “**@rolü düzelt**”) sunar; koşullar [Etiket Rolü](./tag-role.md) ile aynıdır: **Rolleri Yönet** izni, daha yukarıda bir rol ve sizin sahip olmadığınız bir izin olmaması.
 :::
 :::info
 Sunucunuz otomatik rolü için başka bir bot kullanıyorsa rolü captcha'dan önce verebilir. Onu RaidProtect'in otomatik rolleriyle değiştirin.

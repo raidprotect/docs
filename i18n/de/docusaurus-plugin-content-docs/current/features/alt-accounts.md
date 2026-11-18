@@ -18,7 +18,7 @@ Die Zweitkonten gehören zur **Identity Update**, die für Version 3.7.0 vorgese
 - **Gemeinsame Aufhebung**: Die Sanktion eines beliebigen Kontos aufzuheben, hebt sie für alle auf, mit oder ohne Premium.
 - **Gruppierte Suche**: Die [Suche nach Sanktionen](./sanctions.mdx#search) eines Kontos zeigt auch die der anderen Konten der Gruppe.
 - **AutoMod von Discord**: Die vom AutoMod von Discord verhängten Timeouts und Mutes erstrecken sich ebenfalls auf die verknüpften Konten.
-- **Vom Captcha erkannt**: Die [Activity des Captchas](./captcha.md#activity-alts) kann zwei Konten, bei denen sie sicher ist, dass es dieselbe Person ist, selbst verknüpfen oder Ihrem Team die Verknüpfung vorschlagen. Sie stützt sich auf das Gerät, [nie auf die IP-Adresse](#ip).
+- **Vom Captcha erkannt**: Die [Activity des Captchas](./captcha.md#activity-alts) kann zwei Konten, bei denen sie sicher ist, dass es dieselbe Person ist, selbst verknüpfen oder Ihr Team über eine wahrscheinliche Verknüpfung [alarmieren](#alerts). Sie stützt sich auf das Gerät, [nie auf die IP-Adresse](#ip).
 - **Logs**: Verknüpfungen, Entfernungen und Wechsel des Hauptkontos werden in den [Moderationslogs](./moderation.mdx#logs) aufgezeichnet. Das Log einer Sanktion nennt die verknüpften Konten mit ihrem Benutzernamen und trägt im Embed-Format eine Schaltfläche „**Verknüpfte Konten**“, die das `/alt`-Panel des sanktionierten Mitglieds öffnet.
 
 **Grenzen:** keine bei der Anzahl der Konten pro Gruppe oder der Anzahl der Gruppen. Eine Sanktion erstreckt sich auf einmal auf **10 verknüpfte Konten**: Die weiteren werden bei ihrer nächsten Nachricht oder bei ihrer Ankunft sanktioniert, und die Schaltfläche unter der Sanktion sanktioniert sie sofort.
@@ -110,6 +110,28 @@ Diese Einstellung erfordert eine [Jail-Rolle](./sanctions.mdx#jail). Fehlt sie, 
 Um das Hauptkonto einer Gruppe zu ändern, verwenden Sie `/alt` mit einem der Konten und dann die Auswahl „**Ein Konto der Gruppe bearbeiten**“.
 
 RaidProtect merkt sich, ob eine Verknüpfung von Ihrem Team oder vom Bot stammt (dem [Captcha](./captcha.md#activity-alts)). Bestätigen Sie eine vom Bot gesetzte Verknüpfung von Hand, wird sie zu einer Verknüpfung Ihres Teams, und eine von Ihrem Team gesetzte Verknüpfung wird nie wieder zu einer des Bots.
+
+### Doppelkonto-Warnungen {#alerts}
+
+Ein Neuankömmling, der wahrscheinlich mit einem Mitglied Ihres Servers verknüpft ist, alarmiert beim Captcha Ihr Team, das die Konten verknüpft oder nicht. Eine automatisch gesetzte Verknüpfung löst keine Warnung aus. Auch bei einem Mitglied, das Sie sanktionieren und von dem RaidProtect wahrscheinliche Doppelkonten kennt, werden Sie benachrichtigt, in der Bestätigung der Sanktion oder durch eine Warnung „**Wahrscheinliches Doppelkonto: … (sanktioniertes Mitglied)**“.
+
+1. Führen Sie den [Befehl `/settings`](../setup.md#settings) aus.
+2. Öffnen Sie den Tab „**Moderation**“.
+3. Klicken Sie neben „**Doppelkonten**“ auf „**Konfigurieren**“.
+4. Klicken Sie in der Zeile „**Doppelkonto-Warnungen**“ auf „**Schwellen**“ oder „**Kanal und Rolle**“. Die Zusammenfassung der Zeile beschreibt jede Schwelle und nennt Kanal und Rolle.
+
+**Schwellen:**
+
+| Einstellung | Werte | Standard |
+|---|---|---|
+| „**Warnschwelle**“ | „**Nie**“ (Zweifel bleiben in den Captcha-Logs), „**Niedrig**“, „**Wahrscheinlich**“ oder „**Hoch**“: die Sicherheit, ab der das Team alarmiert wird | Wahrscheinlich |
+| „**Schwelle für automatische Verknüpfung**“ | „**Wahrscheinlich**“, „**Hoch**“ oder „**Nie automatisch**“: die Sicherheit, ab der das Captcha selbst verknüpft. Das Team und bereits gebildete Gruppen werden nie automatisch verknüpft | Hoch |
+
+Die Warnschwelle bleibt strikt unter der Schwelle für die automatische Verknüpfung.
+
+**Kanal und Rolle:** Wählen Sie den „**Warnkanal**“ (optional: sonst der Kanal der [Meldungen](./reports.md), dann die Captcha-Logs, ohne Erwähnung) und die „**Erwähnung**“: eine Rolle, @everyone oder @here. Mit den Kästchen „**Kanal erstellen**“ und „**Rolle erstellen**“ legt RaidProtect einen Kanal #doppelkonto-warnungen, für @everyone gesperrt, und eine Rolle „Doppelkonto-Warnungen“ an; ein angekreuztes Kästchen hat Vorrang vor dem gewählten Kanal oder der gewählten Rolle. Die Rolle wird beim ersten Verdacht benachrichtigt, danach alle 5 Warnungen oder jede Stunde.
+
+In einer Warnung hat jedes wahrscheinliche Konto seine Zeile: „**Verknüpfen**“ + „**Getrennt lassen**“ bei einem Zweifel, „**Trennen**“ + „**Verknüpft lassen**“ bei einer automatisch gesetzten Verknüpfung. Ein Klick ersetzt das Paar durch das Ergebnis und den Namen der Person, die entschieden hat; die Warnung ist erledigt, wenn alle ihre Zeilen erledigt sind.
 
 ## Häufig gestellte Fragen {#faq}
 

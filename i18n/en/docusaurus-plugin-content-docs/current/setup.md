@@ -80,6 +80,8 @@ Settings are organized into five tabs:
 
 Each row shows the setting's current value and a button: "**Configure**" opens a dedicated screen, "**Edit**" opens an input window. Every change applies immediately.
 
+`/settings` opens even if RaidProtect lacks the **Manage Channels** or **Manage Roles** permissions. Each action that needs them ("**Create one for me**", enabling the captcha or choosing its channel, the captcha display mode, the HoneyPot, jail and reports channels) then refuses, naming the missing permissions. On the captcha screen, the channel selector and the "**Create**" and "**Enable**" buttons are greyed out until RaidProtect has **Kick Members** and **Manage Roles**.
+
 After an update, a **New** badge flags for two weeks the settings that have just arrived, as well as their tab until you have opened it.
 
 Explore the dashboard below, the buttons are clickable:

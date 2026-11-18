@@ -13,7 +13,7 @@ Quando un utente si unisce al tuo server, la [modalità raid](./raid-mode.md#act
 
 ## 👋 Messaggio di benvenuto {#welcome-message}
 
-Il messaggio di benvenuto viene inviato nel canale che preferisci quando un membro viene ammesso sul server. Contiene il tuo testo e una **scheda di benvenuto** generata per ogni membro: il suo avatar, “Benvenuto su” seguito dal nome del server, e il suo numero di membro.
+Il messaggio di benvenuto viene inviato nel canale che preferisci quando un membro viene ammesso sul server. Contiene una **scheda di benvenuto** generata per ogni membro (il suo avatar, “Benvenuto su” seguito dal nome del server, e il suo numero di membro), preceduta dal tuo testo se ne hai scritto uno.
 
 <Settings start="welcome" />
 
@@ -23,6 +23,8 @@ Il messaggio di benvenuto viene inviato nel canale che preferisci quando un memb
 2. Apri la scheda “**Arrivi**”.
 3. Clicca su “**Configurare**” accanto a “**Messaggio di benvenuto**”.
 4. In “**Canale di benvenuto**”, scegli il canale testuale in cui verrà inviato il messaggio. Scegliere un canale attiva il messaggio.
+
+Il pulsante “**Rimuovi il canale**”, mostrato sotto il selettore quando un canale è scelto, lo rimuove: il messaggio non viene più pubblicato in pubblico, resta attiva solo la carta di benvenuto dell'[Activity del captcha](./captcha.md#activity).
 
 L'interruttore in alto a destra della schermata attiva o disattiva il messaggio di benvenuto. Un'anteprima del messaggio viene mostrata sotto la schermata e si aggiorna a ogni modifica.
 
@@ -36,11 +38,11 @@ Il canale di benvenuto non può essere quello del captcha, del jail, dell'HoneyP
 2. Apri la scheda “**Arrivi**”.
 3. Clicca su “**Configurare**” accanto a “**Messaggio di benvenuto**”.
 4. In “**Contenuto del messaggio**”, clicca su “**Testo**”.
-5. Scrivi il tuo messaggio (1 200 caratteri al massimo), poi conferma. Lascia vuoto il campo per tornare al messaggio predefinito.
+5. Scrivi il tuo messaggio (1 200 caratteri al massimo), poi conferma. Lascia vuoto il campo per inviare solo la scheda: il messaggio parte allora senza testo, e la scheda e i [pulsanti](#welcome-buttons) vengono mostrati da soli, senza la barra colorata.
 
 <SettingsModal name="welcomeText" />
 
-Il testo predefinito è “Benvenuto `{user.mention}` su **`{server.name}`**! 🎉”, nella lingua del server. Puoi usare queste variabili:
+Finché non hai mai impostato un testo, il messaggio usa quello predefinito, “Benvenuto `{user.mention}` su **`{server.name}`**! 🎉”, nella lingua del server. Puoi usare queste variabili:
 
 | Variabile | Sostituita da |
 |---|---|
@@ -67,6 +69,8 @@ Puoi aggiungere sotto il messaggio dei pulsanti che portano a un canale del serv
 5. Dai un nome al pulsante, scegli il canale da collegare e, se lo desideri, un'**emoji**: un'emoji standard, o un'emoji di questo server (`<:nome:id>`, `:nome:` o il suo ID). Un'emoji non valida non impedisce il salvataggio: il pulsante viene creato senza emoji.
 
 Per modificare o eliminare un pulsante, selezionalo nella stessa lista.
+
+Se il tuo server ha una guida del server (Server Guide) con delle azioni, “**Gestisci i pulsanti**” propone anche “**Aggiungi dalla guida del server**” (« Riprende le azioni della guida del tuo server »). Una finestra “**Pulsanti della guida del server**” elenca le azioni della guida: ogni azione selezionata diventa un pulsante verso il suo canale, con il suo titolo e la sua emoji. Un pulsante già presente per lo stesso canale viene sostituito. Il totale resta entro il limite qui sotto: oltre, non viene salvato nulla e un messaggio indica il massimo.
 
 **Limiti:** 2 pulsanti nella versione gratuita, 4 pulsanti nella versione [premium](/it/premium). Se il Premium scade, restano visualizzati solo i primi 2 pulsanti.
 
@@ -95,7 +99,7 @@ Per togliere tutti i ruoli automatici, clicca su “**Reimpostare**”.
 **Limiti:** 3 ruoli nella versione gratuita, 10 ruoli nella versione [premium](/it/premium).
 
 :::warning
-Scegli ruoli senza permessi: un ruolo assegnato all'arrivo non dovrebbe concedere alcun potere. RaidProtect rifiuta i ruoli gestiti da un'integrazione, quelli sopra il suo o il tuo, quelli che danno un permesso di moderazione e il ruolo non verificato del captcha. Ti avvisa se un ruolo scelto acquisisce permessi più tardi.
+Scegli ruoli senza permessi: un ruolo assegnato all'arrivo non dovrebbe concedere alcun potere. RaidProtect rifiuta i ruoli gestiti da un'integrazione, quelli sopra il suo o il tuo, quelli che danno un permesso di moderazione e il ruolo non verificato del captcha. Ti avvisa se un ruolo scelto acquisisce permessi più tardi. Quando un ruolo scelto ha dei permessi rifiutati, il riquadro di errore propone un pulsante “**Rimuovi questi permessi**” (“**Correggi @ruolo**” se i ruoli sono più di uno) che li rimuove al posto tuo, con le stesse condizioni del [Ruolo del Tag](./tag-role.md): permesso **Gestire i ruoli**, ruolo posizionato più in alto e nessun permesso che non hai tu stesso.
 :::
 :::info
 Se il tuo server usa un altro bot per il suo ruolo automatico, rischia di assegnare il ruolo prima del captcha. Sostituiscilo con i ruoli automatici di RaidProtect.

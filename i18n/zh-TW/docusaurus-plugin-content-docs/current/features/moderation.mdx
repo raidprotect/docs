@@ -207,7 +207,7 @@ import Icon from "@site/src/components/Icon";
 
 ## 🕵️ 找回已刪除的訊息 {#snipe}
 
-`/snipe` 指令會逐頁顯示頻道中**最近一小時內被刪除的訊息**，由最新到最舊。
+`/snipe` 指令會逐頁顯示頻道中**最近一小時內被刪除的訊息**，由最新到最舊。搭配 [Logging Update](./logs.md)，`/snipe` 與 `/modview` 的 snipe 部分會顯示紀錄時間窗內的訊息：免費版 **30 分鐘**、[Premium](/zh-TW/premium) 版 **24 小時**，而非一小時。
 
 使用指令：```/snipe [user] [--channel=#channel]```
 
@@ -264,6 +264,8 @@ import Icon from "@site/src/components/Icon";
 <Settings start="logs" />
 
 「**紀錄**」畫面整合了三個頻道：「**一般**」、「**管理**」和「**驗證碼**」。「**管理**」或「**驗證碼**」頻道若留空，其紀錄會轉送到一般頻道。「**被動管理紀錄**」開關決定 RaidProtect 是否也記錄不經過機器人所執行的動作。頻道、身分組、成員、訊息與語音則有各自的[伺服器紀錄](./logs.md)。
+
+從 `/settings` 修改的每個設定，也會在「**一般**」紀錄頻道留下記錄：「@管理員 修改了 **模組 › 選項**：修改前 → 修改後。」涵蓋的設定包括驗證碼、Antispam、Anti-raid、ScamLens 與圖片清單、其他伺服器、HoneyPot、預防性慢速模式、最短註冊時長、處罰、重複帳號、透明度摘要、時區與訊息快取等。由 RaidProtect 自動停用的設定會標註「自動」。若值沒有改變，則不會寫入任何內容。
 
 ## 常見問題 {#faq}
 

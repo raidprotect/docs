@@ -125,7 +125,7 @@ RaidProtect 需要 `管理頻道` 和 `停權成員` 權限。沒有這些權限
 RaidProtect 已內建 [**ScamLens**](./scam-images.md)，它會分析圖片並刪除已知的詐騙圖片（加密貨幣、假贈品活動、假賭場促銷）。
 
 兩者攜手合作：
-- **ScamLens 優先**。如果在 HoneyPot 中發布的圖片已被辨識，就由 ScamLens 刪除訊息並處罰被入侵的帳號；HoneyPot 的處罰不會重複套用。
+- **ScamLens 優先**。如果在 HoneyPot 中發布的圖片已被辨識，就由 ScamLens 刪除訊息並處罰被入侵的帳號；HoneyPot 的處罰不會重複套用。如果 ScamLens 只刪除訊息而不處罰，HoneyPot 會立即處罰，不再有[延遲](#grace)。
 - **HoneyPot 接手**處理其餘所有情況：尚未被辨識的新圖片、連結垃圾訊息、大量提及、文字突襲、機器人。
 - **每張被 HoneyPot 抓到的新圖片都會豐富 ScamLens**，之後它就能在所有受保護的伺服器上封鎖這張圖片。
 - **ScamLens 跟隨您的 HoneyPot**：只要您沒有為它設定專屬的設定，它就會套用您 HoneyPot 的[處罰與時長](./scam-images.md#config)。

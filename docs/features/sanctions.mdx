@@ -20,7 +20,7 @@ L'historique des sanctions enregistre automatiquement toutes les actions de mod�
 - **Sanctions manuelles** : toutes les [commandes de modération](./moderation.mdx) (`/ban`, `/tempban`, `/kick`, `/mute`, `/jail`, `/warn`…) sont enregistrées dans l'historique.
 - **Sanctions automatiques** : les sanctions appliquées par nos modules de protection ([anti-spam](./anti-spam.mdx), [HoneyPot](./honeypot.md), [ScamLens](./scam-images.md)…) sont également ajoutées à l'historique.
 - **Bannissements, expulsions et timeouts** : les sanctions appliquées sans passer par RaidProtect sont ajoutées à l'historique.
-- **AutoMod de Discord** : les timeouts posés par l'AutoMod de Discord sont enregistrés. Chaque message bloqué par une règle AutoMod crée aussi un **avertissement** au nom de “**Discord Automod**”, silencieux (aucun MP), sauf si la règle applique déjà un timeout. Il n'est pas donné non plus quand le membre reçoit une sanction plus lourde (timeout, mute, jail, expulsion, softban, bannissement, quarantaine) dans les 10 secondes autour du blocage, par exemple par le [HoneyPot](./honeypot.md) ou l'[anti-spam](./anti-spam.mdx) pour le même message. Ce warn est activé par défaut et se coupe avec “**Warn des messages bloqués par l'AutoMod**” : faites la [commande `/settings`](../setup.md#settings), onglet “**Modération**”, “**Sanctions**”.
+- **AutoMod de Discord** : les timeouts posés par l'AutoMod de Discord sont enregistrés. Chaque message bloqué par une règle AutoMod crée aussi un **avertissement** au nom de “**Discord Automod**”, silencieux (aucun MP), sauf si la règle applique déjà un timeout. Il n'est pas donné non plus quand le membre reçoit une sanction plus lourde (timeout, mute, jail, expulsion, softban, bannissement, quarantaine) dans les 10 secondes autour du blocage, par exemple par le [HoneyPot](./honeypot.md) ou l'[anti-spam](./anti-spam.mdx) pour le même message. Son motif nomme la règle AutoMod déclenchée et cite le passage bloqué. Ce warn est activé par défaut et se coupe dans “**Options de synchronisation**” : faites la [commande `/settings`](../setup.md#settings), onglet “**Modération**”, “**Sanctions**”, “**Modifier**”, puis décochez “**Avertir l'auteur du message bloqué**”.
 - **Notifications des sanctions** : les membres sanctionnés reçoivent un message privé les informant de la sanction et de sa raison. Le bot envoie également un accusé de réception détaillé confirmant le statut de l'envoi : **reçu**, **MP fermés**, **expiré** ou **silencieux** (lorsque l'option `[--silent]` est utilisée). Pour les kicks, softbans et bans temporaires, ce message contient également un **bouton avec une invitation au serveur** afin que le membre puisse revenir une fois la sanction terminée.
 
 :::info
@@ -161,12 +161,12 @@ Dans l'écran Jail, le sélecteur “**Gestion des rôles lors du jail**” cont
 
 ### Quarantaine Discord synchronisée {#discord-quarantine}
 
-L'AutoMod de Discord peut mettre en quarantaine un membre dont le profil enfreint une règle (pseudo, tag de serveur). Avec ce réglage, nous suivons cette quarantaine : le membre reçoit le **rôle de jail** et une sanction **Quarantaine** est enregistrée dans l'historique. Il en sort dès que Discord lève la quarantaine.
+L'AutoMod de Discord peut mettre en quarantaine un membre dont le profil enfreint une règle (pseudo, tag de serveur). Avec ce réglage, nous suivons cette quarantaine : le membre reçoit le **rôle de jail** et une sanction **Quarantaine** est enregistrée dans l'historique, avec pour motif ce que l'AutoMod a bloqué (pseudo du serveur, nom d'affichage, nom d'utilisateur ou tag de serveur). Il en sort dès que Discord lève la quarantaine.
 
 1. Faites la [commande `/settings`](../setup.md#settings).
 2. Ouvrez l'onglet “**Modération**”.
 3. Cliquez sur “**Configurer**” à côté de “**Sanctions**”.
-4. Cliquez sur “**Activer**” à côté de “**Quarantaine Discord synchronisée**”.
+4. Cliquez sur “**Modifier**” à côté de “**Options de synchronisation**”, puis cochez “**Synchroniser la quarantaine**” et validez.
 
 :::info
 Ce réglage exige un [rôle Jail](#jail). Le désactiver libère les quarantaines qu'il a posées.
@@ -174,7 +174,7 @@ Ce réglage exige un [rôle Jail](#jail). Le désactiver libère les quarantaine
 
 ### Suppression des messages au bannissement {#ban-delete}
 
-Dans l'écran “**Sanctions**”, le sélecteur “**Suppression des messages au bannissement**” fixe l'historique supprimé par défaut quand vous bannissez avec `/ban`, `?ban` ou `/tempban` sans préciser `--delete-messages`. Choisissez “**Aucune suppression**” (par défaut), 1 heure, 6 heures, 12 heures, 1 jour, 3 jours ou 7 jours. Une valeur donnée dans la commande l'emporte.
+Dans l'écran “**Sanctions**”, le sélecteur “**Suppression des messages au bannissement**” fixe l'historique supprimé par défaut quand un modérateur bannit sans préciser de fenêtre, quel que soit le point d'entrée : `/ban`, `?ban`, `/tempban`, mais aussi les boutons de bannissement des fiches et des signalements (sans `--delete-messages`), et les bannissements étendus aux [comptes liés](./alt-accounts.md#modes). Les bannissements automatiques (anti-spam, HoneyPot…) ne sont pas concernés. Choisissez “**Aucune suppression**” (par défaut), 1 heure, 6 heures, 12 heures, 1 jour, 3 jours ou 7 jours. Une valeur donnée dans la commande l'emporte.
 
 ### Mute {#mute}
 
@@ -327,4 +327,4 @@ Oui, si vous réglez la [confidentialité des sanctions](#sanctions-privacy) sur
 
 ### Les messages bloqués par l'AutoMod de Discord comptent-ils comme des sanctions ?
 
-Oui, par défaut : chaque message bloqué crée un avertissement silencieux au nom de “**Discord Automod**”, sauf si la règle applique déjà un timeout ou si le membre reçoit au même moment une sanction plus lourde. Vous pouvez couper ce warn avec “**Warn des messages bloqués par l'AutoMod**” dans `/settings`, onglet “**Modération**”, “**Sanctions**”. Ces avertissements ne sont journalisés que si les logs de modération passives sont activés.
+Oui, par défaut : chaque message bloqué crée un avertissement silencieux au nom de “**Discord Automod**”, sauf si la règle applique déjà un timeout ou si le membre reçoit au même moment une sanction plus lourde. Vous pouvez couper ce warn dans `/settings`, onglet “**Modération**”, “**Sanctions**”, “**Options de synchronisation**” : “**Modifier**”, puis décochez “**Avertir l'auteur du message bloqué**”. Ces avertissements ne sont journalisés que si les logs de modération passives sont activés.

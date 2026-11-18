@@ -41,7 +41,7 @@ Tres comportamientos se ajustan por separado, cada uno en uno de estos modos:
 | **Mensaje reenviado o enlace de canal** | Se elimina el mensaje reenviado desde ese servidor, o que contiene un enlace a uno de sus canales o de sus eventos. |
 | **Etiqueta de servidor mostrada** | El miembro se pone en **cuarentena** con el [rol Jail](./sanctions.mdx#jail). Se levanta en cuanto quita la etiqueta. |
 
-Tu propio servidor siempre pasa, por cualquiera de sus invitaciones, y tu equipo (permisos **Gestionar servidor** o **Gestionar mensajes**) nunca es objetivo del filtro.
+Tu propio servidor siempre pasa, por cualquiera de sus invitaciones, y tu equipo (permisos **Gestionar servidor** o **Gestionar mensajes**) nunca es objetivo del filtro. Las invitaciones y etiquetas de los servidores de RaidProtect también pasan siempre.
 
 ### Configuración {#servers-config}
 
@@ -82,13 +82,21 @@ En la beta, los canales ignorados pasan a una pantalla “**Excepciones**”, qu
 
 ### Listas de servidores {#servers-lists}
 
-1. Haz clic en “**Añadir un servidor**”.
-2. Pega una invitación del servidor todavía válida (p. ej. `discord.gg/ejemplo`): se leen su nombre y su identificador. Ya no se acepta un identificador solo.
-3. Elige la lista: negra o blanca.
+Cada lista tiene su selector, “**Lista negra**” y “**Lista blanca**”, con el número de servidores que contiene. Pasados 25 servidores, un segundo selector “**la continuación**” muestra los siguientes.
 
-Un servidor que ya está en una lista simplemente cambia de lista. “**Retirar**” elimina uno o varios servidores de las listas.
+1. En el selector de la lista, elige “**Añadir**”.
+2. Pega una o varias invitaciones todavía válidas (p. ej. `discord.gg/ejemplo`), separadas por comas, espacios o saltos de línea: se leen el nombre y el identificador de cada servidor. No se acepta un identificador solo. Una invitación inválida o caducada se señala sin bloquear las demás.
 
-**Límites:** 25 servidores en total entre las dos listas.
+Un servidor que ya está en una lista simplemente cambia de lista. Para retirar servidores, selecciónalos en el selector de su lista.
+
+**Límites:** 25 servidores por lista, 50 por lista con [Premium](/es/premium). Una lista llena sin Premium lo propone; un servidor que vuelve a ser gratuito conserva sus entradas.
+
+#### Servidores oficiales y servidores 18+ {#servers-switches}
+
+Dos interruptores gratuitos completan las listas:
+
+- “**Servidores oficiales de Discord**”: permite Discord Town Hall y Discord Developers, sin ocupar sitio en la lista blanca, para cada comportamiento ajustado en lista blanca. Sin efecto para un comportamiento en lista negra o desactivado.
+- “**Invitaciones a servidores 18+**”: rechaza las invitaciones a un servidor que Discord marca como 18+, cuando “**Invitación**” está en lista negra. Los mensajes reenviados, los enlaces de canal y las etiquetas solo llevan el identificador del servidor: no se ven afectados. La lista blanca, tu servidor y los de RaidProtect siempre pasan.
 
 :::tip
 Para permitir solo las invitaciones de tus socios, ajusta “**Invitación**” en “**Lista blanca**” y añade a tus socios a la lista blanca. Una lista blanca vacía rechaza todas las invitaciones a otros servidores.

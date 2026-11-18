@@ -80,6 +80,8 @@ Ayarlar beş sekmede düzenlenmiştir:
 
 Her satır ayarın geçerli değerini ve bir düğme gösterir: “**Yapılandır**” özel bir ekran açar, “**Düzenle**” bir giriş penceresi açar. Her değişiklik anında uygulanır.
 
+RaidProtect'in **Kanalları Yönet** veya **Rolleri Yönet** izni olmasa bile `/settings` açılır. Bunlara ihtiyaç duyan her eylem (“**Benim için bir tane oluştur**”, captcha'yı etkinleştirme veya kanalını seçme, captcha görünüm modu, HoneyPot, jail, bildirim kanalı) eksik izinleri belirterek reddeder. Captcha ekranında kanal seçici ile “**Oluştur**” ve “**Etkinleştir**” düğmeleri, RaidProtect'te **Üyeleri At** ve **Rolleri Yönet** izinleri olana kadar devre dışıdır.
+
 Bir güncellemeden sonra, yeni gelen ayarları ve (siz açana kadar) sekmelerini iki hafta boyunca bir **Yeni** rozeti belirtir.
 
 Aşağıdaki paneli keşfedin, düğmeler tıklanabilir:

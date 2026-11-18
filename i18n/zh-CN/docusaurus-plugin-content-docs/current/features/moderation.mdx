@@ -207,7 +207,7 @@ import Icon from "@site/src/components/Icon";
 
 ## 🕵️ 找回被删除的消息 {#snipe}
 
-`/snipe` 命令会按页显示频道中**最近一小时内被删除的消息**，从最新到最旧排列。
+`/snipe` 命令会按页显示频道中**最近一小时内被删除的消息**，从最新到最旧排列。启用 [Logging Update](./logs.md) 后，`/snipe` 和 `/modview` 的 snipe 部分显示的是日志窗口内的消息：免费版 **30 分钟**，[Premium](/zh-CN/premium) 版 **24 小时**，而不是一小时。
 
 使用命令：```/snipe [user] [--channel=#channel]```
 
@@ -264,6 +264,8 @@ import Icon from "@site/src/components/Icon";
 <Settings start="logs" />
 
 “**日志**”界面包含三个频道：“**常规**”、“**管理**”和“**验证码**”。“**管理**”或“**验证码**”频道留空时，其日志会回退到通用频道。“**被动管理日志**”开关用于选择 RaidProtect 是否也记录不经过机器人而执行的操作。频道、角色、成员、消息和语音有各自的[服务器日志](./logs.md)。
+
+通过 `/settings` 修改的每项设置，也会在“**常规**”日志频道中留下记录：“@modo 修改了 **模块 › 选项**：之前 → 之后。”涵盖的设置包括验证码、Antispam、反突袭、ScamLens 和图片列表、其他服务器、HoneyPot、预防性慢速模式、最低账号年龄、处罚、双重账号、透明度摘要、时区和消息缓存等。RaidProtect 自动关闭的设置会注明“自动”。数值没有变化时不会写入任何记录。
 
 ## 常见问题 {#faq}
 

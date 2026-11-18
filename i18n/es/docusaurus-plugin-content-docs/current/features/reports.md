@@ -18,7 +18,7 @@ Los miembros pueden reportar contenido a través de 4 métodos principales.
 Un miembro puede hacer clic derecho en un mensaje que considere que infringe el reglamento, seleccionar **`Aplicaciones`** y luego hacer clic en **`Reportar Mensaje`**. Se abre una ventana en la que precisa la razón del reporte.
 
 2. **Clic derecho en un perfil**
-De la misma manera, un miembro puede hacer clic derecho en un perfil que considere problemático, elegir **`Aplicaciones`** y luego hacer clic en **`Reportar Usuario`**. Se abre entonces una ventana para que precise lo que reporta (foto de perfil, nombre de usuario, biografía, actividad en voz, actividad en mensajes privados) y la razón.
+De la misma manera, un miembro puede hacer clic derecho en un perfil que considere problemático, elegir **`Aplicaciones`** y luego hacer clic en **`Reportar Usuario`**. Se abre entonces una ventana para que precise lo que reporta (foto de perfil, nombre de usuario, biografía, actividad en voz, actividad en mensajes privados) y la razón. Con la [Logging Update](./logs.md#cache), la ventana también ofrece “**Mensajes en el servidor**”: el hilo del reporte recoge entonces los últimos mensajes del canal, **incluidos los mensajes eliminados** (marcados como eliminados, con el miembro reportado en negrita), dentro de la ventana de 30 minutos (24 horas en Premium).
 
 3. **Botón en un panel de información**
 Si la función “Reporte” está activada en un [panel de información (`/display public`)](./display.mdx), un botón “**Reportar un miembro**” está disponible directamente bajo el panel, lo que permite a los miembros reportar rápidamente a un usuario.

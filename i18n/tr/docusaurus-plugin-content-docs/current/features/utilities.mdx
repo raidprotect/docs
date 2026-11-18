@@ -159,7 +159,7 @@ Yanıt, süreleri, paylaşımı ve haklarınızı ayrıntılandıran gizlilik po
 
 ## 🗂️ Mesaj önbelleği {#message-cache}
 
-Önbellek, **kanal başına bir saatlik mesajı bellekte** tutar, asla veritabanına yazılmaz. [`/snipe`](./moderation.mdx#snipe) komutunu ve `/modview`'in snipe bölümünü besler. Onsuz bu komutlar silinmiş hiçbir mesaj bulamaz.
+Önbellek, **kanal başına bir saatlik mesajı bellekte** tutar, asla veritabanına yazılmaz. [`/snipe`](./moderation.mdx#snipe) komutunu ve `/modview`'in snipe bölümünü besler. Onsuz bu komutlar silinmiş hiçbir mesaj bulamaz. [Logging Update](./logs.md#cache) ile pencere, bir saat yerine ücretsiz sürümde **30 dakika**, [Premium](/tr/premium)'da **24 saat**tir.
 
 1. [`/settings` komutunu](../setup.md#settings) çalıştırın.
 2. “**Araçlar**” sekmesini açın.
@@ -258,17 +258,20 @@ Hedef sunucunun bir üyesiyse ek bilgiler şunları içerir:
     - `MANAGE_SERVER_EXPRESSIONS`
 
   </TabItem>
-  <TabItem value="admin" label="Yönetici">
+  <TabItem value="supervisor" label="Denetçi">
 
-    **Yönetici** kategorisi **iki olası durumda** gösterilir:
+    **Denetçi** kategorisi, üye `ADMINISTRATOR` iznine sahip olmadan **aşağıdaki üç izne aynı anda** sahipse gösterilir:
 
-    1️⃣ Şu izne sahiptir:
-    - `ADMINISTRATOR`
-
-    2️⃣ **Aşağıdaki üç izne aynı anda** sahiptir:
     - `MANAGE_GUILD`
     - `MANAGE_ROLES`
     - `MANAGE_CHANNELS`
+
+  </TabItem>
+  <TabItem value="admin" label="Yönetici">
+
+    **Yönetici** kategorisi, üye şu izne sahipse gösterilir:
+
+    - `ADMINISTRATOR`
 
   </TabItem>
   <TabItem value="owner" label="Sahip">

@@ -159,7 +159,7 @@ import Settings from '@site/src/components/DiscordMessage/mockups/v2';
 
 ## 🗂️ 訊息快取 {#message-cache}
 
-快取會**在記憶體中保留每個頻道一小時的訊息**，絕不寫入資料庫。它為 [`/snipe`](./moderation.mdx#snipe) 指令以及 `/modview` 的 snipe 部分提供資料。沒有它，這些指令就找不到任何已刪除的訊息。
+快取會**在記憶體中保留每個頻道一小時的訊息**，絕不寫入資料庫。它為 [`/snipe`](./moderation.mdx#snipe) 指令以及 `/modview` 的 snipe 部分提供資料。沒有它，這些指令就找不到任何已刪除的訊息。搭配 [Logging Update](./logs.md#cache)，時間窗在免費版為 **30 分鐘**、[Premium](/zh-TW/premium) 版為 **24 小時**，而非一小時。
 
 1. 使用 [`/settings` 指令](../setup.md#settings)。
 2. 開啟「**工具**」分頁。
@@ -258,17 +258,20 @@ RaidProtect 的「**Launch**」按鈕會在 Discord Activity 中開啟 **RaidPro
     - `MANAGE_SERVER_EXPRESSIONS`
 
   </TabItem>
-  <TabItem value="admin" label="管理員">
+  <TabItem value="supervisor" label="主管">
 
-    在**以下兩種情況**下會顯示**管理員**類別：
+    成員**同時**擁有**以下三項權限**、但沒有 `ADMINISTRATOR` 時，會顯示**主管**類別：
 
-    1️⃣ 擁有權限：
-    - `ADMINISTRATOR`
-
-    2️⃣ **同時**擁有**以下三項權限**：
     - `MANAGE_GUILD`
     - `MANAGE_ROLES`
     - `MANAGE_CHANNELS`
+
+  </TabItem>
+  <TabItem value="admin" label="管理員">
+
+    成員擁有以下權限時，會顯示**管理員**類別：
+
+    - `ADMINISTRATOR`
 
   </TabItem>
   <TabItem value="owner" label="擁有者">

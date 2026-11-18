@@ -20,7 +20,7 @@ O histórico de sanções registra automaticamente todas as ações de moderaç�
 - **Sanções manuais**: todos os [comandos de moderação](./moderation.mdx) (`/ban`, `/tempban`, `/kick`, `/mute`, `/jail`, `/warn`…) são registrados no histórico.
 - **Sanções automáticas**: as sanções aplicadas pelos nossos módulos de proteção ([anti-spam](./anti-spam.mdx), [HoneyPot](./honeypot.md), [ScamLens](./scam-images.md)…) também são adicionadas ao histórico.
 - **Banimentos, expulsões e timeouts**: as sanções aplicadas sem passar pelo RaidProtect são adicionadas ao histórico.
-- **AutoMod do Discord**: os timeouts aplicados pelo AutoMod do Discord são registrados. Cada mensagem bloqueada por uma regra do AutoMod também cria um **aviso** em nome de “**Discord Automod**”, silencioso (nenhuma DM), a menos que a regra já aplique um timeout. Ele também não é dado quando o membro recebe uma sanção mais pesada (timeout, mute, jail, expulsão, softban, banimento, quarentena) nos 10 segundos em torno do bloqueio, por exemplo pelo [HoneyPot](./honeypot.md) ou pelo [anti-spam](./anti-spam.mdx) pela mesma mensagem. Esse warn é ativado por padrão e é desativado com “**Warn das mensagens bloqueadas pelo AutoMod**”: execute o [comando `/settings`](../setup.md#settings), aba “**Moderação**”, “**Sanções**”.
+- **AutoMod do Discord**: os timeouts aplicados pelo AutoMod do Discord são registrados. Cada mensagem bloqueada por uma regra do AutoMod também cria um **aviso** em nome de “**Discord Automod**”, silencioso (nenhuma DM), a menos que a regra já aplique um timeout. Ele também não é dado quando o membro recebe uma sanção mais pesada (timeout, mute, jail, expulsão, softban, banimento, quarentena) nos 10 segundos em torno do bloqueio, por exemplo pelo [HoneyPot](./honeypot.md) ou pelo [anti-spam](./anti-spam.mdx) pela mesma mensagem. O motivo dele nomeia a regra do AutoMod acionada e cita o trecho bloqueado. Esse warn é ativado por padrão e é desativado em “**Opções de sincronização**”: execute o [comando `/settings`](../setup.md#settings), aba “**Moderação**”, “**Sanções**”, “**Editar**”, depois desmarque “**Avisar o autor da mensagem bloqueada**”.
 - **Notificações de sanção**: os membros sancionados recebem uma mensagem privada informando-os sobre a sanção e o seu motivo. O bot também envia um aviso de recebimento detalhado confirmando o status do envio: **recebida**, **DM fechadas**, **expirada** ou **silenciosa** (quando a opção `[--silent]` é usada). Para expulsões, softbans e bans temporários, esta mensagem também contém um **botão com um convite para o servidor** para que o membro possa voltar quando a sanção terminar.
 
 :::info
@@ -161,12 +161,12 @@ Na tela Jail, o seletor “**Gestão de cargos ao prender**” controla o que o 
 
 ### Quarentena do Discord sincronizada {#discord-quarantine}
 
-O AutoMod do Discord pode colocar em quarentena um membro cujo perfil infrinja uma regra (apelido, tag de servidor). Com esta configuração, acompanhamos essa quarentena: o membro recebe o **cargo de jail** e uma sanção **Quarentena** é registrada no histórico. Ele sai dela assim que o Discord remove a quarentena.
+O AutoMod do Discord pode colocar em quarentena um membro cujo perfil infrinja uma regra (apelido, tag de servidor). Com esta configuração, acompanhamos essa quarentena: o membro recebe o **cargo de jail** e uma sanção **Quarentena** é registrada no histórico, com o motivo do que o AutoMod bloqueou (apelido no servidor, nome de exibição, nome de usuário ou tag de servidor). Ele sai dela assim que o Discord remove a quarentena.
 
 1. Use o [comando `/settings`](../setup.md#settings).
 2. Abra a aba “**Moderação**”.
 3. Clique em “**Configurar**” ao lado de “**Sanções**”.
-4. Clique em “**Ativar**” ao lado de “**Quarentena do Discord sincronizada**”.
+4. Clique em “**Editar**” ao lado de “**Opções de sincronização**”, depois marque “**Sincronizar a quarentena**” e confirme.
 
 :::info
 Esta configuração exige um [cargo Jail](#jail). Desativá-la libera as quarentenas que ela aplicou.
@@ -174,7 +174,7 @@ Esta configuração exige um [cargo Jail](#jail). Desativá-la libera as quarent
 
 ### Exclusão das mensagens no banimento {#ban-delete}
 
-Na tela “**Sanções**”, o seletor “**Exclusão das mensagens no banimento**” define o histórico excluído por padrão quando você bane com `/ban`, `?ban` ou `/tempban` sem informar `--delete-messages`. Escolha “**Nenhuma exclusão**” (padrão), 1 hora, 6 horas, 12 horas, 1 dia, 3 dias ou 7 dias. Um valor informado no comando prevalece.
+Na tela “**Sanções**”, o seletor “**Exclusão das mensagens no banimento**” define o histórico excluído por padrão quando um moderador bane sem informar uma janela, qualquer que seja o ponto de entrada: `/ban`, `?ban`, `/tempban`, mas também os botões de banimento das fichas e das denúncias (sem `--delete-messages`), e os banimentos estendidos às [contas vinculadas](./alt-accounts.md#modes). Os banimentos automáticos (anti-spam, HoneyPot…) não são afetados. Escolha “**Nenhuma exclusão**” (padrão), 1 hora, 6 horas, 12 horas, 1 dia, 3 dias ou 7 dias. Um valor informado no comando prevalece.
 
 ### Cargo de Mute {#mute}
 
@@ -327,4 +327,4 @@ Sim, se você definir a [privacidade das sanções](#sanctions-privacy) com um n
 
 ### As mensagens bloqueadas pelo AutoMod do Discord contam como sanções?
 
-Sim, por padrão: cada mensagem bloqueada cria um aviso silencioso em nome de “**Discord Automod**”, a menos que a regra já aplique um timeout ou que o membro receba ao mesmo tempo uma sanção mais pesada. Você pode desativar esse warn com “**Warn das mensagens bloqueadas pelo AutoMod**” no `/settings`, aba “**Moderação**”, “**Sanções**”. Esses avisos só são registrados nos logs se os logs de moderação passiva estiverem ativados.
+Sim, por padrão: cada mensagem bloqueada cria um aviso silencioso em nome de “**Discord Automod**”, a menos que a regra já aplique um timeout ou que o membro receba ao mesmo tempo uma sanção mais pesada. Você pode desativar esse warn no `/settings`, aba “**Moderação**”, “**Sanções**”, “**Opções de sincronização**”: “**Editar**”, depois desmarque “**Avisar o autor da mensagem bloqueada**”. Esses avisos só são registrados nos logs se os logs de moderação passiva estiverem ativados.

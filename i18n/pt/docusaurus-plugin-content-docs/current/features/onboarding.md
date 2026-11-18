@@ -13,7 +13,7 @@ Quando um usuário entra no seu servidor, o [modo raid](./raid-mode.md#action), 
 
 ## 👋 Mensagem de boas-vindas {#welcome-message}
 
-A mensagem de boas-vindas é enviada no canal de sua escolha quando um membro é admitido no servidor. Ela contém o seu texto e um **cartão de boas-vindas** gerado para cada membro: seu avatar, “Boas-vindas a” seguido do nome do servidor, e seu número de membro.
+A mensagem de boas-vindas é enviada no canal de sua escolha quando um membro é admitido no servidor. Ela contém um **cartão de boas-vindas** gerado para cada membro (seu avatar, “Boas-vindas a” seguido do nome do servidor, e seu número de membro), precedido do seu texto, se você tiver escrito um.
 
 <Settings start="welcome" />
 
@@ -23,6 +23,8 @@ A mensagem de boas-vindas é enviada no canal de sua escolha quando um membro é
 2. Abra a aba “**Chegadas**”.
 3. Clique em “**Configurar**” ao lado de “**Mensagem de boas-vindas**”.
 4. Em “**Canal de boas-vindas**”, escolha o canal de texto onde a mensagem será enviada. Escolher um canal ativa a mensagem.
+
+O botão “**Remover o canal**”, exibido sob o seletor quando um canal está escolhido, o remove: a mensagem deixa então de ser publicada em público, e só o cartão de boas-vindas da [Activity do captcha](./captcha.md#activity) continua ativo.
 
 O interruptor no canto superior direito da tela ativa ou desativa a mensagem de boas-vindas. Uma prévia da mensagem é exibida abaixo da tela e é atualizada a cada modificação.
 
@@ -36,11 +38,11 @@ O canal de boas-vindas não pode ser o do captcha, do jail, do HoneyPot ou do DI
 2. Abra a aba “**Chegadas**”.
 3. Clique em “**Configurar**” ao lado de “**Mensagem de boas-vindas**”.
 4. Em “**Conteúdo da mensagem**”, clique em “**Texto**”.
-5. Escreva a sua mensagem (no máximo 1.200 caracteres) e confirme. Deixe o campo vazio para voltar à mensagem padrão.
+5. Escreva a sua mensagem (no máximo 1.200 caracteres) e confirme. Deixe o campo vazio para enviar apenas o cartão: a mensagem é então enviada sem texto, e o cartão e os [botões](#welcome-buttons) aparecem sozinhos, sem a barra de cor.
 
 <SettingsModal name="welcomeText" />
 
-O texto padrão é “Bem-vindo(a) `{user.mention}` ao **`{server.name}`**! 🎉”, no idioma do servidor. Você pode usar estas variáveis:
+Enquanto você nunca tiver definido um texto, a mensagem usa o padrão, “Bem-vindo(a) `{user.mention}` ao **`{server.name}`**! 🎉”, no idioma do servidor. Você pode usar estas variáveis:
 
 | Variável | Substituída por |
 |---|---|
@@ -67,6 +69,8 @@ Você pode adicionar abaixo da mensagem botões que levam a um canal do servidor
 5. Dê um nome ao botão, escolha o canal a vincular e, se quiser, um **emoji**: um emoji padrão, ou um emoji deste servidor (`<:nome:id>`, `:nome:` ou o ID dele). Um emoji inválido não impede o salvamento: o botão é criado sem emoji.
 
 Para modificar ou excluir um botão, selecione-o na mesma lista.
+
+Se o seu servidor tem um guia do servidor (Server Guide) com ações, “**Gerenciar botões**” também oferece “**Adicionar a partir do guia do servidor**” (« Reaproveita as ações do seu guia de servidor »). Uma janela “**Botões do guia do servidor**” lista as ações do guia: cada ação marcada vira um botão para o canal dela, com o título e o emoji. Um botão já existente para o mesmo canal é substituído. O total continua dentro do limite abaixo: acima dele, nada é salvo e uma mensagem indica o máximo.
 
 **Limites:** 2 botões na versão gratuita, 4 botões na versão [premium](/pt/premium). Se o Premium expirar, apenas os 2 primeiros botões continuam exibidos.
 
@@ -95,7 +99,7 @@ Para remover todos os cargos automáticos, clique em “**Redefinir**”.
 **Limites:** 3 cargos na versão gratuita, 10 cargos na versão [premium](/pt/premium).
 
 :::warning
-Escolha cargos sem permissões: um cargo dado na chegada não deveria conceder nenhum poder. O RaidProtect recusa os cargos gerenciados por uma integração, os que estão acima do dele ou do seu, os que dão uma permissão de moderação e o cargo não verificado do captcha. Ele avisa você se um cargo escolhido ganhar permissões mais tarde.
+Escolha cargos sem permissões: um cargo dado na chegada não deveria conceder nenhum poder. O RaidProtect recusa os cargos gerenciados por uma integração, os que estão acima do dele ou do seu, os que dão uma permissão de moderação e o cargo não verificado do captcha. Ele avisa você se um cargo escolhido ganhar permissões mais tarde. Quando um cargo escolhido tem permissões recusadas, o aviso de erro oferece um botão “**Remover essas permissões**” (“**Corrigir @cargo**” se houver vários cargos) que as remove por você, com as mesmas condições do [Cargo de Tag](./tag-role.md): permissão **Gerenciar cargos**, cargo posicionado acima e nenhuma permissão que você mesmo não tenha.
 :::
 :::info
 Se o seu servidor usa outro bot para o cargo automático, ele corre o risco de dar o cargo antes do captcha. Substitua-o pelos cargos automáticos do RaidProtect.

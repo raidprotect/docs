@@ -77,6 +77,10 @@ Các hình ảnh của một danh sách bị xóa ngay khi chúng xuất hiện 
 
 Mỗi danh sách có màn hình riêng. Nhấp vào “**Chỉnh**” bên cạnh danh sách, rồi chọn “**Hình phạt của danh sách này**” và, nếu cần, thời hạn của nó. “**Như bộ lọc**” (mặc định) giữ hình phạt của bộ lọc Hình ảnh.
 
+### Xóa một danh sách {#delete-list}
+
+Trên màn hình của danh sách, nút “**Xóa danh sách**” sẽ xóa nó sau khi xác nhận: các hình ảnh tham chiếu của nó không còn được phát hiện và hình phạt riêng của nó biến mất. Các hình phạt đã áp dụng vẫn còn. Thao tác này là vĩnh viễn. Một danh sách tạo khi dùng Premium vẫn xóa được ngay cả sau khi gói đăng ký kết thúc.
+
 ### Kênh xác minh {#review}
 
 Khi một hình ảnh giống với một hình ảnh trong danh sách của bạn nhưng không khớp chắc chắn, chúng tôi báo nó trong **kênh xác minh** của danh sách (“Cần xác minh: danh sách …”), kèm hai nút:

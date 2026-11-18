@@ -77,6 +77,10 @@ Las imágenes de una lista se eliminan en cuanto reaparecen en tu servidor, y su
 
 Cada lista tiene su propia pantalla. Haz clic en “**Ajustar**” junto a la lista, luego elige “**Sanción de esta lista**” y, si hace falta, su duración. “**Como el filtro**” (por defecto) mantiene la sanción del filtro Imágenes.
 
+### Eliminar una lista {#delete-list}
+
+En la pantalla de la lista, “**Eliminar la lista**” la borra tras confirmación: sus imágenes de referencia dejan de detectarse y su sanción propia desaparece. Las sanciones ya aplicadas se mantienen. Es definitivo. Una lista creada en Premium se puede eliminar incluso cuando la suscripción ha terminado.
+
 ### Canal de verificación {#review}
 
 Cuando una imagen se parece a una imagen de tu lista sin coincidencia segura, la señalamos en el **canal de verificación** de la lista (“Verificación requerida: lista …”), con dos botones:

@@ -77,6 +77,10 @@ Die Bilder einer Liste werden gelöscht, sobald sie auf Ihrem Server wieder auft
 
 Jede Liste hat ihren eigenen Bildschirm. Klicken Sie neben der Liste auf „**Einstellen**“, wählen Sie dann „**Sanktion dieser Liste**“ und bei Bedarf ihre Dauer. „**Wie der Filter**“ (Standard) behält die Sanktion des Filters Bilder bei.
 
+### Eine Liste löschen {#delete-list}
+
+Auf dem Bildschirm der Liste löscht „**Liste löschen**“ sie nach Bestätigung: Ihre Referenzbilder werden nicht mehr erkannt, und ihre eigene Sanktion entfällt. Bereits verhängte Sanktionen bleiben bestehen. Das ist endgültig. Eine mit Premium erstellte Liste lässt sich auch nach Ende des Abonnements löschen.
+
 ### Verifizierungskanal {#review}
 
 Ähnelt ein Bild einem Bild Ihrer Liste ohne sichere Übereinstimmung, melden wir es im **Verifizierungskanal** der Liste („Überprüfung erforderlich: Liste …“) mit zwei Schaltflächen:

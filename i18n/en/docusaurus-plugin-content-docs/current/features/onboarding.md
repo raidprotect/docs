@@ -13,7 +13,7 @@ When a user joins your server, [raid mode](./raid-mode.md#action), the [minimum 
 
 ## 👋 Welcome message {#welcome-message}
 
-The welcome message is sent to the channel of your choice when a member is admitted to the server. It contains your text and a **welcome card** generated for each member: their avatar, "Welcome to" followed by the server name, and their member number.
+The welcome message is sent to the channel of your choice when a member is admitted to the server. It contains a **welcome card** generated for each member (their avatar, "Welcome to" followed by the server name, and their member number), preceded by your text if you wrote one.
 
 <Settings start="welcome" />
 
@@ -23,6 +23,8 @@ The welcome message is sent to the channel of your choice when a member is admit
 2. Open the "**Arrivals**" tab.
 3. Click "**Configure**" next to "**Welcome message**".
 4. In "**Welcome channel**", choose the text channel where the message will be sent. Choosing a channel enables the message.
+
+The "**Remove the channel**" button, shown under the selector when a channel is chosen, removes it: the message is then no longer posted publicly, and only the welcome card of the [captcha Activity](./captcha.md#activity) stays active.
 
 The switch at the top right of the screen enables or disables the welcome message. A preview of the message is shown below the screen and updates with every change.
 
@@ -36,11 +38,11 @@ The welcome channel cannot be the captcha, jail, HoneyPot or DISCON channel. If 
 2. Open the "**Arrivals**" tab.
 3. Click "**Configure**" next to "**Welcome message**".
 4. In "**Message content**", click "**Text**".
-5. Write your message (1,200 characters maximum), then confirm. Leave the field empty to go back to the default message.
+5. Write your message (1,200 characters maximum), then confirm. Leave the field empty to send only the card: the message is then sent without text, and the card and the [buttons](#welcome-buttons) are shown alone, without the color bar.
 
 <SettingsModal name="welcomeText" />
 
-The default text is "Welcome `{user.mention}` to **`{server.name}`**! 🎉", in the server's language. You can use these variables:
+Until you have set a text, the message uses the default one, "Welcome `{user.mention}` to **`{server.name}`**! 🎉", in the server's language. You can use these variables:
 
 | Variable | Replaced by |
 |---|---|
@@ -67,6 +69,8 @@ You can add buttons below the message that lead to a channel of the server, for 
 5. Give the button a name, choose the channel to link and, if you wish, an **emoji**: a standard emoji, or an emoji from this server (`<:name:id>`, `:name:` or its ID). An invalid emoji does not prevent saving: the button is created without an emoji.
 
 To edit or delete a button, select it in the same list.
+
+If your server has a Server Guide with actions, "**Manage buttons**" also offers "**Add from the Server Guide**" ("Reuses the actions of your Server Guide"). A "**Server Guide buttons**" window lists the guide's actions: each checked action becomes a button to its channel, with its title and emoji. A button already present for the same channel is replaced. The total stays within the limit below: beyond it, nothing is saved and a message states the maximum.
 
 **Limits:** 2 buttons in the free version, 4 buttons in the [premium](/en/premium) version. If Premium expires, only the first 2 buttons remain displayed.
 
@@ -95,7 +99,7 @@ To remove all auto roles, click "**Reset**".
 **Limits:** 3 roles in the free version, 10 roles in the [premium](/en/premium) version.
 
 :::warning
-Choose roles without permissions: a role given on arrival should grant no power. RaidProtect refuses roles managed by an integration, those placed above its own or yours, those that grant a moderation permission and the captcha's unverified role. It warns you if a chosen role later gains permissions.
+Choose roles without permissions: a role given on arrival should grant no power. RaidProtect refuses roles managed by an integration, those placed above its own or yours, those that grant a moderation permission and the captcha's unverified role. It warns you if a chosen role later gains permissions. When a chosen role carries refused permissions, the error notice offers a "**Remove these permissions**" button ("**Fix @role**" if there are several roles) that removes them for you, under the same conditions as for the [Tag Role](./tag-role.md): **Manage Roles** permission, a role placed higher, and no permission that you do not have yourself.
 :::
 :::info
 If your server uses another bot for its auto role, it may give the role before the captcha. Replace it with RaidProtect's auto roles.

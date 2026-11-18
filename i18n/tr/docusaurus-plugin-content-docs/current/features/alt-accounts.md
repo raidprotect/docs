@@ -18,7 +18,7 @@ import Settings, { SettingsModal } from '@site/src/components/DiscordMessage/moc
 - **Ortak kaldırma**: hesaplardan herhangi birinin yaptırımını kaldırmak, Premium'lu veya Premium'suz, yaptırımı hepsi için kaldırır.
 - **Gruplu arama**: bir hesabın [yaptırımlarını aramak](./sanctions.mdx#search), grubun diğer hesaplarının yaptırımlarını da gösterir.
 - **Discord'un AutoMod'u**: Discord'un AutoMod'unun uyguladığı timeout ve mute'lar da bağlı hesaplara yayılır.
-- **Captcha tarafından tespit edilenler**: [captcha Activity'si](./captcha.md#activity-alts), aynı kişi olduğundan emin olduğu iki hesabı kendiliğinden bağlayabilir ya da bağlantıyı ekibinize önerebilir. Cihaza dayanır, [IP adresine asla](#ip).
+- **Captcha tarafından tespit edilenler**: [captcha Activity'si](./captcha.md#activity-alts), aynı kişi olduğundan emin olduğu iki hesabı kendiliğinden bağlayabilir ya da olası bir bağlantı için [ekibinizi uyarabilir](#alerts). Cihaza dayanır, [IP adresine asla](#ip).
 - **Loglar**: bağlantılar, çıkarmalar ve ana hesap değişiklikleri [moderasyon loglarına](./moderation.mdx#logs) kaydedilir. Bir yaptırımın logu bağlı hesapları kullanıcı adlarıyla belirtir ve embed biçiminde, yaptırım alan üyenin `/alt` panelini açan bir “**Bağlı hesaplar**” düğmesi taşır.
 
 **Sınırlar:** ne grup başına hesap sayısında ne de grup sayısında sınır yok. Bir yaptırım tek seferde **10 bağlı hesaba** yayılır: sonrakiler bir sonraki mesajlarında veya geldiklerinde yaptırım alır, yaptırımın altındaki düğme ise onlara hemen yaptırım uygular.
@@ -110,6 +110,28 @@ Bu ayar bir [Jail rolü](./sanctions.mdx#jail) gerektirir. Rol yoksa bir pencere
 Bir grubun ana hesabını değiştirmek için hesaplardan biriyle `/alt` komutunu, ardından “**Gruptaki bir hesabı düzenle**” seçicisini kullanın.
 
 RaidProtect, bir bağlantının ekibinizden mi yoksa bottan mı (bkz. [captcha](./captcha.md#activity-alts)) geldiğini hatırlar. Bot tarafından kurulan bir bağlantıyı elle onaylamak onu ekibinizin bağlantısı yapar; ekibinizin kurduğu bir bağlantı ise bir daha asla botun bağlantısına dönmez.
+
+### Çift hesap uyarıları {#alerts}
+
+Captcha sırasında, sunucunuzdaki bir üyeyle büyük olasılıkla bağlantılı olan bir yeni gelen ekibinizi uyarır; ekip bağlar ya da bağlamaz. Kendiliğinden kurulan bir bağlantı uyarı oluşturmaz. Yaptırım uyguladığınız ve RaidProtect'in olası çift hesaplarını bildiği bir üye de size bildirilir: yaptırım onayında ya da “**Olası çift hesap: … (yaptırım uygulanan üye)**” uyarısıyla.
+
+1. [`/settings` komutunu](../setup.md#settings) çalıştırın.
+2. “**Moderasyon**” sekmesini açın.
+3. “**Çift hesaplar**” yanındaki “**Yapılandır**” düğmesine tıklayın.
+4. “**Çift hesap uyarıları**” satırında “**Eşikler**”e ya da “**Kanal ve rol**”e tıklayın. Satırın özeti her eşiği açıklar, kanalı ve rolü belirtir.
+
+**Eşikler:**
+
+| Ayar | Değerler | Varsayılan |
+|---|---|---|
+| “**Uyarı eşiği**” | “**Asla**” (şüpheler captcha loglarında kalır), “**Düşük**”, “**Olası**” veya “**Güçlü**”: ekibin uyarılacağı güven düzeyi | Olası |
+| “**Otomatik bağlantı eşiği**” | “**Olası**”, “**Güçlü**” veya “**Kendiliğinden asla**”: captcha'nın tek başına bağlayacağı güven düzeyi. Ekip ve önceden oluşmuş gruplar asla kendiliğinden bağlanmaz | Güçlü |
+
+Uyarı eşiği, otomatik bağlantı eşiğinin kesinlikle altında kalır.
+
+**Kanal ve rol:** “**Uyarı kanalı**”nı seçin (isteğe bağlı: aksi halde [bildirimlerin](./reports.md) kanalı, ardından captcha logları kullanılır, etiketsiz) ve “**Etiket**”i seçin: bir rol, @everyone veya @here. “**Kanalı oluştur**” ve “**Rolü oluştur**” kutuları RaidProtect'in @everyone'a kapalı bir #cift-hesap-uyarilari kanalı ve “Çift hesap uyarıları” adlı bir rol oluşturmasını sağlar; işaretli bir kutu, seçili kanal veya rolden önceliklidir. Rol ilk şüphede, ardından her 5 uyarıda bir ya da saatte bir etiketlenir.
+
+Bir uyarıda her olası hesabın kendi satırı vardır: şüphe için “**Bağla**” + “**Bağlanmadan bırakıldı**”, kendiliğinden kurulan bağlantı için “**Bağlantıyı kaldır**” + “**Bağlı bırakıldı**”. Bir tıklama bu çifti sonuçla ve karar verenin adıyla değiştirir; tüm satırlar karara bağlandığında uyarı işlenmiş olur.
 
 ## Sık sorulan sorular {#faq}
 

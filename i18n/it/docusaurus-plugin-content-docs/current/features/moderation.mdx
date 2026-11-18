@@ -207,7 +207,7 @@ Usa il comando: ```/slowmode (delay) [duration] [channel] [reason] [--silent]```
 
 ## 🕵️ Recuperare un messaggio eliminato {#snipe}
 
-Il comando `/snipe` mostra i **messaggi eliminati dell'ultima ora** in un canale, pagina per pagina, dal più recente al più vecchio.
+Il comando `/snipe` mostra i **messaggi eliminati dell'ultima ora** in un canale, pagina per pagina, dal più recente al più vecchio. Con la [Logging Update](./logs.md), `/snipe` e la parte snipe di `/modview` mostrano i messaggi della finestra dei log: **30 minuti** nella versione gratuita, **24 ore** in [Premium](/it/premium), invece di un'ora.
 
 Usa il comando: ```/snipe [utente] [--channel=#canale]```
 
@@ -264,6 +264,8 @@ Per impostazione predefinita, i log di moderazione vengono inviati nel canale di
 <Settings start="logs" />
 
 La schermata “**Log**” raggruppa tre canali: “**Generale**”, “**Moderazione**” e “**Captcha**”. Un canale “**Moderazione**” o “**Captcha**” lasciato vuoto rimanda i suoi log al canale generale. L'interruttore “**Log di moderazione passivi**” sceglie se RaidProtect registra anche le azioni compiute senza passare dal bot. I canali, i ruoli, i membri, i messaggi e il vocale hanno i loro [log del server](./logs.md).
+
+Ogni impostazione modificata da `/settings` lascia anche una traccia nel canale di log “**Generale**”: « @modo ha modificato **Modulo › Opzione**: prima → dopo. » Sono coperti, tra gli altri, il captcha, l'anti-spam, l'anti-raid, ScamLens e le liste di immagini, Altri server, l'HoneyPot, lo slowmode preventivo, l'età minima, le sanzioni, i doppi account, i recap di trasparenza, il fuso orario e la memorizzazione dei messaggi. Un'impostazione disattivata automaticamente da RaidProtect è annotata « automaticamente ». Non viene scritto nulla se il valore non cambia.
 
 ## Domande frequenti {#faq}
 

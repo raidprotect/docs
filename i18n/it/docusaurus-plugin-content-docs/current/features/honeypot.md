@@ -125,7 +125,7 @@ Usa il comando: ```/honeypot```
 RaidProtect integra già **[ScamLens](./scam-images.md)**, che analizza le immagini ed elimina quelle che sono truffe note (crypto, finti giveaway, false promo di casinò).
 
 I due lavorano mano nella mano:
-- **ScamLens passa per primo.** Se l'immagine pubblicata nell'HoneyPot è già nota, è ScamLens a eliminare il messaggio e a sanzionare l'account compromesso; la sanzione dell'HoneyPot non si applica in aggiunta.
+- **ScamLens passa per primo.** Se l'immagine pubblicata nell'HoneyPot è già nota, è ScamLens a eliminare il messaggio e a sanzionare l'account compromesso; la sanzione dell'HoneyPot non si applica in aggiunta. Se ScamLens elimina il messaggio senza sanzionare, l'HoneyPot sanziona subito, senza [ritardo](#grace).
 - **L'HoneyPot prende il testimone** su tutto il resto: nuove immagini non ancora note, spam di link, menzioni di massa, raid testuali, robot.
 - **Ogni nuova immagine catturata da un HoneyPot arricchisce ScamLens**, che potrà poi bloccarla su tutti i server protetti.
 - **ScamLens segue il tuo HoneyPot**: finché non gli dai un'impostazione propria, applica la [sanzione e la durata](./scam-images.md#config) del tuo HoneyPot.

@@ -18,7 +18,7 @@ Os membros podem denunciar um conteúdo por meio de 4 métodos principais.
 Um membro pode clicar com o botão direito em uma mensagem que considere violar as regras, selecionar **`Aplicativos`** e, em seguida, clicar em **`Denunciar Mensagem`**. Uma janela será aberta, na qual ele especifica o motivo da denúncia.
 
 2. **Clique com o botão direito em um perfil**
-Da mesma forma, um membro pode clicar com o botão direito em um perfil que considere problemático, escolher **`Aplicativos`** e, em seguida, clicar em **`Denunciar Usuário`**. Uma janela será então aberta para permitir que ele especifique o que está denunciando (foto de perfil, nome de usuário, bio, atividade em voz, atividade em mensagens privadas) e o motivo.
+Da mesma forma, um membro pode clicar com o botão direito em um perfil que considere problemático, escolher **`Aplicativos`** e, em seguida, clicar em **`Denunciar Usuário`**. Uma janela será então aberta para permitir que ele especifique o que está denunciando (foto de perfil, nome de usuário, bio, atividade em voz, atividade em mensagens privadas) e o motivo. Com a [Logging Update](./logs.md#cache), a janela também oferece “**Mensagens no servidor**”: o tópico da denúncia reproduz então as últimas mensagens do canal, **mensagens excluídas incluídas** (marcadas como excluídas, o membro denunciado em negrito), dentro da janela de 30 minutos (24 horas no Premium).
 
 3. **Botão em um painel de informação**
 Se a funcionalidade “Denúncia” estiver ativada em um [painel de informação (`/display public`)](./display.mdx), um botão “**Denunciar um membro**” fica disponível diretamente abaixo do painel, permitindo que os membros denunciem rapidamente um usuário.

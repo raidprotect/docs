@@ -80,6 +80,8 @@ Die Einstellungen sind in fünf Tabs geordnet:
 
 Jede Zeile zeigt den aktuellen Wert der Einstellung und eine Schaltfläche: „**Konfigurieren**“ öffnet einen eigenen Bildschirm, „**Bearbeiten**“ öffnet ein Eingabefenster. Jede Änderung wird sofort angewendet.
 
+`/settings` öffnet sich auch, wenn RaidProtect die Berechtigungen **Kanäle verwalten** oder **Rollen verwalten** fehlen. Jede Aktion, die sie braucht („**Für mich erstellen**“, das Captcha aktivieren oder seinen Kanal wählen, Anzeigemodus des Captchas, Kanal des HoneyPots, des Jails, der Meldungen), lehnt dann ab und nennt die fehlenden Berechtigungen. Auf dem Captcha-Bildschirm sind die Kanalauswahl und die Schaltflächen „**Erstellen**“ und „**Aktivieren**“ ausgegraut, solange RaidProtect nicht über **Mitglieder kicken** und **Rollen verwalten** verfügt.
+
 Nach einem Update kennzeichnet ein Hinweis **Neu** zwei Wochen lang die Einstellungen, die gerade hinzugekommen sind, sowie ihren Tab, solange Sie ihn nicht geöffnet haben.
 
 Erkunden Sie das Dashboard unten, die Schaltflächen sind anklickbar:

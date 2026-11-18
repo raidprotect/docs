@@ -18,7 +18,7 @@ Las cuentas duplicadas forman parte de la **Identity Update**, prevista para la 
 - **Levantamiento común**: levantar la sanción de una de las cuentas, sea cual sea, la levanta para todas, con o sin Premium.
 - **Búsqueda agrupada**: [buscar las sanciones](./sanctions.mdx#search) de una cuenta muestra también las de las demás cuentas del grupo.
 - **AutoMod de Discord**: los timeouts y silencios aplicados por el AutoMod de Discord también se extienden a las cuentas vinculadas.
-- **Detectadas por el captcha**: la [Activity del captcha](./captcha.md#activity-alts) puede vincular por sí misma dos cuentas que está segura de que son la misma persona, o proponer el vínculo a tu equipo. Se basa en el dispositivo, [nunca en la dirección IP](#ip).
+- **Detectadas por el captcha**: la [Activity del captcha](./captcha.md#activity-alts) puede vincular por sí misma dos cuentas que está segura de que son la misma persona, o [alertar a tu equipo](#alerts) de un vínculo probable. Se basa en el dispositivo, [nunca en la dirección IP](#ip).
 - **Logs**: los vínculos, las retiradas y los cambios de cuenta principal se registran en los [logs de moderación](./moderation.mdx#logs). El log de una sanción cita las cuentas vinculadas con su nombre de usuario y, en formato embed, lleva un botón “**Cuentas vinculadas**” que abre el panel `/alt` del miembro sancionado.
 
 **Límites:** ninguno en el número de cuentas por grupo ni en el número de grupos. Una sanción se extiende a **10 cuentas vinculadas** de una vez: las siguientes se sancionan en su próximo mensaje o a su llegada, y el botón bajo la sanción las sanciona al momento.
@@ -110,6 +110,28 @@ Este ajuste requiere un [rol Jail](./sanctions.mdx#jail). Si no lo hay, una vent
 Para cambiar la cuenta principal de un grupo, usa `/alt` con una de las cuentas y luego el selector “**Modificar una cuenta del grupo**”.
 
 RaidProtect recuerda si un vínculo viene de tu equipo o del bot (el [captcha](./captcha.md#activity-alts)). Confirmar a mano un vínculo puesto por el bot lo convierte en un vínculo de tu equipo, y un vínculo puesto por tu equipo nunca vuelve a ser un vínculo del bot.
+
+### Alertas de cuenta duplicada {#alerts}
+
+En el captcha, un recién llegado probablemente vinculado a un miembro de tu servidor alerta a tu equipo, que vincula o no. Un vínculo puesto de oficio no genera alerta. Si sancionas a un miembro del que RaidProtect conoce cuentas duplicadas probables, también se te avisa, en la confirmación de la sanción o con una alerta “**Cuenta duplicada probable: … (miembro sancionado)**”.
+
+1. Ejecuta el [comando `/settings`](../setup.md#settings).
+2. Abre la pestaña “**Moderación**”.
+3. Haz clic en “**Configurar**” junto a “**Cuentas duplicadas**”.
+4. En la línea “**Alertas de cuenta duplicada**”, haz clic en “**Umbrales**” o en “**Canal y rol**”. El resumen de la línea describe cada umbral y nombra el canal y el rol.
+
+**Umbrales:**
+
+| Ajuste | Valores | Por defecto |
+|---|---|---|
+| “**Umbral de alerta**” | “**Nunca**” (las dudas quedan en los logs del captcha), “**Bajo**”, “**Probable**” o “**Fuerte**”: la confianza a partir de la cual se alerta al equipo | Probable |
+| “**Umbral de vínculo automático**” | “**Probable**”, “**Fuerte**” o “**Nunca de oficio**”: la confianza a partir de la cual el captcha vincula por sí solo. El equipo y los grupos ya formados nunca se vinculan de oficio | Fuerte |
+
+El umbral de alerta se mantiene estrictamente por debajo del umbral de vínculo automático.
+
+**Canal y rol:** elige el “**Canal de alerta**” (opcional: si no, el canal de [reportes](./reports.md), y luego los logs del captcha, sin mención) y la “**Mención**”: un rol, @everyone o @here. Las casillas “**Crear el canal**” y “**Crear el rol**” dejan que RaidProtect cree un canal #alertas-cuentas-duplicadas, cerrado a @everyone, y un rol “Alertas cuentas duplicadas”; una casilla marcada prevalece sobre el canal o el rol seleccionado. Se avisa al rol en la primera sospecha, y luego cada 5 alertas o cada hora.
+
+En una alerta, cada cuenta probable tiene su línea: “**Vincular**” + “**Mantenida sin vincular**” para una duda, “**Desvincular**” + “**Mantenida vinculada**” para un vínculo puesto de oficio. Un clic sustituye el par por el resultado y el nombre de quien decidió; la alerta se da por tratada cuando todas sus líneas lo están.
 
 ## Preguntas frecuentes {#faq}
 

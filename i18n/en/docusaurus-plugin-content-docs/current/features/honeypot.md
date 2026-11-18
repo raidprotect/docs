@@ -125,7 +125,7 @@ Use the command: ```/honeypot```
 RaidProtect already includes **[ScamLens](./scam-images.md)**, which analyzes images and deletes the ones that are known scams (crypto, fake giveaways, fake casino promotions).
 
 The two work hand in hand:
-- **ScamLens runs first.** If the image posted in the HoneyPot is already known, ScamLens is the one that deletes the message and sanctions the compromised account; the HoneyPot sanction is not applied on top.
+- **ScamLens runs first.** If the image posted in the HoneyPot is already known, ScamLens is the one that deletes the message and sanctions the compromised account; the HoneyPot sanction is not applied on top. If ScamLens deletes the message without sanctioning, the HoneyPot sanctions right away, with no [delay](#grace).
 - **The HoneyPot takes over** for everything else: new images not yet known, link spam, mass mentions, text raids, bots.
 - **Every new image caught by a HoneyPot enriches ScamLens**, which can then block it across all protected servers.
 - **ScamLens follows your HoneyPot**: as long as you give it no setting of its own, it applies your HoneyPot's [sanction and duration](./scam-images.md#config).

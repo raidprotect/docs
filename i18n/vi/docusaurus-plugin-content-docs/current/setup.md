@@ -80,6 +80,8 @@ Các thiết lập được sắp xếp trong năm thẻ:
 
 Mỗi dòng hiển thị giá trị hiện tại của thiết lập và một nút: “**Cấu hình**” mở một màn hình riêng, “**Chỉnh sửa**” mở một cửa sổ nhập liệu. Mọi thay đổi được áp dụng ngay lập tức.
 
+`/settings` vẫn mở được dù RaidProtect thiếu quyền **Quản lý kênh** hoặc **Quản lý vai trò**. Mỗi hành động cần các quyền này (“**Tạo một cái cho tôi**”, bật captcha hoặc chọn kênh của nó, chế độ hiển thị captcha, kênh HoneyPot, jail, báo cáo) sẽ từ chối và nêu các quyền còn thiếu. Trên màn hình captcha, bộ chọn kênh và các nút “**Tạo**” và “**Bật**” bị làm mờ chừng nào RaidProtect chưa có **Đuổi thành viên** và **Quản lý vai trò**.
+
 Sau một bản cập nhật, một huy hiệu **Mới** báo trong hai tuần các thiết lập vừa xuất hiện, cũng như thẻ của chúng chừng nào bạn chưa mở nó.
 
 Hãy khám phá bảng điều khiển bên dưới, các nút đều có thể nhấp:

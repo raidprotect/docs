@@ -80,6 +80,8 @@ Les réglages sont rangés en cinq onglets :
 
 Chaque ligne affiche la valeur actuelle du réglage et un bouton : “**Configurer**” ouvre un écran dédié, “**Modifier**” ouvre une fenêtre de saisie. Tout changement s'applique immédiatement.
 
+`/settings` s'ouvre même si RaidProtect n'a pas les permissions **Gérer les salons** ou **Gérer les rôles**. Chaque action qui en a besoin (“**En créer un pour moi**”, activer le captcha ou choisir son salon, mode d'affichage du captcha, salon du HoneyPot, du jail, des signalements) refuse alors en nommant les permissions manquantes. Sur l'écran du captcha, le sélecteur de salon et les boutons “**Créer**” et “**Activer**” sont grisés tant que RaidProtect n'a pas **Expulser des membres** et **Gérer les rôles**.
+
 Après une mise à jour, une pastille **Nouveau** signale pendant deux semaines les réglages qui viennent d'arriver, ainsi que leur onglet tant que vous ne l'avez pas ouvert.
 
 Explorez le tableau de bord ci-dessous, les boutons sont cliquables :

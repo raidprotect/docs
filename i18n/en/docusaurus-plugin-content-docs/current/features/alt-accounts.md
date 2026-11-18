@@ -18,7 +18,7 @@ Alt accounts are part of the **Identity Update**, planned for version 3.7.0 and 
 - **Shared removal**: removing the sanction of any one of the accounts removes it for all of them, with or without Premium.
 - **Grouped search**: [searching the sanctions](./sanctions.mdx#search) of an account also shows those of the other accounts in the group.
 - **Discord's AutoMod**: timeouts and mutes applied by Discord's AutoMod also extend to linked accounts.
-- **Spotted by the captcha**: the [captcha Activity](./captcha.md#activity-alts) can link two accounts it is sure are the same person by itself, or suggest the link to your team. It relies on the device, [never on the IP address](#ip).
+- **Spotted by the captcha**: the [captcha Activity](./captcha.md#activity-alts) can link two accounts it is sure are the same person by itself, or [alert your team](#alerts) to a probable link. It relies on the device, [never on the IP address](#ip).
 - **Logs**: links, removals and changes of main account are recorded in the [moderation logs](./moderation.mdx#logs). A sanction's log mentions the linked accounts with their username and, in embed format, carries a "**Linked accounts**" button that opens the sanctioned member's `/alt` panel.
 
 **Limits:** none on the number of accounts per group or on the number of groups. A sanction extends to **10 linked accounts** at once: the next ones are sanctioned on their next message or when they arrive, and the button below the sanction sanctions them right away.
@@ -110,6 +110,28 @@ This setting requires a [Jail role](./sanctions.mdx#jail). If there is none, a w
 To change a group's main account, use `/alt` with one of the accounts, then the "**Edit an account in the group**" selector.
 
 RaidProtect remembers whether a link comes from your team or from the bot (the [captcha](./captcha.md#activity-alts)). Manually confirming a link set by the bot makes it a link of your team, and a link set by your team never goes back to being a bot link.
+
+### Duplicate account alerts {#alerts}
+
+At the captcha, a newcomer who is probably linked to a member of your server alerts your team, who then link or not. A link set automatically does not alert. A member you sanction who has probable alt accounts known to RaidProtect is also reported to you, in the sanction confirmation or through a "**Probable alt account: … (sanctioned member)**" alert.
+
+1. Run the [`/settings` command](../setup.md#settings).
+2. Open the "**Moderation**" tab.
+3. Click "**Configure**" next to "**Duplicate accounts**".
+4. On the "**Duplicate account alerts**" row, click "**Thresholds**" or "**Channel and role**". The row's summary describes each threshold and names the channel and the role.
+
+**Thresholds:**
+
+| Setting | Values | Default |
+|---|---|---|
+| "**Alert threshold**" | "**Never**" (doubts stay in the captcha logs), "**Low**", "**Probable**" or "**Strong**": the confidence at which the team is alerted | Probable |
+| "**Automatic link threshold**" | "**Probable**", "**Strong**" or "**Never automatically**": the confidence at which the captcha links on its own. The team and groups already formed are never linked automatically | Strong |
+
+The alert threshold always stays strictly below the automatic link threshold.
+
+**Channel and role:** choose the "**Alert channel**" (optional: otherwise the [reports](./reports.md) channel, then the captcha logs, with no mention) and the "**Mention**": a role, @everyone or @here. The "**Create the channel**" and "**Create the role**" checkboxes let RaidProtect create an #duplicate-account-alerts channel, closed to @everyone, and a "Duplicate account alerts" role; a checked box takes precedence over the selected channel or role. The role is notified at the first suspect, then every 5 alerts or every hour.
+
+In an alert, each probable account has its own row: "**Link**" + "**Kept unlinked**" for a doubt, "**Unlink**" + "**Kept linked**" for a link set automatically. A click replaces the pair with the outcome and the name of who decided; the alert is handled when all its rows are.
 
 ## Frequently asked questions {#faq}
 

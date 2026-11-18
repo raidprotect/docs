@@ -80,6 +80,8 @@ Los ajustes están organizados en cinco pestañas:
 
 Cada línea muestra el valor actual del ajuste y un botón: “**Configurar**” abre una pantalla dedicada, “**Editar**” abre una ventana de entrada. Cualquier cambio se aplica de inmediato.
 
+`/settings` se abre incluso si RaidProtect no tiene los permisos **Gestionar canales** o **Gestionar roles**. Cada acción que los necesita (“**Crear uno para mí**”, activar el captcha o elegir su canal, modo de visualización del captcha, canal del HoneyPot, del jail, de los reportes) lo rechaza entonces nombrando los permisos que faltan. En la pantalla del captcha, el selector de canal y los botones “**Crear**” y “**Activar**” aparecen atenuados mientras RaidProtect no tenga **Expulsar miembros** y **Gestionar roles**.
+
 Tras una actualización, una insignia **Nuevo** señala durante dos semanas los ajustes que acaban de llegar, así como su pestaña mientras no la hayas abierto.
 
 Explora el panel de control a continuación, los botones son clicables:

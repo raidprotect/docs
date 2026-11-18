@@ -41,7 +41,7 @@ Three behaviors are set separately, each on one of these modes:
 | **Forwarded message or channel link** | The message forwarded from that server, or containing a link to one of its channels or events, is deleted. |
 | **Displayed server tag** | The member is put in **quarantine** with the [Jail role](./sanctions.mdx#jail). It is lifted as soon as they remove the tag. |
 
-Your own server always gets through, by any of its invites, and your team (**Manage Server** or **Manage Messages** permissions) is never targeted.
+Your own server always gets through, by any of its invites, and your team (**Manage Server** or **Manage Messages** permissions) is never targeted. The invites and tags of RaidProtect's servers also always get through.
 
 ### Configuration {#servers-config}
 
@@ -82,13 +82,21 @@ In the beta, ignored channels move to an "**Exceptions**" screen, which adds **i
 
 ### Server lists {#servers-lists}
 
-1. Click "**Add a server**".
-2. Paste a still-valid invite to the server (e.g., `discord.gg/example`): its name and ID are read from it. An ID alone is no longer accepted.
-3. Choose the list: blocklist or allowlist.
+Each list has its own selector, "**Blocklist**" and "**Allowlist**", showing the number of servers it holds. Beyond 25 servers, a second "**the rest**" selector shows the following ones.
 
-A server that is already present simply changes list. "**Remove**" takes one or more servers off the lists.
+1. In the list's selector, choose "**Add**".
+2. Paste one or more still-valid invites (e.g., `discord.gg/example`), separated by commas, spaces or line breaks: the name and ID of each server are read from them. An ID alone is not accepted. An invalid or expired invite is reported without blocking the others.
 
-**Limits:** 25 servers in total across both lists.
+A server that is already present simply changes list. To remove servers, select them in the selector of their list.
+
+**Limits:** 25 servers per list, 50 per list with [Premium](/en/premium). A full list without Premium offers it; a server that goes back to free keeps its entries.
+
+#### Official servers and 18+ servers {#servers-switches}
+
+Two free switches complete the lists:
+
+- "**Official Discord servers**": allows Discord Town Hall and Discord Developers, without taking a place in the allowlist, for every behavior set to allowlist. No effect for a behavior set to blocklist or disabled.
+- "**Invites to 18+ servers**": refuses invites to a server that Discord marks as 18+, when "**Invite**" is on blocklist. Forwarded messages, channel links and tags only carry the server ID: they are not affected. The allowlist, your server and RaidProtect's servers always pass.
 
 :::tip
 To only allow your partners' invites, set "**Invite**" to "**Allowlist**" and add your partners to the allowlist. An empty allowlist refuses all invites to other servers.

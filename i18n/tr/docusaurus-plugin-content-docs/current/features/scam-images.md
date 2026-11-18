@@ -77,6 +77,10 @@ Bir listedeki görseller sunucunuzda yeniden göründükleri anda silinir ve yaz
 
 Her listenin kendi ekranı vardır. Listenin yanındaki “**Ayarla**”ya tıklayın, ardından “**Bu listenin yaptırımı**”nı ve gerekirse süresini seçin. “**Filtre gibi**” (varsayılan) Görseller filtresinin yaptırımını korur.
 
+### Bir listeyi silme {#delete-list}
+
+Listenin ekranında “**Listeyi sil**” onaydan sonra listeyi siler: referans görselleri artık algılanmaz ve listeye özel yaptırımı kalkar. Uygulanmış yaptırımlar kalır. Bu işlem geri alınamaz. Premium ile oluşturulan bir liste, abonelik bittikten sonra bile silinebilir.
+
 ### Doğrulama kanalı {#review}
 
 Bir görsel, kesin eşleşme olmadan listenizdeki bir görsele benzediğinde, onu listenin **doğrulama kanalında** (“Doğrulama gerekli: … listesi”) iki düğmeyle bildiririz:

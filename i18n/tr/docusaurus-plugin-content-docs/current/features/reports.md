@@ -18,7 +18,7 @@ RaidProtect'in bildirim sistemi, topluluğunuzun herhangi bir şüpheli mesajı 
 Bir üye, kuralları ihlal ettiğini düşündüğü bir mesaja sağ tıklayabilir, **`Uygulamalar`**'ı seçebilir, ardından **`Bu mesajı bildir`**'e tıklayabilir. Bildirimin sebebini belirttiği bir pencere açılır.
 
 2. **Bir profile sağ tık**
-Aynı şekilde bir üye, sorunlu bulduğu bir profile sağ tıklayabilir, **`Uygulamalar`**'ı seçebilir, ardından **`Kullanıcıyı bildir`**'e tıklayabilir. Ardından neyi bildirdiğini (profil fotoğrafı, kullanıcı adı, biyografi, sesli kanaldaki etkinlik, özel mesajlardaki etkinlik) ve sebebi belirtmesini sağlayan bir pencere açılır.
+Aynı şekilde bir üye, sorunlu bulduğu bir profile sağ tıklayabilir, **`Uygulamalar`**'ı seçebilir, ardından **`Kullanıcıyı bildir`**'e tıklayabilir. Ardından neyi bildirdiğini (profil fotoğrafı, kullanıcı adı, biyografi, sesli kanaldaki etkinlik, özel mesajlardaki etkinlik) ve sebebi belirtmesini sağlayan bir pencere açılır. [Logging Update](./logs.md#cache) ile pencere ayrıca “**Sunucudaki mesajlar**” seçeneğini sunar: bildirimin thread'i o zaman kanalın son mesajlarını, **silinen mesajlar dahil** (silindi olarak işaretlenir, bildirilen üye kalın yazılır), 30 dakikalık pencerede (Premium'da 24 saat) içerir.
 
 3. **Bir bilgi panelindeki düğme**
 “**Şikayet**” özelliği bir [bilgi panelinde (`/display public`)](./display.mdx) etkinse, panelin hemen altında bir “**Üye şikayet et**” düğmesi bulunur; üyelerin bir kullanıcıyı hızlıca bildirmesini sağlar.

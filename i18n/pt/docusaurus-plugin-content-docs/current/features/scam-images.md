@@ -77,6 +77,10 @@ As imagens de uma lista são excluídas assim que reaparecem no seu servidor, e 
 
 Cada lista tem sua própria tela. Clique em “**Configurar**” ao lado da lista, depois escolha “**Sanção desta lista**” e, se necessário, a duração dela. “**Como o filtro**” (padrão) mantém a sanção do filtro Imagens.
 
+### Excluir uma lista {#delete-list}
+
+Na tela da lista, “**Excluir a lista**” a apaga após confirmação: as imagens de referência dela deixam de ser detectadas e a sanção própria dela desaparece. As sanções já aplicadas permanecem. É definitivo. Uma lista criada no Premium pode ser excluída mesmo depois do fim da assinatura.
+
 ### Canal de verificação {#review}
 
 Quando uma imagem se parece com uma imagem da sua lista sem correspondência certa, nós a sinalizamos no **canal de verificação** da lista (“Verificação necessária: lista …”), com dois botões:
